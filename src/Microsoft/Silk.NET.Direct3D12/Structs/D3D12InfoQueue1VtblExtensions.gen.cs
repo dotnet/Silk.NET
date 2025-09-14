@@ -474,7 +474,7 @@ public unsafe static class D3D12InfoQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+    public static int AddMessage(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -506,7 +506,7 @@ public unsafe static class D3D12InfoQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

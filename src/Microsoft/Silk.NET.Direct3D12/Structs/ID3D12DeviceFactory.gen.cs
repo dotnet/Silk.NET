@@ -303,7 +303,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes)
+        public readonly unsafe int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes)
         {
             var @this = (ID3D12DeviceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -315,7 +315,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes)
+        public readonly unsafe int EnableExperimentalFeatures(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes)
         {
             var @this = (ID3D12DeviceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
+        public readonly unsafe int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
         {
             var @this = (ID3D12DeviceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -345,7 +345,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged
+        public readonly int EnableExperimentalFeatures<T0>(uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged
         {
             var @this = (ID3D12DeviceFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

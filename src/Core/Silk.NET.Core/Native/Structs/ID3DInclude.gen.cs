@@ -60,7 +60,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -72,7 +72,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -87,7 +87,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -99,7 +99,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -114,7 +114,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -129,7 +129,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -174,7 +174,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -189,7 +189,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -207,7 +207,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -222,7 +222,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -240,7 +240,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -258,7 +258,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -304,7 +304,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -318,7 +318,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes)
+        public readonly unsafe int Open(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -349,7 +349,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -366,7 +366,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -383,7 +383,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes) where T0 : unmanaged
+        public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -412,7 +412,7 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Close<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly int Close<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

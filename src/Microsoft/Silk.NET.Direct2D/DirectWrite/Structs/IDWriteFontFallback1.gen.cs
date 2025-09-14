@@ -222,7 +222,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -282,7 +282,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -297,7 +297,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -315,7 +315,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -333,7 +333,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -610,7 +610,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -625,7 +625,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -643,7 +643,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -661,7 +661,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -682,7 +682,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -700,7 +700,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -721,7 +721,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -742,7 +742,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(IDWriteTextAnalysisSource* analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1046,7 +1046,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1061,7 +1061,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1079,7 +1079,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1097,7 +1097,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1118,7 +1118,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1136,7 +1136,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1157,7 +1157,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1178,7 +1178,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, IDWriteFontCollection* baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1506,7 +1506,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1524,7 +1524,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1545,7 +1545,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1566,7 +1566,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1590,7 +1590,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1611,7 +1611,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, IDWriteFont** mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1635,7 +1635,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1659,7 +1659,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
+        public readonly unsafe int MapCharacters(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale)
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1931,7 +1931,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI2> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
+        public readonly unsafe int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI2> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1939,7 +1939,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI2> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
+        public readonly unsafe int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI2> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1947,7 +1947,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1955,7 +1955,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1963,7 +1963,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI2> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
+        public readonly unsafe int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI2> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1971,7 +1971,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI2> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
+        public readonly int MapCharacters<TI0, TI1, TI2>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI2> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI2>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1979,7 +1979,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1987,7 +1987,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ComPtr<TI1> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2123,7 +2123,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2131,7 +2131,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2139,7 +2139,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2147,7 +2147,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2155,7 +2155,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2163,7 +2163,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly int MapCharacters<TI0, TI1>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2171,7 +2171,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2179,7 +2179,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ComPtr<TI0> analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteTextAnalysisSource>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2315,7 +2315,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2323,7 +2323,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2331,7 +2331,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2339,7 +2339,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2347,7 +2347,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly unsafe int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2355,7 +2355,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
+        public readonly int MapCharacters<TI0, TI1>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI1> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2363,7 +2363,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2371,7 +2371,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ComPtr<TI0> baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref IDWriteFont* mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2475,7 +2475,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI0> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI0> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2483,7 +2483,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI0> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, uint* mappedLength, ref ComPtr<TI0> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2491,7 +2491,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI0> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
+        public readonly unsafe int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI0> mappedFont, float* scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2499,7 +2499,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI0> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
+        public readonly int MapCharacters<TI0>(ref IDWriteTextAnalysisSource analysisSource, uint textPosition, uint textLength, ref IDWriteFontCollection baseFontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, FontWeight baseWeight, FontStyle baseStyle, FontStretch baseStretch, ref uint mappedLength, ref ComPtr<TI0> mappedFont, ref float scale) where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallback1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

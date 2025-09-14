@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDepthBias2EXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDepthBias2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DepthBiasInfoEXT pDepthBiasInfo);
+        public partial void CmdSetDepthBias2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DepthBiasInfoEXT pDepthBiasInfo);
 
         public ExtDepthBiasControl(INativeContext ctx)
             : base(ctx)

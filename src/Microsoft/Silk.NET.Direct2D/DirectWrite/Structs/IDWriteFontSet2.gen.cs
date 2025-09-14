@@ -432,7 +432,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetPropertyOccurrenceCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty property, uint* propertyOccurrenceCount)
+        public readonly unsafe int GetPropertyOccurrenceCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty property, uint* propertyOccurrenceCount)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetPropertyOccurrenceCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty property, ref uint propertyOccurrenceCount)
+        public readonly int GetPropertyOccurrenceCount([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty property, ref uint propertyOccurrenceCount)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -480,7 +480,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, IDWriteFontSet** filteredSet)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, IDWriteFontSet** filteredSet)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -492,7 +492,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, ref IDWriteFontSet* filteredSet)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, ref IDWriteFontSet* filteredSet)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -549,7 +549,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilteredFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, IDWriteFontSet1** filteredFontSet)
+        public readonly unsafe int GetFilteredFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, IDWriteFontSet1** filteredFontSet)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -561,7 +561,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilteredFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref IDWriteFontSet1* filteredFontSet)
+        public readonly unsafe int GetFilteredFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref IDWriteFontSet1* filteredFontSet)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -624,7 +624,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, uint* indices, uint maxIndexCount, uint* actualIndexCount)
+        public readonly unsafe int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, uint* indices, uint maxIndexCount, uint* actualIndexCount)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -636,7 +636,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, uint* indices, uint maxIndexCount, ref uint actualIndexCount)
+        public readonly unsafe int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, uint* indices, uint maxIndexCount, ref uint actualIndexCount)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -651,7 +651,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref uint indices, uint maxIndexCount, uint* actualIndexCount)
+        public readonly unsafe int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref uint indices, uint maxIndexCount, uint* actualIndexCount)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -666,7 +666,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref uint indices, uint maxIndexCount, ref uint actualIndexCount)
+        public readonly int GetFilteredFontIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref uint indices, uint maxIndexCount, ref uint actualIndexCount)
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -897,7 +897,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, ref ComPtr<TI0> filteredSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
+        public readonly int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, ref ComPtr<TI0> filteredSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -921,7 +921,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetFilteredFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref ComPtr<TI0> filteredFontSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet1>, IComVtbl<TI0>
+        public readonly int GetFilteredFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, Silk.NET.Core.Bool32 selectAnyProperty, ref ComPtr<TI0> filteredFontSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet1>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontSet2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

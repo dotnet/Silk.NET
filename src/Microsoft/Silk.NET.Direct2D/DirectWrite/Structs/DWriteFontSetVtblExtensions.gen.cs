@@ -400,7 +400,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetPropertyOccurrenceCount(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty property, uint* propertyOccurrenceCount)
+    public static unsafe int GetPropertyOccurrenceCount(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty property, uint* propertyOccurrenceCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetPropertyOccurrenceCount(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty property, ref uint propertyOccurrenceCount)
+    public static int GetPropertyOccurrenceCount(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty property, ref uint propertyOccurrenceCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -448,7 +448,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, IDWriteFontSet** filteredSet)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, IDWriteFontSet** filteredSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -460,7 +460,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, ref IDWriteFontSet* filteredSet)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, ref IDWriteFontSet* filteredSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -756,7 +756,7 @@ public unsafe static class DWriteFontSetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount, ref ComPtr<TI0> filteredSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
+    public static int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontSet> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount, ref ComPtr<TI0> filteredSet) where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

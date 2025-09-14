@@ -120,7 +120,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InitializeFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename)
+        public readonly int InitializeFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename)
         {
             var @this = (IWICColorContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -152,7 +152,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InitializeFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pbBuffer, uint cbBufferSize)
+        public readonly int InitializeFromMemory([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pbBuffer, uint cbBufferSize)
         {
             var @this = (IWICColorContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

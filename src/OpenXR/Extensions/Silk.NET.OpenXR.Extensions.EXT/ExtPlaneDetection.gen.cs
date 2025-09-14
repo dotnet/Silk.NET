@@ -26,7 +26,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrBeginPlaneDetectionEXT", Convention = CallingConvention.Winapi)]
-        public partial Result BeginPlaneDetection([Count(Count = 0)] PlaneDetectorEXT planeDetector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PlaneDetectorBeginInfoEXT beginInfo);
+        public partial Result BeginPlaneDetection([Count(Count = 0)] PlaneDetectorEXT planeDetector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PlaneDetectorBeginInfoEXT beginInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreatePlaneDetectorEXT", Convention = CallingConvention.Winapi)]
@@ -38,11 +38,11 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreatePlaneDetectorEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePlaneDetector([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PlaneDetectorCreateInfoEXT createInfo, [Count(Count = 0)] PlaneDetectorEXT* planeDetector);
+        public unsafe partial Result CreatePlaneDetector([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PlaneDetectorCreateInfoEXT createInfo, [Count(Count = 0)] PlaneDetectorEXT* planeDetector);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreatePlaneDetectorEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePlaneDetector([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PlaneDetectorCreateInfoEXT createInfo, [Count(Count = 0)] ref PlaneDetectorEXT planeDetector);
+        public partial Result CreatePlaneDetector([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PlaneDetectorCreateInfoEXT createInfo, [Count(Count = 0)] ref PlaneDetectorEXT planeDetector);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyPlaneDetectorEXT", Convention = CallingConvention.Winapi)]
@@ -58,11 +58,11 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetPlaneDetectionsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPlaneDetection([Count(Count = 0)] PlaneDetectorEXT planeDetector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PlaneDetectorGetInfoEXT info, [Count(Count = 0)] PlaneDetectorLocationsEXT* locations);
+        public unsafe partial Result GetPlaneDetection([Count(Count = 0)] PlaneDetectorEXT planeDetector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PlaneDetectorGetInfoEXT info, [Count(Count = 0)] PlaneDetectorLocationsEXT* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetPlaneDetectionsEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetPlaneDetection([Count(Count = 0)] PlaneDetectorEXT planeDetector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PlaneDetectorGetInfoEXT info, [Count(Count = 0)] ref PlaneDetectorLocationsEXT locations);
+        public partial Result GetPlaneDetection([Count(Count = 0)] PlaneDetectorEXT planeDetector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PlaneDetectorGetInfoEXT info, [Count(Count = 0)] ref PlaneDetectorLocationsEXT locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetPlaneDetectionStateEXT", Convention = CallingConvention.Winapi)]

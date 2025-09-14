@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateFoveationProfileFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFoveationProfileFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FoveationProfileCreateInfoFB createInfo, [Count(Count = 0)] FoveationProfileFB* profile);
+        public unsafe partial Result CreateFoveationProfileFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FoveationProfileCreateInfoFB createInfo, [Count(Count = 0)] FoveationProfileFB* profile);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateFoveationProfileFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateFoveationProfileFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FoveationProfileCreateInfoFB createInfo, [Count(Count = 0)] ref FoveationProfileFB profile);
+        public partial Result CreateFoveationProfileFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FoveationProfileCreateInfoFB createInfo, [Count(Count = 0)] ref FoveationProfileFB profile);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyFoveationProfileFB", Convention = CallingConvention.Winapi)]

@@ -133,7 +133,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, IDWriteRenderingParams* renderingParams, uint textColor, Silk.NET.Maths.Box2D<int>* blackBoxRect)
+    public static unsafe int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, IDWriteRenderingParams* renderingParams, uint textColor, Silk.NET.Maths.Box2D<int>* blackBoxRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, IDWriteRenderingParams* renderingParams, uint textColor, ref Silk.NET.Maths.Box2D<int> blackBoxRect)
+    public static unsafe int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, IDWriteRenderingParams* renderingParams, uint textColor, ref Silk.NET.Maths.Box2D<int> blackBoxRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, ref IDWriteRenderingParams renderingParams, uint textColor, Silk.NET.Maths.Box2D<int>* blackBoxRect)
+    public static unsafe int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, ref IDWriteRenderingParams renderingParams, uint textColor, Silk.NET.Maths.Box2D<int>* blackBoxRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, ref IDWriteRenderingParams renderingParams, uint textColor, ref Silk.NET.Maths.Box2D<int> blackBoxRect)
+    public static int DrawGlyphRun(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, ref IDWriteRenderingParams renderingParams, uint textColor, ref Silk.NET.Maths.Box2D<int> blackBoxRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetCurrentTransform(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform)
+    public static int SetCurrentTransform(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -365,7 +365,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, ComPtr<TI0> renderingParams, uint textColor, Silk.NET.Maths.Box2D<int>* blackBoxRect) where TI0 : unmanaged, IComVtbl<IDWriteRenderingParams>, IComVtbl<TI0>
+    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, ComPtr<TI0> renderingParams, uint textColor, Silk.NET.Maths.Box2D<int>* blackBoxRect) where TI0 : unmanaged, IComVtbl<IDWriteRenderingParams>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -381,7 +381,7 @@ public unsafe static class DWriteBitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun<TI0>(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, ComPtr<TI0> renderingParams, uint textColor, ref Silk.NET.Maths.Box2D<int> blackBoxRect) where TI0 : unmanaged, IComVtbl<IDWriteRenderingParams>, IComVtbl<TI0>
+    public static int DrawGlyphRun<TI0>(this ComPtr<IDWriteBitmapRenderTarget> thisVtbl, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, ComPtr<TI0> renderingParams, uint textColor, ref Silk.NET.Maths.Box2D<int> blackBoxRect) where TI0 : unmanaged, IComVtbl<IDWriteRenderingParams>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

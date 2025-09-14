@@ -126,7 +126,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

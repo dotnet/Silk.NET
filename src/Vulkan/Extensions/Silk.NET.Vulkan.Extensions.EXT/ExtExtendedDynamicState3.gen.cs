@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendAdvancedEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorBlendAdvance([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ColorBlendAdvancedEXT pColorBlendAdvanced);
+        public partial void CmdSetColorBlendAdvance([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ColorBlendAdvancedEXT pColorBlendAdvanced);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendEnableEXT", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendEnableEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorBlendEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Bool32 pColorBlendEnables);
+        public partial void CmdSetColorBlendEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Bool32 pColorBlendEnables);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendEquationEXT", Convention = CallingConvention.Winapi)]
@@ -50,7 +50,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorBlendEquationEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorBlendEquation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ColorBlendEquationEXT pColorBlendEquations);
+        public partial void CmdSetColorBlendEquation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ColorBlendEquationEXT pColorBlendEquations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorWriteMaskEXT", Convention = CallingConvention.Winapi)]
@@ -58,7 +58,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetColorWriteMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetColorWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ColorComponentFlags pColorWriteMasks);
+        public partial void CmdSetColorWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstAttachment, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ColorComponentFlags pColorWriteMasks);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetConservativeRasterizationModeEXT", Convention = CallingConvention.Winapi)]
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetCoverageModulationTable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint coverageModulationTableCount, [Count(Parameter = "coverageModulationTableCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pCoverageModulationTable);
+        public partial void CmdSetCoverageModulationTable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint coverageModulationTableCount, [Count(Parameter = "coverageModulationTableCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pCoverageModulationTable);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoverageModulationTableEnableNV", Convention = CallingConvention.Winapi)]
@@ -150,7 +150,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetSampleMaskEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetSampleMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\\lceil{\\mathit{samples} \\over 32}\\rceil]"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pSampleMask);
+        public partial void CmdSetSampleMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SampleCountFlags samples, [Count(Computed = "latexmath:[\\lceil{\\mathit{samples} \\over 32}\\rceil]"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pSampleMask);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetShadingRateImageEnableNV", Convention = CallingConvention.Winapi)]
@@ -166,7 +166,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportSwizzleNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetViewportSwizzle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewportSwizzleNV pViewportSwizzles);
+        public partial void CmdSetViewportSwizzle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewportSwizzleNV pViewportSwizzles);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingEnableNV", Convention = CallingConvention.Winapi)]

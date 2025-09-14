@@ -25,7 +25,7 @@ namespace Silk.NET.SPIRV.Reflect
             Silk.NET.SPIRV.Op? op = null,
             byte* typeName = null,
             byte* structMemberName = null,
-            Silk.NET.SPIRV.StorageClass? storageClass = null,
+            int? storageClass = null,
             uint? typeFlags = null,
             uint? decorationFlags = null,
             Traits? traits = null,
@@ -117,10 +117,10 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "struct_member_name")]
         public byte* StructMemberName;
 
-        [NativeName("Type", "SpvStorageClass")]
-        [NativeName("Type.Name", "SpvStorageClass")]
+        [NativeName("Type", "int")]
+        [NativeName("Type.Name", "int")]
         [NativeName("Name", "storage_class")]
-        public Silk.NET.SPIRV.StorageClass StorageClass;
+        public int StorageClass;
 
         [NativeName("Type", "SpvReflectTypeFlags")]
         [NativeName("Type.Name", "SpvReflectTypeFlags")]

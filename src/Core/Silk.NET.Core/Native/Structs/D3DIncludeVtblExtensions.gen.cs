@@ -40,7 +40,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -52,7 +52,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -67,7 +67,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -79,7 +79,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -109,7 +109,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -127,7 +127,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -169,7 +169,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -187,7 +187,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -238,7 +238,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -284,7 +284,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -315,7 +315,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -329,7 +329,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -392,7 +392,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Close<T0>(this ComPtr<ID3DInclude> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int Close<T0>(this ComPtr<ID3DInclude> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -436,7 +436,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -444,7 +444,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -468,7 +468,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -476,7 +476,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -500,7 +500,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -508,7 +508,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -524,7 +524,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -548,7 +548,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -556,7 +556,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

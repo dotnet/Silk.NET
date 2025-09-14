@@ -26,5 +26,7 @@ namespace Silk.NET.OpenGLES.Extensions.MESA
         ProgramBinaryFormatMesa = 0x875F,
         [NativeName("Name", "GL_SAMPLER_BINDING")]
         SamplerBinding = 0x8919,
+        [NativeName("Name", "GL_CONST_BW_TILING_MESA")]
+        ConstBWTilingMesa = 0x8BBE,
     }
 }

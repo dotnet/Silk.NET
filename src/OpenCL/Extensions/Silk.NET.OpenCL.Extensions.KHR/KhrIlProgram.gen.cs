@@ -27,10 +27,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public unsafe partial nint CreateProgramWithIL([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithILKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateProgramWithIL<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial nint CreateProgramWithIL<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithILKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateProgramWithIL<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public partial nint CreateProgramWithIL<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint context, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 il, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint length, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         public KhrIlProgram(INativeContext ctx)
             : base(ctx)

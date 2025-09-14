@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexubvARB", Convention = CallingConvention.Winapi)]
         public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string indices);
@@ -36,13 +36,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexusvARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexuivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexuivARB", Convention = CallingConvention.Winapi)]
-        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint indices);
+        public partial void MatrixIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint indices);
 
         [NativeApi(EntryPoint = "glMatrixIndexPointerARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void MatrixIndexPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);

@@ -219,7 +219,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadEx(Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidPreferredVendor, uint dwPersistOptions)
+        public readonly unsafe int LoadEx(Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidPreferredVendor, uint dwPersistOptions)
         {
             var @this = (IWICPersistStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -243,7 +243,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadEx(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidPreferredVendor, uint dwPersistOptions)
+        public readonly int LoadEx(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidPreferredVendor, uint dwPersistOptions)
         {
             var @this = (IWICPersistStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -312,7 +312,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadEx<TI0>(ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidPreferredVendor, uint dwPersistOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly int LoadEx<TI0>(ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidPreferredVendor, uint dwPersistOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICPersistStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

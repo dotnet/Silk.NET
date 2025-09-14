@@ -159,7 +159,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -275,7 +275,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -287,7 +287,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -302,7 +302,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -317,7 +317,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -350,7 +350,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -368,7 +368,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -386,7 +386,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -407,7 +407,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -421,7 +421,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -438,7 +438,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -455,7 +455,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -531,7 +531,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -545,7 +545,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -562,7 +562,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -579,7 +579,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -663,7 +663,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -675,7 +675,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -690,7 +690,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -705,7 +705,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -723,7 +723,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -738,7 +738,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -756,7 +756,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -774,7 +774,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -795,7 +795,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -809,7 +809,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -826,7 +826,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -843,7 +843,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -863,7 +863,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -878,7 +878,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -896,7 +896,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -914,7 +914,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -935,7 +935,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -953,7 +953,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -974,7 +974,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -995,7 +995,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1036,7 +1036,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1056,7 +1056,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1076,7 +1076,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1099,7 +1099,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1113,7 +1113,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1130,7 +1130,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1147,7 +1147,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1167,7 +1167,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1184,7 +1184,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1204,7 +1204,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1224,7 +1224,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1247,7 +1247,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1263,7 +1263,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1282,7 +1282,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1301,7 +1301,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1379,7 +1379,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1393,7 +1393,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1410,7 +1410,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1427,7 +1427,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1511,7 +1511,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1525,7 +1525,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1542,7 +1542,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1559,7 +1559,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1579,7 +1579,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1596,7 +1596,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1616,7 +1616,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1636,7 +1636,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1659,7 +1659,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1675,7 +1675,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1694,7 +1694,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1713,7 +1713,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1799,7 +1799,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1815,7 +1815,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1834,7 +1834,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1853,7 +1853,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2007,7 +2007,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2022,7 +2022,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2040,7 +2040,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2058,7 +2058,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2147,7 +2147,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2162,7 +2162,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2180,7 +2180,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2198,7 +2198,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2219,7 +2219,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2237,7 +2237,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2258,7 +2258,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2279,7 +2279,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2303,7 +2303,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2320,7 +2320,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2340,7 +2340,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2360,7 +2360,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2451,7 +2451,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2468,7 +2468,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2488,7 +2488,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2508,7 +2508,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2607,7 +2607,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2622,7 +2622,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2640,7 +2640,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2658,7 +2658,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2679,7 +2679,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2697,7 +2697,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2718,7 +2718,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2739,7 +2739,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2763,7 +2763,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2780,7 +2780,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2800,7 +2800,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2820,7 +2820,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2843,7 +2843,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2861,7 +2861,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2882,7 +2882,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2903,7 +2903,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2927,7 +2927,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2948,7 +2948,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2972,7 +2972,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2996,7 +2996,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3023,7 +3023,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3043,7 +3043,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3066,7 +3066,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3089,7 +3089,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3115,7 +3115,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3132,7 +3132,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3152,7 +3152,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3172,7 +3172,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3195,7 +3195,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3215,7 +3215,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3238,7 +3238,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3261,7 +3261,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3287,7 +3287,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3306,7 +3306,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3328,7 +3328,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3350,7 +3350,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3443,7 +3443,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3460,7 +3460,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3480,7 +3480,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3500,7 +3500,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3599,7 +3599,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3616,7 +3616,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3636,7 +3636,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3656,7 +3656,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3679,7 +3679,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3699,7 +3699,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3722,7 +3722,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3745,7 +3745,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3771,7 +3771,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3790,7 +3790,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3812,7 +3812,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3834,7 +3834,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3935,7 +3935,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3954,7 +3954,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3976,7 +3976,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+        public readonly unsafe int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3998,7 +3998,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+        public readonly int AsyncGetClassBits(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4132,7 +4132,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4140,7 +4140,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4164,7 +4164,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4172,7 +4172,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4180,7 +4180,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4188,7 +4188,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4196,7 +4196,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4204,7 +4204,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4228,7 +4228,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4236,7 +4236,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4260,7 +4260,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4268,7 +4268,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4276,7 +4276,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4284,7 +4284,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4292,7 +4292,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4300,7 +4300,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4308,7 +4308,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4316,7 +4316,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4324,7 +4324,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4332,7 +4332,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4340,7 +4340,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4348,7 +4348,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4356,7 +4356,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4364,7 +4364,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4372,7 +4372,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4380,7 +4380,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4388,7 +4388,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4396,7 +4396,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4420,7 +4420,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4428,7 +4428,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4452,7 +4452,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4460,7 +4460,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4468,7 +4468,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4476,7 +4476,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4484,7 +4484,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4492,7 +4492,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4516,7 +4516,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4524,7 +4524,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4564,7 +4564,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4572,7 +4572,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4596,7 +4596,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4604,7 +4604,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4612,7 +4612,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4620,7 +4620,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4628,7 +4628,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4636,7 +4636,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4660,7 +4660,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4668,7 +4668,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4692,7 +4692,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4700,7 +4700,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4708,7 +4708,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4716,7 +4716,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4724,7 +4724,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4732,7 +4732,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4740,7 +4740,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4748,7 +4748,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4756,7 +4756,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4764,7 +4764,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4772,7 +4772,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4780,7 +4780,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4788,7 +4788,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4796,7 +4796,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4804,7 +4804,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4812,7 +4812,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4820,7 +4820,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4828,7 +4828,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4852,7 +4852,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4860,7 +4860,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4884,7 +4884,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4892,7 +4892,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4900,7 +4900,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4908,7 +4908,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4916,7 +4916,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4924,7 +4924,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4948,7 +4948,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly unsafe int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4956,7 +4956,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+        public readonly int AsyncGetClassBits<TI0>(ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
         {
             var @this = (IUrlMon*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

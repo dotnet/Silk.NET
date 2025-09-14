@@ -592,7 +592,7 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pRootSignature)
+    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

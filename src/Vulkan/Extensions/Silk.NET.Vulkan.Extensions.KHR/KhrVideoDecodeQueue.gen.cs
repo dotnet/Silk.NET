@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDecodeVideoKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdDecodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecodeInfoKHR pDecodeInfo);
+        public partial void CmdDecodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecodeInfoKHR pDecodeInfo);
 
         public KhrVideoDecodeQueue(INativeContext ctx)
             : base(ctx)

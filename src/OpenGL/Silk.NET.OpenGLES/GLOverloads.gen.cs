@@ -6574,7 +6574,7 @@ namespace Silk.NET.OpenGLES
             thisApi.GetUniformIndices(program, uniformCount, uniformNames, out uniformIndices.GetPinnableReference());
         }
 
-        public static unsafe void GetUniformIndices(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> uniformIndices)
+        public static unsafe void GetUniformIndices(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> uniformIndices)
         {
             // SpanOverloader
             thisApi.GetUniformIndices(program, uniformCount, in uniformNames, out uniformIndices.GetPinnableReference());
@@ -8212,7 +8212,7 @@ namespace Silk.NET.OpenGLES
             thisApi.ShaderSource(shader, count, @string, in length.GetPinnableReference());
         }
 
-        public static unsafe void ShaderSource(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
+        public static unsafe void ShaderSource(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
         {
             // SpanOverloader
             thisApi.ShaderSource(shader, count, in @string, in length.GetPinnableReference());

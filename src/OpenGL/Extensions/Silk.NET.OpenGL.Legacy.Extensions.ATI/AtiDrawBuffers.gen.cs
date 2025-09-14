@@ -24,13 +24,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ATI bufs);
+        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ATI bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawBufferMode* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
-        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DrawBufferMode bufs);
+        public partial void DrawBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DrawBufferMode bufs);
 
         public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ATI> bufs)
         {

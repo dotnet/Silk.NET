@@ -120,7 +120,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -143,7 +143,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -155,7 +155,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -170,7 +170,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -195,7 +195,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -263,7 +263,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -278,7 +278,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -296,7 +296,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -327,7 +327,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -360,7 +360,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -372,7 +372,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -387,7 +387,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -401,7 +401,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -416,7 +416,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -434,7 +434,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -451,7 +451,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -465,7 +465,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -482,7 +482,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -498,7 +498,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -513,7 +513,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -531,7 +531,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -548,7 +548,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -566,7 +566,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -587,7 +587,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -607,7 +607,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -624,7 +624,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -644,7 +644,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -663,7 +663,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -675,7 +675,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -690,7 +690,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -704,7 +704,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -719,7 +719,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -737,7 +737,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -754,7 +754,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -768,7 +768,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -785,7 +785,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -801,7 +801,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -816,7 +816,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -834,7 +834,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -851,7 +851,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -869,7 +869,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -890,7 +890,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -910,7 +910,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -927,7 +927,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -947,7 +947,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -966,7 +966,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -981,7 +981,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -999,7 +999,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1016,7 +1016,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1034,7 +1034,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1055,7 +1055,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1075,7 +1075,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1092,7 +1092,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1112,7 +1112,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1131,7 +1131,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1149,7 +1149,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1170,7 +1170,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1190,7 +1190,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1211,7 +1211,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1235,7 +1235,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1258,7 +1258,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1278,7 +1278,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1301,7 +1301,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1394,7 +1394,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1406,7 +1406,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1434,7 +1434,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1446,7 +1446,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1454,7 +1454,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1466,7 +1466,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1474,7 +1474,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1486,7 +1486,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1514,7 +1514,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1526,7 +1526,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1566,7 +1566,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1590,7 +1590,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1602,7 +1602,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1614,7 +1614,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1638,7 +1638,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1662,7 +1662,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1670,7 +1670,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1678,7 +1678,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1686,7 +1686,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1694,7 +1694,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1702,7 +1702,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1710,7 +1710,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1718,7 +1718,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1726,7 +1726,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1734,7 +1734,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1746,7 +1746,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1754,7 +1754,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1766,7 +1766,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1774,7 +1774,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1786,7 +1786,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1794,7 +1794,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1806,7 +1806,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1814,7 +1814,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1826,7 +1826,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1834,7 +1834,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1846,7 +1846,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1854,7 +1854,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1866,7 +1866,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1874,7 +1874,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1886,7 +1886,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1894,7 +1894,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1906,7 +1906,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1914,7 +1914,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1926,7 +1926,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1938,7 +1938,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1950,7 +1950,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1962,7 +1962,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1974,7 +1974,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1986,7 +1986,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+        public readonly unsafe int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1998,7 +1998,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2010,7 +2010,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+        public readonly int AddMapping([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2022,7 +2022,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2030,7 +2030,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2038,7 +2038,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2046,7 +2046,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2054,7 +2054,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2062,7 +2062,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2070,7 +2070,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2078,7 +2078,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2086,7 +2086,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+        public readonly unsafe int AddMapping<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontFallbackBuilder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -94,7 +94,7 @@ public unsafe static class DWriteTextAnalysisSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetScriptAnalysis(this ComPtr<IDWriteTextAnalysisSink1> thisVtbl, uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ScriptAnalysis scriptAnalysis)
+    public static int SetScriptAnalysis(this ComPtr<IDWriteTextAnalysisSink1> thisVtbl, uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ScriptAnalysis scriptAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class DWriteTextAnalysisSink1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetLineBreakpoints(this ComPtr<IDWriteTextAnalysisSink1> thisVtbl, uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LineBreakpoint lineBreakpoints)
+    public static int SetLineBreakpoints(this ComPtr<IDWriteTextAnalysisSink1> thisVtbl, uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LineBreakpoint lineBreakpoints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

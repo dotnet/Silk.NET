@@ -61,7 +61,7 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
             return thisApi.InitLayer(num_entries, target_dispatch, out num_entries_ret.GetPinnableReference(), layer_dispatch_ret);
         }
 
-        public static unsafe int InitLayer(this LoaderLayers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret)
+        public static unsafe int InitLayer(this LoaderLayers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret)
         {
             // SpanOverloader
             return thisApi.InitLayer(num_entries, target_dispatch, out num_entries_ret.GetPinnableReference(), in layer_dispatch_ret);
@@ -73,7 +73,7 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
             return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), num_entries_ret, layer_dispatch_ret);
         }
 
-        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret) where T0 : unmanaged
+        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), num_entries_ret, in layer_dispatch_ret);
@@ -85,7 +85,7 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
             return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), out num_entries_ret.GetPinnableReference(), layer_dispatch_ret);
         }
 
-        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret) where T0 : unmanaged
+        public static unsafe int InitLayer<T0>(this LoaderLayers thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.InitLayer(num_entries, in target_dispatch.GetPinnableReference(), out num_entries_ret.GetPinnableReference(), in layer_dispatch_ret);

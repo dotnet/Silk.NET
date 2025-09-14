@@ -132,7 +132,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -156,7 +156,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -204,7 +204,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -417,7 +417,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -429,7 +429,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -456,7 +456,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -471,7 +471,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
+        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -486,7 +486,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
+        public readonly unsafe int CreateSurface([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -525,7 +525,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryResourceResidency([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
+        public readonly unsafe int QueryResourceResidency([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -537,7 +537,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryResourceResidency([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
+        public readonly unsafe int QueryResourceResidency([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -621,7 +621,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OfferResources(uint NumResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IDXGIResource* ppResources, OfferResourcePriority Priority)
+        public readonly unsafe int OfferResources(uint NumResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IDXGIResource* ppResources, OfferResourcePriority Priority)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -654,7 +654,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReclaimResources(uint NumResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IDXGIResource* ppResources, int* pDiscarded)
+        public readonly unsafe int ReclaimResources(uint NumResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IDXGIResource* ppResources, int* pDiscarded)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -666,7 +666,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReclaimResources(uint NumResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IDXGIResource* ppResources, ref int pDiscarded)
+        public readonly unsafe int ReclaimResources(uint NumResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IDXGIResource* ppResources, ref int pDiscarded)
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -759,7 +759,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        public readonly unsafe int CreateSurface<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -767,7 +767,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSurface<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        public readonly unsafe int CreateSurface<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -775,7 +775,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateSurface<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
+        public readonly int CreateSurface<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIDevice3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

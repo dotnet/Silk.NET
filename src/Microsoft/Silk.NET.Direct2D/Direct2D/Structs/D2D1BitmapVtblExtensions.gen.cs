@@ -184,7 +184,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -208,7 +208,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -223,7 +223,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
+    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
+    public static unsafe int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -265,7 +265,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static int CopyFromBitmap(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -292,7 +292,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
+    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ID2D1RenderTarget* renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -358,7 +358,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
+    public static unsafe int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect)
+    public static int CopyFromRenderTarget(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ref ID2D1RenderTarget renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -400,7 +400,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch) where T0 : unmanaged
+    public static unsafe int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromMemory(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch)
+    public static unsafe int CopyFromMemory(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -424,7 +424,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch) where T0 : unmanaged
+    public static int CopyFromMemory<T0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> dstRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -512,7 +512,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CopyFromBitmap<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -544,7 +544,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromBitmap<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CopyFromBitmap<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -560,7 +560,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyFromBitmap<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int CopyFromBitmap<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -600,7 +600,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CopyFromRenderTarget<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -632,7 +632,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyFromRenderTarget<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CopyFromRenderTarget<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -648,7 +648,7 @@ public unsafe static class D2D1BitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyFromRenderTarget<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static int CopyFromRenderTarget<TI0>(this ComPtr<ID2D1Bitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> destPoint, ComPtr<TI0> renderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> srcRect) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

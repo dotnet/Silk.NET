@@ -106,7 +106,7 @@ public unsafe static class DWriteGdiInteropVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFromLOGFONT<T0>(this ComPtr<IDWriteGdiInterop> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, IDWriteFont** font) where T0 : unmanaged
+    public static unsafe int CreateFontFromLOGFONT<T0>(this ComPtr<IDWriteGdiInterop> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, IDWriteFont** font) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteGdiInteropVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFromLOGFONT<T0>(this ComPtr<IDWriteGdiInterop> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref IDWriteFont* font) where T0 : unmanaged
+    public static unsafe int CreateFontFromLOGFONT<T0>(this ComPtr<IDWriteGdiInterop> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref IDWriteFont* font) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -372,7 +372,7 @@ public unsafe static class DWriteGdiInteropVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFromLOGFONT<T0, TI0>(this ComPtr<IDWriteGdiInterop> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref ComPtr<TI0> font) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
+    public static int CreateFontFromLOGFONT<T0, TI0>(this ComPtr<IDWriteGdiInterop> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref ComPtr<TI0> font) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

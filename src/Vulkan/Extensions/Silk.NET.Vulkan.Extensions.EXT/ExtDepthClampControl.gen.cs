@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDepthClampRangeEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDepthClampRange([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DepthClampModeEXT depthClampMode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DepthClampRangeEXT pDepthClampRange);
+        public partial void CmdSetDepthClampRange([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DepthClampModeEXT depthClampMode, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DepthClampRangeEXT pDepthClampRange);
 
         public ExtDepthClampControl(INativeContext ctx)
             : base(ctx)

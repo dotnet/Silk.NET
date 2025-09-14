@@ -164,7 +164,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateAlphaTexture(TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> textureBounds, byte* alphaValues, uint bufferSize)
+        public readonly unsafe int CreateAlphaTexture(TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> textureBounds, byte* alphaValues, uint bufferSize)
         {
             var @this = (IDWriteGlyphRunAnalysis*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -176,7 +176,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateAlphaTexture(TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> textureBounds, ref byte alphaValues, uint bufferSize)
+        public readonly int CreateAlphaTexture(TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> textureBounds, ref byte alphaValues, uint bufferSize)
         {
             var @this = (IDWriteGlyphRunAnalysis*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -191,7 +191,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateAlphaTexture(TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> textureBounds, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alphaValues, uint bufferSize)
+        public readonly int CreateAlphaTexture(TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> textureBounds, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alphaValues, uint bufferSize)
         {
             var @this = (IDWriteGlyphRunAnalysis*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

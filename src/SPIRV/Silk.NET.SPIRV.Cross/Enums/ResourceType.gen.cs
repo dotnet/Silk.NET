@@ -44,6 +44,8 @@ namespace Silk.NET.SPIRV.Cross
         ShaderRecordBuffer = 0xE,
         [NativeName("Name", "SPVC_RESOURCE_TYPE_GL_PLAIN_UNIFORM")]
         GLPlainUniform = 0xF,
+        [NativeName("Name", "SPVC_RESOURCE_TYPE_TENSOR")]
+        Tensor = 0x10,
         [NativeName("Name", "SPVC_RESOURCE_TYPE_INT_MAX")]
         IntMax = 0x7FFFFFFF,
     }

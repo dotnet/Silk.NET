@@ -22,19 +22,19 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_dynamic_rendering_local_read";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingAttachmentLocationsKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetRenderingAttachmentLocation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAttachmentLocationInfoKHR* pLocationInfo);
+        public unsafe partial void CmdSetRenderingAttachmentLocation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAttachmentLocationInfo* pLocationInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingAttachmentLocationsKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetRenderingAttachmentLocation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAttachmentLocationInfoKHR pLocationInfo);
+        public partial void CmdSetRenderingAttachmentLocation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAttachmentLocationInfo pLocationInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndicesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingInputAttachmentIndexInfoKHR* pInputAttachmentIndexInfo);
+        public unsafe partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndicesKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingInputAttachmentIndexInfoKHR pInputAttachmentIndexInfo);
+        public partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingInputAttachmentIndexInfo pInputAttachmentIndexInfo);
 
         public KhrDynamicRenderingLocalRead(INativeContext ctx)
             : base(ctx)

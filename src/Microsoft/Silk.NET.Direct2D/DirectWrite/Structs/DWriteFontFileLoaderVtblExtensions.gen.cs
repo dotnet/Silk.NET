@@ -106,7 +106,7 @@ public unsafe static class DWriteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -174,7 +174,7 @@ public unsafe static class DWriteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStreamFromKey<T0, TI0>(this ComPtr<IDWriteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
+    public static int CreateStreamFromKey<T0, TI0>(this ComPtr<IDWriteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

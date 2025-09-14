@@ -106,7 +106,7 @@ public unsafe static class DWriteFontFileVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetReferenceKey(this ComPtr<IDWriteFontFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fontFileReferenceKey, uint* fontFileReferenceKeySize)
+    public static unsafe int GetReferenceKey(this ComPtr<IDWriteFontFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fontFileReferenceKey, uint* fontFileReferenceKeySize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteFontFileVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetReferenceKey(this ComPtr<IDWriteFontFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fontFileReferenceKey, ref uint fontFileReferenceKeySize)
+    public static unsafe int GetReferenceKey(this ComPtr<IDWriteFontFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fontFileReferenceKey, ref uint fontFileReferenceKeySize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -427,7 +427,7 @@ public unsafe static class DWriteFontFileVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetReferenceKey(this ComPtr<IDWriteFontFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fontFileReferenceKey, Span<uint> fontFileReferenceKeySize)
+    public static unsafe int GetReferenceKey(this ComPtr<IDWriteFontFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fontFileReferenceKey, Span<uint> fontFileReferenceKeySize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

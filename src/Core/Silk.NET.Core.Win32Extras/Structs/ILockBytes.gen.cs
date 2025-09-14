@@ -180,7 +180,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteAt<T0>(ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        public readonly unsafe int WriteAt<T0>(ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             var @this = (ILockBytes*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -192,7 +192,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteAt<T0>(ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+        public readonly int WriteAt<T0>(ulong ulOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
         {
             var @this = (ILockBytes*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

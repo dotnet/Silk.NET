@@ -202,7 +202,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+    public static int SetName(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, ID3D12PipelineState* pPipeline)
+    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, ID3D12PipelineState* pPipeline)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -402,7 +402,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, ref ID3D12PipelineState pPipeline)
+    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, ref ID3D12PipelineState pPipeline)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -490,7 +490,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -502,7 +502,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -517,7 +517,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -532,7 +532,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -550,7 +550,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -562,7 +562,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -577,7 +577,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -592,7 +592,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -610,7 +610,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -625,7 +625,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -643,7 +643,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -661,7 +661,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -738,7 +738,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -752,7 +752,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -769,7 +769,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -786,7 +786,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -854,7 +854,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -866,7 +866,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -881,7 +881,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -896,7 +896,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -914,7 +914,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -926,7 +926,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -941,7 +941,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -956,7 +956,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -974,7 +974,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -989,7 +989,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1007,7 +1007,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1025,7 +1025,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1102,7 +1102,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1116,7 +1116,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1133,7 +1133,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1150,7 +1150,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1248,7 +1248,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1260,7 +1260,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1275,7 +1275,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1290,7 +1290,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1308,7 +1308,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1320,7 +1320,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1335,7 +1335,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1350,7 +1350,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1368,7 +1368,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1383,7 +1383,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1401,7 +1401,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1419,7 +1419,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1496,7 +1496,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1510,7 +1510,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1527,7 +1527,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1544,7 +1544,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadPipeline(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1766,7 +1766,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1831,7 +1831,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1872,7 +1872,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1913,7 +1913,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1979,7 +1979,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2045,7 +2045,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2086,7 +2086,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2127,7 +2127,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2193,7 +2193,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2267,7 +2267,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2308,7 +2308,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2349,7 +2349,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2415,7 +2415,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2475,7 +2475,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2484,7 +2484,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2493,7 +2493,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2511,7 +2511,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2529,7 +2529,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2538,7 +2538,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2547,7 +2547,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2565,7 +2565,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2583,7 +2583,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2592,7 +2592,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineStateStreamDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2601,7 +2601,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2619,7 +2619,7 @@ public unsafe static class D3D12PipelineLibrary1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineStateStreamDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

@@ -141,7 +141,7 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> rectangleToFill)
+    public static int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> rectangleToFill)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -162,7 +162,7 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<uint> rectangleToPreserve)
+    public static int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<uint> rectangleToPreserve)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -149,7 +149,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, float dashOffset)
+    public static unsafe int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ID2D1Brush* brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -173,7 +173,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ref ID2D1Brush brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, float dashOffset)
+    public static int SetStroke(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ref ID2D1Brush brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, float dashOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -478,7 +478,7 @@ public unsafe static class D2D1SvgGlyphStyleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStroke<TI0>(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ComPtr<TI0> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static int SetStroke<TI0>(this ComPtr<ID2D1SvgGlyphStyle> thisVtbl, ComPtr<TI0> brush, float strokeWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, float dashOffset) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

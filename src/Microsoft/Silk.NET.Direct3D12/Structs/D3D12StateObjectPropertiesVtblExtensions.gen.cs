@@ -94,7 +94,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pExportName)
     {
         var @this = thisVtbl.Handle;
         void* ret = default;
@@ -126,7 +126,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pExportName)
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pExportName)
     {
         var @this = thisVtbl.Handle;
         ulong ret = default;

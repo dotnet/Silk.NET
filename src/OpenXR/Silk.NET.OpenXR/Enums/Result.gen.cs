@@ -228,18 +228,72 @@ namespace Silk.NET.OpenXR
         ErrorSpaceNetworkRequestFailedFB = unchecked((int) -1000169003),
         [NativeName("Name", "XR_ERROR_SPACE_CLOUD_STORAGE_DISABLED_FB")]
         ErrorSpaceCloudStorageDisabledFB = unchecked((int) -1000169004),
+        [NativeName("Name", "XR_ERROR_SPACE_INSUFFICIENT_RESOURCES_META")]
+        ErrorSpaceInsufficientResourcesMeta = unchecked((int) -1000259000),
+        [NativeName("Name", "XR_ERROR_SPACE_STORAGE_AT_CAPACITY_META")]
+        ErrorSpaceStorageATCapacityMeta = unchecked((int) -1000259001),
+        [NativeName("Name", "XR_ERROR_SPACE_INSUFFICIENT_VIEW_META")]
+        ErrorSpaceInsufficientViewMeta = unchecked((int) -1000259002),
+        [NativeName("Name", "XR_ERROR_SPACE_PERMISSION_INSUFFICIENT_META")]
+        ErrorSpacePermissionInsufficientMeta = unchecked((int) -1000259003),
+        [NativeName("Name", "XR_ERROR_SPACE_RATE_LIMITED_META")]
+        ErrorSpaceRateLimitedMeta = unchecked((int) -1000259004),
+        [NativeName("Name", "XR_ERROR_SPACE_TOO_DARK_META")]
+        ErrorSpaceTooDarkMeta = unchecked((int) -1000259005),
+        [NativeName("Name", "XR_ERROR_SPACE_TOO_BRIGHT_META")]
+        ErrorSpaceTooBrightMeta = unchecked((int) -1000259006),
         [NativeName("Name", "XR_ERROR_PASSTHROUGH_COLOR_LUT_BUFFER_SIZE_MISMATCH_META")]
         ErrorPassthroughColorLutBufferSizeMismatchMeta = unchecked((int) -1000266000),
         [NativeName("Name", "XR_ENVIRONMENT_DEPTH_NOT_AVAILABLE_META")]
         EnvironmentDepthNotAvailableMeta = 1000291000,
+        [NativeName("Name", "XR_ERROR_RENDER_MODEL_ID_INVALID_EXT")]
+        ErrorRenderModelIDInvalidExt = unchecked((int) -1000300000),
+        [NativeName("Name", "XR_ERROR_RENDER_MODEL_ASSET_UNAVAILABLE_EXT")]
+        ErrorRenderModelAssetUnavailableExt = unchecked((int) -1000300001),
+        [NativeName("Name", "XR_ERROR_RENDER_MODEL_GLTF_EXTENSION_REQUIRED_EXT")]
+        ErrorRenderModelGltfExtensionRequiredExt = unchecked((int) -1000300002),
+        [NativeName("Name", "XR_ERROR_NOT_INTERACTION_RENDER_MODEL_EXT")]
+        ErrorNotInteractionRenderModelExt = unchecked((int) -1000301000),
         [NativeName("Name", "XR_ERROR_HINT_ALREADY_SET_QCOM")]
         ErrorHintAlreadySetQCom = unchecked((int) -1000306000),
         [NativeName("Name", "XR_ERROR_NOT_AN_ANCHOR_HTC")]
         ErrorNotANAnchorHtc = unchecked((int) -1000319000),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ENTITY_ID_INVALID_BD")]
+        ErrorSpatialEntityIDInvalidBD = unchecked((int) -1000389000),
+        [NativeName("Name", "XR_ERROR_SPATIAL_SENSING_SERVICE_UNAVAILABLE_BD")]
+        ErrorSpatialSensingServiceUnavailableBD = unchecked((int) -1000389001),
+        [NativeName("Name", "XR_ERROR_ANCHOR_NOT_SUPPORTED_FOR_ENTITY_BD")]
+        ErrorAnchorNotSupportedForEntityBD = unchecked((int) -1000389002),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NOT_FOUND_BD")]
+        ErrorSpatialAnchorNotFoundBD = unchecked((int) -1000390000),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_SHARING_NETWORK_TIMEOUT_BD")]
+        ErrorSpatialAnchorSharingNetworkTimeoutBD = unchecked((int) -1000391000),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_SHARING_AUTHENTICATION_FAILURE_BD")]
+        ErrorSpatialAnchorSharingAuthenticationFailureBD = unchecked((int) -1000391001),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_SHARING_NETWORK_FAILURE_BD")]
+        ErrorSpatialAnchorSharingNetworkFailureBD = unchecked((int) -1000391002),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_SHARING_LOCALIZATION_FAIL_BD")]
+        ErrorSpatialAnchorSharingLocalizationFailBD = unchecked((int) -1000391003),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_SHARING_MAP_INSUFFICIENT_BD")]
+        ErrorSpatialAnchorSharingMapInsufficientBD = unchecked((int) -1000391004),
+        [NativeName("Name", "XR_ERROR_SCENE_CAPTURE_FAILURE_BD")]
+        ErrorSceneCaptureFailureBD = unchecked((int) -1000392000),
         [NativeName("Name", "XR_ERROR_SPACE_NOT_LOCATABLE_EXT")]
         ErrorSpaceNotLocatableExt = unchecked((int) -1000429000),
         [NativeName("Name", "XR_ERROR_PLANE_DETECTION_PERMISSION_DENIED_EXT")]
         ErrorPlaneDetectionPermissionDeniedExt = unchecked((int) -1000429001),
+        [NativeName("Name", "XR_ERROR_MISMATCHING_TRACKABLE_TYPE_ANDROID")]
+        ErrorMismatchingTrackableTypeAndroid = unchecked((int) -1000455000),
+        [NativeName("Name", "XR_ERROR_TRACKABLE_TYPE_NOT_SUPPORTED_ANDROID")]
+        ErrorTrackableTypeNotSupportedAndroid = unchecked((int) -1000455001),
+        [NativeName("Name", "XR_ERROR_ANCHOR_ID_NOT_FOUND_ANDROID")]
+        ErrorAnchorIDNotFoundAndroid = unchecked((int) -1000457000),
+        [NativeName("Name", "XR_ERROR_ANCHOR_ALREADY_PERSISTED_ANDROID")]
+        ErrorAnchorAlreadyPersistedAndroid = unchecked((int) -1000457001),
+        [NativeName("Name", "XR_ERROR_ANCHOR_NOT_TRACKING_ANDROID")]
+        ErrorAnchorNotTrackingAndroid = unchecked((int) -1000457002),
+        [NativeName("Name", "XR_ERROR_PERSISTED_DATA_NOT_READY_ANDROID")]
+        ErrorPersistedDataNotReadyAndroid = unchecked((int) -1000457003),
         [NativeName("Name", "XR_ERROR_FUTURE_PENDING_EXT")]
         ErrorFuturePendingExt = unchecked((int) -1000469001),
         [NativeName("Name", "XR_ERROR_FUTURE_INVALID_EXT")]
@@ -252,10 +306,40 @@ namespace Silk.NET.OpenXR
         ErrorWorldMeshDetectorPermissionDeniedML = unchecked((int) -1000474000),
         [NativeName("Name", "XR_ERROR_WORLD_MESH_DETECTOR_SPACE_NOT_LOCATABLE_ML")]
         ErrorWorldMeshDetectorSpaceNotLocatableML = unchecked((int) -1000474001),
+        [NativeName("Name", "XR_ERROR_FACIAL_EXPRESSION_PERMISSION_DENIED_ML")]
+        ErrorFacialExpressionPermissionDeniedML = 1000482000,
+        [NativeName("Name", "XR_ERROR_COLOCATION_DISCOVERY_NETWORK_FAILED_META")]
+        ErrorColocationDiscoveryNetworkFailedMeta = unchecked((int) -1000571001),
+        [NativeName("Name", "XR_ERROR_COLOCATION_DISCOVERY_NO_DISCOVERY_METHOD_META")]
+        ErrorColocationDiscoveryNoDiscoveryMethodMeta = unchecked((int) -1000571002),
+        [NativeName("Name", "XR_COLOCATION_DISCOVERY_ALREADY_ADVERTISING_META")]
+        ColocationDiscoveryAlreadyAdvertisingMeta = 1000571003,
+        [NativeName("Name", "XR_COLOCATION_DISCOVERY_ALREADY_DISCOVERING_META")]
+        ColocationDiscoveryAlreadyDiscoveringMeta = 1000571004,
+        [NativeName("Name", "XR_ERROR_SPACE_GROUP_NOT_FOUND_META")]
+        ErrorSpaceGroupNotFoundMeta = unchecked((int) -1000572002),
+        [NativeName("Name", "XR_ERROR_ANCHOR_NOT_OWNED_BY_CALLER_ANDROID")]
+        ErrorAnchorNotOwnedByCallerAndroid = unchecked((int) -1000701000),
         [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED_KHR")]
         ErrorExtensionDependencyNotEnabledKhr = unchecked((int) -1000710001),
         [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT_KHR")]
         ErrorPermissionInsufficientKhr = unchecked((int) -1000710000),
+        [NativeName("Name", "XR_ERROR_SPATIAL_CAPABILITY_UNSUPPORTED_EXT")]
+        ErrorSpatialCapabilityUnsupportedExt = unchecked((int) -1000740001),
+        [NativeName("Name", "XR_ERROR_SPATIAL_ENTITY_ID_INVALID_EXT")]
+        ErrorSpatialEntityIDInvalidExt = unchecked((int) -1000740002),
+        [NativeName("Name", "XR_ERROR_SPATIAL_BUFFER_ID_INVALID_EXT")]
+        ErrorSpatialBufferIDInvalidExt = unchecked((int) -1000740003),
+        [NativeName("Name", "XR_ERROR_SPATIAL_COMPONENT_UNSUPPORTED_FOR_CAPABILITY_EXT")]
+        ErrorSpatialComponentUnsupportedForCapabilityExt = unchecked((int) -1000740004),
+        [NativeName("Name", "XR_ERROR_SPATIAL_CAPABILITY_CONFIGURATION_INVALID_EXT")]
+        ErrorSpatialCapabilityConfigurationInvalidExt = unchecked((int) -1000740005),
+        [NativeName("Name", "XR_ERROR_SPATIAL_COMPONENT_NOT_ENABLED_EXT")]
+        ErrorSpatialComponentNotEnabledExt = unchecked((int) -1000740006),
+        [NativeName("Name", "XR_ERROR_SPATIAL_PERSISTENCE_SCOPE_UNSUPPORTED_EXT")]
+        ErrorSpatialPersistenceScopeUnsupportedExt = unchecked((int) -1000763001),
+        [NativeName("Name", "XR_ERROR_SPATIAL_PERSISTENCE_SCOPE_INCOMPATIBLE_EXT")]
+        ErrorSpatialPersistenceScopeIncompatibleExt = unchecked((int) -1000781001),
         [NativeName("Name", "XR_ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED")]
         ErrorExtensionDependencyNotEnabled = unchecked((int) -1000710001),
         [NativeName("Name", "XR_ERROR_PERMISSION_INSUFFICIENT")]

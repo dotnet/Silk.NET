@@ -157,7 +157,7 @@ public unsafe static class WICJpegFrameEncodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteScan(this ComPtr<IWICJpegFrameEncode> thisVtbl, uint cbScanData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pbScanData)
+    public static int WriteScan(this ComPtr<IWICJpegFrameEncode> thisVtbl, uint cbScanData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pbScanData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

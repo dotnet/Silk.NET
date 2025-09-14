@@ -94,7 +94,7 @@ public unsafe static class D3D12VersionedRootSignatureDeserializerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRootSignatureDescAtVersion(this ComPtr<ID3D12VersionedRootSignatureDeserializer> thisVtbl, D3DRootSignatureVersion convertToVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc* ppDesc)
+    public static unsafe int GetRootSignatureDescAtVersion(this ComPtr<ID3D12VersionedRootSignatureDeserializer> thisVtbl, D3DRootSignatureVersion convertToVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc* ppDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

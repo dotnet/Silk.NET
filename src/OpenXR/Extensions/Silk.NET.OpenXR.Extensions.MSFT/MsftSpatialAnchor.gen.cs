@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorCreateInfoMSFT createInfo, [Count(Count = 0)] SpatialAnchorMSFT* anchor);
+        public unsafe partial Result CreateSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorCreateInfoMSFT createInfo, [Count(Count = 0)] SpatialAnchorMSFT* anchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorCreateInfoMSFT createInfo, [Count(Count = 0)] ref SpatialAnchorMSFT anchor);
+        public partial Result CreateSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorCreateInfoMSFT createInfo, [Count(Count = 0)] ref SpatialAnchorMSFT anchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorSpaceMSFT", Convention = CallingConvention.Winapi)]
@@ -46,11 +46,11 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorSpaceMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateSpatialAnchorSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorSpaceMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
+        public partial Result CreateSpatialAnchorSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroySpatialAnchorMSFT", Convention = CallingConvention.Winapi)]

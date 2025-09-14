@@ -31,12 +31,12 @@ namespace Silk.NET.Vulkan.Extensions.QCOM
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDynamicRenderingTilePropertiesQCOM", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDynamicRenderingTileProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingInfo pRenderingInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] TilePropertiesQCOM* pProperties);
+        public unsafe partial Result GetDynamicRenderingTileProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingInfo pRenderingInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] TilePropertiesQCOM* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.TilePropertiesQCom);")]
         [NativeApi(EntryPoint = "vkGetDynamicRenderingTilePropertiesQCOM", Convention = CallingConvention.Winapi)]
-        public partial Result GetDynamicRenderingTileProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingInfo pRenderingInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out TilePropertiesQCOM pProperties);
+        public partial Result GetDynamicRenderingTileProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingInfo pRenderingInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out TilePropertiesQCOM pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetFramebufferTilePropertiesQCOM", Convention = CallingConvention.Winapi)]

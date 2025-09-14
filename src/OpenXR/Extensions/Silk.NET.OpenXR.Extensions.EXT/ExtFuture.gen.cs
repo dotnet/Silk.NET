@@ -26,7 +26,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCancelFutureEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CancelFuture([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FutureCancelInfoEXT cancelInfo);
+        public partial Result CancelFuture([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FutureCancelInfoEXT cancelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPollFutureEXT", Convention = CallingConvention.Winapi)]
@@ -38,11 +38,11 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPollFutureEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result PollFuture([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FuturePollInfoEXT pollInfo, [Count(Count = 0)] FuturePollResultEXT* pollResult);
+        public unsafe partial Result PollFuture([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FuturePollInfoEXT pollInfo, [Count(Count = 0)] FuturePollResultEXT* pollResult);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPollFutureEXT", Convention = CallingConvention.Winapi)]
-        public partial Result PollFuture([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FuturePollInfoEXT pollInfo, [Count(Count = 0)] ref FuturePollResultEXT pollResult);
+        public partial Result PollFuture([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FuturePollInfoEXT pollInfo, [Count(Count = 0)] ref FuturePollResultEXT pollResult);
 
         public ExtFuture(INativeContext ctx)
             : base(ctx)

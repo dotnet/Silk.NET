@@ -133,7 +133,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar, IErrorLog* pErrorLog)
+    public static unsafe int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar, IErrorLog* pErrorLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar, ref IErrorLog pErrorLog)
+    public static unsafe int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar, ref IErrorLog pErrorLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar, IErrorLog* pErrorLog)
+    public static unsafe int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar, IErrorLog* pErrorLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar, ref IErrorLog pErrorLog)
+    public static int Read(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar, ref IErrorLog pErrorLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -270,7 +270,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar)
+    public static unsafe int Write(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -282,7 +282,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar)
+    public static int Write(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -395,7 +395,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Read<TI0>(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
+    public static unsafe int Read<TI0>(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -419,7 +419,7 @@ public unsafe static class PropertyBagVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Read<TI0>(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
+    public static int Read<TI0>(this ComPtr<IPropertyBag> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

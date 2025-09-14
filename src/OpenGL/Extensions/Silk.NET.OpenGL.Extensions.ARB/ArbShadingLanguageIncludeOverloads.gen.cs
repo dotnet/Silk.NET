@@ -22,7 +22,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             thisApi.CompileShaderInclude(shader, count, path, in length.GetPinnableReference());
         }
 
-        public static unsafe void CompileShaderInclude(this ArbShadingLanguageInclude thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* path, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
+        public static unsafe void CompileShaderInclude(this ArbShadingLanguageInclude thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* path, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
         {
             // SpanOverloader
             thisApi.CompileShaderInclude(shader, count, in path, in length.GetPinnableReference());

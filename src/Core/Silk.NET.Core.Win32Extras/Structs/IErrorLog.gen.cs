@@ -132,7 +132,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddError([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ExceptionInfo* pExcepInfo)
+        public readonly unsafe int AddError([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ExceptionInfo* pExcepInfo)
         {
             var @this = (IErrorLog*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddError([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref ExceptionInfo pExcepInfo)
+        public readonly int AddError([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref ExceptionInfo pExcepInfo)
         {
             var @this = (IErrorLog*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

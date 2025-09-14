@@ -282,7 +282,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
+        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
+        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
+        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -321,7 +321,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
+        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -336,7 +336,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
+        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -351,7 +351,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
+        public readonly unsafe int DrawGlyphRun(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -396,7 +396,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -411,7 +411,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -429,7 +429,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -462,7 +462,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -480,7 +480,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
+        public readonly int DrawGlyphRun<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -522,7 +522,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawUnderline(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Underline underline, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
+        public readonly unsafe int DrawUnderline(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Underline underline, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -534,7 +534,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawUnderline(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Underline underline, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
+        public readonly unsafe int DrawUnderline(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Underline underline, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -576,7 +576,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawUnderline<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Underline underline, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawUnderline<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Underline underline, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -591,7 +591,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DrawUnderline<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Underline underline, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
+        public readonly int DrawUnderline<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Underline underline, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -630,7 +630,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawStrikethrough(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Strikethrough strikethrough, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
+        public readonly unsafe int DrawStrikethrough(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Strikethrough strikethrough, Silk.NET.Core.Native.IUnknown* clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -642,7 +642,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawStrikethrough(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Strikethrough strikethrough, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
+        public readonly unsafe int DrawStrikethrough(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Strikethrough strikethrough, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect)
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -684,7 +684,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawStrikethrough<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Strikethrough strikethrough, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
+        public readonly unsafe int DrawStrikethrough<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Strikethrough strikethrough, Silk.NET.Core.Native.IUnknown* clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -699,7 +699,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DrawStrikethrough<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Strikethrough strikethrough, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
+        public readonly int DrawStrikethrough<T0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Strikethrough strikethrough, ref Silk.NET.Core.Native.IUnknown clientDrawingEffect) where T0 : unmanaged
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -842,7 +842,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawGlyphRun<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -850,7 +850,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawGlyphRun<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -858,7 +858,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawGlyphRun<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -874,7 +874,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawGlyphRun<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -882,7 +882,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawGlyphRun<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawGlyphRun<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -890,7 +890,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DrawGlyphRun<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int DrawGlyphRun<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -906,7 +906,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawUnderline<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Underline underline, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawUnderline<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Underline underline, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -922,7 +922,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DrawUnderline<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Underline underline, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int DrawUnderline<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Underline underline, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -938,7 +938,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DrawStrikethrough<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Strikethrough strikethrough, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int DrawStrikethrough<TI0>(void* clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Strikethrough strikethrough, ComPtr<TI0> clientDrawingEffect) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -954,7 +954,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DrawStrikethrough<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Strikethrough strikethrough, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int DrawStrikethrough<T0, TI0>(ref T0 clientDrawingContext, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Strikethrough strikethrough, ComPtr<TI0> clientDrawingEffect) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextRenderer1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -15,7 +15,12 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"DefaultFB\"")]
         [NativeName("Name", "XR_BODY_JOINT_SET_DEFAULT_FB")]
         BodyJointSetDefaultFB = 0,
+        [Obsolete("Deprecated in favour of \"FullBodyMeta\"")]
+        [NativeName("Name", "XR_BODY_JOINT_SET_FULL_BODY_META")]
+        BodyJointSetFullBodyMeta = 1000274000,
         [NativeName("Name", "XR_BODY_JOINT_SET_DEFAULT_FB")]
         DefaultFB = 0,
+        [NativeName("Name", "XR_BODY_JOINT_SET_FULL_BODY_META")]
+        FullBodyMeta = 1000274000,
     }
 }

@@ -115,7 +115,7 @@ public unsafe static class DWriteColorGlyphRunEnumerator1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetCurrentRun(this ComPtr<IDWriteColorGlyphRunEnumerator1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ColorGlyphRun* colorGlyphRun)
+    public static unsafe int GetCurrentRun(this ComPtr<IDWriteColorGlyphRunEnumerator1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ColorGlyphRun* colorGlyphRun)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -155,7 +155,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -167,7 +167,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -203,7 +203,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -215,7 +215,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -251,7 +251,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ID2D1EllipseGeometry** ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ID2D1EllipseGeometry** ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -263,7 +263,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -347,7 +347,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -359,7 +359,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -401,7 +401,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -416,7 +416,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory2> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -476,7 +476,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -488,7 +488,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -503,7 +503,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -515,7 +515,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -530,7 +530,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -545,7 +545,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -584,7 +584,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -596,7 +596,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -632,7 +632,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -644,7 +644,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -680,7 +680,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -692,7 +692,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -707,7 +707,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -719,7 +719,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -734,7 +734,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -749,7 +749,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -788,7 +788,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -800,7 +800,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -842,7 +842,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -857,7 +857,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -896,7 +896,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -908,7 +908,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1076,7 +1076,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, Guid* classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1111,7 +1111,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory2> thisVtbl, ref Guid classId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char propertyXml, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1382,7 +1382,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRectangleGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
+    public static int CreateRectangleGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1414,7 +1414,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRoundedRectangleGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
+    public static int CreateRoundedRectangleGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1446,7 +1446,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateEllipseGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
+    public static int CreateEllipseGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1510,7 +1510,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedGeometry<TI0, TI1>(this ComPtr<ID2D1Factory2> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
+    public static int CreateTransformedGeometry<TI0, TI1>(this ComPtr<ID2D1Factory2> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1526,7 +1526,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1566,7 +1566,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
+    public static int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1606,7 +1606,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1630,7 +1630,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1654,7 +1654,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StrokeStyleProperties strokeStyleProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1686,7 +1686,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1718,7 +1718,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, IWICBitmap* target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1750,7 +1750,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1774,7 +1774,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1798,7 +1798,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1830,7 +1830,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1878,7 +1878,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1910,7 +1910,7 @@ public unsafe static class D2D1Factory2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDCRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
+    public static int CreateDCRenderTarget<TI0>(this ComPtr<ID2D1Factory2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

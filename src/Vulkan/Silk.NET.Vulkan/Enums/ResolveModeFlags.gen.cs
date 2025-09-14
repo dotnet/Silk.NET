@@ -28,6 +28,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MaxBit\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_MAX_BIT")]
         ResolveModeMaxBit = 8,
+        [Obsolete("Deprecated in favour of \"ExternalFormatDownsampleBitAndroid\"")]
+        [NativeName("Name", "VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_BIT_ANDROID")]
+        ResolveModeExternalFormatDownsampleBitAndroid = 16,
         [Obsolete("Deprecated in favour of \"ExternalFormatDownsampleAndroid\"")]
         [NativeName("Name", "VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_ANDROID")]
         ResolveModeExternalFormatDownsampleAndroid = 16,
@@ -41,6 +44,8 @@ namespace Silk.NET.Vulkan
         MinBit = 4,
         [NativeName("Name", "VK_RESOLVE_MODE_MAX_BIT")]
         MaxBit = 8,
+        [NativeName("Name", "VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_BIT_ANDROID")]
+        ExternalFormatDownsampleBitAndroid = 16,
         [NativeName("Name", "VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_ANDROID")]
         ExternalFormatDownsampleAndroid = 16,
     }

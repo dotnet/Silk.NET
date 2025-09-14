@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Rect2D pExclusiveScissors);
+        public partial void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Rect2D pExclusiveScissors);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorEnableNV", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorEnableNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetExclusiveScissorEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Bool32 pExclusiveScissorEnables);
+        public partial void CmdSetExclusiveScissorEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Bool32 pExclusiveScissorEnables);
 
         /// <summary>To be documented.</summary>
         public unsafe void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Parameter = "exclusiveScissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pExclusiveScissors)

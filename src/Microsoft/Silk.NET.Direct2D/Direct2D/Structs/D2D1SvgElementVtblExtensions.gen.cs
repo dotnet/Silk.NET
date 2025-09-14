@@ -484,7 +484,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char tagName, ID2D1SvgElement** newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char tagName, ID2D1SvgElement** newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -496,7 +496,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char tagName, ref ID2D1SvgElement* newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char tagName, ref ID2D1SvgElement* newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -557,7 +557,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, int* inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, int* inherited)
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
@@ -569,7 +569,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, ref int inherited)
+    public static Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
@@ -748,7 +748,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name)
+    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -780,7 +780,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, uint nameCount)
+    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, uint nameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -853,7 +853,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -876,7 +876,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -888,7 +888,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -903,7 +903,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -928,7 +928,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -987,7 +987,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, char* value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, char* value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -999,7 +999,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, ref char value, uint valueCount)
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, ref char value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1014,7 +1014,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1087,7 +1087,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, uint* valueLength)
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, uint* valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1099,7 +1099,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, ref uint valueLength)
+    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, ref uint valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1436,7 +1436,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+    public static int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

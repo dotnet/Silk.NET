@@ -219,7 +219,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11DeviceContext2> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11DeviceContext2> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -313,7 +313,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers)
+    public static unsafe void VSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -330,7 +330,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ShaderResourceView* ppShaderResourceViews)
+    public static unsafe void PSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ShaderResourceView* ppShaderResourceViews)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -347,7 +347,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11PixelShader* pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void PSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11PixelShader* pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -367,7 +367,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11PixelShader pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void PSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11PixelShader pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11PixelShader* pPixelShaderPtr = &pPixelShader)
@@ -387,7 +387,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11SamplerState* ppSamplers)
+    public static unsafe void PSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11SamplerState* ppSamplers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -404,7 +404,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11VertexShader* pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void VSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11VertexShader* pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -424,7 +424,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11VertexShader pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void VSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11VertexShader pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VertexShader* pVertexShaderPtr = &pVertexShader)
@@ -523,7 +523,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers)
+    public static unsafe void PSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -557,7 +557,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pOffsetsPtr = &pOffsets)
@@ -567,7 +567,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pStridesPtr = &pStrides)
@@ -577,7 +577,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pStridesPtr = &pStrides)
@@ -590,7 +590,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -600,7 +600,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -613,7 +613,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -626,7 +626,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppVertexBuffersPtr = &ppVertexBuffers)
@@ -680,7 +680,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers)
+    public static unsafe void GSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -697,7 +697,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11GeometryShader* pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void GSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11GeometryShader* pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -717,7 +717,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11GeometryShader pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void GSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11GeometryShader pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11GeometryShader* pShaderPtr = &pShader)
@@ -744,7 +744,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ShaderResourceView* ppShaderResourceViews)
+    public static unsafe void VSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ShaderResourceView* ppShaderResourceViews)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -761,7 +761,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11SamplerState* ppSamplers)
+    public static unsafe void VSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11SamplerState* ppSamplers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -877,7 +877,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ShaderResourceView* ppShaderResourceViews)
+    public static unsafe void GSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ShaderResourceView* ppShaderResourceViews)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -894,7 +894,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11SamplerState* ppSamplers)
+    public static unsafe void GSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11SamplerState* ppSamplers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -921,7 +921,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -931,7 +931,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -951,7 +951,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pUAVInitialCountsPtr = &pUAVInitialCounts)
@@ -961,7 +961,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -971,7 +971,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -994,7 +994,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1007,7 +1007,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1020,7 +1020,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11DepthStencilView* pDepthStencilViewPtr = &pDepthStencilView)
@@ -1036,7 +1036,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1046,7 +1046,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1059,7 +1059,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1072,7 +1072,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1088,7 +1088,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1101,7 +1101,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1117,7 +1117,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1133,7 +1133,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11RenderTargetView** ppRenderTargetViewsPtr = &ppRenderTargetViews)
@@ -1216,7 +1216,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets)
+    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pOffsetsPtr = &pOffsets)
@@ -1226,7 +1226,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
+    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppSOTargetsPtr = &ppSOTargets)
@@ -1236,7 +1236,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets)
+    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppSOTargetsPtr = &ppSOTargets)
@@ -1338,7 +1338,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetViewports(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Viewport pViewports)
+    public static void RSSetViewports(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Viewport pViewports)
     {
         var @this = thisVtbl.Handle;
         fixed (Viewport* pViewportsPtr = &pViewports)
@@ -1355,7 +1355,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1372,7 +1372,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -1392,7 +1392,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
@@ -1415,7 +1415,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static unsafe void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1441,7 +1441,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static void CopySubresourceRegion(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1504,7 +1504,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSrcDataPtr = &pSrcData)
@@ -1514,7 +1514,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pDstBoxPtr = &pDstBox)
@@ -1524,7 +1524,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pDstBoxPtr = &pDstBox)
@@ -1547,7 +1547,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1560,7 +1560,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe void UpdateSubresource(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1573,7 +1573,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static void UpdateSubresource<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -1885,7 +1885,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ShaderResourceView* ppShaderResourceViews)
+    public static unsafe void HSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ShaderResourceView* ppShaderResourceViews)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -1902,7 +1902,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11HullShader* pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void HSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11HullShader* pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -1922,7 +1922,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11HullShader pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void HSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11HullShader pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11HullShader* pHullShaderPtr = &pHullShader)
@@ -1942,7 +1942,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11SamplerState* ppSamplers)
+    public static unsafe void HSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11SamplerState* ppSamplers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -1959,7 +1959,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers)
+    public static unsafe void HSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -1976,7 +1976,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ShaderResourceView* ppShaderResourceViews)
+    public static unsafe void DSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ShaderResourceView* ppShaderResourceViews)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -1993,7 +1993,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11DomainShader* pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void DSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11DomainShader* pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -2013,7 +2013,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11DomainShader pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void DSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11DomainShader pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11DomainShader* pDomainShaderPtr = &pDomainShader)
@@ -2033,7 +2033,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11SamplerState* ppSamplers)
+    public static unsafe void DSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11SamplerState* ppSamplers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -2050,7 +2050,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers)
+    public static unsafe void DSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -2067,7 +2067,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ShaderResourceView* ppShaderResourceViews)
+    public static unsafe void CSSetShaderResources(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ShaderResourceView* ppShaderResourceViews)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ShaderResourceView** ppShaderResourceViewsPtr = &ppShaderResourceViews)
@@ -2084,7 +2084,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pUAVInitialCountsPtr = &pUAVInitialCounts)
@@ -2094,7 +2094,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -2104,7 +2104,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts)
+    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11UnorderedAccessView** ppUnorderedAccessViewsPtr = &ppUnorderedAccessViews)
@@ -2124,7 +2124,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11ComputeShader* pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void CSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11ComputeShader* pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ClassInstance** ppClassInstancesPtr = &ppClassInstances)
@@ -2144,7 +2144,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11ComputeShader pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void CSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11ComputeShader pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11ComputeShader* pComputeShaderPtr = &pComputeShader)
@@ -2164,7 +2164,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11SamplerState* ppSamplers)
+    public static unsafe void CSSetSamplers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumSamplers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11SamplerState* ppSamplers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11SamplerState** ppSamplersPtr = &ppSamplers)
@@ -2181,7 +2181,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers)
+    public static unsafe void CSSetConstantBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -3762,7 +3762,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags)
+    public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -3782,7 +3782,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags)
+    public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pSrcResourcePtr = &pSrcResource)
@@ -3805,7 +3805,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags)
+    public static unsafe void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3831,7 +3831,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags)
+    public static void CopySubresourceRegion1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3854,7 +3854,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSrcDataPtr = &pSrcData)
@@ -3864,7 +3864,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pDstBoxPtr = &pDstBox)
@@ -3874,7 +3874,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pDstBoxPtr = &pDstBox)
@@ -3897,7 +3897,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    public static unsafe void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3910,7 +3910,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
+    public static unsafe void UpdateSubresource1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3923,7 +3923,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
+    public static void UpdateSubresource1<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDstResourcePtr = &pDstResource)
@@ -3980,7 +3980,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -3990,7 +3990,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4000,7 +4000,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4013,7 +4013,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4023,7 +4023,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4036,7 +4036,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4049,7 +4049,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4072,7 +4072,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4082,7 +4082,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4092,7 +4092,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4105,7 +4105,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4115,7 +4115,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4128,7 +4128,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4141,7 +4141,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4164,7 +4164,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4174,7 +4174,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4184,7 +4184,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4197,7 +4197,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4207,7 +4207,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4220,7 +4220,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4233,7 +4233,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4256,7 +4256,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4266,7 +4266,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4276,7 +4276,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4289,7 +4289,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4299,7 +4299,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4312,7 +4312,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4325,7 +4325,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4348,7 +4348,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4358,7 +4358,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4368,7 +4368,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4381,7 +4381,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4391,7 +4391,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4404,7 +4404,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4417,7 +4417,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4440,7 +4440,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pNumConstantsPtr = &pNumConstants)
@@ -4450,7 +4450,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4460,7 +4460,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11Buffer** ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pFirstConstantPtr = &pFirstConstant)
@@ -4473,7 +4473,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4483,7 +4483,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4496,7 +4496,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -4509,7 +4509,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Buffer** ppConstantBuffersPtr = &ppConstantBuffers)
@@ -5124,7 +5124,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11View* pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -5144,7 +5144,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11View* pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11View* pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ColorPtr = &Color)
@@ -5167,7 +5167,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+    public static unsafe void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pViewPtr = &pView)
@@ -5193,7 +5193,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
+    public static void ClearView(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11View pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pViewPtr = &pView)
@@ -5216,7 +5216,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11View* pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
+    public static unsafe void DiscardView1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11View* pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -5236,7 +5236,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardView1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11View pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
+    public static void DiscardView1(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11View pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects, uint NumRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11View* pResourceViewPtr = &pResourceView)
@@ -5258,7 +5258,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5270,7 +5270,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5282,7 +5282,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5297,7 +5297,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5309,7 +5309,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5324,7 +5324,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5339,7 +5339,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5369,7 +5369,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5384,7 +5384,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5399,7 +5399,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5417,7 +5417,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5432,7 +5432,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5450,7 +5450,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5468,7 +5468,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5489,7 +5489,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5501,7 +5501,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5516,7 +5516,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5531,7 +5531,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5549,7 +5549,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5564,7 +5564,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5582,7 +5582,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5600,7 +5600,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5621,7 +5621,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5636,7 +5636,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5654,7 +5654,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5672,7 +5672,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5693,7 +5693,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5711,7 +5711,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5732,7 +5732,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5753,7 +5753,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5777,7 +5777,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5789,7 +5789,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5804,7 +5804,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5819,7 +5819,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5837,7 +5837,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5852,7 +5852,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5870,7 +5870,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5888,7 +5888,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5909,7 +5909,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5924,7 +5924,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5942,7 +5942,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5960,7 +5960,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5981,7 +5981,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5999,7 +5999,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6020,7 +6020,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6041,7 +6041,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6065,7 +6065,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6080,7 +6080,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6098,7 +6098,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6116,7 +6116,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6137,7 +6137,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6155,7 +6155,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6176,7 +6176,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6197,7 +6197,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6221,7 +6221,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6239,7 +6239,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6260,7 +6260,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6281,7 +6281,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6305,7 +6305,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6326,7 +6326,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6350,7 +6350,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6374,7 +6374,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6413,7 +6413,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6428,7 +6428,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6443,7 +6443,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6461,7 +6461,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6476,7 +6476,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6494,7 +6494,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6512,7 +6512,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6548,7 +6548,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6566,7 +6566,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6584,7 +6584,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6605,7 +6605,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6623,7 +6623,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6644,7 +6644,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6665,7 +6665,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6689,7 +6689,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6704,7 +6704,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6722,7 +6722,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6740,7 +6740,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6761,7 +6761,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6779,7 +6779,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6800,7 +6800,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6821,7 +6821,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6845,7 +6845,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6863,7 +6863,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6884,7 +6884,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6905,7 +6905,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6929,7 +6929,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6950,7 +6950,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6974,7 +6974,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6998,7 +6998,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7025,7 +7025,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7040,7 +7040,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7058,7 +7058,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7076,7 +7076,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7097,7 +7097,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7115,7 +7115,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7136,7 +7136,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7157,7 +7157,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7181,7 +7181,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7199,7 +7199,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7220,7 +7220,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7241,7 +7241,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7265,7 +7265,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7286,7 +7286,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7310,7 +7310,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7334,7 +7334,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7361,7 +7361,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7379,7 +7379,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7400,7 +7400,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7421,7 +7421,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7445,7 +7445,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7466,7 +7466,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7490,7 +7490,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7514,7 +7514,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7541,7 +7541,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7562,7 +7562,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7586,7 +7586,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7610,7 +7610,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7637,7 +7637,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7661,7 +7661,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7688,7 +7688,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
+    public static unsafe int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7715,7 +7715,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags)
+    public static int UpdateTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7754,7 +7754,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7766,7 +7766,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7778,7 +7778,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7805,7 +7805,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7820,7 +7820,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7835,7 +7835,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7853,7 +7853,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7865,7 +7865,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7880,7 +7880,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7895,7 +7895,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7913,7 +7913,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7928,7 +7928,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7946,7 +7946,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7964,7 +7964,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7997,7 +7997,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8012,7 +8012,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8027,7 +8027,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8060,7 +8060,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8078,7 +8078,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8096,7 +8096,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8117,7 +8117,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8132,7 +8132,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8150,7 +8150,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8168,7 +8168,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8189,7 +8189,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8207,7 +8207,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8228,7 +8228,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
+    public static unsafe int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8249,7 +8249,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags)
+    public static int CopyTileMappings(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8290,7 +8290,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -8300,7 +8300,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -8313,7 +8313,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8323,7 +8323,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8336,7 +8336,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8349,7 +8349,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -8388,7 +8388,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8401,7 +8401,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8417,7 +8417,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8430,7 +8430,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8446,7 +8446,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D11Buffer* pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8462,7 +8462,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
+    public static void CopyTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
@@ -8488,7 +8488,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSourceTileDataPtr = &pSourceTileData)
@@ -8498,7 +8498,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
@@ -8508,7 +8508,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pDestTileRegionSizePtr = &pDestTileRegionSize)
@@ -8521,7 +8521,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8531,7 +8531,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8544,7 +8544,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8557,7 +8557,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ID3D11Resource* pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pDestTileRegionStartCoordinatePtr = &pDestTileRegionStartCoordinate)
@@ -8583,7 +8583,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8596,7 +8596,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8609,7 +8609,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8625,7 +8625,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8638,7 +8638,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static unsafe void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8654,7 +8654,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
+    public static unsafe void UpdateTiles(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8670,7 +8670,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged
+    public static void UpdateTiles<T0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
@@ -8766,7 +8766,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pLabel, int Data)
+    public static void SetMarkerInt(this ComPtr<ID3D11DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
         fixed (char* pLabelPtr = &pLabel)
@@ -8792,7 +8792,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pLabel, int Data)
+    public static void BeginEventInt(this ComPtr<ID3D11DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pLabel, int Data)
     {
         var @this = thisVtbl.Handle;
         fixed (char* pLabelPtr = &pLabel)
@@ -8995,7 +8995,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
+    public static unsafe void PSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11PixelShader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9019,7 +9019,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11PixelShader> pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void PSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11PixelShader> pPixelShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9043,7 +9043,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
+    public static unsafe void VSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11VertexShader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9067,7 +9067,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11VertexShader> pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void VSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11VertexShader> pVertexShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9171,7 +9171,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void IASetVertexBuffers<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9187,7 +9187,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void IASetVertexBuffers<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9203,7 +9203,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetVertexBuffers<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void IASetVertexBuffers<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9211,7 +9211,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pOffsets)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9219,7 +9219,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pOffsets)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9227,7 +9227,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pOffsets)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppVertexBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pStrides, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pOffsets)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9267,7 +9267,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
+    public static unsafe void GSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11GeometryShader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9291,7 +9291,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11GeometryShader> pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void GSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11GeometryShader> pShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9443,7 +9443,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargets<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9451,7 +9451,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9475,7 +9475,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
+    public static void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1, TI2>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9483,7 +9483,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9491,7 +9491,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9499,7 +9499,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ComPtr<TI1> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9531,7 +9531,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+    public static void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9539,7 +9539,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9547,7 +9547,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9555,7 +9555,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11RenderTargetView** ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9563,7 +9563,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11RenderTargetView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9571,7 +9571,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9579,7 +9579,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9587,7 +9587,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9595,7 +9595,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9603,7 +9603,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9611,7 +9611,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ComPtr<TI0> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11DepthStencilView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9619,7 +9619,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9627,7 +9627,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9635,7 +9635,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D11UnorderedAccessView** ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9643,7 +9643,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9651,7 +9651,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9659,7 +9659,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void OMSetRenderTargetsAndUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumRTVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11RenderTargetView* ppRenderTargetViews, Span<ID3D11DepthStencilView> pDepthStencilView, uint UAVStartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9739,7 +9739,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SOSetTargets<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void SOSetTargets<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pOffsets) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9747,7 +9747,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pOffsets)
+    public static unsafe void SOSetTargets(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppSOTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pOffsets)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9851,7 +9851,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static void CopySubresourceRegion<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9883,7 +9883,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9915,7 +9915,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void CopySubresourceRegion<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10003,7 +10003,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10019,7 +10019,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateSubresource<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10035,7 +10035,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void UpdateSubresource<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10387,7 +10387,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
+    public static unsafe void HSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11HullShader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10411,7 +10411,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11HullShader> pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void HSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11HullShader> pHullShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10451,7 +10451,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
+    public static unsafe void DSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11DomainShader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10475,7 +10475,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11DomainShader> pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void DSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11DomainShader> pDomainShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10523,7 +10523,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CSSetUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
+    public static void CSSetUnorderedAccessViews<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pUAVInitialCounts) where TI0 : unmanaged, IComVtbl<ID3D11UnorderedAccessView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10531,7 +10531,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
+    public static unsafe void CSSetUnorderedAccessViews(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumUAVs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11UnorderedAccessView* ppUnorderedAccessViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pUAVInitialCounts)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10547,7 +10547,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
+    public static unsafe void CSSetShader<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances) where TI0 : unmanaged, IComVtbl<ID3D11ComputeShader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10571,7 +10571,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11ComputeShader> pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
+    public static unsafe void CSSetShader(this ComPtr<ID3D11DeviceContext2> thisVtbl, Span<ID3D11ComputeShader> pComputeShader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11715,7 +11715,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion1<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static void CopySubresourceRegion1<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI1> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11747,7 +11747,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11779,7 +11779,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void CopySubresourceRegion1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ComPtr<TI0> pSrcResource, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11819,7 +11819,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11835,7 +11835,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateSubresource1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateSubresource1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11851,7 +11851,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void UpdateSubresource1<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDstResource, uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11939,7 +11939,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void VSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11955,7 +11955,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void VSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11971,7 +11971,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void VSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -11979,7 +11979,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11987,7 +11987,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -11995,7 +11995,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void VSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12019,7 +12019,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void HSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12035,7 +12035,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void HSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12051,7 +12051,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void HSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void HSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12059,7 +12059,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12067,7 +12067,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12075,7 +12075,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void HSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12099,7 +12099,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void DSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12115,7 +12115,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void DSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12131,7 +12131,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void DSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12139,7 +12139,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12147,7 +12147,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12155,7 +12155,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void DSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12179,7 +12179,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void GSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12195,7 +12195,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void GSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12211,7 +12211,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void GSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void GSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12219,7 +12219,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12227,7 +12227,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12235,7 +12235,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void GSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12259,7 +12259,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void PSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12275,7 +12275,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void PSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12291,7 +12291,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void PSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12299,7 +12299,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12307,7 +12307,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12315,7 +12315,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void PSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12339,7 +12339,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void CSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12355,7 +12355,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void CSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12371,7 +12371,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void CSSetConstantBuffers1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pNumConstants) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12379,7 +12379,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12387,7 +12387,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12395,7 +12395,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
+    public static unsafe void CSSetConstantBuffers1(this ComPtr<ID3D11DeviceContext2> thisVtbl, uint StartSlot, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D11Buffer* ppConstantBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pFirstConstant, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pNumConstants)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12939,7 +12939,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static unsafe void ClearView<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] float* Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12971,7 +12971,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearView<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static void ClearView<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pView, [Count(Count = 4)] ref float Color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13027,7 +13027,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
+    public static void DiscardView1<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pResourceView, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects, uint NumRects) where TI0 : unmanaged, IComVtbl<ID3D11View>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13067,7 +13067,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13083,7 +13083,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13099,7 +13099,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13115,7 +13115,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13131,7 +13131,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13147,7 +13147,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13163,7 +13163,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13195,7 +13195,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13211,7 +13211,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13227,7 +13227,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13243,7 +13243,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13259,7 +13259,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13275,7 +13275,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13291,7 +13291,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13307,7 +13307,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13323,7 +13323,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13339,7 +13339,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13355,7 +13355,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13371,7 +13371,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13387,7 +13387,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13403,7 +13403,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13419,7 +13419,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13435,7 +13435,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13451,7 +13451,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13467,7 +13467,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13483,7 +13483,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13499,7 +13499,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13515,7 +13515,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13531,7 +13531,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13547,7 +13547,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13563,7 +13563,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13579,7 +13579,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13595,7 +13595,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13611,7 +13611,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13627,7 +13627,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13643,7 +13643,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13659,7 +13659,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13675,7 +13675,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13691,7 +13691,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13707,7 +13707,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13723,7 +13723,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13739,7 +13739,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13755,7 +13755,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13771,7 +13771,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13787,7 +13787,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13803,7 +13803,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13819,7 +13819,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13835,7 +13835,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13851,7 +13851,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13867,7 +13867,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13883,7 +13883,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13899,7 +13899,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13915,7 +13915,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13931,7 +13931,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static int UpdateTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI1> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13947,7 +13947,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13963,7 +13963,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13979,7 +13979,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13995,7 +13995,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14011,7 +14011,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14027,7 +14027,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14043,7 +14043,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14059,7 +14059,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14091,7 +14091,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14107,7 +14107,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14123,7 +14123,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14139,7 +14139,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14155,7 +14155,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14171,7 +14171,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14187,7 +14187,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14267,7 +14267,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14283,7 +14283,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14299,7 +14299,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14315,7 +14315,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14331,7 +14331,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14347,7 +14347,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14363,7 +14363,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14379,7 +14379,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14459,7 +14459,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14475,7 +14475,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14491,7 +14491,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14507,7 +14507,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14523,7 +14523,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14539,7 +14539,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14555,7 +14555,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14571,7 +14571,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14651,7 +14651,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14667,7 +14667,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14683,7 +14683,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14699,7 +14699,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14715,7 +14715,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14731,7 +14731,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14747,7 +14747,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14763,7 +14763,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static int UpdateTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTiledResourceRegionStartCoordinates, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTiledResourceRegionSizes, ComPtr<TI0> pTilePool, uint NumRanges, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pTilePoolStartOffsets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pRangeTileCounts, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14851,7 +14851,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14867,7 +14867,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14883,7 +14883,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14915,7 +14915,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14931,7 +14931,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14947,7 +14947,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14963,7 +14963,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14979,7 +14979,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14995,7 +14995,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static unsafe int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15011,7 +15011,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
+    public static int CopyTileMappings<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI1> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15027,7 +15027,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15043,7 +15043,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15059,7 +15059,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15075,7 +15075,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15107,7 +15107,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15123,7 +15123,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15139,7 +15139,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15187,7 +15187,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15203,7 +15203,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15219,7 +15219,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15235,7 +15235,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static int CopyTileMappings<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestRegionStartCoordinate, ComPtr<TI0> pSourceTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pSourceRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15307,7 +15307,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15323,7 +15323,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15339,7 +15339,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15355,7 +15355,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15371,7 +15371,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
+    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15387,7 +15387,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D11Buffer pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15427,7 +15427,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15451,7 +15451,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15475,7 +15475,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ref ID3D11Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Buffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15507,7 +15507,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15523,7 +15523,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15539,7 +15539,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15555,7 +15555,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15571,7 +15571,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15587,7 +15587,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe void UpdateTiles<TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSourceTileData, uint Flags) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -15603,7 +15603,7 @@ public unsafe static class D3D11DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static void UpdateTiles<T0, TI0>(this ComPtr<ID3D11DeviceContext2> thisVtbl, ComPtr<TI0> pDestTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pDestTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pDestTileRegionSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSourceTileData, uint Flags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

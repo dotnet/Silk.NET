@@ -189,7 +189,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
+        public readonly unsafe int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
         {
             var @this = (IDWriteTextFormat1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
+        public readonly int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
         {
             var @this = (IDWriteTextFormat1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -687,7 +687,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTrimming<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
+        public readonly int SetTrimming<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextFormat1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

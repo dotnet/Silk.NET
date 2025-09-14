@@ -186,7 +186,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        public readonly unsafe int Write<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             var @this = (IWICStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -198,7 +198,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Write<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+        public readonly int Write<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
         {
             var @this = (IWICStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -459,7 +459,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int InitializeFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFileName, uint dwDesiredAccess)
+        public readonly int InitializeFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFileName, uint dwDesiredAccess)
         {
             var @this = (IWICStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateBodyTrackerFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBodyTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyTrackerCreateInfoFB createInfo, [Count(Count = 0)] BodyTrackerFB* bodyTracker);
+        public unsafe partial Result CreateBodyTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyTrackerCreateInfoFB createInfo, [Count(Count = 0)] BodyTrackerFB* bodyTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateBodyTrackerFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateBodyTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyTrackerCreateInfoFB createInfo, [Count(Count = 0)] ref BodyTrackerFB bodyTracker);
+        public partial Result CreateBodyTrackerFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyTrackerCreateInfoFB createInfo, [Count(Count = 0)] ref BodyTrackerFB bodyTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyBodyTrackerFB", Convention = CallingConvention.Winapi)]
@@ -58,11 +58,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateBodyJointsFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateBodyJointsFB([Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyJointsLocateInfoFB locateInfo, [Count(Count = 0)] BodyJointLocationsFB* locations);
+        public unsafe partial Result LocateBodyJointsFB([Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyJointsLocateInfoFB locateInfo, [Count(Count = 0)] BodyJointLocationsFB* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateBodyJointsFB", Convention = CallingConvention.Winapi)]
-        public partial Result LocateBodyJointsFB([Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyJointsLocateInfoFB locateInfo, [Count(Count = 0)] ref BodyJointLocationsFB locations);
+        public partial Result LocateBodyJointsFB([Count(Count = 0)] BodyTrackerFB bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyJointsLocateInfoFB locateInfo, [Count(Count = 0)] ref BodyJointLocationsFB locations);
 
         public FBBodyTracking(INativeContext ctx)
             : base(ctx)

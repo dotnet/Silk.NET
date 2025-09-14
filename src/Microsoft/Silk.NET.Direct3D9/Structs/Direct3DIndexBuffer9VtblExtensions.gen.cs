@@ -115,7 +115,7 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, ref Guid refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, ref Guid refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

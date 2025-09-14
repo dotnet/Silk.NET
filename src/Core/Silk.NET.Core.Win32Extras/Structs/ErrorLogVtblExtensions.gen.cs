@@ -106,7 +106,7 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ExceptionInfo* pExcepInfo)
+    public static unsafe int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ExceptionInfo* pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class ErrorLogVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref ExceptionInfo pExcepInfo)
+    public static int AddError(this ComPtr<IErrorLog> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref ExceptionInfo pExcepInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

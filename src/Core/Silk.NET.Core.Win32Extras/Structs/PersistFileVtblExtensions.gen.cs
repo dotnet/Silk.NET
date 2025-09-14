@@ -124,7 +124,7 @@ public unsafe static class PersistFileVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Load(this ComPtr<IPersistFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszFileName, uint dwMode)
+    public static int Load(this ComPtr<IPersistFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszFileName, uint dwMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -156,7 +156,7 @@ public unsafe static class PersistFileVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Save(this ComPtr<IPersistFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszFileName, Silk.NET.Core.Bool32 fRemember)
+    public static int Save(this ComPtr<IPersistFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszFileName, Silk.NET.Core.Bool32 fRemember)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -188,7 +188,7 @@ public unsafe static class PersistFileVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SaveCompleted(this ComPtr<IPersistFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszFileName)
+    public static int SaveCompleted(this ComPtr<IPersistFile> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszFileName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

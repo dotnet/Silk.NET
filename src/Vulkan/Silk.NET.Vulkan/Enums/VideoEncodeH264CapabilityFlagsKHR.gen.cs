@@ -42,6 +42,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"GeneratePrefixNaluBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_GENERATE_PREFIX_NALU_BIT_KHR")]
         VideoEncodeH264CapabilityGeneratePrefixNaluBitKhr = 256,
+        [Obsolete("Deprecated in favour of \"BPictureIntraRefreshBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
+        VideoEncodeH264CapabilityBPictureIntraRefreshBitKhr = 1024,
+        [Obsolete("Deprecated in favour of \"MBQPDiffWraparoundBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_MB_QP_DIFF_WRAPAROUND_BIT_KHR")]
+        VideoEncodeH264CapabilityMBQPDiffWraparoundBitKhr = 512,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_HRD_COMPLIANCE_BIT_KHR")]
         HrdComplianceBitKhr = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_KHR")]
@@ -60,5 +66,9 @@ namespace Silk.NET.Vulkan
         PerSliceConstantQPBitKhr = 128,
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_GENERATE_PREFIX_NALU_BIT_KHR")]
         GeneratePrefixNaluBitKhr = 256,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
+        BPictureIntraRefreshBitKhr = 1024,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_MB_QP_DIFF_WRAPAROUND_BIT_KHR")]
+        MBQPDiffWraparoundBitKhr = 512,
     }
 }

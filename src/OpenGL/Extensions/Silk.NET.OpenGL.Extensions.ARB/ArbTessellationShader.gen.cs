@@ -30,13 +30,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
-        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float values);
+        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
         public unsafe partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv", Convention = CallingConvention.Winapi)]
-        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float values);
+        public partial void PatchParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float values);
 
         public ArbTessellationShader(INativeContext ctx)
             : base(ctx)

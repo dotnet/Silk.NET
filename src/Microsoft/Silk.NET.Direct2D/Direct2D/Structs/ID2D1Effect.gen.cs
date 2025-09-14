@@ -182,7 +182,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetPropertyIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name)
+        public readonly uint GetPropertyIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
@@ -214,7 +214,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+        public readonly unsafe int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -237,7 +237,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataSize)
+        public readonly unsafe int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+        public readonly int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+        public readonly int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -289,7 +289,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+        public readonly int SetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -325,7 +325,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetValue(uint index, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+        public readonly int SetValue(uint index, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -380,7 +380,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, byte* data, uint dataSize)
+        public readonly unsafe int GetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, byte* data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -392,7 +392,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, ref byte data, uint dataSize)
+        public readonly int GetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, ref byte data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -407,7 +407,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+        public readonly int GetValueByName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

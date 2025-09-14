@@ -135,7 +135,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReadFileFragment([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fragmentStart, ulong fileOffset, ulong fragmentSize, void** fragmentContext)
+        public readonly unsafe int ReadFileFragment([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fragmentStart, ulong fileOffset, ulong fragmentSize, void** fragmentContext)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReadFileFragment([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fragmentStart, ulong fileOffset, ulong fragmentSize, ref void* fragmentContext)
+        public readonly unsafe int ReadFileFragment([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fragmentStart, ulong fileOffset, ulong fragmentSize, ref void* fragmentContext)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -320,7 +320,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
+        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -332,7 +332,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
+        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -347,7 +347,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
+        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -359,7 +359,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
+        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -374,7 +374,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
+        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -389,7 +389,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
+        public readonly unsafe int BeginDownload([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -424,7 +424,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
+        public readonly unsafe int BeginDownload<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -432,7 +432,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDownload<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
+        public readonly unsafe int BeginDownload<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -440,7 +440,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BeginDownload<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
+        public readonly int BeginDownload<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
         {
             var @this = (IDWriteRemoteFontFileStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

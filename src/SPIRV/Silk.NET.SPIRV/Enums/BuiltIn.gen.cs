@@ -138,6 +138,12 @@ namespace Silk.NET.SPIRV
         ViewIndex = 0x1158,
         [NativeName("Name", "SpvBuiltInShadingRateKHR")]
         ShadingRateKhr = 0x115C,
+        [NativeName("Name", "SpvBuiltInTileOffsetQCOM")]
+        TileOffsetQCom = 0x118C,
+        [NativeName("Name", "SpvBuiltInTileDimensionQCOM")]
+        TileDimensionQCom = 0x118D,
+        [NativeName("Name", "SpvBuiltInTileApronSizeQCOM")]
+        TileApronSizeQCom = 0x118E,
         [NativeName("Name", "SpvBuiltInBaryCoordNoPerspAMD")]
         BaryCoordNoPerspAmd = 0x1380,
         [NativeName("Name", "SpvBuiltInBaryCoordNoPerspCentroidAMD")]
@@ -154,8 +160,8 @@ namespace Silk.NET.SPIRV
         BaryCoordPullModelAmd = 0x1386,
         [NativeName("Name", "SpvBuiltInFragStencilRefEXT")]
         FragStencilRefExt = 0x1396,
-        [NativeName("Name", "SpvBuiltInCoalescedInputCountAMDX")]
-        CoalescedInputCountAmdx = 0x139D,
+        [NativeName("Name", "SpvBuiltInRemainingRecursionLevelsAMDX")]
+        RemainingRecursionLevelsAmdx = 0x139D,
         [NativeName("Name", "SpvBuiltInShaderIndexAMDX")]
         ShaderIndexAmdx = 0x13D1,
         [NativeName("Name", "SpvBuiltInViewportMaskNV")]
@@ -274,6 +280,12 @@ namespace Silk.NET.SPIRV
         IncomingRayFlagsNV = 0x14E7,
         [NativeName("Name", "SpvBuiltInRayGeometryIndexKHR")]
         RayGeometryIndexKhr = 0x14E8,
+        [NativeName("Name", "SpvBuiltInHitIsSphereNV")]
+        HitIsSphereNV = 0x14EF,
+        [NativeName("Name", "SpvBuiltInHitIsLSSNV")]
+        HitIsLssnv = 0x14F0,
+        [NativeName("Name", "SpvBuiltInHitSpherePositionNV")]
+        HitSpherePositionNV = 0x14F1,
         [NativeName("Name", "SpvBuiltInWarpsPerSMNV")]
         WarpsPerSmnv = 0x14FE,
         [NativeName("Name", "SpvBuiltInSMCountNV")]
@@ -282,10 +294,18 @@ namespace Silk.NET.SPIRV
         WarpIdnv = 0x1500,
         [NativeName("Name", "SpvBuiltInSMIDNV")]
         Smidnv = 0x1501,
+        [NativeName("Name", "SpvBuiltInHitLSSPositionsNV")]
+        HitLssPositionsNV = 0x1514,
         [NativeName("Name", "SpvBuiltInHitKindFrontFacingMicroTriangleNV")]
         HitKindFrontFacingMicroTriangleNV = 0x151D,
         [NativeName("Name", "SpvBuiltInHitKindBackFacingMicroTriangleNV")]
         HitKindBackFacingMicroTriangleNV = 0x151E,
+        [NativeName("Name", "SpvBuiltInHitSphereRadiusNV")]
+        HitSphereRadiusNV = 0x152C,
+        [NativeName("Name", "SpvBuiltInHitLSSRadiiNV")]
+        HitLssRadiiNV = 0x152D,
+        [NativeName("Name", "SpvBuiltInClusterIDNV")]
+        ClusterIdnv = 0x153C,
         [NativeName("Name", "SpvBuiltInCullMaskKHR")]
         CullMaskKhr = 0x1785,
         [NativeName("Name", "SpvBuiltInMax")]

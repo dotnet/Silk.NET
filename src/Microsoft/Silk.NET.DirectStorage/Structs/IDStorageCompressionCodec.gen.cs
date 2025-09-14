@@ -159,7 +159,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged
+        public readonly unsafe int CompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged
+        public readonly unsafe int CompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int CompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly int CompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -267,7 +267,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged
+        public readonly unsafe int DecompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -279,7 +279,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged
+        public readonly unsafe int DecompressBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int DecompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly int DecompressBuffer<T0, T1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IDStorageCompressionCodec*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

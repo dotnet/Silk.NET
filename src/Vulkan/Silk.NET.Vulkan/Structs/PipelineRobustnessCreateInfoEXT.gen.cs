@@ -17,16 +17,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRobustnessCreateInfoEXT")]
+    [NativeName("AliasOf", "VkPipelineRobustnessCreateInfo")]
     public unsafe partial struct PipelineRobustnessCreateInfoEXT : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<ComputePipelineCreateInfo>, IExtendsChain<PipelineShaderStageCreateInfo>, IExtendsChain<RayTracingPipelineCreateInfoKHR>
     {
         public PipelineRobustnessCreateInfoEXT
         (
-            StructureType? sType = StructureType.PipelineRobustnessCreateInfoExt,
+            StructureType? sType = StructureType.PipelineRobustnessCreateInfo,
             void* pNext = null,
-            PipelineRobustnessBufferBehaviorEXT? storageBuffers = null,
-            PipelineRobustnessBufferBehaviorEXT? uniformBuffers = null,
-            PipelineRobustnessBufferBehaviorEXT? vertexInputs = null,
-            PipelineRobustnessImageBehaviorEXT? images = null
+            PipelineRobustnessBufferBehavior? storageBuffers = null,
+            PipelineRobustnessBufferBehavior? uniformBuffers = null,
+            PipelineRobustnessBufferBehavior? vertexInputs = null,
+            PipelineRobustnessImageBehavior? images = null
         ) : this()
         {
             if (sType is not null)
@@ -71,30 +72,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineRobustnessBufferBehaviorEXT")]
-        [NativeName("Type.Name", "VkPipelineRobustnessBufferBehaviorEXT")]
+        [NativeName("Type", "VkPipelineRobustnessBufferBehavior")]
+        [NativeName("Type.Name", "VkPipelineRobustnessBufferBehavior")]
         [NativeName("Name", "storageBuffers")]
-        public PipelineRobustnessBufferBehaviorEXT StorageBuffers;
+        public PipelineRobustnessBufferBehavior StorageBuffers;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineRobustnessBufferBehaviorEXT")]
-        [NativeName("Type.Name", "VkPipelineRobustnessBufferBehaviorEXT")]
+        [NativeName("Type", "VkPipelineRobustnessBufferBehavior")]
+        [NativeName("Type.Name", "VkPipelineRobustnessBufferBehavior")]
         [NativeName("Name", "uniformBuffers")]
-        public PipelineRobustnessBufferBehaviorEXT UniformBuffers;
+        public PipelineRobustnessBufferBehavior UniformBuffers;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineRobustnessBufferBehaviorEXT")]
-        [NativeName("Type.Name", "VkPipelineRobustnessBufferBehaviorEXT")]
+        [NativeName("Type", "VkPipelineRobustnessBufferBehavior")]
+        [NativeName("Type.Name", "VkPipelineRobustnessBufferBehavior")]
         [NativeName("Name", "vertexInputs")]
-        public PipelineRobustnessBufferBehaviorEXT VertexInputs;
+        public PipelineRobustnessBufferBehavior VertexInputs;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineRobustnessImageBehaviorEXT")]
-        [NativeName("Type.Name", "VkPipelineRobustnessImageBehaviorEXT")]
+        [NativeName("Type", "VkPipelineRobustnessImageBehavior")]
+        [NativeName("Type.Name", "VkPipelineRobustnessImageBehavior")]
         [NativeName("Name", "images")]
-        public PipelineRobustnessImageBehaviorEXT Images;
+        public PipelineRobustnessImageBehavior Images;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineRobustnessCreateInfoExt;
+            return SType = StructureType.PipelineRobustnessCreateInfo;
         }
 
         /// <inheritdoc />

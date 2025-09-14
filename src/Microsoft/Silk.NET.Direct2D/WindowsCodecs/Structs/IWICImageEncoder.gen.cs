@@ -120,7 +120,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrame(Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteFrame(Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrame(Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteFrame(Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrame(ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteFrame(ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteFrame(ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly int WriteFrame(ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -228,7 +228,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrameThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteFrameThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -252,7 +252,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrameThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteFrameThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -279,7 +279,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrameThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteFrameThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapFrameEncode* pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteFrameThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly int WriteFrameThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapFrameEncode pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -336,7 +336,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -360,7 +360,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteThumbnail(Silk.NET.Direct2D.ID2D1Image* pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -387,7 +387,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly unsafe int WriteThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, IWICBitmapEncoder* pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -417,7 +417,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters)
+        public readonly int WriteThumbnail(ref Silk.NET.Direct2D.ID2D1Image pImage, ref IWICBitmapEncoder pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters)
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -452,7 +452,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrame<TI0>(Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+        public readonly unsafe int WriteFrame<TI0>(Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -468,7 +468,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteFrame<TI0>(ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+        public readonly int WriteFrame<TI0>(ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -484,7 +484,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteFrameThumbnail<TI0>(Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+        public readonly unsafe int WriteFrameThumbnail<TI0>(Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -500,7 +500,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteFrameThumbnail<TI0>(ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
+        public readonly int WriteFrameThumbnail<TI0>(ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pFrameEncode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapFrameEncode>, IComVtbl<TI0>
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -516,7 +516,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteThumbnail<TI0>(Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+        public readonly unsafe int WriteThumbnail<TI0>(Silk.NET.Direct2D.ID2D1Image* pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -532,7 +532,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteThumbnail<TI0>(ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+        public readonly int WriteThumbnail<TI0>(ref Silk.NET.Direct2D.ID2D1Image pImage, ComPtr<TI0> pEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageParameters pImageParameters) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
         {
             var @this = (IWICImageEncoder*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

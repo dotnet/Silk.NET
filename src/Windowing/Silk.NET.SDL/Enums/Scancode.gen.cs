@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_scancode_L43_C9")]
     [NativeName("Name", "SDL_Scancode")]
     public enum Scancode : int
     {

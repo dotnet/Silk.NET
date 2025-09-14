@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBindVideoSessionMemoryKHR", Convention = CallingConvention.Winapi)]
-        public partial Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BindVideoSessionMemoryInfoKHR pBindSessionMemoryInfos);
+        public partial Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0)] uint bindSessionMemoryInfoCount, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BindVideoSessionMemoryInfoKHR pBindSessionMemoryInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginVideoCodingKHR", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginVideoCodingKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdBeginVideoCoding([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoBeginCodingInfoKHR pBeginInfo);
+        public partial void CmdBeginVideoCoding([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoBeginCodingInfoKHR pBeginInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdControlVideoCodingKHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdControlVideoCodingKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdControlVideoCoding([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoCodingControlInfoKHR pCodingControlInfo);
+        public partial void CmdControlVideoCoding([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoCodingControlInfoKHR pCodingControlInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndVideoCodingKHR", Convention = CallingConvention.Winapi)]
@@ -50,7 +50,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndVideoCodingKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdEndVideoCoding([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEndCodingInfoKHR pEndCodingInfo);
+        public partial void CmdEndVideoCoding([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEndCodingInfoKHR pEndCodingInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
@@ -62,27 +62,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession);
+        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionKHR pVideoSession);
+        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionKHR pVideoSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession);
+        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionKHR pVideoSession);
+        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionKHR pVideoSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession);
+        public unsafe partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionKHR* pVideoSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionKHR pVideoSession);
+        public partial Result CreateVideoSession([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionKHR pVideoSession);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
@@ -94,27 +94,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters);
+        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionParametersKHR pVideoSessionParameters);
+        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoSessionParametersCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionParametersKHR pVideoSessionParameters);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters);
+        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionParametersKHR pVideoSessionParameters);
+        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionParametersKHR pVideoSessionParameters);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters);
+        public unsafe partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoSessionParametersKHR* pVideoSessionParameters);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionParametersKHR pVideoSessionParameters);
+        public partial Result CreateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionParametersCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoSessionParametersKHR pVideoSessionParameters);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyVideoSessionKHR", Convention = CallingConvention.Winapi)]
@@ -122,7 +122,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyVideoSessionKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroyVideoSession([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyVideoSession([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
@@ -130,7 +130,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroyVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
@@ -143,12 +143,12 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProfileInfoKHR pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
+        public unsafe partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProfileInfoKHR pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoCapabilitiesKHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.VideoCapabilitiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProfileInfoKHR pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
+        public partial Result GetPhysicalDeviceVideoCapabilities([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProfileInfoKHR pVideoProfile, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoCapabilitiesKHR pCapabilities);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR", Convention = CallingConvention.Winapi)]
@@ -170,21 +170,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] uint* pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoFormatPropertiesKHR* pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pVideoFormatProperties = new(StructureType.VideoFormatPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
+        public partial Result GetPhysicalDeviceVideoFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceVideoFormatInfoKHR pVideoFormatInfo, [Count(Count = 0)] ref uint pVideoFormatPropertyCount, [Count(Parameter = "pVideoFormatPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoFormatPropertiesKHR pVideoFormatProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR", Convention = CallingConvention.Winapi)]
@@ -210,7 +210,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public partial Result UpdateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSessionParametersUpdateInfoKHR pUpdateInfo);
+        public partial Result UpdateVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionParametersKHR videoSessionParameters, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSessionParametersUpdateInfoKHR pUpdateInfo);
 
         /// <summary>To be documented.</summary>
         public unsafe Result BindVideoSessionMemory([Count(Count = 0)] Device device, [Count(Count = 0)] VideoSessionKHR videoSession, [Count(Parameter = "bindSessionMemoryInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos)

@@ -92,7 +92,7 @@ public unsafe static class D2D1TessellationSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Triangle triangles, uint trianglesCount)
+    public static void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Triangle triangles, uint trianglesCount)
     {
         var @this = thisVtbl.Handle;
         fixed (Triangle* trianglesPtr = &triangles)

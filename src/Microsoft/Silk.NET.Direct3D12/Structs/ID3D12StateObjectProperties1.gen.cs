@@ -123,7 +123,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetShaderIdentifier([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pExportName)
+        public readonly unsafe void* GetShaderIdentifier([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pExportName)
         {
             var @this = (ID3D12StateObjectProperties1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ulong GetShaderStackSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pExportName)
+        public readonly ulong GetShaderStackSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pExportName)
         {
             var @this = (ID3D12StateObjectProperties1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
@@ -205,7 +205,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ProgramIdentifier GetProgramIdentifier([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pProgramName)
+        public readonly ProgramIdentifier GetProgramIdentifier([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pProgramName)
         {
             ProgramIdentifier silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;

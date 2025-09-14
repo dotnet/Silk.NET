@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureTrianglesOpacityMicromapEXT")]
-    public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT : IExtendsChain<AccelerationStructureGeometryTrianglesDataKHR>
+    public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT : IExtendsChain<AccelerationStructureGeometryTrianglesDataKHR>, IExtendsChain<AccelerationStructureDenseGeometryFormatTrianglesDataAMDX>
     {
         public AccelerationStructureTrianglesOpacityMicromapEXT
         (

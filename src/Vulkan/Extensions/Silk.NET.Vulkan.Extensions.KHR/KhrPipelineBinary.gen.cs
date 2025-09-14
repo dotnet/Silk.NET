@@ -31,30 +31,30 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineBinaryCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryHandlesInfoKHR* pBinaries);
+        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineBinaryCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryHandlesInfoKHR* pBinaries);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pBinaries = new(StructureType.PipelineBinaryHandlesInfoKhr);")]
         [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineBinaryCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryHandlesInfoKHR pBinaries);
+        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineBinaryCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryHandlesInfoKHR pBinaries);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryHandlesInfoKHR* pBinaries);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pBinaries = new(StructureType.PipelineBinaryHandlesInfoKhr);")]
-        [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryHandlesInfoKHR pBinaries);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryHandlesInfoKHR* pBinaries);
+        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryHandlesInfoKHR* pBinaries);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pBinaries = new(StructureType.PipelineBinaryHandlesInfoKhr);")]
         [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryHandlesInfoKHR pBinaries);
+        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryHandlesInfoKHR pBinaries);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryHandlesInfoKHR* pBinaries);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pBinaries = new(StructureType.PipelineBinaryHandlesInfoKhr);")]
+        [NativeApi(EntryPoint = "vkCreatePipelineBinariesKHR", Convention = CallingConvention.Winapi)]
+        public partial Result CreatePipelineBinaries([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryHandlesInfoKHR pBinaries);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipelineBinaryKHR", Convention = CallingConvention.Winapi)]
@@ -62,7 +62,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipelineBinaryKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroyPipelineBinary([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineBinaryKHR pipelineBinary, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyPipelineBinary([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineBinaryKHR pipelineBinary, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
@@ -98,35 +98,35 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
+        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
+        public unsafe partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
+        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
+        public unsafe partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] PipelineBinaryKeyKHR* pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
+        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
+        public unsafe partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] nuint* pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
+        public unsafe partial Result GetPipelineBinaryData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] void* pPipelineBinaryData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineBinaryDataKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
+        public partial Result GetPipelineBinaryData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineBinaryDataInfoKHR pInfo, [Count(Count = 0)] ref PipelineBinaryKeyKHR pPipelineBinaryKey, [Count(Count = 0)] ref nuint pPipelineBinaryDataSize, [Count(Parameter = "pPipelineBinaryDataSize")] ref T0 pPipelineBinaryData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineKeyKHR", Convention = CallingConvention.Winapi)]
@@ -139,12 +139,12 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineKeyKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineKey([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineCreateInfoKHR pPipelineCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryKeyKHR* pPipelineKey);
+        public unsafe partial Result GetPipelineKey([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCreateInfoKHR pPipelineCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineBinaryKeyKHR* pPipelineKey);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pPipelineKey = new(StructureType.PipelineBinaryKeyKhr);")]
         [NativeApi(EntryPoint = "vkGetPipelineKeyKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPipelineKey([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineCreateInfoKHR pPipelineCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryKeyKHR pPipelineKey);
+        public partial Result GetPipelineKey([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCreateInfoKHR pPipelineCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineBinaryKeyKHR pPipelineKey);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseCapturedPipelineDataKHR", Convention = CallingConvention.Winapi)]
@@ -152,15 +152,15 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseCapturedPipelineDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ReleaseCapturedPipelineData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReleaseCapturedPipelineDataInfoKHR* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public unsafe partial Result ReleaseCapturedPipelineData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReleaseCapturedPipelineDataInfoKHR* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseCapturedPipelineDataKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ReleaseCapturedPipelineData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReleaseCapturedPipelineDataInfoKHR pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial Result ReleaseCapturedPipelineData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ReleaseCapturedPipelineDataInfoKHR pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseCapturedPipelineDataKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ReleaseCapturedPipelineData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReleaseCapturedPipelineDataInfoKHR pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial Result ReleaseCapturedPipelineData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ReleaseCapturedPipelineDataInfoKHR pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         public KhrPipelineBinary(INativeContext ctx)
             : base(ctx)

@@ -15,10 +15,5 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"ReserveBitExt\"")]
-        [NativeName("Name", "VK_MEMORY_UNMAP_RESERVE_BIT_EXT")]
-        MemoryUnmapReserveBitExt = 1,
-        [NativeName("Name", "VK_MEMORY_UNMAP_RESERVE_BIT_EXT")]
-        ReserveBitExt = 1,
     }
 }

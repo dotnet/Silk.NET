@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHostImageCopyDevicePerformanceQueryEXT")]
+    [NativeName("AliasOf", "VkHostImageCopyDevicePerformanceQuery")]
     public unsafe partial struct HostImageCopyDevicePerformanceQueryEXT : IExtendsChain<ImageFormatProperties2>, IExtendsChain<ImageFormatProperties2KHR>
     {
         public HostImageCopyDevicePerformanceQueryEXT
         (
-            StructureType? sType = StructureType.HostImageCopyDevicePerformanceQueryExt,
+            StructureType? sType = StructureType.HostImageCopyDevicePerformanceQuery,
             void* pNext = null,
             Bool32? optimalDeviceAccess = null,
             Bool32? identicalMemoryLayout = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.HostImageCopyDevicePerformanceQueryExt;
+            return SType = StructureType.HostImageCopyDevicePerformanceQuery;
         }
 
         /// <inheritdoc />

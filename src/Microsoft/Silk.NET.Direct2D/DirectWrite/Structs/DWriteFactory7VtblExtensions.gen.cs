@@ -127,7 +127,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, IDWriteFontCollectionLoader* collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, IDWriteFontCollection** fontCollection) where T0 : unmanaged
+    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, IDWriteFontCollectionLoader* collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, IDWriteFontCollection** fontCollection) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, IDWriteFontCollectionLoader* collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontCollection* fontCollection) where T0 : unmanaged
+    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, IDWriteFontCollectionLoader* collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontCollection* fontCollection) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -181,7 +181,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ref IDWriteFontCollectionLoader collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, IDWriteFontCollection** fontCollection) where T0 : unmanaged
+    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ref IDWriteFontCollectionLoader collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, IDWriteFontCollection** fontCollection) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -196,7 +196,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ref IDWriteFontCollectionLoader collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontCollection* fontCollection) where T0 : unmanaged
+    public static unsafe int CreateCustomFontCollection<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ref IDWriteFontCollectionLoader collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontCollection* fontCollection) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -277,7 +277,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -389,7 +389,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -403,7 +403,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -468,7 +468,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, IDWriteFontFile** fontFile) where T0 : unmanaged
+    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, IDWriteFontFile** fontFile) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -480,7 +480,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, ref IDWriteFontFile* fontFile) where T0 : unmanaged
+    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileLoader* fontFileLoader, ref IDWriteFontFile* fontFile) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,7 +495,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileLoader fontFileLoader, IDWriteFontFile** fontFile) where T0 : unmanaged
+    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileLoader fontFileLoader, IDWriteFontFile** fontFile) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileLoader fontFileLoader, ref IDWriteFontFile* fontFile) where T0 : unmanaged
+    public static unsafe int CreateCustomFontFileReference<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileLoader fontFileLoader, ref IDWriteFontFile* fontFile) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -549,7 +549,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFace(this ComPtr<IDWriteFactory7> thisVtbl, FontFaceType fontFaceType, uint numberOfFiles, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IDWriteFontFile* fontFiles, uint faceIndex, FontSimulations fontFaceSimulationFlags, IDWriteFontFace** fontFace)
+    public static unsafe int CreateFontFace(this ComPtr<IDWriteFactory7> thisVtbl, FontFaceType fontFaceType, uint numberOfFiles, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IDWriteFontFile* fontFiles, uint faceIndex, FontSimulations fontFaceSimulationFlags, IDWriteFontFace** fontFace)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -561,7 +561,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFace(this ComPtr<IDWriteFactory7> thisVtbl, FontFaceType fontFaceType, uint numberOfFiles, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IDWriteFontFile* fontFiles, uint faceIndex, FontSimulations fontFaceSimulationFlags, ref IDWriteFontFace* fontFace)
+    public static unsafe int CreateFontFace(this ComPtr<IDWriteFactory7> thisVtbl, FontFaceType fontFaceType, uint numberOfFiles, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IDWriteFontFile* fontFiles, uint faceIndex, FontSimulations fontFaceSimulationFlags, ref IDWriteFontFace* fontFace)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -702,7 +702,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -714,7 +714,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -781,7 +781,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -796,7 +796,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -845,7 +845,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -857,7 +857,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -872,7 +872,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -887,7 +887,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -905,7 +905,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -919,7 +919,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -936,7 +936,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -951,7 +951,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -969,7 +969,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -987,7 +987,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1008,7 +1008,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1025,7 +1025,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1070,7 +1070,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1084,7 +1084,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, IDWriteFontCollection* fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1161,7 +1161,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, IDWriteTextFormat** textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, IDWriteTextFormat** textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1178,7 +1178,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat)
+    public static unsafe int CreateTextFormat(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1323,7 +1323,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1335,7 +1335,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, float maxWidth, float maxHeight, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1350,7 +1350,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float maxWidth, float maxHeight, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1365,7 +1365,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float maxWidth, float maxHeight, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float maxWidth, float maxHeight, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1460,7 +1460,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1472,7 +1472,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1514,7 +1514,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1529,7 +1529,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1547,7 +1547,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1559,7 +1559,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1574,7 +1574,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1589,7 +1589,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1607,7 +1607,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1622,7 +1622,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1640,7 +1640,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1658,7 +1658,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1704,7 +1704,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1718,7 +1718,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1766,7 +1766,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, IDWriteTextLayout** textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1783,7 +1783,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
+    public static unsafe int CreateGdiCompatibleTextLayout(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1893,7 +1893,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNumberSubstitution(this ComPtr<IDWriteFactory7> thisVtbl, NumberSubstitutionMethod substitutionMethod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, Silk.NET.Core.Bool32 ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
+    public static unsafe int CreateNumberSubstitution(this ComPtr<IDWriteFactory7> thisVtbl, NumberSubstitutionMethod substitutionMethod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, Silk.NET.Core.Bool32 ignoreUserOverride, IDWriteNumberSubstitution** numberSubstitution)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1905,7 +1905,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateNumberSubstitution(this ComPtr<IDWriteFactory7> thisVtbl, NumberSubstitutionMethod substitutionMethod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, Silk.NET.Core.Bool32 ignoreUserOverride, ref IDWriteNumberSubstitution* numberSubstitution)
+    public static unsafe int CreateNumberSubstitution(this ComPtr<IDWriteFactory7> thisVtbl, NumberSubstitutionMethod substitutionMethod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, Silk.NET.Core.Bool32 ignoreUserOverride, ref IDWriteNumberSubstitution* numberSubstitution)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1966,7 +1966,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
+    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1978,7 +1978,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref IDWriteGlyphRunAnalysis* glyphRunAnalysis)
+    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref IDWriteGlyphRunAnalysis* glyphRunAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1993,7 +1993,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
+    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2005,7 +2005,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref IDWriteGlyphRunAnalysis* glyphRunAnalysis)
+    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref IDWriteGlyphRunAnalysis* glyphRunAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2020,7 +2020,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
+    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, IDWriteGlyphRunAnalysis** glyphRunAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2035,7 +2035,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref IDWriteGlyphRunAnalysis* glyphRunAnalysis)
+    public static unsafe int CreateGlyphRunAnalysis(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref IDWriteGlyphRunAnalysis* glyphRunAnalysis)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2137,7 +2137,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2149,7 +2149,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2164,7 +2164,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2176,7 +2176,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2191,7 +2191,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2206,7 +2206,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2224,7 +2224,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2236,7 +2236,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2251,7 +2251,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2266,7 +2266,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2284,7 +2284,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2299,7 +2299,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2317,7 +2317,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, IDWriteColorGlyphRunEnumerator** colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2335,7 +2335,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
+    public static unsafe int TranslateColorGlyphRun(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref IDWriteColorGlyphRunEnumerator* colorLayers)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2377,7 +2377,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2389,7 +2389,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2404,7 +2404,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2416,7 +2416,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2431,7 +2431,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2446,7 +2446,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2489,7 +2489,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, IDWriteFontFaceReference** fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2503,7 +2503,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref IDWriteFontFaceReference* fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2652,7 +2652,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldAndDpiTransform, Silk.NET.Maths.Vector2D<float>* glyphOrigins)
+    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldAndDpiTransform, Silk.NET.Maths.Vector2D<float>* glyphOrigins)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2664,7 +2664,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldAndDpiTransform, ref Silk.NET.Maths.Vector2D<float> glyphOrigins)
+    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldAndDpiTransform, ref Silk.NET.Maths.Vector2D<float> glyphOrigins)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2679,7 +2679,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldAndDpiTransform, Silk.NET.Maths.Vector2D<float>* glyphOrigins)
+    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldAndDpiTransform, Silk.NET.Maths.Vector2D<float>* glyphOrigins)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2691,7 +2691,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldAndDpiTransform, ref Silk.NET.Maths.Vector2D<float> glyphOrigins)
+    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldAndDpiTransform, ref Silk.NET.Maths.Vector2D<float> glyphOrigins)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2706,7 +2706,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldAndDpiTransform, Silk.NET.Maths.Vector2D<float>* glyphOrigins)
+    public static unsafe int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldAndDpiTransform, Silk.NET.Maths.Vector2D<float>* glyphOrigins)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2721,7 +2721,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldAndDpiTransform, ref Silk.NET.Maths.Vector2D<float> glyphOrigins)
+    public static int ComputeGlyphOrigins(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, MeasuringMode measuringMode, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldAndDpiTransform, ref Silk.NET.Maths.Vector2D<float> glyphOrigins)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2781,7 +2781,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2793,7 +2793,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2833,7 +2833,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2845,7 +2845,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2860,7 +2860,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2875,7 +2875,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2893,7 +2893,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2907,7 +2907,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2949,7 +2949,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, IDWriteRemoteFontFileLoader** newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2963,7 +2963,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
+    public static unsafe int CreateHttpFontFileLoader(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, ref IDWriteRemoteFontFileLoader* newLoader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3018,7 +3018,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ContainerType AnalyzeContainerType<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fileData, uint fileDataSize) where T0 : unmanaged
+    public static ContainerType AnalyzeContainerType<T0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fileData, uint fileDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         ContainerType ret = default;
@@ -3051,7 +3051,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UnpackFontFile<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ContainerType containerType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fileData, uint fileDataSize, IDWriteFontFileStream** unpackedFontStream) where T0 : unmanaged
+    public static unsafe int UnpackFontFile<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ContainerType containerType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fileData, uint fileDataSize, IDWriteFontFileStream** unpackedFontStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3063,7 +3063,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UnpackFontFile<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ContainerType containerType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fileData, uint fileDataSize, ref IDWriteFontFileStream* unpackedFontStream) where T0 : unmanaged
+    public static unsafe int UnpackFontFile<T0>(this ComPtr<IDWriteFactory7> thisVtbl, ContainerType containerType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fileData, uint fileDataSize, ref IDWriteFontFileStream* unpackedFontStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3183,7 +3183,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCustomFontCollection<T0, TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, ComPtr<TI0> collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref ComPtr<TI1> fontCollection) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontCollectionLoader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
+    public static int CreateCustomFontCollection<T0, TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, ComPtr<TI0> collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref ComPtr<TI1> fontCollection) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontCollectionLoader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3199,7 +3199,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontCollection<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, ComPtr<TI0> collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontCollection* fontCollection) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontCollectionLoader>, IComVtbl<TI0>
+    public static unsafe int CreateCustomFontCollection<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, ComPtr<TI0> collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontCollection* fontCollection) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontCollectionLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3239,7 +3239,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCustomFontCollection<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, ref IDWriteFontCollectionLoader collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref ComPtr<TI0> fontCollection) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static int CreateCustomFontCollection<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, ref IDWriteFontCollectionLoader collectionLoader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref ComPtr<TI0> fontCollection) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3303,7 +3303,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3327,7 +3327,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3351,7 +3351,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3383,7 +3383,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int CreateFontFileReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3447,7 +3447,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCustomFontFileReference<T0, TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ComPtr<TI0> fontFileLoader, ref ComPtr<TI1> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileLoader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+    public static int CreateCustomFontFileReference<T0, TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ComPtr<TI0> fontFileLoader, ref ComPtr<TI1> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileLoader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3463,7 +3463,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCustomFontFileReference<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ComPtr<TI0> fontFileLoader, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileLoader>, IComVtbl<TI0>
+    public static unsafe int CreateCustomFontFileReference<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ComPtr<TI0> fontFileLoader, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3479,7 +3479,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCustomFontFileReference<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileLoader fontFileLoader, ref ComPtr<TI0> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int CreateCustomFontFileReference<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileLoader fontFileLoader, ref ComPtr<TI0> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3511,7 +3511,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFace<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, FontFaceType fontFaceType, uint numberOfFiles, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IDWriteFontFile* fontFiles, uint faceIndex, FontSimulations fontFaceSimulationFlags, ref ComPtr<TI0> fontFace) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int CreateFontFace<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, FontFaceType fontFaceType, uint numberOfFiles, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IDWriteFontFile* fontFiles, uint faceIndex, FontSimulations fontFaceSimulationFlags, ref ComPtr<TI0> fontFace) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3599,7 +3599,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
+    public static unsafe int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3615,7 +3615,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3671,7 +3671,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3719,7 +3719,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
+    public static unsafe int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3735,7 +3735,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3751,7 +3751,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
+    public static int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3767,7 +3767,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3783,7 +3783,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
+    public static int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3799,7 +3799,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3815,7 +3815,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3839,7 +3839,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3863,7 +3863,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3903,7 +3903,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
+    public static int CreateTextFormat<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref ComPtr<TI1> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3919,7 +3919,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ComPtr<TI0> fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref IDWriteTextFormat* textFormat) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3975,7 +3975,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static int CreateTextFormat<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFamilyName, ref IDWriteFontCollection fontCollection, FontWeight fontWeight, FontStyle fontStyle, FontStretch fontStretch, float fontSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref ComPtr<TI0> textFormat) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4079,7 +4079,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ComPtr<TI0> textFormat, float maxWidth, float maxHeight, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
+    public static int CreateTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ComPtr<TI0> textFormat, float maxWidth, float maxHeight, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4095,7 +4095,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ComPtr<TI0> textFormat, float maxWidth, float maxHeight, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ComPtr<TI0> textFormat, float maxWidth, float maxHeight, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4111,7 +4111,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float maxWidth, float maxHeight, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
+    public static int CreateTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float maxWidth, float maxHeight, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4191,7 +4191,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4207,7 +4207,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4247,7 +4247,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4271,7 +4271,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4287,7 +4287,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4303,7 +4303,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
+    public static int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4319,7 +4319,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4335,7 +4335,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4359,7 +4359,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
+    public static int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4399,7 +4399,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
+    public static int CreateGdiCompatibleTextLayout<TI0, TI1>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI1> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4415,7 +4415,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
+    public static unsafe int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ComPtr<TI0> textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref IDWriteTextLayout* textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextFormat>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4455,7 +4455,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
+    public static int CreateGdiCompatibleTextLayout<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, float layoutWidth, float layoutHeight, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, ref ComPtr<TI0> textLayout) where TI0 : unmanaged, IComVtbl<IDWriteTextLayout>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4535,7 +4535,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateNumberSubstitution<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, NumberSubstitutionMethod substitutionMethod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, Silk.NET.Core.Bool32 ignoreUserOverride, ref ComPtr<TI0> numberSubstitution) where TI0 : unmanaged, IComVtbl<IDWriteNumberSubstitution>, IComVtbl<TI0>
+    public static int CreateNumberSubstitution<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, NumberSubstitutionMethod substitutionMethod, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, Silk.NET.Core.Bool32 ignoreUserOverride, ref ComPtr<TI0> numberSubstitution) where TI0 : unmanaged, IComVtbl<IDWriteNumberSubstitution>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4575,7 +4575,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref ComPtr<TI0> glyphRunAnalysis) where TI0 : unmanaged, IComVtbl<IDWriteGlyphRunAnalysis>, IComVtbl<TI0>
+    public static unsafe int CreateGlyphRunAnalysis<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref ComPtr<TI0> glyphRunAnalysis) where TI0 : unmanaged, IComVtbl<IDWriteGlyphRunAnalysis>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4599,7 +4599,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGlyphRunAnalysis<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref ComPtr<TI0> glyphRunAnalysis) where TI0 : unmanaged, IComVtbl<IDWriteGlyphRunAnalysis>, IComVtbl<TI0>
+    public static unsafe int CreateGlyphRunAnalysis<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref ComPtr<TI0> glyphRunAnalysis) where TI0 : unmanaged, IComVtbl<IDWriteGlyphRunAnalysis>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4623,7 +4623,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGlyphRunAnalysis<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref ComPtr<TI0> glyphRunAnalysis) where TI0 : unmanaged, IComVtbl<IDWriteGlyphRunAnalysis>, IComVtbl<TI0>
+    public static int CreateGlyphRunAnalysis<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, RenderingMode renderingMode, MeasuringMode measuringMode, float baselineOriginX, float baselineOriginY, ref ComPtr<TI0> glyphRunAnalysis) where TI0 : unmanaged, IComVtbl<IDWriteGlyphRunAnalysis>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4679,7 +4679,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4703,7 +4703,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4727,7 +4727,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRun* glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4751,7 +4751,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4775,7 +4775,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphRunDescription* glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4799,7 +4799,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static unsafe int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4823,7 +4823,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
+    public static int TranslateColorGlyphRun<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, float baselineOriginX, float baselineOriginY, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRun glyphRun, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphRunDescription glyphRunDescription, MeasuringMode measuringMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix worldToDeviceTransform, uint colorPaletteIndex, ref ComPtr<TI0> colorLayers) where TI0 : unmanaged, IComVtbl<IDWriteColorGlyphRunEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4855,7 +4855,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
+    public static unsafe int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4879,7 +4879,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
+    public static unsafe int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.Filetime* lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4903,7 +4903,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
+    public static int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4935,7 +4935,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
+    public static int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.Filetime lastWriteTime, uint faceIndex, FontSimulations fontSimulations, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5095,7 +5095,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
+    public static unsafe int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5127,7 +5127,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
+    public static unsafe int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5151,7 +5151,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
+    public static int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5175,7 +5175,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
+    public static int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5207,7 +5207,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
+    public static int CreateHttpFontFileLoader<TI0>(this ComPtr<IDWriteFactory7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string referrerUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char extraHeaders, ref ComPtr<TI0> newLoader) where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileLoader>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5255,7 +5255,7 @@ public unsafe static class DWriteFactory7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UnpackFontFile<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, ContainerType containerType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fileData, uint fileDataSize, ref ComPtr<TI0> unpackedFontStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
+    public static int UnpackFontFile<T0, TI0>(this ComPtr<IDWriteFactory7> thisVtbl, ContainerType containerType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fileData, uint fileDataSize, ref ComPtr<TI0> unpackedFontStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

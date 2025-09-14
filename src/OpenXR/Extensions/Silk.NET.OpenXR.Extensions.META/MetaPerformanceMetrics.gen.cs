@@ -58,7 +58,7 @@ namespace Silk.NET.OpenXR.Extensions.META
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetPerformanceMetricsStateMETA", Convention = CallingConvention.Winapi)]
-        public partial Result SetPerformanceMetricsStateMeta([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PerformanceMetricsStateMETA state);
+        public partial Result SetPerformanceMetricsStateMeta([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PerformanceMetricsStateMETA state);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumeratePerformanceMetricsCounterPathsMeta([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* counterPathCountOutput, [Count(Parameter = "counterPathCapacityInput")] Span<ulong> counterPaths)

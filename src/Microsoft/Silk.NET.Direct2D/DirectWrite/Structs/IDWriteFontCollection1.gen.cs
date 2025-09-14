@@ -192,7 +192,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, uint* index, int* exists)
+        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, uint* index, int* exists)
         {
             var @this = (IDWriteFontCollection1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -204,7 +204,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, uint* index, ref int exists)
+        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, uint* index, ref int exists)
         {
             var @this = (IDWriteFontCollection1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -219,7 +219,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, ref uint index, int* exists)
+        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, ref uint index, int* exists)
         {
             var @this = (IDWriteFontCollection1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, ref uint index, ref int exists)
+        public readonly int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, ref uint index, ref int exists)
         {
             var @this = (IDWriteFontCollection1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

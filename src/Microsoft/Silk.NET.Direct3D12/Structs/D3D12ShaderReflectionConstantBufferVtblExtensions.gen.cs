@@ -58,7 +58,7 @@ public unsafe static class D3D12ShaderReflectionConstantBufferVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Name)
+    public static unsafe ID3D12ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D12ShaderReflectionConstantBuffer> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D12ShaderReflectionVariable* ret = default;

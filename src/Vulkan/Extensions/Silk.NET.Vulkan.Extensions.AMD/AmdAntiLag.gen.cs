@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.AMD
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAntiLagUpdateAMD", Convention = CallingConvention.Winapi)]
-        public partial void AntiLagUpdate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AntiLagDataAMD pData);
+        public partial void AntiLagUpdate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AntiLagDataAMD pData);
 
         public AmdAntiLag(INativeContext ctx)
             : base(ctx)

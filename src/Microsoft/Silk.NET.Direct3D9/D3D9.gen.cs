@@ -1374,7 +1374,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 315, Column 12 in d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
-        public partial int PERFBeginEvent(uint col, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wszName);
+        public partial int PERFBeginEvent(uint col, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 315, Column 12 in d3d9.h")]
@@ -1394,7 +1394,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 13 in d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
-        public partial void PERFSetMarker(uint col, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wszName);
+        public partial void PERFSetMarker(uint col, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 317, Column 13 in d3d9.h")]
@@ -1409,7 +1409,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 13 in d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
-        public partial void PERFSetRegion(uint col, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wszName);
+        public partial void PERFSetRegion(uint col, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wszName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 318, Column 13 in d3d9.h")]

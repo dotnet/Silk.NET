@@ -54,11 +54,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLoadRenderModelFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderModelLoadInfoFB info, [Count(Count = 0)] RenderModelBufferFB* buffer);
+        public unsafe partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderModelLoadInfoFB info, [Count(Count = 0)] RenderModelBufferFB* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLoadRenderModelFB", Convention = CallingConvention.Winapi)]
-        public partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderModelLoadInfoFB info, [Count(Count = 0)] ref RenderModelBufferFB buffer);
+        public partial Result LoadRenderModelFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderModelLoadInfoFB info, [Count(Count = 0)] ref RenderModelBufferFB buffer);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumerateRenderModelPathsFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint* pathCountOutput, [Count(Parameter = "pathCapacityInput")] Span<RenderModelPathInfoFB> paths)

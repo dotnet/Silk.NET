@@ -193,7 +193,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+    public static unsafe int BeginDraw(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -361,7 +361,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Scroll(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
+    public static unsafe int Scroll(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Scroll(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* clipRect, int offsetX, int offsetY)
+    public static unsafe int Scroll(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* clipRect, int offsetX, int offsetY)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -385,7 +385,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Scroll(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
+    public static int Scroll(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Trim(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> rectangles, uint count)
+    public static int Trim(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> rectangles, uint count)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -527,7 +527,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDraw<TI0>(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int BeginDraw<TI0>(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -543,7 +543,7 @@ public unsafe static class DCompositionVirtualSurfaceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginDraw<TI0>(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int BeginDraw<TI0>(this ComPtr<IDCompositionVirtualSurface> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

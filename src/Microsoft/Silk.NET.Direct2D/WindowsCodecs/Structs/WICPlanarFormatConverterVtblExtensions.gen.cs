@@ -255,7 +255,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -282,7 +282,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -452,7 +452,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pSrcPixelFormats, uint cSrcPlanes, Guid* dstPixelFormat, int* pfCanConvert)
+    public static unsafe int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pSrcPixelFormats, uint cSrcPlanes, Guid* dstPixelFormat, int* pfCanConvert)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -464,7 +464,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pSrcPixelFormats, uint cSrcPlanes, Guid* dstPixelFormat, ref int pfCanConvert)
+    public static unsafe int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pSrcPixelFormats, uint cSrcPlanes, Guid* dstPixelFormat, ref int pfCanConvert)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -479,7 +479,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pSrcPixelFormats, uint cSrcPlanes, ref Guid dstPixelFormat, int* pfCanConvert)
+    public static unsafe int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pSrcPixelFormats, uint cSrcPlanes, ref Guid dstPixelFormat, int* pfCanConvert)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -494,7 +494,7 @@ public unsafe static class WICPlanarFormatConverterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pSrcPixelFormats, uint cSrcPlanes, ref Guid dstPixelFormat, ref int pfCanConvert)
+    public static int CanConvert(this ComPtr<IWICPlanarFormatConverter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pSrcPixelFormats, uint cSrcPlanes, ref Guid dstPixelFormat, ref int pfCanConvert)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

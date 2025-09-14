@@ -24,7 +24,7 @@ namespace Silk.NET.WGL.Extensions.ARB
         public unsafe partial nint CreatePbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iHeight, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
         [NativeApi(EntryPoint = "wglCreatePbufferARB", Convention = CallingConvention.Winapi)]
-        public partial nint CreatePbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iHeight, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int piAttribList);
+        public partial nint CreatePbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iPixelFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iWidth, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iHeight, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int piAttribList);
 
         [NativeApi(EntryPoint = "wglDestroyPbufferARB", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 DestroyPbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hPbuffer);

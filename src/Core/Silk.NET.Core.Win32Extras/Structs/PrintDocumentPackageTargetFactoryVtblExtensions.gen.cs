@@ -193,7 +193,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -449,7 +449,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -461,7 +461,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -476,7 +476,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -491,7 +491,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -509,7 +509,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -524,7 +524,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -542,7 +542,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -560,7 +560,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -581,7 +581,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -596,7 +596,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -614,7 +614,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -632,7 +632,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -653,7 +653,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -671,7 +671,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -692,7 +692,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -713,7 +713,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -737,7 +737,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -751,7 +751,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -768,7 +768,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -785,7 +785,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -805,7 +805,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -822,7 +822,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -842,7 +842,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -862,7 +862,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1009,7 +1009,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1023,7 +1023,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1040,7 +1040,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1057,7 +1057,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, Silk.NET.Core.Win32Extras.IStream* jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1077,7 +1077,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1094,7 +1094,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, Silk.NET.Core.Win32Extras.IStream* jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1114,7 +1114,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1134,7 +1134,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
+    public static unsafe int CreateDocumentPackageTargetForPrintJob(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1434,7 +1434,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1450,7 +1450,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1466,7 +1466,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1482,7 +1482,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1498,7 +1498,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1514,7 +1514,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1530,7 +1530,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1658,7 +1658,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1674,7 +1674,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1690,7 +1690,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1706,7 +1706,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1722,7 +1722,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1738,7 +1738,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1754,7 +1754,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1778,7 +1778,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1794,7 +1794,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1810,7 +1810,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1826,7 +1826,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1842,7 +1842,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1858,7 +1858,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1874,7 +1874,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1898,7 +1898,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1914,7 +1914,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1930,7 +1930,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1946,7 +1946,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1962,7 +1962,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1978,7 +1978,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1994,7 +1994,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2122,7 +2122,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1, TI2>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref ComPtr<TI2> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2138,7 +2138,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ComPtr<TI1> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2154,7 +2154,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2170,7 +2170,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ComPtr<TI0> jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2186,7 +2186,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0, TI1>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref ComPtr<TI1> docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2202,7 +2202,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ComPtr<TI0> jobPrintTicketStream, ref IPrintDocumentPackageTarget* docPackageTarget) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2218,7 +2218,7 @@ public unsafe static class PrintDocumentPackageTargetFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
+    public static int CreateDocumentPackageTargetForPrintJob<TI0>(this ComPtr<IPrintDocumentPackageTargetFactory> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string printerName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char jobName, ref Silk.NET.Core.Win32Extras.IStream jobOutputStream, ref Silk.NET.Core.Win32Extras.IStream jobPrintTicketStream, ref ComPtr<TI0> docPackageTarget) where TI0 : unmanaged, IComVtbl<IPrintDocumentPackageTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void DeleteOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids);
+        public partial void DeleteOcclusionQueries([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids);
 
         [NativeApi(EntryPoint = "glEndOcclusionQueryNV", Convention = CallingConvention.Winapi)]
         public partial void EndOcclusionQuery();

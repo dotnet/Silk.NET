@@ -769,7 +769,7 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2DecodeExecuteParams pExecuteParams)
+    public static int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2DecodeExecuteParams pExecuteParams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

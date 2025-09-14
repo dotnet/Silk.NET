@@ -178,7 +178,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -190,7 +190,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -217,7 +217,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -229,7 +229,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -244,7 +244,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -259,7 +259,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, IDWriteFontFile* fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -319,7 +319,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -337,7 +337,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -370,7 +370,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
+    public static unsafe int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -388,7 +388,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount)
+    public static int AddFont(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ref IDWriteFontFile fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -506,7 +506,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -522,7 +522,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -538,7 +538,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -554,7 +554,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -570,7 +570,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisRange* fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -586,7 +586,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontProperty* properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -602,7 +602,7 @@ public unsafe static class DWriteFontSetBuilder2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int AddFont<TI0>(this ComPtr<IDWriteFontSetBuilder2> thisVtbl, ComPtr<TI0> fontFile, uint fontFaceIndex, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisRange fontAxisRanges, uint fontAxisRangeCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontProperty properties, uint propertyCount) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

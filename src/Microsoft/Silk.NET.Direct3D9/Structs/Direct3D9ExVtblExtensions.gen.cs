@@ -331,7 +331,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Displaymodefilter pFilter)
+    public static uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Displaymodefilter pFilter)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -364,7 +364,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Displaymodefilter pFilter, uint Mode, Displaymodeex* pMode)
+    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Displaymodefilter pFilter, uint Mode, Displaymodeex* pMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -376,7 +376,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Displaymodefilter pFilter, uint Mode, ref Displaymodeex pMode)
+    public static int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Displaymodefilter pFilter, uint Mode, ref Displaymodeex pMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

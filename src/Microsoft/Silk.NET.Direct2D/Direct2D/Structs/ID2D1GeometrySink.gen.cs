@@ -142,7 +142,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddLines([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
+        public readonly void AddLines([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
@@ -159,7 +159,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BezierSegment beziers, uint beziersCount)
+        public readonly void AddBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BezierSegment beziers, uint beziersCount)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BezierSegment* beziersPtr = &beziers)
@@ -199,7 +199,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddBezier([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BezierSegment bezier)
+        public readonly void AddBezier([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BezierSegment bezier)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BezierSegment* bezierPtr = &bezier)
@@ -216,7 +216,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddQuadraticBezier([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QuadraticBezierSegment bezier)
+        public readonly void AddQuadraticBezier([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QuadraticBezierSegment bezier)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (QuadraticBezierSegment* bezierPtr = &bezier)
@@ -233,7 +233,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddQuadraticBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QuadraticBezierSegment beziers, uint beziersCount)
+        public readonly void AddQuadraticBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QuadraticBezierSegment beziers, uint beziersCount)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (QuadraticBezierSegment* beziersPtr = &beziers)
@@ -250,7 +250,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddArc([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ArcSegment arc)
+        public readonly void AddArc([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ArcSegment arc)
         {
             var @this = (ID2D1GeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ArcSegment* arcPtr = &arc)

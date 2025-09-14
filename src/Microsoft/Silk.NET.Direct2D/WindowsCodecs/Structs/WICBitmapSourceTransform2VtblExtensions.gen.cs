@@ -158,7 +158,7 @@ public unsafe static class WICBitmapSourceTransform2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -170,7 +170,7 @@ public unsafe static class WICBitmapSourceTransform2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -185,7 +185,7 @@ public unsafe static class WICBitmapSourceTransform2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, Guid* pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -199,7 +199,7 @@ public unsafe static class WICBitmapSourceTransform2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class WICBitmapSourceTransform2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,7 +232,7 @@ public unsafe static class WICBitmapSourceTransform2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmapSourceTransform2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint uiWidth, uint uiHeight, ref Guid pguidDstFormat, BitmapTransformOptions dstTransform, uint nStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

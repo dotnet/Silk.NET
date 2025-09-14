@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void DeleteMemoryObjects([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* memoryObjects);
 
         [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT", Convention = CallingConvention.Winapi)]
-        public partial void DeleteMemoryObjects([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint memoryObjects);
+        public partial void DeleteMemoryObjects([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint memoryObjects);
 
         [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetMemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
@@ -84,13 +84,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void MemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void MemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
+        public partial void MemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int @params);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryObjectParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT", Convention = CallingConvention.Winapi)]
-        public partial void MemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryObjectParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
+        public partial void MemoryObjectParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memoryObject, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryObjectParameterName pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int @params);
 
         [NativeApi(EntryPoint = "glNamedBufferStorageMemEXT", Convention = CallingConvention.Winapi)]
         public partial void NamedBufferStorageMem([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong offset);

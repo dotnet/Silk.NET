@@ -16,6 +16,12 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrIcdOverloads
     {
+        public static unsafe void* IcdGetFunctionAddressForPlatform(this KhrIcd thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> func_name)
+        {
+            // SpanOverloader
+            return thisApi.IcdGetFunctionAddressForPlatform(platform, in func_name.GetPinnableReference());
+        }
+
         public static unsafe int IcdGetPlatformIDs(this KhrIcd thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* platforms, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> num_platforms)
         {
             // SpanOverloader
@@ -32,6 +38,12 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         {
             // SpanOverloader
             return thisApi.IcdGetPlatformIDs(num_entries, out platforms.GetPinnableReference(), out num_platforms.GetPinnableReference());
+        }
+
+        public static unsafe int IcdSetPlatformDispatchData<T0>(this KhrIcd thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint platform, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> dispatch_data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.IcdSetPlatformDispatchData(platform, out dispatch_data.GetPinnableReference());
         }
 
     }

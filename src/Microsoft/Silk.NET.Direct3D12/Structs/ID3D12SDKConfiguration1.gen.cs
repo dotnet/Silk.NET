@@ -123,7 +123,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSDKVersion(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath)
+        public readonly int SetSDKVersion(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath)
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -194,7 +194,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, Guid* riid, void** ppvFactory)
+        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, Guid* riid, void** ppvFactory)
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -206,7 +206,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, Guid* riid, ref void* ppvFactory)
+        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, Guid* riid, ref void* ppvFactory)
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -221,7 +221,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, ref Guid riid, void** ppvFactory)
+        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, ref Guid riid, void** ppvFactory)
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -236,7 +236,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, ref Guid riid, ref void* ppvFactory)
+        public readonly unsafe int CreateDeviceFactory(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, ref Guid riid, ref void* ppvFactory)
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDeviceFactory<TI0>(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, out ComPtr<TI0> ppvFactory) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateDeviceFactory<TI0>(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, out ComPtr<TI0> ppvFactory) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -371,7 +371,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateDeviceFactory<TI0>(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateDeviceFactory<TI0>(uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12SDKConfiguration1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

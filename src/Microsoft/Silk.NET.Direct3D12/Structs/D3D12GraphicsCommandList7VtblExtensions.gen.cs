@@ -202,7 +202,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+    public static int SetName(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -520,7 +520,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -530,7 +530,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pSrcPtr = &pSrc)
@@ -540,7 +540,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pSrcPtr = &pSrc)
@@ -553,7 +553,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -563,7 +563,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -576,7 +576,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -589,7 +589,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+    public static void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureCopyLocation pSrc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -662,7 +662,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -672,7 +672,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -685,7 +685,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -695,7 +695,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -708,7 +708,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -721,7 +721,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -760,7 +760,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -773,7 +773,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -789,7 +789,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -802,7 +802,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -818,7 +818,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -834,7 +834,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static void CopyTiles(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -907,7 +907,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Viewport pViewports)
+    public static void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumViewports, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Viewport pViewports)
     {
         var @this = thisVtbl.Handle;
         fixed (Viewport* pViewportsPtr = &pViewports)
@@ -924,7 +924,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -982,7 +982,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceBarrier pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ResourceBarrier pBarriers)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -1016,7 +1016,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDescriptorHeaps(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumDescriptorHeaps, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12DescriptorHeap* ppDescriptorHeaps)
+    public static unsafe void SetDescriptorHeaps(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumDescriptorHeaps, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12DescriptorHeap* ppDescriptorHeaps)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12DescriptorHeap** ppDescriptorHeapsPtr = &ppDescriptorHeaps)
@@ -1095,7 +1095,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSrcDataPtr = &pSrcData)
@@ -1112,7 +1112,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSrcDataPtr = &pSrcData)
@@ -1171,7 +1171,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndexBufferView pView)
+    public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndexBufferView pView)
     {
         var @this = thisVtbl.Handle;
         fixed (IndexBufferView* pViewPtr = &pView)
@@ -1188,7 +1188,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VertexBufferView pViews)
+    public static void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VertexBufferView pViews)
     {
         var @this = thisVtbl.Handle;
         fixed (VertexBufferView* pViewsPtr = &pViews)
@@ -1205,7 +1205,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in StreamOutputBufferView pViews)
+    public static void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint StartSlot, uint NumViews, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly StreamOutputBufferView pViews)
     {
         var @this = thisVtbl.Handle;
         fixed (StreamOutputBufferView* pViewsPtr = &pViews)
@@ -1222,7 +1222,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CpuDescriptorHandle pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CpuDescriptorHandle pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
@@ -1232,7 +1232,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
@@ -1242,7 +1242,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CpuDescriptorHandle pDepthStencilDescriptor)
+    public static void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargetDescriptors, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CpuDescriptorHandle pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
@@ -1262,7 +1262,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1279,7 +1279,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1299,7 +1299,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ColorRGBAPtr = &ColorRGBA)
@@ -1319,7 +1319,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1339,7 +1339,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* ValuesPtr = &Values)
@@ -1362,7 +1362,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1388,7 +1388,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1411,7 +1411,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1431,7 +1431,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ValuesPtr = &Values)
@@ -1454,7 +1454,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1480,7 +1480,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1503,7 +1503,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DiscardRegion pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -1523,7 +1523,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DiscardRegion pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1634,7 +1634,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -1651,7 +1651,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -1767,7 +1767,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
@@ -1777,7 +1777,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -1787,7 +1787,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -1810,7 +1810,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1823,7 +1823,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1836,7 +1836,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -1862,7 +1862,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1875,7 +1875,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1888,7 +1888,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1917,7 +1917,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1933,7 +1933,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1949,7 +1949,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -1975,7 +1975,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (SubresourceRangeUint64* pDependentSubresourceRangesPtr = &pDependentSubresourceRanges)
@@ -1985,7 +1985,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -1995,7 +1995,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource** ppDependentResourcesPtr = &ppDependentResources)
@@ -2018,7 +2018,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2031,7 +2031,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2044,7 +2044,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
@@ -2070,7 +2070,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2083,7 +2083,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2096,7 +2096,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2125,7 +2125,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ID3D12Resource** ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2141,7 +2141,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2157,7 +2157,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
@@ -2306,7 +2306,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateMode pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -2316,7 +2316,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -2326,7 +2326,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateMode pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -2363,7 +2363,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginRenderPass(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassRenderTargetDesc* pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
+    public static unsafe void BeginRenderPass(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassRenderTargetDesc* pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (RenderPassDepthStencilDesc* pDepthStencilPtr = &pDepthStencil)
@@ -2373,7 +2373,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginRenderPass(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPassRenderTargetDesc pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
+    public static unsafe void BeginRenderPass(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassRenderTargetDesc pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassDepthStencilDesc* pDepthStencil, RenderPassFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (RenderPassRenderTargetDesc* pRenderTargetsPtr = &pRenderTargets)
@@ -2383,7 +2383,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginRenderPass(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPassRenderTargetDesc pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
+    public static void BeginRenderPass(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassRenderTargetDesc pRenderTargets, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassDepthStencilDesc pDepthStencil, RenderPassFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (RenderPassRenderTargetDesc* pRenderTargetsPtr = &pRenderTargets)
@@ -2410,7 +2410,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+    public static unsafe void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pInitializationParametersDataPtr = &pInitializationParametersData)
@@ -2430,7 +2430,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
+    public static void InitializeMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
@@ -2450,7 +2450,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+    public static unsafe void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12MetaCommand* pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pExecutionParametersDataPtr = &pExecutionParametersData)
@@ -2470,7 +2470,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
+    public static void ExecuteMetaCommand<T0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12MetaCommand pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12MetaCommand* pMetaCommandPtr = &pMetaCommand)
@@ -2490,7 +2490,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BuildRaytracingAccelerationStructure(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
+    public static unsafe void BuildRaytracingAccelerationStructure(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BuildRaytracingAccelerationStructureDesc* pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
     {
         var @this = thisVtbl.Handle;
         fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescsPtr = &pPostbuildInfoDescs)
@@ -2500,7 +2500,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BuildRaytracingAccelerationStructure(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
+    public static unsafe void BuildRaytracingAccelerationStructure(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pPostbuildInfoDescs)
     {
         var @this = thisVtbl.Handle;
         fixed (BuildRaytracingAccelerationStructureDesc* pDescPtr = &pDesc)
@@ -2510,7 +2510,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void BuildRaytracingAccelerationStructure(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
+    public static void BuildRaytracingAccelerationStructure(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BuildRaytracingAccelerationStructureDesc pDesc, uint NumPostbuildInfoDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RaytracingAccelerationStructurePostbuildInfoDesc pPostbuildInfoDescs)
     {
         var @this = thisVtbl.Handle;
         fixed (BuildRaytracingAccelerationStructureDesc* pDescPtr = &pDesc)
@@ -2530,7 +2530,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong pSourceAccelerationStructureData)
+    public static unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RaytracingAccelerationStructurePostbuildInfoDesc* pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pSourceAccelerationStructureData)
     {
         var @this = thisVtbl.Handle;
         fixed (ulong* pSourceAccelerationStructureDataPtr = &pSourceAccelerationStructureData)
@@ -2540,7 +2540,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pSourceAccelerationStructureData)
+    public static unsafe void EmitRaytracingAccelerationStructurePostbuildInfo(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pSourceAccelerationStructureData)
     {
         var @this = thisVtbl.Handle;
         fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pDescPtr = &pDesc)
@@ -2550,7 +2550,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EmitRaytracingAccelerationStructurePostbuildInfo(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong pSourceAccelerationStructureData)
+    public static void EmitRaytracingAccelerationStructurePostbuildInfo(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RaytracingAccelerationStructurePostbuildInfoDesc pDesc, uint NumSourceAccelerationStructures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pSourceAccelerationStructureData)
     {
         var @this = thisVtbl.Handle;
         fixed (RaytracingAccelerationStructurePostbuildInfoDesc* pDescPtr = &pDesc)
@@ -2594,7 +2594,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DispatchRays(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchRaysDesc pDesc)
+    public static void DispatchRays(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DispatchRaysDesc pDesc)
     {
         var @this = thisVtbl.Handle;
         fixed (DispatchRaysDesc* pDescPtr = &pDesc)
@@ -2611,7 +2611,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetShadingRate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ShadingRate baseShadingRate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ShadingRateCombiner combiners)
+    public static void RSSetShadingRate(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ShadingRate baseShadingRate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShadingRateCombiner combiners)
     {
         var @this = thisVtbl.Handle;
         fixed (ShadingRateCombiner* combinersPtr = &combiners)
@@ -2652,7 +2652,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void Barrier(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumBarrierGroups, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BarrierGroup pBarrierGroups)
+    public static void Barrier(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, uint NumBarrierGroups, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BarrierGroup pBarrierGroups)
     {
         var @this = thisVtbl.Handle;
         fixed (BarrierGroup* pBarrierGroupsPtr = &pBarrierGroups)
@@ -3088,7 +3088,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3104,7 +3104,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3120,7 +3120,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3136,7 +3136,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3152,7 +3152,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3168,7 +3168,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3208,7 +3208,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3232,7 +3232,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3256,7 +3256,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3536,7 +3536,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3568,7 +3568,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3624,7 +3624,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3656,7 +3656,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3712,7 +3712,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3976,7 +3976,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT<TI0, TI1, TI2>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+    public static void AtomicCopyBufferUINT<TI0, TI1, TI2>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3984,7 +3984,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3992,7 +3992,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4000,7 +4000,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4032,7 +4032,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4040,7 +4040,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4048,7 +4048,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4056,7 +4056,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4064,7 +4064,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4096,7 +4096,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void AtomicCopyBufferUINT<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4104,7 +4104,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4112,7 +4112,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4120,7 +4120,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4128,7 +4128,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4160,7 +4160,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void AtomicCopyBufferUINT<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4168,7 +4168,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4176,7 +4176,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4200,7 +4200,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT64<TI0, TI1, TI2>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+    public static void AtomicCopyBufferUINT64<TI0, TI1, TI2>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI2> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4208,7 +4208,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4216,7 +4216,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4224,7 +4224,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4256,7 +4256,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4264,7 +4264,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4272,7 +4272,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4280,7 +4280,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ID3D12Resource* pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4288,7 +4288,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4320,7 +4320,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void AtomicCopyBufferUINT64<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI1> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4328,7 +4328,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4336,7 +4336,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4344,7 +4344,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4352,7 +4352,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4384,7 +4384,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void AtomicCopyBufferUINT64<TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ref ID3D12Resource pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubresourceRangeUint64 pDependentSubresourceRanges) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4392,7 +4392,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SubresourceRangeUint64* pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4400,7 +4400,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
+    public static unsafe void AtomicCopyBufferUINT64(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, Span<ID3D12Resource> pDstBuffer, ulong DstOffset, Span<ID3D12Resource> pSrcBuffer, ulong SrcOffset, uint Dependencies, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ID3D12Resource* ppDependentResources, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubresourceRangeUint64> pDependentSubresourceRanges)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4600,7 +4600,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void InitializeMetaCommand<T0, TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+    public static void InitializeMetaCommand<T0, TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInitializationParametersData, nuint InitializationParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4640,7 +4640,7 @@ public unsafe static class D3D12GraphicsCommandList7VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteMetaCommand<T0, TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
+    public static void ExecuteMetaCommand<T0, TI0>(this ComPtr<ID3D12GraphicsCommandList7> thisVtbl, ComPtr<TI0> pMetaCommand, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pExecutionParametersData, nuint ExecutionParametersDataSizeInBytes) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D12MetaCommand>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

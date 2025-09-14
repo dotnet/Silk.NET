@@ -22,7 +22,8 @@ namespace Silk.NET.Assimp
         public QuatKey
         (
             double? mTime = null,
-            AssimpQuaternion? mValue = null
+            AssimpQuaternion? mValue = null,
+            AnimInterpolation? mInterpolation = null
         ) : this()
         {
             if (mTime is not null)
@@ -33,6 +34,11 @@ namespace Silk.NET.Assimp
             if (mValue is not null)
             {
                 MValue = mValue.Value;
+            }
+
+            if (mInterpolation is not null)
+            {
+                MInterpolation = mInterpolation.Value;
             }
         }
 
@@ -46,5 +52,10 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "aiQuaternion")]
         [NativeName("Name", "mValue")]
         public AssimpQuaternion MValue;
+
+        [NativeName("Type", "aiAnimInterpolation")]
+        [NativeName("Type.Name", "aiAnimInterpolation")]
+        [NativeName("Name", "mInterpolation")]
+        public AnimInterpolation MInterpolation;
     }
 }

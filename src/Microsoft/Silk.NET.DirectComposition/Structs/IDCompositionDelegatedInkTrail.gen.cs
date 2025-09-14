@@ -132,7 +132,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddTrailPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, uint* generationId)
+        public readonly unsafe int AddTrailPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, uint* generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddTrailPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, ref uint generationId)
+        public readonly int AddTrailPoints([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, ref uint generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
+        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -192,7 +192,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
+        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -207,7 +207,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
+        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -219,7 +219,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
+        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
+        public readonly unsafe int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
+        public readonly int AddTrailPointsWithPrediction([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
         {
             var @this = (IDCompositionDelegatedInkTrail*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

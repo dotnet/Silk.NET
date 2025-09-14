@@ -30,7 +30,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* @params);
 
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint @params);
+        public partial void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint @params);
 
         public unsafe void ProgramSubroutineParameters([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> @params)
         {

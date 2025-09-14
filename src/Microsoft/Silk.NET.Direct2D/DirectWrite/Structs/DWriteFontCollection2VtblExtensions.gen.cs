@@ -163,7 +163,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, uint* index, int* exists)
+    public static unsafe int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, uint* index, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, uint* index, ref int exists)
+    public static unsafe int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, uint* index, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -190,7 +190,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, ref uint index, int* exists)
+    public static unsafe int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, ref uint index, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, ref uint index, ref int exists)
+    public static int FindFamilyName(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, ref uint index, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -369,7 +369,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -381,7 +381,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -396,7 +396,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -423,7 +423,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -438,7 +438,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -481,7 +481,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,7 +495,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+    public static unsafe int GetMatchingFonts(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -698,7 +698,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+    public static unsafe int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -722,7 +722,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+    public static unsafe int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -746,7 +746,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+    public static int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -778,7 +778,7 @@ public unsafe static class DWriteFontCollection2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+    public static int GetMatchingFonts<TI0>(this ComPtr<IDWriteFontCollection2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

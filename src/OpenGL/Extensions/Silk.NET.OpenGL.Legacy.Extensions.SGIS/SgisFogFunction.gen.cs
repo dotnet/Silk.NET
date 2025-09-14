@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public unsafe partial void FogFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glFogFuncSGIS", Convention = CallingConvention.Winapi)]
-        public partial void FogFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float points);
+        public partial void FogFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFogFunc([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* points);

@@ -94,7 +94,7 @@ public unsafe static class WICColorContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InitializeFromFilename(this ComPtr<IWICColorContext> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename)
+    public static int InitializeFromFilename(this ComPtr<IWICColorContext> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class WICColorContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InitializeFromMemory(this ComPtr<IWICColorContext> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pbBuffer, uint cbBufferSize)
+    public static int InitializeFromMemory(this ComPtr<IWICColorContext> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pbBuffer, uint cbBufferSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

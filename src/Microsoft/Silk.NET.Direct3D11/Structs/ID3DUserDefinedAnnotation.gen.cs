@@ -120,7 +120,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BeginEvent([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+        public readonly int BeginEvent([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+        public readonly void SetMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
         {
             var @this = (ID3DUserDefinedAnnotation*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (char* NamePtr = &Name)

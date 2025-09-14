@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void ActiveVarying([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glActiveVaryingNV", Convention = CallingConvention.Winapi)]
-        public partial void ActiveVarying([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
+        public partial void ActiveVarying([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name);
 
         [NativeApi(EntryPoint = "glActiveVaryingNV", Convention = CallingConvention.Winapi)]
         public partial void ActiveVarying([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
@@ -138,7 +138,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial int GetVaryingLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVaryingLocationNV", Convention = CallingConvention.Winapi)]
-        public partial int GetVaryingLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
+        public partial int GetVaryingLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name);
 
         [NativeApi(EntryPoint = "glGetVaryingLocationNV", Convention = CallingConvention.Winapi)]
         public partial int GetVaryingLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
@@ -147,43 +147,43 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void TransformFeedbackAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackAttribsNV", Convention = CallingConvention.Winapi)]
-        public partial void TransformFeedbackAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
+        public partial void TransformFeedbackAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
+        public unsafe partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
+        public unsafe partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackStreamAttribsNV", Convention = CallingConvention.Winapi)]
-        public partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
+        public partial void TransformFeedbackStreamAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int attribs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int bufstreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
-        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
+        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
-        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackTokenNV* locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
-        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformFeedbackTokenNV locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
+        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformFeedbackTokenNV locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackTokenNV* locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
-        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformFeedbackTokenNV locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+        public partial void TransformFeedbackVaryings([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformFeedbackTokenNV locations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
 
         public unsafe void GetActiveVarying([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> name)
         {

@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorsStorageML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorsStorageML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsCreateStorageInfoML createInfo, [Count(Count = 0)] SpatialAnchorsStorageML* storage);
+        public unsafe partial Result CreateSpatialAnchorsStorageML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsCreateStorageInfoML createInfo, [Count(Count = 0)] SpatialAnchorsStorageML* storage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorsStorageML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorsStorageML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsCreateStorageInfoML createInfo, [Count(Count = 0)] ref SpatialAnchorsStorageML storage);
+        public partial Result CreateSpatialAnchorsStorageML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsCreateStorageInfoML createInfo, [Count(Count = 0)] ref SpatialAnchorsStorageML storage);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDeleteSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
@@ -46,11 +46,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDeleteSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result DeleteSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsDeleteInfoML deleteInfo, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result DeleteSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsDeleteInfoML deleteInfo, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDeleteSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result DeleteSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsDeleteInfoML deleteInfo, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result DeleteSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsDeleteInfoML deleteInfo, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDeleteSpatialAnchorsCompleteML", Convention = CallingConvention.Winapi)]
@@ -74,11 +74,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPublishSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result PublishSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsPublishInfoML publishInfo, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result PublishSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsPublishInfoML publishInfo, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPublishSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result PublishSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsPublishInfoML publishInfo, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result PublishSpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsPublishInfoML publishInfo, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPublishSpatialAnchorsCompleteML", Convention = CallingConvention.Winapi)]
@@ -98,11 +98,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQuerySpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result QuerySpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result QuerySpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQuerySpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result QuerySpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result QuerySpatialAnchorsAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQuerySpatialAnchorsCompleteML", Convention = CallingConvention.Winapi)]
@@ -122,11 +122,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateSpatialAnchorsExpirationAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result UpdateSpatialAnchorsExpirationAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsUpdateExpirationInfoML updateInfo, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result UpdateSpatialAnchorsExpirationAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsUpdateExpirationInfoML updateInfo, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateSpatialAnchorsExpirationAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result UpdateSpatialAnchorsExpirationAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsUpdateExpirationInfoML updateInfo, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result UpdateSpatialAnchorsExpirationAsyncML([Count(Count = 0)] SpatialAnchorsStorageML storage, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsUpdateExpirationInfoML updateInfo, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateSpatialAnchorsExpirationCompleteML", Convention = CallingConvention.Winapi)]

@@ -120,7 +120,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRootSignatureDescAtVersion(D3DRootSignatureVersion convertToVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc* ppDesc)
+        public readonly unsafe int GetRootSignatureDescAtVersion(D3DRootSignatureVersion convertToVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc* ppDesc)
         {
             var @this = (ID3D12VersionedRootSignatureDeserializer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

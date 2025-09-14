@@ -17,15 +17,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfacePresentScalingCapabilitiesEXT")]
+    [NativeName("AliasOf", "VkSurfacePresentScalingCapabilitiesKHR")]
     public unsafe partial struct SurfacePresentScalingCapabilitiesEXT : IExtendsChain<SurfaceCapabilities2KHR>
     {
         public SurfacePresentScalingCapabilitiesEXT
         (
-            StructureType? sType = StructureType.SurfacePresentScalingCapabilitiesExt,
+            StructureType? sType = StructureType.SurfacePresentScalingCapabilitiesKhr,
             void* pNext = null,
-            PresentScalingFlagsEXT? supportedPresentScaling = null,
-            PresentGravityFlagsEXT? supportedPresentGravityX = null,
-            PresentGravityFlagsEXT? supportedPresentGravityY = null,
+            PresentScalingFlagsKHR? supportedPresentScaling = null,
+            PresentGravityFlagsKHR? supportedPresentGravityX = null,
+            PresentGravityFlagsKHR? supportedPresentGravityY = null,
             Extent2D? minScaledImageExtent = null,
             Extent2D? maxScaledImageExtent = null
         ) : this()
@@ -77,20 +78,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPresentScalingFlagsEXT")]
-        [NativeName("Type.Name", "VkPresentScalingFlagsEXT")]
+        [NativeName("Type", "VkPresentScalingFlagsKHR")]
+        [NativeName("Type.Name", "VkPresentScalingFlagsKHR")]
         [NativeName("Name", "supportedPresentScaling")]
-        public PresentScalingFlagsEXT SupportedPresentScaling;
+        public PresentScalingFlagsKHR SupportedPresentScaling;
 /// <summary></summary>
-        [NativeName("Type", "VkPresentGravityFlagsEXT")]
-        [NativeName("Type.Name", "VkPresentGravityFlagsEXT")]
+        [NativeName("Type", "VkPresentGravityFlagsKHR")]
+        [NativeName("Type.Name", "VkPresentGravityFlagsKHR")]
         [NativeName("Name", "supportedPresentGravityX")]
-        public PresentGravityFlagsEXT SupportedPresentGravityX;
+        public PresentGravityFlagsKHR SupportedPresentGravityX;
 /// <summary></summary>
-        [NativeName("Type", "VkPresentGravityFlagsEXT")]
-        [NativeName("Type.Name", "VkPresentGravityFlagsEXT")]
+        [NativeName("Type", "VkPresentGravityFlagsKHR")]
+        [NativeName("Type.Name", "VkPresentGravityFlagsKHR")]
         [NativeName("Name", "supportedPresentGravityY")]
-        public PresentGravityFlagsEXT SupportedPresentGravityY;
+        public PresentGravityFlagsKHR SupportedPresentGravityY;
 /// <summary></summary>
         [NativeName("Type", "VkExtent2D")]
         [NativeName("Type.Name", "VkExtent2D")]
@@ -105,7 +106,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SurfacePresentScalingCapabilitiesExt;
+            return SType = StructureType.SurfacePresentScalingCapabilitiesKhr;
         }
 
         /// <inheritdoc />

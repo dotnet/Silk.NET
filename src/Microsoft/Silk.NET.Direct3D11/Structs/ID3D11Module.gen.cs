@@ -132,7 +132,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        public readonly unsafe int CreateInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pNamespace, ID3D11ModuleInstance** ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        public readonly unsafe int CreateInstance([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+        public readonly int CreateInstance<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

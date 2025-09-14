@@ -193,7 +193,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -325,7 +325,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -337,7 +337,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -367,7 +367,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -385,7 +385,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -400,7 +400,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -436,7 +436,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -457,7 +457,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -472,7 +472,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -490,7 +490,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -508,7 +508,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -529,7 +529,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -547,7 +547,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -568,7 +568,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -589,7 +589,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -661,7 +661,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, Guid* riid, void** ppResult)
+    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -673,7 +673,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, Guid* riid, ref void* ppResult)
+    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -688,7 +688,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, ref Guid riid, void** ppResult)
+    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -703,7 +703,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, ref Guid riid, ref void* ppResult)
+    public static unsafe int Disassemble(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -932,7 +932,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -941,7 +941,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -949,7 +949,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -957,7 +957,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -965,7 +965,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -973,7 +973,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -981,7 +981,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -989,7 +989,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -998,7 +998,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1006,7 +1006,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1014,7 +1014,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1022,7 +1022,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1042,7 +1042,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1051,7 +1051,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1071,7 +1071,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1079,7 +1079,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1099,7 +1099,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1107,7 +1107,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1127,7 +1127,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1135,7 +1135,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1155,7 +1155,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1164,7 +1164,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1184,7 +1184,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1204,7 +1204,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1224,7 +1224,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1232,7 +1232,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe int Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1241,7 +1241,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1249,7 +1249,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1257,7 +1257,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1265,7 +1265,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1273,7 +1273,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Span<Guid> riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1281,7 +1281,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1289,7 +1289,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1297,7 +1297,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1306,7 +1306,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Guid* riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1314,7 +1314,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, void** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1322,7 +1322,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult)
+    public static unsafe int Compile(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, Span<IDxcIncludeHandler> pIncludeHandler, Span<Guid> riid, ref void* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1363,7 +1363,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Disassemble<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int Disassemble<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1423,7 +1423,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1432,7 +1432,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1441,7 +1441,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1450,7 +1450,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1459,7 +1459,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+    public static unsafe ComPtr<TI1> Compile<TI0, TI1>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1468,7 +1468,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> Compile<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1486,7 +1486,7 @@ public unsafe static class DxcCompiler3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> Disassemble<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> Disassemble<TI0>(this ComPtr<IDxcCompiler3> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

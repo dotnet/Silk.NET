@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh);
+        public unsafe partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] TriangleMeshFB* outTriangleMesh);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateTriangleMeshFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] ref TriangleMeshFB outTriangleMesh);
+        public partial Result CreateTriangleMeshFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TriangleMeshCreateInfoFB createInfo, [Count(Count = 0)] ref TriangleMeshFB outTriangleMesh);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyTriangleMeshFB", Convention = CallingConvention.Winapi)]

@@ -264,7 +264,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCustomRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pVPGuid, uint Count, HDCustomRateData* pRates)
+        public readonly unsafe int GetVideoProcessorCustomRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pVPGuid, uint Count, HDCustomRateData* pRates)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -276,7 +276,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoProcessorCustomRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pVPGuid, uint Count, ref HDCustomRateData pRates)
+        public readonly int GetVideoProcessorCustomRates([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pVPGuid, uint Count, ref HDCustomRateData pRates)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -333,7 +333,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
+        public readonly unsafe int CreateVideoProcessor([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -345,7 +345,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
+        public readonly unsafe int CreateVideoProcessor([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -378,7 +378,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateVideoProcessor<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0>
+        public readonly int CreateVideoProcessor<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0>
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

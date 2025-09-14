@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L50_C9")]
     [NativeName("Name", "SDL_KeyCode")]
     public enum KeyCode : int
     {

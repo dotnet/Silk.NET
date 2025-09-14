@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerDetectorML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMarkerDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MarkerDetectorCreateInfoML createInfo, [Count(Count = 0)] MarkerDetectorML* markerDetector);
+        public unsafe partial Result CreateMarkerDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MarkerDetectorCreateInfoML createInfo, [Count(Count = 0)] MarkerDetectorML* markerDetector);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerDetectorML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateMarkerDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MarkerDetectorCreateInfoML createInfo, [Count(Count = 0)] ref MarkerDetectorML markerDetector);
+        public partial Result CreateMarkerDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MarkerDetectorCreateInfoML createInfo, [Count(Count = 0)] ref MarkerDetectorML markerDetector);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceML", Convention = CallingConvention.Winapi)]
@@ -46,11 +46,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMarkerSpaceML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MarkerSpaceCreateInfoML createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateMarkerSpaceML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MarkerSpaceCreateInfoML createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateMarkerSpaceML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateMarkerSpaceML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MarkerSpaceCreateInfoML createInfo, [Count(Count = 0)] ref Space space);
+        public partial Result CreateMarkerSpaceML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MarkerSpaceCreateInfoML createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyMarkerDetectorML", Convention = CallingConvention.Winapi)]

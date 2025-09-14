@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindDescriptorSetsInfoKHR")]
+    [NativeName("AliasOf", "VkBindDescriptorSetsInfo")]
     public unsafe partial struct BindDescriptorSetsInfoKHR : IChainStart
     {
         public BindDescriptorSetsInfoKHR
         (
-            StructureType? sType = StructureType.BindDescriptorSetsInfoKhr,
+            StructureType? sType = StructureType.BindDescriptorSetsInfo,
             void* pNext = null,
             ShaderStageFlags? stageFlags = null,
             PipelineLayout? layout = null,
@@ -127,7 +128,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.BindDescriptorSetsInfoKhr;
+            return SType = StructureType.BindDescriptorSetsInfo;
         }
 
         /// <inheritdoc />
@@ -145,7 +146,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref BindDescriptorSetsInfoKHR Chain(
             out BindDescriptorSetsInfoKHR capture)
         {
-            capture = new BindDescriptorSetsInfoKHR(StructureType.BindDescriptorSetsInfoKhr);
+            capture = new BindDescriptorSetsInfoKHR(StructureType.BindDescriptorSetsInfo);
             return ref capture;
         }
     }

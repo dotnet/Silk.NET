@@ -58,7 +58,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
         }
 
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
+        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
@@ -70,7 +70,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
         }
 
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
+        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
@@ -82,7 +82,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
         }
 
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
+        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
@@ -94,7 +94,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
         }
 
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
+        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount)
         {
             // SpanOverloader
             thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);

@@ -42,7 +42,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public unsafe partial void ShadingRateImagePalette([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint viewport, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] NV* rates);
 
         [NativeApi(EntryPoint = "glShadingRateImagePaletteNV", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRateImagePalette([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint viewport, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NV rates);
+        public partial void ShadingRateImagePalette([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint viewport, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NV rates);
 
         [NativeApi(EntryPoint = "glShadingRateSampleOrderNV", Convention = CallingConvention.Winapi)]
         public partial void ShadingRateSampleOrder([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV order);
@@ -51,7 +51,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public unsafe partial void ShadingRateSampleOrderCustom([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV rate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* locations);
 
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV", Convention = CallingConvention.Winapi)]
-        public partial void ShadingRateSampleOrderCustom([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV rate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int locations);
+        public partial void ShadingRateSampleOrderCustom([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV rate, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int locations);
 
         public unsafe void ShadingRateImagePalette([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint viewport, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<NV> rates)
         {

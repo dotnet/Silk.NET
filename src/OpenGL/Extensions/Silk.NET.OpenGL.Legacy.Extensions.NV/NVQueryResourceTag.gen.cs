@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void DeleteQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* tagIds);
 
         [NativeApi(EntryPoint = "glDeleteQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int tagIds);
+        public partial void DeleteQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int tagIds);
 
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenQueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* tagIds);
@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV", Convention = CallingConvention.Winapi)]
-        public partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte tagString);
+        public partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV", Convention = CallingConvention.Winapi)]
         public partial void QueryResourceTag([Flow(Silk.NET.Core.Native.FlowDirection.In)] int tagId, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagString);

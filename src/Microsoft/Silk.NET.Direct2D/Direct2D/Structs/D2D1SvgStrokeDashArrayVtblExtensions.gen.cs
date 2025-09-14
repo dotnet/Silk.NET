@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, uint startIndex)
+    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

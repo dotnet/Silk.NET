@@ -252,12 +252,12 @@ namespace Silk.NET.DirectComposition
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetTargetStatistics", Convention = CallingConvention.StdCall)]
-        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CompositionTargetId targetId, CompositionTargetStats* targetStats);
+        public unsafe partial int GetTargetStatistics(ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CompositionTargetId targetId, CompositionTargetStats* targetStats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 8 in dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionGetTargetStatistics", Convention = CallingConvention.StdCall)]
-        public partial int GetTargetStatistics(ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CompositionTargetId targetId, ref CompositionTargetStats targetStats);
+        public partial int GetTargetStatistics(ulong frameId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CompositionTargetId targetId, ref CompositionTargetStats targetStats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 219, Column 8 in dcomp.h")]

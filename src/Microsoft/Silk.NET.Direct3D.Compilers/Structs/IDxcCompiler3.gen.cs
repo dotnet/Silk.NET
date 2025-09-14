@@ -219,7 +219,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -231,7 +231,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -246,7 +246,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -261,7 +261,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -279,7 +279,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -312,7 +312,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -351,7 +351,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -363,7 +363,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -378,7 +378,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -393,7 +393,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -411,7 +411,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -426,7 +426,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -462,7 +462,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -483,7 +483,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -498,7 +498,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -516,7 +516,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -534,7 +534,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -555,7 +555,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -573,7 +573,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -594,7 +594,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -615,7 +615,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -687,7 +687,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, Guid* riid, void** ppResult)
+        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -699,7 +699,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -714,7 +714,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, ref Guid riid, void** ppResult)
+        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -729,7 +729,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Disassemble([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -894,7 +894,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -903,7 +903,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -911,7 +911,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -919,7 +919,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -927,7 +927,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -936,7 +936,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -948,7 +948,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -957,7 +957,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -969,7 +969,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -977,7 +977,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -989,7 +989,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -997,7 +997,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcIncludeHandler* pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1009,7 +1009,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1017,7 +1017,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1029,7 +1029,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1038,7 +1038,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, Guid* riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1050,7 +1050,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, void** ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1062,7 +1062,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
+        public readonly unsafe int Compile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcIncludeHandler pIncludeHandler, ref Guid riid, ref void* ppResult)
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1074,7 +1074,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, out ComPtr<TI1> ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1083,7 +1083,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, Guid* riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1091,7 +1091,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, void** ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1099,7 +1099,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler, ref Guid riid, ref void* ppResult) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1107,7 +1107,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1125,7 +1125,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Disassemble<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int Disassemble<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject, out ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1161,7 +1161,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1170,7 +1170,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1179,7 +1179,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1188,7 +1188,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1197,7 +1197,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> Compile<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ComPtr<TI0> pIncludeHandler) where TI0 : unmanaged, IComVtbl<IDxcIncludeHandler>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1206,7 +1206,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> Compile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcIncludeHandler pIncludeHandler) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1224,7 +1224,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> Disassemble<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer pObject) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> Disassemble<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDxcCompiler3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

@@ -201,7 +201,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
+        public readonly unsafe int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
         {
             var @this = (IDWriteTextLayout4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -213,7 +213,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
+        public readonly int SetTrimming([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
         {
             var @this = (IDWriteTextLayout4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -634,7 +634,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFontFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, TextRange textRange)
+        public readonly int SetFontFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, TextRange textRange)
         {
             var @this = (IDWriteTextLayout4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -783,7 +783,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, TextRange textRange)
+        public readonly int SetLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, TextRange textRange)
         {
             var @this = (IDWriteTextLayout4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1955,7 +1955,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFontAxisValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, TextRange textRange)
+        public readonly int SetFontAxisValues([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, TextRange textRange)
         {
             var @this = (IDWriteTextLayout4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2059,7 +2059,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTrimming<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
+        public readonly int SetTrimming<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextLayout4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

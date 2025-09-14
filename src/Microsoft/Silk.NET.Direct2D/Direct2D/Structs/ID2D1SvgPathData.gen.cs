@@ -190,7 +190,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateSegmentData([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float data, uint dataCount, uint startIndex)
+        public readonly int UpdateSegmentData([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float data, uint dataCount, uint startIndex)
         {
             var @this = (ID2D1SvgPathData*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -250,7 +250,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, uint startIndex)
+        public readonly int UpdateCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, uint startIndex)
         {
             var @this = (ID2D1SvgPathData*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

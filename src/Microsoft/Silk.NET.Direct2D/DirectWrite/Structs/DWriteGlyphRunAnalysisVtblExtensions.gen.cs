@@ -138,7 +138,7 @@ public unsafe static class DWriteGlyphRunAnalysisVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateAlphaTexture(this ComPtr<IDWriteGlyphRunAnalysis> thisVtbl, TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> textureBounds, byte* alphaValues, uint bufferSize)
+    public static unsafe int CreateAlphaTexture(this ComPtr<IDWriteGlyphRunAnalysis> thisVtbl, TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> textureBounds, byte* alphaValues, uint bufferSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -150,7 +150,7 @@ public unsafe static class DWriteGlyphRunAnalysisVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateAlphaTexture(this ComPtr<IDWriteGlyphRunAnalysis> thisVtbl, TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> textureBounds, ref byte alphaValues, uint bufferSize)
+    public static int CreateAlphaTexture(this ComPtr<IDWriteGlyphRunAnalysis> thisVtbl, TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> textureBounds, ref byte alphaValues, uint bufferSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -165,7 +165,7 @@ public unsafe static class DWriteGlyphRunAnalysisVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateAlphaTexture(this ComPtr<IDWriteGlyphRunAnalysis> thisVtbl, TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> textureBounds, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alphaValues, uint bufferSize)
+    public static int CreateAlphaTexture(this ComPtr<IDWriteGlyphRunAnalysis> thisVtbl, TextureType textureType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> textureBounds, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string alphaValues, uint bufferSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

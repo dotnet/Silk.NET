@@ -30,7 +30,7 @@ namespace Silk.NET.WGL.Extensions.I3D
         public unsafe partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piValue);
 
         [NativeApi(EntryPoint = "wglSetDigitalVideoParametersI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int piValue);
+        public partial Silk.NET.Core.Bool32 SetDigitalVideoParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int piValue);
 
         public I3DDigitalVideoControl(INativeContext ctx)
             : base(ctx)

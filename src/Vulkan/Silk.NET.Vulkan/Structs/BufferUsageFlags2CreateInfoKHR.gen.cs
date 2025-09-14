@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferUsageFlags2CreateInfoKHR")]
+    [NativeName("AliasOf", "VkBufferUsageFlags2CreateInfo")]
     public unsafe partial struct BufferUsageFlags2CreateInfoKHR : IExtendsChain<BufferViewCreateInfo>, IExtendsChain<BufferCreateInfo>, IExtendsChain<PhysicalDeviceExternalBufferInfo>, IExtendsChain<PhysicalDeviceExternalBufferInfoKHR>, IExtendsChain<DescriptorBufferBindingInfoEXT>
     {
         public BufferUsageFlags2CreateInfoKHR
         (
-            StructureType? sType = StructureType.BufferUsageFlags2CreateInfoKhr,
+            StructureType? sType = StructureType.BufferUsageFlags2CreateInfo,
             void* pNext = null,
-            BufferUsageFlags2KHR? usage = null
+            BufferUsageFlags2? usage = null
         ) : this()
         {
             if (sType is not null)
@@ -53,15 +54,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkBufferUsageFlags2KHR")]
-        [NativeName("Type.Name", "VkBufferUsageFlags2KHR")]
+        [NativeName("Type", "VkBufferUsageFlags2")]
+        [NativeName("Type.Name", "VkBufferUsageFlags2")]
         [NativeName("Name", "usage")]
-        public BufferUsageFlags2KHR Usage;
+        public BufferUsageFlags2 Usage;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.BufferUsageFlags2CreateInfoKhr;
+            return SType = StructureType.BufferUsageFlags2CreateInfo;
         }
 
         /// <inheritdoc />

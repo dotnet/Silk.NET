@@ -240,7 +240,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -288,7 +288,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -312,7 +312,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -460,7 +460,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ResourceBarrier(uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResourceBarrier pBarriers)
+        public readonly void ResourceBarrier(uint NumBarriers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ResourceBarrier pBarriers)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -477,7 +477,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DiscardRegion pRegion)
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DiscardRegion pRegion)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -497,7 +497,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardResource(ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DiscardRegion pRegion)
+        public readonly void DiscardResource(ref ID3D12Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DiscardRegion pRegion)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -608,7 +608,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarker<T0>(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint Size) where T0 : unmanaged
+        public readonly void SetMarker<T0>(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
@@ -625,7 +625,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEvent<T0>(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint Size) where T0 : unmanaged
+        public readonly void BeginEvent<T0>(uint Metadata, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
@@ -649,7 +649,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments pInputArguments)
+        public readonly unsafe void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessInputStreamArguments* pInputArgumentsPtr = &pInputArguments)
@@ -659,7 +659,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+        public readonly unsafe void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -669,7 +669,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments pInputArguments)
+        public readonly unsafe void ProcessFrames(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -692,7 +692,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments pInputArguments)
+        public readonly unsafe void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -705,7 +705,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
+        public readonly unsafe void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -718,7 +718,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments pInputArguments)
+        public readonly void ProcessFrames(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -741,7 +741,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateMode pModes)
+        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateMode pModes)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -751,7 +751,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
+        public readonly unsafe void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WritebufferimmediateMode* pModes)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -761,7 +761,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WritebufferimmediateMode pModes)
+        public readonly void WriteBufferImmediate(uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateParameter pParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WritebufferimmediateMode pModes)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -781,7 +781,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments1 pInputArguments)
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments1 pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessInputStreamArguments1* pInputArgumentsPtr = &pInputArguments)
@@ -791,7 +791,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -801,7 +801,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments1 pInputArguments)
+        public readonly unsafe void ProcessFrames1(ID3D12VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments1 pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -824,7 +824,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments1 pInputArguments)
+        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments1 pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -837,7 +837,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
+        public readonly unsafe void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -850,7 +850,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments1 pInputArguments)
+        public readonly void ProcessFrames1(ref ID3D12VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments1 pInputArguments)
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -916,7 +916,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -980,7 +980,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void ProcessFrames<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -988,7 +988,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void ProcessFrames<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -996,7 +996,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ProcessFrames<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+        public readonly void ProcessFrames<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1012,7 +1012,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void ProcessFrames1<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamArguments* pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1020,7 +1020,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ProcessFrames1<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void ProcessFrames1<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamArguments1* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1028,7 +1028,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ProcessFrames1<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
+        public readonly void ProcessFrames1<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamArguments pOutputArguments, uint NumInputStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamArguments1 pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D12VideoProcessCommandList1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

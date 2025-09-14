@@ -24,7 +24,7 @@ namespace Silk.NET.WGL.Extensions.NV
         public unsafe partial nint CreateAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* phGpuList);
 
         [NativeApi(EntryPoint = "wglCreateAffinityDCNV", Convention = CallingConvention.Winapi)]
-        public partial nint CreateAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in nint phGpuList);
+        public partial nint CreateAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly nint phGpuList);
 
         [NativeApi(EntryPoint = "wglDeleteDCNV", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 DeleteDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hdc);
@@ -39,7 +39,7 @@ namespace Silk.NET.WGL.Extensions.NV
         public unsafe partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iDeviceIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GpuDevice* lpGpuDevice);
 
         [NativeApi(EntryPoint = "wglEnumGpuDevicesNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iDeviceIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GpuDevice lpGpuDevice);
+        public partial Silk.NET.Core.Bool32 EnumGpuDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iDeviceIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GpuDevice lpGpuDevice);
 
         [NativeApi(EntryPoint = "wglEnumGpusFromAffinityDCNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 EnumGpusFromAffinityDC([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hAffinityDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint iGpuIndex, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* hGpu);

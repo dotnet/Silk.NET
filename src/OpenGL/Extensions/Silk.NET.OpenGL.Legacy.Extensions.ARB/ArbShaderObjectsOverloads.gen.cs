@@ -406,7 +406,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ShaderSource(shaderObj, count, @string, in length.GetPinnableReference());
         }
 
-        public static unsafe void ShaderSource(this ArbShaderObjects thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
+        public static unsafe void ShaderSource(this ArbShaderObjects thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
         {
             // SpanOverloader
             thisApi.ShaderSource(shaderObj, count, in @string, in length.GetPinnableReference());

@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public unsafe partial void IglooInterface([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* @params);
 
         [NativeApi(EntryPoint = "glIglooInterfaceSGIX", Convention = CallingConvention.Winapi)]
-        public partial void IglooInterface<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 @params) where T0 : unmanaged;
+        public partial void IglooInterface<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 @params) where T0 : unmanaged;
 
         public SgixIglooInterface(INativeContext ctx)
             : base(ctx)

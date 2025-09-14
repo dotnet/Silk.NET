@@ -94,7 +94,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIFactory3> thisVtbl, Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIFactory3> thisVtbl, Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,7 +142,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIFactory3> thisVtbl, Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIFactory3> thisVtbl, Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<IDXGIFactory3> thisVtbl, ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+    public static int SetPrivateDataInterface(this ComPtr<IDXGIFactory3> thisVtbl, ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -604,7 +604,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -616,7 +616,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -631,7 +631,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -646,7 +646,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -664,7 +664,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -676,7 +676,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -691,7 +691,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -706,7 +706,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -724,7 +724,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -739,7 +739,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -757,7 +757,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -775,7 +775,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -856,7 +856,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -871,7 +871,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -889,7 +889,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -907,7 +907,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -928,7 +928,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -943,7 +943,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -961,7 +961,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -979,7 +979,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1000,7 +1000,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1018,7 +1018,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1039,7 +1039,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1060,7 +1060,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForHwnd(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1132,7 +1132,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1144,7 +1144,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1159,7 +1159,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1174,7 +1174,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1252,7 +1252,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1267,7 +1267,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1285,7 +1285,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1303,7 +1303,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1384,7 +1384,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1399,7 +1399,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1417,7 +1417,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1435,7 +1435,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1528,7 +1528,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1546,7 +1546,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1567,7 +1567,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1588,7 +1588,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForCoreWindow(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1860,7 +1860,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1872,7 +1872,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1887,7 +1887,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1902,7 +1902,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1980,7 +1980,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1995,7 +1995,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2013,7 +2013,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2031,7 +2031,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+    public static unsafe int CreateSwapChainForComposition(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2415,7 +2415,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2431,7 +2431,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2447,7 +2447,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2463,7 +2463,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2479,7 +2479,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2495,7 +2495,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2511,7 +2511,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2527,7 +2527,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2543,7 +2543,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForHwnd<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static int CreateSwapChainForHwnd<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2559,7 +2559,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2575,7 +2575,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2591,7 +2591,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2663,7 +2663,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2679,7 +2679,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2695,7 +2695,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainDesc1* pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2719,7 +2719,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2735,7 +2735,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2751,7 +2751,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2775,7 +2775,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForHwnd<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2791,7 +2791,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2807,7 +2807,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static int CreateSwapChainForHwnd<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, nint hWnd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2879,7 +2879,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2, TI3>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI2> pRestrictToOutput, ref ComPtr<TI3> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI3>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2, TI3>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI2> pRestrictToOutput, ref ComPtr<TI3> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI2> where TI3 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI3>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2895,7 +2895,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI2> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI2>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI2> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2911,7 +2911,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2927,7 +2927,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ComPtr<TI1> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3007,7 +3007,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3023,7 +3023,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3039,7 +3039,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3055,7 +3055,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3135,7 +3135,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3151,7 +3151,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3167,7 +3167,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3183,7 +3183,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ComPtr<TI0> pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3255,7 +3255,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForCoreWindow<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3271,7 +3271,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3287,7 +3287,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static int CreateSwapChainForCoreWindow<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3447,7 +3447,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForComposition<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
+    public static int CreateSwapChainForComposition<TI0, TI1, TI2>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref ComPtr<TI2> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3463,7 +3463,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
+    public static unsafe int CreateSwapChainForComposition<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI1> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3479,7 +3479,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForComposition<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForComposition<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3495,7 +3495,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForComposition<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ComPtr<TI0> pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3567,7 +3567,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForComposition<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
+    public static int CreateSwapChainForComposition<TI0, TI1>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref ComPtr<TI1> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3583,7 +3583,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSwapChainForComposition<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static unsafe int CreateSwapChainForComposition<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ComPtr<TI0> pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3599,7 +3599,7 @@ public unsafe static class DXGIFactory3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSwapChainForComposition<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
+    public static int CreateSwapChainForComposition<TI0>(this ComPtr<IDXGIFactory3> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<IDXGISwapChain1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

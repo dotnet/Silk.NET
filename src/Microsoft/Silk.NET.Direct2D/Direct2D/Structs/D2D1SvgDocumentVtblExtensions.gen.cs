@@ -181,7 +181,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindElementById(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ID2D1SvgElement** svgElement)
+    public static unsafe int FindElementById(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ID2D1SvgElement** svgElement)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,7 +193,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindElementById(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ref ID2D1SvgElement* svgElement)
+    public static unsafe int FindElementById(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ref ID2D1SvgElement* svgElement)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -350,7 +350,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ID2D1SvgPaint** paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ID2D1SvgPaint** paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -362,7 +362,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ref ID2D1SvgPaint* paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ref ID2D1SvgPaint* paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -402,7 +402,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id, ID2D1SvgPaint** paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id, ID2D1SvgPaint** paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -414,7 +414,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id, ref ID2D1SvgPaint* paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id, ref ID2D1SvgPaint* paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -429,7 +429,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ID2D1SvgPaint** paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ID2D1SvgPaint** paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -444,7 +444,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ref ID2D1SvgPaint* paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ref ID2D1SvgPaint* paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -462,7 +462,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgPaint** paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgPaint** paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -476,7 +476,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgPaint* paint)
+    public static unsafe int CreatePaint(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgPaint* paint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -514,7 +514,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeDashArray(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgLength dashes, uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
+    public static unsafe int CreateStrokeDashArray(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgLength dashes, uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -526,7 +526,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeDashArray(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgLength dashes, uint dashesCount, ref ID2D1SvgStrokeDashArray* strokeDashArray)
+    public static unsafe int CreateStrokeDashArray(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgLength dashes, uint dashesCount, ref ID2D1SvgStrokeDashArray* strokeDashArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -562,7 +562,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePointCollection(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ID2D1SvgPointCollection** pointCollection)
+    public static unsafe int CreatePointCollection(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ID2D1SvgPointCollection** pointCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -574,7 +574,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePointCollection(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ID2D1SvgPointCollection* pointCollection)
+    public static unsafe int CreatePointCollection(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ID2D1SvgPointCollection* pointCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -610,7 +610,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
+    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -622,7 +622,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -637,7 +637,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ID2D1SvgPathData** pathData)
+    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ID2D1SvgPathData** pathData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -649,7 +649,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -664,7 +664,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
+    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -679,7 +679,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+    public static unsafe int CreatePathData(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -770,7 +770,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindElementById<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+    public static int FindElementById<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -882,7 +882,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+    public static unsafe int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -914,7 +914,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+    public static unsafe int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -938,7 +938,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+    public static int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -962,7 +962,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+    public static int CreatePaint<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, SvgPaintType paintType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -994,7 +994,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStrokeDashArray<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgLength dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
+    public static int CreateStrokeDashArray<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgLength dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1026,7 +1026,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePointCollection<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
+    public static int CreatePointCollection<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1058,7 +1058,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+    public static unsafe int CreatePathData<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1082,7 +1082,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePathData<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+    public static unsafe int CreatePathData<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1106,7 +1106,7 @@ public unsafe static class D2D1SvgDocumentVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePathData<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+    public static int CreatePathData<TI0>(this ComPtr<ID2D1SvgDocument> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float segmentData, uint segmentDataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

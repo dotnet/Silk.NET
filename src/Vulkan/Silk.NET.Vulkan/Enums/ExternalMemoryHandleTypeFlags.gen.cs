@@ -57,6 +57,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ScreenBufferBitQnx\"")]
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
         ExternalMemoryHandleTypeScreenBufferBitQnx = 16384,
+        [Obsolete("Deprecated in favour of \"MtlbufferBitExt\"")]
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLBUFFER_BIT_EXT")]
+        ExternalMemoryHandleTypeMtlbufferBitExt = 65536,
+        [Obsolete("Deprecated in favour of \"MtltextureBitExt\"")]
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLTEXTURE_BIT_EXT")]
+        ExternalMemoryHandleTypeMtltextureBitExt = 131072,
+        [Obsolete("Deprecated in favour of \"MtlheapBitExt\"")]
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLHEAP_BIT_EXT")]
+        ExternalMemoryHandleTypeMtlheapBitExt = 262144,
         [Obsolete("Deprecated in favour of \"SciBufBitNV\"")]
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCI_BUF_BIT_NV")]
         ExternalMemoryHandleTypeSciBufBitNV = 8192,
@@ -88,6 +97,12 @@ namespace Silk.NET.Vulkan
         RdmaAddressBitNV = 4096,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
         ScreenBufferBitQnx = 16384,
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLBUFFER_BIT_EXT")]
+        MtlbufferBitExt = 65536,
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLTEXTURE_BIT_EXT")]
+        MtltextureBitExt = 131072,
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLHEAP_BIT_EXT")]
+        MtlheapBitExt = 262144,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCI_BUF_BIT_NV")]
         SciBufBitNV = 8192,
     }

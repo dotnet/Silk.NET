@@ -24,7 +24,7 @@ namespace Silk.NET.WGL.Extensions.NV
         public unsafe partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piAttribList);
 
         [NativeApi(EntryPoint = "wglBindVideoDeviceNV", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int piAttribList);
+        public partial Silk.NET.Core.Bool32 BindVideoDevice([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uVideoSlot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hVideoDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int piAttribList);
 
         [NativeApi(EntryPoint = "wglEnumerateVideoDevicesNV", Convention = CallingConvention.Winapi)]
         public unsafe partial int EnumerateVideoDevices([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDc, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* phDeviceList);

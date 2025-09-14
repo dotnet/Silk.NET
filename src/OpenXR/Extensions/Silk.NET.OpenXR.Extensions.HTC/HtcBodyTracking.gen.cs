@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.HTC
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateBodyTrackerHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBodyTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyTrackerCreateInfoHTC createInfo, [Count(Count = 0)] BodyTrackerHTC* bodyTracker);
+        public unsafe partial Result CreateBodyTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyTrackerCreateInfoHTC createInfo, [Count(Count = 0)] BodyTrackerHTC* bodyTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateBodyTrackerHTC", Convention = CallingConvention.Winapi)]
-        public partial Result CreateBodyTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyTrackerCreateInfoHTC createInfo, [Count(Count = 0)] ref BodyTrackerHTC bodyTracker);
+        public partial Result CreateBodyTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyTrackerCreateInfoHTC createInfo, [Count(Count = 0)] ref BodyTrackerHTC bodyTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyBodyTrackerHTC", Convention = CallingConvention.Winapi)]
@@ -58,11 +58,11 @@ namespace Silk.NET.OpenXR.Extensions.HTC
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateBodyJointsHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateBodyJointsHtc([Count(Count = 0)] BodyTrackerHTC bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyJointsLocateInfoHTC locateInfo, [Count(Count = 0)] BodyJointLocationsHTC* locations);
+        public unsafe partial Result LocateBodyJointsHtc([Count(Count = 0)] BodyTrackerHTC bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyJointsLocateInfoHTC locateInfo, [Count(Count = 0)] BodyJointLocationsHTC* locations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateBodyJointsHTC", Convention = CallingConvention.Winapi)]
-        public partial Result LocateBodyJointsHtc([Count(Count = 0)] BodyTrackerHTC bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BodyJointsLocateInfoHTC locateInfo, [Count(Count = 0)] ref BodyJointLocationsHTC locations);
+        public partial Result LocateBodyJointsHtc([Count(Count = 0)] BodyTrackerHTC bodyTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BodyJointsLocateInfoHTC locateInfo, [Count(Count = 0)] ref BodyJointLocationsHTC locations);
 
         public HtcBodyTracking(INativeContext ctx)
             : base(ctx)
