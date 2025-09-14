@@ -114,7 +114,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     {
         var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
 
-        if (_keyStates.IsDefined(keyName))
+        if (ButtonStates.IsDefined(keyName))
         {
             var isDown = key.Down != 0;
             var button = _keyStates[keyName];
@@ -258,6 +258,6 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
         private Button<KeyName> CreateButton(KeyName key, byte pressure) => new(key, pressure > 0, pressure * _pressureMultiplier);
 
-        public bool IsDefined(KeyName keyName) => _indices[(int)keyName] >= 0;
+        public static bool IsDefined(KeyName keyName) => _indices[(int)keyName] >= 0;
     }
 }
