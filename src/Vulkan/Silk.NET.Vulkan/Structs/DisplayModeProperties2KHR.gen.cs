@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayModeProperties2KHR")]
-    public unsafe partial struct DisplayModeProperties2KHR : IChainable
+    public unsafe partial struct DisplayModeProperties2KHR : IChainStart
     {
         public DisplayModeProperties2KHR
         (
@@ -69,6 +69,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DisplayModeProperties2KHR Chain(
+            out DisplayModeProperties2KHR capture)
+        {
+            capture = new DisplayModeProperties2KHR(StructureType.DisplayModeProperties2Khr);
+            return ref capture;
         }
     }
 }

@@ -99,6 +99,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MicromapStorageBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_MICROMAP_STORAGE_BIT_EXT")]
         BufferUsageMicromapStorageBitExt = 16777216,
+        [Obsolete("Deprecated in favour of \"TileMemoryBitQCom\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_TILE_MEMORY_BIT_QCOM")]
+        BufferUsageTileMemoryBitQCom = 134217728,
         [Obsolete("Deprecated in favour of \"ShaderDeviceAddressBit\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
         BufferUsageShaderDeviceAddressBit = 131072,
@@ -158,6 +161,8 @@ namespace Silk.NET.Vulkan
         MicromapBuildInputReadOnlyBitExt = 8388608,
         [NativeName("Name", "VK_BUFFER_USAGE_MICROMAP_STORAGE_BIT_EXT")]
         MicromapStorageBitExt = 16777216,
+        [NativeName("Name", "VK_BUFFER_USAGE_TILE_MEMORY_BIT_QCOM")]
+        TileMemoryBitQCom = 134217728,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
         ShaderDeviceAddressBit = 131072,
     }

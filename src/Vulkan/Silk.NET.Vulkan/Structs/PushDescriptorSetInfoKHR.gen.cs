@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPushDescriptorSetInfoKHR")]
+    [NativeName("AliasOf", "VkPushDescriptorSetInfo")]
     public unsafe partial struct PushDescriptorSetInfoKHR : IChainStart
     {
         public PushDescriptorSetInfoKHR
         (
-            StructureType? sType = StructureType.PushDescriptorSetInfoKhr,
+            StructureType? sType = StructureType.PushDescriptorSetInfo,
             void* pNext = null,
             ShaderStageFlags? stageFlags = null,
             PipelineLayout? layout = null,
@@ -105,7 +106,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PushDescriptorSetInfoKhr;
+            return SType = StructureType.PushDescriptorSetInfo;
         }
 
         /// <inheritdoc />
@@ -123,7 +124,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref PushDescriptorSetInfoKHR Chain(
             out PushDescriptorSetInfoKHR capture)
         {
-            capture = new PushDescriptorSetInfoKHR(StructureType.PushDescriptorSetInfoKhr);
+            capture = new PushDescriptorSetInfoKHR(StructureType.PushDescriptorSetInfo);
             return ref capture;
         }
     }

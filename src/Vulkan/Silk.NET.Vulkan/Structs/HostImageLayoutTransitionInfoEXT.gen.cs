@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHostImageLayoutTransitionInfoEXT")]
+    [NativeName("AliasOf", "VkHostImageLayoutTransitionInfo")]
     public unsafe partial struct HostImageLayoutTransitionInfoEXT : IChainable
     {
         public HostImageLayoutTransitionInfoEXT
         (
-            StructureType? sType = StructureType.HostImageLayoutTransitionInfoExt,
+            StructureType? sType = StructureType.HostImageLayoutTransitionInfo,
             void* pNext = null,
             Image? image = null,
             ImageLayout? oldLayout = null,
@@ -94,7 +95,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.HostImageLayoutTransitionInfoExt;
+            return SType = StructureType.HostImageLayoutTransitionInfo;
         }
 
         /// <inheritdoc />

@@ -206,6 +206,16 @@ namespace Silk.NET.OpenCL
         DX9ResourceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0B),
         [NativeName("Name", "CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
         InvalidGLSharegroupReferenceKhr = unchecked((int) 0xFFFFFFFFFFFFFC18),
+        [NativeName("Name", "CL_ECC_RECOVERED_IMG")]
+        EccRecoveredImg = 0x40DD,
+        [NativeName("Name", "CL_PAGE_FAULT_IMG")]
+        PageFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB99),
+        [NativeName("Name", "CL_SAFETY_FAULT_IMG")]
+        SafetyFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB98),
+        [NativeName("Name", "CL_GENERAL_FAULT_IMG")]
+        GeneralFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB97),
+        [NativeName("Name", "CL_ECC_UNRECOVERED_IMG")]
+        EccUnrecoveredImg = unchecked((int) 0xFFFFFFFFFFFFFB96),
         [NativeName("Name", "CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
         CommandTerminatedItselfWithFailureArm = unchecked((int) 0xFFFFFFFFFFFFFBAC),
         [NativeName("Name", "CL_INVALID_SEMAPHORE_KHR")]

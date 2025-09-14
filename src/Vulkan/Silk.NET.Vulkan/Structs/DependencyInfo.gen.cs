@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDependencyInfo")]
     [NativeName("Aliases", "VkDependencyInfoKHR")]
-    public unsafe partial struct DependencyInfo : IChainable
+    public unsafe partial struct DependencyInfo : IChainStart
     {
         public DependencyInfo
         (
@@ -136,6 +136,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref DependencyInfo Chain(
+            out DependencyInfo capture)
+        {
+            capture = new DependencyInfo(StructureType.DependencyInfo);
+            return ref capture;
         }
     }
 }

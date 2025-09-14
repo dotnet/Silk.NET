@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtSwapchainMaintenance1Overloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result ReleaseSwapchainImages(this ExtSwapchainMaintenance1 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReleaseSwapchainImagesInfoEXT> pReleaseInfo)
+        public static unsafe Result ReleaseSwapchainImages(this ExtSwapchainMaintenance1 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReleaseSwapchainImagesInfoKHR> pReleaseInfo)
         {
             // SpanOverloader
             return thisApi.ReleaseSwapchainImages(device, in pReleaseInfo.GetPinnableReference());

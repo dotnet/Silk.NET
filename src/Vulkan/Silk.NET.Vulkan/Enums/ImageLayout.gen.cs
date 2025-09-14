@@ -72,6 +72,12 @@ namespace Silk.NET.Vulkan
         AttachmentOptimalKhr = 1000314001,
         [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT")]
         AttachmentFeedbackLoopOptimalExt = 1000339000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_TENSOR_ALIASING_ARM")]
+        TensorAliasingArm = 1000460000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_QUANTIZATION_MAP_KHR")]
+        VideoEncodeQuantizationMapKhr = 1000553000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT")]
+        ZeroInitializedExt = 1000620000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")]
         DepthReadOnlyStencilAttachmentOptimal = 1000117000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")]
@@ -88,5 +94,7 @@ namespace Silk.NET.Vulkan
         ReadOnlyOptimal = 1000314000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL")]
         AttachmentOptimal = 1000314001,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ")]
+        RenderingLocalRead = 1000232000,
     }
 }

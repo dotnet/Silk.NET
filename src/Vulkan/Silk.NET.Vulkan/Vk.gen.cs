@@ -20,6 +20,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_ATTACHMENT_UNUSED")]
         public const uint AttachmentUnused = unchecked((uint) (~0U));
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_COMPRESSED_TRIANGLE_FORMAT_DGF1_BYTE_ALIGNMENT_AMDX")]
+        public const uint CompressedTriangleFormatDgf1ByteAlignmentAmdx = unchecked((uint) 128);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_COMPRESSED_TRIANGLE_FORMAT_DGF1_BYTE_STRIDE_AMDX")]
+        public const uint CompressedTriangleFormatDgf1ByteStrideAmdx = unchecked((uint) 128);
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_FALSE")]
         public const uint False = unchecked((uint) 0);
         [NativeName("Type", "")]
@@ -29,44 +35,32 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_LUID_SIZE")]
         public const uint LuidSize = unchecked((uint) 8);
         [NativeName("Type", "")]
-        [NativeName("Name", "VK_LUID_SIZE_KHR")]
-        public const uint LuidSizeKhr = unchecked((uint) 8);
-        [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DESCRIPTION_SIZE")]
         public const uint MaxDescriptionSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DEVICE_GROUP_SIZE")]
         public const uint MaxDeviceGroupSize = unchecked((uint) 32);
         [NativeName("Type", "")]
-        [NativeName("Name", "VK_MAX_DEVICE_GROUP_SIZE_KHR")]
-        public const uint MaxDeviceGroupSizeKhr = unchecked((uint) 32);
-        [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DRIVER_INFO_SIZE")]
         public const uint MaxDriverInfoSize = unchecked((uint) 256);
-        [NativeName("Type", "")]
-        [NativeName("Name", "VK_MAX_DRIVER_INFO_SIZE_KHR")]
-        public const uint MaxDriverInfoSizeKhr = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DRIVER_NAME_SIZE")]
         public const uint MaxDriverNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
-        [NativeName("Name", "VK_MAX_DRIVER_NAME_SIZE_KHR")]
-        public const uint MaxDriverNameSizeKhr = unchecked((uint) 256);
-        [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_EXTENSION_NAME_SIZE")]
         public const uint MaxExtensionNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
-        [NativeName("Name", "VK_MAX_GLOBAL_PRIORITY_SIZE_EXT")]
-        public const uint MaxGlobalPrioritySizeExt = unchecked((uint) 16);
-        [NativeName("Type", "")]
-        [NativeName("Name", "VK_MAX_GLOBAL_PRIORITY_SIZE_KHR")]
-        public const uint MaxGlobalPrioritySizeKhr = unchecked((uint) 16);
+        [NativeName("Name", "VK_MAX_GLOBAL_PRIORITY_SIZE")]
+        public const uint MaxGlobalPrioritySize = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_MEMORY_HEAPS")]
         public const uint MaxMemoryHeaps = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_MEMORY_TYPES")]
         public const uint MaxMemoryTypes = unchecked((uint) 32);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_PHYSICAL_DEVICE_DATA_GRAPH_OPERATION_SET_NAME_SIZE_ARM")]
+        public const uint MaxPhysicalDeviceDataGraphOperationSetNameSizeArm = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_PHYSICAL_DEVICE_NAME_SIZE")]
         public const uint MaxPhysicalDeviceNameSize = unchecked((uint) 256);
@@ -80,11 +74,14 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_MAX_VIDEO_AV1_REFERENCES_PER_FRAME_KHR")]
         public const uint MaxVideoAV1ReferencesPerFrameKhr = unchecked((uint) 7);
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_VIDEO_VP9_REFERENCES_PER_FRAME_KHR")]
+        public const uint MaxVideoVP9ReferencesPerFrameKhr = unchecked((uint) 3);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_PARTITIONED_ACCELERATION_STRUCTURE_PARTITION_INDEX_GLOBAL_NV")]
+        public const uint PartitionedAccelerationStructurePartitionIndexGlobalNV = unchecked((uint) (~0U));
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL")]
         public const uint QueueFamilyExternal = unchecked((uint) (~1U));
-        [NativeName("Type", "")]
-        [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL_KHR")]
-        public const uint QueueFamilyExternalKhr = unchecked((uint) (~1U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_FOREIGN_EXT")]
         public const uint QueueFamilyForeignExt = unchecked((uint) (~2U));
@@ -107,9 +104,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_SHADER_UNUSED_KHR")]
         public const uint ShaderUnusedKhr = unchecked((uint) (~0U));
         [NativeName("Type", "")]
-        [NativeName("Name", "VK_SHADER_UNUSED_NV")]
-        public const uint ShaderUnusedNV = unchecked((uint) (~0U));
-        [NativeName("Type", "")]
         [NativeName("Name", "VK_SUBPASS_EXTERNAL")]
         public const uint SubpassExternal = unchecked((uint) (~0U));
         [NativeName("Type", "")]
@@ -121,6 +115,186 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "")]
         [NativeName("Name", "VK_WHOLE_SIZE")]
         public const ulong WholeSize = unchecked((ulong) (~0ul));
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BindDescriptorSetsInfo* pBindDescriptorSetsInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets2", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BindDescriptorSetsInfo pBindDescriptorSetsInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer2", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindIndexBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] IndexType indexType);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushConstants2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushConstantsInfo* pPushConstantsInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushConstants2", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushConstantsInfo pPushConstantsInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSet", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSet", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WriteDescriptorSet pDescriptorWrites);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSet2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPushDescriptorSet2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushDescriptorSetInfo* pPushDescriptorSetInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSet2", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushDescriptorSet2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushDescriptorSetInfo pPushDescriptorSetInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPushDescriptorSetWithTemplate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplate", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushDescriptorSetWithTemplate<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplate2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplate2", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushDescriptorSetWithTemplateInfo pPushDescriptorSetWithTemplateInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetLineStipple", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetRenderingAttachmentLocations", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetRenderingAttachmentLocation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAttachmentLocationInfo* pLocationInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetRenderingAttachmentLocations", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetRenderingAttachmentLocation([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAttachmentLocationInfo pLocationInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndices", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndices", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingInputAttachmentIndexInfo pInputAttachmentIndexInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCopyImageToImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CopyImageToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyImageToImageInfo* pCopyImageToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCopyImageToImage", Convention = CallingConvention.Winapi)]
+        public partial Result CopyImageToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyImageToImageInfo pCopyImageToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCopyImageToMemory", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CopyImageToMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyImageToMemoryInfo* pCopyImageToMemoryInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCopyImageToMemory", Convention = CallingConvention.Winapi)]
+        public partial Result CopyImageToMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyImageToMemoryInfo pCopyImageToMemoryInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCopyMemoryToImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CopyMemoryToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyMemoryToImageInfo* pCopyMemoryToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCopyMemoryToImage", Convention = CallingConvention.Winapi)]
+        public partial Result CopyMemoryToImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMemoryToImageInfo pCopyMemoryToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceImageSubresourceInfo pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayout", Convention = CallingConvention.Winapi)]
+        public partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceImageSubresourceInfo pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2 pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2", Convention = CallingConvention.Winapi)]
+        public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2 pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkMapMemory2", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryMapInfo* pMemoryMapInfo, [Count(Count = 0)] void** ppData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkMapMemory2", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryMapInfo* pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkMapMemory2", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryMapInfo pMemoryMapInfo, [Count(Count = 0)] void** ppData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkMapMemory2", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryMapInfo pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkTransitionImageLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result TransitionImageLayout([Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] HostImageLayoutTransitionInfo* pTransitions);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkTransitionImageLayout", Convention = CallingConvention.Winapi)]
+        public partial Result TransitionImageLayout([Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HostImageLayoutTransitionInfo pTransitions);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkUnmapMemory2", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryUnmapInfo* pMemoryUnmapInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkUnmapMemory2", Convention = CallingConvention.Winapi)]
+        public partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryUnmapInfo pMemoryUnmapInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginRenderPass2", Convention = CallingConvention.Winapi)]
@@ -2837,6 +3011,20 @@ namespace Silk.NET.Vulkan
         public partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Fence pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be documented.</summary>
+        public unsafe void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
+        {
+            // ImplicitCountSpanOverloader
+            CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, (uint) pDescriptorWrites.Length, in pDescriptorWrites.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result TransitionImageLayout([Count(Count = 0)] Device device, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HostImageLayoutTransitionInfo> pTransitions)
+        {
+            // ImplicitCountSpanOverloader
+            return TransitionImageLayout(device, (uint) pTransitions.Length, in pTransitions.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
         {
             // ImplicitCountSpanOverloader
@@ -3546,6 +3734,58 @@ namespace Silk.NET.Vulkan
         {
             // ImplicitCountSpanOverloader
             return WaitForFences(device, (uint) pFences.Length, in pFences.GetPinnableReference(), waitAll, timeout);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageSubresourceLayout(device, pInfo, out SubresourceLayout2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceImageSubresourceInfo pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageSubresourceLayout(device, in pInfo, out SubresourceLayout2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSubresourceLayout2(device, image, pSubresource, out SubresourceLayout2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2 pSubresource)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSubresourceLayout2(device, image, in pSubresource, out SubresourceLayout2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderingAreaGranularity(device, pRenderingAreaInfo, out Extent2D silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAreaInfo pRenderingAreaInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderingAreaGranularity(device, in pRenderingAreaInfo, out Extent2D silkRet);
+            return silkRet;
         }
 
         /// <summary>To be documented.</summary>

@@ -31,6 +31,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DecodeAV1BitKhr\"")]
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR")]
         VideoCodecOperationDecodeAV1BitKhr = 4,
+        [Obsolete("Deprecated in favour of \"EncodeAV1BitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
+        VideoCodecOperationEncodeAV1BitKhr = 262144,
+        [Obsolete("Deprecated in favour of \"DecodeVP9BitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_VP9_BIT_KHR")]
+        VideoCodecOperationDecodeVP9BitKhr = 8,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_NONE_KHR")]
         NoneKhr = 0,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR")]
@@ -43,5 +49,9 @@ namespace Silk.NET.Vulkan
         DecodeH265BitKhr = 2,
         [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR")]
         DecodeAV1BitKhr = 4,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
+        EncodeAV1BitKhr = 262144,
+        [NativeName("Name", "VK_VIDEO_CODEC_OPERATION_DECODE_VP9_BIT_KHR")]
+        DecodeVP9BitKhr = 8,
     }
 }

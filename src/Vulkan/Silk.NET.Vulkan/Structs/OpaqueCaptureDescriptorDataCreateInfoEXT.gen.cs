@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkOpaqueCaptureDescriptorDataCreateInfoEXT")]
-    public unsafe partial struct OpaqueCaptureDescriptorDataCreateInfoEXT : IExtendsChain<BufferCreateInfo>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<SamplerCreateInfo>, IExtendsChain<AccelerationStructureCreateInfoKHR>, IExtendsChain<AccelerationStructureCreateInfoNV>
+    public unsafe partial struct OpaqueCaptureDescriptorDataCreateInfoEXT : IExtendsChain<BufferCreateInfo>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<SamplerCreateInfo>, IExtendsChain<AccelerationStructureCreateInfoKHR>, IExtendsChain<AccelerationStructureCreateInfoNV>, IExtendsChain<TensorCreateInfoARM>, IExtendsChain<TensorViewCreateInfoARM>
     {
         public OpaqueCaptureDescriptorDataCreateInfoEXT
         (

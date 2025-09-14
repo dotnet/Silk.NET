@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceHostImageCopyPropertiesEXT")]
+    [NativeName("AliasOf", "VkPhysicalDeviceHostImageCopyProperties")]
     public unsafe partial struct PhysicalDeviceHostImageCopyPropertiesEXT : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceHostImageCopyPropertiesEXT
         (
-            StructureType? sType = StructureType.PhysicalDeviceHostImageCopyPropertiesExt,
+            StructureType? sType = StructureType.PhysicalDeviceHostImageCopyProperties,
             void* pNext = null,
             uint? copySrcLayoutCount = null,
             ImageLayout* pCopySrcLayouts = null,
@@ -110,7 +111,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceHostImageCopyPropertiesExt;
+            return SType = StructureType.PhysicalDeviceHostImageCopyProperties;
         }
 
         /// <inheritdoc />

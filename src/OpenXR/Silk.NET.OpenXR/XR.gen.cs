@@ -29,8 +29,14 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_API_LAYER_NEXT_INFO_STRUCT_VERSION")]
         public const uint ApiLayerNextInfoStructVersion = unchecked((uint) 1);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_BODY_JOINT_COUNT_BD")]
+        public const uint BodyJointCountBD = unchecked((uint) 24);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_BODY_JOINT_COUNT_HTC")]
         public const uint BodyJointCountHtc = unchecked((uint) 26);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_BODY_JOINT_WITHOUT_ARM_COUNT_BD")]
+        public const uint BodyJointWithoutArmCountBD = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_CURRENT_LOADER_API_LAYER_VERSION")]
         public const uint CurrentLoaderApiLayerVersion = unchecked((uint) 1);
@@ -131,8 +137,17 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_NULL_RENDER_MODEL_KEY_FB")]
         public const uint NullRenderModelKeyFB = unchecked((uint) 0);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_SPATIAL_BUFFER_ID_EXT")]
+        public const uint NullSpatialBufferIDExt = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_SPATIAL_ENTITY_ID_EXT")]
+        public const uint NullSpatialEntityIDExt = unchecked((uint) 0);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_NULL_SYSTEM_ID")]
         public const uint NullSystemID = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_TRACKABLE_ANDROID")]
+        public const uint NullTrackableAndroid = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_RUNTIME_INFO_STRUCT_VERSION")]
         public const uint RuntimeInfoStructVersion = unchecked((uint) 1);

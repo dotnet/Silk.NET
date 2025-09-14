@@ -1456,7 +1456,7 @@ namespace Silk.NET.OpenGL
             thisApi.NamedBufferData(buffer, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void NamedBufferData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
+        public static unsafe void NamedBufferData<T0>(this GL thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferData(buffer, size, in data.GetPinnableReference(), usage);

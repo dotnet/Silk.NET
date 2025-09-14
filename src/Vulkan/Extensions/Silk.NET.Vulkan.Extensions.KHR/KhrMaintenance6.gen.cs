@@ -30,35 +30,35 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBindDescriptorSets2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BindDescriptorSetsInfoKHR* pBindDescriptorSetsInfo);
+        public unsafe partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BindDescriptorSetsInfo* pBindDescriptorSetsInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBindDescriptorSets2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BindDescriptorSetsInfoKHR pBindDescriptorSetsInfo);
+        public partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BindDescriptorSetsInfo pBindDescriptorSetsInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushConstants2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushConstantsInfoKHR* pPushConstantsInfo);
+        public unsafe partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushConstantsInfo* pPushConstantsInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushConstants2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushConstantsInfoKHR pPushConstantsInfo);
+        public partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushConstantsInfo pPushConstantsInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSet2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdPushDescriptorSet2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushDescriptorSetInfoKHR* pPushDescriptorSetInfo);
+        public unsafe partial void CmdPushDescriptorSet2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushDescriptorSetInfo* pPushDescriptorSetInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSet2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdPushDescriptorSet2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushDescriptorSetInfoKHR pPushDescriptorSetInfo);
+        public partial void CmdPushDescriptorSet2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushDescriptorSetInfo pPushDescriptorSetInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplate2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushDescriptorSetWithTemplateInfoKHR* pPushDescriptorSetWithTemplateInfo);
+        public unsafe partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplate2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushDescriptorSetWithTemplateInfoKHR pPushDescriptorSetWithTemplateInfo);
+        public partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PushDescriptorSetWithTemplateInfo pPushDescriptorSetWithTemplateInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDescriptorBufferOffsets2EXT", Convention = CallingConvention.Winapi)]

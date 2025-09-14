@@ -17,51 +17,51 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtHostImageCopyOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result CopyImageToImage(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToImageInfoEXT> pCopyImageToImageInfo)
+        public static unsafe Result CopyImageToImage(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToImageInfo> pCopyImageToImageInfo)
         {
             // SpanOverloader
             return thisApi.CopyImageToImage(device, in pCopyImageToImageInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CopyImageToMemory(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToMemoryInfoEXT> pCopyImageToMemoryInfo)
+        public static unsafe Result CopyImageToMemory(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToMemoryInfo> pCopyImageToMemoryInfo)
         {
             // SpanOverloader
             return thisApi.CopyImageToMemory(device, in pCopyImageToMemoryInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CopyMemoryToImage(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyMemoryToImageInfoEXT> pCopyMemoryToImageInfo)
+        public static unsafe Result CopyMemoryToImage(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyMemoryToImageInfo> pCopyMemoryToImageInfo)
         {
             // SpanOverloader
             return thisApi.CopyMemoryToImage(device, in pCopyMemoryToImageInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public static unsafe void GetImageSubresourceLayout2(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2KHR* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2KHR> pLayout)
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetImageSubresourceLayout2(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
         {
             // SpanOverloader
             thisApi.GetImageSubresourceLayout2(device, image, pSubresource, out pLayout.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetImageSubresourceLayout2(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2KHR> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout)
+        public static unsafe void GetImageSubresourceLayout2(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout)
         {
             // SpanOverloader
             thisApi.GetImageSubresourceLayout2(device, image, in pSubresource.GetPinnableReference(), pLayout);
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public static unsafe void GetImageSubresourceLayout2(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2KHR> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2KHR> pLayout)
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetImageSubresourceLayout2(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
         {
             // SpanOverloader
             thisApi.GetImageSubresourceLayout2(device, image, in pSubresource.GetPinnableReference(), out pLayout.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result TransitionImageLayout(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HostImageLayoutTransitionInfoEXT> pTransitions)
+        public static unsafe Result TransitionImageLayout(this ExtHostImageCopy thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HostImageLayoutTransitionInfo> pTransitions)
         {
             // SpanOverloader
             return thisApi.TransitionImageLayout(device, transitionCount, in pTransitions.GetPinnableReference());

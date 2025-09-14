@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingAttachmentInfo")]
     [NativeName("Aliases", "VkRenderingAttachmentInfoKHR")]
-    public unsafe partial struct RenderingAttachmentInfo : IChainable
+    public unsafe partial struct RenderingAttachmentInfo : IChainStart
     {
         public RenderingAttachmentInfo
         (
@@ -147,6 +147,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref RenderingAttachmentInfo Chain(
+            out RenderingAttachmentInfo capture)
+        {
+            capture = new RenderingAttachmentInfo(StructureType.RenderingAttachmentInfo);
+            return ref capture;
         }
     }
 }

@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfacePresentModeCompatibilityEXT")]
+    [NativeName("AliasOf", "VkSurfacePresentModeCompatibilityKHR")]
     public unsafe partial struct SurfacePresentModeCompatibilityEXT : IExtendsChain<SurfaceCapabilities2KHR>
     {
         public SurfacePresentModeCompatibilityEXT
         (
-            StructureType? sType = StructureType.SurfacePresentModeCompatibilityExt,
+            StructureType? sType = StructureType.SurfacePresentModeCompatibilityKhr,
             void* pNext = null,
             uint? presentModeCount = null,
             PresentModeKHR* pPresentModes = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SurfacePresentModeCompatibilityExt;
+            return SType = StructureType.SurfacePresentModeCompatibilityKhr;
         }
 
         /// <inheritdoc />

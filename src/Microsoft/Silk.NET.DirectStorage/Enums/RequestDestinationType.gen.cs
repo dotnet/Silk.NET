@@ -27,6 +27,9 @@ namespace Silk.NET.DirectStorage
         [Obsolete("Deprecated in favour of \"Tiles\"")]
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_TILES")]
         RequestDestinationTiles = 0x4,
+        [Obsolete("Deprecated in favour of \"MultipleSubresourcesRange\"")]
+        [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_MULTIPLE_SUBRESOURCES_RANGE")]
+        RequestDestinationMultipleSubresourcesRange = 0x5,
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_MEMORY")]
         Memory = 0x0,
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_BUFFER")]
@@ -37,5 +40,7 @@ namespace Silk.NET.DirectStorage
         MultipleSubresources = 0x3,
         [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_TILES")]
         Tiles = 0x4,
+        [NativeName("Name", "DSTORAGE_REQUEST_DESTINATION_MULTIPLE_SUBRESOURCES_RANGE")]
+        MultipleSubresourcesRange = 0x5,
     }
 }

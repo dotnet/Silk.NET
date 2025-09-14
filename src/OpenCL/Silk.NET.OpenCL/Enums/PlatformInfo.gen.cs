@@ -44,5 +44,7 @@ namespace Silk.NET.OpenCL
         ExternalMemoryImportHandleTypesKhr = 0x2044,
         [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
         CommandBufferCapabilitiesKhr = 0x908,
+        [NativeName("Name", "CL_PLATFORM_SVM_TYPE_CAPABILITIES_KHR")]
+        SvmTypeCapabilitiesKhr = 0x909,
     }
 }

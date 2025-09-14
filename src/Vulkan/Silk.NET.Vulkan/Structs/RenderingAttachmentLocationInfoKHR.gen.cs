@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingAttachmentLocationInfoKHR")]
+    [NativeName("AliasOf", "VkRenderingAttachmentLocationInfo")]
     public unsafe partial struct RenderingAttachmentLocationInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<CommandBufferInheritanceInfo>
     {
         public RenderingAttachmentLocationInfoKHR
         (
-            StructureType? sType = StructureType.RenderingAttachmentLocationInfoKhr,
+            StructureType? sType = StructureType.RenderingAttachmentLocationInfo,
             void* pNext = null,
             uint? colorAttachmentCount = null,
             uint* pColorAttachmentLocations = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.RenderingAttachmentLocationInfoKhr;
+            return SType = StructureType.RenderingAttachmentLocationInfo;
         }
 
         /// <inheritdoc />

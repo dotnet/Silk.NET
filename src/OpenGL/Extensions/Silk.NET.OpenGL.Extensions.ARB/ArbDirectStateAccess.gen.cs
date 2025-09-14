@@ -684,10 +684,10 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedBufferData", Convention = CallingConvention.Winapi)]
-        public unsafe partial void NamedBufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferObjectUsage usage);
+        public unsafe partial void NamedBufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage);
 
         [NativeApi(EntryPoint = "glNamedBufferData", Convention = CallingConvention.Winapi)]
-        public partial void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged;
+        public partial void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedBufferStorage", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedBufferStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint flags);
@@ -1367,7 +1367,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             NamedBufferData(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
         }
 
-        public unsafe void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
+        public unsafe void NamedBufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             NamedBufferData(buffer, (nuint) ((data.Length) * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);

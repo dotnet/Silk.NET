@@ -190,5 +190,7 @@ namespace Silk.NET.Vulkan
         DepthBiasEnable = 1000377002,
         [NativeName("Name", "VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE")]
         PrimitiveRestartEnable = 1000377004,
+        [NativeName("Name", "VK_DYNAMIC_STATE_LINE_STIPPLE")]
+        LineStipple = 1000259000,
     }
 }

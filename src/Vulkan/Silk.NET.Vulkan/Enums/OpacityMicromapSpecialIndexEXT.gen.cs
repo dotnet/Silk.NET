@@ -12,25 +12,30 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkOpacityMicromapSpecialIndexEXT")]
     public enum OpacityMicromapSpecialIndexEXT : int
     {
-        [Obsolete("Deprecated in favour of \"TransparentExt\"")]
+        [Obsolete("Deprecated in favour of \"FullyTransparentExt\"")]
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_EXT")]
         OpacityMicromapSpecialIndexFullyTransparentExt = unchecked((int) -1),
-        [Obsolete("Deprecated in favour of \"OpaqueExt\"")]
+        [Obsolete("Deprecated in favour of \"FullyOpaqueExt\"")]
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_EXT")]
         OpacityMicromapSpecialIndexFullyOpaqueExt = unchecked((int) -2),
-        [Obsolete("Deprecated in favour of \"UnknownTransparentExt\"")]
+        [Obsolete("Deprecated in favour of \"FullyUnknownTransparentExt\"")]
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_EXT")]
         OpacityMicromapSpecialIndexFullyUnknownTransparentExt = unchecked((int) -3),
-        [Obsolete("Deprecated in favour of \"UnknownOpaqueExt\"")]
+        [Obsolete("Deprecated in favour of \"FullyUnknownOpaqueExt\"")]
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT")]
         OpacityMicromapSpecialIndexFullyUnknownOpaqueExt = unchecked((int) -4),
+        [Obsolete("Deprecated in favour of \"ClusterGeometryDisableOpacityMicromapNV\"")]
+        [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_CLUSTER_GEOMETRY_DISABLE_OPACITY_MICROMAP_NV")]
+        OpacityMicromapSpecialIndexClusterGeometryDisableOpacityMicromapNV = unchecked((int) -5),
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_EXT")]
-        TransparentExt = unchecked((int) -1),
+        FullyTransparentExt = unchecked((int) -1),
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_EXT")]
-        OpaqueExt = unchecked((int) -2),
+        FullyOpaqueExt = unchecked((int) -2),
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_EXT")]
-        UnknownTransparentExt = unchecked((int) -3),
+        FullyUnknownTransparentExt = unchecked((int) -3),
         [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT")]
-        UnknownOpaqueExt = unchecked((int) -4),
+        FullyUnknownOpaqueExt = unchecked((int) -4),
+        [NativeName("Name", "VK_OPACITY_MICROMAP_SPECIAL_INDEX_CLUSTER_GEOMETRY_DISABLE_OPACITY_MICROMAP_NV")]
+        ClusterGeometryDisableOpacityMicromapNV = unchecked((int) -5),
     }
 }
