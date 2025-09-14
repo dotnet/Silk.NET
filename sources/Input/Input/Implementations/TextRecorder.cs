@@ -20,7 +20,10 @@ public sealed class TextRecorder
     /// <summary>
     /// Constructor
     /// </summary>
-    public TextRecorder(ICharacterConverter converter) => _converter = converter;
+    public TextRecorder(ICharacterConverter? converter)
+    {
+        _converter = converter ?? new DummyCharConverter();
+    }
 
     /// <summary>
     /// The number of characters currently in the buffer.

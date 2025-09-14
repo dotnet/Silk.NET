@@ -137,7 +137,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
                                && ((stateChanged && isDown) || (!stateChanged && key.Repeat != 0));
             if (shouldRecord)
             {
-                _textRecorder ??= new TextRecorder();
+                _textRecorder ??= new TextRecorder(null);
                 _textRecorder.AddKeyStroke(keyName, this);
             }
         }
@@ -160,7 +160,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
                                     "one we're recording text for.");
         }
 
-        _textRecorder ??= new TextRecorder();
+        _textRecorder ??= new TextRecorder(null);
 
         if (evt.Length == 0)
         {
@@ -188,7 +188,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
 
         var candidate = new Ptr<sbyte>(evt.Candidates[evt.SelectedCandidate]);
         var str = candidate.ReadToString();
-        _textRecorder ??= new TextRecorder();
+        _textRecorder ??= new TextRecorder(null);
         _textRecorder.InsertText(str);
     }
 

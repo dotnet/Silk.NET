@@ -15,10 +15,8 @@ public interface ICharacterConverter
 }
 
 
-public class DummyCharConverter: ICharacterConverter
+internal class DummyCharConverter: ICharacterConverter
 {
-    private static CultureInfo Culture => CultureInfo.CurrentUICulture;
-    private static int Layout => Culture.KeyboardLayoutId;
     public bool TryConvert(KeyName key, KeyModifiers modifiers, [NotNullWhen(true)] out char? c)
     {
         if (!key.IsChar())
@@ -27,13 +25,25 @@ public class DummyCharConverter: ICharacterConverter
             return false;
         }
 
-        char resultBeforeProcessing = '\0';
-        bool isLetter = false;
         var isShifted = modifiers.IsShift();
-        switch (key)
+        const char a = 'a';
+        //const char A = 'A';
+        const int aCode = (int)KeyName.A;
+        const int max = (int)KeyName.Z - (int)KeyName.A;
+        var diff = (int)key - aCode;
+        if (diff is >= 0 and <= max)
         {
-            case KeyName.A:
+            var baseChar = a;
+            c = (char)(baseChar + diff);
+            if (isShifted)
+            {
+                c = CultureInfo.CurrentCulture.TextInfo.ToUpper(c.Value);
+            }
 
+            return true;
         }
+
+        c = null;
+        return false;
     }
 }
