@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-        <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Bcl.HashCode" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' != 'net5.0'">

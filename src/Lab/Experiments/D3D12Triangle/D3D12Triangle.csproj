@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ultz.Extensions.Logging" Version="2.0.1" />
+        <PackageReference Include="Ultz.Extensions.Logging" Version="4.1.4" />
     </ItemGroup>
 
 </Project>
