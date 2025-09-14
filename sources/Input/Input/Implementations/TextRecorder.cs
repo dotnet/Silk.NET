@@ -13,7 +13,7 @@ namespace Silk.NET.Input;
 /// instead, but this requires the use of the SDL windowing API, which may not be available in all contexts.
 /// This class is a work in progress, and not yet sufficient for full text-editor support.
 /// </summary>
-public sealed class TextRecorder
+internal sealed class TextRecorder
 {
     private readonly ICharacterConverter _converter;
 
@@ -60,10 +60,9 @@ public sealed class TextRecorder
         var activeModifiers = state.Modifiers;
         if (name.IsChar())
         {
-            if (_selectionLength > 0)
+            if (activeModifiers.IsAlt() || activeModifiers.IsControl())
             {
-                // overwrite current selected text
-                RemoveSelectedTextAndClearSelection();
+                return;
             }
 
             // insert the appropriate character
@@ -176,7 +175,6 @@ public sealed class TextRecorder
         {
             _sb.Insert(_cursorStart, str);
             SetCursorPositionRaw(_cursorStart + str.Length);
-            ;
         }
     }
 
