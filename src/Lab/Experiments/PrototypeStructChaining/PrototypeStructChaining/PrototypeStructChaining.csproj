@@ -11,11 +11,11 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
         <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
-        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.9" />
         <ProjectReference Include="..\..\..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
-        <PackageReference Include="System.Memory" Version="4.5.5" />
-        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
-        <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+        <PackageReference Include="System.Memory" Version="4.6.3" />
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+        <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
     </ItemGroup>
 
     <ItemGroup>
