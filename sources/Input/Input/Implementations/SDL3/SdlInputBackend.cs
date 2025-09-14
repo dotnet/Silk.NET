@@ -501,7 +501,10 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     {
         for (var i = 0; i < devices.Count; i++)
         {
-            devices[i].RefreshIdFromBackend();
+            if (devices[i] is IOrderedDevice d)
+            {
+                d.RefreshSdlId();
+            }
         }
     }
 

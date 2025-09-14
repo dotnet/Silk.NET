@@ -9,7 +9,7 @@ namespace Silk.NET.Input.SDL3;
 /// <summary>
 /// provides the IGamepad implementation for a joystick
 /// </summary>
-internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGamepad>, ISdlJoystick
+internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGamepad>, ISdlJoystick, IJoystick
 {
     private readonly GamepadHandle _gamepadHandle;
 
@@ -362,4 +362,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     // we can safely use an integer key with a bit shift like this.
     private const int _buttonShift = 0;
     private const int _axisShift = 8;
+
+    JoystickState IJoystick.State => Joystick.State;
+    ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => GamepadState.Buttons;
 }
