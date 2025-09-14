@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Silk.NET.Input.KeyHandling;
@@ -33,19 +34,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     private SdlKeyboard(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
-        Span<Button<KeyName>> keyStates = stackalloc Button<KeyName>[(int)KeyName.EndCall + 1];
-        int keyCount = 0;
-        for (var i = 0; i < 512; i++)
-        {
-            var keyName = (KeyName)i;
-            if (Enum.IsDefined(keyName))
-            {
-                keyStates[keyCount++] = new Button<KeyName>((KeyName)i, false, 0f);
-            }
-        }
-
-        _keyStates = keyStates[..keyCount].ToArray();
         _modState = NativeBackend.GetModState();
+        _keyStates = new ButtonStates();
 
         State = new KeyboardState(
             keys: _keyStates,
@@ -122,19 +112,16 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     public void AddKeyEvent(in KeyboardEvent key)
     {
-        const float fraction = 1f / 255f;
         var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
 
-        if (Enum.IsDefined(keyName))
+        if (_keyStates.IsDefined(keyName))
         {
             var isDown = key.Down != 0;
-
-            var index = EnumInfo<KeyName>.ValueIndexOf(keyName);
-            ref var button = ref _keyStates[index];
+            var button = _keyStates[keyName];
             var stateChanged = button.IsDown != isDown;
-            _keyStates[index] = new Button<KeyName>(keyName, key.Down != 0, key.Down * fraction);
+            _keyStates.SetKeyState(keyName, key.Down);
 
-            var shouldRecord = _textIsRecording == TextRecorderState.RecordingSdl
+            var shouldRecord = _textIsRecording == TextRecorderState.RecordingNoSdl
                                && ((stateChanged && isDown) || (!stateChanged && key.Repeat != 0));
             if (shouldRecord)
             {
@@ -223,5 +210,54 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     private enum TextRecorderState {None, RecordingNoSdl, RecordingSdl}
     private TextRecorderState _textIsRecording;
     private ushort _modState;
-    private readonly Button<KeyName>[] _keyStates;
+    private const float _pressureMultiplier = 1f / 255f;
+    private readonly ButtonStates _keyStates;
+
+    private class ButtonStates : IReadOnlyList<Button<KeyName>>
+    {
+        private static readonly int _keyCount;
+        private readonly byte[] _keyPressures = new byte[_keyCount];
+        private static readonly int[] _indices;
+
+        static ButtonStates()
+        {
+            _indices = new int[512];
+            for (var i = 0; i < 512; i++)
+            {
+                _indices[i] = Enum.IsDefined((KeyName)i) ? _keyCount++ : -1;
+            }
+        }
+
+        public int SetKeyState(KeyName key, byte pressure) => _keyPressures[_indices[(int)key]] = pressure;
+
+        public IEnumerator<Button<KeyName>> GetEnumerator()
+        {
+            for (var i = 0; i < _keyCount; i++)
+            {
+                var index = _indices[i];
+                if(index != -1)
+                {
+                    yield return GetButton(index);
+                }
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        public int Count => _keyCount;
+
+        public Button<KeyName> this[int index] => GetButton(index);
+        public Button<KeyName> this[KeyName key] => GetButton((int)key);
+
+        private Button<KeyName> GetButton(KeyName key) => GetButton((int)key);
+        private Button<KeyName> GetButton(int key)
+        {
+            var keyIdx = _indices[key];
+            return CreateButton((KeyName)key, _keyPressures[keyIdx]);
+        }
+
+        private Button<KeyName> CreateButton(KeyName key, byte pressure) => new(key, pressure > 0, pressure * _pressureMultiplier);
+
+        public bool IsDefined(KeyName keyName) => _indices[(int)keyName] >= 0;
+    }
 }

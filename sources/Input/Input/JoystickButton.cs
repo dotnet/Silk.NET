@@ -3,6 +3,7 @@ namespace Silk.NET.Input;
 /// <summary>
 /// Enumerates the buttons of a joystick.
 /// </summary>
+[OrderedIndexUsage]
 public enum JoystickButton // todo : should we include XInput, PSX, and Nintendo button names here?
 {
     /// <summary>

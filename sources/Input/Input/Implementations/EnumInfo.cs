@@ -7,7 +7,9 @@ namespace Silk.NET.Input;
 // ReSharper disable StaticMemberInGenericType
 // ^ that's the point
 /// <summary>
-/// A helper class for quickly converting enum values into indexes
+/// A helper class for quickly converting enum values into indexes, particularly
+/// when there is a possibility of unknown/unnamed enum values. See <see cref="JoystickButton"/> for an example
+/// of an appropriate implementation along with <see cref="ButtonReadOnlyList{JoystickButton}"/>
 /// </summary>
 /// <typeparam name="T"></typeparam>
 internal static class EnumInfo<T> where T : unmanaged, Enum
@@ -44,12 +46,28 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     private static readonly string[] _names;
     private static readonly Dictionary<T, int> _numericallyDistinctValues;
     private static readonly ulong[] _allEnumValuesRaw;
+    private static bool _unnamedAreIndexable;
 
     static unsafe EnumInfo()
     {
-        if (typeof(T).CustomAttributes.Any(x => x.AttributeType == typeof(FlagsAttribute)))
+        var customAttributeDatas = typeof(T).CustomAttributes;
+        var hasFlagsAttribute = false;
+        foreach (var attr in customAttributeDatas)
         {
-            throw new InvalidOperationException("Flags enums are not supported.");
+            if (attr.AttributeType == typeof(FlagsAttribute))
+            {
+                hasFlagsAttribute = true;
+            }
+
+            if (attr.AttributeType == typeof(OrderedIndexUsageAttribute))
+            {
+                _unnamedAreIndexable = true;
+            }
+        }
+
+        if (hasFlagsAttribute)
+        {
+            throw new InvalidOperationException("Enums with the FlagsAttribute cannot be used with EnumInfo");
         }
 
         var underlyingType = UnderlyingType;
@@ -156,7 +174,9 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// <returns>The index of the sorted enum numerical value, or -1 if not a named enum member.</returns>
     /// <exception cref="InvalidOperationException"></exception>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int ValueIndexOf(T value) => _numericallyDistinctValues.GetValueOrDefault(value, -1);
+    public static int ValueIndexOf(T value) => !_unnamedAreIndexable
+        ? ValueOf<T, int>(value)
+        : _numericallyDistinctValues.GetValueOrDefault(value, -1);
 
     /// <summary>
     /// Gets the ordered index of the unnamed enum value provided. This index is calculated by:
@@ -168,6 +188,11 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// <returns></returns>
     public static int ValueIndexOfUnnamed(T value)
     {
+        if (!_unnamedAreIndexable)
+        {
+            return ValueOf<T, int>(value);
+        }
+
         if(_numericallyDistinctValues.TryGetValue(value, out var index))
         {
             return index;
@@ -184,8 +209,14 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         return  _all.Length + rawValue;
     }
 
+    /// <summary>
+    /// Returns the numerical value of the enum value provided in a type-safe way
+    /// </summary>
+    /// <param name="value"></param>
+    /// <typeparam name="TValue"></typeparam>
+    /// <typeparam name="TNumber"></typeparam>
+    /// <returns></returns>
     private static unsafe TNumber ValueOf<TValue, TNumber>(TValue value) where TNumber : unmanaged where TValue : unmanaged
-
     {
         if (sizeof(T) == sizeof(TNumber))
         {
@@ -231,3 +262,6 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
     public static unsafe bool HasValue(int value) => _allEnumValuesRaw.Contains(*(uint*)&value);
 }
+
+[AttributeUsage(AttributeTargets.Enum)]
+internal class OrderedIndexUsageAttribute : Attribute;
