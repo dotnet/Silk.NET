@@ -270,10 +270,13 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                         keyboard.AddKeyEvent(evt.Key);
                         break;
                     case EventType.TextEditing:
-                        break;
-                    case EventType.TextInput:
+                        keyboard.AddTextEditingEvent(evt.Edit);
                         break;
                     case EventType.TextEditingCandidates:
+                        keyboard.AddTextCandidatesEvent(evt.EditCandidates);
+                        break;
+                    case EventType.TextInput:
+                        keyboard.AddTextInputEvent(evt.Text);
                         break;
                 }
 

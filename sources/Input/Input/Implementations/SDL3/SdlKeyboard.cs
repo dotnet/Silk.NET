@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Silk.NET.SDL;
 
@@ -76,7 +77,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
         }
         else
         {
-            _textIsRecording = TextRecorderState.Recording;
+            _textIsRecording = TextRecorderState.RecordingNoSdl;
         }
     }
 
@@ -92,7 +93,7 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
         {
             case TextRecorderState.None:
                 return null;
-            case TextRecorderState.Recording:
+            case TextRecorderState.RecordingNoSdl:
                 _textIsRecording = TextRecorderState.None;
                 break;
             case TextRecorderState.RecordingSdl:
@@ -125,61 +126,100 @@ internal partial class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboar
 
         if (Enum.IsDefined(keyName))
         {
+            var isDown = key.Down != 0;
+
             var index = EnumInfo<KeyName>.ValueIndexOf(keyName);
+            ref var button = ref _keyStates[index];
+            var stateChanged = button.IsDown != isDown;
             _keyStates[index] = new Button<KeyName>(keyName, key.Down != 0, key.Down * fraction);
 
-            if (_textIsRecording == TextRecorderState.Recording)
+            var shouldRecord = _textIsRecording == TextRecorderState.RecordingSdl
+                               && ((stateChanged && isDown) || (!stateChanged && key.Repeat != 0));
+            if (shouldRecord)
             {
                 _textRecorder ??= new TextRecorder();
-                _textRecorder!.AddKeyStroke(keyName, key.Down != 0, this);
+                _textRecorder.AddKeyStroke(keyName, this);
             }
         }
     }
 
-    public unsafe void AddTextEditingEvent(in TextEditingEvent evt) => throw new NotImplementedException();
-    public unsafe void AddTextCandidatesEvent(in TextEditingCandidatesEvent evt) => throw new NotImplementedException();
+    public unsafe void AddTextEditingEvent(in TextEditingEvent evt)
+    {
+        if (_textEntryWindow == null)
+        {
+            var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
+            if (windowHandle.Handle != null)
+            {
+                Console.Out.WriteLine("Unexpected text editing event");
+                BeginRecordingSdl(windowHandle);
+            }
+        }
+        else if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
+        {
+            Console.Error.WriteLine("Received text editing event for a different window than the " +
+                                    "one we're recording text for.");
+        }
+
+        _textRecorder ??= new TextRecorder();
+
+        if (evt.Length == 0)
+        {
+            _textRecorder.SetSelection(evt.Start, 0);
+        }
+        else
+        {
+            if (evt.Text == null)
+            {
+                return;
+            }
+
+            _textRecorder.InsertTextAt(evt.Text, evt.Start, evt.Length);
+        }
+    }
+
+    public unsafe void AddTextCandidatesEvent(in TextEditingCandidatesEvent evt)
+    {
+        if (evt.SelectedCandidate == -1 || evt.NumCandidates == 0)
+        {
+            return;
+        }
+
+        Debug.Assert(evt.NumCandidates > evt.SelectedCandidate);
+
+        var candidate = new Ptr<sbyte>(evt.Candidates[evt.SelectedCandidate]);
+        var str = candidate.ReadToString();
+        _textRecorder ??= new TextRecorder();
+        _textRecorder.InsertText(str);
+    }
 
     public unsafe void AddTextInputEvent(in TextInputEvent evt)
     {
         if (_textEntryWindow == null)
         {
-            Console.Out.WriteLine("Unexpected text input event");
             var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
             if (windowHandle.Handle != null)
             {
+                Console.Out.WriteLine("Unexpected text input event");
                 BeginRecordingSdl(windowHandle);
             }
-
-            return;
         }
-
-        if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
+        else if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
         {
             Console.Error.WriteLine("Received text input event for a different window than the " +
                                     "one we're recording text for.");
-            return;
         }
 
-        if (evt.Text == null)
-        {
-            return;
-        }
 
-        var str = new Ptr<sbyte>(evt.Text).ReadToString();
-
-        if (string.IsNullOrEmpty(str))
-        {
-            return;
-        }
+        var str = evt.Text == null ? "" : new Ptr<sbyte>(evt.Text).ReadToString();
 
         _textRecorder ??= new TextRecorder();
-        _textRecorder.AddString(evt);
+        _textRecorder.InsertText(str);
     }
 
 
     private WindowHandle? _textEntryWindow;
     private TextRecorder? _textRecorder;
-    private enum TextRecorderState {None, Recording, RecordingSdl}
+    private enum TextRecorderState {None, RecordingNoSdl, RecordingSdl}
     private TextRecorderState _textIsRecording;
     private ushort _modState;
     private readonly Button<KeyName>[] _keyStates;
