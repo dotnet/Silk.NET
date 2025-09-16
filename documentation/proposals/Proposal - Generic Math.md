@@ -20,10 +20,7 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - Text herein marked **INFORMATIVE** does not form a normative part of this proposal, and is for background only.
 - Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
 - If any of the APIs contained herein are later deemed mathematically invalid in the context of their exposing primitive (e.g. a specific operation being inappropriate for a specific sized matrix), the Silk.NET team reserves the right to remove them at their own accord.
-- Any extension method defined here must be provided in a non-generic class with the same name as the generic type it operates on.
-  - For example, the `Dot` extension method for `Vector3D<T>` would be have the following signature:
-    `Vector3D.Dot<T>(this Vector3D<T> left, Vector3D<T> right)`
-  - The method will be invokeable as `a.Dot(b)` as well as `Vector3D.Dot(a, b)`
+- Any static or extension method defined here must be provided in a non-generic class with the same name as the generic type it operates on.
 
 # Vector Types
 
@@ -45,8 +42,8 @@ For each vector struct, the following requirements **must** fulfill the followin
 - An AsSpan function which returns this vector as a Span of the generic type
 - A LengthSquared extension property which returns the dot product of the vector with itself.
 - A Length extension property which returns the magnitued of the vector when the type `T` defines `IRootFunctions<T>`.
-- A Dot extension method which takes another vector and returns the dot product with our original vector. 
-- For 3D Vectors, a Cross extension method which takes another vector and returns the cross product with our original vector. 
+- A Dot static method which takes another vector and returns the dot product with our original vector. 
+- For 3D Vectors, a Cross static method which takes another vector and returns the cross product with our original vector. 
 - `+`, `-`, `*`, `/`, and `%` operators defined between two vectors of the same type which returns a vector which has had each operation applied component-wise.
 - `+`, `-`, `*`, `/`, and `%` operators defined between a vector and a scalar value that matches the generic type which returns a vector which has had each operation applied component-wise with the scalar value. Both vector first and scalar first should be implemented.
 - A `-` unary operator which returns the negated vector.
@@ -64,16 +61,16 @@ For each vector struct, the following requirements **must** fulfill the followin
 - An implicit conversion from a value tuple of the same size.
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
-- Define Transform extension methods which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
+- Define Transform static methods which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
 - Define `VectorND<T> * MatrixNXM` operators where N is the same for both Vector and Matrix, but M is any number
   - These operators should function like Transform, but without needed assumptions
-- Define TransformNormal extension methods which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
+- Define TransformNormal static methods which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
 - For types implementing IBinaryNumber<T>
-    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` extension methods defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
-    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` extension methods operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
-    - `BitwiseNot` extension method defined which negates the bits of the vector components. (BitwiseComplement?)
+    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` static methods defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
+    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` static methods operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
+    - `BitwiseNot` static method defined which negates the bits of the vector components. (BitwiseComplement?)
 - A Normalize extension method which divides all components by the length of the vector, when `T` implements `IRootFunctions<T>`
-- A Reflect extension method which takes a normal vector and reflects the vector over the normal
+- A Reflect static method which takes a normal vector and reflects the vector over the normal
 - The following static Vector properties which have the given value for all components
   - PositiveInfinity
   - NegativeInfinity
@@ -83,7 +80,7 @@ For each vector struct, the following requirements **must** fulfill the followin
   - Pi
   - Tau
   - E
-- Define the following extension methods for these types which calls the specified function and returns a new vector with the specified multiplicity:
+- Define the following static methods for these types which calls the specified function and returns a new vector with the specified multiplicity:
   - INumber<>.Sign, (Memberwise)
     - Returns `VectorND<int>`, where N matches the dimensionality of the vector
   - INumber<>.Max, (Memberwise, Memberwise)
@@ -121,8 +118,6 @@ For each vector struct, the following requirements **must** fulfill the followin
   - IFloatingPoint<>.Truncate, (Memberwise)
   - IFloatingPointIeee754<>.Atan2, (Memberwise, Memberwise)
   - IFloatingPointIeee754<>.Atan2Pi, (Memberwise, Memberwise)
-  - IFloatingPointIeee754<>.Atan2, (Memberwise, Scalar) *really?
-  - IFloatingPointIeee754<>.Atan2Pi, (Memberwise, Scalar) *really?
   - IFloatingPointIeee754<>.Lerp, (Memberwise, Memberwise, Memberwise)
   - IFloatingPointIeee754<>.Lerp, (Memberwise, Memberwise, Scalar)
   - IFloatingPointIeee754<>.BitDecrement, (Memberwise)
@@ -233,7 +228,7 @@ Matrix structs **must** fulfill the following requirements:
 - Invert extension method for square matricies
 - GetDeterminant extension method for square matricies and Matrix3X2, Matrix4X3, and Matrix5X4
 - Transpose extension method
-- a static lerp extension method
+- Lerp static method
 - static identity property for square matrices
 - For Matrix3X2, Matrix3X3, Matrix4X3, and Matrix4X4 include the following static functions
   - CreateBillboardRH
@@ -369,3 +364,14 @@ Each type **must** include the following:
 - Rectangles and boxes are obscured with regards to internal layout, bindings to have interchange types that implicitly cast to the mathematical constructs that are represented by the Box/Rectangle types.
 - Investigate in the future if we can either add an Origin property for compatibility or an analyser for users to know that Min is the new Origin.
 - Approved notwithstanding the missing APIs.
+
+## 14/09/2025
+
+[Video](https://youtu.be/s5MVZ3BMbac?t=327)
+
+- It's weird having instance invocations (extension methods) and static methods.
+    - Should we follow System.Numerics where possible?
+    - Should we use this for things that would otherwise be an infix operator only?
+    - We will remove instance extension methods and add them back later if we still want them.
+    - We visited Length/LengthSquared as properties instead of .NET
+- Approved notwithstanding instance extension method and Atan2(Memberwise, Scalar) removal
