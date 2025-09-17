@@ -1,31 +1,36 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-// Ported from um/DispEx.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static Silk.NET.Win32.IID;
-
+using System.Runtime.Intrinsics.X86;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.Win32;
 
-/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
 [Guid("A6EF9860-C720-11D0-9337-00A0C90DCAA9")]
 [NativeTypeName("struct IDispatchEx : IDispatch")]
 [NativeInheritance("IDispatch")]
-public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, IDisposable
+public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
 {
-    public Native* lpVtbl;
+    public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
-        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDispatchEx));
+        (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID.IDispatchEx));
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(10)]
-        HRESULT DeleteMemberByDispID([NativeTypeName("DISPID")] int id);
+        HResult DeleteMemberByDispID([NativeTypeName("DISPID")] int id);
 
         [VtblIndex(9)]
-        HRESULT DeleteMemberByName(
+        HResult DeleteMemberByName(
             [NativeTypeName("BSTR")] ushort* bstrName,
             [NativeTypeName("DWORD")] uint grfdex
         );
@@ -34,13 +39,13 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT DeleteMemberByName(
+        HResult DeleteMemberByName(
             [NativeTypeName("BSTR")] Ref<ushort> bstrName,
             [NativeTypeName("DWORD")] uint grfdex
         );
 
         [VtblIndex(7)]
-        HRESULT GetDispID(
+        HResult GetDispID(
             [NativeTypeName("BSTR")] ushort* bstrName,
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID *")] int* pid
@@ -50,14 +55,14 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT GetDispID(
+        HResult GetDispID(
             [NativeTypeName("BSTR")] Ref<ushort> bstrName,
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID *")] Ref<int> pid
         );
 
         [VtblIndex(12)]
-        HRESULT GetMemberName(
+        HResult GetMemberName(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("BSTR *")] ushort** pbstrName
         );
@@ -66,13 +71,13 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT GetMemberName(
+        HResult GetMemberName(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("BSTR *")] Ref2D<ushort> pbstrName
         );
 
         [VtblIndex(11)]
-        HRESULT GetMemberProperties(
+        HResult GetMemberProperties(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DWORD")] uint grfdexFetch,
             [NativeTypeName("DWORD *")] uint* pgrfdex
@@ -82,23 +87,23 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT GetMemberProperties(
+        HResult GetMemberProperties(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DWORD")] uint grfdexFetch,
             [NativeTypeName("DWORD *")] Ref<uint> pgrfdex
         );
 
         [VtblIndex(14)]
-        HRESULT GetNameSpaceParent(IUnknown* ppunk);
+        HResult GetNameSpaceParent(IUnknown* ppunk);
 
         [VtblIndex(14)]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT GetNameSpaceParent(Ref<IUnknown> ppunk);
+        HResult GetNameSpaceParent(Ref<IUnknown> ppunk);
 
         [VtblIndex(13)]
-        HRESULT GetNextDispID(
+        HResult GetNextDispID(
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DISPID *")] int* pid
@@ -108,35 +113,35 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT GetNextDispID(
+        HResult GetNextDispID(
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DISPID *")] Ref<int> pid
         );
 
         [VtblIndex(8)]
-        HRESULT InvokeEx(
+        HResult InvokeEx(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("LCID")] uint lcid,
             [NativeTypeName("WORD")] ushort wFlags,
-            DISPPARAMS* pdp,
-            VARIANT* pvarRes,
-            EXCEPINFO* pei,
-            IServiceProvider pspCaller
+            Dispparams* pdp,
+            Variant* pvarRes,
+            Excepinfo* pei,
+            IServiceProvider* pspCaller
         );
 
         [VtblIndex(8)]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        HRESULT InvokeEx(
+        HResult InvokeEx(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("LCID")] uint lcid,
             [NativeTypeName("WORD")] ushort wFlags,
-            Ref<DISPPARAMS> pdp,
-            Ref<VARIANT> pvarRes,
-            Ref<EXCEPINFO> pei,
-            IServiceProvider pspCaller
+            Ref<Dispparams> pdp,
+            Ref<Variant> pvarRes,
+            Ref<Excepinfo> pei,
+            Ref<IServiceProvider> pspCaller
         );
     }
 
@@ -146,8 +151,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
     public unsafe partial struct Native : IDispatch.Interface, INativeGuid
     {
         static Guid* INativeGuid.NativeGuid =>
-            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDispatchEx));
-
+            (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID.IDispatchEx));
         public void** lpVtbl;
 
         public partial struct Vtbl
@@ -169,7 +173,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
                 IDispatchEx.Native*,
                 uint,
                 uint,
-                ITypeInfo.Native**,
+                ITypeInfo**,
                 int> GetTypeInfo;
 
             [NativeTypeName(
@@ -193,9 +197,9 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
                 Guid*,
                 uint,
                 ushort,
-                DISPPARAMS*,
-                VARIANT*,
-                EXCEPINFO*,
+                Dispparams*,
+                Variant*,
+                Excepinfo*,
                 uint*,
                 int> Invoke;
 
@@ -210,10 +214,10 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
                 int,
                 uint,
                 ushort,
-                DISPPARAMS*,
-                VARIANT*,
-                EXCEPINFO*,
-                IServiceProvider.Native*,
+                Dispparams*,
+                Variant*,
+                Excepinfo*,
+                IServiceProvider*,
                 int> InvokeEx;
 
             [NativeTypeName("HRESULT (BSTR, DWORD) __attribute__((stdcall))")]
@@ -255,7 +259,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT DeleteMemberByDispID([NativeTypeName("DISPID")] int id)
+        public HResult DeleteMemberByDispID([NativeTypeName("DISPID")] int id)
         {
             return ((delegate* unmanaged<IDispatchEx.Native*, int, int>)(lpVtbl[10]))(
                 (IDispatchEx.Native*)Unsafe.AsPointer(ref this),
@@ -265,7 +269,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT DeleteMemberByName(
+        public HResult DeleteMemberByName(
             [NativeTypeName("BSTR")] ushort* bstrName,
             [NativeTypeName("DWORD")] uint grfdex
         )
@@ -282,28 +286,31 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT DeleteMemberByName(
+        public HResult DeleteMemberByName(
             [NativeTypeName("BSTR")] Ref<ushort> bstrName,
             [NativeTypeName("DWORD")] uint grfdex
         )
         {
             fixed (ushort* __dsl_bstrName = bstrName)
             {
-                return (HRESULT)DeleteMemberByName(__dsl_bstrName, grfdex);
+                return (HResult)DeleteMemberByName(__dsl_bstrName, grfdex);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetDispID(
+        public HResult GetDispID(
             [NativeTypeName("BSTR")] ushort* bstrName,
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID *")] int* pid
         )
         {
-            return (
-                (delegate* unmanaged<IDispatchEx.Native*, ushort*, uint, int*, int>)(lpVtbl[7])
-            )((IDispatchEx.Native*)Unsafe.AsPointer(ref this), bstrName, grfdex, pid);
+            return ((delegate* unmanaged<IDispatchEx.Native*, ushort*, uint, int*, int>)(lpVtbl[7]))(
+                (IDispatchEx.Native*)Unsafe.AsPointer(ref this),
+                bstrName,
+                grfdex,
+                pid
+            );
         }
 
         [VtblIndex(7)]
@@ -311,7 +318,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetDispID(
+        public HResult GetDispID(
             [NativeTypeName("BSTR")] Ref<ushort> bstrName,
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID *")] Ref<int> pid
@@ -320,13 +327,13 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
             fixed (int* __dsl_pid = pid)
             fixed (ushort* __dsl_bstrName = bstrName)
             {
-                return (HRESULT)GetDispID(__dsl_bstrName, grfdex, __dsl_pid);
+                return (HResult)GetDispID(__dsl_bstrName, grfdex, __dsl_pid);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetIDsOfNames(
+        public HResult GetIDsOfNames(
             [NativeTypeName("const IID &")] Guid* riid,
             [NativeTypeName("LPOLESTR *")] ushort** rgszNames,
             uint cNames,
@@ -353,7 +360,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetIDsOfNames(
+        public HResult GetIDsOfNames(
             [NativeTypeName("const IID &")] Ref<Guid> riid,
             [NativeTypeName("LPOLESTR *")] Ref2D<ushort> rgszNames,
             uint cNames,
@@ -365,7 +372,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
             fixed (ushort** __dsl_rgszNames = rgszNames)
             fixed (Guid* __dsl_riid = riid)
             {
-                return (HRESULT)GetIDsOfNames(
+                return (HResult)GetIDsOfNames(
                     __dsl_riid,
                     __dsl_rgszNames,
                     cNames,
@@ -377,7 +384,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetMemberName(
+        public HResult GetMemberName(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("BSTR *")] ushort** pbstrName
         )
@@ -394,20 +401,20 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetMemberName(
+        public HResult GetMemberName(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("BSTR *")] Ref2D<ushort> pbstrName
         )
         {
             fixed (ushort** __dsl_pbstrName = pbstrName)
             {
-                return (HRESULT)GetMemberName(id, __dsl_pbstrName);
+                return (HResult)GetMemberName(id, __dsl_pbstrName);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetMemberProperties(
+        public HResult GetMemberProperties(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DWORD")] uint grfdexFetch,
             [NativeTypeName("DWORD *")] uint* pgrfdex
@@ -426,7 +433,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetMemberProperties(
+        public HResult GetMemberProperties(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DWORD")] uint grfdexFetch,
             [NativeTypeName("DWORD *")] Ref<uint> pgrfdex
@@ -434,17 +441,17 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         {
             fixed (uint* __dsl_pgrfdex = pgrfdex)
             {
-                return (HRESULT)GetMemberProperties(id, grfdexFetch, __dsl_pgrfdex);
+                return (HResult)GetMemberProperties(id, grfdexFetch, __dsl_pgrfdex);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetNameSpaceParent(IUnknown* ppunk)
+        public HResult GetNameSpaceParent(IUnknown* ppunk)
         {
             return ((delegate* unmanaged<IDispatchEx.Native*, IUnknown.Native**, int>)(lpVtbl[14]))(
                 (IDispatchEx.Native*)Unsafe.AsPointer(ref this),
-                &ppunk->lpVtbl
+                &ppunk->LpVtbl
             );
         }
 
@@ -453,17 +460,17 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetNameSpaceParent(Ref<IUnknown> ppunk)
+        public HResult GetNameSpaceParent(Ref<IUnknown> ppunk)
         {
             fixed (IUnknown* __dsl_ppunk = ppunk)
             {
-                return (HRESULT)GetNameSpaceParent(__dsl_ppunk);
+                return (HResult)GetNameSpaceParent(__dsl_ppunk);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetNextDispID(
+        public HResult GetNextDispID(
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DISPID *")] int* pid
@@ -482,7 +489,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetNextDispID(
+        public HResult GetNextDispID(
             [NativeTypeName("DWORD")] uint grfdex,
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("DISPID *")] Ref<int> pid
@@ -490,23 +497,21 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         {
             fixed (int* __dsl_pid = pid)
             {
-                return (HRESULT)GetNextDispID(grfdex, id, __dsl_pid);
+                return (HResult)GetNextDispID(grfdex, id, __dsl_pid);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetTypeInfo(
+        public HResult GetTypeInfo(
             uint iTInfo,
             [NativeTypeName("LCID")] uint lcid,
-            ITypeInfo* ppTInfo
+            ITypeInfo** ppTInfo
         )
         {
             return (
-                (delegate* unmanaged<IDispatchEx.Native*, uint, uint, ITypeInfo.Native**, int>)(
-                    lpVtbl[4]
-                )
-            )((IDispatchEx.Native*)Unsafe.AsPointer(ref this), iTInfo, lcid, &ppTInfo->lpVtbl);
+                (delegate* unmanaged<IDispatchEx.Native*, uint, uint, ITypeInfo**, int>)(lpVtbl[4])
+            )((IDispatchEx.Native*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
         }
 
         [VtblIndex(4)]
@@ -514,21 +519,21 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetTypeInfo(
+        public HResult GetTypeInfo(
             uint iTInfo,
             [NativeTypeName("LCID")] uint lcid,
-            Ref<ITypeInfo> ppTInfo
+            Ref2D<ITypeInfo> ppTInfo
         )
         {
-            fixed (ITypeInfo* __dsl_ppTInfo = ppTInfo)
+            fixed (ITypeInfo** __dsl_ppTInfo = ppTInfo)
             {
-                return (HRESULT)GetTypeInfo(iTInfo, lcid, __dsl_ppTInfo);
+                return (HResult)GetTypeInfo(iTInfo, lcid, __dsl_ppTInfo);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
+        public HResult GetTypeInfoCount(uint* pctinfo)
         {
             return ((delegate* unmanaged<IDispatchEx.Native*, uint*, int>)(lpVtbl[3]))(
                 (IDispatchEx.Native*)Unsafe.AsPointer(ref this),
@@ -541,24 +546,24 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT GetTypeInfoCount(Ref<uint> pctinfo)
+        public HResult GetTypeInfoCount(Ref<uint> pctinfo)
         {
             fixed (uint* __dsl_pctinfo = pctinfo)
             {
-                return (HRESULT)GetTypeInfoCount(__dsl_pctinfo);
+                return (HResult)GetTypeInfoCount(__dsl_pctinfo);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Invoke(
+        public HResult Invoke(
             [NativeTypeName("DISPID")] int dispIdMember,
             [NativeTypeName("const IID &")] Guid* riid,
             [NativeTypeName("LCID")] uint lcid,
             [NativeTypeName("WORD")] ushort wFlags,
-            DISPPARAMS* pDispParams,
-            VARIANT* pVarResult,
-            EXCEPINFO* pExcepInfo,
+            Dispparams* pDispParams,
+            Variant* pVarResult,
+            Excepinfo* pExcepInfo,
             uint* puArgErr
         )
         {
@@ -569,9 +574,9 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
                     Guid*,
                     uint,
                     ushort,
-                    DISPPARAMS*,
-                    VARIANT*,
-                    EXCEPINFO*,
+                    Dispparams*,
+                    Variant*,
+                    Excepinfo*,
                     uint*,
                     int>)(lpVtbl[6])
             )(
@@ -592,24 +597,24 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT Invoke(
+        public HResult Invoke(
             [NativeTypeName("DISPID")] int dispIdMember,
             [NativeTypeName("const IID &")] Ref<Guid> riid,
             [NativeTypeName("LCID")] uint lcid,
             [NativeTypeName("WORD")] ushort wFlags,
-            Ref<DISPPARAMS> pDispParams,
-            Ref<VARIANT> pVarResult,
-            Ref<EXCEPINFO> pExcepInfo,
+            Ref<Dispparams> pDispParams,
+            Ref<Variant> pVarResult,
+            Ref<Excepinfo> pExcepInfo,
             Ref<uint> puArgErr
         )
         {
             fixed (uint* __dsl_puArgErr = puArgErr)
-            fixed (EXCEPINFO* __dsl_pExcepInfo = pExcepInfo)
-            fixed (VARIANT* __dsl_pVarResult = pVarResult)
-            fixed (DISPPARAMS* __dsl_pDispParams = pDispParams)
+            fixed (Excepinfo* __dsl_pExcepInfo = pExcepInfo)
+            fixed (Variant* __dsl_pVarResult = pVarResult)
+            fixed (Dispparams* __dsl_pDispParams = pDispParams)
             fixed (Guid* __dsl_riid = riid)
             {
-                return (HRESULT)Invoke(
+                return (HResult)Invoke(
                     dispIdMember,
                     __dsl_riid,
                     lcid,
@@ -624,14 +629,14 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT InvokeEx(
+        public HResult InvokeEx(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("LCID")] uint lcid,
             [NativeTypeName("WORD")] ushort wFlags,
-            DISPPARAMS* pdp,
-            VARIANT* pvarRes,
-            EXCEPINFO* pei,
-            IServiceProvider pspCaller
+            Dispparams* pdp,
+            Variant* pvarRes,
+            Excepinfo* pei,
+            IServiceProvider* pspCaller
         )
         {
             return (
@@ -640,10 +645,10 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
                     int,
                     uint,
                     ushort,
-                    DISPPARAMS*,
-                    VARIANT*,
-                    EXCEPINFO*,
-                    IServiceProvider.Native*,
+                    Dispparams*,
+                    Variant*,
+                    Excepinfo*,
+                    IServiceProvider*,
                     int>)(lpVtbl[8])
             )(
                 (IDispatchEx.Native*)Unsafe.AsPointer(ref this),
@@ -653,7 +658,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
                 pdp,
                 pvarRes,
                 pei,
-                pspCaller.lpVtbl
+                pspCaller
             );
         }
 
@@ -662,35 +667,36 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT InvokeEx(
+        public HResult InvokeEx(
             [NativeTypeName("DISPID")] int id,
             [NativeTypeName("LCID")] uint lcid,
             [NativeTypeName("WORD")] ushort wFlags,
-            Ref<DISPPARAMS> pdp,
-            Ref<VARIANT> pvarRes,
-            Ref<EXCEPINFO> pei,
-            IServiceProvider pspCaller
+            Ref<Dispparams> pdp,
+            Ref<Variant> pvarRes,
+            Ref<Excepinfo> pei,
+            Ref<IServiceProvider> pspCaller
         )
         {
-            fixed (EXCEPINFO* __dsl_pei = pei)
-            fixed (VARIANT* __dsl_pvarRes = pvarRes)
-            fixed (DISPPARAMS* __dsl_pdp = pdp)
+            fixed (IServiceProvider* __dsl_pspCaller = pspCaller)
+            fixed (Excepinfo* __dsl_pei = pei)
+            fixed (Variant* __dsl_pvarRes = pvarRes)
+            fixed (Dispparams* __dsl_pdp = pdp)
             {
-                return (HRESULT)InvokeEx(
+                return (HResult)InvokeEx(
                     id,
                     lcid,
                     wFlags,
                     __dsl_pdp,
                     __dsl_pvarRes,
                     __dsl_pei,
-                    pspCaller
+                    __dsl_pspCaller
                 );
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+        public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
             return ((delegate* unmanaged<IDispatchEx.Native*, Guid*, void**, int>)(lpVtbl[0]))(
                 (IDispatchEx.Native*)Unsafe.AsPointer(ref this),
@@ -704,7 +710,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public HRESULT QueryInterface(
+        public HResult QueryInterface(
             [NativeTypeName("const IID &")] Ref<Guid> riid,
             Ref2D ppvObject
         )
@@ -712,14 +718,14 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
             fixed (void** __dsl_ppvObject = ppvObject)
             fixed (Guid* __dsl_riid = riid)
             {
-                return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+                return (HResult)QueryInterface(__dsl_riid, __dsl_ppvObject);
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(0)]
-        public HRESULT QueryInterface<TCom>(out TCom ppvObject)
-            where TCom : unmanaged, IComInterface
+        [Transformed]
+        public HResult QueryInterface<TCom>(out TCom ppvObject)
+            where TCom : unmanaged, IComVtbl
         {
             ppvObject = default;
             return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -738,109 +744,112 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
     /// <summary>Initializes a new instance of the <see cref = "IDispatchEx"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public IDispatchEx(Ptr2D* vtbl) => lpVtbl = (IDispatchEx.Native*)vtbl;
+
+    public IDispatchEx(Ptr3D vtbl) => LpVtbl = (IDispatchEx.Native*)vtbl;
 
     /// <summary>Initializes a new instance of the <see cref = "IDispatchEx"/> struct with the specified virtual table pointer.</summary>
     /// <param name = "vtbl">The pointer to virtual table.</param>
-    public IDispatchEx(IDispatchEx.Native* vtbl) => lpVtbl = vtbl;
+
+    public IDispatchEx(Ptr<IDispatchEx.Native> vtbl) => LpVtbl = vtbl;
 
     /// <summary>casts <see cref = "IDispatchEx.Native"/> to <see cref = "IDispatchEx"/>.</summary>
     /// <param name = "value">The <see cref = "IDispatchEx.Native"/> instance to be converted </param>
+
     public static implicit operator IDispatchEx(IDispatchEx.Native* value) =>
-        new IDispatchEx(value);
+        new IDispatchEx((Ptr<Native>)value);
 
     /// <summary>casts <see cref = "IDispatchEx"/> to <see cref = "IDispatchEx.Native"/> pointer.</summary>
     /// <param name = "value">The <see cref = "IDispatchEx"/> instance to be converted </param>
-    public static implicit operator IDispatchEx.Native*(IDispatchEx value) => value.lpVtbl;
 
-    /// <summary>casts <see cref = "Ptr2D"/> to <see cref = "IDispatchEx"/>.</summary>
-    /// <param name = "value">The <see cref = "Ptr2D"/> instance to be converted </param>
-    public static explicit operator IDispatchEx(Ptr2D* value) => new IDispatchEx(value);
+    public static implicit operator IDispatchEx.Native*(IDispatchEx value) => value.LpVtbl;
 
-    /// <summary>casts <see cref = "IDispatchEx"/> to <see cref = "Ptr2D"/> pointer.</summary>
+    /// <summary>casts <see cref = "Ptr3D"/> to <see cref = "IDispatchEx"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr3D"/> instance to be converted </param>
+
+    public static explicit operator IDispatchEx(Ptr3D value) => new IDispatchEx(value);
+
+    /// <summary>casts <see cref = "IDispatchEx"/> to <see cref = "Ptr3D"/> .</summary>
     /// <param name = "value">The <see cref = "IDispatchEx"/> instance to be converted </param>
-    public static implicit operator Ptr2D*(IDispatchEx value) => (Ptr2D*)value.lpVtbl;
 
-    /// <summary>casts void*** pointer to <see cref = "IDispatchEx"/>.</summary>
-    /// <param name = "value">The void*** instance to be converted</param>
-    public static explicit operator IDispatchEx(void*** value) => new IDispatchEx((Native*)value);
+    public static implicit operator Ptr3D(IDispatchEx value) => (Ptr3D)value.LpVtbl;
 
-    /// <summary>casts <see cref = "IDispatchEx"/> to void*** pointer</summary>
+    /// <summary>casts <see cref = "Ptr{T}"/> to <see cref = "IDispatchEx"/>.</summary>
+    /// <param name = "value">The <see cref = "Ptr{T}"/> instance to be converted </param>
+
+    public static explicit operator IDispatchEx(Ptr<IDispatchEx.Native> value) =>
+        new IDispatchEx(value);
+
+    /// <summary>casts <see cref = "IDispatchEx"/> to <see cref = "Ptr{T}"/> .</summary>
     /// <param name = "value">The <see cref = "IDispatchEx"/> instance to be converted </param>
-    public static implicit operator void***(IDispatchEx value) => (void***)value.lpVtbl;
 
-    /// <summary>casts nuint to <see cref = "IDispatchEx"/>.</summary>
-    /// <param name = "value">The nuint instance to be converted</param>
+    public static implicit operator Ptr<IDispatchEx.Native>(IDispatchEx value) =>
+        (Ptr<IDispatchEx.Native>)value.LpVtbl;
+
+    /// <summary>casts void*** to <see cref = "IDispatchEx"/>.</summary>
+    /// <param name = "value">The void*** instance to be converted </param>
+
+    public static explicit operator IDispatchEx(void*** value) =>
+        new IDispatchEx((Ptr<Native>)value);
+
+    /// <summary>casts <see cref = "IDispatchEx"/> to void*** pointer.</summary>
+    /// <param name = "value">The <see cref = "IDispatchEx"/> instance to be converted </param>
+
+    public static implicit operator void***(IDispatchEx value) => (void***)value.LpVtbl;
+
+    /// <summary>casts <see cref = "nuint"/> to <see cref = "IDispatchEx"/>.</summary>
+    /// <param name = "value">The <see cref = "nuint"/> instance to be converted </param>
+
     public static explicit operator IDispatchEx(nuint value) =>
-        new IDispatchEx((Native*)value.ToPointer());
+        new IDispatchEx((Ptr<Native>)value.ToPointer());
 
-    /// <summary>casts <see cref = "IDispatchEx"/> to nuint</summary>
+    /// <summary>casts <see cref = "IDispatchEx"/> to <see cref = "nuint"/> .</summary>
     /// <param name = "value">The <see cref = "IDispatchEx"/> instance to be converted </param>
-    public static implicit operator nuint(IDispatchEx value) => (nuint)value.lpVtbl;
 
-    /// <summary>Downcasts <see cref = "Silk.NET.Core.IUnknown"/> to <see cref = "IDispatchEx"/>.</summary>
-    /// <param name = "value">The <see cref = "Silk.NET.Core.IUnknown"/> instance to be converted </param>
-    public static explicit operator IDispatchEx(Silk.NET.Core.IUnknown value) =>
-        new IDispatchEx((IDispatchEx.Native*)value.lpVtbl);
-
-    /// <summary>Upcasts <see cref = "IDispatchEx"/> to <see cref = "Silk.NET.Core.IUnknown"/>.</summary>
-    /// <param name = "value">The <see cref = "IDispatchEx"/> instance to be converted </param>
-    public static implicit operator Silk.NET.Core.IUnknown(IDispatchEx value) =>
-        new Silk.NET.Core.IUnknown((Silk.NET.Core.IUnknown.Native*)value.lpVtbl);
+    public static implicit operator nuint(IDispatchEx value) => (nuint)value.LpVtbl;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
-    public uint AddRef() => lpVtbl->AddRef();
+    public uint AddRef() => LpVtbl->AddRef();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT DeleteMemberByDispID([NativeTypeName("DISPID")] int id) =>
-        lpVtbl->DeleteMemberByDispID(id);
+    public HResult DeleteMemberByDispID([NativeTypeName("DISPID")] int id) =>
+        LpVtbl->DeleteMemberByDispID(id);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT DeleteMemberByName(
+    public HResult DeleteMemberByName(
         [NativeTypeName("BSTR")] ushort* bstrName,
         [NativeTypeName("DWORD")] uint grfdex
-    ) => lpVtbl->DeleteMemberByName(bstrName, grfdex);
+    ) => LpVtbl->DeleteMemberByName(bstrName, grfdex);
 
     [VtblIndex(9)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT DeleteMemberByName(
+    public HResult DeleteMemberByName(
         [NativeTypeName("BSTR")] Ref<ushort> bstrName,
         [NativeTypeName("DWORD")] uint grfdex
     )
     {
         fixed (ushort* __dsl_bstrName = bstrName)
         {
-            return (HRESULT)DeleteMemberByName(__dsl_bstrName, grfdex);
+            return (HResult)DeleteMemberByName(__dsl_bstrName, grfdex);
         }
     }
 
-    public void Dispose() => Release();
-
-    /// <inheritdoc cref = "IComInterface.GetAddressOf{TNativeInterface}()"></inheritdoc>
-    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged =>
-        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-
-    /// <inheritdoc cref = "IComInterface.GetAddressOf()"></inheritdoc>
-    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDispID(
+    public HResult GetDispID(
         [NativeTypeName("BSTR")] ushort* bstrName,
         [NativeTypeName("DWORD")] uint grfdex,
         [NativeTypeName("DISPID *")] int* pid
-    ) => lpVtbl->GetDispID(bstrName, grfdex, pid);
+    ) => LpVtbl->GetDispID(bstrName, grfdex, pid);
 
     [VtblIndex(7)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetDispID(
+    public HResult GetDispID(
         [NativeTypeName("BSTR")] Ref<ushort> bstrName,
         [NativeTypeName("DWORD")] uint grfdex,
         [NativeTypeName("DISPID *")] Ref<int> pid
@@ -849,24 +858,24 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         fixed (int* __dsl_pid = pid)
         fixed (ushort* __dsl_bstrName = bstrName)
         {
-            return (HRESULT)GetDispID(__dsl_bstrName, grfdex, __dsl_pid);
+            return (HResult)GetDispID(__dsl_bstrName, grfdex, __dsl_pid);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames(
+    public HResult GetIDsOfNames(
         [NativeTypeName("const IID &")] Guid* riid,
         [NativeTypeName("LPOLESTR *")] ushort** rgszNames,
         uint cNames,
         [NativeTypeName("LCID")] uint lcid,
         [NativeTypeName("DISPID *")] int* rgDispId
-    ) => lpVtbl->GetIDsOfNames(riid, rgszNames, cNames, lcid, rgDispId);
+    ) => LpVtbl->GetIDsOfNames(riid, rgszNames, cNames, lcid, rgDispId);
 
     [VtblIndex(5)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetIDsOfNames(
+    public HResult GetIDsOfNames(
         [NativeTypeName("const IID &")] Ref<Guid> riid,
         [NativeTypeName("LPOLESTR *")] Ref2D<ushort> rgszNames,
         uint cNames,
@@ -878,7 +887,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
         fixed (ushort** __dsl_rgszNames = rgszNames)
         fixed (Guid* __dsl_riid = riid)
         {
-            return (HRESULT)GetIDsOfNames(
+            return (HResult)GetIDsOfNames(
                 __dsl_riid,
                 __dsl_rgszNames,
                 cNames,
@@ -890,37 +899,37 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetMemberName(
+    public HResult GetMemberName(
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("BSTR *")] ushort** pbstrName
-    ) => lpVtbl->GetMemberName(id, pbstrName);
+    ) => LpVtbl->GetMemberName(id, pbstrName);
 
     [VtblIndex(12)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetMemberName(
+    public HResult GetMemberName(
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("BSTR *")] Ref2D<ushort> pbstrName
     )
     {
         fixed (ushort** __dsl_pbstrName = pbstrName)
         {
-            return (HRESULT)GetMemberName(id, __dsl_pbstrName);
+            return (HResult)GetMemberName(id, __dsl_pbstrName);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetMemberProperties(
+    public HResult GetMemberProperties(
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("DWORD")] uint grfdexFetch,
         [NativeTypeName("DWORD *")] uint* pgrfdex
-    ) => lpVtbl->GetMemberProperties(id, grfdexFetch, pgrfdex);
+    ) => LpVtbl->GetMemberProperties(id, grfdexFetch, pgrfdex);
 
     [VtblIndex(11)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetMemberProperties(
+    public HResult GetMemberProperties(
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("DWORD")] uint grfdexFetch,
         [NativeTypeName("DWORD *")] Ref<uint> pgrfdex
@@ -928,37 +937,37 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
     {
         fixed (uint* __dsl_pgrfdex = pgrfdex)
         {
-            return (HRESULT)GetMemberProperties(id, grfdexFetch, __dsl_pgrfdex);
+            return (HResult)GetMemberProperties(id, grfdexFetch, __dsl_pgrfdex);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetNameSpaceParent(IUnknown* ppunk) => lpVtbl->GetNameSpaceParent(ppunk);
+    public HResult GetNameSpaceParent(IUnknown* ppunk) => LpVtbl->GetNameSpaceParent(ppunk);
 
     [VtblIndex(14)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetNameSpaceParent(Ref<IUnknown> ppunk)
+    public HResult GetNameSpaceParent(Ref<IUnknown> ppunk)
     {
         fixed (IUnknown* __dsl_ppunk = ppunk)
         {
-            return (HRESULT)GetNameSpaceParent(__dsl_ppunk);
+            return (HResult)GetNameSpaceParent(__dsl_ppunk);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetNextDispID(
+    public HResult GetNextDispID(
         [NativeTypeName("DWORD")] uint grfdex,
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("DISPID *")] int* pid
-    ) => lpVtbl->GetNextDispID(grfdex, id, pid);
+    ) => LpVtbl->GetNextDispID(grfdex, id, pid);
 
     [VtblIndex(13)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetNextDispID(
+    public HResult GetNextDispID(
         [NativeTypeName("DWORD")] uint grfdex,
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("DISPID *")] Ref<int> pid
@@ -966,61 +975,61 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
     {
         fixed (int* __dsl_pid = pid)
         {
-            return (HRESULT)GetNextDispID(grfdex, id, __dsl_pid);
+            return (HResult)GetNextDispID(grfdex, id, __dsl_pid);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetTypeInfo(
+    public HResult GetTypeInfo(
         uint iTInfo,
         [NativeTypeName("LCID")] uint lcid,
-        ITypeInfo* ppTInfo
-    ) => lpVtbl->GetTypeInfo(iTInfo, lcid, ppTInfo);
+        ITypeInfo** ppTInfo
+    ) => LpVtbl->GetTypeInfo(iTInfo, lcid, ppTInfo);
 
     [VtblIndex(4)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetTypeInfo(
+    public HResult GetTypeInfo(
         uint iTInfo,
         [NativeTypeName("LCID")] uint lcid,
-        Ref<ITypeInfo> ppTInfo
+        Ref2D<ITypeInfo> ppTInfo
     )
     {
-        fixed (ITypeInfo* __dsl_ppTInfo = ppTInfo)
+        fixed (ITypeInfo** __dsl_ppTInfo = ppTInfo)
         {
-            return (HRESULT)GetTypeInfo(iTInfo, lcid, __dsl_ppTInfo);
+            return (HResult)GetTypeInfo(iTInfo, lcid, __dsl_ppTInfo);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetTypeInfoCount(uint* pctinfo) => lpVtbl->GetTypeInfoCount(pctinfo);
+    public HResult GetTypeInfoCount(uint* pctinfo) => LpVtbl->GetTypeInfoCount(pctinfo);
 
     [VtblIndex(3)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT GetTypeInfoCount(Ref<uint> pctinfo)
+    public HResult GetTypeInfoCount(Ref<uint> pctinfo)
     {
         fixed (uint* __dsl_pctinfo = pctinfo)
         {
-            return (HRESULT)GetTypeInfoCount(__dsl_pctinfo);
+            return (HResult)GetTypeInfoCount(__dsl_pctinfo);
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Invoke(
+    public HResult Invoke(
         [NativeTypeName("DISPID")] int dispIdMember,
         [NativeTypeName("const IID &")] Guid* riid,
         [NativeTypeName("LCID")] uint lcid,
         [NativeTypeName("WORD")] ushort wFlags,
-        DISPPARAMS* pDispParams,
-        VARIANT* pVarResult,
-        EXCEPINFO* pExcepInfo,
+        Dispparams* pDispParams,
+        Variant* pVarResult,
+        Excepinfo* pExcepInfo,
         uint* puArgErr
     ) =>
-        lpVtbl->Invoke(
+        LpVtbl->Invoke(
             dispIdMember,
             riid,
             lcid,
@@ -1034,24 +1043,24 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
     [VtblIndex(6)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT Invoke(
+    public HResult Invoke(
         [NativeTypeName("DISPID")] int dispIdMember,
         [NativeTypeName("const IID &")] Ref<Guid> riid,
         [NativeTypeName("LCID")] uint lcid,
         [NativeTypeName("WORD")] ushort wFlags,
-        Ref<DISPPARAMS> pDispParams,
-        Ref<VARIANT> pVarResult,
-        Ref<EXCEPINFO> pExcepInfo,
+        Ref<Dispparams> pDispParams,
+        Ref<Variant> pVarResult,
+        Ref<Excepinfo> pExcepInfo,
         Ref<uint> puArgErr
     )
     {
         fixed (uint* __dsl_puArgErr = puArgErr)
-        fixed (EXCEPINFO* __dsl_pExcepInfo = pExcepInfo)
-        fixed (VARIANT* __dsl_pVarResult = pVarResult)
-        fixed (DISPPARAMS* __dsl_pDispParams = pDispParams)
+        fixed (Excepinfo* __dsl_pExcepInfo = pExcepInfo)
+        fixed (Variant* __dsl_pVarResult = pVarResult)
+        fixed (Dispparams* __dsl_pDispParams = pDispParams)
         fixed (Guid* __dsl_riid = riid)
         {
-            return (HRESULT)Invoke(
+            return (HResult)Invoke(
                 dispIdMember,
                 __dsl_riid,
                 lcid,
@@ -1066,66 +1075,67 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT InvokeEx(
+    public HResult InvokeEx(
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("LCID")] uint lcid,
         [NativeTypeName("WORD")] ushort wFlags,
-        DISPPARAMS* pdp,
-        VARIANT* pvarRes,
-        EXCEPINFO* pei,
-        IServiceProvider pspCaller
-    ) => lpVtbl->InvokeEx(id, lcid, wFlags, pdp, pvarRes, pei, pspCaller);
+        Dispparams* pdp,
+        Variant* pvarRes,
+        Excepinfo* pei,
+        IServiceProvider* pspCaller
+    ) => LpVtbl->InvokeEx(id, lcid, wFlags, pdp, pvarRes, pei, pspCaller);
 
     [VtblIndex(8)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT InvokeEx(
+    public HResult InvokeEx(
         [NativeTypeName("DISPID")] int id,
         [NativeTypeName("LCID")] uint lcid,
         [NativeTypeName("WORD")] ushort wFlags,
-        Ref<DISPPARAMS> pdp,
-        Ref<VARIANT> pvarRes,
-        Ref<EXCEPINFO> pei,
-        IServiceProvider pspCaller
+        Ref<Dispparams> pdp,
+        Ref<Variant> pvarRes,
+        Ref<Excepinfo> pei,
+        Ref<IServiceProvider> pspCaller
     )
     {
-        fixed (EXCEPINFO* __dsl_pei = pei)
-        fixed (VARIANT* __dsl_pvarRes = pvarRes)
-        fixed (DISPPARAMS* __dsl_pdp = pdp)
+        fixed (IServiceProvider* __dsl_pspCaller = pspCaller)
+        fixed (Excepinfo* __dsl_pei = pei)
+        fixed (Variant* __dsl_pvarRes = pvarRes)
+        fixed (Dispparams* __dsl_pdp = pdp)
         {
-            return (HRESULT)InvokeEx(
+            return (HResult)InvokeEx(
                 id,
                 lcid,
                 wFlags,
                 __dsl_pdp,
                 __dsl_pvarRes,
                 __dsl_pei,
-                pspCaller
+                __dsl_pspCaller
             );
         }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) =>
-        lpVtbl->QueryInterface(riid, ppvObject);
+    public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject) =>
+        LpVtbl->QueryInterface(riid, ppvObject);
 
     [VtblIndex(0)]
     [Transformed]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public HRESULT QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
+    public HResult QueryInterface([NativeTypeName("const IID &")] Ref<Guid> riid, Ref2D ppvObject)
     {
         fixed (void** __dsl_ppvObject = ppvObject)
         fixed (Guid* __dsl_riid = riid)
         {
-            return (HRESULT)QueryInterface(__dsl_riid, __dsl_ppvObject);
+            return (HResult)QueryInterface(__dsl_riid, __dsl_ppvObject);
         }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public HRESULT QueryInterface<TCom>(out TCom ppvObject)
-        where TCom : unmanaged, IComInterface
+    [Transformed]
+    public HResult QueryInterface<TCom>(out TCom ppvObject)
+        where TCom : unmanaged, IComVtbl
     {
         ppvObject = default;
         return QueryInterface(TCom.NativeGuid, ppvObject.GetAddressOf());
@@ -1134,5 +1144,5 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, IComInterface, I
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
-    public uint Release() => lpVtbl->Release();
+    public uint Release() => LpVtbl->Release();
 }

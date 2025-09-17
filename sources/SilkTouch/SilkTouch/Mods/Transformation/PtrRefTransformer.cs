@@ -290,7 +290,9 @@ public sealed partial class PtrRefTransformer()
     public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
     {
         var ret = base.VisitIdentifierName(node) as IdentifierNameSyntax;
-        if (ret is null || ret.Parent is InvocationExpressionSyntax)
+        if (ret is null || ret.Parent is InvocationExpressionSyntax || ret.Parent is MethodDeclarationSyntax ||
+            ret.Parent is PointerTypeSyntax ||
+            (ret.Parent is CastExpressionSyntax cast && cast.Type == node))
         {
             return ret;
         }

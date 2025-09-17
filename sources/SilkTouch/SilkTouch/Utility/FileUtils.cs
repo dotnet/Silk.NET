@@ -68,7 +68,7 @@ namespace Silk.NET.SilkTouch.Utility
 
         internal static string GlobToRegexInput(string glob)
         {
-            return glob.Replace("*", "**").Replace("****", "(.*)").Replace("**", @"([^\/]*)");
+            return glob.Replace("*", "**").Replace("****", "(.*)").Replace("/", "./").Replace("\\", @"[\/\\]").Replace("./", @"[\/\\]").Replace("**", @"([^\/\\]*)");
         }
 
         internal static string GlobToRegexOutput(string glob)

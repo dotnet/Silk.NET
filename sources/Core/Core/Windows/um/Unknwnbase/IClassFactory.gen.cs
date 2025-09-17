@@ -1,22 +1,20 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-// Ported from um/Unknwnbase.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/inspectable.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using Silk.NET.Core;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 
-/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
-
+/// <include file='IClassFactory.xml' path='doc/member[@name="IClassFactory"]/*'/>
 [Guid("00000001-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct IClassFactory
-    : IClassFactory.Interface,
-        IComVtbl<IClassFactory>,
-        IDisposable
+public unsafe partial struct IClassFactory : IClassFactory.Interface, INativeGuid
 {
     public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -60,7 +58,7 @@ public unsafe partial struct IClassFactory
             where TSelf : unmanaged, Interface
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+            public delegate* unmanaged<TSelf*, Guid*, void**, HResult> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, uint> AddRef;
@@ -69,10 +67,15 @@ public unsafe partial struct IClassFactory
             public delegate* unmanaged<TSelf*, uint> Release;
 
             [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, IUnknown.Native*, Guid*, void**, int> CreateInstance;
+            public delegate* unmanaged<
+                TSelf*,
+                IUnknown.Native*,
+                Guid*,
+                void**,
+                HResult> CreateInstance;
 
             [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, MaybeBool<int>, int> LockServer;
+            public delegate* unmanaged<TSelf*, MaybeBool<int>, HResult> LockServer;
         }
 
         /// <inheritdoc cref = "IUnknown.AddRef"/>
@@ -98,9 +101,12 @@ public unsafe partial struct IClassFactory
         )
         {
             return (
-                (delegate* unmanaged<IClassFactory.Native*, IUnknown.Native*, Guid*, void**, int>)(
-                    lpVtbl[3]
-                )
+                (delegate* unmanaged<
+                    IClassFactory.Native*,
+                    IUnknown.Native*,
+                    Guid*,
+                    void**,
+                    HResult>)(lpVtbl[3])
             )((IClassFactory.Native*)Unsafe.AsPointer(ref this), pUnkOuter.LpVtbl, riid, ppvObject);
         }
 
@@ -137,10 +143,9 @@ public unsafe partial struct IClassFactory
         [VtblIndex(4)]
         public HResult LockServer([NativeTypeName("BOOL")] MaybeBool<int> fLock)
         {
-            return ((delegate* unmanaged<IClassFactory.Native*, MaybeBool<int>, int>)(lpVtbl[4]))(
-                (IClassFactory.Native*)Unsafe.AsPointer(ref this),
-                fLock
-            );
+            return (
+                (delegate* unmanaged<IClassFactory.Native*, MaybeBool<int>, HResult>)(lpVtbl[4])
+            )((IClassFactory.Native*)Unsafe.AsPointer(ref this), fLock);
         }
 
         /// <inheritdoc cref = "IUnknown.QueryInterface"/>
@@ -149,11 +154,9 @@ public unsafe partial struct IClassFactory
         [VtblIndex(0)]
         public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
-            return ((delegate* unmanaged<IClassFactory.Native*, Guid*, void**, int>)(lpVtbl[0]))(
-                (IClassFactory.Native*)Unsafe.AsPointer(ref this),
-                riid,
-                ppvObject
-            );
+            return (
+                (delegate* unmanaged<IClassFactory.Native*, Guid*, void**, HResult>)(lpVtbl[0])
+            )((IClassFactory.Native*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [VtblIndex(0)]
@@ -260,18 +263,6 @@ public unsafe partial struct IClassFactory
 
     public static implicit operator nuint(IClassFactory value) => (nuint)value.LpVtbl;
 
-    /// <summary>Downcasts <see cref = "Silk.NET.Core.IUnknown"/> to <see cref = "IClassFactory"/>.</summary>
-    /// <param name = "value">The <see cref = "Silk.NET.Core.IUnknown"/> instance to be converted </param>
-
-    public static explicit operator IClassFactory(Silk.NET.Core.IUnknown value) =>
-        new IClassFactory((Ptr<IClassFactory.Native>)value.LpVtbl);
-
-    /// <summary>Upcasts <see cref = "IClassFactory"/> to <see cref = "Silk.NET.Core.IUnknown"/>.</summary>
-    /// <param name = "value">The <see cref = "IClassFactory"/> instance to be converted </param>
-
-    public static implicit operator Silk.NET.Core.IUnknown(IClassFactory value) =>
-        new Silk.NET.Core.IUnknown((Ptr<Silk.NET.Core.IUnknown.Native>)value.LpVtbl);
-
     /// <inheritdoc cref = "IUnknown.AddRef"/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -313,18 +304,6 @@ public unsafe partial struct IClassFactory
         ppvObject = default;
         return CreateInstance(pUnkOuter, TCom.NativeGuid, ppvObject.GetAddressOf());
     }
-
-    public void Dispose() => Release();
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
-
-    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged =>
-        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
-
-    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
     /// <include file='IClassFactory.xml' path='doc/member[@name="IClassFactory.LockServer"]/*'/>
 

@@ -7,40 +7,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.Win32.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SIGNER_SPC_CHAIN_INFO"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SignerSpcChainInfo"/> struct.</summary>
 public static unsafe partial class SIGNER_SPC_CHAIN_INFOTests
 {
-    /// <summary>Validates that the <see cref = "SIGNER_SPC_CHAIN_INFO"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SignerSpcChainInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SIGNER_SPC_CHAIN_INFO>(),
-            Is.EqualTo(sizeof(SIGNER_SPC_CHAIN_INFO))
-        );
+        Assert.That(Marshal.SizeOf<SignerSpcChainInfo>(), Is.EqualTo(sizeof(SignerSpcChainInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "SIGNER_SPC_CHAIN_INFO"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SignerSpcChainInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SIGNER_SPC_CHAIN_INFO).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SignerSpcChainInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SIGNER_SPC_CHAIN_INFO"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SignerSpcChainInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SIGNER_SPC_CHAIN_INFO), Is.EqualTo(32));
+            Assert.That(sizeof(SignerSpcChainInfo), Is.EqualTo(32));
         }
         else
         {
-            Assert.That(sizeof(SIGNER_SPC_CHAIN_INFO), Is.EqualTo(16));
+            Assert.That(sizeof(SignerSpcChainInfo), Is.EqualTo(16));
         }
     }
 }

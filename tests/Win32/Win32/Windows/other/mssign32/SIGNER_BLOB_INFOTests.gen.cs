@@ -7,37 +7,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.Win32.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SIGNER_BLOB_INFO"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SignerBlobInfo"/> struct.</summary>
 public static unsafe partial class SIGNER_BLOB_INFOTests
 {
-    /// <summary>Validates that the <see cref = "SIGNER_BLOB_INFO"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SignerBlobInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SIGNER_BLOB_INFO>(), Is.EqualTo(sizeof(SIGNER_BLOB_INFO)));
+        Assert.That(Marshal.SizeOf<SignerBlobInfo>(), Is.EqualTo(sizeof(SignerBlobInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "SIGNER_BLOB_INFO"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SignerBlobInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SIGNER_BLOB_INFO).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SignerBlobInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SIGNER_BLOB_INFO"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SignerBlobInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SIGNER_BLOB_INFO), Is.EqualTo(40));
+            Assert.That(sizeof(SignerBlobInfo), Is.EqualTo(40));
         }
         else
         {
-            Assert.That(sizeof(SIGNER_BLOB_INFO), Is.EqualTo(20));
+            Assert.That(sizeof(SignerBlobInfo), Is.EqualTo(20));
         }
     }
 }

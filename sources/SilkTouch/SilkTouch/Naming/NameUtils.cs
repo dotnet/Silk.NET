@@ -16,8 +16,8 @@ using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
-using Silk.NET.SilkTouch.Utility;
 using Project = Microsoft.CodeAnalysis.Project;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -330,7 +330,7 @@ public static partial class NameUtils
     /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
-    public static async Task RenameAllAsync(
+    public static async Task RenameAllRoslynAsync(
         IModContext ctx,
         IEnumerable<(ISymbol Symbol, string NewName)> toRename,
         ILogger? logger = null,
@@ -349,8 +349,7 @@ public static partial class NameUtils
         await Parallel.ForEachAsync(
             toRename,
             ct,
-            async (tuple, _) =>
-            {
+            async (tuple, _) => {
                 // First, let's add all of the locations of the declaration identifiers.
                 var (symbol, newName) = tuple;
                 if (includeDeclarations)
@@ -549,5 +548,74 @@ public static partial class NameUtils
         }
 
         ctx.SourceProject = sln.GetProject(srcProjId);
+    }
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="toRename">list of symbols to rename with new names</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    /// <param name="includeDeclarations">whether to replace any declaration references or not</param>
+    /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
+    public static async Task RenameAllAsync(
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        ILogger? logger = null,
+        CancellationToken ct = default,
+        bool includeDeclarations = true,
+        bool includeCandidateLocations = false
+    )
+    {
+        var sourceProject = ctx.SourceProject;
+        if (sourceProject == null)
+        {
+            return;
+        }
+
+        // We need to track both the original solution and modified solution
+        // The original is where we retrieve documents and semantic models
+        // The modified solution is where we place the results
+        IReadOnlyList<DocumentId> documentIds = [.. sourceProject.DocumentIds, .. ctx.TestProject?.DocumentIds ?? []];
+
+        var originalSolution = sourceProject.Solution;
+        var newNameLookup = toRename.GroupBy(t => t.Symbol.Name).ToDictionary(group => group.Key, group => group.ToList());
+        var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
+        await Parallel.ForEachAsync(documentIds, ct, async (documentId, _) => {
+            var originalDocument = originalSolution.GetDocument(documentId);
+            if (originalDocument == null)
+            {
+                return;
+            }
+
+            var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
+            var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
+
+            if (originalRoot == null || semanticModel == null)
+            {
+                return;
+            }
+
+            var renamer = new Renamer(newNameLookup);
+            renamer.Initialize(semanticModel);
+
+            var newRoot = renamer.Visit(originalRoot);
+            newDocuments.TryAdd(documentId, newRoot);
+        });
+
+        var modifiedSolution = sourceProject.Solution;
+        foreach (var (documentId, newRoot) in newDocuments)
+        {
+            var modifiedDocument = modifiedSolution.GetDocument(documentId);
+            if (modifiedDocument == null)
+            {
+                return;
+            }
+
+            modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
+        }
+
+        ctx.SourceProject = modifiedSolution.GetProject(sourceProject.Id);
     }
 }

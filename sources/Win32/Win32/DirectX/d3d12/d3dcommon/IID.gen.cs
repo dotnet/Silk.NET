@@ -1,18 +1,23 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.614.0
-// Original source is Copyright © Microsoft. Licensed under the MIT license
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.Win32;
 
 public static partial class IID
 {
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid IID_ID3D10Blob
+    public static ref readonly Guid ID3D10Blob
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -42,8 +47,8 @@ public static partial class IID
     }
 
     [NativeTypeName("#define IID_ID3DBlob IID_ID3D10Blob")]
-    public static ref readonly Guid IID_ID3DBlob => ref IID_ID3D10Blob;
-    public static ref readonly Guid IID_ID3DDestructionNotifier
+    public static ref readonly Guid ID3DBlob => ref ID3D10Blob;
+    public static ref readonly Guid ID3DDestructionNotifier
     {
         get
         {

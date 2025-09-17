@@ -17,8 +17,7 @@ namespace Silk.NET.SilkTouch.Logging
     /// </summary>
     internal class ProgressService : IProgressService
     {
-        private ConcurrentDictionary<string, (string, float)> Progress =
-            new ConcurrentDictionary<string, (string, float)>();
+        private ConcurrentDictionary<string, (string, string, float)> Progress = [];
 
 #pragma warning disable ST0005 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
         private JobContext _jobContext;
@@ -35,17 +34,26 @@ namespace Silk.NET.SilkTouch.Logging
 
 
         /// <inheritdoc/>
-        public IEnumerable<KeyValuePair<string, (string, float)>> GetAllProgress() => Progress;
+        public IEnumerable<KeyValuePair<string, (string, string, float)>> GetAllProgress() => Progress;
 
         /// <inheritdoc/>
-        public (string, float) GetCurrentTaskAndProgress() =>
+        public (string, string, float) GetCurrentModTaskAndProgress() =>
             Progress.TryGetValue(_jobContext.JobKey ?? string.Empty, out var value)
                 ? value
-                : (string.Empty, 0);
+                : (string.Empty, string.Empty, 0);
 
         /// <inheritdoc/>
         public void RemoveProgress() =>
             Progress.TryRemove(_jobContext.JobKey ?? string.Empty, out _);
+        public void SetMod(string mod)
+        {
+            if (_jobContext.JobKey is null)
+            {
+                return;
+            }
+
+            Progress[_jobContext.JobKey] = (mod, string.Empty, 0);
+        }
 
         /// <inheritdoc/>
         public void SetProgress(float progress)
@@ -57,10 +65,10 @@ namespace Silk.NET.SilkTouch.Logging
 
             if (!Progress.TryGetValue(_jobContext.JobKey, out var value))
             {
-                value = (string.Empty, 0);
+                value = (string.Empty,string.Empty, 0);
             }
 
-            Progress[_jobContext.JobKey] = (value.Item1, progress);
+            Progress[_jobContext.JobKey] = (value.Item1, value.Item2, progress);
         }
 
         /// <inheritdoc/>
@@ -71,7 +79,12 @@ namespace Silk.NET.SilkTouch.Logging
                 return;
             }
 
-            Progress[_jobContext.JobKey] = (task, 0);
+            if (!Progress.TryGetValue(_jobContext.JobKey, out var value))
+            {
+                value = (string.Empty, string.Empty, 0);
+            }
+
+            Progress[_jobContext.JobKey] = (value.Item1, task, 0);
         }
     }
 }

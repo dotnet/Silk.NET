@@ -1,0 +1,8 @@
+--include-directory
+C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/
+C:/Program Files/Microsoft Visual Studio/2022/Professional/DIA SDK/include/
+C:/Program Files/Microsoft Visual Studio/2022/Enterprise/DIA SDK/include/
+--traverse
+C:/Program Files/Microsoft Visual Studio/2022/Community/DIA SDK/include/cvconst.h
+C:/Program Files/Microsoft Visual Studio/2022/Professional/DIA SDK/include/cvconst.h
+C:/Program Files/Microsoft Visual Studio/2022/Enterprise/DIA SDK/include/cvconst.h

@@ -14,8 +14,10 @@
         "TransformInterfaces",
         "TransformCOM",
         "DisableWarnings",
+        "FixOptionalParams",
         "TransformFunctions",
-        "PrettifyNames"
+        "PrettifyNames",
+        "DiscardOutput"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -25,24 +27,6 @@
           "!eng/submodules/terrafx.interop.windows/generation/WinRT/winrt/inspectable/generate.rsp"
         ],
         "ManualOverrides": {
-          "sources/Windows/um/httpserv/IHttpResponse.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse.cs",
-          "sources/Windows/um/httpserv/IHttpResponse2.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse2.cs",
-          "sources/Windows/um/httpserv/IHttpResponse3.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse3.cs",
-          "sources/Windows/um/httpserv/IHttpResponse4.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpResponse4.cs",
-          "sources/Windows/um/httpserv/IHttpTraceContext.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/IHttpTraceContext.cs",
-          "sources/Windows/um/httpserv/CHttpModule.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/httpserv/CHttpModule.cs",
-          "sources/Windows/um/winioctl/STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.cs",
-          "sources/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/winioctl/TXFS_READ_BACKUP_INFORMATION_OUT.cs",
-          "sources/Windows/um/WinUser/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/WinUser/Windows.cs",
-          "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.cs",
-          "sources/Windows/shared/ws2ipdef/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/ws2ipdef/Windows.cs",
-          "sources/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/Iprtrmib/MIB_OPAQUE_INFO.cs",
-          "sources/Windows/shared/winerror/**.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/winerror/**.cs",
-          "sources/WinRT/winrt/windows.applicationmodel.email/IEmailMailboxSmimeEncryptionAlgorithm.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.email/EmailMailboxSmimeEncryptionAlgorithm.cs",
-          "sources/WinRT/winrt/windows.applicationmodel.email/IEmailMailboxSmimeSigningAlgorithm.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.email/EmailMailboxSmimeSigningAlgorithm.cs",
-          "sources/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.perception.spatial/ISpatialCoordinateSystem.cs",
-          "sources/WinRT/winrt/windows.security.authentication.web.core/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.security.authentication.web.core/IID.Manual.cs",
-          "sources/WinRT/winrt/windows.ui.input/IID.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/windows.ui.input/IID.Manual.cs",
           "sources/WinRT/winrt/winstring/WinRT.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/WinRT/winrt/winstring/WinRT.cs"
         },
         "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
@@ -54,27 +38,24 @@
         "GeneratedToRemove": [
           "tests/DirectX/d3dx12/d3dx12_core/**.cs",
           "tests/DirectX/d3dx12/d3dx12_barriers/**.cs",
-          "sources/**/HANDLE.gen.cs",
           "sources/**/helper-types/*Attribute.gen.cs",
-          "sources/**/helper-types/HRESULT.gen.cs",
-          "sources/**/helper-types/BOOL.gen.cs",
-          "sources/**/helper-types/HSTRING.gen.cs",
           "sources/WinRT/um/efswrtinterop/WinRT.gen.cs",
           "sources/WinRT/um/appserviceinterop/WinRT.gen.cs",
           "sources/WinRT/winrt/windows.media.casting/CastingConnectionErrorStatus.gen.cs",
-          "sources/WinRT/winrt/windows.media.casting/CastingConnectionState.gen.cs"
+          "sources/WinRT/winrt/windows.media.casting/CastingConnectionState.gen.cs",
+          "sources/WinRT/winrt/roerrorapi/RoErrorReportingFlags.gen.cs"
         ],
-        "InjectedRemappedNames": {
-          "BOOL": "MaybeBool<int>",
-          "HANDLE": "Handle",
-          "HSTRING": "HString",
-          "HRESULT": "HResult"
-        },
-        "InjectedGeneratorOptions": [
-          "--config",
-          "dont-use-using-statics-for-guid-members",
-          "dont-use-using-statics-for-enums"
-        ]
+        "CompositeRsps": {
+          "**": [ "eng/silktouch/win32/overrides.rsp" ],
+          "**/WinUser/generate.rsp": [ "eng/silktouch/win32/libpaths/WinUser.rsp" ],
+          "**/tbs/generate.rsp": [ "eng/silktouch/win32/libpaths/tbs.rsp" ],
+          "**/fileapi/generate.rsp": [ "eng/silktouch/win32/libpaths/fileapi.rsp" ],
+          "**/http/generate.rsp": [ "eng/silktouch/win32/libpaths/http.rsp" ],
+          "**/winstring/generate.rsp": [ "eng/silktouch/win32/libpaths/winstring.rsp" ],
+          "**/cvconst/generate.rsp": [ "eng/silktouch/win32/includes/cvconst.rsp" ],
+          "**/dia2/generate.rsp": [ "eng/silktouch/win32/includes/dia2.rsp" ],
+          "**/diacreate/generate.rsp": [ "eng/silktouch/win32/includes/diacreate.rsp" ]
+        }
       },
       "ImportManualFiles": {
         "ManualImports": {
@@ -114,10 +95,14 @@
       },
       "RemapTypes": {
         "Mappings": {
+          "BOOL": "MaybeBool<int>",
+          "BOOLEAN": "MaybeBool<byte>",
           "HSTRING": "HString",
           "HRESULT": "HResult",
-          "BOOL": "MaybeBool<int>",
-          "HANDLE": "Handle"
+          "ROPARAMIIDHANDLE": "ROParamIIDHandle",
+          "HMODULE": "HModule",
+          "HANDLE": "Handle",
+          "lpVtbl": "LpVtbl"
         }
       },
       "TransformInterfaces": {
@@ -149,12 +134,65 @@
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "NameOverrides": {
+          "BOOL": "MaybeBool<int>",
+          "BIN_COUNT.BinCount": "Count",
+          "BIN_COUNT.BinRange": "Range",
+          "DIK.DIK_EQUALS": "EqualsKey",
+          "DIKEYBOARD.DIKEYBOARD_EQUALS": "EqualsKey",
+          "DIKEYBOARD": "DIKeyboard",
+          "YxyCOLOR.x": "x",
+          "YxyCOLOR.y": "y",
+          "XML_ERROR": "XmlErrorDesc",
           "HSTRING": "HString",
+          "ROPARAMIIDHANDLE": "ROParamIIDHandle",
+          "HMODULE": "HModule",
           "HRESULT": "HResult",
+          "Point": "PointF",
           "GUID": "IID",
           "ISVGPointList": "ISVGPointList",
-          "ISVGPoint": "ISVGPoint"
+          "ISVGPoint": "ISVGPoint",
+          "DomConstructor.DomConstructor_Max": "MaxValue",
+          "Effect.useAuxData": "UseAuxDataValue",
+          "EXCEPTION_RECORD.ExceptionRecord": "Record",
+          "EXCEPTION_RECORD.ExceptionCode": "Code",
+          "EXCEPTION_RECORD.ExceptionFlags": "Flags",
+          "EXCEPTION_RECORD.ExceptionAddress": "Address",
+          "EXCEPTION_RECORD.ExceptionInformation": "Information",
+          "MF_MEDIAKEY_STATUS": "MFMediaKeyStatusFlags",
+          "FLAG_STGMEDIUM": "FlagSTGMedium",
+          "RemSTGMEDIUM": "RemSTGMedium",
+          "STGMEDIUM": "StgMedium",
+          "userFLAG_STGMEDIUM": "UserFlagSTGMedium",
+          "userSTGMEDIUM": "UserStgMedium",
+          "mediaType": "HtmlMediaType",
+          "PREVENT_MEDIA_REMOVAL.PreventMediaRemoval": "Value",
+          "SHARED_VIRTUAL_DISK_SUPPORT.SharedVirtualDiskSupport": "Type",
+          "TRANSACTION_NOTIFICATION.TransactionNotification": "Notification",
+          "WAVE_FORMAT_G726_ADPCM": "FormatG726ADPCM",
+          "WAVE_FORMAT_GSM_610": "FormatGSM610",
+          "_SIZE_T_MAX": "USizeTMax",
+          "_SIZE_T_ERROR": "USizeTError",
+          "IEmailMailboxSmimeEncryptionAlgorithm": "EmailMailboxSmimeEncryptionAlgorithm",
+          "IEmailMailboxSmimeSigningAlgorithm": "EmailMailboxSmimeSigningAlgorithm",
+          "TRACKMOUSEEVENT": "TrackMouseEvent",
+          "Windows._TrackMouseEvent": "TrackMouseEventCOM",
+          "MEDIASUBTYPE_DVSD": "DVSD"
         }
+      },
+      "DiscardOutput": {
+        "OutputToDiscard": [
+          "sources/**/helper-types/HRESULT.gen.cs",
+          "sources/**/helper-types/BOOL.gen.cs",
+          "sources/**/helper-types/HSTRING.gen.cs",
+          "sources/**/HANDLE.gen.cs"
+        ]
+      },
+      "FixOptionalParams": {
+        "TypesToFix": [
+          "MaybeBool<int>",
+          "HResult",
+          "MaybeBool<byte>"
+        ]
       }
     },
     "Core": {
@@ -168,6 +206,7 @@
         "TransformInterfaces",
         "TransformCOM",
         "DisableWarnings",
+        "FixOptionalParams",
         "TransformFunctions",
         "PrettifyNames"
       ],
@@ -189,14 +228,9 @@
           "!sources/**/helper-types/Hstring.gen.cs",
           "!sources/**/helper-types/Handle.gen.cs"
         ],
-        "InjectedRemappedNames": {
-          "BOOL": "MaybeBool<int>",
-          "HANDLE": "Handle"
-        },
-        "InjectedGeneratorOptions": [
-          "--config",
-          "dont-use-using-statics-for-guid-members"
-        ]
+        "CompositeRsps": {
+          "**": [ "eng/silktouch/win32/overrides.rsp" ]
+        }
       },
       "ChangeNamespace": {
         "Mappings": {
@@ -226,6 +260,12 @@
           "HSTRING": "HString",
           "HRESULT": "HResult"
         }
+      },
+      "FixOptionalParams": {
+        "TypesToFix": [
+          "MaybeBool<int>",
+          "HResult"
+        ]
       }
     },
     "SDL": {

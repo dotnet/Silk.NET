@@ -35,6 +35,8 @@ public class ModLoader
             nameof(ImportManualFiles) => typeof(ImportManualFiles),
             nameof(RemapTypes) => typeof(RemapTypes),
             nameof(RemoveStaticUsings) => typeof(RemoveStaticUsings),
+            nameof(DiscardOutput) => typeof(DiscardOutput),
+            nameof(FixOptionalParams) => typeof(FixOptionalParams),
             _ => null,
         };
 }

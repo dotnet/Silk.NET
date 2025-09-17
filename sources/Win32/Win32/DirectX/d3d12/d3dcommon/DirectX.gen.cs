@@ -1,17 +1,23 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.614.0
-// Original source is Copyright © Microsoft. Licensed under the MIT license
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
 #pragma warning disable CS1589, CS0419, CA1416, CS0618
 namespace Silk.NET.DirectX;
 
 public static partial class DirectX
 {
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid WKPDID_D3DDebugObjectName
+    public static ref readonly Guid WkpdidD3DDebugObjectName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -41,7 +47,7 @@ public static partial class DirectX
     }
 
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid WKPDID_D3DDebugObjectNameW
+    public static ref readonly Guid WkpdidD3DDebugObjectNameW
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -71,7 +77,7 @@ public static partial class DirectX
     }
 
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid WKPDID_CommentStringW
+    public static ref readonly Guid WkpdidCommentStringW
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -101,7 +107,7 @@ public static partial class DirectX
     }
 
     [NativeTypeName("const GUID")]
-    public static ref readonly Guid WKPDID_D3D12UniqueObjectId
+    public static ref readonly Guid WkpdidD3D12UniqueObjectId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

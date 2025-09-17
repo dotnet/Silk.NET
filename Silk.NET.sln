@@ -45,31 +45,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A5578D12
 		tests\Directory.Build.targets = tests\Directory.Build.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch", "sources\SilkTouch\SilkTouch\Silk.NET.SilkTouch.csproj", "{76F747A6-D971-4162-BF35-A226177FCA08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SilkTouch", "sources\SilkTouch\SilkTouch\Silk.NET.SilkTouch.csproj", "{76F747A6-D971-4162-BF35-A226177FCA08}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SilkTouch.UnitTests", "tests\SilkTouch\SilkTouch\Silk.NET.SilkTouch.UnitTests.csproj", "{600D712C-4ABF-44C4-96C3-B1DEE1F38298}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{475AEF7B-0154-4989-AF82-97E3A95A96AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "sources\Core\Core\Silk.NET.Core.csproj", "{131C09C1-BF4D-47C1-AF13-4A7E30866B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Core", "sources\Core\Core\Silk.NET.Core.csproj", "{131C09C1-BF4D-47C1-AF13-4A7E30866B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "sources\Playground\Playground.csproj", "{48F43535-3AFC-45E7-A98D-C2609B3B9757}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground", "sources\Playground\Playground.csproj", "{48F43535-3AFC-45E7-A98D-C2609B3B9757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core.UnitTests", "tests\Core\Core\Silk.NET.Core.UnitTests.csproj", "{A87E1861-07E4-4B7A-9173-0853370A7D4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Core.UnitTests", "tests\Core\Core\Silk.NET.Core.UnitTests.csproj", "{A87E1861-07E4-4B7A-9173-0853370A7D4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "sources\Maths\Maths\Silk.NET.Maths.csproj", "{1B21D783-71C3-48D3-91F5-0EEA90FB0DB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths", "sources\Maths\Maths\Silk.NET.Maths.csproj", "{1B21D783-71C3-48D3-91F5-0EEA90FB0DB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Tests", "tests\Maths\Maths\Silk.NET.Maths.Tests.csproj", "{01683C11-4721-43AB-B53C-15EBE935B48F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths.Tests", "tests\Maths\Maths\Silk.NET.Maths.Tests.csproj", "{01683C11-4721-43AB-B53C-15EBE935B48F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{B681E21A-47A2-4635-96EE-60D8D63FBEA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Benchmarks", "eng\benchmarks\Silk.NET.Maths.Benchmarks\Silk.NET.Maths.Benchmarks.csproj", "{AF6C70ED-D6A8-4C57-8DB3-EAFF94396049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths.Benchmarks", "eng\benchmarks\Silk.NET.Maths.Benchmarks\Silk.NET.Maths.Benchmarks.csproj", "{AF6C70ED-D6A8-4C57-8DB3-EAFF94396049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL", "sources\OpenGL\OpenGL\Silk.NET.OpenGL.csproj", "{9625C977-25BE-48F3-9B6F-BC94B8B799A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL", "sources\OpenGL\OpenGL\Silk.NET.OpenGL.csproj", "{9625C977-25BE-48F3-9B6F-BC94B8B799A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SDL", "sources\SDL\SDL\Silk.NET.SDL.csproj", "{19B05730-F97E-43D4-B922-DF4697E5CE5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SDL", "sources\SDL\SDL\Silk.NET.SDL.csproj", "{19B05730-F97E-43D4-B922-DF4697E5CE5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SDL.UnitTests", "tests\SDL\SDL\Silk.NET.SDL.UnitTests.csproj", "{D2B9C43F-A80D-4C9A-9643-BC1AC1B4E807}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SDL.UnitTests", "tests\SDL\SDL\Silk.NET.SDL.UnitTests.csproj", "{D2B9C43F-A80D-4C9A-9643-BC1AC1B4E807}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5CD096DB-6C44-48F1-9093-AD4C84B6B7EC}"
 EndProject
@@ -89,23 +89,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDL", "SDL", "{49D426BF-A00
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SilkTouch", "SilkTouch", "{AB25C482-DA9D-4335-8E26-2F29C3700152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.NUKE", "eng\build\Silk.NET.NUKE.csproj", "{3CADD95A-179F-4ECF-A49D-4B753832C63C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE", "eng\build\Silk.NET.NUKE.csproj", "{3CADD95A-179F-4ECF-A49D-4B753832C63C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET", "sources\Core\Silk.NET\Silk.NET.csproj", "{6FA628B8-9696-4847-89F9-E58F470AF4FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET", "sources\Core\Silk.NET\Silk.NET.csproj", "{6FA628B8-9696-4847-89F9-E58F470AF4FB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win32", "Win32", "{6E739132-EEAB-43A5-83C7-EB58C50D03A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SDL.Native", "sources\SDL\Native\Silk.NET.SDL.Native.csproj", "{F16C0AB9-DE7E-4C09-9EE9-DAA8B8E935A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.SDL.Native", "sources\SDL\Native\Silk.NET.SDL.Native.csproj", "{F16C0AB9-DE7E-4C09-9EE9-DAA8B8E935A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windowing", "Windowing", "{FE4414F8-5370-445D-9F24-C3AD3223F299}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing", "sources\Windowing\Windowing\Silk.NET.Windowing.csproj", "{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing", "sources\Windowing\Windowing\Silk.NET.Windowing.csproj", "{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Win32", "sources\Win32\Win32\Silk.NET.Win32.csproj", "{BB33CC4A-EA3A-4D4F-879A-F93C617C5E63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Win32", "sources\Win32\Win32\Silk.NET.Win32.csproj", "{BB33CC4A-EA3A-4D4F-879A-F93C617C5E63}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win32", "Win32", "{BA20152E-2FF8-48F0-A90E-682A7A8CF657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Win32.UnitTests", "tests\Win32\Win32\Silk.NET.Win32.UnitTests.csproj", "{C8F32825-1F93-44F0-AB88-26167C21CADF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Win32.UnitTests", "tests\Win32\Win32\Silk.NET.Win32.UnitTests.csproj", "{C8F32825-1F93-44F0-AB88-26167C21CADF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -163,7 +163,6 @@ Global
 		{F16C0AB9-DE7E-4C09-9EE9-DAA8B8E935A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F16C0AB9-DE7E-4C09-9EE9-DAA8B8E935A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF07CBB5-D253-4CA9-A5DA-8B3DF2B0DF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB33CC4A-EA3A-4D4F-879A-F93C617C5E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB33CC4A-EA3A-4D4F-879A-F93C617C5E63}.Release|Any CPU.ActiveCfg = Release|Any CPU

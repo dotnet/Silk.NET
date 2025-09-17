@@ -150,11 +150,6 @@ namespace Silk.NET.SilkTouch.Mods
 
                 doc = doc.WithSyntaxRoot(root = (updater.Visit(root).NormalizeWhitespace()));
 
-                if (doc.FilePath?.ToLower().Contains("idxgifactory.gen.cs") ?? false)
-                {
-                    File.WriteAllText($"IDXGIFactory.TransformInterface.UsageUpdater.cs", root.ToFullString());
-                }
-
                 proj = doc.Project;
 
                 logger.LogDebug(
@@ -181,11 +176,6 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 doc = doc.WithSyntaxRoot(root = rewriter.Visit(root).NormalizeWhitespace());
-
-                if (doc.FilePath?.ToLower().Contains("idxgifactory.gen.cs") ?? false)
-                {
-                    File.WriteAllText($"IDXGIFactory.TransformInterface.Rewriter.cs", root.ToFullString());
-                }
 
                 proj = doc.Project;
 
@@ -236,7 +226,7 @@ namespace Silk.NET.SilkTouch.Mods
                         !fds.Modifiers.Contains(Token(SyntaxKind.StaticKeyword))
                         && fds.Declaration.Type.ToString() != "void**"
                         && !fds.Declaration.Type.ToString().StartsWith("delegate")
-                        && fds.Declaration.Variables[0].Identifier.Text != "lpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text != "LpVtbl"
                     )
                     || !fields.Any(fds =>
                         fds.Declaration.Type is FunctionPointerTypeSyntax fpts
@@ -245,7 +235,7 @@ namespace Silk.NET.SilkTouch.Mods
                     )
                     || !fields.Any(fds =>
                         fds.Declaration.Type.ToString() == "void**"
-                        && fds.Declaration.Variables[0].Identifier.Text == "lpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text == "LpVtbl"
                     )
                     || FoundTypes.ContainsKey(node.Identifier.Text)
                 )
@@ -446,7 +436,7 @@ namespace Silk.NET.SilkTouch.Mods
                         return BinaryExpression(
                             node.Kind(),
                             node.Left,
-                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Right, IdentifierName("lpVtbl"))
+                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Right, IdentifierName("LpVtbl"))
                         );
                     }
                 }
@@ -457,7 +447,7 @@ namespace Silk.NET.SilkTouch.Mods
                     {
                         return BinaryExpression(
                             node.Kind(),
-                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Left, IdentifierName("lpVtbl")),
+                            MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, node.Left, IdentifierName("LpVtbl")),
                             node.Right
                         );
                     }
@@ -720,7 +710,7 @@ namespace Silk.NET.SilkTouch.Mods
                         MemberAccessExpression(
                             SyntaxKind.SimpleMemberAccessExpression,
                             originalArg.Expression,
-                            IdentifierName("lpVtbl")
+                            IdentifierName("LpVtbl")
                         )
                     );
                 }
@@ -732,7 +722,7 @@ namespace Silk.NET.SilkTouch.Mods
                             MemberAccessExpression(
                                 SyntaxKind.PointerMemberAccessExpression,
                                 originalArg.Expression,
-                                IdentifierName("lpVtbl")
+                                IdentifierName("LpVtbl")
                             )
                         )
                     );
@@ -836,7 +826,7 @@ namespace Silk.NET.SilkTouch.Mods
 
             public override SyntaxNode? VisitTypeConstraint(TypeConstraintSyntax node) => node;
 
-            const string NATIVE_VARIABLE_NAME = "lpVtbl";
+            const string NATIVE_VARIABLE_NAME = "LpVtbl";
 
             public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
             {
@@ -1066,7 +1056,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 ArrowExpressionClause(
                                     AssignmentExpression(
                                         SyntaxKind.SimpleAssignmentExpression,
-                                        IdentifierName("lpVtbl"),
+                                        IdentifierName("LpVtbl"),
                                         CastExpression(
                                             PointerType(nativeName),
                                             IdentifierName("vtbl")
@@ -1210,7 +1200,7 @@ namespace Silk.NET.SilkTouch.Mods
                                 ArrowExpressionClause(
                                     AssignmentExpression(
                                         SyntaxKind.SimpleAssignmentExpression,
-                                        IdentifierName("lpVtbl"),
+                                        IdentifierName("LpVtbl"),
                                         IdentifierName("vtbl")
                                     )
                                 )
@@ -1418,13 +1408,13 @@ namespace Silk.NET.SilkTouch.Mods
                         MemberAccessExpression(
                             SyntaxKind.SimpleMemberAccessExpression,
                             IdentifierName("value"),
-                            IdentifierName("lpVtbl")
+                            IdentifierName("LpVtbl")
                         )
                     )
                     : MemberAccessExpression(
                         SyntaxKind.SimpleMemberAccessExpression,
                         IdentifierName("value"),
-                        IdentifierName("lpVtbl")
+                        IdentifierName("LpVtbl")
                     );
 
                 XmlNodeSyntax castXmlTag = castSeeTag

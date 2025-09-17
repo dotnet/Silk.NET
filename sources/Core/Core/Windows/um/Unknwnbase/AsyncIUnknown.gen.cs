@@ -1,22 +1,19 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-// Ported from um/Unknwnbase.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/inspectable.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using Silk.NET.Core;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 
-/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
-
+/// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown"]/*'/>
 [Guid("000E0000-0000-0000-C000-000000000046")]
 [NativeTypeName("struct AsyncIUnknown : IUnknown")]
 [NativeInheritance("IUnknown")]
-public unsafe partial struct AsyncIUnknown
-    : AsyncIUnknown.Interface,
-        IComVtbl<AsyncIUnknown>,
-        IDisposable
+public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface, INativeGuid
 {
     public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -72,7 +69,7 @@ public unsafe partial struct AsyncIUnknown
             where TSelf : unmanaged, Interface
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+            public delegate* unmanaged<TSelf*, Guid*, void**, HResult> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, uint> AddRef;
@@ -81,19 +78,19 @@ public unsafe partial struct AsyncIUnknown
             public delegate* unmanaged<TSelf*, uint> Release;
 
             [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, Guid*, int> Begin_QueryInterface;
+            public delegate* unmanaged<TSelf*, Guid*, HResult> Begin_QueryInterface;
 
             [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, void**, int> Finish_QueryInterface;
+            public delegate* unmanaged<TSelf*, void**, HResult> Finish_QueryInterface;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, int> Begin_AddRef;
+            public delegate* unmanaged<TSelf*, HResult> Begin_AddRef;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, uint> Finish_AddRef;
 
             [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, int> Begin_Release;
+            public delegate* unmanaged<TSelf*, HResult> Begin_Release;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, uint> Finish_Release;
@@ -117,7 +114,7 @@ public unsafe partial struct AsyncIUnknown
         [VtblIndex(5)]
         public HResult Begin_AddRef()
         {
-            return ((delegate* unmanaged<AsyncIUnknown.Native*, int>)(lpVtbl[5]))(
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, HResult>)(lpVtbl[5]))(
                 (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
             );
         }
@@ -128,7 +125,7 @@ public unsafe partial struct AsyncIUnknown
         [VtblIndex(3)]
         public HResult Begin_QueryInterface([NativeTypeName("const IID &")] Guid* riid)
         {
-            return ((delegate* unmanaged<AsyncIUnknown.Native*, Guid*, int>)(lpVtbl[3]))(
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, Guid*, HResult>)(lpVtbl[3]))(
                 (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this),
                 riid
             );
@@ -153,7 +150,7 @@ public unsafe partial struct AsyncIUnknown
         [VtblIndex(7)]
         public HResult Begin_Release()
         {
-            return ((delegate* unmanaged<AsyncIUnknown.Native*, int>)(lpVtbl[7]))(
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, HResult>)(lpVtbl[7]))(
                 (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this)
             );
         }
@@ -176,7 +173,7 @@ public unsafe partial struct AsyncIUnknown
         [VtblIndex(4)]
         public HResult Finish_QueryInterface(void** ppvObject)
         {
-            return ((delegate* unmanaged<AsyncIUnknown.Native*, void**, int>)(lpVtbl[4]))(
+            return ((delegate* unmanaged<AsyncIUnknown.Native*, void**, HResult>)(lpVtbl[4]))(
                 (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this),
                 ppvObject
             );
@@ -213,11 +210,9 @@ public unsafe partial struct AsyncIUnknown
         [VtblIndex(0)]
         public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
-            return ((delegate* unmanaged<AsyncIUnknown.Native*, Guid*, void**, int>)(lpVtbl[0]))(
-                (AsyncIUnknown.Native*)Unsafe.AsPointer(ref this),
-                riid,
-                ppvObject
-            );
+            return (
+                (delegate* unmanaged<AsyncIUnknown.Native*, Guid*, void**, HResult>)(lpVtbl[0])
+            )((AsyncIUnknown.Native*)Unsafe.AsPointer(ref this), riid, ppvObject);
         }
 
         [VtblIndex(0)]
@@ -324,18 +319,6 @@ public unsafe partial struct AsyncIUnknown
 
     public static implicit operator nuint(AsyncIUnknown value) => (nuint)value.LpVtbl;
 
-    /// <summary>Downcasts <see cref = "Silk.NET.Core.IUnknown"/> to <see cref = "AsyncIUnknown"/>.</summary>
-    /// <param name = "value">The <see cref = "Silk.NET.Core.IUnknown"/> instance to be converted </param>
-
-    public static explicit operator AsyncIUnknown(Silk.NET.Core.IUnknown value) =>
-        new AsyncIUnknown((Ptr<AsyncIUnknown.Native>)value.LpVtbl);
-
-    /// <summary>Upcasts <see cref = "AsyncIUnknown"/> to <see cref = "Silk.NET.Core.IUnknown"/>.</summary>
-    /// <param name = "value">The <see cref = "AsyncIUnknown"/> instance to be converted </param>
-
-    public static implicit operator Silk.NET.Core.IUnknown(AsyncIUnknown value) =>
-        new Silk.NET.Core.IUnknown((Ptr<Silk.NET.Core.IUnknown.Native>)value.LpVtbl);
-
     /// <inheritdoc cref = "IUnknown.AddRef"/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -373,8 +356,6 @@ public unsafe partial struct AsyncIUnknown
     [VtblIndex(7)]
     public HResult Begin_Release() => LpVtbl->Begin_Release();
 
-    public void Dispose() => Release();
-
     /// <include file='AsyncIUnknown.xml' path='doc/member[@name="AsyncIUnknown.Finish_AddRef"]/*'/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -406,16 +387,6 @@ public unsafe partial struct AsyncIUnknown
     [VtblIndex(8)]
     [return: NativeTypeName("ULONG")]
     public uint Finish_Release() => LpVtbl->Finish_Release();
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
-
-    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged =>
-        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
-
-    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
     /// <inheritdoc cref = "IUnknown.QueryInterface"/>
 

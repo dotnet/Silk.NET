@@ -71,11 +71,17 @@ namespace Silk.NET.SilkTouch.Logging
 
                 foreach (var kvp in progressDictionary)
                 {
-                    string task = string.IsNullOrWhiteSpace(kvp.Value.Item1)
+                    var mod = string.IsNullOrWhiteSpace(kvp.Value.Item1)
+                        ? "Uknown Mod"
+                        : kvp.Value.Item1;
+
+                    var progress = Math.Clamp(kvp.Value.Item3, 0, 1);
+                    var task = string.IsNullOrWhiteSpace(kvp.Value.Item2)
                         ? string.Empty
-                        : $" - {kvp.Value.Item1}";
+                        : $" > {kvp.Value.Item2}: ({new string('|', (int)(progress * 20))}{new string('-', 20 - (int)(progress * 20))}) ({(progress * 100):F2}%)";
+
                     _originalOut.WriteLine(
-                        $"{kvp.Key}{task}: ({new string('|', (int)(kvp.Value.Item2 * 20))}{new string('-', 20 - (int)(kvp.Value.Item2 * 20))}) ({(kvp.Value.Item2 * 100):F2}%)"
+                        $"{kvp.Key} - {mod}{task}"
                     );
                 }
             }

@@ -123,7 +123,7 @@ public class TransformFunctions(
 
         ctx.SourceProject = proj;
 
-        await NameUtils.RenameAllAsync(ctx, toRenameSymbols, logger, ct, false, true);
+        await NameUtils.RenameAllRoslynAsync(ctx, toRenameSymbols, logger, ct, false, true);
     }
 
     /// <inheritdoc />
@@ -230,7 +230,8 @@ public class TransformFunctions(
         // Add the suffixed function
         var newFun = transFunc
             .Function.WithRenameSafeAttributeLists()
-            .WithIdentifier(Identifier(newIden));
+            .WithIdentifier(Identifier(newIden))
+            .WithModifiers(TokenList(transFunc.Function.Modifiers.Where(mod => !mod.IsKind(SyntaxKind.NewKeyword))));
 
         return newFun;
     }

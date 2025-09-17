@@ -12,13 +12,14 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using CSharpier;
+using CSharpier.Core;
+using CSharpier.Core.CSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using EndOfLine = CSharpier.EndOfLine;
+using EndOfLine = CSharpier.Core.EndOfLine;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -305,7 +306,7 @@ internal class MSBuildModContext(
         CancellationToken ct = default
     )
     {
-        var result = await CodeFormatter.FormatAsync(
+        var result = await CSharpFormatter.FormatAsync(
             root.NormalizeWhitespace().SyntaxTree,
             _opts,
             ct

@@ -5,6 +5,8 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.Core;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 

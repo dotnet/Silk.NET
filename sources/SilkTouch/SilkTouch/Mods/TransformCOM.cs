@@ -321,11 +321,11 @@ namespace Silk.NET.SilkTouch.Mods
                         !fds.Modifiers.Contains(Token(SyntaxKind.StaticKeyword))
                         && fds.Declaration.Type.ToString() != "Native*"
                         && !fds.Declaration.Type.ToString().StartsWith("delegate")
-                        && fds.Declaration.Variables[0].Identifier.Text != "lpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text != "LpVtbl"
                     )
                     || !fields.Any(fds =>
                         fds.Declaration.Type.ToString() == "Native*"
-                        && fds.Declaration.Variables[0].Identifier.Text == "lpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text == "LpVtbl"
                     )
                 )
                 {
@@ -794,6 +794,18 @@ namespace Silk.NET.SilkTouch.Mods
                     : base.VisitSimpleBaseType(node);
             }
 
+            public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+            {
+                if (node.Declaration.Type.ToString() == "HResult" && node.Modifiers.Any(modifier => modifier.IsKind(SyntaxKind.ConstKeyword)))
+                {
+                    return base.VisitPropertyDeclaration(PropertyDeclaration(node.Declaration.Type, node.Declaration.Variables.First().Identifier)
+                        .WithLeadingTrivia(node.GetLeadingTrivia())
+                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)))
+                        .WithExpressionBody(ArrowExpressionClause(node.Declaration.Variables.First().Initializer!.Value)).WithSemicolonToken(Token(SyntaxKind.SemicolonToken)));
+                }
+                return base.VisitFieldDeclaration(node);
+            }
+
             public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
             {
                 if (
@@ -919,7 +931,7 @@ namespace Silk.NET.SilkTouch.Mods
                                                     MemberAccessExpression(
                                                         SyntaxKind.SimpleMemberAccessExpression,
                                                         IdentifierName("value"),
-                                                        IdentifierName("lpVtbl")
+                                                        IdentifierName("LpVtbl")
                                                     )
                                                 )
                                             )

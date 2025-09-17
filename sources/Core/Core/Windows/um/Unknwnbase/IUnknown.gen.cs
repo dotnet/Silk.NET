@@ -1,17 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
-// Ported from um/Unknwnbase.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/inspectable.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using Silk.NET.Core;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 
-/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
-
+/// <include file='IUnknown.xml' path='doc/member[@name="IUnknown"]/*'/>
 [Guid("00000000-0000-0000-C000-000000000046")]
-public unsafe partial struct IUnknown : IUnknown.Interface, IComVtbl<IUnknown>, IDisposable
+public unsafe partial struct IUnknown : IUnknown.Interface, INativeGuid
 {
     public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -50,7 +50,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComVtbl<IUnknown>, 
             where TSelf : unmanaged, Interface
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+            public delegate* unmanaged<TSelf*, Guid*, void**, HResult> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, uint> AddRef;
@@ -77,7 +77,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComVtbl<IUnknown>, 
         [VtblIndex(0)]
         public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
-            return ((delegate* unmanaged<IUnknown.Native*, Guid*, void**, int>)(lpVtbl[0]))(
+            return ((delegate* unmanaged<IUnknown.Native*, Guid*, void**, HResult>)(lpVtbl[0]))(
                 (IUnknown.Native*)Unsafe.AsPointer(ref this),
                 riid,
                 ppvObject
@@ -192,18 +192,6 @@ public unsafe partial struct IUnknown : IUnknown.Interface, IComVtbl<IUnknown>, 
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
     public uint AddRef() => LpVtbl->AddRef();
-
-    public void Dispose() => Release();
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
-
-    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged =>
-        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
-
-    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
     /// <include file='IUnknown.xml' path='doc/member[@name="IUnknown.QueryInterface"]/*'/>
 

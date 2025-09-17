@@ -79,14 +79,9 @@ public sealed class ClangScraper(
         public Dictionary<string, string>? ManualOverrides { get; init; }
 
         /// <summary>
-        /// Entries to be added to the Response File remapped names
+        /// ResponseFiles to be composited with all other response files
         /// </summary>
-        public Dictionary<string, string>? InjectedRemappedNames { get; init; }
-
-        /// <summary>
-        /// Entries to be added to each Response file
-        /// </summary>
-        public string[]? InjectedGeneratorOptions { get; init; }
+        public Dictionary<string, string[]>? CompositeRsps { get; init; }
 
         /// <summary>
         /// The root output directory as defined in the response files.
@@ -496,16 +491,13 @@ public sealed class ClangScraper(
         // Read the configuration.
         var cfg = await inputResolver.Resolve(config.Get(ctx.JobKey));
 
-        Dictionary<string, string> remappedNames = cfg.InjectedRemappedNames ?? [];
-
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);
         var rsps = rspHandler
             .ReadResponseFiles(
                 ctx.ConfigurationDirectory,
                 cfg.ClangSharpResponseFiles,
-                remappedNames,
-                cfg.InjectedGeneratorOptions
+                cfg.CompositeRsps
             )
             .ToList();
 

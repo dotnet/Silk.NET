@@ -8,7 +8,9 @@ using System.IO.Hashing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using ClangSharp;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Logging;
@@ -806,13 +808,11 @@ public class ResponseFileHandler(
     /// <param name="args">The arguments read from the rsp file.</param>
     /// <param name="directory">The directory in which the rsp file resides.</param>
     /// <param name="filePath">The file path from which the response file arguments were read.</param>
-    /// <param name="injectedRemappedNames">remapped name entries to inject into the response file</param>
     /// <returns></returns>
     public ResponseFile ReadResponseFile(
         IReadOnlyList<string> args,
         string? directory = null,
-        string? filePath = null,
-        Dictionary<string, string>? injectedRemappedNames = null
+        string? filePath = null
     )
     {
         logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
@@ -971,22 +971,8 @@ public class ResponseFileHandler(
 
         foreach (var key in withTransparentStructs.Keys)
         {
-            remappedNames.Add(key, key);
-        }
-
-        if (injectedRemappedNames is not null)
-        {
-            foreach (var remappedName in injectedRemappedNames)
-            {
-                if (remappedNames.ContainsKey(remappedName.Key))
-                {
-                    remappedNames[remappedName.Key] = remappedName.Value;
-                }
-                else
-                {
-                    remappedNames.Add(remappedName.Key, remappedName.Value);
-                }
-            }
+            if (!remappedNames.ContainsKey(key))
+                remappedNames.Add(key, key);
         }
 
         var configOptions = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
@@ -1508,8 +1494,7 @@ public class ResponseFileHandler(
     /// </summary>
     /// <param name="directory">The directory in which the patterns are applied.</param>
     /// <param name="globs">The glob patterns used to match rsp files.</param>
-    /// <param name="injectedRemappedNames">remapped name entries to inject into the response file</param>
-    /// <param name="injectedConfigOptions">options appended to the end of the rsp file</param>
+    /// <param name="compositeRspGlobs">rsp globs to be composited</param>
     /// <returns>The read response files.</returns>
     /// <exception cref="InvalidOperationException">
     /// If the directory name of the file could not be determined.
@@ -1517,16 +1502,18 @@ public class ResponseFileHandler(
     public IEnumerable<ResponseFile> ReadResponseFiles(
         string directory,
         IReadOnlyList<string> globs,
-        Dictionary<string, string>? injectedRemappedNames = null,
-        string[]? injectedConfigOptions = null
+        Dictionary<string,string[]>? compositeRspGlobs = null
     )
     {
-        injectedConfigOptions ??= [];
         logger.LogDebug(
             "Looking for response files in {0} (we are in {1})",
             directory,
             Environment.CurrentDirectory
         );
+
+        Dictionary<Regex, string> compositeRegex = compositeRspGlobs is null ? [] :
+            compositeRspGlobs.Keys.Select(glob => (new Regex(FileUtils.GlobToRegexInput(glob)), glob)).ToDictionary();
+
         IEnumerable<string> rsps = FileUtils.Glob(globs);
         int index = 0;
         int count = rsps.Count();
@@ -1534,15 +1521,45 @@ public class ResponseFileHandler(
         foreach (var rsp in rsps)
         {
             index++;
+
+            IEnumerable<string> additionalArgs = [];
+            if (compositeRspGlobs is not null)
+            {
+                List<string> regexMatch = [];
+                foreach (var regex in compositeRegex)
+                {
+                    if (regex.Key.IsMatch(rsp))
+                    {
+                        regexMatch.Add(regex.Value);
+                    }
+                }
+
+                IEnumerable<string> additionalRsps = [];
+
+                foreach (var match in regexMatch)
+                {
+                    additionalRsps = additionalRsps.Concat(FileUtils.Glob(compositeRspGlobs.TryGetValue(match, out string[]? addedArgs) ? addedArgs : []));
+                }
+
+                additionalArgs = additionalRsps.SelectMany(rsp => {
+                    logger.LogDebug("Reading found file: {0}", rsp);
+                    var dir =
+                        Path.GetDirectoryName(rsp)
+                        ?? throw new InvalidOperationException("Couldn't get directory name of path");
+                    return RspRelativeTo(dir, rsp);
+                });
+            }
+
+                
+
             logger.LogDebug("Reading found file: {0}", rsp);
             var dir =
                 Path.GetDirectoryName(rsp)
                 ?? throw new InvalidOperationException("Couldn't get directory name of path");
             var read = ReadResponseFile(
-                RspRelativeTo(dir, rsp).Concat(injectedConfigOptions).ToArray(),
+                RspRelativeTo(dir, rsp).Concat(additionalArgs).ToArray(),
                 dir,
-                rsp,
-                injectedRemappedNames
+                rsp
             );
 
             progressService.SetProgress(index / (float)count);

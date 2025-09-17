@@ -7,40 +7,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.Win32.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SIGNER_CERT_STORE_INFO"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SignerCertStoreInfo"/> struct.</summary>
 public static unsafe partial class SIGNER_CERT_STORE_INFOTests
 {
-    /// <summary>Validates that the <see cref = "SIGNER_CERT_STORE_INFO"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SignerCertStoreInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SIGNER_CERT_STORE_INFO>(),
-            Is.EqualTo(sizeof(SIGNER_CERT_STORE_INFO))
-        );
+        Assert.That(Marshal.SizeOf<SignerCertStoreInfo>(), Is.EqualTo(sizeof(SignerCertStoreInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "SIGNER_CERT_STORE_INFO"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SignerCertStoreInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SIGNER_CERT_STORE_INFO).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SignerCertStoreInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SIGNER_CERT_STORE_INFO"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SignerCertStoreInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SIGNER_CERT_STORE_INFO), Is.EqualTo(32));
+            Assert.That(sizeof(SignerCertStoreInfo), Is.EqualTo(32));
         }
         else
         {
-            Assert.That(sizeof(SIGNER_CERT_STORE_INFO), Is.EqualTo(16));
+            Assert.That(sizeof(SignerCertStoreInfo), Is.EqualTo(16));
         }
     }
 }

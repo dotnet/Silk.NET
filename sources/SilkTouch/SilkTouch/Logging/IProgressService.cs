@@ -18,13 +18,13 @@ namespace Silk.NET.SilkTouch.Logging
         /// Returns an enumerable of all progress values with job as the key, and then the task and progress in a tuple
         /// </summary>
         /// <returns></returns>
-        IEnumerable<KeyValuePair<string, (string, float)>> GetAllProgress();
+        IEnumerable<KeyValuePair<string, (string, string, float)>> GetAllProgress();
 
         /// <summary>
         /// Get the current task and progress for this job
         /// </summary>
         /// <returns>current task and progress for this job</returns>
-        (string, float) GetCurrentTaskAndProgress();
+        (string, string, float) GetCurrentModTaskAndProgress();
 
         /// <summary>
         /// Set the name of the task for this job
@@ -32,6 +32,13 @@ namespace Silk.NET.SilkTouch.Logging
         /// </summary>
         /// <param name="task">name of the current task</param>
         void SetTask(string task);
+
+        /// <summary>
+        /// Set the name of the current mod for this job
+        /// Clears the current task
+        /// </summary>
+        /// <param name="mod">name of the current task</param>
+        void SetMod(string mod);
 
         /// <summary>
         /// Sets the progress of the current job's task

@@ -1,19 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\OpenGL\OpenGL\Silk.NET.OpenGL.csproj" />
-      <ProjectReference Include="..\SDL\SDL\Silk.NET.SDL.csproj" />
-      <ProjectReference Include="..\Windowing\Windowing\Silk.NET.Windowing.csproj" />
-    </ItemGroup>
-
-    <Import Project="../Core/Core/Silk.NET.Core.targets" />
-
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenGL\OpenGL\Silk.NET.OpenGL.csproj" />
+    <ProjectReference Include="..\SDL\SDL\Silk.NET.SDL.csproj" />
+    <ProjectReference Include="..\Windowing\Windowing\Silk.NET.Windowing.csproj" />
+  </ItemGroup>
+  <Import Project="../Core/Core/Silk.NET.Core.targets" />
 </Project>

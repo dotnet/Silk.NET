@@ -9,16 +9,12 @@ using Silk.NET.Core;
 #pragma warning disable CS1589, CS1591, CS0419, CA1416, CS0618
 namespace Silk.NET.Core;
 
-/// <inheritdoc cref = "IDisposable.Dispose"></inheritdoc>
-
+/// <include file='IInspectable.xml' path='doc/member[@name="IInspectable"]/*'/>
 [Guid("AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90")]
 [NativeTypeName("struct IInspectable : IUnknown")]
 [NativeInheritance("IUnknown")]
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct IInspectable
-    : IInspectable.Interface,
-        IComVtbl<IInspectable>,
-        IDisposable
+public unsafe partial struct IInspectable : IInspectable.Interface, INativeGuid
 {
     public Native* LpVtbl;
     static Guid* INativeGuid.NativeGuid =>
@@ -76,7 +72,7 @@ public unsafe partial struct IInspectable
             where TSelf : unmanaged, Interface
         {
             [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+            public delegate* unmanaged<TSelf*, Guid*, void**, HResult> QueryInterface;
 
             [NativeTypeName("ULONG () __attribute__((stdcall))")]
             public delegate* unmanaged<TSelf*, uint> AddRef;
@@ -85,13 +81,13 @@ public unsafe partial struct IInspectable
             public delegate* unmanaged<TSelf*, uint> Release;
 
             [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+            public delegate* unmanaged<TSelf*, uint*, Guid**, HResult> GetIids;
 
             [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, HString*, int> GetRuntimeClassName;
+            public delegate* unmanaged<TSelf*, HString*, HResult> GetRuntimeClassName;
 
             [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-            public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+            public delegate* unmanaged<TSelf*, TrustLevel*, HResult> GetTrustLevel;
         }
 
         /// <inheritdoc cref = "IUnknown.AddRef"/>
@@ -115,7 +111,7 @@ public unsafe partial struct IInspectable
             [NativeTypeName("IID **")] Guid** iids
         )
         {
-            return ((delegate* unmanaged<IInspectable.Native*, uint*, Guid**, int>)(lpVtbl[3]))(
+            return ((delegate* unmanaged<IInspectable.Native*, uint*, Guid**, HResult>)(lpVtbl[3]))(
                 (IInspectable.Native*)Unsafe.AsPointer(ref this),
                 iidCount,
                 iids
@@ -145,7 +141,7 @@ public unsafe partial struct IInspectable
         [VtblIndex(4)]
         public HResult GetRuntimeClassName(HString* className)
         {
-            return ((delegate* unmanaged<IInspectable.Native*, HString*, int>)(lpVtbl[4]))(
+            return ((delegate* unmanaged<IInspectable.Native*, HString*, HResult>)(lpVtbl[4]))(
                 (IInspectable.Native*)Unsafe.AsPointer(ref this),
                 className
             );
@@ -170,7 +166,7 @@ public unsafe partial struct IInspectable
         [VtblIndex(5)]
         public HResult GetTrustLevel(TrustLevel* trustLevel)
         {
-            return ((delegate* unmanaged<IInspectable.Native*, TrustLevel*, int>)(lpVtbl[5]))(
+            return ((delegate* unmanaged<IInspectable.Native*, TrustLevel*, HResult>)(lpVtbl[5]))(
                 (IInspectable.Native*)Unsafe.AsPointer(ref this),
                 trustLevel
             );
@@ -195,7 +191,7 @@ public unsafe partial struct IInspectable
         [VtblIndex(0)]
         public HResult QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
         {
-            return ((delegate* unmanaged<IInspectable.Native*, Guid*, void**, int>)(lpVtbl[0]))(
+            return ((delegate* unmanaged<IInspectable.Native*, Guid*, void**, HResult>)(lpVtbl[0]))(
                 (IInspectable.Native*)Unsafe.AsPointer(ref this),
                 riid,
                 ppvObject
@@ -306,36 +302,12 @@ public unsafe partial struct IInspectable
 
     public static implicit operator nuint(IInspectable value) => (nuint)value.LpVtbl;
 
-    /// <summary>Downcasts <see cref = "Silk.NET.Core.IUnknown"/> to <see cref = "IInspectable"/>.</summary>
-    /// <param name = "value">The <see cref = "Silk.NET.Core.IUnknown"/> instance to be converted </param>
-
-    public static explicit operator IInspectable(Silk.NET.Core.IUnknown value) =>
-        new IInspectable((Ptr<IInspectable.Native>)value.LpVtbl);
-
-    /// <summary>Upcasts <see cref = "IInspectable"/> to <see cref = "Silk.NET.Core.IUnknown"/>.</summary>
-    /// <param name = "value">The <see cref = "IInspectable"/> instance to be converted </param>
-
-    public static implicit operator Silk.NET.Core.IUnknown(IInspectable value) =>
-        new Silk.NET.Core.IUnknown((Ptr<Silk.NET.Core.IUnknown.Native>)value.LpVtbl);
-
     /// <inheritdoc cref = "IUnknown.AddRef"/>
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
     public uint AddRef() => LpVtbl->AddRef();
-
-    public void Dispose() => Release();
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf{TNativeInterface}()"></inheritdoc>
-
-    public readonly Ptr2D<TNativeInterface> GetAddressOf<TNativeInterface>()
-        where TNativeInterface : unmanaged =>
-        (TNativeInterface**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-
-    /// <inheritdoc cref = "IComVtbl.GetAddressOf()"></inheritdoc>
-
-    public readonly Ptr2D GetAddressOf() => (void**)Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
     /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.GetIids"]/*'/>
 

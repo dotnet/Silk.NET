@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Logging;
@@ -60,22 +59,12 @@ public class RemapTypes(
             );
 
         var diagnostics = comp.GetDiagnostics();
-        float total = diagnostics.Length;
-        int index = 0;
         progressService.SetTask("Searching for Errored Typing");
 
         List<Location> retrievedLocations = [];
 
-        Parallel.ForEach(diagnostics, diagnostic => {
-            if (diagnostic.Id == "CS0246" && !retrievedLocations.Contains(diagnostic.Location))
-            {
-                retrievedLocations.Add(diagnostic.Location);
-            }
-            progressService.SetProgress(Interlocked.Increment(ref index) / total);
-        });
-
         progressService.SetTask("Remapping Errored Types");
-        await NameUtils.RemapAllAsync(ctx, cfg.Mappings!, retrievedLocations, logger);
+        await NameUtils.RemapAllAsync(ctx, cfg.Mappings!, diagnostics.Select(diagnostic => diagnostic.Location), logger);
         progressService.SetProgress(1);
 
         proj = ctx.SourceProject;
@@ -87,7 +76,7 @@ public class RemapTypes(
 
         progressService.SetTask("Remapping Known Types");
 
-        await NameUtils.RenameAllAsync(
+        await NameUtils.RenameAllRoslynAsync(
             ctx,
             cfg.Mappings.SelectMany(x => comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct).OfType<ITypeSymbol>().Select(y => ((ISymbol)y, x.Value))),
             logger,

@@ -1,0 +1,7 @@
+--with-librarypath
+GetCurrentMonitorTopologyId=user32
+RegisterCloakedNotification=user32
+EnterMoveSizeLoop=user32
+ConvertToInterceptWindow=user32
+IsInterceptWindow=user32
+ApplyWindowAction=user32

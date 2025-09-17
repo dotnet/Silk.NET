@@ -7,37 +7,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.DirectX.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "D3D_SHADER_MACRO"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "D3DShaderMacro"/> struct.</summary>
 public static unsafe partial class D3D_SHADER_MACROTests
 {
-    /// <summary>Validates that the <see cref = "D3D_SHADER_MACRO"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "D3DShaderMacro"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<D3D_SHADER_MACRO>(), Is.EqualTo(sizeof(D3D_SHADER_MACRO)));
+        Assert.That(Marshal.SizeOf<D3DShaderMacro>(), Is.EqualTo(sizeof(D3DShaderMacro)));
     }
 
-    /// <summary>Validates that the <see cref = "D3D_SHADER_MACRO"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "D3DShaderMacro"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(D3D_SHADER_MACRO).IsLayoutSequential, Is.True);
+        Assert.That(typeof(D3DShaderMacro).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "D3D_SHADER_MACRO"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "D3DShaderMacro"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(D3D_SHADER_MACRO), Is.EqualTo(16));
+            Assert.That(sizeof(D3DShaderMacro), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(D3D_SHADER_MACRO), Is.EqualTo(8));
+            Assert.That(sizeof(D3DShaderMacro), Is.EqualTo(8));
         }
     }
 }
