@@ -4,12 +4,12 @@
 Example: Proposal API for Input via keyboards, mice, and controllers.
 
 # Contributors
-- Your Name, Your Company/Silk.NET Contributors
-- Dylan P, Ultz Limited
+- Your Name (@YourGitHubUsername)
+- Dylan P (@Perksey)
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
+- [ ] Discussed in Community Meeting
 - [ ] Approved
 - [ ] Implemented
 
