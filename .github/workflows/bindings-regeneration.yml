@@ -30,6 +30,10 @@ jobs:
       with:
         java-version: 11
         distribution: "temurin"
+    - name: Setup .NET 9.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 9.0.305
     - name: Setup .NET 7.0
       uses: actions/setup-dotnet@v1
       with:
