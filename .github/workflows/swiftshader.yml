@@ -54,7 +54,7 @@ jobs:
           echo running extras
           ${{ matrix.env.extras }}
       - name: Cache .tmp, ~/.nuget/packages
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             .tmp
