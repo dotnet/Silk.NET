@@ -7,8 +7,8 @@ Proposal strategy for achieving some ABI compatibility with Silk.NET 2.X in Silk
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed in Community Meeting
-- [ ] Approved
+- [x] Discussed in Community Meeting
+- [x] Approved
 - [ ] Implemented
 
 # Introduction
