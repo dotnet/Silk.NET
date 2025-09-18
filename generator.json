@@ -54,8 +54,10 @@
         "InputSourceRoot": "sources/SDL",
         "InputTestRoot": "tests/SDL"
       },
+      "ExtractNestedTyping": {
+        "GenerateEmptyStructsForMissingHandleTypes": true
+      },
       "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "TransformFunctions": {
@@ -149,12 +151,90 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHint": "gl"
+        "GlobalPrefixHint": "gl",
+        "PrefixOverrides": {
+          "SyncObjectMask": "GL_SYNC"
+        }
       },
       "TransformFunctions": {
         "BoolTypes": {
           "GLboolean": null
         }
+      }
+    },
+    "Vulkan": {
+      "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
+      "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "AddApiProfiles",
+        "MixKhronosData",
+        "ExtractNestedTyping",
+        "PrettifyNames",
+        "TransformHandles",
+        "TransformFunctions",
+        "TransformProperties",
+        "TransformEnums",
+        "AddVTables",
+        "TransformVulkan"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/vulkan/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/Vulkan",
+        "InputTestRoot": "tests/Vulkan"
+      },
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Profile": "vulkan",
+            "SourceSubdirectory": "vulkan"
+          }
+        ]
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
+        "Namespace": "Silk.NET.Vulkan"
+      },
+      "ExtractNestedTyping": {
+        "GenerateEmptyStructsForMissingHandleTypes": true
+      },
+      "PrettifyNames": {
+        "LongAcronymThreshold": 4,
+        "GlobalPrefixHint": "vk"
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true
+          }
+        ]
+      },
+      "TransformHandles": {
+        "UseDSL": true
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RemoveMembers": [
+          {
+            "MemberName": "MaxEnum",
+            "MemberValue": "0x7FFFFFFF"
+          },
+          {
+            "MemberName": "Invalid",
+            "MemberValue": "0x7FFFFFFF"
+          }
+        ]
       }
     }
   }
