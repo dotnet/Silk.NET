@@ -6,6 +6,7 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 # Contributors
 - Maxine H (@uwx)
 - Andrew Davis (@Curin)
+- John Gietzen (@otac0n)
 
 # Current Status
 - [x] Proposed
@@ -19,16 +20,11 @@ This API aims to replace the existing implementation of Silk.NET.Maths.
 - Text herein marked **INFORMATIVE** does not form a normative part of this proposal, and is for background only.
 - Within this proposal, the key words **must**, **required**, **shall**, **should**, **recommended**, **may**, **could**, and **optional** are to be interpreted as described in [RFC 2119 - Key words for use in RFCs to Indicate Requirement Levels](https://www.ietf.org/rfc/rfc2119.txt). The additional key word **optionally** is an alternate form of **optional**, for use where grammatically appropriate. These key words are highlighted in the proposal for clarity.
 - If any of the APIs contained herein are later deemed mathematically invalid in the context of their exposing primitive (e.g. a specific operation being inappropriate for a specific sized matrix), the Silk.NET team reserves the right to remove them at their own accord.
-
-# **INFORMATIVE** Integer and Floating Point Types
-While investigating the use of generic math we came to the conclusion that making types which supports both integer and floating point types would not be optimal. This was discussed at length on the discord [here](https://discord.com/channels/521092042781229087/587346162802229298/1167705816812498974). Ultimately it was decided to provide both an integer and floating point variant for each vector type and every type built from them. These types are generic where `Vector2I<T>` will be a 2D vector which takes any binary integer type for `T`. Similarly `Vector2F<T>` will be a 2D vector which takes any floating point type for `T`. By extension we get types like `BoxI<T>` and `RectangleF<T>`. The integer types are granted the bitwise operators `&`, `~`, `|`, and `^`. Floating point types will include some operations that require certain functions unavailable to integer types like `Length` which requires `Sqrt`.
-
-# I types versus F Types
-Each type in this proposal, aside from `Quaternion`, ends in I or F, defining whether it is an integer type or floating point type. Integer types **must** use a generic type argument `T` with the constraint of `IBinaryInteger<T>`. On the other hand, floating point types **must** use a generic type argument `T` with the constraint of `IFloatingPointIeee754<T>`.
+- Any static or extension method defined here must be provided in a non-generic class with the same name as the generic type it operates on.
 
 # Vector Types
 
-The main types defined for this proposal are two sets of vector types, `VectorNI<T>` and `VectorNF<T>` where `N` defines the dimensionality of the vector between 2 and 4.
+The main types defined for this proposal are the vector types, `VectorND<T>` where `N` defines the dimensionality of the vector between 2 and 4.
 
 For each vector struct, the following requirements **must** fulfill the following requirements:
 - Implements IEquatable with itself as the generic parameter
@@ -44,70 +40,37 @@ For each vector struct, the following requirements **must** fulfill the followin
 - Constructors for 3 dimensions and up **must** include lower dimension variants that use the lower dimensions for their specific components (vector2 -> X,Y).
 - A ref indexer that takes a int index and returns the corresponding component value (0 -> x, 1 -> y, etc.)
 - An AsSpan function which returns this vector as a Span of the generic type
-- A LengthSquared property which returns the dot product of the vector with itself.
-- A Dot function which takes another vector and returns the dot product with our original vector. 
-  - A static implementation of this function **must** be available as well.
-- For 3D Vectors, a Cross function which takes another vector and returns the cross product with our original vector. 
-  - A static implementation of this function **must** be available as well.
+- A LengthSquared extension property which returns the dot product of the vector with itself.
+- A Length extension property which returns the magnitued of the vector when the type `T` defines `IRootFunctions<T>`.
+- A Dot static method which takes another vector and returns the dot product with our original vector. 
+- For 3D Vectors, a Cross static method which takes another vector and returns the cross product with our original vector. 
 - `+`, `-`, `*`, `/`, and `%` operators defined between two vectors of the same type which returns a vector which has had each operation applied component-wise.
 - `+`, `-`, `*`, `/`, and `%` operators defined between a vector and a scalar value that matches the generic type which returns a vector which has had each operation applied component-wise with the scalar value. Both vector first and scalar first should be implemented.
 - A `-` unary operator which returns the negated vector.
 - A `+` unary operator which returns the vector.
 - Overrides ToString to show component values.
-- Max and Min functions, which takes another vector and returns a new vector which component-wise has the Max or Min value, respectively.
-  - A Static implementation of this function **must** be available as well.
-- Max and Min functions, which takes a scalar value which matches the generic type and returns a new vector which component-wise has the Max or Min value with the scalar value, respectively.
-  - A Static implementation of this function **must** be available as well.
-- A Clamp function which takes a Max vector and a Min vector and returns a vector which has its components bounded between the Min and Max vectors.
-  - A Static implementation of this function **must** be available as well.
-- A Clamp function which takes a Max scalar and a Min scalar, both which match the generic type, and returns a vector which has its components bounded between the Min and Max scalars.
-  - A Static implementation of this function **must** be available as well.
-- An Abs function which returns a vector where each component is the absolute value of the original
-  - A Static implementation of this function **must** be available as well.
 - CopyTo functions which copy to an array or span, with or without a starting index
-- Explicit cast and checked cast operators to all standard variants of the F and I vector types of the same dimensionality
+- Explicit cast and checked cast operators to all builtin type parameter variants of the vector types of the same dimensionality. (e.g. from `Vector2D<T>` to `Vector2D<float>`)
 - Explicit cast and checked cast to and from matching System.Numerics vector type
 - Explicit cast cast to lower dimensional matching vector with matching generic type
-- A CopySign function which takes a vector and copies the signs component-wise to our vector
-  - A Static implementation of this function **must** be available but it should return a new vector without affecting the original
-- A Copy sign function which takes a scalar which matches the generic type, and copies the scalars sign onto each component of the vector
-  - A Static implementation of this function **must** be available but it should return a new vector without affecting the original
-- A Sign function which returns a vector where each component is only the sign segment of the original vector
-  - A Static implementation of this function **must** be available
 - Static Unit Vectors for each component
 - A Static Zero Vector with zero for all components
 - A Static One Vector with one for all components
 - A static AllBitsSet Vector with all bits set for all components
+- A deconstruct method for detupling
+- An implicit conversion from a value tuple of the same size.
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
   - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
-- Define Transform functions which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
-  - A Static implementation of these functions **must** be available
-- Define VectorN\<T\> `*` MatrixNxM operators where N is the same for both Vector and Matrix, but M is any number
+- Define Transform static methods which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
+- Define `VectorND<T> * MatrixNXM` operators where N is the same for both Vector and Matrix, but M is any number
   - These operators should function like Transform, but without needed assumptions
-- Define TransformNormal functions which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use Matrix2xn, Matrix3xn, and matrix4xn) and return a vector containing the output (type should match the outer type e.g. Vector2.Transform(Matrix4x4) returns Vector2)
-  - A Static implementation of these functions **must** be available
-
-For I types, the following additional requirements **must** be fulfilled:
-- the bitwise `&`, `|`, and `^` operators defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
-- the bitwise `&`, `|`, and `^` operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
-- the unary bitwise `~` operator defined which negates the bits of the vector components.
-- Define the following static functions for these types to match IBinaryInteger (Vector replaced with type, e.g. `Vector2I<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
-  - Log2(Vector x)
-  - DivRem(Vector left, Vector right)
-    - Returns tuple of 2 Vectors (Vector Quotient, Vector Remainder)
-  - PopCount(Vector x)
-    - returns The number of set bits in the vector
-
-For F types, the following additional requirements **must** be fulfilled:
-- A Length property which returns the square root of LengthSquared.
-- A Normalize function which divides all components by the length of the vector
-  - A static implementation of this function **must** be available but it should return a normalized vector without affecting the original vector
-- A static Lerp function which takes Two vectors to interpolate between and a vector representing the t value for each component, and returns a vector which components are linearly interpolated between the original two vectors based on the respective t values.
-  - A clamped version of this function **must** also be available which clamps the t-values between 0 and 1
-- A static Lerp function which takes Two vectors and a scalar value which matches the generic type, and returns a vector which is linearly interpolated between the two vectors using the scalar as the t value.
-  - A clamped version of this function **must** also be available which clamps the t-values between 0 and 1
-- A Reflect Function which takes a normal vector and reflects the vector over the normal
-  - A Static implemenation of this function **must** be available as well, but should return the reflected vector without affecting the original vector.
+- Define TransformNormal static methods which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
+- For types implementing IBinaryNumber<T>
+    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` static methods defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
+    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` static methods operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
+    - `BitwiseNot` static method defined which negates the bits of the vector components. (BitwiseComplement?)
+- A Normalize extension method which divides all components by the length of the vector, when `T` implements `IRootFunctions<T>`
+- A Reflect static method which takes a normal vector and reflects the vector over the normal
 - The following static Vector properties which have the given value for all components
   - PositiveInfinity
   - NegativeInfinity
@@ -117,82 +80,118 @@ For F types, the following additional requirements **must** be fulfilled:
   - Pi
   - Tau
   - E
-- Define the following static functions for these types to match IBinaryFloatingPointIeee754 (Vector replaced with type, e.g. `Vector2F<T>`) which returns a new vector with these operations applied component-wise, unless otherwise specified:
-  - Sqrt(Vector x)
-  - Acosh(Vector x)
-  - Asinh(Vector x)
-  - Atanh(Vector x)
-  - Cosh(Vector x)
-  - Sinh(Vector x)
-  - Tanh(Vector x)
-  - Acos(Vector x)
-  - AcosPi(Vector x)
-  - Asin(Vector x)
-  - AsinPi(Vector x)
-  - Atan(Vector x)
-  - AtanPi(Vector x)
-  - Cos(Vector x)
-  - CosPi(Vector x)
-  - Sin(Vector x)
-  - SinPi(Vector x)
-  - Tan(Vector x)
-  - TanPi(Vector x)
-  - DegreesToRadians(Vector degrees)
-  - RadiansToDegrees(Vector radians)
-  - SinCos(Vector x)
-    - Returns a tuple of 2 Vectors (Sin, Cos)
-  - SinCosPi(Vector x)
-    - Returns a tuple of 2 Vectors (SinPi, CosPi)
-  - Log(Vector x)
-  - Log(Vector x, Vector newBase)
-  - Log(Vector x, TScalar newBase)
-  - LogP1(Vector x)
-  - Log2(Vector x)
-  - Log2P1(Vector x)
-  - Log10(Vector x)
-  - Log10P1(Vector x)
-  - Exp(Vector x)
-  - ExpM1(Vector x)
-  - Exp2(Vector x)
-  - Exp2M1(Vector x)
-  - Exp10(Vector x)
-  - Exp10M1(Vector x)
-  - Pow(Vector x, Vector y)
-  - Pow(Vector x, TScalar y)
-  - Cbrt(Vector x)
-  - Hypot(Vector x, Vector y)
-  - Hypot(Vector x, TScalar y)
-  - RootN(Vector x, int n)
-  - Round(Vector x)
-  - Round(Vector x, int digits)
-  - Round(Vector x, MidpointRounding mode)
-  - Round(Vector x, int digits, MidpointRounding mode)
-  - Truncate(Vector x)
-  - Atan2(Vector x, Vector y)
-  - Atan2Pi(Vector x, Vector y)
-  - Atan2(Vector x, TScalar y)
-  - Atan2Pi(Vector x, TScalar y)
-  - BitDecrement(Vector x)
-  - BitIncrement(Vector x)
-  - FusedMultiplyAdd(Vector left, Vector right, Vector addend)
-  - FusedMultiplyAdd(Vector left, Vector right, TScalar addend)
-  - FusedMultiplyAdd(Vector left, TScalar right, Vector addend)
-  - FusedMultiplyAdd(Vector left, TScalar right, TScalar addend)
-  - ReciprocalEstimate(Vector x)
-  - ReciprocalSqrtEstimate(Vector x)
-  - ILogB(Vector x)
-    - Returns VectorNI\<T\>, where N matches the dimensionality of the vector
+- Define the following static methods for these types which calls the specified function and returns a new vector with the specified multiplicity:
+  - INumber<>.Sign, (Memberwise)
+    - Returns `VectorND<int>`, where N matches the dimensionality of the vector
+  - INumber<>.Max, (Memberwise, Memberwise)
+  - INumber<>.Max, (Memberwise, Scalar)
+  - INumber<>.MaxNumber, (Memberwise, Memberwise)
+  - INumber<>.MaxNumber, (Memberwise, Scalar)
+  - INumber<>.Min, (Memberwise, Memberwise)
+  - INumber<>.Min, (Memberwise, Scalar)
+  - INumber<>.MinNumber, (Memberwise, Memberwise)
+  - INumber<>.MinNumber, (Memberwise, Scalar)
+  - INumber<>.Clamp, (Memberwise, Memberwise, Memberwise)
+  - INumber<>.Clamp, (Memberwise, Scalar, Scalar)
+  - INumber<>.CopySign, (Memberwise, Memberwise)
+  - INumber<>.CopySign, (Memberwise, Scalar)
+  - INumberBase<>.Abs, (Memberwise)
+  - INumberBase<>.MaxMagnitude, (Memberwise, Memberwise)
+  - INumberBase<>.MaxMagnitudeNumber, (Memberwise, Memberwise)
+  - INumberBase<>.MinMagnitude, (Memberwise, Memberwise)
+  - INumberBase<>.MinMagnitudeNumber, (Memberwise, Memberwise)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Memberwise, Memberwise)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Memberwise, Scalar)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Memberwise)
+  - INumberBase<>.MultiplyAddEstimate, (Memberwise, Scalar, Scalar)
+  - IBinaryNumber<>.Log2, (Memberwise)
+  - IBinaryInteger<>.DivRem, (Memberwise)
+    - Returns tuple of 2 Vectors (Vector Quotient, Vector Remainder)
+  - IBinaryInteger<>.PopCount, (Memberwise)
+  - IBinaryInteger<>.TrailingZeroCount, (Memberwise)
+  - IFloatingPoint<>.Ceiling, (Memberwise)
+  - IFloatingPoint<>.Floor, (Memberwise)
+  - IFloatingPoint<>.Round, (Memberwise)
+  - IFloatingPoint<>.Round, (Memberwise, Scalar) *`int digits`
+  - IFloatingPoint<>.Round, (Memberwise, Scalar) *`MidpointRounding mode`
+  - IFloatingPoint<>.Round, (Memberwise, Scalar, Scalar) *`int digits, MidpointRounding mode`
+  - IFloatingPoint<>.Truncate, (Memberwise)
+  - IFloatingPointIeee754<>.Atan2, (Memberwise, Memberwise)
+  - IFloatingPointIeee754<>.Atan2Pi, (Memberwise, Memberwise)
+  - IFloatingPointIeee754<>.Lerp, (Memberwise, Memberwise, Memberwise)
+  - IFloatingPointIeee754<>.Lerp, (Memberwise, Memberwise, Scalar)
+  - IFloatingPointIeee754<>.BitDecrement, (Memberwise)
+  - IFloatingPointIeee754<>.BitIncrement, (Memberwise)
+  - IFloatingPointIeee754<>.FusedMultiplyAdd, (Memberwise, Memberwise, Memberwise)
+  - IFloatingPointIeee754<>.FusedMultiplyAdd, (Memberwise, Memberwise, Scalar)
+  - IFloatingPointIeee754<>.FusedMultiplyAdd, (Memberwise, Scalar, Memberwise)
+  - IFloatingPointIeee754<>.FusedMultiplyAdd, (Memberwise, Scalar, Scalar)
+  - IFloatingPointIeee754<>.Ieee754Remainder, (Memberwise, Memberwise)
+  - IFloatingPointIeee754<>.Ieee754Remainder, (Memberwise, Scalar)
+  - IFloatingPointIeee754<>.ILogB, (Memberwise)
+    - Returns `VectorND<int>`, where N matches the dimensionality of the vector
     - **INFORMATIVE** This may require multiple methods depending on implementation
-  - ScaleB(Vector x, VectorNI\<int\> n)
+  - IFloatingPointIeee754<>.ReciprocalEstimate, (Memberwise)
+  - IFloatingPointIeee754<>.ReciprocalSqrtEstimate, (Memberwise)
+  - IFloatingPointIeee754<>.ScaleB, (Memberwise, Memberwise)
+  - IFloatingPointIeee754<>.ScaleB, (Memberwise, Scalar)
+  - IPowerFunctions<>.Pow, (Memberwise, Memberwise)
+  - IPowerFunctions<>.Pow, (Memberwise, Scalar)
+  - IRootFunctions<>.Cbrt, (Memberwise)
+  - IRootFunctions<>.Sqrt, (Memberwise)
+  - IRootFunctions<>.RootN, (Memberwise, Memberwise)
+  - IRootFunctions<>.RootN, (Memberwise, Scalar)
+  - IRootFunctions<>.Hypot, (Memberwise, Memberwise)
+  - IRootFunctions<>.Hypot, (Memberwise, Scalar)
+  - ILogarithmicFunctions<>.Log, (Memberwise)
+  - ILogarithmicFunctions<>.Log, (Memberwise, Memberwise)
+  - ILogarithmicFunctions<>.Log, (Memberwise, Scalar)
+  - ILogarithmicFunctions<>.LogP1, (Memberwise)
+  - ~~ILogarithmicFunctions<>.Log2, (Memberwise)~~
+    - Provided via `IBinaryNumber<>`, which is present on all builtin types that implement `ILogarithmicFunctions<>`
+  - ILogarithmicFunctions<>.Log2P1, (Memberwise)
+  - ILogarithmicFunctions<>.Log10, (Memberwise)
+  - ILogarithmicFunctions<>.Log10P1, (Memberwise)
+  - IExponentialFunctions<>.Exp, (Memberwise)
+  - IExponentialFunctions<>.ExpM1, (Memberwise)
+  - IExponentialFunctions<>.Exp2, (Memberwise)
+  - IExponentialFunctions<>.Exp2M1, (Memberwise)
+  - IExponentialFunctions<>.Exp10, (Memberwise)
+  - IExponentialFunctions<>.Exp10M1, (Memberwise)
+  - ITrigonometricFunctions<>.Acos, (Memberwise)
+  - ITrigonometricFunctions<>.AcosPi, (Memberwise)
+  - ITrigonometricFunctions<>.Asin, (Memberwise)
+  - ITrigonometricFunctions<>.AsinPi, (Memberwise)
+  - ITrigonometricFunctions<>.Atan, (Memberwise)
+  - ITrigonometricFunctions<>.AtanPi, (Memberwise)
+  - ITrigonometricFunctions<>.Cos, (Memberwise)
+  - ITrigonometricFunctions<>.CosPi, (Memberwise)
+  - ITrigonometricFunctions<>.Sin, (Memberwise)
+  - ITrigonometricFunctions<>.SinPi, (Memberwise)
+  - ITrigonometricFunctions<>.SinCos, (Memberwise)
+    - Returns a tuple of 2 Vectors (Sin, Cos)
+  - ITrigonometricFunctions<>.SinCosPi, (Memberwise)
+    - Returns a tuple of 2 Vectors (Sin, Cos)
+  - ITrigonometricFunctions<>.Tan, (Memberwise)
+  - ITrigonometricFunctions<>.TanPi, (Memberwise)
+  - ITrigonometricFunctions<>.DegreesToRadians, (Memberwise)
+  - ITrigonometricFunctions<>.RadiansToDegrees, (Memberwise)
+  - IHyperbolicFunctions<>.Acosh, (Memberwise)
+  - IHyperbolicFunctions<>.Asinh, (Memberwise)
+  - IHyperbolicFunctions<>.Atanh, (Memberwise)
+  - IHyperbolicFunctions<>.Cosh, (Memberwise)
+  - IHyperbolicFunctions<>.Sinh, (Memberwise)
+  - IHyperbolicFunctions<>.Tanh, (Memberwise)
+  - ScaleB(Vector x, VectorND\<int\> n)
   - ScaleB(Vector x, int n)
   - RoundToInt(Vector x)
-    - Returns `VectorNI`, where N matches the dimensionality of the vector
+    - Returns `VectorND<int>`, where N matches the dimensionality of the vector
     - **INFORMATIVE** This may require multiple methods depending on implementation
   - FloorToInt(Vector x)
-    - Returns `VectorNI`, where N matches the dimensionality of the vector
+    - Returns `VectorND<int>`, where N matches the dimensionality of the vector
     - **INFORMATIVE** This may require multiple methods depending on implementation
   - CeilingToInt(Vector x)
-    - Returns `VectorNI`, where N matches the dimensionality of the vector
+    - Returns `VectorND<int>`, where N matches the dimensionality of the vector
     - **INFORMATIVE** This may require multiple methods depending on implementation
   - ToVector64(Vector x)
     - Returns `System.Runtime.Intrinsics.Vector64<TScalar>`
@@ -206,45 +205,32 @@ For F types, the following additional requirements **must** be fulfilled:
 # Matrix Types
 
 This proposal includes the following matrix types:
-- Matrix2x2F
-- Matrix2x2I
-- Matrix2x3F
-- Matrix2x3I
-- Matrix2x4F
-- Matrix2x4I
-- Matrix3x2F
-- Matrix3x2I
-- Matrix3x3F
-- Matrix3x3I
-- Matrix3x4F
-- Matrix3x4I
-- Matrix4x2F
-- Matrix4x2I
-- Matrix4x3F
-- Matrix4x3I
-- Matrix4x4F
-- Matrix4x4I
-- Matrix5x4F
-- Matrix5x4I
-
-Integer Variants do not require any functions which interact with Quaternions
+- `Matrix2X2<T>`
+- `Matrix2X3<T>`
+- `Matrix2X4<T>`
+- `Matrix3X2<T>`
+- `Matrix3X3<T>`
+- `Matrix3X4<T>`
+- `Matrix4X2<T>`
+- `Matrix4X3<T>`
+- `Matrix4X4<T>`
+- `Matrix5X4<T>`
 
 Matrix structs **must** fulfill the following requirements:
 - Fulfills `IEquatable<T>` where `T` is the same matrix class
 - Stored in row major format
-- F matricies work with F vectors, and I Matricies work with I vectors
 - Both row vectors and individual values (M11, etc.) accessible via properties
 - A ref indexer that takes row and column indicies and outputs the value
 - Add, subtract, and multiply operators defined with Matricies of the same size
 - Multiply operators defined with compatible matricies, if the output matrix type already exists (AxB * BxC = AxC)
 - Negate Operator defined
 - Implicit conversion to and from the System.Numerics matrix type, if available
-- Invert function for square matricies
-- GetDeterminant function for square matricies and Matrix3x2, Matrix4x3, and Matrix 5x4
-- Transpose function
-- static lerp function
-- static identity property
-- For Matrix3x2, Matrix3x3, Matrix4x3, and Matrix4x4 include the following static functions
+- Invert extension method for square matricies
+- GetDeterminant extension method for square matricies and Matrix3X2, Matrix4X3, and Matrix5X4
+- Transpose extension method
+- Lerp static method
+- static identity property for square matrices
+- For Matrix3X2, Matrix3X3, Matrix4X3, and Matrix4X4 include the following static functions
   - CreateBillboardRH
   - CreateBillboardLH
   - CreateRotation
@@ -252,14 +238,14 @@ Matrix structs **must** fulfill the following requirements:
   - CreateTranslation
   - CreateScale
   - Decompose (separate out any transformations)
-- For Matrix3x2 include a CreateSkew static function
-- For Matrix3x3, Matrix4x3, and Matrix4x4 include the following static functions
+- For Matrix3X2 include a CreateSkew static function
+- For Matrix3X3, Matrix4X3, and Matrix4X4 include the following static functions
   - CreateFromAxisAngle
   - CreateFromQuaternion
   - Transform
     - from a Quaternion
   - CreateFromYawPitchRoll
-- For Matrix4x3 and Matrix4x4 include the following static functions
+- For Matrix4X3 and Matrix4X4 include the following static functions
   - CreateConstrainedBillboardLH
   - CreateConstrainedBillboardRH
   - CreateLookAtLH
@@ -287,9 +273,9 @@ A Quaternion struct **must** be defined and match the following requirements:
 - Implements IEquatable with itself
 - Contain 4 scalar properties (X, Y, Z, W)
 - Define a Constructor taking 4 scalar values matching the properties
-- Define a Constructor taking a Vector3F\<T\> and a Scalar, with the vector 3 mapping to X, Y, Z and the Scalar to the W
-- Define a Constructor taking a Vector4F\<T\>
-- A Vector3F\<T\> Axis property mapping to (X, Y, Z)
+- Define a Constructor taking a `Vector3D<T>` and a Scalar, with the vector 3 mapping to X, Y, Z and the Scalar to the W
+- Define a Constructor taking a `Vector4D<T>`
+- A `Vector3D<T>` Axis property mapping to (X, Y, Z)
 - A T Angle property mapping to 2 * Acos(W)
 - A ref Indexer which takes an int and returns the components in order
 - An AsSpan function which returns this quaternion as a Span of the generic type
@@ -309,9 +295,9 @@ A Quaternion struct **must** be defined and match the following requirements:
   - A static implementation of this function **must** be available but it returns a new Quaternion rather than affecting the originals
 - A Conjugate function which returns the conjugate of this quaternion
   - A static implementation of this function **must** be available
-- A static CreateFromAxisAngle function which takes in a Vector3F\<T\> and an angle and returns a Quaternion representing that rotation
-- A static CreateFromRotationMatrix function which takes either a Matrix3x3 or Matrix4x4 and returns a Quaternion representing that rotation
-- A static CreateFromYawPitchRoll which takes either each components separately or in a Vector3F\<T\> and outputs a Quaternion representing that rotation
+- A static CreateFromAxisAngle function which takes in a `Vector3D<T>` and an angle and returns a Quaternion representing that rotation
+- A static CreateFromRotationMatrix function which takes either a Matrix3X3 or Matrix4X4 and returns a Quaternion representing that rotation
+- A static CreateFromYawPitchRoll which takes either each components separately or in a `Vector3D<T>` and outputs a Quaternion representing that rotation
 - A static Lerp function which takes 2 Quaternions and a Scalar matching the generic type which linearly interpolates between the 2 Quaternions with scalar used as the amount to lerp
 - A static SLerp function which takes 2 Quaternions and a Scalar matching the generic type which Spherical linearly interpolates between the 2 Quaternions with scalar used as the amount to lerp
 - A static Zero Quaternion Property
@@ -320,20 +306,13 @@ A Quaternion struct **must** be defined and match the following requirements:
 # Geometric Types
 
 The following Geometric Types are defined:
-- BoxF
-- BoxI
-- CircleF
-- CircleI
-- PlaneF
-- PlaneI
-- Ray2F
-- Ray2I
-- Ray3F
-- Ray3I
-- RectangleF
-- RectangleI
-- SphereF
-- SphereI
+- Box
+- Circle
+- Plane
+- Ray2
+- Ray3
+- Rectangle
+- Sphere
 
 Each type **must** include the following:
 - Intersect functions with both another instance of the type and a point
@@ -354,7 +333,7 @@ Each type **must** include the following:
   - DotCoordinate and DotNormal
     - with a Vector3
   - Transform
-    - With a Matrix4x4 or Quaternion, if relevant
+    - With a Matrix4X4 or Quaternion, if relevant
 
 # Meeting Notes 
 
@@ -385,3 +364,14 @@ Each type **must** include the following:
 - Rectangles and boxes are obscured with regards to internal layout, bindings to have interchange types that implicitly cast to the mathematical constructs that are represented by the Box/Rectangle types.
 - Investigate in the future if we can either add an Origin property for compatibility or an analyser for users to know that Min is the new Origin.
 - Approved notwithstanding the missing APIs.
+
+## 14/09/2025
+
+[Video](https://youtu.be/s5MVZ3BMbac?t=327)
+
+- It's weird having instance invocations (extension methods) and static methods.
+    - Should we follow System.Numerics where possible?
+    - Should we use this for things that would otherwise be an infix operator only?
+    - We will remove instance extension methods and add them back later if we still want them.
+    - We visited Length/LengthSquared as properties instead of .NET
+- Approved notwithstanding instance extension method and Atan2(Memberwise, Scalar) removal
