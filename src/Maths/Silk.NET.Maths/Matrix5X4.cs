@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
-    /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    /// <summary>A structure encapsulating a 5x4 matrix.</summary>
     [Serializable]
     [DataContract]
     public struct Matrix5X4<T> : IEquatable<Matrix5X4<T>>

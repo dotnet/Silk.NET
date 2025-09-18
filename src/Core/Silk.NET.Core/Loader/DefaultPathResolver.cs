@@ -370,7 +370,7 @@ namespace Silk.NET.Core.Loader
         private static readonly string[] _linuxRiDs =
         {
             "alpine", "android", "arch", "centos", "debian", "exherbo", "fedora", "freebsd", "gentoo", "linux",
-            "opensuse", "rhel", "sles", "tizen"
+            "opensuse", "rhel", "sles", "tizen", "pop"
         };
 
         private static string? GuessFallbackRid(string actualRuntimeIdentifier)
