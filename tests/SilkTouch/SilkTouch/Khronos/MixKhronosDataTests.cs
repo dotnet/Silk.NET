@@ -62,7 +62,7 @@ public class MixKhronosDataTests
                     new NullLogger<MixKhronosData>(),
                     new Options
                     {
-                        Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) }
+                        Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
                     }
                 );
                 await mod.InitializeAsync(new DummyModContext());
@@ -78,7 +78,6 @@ public class MixKhronosDataTests
             .SelectAwait(async s =>
                 s[0] is "gl.xml" or "cl.xml"
                     ? (object[])
-
                         [
                             s[0],
                             s[1],
@@ -89,7 +88,7 @@ public class MixKhronosDataTests
                                         )
                                     )
                                     .Select(ReadProfile)
-                            )
+                            ),
                         ]
                     : null
             )
@@ -152,11 +151,9 @@ public class MixKhronosDataTests
         )
         {
             var key = (
-                x.NativeName is "GLenum"
-                    ? "GLEnum"
-                    : x.NativeName.StartsWith("ErrorCodes")
-                        ? "ErrorCodes"
-                        : x.NativeName
+                x.NativeName is "GLenum" ? "GLEnum"
+                : x.NativeName.StartsWith("ErrorCodes") ? "ErrorCodes"
+                : x.NativeName
             ).Replace('.', '_').Trim();
             key = key[(key.LastIndexOf(' ') + 1)..];
             if (!baselineGroups.TryGetValue(key, out var constituents))
@@ -281,11 +278,10 @@ public class MixKhronosDataTests
                 .Options,
             Is.EquivalentTo(
                 (IEnumerable<string>)
-
                     [
                         "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
                         "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-                        "VK_VERSION_1_2"
+                        "VK_VERSION_1_2",
                     ]
             )
         );
@@ -300,10 +296,9 @@ public class MixKhronosDataTests
                 .Options,
             Is.EquivalentTo(
                 (IEnumerable<string>)
-
                     [
                         "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
-                        "VK_EXT_queue_family_foreign+VK_VERSION_1_1"
+                        "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
                     ]
             )
         );
