@@ -38,7 +38,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Computes the dot product of two vectors.</summary>
-        public static T Dot<T>(this Vector2D<T> left, Vector2D<T> right)
+        public static T Dot<T>(Vector2D<T> left, Vector2D<T> right)
             where T : INumberBase<T> =>
             left.X * right.X + left.Y * right.Y;
 
@@ -90,13 +90,13 @@ namespace Silk.NET.Maths
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCos(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static (Vector2D<T> Sin, Vector2D<T> Cos) SinCos<T>(this Vector2D<T> x)
+        public static (Vector2D<T> Sin, Vector2D<T> Cos) SinCos<T>(Vector2D<T> x)
             where T : ITrigonometricFunctions<T> =>
             (new(T.Sin(x.X), T.Sin(x.Y)), new(T.Cos(x.X), T.Cos(x.Y)));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCosPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static (Vector2D<T> SinPi, Vector2D<T> CosPi) SinCosPi<T>(this Vector2D<T> x)
+        public static (Vector2D<T> SinPi, Vector2D<T> CosPi) SinCosPi<T>(Vector2D<T> x)
             where T : ITrigonometricFunctions<T> =>
             (new(T.SinPi(x.X), T.SinPi(x.Y)), new(T.CosPi(x.X), T.CosPi(x.Y)));
 
@@ -129,63 +129,63 @@ namespace Silk.NET.Maths
 
         /// <summary>Applies <see cref="INumber{TSelf}.Sign(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
-        public static Vector2D<int> Sign<TSelf>(this Vector2D<TSelf> value)
+        public static Vector2D<int> Sign<TSelf>(Vector2D<TSelf> value)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Sign(value.X), TSelf.Sign(value.Y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.Max(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Max<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> Max<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Max(x.X, y.X), TSelf.Max(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.Max(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A single value provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Max<TSelf>(this Vector2D<TSelf> x, TSelf y)
+        public static Vector2D<TSelf> Max<TSelf>(Vector2D<TSelf> x, TSelf y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Max(x.X, y), TSelf.Max(x.Y, y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.MaxNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MaxNumber<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> MaxNumber<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.MaxNumber(x.X, y.X), TSelf.MaxNumber(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.MaxNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A single value provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MaxNumber<TSelf>(this Vector2D<TSelf> x, TSelf y)
+        public static Vector2D<TSelf> MaxNumber<TSelf>(Vector2D<TSelf> x, TSelf y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.MaxNumber(x.X, y), TSelf.MaxNumber(x.Y, y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.Min(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Min<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> Min<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Min(x.X, y.X), TSelf.Min(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.Min(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A single value provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Min<TSelf>(this Vector2D<TSelf> x, TSelf y)
+        public static Vector2D<TSelf> Min<TSelf>(Vector2D<TSelf> x, TSelf y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Min(x.X, y), TSelf.Min(x.Y, y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.MinNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MinNumber<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> MinNumber<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.MinNumber(x.X, y.X), TSelf.MinNumber(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.MinNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A single value provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MinNumber<TSelf>(this Vector2D<TSelf> x, TSelf y)
+        public static Vector2D<TSelf> MinNumber<TSelf>(Vector2D<TSelf> x, TSelf y)
             where TSelf : INumber<TSelf> =>
             new(TSelf.MinNumber(x.X, y), TSelf.MinNumber(x.Y, y));
 
@@ -193,7 +193,7 @@ namespace Silk.NET.Maths
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         /// <param name="min">A vector whose members will be provided for <parameref name="min"/>.</param>
         /// <param name="max">A vector whose members will be provided for <parameref name="max"/>.</param>
-        public static Vector2D<TSelf> Clamp<TSelf>(this Vector2D<TSelf> value, Vector2D<TSelf> min, Vector2D<TSelf> max)
+        public static Vector2D<TSelf> Clamp<TSelf>(Vector2D<TSelf> value, Vector2D<TSelf> min, Vector2D<TSelf> max)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Clamp(value.X, min.X, max.X), TSelf.Clamp(value.Y, min.Y, max.Y));
 
@@ -201,99 +201,131 @@ namespace Silk.NET.Maths
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         /// <param name="min">A single value provided for <parameref name="min"/>.</param>
         /// <param name="max">A single value provided for <parameref name="max"/>.</param>
-        public static Vector2D<TSelf> Clamp<TSelf>(this Vector2D<TSelf> value, TSelf min, TSelf max)
+        public static Vector2D<TSelf> Clamp<TSelf>(Vector2D<TSelf> value, TSelf min, TSelf max)
             where TSelf : INumber<TSelf> =>
             new(TSelf.Clamp(value.X, min, max), TSelf.Clamp(value.Y, min, max));
 
         /// <summary>Applies <see cref="INumber{TSelf}.CopySign(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         /// <param name="sign">A vector whose members will be provided for <parameref name="sign"/>.</param>
-        public static Vector2D<TSelf> CopySign<TSelf>(this Vector2D<TSelf> value, Vector2D<TSelf> sign)
+        public static Vector2D<TSelf> CopySign<TSelf>(Vector2D<TSelf> value, Vector2D<TSelf> sign)
             where TSelf : INumber<TSelf> =>
             new(TSelf.CopySign(value.X, sign.X), TSelf.CopySign(value.Y, sign.Y));
 
         /// <summary>Applies <see cref="INumber{TSelf}.CopySign(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
         /// <param name="sign">A single value provided for <parameref name="sign"/>.</param>
-        public static Vector2D<TSelf> CopySign<TSelf>(this Vector2D<TSelf> value, TSelf sign)
+        public static Vector2D<TSelf> CopySign<TSelf>(Vector2D<TSelf> value, TSelf sign)
             where TSelf : INumber<TSelf> =>
             new(TSelf.CopySign(value.X, sign), TSelf.CopySign(value.Y, sign));
 
         /// <summary>Applies <see cref="INumberBase{TSelf}.Abs(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
-        public static Vector2D<TSelf> Abs<TSelf>(this Vector2D<TSelf> value)
+        public static Vector2D<TSelf> Abs<TSelf>(Vector2D<TSelf> value)
             where TSelf : INumberBase<TSelf> =>
             new(TSelf.Abs(value.X), TSelf.Abs(value.Y));
 
         /// <summary>Applies <see cref="INumberBase{TSelf}.MaxMagnitude(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MaxMagnitude<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> MaxMagnitude<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumberBase<TSelf> =>
             new(TSelf.MaxMagnitude(x.X, y.X), TSelf.MaxMagnitude(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumberBase{TSelf}.MaxMagnitudeNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MaxMagnitudeNumber<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> MaxMagnitudeNumber<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumberBase<TSelf> =>
             new(TSelf.MaxMagnitudeNumber(x.X, y.X), TSelf.MaxMagnitudeNumber(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumberBase{TSelf}.MinMagnitude(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MinMagnitude<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> MinMagnitude<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumberBase<TSelf> =>
             new(TSelf.MinMagnitude(x.X, y.X), TSelf.MinMagnitude(x.Y, y.Y));
 
         /// <summary>Applies <see cref="INumberBase{TSelf}.MinMagnitudeNumber(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> MinMagnitudeNumber<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> MinMagnitudeNumber<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : INumberBase<TSelf> =>
             new(TSelf.MinMagnitudeNumber(x.X, y.X), TSelf.MinMagnitudeNumber(x.Y, y.Y));
 
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MultiplyAddEstimate(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
+        /// <param name="addend">A vector whose members will be provided for <parameref name="addend"/>.</param>
+        public static Vector2D<TSelf> MultiplyAddEstimate<TSelf>(Vector2D<TSelf> left, Vector2D<TSelf> right, Vector2D<TSelf> addend)
+            where TSelf : INumberBase<TSelf> =>
+            new(TSelf.MultiplyAddEstimate(left.X, right.X, addend.X), TSelf.MultiplyAddEstimate(left.Y, right.Y, addend.Y));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MultiplyAddEstimate(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
+        /// <param name="addend">A single value provided for <parameref name="addend"/>.</param>
+        public static Vector2D<TSelf> MultiplyAddEstimate<TSelf>(Vector2D<TSelf> left, Vector2D<TSelf> right, TSelf addend)
+            where TSelf : INumberBase<TSelf> =>
+            new(TSelf.MultiplyAddEstimate(left.X, right.X, addend), TSelf.MultiplyAddEstimate(left.Y, right.Y, addend));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MultiplyAddEstimate(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A single value provided for <parameref name="right"/>.</param>
+        /// <param name="addend">A vector whose members will be provided for <parameref name="addend"/>.</param>
+        public static Vector2D<TSelf> MultiplyAddEstimate<TSelf>(Vector2D<TSelf> left, TSelf right, Vector2D<TSelf> addend)
+            where TSelf : INumberBase<TSelf> =>
+            new(TSelf.MultiplyAddEstimate(left.X, right, addend.X), TSelf.MultiplyAddEstimate(left.Y, right, addend.Y));
+
+        /// <summary>Applies <see cref="INumberBase{TSelf}.MultiplyAddEstimate(TSelf, TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A single value provided for <parameref name="right"/>.</param>
+        /// <param name="addend">A single value provided for <parameref name="addend"/>.</param>
+        public static Vector2D<TSelf> MultiplyAddEstimate<TSelf>(Vector2D<TSelf> left, TSelf right, TSelf addend)
+            where TSelf : INumberBase<TSelf> =>
+            new(TSelf.MultiplyAddEstimate(left.X, right, addend), TSelf.MultiplyAddEstimate(left.Y, right, addend));
+
         /// <summary>Applies <see cref="IBinaryInteger{TSelf}.PopCount(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
-        public static Vector2D<TSelf> PopCount<TSelf>(this Vector2D<TSelf> value)
+        public static Vector2D<TSelf> PopCount<TSelf>(Vector2D<TSelf> value)
             where TSelf : IBinaryInteger<TSelf> =>
             new(TSelf.PopCount(value.X), TSelf.PopCount(value.Y));
 
         /// <summary>Applies <see cref="IBinaryInteger{TSelf}.TrailingZeroCount(TSelf)"/> to the provided arguments.</summary>
         /// <param name="value">A vector whose members will be provided for <parameref name="value"/>.</param>
-        public static Vector2D<TSelf> TrailingZeroCount<TSelf>(this Vector2D<TSelf> value)
+        public static Vector2D<TSelf> TrailingZeroCount<TSelf>(Vector2D<TSelf> value)
             where TSelf : IBinaryInteger<TSelf> =>
             new(TSelf.TrailingZeroCount(value.X), TSelf.TrailingZeroCount(value.Y));
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Ceiling(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Ceiling<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Ceiling<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Ceiling(x.X), TSelf.Ceiling(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Floor(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Floor<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Floor<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Floor(x.X), TSelf.Floor(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Round<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Round<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Round(x.X), TSelf.Round(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf, int)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="digits">A single value provided for <parameref name="digits"/>.</param>
-        public static Vector2D<TSelf> Round<TSelf>(this Vector2D<TSelf> x, int digits)
+        public static Vector2D<TSelf> Round<TSelf>(Vector2D<TSelf> x, int digits)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Round(x.X, digits), TSelf.Round(x.Y, digits));
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf, MidpointRounding)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="mode">A single value provided for <parameref name="mode"/>.</param>
-        public static Vector2D<TSelf> Round<TSelf>(this Vector2D<TSelf> x, MidpointRounding mode)
+        public static Vector2D<TSelf> Round<TSelf>(Vector2D<TSelf> x, MidpointRounding mode)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Round(x.X, mode), TSelf.Round(x.Y, mode));
 
@@ -301,27 +333,27 @@ namespace Silk.NET.Maths
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="digits">A single value provided for <parameref name="digits"/>.</param>
         /// <param name="mode">A single value provided for <parameref name="mode"/>.</param>
-        public static Vector2D<TSelf> Round<TSelf>(this Vector2D<TSelf> x, int digits, MidpointRounding mode)
+        public static Vector2D<TSelf> Round<TSelf>(Vector2D<TSelf> x, int digits, MidpointRounding mode)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Round(x.X, digits, mode), TSelf.Round(x.Y, digits, mode));
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Truncate(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Truncate<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Truncate<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPoint<TSelf> =>
             new(TSelf.Truncate(x.X), TSelf.Truncate(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.Atan2(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Atan2<TSelf>(this Vector2D<TSelf> y, Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Atan2<TSelf>(Vector2D<TSelf> y, Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.Atan2(y.X, x.X), TSelf.Atan2(y.Y, x.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.Atan2Pi(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Atan2Pi<TSelf>(this Vector2D<TSelf> y, Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Atan2Pi<TSelf>(Vector2D<TSelf> y, Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.Atan2Pi(y.X, x.X), TSelf.Atan2Pi(y.Y, x.Y));
 
@@ -329,19 +361,19 @@ namespace Silk.NET.Maths
         /// <param name="value1">A vector whose members will be provided for <parameref name="value1"/>.</param>
         /// <param name="value2">A vector whose members will be provided for <parameref name="value2"/>.</param>
         /// <param name="amount">A single value provided for <parameref name="amount"/>.</param>
-        public static Vector2D<TSelf> Lerp<TSelf>(this Vector2D<TSelf> value1, Vector2D<TSelf> value2, TSelf amount)
+        public static Vector2D<TSelf> Lerp<TSelf>(Vector2D<TSelf> value1, Vector2D<TSelf> value2, TSelf amount)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.Lerp(value1.X, value2.X, amount), TSelf.Lerp(value1.Y, value2.Y, amount));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.BitDecrement(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> BitDecrement<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> BitDecrement<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.BitDecrement(x.X), TSelf.BitDecrement(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.BitIncrement(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> BitIncrement<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> BitIncrement<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.BitIncrement(x.X), TSelf.BitIncrement(x.Y));
 
@@ -349,7 +381,7 @@ namespace Silk.NET.Maths
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
         /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
         /// <param name="addend">A vector whose members will be provided for <parameref name="addend"/>.</param>
-        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, Vector2D<TSelf> right, Vector2D<TSelf> addend)
+        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(Vector2D<TSelf> left, Vector2D<TSelf> right, Vector2D<TSelf> addend)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.FusedMultiplyAdd(left.X, right.X, addend.X), TSelf.FusedMultiplyAdd(left.Y, right.Y, addend.Y));
 
@@ -357,7 +389,7 @@ namespace Silk.NET.Maths
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
         /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
         /// <param name="addend">A single value provided for <parameref name="addend"/>.</param>
-        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, Vector2D<TSelf> right, TSelf addend)
+        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(Vector2D<TSelf> left, Vector2D<TSelf> right, TSelf addend)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.FusedMultiplyAdd(left.X, right.X, addend), TSelf.FusedMultiplyAdd(left.Y, right.Y, addend));
 
@@ -365,7 +397,7 @@ namespace Silk.NET.Maths
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
         /// <param name="right">A single value provided for <parameref name="right"/>.</param>
         /// <param name="addend">A vector whose members will be provided for <parameref name="addend"/>.</param>
-        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, TSelf right, Vector2D<TSelf> addend)
+        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(Vector2D<TSelf> left, TSelf right, Vector2D<TSelf> addend)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.FusedMultiplyAdd(left.X, right, addend.X), TSelf.FusedMultiplyAdd(left.Y, right, addend.Y));
 
@@ -373,313 +405,313 @@ namespace Silk.NET.Maths
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
         /// <param name="right">A single value provided for <parameref name="right"/>.</param>
         /// <param name="addend">A single value provided for <parameref name="addend"/>.</param>
-        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(this Vector2D<TSelf> left, TSelf right, TSelf addend)
+        public static Vector2D<TSelf> FusedMultiplyAdd<TSelf>(Vector2D<TSelf> left, TSelf right, TSelf addend)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.FusedMultiplyAdd(left.X, right, addend), TSelf.FusedMultiplyAdd(left.Y, right, addend));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.Ieee754Remainder(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
         /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
-        public static Vector2D<TSelf> Ieee754Remainder<TSelf>(this Vector2D<TSelf> left, Vector2D<TSelf> right)
+        public static Vector2D<TSelf> Ieee754Remainder<TSelf>(Vector2D<TSelf> left, Vector2D<TSelf> right)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.Ieee754Remainder(left.X, right.X), TSelf.Ieee754Remainder(left.Y, right.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.Ieee754Remainder(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
         /// <param name="right">A single value provided for <parameref name="right"/>.</param>
-        public static Vector2D<TSelf> Ieee754Remainder<TSelf>(this Vector2D<TSelf> left, TSelf right)
+        public static Vector2D<TSelf> Ieee754Remainder<TSelf>(Vector2D<TSelf> left, TSelf right)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.Ieee754Remainder(left.X, right), TSelf.Ieee754Remainder(left.Y, right));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.ILogB(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<int> ILogB<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<int> ILogB<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.ILogB(x.X), TSelf.ILogB(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.ReciprocalEstimate(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> ReciprocalEstimate<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> ReciprocalEstimate<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.ReciprocalEstimate(x.X), TSelf.ReciprocalEstimate(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.ReciprocalSqrtEstimate(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> ReciprocalSqrtEstimate<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> ReciprocalSqrtEstimate<TSelf>(Vector2D<TSelf> x)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.ReciprocalSqrtEstimate(x.X), TSelf.ReciprocalSqrtEstimate(x.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.ScaleB(TSelf, int)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="n">A vector whose members will be provided for <parameref name="n"/>.</param>
-        public static Vector2D<TSelf> ScaleB<TSelf>(this Vector2D<TSelf> x, Vector2D<int> n)
+        public static Vector2D<TSelf> ScaleB<TSelf>(Vector2D<TSelf> x, Vector2D<int> n)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.ScaleB(x.X, n.X), TSelf.ScaleB(x.Y, n.Y));
 
         /// <summary>Applies <see cref="IFloatingPointIeee754{TSelf}.ScaleB(TSelf, int)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="n">A single value provided for <parameref name="n"/>.</param>
-        public static Vector2D<TSelf> ScaleB<TSelf>(this Vector2D<TSelf> x, int n)
+        public static Vector2D<TSelf> ScaleB<TSelf>(Vector2D<TSelf> x, int n)
             where TSelf : IFloatingPointIeee754<TSelf> =>
             new(TSelf.ScaleB(x.X, n), TSelf.ScaleB(x.Y, n));
 
         /// <summary>Applies <see cref="IPowerFunctions{TSelf}.Pow(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Pow<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> Pow<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : IPowerFunctions<TSelf> =>
             new(TSelf.Pow(x.X, y.X), TSelf.Pow(x.Y, y.Y));
 
         /// <summary>Applies <see cref="IPowerFunctions{TSelf}.Pow(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A single value provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Pow<TSelf>(this Vector2D<TSelf> x, TSelf y)
+        public static Vector2D<TSelf> Pow<TSelf>(Vector2D<TSelf> x, TSelf y)
             where TSelf : IPowerFunctions<TSelf> =>
             new(TSelf.Pow(x.X, y), TSelf.Pow(x.Y, y));
 
         /// <summary>Applies <see cref="IRootFunctions{TSelf}.Cbrt(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Cbrt<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Cbrt<TSelf>(Vector2D<TSelf> x)
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.Cbrt(x.X), TSelf.Cbrt(x.Y));
 
         /// <summary>Applies <see cref="IRootFunctions{TSelf}.Sqrt(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Sqrt<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Sqrt<TSelf>(Vector2D<TSelf> x)
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.Sqrt(x.X), TSelf.Sqrt(x.Y));
 
         /// <summary>Applies <see cref="IRootFunctions{TSelf}.RootN(TSelf, int)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="n">A single value provided for <parameref name="n"/>.</param>
-        public static Vector2D<TSelf> RootN<TSelf>(this Vector2D<TSelf> x, int n)
+        public static Vector2D<TSelf> RootN<TSelf>(Vector2D<TSelf> x, int n)
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.RootN(x.X, n), TSelf.RootN(x.Y, n));
 
         /// <summary>Applies <see cref="IRootFunctions{TSelf}.RootN(TSelf, int)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="n">A vector whose members will be provided for <parameref name="n"/>.</param>
-        public static Vector2D<TSelf> RootN<TSelf>(this Vector2D<TSelf> x, Vector2D<int> n)
+        public static Vector2D<TSelf> RootN<TSelf>(Vector2D<TSelf> x, Vector2D<int> n)
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.RootN(x.X, n.X), TSelf.RootN(x.Y, n.Y));
 
         /// <summary>Applies <see cref="IRootFunctions{TSelf}.Hypot(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A vector whose members will be provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Hypot<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> y)
+        public static Vector2D<TSelf> Hypot<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> y)
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.Hypot(x.X, y.X), TSelf.Hypot(x.Y, y.Y));
 
         /// <summary>Applies <see cref="IRootFunctions{TSelf}.Hypot(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="y">A single value provided for <parameref name="y"/>.</param>
-        public static Vector2D<TSelf> Hypot<TSelf>(this Vector2D<TSelf> x, TSelf y)
+        public static Vector2D<TSelf> Hypot<TSelf>(Vector2D<TSelf> x, TSelf y)
             where TSelf : IRootFunctions<TSelf> =>
             new(TSelf.Hypot(x.X, y), TSelf.Hypot(x.Y, y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Log<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Log<TSelf>(Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X), TSelf.Log(x.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="newBase">A vector whose members will be provided for <parameref name="newBase"/>.</param>
-        public static Vector2D<TSelf> Log<TSelf>(this Vector2D<TSelf> x, Vector2D<TSelf> newBase)
+        public static Vector2D<TSelf> Log<TSelf>(Vector2D<TSelf> x, Vector2D<TSelf> newBase)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X, newBase.X), TSelf.Log(x.Y, newBase.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log(TSelf, TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
         /// <param name="newBase">A single value provided for <parameref name="newBase"/>.</param>
-        public static Vector2D<TSelf> Log<TSelf>(this Vector2D<TSelf> x, TSelf newBase)
+        public static Vector2D<TSelf> Log<TSelf>(Vector2D<TSelf> x, TSelf newBase)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log(x.X, newBase), TSelf.Log(x.Y, newBase));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.LogP1(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> LogP1<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> LogP1<TSelf>(Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.LogP1(x.X), TSelf.LogP1(x.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log2(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Log2<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Log2<TSelf>(Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log2(x.X), TSelf.Log2(x.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log2P1(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Log2P1<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Log2P1<TSelf>(Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log2P1(x.X), TSelf.Log2P1(x.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log10(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Log10<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Log10<TSelf>(Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log10(x.X), TSelf.Log10(x.Y));
 
         /// <summary>Applies <see cref="ILogarithmicFunctions{TSelf}.Log10P1(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Log10P1<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Log10P1<TSelf>(Vector2D<TSelf> x)
             where TSelf : ILogarithmicFunctions<TSelf> =>
             new(TSelf.Log10P1(x.X), TSelf.Log10P1(x.Y));
 
         /// <summary>Applies <see cref="IExponentialFunctions{TSelf}.Exp(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Exp<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Exp<TSelf>(Vector2D<TSelf> x)
             where TSelf : IExponentialFunctions<TSelf> =>
             new(TSelf.Exp(x.X), TSelf.Exp(x.Y));
 
         /// <summary>Applies <see cref="IExponentialFunctions{TSelf}.ExpM1(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> ExpM1<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> ExpM1<TSelf>(Vector2D<TSelf> x)
             where TSelf : IExponentialFunctions<TSelf> =>
             new(TSelf.ExpM1(x.X), TSelf.ExpM1(x.Y));
 
         /// <summary>Applies <see cref="IExponentialFunctions{TSelf}.Exp2(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Exp2<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Exp2<TSelf>(Vector2D<TSelf> x)
             where TSelf : IExponentialFunctions<TSelf> =>
             new(TSelf.Exp2(x.X), TSelf.Exp2(x.Y));
 
         /// <summary>Applies <see cref="IExponentialFunctions{TSelf}.Exp2M1(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Exp2M1<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Exp2M1<TSelf>(Vector2D<TSelf> x)
             where TSelf : IExponentialFunctions<TSelf> =>
             new(TSelf.Exp2M1(x.X), TSelf.Exp2M1(x.Y));
 
         /// <summary>Applies <see cref="IExponentialFunctions{TSelf}.Exp10(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Exp10<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Exp10<TSelf>(Vector2D<TSelf> x)
             where TSelf : IExponentialFunctions<TSelf> =>
             new(TSelf.Exp10(x.X), TSelf.Exp10(x.Y));
 
         /// <summary>Applies <see cref="IExponentialFunctions{TSelf}.Exp10M1(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Exp10M1<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Exp10M1<TSelf>(Vector2D<TSelf> x)
             where TSelf : IExponentialFunctions<TSelf> =>
             new(TSelf.Exp10M1(x.X), TSelf.Exp10M1(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.Acos(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Acos<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Acos<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.Acos(x.X), TSelf.Acos(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.AcosPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> AcosPi<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> AcosPi<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.AcosPi(x.X), TSelf.AcosPi(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.Asin(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Asin<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Asin<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.Asin(x.X), TSelf.Asin(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.AsinPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> AsinPi<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> AsinPi<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.AsinPi(x.X), TSelf.AsinPi(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.Atan(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Atan<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Atan<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.Atan(x.X), TSelf.Atan(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.AtanPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> AtanPi<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> AtanPi<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.AtanPi(x.X), TSelf.AtanPi(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.Cos(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Cos<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Cos<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.Cos(x.X), TSelf.Cos(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.CosPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> CosPi<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> CosPi<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.CosPi(x.X), TSelf.CosPi(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.Sin(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Sin<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Sin<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.Sin(x.X), TSelf.Sin(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> SinPi<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> SinPi<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.SinPi(x.X), TSelf.SinPi(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.Tan(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Tan<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Tan<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.Tan(x.X), TSelf.Tan(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.TanPi(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> TanPi<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> TanPi<TSelf>(Vector2D<TSelf> x)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.TanPi(x.X), TSelf.TanPi(x.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.DegreesToRadians(TSelf)"/> to the provided arguments.</summary>
         /// <param name="degrees">A vector whose members will be provided for <parameref name="degrees"/>.</param>
-        public static Vector2D<TSelf> DegreesToRadians<TSelf>(this Vector2D<TSelf> degrees)
+        public static Vector2D<TSelf> DegreesToRadians<TSelf>(Vector2D<TSelf> degrees)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.DegreesToRadians(degrees.X), TSelf.DegreesToRadians(degrees.Y));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.RadiansToDegrees(TSelf)"/> to the provided arguments.</summary>
         /// <param name="radians">A vector whose members will be provided for <parameref name="radians"/>.</param>
-        public static Vector2D<TSelf> RadiansToDegrees<TSelf>(this Vector2D<TSelf> radians)
+        public static Vector2D<TSelf> RadiansToDegrees<TSelf>(Vector2D<TSelf> radians)
             where TSelf : ITrigonometricFunctions<TSelf> =>
             new(TSelf.RadiansToDegrees(radians.X), TSelf.RadiansToDegrees(radians.Y));
 
         /// <summary>Applies <see cref="IHyperbolicFunctions{TSelf}.Acosh(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Acosh<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Acosh<TSelf>(Vector2D<TSelf> x)
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Acosh(x.X), TSelf.Acosh(x.Y));
 
         /// <summary>Applies <see cref="IHyperbolicFunctions{TSelf}.Asinh(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Asinh<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Asinh<TSelf>(Vector2D<TSelf> x)
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Asinh(x.X), TSelf.Asinh(x.Y));
 
         /// <summary>Applies <see cref="IHyperbolicFunctions{TSelf}.Atanh(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Atanh<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Atanh<TSelf>(Vector2D<TSelf> x)
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Atanh(x.X), TSelf.Atanh(x.Y));
 
         /// <summary>Applies <see cref="IHyperbolicFunctions{TSelf}.Cosh(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Cosh<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Cosh<TSelf>(Vector2D<TSelf> x)
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Cosh(x.X), TSelf.Cosh(x.Y));
 
         /// <summary>Applies <see cref="IHyperbolicFunctions{TSelf}.Sinh(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Sinh<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Sinh<TSelf>(Vector2D<TSelf> x)
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Sinh(x.X), TSelf.Sinh(x.Y));
 
         /// <summary>Applies <see cref="IHyperbolicFunctions{TSelf}.Tanh(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
-        public static Vector2D<TSelf> Tanh<TSelf>(this Vector2D<TSelf> x)
+        public static Vector2D<TSelf> Tanh<TSelf>(Vector2D<TSelf> x)
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Tanh(x.X), TSelf.Tanh(x.Y));
     }
