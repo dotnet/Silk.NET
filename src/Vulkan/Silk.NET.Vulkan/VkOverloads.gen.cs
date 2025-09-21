@@ -17,6 +17,178 @@ namespace Silk.NET.Vulkan
     public static class VkOverloads
     {
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindDescriptorSets2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindDescriptorSetsInfo> pBindDescriptorSetsInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdBindDescriptorSets2(commandBuffer, in pBindDescriptorSetsInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushConstants2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PushConstantsInfo> pPushConstantsInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPushConstants2(commandBuffer, in pPushConstantsInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSet(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, in pDescriptorWrites.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSet2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PushDescriptorSetInfo> pPushDescriptorSetInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSet2(commandBuffer, in pPushDescriptorSetInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSetWithTemplate<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSetWithTemplate(commandBuffer, descriptorUpdateTemplate, layout, set, ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSetWithTemplate2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSetWithTemplate2(commandBuffer, in pPushDescriptorSetWithTemplateInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetRenderingAttachmentLocation(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAttachmentLocationInfo> pLocationInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdSetRenderingAttachmentLocation(commandBuffer, in pLocationInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetRenderingInputAttachmentIndices(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdSetRenderingInputAttachmentIndices(commandBuffer, in pInputAttachmentIndexInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CopyImageToImage(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToImageInfo> pCopyImageToImageInfo)
+        {
+            // SpanOverloader
+            return thisApi.CopyImageToImage(device, in pCopyImageToImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CopyImageToMemory(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToMemoryInfo> pCopyImageToMemoryInfo)
+        {
+            // SpanOverloader
+            return thisApi.CopyImageToMemory(device, in pCopyImageToMemoryInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CopyMemoryToImage(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyMemoryToImageInfo> pCopyMemoryToImageInfo)
+        {
+            // SpanOverloader
+            return thisApi.CopyMemoryToImage(device, in pCopyMemoryToImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetDeviceImageSubresourceLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSubresourceLayout(device, pInfo, out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceImageSubresourceLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageSubresourceInfo> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSubresourceLayout(device, in pInfo.GetPinnableReference(), pLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetDeviceImageSubresourceLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageSubresourceInfo> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSubresourceLayout(device, in pInfo.GetPinnableReference(), out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetImageSubresourceLayout2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetImageSubresourceLayout2(device, image, pSubresource, out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetImageSubresourceLayout2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetImageSubresourceLayout2(device, image, in pSubresource.GetPinnableReference(), pLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetImageSubresourceLayout2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetImageSubresourceLayout2(device, image, in pSubresource.GetPinnableReference(), out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderingAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Extent2D> pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderingAreaGranularity(device, pRenderingAreaInfo, out pGranularity.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderingAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAreaInfo> pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderingAreaGranularity(device, in pRenderingAreaInfo.GetPinnableReference(), pGranularity);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderingAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAreaInfo> pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Extent2D> pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderingAreaGranularity(device, in pRenderingAreaInfo.GetPinnableReference(), out pGranularity.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result MapMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryMapInfo> pMemoryMapInfo, [Count(Count = 0)] void** ppData)
+        {
+            // SpanOverloader
+            return thisApi.MapMemory2(device, in pMemoryMapInfo.GetPinnableReference(), ppData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result MapMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryMapInfo> pMemoryMapInfo, [Count(Count = 0)] ref void* ppData)
+        {
+            // SpanOverloader
+            return thisApi.MapMemory2(device, in pMemoryMapInfo.GetPinnableReference(), ref ppData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result TransitionImageLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HostImageLayoutTransitionInfo> pTransitions)
+        {
+            // SpanOverloader
+            return thisApi.TransitionImageLayout(device, transitionCount, in pTransitions.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result UnmapMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryUnmapInfo> pMemoryUnmapInfo)
+        {
+            // SpanOverloader
+            return thisApi.UnmapMemory2(device, in pMemoryUnmapInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdBeginRenderPass2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubpassBeginInfo> pSubpassBeginInfo)
         {
             // SpanOverloader

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVertexInputBindingDivisorDescriptionKHR")]
-    [NativeName("Aliases", "VkVertexInputBindingDivisorDescriptionEXT")]
+    [NativeName("AliasOf", "VkVertexInputBindingDivisorDescription")]
     public unsafe partial struct VertexInputBindingDivisorDescriptionKHR
     {
         public VertexInputBindingDivisorDescriptionKHR

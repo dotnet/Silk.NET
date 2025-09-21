@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT", Convention = CallingConvention.Winapi)]
-        public partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte marker);
+        public partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT", Convention = CallingConvention.Winapi)]
         public partial void InsertEventMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);
@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT", Convention = CallingConvention.Winapi)]
-        public partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte marker);
+        public partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT", Convention = CallingConvention.Winapi)]
         public partial void PushGroupMarker([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string marker);

@@ -393,7 +393,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -405,7 +405,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -417,7 +417,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -432,7 +432,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -459,7 +459,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -474,7 +474,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly int SetTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IPropertyStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

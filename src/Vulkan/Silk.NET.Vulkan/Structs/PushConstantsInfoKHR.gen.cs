@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPushConstantsInfoKHR")]
+    [NativeName("AliasOf", "VkPushConstantsInfo")]
     public unsafe partial struct PushConstantsInfoKHR : IChainStart
     {
         public PushConstantsInfoKHR
         (
-            StructureType? sType = StructureType.PushConstantsInfoKhr,
+            StructureType? sType = StructureType.PushConstantsInfo,
             void* pNext = null,
             PipelineLayout? layout = null,
             ShaderStageFlags? stageFlags = null,
@@ -105,7 +106,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PushConstantsInfoKhr;
+            return SType = StructureType.PushConstantsInfo;
         }
 
         /// <inheritdoc />
@@ -123,7 +124,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref PushConstantsInfoKHR Chain(
             out PushConstantsInfoKHR capture)
         {
-            capture = new PushConstantsInfoKHR(StructureType.PushConstantsInfoKhr);
+            capture = new PushConstantsInfoKHR(StructureType.PushConstantsInfo);
             return ref capture;
         }
     }

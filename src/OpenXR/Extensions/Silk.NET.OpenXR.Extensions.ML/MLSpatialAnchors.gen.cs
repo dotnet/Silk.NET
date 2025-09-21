@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorsAsyncML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsCreateInfoBaseHeaderML createInfo, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result CreateSpatialAnchorsAsyncML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsCreateInfoBaseHeaderML createInfo, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorsAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorsAsyncML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorsCreateInfoBaseHeaderML createInfo, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result CreateSpatialAnchorsAsyncML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorsCreateInfoBaseHeaderML createInfo, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorsCompleteML", Convention = CallingConvention.Winapi)]

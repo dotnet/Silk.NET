@@ -24,7 +24,7 @@ namespace Silk.NET.WGL.Extensions.ARB
         public unsafe partial nint CreateContextAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attribList);
 
         [NativeApi(EntryPoint = "wglCreateContextAttribsARB", Convention = CallingConvention.Winapi)]
-        public partial nint CreateContextAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int attribList);
+        public partial nint CreateContextAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int attribList);
 
         public ArbCreateContext(INativeContext ctx)
             : base(ctx)

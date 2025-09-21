@@ -138,7 +138,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount)
+        public readonly unsafe int AddArguments([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* pArguments, uint argCount)
+        public readonly unsafe int AddArgumentsUTF8([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* pArguments, uint argCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddDefines([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Define pDefines, uint defineCount)
+        public readonly int AddDefines([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Define pDefines, uint defineCount)
         {
             var @this = (IDxcCompilerArgs*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

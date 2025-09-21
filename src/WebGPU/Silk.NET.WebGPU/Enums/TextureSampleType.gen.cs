@@ -12,18 +12,20 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureSampleType")]
     public enum TextureSampleType : int
     {
+        [NativeName("Name", "WGPUTextureSampleType_BindingNotUsed")]
+        BindingNotUsed = 0x0,
         [NativeName("Name", "WGPUTextureSampleType_Undefined")]
-        Undefined = 0x0,
+        Undefined = 0x1,
         [NativeName("Name", "WGPUTextureSampleType_Float")]
-        Float = 0x1,
+        Float = 0x2,
         [NativeName("Name", "WGPUTextureSampleType_UnfilterableFloat")]
-        UnfilterableFloat = 0x2,
+        UnfilterableFloat = 0x3,
         [NativeName("Name", "WGPUTextureSampleType_Depth")]
-        Depth = 0x3,
+        Depth = 0x4,
         [NativeName("Name", "WGPUTextureSampleType_Sint")]
-        Sint = 0x4,
+        Sint = 0x5,
         [NativeName("Name", "WGPUTextureSampleType_Uint")]
-        Uint = 0x5,
+        Uint = 0x6,
         [NativeName("Name", "WGPUTextureSampleType_Force32")]
         Force32 = 0x7FFFFFFF,
     }

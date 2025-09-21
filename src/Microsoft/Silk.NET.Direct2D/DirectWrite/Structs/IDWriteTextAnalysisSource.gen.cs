@@ -132,7 +132,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTextAtPosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, uint* textLength)
+        public readonly unsafe int GetTextAtPosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, uint* textLength)
         {
             var @this = (IDWriteTextAnalysisSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTextAtPosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, ref uint textLength)
+        public readonly unsafe int GetTextAtPosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, ref uint textLength)
         {
             var @this = (IDWriteTextAnalysisSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTextBeforePosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, uint* textLength)
+        public readonly unsafe int GetTextBeforePosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, uint* textLength)
         {
             var @this = (IDWriteTextAnalysisSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -192,7 +192,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTextBeforePosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, ref uint textLength)
+        public readonly unsafe int GetTextBeforePosition(uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, ref uint textLength)
         {
             var @this = (IDWriteTextAnalysisSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -225,7 +225,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLocaleName(uint textPosition, uint* textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* localeName)
+        public readonly unsafe int GetLocaleName(uint textPosition, uint* textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* localeName)
         {
             var @this = (IDWriteTextAnalysisSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetLocaleName(uint textPosition, ref uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* localeName)
+        public readonly unsafe int GetLocaleName(uint textPosition, ref uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* localeName)
         {
             var @this = (IDWriteTextAnalysisSource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

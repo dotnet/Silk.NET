@@ -156,12 +156,12 @@ namespace Silk.NET.DXVA
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
         [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
+        public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
         [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
+        public unsafe partial int HDCreateDevice(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
@@ -176,12 +176,12 @@ namespace Silk.NET.DXVA
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
         [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
+        public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
         [NativeApi(EntryPoint = "DXVAHD_CreateDevice", Convention = CallingConvention.StdCall)]
-        public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
+        public unsafe partial int HDCreateDevice(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1967, Column 8 in dxva2api.h")]
@@ -253,7 +253,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public unsafe int HDCreateDevice<TI0>(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDXVAHDDevice>, IComVtbl<TI0>
+        public unsafe int HDCreateDevice<TI0>(Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDXVAHDDevice>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return HDCreateDevice(pD3DDevice, in pContentDesc, Usage, pPlugin, (IDXVAHDDevice**) ppDevice.GetAddressOf());
@@ -269,7 +269,7 @@ namespace Silk.NET.DXVA
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1134, Column 1 in dxvahd.h")]
-        public unsafe int HDCreateDevice<TI0>(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDXVAHDDevice>, IComVtbl<TI0>
+        public unsafe int HDCreateDevice<TI0>(ref Silk.NET.Direct3D9.IDirect3DDevice9Ex pD3DDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDContentDesc pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDXVAHDDevice>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return HDCreateDevice(ref pD3DDevice, in pContentDesc, Usage, pPlugin, (IDXVAHDDevice**) ppDevice.GetAddressOf());

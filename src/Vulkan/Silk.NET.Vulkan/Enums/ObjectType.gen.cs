@@ -110,12 +110,20 @@ namespace Silk.NET.Vulkan
         BufferCollectionFuchsia = 1000366000,
         [NativeName("Name", "VK_OBJECT_TYPE_MICROMAP_EXT")]
         MicromapExt = 1000396000,
+        [NativeName("Name", "VK_OBJECT_TYPE_TENSOR_ARM")]
+        TensorArm = 1000460000,
+        [NativeName("Name", "VK_OBJECT_TYPE_TENSOR_VIEW_ARM")]
+        TensorViewArm = 1000460001,
         [NativeName("Name", "VK_OBJECT_TYPE_OPTICAL_FLOW_SESSION_NV")]
         OpticalFlowSessionNV = 1000464000,
         [NativeName("Name", "VK_OBJECT_TYPE_SHADER_EXT")]
         ShaderExt = 1000482000,
         [NativeName("Name", "VK_OBJECT_TYPE_PIPELINE_BINARY_KHR")]
         PipelineBinaryKhr = 1000483000,
+        [NativeName("Name", "VK_OBJECT_TYPE_DATA_GRAPH_PIPELINE_SESSION_ARM")]
+        DataGraphPipelineSessionArm = 1000507000,
+        [NativeName("Name", "VK_OBJECT_TYPE_EXTERNAL_COMPUTE_QUEUE_NV")]
+        ExternalComputeQueueNV = 1000556000,
         [NativeName("Name", "VK_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_EXT")]
         IndirectCommandsLayoutExt = 1000572000,
         [NativeName("Name", "VK_OBJECT_TYPE_INDIRECT_EXECUTION_SET_EXT")]

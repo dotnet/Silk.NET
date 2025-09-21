@@ -26,7 +26,7 @@ namespace Silk.NET.OpenXR.Extensions.ALMALENCE
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetDigitalLensControlALMALENCE", Convention = CallingConvention.Winapi)]
-        public partial Result SetDigitalLensControlAlmalence([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DigitalLensControlALMALENCE digitalLensControl);
+        public partial Result SetDigitalLensControlAlmalence([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DigitalLensControlALMALENCE digitalLensControl);
 
         public AlmalenceDigitalLensControl(INativeContext ctx)
             : base(ctx)

@@ -21,6 +21,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MultiInstanceBitKhr\"")]
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT_KHR")]
         MemoryHeapMultiInstanceBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"TileMemoryBitQCom\"")]
+        [NativeName("Name", "VK_MEMORY_HEAP_TILE_MEMORY_BIT_QCOM")]
+        MemoryHeapTileMemoryBitQCom = 8,
         [Obsolete("Deprecated in favour of \"MultiInstanceBit\"")]
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT")]
         MemoryHeapMultiInstanceBit = 2,
@@ -31,6 +34,8 @@ namespace Silk.NET.Vulkan
         DeviceLocalBit = 1,
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT_KHR")]
         MultiInstanceBitKhr = 2,
+        [NativeName("Name", "VK_MEMORY_HEAP_TILE_MEMORY_BIT_QCOM")]
+        TileMemoryBitQCom = 8,
         [NativeName("Name", "VK_MEMORY_HEAP_MULTI_INSTANCE_BIT")]
         MultiInstanceBit = 2,
         [NativeName("Name", "VK_MEMORY_HEAP_SEU_SAFE_BIT")]

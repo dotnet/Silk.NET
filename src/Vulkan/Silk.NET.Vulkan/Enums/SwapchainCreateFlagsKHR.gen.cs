@@ -27,6 +27,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DeferredMemoryAllocationBitExt\"")]
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_EXT")]
         SwapchainCreateDeferredMemoryAllocationBitExt = 8,
+        [Obsolete("Deprecated in favour of \"PresentID2BitKhr\"")]
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_ID_2_BIT_KHR")]
+        SwapchainCreatePresentID2BitKhr = 64,
+        [Obsolete("Deprecated in favour of \"PresentWait2BitKhr\"")]
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_WAIT_2_BIT_KHR")]
+        SwapchainCreatePresentWait2BitKhr = 128,
+        [Obsolete("Deprecated in favour of \"DeferredMemoryAllocationBitKhr\"")]
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_KHR")]
+        SwapchainCreateDeferredMemoryAllocationBitKhr = 8,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
         SplitInstanceBindRegionsBitKhr = 1,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_PROTECTED_BIT_KHR")]
@@ -35,5 +44,11 @@ namespace Silk.NET.Vulkan
         MutableFormatBitKhr = 4,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_EXT")]
         DeferredMemoryAllocationBitExt = 8,
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_ID_2_BIT_KHR")]
+        PresentID2BitKhr = 64,
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_WAIT_2_BIT_KHR")]
+        PresentWait2BitKhr = 128,
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_KHR")]
+        DeferredMemoryAllocationBitKhr = 8,
     }
 }

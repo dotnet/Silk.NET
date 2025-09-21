@@ -126,7 +126,7 @@ public unsafe static class D2D1DrawingStateBlock1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DrawingStateDescription stateDescription)
+    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DrawingStateDescription stateDescription)
     {
         var @this = thisVtbl.Handle;
         fixed (DrawingStateDescription* stateDescriptionPtr = &stateDescription)

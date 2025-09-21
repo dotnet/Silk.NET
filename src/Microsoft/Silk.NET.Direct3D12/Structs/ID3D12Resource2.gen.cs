@@ -243,7 +243,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -267,7 +267,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -291,7 +291,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -315,7 +315,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -339,7 +339,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+        public readonly int SetName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Range pReadRange, void** ppData)
+        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Range pReadRange, void** ppData)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -443,7 +443,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Range pReadRange, ref void* ppData)
+        public readonly unsafe int Map(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Range pReadRange, ref void* ppData)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -465,7 +465,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void Unmap(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Range pWrittenRange)
+        public readonly void Unmap(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Range pWrittenRange)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Range* pWrittenRangePtr = &pWrittenRange)
@@ -504,7 +504,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteToSubresource<T0>(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly unsafe int WriteToSubresource<T0>(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Box* pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -516,7 +516,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+        public readonly unsafe int WriteToSubresource(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -528,7 +528,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteToSubresource<T0>(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+        public readonly int WriteToSubresource<T0>(uint DstSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDstBox, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -552,7 +552,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox)
+        public readonly unsafe int ReadFromSubresource(void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox)
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -576,7 +576,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pSrcBox) where T0 : unmanaged
+        public readonly int ReadFromSubresource<T0>(ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pSrcBox) where T0 : unmanaged
         {
             var @this = (ID3D12Resource2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

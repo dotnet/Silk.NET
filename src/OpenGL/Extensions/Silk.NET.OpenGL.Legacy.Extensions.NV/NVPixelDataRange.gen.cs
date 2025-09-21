@@ -30,13 +30,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void PixelDataRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
-        public partial void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer) where T0 : unmanaged;
+        public partial void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void PixelDataRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV", Convention = CallingConvention.Winapi)]
-        public partial void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer) where T0 : unmanaged;
+        public partial void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer) where T0 : unmanaged;
 
         public unsafe void PixelDataRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV target, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {

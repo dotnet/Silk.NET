@@ -122,7 +122,7 @@ public unsafe static class D3D12WorkGraphPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetWorkGraphIndex(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pProgramName)
+    public static uint GetWorkGraphIndex(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pProgramName)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;

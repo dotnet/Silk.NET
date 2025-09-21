@@ -22,13 +22,13 @@ namespace Silk.NET.WebGPU
         public DeviceDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
+            StringView? label = null,
             nuint? requiredFeatureCount = null,
             FeatureName* requiredFeatures = null,
-            RequiredLimits* requiredLimits = null,
+            Limits* requiredLimits = null,
             QueueDescriptor? defaultQueue = null,
-            PfnDeviceLostCallback? deviceLostCallback = null,
-            void* deviceLostUserdata = null
+            DeviceLostCallbackInfo? deviceLostCallbackInfo = null,
+            UncapturedErrorCallbackInfo? uncapturedErrorCallbackInfo = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -38,7 +38,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
+                Label = label.Value;
             }
 
             if (requiredFeatureCount is not null)
@@ -61,27 +61,27 @@ namespace Silk.NET.WebGPU
                 DefaultQueue = defaultQueue.Value;
             }
 
-            if (deviceLostCallback is not null)
+            if (deviceLostCallbackInfo is not null)
             {
-                DeviceLostCallback = deviceLostCallback.Value;
+                DeviceLostCallbackInfo = deviceLostCallbackInfo.Value;
             }
 
-            if (deviceLostUserdata is not null)
+            if (uncapturedErrorCallbackInfo is not null)
             {
-                DeviceLostUserdata = deviceLostUserdata;
+                UncapturedErrorCallbackInfo = uncapturedErrorCallbackInfo.Value;
             }
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
+        public StringView Label;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
@@ -93,24 +93,24 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "requiredFeatures")]
         public FeatureName* RequiredFeatures;
 
-        [NativeName("Type", "const WGPURequiredLimits *")]
-        [NativeName("Type.Name", "const WGPURequiredLimits *")]
+        [NativeName("Type", "const WGPULimits *")]
+        [NativeName("Type.Name", "const WGPULimits *")]
         [NativeName("Name", "requiredLimits")]
-        public RequiredLimits* RequiredLimits;
+        public Limits* RequiredLimits;
 
         [NativeName("Type", "WGPUQueueDescriptor")]
         [NativeName("Type.Name", "WGPUQueueDescriptor")]
         [NativeName("Name", "defaultQueue")]
         public QueueDescriptor DefaultQueue;
 
-        [NativeName("Type", "WGPUDeviceLostCallback")]
-        [NativeName("Type.Name", "WGPUDeviceLostCallback")]
-        [NativeName("Name", "deviceLostCallback")]
-        public PfnDeviceLostCallback DeviceLostCallback;
+        [NativeName("Type", "WGPUDeviceLostCallbackInfo")]
+        [NativeName("Type.Name", "WGPUDeviceLostCallbackInfo")]
+        [NativeName("Name", "deviceLostCallbackInfo")]
+        public DeviceLostCallbackInfo DeviceLostCallbackInfo;
 
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "deviceLostUserdata")]
-        public void* DeviceLostUserdata;
+        [NativeName("Type", "WGPUUncapturedErrorCallbackInfo")]
+        [NativeName("Type.Name", "WGPUUncapturedErrorCallbackInfo")]
+        [NativeName("Name", "uncapturedErrorCallbackInfo")]
+        public UncapturedErrorCallbackInfo UncapturedErrorCallbackInfo;
     }
 }

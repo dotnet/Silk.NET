@@ -24,5 +24,7 @@ namespace Silk.NET.OpenGLES
         GccsoShaderBinaryFJ = 0x9260,
         [NativeName("Name", "GL_SHADER_BINARY_FORMAT_SPIR_V")]
         ShaderBinaryFormatSpirV = 0x9551,
+        [NativeName("Name", "GL_HUAWEI_SHADER_BINARY")]
+        HuaweiShaderBinary = 0x9770,
     }
 }

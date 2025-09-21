@@ -36,13 +36,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in sbyte coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly sbyte coords);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in sbyte coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly sbyte coords);
 
         [NativeApi(EntryPoint = "glNormalStream3sATI", Convention = CallingConvention.Winapi)]
         public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short nx, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short ny, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short nz);
@@ -54,13 +54,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glNormalStream3iATI", Convention = CallingConvention.Winapi)]
         public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int nx, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int ny, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int nz);
@@ -72,13 +72,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glNormalStream3fATI", Convention = CallingConvention.Winapi)]
         public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float nx, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float ny, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float nz);
@@ -90,13 +90,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glNormalStream3dATI", Convention = CallingConvention.Winapi)]
         public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double nx, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double ny, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double nz);
@@ -108,13 +108,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI", Convention = CallingConvention.Winapi)]
-        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void NormalStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexBlendEnviATI", Convention = CallingConvention.Winapi)]
         public partial void VertexBlendEnv([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);
@@ -138,13 +138,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream1iATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x);
@@ -156,13 +156,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream1fATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x);
@@ -174,13 +174,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream1dATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x);
@@ -192,13 +192,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream1([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream2sATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short y);
@@ -210,13 +210,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream2iATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y);
@@ -228,13 +228,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream2fATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y);
@@ -246,13 +246,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream2dATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y);
@@ -264,13 +264,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream2([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream3sATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short z);
@@ -282,13 +282,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream3iATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int z);
@@ -300,13 +300,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream3fATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z);
@@ -318,13 +318,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream3dATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z);
@@ -336,13 +336,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream3([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream4sATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] short w);
@@ -354,13 +354,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short coords);
 
         [NativeApi(EntryPoint = "glVertexStream4iATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int w);
@@ -372,13 +372,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int coords);
 
         [NativeApi(EntryPoint = "glVertexStream4fATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float w);
@@ -390,13 +390,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float coords);
 
         [NativeApi(EntryPoint = "glVertexStream4dATI", Convention = CallingConvention.Winapi)]
         public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double w);
@@ -408,13 +408,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI", Convention = CallingConvention.Winapi)]
-        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double coords);
+        public partial void VertexStream4([Flow(Silk.NET.Core.Native.FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double coords);
 
         public AtiVertexStreams(INativeContext ctx)
             : base(ctx)

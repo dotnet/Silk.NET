@@ -38,6 +38,8 @@ namespace Silk.NET.SPIRV
         Slang = 0xB,
         [NativeName("Name", "SpvSourceLanguageZig")]
         Zig = 0xC,
+        [NativeName("Name", "SpvSourceLanguageRust")]
+        Rust = 0xD,
         [NativeName("Name", "SpvSourceLanguageMax")]
         Max = 0x7FFFFFFF,
     }

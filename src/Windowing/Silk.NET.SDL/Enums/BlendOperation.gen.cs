@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_blendmode_L65_C9")]
     [NativeName("Name", "SDL_BlendOperation")]
     public enum BlendOperation : int
     {

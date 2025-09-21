@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderSubgroupRotateFeaturesKHR")]
+    [NativeName("AliasOf", "VkPhysicalDeviceShaderSubgroupRotateFeatures")]
     public unsafe partial struct PhysicalDeviceShaderSubgroupRotateFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceShaderSubgroupRotateFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceShaderSubgroupRotateFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceShaderSubgroupRotateFeatures,
             void* pNext = null,
             Bool32? shaderSubgroupRotate = null,
             Bool32? shaderSubgroupRotateClustered = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceShaderSubgroupRotateFeaturesKhr;
+            return SType = StructureType.PhysicalDeviceShaderSubgroupRotateFeatures;
         }
 
         /// <inheritdoc />

@@ -10,10 +10,17 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.IMG
 {
     [Obsolete("The \"ungrouped\" enums (CLEnum, KHR, etc...) are deprecated in favour of the \"grouped\" enums (ErrorCodes, DeviceType, etc...). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ")]
-    [Flags]
     [NativeName("Name", "CLenum")]
     public enum IMG : int
     {
+        [NativeName("Name", "CL_CONTEXT_WORKGROUP_PROTECTION_IMG")]
+        WorkgroupProtection = 0x1,
+        [NativeName("Name", "CL_CONTEXT_WORKGROUP_PROTECTION_IMG")]
+        ContextWorkgroupProtectionImg = 0x1,
+        [NativeName("Name", "CL_CONTEXT_ENHANCED_EVENT_EXECUTION_STATUS_IMG")]
+        EnhancedEventExecutionStatus = 0x2,
+        [NativeName("Name", "CL_CONTEXT_ENHANCED_EVENT_EXECUTION_STATUS_IMG")]
+        ContextEnhancedEventExecutionStatusImg = 0x2,
         [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
         RelaxRequirements = 0x1,
         [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
@@ -62,14 +69,40 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         GenerateMipmapImg = 0x40D6,
         [NativeName("Name", "CL_COMMAND_GENERATE_MIPMAP_IMG")]
         CommandGenerateMipmapImg = 0x40D6,
+        [NativeName("Name", "CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
+        SafetyPropertiesImg = 0x40D9,
+        [NativeName("Name", "CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
+        ContextSafetyPropertiesImg = 0x40D9,
         [NativeName("Name", "CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
         MemoryCapabilitiesImg = 0x40D8,
         [NativeName("Name", "CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
         DeviceMemoryCapabilitiesImg = 0x40D8,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
+        WorkgroupProtectionSvmCapabilitiesImg = 0x40DA,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
+        DeviceWorkgroupProtectionSvmCapabilitiesImg = 0x40DA,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
+        WorkgroupProtectionDeviceEnqueueCapabilitiesImg = 0x40DB,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
+        DeviceWorkgroupProtectionDeviceEnqueueCapabilitiesImg = 0x40DB,
+        [NativeName("Name", "CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
+        SafetyMemSizeImg = 0x40DC,
+        [NativeName("Name", "CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
+        DeviceSafetyMemSizeImg = 0x40DC,
         [NativeName("Name", "CL_GRALLOC_RESOURCE_NOT_ACQUIRED_IMG")]
         GrallocResourceNotAcquiredImg = 0x40D4,
         [NativeName("Name", "CL_INVALID_GRALLOC_OBJECT_IMG")]
         InvalidGrallocObjectImg = 0x40D5,
+        [NativeName("Name", "CL_ECC_RECOVERED_IMG")]
+        EccRecoveredImg = 0x40DD,
+        [NativeName("Name", "CL_PAGE_FAULT_IMG")]
+        PageFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB99),
+        [NativeName("Name", "CL_SAFETY_FAULT_IMG")]
+        SafetyFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB98),
+        [NativeName("Name", "CL_GENERAL_FAULT_IMG")]
+        GeneralFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB97),
+        [NativeName("Name", "CL_ECC_UNRECOVERED_IMG")]
+        EccUnrecoveredImg = unchecked((int) 0xFFFFFFFFFFFFFB96),
         [NativeName("Name", "CL_CANCELLED_IMG")]
         CancelledImg = unchecked((int) 0xFFFFFFFFFFFFFB9A),
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]
@@ -88,5 +121,13 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         AllocFlagsImg = 0x40D7,
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
         MemAllocFlagsImg = 0x40D7,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_VIRTUAL_ADDRESS_IMG")]
+        ExternalMemoryDmaBufVirtualAddressImg = 0x4220,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_VIRTUAL_ADDRESS_IMG")]
+        SvmAllocExternalMemoryDmaBufVirtualAddressImg = 0x4220,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_IMG")]
+        ExternalMemoryDmaBufImg = 0x4221,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_IMG")]
+        SvmAllocExternalMemoryDmaBufImg = 0x4221,
     }
 }

@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SemaphoreGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* pFd);
+        public unsafe partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* pFd);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SemaphoreGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int pFd);
+        public partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int pFd);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ImportSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImportSemaphoreFdInfoKHR pImportSemaphoreFdInfo);
+        public partial Result ImportSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImportSemaphoreFdInfoKHR pImportSemaphoreFdInfo);
 
         public KhrExternalSemaphoreFd(INativeContext ctx)
             : base(ctx)

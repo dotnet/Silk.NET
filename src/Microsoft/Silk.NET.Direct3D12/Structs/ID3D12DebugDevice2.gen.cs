@@ -150,7 +150,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDebugParameter<T0>(DebugDeviceParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint DataSize) where T0 : unmanaged
+        public readonly int SetDebugParameter<T0>(DebugDeviceParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint DataSize) where T0 : unmanaged
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

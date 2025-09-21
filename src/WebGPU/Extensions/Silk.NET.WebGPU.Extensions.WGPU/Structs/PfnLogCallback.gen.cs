@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     public unsafe readonly struct PfnLogCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<LogLevel, byte*, void*, void> Handle => (delegate* unmanaged[Cdecl]<LogLevel, byte*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void> Handle => (delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void>) _handle;
         public PfnLogCallback
         (
-            delegate* unmanaged[Cdecl]<LogLevel, byte*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnLogCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
 
         public static implicit operator nint(PfnLogCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnLogCallback(nint pfn)
-            => new PfnLogCallback((delegate* unmanaged[Cdecl]<LogLevel, byte*, void*, void>) pfn);
+            => new PfnLogCallback((delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void>) pfn);
 
         public static implicit operator PfnLogCallback(LogCallback proc)
             => new PfnLogCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public static explicit operator LogCallback(PfnLogCallback pfn)
             => SilkMarshal.PtrToDelegate<LogCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<LogLevel, byte*, void*, void>(PfnLogCallback pfn) => pfn.Handle;
-        public static implicit operator PfnLogCallback(delegate* unmanaged[Cdecl]<LogLevel, byte*, void*, void> ptr) => new PfnLogCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void>(PfnLogCallback pfn) => pfn.Handle;
+        public static implicit operator PfnLogCallback(delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void> ptr) => new PfnLogCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void LogCallback(LogLevel arg0, byte* arg1, void* arg2);
+    public unsafe delegate void LogCallback(LogLevel arg0, StringView arg1, void* arg2);
 }
 

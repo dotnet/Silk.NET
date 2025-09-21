@@ -12,12 +12,14 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUAddressMode")]
     public enum AddressMode : int
     {
-        [NativeName("Name", "WGPUAddressMode_Repeat")]
-        Repeat = 0x0,
-        [NativeName("Name", "WGPUAddressMode_MirrorRepeat")]
-        MirrorRepeat = 0x1,
+        [NativeName("Name", "WGPUAddressMode_Undefined")]
+        Undefined = 0x0,
         [NativeName("Name", "WGPUAddressMode_ClampToEdge")]
-        ClampToEdge = 0x2,
+        ClampToEdge = 0x1,
+        [NativeName("Name", "WGPUAddressMode_Repeat")]
+        Repeat = 0x2,
+        [NativeName("Name", "WGPUAddressMode_MirrorRepeat")]
+        MirrorRepeat = 0x3,
         [NativeName("Name", "WGPUAddressMode_Force32")]
         Force32 = 0x7FFFFFFF,
     }

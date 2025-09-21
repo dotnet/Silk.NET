@@ -118,6 +118,8 @@ namespace Silk.NET.Vulkan
         PipelineBinaryMissingKhr = 1000483000,
         [NativeName("Name", "VK_ERROR_NOT_ENOUGH_SPACE_KHR")]
         ErrorNotEnoughSpaceKhr = unchecked((int) -1000483000),
+        [NativeName("Name", "VK_ERROR_VALIDATION_FAILED")]
+        ErrorValidationFailed = unchecked((int) -1000011001),
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY")]
         ErrorOutOfPoolMemory = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE")]
@@ -128,8 +130,8 @@ namespace Silk.NET.Vulkan
         ErrorInvalidOpaqueCaptureAddress = unchecked((int) -1000257000),
         [NativeName("Name", "VK_PIPELINE_COMPILE_REQUIRED")]
         PipelineCompileRequired = 1000297000,
-        [NativeName("Name", "VK_ERROR_VALIDATION_FAILED")]
-        ErrorValidationFailed = unchecked((int) -1000011001),
+        [NativeName("Name", "VK_ERROR_NOT_PERMITTED")]
+        ErrorNotPermitted = unchecked((int) -1000174001),
         [NativeName("Name", "VK_ERROR_INVALID_PIPELINE_CACHE_DATA")]
         ErrorInvalidPipelineCacheData = unchecked((int) -1000298000),
         [NativeName("Name", "VK_ERROR_NO_PIPELINE_MATCH")]

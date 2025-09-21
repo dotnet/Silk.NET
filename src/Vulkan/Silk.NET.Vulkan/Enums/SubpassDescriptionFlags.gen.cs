@@ -27,6 +27,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ShaderResolveBitQCom\"")]
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
         SubpassDescriptionShaderResolveBitQCom = 8,
+        [Obsolete("Deprecated in favour of \"TileShadingApronBitQCom\"")]
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
+        SubpassDescriptionTileShadingApronBitQCom = 256,
         [Obsolete("Deprecated in favour of \"RasterizationOrderAttachmentColorAccessBitArm\"")]
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
         SubpassDescriptionRasterizationOrderAttachmentColorAccessBitArm = 16,
@@ -56,6 +59,8 @@ namespace Silk.NET.Vulkan
         FragmentRegionBitQCom = 4,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
         ShaderResolveBitQCom = 8,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
+        TileShadingApronBitQCom = 256,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
         RasterizationOrderAttachmentColorAccessBitArm = 16,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM")]

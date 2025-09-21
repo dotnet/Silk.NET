@@ -81,7 +81,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void ProgramUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* value);
 
         [NativeApi(EntryPoint = "glProgramUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong value);
+        public partial void ProgramUniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong value);
 
         [NativeApi(EntryPoint = "glUniformui64NV", Convention = CallingConvention.Winapi)]
         public partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong value);
@@ -90,7 +90,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* value);
 
         [NativeApi(EntryPoint = "glUniformui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong value);
+        public partial void Uniform([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong value);
 
         public unsafe ulong GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV value)
         {

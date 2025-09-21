@@ -15,9 +15,9 @@ namespace Silk.NET.Vulkan.Video
         [Obsolete("Deprecated in favour of \"BT709\"")]
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_709")]
         StdVideoAV1ColorPrimariesBT709 = 0x1,
-        [Obsolete("Deprecated in favour of \"BTUnspecified\"")]
-        [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_UNSPECIFIED")]
-        StdVideoAV1ColorPrimariesBTUnspecified = 0x2,
+        [Obsolete("Deprecated in favour of \"Unspecified\"")]
+        [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_UNSPECIFIED")]
+        StdVideoAV1ColorPrimariesUnspecified = 0x2,
         [Obsolete("Deprecated in favour of \"BT470M\"")]
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_470_M")]
         StdVideoAV1ColorPrimariesBT470M = 0x4,
@@ -51,13 +51,16 @@ namespace Silk.NET.Vulkan.Video
         [Obsolete("Deprecated in favour of \"Invalid\"")]
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_INVALID")]
         StdVideoAV1ColorPrimariesInvalid = 0x7FFFFFFF,
+        [Obsolete("Deprecated in favour of \"BTUnspecified\"")]
+        [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_UNSPECIFIED")]
+        StdVideoAV1ColorPrimariesBTUnspecified = 0x2,
         [Obsolete("Deprecated in favour of \"MaxEnum\"")]
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_MAX_ENUM")]
         StdVideoAV1ColorPrimariesMaxEnum = 0x7FFFFFFF,
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_709")]
         BT709 = 0x1,
-        [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_UNSPECIFIED")]
-        BTUnspecified = 0x2,
+        [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_UNSPECIFIED")]
+        Unspecified = 0x2,
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_470_M")]
         BT470M = 0x4,
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_470_B_G")]
@@ -80,6 +83,8 @@ namespace Silk.NET.Vulkan.Video
         Ebu3213 = 0x16,
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_INVALID")]
         Invalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_BT_UNSPECIFIED")]
+        BTUnspecified = 0x2,
         [NativeName("Name", "STD_VIDEO_AV1_COLOR_PRIMARIES_MAX_ENUM")]
         MaxEnum = 0x7FFFFFFF,
     }

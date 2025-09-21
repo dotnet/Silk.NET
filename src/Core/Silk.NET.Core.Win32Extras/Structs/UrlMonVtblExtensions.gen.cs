@@ -133,7 +133,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -249,7 +249,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -261,7 +261,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -276,7 +276,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -309,7 +309,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -324,7 +324,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -342,7 +342,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -360,7 +360,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -381,7 +381,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -395,7 +395,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -429,7 +429,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -505,7 +505,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -519,7 +519,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -536,7 +536,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -553,7 +553,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -637,7 +637,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -649,7 +649,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -664,7 +664,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -679,7 +679,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -697,7 +697,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -712,7 +712,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -730,7 +730,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -748,7 +748,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -769,7 +769,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -783,7 +783,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -800,7 +800,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -817,7 +817,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -837,7 +837,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -852,7 +852,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -870,7 +870,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -888,7 +888,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -909,7 +909,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -927,7 +927,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -948,7 +948,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -969,7 +969,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -993,7 +993,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1010,7 +1010,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1030,7 +1030,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1050,7 +1050,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1073,7 +1073,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1087,7 +1087,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1104,7 +1104,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1121,7 +1121,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1141,7 +1141,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1158,7 +1158,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1178,7 +1178,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1198,7 +1198,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1221,7 +1221,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1237,7 +1237,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1256,7 +1256,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1275,7 +1275,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1353,7 +1353,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1367,7 +1367,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1384,7 +1384,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1401,7 +1401,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1485,7 +1485,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1499,7 +1499,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1516,7 +1516,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1533,7 +1533,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1553,7 +1553,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1570,7 +1570,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1590,7 +1590,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1610,7 +1610,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1633,7 +1633,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1649,7 +1649,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1668,7 +1668,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1687,7 +1687,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1773,7 +1773,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1789,7 +1789,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1808,7 +1808,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1827,7 +1827,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1981,7 +1981,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1996,7 +1996,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2014,7 +2014,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2032,7 +2032,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2121,7 +2121,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2136,7 +2136,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2154,7 +2154,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2172,7 +2172,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2193,7 +2193,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2211,7 +2211,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2232,7 +2232,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2253,7 +2253,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2277,7 +2277,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2294,7 +2294,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2314,7 +2314,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2334,7 +2334,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2425,7 +2425,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2442,7 +2442,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2462,7 +2462,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2482,7 +2482,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2581,7 +2581,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2596,7 +2596,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2614,7 +2614,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2632,7 +2632,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2653,7 +2653,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2671,7 +2671,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2692,7 +2692,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2713,7 +2713,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2737,7 +2737,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2754,7 +2754,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2774,7 +2774,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2794,7 +2794,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2817,7 +2817,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2835,7 +2835,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2856,7 +2856,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2877,7 +2877,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2901,7 +2901,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2922,7 +2922,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2946,7 +2946,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2970,7 +2970,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2997,7 +2997,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3017,7 +3017,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3040,7 +3040,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3063,7 +3063,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3089,7 +3089,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3106,7 +3106,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3126,7 +3126,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3146,7 +3146,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3169,7 +3169,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3189,7 +3189,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3212,7 +3212,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3235,7 +3235,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3261,7 +3261,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3280,7 +3280,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3302,7 +3302,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3324,7 +3324,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3417,7 +3417,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3434,7 +3434,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3454,7 +3454,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3474,7 +3474,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3573,7 +3573,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3590,7 +3590,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3610,7 +3610,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3630,7 +3630,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3653,7 +3653,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3673,7 +3673,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3696,7 +3696,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3719,7 +3719,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3745,7 +3745,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3764,7 +3764,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3786,7 +3786,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3808,7 +3808,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3909,7 +3909,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3928,7 +3928,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, IBindCtx* pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3950,7 +3950,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
+    public static unsafe int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, Guid* riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3972,7 +3972,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
+    public static int AsyncGetClassBits(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ref IBindCtx pbc, uint dwClassContext, ref Guid riid, uint flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4154,7 +4154,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4170,7 +4170,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4242,7 +4242,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4258,7 +4258,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4290,7 +4290,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4306,7 +4306,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4338,7 +4338,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4354,7 +4354,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4426,7 +4426,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4442,7 +4442,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4514,7 +4514,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4530,7 +4530,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4562,7 +4562,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4578,7 +4578,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4610,7 +4610,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4626,7 +4626,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4658,7 +4658,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4674,7 +4674,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4706,7 +4706,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4722,7 +4722,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4754,7 +4754,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4770,7 +4770,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4802,7 +4802,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4818,7 +4818,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4850,7 +4850,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4866,7 +4866,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4898,7 +4898,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4914,7 +4914,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4986,7 +4986,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5002,7 +5002,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5074,7 +5074,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5090,7 +5090,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5122,7 +5122,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5138,7 +5138,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5170,7 +5170,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5186,7 +5186,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5258,7 +5258,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5274,7 +5274,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, Guid* rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5394,7 +5394,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5410,7 +5410,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5490,7 +5490,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5506,7 +5506,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5538,7 +5538,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5554,7 +5554,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5586,7 +5586,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5602,7 +5602,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5682,7 +5682,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5698,7 +5698,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5778,7 +5778,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5794,7 +5794,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5826,7 +5826,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5842,7 +5842,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5874,7 +5874,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5890,7 +5890,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5922,7 +5922,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5938,7 +5938,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5970,7 +5970,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5986,7 +5986,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6018,7 +6018,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6034,7 +6034,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6066,7 +6066,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6082,7 +6082,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6114,7 +6114,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6130,7 +6130,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6162,7 +6162,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6178,7 +6178,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6258,7 +6258,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6274,7 +6274,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6354,7 +6354,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6370,7 +6370,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6402,7 +6402,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6418,7 +6418,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6450,7 +6450,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6466,7 +6466,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6546,7 +6546,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static unsafe int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, Guid* riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6562,7 +6562,7 @@ public unsafe static class UrlMonVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
+    public static int AsyncGetClassBits<TI0>(this ComPtr<IUrlMon> thisVtbl, ref Guid rclsid, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszTYPE, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pszExt, uint dwFileVersionMS, uint dwFileVersionLS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszCodeBase, ComPtr<TI0> pbc, uint dwClassContext, ref Guid riid, uint flags) where TI0 : unmanaged, IComVtbl<IBindCtx>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

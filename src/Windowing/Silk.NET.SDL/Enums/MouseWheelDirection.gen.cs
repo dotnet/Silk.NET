@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_mouse_L66_C9")]
     [NativeName("Name", "SDL_MouseWheelDirection")]
     public enum MouseWheelDirection : int
     {

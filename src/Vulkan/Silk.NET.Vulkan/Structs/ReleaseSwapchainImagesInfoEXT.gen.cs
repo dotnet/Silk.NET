@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkReleaseSwapchainImagesInfoEXT")]
+    [NativeName("AliasOf", "VkReleaseSwapchainImagesInfoKHR")]
     public unsafe partial struct ReleaseSwapchainImagesInfoEXT : IChainable
     {
         public ReleaseSwapchainImagesInfoEXT
         (
-            StructureType? sType = StructureType.ReleaseSwapchainImagesInfoExt,
+            StructureType? sType = StructureType.ReleaseSwapchainImagesInfoKhr,
             void* pNext = null,
             SwapchainKHR? swapchain = null,
             uint? imageIndexCount = null,
@@ -83,7 +84,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ReleaseSwapchainImagesInfoExt;
+            return SType = StructureType.ReleaseSwapchainImagesInfoKhr;
         }
 
         /// <inheritdoc />

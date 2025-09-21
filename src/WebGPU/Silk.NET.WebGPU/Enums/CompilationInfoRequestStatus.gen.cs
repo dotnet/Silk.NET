@@ -13,13 +13,9 @@ namespace Silk.NET.WebGPU
     public enum CompilationInfoRequestStatus : int
     {
         [NativeName("Name", "WGPUCompilationInfoRequestStatus_Success")]
-        Success = 0x0,
-        [NativeName("Name", "WGPUCompilationInfoRequestStatus_Error")]
-        Error = 0x1,
-        [NativeName("Name", "WGPUCompilationInfoRequestStatus_DeviceLost")]
-        DeviceLost = 0x2,
-        [NativeName("Name", "WGPUCompilationInfoRequestStatus_Unknown")]
-        Unknown = 0x3,
+        Success = 0x1,
+        [NativeName("Name", "WGPUCompilationInfoRequestStatus_CallbackCancelled")]
+        CallbackCancelled = 0x2,
         [NativeName("Name", "WGPUCompilationInfoRequestStatus_Force32")]
         Force32 = 0x7FFFFFFF,
     }
