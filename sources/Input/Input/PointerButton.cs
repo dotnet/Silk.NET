@@ -3,12 +3,13 @@ namespace Silk.NET.Input;
 /// <summary>
 /// Enumerates the buttons available on pointer devices.
 /// </summary>
+[OrderedIndexUsage]
 public enum PointerButton
 {
     /// <summary>
     /// An unrecognised button.
     /// </summary>
-    Unknown,
+    Unknown = JoystickAxis.Unknown,
 
     /// <summary>
     /// The primary button e.g. left click.

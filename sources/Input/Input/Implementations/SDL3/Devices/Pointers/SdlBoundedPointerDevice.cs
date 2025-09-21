@@ -10,33 +10,19 @@ namespace Silk.NET.Input.SDL3.Pointers;
 /// </summary>
 internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
 {
-    protected SdlBoundedPointerDevice(SdlInputBackend backend, IReadOnlyList<IPointerTarget> targets, InputMarshal.ListOwner<TargetPoint> boundedPoints) : base(backend)
+    protected SdlBoundedPointerDevice(SdlInputBackend backend, nint silkId,
+        uint sdlDeviceId) : base(backend, silkId, sdlDeviceId)
     {
-        Targets = targets;
-        BoundedPoints = boundedPoints;
     }
 
     public abstract PointerState State { get; }
 
-    //public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
-
-    [field: MaybeNull]
-    public virtual IReadOnlyList<IPointerTarget> Targets =>
-        field ??= [Backend.BoundedPointerTarget];
+    public abstract IReadOnlyList<IPointerTarget> Targets { get; }
 
     /// <summary>
     /// Determines whether the <see cref="SdlBoundedPointerTarget"/> should interpret <see cref="PointerState.Points"/>
     /// as being bounded points. For all devices supported by this backend, only one target is supported at a time
     /// today.
     /// </summary>
-    public virtual bool IsBounded => true;
-
-    // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-    public InputMarshal.ListOwner<TargetPoint> BoundedPoints =>
-        field.List.Data is null ? field = InputMarshal.CreateList<TargetPoint>() : field;
-
-    protected sealed override void Release()
-    {
-
-    }
+    public bool IsBounded => true;
 }

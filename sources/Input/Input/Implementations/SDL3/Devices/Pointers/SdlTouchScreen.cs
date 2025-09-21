@@ -14,11 +14,6 @@ internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerD
         throw new NotImplementedException();
     }
 
-    public override uint RefreshIdFromBackend()
-    {
-        throw new NotImplementedException();
-    }
-
     public override string Name
     {
         get

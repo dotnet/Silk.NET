@@ -120,10 +120,6 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     public SdlPlatformInfo Info { get; }
 
     [field: MaybeNull]
-    public SdlBoundedPointerTarget BoundedPointerTarget =>
-        field ??= new SdlBoundedPointerTarget(this);
-
-    [field: MaybeNull]
     public SdlUnboundedPointerTarget UnboundedPointerTarget =>
         field ??= new SdlUnboundedPointerTarget(this);
 
@@ -187,7 +183,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 
         while (_pumpedEvents.TryDequeue(out var evt))
         {
-            ProcessEvent(ref evt, handler);
+            ProcessEvent(in evt, handler);
         }
 
         foreach (var device in _devices)
@@ -218,7 +214,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         BoundedPointerTargetUpdate,
     }
 
-    private ulong GetTimestamp(ref readonly Event @event) =>
+    private ulong GetTimestamp(in Event @event) =>
         unchecked((ulong)(_epoch + (@event.Common.Timestamp * _ticksPerNanosecond)));
 
     private unsafe byte OnEvent(void* arg0, Event* arg1)
@@ -228,9 +224,9 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         return 1;
     }
 
-    private void ProcessEvent(ref Event evt, IInputHandler handler)
+    private void ProcessEvent(in Event evt, IInputHandler handler)
     {
-        var timestamp = GetTimestamp(ref evt);
+        var timestamp = GetTimestamp(in evt);
         Debug.Assert(timestamp >= _previousTimestamp, "Events out of order");
         _previousTimestamp = timestamp;
 
@@ -355,6 +351,34 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                     case EventType.JoystickUpdateComplete:
                         break;
                 }
+                break;
+            }
+            case >= EventType.MouseMotion and <= EventType.MouseAdded:
+            {
+                if(!TryGetOrCreateDevice<SdlSharedMouse>(evt.Mdevice.Which, out var mouse))
+                {
+                    return;
+                }
+
+                if (type is EventType.MouseAdded)
+                {
+                    return;
+                }
+
+                switch (type)
+                {
+                    case EventType.MouseMotion:
+                        mouse.AddMotion(evt.Motion);
+                        break;
+                    case EventType.MouseButtonDown:
+                    case EventType.MouseButtonUp:
+                        mouse.AddButtonEvent(evt.Button);
+                        break;
+                    case EventType.MouseWheel:
+                        mouse.AddWheelEvent(evt.Wheel);
+                        break;
+                }
+
                 break;
             }
         }
@@ -538,5 +562,30 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Clear() => _events.Clear();
+    }
+
+    internal unsafe bool TryGetPointerTargetForWindow(WindowHandle window, [NotNullWhen(true)] out IPointerTarget? target)
+    {
+        if (window.Handle == null)
+        {
+            target = null;
+            return false;
+        }
+
+        var id = _sdl.GetWindowID(window);
+        return TryGetPointerTargetForWindow(id, out target);
+    }
+
+    internal bool TryGetPointerTargetForWindow(uint id, [NotNullWhen(true)] out IPointerTarget? target)
+    {
+        if (id == 0)
+        {
+            target = null;
+            return false;
+        }
+
+        // todo : get the SDL window (or other window) with the given ID
+        target = null;
+        throw new NotImplementedException();
     }
 }

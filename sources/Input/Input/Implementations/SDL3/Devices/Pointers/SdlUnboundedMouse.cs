@@ -5,14 +5,19 @@ using System.Numerics;
 
 namespace Silk.NET.Input.SDL3.Pointers;
 
-internal class SdlUnboundedMouse : SdlDevice, IMouse
+internal class SdlUnboundedMouse : SdlDevice, IMouse, ISdlDevice<SdlUnboundedMouse>
 {
-    public SdlUnboundedMouse(uint sdlDeviceId, SdlInputBackend backend) : base(sdlDeviceId, backend)
+    private SdlUnboundedMouse(uint sdlDeviceId, nint silkId, SdlInputBackend backend) : base(backend, silkId, sdlDeviceId)
     {
     }
 
 
     public MouseState State => throw new NotImplementedException();
+    public static SdlUnboundedMouse? CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    {
+
+    }
+
     public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
 
     public ICursorConfiguration Cursor => Backend;

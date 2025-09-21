@@ -9,24 +9,24 @@ namespace Silk.NET.Input;
 /// <typeparam name="T">The <c>Silk.NET.Input</c> type to store.</typeparam>
 public readonly struct InputReadOnlyList<T> : IReadOnlyList<T>
 {
-    internal object Data { get; }
-
-    internal InputReadOnlyList(object data) => Data = data;
+    internal object Data => _list;
 
     /// <summary>
     /// Creates an <see cref="InputReadOnlyList{T}"/> from a <see cref="IReadOnlyList{T}"/>.
     /// </summary>
     /// <param name="other">The list to copy.</param>
-    public InputReadOnlyList(IReadOnlyList<T> other) => this = InputMarshal.Clone(other).List;
+    public InputReadOnlyList(IReadOnlyList<T> other) => _list = other;
 
     /// <inheritdoc />
-    public IEnumerator<T> GetEnumerator() => InputMarshal.EnumerateList(this);
+    public IEnumerator<T> GetEnumerator() => _list.GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     /// <inheritdoc />
-    public int Count => InputMarshal.GetListCount(this);
+    public int Count => _list.Count;
 
     /// <inheritdoc />
-    public T this[int index] => InputMarshal.ElementAt(this, index);
+    public T this[int index] => _list[index];
+
+    private readonly IReadOnlyList<T> _list;
 }
