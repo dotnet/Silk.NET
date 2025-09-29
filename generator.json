@@ -165,6 +165,8 @@
         "AddIncludes",
         "ClangScraper",
         "ChangeNativeClass",
+        "AddApiProfiles",
+        "MixKhronosData",
         "ExtractNestedTyping",
         "TransformHandles",
         "TransformFunctions",
@@ -184,7 +186,21 @@
           "EFX_REVERB_PRESET_.*": "EfxReverbPreset"
         }
       },
-      "_TODO_Add_MixKhronosData_once_OpenAL_Soft_has_a_Khronos_style_spec": {},
+      "MixKhronosData": {
+        "UseDataTypeTrimmings": true,
+        "SpecPath": "eng/submodules/openal-soft/registry/xml/al.xml",
+        "EnumNativeTypeNames": {
+          "ALenum": "ALEnum",
+          "ALCenum": "ALCEnum"
+        },
+        "Namespace": "Silk.NET.OpenAL",
+        "NonStandardExtensionNomenclature": true,
+        "Vendors": [
+          "SOFT",
+          "LOKI",
+          "EXT"
+        ]
+      },
       "AddVTables": {
         "VTables": [
           {

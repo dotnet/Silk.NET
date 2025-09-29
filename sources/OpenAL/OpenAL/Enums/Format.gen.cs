@@ -1,0 +1,85 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Generated using the OpenAL Soft headers and corresponding dependencies.
+// Original source is licensed under the LGPL 2.0 license. Please note that while bindings are able to be MIT due to
+// being header-derived only, implementations of the headers may have a less permissive license.
+using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.OpenAL;
+
+[Transformed]
+public enum Format : uint
+{
+    FormatMono8 = unchecked((uint)0x1100),
+    FormatMono16 = unchecked((uint)0x1101),
+    FormatStereo8 = unchecked((uint)0x1102),
+    FormatStereo16 = unchecked((uint)0x1103),
+    FormatImaAdpcmMono16EXT = unchecked((uint)0x10000),
+    FormatImaAdpcmStereo16EXT = unchecked((uint)0x10001),
+    FormatWaveEXT = unchecked((uint)0x10002),
+    FormatVorbisEXT = unchecked((uint)0x10003),
+    FormatQuad8LOKI = unchecked((uint)0x10004),
+    FormatQuad16LOKI = unchecked((uint)0x10005),
+    FormatMonoFloat32 = unchecked((uint)0x10010),
+    FormatStereoFloat32 = unchecked((uint)0x10011),
+    FormatMonoDoubleEXT = unchecked((uint)0x10012),
+    FormatStereoDoubleEXT = unchecked((uint)0x10013),
+    FormatMonoMulawEXT = unchecked((uint)0x10014),
+    FormatStereoMulawEXT = unchecked((uint)0x10015),
+    FormatMonoAlawEXT = unchecked((uint)0x10016),
+    FormatStereoAlawEXT = unchecked((uint)0x10017),
+    FormatQuad8 = unchecked((uint)0x1204),
+    FormatQuad16 = unchecked((uint)0x1205),
+    FormatQuad32 = unchecked((uint)0x1206),
+    FormatRear8 = unchecked((uint)0x1207),
+    FormatRear16 = unchecked((uint)0x1208),
+    FormatRear32 = unchecked((uint)0x1209),
+    Format51Chn8 = unchecked((uint)0x120A),
+    Format51Chn16 = unchecked((uint)0x120B),
+    Format51Chn32 = unchecked((uint)0x120C),
+    Format61Chn8 = unchecked((uint)0x120D),
+    Format61Chn16 = unchecked((uint)0x120E),
+    Format61Chn32 = unchecked((uint)0x120F),
+    Format71Chn8 = unchecked((uint)0x1210),
+    Format71Chn16 = unchecked((uint)0x1211),
+    Format71Chn32 = unchecked((uint)0x1212),
+    FormatMonoMulaw = unchecked((uint)0x10014),
+    FormatStereoMulaw = unchecked((uint)0x10015),
+    FormatQuadMulaw = unchecked((uint)0x10021),
+    FormatRearMulaw = unchecked((uint)0x10022),
+    Format51ChnMulaw = unchecked((uint)0x10023),
+    Format61ChnMulaw = unchecked((uint)0x10024),
+    Format71ChnMulaw = unchecked((uint)0x10025),
+    FormatMonoIma4 = unchecked((uint)0x1300),
+    FormatStereoIma4 = unchecked((uint)0x1301),
+    FormatMonoMsadpcmSOFT = unchecked((uint)0x1302),
+    FormatStereoMsadpcmSOFT = unchecked((uint)0x1303),
+    FormatBformat2D8 = unchecked((uint)0x20021),
+    FormatBformat2D16 = unchecked((uint)0x20022),
+    FormatBformat2DFloat32 = unchecked((uint)0x20023),
+    FormatBformat3D8 = unchecked((uint)0x20031),
+    FormatBformat3D16 = unchecked((uint)0x20032),
+    FormatBformat3DFloat32 = unchecked((uint)0x20033),
+    FormatBformat2DMulaw = unchecked((uint)0x10031),
+    FormatBformat3DMulaw = unchecked((uint)0x10032),
+    FormatUhj2Chn8SOFT = unchecked((uint)0x19A2),
+    FormatUhj2Chn16SOFT = unchecked((uint)0x19A3),
+    FormatUhj2ChnFloat32SOFT = unchecked((uint)0x19A4),
+    FormatUhj3Chn8SOFT = unchecked((uint)0x19A5),
+    FormatUhj3Chn16SOFT = unchecked((uint)0x19A6),
+    FormatUhj3ChnFloat32SOFT = unchecked((uint)0x19A7),
+    FormatUhj4Chn8SOFT = unchecked((uint)0x19A8),
+    FormatUhj4Chn16SOFT = unchecked((uint)0x19A9),
+    FormatUhj4ChnFloat32SOFT = unchecked((uint)0x19AA),
+    FormatUhj2ChnMulawSOFT = unchecked((uint)0x19B3),
+    FormatUhj2ChnAlawSOFT = unchecked((uint)0x19B4),
+    FormatUhj2ChnIma4SOFT = unchecked((uint)0x19B5),
+    FormatUhj2ChnMsadpcmSOFT = unchecked((uint)0x19B6),
+    FormatUhj3ChnMulawSOFT = unchecked((uint)0x19B7),
+    FormatUhj3ChnAlawSOFT = unchecked((uint)0x19B8),
+    FormatUhj4ChnMulawSOFT = unchecked((uint)0x19B9),
+    FormatUhj4ChnAlawSOFT = unchecked((uint)0x19BA),
+}
