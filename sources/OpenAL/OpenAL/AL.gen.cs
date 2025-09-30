@@ -26,7 +26,7 @@ partial class AL(INativeContext nativeContext) : IDisposable
         public static void MakeCurrent(IAL ctx) => Underlying.Value = ctx;
     }
 
-    private readonly unsafe void*[] _slots = new void*[73];
+    private readonly unsafe void*[] _slots = new void*[264];
 
     public static IAL Create(INativeContext ctx) => new AL(ctx);
 

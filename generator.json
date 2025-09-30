@@ -223,7 +223,21 @@
           "EFXEAXREVERBPROPERTIES_flReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
           "EFXEAXREVERBPROPERTIES_flLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
           "ALCcontextHandle": "ContextHandle",
-          "ALCdeviceHandle": "DeviceHandle"
+          "ALCdeviceHandle": "DeviceHandle",
+          "ALBUFFERCALLBACKTYPESOFT": "BufferCallbackSOFT",
+          "ALBUFFERCALLBACKTYPESOFTDelegate": "BufferCallbackDelegateSOFT",
+          "ALCEVENTPROCTYPESOFT": "ContextEventProcSOFT",
+          "ALCEVENTPROCTYPESOFTDelegate": "ContextEventProcDelegateSOFT",
+          "ALEVENTPROCSOFT": "EventProcSOFT",
+          "ALEVENTPROCSOFTDelegate": "EventProcDelegateSOFT",
+          "ALDEBUGPROCEXT": "DebugProcEXT",
+          "ALDEBUGPROCEXTDelegate": "DebugProcDelegateEXT",
+          "LPALFOLDBACKCALLBACK": "FoldbackCallback",
+          "LPALFOLDBACKCALLBACKDelegate": "FoldbackCallbackDelegate",
+          "EAXSetDirect": "EAXSetDirect",
+          "EAXGetDirect": "EAXGetDirect",
+          "EAXGetBufferModeDirect": "EAXGetBufferModeDirect",
+          "EAXSetBufferModeDirect": "EAXSetBufferModeDirect"
         }
       },
       "TransformFunctions": {

@@ -532,9 +532,7 @@ public class PrettifyNames(
                         {
                             2 => 2, // The original needs to be counted as a conflict in addition to this conflict
                             > 2 => 1, // Just mark this conflict, original is already counted.
-                            _ =>
-                                0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
-                            ,
+                            _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
                         };
 
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
