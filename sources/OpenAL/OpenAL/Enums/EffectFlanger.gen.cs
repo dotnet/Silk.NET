@@ -11,4 +11,12 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectFlanger : uint { }
+public enum EffectFlanger : uint
+{
+    Waveform = unchecked((uint)0x0001),
+    Phase = unchecked((uint)0x0002),
+    Rate = unchecked((uint)0x0003),
+    Depth = unchecked((uint)0x0004),
+    Feedback = unchecked((uint)0x0005),
+    Delay = unchecked((uint)0x0006),
+}

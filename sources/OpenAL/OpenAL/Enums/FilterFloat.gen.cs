@@ -11,4 +11,13 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum FilterFloat : uint { }
+public enum FilterFloat : uint
+{
+    LowpassGain = unchecked((uint)0x0001),
+    LowpassGainhf = unchecked((uint)0x0002),
+    HighpassGain = unchecked((uint)0x0001),
+    HighpassGainlf = unchecked((uint)0x0002),
+    BandpassGain = unchecked((uint)0x0001),
+    BandpassGainlf = unchecked((uint)0x0002),
+    BandpassGainhf = unchecked((uint)0x0003),
+}

@@ -15,11 +15,11 @@ public unsafe partial interface IALContext
     public partial interface Static
     {
         [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         static abstract sbyte CaptureCloseDevice(DeviceHandle device);
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         static abstract DeviceHandle CaptureOpenDevice(
             [NativeTypeName("const ALCchar *")] sbyte* devicename,
@@ -28,7 +28,7 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCsizei")] int buffersize
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         static abstract DeviceHandle CaptureOpenDevice(
@@ -38,7 +38,7 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCsizei")] int buffersize
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         static abstract void CaptureSamples(
             DeviceHandle device,
@@ -46,7 +46,7 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCsizei")] int samples
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         static abstract void CaptureSamples(
@@ -55,27 +55,27 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCsizei")] int samples
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
         static abstract void CaptureStart(DeviceHandle device);
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
         static abstract void CaptureStop(DeviceHandle device);
 
         [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
         static abstract sbyte CloseDevice(DeviceHandle device);
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         static abstract ContextHandle CreateContext(
             DeviceHandle device,
             [NativeTypeName("const ALCint *")] int* attrlist
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         static abstract ContextHandle CreateContext(
@@ -83,7 +83,7 @@ public unsafe partial interface IALContext
             [NativeTypeName("const ALCint *")] Ref<int> attrlist
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
         static abstract void DestroyContext(ContextHandle context);
 
@@ -146,16 +146,16 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
         static abstract DeviceHandle GetContextsDevice(ContextHandle context);
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
         static abstract ContextHandle GetCurrentContext();
 
         [return: NativeTypeName("ALCenum")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         static abstract int GetEnumValue(
             DeviceHandle device,
@@ -163,7 +163,7 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("ALCenum")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         static abstract int GetEnumValue(
@@ -172,13 +172,13 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("ALCenum")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
         static abstract Constant<int, ErrorCode> GetError(DeviceHandle device);
 
         [return: NativeTypeName("ALCenum")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
         static abstract int GetErrorRaw(DeviceHandle device);
 
@@ -209,7 +209,7 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCenum")] int pname
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         static abstract void GetInteger(
             DeviceHandle device,
@@ -218,7 +218,7 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCint *")] int* values
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         static abstract void GetInteger(
@@ -228,13 +228,13 @@ public unsafe partial interface IALContext
             [NativeTypeName("ALCint *")] Ref<int> values
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         static abstract int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
         [return: NativeTypeName("ALCvoid *")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         static abstract void* GetProcAddress(
             DeviceHandle device,
@@ -242,7 +242,7 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("ALCvoid *")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         static abstract Ptr GetProcAddress(
@@ -268,7 +268,7 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("const ALCchar *")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         static abstract Ptr<sbyte> GetString(
@@ -296,7 +296,7 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("const ALCchar *")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         static abstract sbyte* GetStringRaw(
             DeviceHandle device,
@@ -308,7 +308,7 @@ public unsafe partial interface IALContext
         static abstract ContextHandle GetThreadContext();
 
         [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         static abstract sbyte IsExtensionPresent(
             DeviceHandle device,
@@ -316,7 +316,7 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         static abstract sbyte IsExtensionPresent(
@@ -359,24 +359,24 @@ public unsafe partial interface IALContext
         );
 
         [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         static abstract sbyte MakeContextCurrent(ContextHandle context);
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         static abstract DeviceHandle OpenDevice(
             [NativeTypeName("const ALCchar *")] sbyte* devicename
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         static abstract DeviceHandle OpenDevice(
             [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
         );
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcProcessContext")]
         static abstract void ProcessContext(ContextHandle context);
 
@@ -438,17 +438,17 @@ public unsafe partial interface IALContext
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         static abstract sbyte SetThreadContext(ContextHandle context);
 
-        [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
         static abstract void SuspendContext(ContextHandle context);
     }
 
     [return: NativeTypeName("ALCboolean")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     sbyte CaptureCloseDevice(DeviceHandle device);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     DeviceHandle CaptureOpenDevice(
         [NativeTypeName("const ALCchar *")] sbyte* devicename,
@@ -457,7 +457,7 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCsizei")] int buffersize
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     DeviceHandle CaptureOpenDevice(
@@ -467,7 +467,7 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCsizei")] int buffersize
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
     void CaptureSamples(
         DeviceHandle device,
@@ -475,7 +475,7 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCsizei")] int samples
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
     void CaptureSamples(
@@ -484,27 +484,27 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCsizei")] int samples
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
     void CaptureStart(DeviceHandle device);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_1"], MinVersion = "1.1")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
     void CaptureStop(DeviceHandle device);
 
     [return: NativeTypeName("ALCboolean")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     sbyte CloseDevice(DeviceHandle device);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
     ContextHandle CreateContext(
         DeviceHandle device,
         [NativeTypeName("const ALCint *")] int* attrlist
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
     ContextHandle CreateContext(
@@ -512,7 +512,7 @@ public unsafe partial interface IALContext
         [NativeTypeName("const ALCint *")] Ref<int> attrlist
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
     void DestroyContext(ContextHandle context);
 
@@ -575,33 +575,33 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCenum")] Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
     DeviceHandle GetContextsDevice(ContextHandle context);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
     ContextHandle GetCurrentContext();
 
     [return: NativeTypeName("ALCenum")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
     int GetEnumValue(DeviceHandle device, [NativeTypeName("const ALCchar *")] sbyte* enumname);
 
     [return: NativeTypeName("ALCenum")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
     int GetEnumValue(DeviceHandle device, [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname);
 
     [return: NativeTypeName("ALCenum")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     Constant<int, ErrorCode> GetError(DeviceHandle device);
 
     [return: NativeTypeName("ALCenum")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     int GetErrorRaw(DeviceHandle device);
 
@@ -629,7 +629,7 @@ public unsafe partial interface IALContext
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     long GetInteger64SOFT(DeviceHandle device, [NativeTypeName("ALCenum")] int pname);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     void GetInteger(
         DeviceHandle device,
@@ -638,7 +638,7 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCint *")] int* values
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     void GetInteger(
@@ -648,18 +648,18 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCint *")] Ref<int> values
     );
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
     [return: NativeTypeName("ALCvoid *")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
     void* GetProcAddress(DeviceHandle device, [NativeTypeName("const ALCchar *")] sbyte* funcname);
 
     [return: NativeTypeName("ALCvoid *")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
     Ptr GetProcAddress(
@@ -682,7 +682,7 @@ public unsafe partial interface IALContext
     );
 
     [return: NativeTypeName("const ALCchar *")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
     Ptr<sbyte> GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
@@ -707,7 +707,7 @@ public unsafe partial interface IALContext
     );
 
     [return: NativeTypeName("const ALCchar *")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
     sbyte* GetStringRaw(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
@@ -716,7 +716,7 @@ public unsafe partial interface IALContext
     ContextHandle GetThreadContext();
 
     [return: NativeTypeName("ALCboolean")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
     sbyte IsExtensionPresent(
         DeviceHandle device,
@@ -724,7 +724,7 @@ public unsafe partial interface IALContext
     );
 
     [return: NativeTypeName("ALCboolean")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
     sbyte IsExtensionPresent(
@@ -763,20 +763,20 @@ public unsafe partial interface IALContext
     DeviceHandle LoopbackOpenDeviceSOFT([NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName);
 
     [return: NativeTypeName("ALCboolean")]
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     sbyte MakeContextCurrent(ContextHandle context);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] sbyte* devicename);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] Ref<sbyte> devicename);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcProcessContext")]
     void ProcessContext(ContextHandle context);
 
@@ -832,7 +832,7 @@ public unsafe partial interface IALContext
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     sbyte SetThreadContext(ContextHandle context);
 
-    [SupportedApiProfile("alc", ["ALC_VERISON_1_0", "ALC_VERISON_1_1"], MinVersion = "1.0")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
     void SuspendContext(ContextHandle context);
 }

@@ -11,4 +11,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectFrequencyShifter : uint { }
+public enum EffectFrequencyShifter : uint
+{
+    Frequency = unchecked((uint)0x0001),
+    LeftDirection = unchecked((uint)0x0002),
+    RightDirection = unchecked((uint)0x0003),
+}

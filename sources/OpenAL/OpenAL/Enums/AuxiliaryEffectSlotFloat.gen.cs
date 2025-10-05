@@ -11,4 +11,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum AuxiliaryEffectSlotFloat : uint { }
+public enum AuxiliaryEffectSlotFloat : uint
+{
+    AlEffectslotGain = unchecked((uint)0x0002),
+}

@@ -13,6 +13,20 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum EffectType : uint
 {
-    Dialogue = unchecked((uint)0x9001),
-    LowFrequencyEffect = unchecked((uint)0x9000),
+    Null = unchecked((uint)0x0000),
+    Reverb = unchecked((uint)0x0001),
+    Chorus = unchecked((uint)0x0002),
+    Distortion = unchecked((uint)0x0003),
+    Echo = unchecked((uint)0x0004),
+    Flanger = unchecked((uint)0x0005),
+    FrequencyShifter = unchecked((uint)0x0006),
+    VocalMorpher = unchecked((uint)0x0007),
+    PitchShifter = unchecked((uint)0x0008),
+    RingModulator = unchecked((uint)0x0009),
+    Autowah = unchecked((uint)0x000A),
+    Compressor = unchecked((uint)0x000B),
+    Equalizer = unchecked((uint)0x000C),
+    Eaxreverb = unchecked((uint)0x8000),
+    DedicatedDialogue = unchecked((uint)0x9001),
+    DedicatedLowFrequencyEffect = unchecked((uint)0x9000),
 }

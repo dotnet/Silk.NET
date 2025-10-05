@@ -11,4 +11,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectBandPass : uint { }
+public enum EffectBandPass : uint
+{
+    Gain = unchecked((uint)0x0001),
+    Gainlf = unchecked((uint)0x0002),
+    Gainhf = unchecked((uint)0x0003),
+}

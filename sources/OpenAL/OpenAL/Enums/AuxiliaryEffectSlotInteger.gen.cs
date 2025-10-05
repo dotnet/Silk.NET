@@ -13,5 +13,7 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum AuxiliaryEffectSlotInteger : uint
 {
-    AlEffectslotTargetSOFT = unchecked((uint)0x199C),
+    Effect = unchecked((uint)0x0001),
+    AuxiliarySendAuto = unchecked((uint)0x0003),
+    TargetSOFT = unchecked((uint)0x199C),
 }

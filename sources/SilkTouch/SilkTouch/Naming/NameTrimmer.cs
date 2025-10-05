@@ -146,7 +146,7 @@ public class NameTrimmer : INameTrimmer
             // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
             // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
             // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
-            names![originalName] = (oldPrimary[prefixLen..], sec);
+            names![originalName] = (oldPrimary[prefixLen..].Trim('_'), sec);
         }
     }
 
@@ -182,6 +182,11 @@ public class NameTrimmer : INameTrimmer
         bool naive
     )
     {
+        if (container == "VocalMorpherPhoneme")
+        {
+            Debugger.Break();
+        }
+
         // If the type has no members,
         if (names is null || names.Count == 0)
         {

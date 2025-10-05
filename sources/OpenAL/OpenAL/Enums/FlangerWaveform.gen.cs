@@ -11,4 +11,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum FlangerWaveform : uint { }
+public enum FlangerWaveform : uint
+{
+    Sinusoid = unchecked((uint)(0)),
+    Triangle = unchecked((uint)(1)),
+}

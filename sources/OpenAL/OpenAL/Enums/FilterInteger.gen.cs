@@ -11,4 +11,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum FilterInteger : uint { }
+public enum FilterInteger : uint
+{
+    AlFilterType = unchecked((uint)0x8001),
+}

@@ -25,6 +25,7 @@ public enum SourceFloat : uint
     SecOffset = unchecked((uint)0x1024),
     SampleOffset = unchecked((uint)0x1025),
     ByteOffset = unchecked((uint)0x1026),
+    ConeOuterGainhf = unchecked((uint)0x20009),
     ByteRwOffsetsSOFT = unchecked((uint)0x1031),
     SampleRwOffsetsSOFT = unchecked((uint)0x1032),
     StereoAngles = unchecked((uint)0x1030),

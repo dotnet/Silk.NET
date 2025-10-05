@@ -11,4 +11,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectDistortion : uint { }
+public enum EffectDistortion : uint
+{
+    Edge = unchecked((uint)0x0001),
+    Gain = unchecked((uint)0x0002),
+    LowpassCutoff = unchecked((uint)0x0003),
+    Eqcenter = unchecked((uint)0x0004),
+    Eqbandwidth = unchecked((uint)0x0005),
+}

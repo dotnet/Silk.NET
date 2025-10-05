@@ -18,4 +18,5 @@ public enum ListenerPName : uint
     Velocity = unchecked((uint)0x1006),
     Orientation = unchecked((uint)0x100F),
     ConeOuterGain = unchecked((uint)0x1022),
+    MetersPerUnit = unchecked((uint)0x20004),
 }

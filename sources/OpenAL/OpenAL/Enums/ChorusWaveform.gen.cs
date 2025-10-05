@@ -11,4 +11,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum ChorusWaveform : uint { }
+public enum ChorusWaveform : uint
+{
+    Sinusoid = unchecked((uint)(0)),
+    Triangle = unchecked((uint)(1)),
+}

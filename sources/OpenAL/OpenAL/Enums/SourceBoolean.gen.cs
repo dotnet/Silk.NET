@@ -15,4 +15,7 @@ public enum SourceBoolean : uint
 {
     SourceRelative = unchecked((uint)0x202),
     Looping = unchecked((uint)0x1007),
+    DirectFilterGainhfAuto = unchecked((uint)0x2000A),
+    AuxiliarySendFilterGainAuto = unchecked((uint)0x2000B),
+    AuxiliarySendFilterGainhfAuto = unchecked((uint)0x2000C),
 }

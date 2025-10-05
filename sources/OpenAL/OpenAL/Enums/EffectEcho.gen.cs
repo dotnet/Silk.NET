@@ -11,4 +11,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectEcho : uint { }
+public enum EffectEcho : uint
+{
+    Delay = unchecked((uint)0x0001),
+    Lrdelay = unchecked((uint)0x0002),
+    Damping = unchecked((uint)0x0003),
+    Feedback = unchecked((uint)0x0004),
+    Spread = unchecked((uint)0x0005),
+}

@@ -11,4 +11,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectPitchShifter : uint { }
+public enum EffectPitchShifter : uint
+{
+    CoarseTune = unchecked((uint)0x0001),
+    FineTune = unchecked((uint)0x0002),
+}

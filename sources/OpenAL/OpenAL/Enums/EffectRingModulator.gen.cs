@@ -11,4 +11,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectRingModulator : uint { }
+public enum EffectRingModulator : uint
+{
+    Frequency = unchecked((uint)0x0001),
+    HighpassCutoff = unchecked((uint)0x0002),
+    Waveform = unchecked((uint)0x0003),
+}

@@ -14,6 +14,14 @@ public unsafe partial class AL : IAL, IAL.Static
 {
     public partial class DllImport : IAL.Static
     {
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotf")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        );
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotfDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void AuxiliaryEffectSlotfDirect(
@@ -22,6 +30,32 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotfv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                AuxiliaryEffectSlot(effectslot, param1, __dsl_pflValues);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -51,6 +85,14 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSloti")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        );
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotiDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void AuxiliaryEffectSlotiDirect(
@@ -59,6 +101,32 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotiv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                AuxiliaryEffectSlot(effectslot, param1, __dsl_piValues);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alAuxiliaryEffectSlotivDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -921,6 +989,37 @@ public unsafe partial class AL : IAL, IAL.Static
         [SupportedApiProfile("al", ["AL_SOFT_deferred_updates"])]
         public static extern void DeferUpdatesSOFT();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        public static void DeleteAuxiliaryEffectSlot(
+            [NativeTypeName("const ALuint *")] uint effectslots
+        ) => DeleteAuxiliaryEffectSlots(1, (uint*)&effectslots);
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effectslots
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+        )
+        {
+            fixed (uint* __dsl_effectslots = effectslots)
+            {
+                DeleteAuxiliaryEffectSlots(n, __dsl_effectslots);
+            }
+        }
+
         [DllImport(
             "openal",
             ExactSpelling = true,
@@ -1015,6 +1114,36 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        public static void DeleteEffect([NativeTypeName("const ALuint *")] uint effects) =>
+            DeleteEffects(1, (uint*)&effects);
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteEffects")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effects
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effects
+        )
+        {
+            fixed (uint* __dsl_effects = effects)
+            {
+                DeleteEffects(n, __dsl_effects);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteEffectsDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void DeleteEffectsDirect(
@@ -1048,6 +1177,36 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint effects
         ) => DeleteEffectsDirect(context, 1, (uint*)&effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        public static void DeleteFilter([NativeTypeName("const ALuint *")] uint filters) =>
+            DeleteFilters(1, (uint*)&filters);
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteFilters")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* filters
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> filters
+        )
+        {
+            fixed (uint* __dsl_filters = filters)
+            {
+                DeleteFilters(n, __dsl_filters);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteFiltersDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1214,6 +1373,14 @@ public unsafe partial class AL : IAL, IAL.Static
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         public static extern void DopplerVelocity([NativeTypeName("ALfloat")] float value);
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectf")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        );
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectfDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void EffectfDirect(
@@ -1222,6 +1389,32 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectfv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                Effect(effect, param1, __dsl_pflValues);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectfvDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1251,6 +1444,14 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffecti")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        );
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectiDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void EffectiDirect(
@@ -1259,6 +1460,32 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectiv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                Effect(effect, param1, __dsl_piValues);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alEffectivDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1435,6 +1662,14 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) => EventControlSOFT(1, (int*)&types, (sbyte)enable);
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilterf")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        );
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilterfDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void FilterfDirect(
@@ -1443,6 +1678,32 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilterfv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                Filter(filter, param1, __dsl_pflValues);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilterfvDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1472,6 +1733,14 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilteri")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        );
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilteriDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void FilteriDirect(
@@ -1480,6 +1749,32 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilteriv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                Filter(filter, param1, __dsl_piValues);
+            }
+        }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alFilterivDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1506,6 +1801,40 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValues = piValues)
             {
                 FilterivDirect(context, filter, param2, __dsl_piValues);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        public static uint GenAuxiliaryEffectSlot()
+        {
+            uint effectslots = default;
+            GenAuxiliaryEffectSlots(1, (uint*)&effectslots);
+            return effectslots;
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effectslots
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effectslots
+        )
+        {
+            fixed (uint* __dsl_effectslots = effectslots)
+            {
+                GenAuxiliaryEffectSlots(n, __dsl_effectslots);
             }
         }
 
@@ -1605,6 +1934,40 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        public static uint GenEffect()
+        {
+            uint effects = default;
+            GenEffects(1, (uint*)&effects);
+            return effects;
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenEffects")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effects
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effects
+        )
+        {
+            fixed (uint* __dsl_effects = effects)
+            {
+                GenEffects(n, __dsl_effects);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenEffectsDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GenEffectsDirect(
@@ -1639,6 +2002,40 @@ public unsafe partial class AL : IAL, IAL.Static
             uint effects = default;
             GenEffectsDirect(context, 1, (uint*)&effects);
             return effects;
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        public static uint GenFilter()
+        {
+            uint filters = default;
+            GenFilters(1, (uint*)&filters);
+            return filters;
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenFilters")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* filters
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> filters
+        )
+        {
+            fixed (uint* __dsl_filters = filters)
+            {
+                GenFilters(n, __dsl_filters);
+            }
         }
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenFiltersDirect")]
@@ -1747,6 +2144,32 @@ public unsafe partial class AL : IAL, IAL.Static
             return sources;
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        )
+        {
+            fixed (float* __dsl_flValue = flValue)
+            {
+                GetAuxiliaryEffectSlotf(effectslot, param1, __dsl_flValue);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetAuxiliaryEffectSlotfDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GetAuxiliaryEffectSlotfDirect(
@@ -1772,6 +2195,32 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (float* __dsl_pflValue = pflValue)
             {
                 GetAuxiliaryEffectSlotfDirect(context, effectslot, param2, __dsl_pflValue);
+            }
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                GetAuxiliaryEffectSlotfv(effectslot, param1, __dsl_pflValues);
             }
         }
 
@@ -1803,6 +2252,32 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetAuxiliaryEffectSloti")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        )
+        {
+            fixed (int* __dsl_iValue = iValue)
+            {
+                GetAuxiliaryEffectSloti(effectslot, param1, __dsl_iValue);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetAuxiliaryEffectSlotiDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GetAuxiliaryEffectSlotiDirect(
@@ -1828,6 +2303,32 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValue = piValue)
             {
                 GetAuxiliaryEffectSlotiDirect(context, effectslot, param2, __dsl_piValue);
+            }
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                GetAuxiliaryEffectSlotiv(effectslot, param1, __dsl_piValues);
             }
         }
 
@@ -2883,6 +3384,32 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetEffectf")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        )
+        {
+            fixed (float* __dsl_flValue = flValue)
+            {
+                GetEffectf(effect, param1, __dsl_flValue);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetEffectfDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GetEffectfDirect(
@@ -2908,6 +3435,32 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (float* __dsl_pflValue = pflValue)
             {
                 GetEffectfDirect(context, effect, param2, __dsl_pflValue);
+            }
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetEffectfv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                GetEffectfv(effect, param1, __dsl_pflValues);
             }
         }
 
@@ -2939,6 +3492,32 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetEffecti")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        )
+        {
+            fixed (int* __dsl_iValue = iValue)
+            {
+                GetEffecti(effect, param1, __dsl_iValue);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetEffectiDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GetEffectiDirect(
@@ -2964,6 +3543,32 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValue = piValue)
             {
                 GetEffectiDirect(context, effect, param2, __dsl_piValue);
+            }
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetEffectiv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                GetEffectiv(effect, param1, __dsl_piValues);
             }
         }
 
@@ -3065,6 +3670,32 @@ public unsafe partial class AL : IAL, IAL.Static
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         public static extern int GetErrorRaw();
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetFilterf")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        )
+        {
+            fixed (float* __dsl_flValue = flValue)
+            {
+                GetFilterf(filter, param1, __dsl_flValue);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetFilterfDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GetFilterfDirect(
@@ -3090,6 +3721,32 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (float* __dsl_pflValue = pflValue)
             {
                 GetFilterfDirect(context, filter, param2, __dsl_pflValue);
+            }
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetFilterfv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                GetFilterfv(filter, param1, __dsl_pflValues);
             }
         }
 
@@ -3121,6 +3778,32 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetFilteri")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        )
+        {
+            fixed (int* __dsl_iValue = iValue)
+            {
+                GetFilteri(filter, param1, __dsl_iValue);
+            }
+        }
+
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetFilteriDirect")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern void GetFilteriDirect(
@@ -3146,6 +3829,32 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValue = piValue)
             {
                 GetFilteriDirect(context, filter, param2, __dsl_piValue);
+            }
+        }
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetFilteriv")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                GetFilteriv(filter, param1, __dsl_piValues);
             }
         }
 
@@ -4870,6 +5579,14 @@ public unsafe partial class AL : IAL, IAL.Static
         public static extern sbyte* GetStringRaw([NativeTypeName("ALenum")] int param0);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        public static MaybeBool<sbyte> IsAuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot
+        ) => (MaybeBool<sbyte>)(sbyte)IsAuxiliaryEffectSlotRaw(effectslot);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
@@ -4883,6 +5600,13 @@ public unsafe partial class AL : IAL, IAL.Static
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         public static extern sbyte IsAuxiliaryEffectSlotDirectRaw(
             ContextHandle context,
+            [NativeTypeName("ALuint")] uint effectslot
+        );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsAuxiliaryEffectSlot")]
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern sbyte IsAuxiliaryEffectSlotRaw(
             [NativeTypeName("ALuint")] uint effectslot
         );
 
@@ -4931,6 +5655,13 @@ public unsafe partial class AL : IAL, IAL.Static
         public static extern sbyte IsBufferRaw([NativeTypeName("ALuint")] uint buffer);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        public static MaybeBool<sbyte> IsEffect([NativeTypeName("ALuint")] uint effect) =>
+            (MaybeBool<sbyte>)(sbyte)IsEffectRaw(effect);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
@@ -4946,6 +5677,11 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsEffect")]
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern sbyte IsEffectRaw([NativeTypeName("ALuint")] uint effect);
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsEnabled")]
         [return: NativeTypeName("ALboolean")]
@@ -5028,6 +5764,13 @@ public unsafe partial class AL : IAL, IAL.Static
         }
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        public static MaybeBool<sbyte> IsFilter([NativeTypeName("ALuint")] uint filter) =>
+            (MaybeBool<sbyte>)(sbyte)IsFilterRaw(filter);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
@@ -5043,6 +5786,11 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter
         );
+
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsFilter")]
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        public static extern sbyte IsFilterRaw([NativeTypeName("ALuint")] uint filter);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -6553,6 +7301,17 @@ public unsafe partial class AL : IAL, IAL.Static
     public partial class StaticWrapper<T> : IAL
         where T : IAL.Static
     {
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        ) => T.AuxiliaryEffectSlot(effectslot, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfDirect")]
         [MethodImpl(
@@ -6564,6 +7323,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         ) => T.AuxiliaryEffectSlotfDirect(context, effectslot, param2, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        ) => T.AuxiliaryEffectSlot(effectslot, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        ) => T.AuxiliaryEffectSlot(effectslot, param1, pflValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
@@ -6590,6 +7372,17 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         ) => T.AuxiliaryEffectSlotfvDirect(context, effectslot, param2, pflValues);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        ) => T.AuxiliaryEffectSlot(effectslot, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiDirect")]
         [MethodImpl(
@@ -6601,6 +7394,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         ) => T.AuxiliaryEffectSlotiDirect(context, effectslot, param2, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        ) => T.AuxiliaryEffectSlot(effectslot, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        ) => T.AuxiliaryEffectSlot(effectslot, param1, piValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotivDirect")]
@@ -7372,6 +8188,37 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public void DeferUpdatesSOFT() => T.DeferUpdatesSOFT();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteAuxiliaryEffectSlot(
+            [NativeTypeName("const ALuint *")] uint effectslots
+        ) => T.DeleteAuxiliaryEffectSlot(effectslots);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effectslots
+        ) => T.DeleteAuxiliaryEffectSlots(n, effectslots);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+        ) => T.DeleteAuxiliaryEffectSlots(n, effectslots);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
         [MethodImpl(
@@ -7459,6 +8306,36 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("const ALuint *")] Ref<uint> buffers
         ) => T.DeleteBuffersDirect(context, n, buffers);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteEffect([NativeTypeName("const ALuint *")] uint effects) =>
+            T.DeleteEffect(effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effects
+        ) => T.DeleteEffects(n, effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effects
+        ) => T.DeleteEffects(n, effects);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
         [MethodImpl(
@@ -7492,6 +8369,36 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint effects
         ) => T.DeleteEffectsDirect(context, effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteFilter([NativeTypeName("const ALuint *")] uint filters) =>
+            T.DeleteFilter(filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* filters
+        ) => T.DeleteFilters(n, filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> filters
+        ) => T.DeleteFilters(n, filters);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
@@ -7694,6 +8601,17 @@ public unsafe partial class AL : IAL, IAL.Static
         public void DopplerVelocity([NativeTypeName("ALfloat")] float value) =>
             T.DopplerVelocity(value);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        ) => T.Effect(effect, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfDirect")]
         [MethodImpl(
@@ -7705,6 +8623,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         ) => T.EffectfDirect(context, effect, param2, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        ) => T.Effect(effect, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        ) => T.Effect(effect, param1, pflValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfvDirect")]
@@ -7731,6 +8672,17 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         ) => T.EffectfvDirect(context, effect, param2, pflValues);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        ) => T.Effect(effect, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectiDirect")]
         [MethodImpl(
@@ -7742,6 +8694,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         ) => T.EffectiDirect(context, effect, param2, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        ) => T.Effect(effect, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        ) => T.Effect(effect, param1, piValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectivDirect")]
@@ -7921,6 +8896,17 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) => T.EventControlSOFT(types, enable);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        ) => T.Filter(filter, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfDirect")]
         [MethodImpl(
@@ -7932,6 +8918,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         ) => T.FilterfDirect(context, filter, param2, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        ) => T.Filter(filter, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        ) => T.Filter(filter, param1, pflValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfvDirect")]
@@ -7958,6 +8967,17 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         ) => T.FilterfvDirect(context, filter, param2, pflValues);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        ) => T.Filter(filter, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilteriDirect")]
         [MethodImpl(
@@ -7969,6 +8989,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         ) => T.FilteriDirect(context, filter, param2, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        ) => T.Filter(filter, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        ) => T.Filter(filter, param1, piValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterivDirect")]
@@ -7994,6 +9037,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("const ALint *")] Ref<int> piValues
         ) => T.FilterivDirect(context, filter, param2, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenAuxiliaryEffectSlot() => T.GenAuxiliaryEffectSlot();
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effectslots
+        ) => T.GenAuxiliaryEffectSlots(n, effectslots);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effectslots
+        ) => T.GenAuxiliaryEffectSlots(n, effectslots);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
@@ -8079,6 +9151,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALuint *")] Ref<uint> buffers
         ) => T.GenBuffersDirect(context, n, buffers);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenEffect() => T.GenEffect();
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effects
+        ) => T.GenEffects(n, effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effects
+        ) => T.GenEffects(n, effects);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
         [MethodImpl(
@@ -8109,6 +9210,35 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public uint GenEffectsDirect(ContextHandle context) => T.GenEffectsDirect(context);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenFilter() => T.GenFilter();
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* filters
+        ) => T.GenFilters(n, filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> filters
+        ) => T.GenFilters(n, filters);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
@@ -8201,6 +9331,29 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public uint GenSourcesDirect(ContextHandle context) => T.GenSourcesDirect(context);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        ) => T.GetAuxiliaryEffectSlotf(effectslot, param1, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        ) => T.GetAuxiliaryEffectSlotf(effectslot, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfDirect")]
         [MethodImpl(
@@ -8225,6 +9378,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat *")] Ref<float> pflValue
         ) => T.GetAuxiliaryEffectSlotfDirect(context, effectslot, param2, pflValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        ) => T.GetAuxiliaryEffectSlotfv(effectslot, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        ) => T.GetAuxiliaryEffectSlotfv(effectslot, param1, pflValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfvDirect")]
@@ -8251,6 +9427,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALfloat *")] Ref<float> pflValues
         ) => T.GetAuxiliaryEffectSlotfvDirect(context, effectslot, param2, pflValues);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        ) => T.GetAuxiliaryEffectSloti(effectslot, param1, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        ) => T.GetAuxiliaryEffectSloti(effectslot, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiDirect")]
         [MethodImpl(
@@ -8275,6 +9474,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint *")] Ref<int> piValue
         ) => T.GetAuxiliaryEffectSlotiDirect(context, effectslot, param2, piValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        ) => T.GetAuxiliaryEffectSlotiv(effectslot, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        ) => T.GetAuxiliaryEffectSlotiv(effectslot, param1, piValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotivDirect")]
@@ -9205,6 +10427,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALdouble *")] Ref<double> values
         ) => T.GetDoublevDirect(context, param1, values);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        ) => T.GetEffectf(effect, param1, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        ) => T.GetEffectf(effect, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectfDirect")]
         [MethodImpl(
@@ -9229,6 +10474,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat *")] Ref<float> pflValue
         ) => T.GetEffectfDirect(context, effect, param2, pflValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        ) => T.GetEffectfv(effect, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        ) => T.GetEffectfv(effect, param1, pflValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectfvDirect")]
@@ -9255,6 +10523,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALfloat *")] Ref<float> pflValues
         ) => T.GetEffectfvDirect(context, effect, param2, pflValues);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        ) => T.GetEffecti(effect, param1, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        ) => T.GetEffecti(effect, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectiDirect")]
         [MethodImpl(
@@ -9279,6 +10570,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint *")] Ref<int> piValue
         ) => T.GetEffectiDirect(context, effect, param2, piValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        ) => T.GetEffectiv(effect, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        ) => T.GetEffectiv(effect, param1, piValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectivDirect")]
@@ -9382,6 +10696,29 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public int GetErrorRaw() => T.GetErrorRaw();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        ) => T.GetFilterf(filter, param1, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        ) => T.GetFilterf(filter, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilterfDirect")]
         [MethodImpl(
@@ -9406,6 +10743,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat *")] Ref<float> pflValue
         ) => T.GetFilterfDirect(context, filter, param2, pflValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        ) => T.GetFilterfv(filter, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        ) => T.GetFilterfv(filter, param1, pflValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilterfvDirect")]
@@ -9432,6 +10792,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALfloat *")] Ref<float> pflValues
         ) => T.GetFilterfvDirect(context, filter, param2, pflValues);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        ) => T.GetFilteri(filter, param1, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        ) => T.GetFilteri(filter, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilteriDirect")]
         [MethodImpl(
@@ -9456,6 +10839,29 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint *")] Ref<int> piValue
         ) => T.GetFilteriDirect(context, filter, param2, piValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        ) => T.GetFilteriv(filter, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        ) => T.GetFilteriv(filter, param1, piValues);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilterivDirect")]
@@ -10965,6 +12371,16 @@ public unsafe partial class AL : IAL, IAL.Static
         public sbyte* GetStringRaw([NativeTypeName("ALenum")] int param0) => T.GetStringRaw(param0);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<sbyte> IsAuxiliaryEffectSlot([NativeTypeName("ALuint")] uint effectslot) =>
+            T.IsAuxiliaryEffectSlot(effectslot);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
@@ -10986,6 +12402,15 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot
         ) => T.IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte IsAuxiliaryEffectSlotRaw([NativeTypeName("ALuint")] uint effectslot) =>
+            T.IsAuxiliaryEffectSlotRaw(effectslot);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -11048,6 +12473,16 @@ public unsafe partial class AL : IAL, IAL.Static
         public sbyte IsBufferRaw([NativeTypeName("ALuint")] uint buffer) => T.IsBufferRaw(buffer);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<sbyte> IsEffect([NativeTypeName("ALuint")] uint effect) =>
+            T.IsEffect(effect);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
@@ -11069,6 +12504,14 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect
         ) => T.IsEffectDirectRaw(context, effect);
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte IsEffectRaw([NativeTypeName("ALuint")] uint effect) => T.IsEffectRaw(effect);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -11157,6 +12600,16 @@ public unsafe partial class AL : IAL, IAL.Static
         ) => T.IsExtensionPresentDirect(context, extname);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<sbyte> IsFilter([NativeTypeName("ALuint")] uint filter) =>
+            T.IsFilter(filter);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
@@ -11178,6 +12631,14 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter
         ) => T.IsFilterDirectRaw(context, filter);
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte IsFilterRaw([NativeTypeName("ALuint")] uint filter) => T.IsFilterRaw(filter);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -12745,6 +14206,17 @@ public unsafe partial class AL : IAL, IAL.Static
 
     public partial class ThisThread
     {
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        ) => Underlying.Value!.AuxiliaryEffectSlot(effectslot, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfDirect")]
         [MethodImpl(
@@ -12756,6 +14228,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         ) => Underlying.Value!.AuxiliaryEffectSlotfDirect(context, effectslot, param2, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        ) => Underlying.Value!.AuxiliaryEffectSlot(effectslot, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                AuxiliaryEffectSlot(effectslot, param1, __dsl_pflValues);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
@@ -12788,6 +14289,17 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        ) => Underlying.Value!.AuxiliaryEffectSlot(effectslot, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiDirect")]
         [MethodImpl(
@@ -12799,6 +14311,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         ) => Underlying.Value!.AuxiliaryEffectSlotiDirect(context, effectslot, param2, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        ) => Underlying.Value!.AuxiliaryEffectSlot(effectslot, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                AuxiliaryEffectSlot(effectslot, param1, __dsl_piValues);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotivDirect")]
@@ -13800,6 +15341,43 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public static void DeferUpdatesSOFT() => Underlying.Value!.DeferUpdatesSOFT();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteAuxiliaryEffectSlot(
+            [NativeTypeName("const ALuint *")] uint effectslots
+        ) => Underlying.Value!.DeleteAuxiliaryEffectSlot(effectslots);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effectslots
+        ) => Underlying.Value!.DeleteAuxiliaryEffectSlots(n, effectslots);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+        )
+        {
+            fixed (uint* __dsl_effectslots = effectslots)
+            {
+                DeleteAuxiliaryEffectSlots(n, __dsl_effectslots);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
         [MethodImpl(
@@ -13905,6 +15483,42 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteEffect([NativeTypeName("const ALuint *")] uint effects) =>
+            Underlying.Value!.DeleteEffect(effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effects
+        ) => Underlying.Value!.DeleteEffects(n, effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effects
+        )
+        {
+            fixed (uint* __dsl_effects = effects)
+            {
+                DeleteEffects(n, __dsl_effects);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
         [MethodImpl(
@@ -13944,6 +15558,42 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint effects
         ) => Underlying.Value!.DeleteEffectsDirect(context, effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteFilter([NativeTypeName("const ALuint *")] uint filters) =>
+            Underlying.Value!.DeleteFilter(filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* filters
+        ) => Underlying.Value!.DeleteFilters(n, filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> filters
+        )
+        {
+            fixed (uint* __dsl_filters = filters)
+            {
+                DeleteFilters(n, __dsl_filters);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
@@ -14165,6 +15815,17 @@ public unsafe partial class AL : IAL, IAL.Static
         public static void DopplerVelocity([NativeTypeName("ALfloat")] float value) =>
             Underlying.Value!.DopplerVelocity(value);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        ) => Underlying.Value!.Effect(effect, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfDirect")]
         [MethodImpl(
@@ -14176,6 +15837,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         ) => Underlying.Value!.EffectfDirect(context, effect, param2, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        ) => Underlying.Value!.Effect(effect, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                Effect(effect, param1, __dsl_pflValues);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfvDirect")]
@@ -14208,6 +15898,17 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        ) => Underlying.Value!.Effect(effect, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectiDirect")]
         [MethodImpl(
@@ -14219,6 +15920,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         ) => Underlying.Value!.EffectiDirect(context, effect, param2, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        ) => Underlying.Value!.Effect(effect, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                Effect(effect, param1, __dsl_piValues);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectivDirect")]
@@ -14429,6 +16159,17 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) => Underlying.Value!.EventControlSOFT(types, enable);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        ) => Underlying.Value!.Filter(filter, param1, flValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfDirect")]
         [MethodImpl(
@@ -14440,6 +16181,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
         ) => Underlying.Value!.FilterfDirect(context, filter, param2, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        ) => Underlying.Value!.Filter(filter, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                Filter(filter, param1, __dsl_pflValues);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfvDirect")]
@@ -14472,6 +16242,17 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        ) => Underlying.Value!.Filter(filter, param1, iValue);
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilteriDirect")]
         [MethodImpl(
@@ -14483,6 +16264,35 @@ public unsafe partial class AL : IAL, IAL.Static
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
         ) => Underlying.Value!.FilteriDirect(context, filter, param2, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        ) => Underlying.Value!.Filter(filter, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                Filter(filter, param1, __dsl_piValues);
+            }
+        }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterivDirect")]
@@ -14512,6 +16322,46 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValues = piValues)
             {
                 FilterivDirect(context, filter, param2, __dsl_piValues);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenAuxiliaryEffectSlot()
+        {
+            uint effectslots = default;
+            GenAuxiliaryEffectSlots(1, (uint*)&effectslots);
+            return effectslots;
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effectslots
+        ) => Underlying.Value!.GenAuxiliaryEffectSlots(n, effectslots);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effectslots
+        )
+        {
+            fixed (uint* __dsl_effectslots = effectslots)
+            {
+                GenAuxiliaryEffectSlots(n, __dsl_effectslots);
             }
         }
 
@@ -14626,6 +16476,46 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenEffect()
+        {
+            uint effects = default;
+            GenEffects(1, (uint*)&effects);
+            return effects;
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effects
+        ) => Underlying.Value!.GenEffects(n, effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effects
+        )
+        {
+            fixed (uint* __dsl_effects = effects)
+            {
+                GenEffects(n, __dsl_effects);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
         [MethodImpl(
@@ -14666,6 +16556,46 @@ public unsafe partial class AL : IAL, IAL.Static
             uint effects = default;
             GenEffectsDirect(context, 1, (uint*)&effects);
             return effects;
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenFilter()
+        {
+            uint filters = default;
+            GenFilters(1, (uint*)&filters);
+            return filters;
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* filters
+        ) => Underlying.Value!.GenFilters(n, filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> filters
+        )
+        {
+            fixed (uint* __dsl_filters = filters)
+            {
+                GenFilters(n, __dsl_filters);
+            }
         }
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -14792,6 +16722,35 @@ public unsafe partial class AL : IAL, IAL.Static
             return sources;
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        ) => Underlying.Value!.GetAuxiliaryEffectSlotf(effectslot, param1, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        )
+        {
+            fixed (float* __dsl_flValue = flValue)
+            {
+                GetAuxiliaryEffectSlotf(effectslot, param1, __dsl_flValue);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfDirect")]
         [MethodImpl(
@@ -14820,6 +16779,35 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (float* __dsl_pflValue = pflValue)
             {
                 GetAuxiliaryEffectSlotfDirect(context, effectslot, param2, __dsl_pflValue);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        ) => Underlying.Value!.GetAuxiliaryEffectSlotfv(effectslot, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                GetAuxiliaryEffectSlotfv(effectslot, param1, __dsl_pflValues);
             }
         }
 
@@ -14860,6 +16848,35 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        ) => Underlying.Value!.GetAuxiliaryEffectSloti(effectslot, param1, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        )
+        {
+            fixed (int* __dsl_iValue = iValue)
+            {
+                GetAuxiliaryEffectSloti(effectslot, param1, __dsl_iValue);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiDirect")]
         [MethodImpl(
@@ -14888,6 +16905,35 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValue = piValue)
             {
                 GetAuxiliaryEffectSlotiDirect(context, effectslot, param2, __dsl_piValue);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        ) => Underlying.Value!.GetAuxiliaryEffectSlotiv(effectslot, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                GetAuxiliaryEffectSlotiv(effectslot, param1, __dsl_piValues);
             }
         }
 
@@ -16069,6 +18115,35 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        ) => Underlying.Value!.GetEffectf(effect, param1, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        )
+        {
+            fixed (float* __dsl_flValue = flValue)
+            {
+                GetEffectf(effect, param1, __dsl_flValue);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectfDirect")]
         [MethodImpl(
@@ -16097,6 +18172,35 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (float* __dsl_pflValue = pflValue)
             {
                 GetEffectfDirect(context, effect, param2, __dsl_pflValue);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        ) => Underlying.Value!.GetEffectfv(effect, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                GetEffectfv(effect, param1, __dsl_pflValues);
             }
         }
 
@@ -16131,6 +18235,35 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        ) => Underlying.Value!.GetEffecti(effect, param1, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        )
+        {
+            fixed (int* __dsl_iValue = iValue)
+            {
+                GetEffecti(effect, param1, __dsl_iValue);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectiDirect")]
         [MethodImpl(
@@ -16159,6 +18292,35 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValue = piValue)
             {
                 GetEffectiDirect(context, effect, param2, __dsl_piValue);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        ) => Underlying.Value!.GetEffectiv(effect, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                GetEffectiv(effect, param1, __dsl_piValues);
             }
         }
 
@@ -16282,6 +18444,35 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public static int GetErrorRaw() => Underlying.Value!.GetErrorRaw();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        ) => Underlying.Value!.GetFilterf(filter, param1, flValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        )
+        {
+            fixed (float* __dsl_flValue = flValue)
+            {
+                GetFilterf(filter, param1, __dsl_flValue);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilterfDirect")]
         [MethodImpl(
@@ -16310,6 +18501,35 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (float* __dsl_pflValue = pflValue)
             {
                 GetFilterfDirect(context, filter, param2, __dsl_pflValue);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        ) => Underlying.Value!.GetFilterfv(filter, param1, pflValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
+        )
+        {
+            fixed (float* __dsl_pflValues = pflValues)
+            {
+                GetFilterfv(filter, param1, __dsl_pflValues);
             }
         }
 
@@ -16344,6 +18564,35 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        ) => Underlying.Value!.GetFilteri(filter, param1, iValue);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        )
+        {
+            fixed (int* __dsl_iValue = iValue)
+            {
+                GetFilteri(filter, param1, __dsl_iValue);
+            }
+        }
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilteriDirect")]
         [MethodImpl(
@@ -16372,6 +18621,35 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (int* __dsl_piValue = piValue)
             {
                 GetFilteriDirect(context, filter, param2, __dsl_piValue);
+            }
+        }
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        ) => Underlying.Value!.GetFilteriv(filter, param1, piValues);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
+        )
+        {
+            fixed (int* __dsl_piValues = piValues)
+            {
+                GetFilteriv(filter, param1, __dsl_piValues);
             }
         }
 
@@ -18323,6 +20601,17 @@ public unsafe partial class AL : IAL, IAL.Static
             Underlying.Value!.GetStringRaw(param0);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<sbyte> IsAuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot
+        ) => Underlying.Value!.IsAuxiliaryEffectSlot(effectslot);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
@@ -18344,6 +20633,15 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot
         ) => Underlying.Value!.IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static sbyte IsAuxiliaryEffectSlotRaw([NativeTypeName("ALuint")] uint effectslot) =>
+            Underlying.Value!.IsAuxiliaryEffectSlotRaw(effectslot);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -18408,6 +20706,16 @@ public unsafe partial class AL : IAL, IAL.Static
             Underlying.Value!.IsBufferRaw(buffer);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<sbyte> IsEffect([NativeTypeName("ALuint")] uint effect) =>
+            Underlying.Value!.IsEffect(effect);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
@@ -18429,6 +20737,15 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect
         ) => Underlying.Value!.IsEffectDirectRaw(context, effect);
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static sbyte IsEffectRaw([NativeTypeName("ALuint")] uint effect) =>
+            Underlying.Value!.IsEffectRaw(effect);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -18529,6 +20846,16 @@ public unsafe partial class AL : IAL, IAL.Static
         }
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<sbyte> IsFilter([NativeTypeName("ALuint")] uint filter) =>
+            Underlying.Value!.IsFilter(filter);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
@@ -18550,6 +20877,15 @@ public unsafe partial class AL : IAL, IAL.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter
         ) => Underlying.Value!.IsFilterDirectRaw(context, filter);
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static sbyte IsFilterRaw([NativeTypeName("ALuint")] uint filter) =>
+            Underlying.Value!.IsFilterRaw(filter);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -20382,21 +22718,32 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeTypeName("#define AL_CPLUSPLUS __cplusplus")]
     public const nint Cplusplus = 201703;
 
-    [NativeTypeName("#define AL_INVALID (-1)")]
-    [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
-    public const int Invalid = (-1);
-
-    [NativeTypeName("#define AL_ILLEGAL_ENUM AL_INVALID_ENUM")]
-    [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
-    public const int IllegalEnum = 0xA002;
-
-    [NativeTypeName("#define AL_ILLEGAL_COMMAND AL_INVALID_OPERATION")]
-    [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
-    public const int IllegalCommand = 0xA004;
-
     [NativeTypeName("#define AL_EXT_FOLDBACK_NAME \"AL_EXT_FOLDBACK\"")]
     [SupportedApiProfile("al", ["AL_EXT_FOLDBACK"])]
     public static ReadOnlySpan<byte> ExtFoldbackName => "AL_EXT_FOLDBACK"u8;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float, void>)(
+                _slots[0] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[0] = nativeContext.LoadFunction("alAuxiliaryEffectSlotf", "openal")
+            )
+        )(effectslot, param1, flValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    ) => ThisThread.AuxiliaryEffectSlot(effectslot, param1, flValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.AuxiliaryEffectSlotfDirect(
@@ -20407,9 +22754,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, void>)(
-                _slots[0] is not null and var loadedFnPtr
+                _slots[1] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[0] = nativeContext.LoadFunction(
+                    : _slots[1] = nativeContext.LoadFunction(
                         "alAuxiliaryEffectSlotfDirect",
                         "openal"
                     )
@@ -20427,6 +22774,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.AuxiliaryEffectSlotfDirect(context, effectslot, param2, flValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[2] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[2] = nativeContext.LoadFunction("alAuxiliaryEffectSlotfv", "openal")
+            )
+        )(effectslot, param1, pflValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    ) => ThisThread.AuxiliaryEffectSlot(effectslot, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+    )
+    {
+        fixed (float* __dsl_pflValues = pflValues)
+        {
+            ((IAL)this).AuxiliaryEffectSlot(effectslot, param1, __dsl_pflValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+    ) => ThisThread.AuxiliaryEffectSlot(effectslot, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.AuxiliaryEffectSlotfvDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -20435,9 +22828,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[1] is not null and var loadedFnPtr
+                _slots[3] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[1] = nativeContext.LoadFunction(
+                    : _slots[3] = nativeContext.LoadFunction(
                         "alAuxiliaryEffectSlotfvDirect",
                         "openal"
                     )
@@ -20480,6 +22873,29 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.AuxiliaryEffectSlotfvDirect(context, effectslot, param2, pflValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int, void>)(
+                _slots[4] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[4] = nativeContext.LoadFunction("alAuxiliaryEffectSloti", "openal")
+            )
+        )(effectslot, param1, iValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSloti")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    ) => ThisThread.AuxiliaryEffectSlot(effectslot, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.AuxiliaryEffectSlotiDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -20488,9 +22904,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, void>)(
-                _slots[2] is not null and var loadedFnPtr
+                _slots[5] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[2] = nativeContext.LoadFunction(
+                    : _slots[5] = nativeContext.LoadFunction(
                         "alAuxiliaryEffectSlotiDirect",
                         "openal"
                     )
@@ -20508,6 +22924,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.AuxiliaryEffectSlotiDirect(context, effectslot, param2, iValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[6] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[6] = nativeContext.LoadFunction("alAuxiliaryEffectSlotiv", "openal")
+            )
+        )(effectslot, param1, piValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    ) => ThisThread.AuxiliaryEffectSlot(effectslot, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
+    )
+    {
+        fixed (int* __dsl_piValues = piValues)
+        {
+            ((IAL)this).AuxiliaryEffectSlot(effectslot, param1, __dsl_piValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
+    ) => ThisThread.AuxiliaryEffectSlot(effectslot, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.AuxiliaryEffectSlotivDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -20516,9 +22978,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[3] is not null and var loadedFnPtr
+                _slots[7] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[3] = nativeContext.LoadFunction(
+                    : _slots[7] = nativeContext.LoadFunction(
                         "alAuxiliaryEffectSlotivDirect",
                         "openal"
                     )
@@ -20570,9 +23032,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float, float, float, void>)(
-                _slots[4] is not null and var loadedFnPtr
+                _slots[8] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[4] = nativeContext.LoadFunction("alBuffer3f", "openal")
+                    : _slots[8] = nativeContext.LoadFunction("alBuffer3f", "openal")
             )
         )(buffer, param1, value1, value2, value3);
 
@@ -20598,9 +23060,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, float, float, void>)(
-                _slots[5] is not null and var loadedFnPtr
+                _slots[9] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[5] = nativeContext.LoadFunction("alBuffer3fDirect", "openal")
+                    : _slots[9] = nativeContext.LoadFunction("alBuffer3fDirect", "openal")
             )
         )(context, buffer, param2, value1, value2, value3);
 
@@ -20626,9 +23088,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, int, int, void>)(
-                _slots[6] is not null and var loadedFnPtr
+                _slots[10] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[6] = nativeContext.LoadFunction("alBuffer3i", "openal")
+                    : _slots[10] = nativeContext.LoadFunction("alBuffer3i", "openal")
             )
         )(buffer, param1, value1, value2, value3);
 
@@ -20654,9 +23116,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, int, int, void>)(
-                _slots[7] is not null and var loadedFnPtr
+                _slots[11] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[7] = nativeContext.LoadFunction("alBuffer3iDirect", "openal")
+                    : _slots[11] = nativeContext.LoadFunction("alBuffer3iDirect", "openal")
             )
         )(context, buffer, param2, value1, value2, value3);
 
@@ -20683,9 +23145,12 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, BufferCallbackSOFT, void*, void>)(
-                _slots[8] is not null and var loadedFnPtr
+                _slots[12] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[8] = nativeContext.LoadFunction("alBufferCallbackDirectSOFT", "openal")
+                    : _slots[12] = nativeContext.LoadFunction(
+                        "alBufferCallbackDirectSOFT",
+                        "openal"
+                    )
             )
         )(context, buffer, format, freq, callback, userptr);
 
@@ -20755,9 +23220,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, BufferCallbackSOFT, void*, void>)(
-                _slots[9] is not null and var loadedFnPtr
+                _slots[13] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[9] = nativeContext.LoadFunction("alBufferCallbackSOFT", "openal")
+                    : _slots[13] = nativeContext.LoadFunction("alBufferCallbackSOFT", "openal")
             )
         )(buffer, format, freq, callback, userptr);
 
@@ -20809,9 +23274,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, void*, int, int, void>)(
-                _slots[10] is not null and var loadedFnPtr
+                _slots[14] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[10] = nativeContext.LoadFunction("alBufferData", "openal")
+                    : _slots[14] = nativeContext.LoadFunction("alBufferData", "openal")
             )
         )(buffer, format, data, size, samplerate);
 
@@ -20864,9 +23329,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, void*, int, int, void>)(
-                _slots[11] is not null and var loadedFnPtr
+                _slots[15] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[11] = nativeContext.LoadFunction("alBufferDataDirect", "openal")
+                    : _slots[15] = nativeContext.LoadFunction("alBufferDataDirect", "openal")
             )
         )(context, buffer, format, data, size, samplerate);
 
@@ -20928,9 +23393,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, void*, int, int, void>)(
-                _slots[12] is not null and var loadedFnPtr
+                _slots[16] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[12] = nativeContext.LoadFunction("alBufferDataStatic", "openal")
+                    : _slots[16] = nativeContext.LoadFunction("alBufferDataStatic", "openal")
             )
         )(buffer, format, data, size, freq);
 
@@ -20983,9 +23448,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, void*, int, int, void>)(
-                _slots[13] is not null and var loadedFnPtr
+                _slots[17] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[13] = nativeContext.LoadFunction("alBufferDataStaticDirect", "openal")
+                    : _slots[17] = nativeContext.LoadFunction("alBufferDataStaticDirect", "openal")
             )
         )(context, buffer, format, data, size, freq);
 
@@ -21053,9 +23518,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float, void>)(
-                _slots[14] is not null and var loadedFnPtr
+                _slots[18] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[14] = nativeContext.LoadFunction("alBufferf", "openal")
+                    : _slots[18] = nativeContext.LoadFunction("alBufferf", "openal")
             )
         )(buffer, param1, value);
 
@@ -21077,9 +23542,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, void>)(
-                _slots[15] is not null and var loadedFnPtr
+                _slots[19] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[15] = nativeContext.LoadFunction("alBufferfDirect", "openal")
+                    : _slots[19] = nativeContext.LoadFunction("alBufferfDirect", "openal")
             )
         )(context, buffer, param2, value);
 
@@ -21101,9 +23566,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, void>)(
-                _slots[16] is not null and var loadedFnPtr
+                _slots[20] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[16] = nativeContext.LoadFunction("alBufferfv", "openal")
+                    : _slots[20] = nativeContext.LoadFunction("alBufferfv", "openal")
             )
         )(buffer, param1, values);
 
@@ -21148,9 +23613,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[17] is not null and var loadedFnPtr
+                _slots[21] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[17] = nativeContext.LoadFunction("alBufferfvDirect", "openal")
+                    : _slots[21] = nativeContext.LoadFunction("alBufferfvDirect", "openal")
             )
         )(context, buffer, param2, values);
 
@@ -21197,9 +23662,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, void>)(
-                _slots[18] is not null and var loadedFnPtr
+                _slots[22] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[18] = nativeContext.LoadFunction("alBufferi", "openal")
+                    : _slots[22] = nativeContext.LoadFunction("alBufferi", "openal")
             )
         )(buffer, param1, value);
 
@@ -21221,9 +23686,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, void>)(
-                _slots[19] is not null and var loadedFnPtr
+                _slots[23] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[19] = nativeContext.LoadFunction("alBufferiDirect", "openal")
+                    : _slots[23] = nativeContext.LoadFunction("alBufferiDirect", "openal")
             )
         )(context, buffer, param2, value);
 
@@ -21245,9 +23710,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, void>)(
-                _slots[20] is not null and var loadedFnPtr
+                _slots[24] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[20] = nativeContext.LoadFunction("alBufferiv", "openal")
+                    : _slots[24] = nativeContext.LoadFunction("alBufferiv", "openal")
             )
         )(buffer, param1, values);
 
@@ -21292,9 +23757,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[21] is not null and var loadedFnPtr
+                _slots[25] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[21] = nativeContext.LoadFunction("alBufferivDirect", "openal")
+                    : _slots[25] = nativeContext.LoadFunction("alBufferivDirect", "openal")
             )
         )(context, buffer, param2, values);
 
@@ -21345,9 +23810,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, uint, int, int, int, int, void*, void>)(
-                _slots[22] is not null and var loadedFnPtr
+                _slots[26] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[22] = nativeContext.LoadFunction("alBufferSamplesSOFT", "openal")
+                    : _slots[26] = nativeContext.LoadFunction("alBufferSamplesSOFT", "openal")
             )
         )(buffer, samplerate, internalformat, samples, channels, type, data);
 
@@ -21432,9 +23897,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, void*, int, int, void>)(
-                _slots[23] is not null and var loadedFnPtr
+                _slots[27] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[23] = nativeContext.LoadFunction("alBufferSubDataDirectSOFT", "openal")
+                    : _slots[27] = nativeContext.LoadFunction("alBufferSubDataDirectSOFT", "openal")
             )
         )(context, buffer, format, data, offset, length);
 
@@ -21504,9 +23969,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, void*, int, int, void>)(
-                _slots[24] is not null and var loadedFnPtr
+                _slots[28] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[24] = nativeContext.LoadFunction("alBufferSubDataSOFT", "openal")
+                    : _slots[28] = nativeContext.LoadFunction("alBufferSubDataSOFT", "openal")
             )
         )(buffer, format, data, offset, length);
 
@@ -21559,9 +24024,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, int, int, void*, void>)(
-                _slots[25] is not null and var loadedFnPtr
+                _slots[29] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[25] = nativeContext.LoadFunction("alBufferSubSamplesSOFT", "openal")
+                    : _slots[29] = nativeContext.LoadFunction("alBufferSubSamplesSOFT", "openal")
             )
         )(buffer, offset, samples, channels, type, data);
 
@@ -21621,9 +24086,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, DebugProcEXT, void*, void>)(
-                _slots[26] is not null and var loadedFnPtr
+                _slots[30] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[26] = nativeContext.LoadFunction(
+                    : _slots[30] = nativeContext.LoadFunction(
                         "alDebugMessageCallbackDirectEXT",
                         "openal"
                     )
@@ -21669,9 +24134,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<DebugProcEXT, void*, void>)(
-                _slots[27] is not null and var loadedFnPtr
+                _slots[31] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[27] = nativeContext.LoadFunction("alDebugMessageCallbackEXT", "openal")
+                    : _slots[31] = nativeContext.LoadFunction("alDebugMessageCallbackEXT", "openal")
             )
         )(callback, userParam);
 
@@ -21716,9 +24181,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int, int, int, uint*, sbyte, void>)(
-                _slots[28] is not null and var loadedFnPtr
+                _slots[32] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[28] = nativeContext.LoadFunction(
+                    : _slots[32] = nativeContext.LoadFunction(
                         "alDebugMessageControlDirectEXT",
                         "openal"
                     )
@@ -21838,9 +24303,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int, int, int, uint*, sbyte, void>)(
-                _slots[29] is not null and var loadedFnPtr
+                _slots[33] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[29] = nativeContext.LoadFunction("alDebugMessageControlEXT", "openal")
+                    : _slots[33] = nativeContext.LoadFunction("alDebugMessageControlEXT", "openal")
             )
         )(source, type, severity, count, ids, enable);
 
@@ -21933,9 +24398,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int, uint, int, int, sbyte*, void>)(
-                _slots[30] is not null and var loadedFnPtr
+                _slots[34] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[30] = nativeContext.LoadFunction(
+                    : _slots[34] = nativeContext.LoadFunction(
                         "alDebugMessageInsertDirectEXT",
                         "openal"
                     )
@@ -22055,9 +24520,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int, uint, int, int, sbyte*, void>)(
-                _slots[31] is not null and var loadedFnPtr
+                _slots[35] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[31] = nativeContext.LoadFunction("alDebugMessageInsertEXT", "openal")
+                    : _slots[35] = nativeContext.LoadFunction("alDebugMessageInsertEXT", "openal")
             )
         )(source, type, id, severity, length, message);
 
@@ -22142,9 +24607,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DeferUpdatesDirectSOFT(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
-                _slots[32] is not null and var loadedFnPtr
+                _slots[36] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[32] = nativeContext.LoadFunction("alDeferUpdatesDirectSOFT", "openal")
+                    : _slots[36] = nativeContext.LoadFunction("alDeferUpdatesDirectSOFT", "openal")
             )
         )(context);
 
@@ -22162,9 +24627,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DeferUpdatesSOFT() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[33] is not null and var loadedFnPtr
+                _slots[37] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[33] = nativeContext.LoadFunction("alDeferUpdatesSOFT", "openal")
+                    : _slots[37] = nativeContext.LoadFunction("alDeferUpdatesSOFT", "openal")
             )
         )();
 
@@ -22174,6 +24639,63 @@ public unsafe partial class AL : IAL, IAL.Static
     public static void DeferUpdatesSOFT() => ThisThread.DeferUpdatesSOFT();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteAuxiliaryEffectSlot([NativeTypeName("const ALuint *")] uint effectslots) =>
+        ((IAL)this).DeleteAuxiliaryEffectSlots(1, (uint*)&effectslots);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteAuxiliaryEffectSlot(
+        [NativeTypeName("const ALuint *")] uint effectslots
+    ) => ThisThread.DeleteAuxiliaryEffectSlot(effectslots);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* effectslots
+    ) =>
+        (
+            (delegate* unmanaged<int, uint*, void>)(
+                _slots[38] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[38] = nativeContext.LoadFunction(
+                        "alDeleteAuxiliaryEffectSlots",
+                        "openal"
+                    )
+            )
+        )(n, effectslots);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* effectslots
+    ) => ThisThread.DeleteAuxiliaryEffectSlots(n, effectslots);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+    )
+    {
+        fixed (uint* __dsl_effectslots = effectslots)
+        {
+            ((IAL)this).DeleteAuxiliaryEffectSlots(n, __dsl_effectslots);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+    ) => ThisThread.DeleteAuxiliaryEffectSlots(n, effectslots);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.DeleteAuxiliaryEffectSlotsDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
@@ -22181,9 +24703,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[34] is not null and var loadedFnPtr
+                _slots[39] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[34] = nativeContext.LoadFunction(
+                    : _slots[39] = nativeContext.LoadFunction(
                         "alDeleteAuxiliaryEffectSlotsDirect",
                         "openal"
                     )
@@ -22255,9 +24777,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[35] is not null and var loadedFnPtr
+                _slots[40] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[35] = nativeContext.LoadFunction("alDeleteBuffers", "openal")
+                    : _slots[40] = nativeContext.LoadFunction("alDeleteBuffers", "openal")
             )
         )(n, buffers);
 
@@ -22298,9 +24820,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[36] is not null and var loadedFnPtr
+                _slots[41] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[36] = nativeContext.LoadFunction("alDeleteBuffersDirect", "openal")
+                    : _slots[41] = nativeContext.LoadFunction("alDeleteBuffersDirect", "openal")
             )
         )(context, n, buffers);
 
@@ -22337,6 +24859,59 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.DeleteBuffersDirect(context, n, buffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteEffect([NativeTypeName("const ALuint *")] uint effects) =>
+        ((IAL)this).DeleteEffects(1, (uint*)&effects);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteEffect([NativeTypeName("const ALuint *")] uint effects) =>
+        ThisThread.DeleteEffect(effects);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* effects
+    ) =>
+        (
+            (delegate* unmanaged<int, uint*, void>)(
+                _slots[42] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[42] = nativeContext.LoadFunction("alDeleteEffects", "openal")
+            )
+        )(n, effects);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* effects
+    ) => ThisThread.DeleteEffects(n, effects);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> effects
+    )
+    {
+        fixed (uint* __dsl_effects = effects)
+        {
+            ((IAL)this).DeleteEffects(n, __dsl_effects);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> effects
+    ) => ThisThread.DeleteEffects(n, effects);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.DeleteEffectsDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
@@ -22344,9 +24919,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[37] is not null and var loadedFnPtr
+                _slots[43] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[37] = nativeContext.LoadFunction("alDeleteEffectsDirect", "openal")
+                    : _slots[43] = nativeContext.LoadFunction("alDeleteEffectsDirect", "openal")
             )
         )(context, n, effects);
 
@@ -22398,6 +24973,59 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.DeleteEffectsDirect(context, effects);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteFilter([NativeTypeName("const ALuint *")] uint filters) =>
+        ((IAL)this).DeleteFilters(1, (uint*)&filters);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteFilter([NativeTypeName("const ALuint *")] uint filters) =>
+        ThisThread.DeleteFilter(filters);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* filters
+    ) =>
+        (
+            (delegate* unmanaged<int, uint*, void>)(
+                _slots[44] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[44] = nativeContext.LoadFunction("alDeleteFilters", "openal")
+            )
+        )(n, filters);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* filters
+    ) => ThisThread.DeleteFilters(n, filters);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> filters
+    )
+    {
+        fixed (uint* __dsl_filters = filters)
+        {
+            ((IAL)this).DeleteFilters(n, __dsl_filters);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> filters
+    ) => ThisThread.DeleteFilters(n, filters);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.DeleteFiltersDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
@@ -22405,9 +25033,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[38] is not null and var loadedFnPtr
+                _slots[45] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[38] = nativeContext.LoadFunction("alDeleteFiltersDirect", "openal")
+                    : _slots[45] = nativeContext.LoadFunction("alDeleteFiltersDirect", "openal")
             )
         )(context, n, filters);
 
@@ -22476,9 +25104,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[39] is not null and var loadedFnPtr
+                _slots[46] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[39] = nativeContext.LoadFunction("alDeleteSources", "openal")
+                    : _slots[46] = nativeContext.LoadFunction("alDeleteSources", "openal")
             )
         )(n, sources);
 
@@ -22519,9 +25147,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[40] is not null and var loadedFnPtr
+                _slots[47] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[40] = nativeContext.LoadFunction("alDeleteSourcesDirect", "openal")
+                    : _slots[47] = nativeContext.LoadFunction("alDeleteSourcesDirect", "openal")
             )
         )(context, n, sources);
 
@@ -22576,9 +25204,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.Disable([NativeTypeName("ALenum")] int capability) =>
         (
             (delegate* unmanaged<int, void>)(
-                _slots[41] is not null and var loadedFnPtr
+                _slots[48] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[41] = nativeContext.LoadFunction("alDisable", "openal")
+                    : _slots[48] = nativeContext.LoadFunction("alDisable", "openal")
             )
         )(capability);
 
@@ -22604,9 +25232,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DisableDirect(ContextHandle context, [NativeTypeName("ALenum")] int capability) =>
         (
             (delegate* unmanaged<ContextHandle, int, void>)(
-                _slots[42] is not null and var loadedFnPtr
+                _slots[49] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[42] = nativeContext.LoadFunction("alDisableDirect", "openal")
+                    : _slots[49] = nativeContext.LoadFunction("alDisableDirect", "openal")
             )
         )(context, capability);
 
@@ -22637,9 +25265,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DistanceModel([NativeTypeName("ALenum")] int distanceModel) =>
         (
             (delegate* unmanaged<int, void>)(
-                _slots[43] is not null and var loadedFnPtr
+                _slots[50] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[43] = nativeContext.LoadFunction("alDistanceModel", "openal")
+                    : _slots[50] = nativeContext.LoadFunction("alDistanceModel", "openal")
             )
         )(distanceModel);
 
@@ -22669,9 +25297,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, void>)(
-                _slots[44] is not null and var loadedFnPtr
+                _slots[51] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[44] = nativeContext.LoadFunction("alDistanceModelDirect", "openal")
+                    : _slots[51] = nativeContext.LoadFunction("alDistanceModelDirect", "openal")
             )
         )(context, distanceModel);
 
@@ -22702,9 +25330,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DopplerFactor([NativeTypeName("ALfloat")] float value) =>
         (
             (delegate* unmanaged<float, void>)(
-                _slots[45] is not null and var loadedFnPtr
+                _slots[52] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[45] = nativeContext.LoadFunction("alDopplerFactor", "openal")
+                    : _slots[52] = nativeContext.LoadFunction("alDopplerFactor", "openal")
             )
         )(value);
 
@@ -22718,9 +25346,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DopplerFactorDirect(ContextHandle context, [NativeTypeName("ALfloat")] float value) =>
         (
             (delegate* unmanaged<ContextHandle, float, void>)(
-                _slots[46] is not null and var loadedFnPtr
+                _slots[53] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[46] = nativeContext.LoadFunction("alDopplerFactorDirect", "openal")
+                    : _slots[53] = nativeContext.LoadFunction("alDopplerFactorDirect", "openal")
             )
         )(context, value);
 
@@ -22736,9 +25364,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.DopplerVelocity([NativeTypeName("ALfloat")] float value) =>
         (
             (delegate* unmanaged<float, void>)(
-                _slots[47] is not null and var loadedFnPtr
+                _slots[54] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[47] = nativeContext.LoadFunction("alDopplerVelocity", "openal")
+                    : _slots[54] = nativeContext.LoadFunction("alDopplerVelocity", "openal")
             )
         )(value);
 
@@ -22749,6 +25377,29 @@ public unsafe partial class AL : IAL, IAL.Static
         ThisThread.DopplerVelocity(value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float, void>)(
+                _slots[55] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[55] = nativeContext.LoadFunction("alEffectf", "openal")
+            )
+        )(effect, param1, flValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffectf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    ) => ThisThread.Effect(effect, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.EffectfDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -22757,9 +25408,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, void>)(
-                _slots[48] is not null and var loadedFnPtr
+                _slots[56] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[48] = nativeContext.LoadFunction("alEffectfDirect", "openal")
+                    : _slots[56] = nativeContext.LoadFunction("alEffectfDirect", "openal")
             )
         )(context, effect, param2, flValue);
 
@@ -22774,6 +25425,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.EffectfDirect(context, effect, param2, flValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[57] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[57] = nativeContext.LoadFunction("alEffectfv", "openal")
+            )
+        )(effect, param1, pflValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffectfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    ) => ThisThread.Effect(effect, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+    )
+    {
+        fixed (float* __dsl_pflValues = pflValues)
+        {
+            ((IAL)this).Effect(effect, param1, __dsl_pflValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alEffectfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+    ) => ThisThread.Effect(effect, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.EffectfvDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -22782,9 +25479,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[49] is not null and var loadedFnPtr
+                _slots[58] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[49] = nativeContext.LoadFunction("alEffectfvDirect", "openal")
+                    : _slots[58] = nativeContext.LoadFunction("alEffectfvDirect", "openal")
             )
         )(context, effect, param2, pflValues);
 
@@ -22824,6 +25521,29 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.EffectfvDirect(context, effect, param2, pflValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int, void>)(
+                _slots[59] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[59] = nativeContext.LoadFunction("alEffecti", "openal")
+            )
+        )(effect, param1, iValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffecti")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    ) => ThisThread.Effect(effect, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.EffectiDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -22832,9 +25552,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, void>)(
-                _slots[50] is not null and var loadedFnPtr
+                _slots[60] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[50] = nativeContext.LoadFunction("alEffectiDirect", "openal")
+                    : _slots[60] = nativeContext.LoadFunction("alEffectiDirect", "openal")
             )
         )(context, effect, param2, iValue);
 
@@ -22849,6 +25569,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.EffectiDirect(context, effect, param2, iValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[61] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[61] = nativeContext.LoadFunction("alEffectiv", "openal")
+            )
+        )(effect, param1, piValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffectiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    ) => ThisThread.Effect(effect, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
+    )
+    {
+        fixed (int* __dsl_piValues = piValues)
+        {
+            ((IAL)this).Effect(effect, param1, __dsl_piValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alEffectiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
+    ) => ThisThread.Effect(effect, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.EffectivDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -22857,9 +25623,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[51] is not null and var loadedFnPtr
+                _slots[62] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[51] = nativeContext.LoadFunction("alEffectivDirect", "openal")
+                    : _slots[62] = nativeContext.LoadFunction("alEffectivDirect", "openal")
             )
         )(context, effect, param2, piValues);
 
@@ -22902,9 +25668,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.Enable([NativeTypeName("ALenum")] int capability) =>
         (
             (delegate* unmanaged<int, void>)(
-                _slots[52] is not null and var loadedFnPtr
+                _slots[63] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[52] = nativeContext.LoadFunction("alEnable", "openal")
+                    : _slots[63] = nativeContext.LoadFunction("alEnable", "openal")
             )
         )(capability);
 
@@ -22930,9 +25696,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.EnableDirect(ContextHandle context, [NativeTypeName("ALenum")] int capability) =>
         (
             (delegate* unmanaged<ContextHandle, int, void>)(
-                _slots[53] is not null and var loadedFnPtr
+                _slots[64] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[53] = nativeContext.LoadFunction("alEnableDirect", "openal")
+                    : _slots[64] = nativeContext.LoadFunction("alEnableDirect", "openal")
             )
         )(context, capability);
 
@@ -22967,9 +25733,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, EventProcSOFT, void*, void>)(
-                _slots[54] is not null and var loadedFnPtr
+                _slots[65] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[54] = nativeContext.LoadFunction("alEventCallbackDirectSOFT", "openal")
+                    : _slots[65] = nativeContext.LoadFunction("alEventCallbackDirectSOFT", "openal")
             )
         )(context, callback, userParam);
 
@@ -23012,9 +25778,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<EventProcSOFT, void*, void>)(
-                _slots[55] is not null and var loadedFnPtr
+                _slots[66] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[55] = nativeContext.LoadFunction("alEventCallbackSOFT", "openal")
+                    : _slots[66] = nativeContext.LoadFunction("alEventCallbackSOFT", "openal")
             )
         )(callback, userParam);
 
@@ -23056,9 +25822,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int*, sbyte, void>)(
-                _slots[56] is not null and var loadedFnPtr
+                _slots[67] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[56] = nativeContext.LoadFunction("alEventControlDirectSOFT", "openal")
+                    : _slots[67] = nativeContext.LoadFunction("alEventControlDirectSOFT", "openal")
             )
         )(context, count, types, enable);
 
@@ -23122,9 +25888,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int*, sbyte, void>)(
-                _slots[57] is not null and var loadedFnPtr
+                _slots[68] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[57] = nativeContext.LoadFunction("alEventControlSOFT", "openal")
+                    : _slots[68] = nativeContext.LoadFunction("alEventControlSOFT", "openal")
             )
         )(count, types, enable);
 
@@ -23176,6 +25942,29 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.EventControlSOFT(types, enable);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float, void>)(
+                _slots[69] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[69] = nativeContext.LoadFunction("alFilterf", "openal")
+            )
+        )(filter, param1, flValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilterf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    ) => ThisThread.Filter(filter, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.FilterfDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -23184,9 +25973,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, void>)(
-                _slots[58] is not null and var loadedFnPtr
+                _slots[70] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[58] = nativeContext.LoadFunction("alFilterfDirect", "openal")
+                    : _slots[70] = nativeContext.LoadFunction("alFilterfDirect", "openal")
             )
         )(context, filter, param2, flValue);
 
@@ -23201,6 +25990,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.FilterfDirect(context, filter, param2, flValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[71] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[71] = nativeContext.LoadFunction("alFilterfv", "openal")
+            )
+        )(filter, param1, pflValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilterfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    ) => ThisThread.Filter(filter, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+    )
+    {
+        fixed (float* __dsl_pflValues = pflValues)
+        {
+            ((IAL)this).Filter(filter, param1, __dsl_pflValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alFilterfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
+    ) => ThisThread.Filter(filter, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.FilterfvDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -23209,9 +26044,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[59] is not null and var loadedFnPtr
+                _slots[72] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[59] = nativeContext.LoadFunction("alFilterfvDirect", "openal")
+                    : _slots[72] = nativeContext.LoadFunction("alFilterfvDirect", "openal")
             )
         )(context, filter, param2, pflValues);
 
@@ -23251,6 +26086,29 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.FilterfvDirect(context, filter, param2, pflValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int, void>)(
+                _slots[73] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[73] = nativeContext.LoadFunction("alFilteri", "openal")
+            )
+        )(filter, param1, iValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilteri")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    ) => ThisThread.Filter(filter, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.FilteriDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -23259,9 +26117,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, void>)(
-                _slots[60] is not null and var loadedFnPtr
+                _slots[74] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[60] = nativeContext.LoadFunction("alFilteriDirect", "openal")
+                    : _slots[74] = nativeContext.LoadFunction("alFilteriDirect", "openal")
             )
         )(context, filter, param2, iValue);
 
@@ -23276,6 +26134,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.FilteriDirect(context, filter, param2, iValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[75] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[75] = nativeContext.LoadFunction("alFilteriv", "openal")
+            )
+        )(filter, param1, piValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilteriv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    ) => ThisThread.Filter(filter, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
+    )
+    {
+        fixed (int* __dsl_piValues = piValues)
+        {
+            ((IAL)this).Filter(filter, param1, __dsl_piValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alFilteriv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
+    ) => ThisThread.Filter(filter, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.FilterivDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -23284,9 +26188,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[61] is not null and var loadedFnPtr
+                _slots[76] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[61] = nativeContext.LoadFunction("alFilterivDirect", "openal")
+                    : _slots[76] = nativeContext.LoadFunction("alFilterivDirect", "openal")
             )
         )(context, filter, param2, piValues);
 
@@ -23326,6 +26230,62 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.FilterivDirect(context, filter, param2, piValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenAuxiliaryEffectSlot()
+    {
+        uint effectslots = default;
+        ((IAL)this).GenAuxiliaryEffectSlots(1, (uint*)&effectslots);
+        return effectslots;
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenAuxiliaryEffectSlot() => ThisThread.GenAuxiliaryEffectSlot();
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GenAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* effectslots
+    ) =>
+        (
+            (delegate* unmanaged<int, uint*, void>)(
+                _slots[77] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[77] = nativeContext.LoadFunction("alGenAuxiliaryEffectSlots", "openal")
+            )
+        )(n, effectslots);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* effectslots
+    ) => ThisThread.GenAuxiliaryEffectSlots(n, effectslots);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GenAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> effectslots
+    )
+    {
+        fixed (uint* __dsl_effectslots = effectslots)
+        {
+            ((IAL)this).GenAuxiliaryEffectSlots(n, __dsl_effectslots);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> effectslots
+    ) => ThisThread.GenAuxiliaryEffectSlots(n, effectslots);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GenAuxiliaryEffectSlotsDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
@@ -23333,9 +26293,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[62] is not null and var loadedFnPtr
+                _slots[78] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[62] = nativeContext.LoadFunction(
+                    : _slots[78] = nativeContext.LoadFunction(
                         "alGenAuxiliaryEffectSlotsDirect",
                         "openal"
                     )
@@ -23410,9 +26370,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[63] is not null and var loadedFnPtr
+                _slots[79] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[63] = nativeContext.LoadFunction("alGenBuffers", "openal")
+                    : _slots[79] = nativeContext.LoadFunction("alGenBuffers", "openal")
             )
         )(n, buffers);
 
@@ -23453,9 +26413,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[64] is not null and var loadedFnPtr
+                _slots[80] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[64] = nativeContext.LoadFunction("alGenBuffersDirect", "openal")
+                    : _slots[80] = nativeContext.LoadFunction("alGenBuffersDirect", "openal")
             )
         )(context, n, buffers);
 
@@ -23492,6 +26452,62 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GenBuffersDirect(context, n, buffers);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenEffect()
+    {
+        uint effects = default;
+        ((IAL)this).GenEffects(1, (uint*)&effects);
+        return effects;
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenEffects")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenEffect() => ThisThread.GenEffect();
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GenEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* effects
+    ) =>
+        (
+            (delegate* unmanaged<int, uint*, void>)(
+                _slots[81] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[81] = nativeContext.LoadFunction("alGenEffects", "openal")
+            )
+        )(n, effects);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGenEffects")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* effects
+    ) => ThisThread.GenEffects(n, effects);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GenEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> effects
+    )
+    {
+        fixed (uint* __dsl_effects = effects)
+        {
+            ((IAL)this).GenEffects(n, __dsl_effects);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenEffects")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> effects
+    ) => ThisThread.GenEffects(n, effects);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GenEffectsDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
@@ -23499,9 +26515,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[65] is not null and var loadedFnPtr
+                _slots[82] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[65] = nativeContext.LoadFunction("alGenEffectsDirect", "openal")
+                    : _slots[82] = nativeContext.LoadFunction("alGenEffectsDirect", "openal")
             )
         )(context, n, effects);
 
@@ -23553,6 +26569,62 @@ public unsafe partial class AL : IAL, IAL.Static
         ThisThread.GenEffectsDirect(context);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenFilter()
+    {
+        uint filters = default;
+        ((IAL)this).GenFilters(1, (uint*)&filters);
+        return filters;
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenFilters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenFilter() => ThisThread.GenFilter();
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GenFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* filters
+    ) =>
+        (
+            (delegate* unmanaged<int, uint*, void>)(
+                _slots[83] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[83] = nativeContext.LoadFunction("alGenFilters", "openal")
+            )
+        )(n, filters);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGenFilters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* filters
+    ) => ThisThread.GenFilters(n, filters);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GenFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> filters
+    )
+    {
+        fixed (uint* __dsl_filters = filters)
+        {
+            ((IAL)this).GenFilters(n, __dsl_filters);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenFilters")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GenFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> filters
+    ) => ThisThread.GenFilters(n, filters);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GenFiltersDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
@@ -23560,9 +26632,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[66] is not null and var loadedFnPtr
+                _slots[84] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[66] = nativeContext.LoadFunction("alGenFiltersDirect", "openal")
+                    : _slots[84] = nativeContext.LoadFunction("alGenFiltersDirect", "openal")
             )
         )(context, n, filters);
 
@@ -23634,9 +26706,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[67] is not null and var loadedFnPtr
+                _slots[85] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[67] = nativeContext.LoadFunction("alGenSources", "openal")
+                    : _slots[85] = nativeContext.LoadFunction("alGenSources", "openal")
             )
         )(n, sources);
 
@@ -23677,9 +26749,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[68] is not null and var loadedFnPtr
+                _slots[86] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[68] = nativeContext.LoadFunction("alGenSourcesDirect", "openal")
+                    : _slots[86] = nativeContext.LoadFunction("alGenSourcesDirect", "openal")
             )
         )(context, n, sources);
 
@@ -23731,6 +26803,52 @@ public unsafe partial class AL : IAL, IAL.Static
         ThisThread.GenSourcesDirect(context);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSlotf(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[87] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[87] = nativeContext.LoadFunction("alGetAuxiliaryEffectSlotf", "openal")
+            )
+        )(effectslot, param1, flValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSlotf(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    ) => ThisThread.GetAuxiliaryEffectSlotf(effectslot, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSlotf(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    )
+    {
+        fixed (float* __dsl_flValue = flValue)
+        {
+            ((IAL)this).GetAuxiliaryEffectSlotf(effectslot, param1, __dsl_flValue);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSlotf(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    ) => ThisThread.GetAuxiliaryEffectSlotf(effectslot, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetAuxiliaryEffectSlotfDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -23739,9 +26857,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[69] is not null and var loadedFnPtr
+                _slots[88] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[69] = nativeContext.LoadFunction(
+                    : _slots[88] = nativeContext.LoadFunction(
                         "alGetAuxiliaryEffectSlotfDirect",
                         "openal"
                     )
@@ -23784,6 +26902,55 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetAuxiliaryEffectSlotfDirect(context, effectslot, param2, pflValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSlotfv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[89] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[89] = nativeContext.LoadFunction(
+                        "alGetAuxiliaryEffectSlotfv",
+                        "openal"
+                    )
+            )
+        )(effectslot, param1, pflValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSlotfv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    ) => ThisThread.GetAuxiliaryEffectSlotfv(effectslot, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSlotfv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
+    )
+    {
+        fixed (float* __dsl_pflValues = pflValues)
+        {
+            ((IAL)this).GetAuxiliaryEffectSlotfv(effectslot, param1, __dsl_pflValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSlotfv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
+    ) => ThisThread.GetAuxiliaryEffectSlotfv(effectslot, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetAuxiliaryEffectSlotfvDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -23792,9 +26959,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[70] is not null and var loadedFnPtr
+                _slots[90] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[70] = nativeContext.LoadFunction(
+                    : _slots[90] = nativeContext.LoadFunction(
                         "alGetAuxiliaryEffectSlotfvDirect",
                         "openal"
                     )
@@ -23842,6 +27009,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetAuxiliaryEffectSlotfvDirect(context, effectslot, param2, pflValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSloti(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[91] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[91] = nativeContext.LoadFunction("alGetAuxiliaryEffectSloti", "openal")
+            )
+        )(effectslot, param1, iValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSloti(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    ) => ThisThread.GetAuxiliaryEffectSloti(effectslot, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSloti(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    )
+    {
+        fixed (int* __dsl_iValue = iValue)
+        {
+            ((IAL)this).GetAuxiliaryEffectSloti(effectslot, param1, __dsl_iValue);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSloti(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    ) => ThisThread.GetAuxiliaryEffectSloti(effectslot, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetAuxiliaryEffectSlotiDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -23850,9 +27063,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[71] is not null and var loadedFnPtr
+                _slots[92] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[71] = nativeContext.LoadFunction(
+                    : _slots[92] = nativeContext.LoadFunction(
                         "alGetAuxiliaryEffectSlotiDirect",
                         "openal"
                     )
@@ -23895,6 +27108,55 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetAuxiliaryEffectSlotiDirect(context, effectslot, param2, piValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSlotiv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[93] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[93] = nativeContext.LoadFunction(
+                        "alGetAuxiliaryEffectSlotiv",
+                        "openal"
+                    )
+            )
+        )(effectslot, param1, piValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSlotiv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    ) => ThisThread.GetAuxiliaryEffectSlotiv(effectslot, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetAuxiliaryEffectSlotiv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
+    )
+    {
+        fixed (int* __dsl_piValues = piValues)
+        {
+            ((IAL)this).GetAuxiliaryEffectSlotiv(effectslot, param1, __dsl_piValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetAuxiliaryEffectSlotiv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
+    ) => ThisThread.GetAuxiliaryEffectSlotiv(effectslot, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetAuxiliaryEffectSlotivDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
@@ -23903,9 +27165,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[72] is not null and var loadedFnPtr
+                _slots[94] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[72] = nativeContext.LoadFunction(
+                    : _slots[94] = nativeContext.LoadFunction(
                         "alGetAuxiliaryEffectSlotivDirect",
                         "openal"
                     )
@@ -23979,9 +27241,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.GetBooleanDirectRaw(ContextHandle context, [NativeTypeName("ALenum")] int param1) =>
         (
             (delegate* unmanaged<ContextHandle, int, sbyte>)(
-                _slots[74] is not null and var loadedFnPtr
+                _slots[96] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[74] = nativeContext.LoadFunction("alGetBooleanDirect", "openal")
+                    : _slots[96] = nativeContext.LoadFunction("alGetBooleanDirect", "openal")
             )
         )(context, param1);
 
@@ -23998,9 +27260,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.GetBooleanRaw([NativeTypeName("ALenum")] int param0) =>
         (
             (delegate* unmanaged<int, sbyte>)(
-                _slots[73] is not null and var loadedFnPtr
+                _slots[95] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[73] = nativeContext.LoadFunction("alGetBoolean", "openal")
+                    : _slots[95] = nativeContext.LoadFunction("alGetBoolean", "openal")
             )
         )(param0);
 
@@ -24018,9 +27280,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, sbyte*, void>)(
-                _slots[75] is not null and var loadedFnPtr
+                _slots[97] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[75] = nativeContext.LoadFunction("alGetBooleanv", "openal")
+                    : _slots[97] = nativeContext.LoadFunction("alGetBooleanv", "openal")
             )
         )(param0, values);
 
@@ -24075,9 +27337,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, sbyte*, void>)(
-                _slots[76] is not null and var loadedFnPtr
+                _slots[98] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[76] = nativeContext.LoadFunction("alGetBooleanvDirect", "openal")
+                    : _slots[98] = nativeContext.LoadFunction("alGetBooleanvDirect", "openal")
             )
         )(context, param1, values);
 
@@ -24123,9 +27385,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, float*, float*, void>)(
-                _slots[77] is not null and var loadedFnPtr
+                _slots[99] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[77] = nativeContext.LoadFunction("alGetBuffer3f", "openal")
+                    : _slots[99] = nativeContext.LoadFunction("alGetBuffer3f", "openal")
             )
         )(buffer, param1, value1, value2, value3);
 
@@ -24180,9 +27442,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, float*, float*, void>)(
-                _slots[78] is not null and var loadedFnPtr
+                _slots[100] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[78] = nativeContext.LoadFunction("alGetBuffer3fDirect", "openal")
+                    : _slots[100] = nativeContext.LoadFunction("alGetBuffer3fDirect", "openal")
             )
         )(context, buffer, param2, value1, value2, value3);
 
@@ -24246,9 +27508,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, int*, int*, void>)(
-                _slots[79] is not null and var loadedFnPtr
+                _slots[101] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[79] = nativeContext.LoadFunction("alGetBuffer3i", "openal")
+                    : _slots[101] = nativeContext.LoadFunction("alGetBuffer3i", "openal")
             )
         )(buffer, param1, value1, value2, value3);
 
@@ -24303,9 +27565,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, int*, int*, void>)(
-                _slots[80] is not null and var loadedFnPtr
+                _slots[102] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[80] = nativeContext.LoadFunction("alGetBuffer3iDirect", "openal")
+                    : _slots[102] = nativeContext.LoadFunction("alGetBuffer3iDirect", "openal")
             )
         )(context, buffer, param2, value1, value2, value3);
 
@@ -24370,9 +27632,12 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, void**, void**, void**, void>)(
-                _slots[81] is not null and var loadedFnPtr
+                _slots[103] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[81] = nativeContext.LoadFunction("alGetBuffer3PtrDirectSOFT", "openal")
+                    : _slots[103] = nativeContext.LoadFunction(
+                        "alGetBuffer3PtrDirectSOFT",
+                        "openal"
+                    )
             )
         )(context, buffer, param2, ptr0, ptr1, ptr2);
 
@@ -24444,9 +27709,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, void**, void**, void**, void>)(
-                _slots[82] is not null and var loadedFnPtr
+                _slots[104] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[82] = nativeContext.LoadFunction("alGetBuffer3PtrSOFT", "openal")
+                    : _slots[104] = nativeContext.LoadFunction("alGetBuffer3PtrSOFT", "openal")
             )
         )(buffer, param1, ptr0, ptr1, ptr2);
 
@@ -24498,9 +27763,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, void>)(
-                _slots[83] is not null and var loadedFnPtr
+                _slots[105] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[83] = nativeContext.LoadFunction("alGetBufferf", "openal")
+                    : _slots[105] = nativeContext.LoadFunction("alGetBufferf", "openal")
             )
         )(buffer, param1, value);
 
@@ -24545,9 +27810,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[84] is not null and var loadedFnPtr
+                _slots[106] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[84] = nativeContext.LoadFunction("alGetBufferfDirect", "openal")
+                    : _slots[106] = nativeContext.LoadFunction("alGetBufferfDirect", "openal")
             )
         )(context, buffer, param2, value);
 
@@ -24594,9 +27859,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, void>)(
-                _slots[85] is not null and var loadedFnPtr
+                _slots[107] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[85] = nativeContext.LoadFunction("alGetBufferfv", "openal")
+                    : _slots[107] = nativeContext.LoadFunction("alGetBufferfv", "openal")
             )
         )(buffer, param1, values);
 
@@ -24641,9 +27906,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[86] is not null and var loadedFnPtr
+                _slots[108] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[86] = nativeContext.LoadFunction("alGetBufferfvDirect", "openal")
+                    : _slots[108] = nativeContext.LoadFunction("alGetBufferfvDirect", "openal")
             )
         )(context, buffer, param2, values);
 
@@ -24690,9 +27955,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, void>)(
-                _slots[87] is not null and var loadedFnPtr
+                _slots[109] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[87] = nativeContext.LoadFunction("alGetBufferi", "openal")
+                    : _slots[109] = nativeContext.LoadFunction("alGetBufferi", "openal")
             )
         )(buffer, param1, value);
 
@@ -24737,9 +28002,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[88] is not null and var loadedFnPtr
+                _slots[110] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[88] = nativeContext.LoadFunction("alGetBufferiDirect", "openal")
+                    : _slots[110] = nativeContext.LoadFunction("alGetBufferiDirect", "openal")
             )
         )(context, buffer, param2, value);
 
@@ -24786,9 +28051,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, void>)(
-                _slots[89] is not null and var loadedFnPtr
+                _slots[111] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[89] = nativeContext.LoadFunction("alGetBufferiv", "openal")
+                    : _slots[111] = nativeContext.LoadFunction("alGetBufferiv", "openal")
             )
         )(buffer, param1, values);
 
@@ -24833,9 +28098,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[90] is not null and var loadedFnPtr
+                _slots[112] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[90] = nativeContext.LoadFunction("alGetBufferivDirect", "openal")
+                    : _slots[112] = nativeContext.LoadFunction("alGetBufferivDirect", "openal")
             )
         )(context, buffer, param2, values);
 
@@ -24883,9 +28148,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, void**, void>)(
-                _slots[91] is not null and var loadedFnPtr
+                _slots[113] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[91] = nativeContext.LoadFunction("alGetBufferPtrDirectSOFT", "openal")
+                    : _slots[113] = nativeContext.LoadFunction("alGetBufferPtrDirectSOFT", "openal")
             )
         )(context, buffer, param2, ptr);
 
@@ -24940,9 +28205,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, void**, void>)(
-                _slots[92] is not null and var loadedFnPtr
+                _slots[114] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[92] = nativeContext.LoadFunction("alGetBufferPtrSOFT", "openal")
+                    : _slots[114] = nativeContext.LoadFunction("alGetBufferPtrSOFT", "openal")
             )
         )(buffer, param1, ptr);
 
@@ -24987,9 +28252,12 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, void**, void>)(
-                _slots[93] is not null and var loadedFnPtr
+                _slots[115] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[93] = nativeContext.LoadFunction("alGetBufferPtrvDirectSOFT", "openal")
+                    : _slots[115] = nativeContext.LoadFunction(
+                        "alGetBufferPtrvDirectSOFT",
+                        "openal"
+                    )
             )
         )(context, buffer, param2, ptr);
 
@@ -25044,9 +28312,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, void**, void>)(
-                _slots[94] is not null and var loadedFnPtr
+                _slots[116] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[94] = nativeContext.LoadFunction("alGetBufferPtrvSOFT", "openal")
+                    : _slots[116] = nativeContext.LoadFunction("alGetBufferPtrvSOFT", "openal")
             )
         )(buffer, param1, ptr);
 
@@ -25093,9 +28361,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, int, int, void*, void>)(
-                _slots[95] is not null and var loadedFnPtr
+                _slots[117] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[95] = nativeContext.LoadFunction("alGetBufferSamplesSOFT", "openal")
+                    : _slots[117] = nativeContext.LoadFunction("alGetBufferSamplesSOFT", "openal")
             )
         )(buffer, offset, samples, channels, type, data);
 
@@ -25171,9 +28439,9 @@ public unsafe partial class AL : IAL, IAL.Static
                 int*,
                 sbyte*,
                 uint>)(
-                _slots[96] is not null and var loadedFnPtr
+                _slots[118] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[96] = nativeContext.LoadFunction(
+                    : _slots[118] = nativeContext.LoadFunction(
                         "alGetDebugMessageLogDirectEXT",
                         "openal"
                     )
@@ -25409,9 +28677,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, int*, uint*, int*, int*, sbyte*, uint>)(
-                _slots[97] is not null and var loadedFnPtr
+                _slots[119] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[97] = nativeContext.LoadFunction("alGetDebugMessageLogEXT", "openal")
+                    : _slots[119] = nativeContext.LoadFunction("alGetDebugMessageLogEXT", "openal")
             )
         )(count, logBufSize, sources, types, ids, severities, lengths, logBuf);
 
@@ -25621,9 +28889,9 @@ public unsafe partial class AL : IAL, IAL.Static
     double IAL.GetDouble([NativeTypeName("ALenum")] int param0) =>
         (
             (delegate* unmanaged<int, double>)(
-                _slots[98] is not null and var loadedFnPtr
+                _slots[120] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[98] = nativeContext.LoadFunction("alGetDouble", "openal")
+                    : _slots[120] = nativeContext.LoadFunction("alGetDouble", "openal")
             )
         )(param0);
 
@@ -25638,9 +28906,9 @@ public unsafe partial class AL : IAL, IAL.Static
     double IAL.GetDoubleDirect(ContextHandle context, [NativeTypeName("ALenum")] int param1) =>
         (
             (delegate* unmanaged<ContextHandle, int, double>)(
-                _slots[99] is not null and var loadedFnPtr
+                _slots[121] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[99] = nativeContext.LoadFunction("alGetDoubleDirect", "openal")
+                    : _slots[121] = nativeContext.LoadFunction("alGetDoubleDirect", "openal")
             )
         )(context, param1);
 
@@ -25660,9 +28928,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, double*, void>)(
-                _slots[100] is not null and var loadedFnPtr
+                _slots[122] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[100] = nativeContext.LoadFunction("alGetDoublev", "openal")
+                    : _slots[122] = nativeContext.LoadFunction("alGetDoublev", "openal")
             )
         )(param0, values);
 
@@ -25717,9 +28985,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, double*, void>)(
-                _slots[101] is not null and var loadedFnPtr
+                _slots[123] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[101] = nativeContext.LoadFunction("alGetDoublevDirect", "openal")
+                    : _slots[123] = nativeContext.LoadFunction("alGetDoublevDirect", "openal")
             )
         )(context, param1, values);
 
@@ -25756,6 +29024,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetDoublevDirect(context, param1, values);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffectf(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[124] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[124] = nativeContext.LoadFunction("alGetEffectf", "openal")
+            )
+        )(effect, param1, flValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffectf(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    ) => ThisThread.GetEffectf(effect, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffectf(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    )
+    {
+        fixed (float* __dsl_flValue = flValue)
+        {
+            ((IAL)this).GetEffectf(effect, param1, __dsl_flValue);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffectf(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    ) => ThisThread.GetEffectf(effect, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetEffectfDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -25764,9 +29078,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[102] is not null and var loadedFnPtr
+                _slots[125] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[102] = nativeContext.LoadFunction("alGetEffectfDirect", "openal")
+                    : _slots[125] = nativeContext.LoadFunction("alGetEffectfDirect", "openal")
             )
         )(context, effect, param2, pflValue);
 
@@ -25806,6 +29120,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetEffectfDirect(context, effect, param2, pflValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffectfv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[126] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[126] = nativeContext.LoadFunction("alGetEffectfv", "openal")
+            )
+        )(effect, param1, pflValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffectfv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    ) => ThisThread.GetEffectfv(effect, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffectfv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
+    )
+    {
+        fixed (float* __dsl_pflValues = pflValues)
+        {
+            ((IAL)this).GetEffectfv(effect, param1, __dsl_pflValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffectfv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
+    ) => ThisThread.GetEffectfv(effect, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetEffectfvDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -25814,9 +29174,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[103] is not null and var loadedFnPtr
+                _slots[127] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[103] = nativeContext.LoadFunction("alGetEffectfvDirect", "openal")
+                    : _slots[127] = nativeContext.LoadFunction("alGetEffectfvDirect", "openal")
             )
         )(context, effect, param2, pflValues);
 
@@ -25856,6 +29216,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetEffectfvDirect(context, effect, param2, pflValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffecti(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[128] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[128] = nativeContext.LoadFunction("alGetEffecti", "openal")
+            )
+        )(effect, param1, iValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffecti(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    ) => ThisThread.GetEffecti(effect, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffecti(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    )
+    {
+        fixed (int* __dsl_iValue = iValue)
+        {
+            ((IAL)this).GetEffecti(effect, param1, __dsl_iValue);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffecti(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    ) => ThisThread.GetEffecti(effect, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetEffectiDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -25864,9 +29270,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[104] is not null and var loadedFnPtr
+                _slots[129] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[104] = nativeContext.LoadFunction("alGetEffectiDirect", "openal")
+                    : _slots[129] = nativeContext.LoadFunction("alGetEffectiDirect", "openal")
             )
         )(context, effect, param2, piValue);
 
@@ -25906,6 +29312,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetEffectiDirect(context, effect, param2, piValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffectiv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[130] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[130] = nativeContext.LoadFunction("alGetEffectiv", "openal")
+            )
+        )(effect, param1, piValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffectiv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    ) => ThisThread.GetEffectiv(effect, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetEffectiv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
+    )
+    {
+        fixed (int* __dsl_piValues = piValues)
+        {
+            ((IAL)this).GetEffectiv(effect, param1, __dsl_piValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetEffectiv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
+    ) => ThisThread.GetEffectiv(effect, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetEffectivDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
@@ -25914,9 +29366,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[105] is not null and var loadedFnPtr
+                _slots[131] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[105] = nativeContext.LoadFunction("alGetEffectivDirect", "openal")
+                    : _slots[131] = nativeContext.LoadFunction("alGetEffectivDirect", "openal")
             )
         )(context, effect, param2, piValues);
 
@@ -25959,9 +29411,9 @@ public unsafe partial class AL : IAL, IAL.Static
     int IAL.GetEnumValue([NativeTypeName("const ALchar *")] sbyte* ename) =>
         (
             (delegate* unmanaged<sbyte*, int>)(
-                _slots[106] is not null and var loadedFnPtr
+                _slots[132] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[106] = nativeContext.LoadFunction("alGetEnumValue", "openal")
+                    : _slots[132] = nativeContext.LoadFunction("alGetEnumValue", "openal")
             )
         )(ename);
 
@@ -25996,9 +29448,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, sbyte*, int>)(
-                _slots[107] is not null and var loadedFnPtr
+                _slots[133] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[107] = nativeContext.LoadFunction("alGetEnumValueDirect", "openal")
+                    : _slots[133] = nativeContext.LoadFunction("alGetEnumValueDirect", "openal")
             )
         )(context, ename);
 
@@ -26060,9 +29512,9 @@ public unsafe partial class AL : IAL, IAL.Static
     int IAL.GetErrorDirectRaw(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, int>)(
-                _slots[109] is not null and var loadedFnPtr
+                _slots[135] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[109] = nativeContext.LoadFunction("alGetErrorDirect", "openal")
+                    : _slots[135] = nativeContext.LoadFunction("alGetErrorDirect", "openal")
             )
         )(context);
 
@@ -26077,9 +29529,9 @@ public unsafe partial class AL : IAL, IAL.Static
     int IAL.GetErrorRaw() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[108] is not null and var loadedFnPtr
+                _slots[134] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[108] = nativeContext.LoadFunction("alGetError", "openal")
+                    : _slots[134] = nativeContext.LoadFunction("alGetError", "openal")
             )
         )();
 
@@ -26090,6 +29542,52 @@ public unsafe partial class AL : IAL, IAL.Static
     public static int GetErrorRaw() => ThisThread.GetErrorRaw();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilterf(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[136] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[136] = nativeContext.LoadFunction("alGetFilterf", "openal")
+            )
+        )(filter, param1, flValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilterf(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    ) => ThisThread.GetFilterf(filter, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilterf(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    )
+    {
+        fixed (float* __dsl_flValue = flValue)
+        {
+            ((IAL)this).GetFilterf(filter, param1, __dsl_flValue);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilterf(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    ) => ThisThread.GetFilterf(filter, param1, flValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetFilterfDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -26098,9 +29596,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[110] is not null and var loadedFnPtr
+                _slots[137] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[110] = nativeContext.LoadFunction("alGetFilterfDirect", "openal")
+                    : _slots[137] = nativeContext.LoadFunction("alGetFilterfDirect", "openal")
             )
         )(context, filter, param2, pflValue);
 
@@ -26140,6 +29638,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetFilterfDirect(context, filter, param2, pflValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilterfv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, float*, void>)(
+                _slots[138] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[138] = nativeContext.LoadFunction("alGetFilterfv", "openal")
+            )
+        )(filter, param1, pflValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilterfv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    ) => ThisThread.GetFilterfv(filter, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilterfv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
+    )
+    {
+        fixed (float* __dsl_pflValues = pflValues)
+        {
+            ((IAL)this).GetFilterfv(filter, param1, __dsl_pflValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilterfv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
+    ) => ThisThread.GetFilterfv(filter, param1, pflValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetFilterfvDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -26148,9 +29692,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[111] is not null and var loadedFnPtr
+                _slots[139] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[111] = nativeContext.LoadFunction("alGetFilterfvDirect", "openal")
+                    : _slots[139] = nativeContext.LoadFunction("alGetFilterfvDirect", "openal")
             )
         )(context, filter, param2, pflValues);
 
@@ -26190,6 +29734,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetFilterfvDirect(context, filter, param2, pflValues);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilteri(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[140] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[140] = nativeContext.LoadFunction("alGetFilteri", "openal")
+            )
+        )(filter, param1, iValue);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilteri(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    ) => ThisThread.GetFilteri(filter, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilteri(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    )
+    {
+        fixed (int* __dsl_iValue = iValue)
+        {
+            ((IAL)this).GetFilteri(filter, param1, __dsl_iValue);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilteri(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    ) => ThisThread.GetFilteri(filter, param1, iValue);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetFilteriDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -26198,9 +29788,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[112] is not null and var loadedFnPtr
+                _slots[141] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[112] = nativeContext.LoadFunction("alGetFilteriDirect", "openal")
+                    : _slots[141] = nativeContext.LoadFunction("alGetFilteriDirect", "openal")
             )
         )(context, filter, param2, piValue);
 
@@ -26240,6 +29830,52 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetFilteriDirect(context, filter, param2, piValue);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilteriv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    ) =>
+        (
+            (delegate* unmanaged<uint, int, int*, void>)(
+                _slots[142] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[142] = nativeContext.LoadFunction("alGetFilteriv", "openal")
+            )
+        )(filter, param1, piValues);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilteriv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    ) => ThisThread.GetFilteriv(filter, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.GetFilteriv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
+    )
+    {
+        fixed (int* __dsl_piValues = piValues)
+        {
+            ((IAL)this).GetFilteriv(filter, param1, __dsl_piValues);
+        }
+    }
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void GetFilteriv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
+    ) => ThisThread.GetFilteriv(filter, param1, piValues);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.GetFilterivDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
@@ -26248,9 +29884,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[113] is not null and var loadedFnPtr
+                _slots[143] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[113] = nativeContext.LoadFunction("alGetFilterivDirect", "openal")
+                    : _slots[143] = nativeContext.LoadFunction("alGetFilterivDirect", "openal")
             )
         )(context, filter, param2, piValues);
 
@@ -26293,9 +29929,9 @@ public unsafe partial class AL : IAL, IAL.Static
     float IAL.GetFloat([NativeTypeName("ALenum")] int param0) =>
         (
             (delegate* unmanaged<int, float>)(
-                _slots[114] is not null and var loadedFnPtr
+                _slots[144] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[114] = nativeContext.LoadFunction("alGetFloat", "openal")
+                    : _slots[144] = nativeContext.LoadFunction("alGetFloat", "openal")
             )
         )(param0);
 
@@ -26310,9 +29946,9 @@ public unsafe partial class AL : IAL, IAL.Static
     float IAL.GetFloatDirect(ContextHandle context, [NativeTypeName("ALenum")] int param1) =>
         (
             (delegate* unmanaged<ContextHandle, int, float>)(
-                _slots[115] is not null and var loadedFnPtr
+                _slots[145] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[115] = nativeContext.LoadFunction("alGetFloatDirect", "openal")
+                    : _slots[145] = nativeContext.LoadFunction("alGetFloatDirect", "openal")
             )
         )(context, param1);
 
@@ -26332,9 +29968,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float*, void>)(
-                _slots[116] is not null and var loadedFnPtr
+                _slots[146] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[116] = nativeContext.LoadFunction("alGetFloatv", "openal")
+                    : _slots[146] = nativeContext.LoadFunction("alGetFloatv", "openal")
             )
         )(param0, values);
 
@@ -26389,9 +30025,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float*, void>)(
-                _slots[117] is not null and var loadedFnPtr
+                _slots[147] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[117] = nativeContext.LoadFunction("alGetFloatvDirect", "openal")
+                    : _slots[147] = nativeContext.LoadFunction("alGetFloatvDirect", "openal")
             )
         )(context, param1, values);
 
@@ -26431,9 +30067,9 @@ public unsafe partial class AL : IAL, IAL.Static
     int IAL.GetInteger([NativeTypeName("ALenum")] int param0) =>
         (
             (delegate* unmanaged<int, int>)(
-                _slots[118] is not null and var loadedFnPtr
+                _slots[148] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[118] = nativeContext.LoadFunction("alGetInteger", "openal")
+                    : _slots[148] = nativeContext.LoadFunction("alGetInteger", "openal")
             )
         )(param0);
 
@@ -26448,9 +30084,9 @@ public unsafe partial class AL : IAL, IAL.Static
     int IAL.GetIntegerDirect(ContextHandle context, [NativeTypeName("ALenum")] int param1) =>
         (
             (delegate* unmanaged<ContextHandle, int, int>)(
-                _slots[119] is not null and var loadedFnPtr
+                _slots[149] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[119] = nativeContext.LoadFunction("alGetIntegerDirect", "openal")
+                    : _slots[149] = nativeContext.LoadFunction("alGetIntegerDirect", "openal")
             )
         )(context, param1);
 
@@ -26470,9 +30106,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int*, void>)(
-                _slots[120] is not null and var loadedFnPtr
+                _slots[150] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[120] = nativeContext.LoadFunction("alGetIntegerv", "openal")
+                    : _slots[150] = nativeContext.LoadFunction("alGetIntegerv", "openal")
             )
         )(param0, values);
 
@@ -26527,9 +30163,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int*, void>)(
-                _slots[121] is not null and var loadedFnPtr
+                _slots[151] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[121] = nativeContext.LoadFunction("alGetIntegervDirect", "openal")
+                    : _slots[151] = nativeContext.LoadFunction("alGetIntegervDirect", "openal")
             )
         )(context, param1, values);
 
@@ -26574,9 +30210,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float*, float*, float*, void>)(
-                _slots[122] is not null and var loadedFnPtr
+                _slots[152] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[122] = nativeContext.LoadFunction("alGetListener3f", "openal")
+                    : _slots[152] = nativeContext.LoadFunction("alGetListener3f", "openal")
             )
         )(param0, value1, value2, value3);
 
@@ -26627,9 +30263,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float*, float*, float*, void>)(
-                _slots[123] is not null and var loadedFnPtr
+                _slots[153] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[123] = nativeContext.LoadFunction("alGetListener3fDirect", "openal")
+                    : _slots[153] = nativeContext.LoadFunction("alGetListener3fDirect", "openal")
             )
         )(context, param1, value1, value2, value3);
 
@@ -26688,9 +30324,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int*, int*, int*, void>)(
-                _slots[124] is not null and var loadedFnPtr
+                _slots[154] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[124] = nativeContext.LoadFunction("alGetListener3i", "openal")
+                    : _slots[154] = nativeContext.LoadFunction("alGetListener3i", "openal")
             )
         )(param0, value1, value2, value3);
 
@@ -26741,9 +30377,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int*, int*, int*, void>)(
-                _slots[125] is not null and var loadedFnPtr
+                _slots[155] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[125] = nativeContext.LoadFunction("alGetListener3iDirect", "openal")
+                    : _slots[155] = nativeContext.LoadFunction("alGetListener3iDirect", "openal")
             )
         )(context, param1, value1, value2, value3);
 
@@ -26800,9 +30436,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float*, void>)(
-                _slots[126] is not null and var loadedFnPtr
+                _slots[156] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[126] = nativeContext.LoadFunction("alGetListenerf", "openal")
+                    : _slots[156] = nativeContext.LoadFunction("alGetListenerf", "openal")
             )
         )(param0, value);
 
@@ -26857,9 +30493,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float*, void>)(
-                _slots[127] is not null and var loadedFnPtr
+                _slots[157] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[127] = nativeContext.LoadFunction("alGetListenerfDirect", "openal")
+                    : _slots[157] = nativeContext.LoadFunction("alGetListenerfDirect", "openal")
             )
         )(context, param1, value);
 
@@ -26902,9 +30538,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float*, void>)(
-                _slots[128] is not null and var loadedFnPtr
+                _slots[158] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[128] = nativeContext.LoadFunction("alGetListenerfv", "openal")
+                    : _slots[158] = nativeContext.LoadFunction("alGetListenerfv", "openal")
             )
         )(param0, values);
 
@@ -26959,9 +30595,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float*, void>)(
-                _slots[129] is not null and var loadedFnPtr
+                _slots[159] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[129] = nativeContext.LoadFunction("alGetListenerfvDirect", "openal")
+                    : _slots[159] = nativeContext.LoadFunction("alGetListenerfvDirect", "openal")
             )
         )(context, param1, values);
 
@@ -27004,9 +30640,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int*, void>)(
-                _slots[130] is not null and var loadedFnPtr
+                _slots[160] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[130] = nativeContext.LoadFunction("alGetListeneri", "openal")
+                    : _slots[160] = nativeContext.LoadFunction("alGetListeneri", "openal")
             )
         )(param0, value);
 
@@ -27061,9 +30697,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int*, void>)(
-                _slots[131] is not null and var loadedFnPtr
+                _slots[161] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[131] = nativeContext.LoadFunction("alGetListeneriDirect", "openal")
+                    : _slots[161] = nativeContext.LoadFunction("alGetListeneriDirect", "openal")
             )
         )(context, param1, value);
 
@@ -27106,9 +30742,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int*, void>)(
-                _slots[132] is not null and var loadedFnPtr
+                _slots[162] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[132] = nativeContext.LoadFunction("alGetListeneriv", "openal")
+                    : _slots[162] = nativeContext.LoadFunction("alGetListeneriv", "openal")
             )
         )(param0, values);
 
@@ -27163,9 +30799,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int*, void>)(
-                _slots[133] is not null and var loadedFnPtr
+                _slots[163] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[133] = nativeContext.LoadFunction("alGetListenerivDirect", "openal")
+                    : _slots[163] = nativeContext.LoadFunction("alGetListenerivDirect", "openal")
             )
         )(context, param1, values);
 
@@ -27212,9 +30848,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint, int, int*, sbyte*, void>)(
-                _slots[134] is not null and var loadedFnPtr
+                _slots[164] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[134] = nativeContext.LoadFunction(
+                    : _slots[164] = nativeContext.LoadFunction(
                         "alGetObjectLabelDirectEXT",
                         "openal"
                     )
@@ -27314,9 +30950,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint, int, int*, sbyte*, void>)(
-                _slots[135] is not null and var loadedFnPtr
+                _slots[165] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[135] = nativeContext.LoadFunction("alGetObjectLabelEXT", "openal")
+                    : _slots[165] = nativeContext.LoadFunction("alGetObjectLabelEXT", "openal")
             )
         )(identifier, name, bufSize, length, label);
 
@@ -27394,9 +31030,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void* IAL.GetPointerDirectEXT(ContextHandle context, [NativeTypeName("ALenum")] int pname) =>
         (
             (delegate* unmanaged<ContextHandle, int, void*>)(
-                _slots[136] is not null and var loadedFnPtr
+                _slots[166] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[136] = nativeContext.LoadFunction("alGetPointerDirectEXT", "openal")
+                    : _slots[166] = nativeContext.LoadFunction("alGetPointerDirectEXT", "openal")
             )
         )(context, pname);
 
@@ -27427,9 +31063,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void* IAL.GetPointerDirectSOFT(ContextHandle context, [NativeTypeName("ALenum")] int pname) =>
         (
             (delegate* unmanaged<ContextHandle, int, void*>)(
-                _slots[137] is not null and var loadedFnPtr
+                _slots[167] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[137] = nativeContext.LoadFunction("alGetPointerDirectSOFT", "openal")
+                    : _slots[167] = nativeContext.LoadFunction("alGetPointerDirectSOFT", "openal")
             )
         )(context, pname);
 
@@ -27460,9 +31096,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void* IAL.GetPointerEXT([NativeTypeName("ALenum")] int pname) =>
         (
             (delegate* unmanaged<int, void*>)(
-                _slots[138] is not null and var loadedFnPtr
+                _slots[168] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[138] = nativeContext.LoadFunction("alGetPointerEXT", "openal")
+                    : _slots[168] = nativeContext.LoadFunction("alGetPointerEXT", "openal")
             )
         )(pname);
 
@@ -27488,9 +31124,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void* IAL.GetPointerSOFT([NativeTypeName("ALenum")] int pname) =>
         (
             (delegate* unmanaged<int, void*>)(
-                _slots[139] is not null and var loadedFnPtr
+                _slots[169] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[139] = nativeContext.LoadFunction("alGetPointerSOFT", "openal")
+                    : _slots[169] = nativeContext.LoadFunction("alGetPointerSOFT", "openal")
             )
         )(pname);
 
@@ -27520,9 +31156,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, void**, void>)(
-                _slots[140] is not null and var loadedFnPtr
+                _slots[170] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[140] = nativeContext.LoadFunction("alGetPointervDirectEXT", "openal")
+                    : _slots[170] = nativeContext.LoadFunction("alGetPointervDirectEXT", "openal")
             )
         )(context, pname, values);
 
@@ -27566,9 +31202,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, void**, void>)(
-                _slots[141] is not null and var loadedFnPtr
+                _slots[171] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[141] = nativeContext.LoadFunction("alGetPointervDirectSOFT", "openal")
+                    : _slots[171] = nativeContext.LoadFunction("alGetPointervDirectSOFT", "openal")
             )
         )(context, pname, values);
 
@@ -27608,9 +31244,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.GetPointerEXT([NativeTypeName("ALenum")] int pname, void** values) =>
         (
             (delegate* unmanaged<int, void**, void>)(
-                _slots[142] is not null and var loadedFnPtr
+                _slots[172] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[142] = nativeContext.LoadFunction("alGetPointervEXT", "openal")
+                    : _slots[172] = nativeContext.LoadFunction("alGetPointervEXT", "openal")
             )
         )(pname, values);
 
@@ -27645,9 +31281,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.GetPointerSOFT([NativeTypeName("ALenum")] int pname, void** values) =>
         (
             (delegate* unmanaged<int, void**, void>)(
-                _slots[143] is not null and var loadedFnPtr
+                _slots[173] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[143] = nativeContext.LoadFunction("alGetPointervSOFT", "openal")
+                    : _slots[173] = nativeContext.LoadFunction("alGetPointervSOFT", "openal")
             )
         )(pname, values);
 
@@ -27682,9 +31318,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void* IAL.GetProcAddress([NativeTypeName("const ALchar *")] sbyte* fname) =>
         (
             (delegate* unmanaged<sbyte*, void*>)(
-                _slots[144] is not null and var loadedFnPtr
+                _slots[174] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[144] = nativeContext.LoadFunction("alGetProcAddress", "openal")
+                    : _slots[174] = nativeContext.LoadFunction("alGetProcAddress", "openal")
             )
         )(fname);
 
@@ -27717,9 +31353,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, sbyte*, void*>)(
-                _slots[145] is not null and var loadedFnPtr
+                _slots[175] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[145] = nativeContext.LoadFunction("alGetProcAddressDirect", "openal")
+                    : _slots[175] = nativeContext.LoadFunction("alGetProcAddressDirect", "openal")
             )
         )(context, fname);
 
@@ -27763,9 +31399,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, double*, double*, double*, void>)(
-                _slots[146] is not null and var loadedFnPtr
+                _slots[176] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[146] = nativeContext.LoadFunction("alGetSource3dDirectSOFT", "openal")
+                    : _slots[176] = nativeContext.LoadFunction("alGetSource3dDirectSOFT", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -27837,9 +31473,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, double*, double*, double*, void>)(
-                _slots[147] is not null and var loadedFnPtr
+                _slots[177] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[147] = nativeContext.LoadFunction("alGetSource3dSOFT", "openal")
+                    : _slots[177] = nativeContext.LoadFunction("alGetSource3dSOFT", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -27893,9 +31529,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, float*, float*, void>)(
-                _slots[148] is not null and var loadedFnPtr
+                _slots[178] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[148] = nativeContext.LoadFunction("alGetSource3f", "openal")
+                    : _slots[178] = nativeContext.LoadFunction("alGetSource3f", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -27950,9 +31586,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, float*, float*, void>)(
-                _slots[149] is not null and var loadedFnPtr
+                _slots[179] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[149] = nativeContext.LoadFunction("alGetSource3fDirect", "openal")
+                    : _slots[179] = nativeContext.LoadFunction("alGetSource3fDirect", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -28016,9 +31652,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, int*, int*, void>)(
-                _slots[150] is not null and var loadedFnPtr
+                _slots[180] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[150] = nativeContext.LoadFunction("alGetSource3i", "openal")
+                    : _slots[180] = nativeContext.LoadFunction("alGetSource3i", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -28073,9 +31709,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, long*, long*, long*, void>)(
-                _slots[151] is not null and var loadedFnPtr
+                _slots[181] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[151] = nativeContext.LoadFunction(
+                    : _slots[181] = nativeContext.LoadFunction(
                         "alGetSource3i64DirectSOFT",
                         "openal"
                     )
@@ -28150,9 +31786,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, long*, long*, long*, void>)(
-                _slots[152] is not null and var loadedFnPtr
+                _slots[182] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[152] = nativeContext.LoadFunction("alGetSource3i64SOFT", "openal")
+                    : _slots[182] = nativeContext.LoadFunction("alGetSource3i64SOFT", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -28207,9 +31843,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, int*, int*, void>)(
-                _slots[153] is not null and var loadedFnPtr
+                _slots[183] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[153] = nativeContext.LoadFunction("alGetSource3iDirect", "openal")
+                    : _slots[183] = nativeContext.LoadFunction("alGetSource3iDirect", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -28272,9 +31908,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, double*, void>)(
-                _slots[154] is not null and var loadedFnPtr
+                _slots[184] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[154] = nativeContext.LoadFunction("alGetSourcedDirectSOFT", "openal")
+                    : _slots[184] = nativeContext.LoadFunction("alGetSourcedDirectSOFT", "openal")
             )
         )(context, source, param2, value);
 
@@ -28329,9 +31965,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, double*, void>)(
-                _slots[155] is not null and var loadedFnPtr
+                _slots[185] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[155] = nativeContext.LoadFunction("alGetSourcedSOFT", "openal")
+                    : _slots[185] = nativeContext.LoadFunction("alGetSourcedSOFT", "openal")
             )
         )(source, param1, value);
 
@@ -28376,9 +32012,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, double*, void>)(
-                _slots[156] is not null and var loadedFnPtr
+                _slots[186] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[156] = nativeContext.LoadFunction("alGetSourcedvDirectSOFT", "openal")
+                    : _slots[186] = nativeContext.LoadFunction("alGetSourcedvDirectSOFT", "openal")
             )
         )(context, source, param2, values);
 
@@ -28433,9 +32069,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, double*, void>)(
-                _slots[157] is not null and var loadedFnPtr
+                _slots[187] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[157] = nativeContext.LoadFunction("alGetSourcedvSOFT", "openal")
+                    : _slots[187] = nativeContext.LoadFunction("alGetSourcedvSOFT", "openal")
             )
         )(source, param1, values);
 
@@ -28479,9 +32115,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, void>)(
-                _slots[158] is not null and var loadedFnPtr
+                _slots[188] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[158] = nativeContext.LoadFunction("alGetSourcef", "openal")
+                    : _slots[188] = nativeContext.LoadFunction("alGetSourcef", "openal")
             )
         )(source, param1, value);
 
@@ -28526,9 +32162,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[159] is not null and var loadedFnPtr
+                _slots[189] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[159] = nativeContext.LoadFunction("alGetSourcefDirect", "openal")
+                    : _slots[189] = nativeContext.LoadFunction("alGetSourcefDirect", "openal")
             )
         )(context, source, param2, value);
 
@@ -28575,9 +32211,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, void>)(
-                _slots[160] is not null and var loadedFnPtr
+                _slots[190] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[160] = nativeContext.LoadFunction("alGetSourcefv", "openal")
+                    : _slots[190] = nativeContext.LoadFunction("alGetSourcefv", "openal")
             )
         )(source, param1, values);
 
@@ -28622,9 +32258,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[161] is not null and var loadedFnPtr
+                _slots[191] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[161] = nativeContext.LoadFunction("alGetSourcefvDirect", "openal")
+                    : _slots[191] = nativeContext.LoadFunction("alGetSourcefvDirect", "openal")
             )
         )(context, source, param2, values);
 
@@ -28671,9 +32307,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, void>)(
-                _slots[162] is not null and var loadedFnPtr
+                _slots[192] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[162] = nativeContext.LoadFunction("alGetSourcei", "openal")
+                    : _slots[192] = nativeContext.LoadFunction("alGetSourcei", "openal")
             )
         )(source, param1, value);
 
@@ -28718,9 +32354,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, long*, void>)(
-                _slots[163] is not null and var loadedFnPtr
+                _slots[193] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[163] = nativeContext.LoadFunction("alGetSourcei64DirectSOFT", "openal")
+                    : _slots[193] = nativeContext.LoadFunction("alGetSourcei64DirectSOFT", "openal")
             )
         )(context, source, param2, value);
 
@@ -28775,9 +32411,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, long*, void>)(
-                _slots[164] is not null and var loadedFnPtr
+                _slots[194] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[164] = nativeContext.LoadFunction("alGetSourcei64SOFT", "openal")
+                    : _slots[194] = nativeContext.LoadFunction("alGetSourcei64SOFT", "openal")
             )
         )(source, param1, value);
 
@@ -28822,9 +32458,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, long*, void>)(
-                _slots[165] is not null and var loadedFnPtr
+                _slots[195] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[165] = nativeContext.LoadFunction(
+                    : _slots[195] = nativeContext.LoadFunction(
                         "alGetSourcei64vDirectSOFT",
                         "openal"
                     )
@@ -28882,9 +32518,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, long*, void>)(
-                _slots[166] is not null and var loadedFnPtr
+                _slots[196] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[166] = nativeContext.LoadFunction("alGetSourcei64vSOFT", "openal")
+                    : _slots[196] = nativeContext.LoadFunction("alGetSourcei64vSOFT", "openal")
             )
         )(source, param1, values);
 
@@ -28929,9 +32565,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[167] is not null and var loadedFnPtr
+                _slots[197] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[167] = nativeContext.LoadFunction("alGetSourceiDirect", "openal")
+                    : _slots[197] = nativeContext.LoadFunction("alGetSourceiDirect", "openal")
             )
         )(context, source, param2, value);
 
@@ -28978,9 +32614,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, void>)(
-                _slots[168] is not null and var loadedFnPtr
+                _slots[198] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[168] = nativeContext.LoadFunction("alGetSourceiv", "openal")
+                    : _slots[198] = nativeContext.LoadFunction("alGetSourceiv", "openal")
             )
         )(source, param1, values);
 
@@ -29025,9 +32661,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[169] is not null and var loadedFnPtr
+                _slots[199] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[169] = nativeContext.LoadFunction("alGetSourceivDirect", "openal")
+                    : _slots[199] = nativeContext.LoadFunction("alGetSourceivDirect", "openal")
             )
         )(context, source, param2, values);
 
@@ -29096,9 +32732,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte* IAL.GetStringDirectRaw(ContextHandle context, [NativeTypeName("ALenum")] int param1) =>
         (
             (delegate* unmanaged<ContextHandle, int, sbyte*>)(
-                _slots[171] is not null and var loadedFnPtr
+                _slots[201] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[171] = nativeContext.LoadFunction("alGetStringDirect", "openal")
+                    : _slots[201] = nativeContext.LoadFunction("alGetStringDirect", "openal")
             )
         )(context, param1);
 
@@ -29119,9 +32755,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int, sbyte*>)(
-                _slots[172] is not null and var loadedFnPtr
+                _slots[202] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[172] = nativeContext.LoadFunction("alGetStringiDirectSOFT", "openal")
+                    : _slots[202] = nativeContext.LoadFunction("alGetStringiDirectSOFT", "openal")
             )
         )(context, pname, index);
 
@@ -29168,9 +32804,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int, sbyte*>)(
-                _slots[173] is not null and var loadedFnPtr
+                _slots[203] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[173] = nativeContext.LoadFunction("alGetStringiSOFT", "openal")
+                    : _slots[203] = nativeContext.LoadFunction("alGetStringiSOFT", "openal")
             )
         )(pname, index);
 
@@ -29203,9 +32839,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte* IAL.GetStringRaw([NativeTypeName("ALenum")] int param0) =>
         (
             (delegate* unmanaged<int, sbyte*>)(
-                _slots[170] is not null and var loadedFnPtr
+                _slots[200] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[170] = nativeContext.LoadFunction("alGetString", "openal")
+                    : _slots[200] = nativeContext.LoadFunction("alGetString", "openal")
             )
         )(param0);
 
@@ -29215,6 +32851,19 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte* GetStringRaw([NativeTypeName("ALenum")] int param0) =>
         ThisThread.GetStringRaw(param0);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<sbyte> IAL.IsAuxiliaryEffectSlot([NativeTypeName("ALuint")] uint effectslot) =>
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsAuxiliaryEffectSlotRaw(effectslot);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<sbyte> IsAuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot
+    ) => ThisThread.IsAuxiliaryEffectSlot(effectslot);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsAuxiliaryEffectSlotDirect(
@@ -29239,9 +32888,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
-                _slots[174] is not null and var loadedFnPtr
+                _slots[205] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[174] = nativeContext.LoadFunction(
+                    : _slots[205] = nativeContext.LoadFunction(
                         "alIsAuxiliaryEffectSlotDirect",
                         "openal"
                     )
@@ -29256,6 +32905,23 @@ public unsafe partial class AL : IAL, IAL.Static
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot
     ) => ThisThread.IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    sbyte IAL.IsAuxiliaryEffectSlotRaw([NativeTypeName("ALuint")] uint effectslot) =>
+        (
+            (delegate* unmanaged<uint, sbyte>)(
+                _slots[204] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[204] = nativeContext.LoadFunction("alIsAuxiliaryEffectSlot", "openal")
+            )
+        )(effectslot);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static sbyte IsAuxiliaryEffectSlotRaw([NativeTypeName("ALuint")] uint effectslot) =>
+        ThisThread.IsAuxiliaryEffectSlotRaw(effectslot);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsBuffer([NativeTypeName("ALuint")] uint buffer) =>
@@ -29289,9 +32955,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsBufferDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint buffer) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
-                _slots[176] is not null and var loadedFnPtr
+                _slots[207] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[176] = nativeContext.LoadFunction("alIsBufferDirect", "openal")
+                    : _slots[207] = nativeContext.LoadFunction("alIsBufferDirect", "openal")
             )
         )(context, buffer);
 
@@ -29321,9 +32987,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsBufferFormatSupportedSOFTRaw([NativeTypeName("ALenum")] int format) =>
         (
             (delegate* unmanaged<int, sbyte>)(
-                _slots[177] is not null and var loadedFnPtr
+                _slots[208] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[177] = nativeContext.LoadFunction(
+                    : _slots[208] = nativeContext.LoadFunction(
                         "alIsBufferFormatSupportedSOFT",
                         "openal"
                     )
@@ -29341,9 +33007,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsBufferRaw([NativeTypeName("ALuint")] uint buffer) =>
         (
             (delegate* unmanaged<uint, sbyte>)(
-                _slots[175] is not null and var loadedFnPtr
+                _slots[206] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[175] = nativeContext.LoadFunction("alIsBuffer", "openal")
+                    : _slots[206] = nativeContext.LoadFunction("alIsBuffer", "openal")
             )
         )(buffer);
 
@@ -29353,6 +33019,18 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte IsBufferRaw([NativeTypeName("ALuint")] uint buffer) =>
         ThisThread.IsBufferRaw(buffer);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<sbyte> IAL.IsEffect([NativeTypeName("ALuint")] uint effect) =>
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsEffectRaw(effect);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alIsEffect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<sbyte> IsEffect([NativeTypeName("ALuint")] uint effect) =>
+        ThisThread.IsEffect(effect);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsEffectDirect(
@@ -29374,9 +33052,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsEffectDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint effect) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
-                _slots[178] is not null and var loadedFnPtr
+                _slots[210] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[178] = nativeContext.LoadFunction("alIsEffectDirect", "openal")
+                    : _slots[210] = nativeContext.LoadFunction("alIsEffectDirect", "openal")
             )
         )(context, effect);
 
@@ -29390,12 +33068,29 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.IsEffectDirectRaw(context, effect);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    sbyte IAL.IsEffectRaw([NativeTypeName("ALuint")] uint effect) =>
+        (
+            (delegate* unmanaged<uint, sbyte>)(
+                _slots[209] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[209] = nativeContext.LoadFunction("alIsEffect", "openal")
+            )
+        )(effect);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alIsEffect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static sbyte IsEffectRaw([NativeTypeName("ALuint")] uint effect) =>
+        ThisThread.IsEffectRaw(effect);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IAL.IsEnabled([NativeTypeName("ALenum")] int capability) =>
         (
             (delegate* unmanaged<int, sbyte>)(
-                _slots[179] is not null and var loadedFnPtr
+                _slots[211] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[179] = nativeContext.LoadFunction("alIsEnabled", "openal")
+                    : _slots[211] = nativeContext.LoadFunction("alIsEnabled", "openal")
             )
         )(capability);
 
@@ -29424,9 +33119,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsEnabledDirect(ContextHandle context, [NativeTypeName("ALenum")] int capability) =>
         (
             (delegate* unmanaged<ContextHandle, int, sbyte>)(
-                _slots[180] is not null and var loadedFnPtr
+                _slots[212] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[180] = nativeContext.LoadFunction("alIsEnabledDirect", "openal")
+                    : _slots[212] = nativeContext.LoadFunction("alIsEnabledDirect", "openal")
             )
         )(context, capability);
 
@@ -29459,9 +33154,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsExtensionPresent([NativeTypeName("const ALchar *")] sbyte* extname) =>
         (
             (delegate* unmanaged<sbyte*, sbyte>)(
-                _slots[181] is not null and var loadedFnPtr
+                _slots[213] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[181] = nativeContext.LoadFunction("alIsExtensionPresent", "openal")
+                    : _slots[213] = nativeContext.LoadFunction("alIsExtensionPresent", "openal")
             )
         )(extname);
 
@@ -29497,9 +33192,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, sbyte*, sbyte>)(
-                _slots[182] is not null and var loadedFnPtr
+                _slots[214] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[182] = nativeContext.LoadFunction(
+                    : _slots[214] = nativeContext.LoadFunction(
                         "alIsExtensionPresentDirect",
                         "openal"
                     )
@@ -29539,6 +33234,18 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.IsExtensionPresentDirect(context, extname);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<sbyte> IAL.IsFilter([NativeTypeName("ALuint")] uint filter) =>
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsFilterRaw(filter);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alIsFilter")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<sbyte> IsFilter([NativeTypeName("ALuint")] uint filter) =>
+        ThisThread.IsFilter(filter);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsFilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter
@@ -29558,9 +33265,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsFilterDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint filter) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
-                _slots[183] is not null and var loadedFnPtr
+                _slots[216] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[183] = nativeContext.LoadFunction("alIsFilterDirect", "openal")
+                    : _slots[216] = nativeContext.LoadFunction("alIsFilterDirect", "openal")
             )
         )(context, filter);
 
@@ -29572,6 +33279,23 @@ public unsafe partial class AL : IAL, IAL.Static
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter
     ) => ThisThread.IsFilterDirectRaw(context, filter);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    sbyte IAL.IsFilterRaw([NativeTypeName("ALuint")] uint filter) =>
+        (
+            (delegate* unmanaged<uint, sbyte>)(
+                _slots[215] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[215] = nativeContext.LoadFunction("alIsFilter", "openal")
+            )
+        )(filter);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alIsFilter")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static sbyte IsFilterRaw([NativeTypeName("ALuint")] uint filter) =>
+        ThisThread.IsFilterRaw(filter);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsSource([NativeTypeName("ALuint")] uint source) =>
@@ -29605,9 +33329,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsSourceDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
-                _slots[185] is not null and var loadedFnPtr
+                _slots[218] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[185] = nativeContext.LoadFunction("alIsSourceDirect", "openal")
+                    : _slots[218] = nativeContext.LoadFunction("alIsSourceDirect", "openal")
             )
         )(context, source);
 
@@ -29624,9 +33348,9 @@ public unsafe partial class AL : IAL, IAL.Static
     sbyte IAL.IsSourceRaw([NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<uint, sbyte>)(
-                _slots[184] is not null and var loadedFnPtr
+                _slots[217] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[184] = nativeContext.LoadFunction("alIsSource", "openal")
+                    : _slots[217] = nativeContext.LoadFunction("alIsSource", "openal")
             )
         )(source);
 
@@ -29646,9 +33370,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float, float, float, void>)(
-                _slots[186] is not null and var loadedFnPtr
+                _slots[219] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[186] = nativeContext.LoadFunction("alListener3f", "openal")
+                    : _slots[219] = nativeContext.LoadFunction("alListener3f", "openal")
             )
         )(param0, value1, value2, value3);
 
@@ -29672,9 +33396,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float, float, float, void>)(
-                _slots[187] is not null and var loadedFnPtr
+                _slots[220] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[187] = nativeContext.LoadFunction("alListener3fDirect", "openal")
+                    : _slots[220] = nativeContext.LoadFunction("alListener3fDirect", "openal")
             )
         )(context, param1, value1, value2, value3);
 
@@ -29698,9 +33422,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int, int, int, void>)(
-                _slots[188] is not null and var loadedFnPtr
+                _slots[221] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[188] = nativeContext.LoadFunction("alListener3i", "openal")
+                    : _slots[221] = nativeContext.LoadFunction("alListener3i", "openal")
             )
         )(param0, value1, value2, value3);
 
@@ -29724,9 +33448,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int, int, int, void>)(
-                _slots[189] is not null and var loadedFnPtr
+                _slots[222] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[189] = nativeContext.LoadFunction("alListener3iDirect", "openal")
+                    : _slots[222] = nativeContext.LoadFunction("alListener3iDirect", "openal")
             )
         )(context, param1, value1, value2, value3);
 
@@ -29748,9 +33472,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float, void>)(
-                _slots[190] is not null and var loadedFnPtr
+                _slots[223] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[190] = nativeContext.LoadFunction("alListenerf", "openal")
+                    : _slots[223] = nativeContext.LoadFunction("alListenerf", "openal")
             )
         )(param0, value);
 
@@ -29770,9 +33494,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float, void>)(
-                _slots[191] is not null and var loadedFnPtr
+                _slots[224] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[191] = nativeContext.LoadFunction("alListenerfDirect", "openal")
+                    : _slots[224] = nativeContext.LoadFunction("alListenerfDirect", "openal")
             )
         )(context, param1, value);
 
@@ -29792,9 +33516,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, float*, void>)(
-                _slots[192] is not null and var loadedFnPtr
+                _slots[225] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[192] = nativeContext.LoadFunction("alListenerfv", "openal")
+                    : _slots[225] = nativeContext.LoadFunction("alListenerfv", "openal")
             )
         )(param0, values);
 
@@ -29835,9 +33559,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, float*, void>)(
-                _slots[193] is not null and var loadedFnPtr
+                _slots[226] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[193] = nativeContext.LoadFunction("alListenerfvDirect", "openal")
+                    : _slots[226] = nativeContext.LoadFunction("alListenerfvDirect", "openal")
             )
         )(context, param1, values);
 
@@ -29877,9 +33601,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.Listener([NativeTypeName("ALenum")] int param0, [NativeTypeName("ALint")] int value) =>
         (
             (delegate* unmanaged<int, int, void>)(
-                _slots[194] is not null and var loadedFnPtr
+                _slots[227] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[194] = nativeContext.LoadFunction("alListeneri", "openal")
+                    : _slots[227] = nativeContext.LoadFunction("alListeneri", "openal")
             )
         )(param0, value);
 
@@ -29899,9 +33623,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int, void>)(
-                _slots[195] is not null and var loadedFnPtr
+                _slots[228] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[195] = nativeContext.LoadFunction("alListeneriDirect", "openal")
+                    : _slots[228] = nativeContext.LoadFunction("alListeneriDirect", "openal")
             )
         )(context, param1, value);
 
@@ -29921,9 +33645,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int*, void>)(
-                _slots[196] is not null and var loadedFnPtr
+                _slots[229] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[196] = nativeContext.LoadFunction("alListeneriv", "openal")
+                    : _slots[229] = nativeContext.LoadFunction("alListeneriv", "openal")
             )
         )(param0, values);
 
@@ -29964,9 +33688,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int*, void>)(
-                _slots[197] is not null and var loadedFnPtr
+                _slots[230] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[197] = nativeContext.LoadFunction("alListenerivDirect", "openal")
+                    : _slots[230] = nativeContext.LoadFunction("alListenerivDirect", "openal")
             )
         )(context, param1, values);
 
@@ -30012,9 +33736,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint, int, sbyte*, void>)(
-                _slots[198] is not null and var loadedFnPtr
+                _slots[231] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[198] = nativeContext.LoadFunction("alObjectLabelDirectEXT", "openal")
+                    : _slots[231] = nativeContext.LoadFunction("alObjectLabelDirectEXT", "openal")
             )
         )(context, identifier, name, length, label);
 
@@ -30084,9 +33808,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint, int, sbyte*, void>)(
-                _slots[199] is not null and var loadedFnPtr
+                _slots[232] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[199] = nativeContext.LoadFunction("alObjectLabelEXT", "openal")
+                    : _slots[232] = nativeContext.LoadFunction("alObjectLabelEXT", "openal")
             )
         )(identifier, name, length, label);
 
@@ -30146,9 +33870,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.PopDebugGroupDirectEXT(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
-                _slots[200] is not null and var loadedFnPtr
+                _slots[233] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[200] = nativeContext.LoadFunction("alPopDebugGroupDirectEXT", "openal")
+                    : _slots[233] = nativeContext.LoadFunction("alPopDebugGroupDirectEXT", "openal")
             )
         )(context);
 
@@ -30162,9 +33886,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.PopDebugGroupEXT() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[201] is not null and var loadedFnPtr
+                _slots[234] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[201] = nativeContext.LoadFunction("alPopDebugGroupEXT", "openal")
+                    : _slots[234] = nativeContext.LoadFunction("alPopDebugGroupEXT", "openal")
             )
         )();
 
@@ -30177,9 +33901,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.ProcessUpdatesDirectSOFT(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
-                _slots[202] is not null and var loadedFnPtr
+                _slots[235] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[202] = nativeContext.LoadFunction(
+                    : _slots[235] = nativeContext.LoadFunction(
                         "alProcessUpdatesDirectSOFT",
                         "openal"
                     )
@@ -30200,9 +33924,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.ProcessUpdatesSOFT() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[203] is not null and var loadedFnPtr
+                _slots[236] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[203] = nativeContext.LoadFunction("alProcessUpdatesSOFT", "openal")
+                    : _slots[236] = nativeContext.LoadFunction("alProcessUpdatesSOFT", "openal")
             )
         )();
 
@@ -30221,9 +33945,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint, int, sbyte*, void>)(
-                _slots[204] is not null and var loadedFnPtr
+                _slots[237] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[204] = nativeContext.LoadFunction(
+                    : _slots[237] = nativeContext.LoadFunction(
                         "alPushDebugGroupDirectEXT",
                         "openal"
                     )
@@ -30296,9 +34020,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint, int, sbyte*, void>)(
-                _slots[205] is not null and var loadedFnPtr
+                _slots[238] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[205] = nativeContext.LoadFunction("alPushDebugGroupEXT", "openal")
+                    : _slots[238] = nativeContext.LoadFunction("alPushDebugGroupEXT", "openal")
             )
         )(source, id, length, message);
 
@@ -30364,9 +34088,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, int, int, float*, FoldbackCallback, void>)(
-                _slots[206] is not null and var loadedFnPtr
+                _slots[239] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[206] = nativeContext.LoadFunction("alRequestFoldbackStart", "openal")
+                    : _slots[239] = nativeContext.LoadFunction("alRequestFoldbackStart", "openal")
             )
         )(mode, count, length, mem, callback);
 
@@ -30419,9 +34143,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, int, int, float*, FoldbackCallback, void>)(
-                _slots[207] is not null and var loadedFnPtr
+                _slots[240] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[207] = nativeContext.LoadFunction(
+                    : _slots[240] = nativeContext.LoadFunction(
                         "alRequestFoldbackStartDirect",
                         "openal"
                     )
@@ -30480,9 +34204,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.RequestFoldbackStop() =>
         (
             (delegate* unmanaged<void>)(
-                _slots[208] is not null and var loadedFnPtr
+                _slots[241] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[208] = nativeContext.LoadFunction("alRequestFoldbackStop", "openal")
+                    : _slots[241] = nativeContext.LoadFunction("alRequestFoldbackStop", "openal")
             )
         )();
 
@@ -30495,9 +34219,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.RequestFoldbackStopDirect(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
-                _slots[209] is not null and var loadedFnPtr
+                _slots[242] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[209] = nativeContext.LoadFunction(
+                    : _slots[242] = nativeContext.LoadFunction(
                         "alRequestFoldbackStopDirect",
                         "openal"
                     )
@@ -30521,9 +34245,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, double, double, double, void>)(
-                _slots[210] is not null and var loadedFnPtr
+                _slots[243] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[210] = nativeContext.LoadFunction("alSource3dDirectSOFT", "openal")
+                    : _slots[243] = nativeContext.LoadFunction("alSource3dDirectSOFT", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -30553,9 +34277,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, double, double, double, void>)(
-                _slots[211] is not null and var loadedFnPtr
+                _slots[244] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[211] = nativeContext.LoadFunction("alSource3dSOFT", "openal")
+                    : _slots[244] = nativeContext.LoadFunction("alSource3dSOFT", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -30580,9 +34304,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float, float, float, void>)(
-                _slots[212] is not null and var loadedFnPtr
+                _slots[245] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[212] = nativeContext.LoadFunction("alSource3f", "openal")
+                    : _slots[245] = nativeContext.LoadFunction("alSource3f", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -30608,9 +34332,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, float, float, void>)(
-                _slots[213] is not null and var loadedFnPtr
+                _slots[246] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[213] = nativeContext.LoadFunction("alSource3fDirect", "openal")
+                    : _slots[246] = nativeContext.LoadFunction("alSource3fDirect", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -30636,9 +34360,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, int, int, void>)(
-                _slots[214] is not null and var loadedFnPtr
+                _slots[247] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[214] = nativeContext.LoadFunction("alSource3i", "openal")
+                    : _slots[247] = nativeContext.LoadFunction("alSource3i", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -30664,9 +34388,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, long, long, long, void>)(
-                _slots[215] is not null and var loadedFnPtr
+                _slots[248] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[215] = nativeContext.LoadFunction("alSource3i64DirectSOFT", "openal")
+                    : _slots[248] = nativeContext.LoadFunction("alSource3i64DirectSOFT", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -30696,9 +34420,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, long, long, long, void>)(
-                _slots[216] is not null and var loadedFnPtr
+                _slots[249] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[216] = nativeContext.LoadFunction("alSource3i64SOFT", "openal")
+                    : _slots[249] = nativeContext.LoadFunction("alSource3i64SOFT", "openal")
             )
         )(source, param1, value1, value2, value3);
 
@@ -30724,9 +34448,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, int, int, void>)(
-                _slots[217] is not null and var loadedFnPtr
+                _slots[250] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[217] = nativeContext.LoadFunction("alSource3iDirect", "openal")
+                    : _slots[250] = nativeContext.LoadFunction("alSource3iDirect", "openal")
             )
         )(context, source, param2, value1, value2, value3);
 
@@ -30751,9 +34475,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, double, void>)(
-                _slots[218] is not null and var loadedFnPtr
+                _slots[251] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[218] = nativeContext.LoadFunction("alSourcedDirectSOFT", "openal")
+                    : _slots[251] = nativeContext.LoadFunction("alSourcedDirectSOFT", "openal")
             )
         )(context, source, param2, value);
 
@@ -30779,9 +34503,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, double, void>)(
-                _slots[219] is not null and var loadedFnPtr
+                _slots[252] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[219] = nativeContext.LoadFunction("alSourcedSOFT", "openal")
+                    : _slots[252] = nativeContext.LoadFunction("alSourcedSOFT", "openal")
             )
         )(source, param1, value);
 
@@ -30803,9 +34527,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, double*, void>)(
-                _slots[220] is not null and var loadedFnPtr
+                _slots[253] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[220] = nativeContext.LoadFunction("alSourcedvDirectSOFT", "openal")
+                    : _slots[253] = nativeContext.LoadFunction("alSourcedvDirectSOFT", "openal")
             )
         )(context, source, param2, values);
 
@@ -30860,9 +34584,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, double*, void>)(
-                _slots[221] is not null and var loadedFnPtr
+                _slots[254] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[221] = nativeContext.LoadFunction("alSourcedvSOFT", "openal")
+                    : _slots[254] = nativeContext.LoadFunction("alSourcedvSOFT", "openal")
             )
         )(source, param1, values);
 
@@ -30906,9 +34630,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float, void>)(
-                _slots[222] is not null and var loadedFnPtr
+                _slots[255] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[222] = nativeContext.LoadFunction("alSourcef", "openal")
+                    : _slots[255] = nativeContext.LoadFunction("alSourcef", "openal")
             )
         )(source, param1, value);
 
@@ -30930,9 +34654,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float, void>)(
-                _slots[223] is not null and var loadedFnPtr
+                _slots[256] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[223] = nativeContext.LoadFunction("alSourcefDirect", "openal")
+                    : _slots[256] = nativeContext.LoadFunction("alSourcefDirect", "openal")
             )
         )(context, source, param2, value);
 
@@ -30954,9 +34678,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, float*, void>)(
-                _slots[224] is not null and var loadedFnPtr
+                _slots[257] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[224] = nativeContext.LoadFunction("alSourcefv", "openal")
+                    : _slots[257] = nativeContext.LoadFunction("alSourcefv", "openal")
             )
         )(source, param1, values);
 
@@ -31001,9 +34725,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, float*, void>)(
-                _slots[225] is not null and var loadedFnPtr
+                _slots[258] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[225] = nativeContext.LoadFunction("alSourcefvDirect", "openal")
+                    : _slots[258] = nativeContext.LoadFunction("alSourcefvDirect", "openal")
             )
         )(context, source, param2, values);
 
@@ -31050,9 +34774,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int, void>)(
-                _slots[226] is not null and var loadedFnPtr
+                _slots[259] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[226] = nativeContext.LoadFunction("alSourcei", "openal")
+                    : _slots[259] = nativeContext.LoadFunction("alSourcei", "openal")
             )
         )(source, param1, value);
 
@@ -31074,9 +34798,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, long, void>)(
-                _slots[227] is not null and var loadedFnPtr
+                _slots[260] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[227] = nativeContext.LoadFunction("alSourcei64DirectSOFT", "openal")
+                    : _slots[260] = nativeContext.LoadFunction("alSourcei64DirectSOFT", "openal")
             )
         )(context, source, param2, value);
 
@@ -31102,9 +34826,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, long, void>)(
-                _slots[228] is not null and var loadedFnPtr
+                _slots[261] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[228] = nativeContext.LoadFunction("alSourcei64SOFT", "openal")
+                    : _slots[261] = nativeContext.LoadFunction("alSourcei64SOFT", "openal")
             )
         )(source, param1, value);
 
@@ -31126,9 +34850,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, long*, void>)(
-                _slots[229] is not null and var loadedFnPtr
+                _slots[262] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[229] = nativeContext.LoadFunction("alSourcei64vDirectSOFT", "openal")
+                    : _slots[262] = nativeContext.LoadFunction("alSourcei64vDirectSOFT", "openal")
             )
         )(context, source, param2, values);
 
@@ -31183,9 +34907,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, long*, void>)(
-                _slots[230] is not null and var loadedFnPtr
+                _slots[263] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[230] = nativeContext.LoadFunction("alSourcei64vSOFT", "openal")
+                    : _slots[263] = nativeContext.LoadFunction("alSourcei64vSOFT", "openal")
             )
         )(source, param1, values);
 
@@ -31230,9 +34954,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int, void>)(
-                _slots[231] is not null and var loadedFnPtr
+                _slots[264] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[231] = nativeContext.LoadFunction("alSourceiDirect", "openal")
+                    : _slots[264] = nativeContext.LoadFunction("alSourceiDirect", "openal")
             )
         )(context, source, param2, value);
 
@@ -31254,9 +34978,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, int*, void>)(
-                _slots[232] is not null and var loadedFnPtr
+                _slots[265] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[232] = nativeContext.LoadFunction("alSourceiv", "openal")
+                    : _slots[265] = nativeContext.LoadFunction("alSourceiv", "openal")
             )
         )(source, param1, values);
 
@@ -31301,9 +35025,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, int*, void>)(
-                _slots[233] is not null and var loadedFnPtr
+                _slots[266] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[233] = nativeContext.LoadFunction("alSourceivDirect", "openal")
+                    : _slots[266] = nativeContext.LoadFunction("alSourceivDirect", "openal")
             )
         )(context, source, param2, values);
 
@@ -31346,9 +35070,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourcePause([NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[234] is not null and var loadedFnPtr
+                _slots[267] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[234] = nativeContext.LoadFunction("alSourcePause", "openal")
+                    : _slots[267] = nativeContext.LoadFunction("alSourcePause", "openal")
             )
         )(source);
 
@@ -31362,9 +35086,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourcePauseDirect(ContextHandle context, [NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<ContextHandle, uint, void>)(
-                _slots[235] is not null and var loadedFnPtr
+                _slots[268] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[235] = nativeContext.LoadFunction("alSourcePauseDirect", "openal")
+                    : _slots[268] = nativeContext.LoadFunction("alSourcePauseDirect", "openal")
             )
         )(context, source);
 
@@ -31383,9 +35107,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[236] is not null and var loadedFnPtr
+                _slots[269] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[236] = nativeContext.LoadFunction("alSourcePausev", "openal")
+                    : _slots[269] = nativeContext.LoadFunction("alSourcePausev", "openal")
             )
         )(n, sources);
 
@@ -31437,9 +35161,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[237] is not null and var loadedFnPtr
+                _slots[270] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[237] = nativeContext.LoadFunction("alSourcePausevDirect", "openal")
+                    : _slots[270] = nativeContext.LoadFunction("alSourcePausevDirect", "openal")
             )
         )(context, n, sources);
 
@@ -31494,9 +35218,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourcePlay([NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[238] is not null and var loadedFnPtr
+                _slots[271] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[238] = nativeContext.LoadFunction("alSourcePlay", "openal")
+                    : _slots[271] = nativeContext.LoadFunction("alSourcePlay", "openal")
             )
         )(source);
 
@@ -31514,9 +35238,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, long, void>)(
-                _slots[239] is not null and var loadedFnPtr
+                _slots[272] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[239] = nativeContext.LoadFunction(
+                    : _slots[272] = nativeContext.LoadFunction(
                         "alSourcePlayAtTimeDirectSOFT",
                         "openal"
                     )
@@ -31543,9 +35267,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, long, void>)(
-                _slots[240] is not null and var loadedFnPtr
+                _slots[273] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[240] = nativeContext.LoadFunction("alSourcePlayAtTimeSOFT", "openal")
+                    : _slots[273] = nativeContext.LoadFunction("alSourcePlayAtTimeSOFT", "openal")
             )
         )(source, start_time);
 
@@ -31566,9 +35290,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, long, void>)(
-                _slots[241] is not null and var loadedFnPtr
+                _slots[274] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[241] = nativeContext.LoadFunction(
+                    : _slots[274] = nativeContext.LoadFunction(
                         "alSourcePlayAtTimevDirectSOFT",
                         "openal"
                     )
@@ -31647,9 +35371,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, long, void>)(
-                _slots[242] is not null and var loadedFnPtr
+                _slots[275] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[242] = nativeContext.LoadFunction("alSourcePlayAtTimevSOFT", "openal")
+                    : _slots[275] = nativeContext.LoadFunction("alSourcePlayAtTimevSOFT", "openal")
             )
         )(n, sources, start_time);
 
@@ -31704,9 +35428,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourcePlayDirect(ContextHandle context, [NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<ContextHandle, uint, void>)(
-                _slots[243] is not null and var loadedFnPtr
+                _slots[276] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[243] = nativeContext.LoadFunction("alSourcePlayDirect", "openal")
+                    : _slots[276] = nativeContext.LoadFunction("alSourcePlayDirect", "openal")
             )
         )(context, source);
 
@@ -31725,9 +35449,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[244] is not null and var loadedFnPtr
+                _slots[277] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[244] = nativeContext.LoadFunction("alSourcePlayv", "openal")
+                    : _slots[277] = nativeContext.LoadFunction("alSourcePlayv", "openal")
             )
         )(n, sources);
 
@@ -31779,9 +35503,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[245] is not null and var loadedFnPtr
+                _slots[278] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[245] = nativeContext.LoadFunction("alSourcePlayvDirect", "openal")
+                    : _slots[278] = nativeContext.LoadFunction("alSourcePlayvDirect", "openal")
             )
         )(context, n, sources);
 
@@ -31840,9 +35564,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, uint*, void>)(
-                _slots[246] is not null and var loadedFnPtr
+                _slots[279] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[246] = nativeContext.LoadFunction("alSourceQueueBuffers", "openal")
+                    : _slots[279] = nativeContext.LoadFunction("alSourceQueueBuffers", "openal")
             )
         )(source, nb, buffers);
 
@@ -31887,9 +35611,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, uint*, void>)(
-                _slots[247] is not null and var loadedFnPtr
+                _slots[280] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[247] = nativeContext.LoadFunction(
+                    : _slots[280] = nativeContext.LoadFunction(
                         "alSourceQueueBuffersDirect",
                         "openal"
                     )
@@ -31935,9 +35659,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourceRewin([NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[248] is not null and var loadedFnPtr
+                _slots[281] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[248] = nativeContext.LoadFunction("alSourceRewind", "openal")
+                    : _slots[281] = nativeContext.LoadFunction("alSourceRewind", "openal")
             )
         )(source);
 
@@ -31951,9 +35675,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourceRewindDirect(ContextHandle context, [NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<ContextHandle, uint, void>)(
-                _slots[249] is not null and var loadedFnPtr
+                _slots[282] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[249] = nativeContext.LoadFunction("alSourceRewindDirect", "openal")
+                    : _slots[282] = nativeContext.LoadFunction("alSourceRewindDirect", "openal")
             )
         )(context, source);
 
@@ -31972,9 +35696,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[250] is not null and var loadedFnPtr
+                _slots[283] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[250] = nativeContext.LoadFunction("alSourceRewindv", "openal")
+                    : _slots[283] = nativeContext.LoadFunction("alSourceRewindv", "openal")
             )
         )(n, sources);
 
@@ -32026,9 +35750,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[251] is not null and var loadedFnPtr
+                _slots[284] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[251] = nativeContext.LoadFunction("alSourceRewindvDirect", "openal")
+                    : _slots[284] = nativeContext.LoadFunction("alSourceRewindvDirect", "openal")
             )
         )(context, n, sources);
 
@@ -32083,9 +35807,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourceStop([NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<uint, void>)(
-                _slots[252] is not null and var loadedFnPtr
+                _slots[285] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[252] = nativeContext.LoadFunction("alSourceStop", "openal")
+                    : _slots[285] = nativeContext.LoadFunction("alSourceStop", "openal")
             )
         )(source);
 
@@ -32099,9 +35823,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SourceStopDirect(ContextHandle context, [NativeTypeName("ALuint")] uint source) =>
         (
             (delegate* unmanaged<ContextHandle, uint, void>)(
-                _slots[253] is not null and var loadedFnPtr
+                _slots[286] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[253] = nativeContext.LoadFunction("alSourceStopDirect", "openal")
+                    : _slots[286] = nativeContext.LoadFunction("alSourceStopDirect", "openal")
             )
         )(context, source);
 
@@ -32120,9 +35844,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
-                _slots[254] is not null and var loadedFnPtr
+                _slots[287] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[254] = nativeContext.LoadFunction("alSourceStopv", "openal")
+                    : _slots[287] = nativeContext.LoadFunction("alSourceStopv", "openal")
             )
         )(n, sources);
 
@@ -32174,9 +35898,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
-                _slots[255] is not null and var loadedFnPtr
+                _slots[288] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[255] = nativeContext.LoadFunction("alSourceStopvDirect", "openal")
+                    : _slots[288] = nativeContext.LoadFunction("alSourceStopvDirect", "openal")
             )
         )(context, n, sources);
 
@@ -32235,9 +35959,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<uint, int, uint*, void>)(
-                _slots[256] is not null and var loadedFnPtr
+                _slots[289] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[256] = nativeContext.LoadFunction("alSourceUnqueueBuffers", "openal")
+                    : _slots[289] = nativeContext.LoadFunction("alSourceUnqueueBuffers", "openal")
             )
         )(source, nb, buffers);
 
@@ -32282,9 +36006,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int, uint*, void>)(
-                _slots[257] is not null and var loadedFnPtr
+                _slots[290] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[257] = nativeContext.LoadFunction(
+                    : _slots[290] = nativeContext.LoadFunction(
                         "alSourceUnqueueBuffersDirect",
                         "openal"
                     )
@@ -32330,9 +36054,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SpeedOfSound([NativeTypeName("ALfloat")] float value) =>
         (
             (delegate* unmanaged<float, void>)(
-                _slots[258] is not null and var loadedFnPtr
+                _slots[291] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[258] = nativeContext.LoadFunction("alSpeedOfSound", "openal")
+                    : _slots[291] = nativeContext.LoadFunction("alSpeedOfSound", "openal")
             )
         )(value);
 
@@ -32346,9 +36070,9 @@ public unsafe partial class AL : IAL, IAL.Static
     void IAL.SpeedOfSoundDirect(ContextHandle context, [NativeTypeName("ALfloat")] float value) =>
         (
             (delegate* unmanaged<ContextHandle, float, void>)(
-                _slots[259] is not null and var loadedFnPtr
+                _slots[292] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[259] = nativeContext.LoadFunction("alSpeedOfSoundDirect", "openal")
+                    : _slots[292] = nativeContext.LoadFunction("alSpeedOfSoundDirect", "openal")
             )
         )(context, value);
 
@@ -32368,9 +36092,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int*, int>)(
-                _slots[260] is not null and var loadedFnPtr
+                _slots[293] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[260] = nativeContext.LoadFunction("EAXGetBufferModeDirect", "openal")
+                    : _slots[293] = nativeContext.LoadFunction("EAXGetBufferModeDirect", "openal")
             )
         )(context, buffer, pReserved);
 
@@ -32419,9 +36143,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, System.Guid*, uint, uint, void*, uint, int>)(
-                _slots[261] is not null and var loadedFnPtr
+                _slots[294] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[261] = nativeContext.LoadFunction("EAXGetDirect", "openal")
+                    : _slots[294] = nativeContext.LoadFunction("EAXGetDirect", "openal")
             )
         )(context, property_set_id, property_id, source_id, value, value_size);
 
@@ -32502,9 +36226,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, int, sbyte>)(
-                _slots[262] is not null and var loadedFnPtr
+                _slots[295] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[262] = nativeContext.LoadFunction("EAXSetBufferModeDirect", "openal")
+                    : _slots[295] = nativeContext.LoadFunction("EAXSetBufferModeDirect", "openal")
             )
         )(context, n, buffers, value);
 
@@ -32557,9 +36281,9 @@ public unsafe partial class AL : IAL, IAL.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, System.Guid*, uint, uint, void*, uint, int>)(
-                _slots[263] is not null and var loadedFnPtr
+                _slots[296] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[263] = nativeContext.LoadFunction("EAXSetDirect", "openal")
+                    : _slots[296] = nativeContext.LoadFunction("EAXSetDirect", "openal")
             )
         )(context, property_set_id, property_id, source_id, value, value_size);
 

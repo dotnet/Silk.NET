@@ -14,6 +14,14 @@ public unsafe partial interface IAL
 {
     public partial interface Static
     {
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotf")]
+        static abstract void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfDirect")]
         static abstract void AuxiliaryEffectSlotfDirect(
@@ -21,6 +29,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        static abstract void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+        static abstract void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -42,6 +67,14 @@ public unsafe partial interface IAL
             [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSloti")]
+        static abstract void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiDirect")]
         static abstract void AuxiliaryEffectSlotiDirect(
@@ -49,6 +82,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        static abstract void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+        static abstract void AuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -652,6 +702,28 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alDeferUpdatesSOFT")]
         static abstract void DeferUpdatesSOFT();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        static abstract void DeleteAuxiliaryEffectSlot(
+            [NativeTypeName("const ALuint *")] uint effectslots
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        static abstract void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effectslots
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+        static abstract void DeleteAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
         static abstract void DeleteAuxiliaryEffectSlotsDirect(
@@ -714,6 +786,26 @@ public unsafe partial interface IAL
             [NativeTypeName("const ALuint *")] Ref<uint> buffers
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        static abstract void DeleteEffect([NativeTypeName("const ALuint *")] uint effects);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        static abstract void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* effects
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+        static abstract void DeleteEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> effects
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
         static abstract void DeleteEffectsDirect(
@@ -737,6 +829,26 @@ public unsafe partial interface IAL
         static abstract void DeleteEffectsDirect(
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint effects
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        static abstract void DeleteFilter([NativeTypeName("const ALuint *")] uint filters);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        static abstract void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] uint* filters
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+        static abstract void DeleteFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("const ALuint *")] Ref<uint> filters
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -876,6 +988,14 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alDopplerVelocity")]
         static abstract void DopplerVelocity([NativeTypeName("ALfloat")] float value);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectf")]
+        static abstract void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfDirect")]
         static abstract void EffectfDirect(
@@ -883,6 +1003,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        static abstract void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectfv")]
+        static abstract void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -904,6 +1041,14 @@ public unsafe partial interface IAL
             [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffecti")]
+        static abstract void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectiDirect")]
         static abstract void EffectiDirect(
@@ -911,6 +1056,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        static abstract void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alEffectiv")]
+        static abstract void Effect(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1043,6 +1205,14 @@ public unsafe partial interface IAL
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilterf")]
+        static abstract void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat")] float flValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfDirect")]
         static abstract void FilterfDirect(
@@ -1050,6 +1220,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat")] float flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        static abstract void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilterfv")]
+        static abstract void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1071,6 +1258,14 @@ public unsafe partial interface IAL
             [NativeTypeName("const ALfloat *")] Ref<float> pflValues
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilteri")]
+        static abstract void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint")] int iValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilteriDirect")]
         static abstract void FilteriDirect(
@@ -1078,6 +1273,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint")] int iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        static abstract void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alFilteriv")]
+        static abstract void Filter(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("const ALint *")] Ref<int> piValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1097,6 +1309,26 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("const ALint *")] Ref<int> piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        static abstract uint GenAuxiliaryEffectSlot();
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        static abstract void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effectslots
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+        static abstract void GenAuxiliaryEffectSlots(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effectslots
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1158,6 +1390,26 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint *")] Ref<uint> buffers
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        static abstract uint GenEffect();
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        static abstract void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* effects
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenEffects")]
+        static abstract void GenEffects(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> effects
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
         static abstract void GenEffectsDirect(
@@ -1179,6 +1431,26 @@ public unsafe partial interface IAL
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
         static abstract uint GenEffectsDirect(ContextHandle context);
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        static abstract uint GenFilter();
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        static abstract void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] uint* filters
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGenFilters")]
+        static abstract void GenFilters(
+            [NativeTypeName("ALsizei")] int n,
+            [NativeTypeName("ALuint *")] Ref<uint> filters
+        );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
@@ -1244,6 +1516,23 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
         static abstract uint GenSourcesDirect(ContextHandle context);
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        static abstract void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+        static abstract void GetAuxiliaryEffectSlotf(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfDirect")]
         static abstract void GetAuxiliaryEffectSlotfDirect(
@@ -1261,6 +1550,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat *")] Ref<float> pflValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        static abstract void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+        static abstract void GetAuxiliaryEffectSlotfv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1282,6 +1588,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALfloat *")] Ref<float> pflValues
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        static abstract void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+        static abstract void GetAuxiliaryEffectSloti(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiDirect")]
         static abstract void GetAuxiliaryEffectSlotiDirect(
@@ -1299,6 +1622,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint *")] Ref<int> piValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        static abstract void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+        static abstract void GetAuxiliaryEffectSlotiv(
+            [NativeTypeName("ALuint")] uint effectslot,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1952,6 +2292,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALdouble *")] Ref<double> values
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        static abstract void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+        static abstract void GetEffectf(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectfDirect")]
         static abstract void GetEffectfDirect(
@@ -1969,6 +2326,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat *")] Ref<float> pflValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        static abstract void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+        static abstract void GetEffectfv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -1990,6 +2364,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALfloat *")] Ref<float> pflValues
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        static abstract void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+        static abstract void GetEffecti(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetEffectiDirect")]
         static abstract void GetEffectiDirect(
@@ -2007,6 +2398,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint *")] Ref<int> piValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        static abstract void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+        static abstract void GetEffectiv(
+            [NativeTypeName("ALuint")] uint effect,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -2078,6 +2486,23 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alGetError")]
         static abstract int GetErrorRaw();
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        static abstract void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* flValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+        static abstract void GetFilterf(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> flValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilterfDirect")]
         static abstract void GetFilterfDirect(
@@ -2095,6 +2520,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALfloat *")] Ref<float> pflValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        static abstract void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] float* pflValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+        static abstract void GetFilterfv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALfloat *")] Ref<float> pflValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -2116,6 +2558,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALfloat *")] Ref<float> pflValues
         );
 
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        static abstract void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* iValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+        static abstract void GetFilteri(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> iValue
+        );
+
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetFilteriDirect")]
         static abstract void GetFilteriDirect(
@@ -2133,6 +2592,23 @@ public unsafe partial interface IAL
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint *")] Ref<int> piValue
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        static abstract void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] int* piValues
+        );
+
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+        static abstract void GetFilteriv(
+            [NativeTypeName("ALuint")] uint filter,
+            [NativeTypeName("ALenum")] int param1,
+            [NativeTypeName("ALint *")] Ref<int> piValues
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -3264,6 +3740,14 @@ public unsafe partial interface IAL
         static abstract sbyte* GetStringRaw([NativeTypeName("ALenum")] int param0);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        static abstract MaybeBool<sbyte> IsAuxiliaryEffectSlot(
+            [NativeTypeName("ALuint")] uint effectslot
+        );
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
@@ -3279,6 +3763,11 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot
         );
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+        static abstract sbyte IsAuxiliaryEffectSlotRaw([NativeTypeName("ALuint")] uint effectslot);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -3322,6 +3811,12 @@ public unsafe partial interface IAL
         static abstract sbyte IsBufferRaw([NativeTypeName("ALuint")] uint buffer);
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        static abstract MaybeBool<sbyte> IsEffect([NativeTypeName("ALuint")] uint effect);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
@@ -3337,6 +3832,11 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect
         );
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsEffect")]
+        static abstract sbyte IsEffectRaw([NativeTypeName("ALuint")] uint effect);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -3399,6 +3899,12 @@ public unsafe partial interface IAL
         );
 
         [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        static abstract MaybeBool<sbyte> IsFilter([NativeTypeName("ALuint")] uint filter);
+
+        [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
@@ -3414,6 +3920,11 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter
         );
+
+        [return: NativeTypeName("ALboolean")]
+        [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+        [NativeFunction("openal", EntryPoint = "alIsFilter")]
+        static abstract sbyte IsFilterRaw([NativeTypeName("ALuint")] uint filter);
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -4575,6 +5086,14 @@ public unsafe partial interface IAL
         );
     }
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotf")]
+    void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfDirect")]
     void AuxiliaryEffectSlotfDirect(
@@ -4582,6 +5101,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALfloat")] float flValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+    void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfv")]
+    void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -4603,6 +5139,14 @@ public unsafe partial interface IAL
         [NativeTypeName("const ALfloat *")] Ref<float> pflValues
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSloti")]
+    void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiDirect")]
     void AuxiliaryEffectSlotiDirect(
@@ -4610,6 +5154,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint")] int iValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+    void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiv")]
+    void AuxiliaryEffectSlot(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5213,6 +5774,26 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alDeferUpdatesSOFT")]
     void DeferUpdatesSOFT();
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+    void DeleteAuxiliaryEffectSlot([NativeTypeName("const ALuint *")] uint effectslots);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+    void DeleteAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* effectslots
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
+    void DeleteAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> effectslots
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
     void DeleteAuxiliaryEffectSlotsDirect(
@@ -5275,6 +5856,26 @@ public unsafe partial interface IAL
         [NativeTypeName("const ALuint *")] Ref<uint> buffers
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+    void DeleteEffect([NativeTypeName("const ALuint *")] uint effects);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+    void DeleteEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* effects
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
+    void DeleteEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> effects
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
     void DeleteEffectsDirect(
@@ -5298,6 +5899,26 @@ public unsafe partial interface IAL
     void DeleteEffectsDirect(
         ContextHandle context,
         [NativeTypeName("const ALuint *")] uint effects
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+    void DeleteFilter([NativeTypeName("const ALuint *")] uint filters);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+    void DeleteFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] uint* filters
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
+    void DeleteFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("const ALuint *")] Ref<uint> filters
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5426,6 +6047,14 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alDopplerVelocity")]
     void DopplerVelocity([NativeTypeName("ALfloat")] float value);
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffectf")]
+    void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alEffectfDirect")]
     void EffectfDirect(
@@ -5433,6 +6062,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALfloat")] float flValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffectfv")]
+    void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alEffectfv")]
+    void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5454,6 +6100,14 @@ public unsafe partial interface IAL
         [NativeTypeName("const ALfloat *")] Ref<float> pflValues
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffecti")]
+    void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alEffectiDirect")]
     void EffectiDirect(
@@ -5461,6 +6115,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint")] int iValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alEffectiv")]
+    void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alEffectiv")]
+    void Effect(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5588,6 +6259,14 @@ public unsafe partial interface IAL
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilterf")]
+    void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat")] float flValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alFilterfDirect")]
     void FilterfDirect(
@@ -5595,6 +6274,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALfloat")] float flValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilterfv")]
+    void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] float* pflValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alFilterfv")]
+    void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALfloat *")] Ref<float> pflValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5616,6 +6312,14 @@ public unsafe partial interface IAL
         [NativeTypeName("const ALfloat *")] Ref<float> pflValues
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilteri")]
+    void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint")] int iValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alFilteriDirect")]
     void FilteriDirect(
@@ -5623,6 +6327,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint")] int iValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alFilteriv")]
+    void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] int* piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alFilteriv")]
+    void Filter(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("const ALint *")] Ref<int> piValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5642,6 +6363,26 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("const ALint *")] Ref<int> piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+    uint GenAuxiliaryEffectSlot();
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+    void GenAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] uint* effectslots
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
+    void GenAuxiliaryEffectSlots(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> effectslots
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5700,6 +6441,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint *")] Ref<uint> buffers
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenEffects")]
+    uint GenEffect();
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGenEffects")]
+    void GenEffects([NativeTypeName("ALsizei")] int n, [NativeTypeName("ALuint *")] uint* effects);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenEffects")]
+    void GenEffects(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> effects
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
     void GenEffectsDirect(
@@ -5721,6 +6479,23 @@ public unsafe partial interface IAL
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
     uint GenEffectsDirect(ContextHandle context);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenFilters")]
+    uint GenFilter();
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGenFilters")]
+    void GenFilters([NativeTypeName("ALsizei")] int n, [NativeTypeName("ALuint *")] uint* filters);
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGenFilters")]
+    void GenFilters(
+        [NativeTypeName("ALsizei")] int n,
+        [NativeTypeName("ALuint *")] Ref<uint> filters
+    );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
@@ -5783,6 +6558,23 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
     uint GenSourcesDirect(ContextHandle context);
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+    void GetAuxiliaryEffectSlotf(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotf")]
+    void GetAuxiliaryEffectSlotf(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfDirect")]
     void GetAuxiliaryEffectSlotfDirect(
@@ -5800,6 +6592,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALfloat *")] Ref<float> pflValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+    void GetAuxiliaryEffectSlotfv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotfv")]
+    void GetAuxiliaryEffectSlotfv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -5821,6 +6630,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALfloat *")] Ref<float> pflValues
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+    void GetAuxiliaryEffectSloti(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSloti")]
+    void GetAuxiliaryEffectSloti(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiDirect")]
     void GetAuxiliaryEffectSlotiDirect(
@@ -5838,6 +6664,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint *")] Ref<int> piValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+    void GetAuxiliaryEffectSlotiv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetAuxiliaryEffectSlotiv")]
+    void GetAuxiliaryEffectSlotiv(
+        [NativeTypeName("ALuint")] uint effectslot,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -6482,6 +7325,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALdouble *")] Ref<double> values
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+    void GetEffectf(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffectf")]
+    void GetEffectf(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetEffectfDirect")]
     void GetEffectfDirect(
@@ -6499,6 +7359,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALfloat *")] Ref<float> pflValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+    void GetEffectfv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffectfv")]
+    void GetEffectfv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -6520,6 +7397,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALfloat *")] Ref<float> pflValues
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+    void GetEffecti(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffecti")]
+    void GetEffecti(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetEffectiDirect")]
     void GetEffectiDirect(
@@ -6537,6 +7431,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint *")] Ref<int> piValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+    void GetEffectiv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetEffectiv")]
+    void GetEffectiv(
+        [NativeTypeName("ALuint")] uint effect,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -6605,6 +7516,23 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alGetError")]
     int GetErrorRaw();
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+    void GetFilterf(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* flValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilterf")]
+    void GetFilterf(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> flValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetFilterfDirect")]
     void GetFilterfDirect(
@@ -6622,6 +7550,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALfloat *")] Ref<float> pflValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+    void GetFilterfv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] float* pflValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilterfv")]
+    void GetFilterfv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALfloat *")] Ref<float> pflValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -6643,6 +7588,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALfloat *")] Ref<float> pflValues
     );
 
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+    void GetFilteri(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* iValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilteri")]
+    void GetFilteri(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> iValue
+    );
+
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetFilteriDirect")]
     void GetFilteriDirect(
@@ -6660,6 +7622,23 @@ public unsafe partial interface IAL
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint *")] Ref<int> piValue
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+    void GetFilteriv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] int* piValues
+    );
+
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alGetFilteriv")]
+    void GetFilteriv(
+        [NativeTypeName("ALuint")] uint filter,
+        [NativeTypeName("ALenum")] int param1,
+        [NativeTypeName("ALint *")] Ref<int> piValues
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
@@ -7766,6 +8745,12 @@ public unsafe partial interface IAL
     sbyte* GetStringRaw([NativeTypeName("ALenum")] int param0);
 
     [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+    MaybeBool<sbyte> IsAuxiliaryEffectSlot([NativeTypeName("ALuint")] uint effectslot);
+
+    [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
@@ -7781,6 +8766,11 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot
     );
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlot")]
+    sbyte IsAuxiliaryEffectSlotRaw([NativeTypeName("ALuint")] uint effectslot);
 
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7816,6 +8806,12 @@ public unsafe partial interface IAL
     sbyte IsBufferRaw([NativeTypeName("ALuint")] uint buffer);
 
     [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alIsEffect")]
+    MaybeBool<sbyte> IsEffect([NativeTypeName("ALuint")] uint effect);
+
+    [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
@@ -7825,6 +8821,11 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
     sbyte IsEffectDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint effect);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alIsEffect")]
+    sbyte IsEffectRaw([NativeTypeName("ALuint")] uint effect);
 
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7882,6 +8883,12 @@ public unsafe partial interface IAL
     );
 
     [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alIsFilter")]
+    MaybeBool<sbyte> IsFilter([NativeTypeName("ALuint")] uint filter);
+
+    [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
@@ -7891,6 +8898,11 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
     sbyte IsFilterDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint filter);
+
+    [return: NativeTypeName("ALboolean")]
+    [SupportedApiProfile("al", ["ALC_EXT_EFX"])]
+    [NativeFunction("openal", EntryPoint = "alIsFilter")]
+    sbyte IsFilterRaw([NativeTypeName("ALuint")] uint filter);
 
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]

@@ -15,4 +15,5 @@ public enum ListenerFloat : uint
 {
     Orientation = unchecked((uint)0x100F),
     ConeOuterGain = unchecked((uint)0x1022),
+    MetersPerUnit = unchecked((uint)0x20004),
 }

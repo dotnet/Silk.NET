@@ -11,4 +11,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum FrequencyShifterDirection : uint { }
+public enum FrequencyShifterDirection : uint
+{
+    Down = unchecked((uint)(0)),
+    Up = unchecked((uint)(1)),
+    Off = unchecked((uint)(2)),
+}

@@ -11,4 +11,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum FilterLowPass : uint { }
+public enum FilterLowPass : uint
+{
+    Gain = unchecked((uint)0x0001),
+    Gainhf = unchecked((uint)0x0002),
+}

@@ -11,4 +11,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectAutowah : uint { }
+public enum EffectAutowah : uint
+{
+    AttackTime = unchecked((uint)0x0001),
+    ReleaseTime = unchecked((uint)0x0002),
+    Resonance = unchecked((uint)0x0003),
+    PeakGain = unchecked((uint)0x0004),
+}

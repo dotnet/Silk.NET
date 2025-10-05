@@ -1,7 +1,7 @@
 @../settings.rsp
 @../remap.rsp
 --exclude
-TODO_EXCLUSIONS_HERE
+_GUID
 --file
 openal-soft-al.h
 --methodClassName

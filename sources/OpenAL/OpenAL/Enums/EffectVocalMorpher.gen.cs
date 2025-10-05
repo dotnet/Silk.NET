@@ -11,4 +11,12 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum EffectVocalMorpher : uint { }
+public enum EffectVocalMorpher : uint
+{
+    Phonemea = unchecked((uint)0x0001),
+    PhonemeaCoarseTuning = unchecked((uint)0x0002),
+    Phonemeb = unchecked((uint)0x0003),
+    PhonemebCoarseTuning = unchecked((uint)0x0004),
+    Waveform = unchecked((uint)0x0005),
+    Rate = unchecked((uint)0x0006),
+}

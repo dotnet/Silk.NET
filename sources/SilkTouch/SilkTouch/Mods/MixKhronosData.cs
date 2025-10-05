@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -34,7 +35,7 @@ public partial class MixKhronosData(
         IApiMetadataProvider<SymbolConstraints>,
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
-    internal Dictionary<string, JobData> Jobs = new();
+    internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
         4
     );
@@ -1280,11 +1281,7 @@ public partial class MixKhronosData(
             foreach (var (_, (current, previous)) in names)
             {
                 var prev = previous?.FirstOrDefault();
-                if (
-                    prev is not null
-                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
-                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
-                )
+                if (prev is not null && (job.Vendors?.Contains(current) ?? false))
                 {
                     rewind = true;
                 }

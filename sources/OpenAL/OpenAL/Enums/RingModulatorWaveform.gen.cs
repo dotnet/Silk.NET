@@ -11,4 +11,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum RingModulatorWaveform : uint { }
+public enum RingModulatorWaveform : uint
+{
+    Sinusoid = unchecked((uint)(0)),
+    Sawtooth = unchecked((uint)(1)),
+    Square = unchecked((uint)(2)),
+}
