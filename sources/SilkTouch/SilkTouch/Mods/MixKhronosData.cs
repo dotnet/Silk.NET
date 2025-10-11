@@ -166,6 +166,13 @@ public partial class MixKhronosData(
         /// <see cref="NonStandardExtensionNomenclature"/>.
         /// </summary>
         public List<string>? Vendors { get; init; }
+
+        /// <summary>
+        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
+        /// when determining a data type suffix to trim when <see cref="UseDataTypeTrimmings"/> is on. For example,
+        /// <c>Direct</c> for OpenAL.
+        /// </summary>
+        public List<string>? IgnoreNonVendorSuffixes { get; init; }
     }
 
     /// <summary>
@@ -1425,6 +1432,19 @@ public partial class MixKhronosData(
                 }
             }
 
+            // If we have an additional non-vendor suffix (e.g. al*Direct) then let's trim it before we try to do the
+            // data type trimming
+            string? identifiedSuffix = null;
+            foreach (var suffix in job.Configuration.IgnoreNonVendorSuffixes ?? [])
+            {
+                if (newCurrent.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                {
+                    identifiedSuffix = suffix;
+                    newCurrent = newCurrent[..^suffix.Length];
+                    break;
+                }
+            }
+
             if (
                 !job.Configuration.UseDataTypeTrimmings // don't trim data types
                 || context.Container is null // don't trim type names
@@ -1438,6 +1458,7 @@ public partial class MixKhronosData(
 
             newPrev ??= previous ?? [];
             var newPrim = newCurrent.Remove(match.Index);
+            newPrim += identifiedSuffix;
             if (identifiedVendor is not null && trimVendor)
             {
                 // If the only difference between this function and other functions that could conflict is the vendor,
@@ -1749,7 +1770,7 @@ public partial class MixKhronosData(
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
             + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Rewind)$"
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Rewind|Supported)$"
     )]
     private static partial Regex EndingsNotToTrim();
 

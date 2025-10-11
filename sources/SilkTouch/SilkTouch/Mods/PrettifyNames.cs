@@ -480,6 +480,8 @@ public class PrettifyNames(
 
             // Function-specific logic where some conflicts are okay, so we have to evaluate each signature to see if
             // we can discriminate each one such that there are no conflicts.
+            //
+            // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
             var nMethConflicts = 0;
             var nMethods = 0;
             var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts

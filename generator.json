@@ -199,6 +199,9 @@
           "SOFT",
           "LOKI",
           "EXT"
+        ],
+        "IgnoreNonVendorSuffixes": [
+          "Direct"
         ]
       },
       "AddVTables": {

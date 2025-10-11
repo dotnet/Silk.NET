@@ -24,7 +24,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfDirect")]
-        static abstract void AuxiliaryEffectSlotfDirect(
+        static abstract void AuxiliaryEffectSlotDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
@@ -50,7 +50,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
-        static abstract void AuxiliaryEffectSlotfvDirect(
+        static abstract void AuxiliaryEffectSlotDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
@@ -60,7 +60,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
-        static abstract void AuxiliaryEffectSlotfvDirect(
+        static abstract void AuxiliaryEffectSlotDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
@@ -77,7 +77,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiDirect")]
-        static abstract void AuxiliaryEffectSlotiDirect(
+        static abstract void AuxiliaryEffectSlotDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
@@ -103,7 +103,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotivDirect")]
-        static abstract void AuxiliaryEffectSlotivDirect(
+        static abstract void AuxiliaryEffectSlotDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
@@ -113,7 +113,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotivDirect")]
-        static abstract void AuxiliaryEffectSlotivDirect(
+        static abstract void AuxiliaryEffectSlotDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effectslot,
             [NativeTypeName("ALenum")] int param2,
@@ -132,7 +132,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alBuffer3fDirect")]
-        static abstract void Buffer3FDirect(
+        static abstract void Buffer3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -153,7 +153,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alBuffer3iDirect")]
-        static abstract void Buffer3IDirect(
+        static abstract void Buffer3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -320,7 +320,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alBufferfDirect")]
-        static abstract void BufferfDirect(
+        static abstract void BufferDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -346,7 +346,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alBufferfvDirect")]
-        static abstract void BufferfvDirect(
+        static abstract void BufferDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -356,7 +356,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferfvDirect")]
-        static abstract void BufferfvDirect(
+        static abstract void BufferDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -373,7 +373,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alBufferiDirect")]
-        static abstract void BufferiDirect(
+        static abstract void BufferDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -399,7 +399,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alBufferivDirect")]
-        static abstract void BufferivDirect(
+        static abstract void BufferDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -409,7 +409,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferivDirect")]
-        static abstract void BufferivDirect(
+        static abstract void BufferDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -998,7 +998,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfDirect")]
-        static abstract void EffectfDirect(
+        static abstract void EffectDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
@@ -1024,7 +1024,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectfvDirect")]
-        static abstract void EffectfvDirect(
+        static abstract void EffectDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
@@ -1034,7 +1034,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEffectfvDirect")]
-        static abstract void EffectfvDirect(
+        static abstract void EffectDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
@@ -1051,7 +1051,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectiDirect")]
-        static abstract void EffectiDirect(
+        static abstract void EffectDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
@@ -1077,7 +1077,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alEffectivDirect")]
-        static abstract void EffectivDirect(
+        static abstract void EffectDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
@@ -1087,7 +1087,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEffectivDirect")]
-        static abstract void EffectivDirect(
+        static abstract void EffectDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint effect,
             [NativeTypeName("ALenum")] int param2,
@@ -1215,7 +1215,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfDirect")]
-        static abstract void FilterfDirect(
+        static abstract void FilterDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
@@ -1241,7 +1241,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterfvDirect")]
-        static abstract void FilterfvDirect(
+        static abstract void FilterDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
@@ -1251,7 +1251,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alFilterfvDirect")]
-        static abstract void FilterfvDirect(
+        static abstract void FilterDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
@@ -1268,7 +1268,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilteriDirect")]
-        static abstract void FilteriDirect(
+        static abstract void FilterDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
@@ -1294,7 +1294,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alFilterivDirect")]
-        static abstract void FilterivDirect(
+        static abstract void FilterDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
@@ -1304,7 +1304,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alFilterivDirect")]
-        static abstract void FilterivDirect(
+        static abstract void FilterDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint filter,
             [NativeTypeName("ALenum")] int param2,
@@ -1710,7 +1710,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetBooleanvDirect")]
-        static abstract void GetBooleanvDirect(
+        static abstract void GetBooleanDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALboolean *")] sbyte* values
@@ -1719,7 +1719,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBooleanvDirect")]
-        static abstract void GetBooleanvDirect(
+        static abstract void GetBooleanDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALboolean *")] Ref<sbyte> values
@@ -1748,7 +1748,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3fDirect")]
-        static abstract void GetBuffer3FDirect(
+        static abstract void GetBuffer3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -1760,7 +1760,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3fDirect")]
-        static abstract void GetBuffer3FDirect(
+        static abstract void GetBuffer3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -1792,7 +1792,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3iDirect")]
-        static abstract void GetBuffer3IDirect(
+        static abstract void GetBuffer3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -1804,7 +1804,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3iDirect")]
-        static abstract void GetBuffer3IDirect(
+        static abstract void GetBuffer3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -2277,7 +2277,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetDoublevDirect")]
-        static abstract void GetDoublevDirect(
+        static abstract void GetDoubleDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble *")] double* values
@@ -2286,7 +2286,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDoublevDirect")]
-        static abstract void GetDoublevDirect(
+        static abstract void GetDoubleDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble *")] Ref<double> values
@@ -2665,7 +2665,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetFloatvDirect")]
-        static abstract void GetFloatvDirect(
+        static abstract void GetFloatDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALfloat *")] float* values
@@ -2674,7 +2674,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetFloatvDirect")]
-        static abstract void GetFloatvDirect(
+        static abstract void GetFloatDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALfloat *")] Ref<float> values
@@ -2715,7 +2715,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetIntegervDirect")]
-        static abstract void GetIntegervDirect(
+        static abstract void GetIntegerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint *")] int* values
@@ -2724,7 +2724,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetIntegervDirect")]
-        static abstract void GetIntegervDirect(
+        static abstract void GetIntegerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint *")] Ref<int> values
@@ -2751,7 +2751,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetListener3fDirect")]
-        static abstract void GetListener3FDirect(
+        static abstract void GetListener3Direct(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALfloat *")] float* value1,
@@ -2762,7 +2762,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetListener3fDirect")]
-        static abstract void GetListener3FDirect(
+        static abstract void GetListener3Direct(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALfloat *")] Ref<float> value1,
@@ -2791,7 +2791,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetListener3iDirect")]
-        static abstract void GetListener3IDirect(
+        static abstract void GetListener3Direct(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint *")] int* value1,
@@ -2802,7 +2802,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetListener3iDirect")]
-        static abstract void GetListener3IDirect(
+        static abstract void GetListener3Direct(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint *")] Ref<int> value1,
@@ -3075,7 +3075,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-        static abstract void GetPointervDirectEXT(
+        static abstract void GetPointerDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname,
             void** values
@@ -3084,7 +3084,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-        static abstract void GetPointervDirectEXT(
+        static abstract void GetPointerDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, PointerPName> pname,
             Ref2D values
@@ -3092,7 +3092,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-        static abstract void GetPointervDirectSOFT(
+        static abstract void GetPointerDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname,
             void** values
@@ -3101,7 +3101,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-        static abstract void GetPointervDirectSOFT(
+        static abstract void GetPointerDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, PointerPName> pname,
             Ref2D values
@@ -3161,7 +3161,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-        static abstract void GetSource3DDirectSOFT(
+        static abstract void GetSource3DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3177,7 +3177,7 @@ public unsafe partial interface IAL
         )]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-        static abstract void GetSource3DDirectSOFT(
+        static abstract void GetSource3DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3230,7 +3230,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetSource3fDirect")]
-        static abstract void GetSource3FDirect(
+        static abstract void GetSource3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3242,7 +3242,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3fDirect")]
-        static abstract void GetSource3FDirect(
+        static abstract void GetSource3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3278,7 +3278,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-        static abstract void GetSource3I64DirectSOFT(
+        static abstract void GetSource3DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3294,7 +3294,7 @@ public unsafe partial interface IAL
         )]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-        static abstract void GetSource3I64DirectSOFT(
+        static abstract void GetSource3DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3326,7 +3326,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alGetSource3iDirect")]
-        static abstract void GetSource3IDirect(
+        static abstract void GetSource3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3338,7 +3338,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3iDirect")]
-        static abstract void GetSource3IDirect(
+        static abstract void GetSource3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3353,7 +3353,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-        static abstract void GetSourcedDirectSOFT(
+        static abstract void GetSourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3367,7 +3367,7 @@ public unsafe partial interface IAL
         )]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-        static abstract void GetSourcedDirectSOFT(
+        static abstract void GetSourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -3697,7 +3697,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-        static abstract sbyte* GetStringiDirectSOFT(
+        static abstract sbyte* GetStringDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname,
             [NativeTypeName("ALsizei")] int index
@@ -3711,7 +3711,7 @@ public unsafe partial interface IAL
         )]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-        static abstract Ptr<sbyte> GetStringiDirectSOFT(
+        static abstract Ptr<sbyte> GetStringDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, StringPName> pname,
             [NativeTypeName("ALsizei")] int index
@@ -3796,7 +3796,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-        static abstract MaybeBool<sbyte> IsBufferFormatSupporteSOFT(
+        static abstract MaybeBool<sbyte> IsBufferFormatSupportedSOFT(
             [NativeTypeName("ALenum")] int format
         );
 
@@ -3965,7 +3965,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alListener3fDirect")]
-        static abstract void Listener3FDirect(
+        static abstract void Listener3Direct(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALfloat")] float value1,
@@ -3984,7 +3984,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alListener3iDirect")]
-        static abstract void Listener3IDirect(
+        static abstract void Listener3Direct(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint")] int value1,
@@ -4001,7 +4001,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alListenerfDirect")]
-        static abstract void ListenerfDirect(
+        static abstract void ListenerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALfloat")] float value
@@ -4024,7 +4024,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alListenerfvDirect")]
-        static abstract void ListenerfvDirect(
+        static abstract void ListenerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("const ALfloat *")] float* values
@@ -4033,7 +4033,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alListenerfvDirect")]
-        static abstract void ListenerfvDirect(
+        static abstract void ListenerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("const ALfloat *")] Ref<float> values
@@ -4048,7 +4048,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alListeneriDirect")]
-        static abstract void ListeneriDirect(
+        static abstract void ListenerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint")] int value
@@ -4071,7 +4071,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alListenerivDirect")]
-        static abstract void ListenerivDirect(
+        static abstract void ListenerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("const ALint *")] int* values
@@ -4080,7 +4080,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alListenerivDirect")]
-        static abstract void ListenerivDirect(
+        static abstract void ListenerDirect(
             ContextHandle context,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("const ALint *")] Ref<int> values
@@ -4282,7 +4282,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alSource3dDirectSOFT")]
-        static abstract void Source3DDirectSOFT(
+        static abstract void Source3DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4313,7 +4313,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSource3fDirect")]
-        static abstract void Source3FDirect(
+        static abstract void Source3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4338,7 +4338,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alSource3i64DirectSOFT")]
-        static abstract void Source3I64DirectSOFT(
+        static abstract void Source3DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4359,7 +4359,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSource3iDirect")]
-        static abstract void Source3IDirect(
+        static abstract void Source3Direct(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4374,7 +4374,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alSourcedDirectSOFT")]
-        static abstract void SourcedDirectSOFT(
+        static abstract void SourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4395,7 +4395,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-        static abstract void SourcedvDirectSOFT(
+        static abstract void SourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4409,7 +4409,7 @@ public unsafe partial interface IAL
         )]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-        static abstract void SourcedvDirectSOFT(
+        static abstract void SourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4443,7 +4443,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourcefDirect")]
-        static abstract void SourcefDirect(
+        static abstract void SourceDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4469,7 +4469,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourcefvDirect")]
-        static abstract void SourcefvDirect(
+        static abstract void SourceDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4479,7 +4479,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcefvDirect")]
-        static abstract void SourcefvDirect(
+        static abstract void SourceDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4500,7 +4500,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alSourcei64DirectSOFT")]
-        static abstract void Sourcei64DirectSOFT(
+        static abstract void SourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4521,7 +4521,7 @@ public unsafe partial interface IAL
             RequireAll = true
         )]
         [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-        static abstract void Sourcei64VDirectSOFT(
+        static abstract void SourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4535,7 +4535,7 @@ public unsafe partial interface IAL
         )]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-        static abstract void Sourcei64VDirectSOFT(
+        static abstract void SourceDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4561,7 +4561,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourceiDirect")]
-        static abstract void SourceiDirect(
+        static abstract void SourceDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4587,7 +4587,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourceivDirect")]
-        static abstract void SourceivDirect(
+        static abstract void SourceDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4597,7 +4597,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourceivDirect")]
-        static abstract void SourceivDirect(
+        static abstract void SourceDirect(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4869,7 +4869,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-        static abstract void SourceRewindvDirect(
+        static abstract void SourceRewinDirect(
             ContextHandle context,
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] uint* sources
@@ -4878,7 +4878,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-        static abstract void SourceRewindvDirect(
+        static abstract void SourceRewinDirect(
             ContextHandle context,
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] Ref<uint> sources
@@ -4887,7 +4887,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-        static abstract void SourceRewindvDirect(
+        static abstract void SourceRewinDirect(
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint sources
         );
@@ -5096,7 +5096,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfDirect")]
-    void AuxiliaryEffectSlotfDirect(
+    void AuxiliaryEffectSlotDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
@@ -5122,7 +5122,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
-    void AuxiliaryEffectSlotfvDirect(
+    void AuxiliaryEffectSlotDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
@@ -5132,7 +5132,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotfvDirect")]
-    void AuxiliaryEffectSlotfvDirect(
+    void AuxiliaryEffectSlotDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
@@ -5149,7 +5149,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotiDirect")]
-    void AuxiliaryEffectSlotiDirect(
+    void AuxiliaryEffectSlotDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
@@ -5175,7 +5175,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotivDirect")]
-    void AuxiliaryEffectSlotivDirect(
+    void AuxiliaryEffectSlotDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
@@ -5185,7 +5185,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alAuxiliaryEffectSlotivDirect")]
-    void AuxiliaryEffectSlotivDirect(
+    void AuxiliaryEffectSlotDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effectslot,
         [NativeTypeName("ALenum")] int param2,
@@ -5204,7 +5204,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alBuffer3fDirect")]
-    void Buffer3FDirect(
+    void Buffer3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5225,7 +5225,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alBuffer3iDirect")]
-    void Buffer3IDirect(
+    void Buffer3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5392,7 +5392,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alBufferfDirect")]
-    void BufferfDirect(
+    void BufferDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5418,7 +5418,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alBufferfvDirect")]
-    void BufferfvDirect(
+    void BufferDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5428,7 +5428,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferfvDirect")]
-    void BufferfvDirect(
+    void BufferDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5445,7 +5445,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alBufferiDirect")]
-    void BufferiDirect(
+    void BufferDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5471,7 +5471,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alBufferivDirect")]
-    void BufferivDirect(
+    void BufferDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -5481,7 +5481,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferivDirect")]
-    void BufferivDirect(
+    void BufferDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -6057,7 +6057,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alEffectfDirect")]
-    void EffectfDirect(
+    void EffectDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
@@ -6083,7 +6083,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alEffectfvDirect")]
-    void EffectfvDirect(
+    void EffectDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
@@ -6093,7 +6093,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEffectfvDirect")]
-    void EffectfvDirect(
+    void EffectDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
@@ -6110,7 +6110,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alEffectiDirect")]
-    void EffectiDirect(
+    void EffectDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
@@ -6136,7 +6136,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alEffectivDirect")]
-    void EffectivDirect(
+    void EffectDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
@@ -6146,7 +6146,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEffectivDirect")]
-    void EffectivDirect(
+    void EffectDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint effect,
         [NativeTypeName("ALenum")] int param2,
@@ -6269,7 +6269,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alFilterfDirect")]
-    void FilterfDirect(
+    void FilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
@@ -6295,7 +6295,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alFilterfvDirect")]
-    void FilterfvDirect(
+    void FilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
@@ -6305,7 +6305,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alFilterfvDirect")]
-    void FilterfvDirect(
+    void FilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
@@ -6322,7 +6322,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alFilteriDirect")]
-    void FilteriDirect(
+    void FilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
@@ -6348,7 +6348,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alFilterivDirect")]
-    void FilterivDirect(
+    void FilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
@@ -6358,7 +6358,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alFilterivDirect")]
-    void FilterivDirect(
+    void FilterDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint filter,
         [NativeTypeName("ALenum")] int param2,
@@ -6746,7 +6746,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetBooleanvDirect")]
-    void GetBooleanvDirect(
+    void GetBooleanDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALboolean *")] sbyte* values
@@ -6755,7 +6755,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBooleanvDirect")]
-    void GetBooleanvDirect(
+    void GetBooleanDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALboolean *")] Ref<sbyte> values
@@ -6784,7 +6784,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3fDirect")]
-    void GetBuffer3FDirect(
+    void GetBuffer3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -6796,7 +6796,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3fDirect")]
-    void GetBuffer3FDirect(
+    void GetBuffer3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -6828,7 +6828,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3iDirect")]
-    void GetBuffer3IDirect(
+    void GetBuffer3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -6840,7 +6840,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3iDirect")]
-    void GetBuffer3IDirect(
+    void GetBuffer3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -7310,7 +7310,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetDoublevDirect")]
-    void GetDoublevDirect(
+    void GetDoubleDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble *")] double* values
@@ -7319,7 +7319,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDoublevDirect")]
-    void GetDoublevDirect(
+    void GetDoubleDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble *")] Ref<double> values
@@ -7692,7 +7692,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetFloatvDirect")]
-    void GetFloatvDirect(
+    void GetFloatDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALfloat *")] float* values
@@ -7701,7 +7701,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetFloatvDirect")]
-    void GetFloatvDirect(
+    void GetFloatDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALfloat *")] Ref<float> values
@@ -7736,7 +7736,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetIntegervDirect")]
-    void GetIntegervDirect(
+    void GetIntegerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint *")] int* values
@@ -7745,7 +7745,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetIntegervDirect")]
-    void GetIntegervDirect(
+    void GetIntegerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint *")] Ref<int> values
@@ -7772,7 +7772,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetListener3fDirect")]
-    void GetListener3FDirect(
+    void GetListener3Direct(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALfloat *")] float* value1,
@@ -7783,7 +7783,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetListener3fDirect")]
-    void GetListener3FDirect(
+    void GetListener3Direct(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALfloat *")] Ref<float> value1,
@@ -7812,7 +7812,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetListener3iDirect")]
-    void GetListener3IDirect(
+    void GetListener3Direct(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint *")] int* value1,
@@ -7823,7 +7823,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetListener3iDirect")]
-    void GetListener3IDirect(
+    void GetListener3Direct(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint *")] Ref<int> value1,
@@ -8086,7 +8086,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-    void GetPointervDirectEXT(
+    void GetPointerDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int pname,
         void** values
@@ -8095,7 +8095,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-    void GetPointervDirectEXT(
+    void GetPointerDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, PointerPName> pname,
         Ref2D values
@@ -8103,7 +8103,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-    void GetPointervDirectSOFT(
+    void GetPointerDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int pname,
         void** values
@@ -8112,7 +8112,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-    void GetPointervDirectSOFT(
+    void GetPointerDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, PointerPName> pname,
         Ref2D values
@@ -8172,7 +8172,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-    void GetSource3DDirectSOFT(
+    void GetSource3DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8188,7 +8188,7 @@ public unsafe partial interface IAL
     )]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-    void GetSource3DDirectSOFT(
+    void GetSource3DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8241,7 +8241,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetSource3fDirect")]
-    void GetSource3FDirect(
+    void GetSource3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8253,7 +8253,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3fDirect")]
-    void GetSource3FDirect(
+    void GetSource3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8289,7 +8289,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-    void GetSource3I64DirectSOFT(
+    void GetSource3DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8305,7 +8305,7 @@ public unsafe partial interface IAL
     )]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-    void GetSource3I64DirectSOFT(
+    void GetSource3DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8337,7 +8337,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alGetSource3iDirect")]
-    void GetSource3IDirect(
+    void GetSource3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8349,7 +8349,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3iDirect")]
-    void GetSource3IDirect(
+    void GetSource3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8364,7 +8364,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-    void GetSourcedDirectSOFT(
+    void GetSourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8378,7 +8378,7 @@ public unsafe partial interface IAL
     )]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-    void GetSourcedDirectSOFT(
+    void GetSourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -8702,7 +8702,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-    sbyte* GetStringiDirectSOFT(
+    sbyte* GetStringDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int pname,
         [NativeTypeName("ALsizei")] int index
@@ -8716,7 +8716,7 @@ public unsafe partial interface IAL
     )]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-    Ptr<sbyte> GetStringiDirectSOFT(
+    Ptr<sbyte> GetStringDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, StringPName> pname,
         [NativeTypeName("ALsizei")] int index
@@ -8793,7 +8793,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-    MaybeBool<sbyte> IsBufferFormatSupporteSOFT([NativeTypeName("ALenum")] int format);
+    MaybeBool<sbyte> IsBufferFormatSupportedSOFT([NativeTypeName("ALenum")] int format);
 
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -8937,7 +8937,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alListener3fDirect")]
-    void Listener3FDirect(
+    void Listener3Direct(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALfloat")] float value1,
@@ -8956,7 +8956,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alListener3iDirect")]
-    void Listener3IDirect(
+    void Listener3Direct(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint")] int value1,
@@ -8970,7 +8970,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alListenerfDirect")]
-    void ListenerfDirect(
+    void ListenerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALfloat")] float value
@@ -8993,7 +8993,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alListenerfvDirect")]
-    void ListenerfvDirect(
+    void ListenerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("const ALfloat *")] float* values
@@ -9002,7 +9002,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alListenerfvDirect")]
-    void ListenerfvDirect(
+    void ListenerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("const ALfloat *")] Ref<float> values
@@ -9014,7 +9014,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alListeneriDirect")]
-    void ListeneriDirect(
+    void ListenerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint")] int value
@@ -9037,7 +9037,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alListenerivDirect")]
-    void ListenerivDirect(
+    void ListenerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("const ALint *")] int* values
@@ -9046,7 +9046,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alListenerivDirect")]
-    void ListenerivDirect(
+    void ListenerDirect(
         ContextHandle context,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("const ALint *")] Ref<int> values
@@ -9248,7 +9248,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alSource3dDirectSOFT")]
-    void Source3DDirectSOFT(
+    void Source3DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9279,7 +9279,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSource3fDirect")]
-    void Source3FDirect(
+    void Source3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9304,7 +9304,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alSource3i64DirectSOFT")]
-    void Source3I64DirectSOFT(
+    void Source3DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9325,7 +9325,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSource3iDirect")]
-    void Source3IDirect(
+    void Source3Direct(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9340,7 +9340,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alSourcedDirectSOFT")]
-    void SourcedDirectSOFT(
+    void SourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9361,7 +9361,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-    void SourcedvDirectSOFT(
+    void SourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9375,7 +9375,7 @@ public unsafe partial interface IAL
     )]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-    void SourcedvDirectSOFT(
+    void SourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9409,7 +9409,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourcefDirect")]
-    void SourcefDirect(
+    void SourceDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9435,7 +9435,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourcefvDirect")]
-    void SourcefvDirect(
+    void SourceDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9445,7 +9445,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcefvDirect")]
-    void SourcefvDirect(
+    void SourceDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9466,7 +9466,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alSourcei64DirectSOFT")]
-    void Sourcei64DirectSOFT(
+    void SourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9487,7 +9487,7 @@ public unsafe partial interface IAL
         RequireAll = true
     )]
     [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-    void Sourcei64VDirectSOFT(
+    void SourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9501,7 +9501,7 @@ public unsafe partial interface IAL
     )]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-    void Sourcei64VDirectSOFT(
+    void SourceDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9527,7 +9527,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourceiDirect")]
-    void SourceiDirect(
+    void SourceDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9553,7 +9553,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourceivDirect")]
-    void SourceivDirect(
+    void SourceDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9563,7 +9563,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourceivDirect")]
-    void SourceivDirect(
+    void SourceDirect(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -9820,7 +9820,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-    void SourceRewindvDirect(
+    void SourceRewinDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] uint* sources
@@ -9829,7 +9829,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-    void SourceRewindvDirect(
+    void SourceRewinDirect(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] Ref<uint> sources
@@ -9838,10 +9838,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-    void SourceRewindvDirect(
-        ContextHandle context,
-        [NativeTypeName("const ALuint *")] uint sources
-    );
+    void SourceRewinDirect(ContextHandle context, [NativeTypeName("const ALuint *")] uint sources);
 
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceStop")]
