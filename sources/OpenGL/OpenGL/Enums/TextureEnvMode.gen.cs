@@ -17,5 +17,5 @@ public enum TextureEnvMode : uint
     Decal = unchecked((uint)0x2101),
     Combine = unchecked((uint)0x8570),
     ReplaceEXT = unchecked((uint)0x8062),
-    TextureEnvBiasSGIX = unchecked((uint)0x80BE)
+    TextureEnvBiasSGIX = unchecked((uint)0x80BE),
 }

@@ -23,5 +23,5 @@ public enum InterleavedArrayFormat : uint
     T2FC3FV3F = unchecked((uint)0x2A2A),
     T2FN3FV3F = unchecked((uint)0x2A2B),
     T2FC4FN3FV3F = unchecked((uint)0x2A2C),
-    T4FC4FN3FV4F = unchecked((uint)0x2A2D)
+    T4FC4FN3FV4F = unchecked((uint)0x2A2D),
 }

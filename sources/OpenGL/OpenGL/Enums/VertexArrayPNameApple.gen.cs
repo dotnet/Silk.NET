@@ -12,5 +12,5 @@ public enum VertexArrayPNameApple : uint
 {
     Cached = unchecked((uint)0x85BE),
     Shared = unchecked((uint)0x85BF),
-    Client = unchecked((uint)0x85B4)
+    Client = unchecked((uint)0x85B4),
 }

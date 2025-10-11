@@ -13,5 +13,5 @@ public enum ClampColorMode : uint
     False = unchecked((uint)0),
     True = unchecked((uint)1),
     FixedOnly = unchecked((uint)0x891D),
-    FixedOnlyARB = unchecked((uint)0x891D)
+    FixedOnlyARB = unchecked((uint)0x891D),
 }

@@ -13,5 +13,5 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum EffectDedicatedGain : uint
 {
-    AlDedicatedGain = unchecked((uint)0x0001),
+    DedicatedGain = unchecked((uint)0x0001),
 }

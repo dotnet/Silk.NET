@@ -13,5 +13,5 @@ public enum HintTargetPGI : uint
     VertexDataHint = unchecked((uint)0x1A22A),
     VertexConsistentHint = unchecked((uint)0x1A22B),
     MaterialSideHint = unchecked((uint)0x1A22C),
-    MaxVertexHint = unchecked((uint)0x1A22D)
+    MaxVertexHint = unchecked((uint)0x1A22D),
 }

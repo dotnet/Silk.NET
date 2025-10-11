@@ -4838,7 +4838,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alSourceRewind")]
-        static abstract void SourceRewin([NativeTypeName("ALuint")] uint source);
+        static abstract void SourceRewind([NativeTypeName("ALuint")] uint source);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourceRewindDirect")]
@@ -4849,7 +4849,7 @@ public unsafe partial interface IAL
 
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-        static abstract void SourceRewindv(
+        static abstract void SourceRewin(
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] uint* sources
         );
@@ -4857,7 +4857,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-        static abstract void SourceRewindv(
+        static abstract void SourceRewin(
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] Ref<uint> sources
         );
@@ -4865,7 +4865,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-        static abstract void SourceRewindv([NativeTypeName("const ALuint *")] uint sources);
+        static abstract void SourceRewin([NativeTypeName("const ALuint *")] uint sources);
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
@@ -9792,7 +9792,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewind")]
-    void SourceRewin([NativeTypeName("ALuint")] uint source);
+    void SourceRewind([NativeTypeName("ALuint")] uint source);
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourceRewindDirect")]
@@ -9800,7 +9800,7 @@ public unsafe partial interface IAL
 
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-    void SourceRewindv(
+    void SourceRewin(
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] uint* sources
     );
@@ -9808,7 +9808,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-    void SourceRewindv(
+    void SourceRewin(
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] Ref<uint> sources
     );
@@ -9816,7 +9816,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-    void SourceRewindv([NativeTypeName("const ALuint *")] uint sources);
+    void SourceRewin([NativeTypeName("const ALuint *")] uint sources);
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]

@@ -13,5 +13,5 @@ public enum SyncStatus : uint
     AlreadySignaled = unchecked((uint)0x911A),
     TimeoutExpired = unchecked((uint)0x911B),
     ConditionSatisfied = unchecked((uint)0x911C),
-    WaitFailed = unchecked((uint)0x911D)
+    WaitFailed = unchecked((uint)0x911D),
 }

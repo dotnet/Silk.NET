@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum LightEnvParameterSGIX : uint
 {
-    LightEnvMode = unchecked((uint)0x8407)
+    LightEnvMode = unchecked((uint)0x8407),
 }

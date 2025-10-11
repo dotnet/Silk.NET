@@ -20,5 +20,5 @@ public enum UniformBlockPName : uint
     ReferencedByFragmentShader = unchecked((uint)0x8A46),
     ReferencedByTessControlShader = unchecked((uint)0x84F0),
     ReferencedByTessEvaluationShader = unchecked((uint)0x84F1),
-    ReferencedByComputeShader = unchecked((uint)0x90EC)
+    ReferencedByComputeShader = unchecked((uint)0x90EC),
 }

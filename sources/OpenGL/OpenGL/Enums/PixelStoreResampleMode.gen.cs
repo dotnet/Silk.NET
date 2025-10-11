@@ -12,5 +12,5 @@ public enum PixelStoreResampleMode : uint
 {
     ReplicateSGIX = unchecked((uint)0x8433),
     ZeroFillSGIX = unchecked((uint)0x8434),
-    DecimateSGIX = unchecked((uint)0x8430)
+    DecimateSGIX = unchecked((uint)0x8430),
 }

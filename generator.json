@@ -149,7 +149,7 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHint": "gl"
+        "GlobalPrefixHints": ["gl"]
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -217,6 +217,7 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
+        "GlobalPrefixHints": ["alc", "al"],
         "NameOverrides": {
           "ALContext": "ALContext",
           "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",

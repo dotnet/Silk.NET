@@ -12,5 +12,5 @@ public enum PathFontStyle : uint
 {
     None = unchecked((uint)0),
     BoldBitNV = unchecked((uint)0x01),
-    ItalicBitNV = unchecked((uint)0x02)
+    ItalicBitNV = unchecked((uint)0x02),
 }

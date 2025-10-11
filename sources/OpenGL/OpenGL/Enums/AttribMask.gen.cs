@@ -34,5 +34,5 @@ public enum AttribMask : uint
     MultisampleBit = unchecked((uint)0x20000000),
     MultisampleBitARB = unchecked((uint)0x20000000),
     MultisampleBit3DFX = unchecked((uint)0x20000000),
-    MultisampleBitEXT = unchecked((uint)0x20000000)
+    MultisampleBitEXT = unchecked((uint)0x20000000),
 }

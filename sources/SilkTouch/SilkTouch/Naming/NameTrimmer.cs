@@ -29,16 +29,9 @@ public class NameTrimmer : INameTrimmer
     private static readonly HashSet<string> s_forbiddenTrimmings = new() { "unsigned", "per" };
 
     /// <inheritdoc />
-    public void Trim(
-        string? container,
-        string? hint,
-        string? jobKey,
-        Dictionary<string, (string Primary, List<string>? Secondary)>? names,
-        Dictionary<string, string>? prefixOverrides,
-        HashSet<string>? nonDeterminant,
-        ref string? identifiedPrefix
-    )
+    public void Trim(NameTrimmerContext context)
     {
+        string? identifiedPrefix = null;
         Dictionary<string, (string Primary, List<string>? Secondary, string Original)> localNames =
             null!;
         var nPasses = HasRawPass
@@ -51,17 +44,43 @@ public class NameTrimmer : INameTrimmer
         {
             for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
             {
+                if (context.Names is null)
+                {
+                    continue;
+                }
+
+                // Attempt to identify the hint being used.
+                string? hint = null;
+                foreach (var candidateHint in context.Configuration.GlobalPrefixHints ?? [])
+                {
+                    var match = true;
+                    foreach (var name in context.Names.Keys)
+                    {
+                        if (!name.StartsWith(candidateHint, StringComparison.OrdinalIgnoreCase))
+                        {
+                            match = false;
+                            break;
+                        }
+                    }
+
+                    if (match)
+                    {
+                        hint = candidateHint;
+                        break;
+                    }
+                }
+
                 var result = GetPrefix(
-                    container,
+                    context.Container,
                     hint,
-                    names,
-                    prefixOverrides,
-                    nonDeterminant,
+                    context.Names,
+                    context.Configuration.PrefixOverrides,
+                    context.NonDeterminant,
                     i == 0,
                     naive = i == 2
                 );
 
-                if (result is null || names is null)
+                if (result is null)
                 {
                     // skip outright.
                     return;
@@ -99,54 +118,57 @@ public class NameTrimmer : INameTrimmer
             }
         }
 
-        // Fall back to the hint. I know we've checked above whether this is the obvious answer for a given pass, but
-        // if we've still got no possible prefix after all of the passes then this is better than nothing - if the name
-        // doesn't start with the prefix we simply won't use the prefix.
-        if (string.IsNullOrWhiteSpace(identifiedPrefix))
+        // If identifiedPrefix is null, we fall back to the hints. I know we've checked above whether this is the
+        // obvious answer for a given pass, but if we've still got no possible prefix after all of the passes then this
+        // is better than nothing - if the name doesn't start with the prefix we simply won't use the prefix.
+        if (
+            string.IsNullOrWhiteSpace(identifiedPrefix)
+            && context.Configuration.GlobalPrefixHints is not { Count: > 0 }
+        )
         {
-            if (hint is not null)
-            {
-                identifiedPrefix = hint;
-                naive = true;
-            }
-            else
-            {
-                return;
-            }
+            return;
         }
 
-        identifiedPrefix = identifiedPrefix.Trim('_');
+        identifiedPrefix = identifiedPrefix?.Trim('_');
         foreach (var (trimmingName, (oldPrimary, secondary, originalName)) in localNames)
         {
-            if (
-                naive
-                && (
-                    identifiedPrefix.Length >= trimmingName.Length
-                    || !trimmingName.StartsWith(
-                        identifiedPrefix,
-                        StringComparison.OrdinalIgnoreCase
-                    )
-                )
+            foreach (
+                var candidatePrefix in !string.IsNullOrWhiteSpace(identifiedPrefix)
+                    ? [identifiedPrefix] // otherwise we fall back to the hints...
+                    : context.Configuration.GlobalPrefixHints ?? Enumerable.Empty<string>()
             )
             {
-                continue;
+                if (
+                    naive
+                    && (
+                        candidatePrefix.Length >= trimmingName.Length
+                        || !trimmingName.StartsWith(
+                            candidatePrefix,
+                            StringComparison.OrdinalIgnoreCase
+                        )
+                    )
+                )
+                {
+                    continue;
+                }
+
+                var prefixLen = candidatePrefix
+                    .TakeWhile((x, i) => char.ToLower(oldPrimary[i]) == char.ToLower(x))
+                    .Count();
+                if (prefixLen >= oldPrimary.Length)
+                {
+                    continue;
+                }
+
+                var sec = secondary ?? [];
+                sec.Add(oldPrimary);
+
+                // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
+                // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
+                // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
+                context.Names![originalName] = (oldPrimary[prefixLen..].Trim('_'), sec);
+                break;
             }
-
-            var prefixLen = identifiedPrefix
-                .TakeWhile((x, i) => char.ToLower(oldPrimary[i]) == char.ToLower(x))
-                .Count();
-            if (prefixLen >= oldPrimary.Length)
-            {
-                continue;
-            }
-
-            var sec = secondary ?? [];
-            sec.Add(oldPrimary);
-
-            // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
-            // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
-            // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
-            names![originalName] = (oldPrimary[prefixLen..].Trim('_'), sec);
         }
     }
 
@@ -182,11 +204,6 @@ public class NameTrimmer : INameTrimmer
         bool naive
     )
     {
-        if (container == "VocalMorpherPhoneme")
-        {
-            Debugger.Break();
-        }
-
         // If the type has no members,
         if (names is null || names.Count == 0)
         {

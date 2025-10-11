@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexAttribLType : uint
 {
-    Double = unchecked((uint)0x140A)
+    Double = unchecked((uint)0x140A),
 }

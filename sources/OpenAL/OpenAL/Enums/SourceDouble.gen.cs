@@ -13,5 +13,5 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum SourceDouble : uint
 {
-    AlSecOffsetClockSOFT = unchecked((uint)0x1203),
+    SecOffsetClockSOFT = unchecked((uint)0x1203),
 }

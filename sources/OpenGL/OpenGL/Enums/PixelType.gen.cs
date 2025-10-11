@@ -54,5 +54,5 @@ public enum PixelType : uint
     UnsignedShort4X4X4X4RevEXT = unchecked((uint)0x8365),
     UnsignedShort1X5X5X5RevEXT = unchecked((uint)0x8366),
     UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368),
-    UnsignedShort4X4X4X4RevIMG = unchecked((uint)0x8365)
+    UnsignedShort4X4X4X4RevIMG = unchecked((uint)0x8365),
 }

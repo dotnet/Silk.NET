@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum CombinerPortion : uint
 {
     Alpha = unchecked((uint)0x1906),
-    Rgb = unchecked((uint)0x1907)
+    Rgb = unchecked((uint)0x1907),
 }

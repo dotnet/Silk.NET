@@ -59,5 +59,5 @@ public enum HintTarget : uint
     VertexPreclipHintSGIX = unchecked((uint)0x83EF),
     PhongHintWIN = unchecked((uint)0x80EB),
     FragmentShaderDerivativeHintOES = unchecked((uint)0x8B8B),
-    BinningControlHintQCOM = unchecked((uint)0x8FB0)
+    BinningControlHintQCOM = unchecked((uint)0x8FB0),
 }

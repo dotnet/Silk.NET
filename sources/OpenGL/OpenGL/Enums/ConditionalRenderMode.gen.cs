@@ -17,5 +17,5 @@ public enum ConditionalRenderMode : uint
     WaitInverted = unchecked((uint)0x8E17),
     NoWaitInverted = unchecked((uint)0x8E18),
     ByRegionWaitInverted = unchecked((uint)0x8E19),
-    ByRegionNoWaitInverted = unchecked((uint)0x8E1A)
+    ByRegionNoWaitInverted = unchecked((uint)0x8E1A),
 }

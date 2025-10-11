@@ -13,5 +13,5 @@ public enum FragmentShaderColorModMaskATI : uint
     X2XBit = unchecked((uint)0x00000001),
     CompBit = unchecked((uint)0x00000002),
     NegateBit = unchecked((uint)0x00000004),
-    BiasBit = unchecked((uint)0x00000008)
+    BiasBit = unchecked((uint)0x00000008),
 }

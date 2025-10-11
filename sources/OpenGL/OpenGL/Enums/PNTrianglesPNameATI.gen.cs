@@ -12,5 +12,5 @@ public enum PNTrianglesPNameATI : uint
 {
     PointMode = unchecked((uint)0x87F2),
     NormalMode = unchecked((uint)0x87F3),
-    TesselationLevel = unchecked((uint)0x87F4)
+    TesselationLevel = unchecked((uint)0x87F4),
 }

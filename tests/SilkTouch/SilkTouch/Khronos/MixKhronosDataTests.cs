@@ -14,6 +14,7 @@ using NUnit.Framework;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
+using Silk.NET.SilkTouch.Naming;
 using VerifyNUnit;
 using VerifyTests;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -345,17 +346,15 @@ public class MixKhronosDataTests
             { "GL_PIXEL_COUNT_NV", ("GL_PIXEL_COUNT_NV", []) },
             { "GL_PIXEL_COUNT_AVAILABLE_NV", ("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
         };
-        string? prefix = null;
-        baseTrimmer.Trim(
-            "OcclusionQueryParameterNameNV",
-            "gl",
-            "OpenGL",
-            names,
-            null,
-            null,
-            ref prefix
-        );
-        uut.Trim("OcclusionQueryParameterNameNV", "gl", "OpenGL", names, null, null, ref prefix);
+        var ctx = new NameTrimmerContext
+        {
+            Container = "OcclusionQueryParameterNameNV",
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+            Names = names,
+            JobKey = "OpenGL",
+        };
+        baseTrimmer.Trim(ctx);
+        uut.Trim(ctx);
         Assert.That(names["GL_PIXEL_COUNT_NV"].Item1, Is.EqualTo("PixelCount"));
         Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Item1, Is.EqualTo("PixelCountAvailable"));
     }
@@ -400,9 +399,15 @@ public class MixKhronosDataTests
             { "AL_VOCAL_MORPHER_PHONEME_E", ("AL_VOCAL_MORPHER_PHONEME_E", null) },
             { "AL_VOCAL_MORPHER_PHONEME_I", ("AL_VOCAL_MORPHER_PHONEME_I", null) },
         };
-        string? prefix = null;
-        baseTrimmer.Trim("VocalMorpherPhoneme", "al", "OpenAL", names, null, null, ref prefix);
-        uut.Trim("VocalMorpherPhoneme", "al", "OpenAL", names, null, null, ref prefix);
+        var ctx = new NameTrimmerContext
+        {
+            Container = "VocalMorpherPhoneme",
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["al"] },
+            Names = names,
+            JobKey = "OpenAL",
+        };
+        baseTrimmer.Trim(ctx);
+        uut.Trim(ctx);
         Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Item1, Is.EqualTo("A"));
         Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Item1, Is.EqualTo("E"));
         Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Item1, Is.EqualTo("I"));

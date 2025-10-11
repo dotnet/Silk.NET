@@ -15,5 +15,5 @@ public enum ColorTableTarget : uint
     PostColorMatrixColorTable = unchecked((uint)0x80D2),
     ProxyColorTable = unchecked((uint)0x80D3),
     ProxyPostConvolutionColorTable = unchecked((uint)0x80D4),
-    ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5)
+    ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5),
 }

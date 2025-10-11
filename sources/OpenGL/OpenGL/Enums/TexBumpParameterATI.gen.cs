@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TexBumpParameterATI : uint
 {
-    BumpRotMatrix = unchecked((uint)0x8775)
+    BumpRotMatrix = unchecked((uint)0x8775),
 }

@@ -318,5 +318,5 @@ public enum SizedInternalFormat : uint
     CompressedSrgbS3TcDxt1NV = unchecked((uint)0x8C4C),
     CompressedSrgbAlphaS3TcDxt1NV = unchecked((uint)0x8C4D),
     CompressedSrgbAlphaS3TcDxt3NV = unchecked((uint)0x8C4E),
-    CompressedSrgbAlphaS3TcDxt5NV = unchecked((uint)0x8C4F)
+    CompressedSrgbAlphaS3TcDxt5NV = unchecked((uint)0x8C4F),
 }

@@ -19,5 +19,5 @@ public enum AtomicCounterBufferPName : uint
     ReferencedByTessEvaluationShader = unchecked((uint)0x92C9),
     ReferencedByGeometryShader = unchecked((uint)0x92CA),
     ReferencedByFragmentShader = unchecked((uint)0x92CB),
-    ReferencedByComputeShader = unchecked((uint)0x90ED)
+    ReferencedByComputeShader = unchecked((uint)0x90ED),
 }

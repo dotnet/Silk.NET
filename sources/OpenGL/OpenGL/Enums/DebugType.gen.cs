@@ -19,5 +19,5 @@ public enum DebugType : uint
     DebugTypeOther = unchecked((uint)0x8251),
     DebugTypeMarker = unchecked((uint)0x8268),
     DebugTypePushGroup = unchecked((uint)0x8269),
-    DebugTypePopGroup = unchecked((uint)0x826A)
+    DebugTypePopGroup = unchecked((uint)0x826A),
 }

@@ -19,5 +19,5 @@ public enum LightParameter : uint
     SpotCutoff = unchecked((uint)0x1206),
     ConstantAttenuation = unchecked((uint)0x1207),
     LinearAttenuation = unchecked((uint)0x1208),
-    QuadraticAttenuation = unchecked((uint)0x1209)
+    QuadraticAttenuation = unchecked((uint)0x1209),
 }

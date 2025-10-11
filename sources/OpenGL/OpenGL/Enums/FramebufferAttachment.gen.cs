@@ -45,5 +45,5 @@ public enum FramebufferAttachment : uint
     ColorAttachment31 = unchecked((uint)0x8CFF),
     DepthAttachment = unchecked((uint)0x8D00),
     StencilAttachment = unchecked((uint)0x8D20),
-    ShadingRateAttachmentEXT = unchecked((uint)0x96D1)
+    ShadingRateAttachmentEXT = unchecked((uint)0x96D1),
 }

@@ -14,5 +14,5 @@ public enum ClearBufferMask : uint
     StencilBufferBit = unchecked((uint)0x00000400),
     ColorBufferBit = unchecked((uint)0x00004000),
     AccumBufferBit = unchecked((uint)0x00000200),
-    CoverageBufferBitNV = unchecked((uint)0x00008000)
+    CoverageBufferBitNV = unchecked((uint)0x00008000),
 }
