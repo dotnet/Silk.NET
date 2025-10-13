@@ -61,6 +61,7 @@ jobs:
   build:
     needs: [prerequisites]
     strategy:
+      fail-fast: false
       matrix:
         flat: ${{ fromJSON(needs.prerequisites.outputs.matrix_strategy) }}
     runs-on: ${{ (startsWith(matrix.flat.runtime, 'osx') || startsWith(matrix.flat.runtime, 'ios') || startsWith(matrix.flat.runtime, 'tvos')) && 'macos-latest' || startsWith(matrix.flat.runtime, 'win') && 'windows-latest' || 'ubuntu-latest' }}
