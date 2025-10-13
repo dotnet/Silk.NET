@@ -6,7 +6,7 @@ call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Buil
 rd /s /q build
 mkdir build
 cd build
-cmake ..\..\..\..\eng\submodules\openal-soft -DCMAKE_BUILD_TYPE=Release -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF -DALSOFT_BUILD_ROUTER=ON -A arm64
+cmake ..\..\..\..\eng\submodules\openal-soft -DCMAKE_BUILD_TYPE=Release -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF -DALSOFT_BUILD_ROUTER=ON -DALSOFT_REQUIRE_WINMM=ON -DALSOFT_REQUIRE_DSOUND=ON -DALSOFT_REQUIRE_WASAPI=ON -A arm64
 cmake --build . --parallel --config Release
 cd ..
 mkdir runtimes\win-arm64\native

@@ -13,7 +13,7 @@ fi
 rm -rf build
 mkdir build
 cd build
-cmake ../../../../eng/submodules/openal-soft -DANDROID_ABI=x86_64 -DCMAKE_TOOLCHAIN_FILE="${ANDROID_NDK_HOME}/build/cmake/android.toolchain.cmake" -DANDROID_PLATFORM=21 -DCMAKE_BUILD_TYPE=Release -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF
+cmake ../../../../eng/submodules/openal-soft -DANDROID_ABI=x86_64 -DCMAKE_TOOLCHAIN_FILE="${ANDROID_NDK_HOME}/build/cmake/android.toolchain.cmake" -DANDROID_PLATFORM=21 -DCMAKE_BUILD_TYPE=Release -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF -DALSOFT_EMBED_HRTF_DATA=TRUE -DALSOFT_REQUIRE_OPENSL=ON
 cmake --build . --parallel
 cd ..
 mkdir -p runtimes/android-x64/native
