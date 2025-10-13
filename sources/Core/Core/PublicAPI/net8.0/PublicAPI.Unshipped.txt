@@ -347,7 +347,7 @@ static Silk.NET.Core.Default.True<T>() -> T
 static Silk.NET.Core.DSL.nullptr.get -> Silk.NET.Core.NullPtr
 static Silk.NET.Core.Loader.LoaderInterface.AlternativeNames.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<string!>!>!
 static Silk.NET.Core.Loader.LoaderInterface.LoadLibrary(string! name, System.Reflection.Assembly! asm) -> nint
-static Silk.NET.Core.Loader.LoaderInterface.OnResolvingLibrary(string! libraryName, System.Reflection.Assembly! assembly, System.Runtime.InteropServices.DllImportSearchPath? searchPath) -> nint
+static Silk.NET.Core.Loader.LoaderInterface.LoadAlternativeNames(string! libraryName, System.Reflection.Assembly! assembly, System.Runtime.InteropServices.DllImportSearchPath? searchPath) -> nint
 static Silk.NET.Core.Loader.LoaderInterface.RegisterAlternativeName(string! libraryName, string! altName) -> void
 static Silk.NET.Core.Loader.LoaderInterface.RegisterHook(System.Reflection.Assembly? asm) -> void
 static Silk.NET.Core.Loader.LoaderInterface.ResolvingLibrary -> System.Runtime.InteropServices.DllImportResolver?
