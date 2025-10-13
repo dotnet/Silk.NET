@@ -7,14 +7,14 @@ permissions:
   contents: write
 env:
   # A space-separated list of paths to native libraries to build.
-  NATIVE_LIBRARY_PATHS: "sources/SDL/Native"
+  NATIVE_LIBRARY_PATHS: "sources/SDL/Native sources/OpenAL/Soft.Native"
   # A space-separated list of submodule paths for each native library path. Use _ if a submodule is not used - this must
   # match the number of spaces in NATIVE_LIBRARY_PATHS.
-  NATIVE_LIBRARY_SUBMODULE_PATHS: "eng/submodules/sdl"
+  NATIVE_LIBRARY_SUBMODULE_PATHS: "eng/submodules/sdl eng/submodules/openal-soft"
   # A space-separated list of shorthands to the native library paths that will build the native library for each native
   # library path. This must match the number of spaces in NATIVE_LIBRARY_PATHS. If a shorthand builds multiple native
   # binary paths, these will be deduplicated.
-  NATIVE_LIBRARY_SHORTHANDS: "SDL"
+  NATIVE_LIBRARY_SHORTHANDS: "SDL OpenAL-Soft"
 jobs:
   prerequisites:
     name: PR Check

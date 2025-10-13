@@ -1,0 +1,21 @@
+#!/usr/bin/env -S bash -eu
+if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
+    git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
+fi
+
+if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
+    ../../../eng/native/buildsystem/download-zig.py
+    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+    sudo apt-get update
+    sudo apt-get install build-essential git make \
+        pkg-config cmake ninja-build libasound2-dev libpulse-dev libsoundio-dev libsndfile1-dev libmysofa-dev \
+        qtbase5-dev libdbus-1-dev libjack-dev portaudio19-dev
+fi
+rm -rf build
+mkdir build
+cd build
+cmake ../../../../eng/submodules/openal-soft -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-x86_64-linux-gnu.2.17.cmake -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF
+cmake --build . --parallel
+cd ..
+mkdir -p runtimes/linux-x64/native
+cp build/libopenal.so runtimes/linux-x64/native
