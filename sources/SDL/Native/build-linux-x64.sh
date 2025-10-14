@@ -3,12 +3,9 @@ if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
 fi
 
-if [ -d ../../../eng/native/buildsystem/zig ]; then
-    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
-fi
-
-if [[ "$@" == *"--install-deps"* ]]; then
+if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
+    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
     sudo apt-get update
     sudo apt-get install build-essential git make \
         pkg-config cmake ninja-build gnome-desktop-testing libasound2-dev libpulse-dev \
@@ -17,7 +14,6 @@ if [[ "$@" == *"--install-deps"* ]]; then
         libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
         libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev fcitx-libs-dev \
         libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
-    exit
 fi
 rm -rf build
 mkdir build

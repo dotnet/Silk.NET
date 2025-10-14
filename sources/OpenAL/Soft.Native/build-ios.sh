@@ -3,10 +3,6 @@ if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
 
-if [[ "$@" == *"--install-deps"* ]]; then
-  exit
-fi
-
 rm -rf build
 mkdir build
 cd build
