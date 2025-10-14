@@ -3,9 +3,12 @@ if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
 
+if [ -e ../../../eng/native/buildsystem/zig ]; then
+    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+fi
+
 if [[ "$@" == *"--install-deps"* ]]; then
     ../../../eng/native/buildsystem/download-zig.py
-    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
     sudo apt-get update
     sudo apt-get install build-essential git make \
         pkg-config cmake ninja-build libasound2-dev libpulse-dev libsoundio-dev libsndfile1-dev libmysofa-dev \

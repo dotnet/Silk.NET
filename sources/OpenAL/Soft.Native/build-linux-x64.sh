@@ -5,7 +5,6 @@ fi
 
 if [[ "$@" == *"--install-deps"* ]]; then
     ../../../eng/native/buildsystem/download-zig.py
-    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
     sudo apt-get update
     sudo apt-get install build-essential git make \
         pkg-config cmake ninja-build libasound2-dev libpulse-dev libsoundio-dev libsndfile1-dev libmysofa-dev \
