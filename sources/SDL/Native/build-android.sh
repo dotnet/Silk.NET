@@ -5,7 +5,7 @@ if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
 fi
 
 python="python"
-if [ ! -z "$GITHUB_ACTIONS" ]; then
+if [[ "$@" == *"--install-deps"* ]]; then
   # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
   sdkmanager=( /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager )
   ${sdkmanager[-1]} --install "platforms;android-19"
