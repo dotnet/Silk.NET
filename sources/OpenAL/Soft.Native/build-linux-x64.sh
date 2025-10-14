@@ -9,7 +9,7 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     sudo apt-get update
     sudo apt-get install build-essential git make \
         pkg-config cmake ninja-build libasound2-dev libpulse-dev libsoundio-dev libsndfile1-dev libmysofa-dev \
-        qtbase5-dev libdbus-1-dev libjack-dev portaudio19-dev
+        qtbase5-dev libdbus-1-dev libjack-dev portaudio19-dev libjack-dev libpipewire-0.3-dev qt6-base-dev
 fi
 rm -rf build
 mkdir build
