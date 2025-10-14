@@ -3,7 +3,7 @@ if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
 
-if [ -e ../../../eng/native/buildsystem/zig ]; then
+if [ -d ../../../eng/native/buildsystem/zig ]; then
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 fi
 

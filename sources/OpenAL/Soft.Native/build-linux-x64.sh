@@ -3,6 +3,10 @@ if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
 
+if [ -d ../../../eng/native/buildsystem/zig ]; then
+    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+fi
+
 if [[ "$@" == *"--install-deps"* ]]; then
     ../../../eng/native/buildsystem/download-zig.py
     sudo apt-get update
