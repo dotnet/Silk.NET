@@ -1,15 +1,25 @@
 #!/usr/bin/env -S bash -eu
+if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
+    if [[ ! -z ${SILKDOTNET_DockerBuild+x} ]]; then
+        dpkg --add-architecture arm64
+        apt update
+        apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+        apt install -y libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
+            libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 git \
+            cmake build-essential python3
+        ../../../eng/native/buildsystem/download-zig.py
+        export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+    else
+        docker="docker"
+        if command -v podman >/dev/null 2>&1; then
+            docker="podman"
+        fi
+        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
+        exit
+    fi
+fi
 if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
-fi
-
-if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
-    ../../../eng/native/buildsystem/download-zig.py
-    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
-    sudo apt-get update
-    sudo apt-get install build-essential git make \
-        pkg-config cmake ninja-build libasound2-dev libpulse-dev libsoundio-dev libsndfile1-dev libmysofa-dev \
-        qtbase5-dev libdbus-1-dev libjack-dev portaudio19-dev libjack-dev libpipewire-0.3-dev qt6-base-dev
 fi
 rm -rf build
 mkdir build
