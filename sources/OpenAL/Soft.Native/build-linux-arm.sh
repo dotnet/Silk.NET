@@ -3,10 +3,10 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     if [[ ! -z ${SILKDOTNET_DockerBuild+x} ]]; then
         dpkg --add-architecture armhf
         apt update
-        apt install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
         apt install -y libasound2-dev:armhf libpulse-dev:armhf libsoundio-dev:armhf libsndfile1-dev:armhf \
             libmysofa-dev:armhf qtbase5-dev:armhf libdbus-1-dev:armhf libjack-dev:armhf portaudio19-dev:armhf git \
-            cmake build-essential python3
+            cmake build-essential python3 libpipewire-0.3-dev:armhf qt6-base-dev:armhf pulseaudio:armhf \
+            gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
         ../../../eng/native/buildsystem/download-zig.py
         export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
     else
