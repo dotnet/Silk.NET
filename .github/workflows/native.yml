@@ -68,13 +68,10 @@ jobs:
     name: ${{ matrix.flat.target }} / ${{ matrix.flat.runtime }}
     steps:
       - uses: actions/checkout@v3
-      - name: Prerequisites
+      - name: Build
         run: |
           echo "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.flat.target }}-${{ matrix.flat.runtime }}.txt
-          ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }} --install-deps
-        working-directory: ${{ matrix.flat.dir }}
-      - name: Build
-        run: ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }}
+          ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }}
         working-directory: ${{ matrix.flat.dir }}
       - uses: actions/upload-artifact@v4
         with:
