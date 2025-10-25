@@ -5,10 +5,8 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         apt update
         apt install -y libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
             libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 git \
-            cmake build-essential python3 libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
+            cmake python3 libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
             gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-        ../../../eng/native/buildsystem/download-zig.py
-        export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
     else
         docker="docker"
         if command -v podman >/dev/null 2>&1; then
@@ -24,7 +22,7 @@ fi
 rm -rf build
 mkdir build
 cd build
-cmake ../../../../eng/submodules/openal-soft -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/zig-toolchain-aarch64-linux-gnu.2.28.cmake -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF -DALSOFT_REQUIRE_RTKIT=ON -DALSOFT_REQUIRE_ALSA=ON -DALSOFT_REQUIRE_OSS=ON -DALSOFT_REQUIRE_PORTAUDIO=ON -DALSOFT_REQUIRE_PULSEAUDIO=ON -DALSOFT_REQUIRE_JACK=ON -DALSOFT_REQUIRE_PIPEWIRE=ON
+cmake ../../../../eng/submodules/openal-soft -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../../../../eng/native/cmake/aarch64-linux-gnu.cmake -DALSOFT_UTILS=OFF -DALSOFT_EXAMPLES=OFF -DALSOFT_REQUIRE_RTKIT=ON -DALSOFT_REQUIRE_ALSA=ON -DALSOFT_REQUIRE_OSS=ON -DALSOFT_REQUIRE_PORTAUDIO=ON -DALSOFT_REQUIRE_PULSEAUDIO=ON -DALSOFT_REQUIRE_JACK=ON -DALSOFT_REQUIRE_PIPEWIRE=ON
 cmake --build . --parallel
 cd ..
 mkdir -p runtimes/linux-arm64/native
