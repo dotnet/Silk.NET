@@ -1850,6 +1850,9 @@ public partial class MixKhronosData(
         // therefore the result of this function will go mostly ignored.
         var anyNamespaced =
             doc.Element("registry")?.Elements("enums").Attributes("namespace").Any() ?? false;
+        var anyGLStyleGroups =
+            doc.Element("registry")?.Elements("enums").Elements("enum").Attributes("group").Any()
+            ?? false;
         var likelyOpenCL = false; // OpenCL specific
         var topLevelIntentionalExclusions = new HashSet<string>(); // OpenCL specific
         foreach (var block in doc.Element("registry")?.Elements("enums") ?? [])
@@ -1961,7 +1964,7 @@ public partial class MixKhronosData(
                         }
                         : new EnumGroup(
                             group,
-                            glGroups?.Length > 0 ? "GLenum" : null,
+                            anyGLStyleGroups ? "GLenum" : null,
                             [],
                             isBitmask,
                             thisVendor,

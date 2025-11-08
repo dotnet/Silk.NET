@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum FrequencyShifterDirection : uint
 {
-    Down = unchecked((uint)(0)),
-    Up = unchecked((uint)(1)),
-    Off = unchecked((uint)(2)),
+    Down = unchecked((uint)0),
+    Up = unchecked((uint)1),
+    Off = unchecked((uint)2),
 }

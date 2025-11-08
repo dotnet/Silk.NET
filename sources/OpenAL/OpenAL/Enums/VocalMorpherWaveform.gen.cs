@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum VocalMorpherWaveform : uint
 {
-    Sinusoid = unchecked((uint)(0)),
-    Triangle = unchecked((uint)(1)),
-    Sawtooth = unchecked((uint)(2)),
+    Sinusoid = unchecked((uint)0),
+    Triangle = unchecked((uint)1),
+    Sawtooth = unchecked((uint)2),
 }
