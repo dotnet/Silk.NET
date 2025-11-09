@@ -30,6 +30,7 @@ public class ModLoader
             nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),
             nameof(ChangeNativeClass) => typeof(ChangeNativeClass),
+            nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
             _ => null,
         };
 }

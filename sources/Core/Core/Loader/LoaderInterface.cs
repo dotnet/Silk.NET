@@ -148,12 +148,16 @@ public static class LoaderInterface
     /// </summary>
     /// <param name="libraryName">The library name.</param>
     /// <param name="altName">The alternative name to use when we can't load the usual name.</param>
-    public static void RegisterAlternativeName(string libraryName, string altName) =>
-        (
-            AlternativeNames.TryGetValue(libraryName, out var alts)
-                ? alts
-                : AlternativeNames[libraryName] = []
-        ).Add(altName);
+    public static void RegisterAlternativeName(string libraryName, string altName)
+    {
+        var names = AlternativeNames.TryGetValue(libraryName, out var alts)
+            ? alts
+            : AlternativeNames[libraryName] = [];
+        if (!names.Contains(altName))
+        {
+            names.Add(altName);
+        }
+    }
 
     /// <summary>
     /// Gets the backing dictionary for <see cref="RegisterAlternativeName"/>. This can be manually modified if desired.

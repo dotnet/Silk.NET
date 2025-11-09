@@ -169,6 +169,7 @@
         "MixKhronosData",
         "ExtractNestedTyping",
         "TransformHandles",
+        "InterceptNativeFunctions",
         "TransformFunctions",
         "PrettifyNames",
         "AddVTables"
@@ -202,6 +203,12 @@
         ],
         "IgnoreNonVendorSuffixes": [
           "Direct"
+        ]
+      },
+      "InterceptNativeFunctions": {
+        "NativeFunctionNames": [
+          "alcOpenDevice",
+          "alcMakeContextCurrent"
         ]
       },
       "AddVTables": {
@@ -246,7 +253,8 @@
       },
       "TransformFunctions": {
         "BoolTypes": {
-          "ALboolean": null
+          "ALboolean": null,
+          "ALCboolean": null
         },
         "BenefitOfTheDoubtArrayTransformation": true
       },

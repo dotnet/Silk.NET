@@ -367,19 +367,29 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx) =>
-            (
+        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx)
+        {
+            var current =
                 ctx.CurrentPartial
                 ?? ClassDeclaration(Name)
                     .WithModifiers(
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
-                    )
-            ).AddMembers(
+                    );
+            if (!ctx.Original.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                // We only care about the stuff that appears in the interface at this time.
+                return current;
+            }
+            return current.AddMembers(
                 ctx.StaticDecl.WithModifiers(
                         TokenList(
                             new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
                                 ctx.StaticDecl.Modifiers.Where(x =>
-                                    x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                                    x.Kind()
+                                        is not (
+                                            SyntaxKind.PublicKeyword
+                                            or SyntaxKind.PartialKeyword
+                                        )
                                 )
                             )
                         )
@@ -416,6 +426,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
                     .AddMaxOpt()
             );
+        }
     }
 
     /// <summary>
@@ -430,8 +441,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         public override bool IsStatic => false;
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx) =>
-            (
+        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx)
+        {
+            var current =
                 ctx.CurrentPartial
                 ?? ClassDeclaration(Name)
                     .WithModifiers(
@@ -456,10 +468,21 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 )
                             )
                         )
+                    );
+            if (!ctx.Original.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                // We only care about the stuff that appears in the interface at this time.
+                return current;
+            }
+            return current.AddMembers(
+                ctx.InstanceDecl.WithBody(null)
+                    .WithModifiers(
+                        TokenList(
+                            ctx.InstanceDecl.Modifiers.Where(x =>
+                                !x.IsKind(SyntaxKind.PartialKeyword)
+                            )
+                        )
                     )
-            ).AddMembers(
-                ctx.InstanceDecl.AddModifiers(Token(SyntaxKind.PublicKeyword))
-                    .WithBody(null)
                     .WithExpressionBody(
                         ArrowExpressionClause(
                             InvocationExpression(
@@ -481,6 +504,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                     .AddMaxOpt()
             );
+        }
     }
 
     /// <summary>
@@ -775,12 +799,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var staticDecl = baseDecl
                 .WithModifiers(
                     TokenList(
-                        baseDecl.Modifiers.Where(x =>
-                            x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
-                        )
+                        baseDecl.Modifiers.Where(x => x.Kind() is not SyntaxKind.ExternKeyword)
                     )
                 )
-                .AddModifiers(Token(SyntaxKind.AbstractKeyword))
                 .WithBody(node.Body)
                 .WithSemicolonToken(
                     node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
@@ -790,37 +811,61 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             // Create the instance declaration.
             var instanceDecl = baseDecl
                 .WithModifiers(
-                    TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
+                    TokenList(
+                        baseDecl.Modifiers.Where(x =>
+                            x.Kind() is not (SyntaxKind.StaticKeyword or SyntaxKind.ExternKeyword)
+                        )
+                    )
                 )
                 .WithBody(node.Body)
                 .WithSemicolonToken(
                     node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
                 )
                 .WithExpressionBody(node.ExpressionBody);
-            _currentInterface = _currentInterface.WithMembers(
-                List(
-                    _currentInterface
-                        .Members.Select(x =>
-                            x == staticInterface
-                                ? staticInterface = staticInterface.AddMembers(
-                                    staticDecl
+            if (node.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                _currentInterface = _currentInterface.WithMembers(
+                    List(
+                        _currentInterface
+                            .Members.Select(x =>
+                                x == staticInterface
+                                    ? staticInterface = staticInterface.AddMembers(
+                                        staticDecl
+                                            .WithModifiers(
+                                                TokenList(
+                                                    staticDecl.Modifiers.Where(y =>
+                                                        !y.IsKind(SyntaxKind.PublicKeyword)
+                                                        && !y.IsKind(SyntaxKind.PartialKeyword)
+                                                    )
+                                                )
+                                            )
+                                            .AddModifiers(Token(SyntaxKind.AbstractKeyword))
+                                            .WithBody(null)
+                                            .WithExpressionBody(null)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                    )
+                                    : x
+                            )
+                            .Concat(
+                                Enumerable.Repeat(
+                                    instanceDecl
+                                        .WithModifiers(
+                                            TokenList(
+                                                instanceDecl.Modifiers.Where(x =>
+                                                    !x.IsKind(SyntaxKind.PublicKeyword)
+                                                    && !x.IsKind(SyntaxKind.PartialKeyword)
+                                                )
+                                            )
+                                        )
                                         .WithBody(null)
                                         .WithExpressionBody(null)
-                                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                                    1
                                 )
-                                : x
-                        )
-                        .Concat(
-                            Enumerable.Repeat(
-                                instanceDecl
-                                    .WithBody(null)
-                                    .WithExpressionBody(null)
-                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                                1
                             )
-                        )
-                )
-            );
+                    )
+                );
+            }
 
             for (var i = 0; i < _vTables.Length; i++)
             {
@@ -854,60 +899,90 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             // For the instance implementation of the vtable interface, the class contains an INativeContext from which
             // we'll get function pointers, implementing the interface as a function pointer call. It's an explicit
             // implementation because otherwise the static and non-static functions will conflict.
-            _rwMethodCallsForExplicitInterfaceSpecifier = _currentInterface;
-            var nativeContextTramp = instanceDecl
-                .WithExplicitInterfaceSpecifier(
-                    ExplicitInterfaceSpecifier(
-                        IdentifierName(_currentInterface.Identifier.ToString())
-                    )
-                )
-                .WithAttributeLists(List<AttributeListSyntax>())
-                .WithExpressionBody(
-                    node.Body is null && node.ExpressionBody is null
-                        ? GenerateNativeContextTrampoline(
-                            lib,
-                            entryPoint,
-                            callConv,
-                            node.ParameterList,
-                            node.ReturnType,
-                            slot
+            // If it's partial, then don't output this declaration part as explicit interface methods don't support
+            // that.
+            if (!node.Modifiers.Any(SyntaxKind.PartialKeyword))
+            {
+                _rwMethodCallsForExplicitInterfaceSpecifier = _currentInterface;
+                var nativeContextTramp = instanceDecl
+                    .WithModifiers(
+                        TokenList(
+                            instanceDecl.Modifiers.Where(x =>
+                                x.Kind() is not SyntaxKind.PublicKeyword
+                            )
                         )
-                    : node.ExpressionBody is null ? null
-                    : VisitArrowExpressionClause(node.ExpressionBody) as ArrowExpressionClauseSyntax
-                )
-                .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
-                .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default)
-                .AddMaxOpt();
-            _rwMethodCallsForExplicitInterfaceSpecifier = null;
-            _methods.Add(nativeContextTramp);
+                    )
+                    .WithExplicitInterfaceSpecifier(
+                        node.Modifiers.Any(SyntaxKind.PublicKeyword)
+                            ? ExplicitInterfaceSpecifier(
+                                IdentifierName(_currentInterface.Identifier.ToString())
+                            )
+                            : null
+                    )
+                    .WithAttributeLists(List<AttributeListSyntax>())
+                    .WithExpressionBody(
+                        node.Body is null
+                        && node.ExpressionBody is null
+                        && node.Modifiers.Any(SyntaxKind.ExternKeyword)
+                            ? GenerateNativeContextTrampoline(
+                                lib,
+                                entryPoint,
+                                callConv,
+                                node.ParameterList,
+                                node.ReturnType,
+                                slot
+                            )
+                        : node.ExpressionBody is null ? null
+                        : VisitArrowExpressionClause(node.ExpressionBody)
+                            as ArrowExpressionClauseSyntax
+                    )
+                    .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                    .WithSemicolonToken(
+                        node.Body is null ? Token(SyntaxKind.SemicolonToken) : default
+                    )
+                    .AddMaxOpt();
+                _rwMethodCallsForExplicitInterfaceSpecifier = null;
+                _methods.Add(nativeContextTramp);
+            }
 
             // For the static implementation, we basically forward to whatever is the "static default".
-            var staticDefaultProxy = node.WithBody(null)
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        InvocationExpression(
-                            MemberAccessExpression(
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                IdentifierName(_staticDefault),
-                                IdentifierName(node.Identifier.ToString())
-                            ),
-                            ArgumentList(
-                                SeparatedList(
-                                    node.ParameterList.Parameters.Select(x =>
-                                        Argument(IdentifierName(x.Identifier))
+            // We only do this if the method is public - if not, then it's not in the interface and therefore not in the
+            // static default.
+            if (node.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                var staticDefaultProxy = node.WithBody(null)
+                    .WithExpressionBody(
+                        ArrowExpressionClause(
+                            InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName(_staticDefault),
+                                    IdentifierName(node.Identifier.ToString())
+                                ),
+                                ArgumentList(
+                                    SeparatedList(
+                                        node.ParameterList.Parameters.Select(x =>
+                                            Argument(IdentifierName(x.Identifier))
+                                        )
                                     )
                                 )
                             )
                         )
                     )
-                )
-                .WithModifiers(
-                    TokenList(node.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
-                )
-                .WithAttributeLists(staticDecl.AttributeLists)
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                .AddMaxOpt();
-            _methods.Add(staticDefaultProxy);
+                    .WithModifiers(
+                        TokenList(
+                            node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is not (SyntaxKind.ExternKeyword or SyntaxKind.PartialKeyword)
+                            )
+                        )
+                    )
+                    .WithAttributeLists(staticDecl.AttributeLists)
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .AddMaxOpt();
+                _methods.Add(staticDefaultProxy);
+            }
+
             return null;
         }
 
@@ -923,7 +998,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 node.Expression is IdentifierNameSyntax { Identifier: var tok }
                 && (
                     type?.Members.Any(x =>
-                        x.ChildTokens()
+                        x.Modifiers.Any(SyntaxKind.PublicKeyword)
+                        && x.ChildTokens()
                             .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
                             .ToString() == tok.ToString()
                     ) ?? false

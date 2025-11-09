@@ -16,8 +16,14 @@ public unsafe partial interface IALContext
     {
         [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
-        static abstract sbyte CaptureCloseDevice(DeviceHandle device);
+        static abstract MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device);
+
+        [return: NativeTypeName("ALCboolean")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+        [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
+        static abstract sbyte CaptureCloseDeviceRaw(DeviceHandle device);
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
@@ -65,8 +71,14 @@ public unsafe partial interface IALContext
 
         [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
-        static abstract sbyte CloseDevice(DeviceHandle device);
+        static abstract MaybeBool<sbyte> CloseDevice(DeviceHandle device);
+
+        [return: NativeTypeName("ALCboolean")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
+        static abstract sbyte CloseDeviceRaw(DeviceHandle device);
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
@@ -123,10 +135,10 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
-        static abstract sbyte EventControlSOFT(
+        static abstract MaybeBool<sbyte> EventControlSOFT(
             [NativeTypeName("ALCsizei")] int count,
             [NativeTypeName("const ALCenum *")] Ref<int> events,
-            [NativeTypeName("ALCboolean")] sbyte enable
+            [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
         );
 
         [return: NativeTypeName("ALCenum")]
@@ -319,7 +331,7 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
-        static abstract sbyte IsExtensionPresent(
+        static abstract MaybeBool<sbyte> IsExtensionPresent(
             DeviceHandle device,
             [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
         );
@@ -338,7 +350,7 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
-        static abstract sbyte IsRenderFormatSupportedSOFT(
+        static abstract MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
             DeviceHandle device,
             [NativeTypeName("ALCsizei")] int freq,
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, RenderFormatChannelSOFT> channels,
@@ -360,8 +372,14 @@ public unsafe partial interface IALContext
 
         [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
-        static abstract sbyte MakeContextCurrent(ContextHandle context);
+        static abstract MaybeBool<sbyte> MakeContextCurrent(ContextHandle context);
+
+        [return: NativeTypeName("ALCboolean")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
+        static abstract sbyte MakeContextCurrentRaw(ContextHandle context);
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
@@ -410,7 +428,7 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
-        static abstract sbyte ReopenDeviceSOFT(
+        static abstract MaybeBool<sbyte> ReopenDeviceSOFT(
             DeviceHandle device,
             [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
             [NativeTypeName("const ALCint *")] Ref<int> attribs
@@ -428,15 +446,21 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
-        static abstract sbyte ResetDeviceSOFT(
+        static abstract MaybeBool<sbyte> ResetDeviceSOFT(
             DeviceHandle device,
             [NativeTypeName("const ALCint *")] Ref<int> attribs
         );
 
         [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
-        static abstract sbyte SetThreadContext(ContextHandle context);
+        static abstract MaybeBool<sbyte> SetThreadContext(ContextHandle context);
+
+        [return: NativeTypeName("ALCboolean")]
+        [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
+        [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
+        static abstract sbyte SetThreadContextRaw(ContextHandle context);
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
@@ -445,8 +469,14 @@ public unsafe partial interface IALContext
 
     [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
-    sbyte CaptureCloseDevice(DeviceHandle device);
+    MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device);
+
+    [return: NativeTypeName("ALCboolean")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+    [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
+    sbyte CaptureCloseDeviceRaw(DeviceHandle device);
 
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
@@ -494,8 +524,14 @@ public unsafe partial interface IALContext
 
     [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
-    sbyte CloseDevice(DeviceHandle device);
+    MaybeBool<sbyte> CloseDevice(DeviceHandle device);
+
+    [return: NativeTypeName("ALCboolean")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
+    sbyte CloseDeviceRaw(DeviceHandle device);
 
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
@@ -552,10 +588,10 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
-    sbyte EventControlSOFT(
+    MaybeBool<sbyte> EventControlSOFT(
         [NativeTypeName("ALCsizei")] int count,
         [NativeTypeName("const ALCenum *")] Ref<int> events,
-        [NativeTypeName("ALCboolean")] sbyte enable
+        [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
     );
 
     [return: NativeTypeName("ALCenum")]
@@ -727,7 +763,7 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
-    sbyte IsExtensionPresent(
+    MaybeBool<sbyte> IsExtensionPresent(
         DeviceHandle device,
         [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
     );
@@ -746,7 +782,7 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
-    sbyte IsRenderFormatSupportedSOFT(
+    MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
         DeviceHandle device,
         [NativeTypeName("ALCsizei")] int freq,
         [NativeTypeName("ALCenum")] Constant<int, ALCEnum, RenderFormatChannelSOFT> channels,
@@ -764,8 +800,14 @@ public unsafe partial interface IALContext
 
     [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
-    sbyte MakeContextCurrent(ContextHandle context);
+    MaybeBool<sbyte> MakeContextCurrent(ContextHandle context);
+
+    [return: NativeTypeName("ALCboolean")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
+    sbyte MakeContextCurrentRaw(ContextHandle context);
 
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
@@ -810,7 +852,7 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
-    sbyte ReopenDeviceSOFT(
+    MaybeBool<sbyte> ReopenDeviceSOFT(
         DeviceHandle device,
         [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
         [NativeTypeName("const ALCint *")] Ref<int> attribs
@@ -825,12 +867,21 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
-    sbyte ResetDeviceSOFT(DeviceHandle device, [NativeTypeName("const ALCint *")] Ref<int> attribs);
+    MaybeBool<sbyte> ResetDeviceSOFT(
+        DeviceHandle device,
+        [NativeTypeName("const ALCint *")] Ref<int> attribs
+    );
+
+    [return: NativeTypeName("ALCboolean")]
+    [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
+    MaybeBool<sbyte> SetThreadContext(ContextHandle context);
 
     [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
-    sbyte SetThreadContext(ContextHandle context);
+    sbyte SetThreadContextRaw(ContextHandle context);
 
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
