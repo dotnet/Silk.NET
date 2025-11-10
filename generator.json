@@ -111,9 +111,6 @@
         ]
       },
       "TransformCOM": {
-        "BaseTypes": {
-          "IUnknown.Interface": "Silk.NET.Core.IUnknown.Interface"
-        },
         "AdditionalCOMTypes": {
           "IDispatchEx.Interface": {
             "Namespace": "Silk.NET.Win32",
@@ -134,7 +131,7 @@
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "NameOverrides": {
-          "BOOL": "MaybeBool<int>",
+          //"BOOL": "MaybeBool<int>",
           "BIN_COUNT.BinCount": "Count",
           "BIN_COUNT.BinRange": "Range",
           "DIK.DIK_EQUALS": "EqualsKey",
@@ -182,7 +179,7 @@
       "DiscardOutput": {
         "OutputToDiscard": [
           "sources/**/helper-types/HRESULT.gen.cs",
-          "sources/**/helper-types/BOOL.gen.cs",
+          "sources/**/helper-types/MaybeBool.gen.cs",
           "sources/**/helper-types/HSTRING.gen.cs",
           "sources/**/HANDLE.gen.cs"
         ]
@@ -190,6 +187,7 @@
       "FixOptionalParams": {
         "TypesToFix": [
           "MaybeBool<int>",
+          "BOOL",
           "HResult",
           "MaybeBool<byte>"
         ]
@@ -258,7 +256,8 @@
       "PrettifyNames": {
         "NameOverrides": {
           "HSTRING": "HString",
-          "HRESULT": "HResult"
+          "HRESULT": "HResult",
+          "MaybeBool<int>": "MaybeBool<int>"
         }
       },
       "FixOptionalParams": {

@@ -21,10 +21,10 @@ public unsafe partial struct Lparam
 
     public static implicit operator void*(Lparam value) => (void*)(value.Value);
 
-    public static explicit operator Lparam(MaybeBool<int> value) => new Lparam(value.Value);
+    public static explicit operator Lparam(MaybeBoolInt value) => new Lparam(value.Value);
 
-    public static explicit operator MaybeBool<int>(Lparam value) =>
-        new MaybeBool<int>((int)(value.Value));
+    public static explicit operator MaybeBoolInt(Lparam value) =>
+        new MaybeBoolInt((int)(value.Value));
 
     public static explicit operator Lparam(Handle value) => new Lparam((nint)(value.Value));
 

@@ -20,11 +20,10 @@ public unsafe partial struct Wparam
 
     public static implicit operator void*(Wparam value) => (void*)(value.Value);
 
-    public static explicit operator Wparam(MaybeBool<int> value) =>
-        new Wparam((nuint)(value.Value));
+    public static explicit operator Wparam(MaybeBoolInt value) => new Wparam((nuint)(value.Value));
 
-    public static explicit operator MaybeBool<int>(Wparam value) =>
-        new MaybeBool<int>((int)(value.Value));
+    public static explicit operator MaybeBoolInt(Wparam value) =>
+        new MaybeBoolInt((int)(value.Value));
 
     public static explicit operator Wparam(Handle value) => new Wparam((nuint)(value.Value));
 

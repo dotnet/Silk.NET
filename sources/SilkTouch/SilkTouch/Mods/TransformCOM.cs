@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Collections.Immutable;
 using System.CommandLine;
 using System.Diagnostics;
 using System.Reflection;
@@ -68,7 +69,7 @@ namespace Silk.NET.SilkTouch.Mods
                 return;
             }
 
-            int count = proj?.DocumentIds.Count ?? 0;
+            int count = proj?.DocumentIds.Count ?? 1;
             int index = 0;
 
             var baseTypes = cfg.BaseTypes ?? [];
@@ -104,6 +105,8 @@ namespace Silk.NET.SilkTouch.Mods
                 );
             }
 
+            Dictionary<string, PropertyDeclarationSyntax> IIDs = [];
+            ImmutableArray<DocumentId> docsToRemove = [];
             foreach (var docId in proj?.DocumentIds ?? [])
             {
                 index++;
@@ -115,9 +118,23 @@ namespace Silk.NET.SilkTouch.Mods
                     continue;
                 }
 
-                firstPass.Visit(root);
+                if (doc.Name == "IID.gen.cs")
+                {
+                    var IIDList = root.DescendantNodes().OfType<PropertyDeclarationSyntax>().Where(prop => prop.Type is not PointerTypeSyntax);
+
+                    foreach(PropertyDeclarationSyntax prop in IIDList)
+                    {
+                        IIDs.Add(prop.Identifier.Text, prop);
+                    }
+                    docsToRemove = docsToRemove.Add(docId);
+                }
+                else
+                {
+                    firstPass.Visit(root);
+                }
                 progressService.SetProgress((float)index / count);
             }
+            proj = proj?.RemoveDocuments(docsToRemove);
 
             //Cleanup our lists
             firstPass.FoundCOMTypes = firstPass
@@ -125,7 +142,8 @@ namespace Silk.NET.SilkTouch.Mods
                 .ToDictionary();
 
             index = 0;
-            var rewriter = new Rewriter(firstPass.FoundCOMTypes);
+            count = proj?.DocumentIds.Count ?? 1;
+            var rewriter = new Rewriter(firstPass.FoundCOMTypes, IIDs);
 
             progressService.SetTask("COM Object Rewrite");
             foreach (var docId in proj?.DocumentIds ?? [])
@@ -147,6 +165,31 @@ namespace Silk.NET.SilkTouch.Mods
                 progressService.SetProgress((float)index / count);
             }
             ctx.SourceProject = proj;
+
+            proj = ctx.TestProject;
+            index = 0;
+            count = proj?.DocumentIds.Count ?? 1;
+            progressService.SetTask("Finding and Removing IID Tests");
+
+            docsToRemove = docsToRemove.Clear();
+            foreach (var docId in proj?.DocumentIds ?? [])
+            {
+                index++;
+                var doc =
+                    proj?.GetDocument(docId)
+                    ?? throw new InvalidOperationException("Document missing");
+
+                if (doc.Name == "IIDTests.gen.cs")
+                {
+                    docsToRemove = docsToRemove.Add(docId);
+                }
+
+                progressService.SetProgress((float)index / count);
+            }
+            proj = proj?.RemoveDocuments(docsToRemove);
+
+            progressService.SetProgress(1);
+            ctx.TestProject = proj;
         }
 
         /// <inheritdoc/>
@@ -321,11 +364,11 @@ namespace Silk.NET.SilkTouch.Mods
                         !fds.Modifiers.Contains(Token(SyntaxKind.StaticKeyword))
                         && fds.Declaration.Type.ToString() != "Native*"
                         && !fds.Declaration.Type.ToString().StartsWith("delegate")
-                        && fds.Declaration.Variables[0].Identifier.Text != "LpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text.ToLower() != "lpvtbl"
                     )
                     || !fields.Any(fds =>
                         fds.Declaration.Type.ToString() == "Native*"
-                        && fds.Declaration.Variables[0].Identifier.Text == "LpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text.ToLower() == "lpvtbl"
                     )
                 )
                 {
@@ -368,7 +411,7 @@ namespace Silk.NET.SilkTouch.Mods
                     }
                 }
 
-                CheckBases((typeName, types, false, qualifiedNamespace), bases);
+                CheckBases((typeName, types, !typeName.EndsWith(".Interface"), qualifiedNamespace), bases);
             }
 
             public void AddInitialType(string typeName, string _namespace, string? parentName)
@@ -516,14 +559,18 @@ namespace Silk.NET.SilkTouch.Mods
             }
         }
 
-        class Rewriter(Dictionary<string, (bool, KeyedStringTree<QualifiedNameSyntax>?)> ComTypes) : CSharpSyntaxRewriter
+        class Rewriter(Dictionary<string, (bool, KeyedStringTree<QualifiedNameSyntax>?)> ComTypes,
+            Dictionary<string, PropertyDeclarationSyntax> IIDs) : CSharpSyntaxRewriter
         {
             bool isInCom = false;
             bool disposeFound = false;
             string currentName = string.Empty;
+            string iidName = string.Empty;
 
             public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
             {
+                string parentIID = iidName;
+                iidName = string.Empty;
                 string name = currentName = node.Identifier.ToString();
                 bool parentIsCom = isInCom;
 
@@ -540,6 +587,9 @@ namespace Silk.NET.SilkTouch.Mods
                     //visit and modify ComType Variables and internal usages first
                     node = (base.VisitStructDeclaration(node) as StructDeclarationSyntax)!;
                     node = node.AddBaseListTypes(SimpleBaseType(ParseTypeName("IDisposable")));
+
+                    if (IIDs.ContainsKey(iidName))
+                        node = node.AddMembers(IIDs[iidName].WithIdentifier(Identifier("IID")));
 
                     if (!disposeFound)
                     {
@@ -783,6 +833,7 @@ namespace Silk.NET.SilkTouch.Mods
                 }
 
                 isInCom = parentIsCom;
+                iidName = parentIID;
 
                 return node;
             }
@@ -792,6 +843,16 @@ namespace Silk.NET.SilkTouch.Mods
                 return isInCom && node.Type.ToString() == "INativeGuid"
                     ? SimpleBaseType(ParseTypeName($"IComVtbl<{currentName}>"))
                     : base.VisitSimpleBaseType(node);
+            }
+
+            public override SyntaxNode? VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
+            {
+                if (node.Expression.ToString() == "IID" && IIDs.ContainsKey(node.Name.ToString()))
+                {
+                    iidName = node.Name.ToString();
+                    return IdentifierName("IID");
+                }
+                return base.VisitMemberAccessExpression(node);
             }
 
             public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)

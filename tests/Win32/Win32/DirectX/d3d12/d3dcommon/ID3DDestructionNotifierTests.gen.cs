@@ -16,7 +16,10 @@ public static unsafe partial class ID3DDestructionNotifierTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(ID3DDestructionNotifier).GUID, Is.EqualTo(IID.ID3DDestructionNotifier));
+        Assert.That(
+            typeof(ID3DDestructionNotifier).GUID,
+            Is.EqualTo(IID.IID_ID3DDestructionNotifier)
+        );
     }
 
     /// <summary>Validates that the <see cref = "ID3DDestructionNotifier"/> struct is blittable.</summary>

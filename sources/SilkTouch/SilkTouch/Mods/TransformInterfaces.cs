@@ -226,7 +226,7 @@ namespace Silk.NET.SilkTouch.Mods
                         !fds.Modifiers.Contains(Token(SyntaxKind.StaticKeyword))
                         && fds.Declaration.Type.ToString() != "void**"
                         && !fds.Declaration.Type.ToString().StartsWith("delegate")
-                        && fds.Declaration.Variables[0].Identifier.Text != "LpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text.ToLower() != "lpvtbl"
                     )
                     || !fields.Any(fds =>
                         fds.Declaration.Type is FunctionPointerTypeSyntax fpts
@@ -235,7 +235,7 @@ namespace Silk.NET.SilkTouch.Mods
                     )
                     || !fields.Any(fds =>
                         fds.Declaration.Type.ToString() == "void**"
-                        && fds.Declaration.Variables[0].Identifier.Text == "LpVtbl"
+                        && fds.Declaration.Variables[0].Identifier.Text.ToLower() == "lpvtbl"
                     )
                     || FoundTypes.ContainsKey(node.Identifier.Text)
                 )

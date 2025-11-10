@@ -76,7 +76,7 @@ public class RemapTypes(
 
         progressService.SetTask("Remapping Known Types");
 
-        await NameUtils.RenameAllRoslynAsync(
+        await NameUtils.RenameAllAsync(
             ctx,
             cfg.Mappings.SelectMany(x => comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct).OfType<ITypeSymbol>().Select(y => ((ISymbol)y, x.Value))),
             logger,

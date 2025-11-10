@@ -20,10 +20,10 @@ public unsafe partial struct Lresult
 
     public static implicit operator void*(Lresult value) => (void*)(value.Value);
 
-    public static explicit operator Lresult(MaybeBool<int> value) => new Lresult(value.Value);
+    public static explicit operator Lresult(MaybeBoolInt value) => new Lresult(value.Value);
 
-    public static explicit operator MaybeBool<int>(Lresult value) =>
-        new MaybeBool<int>((int)(value.Value));
+    public static explicit operator MaybeBoolInt(Lresult value) =>
+        new MaybeBoolInt((int)(value.Value));
 
     public static explicit operator Lresult(Handle value) => new Lresult((nint)(value.Value));
 

@@ -16,7 +16,7 @@ public static unsafe partial class ID3DBlobTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(ID3DBlob).GUID, Is.EqualTo(IID.ID3D10Blob));
+        Assert.That(typeof(ID3DBlob).GUID, Is.EqualTo(IID.IID_ID3D10Blob));
     }
 
     /// <summary>Validates that the <see cref = "ID3DBlob"/> struct is blittable.</summary>
