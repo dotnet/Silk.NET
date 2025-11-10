@@ -35,6 +35,11 @@ public partial class ALContext
         public IALContext Clone() => new StaticWrapper<T>();
     }
 
+    public partial class ThisThread
+    {
+        private static partial IALContext ContextFactory() => Create();
+    }
+
     private Dictionary<ContextHandle, AL>? _contexts = null;
     private unsafe delegate* unmanaged<DeviceHandle, sbyte*, void*> _getProcAddress;
 
@@ -84,10 +89,8 @@ public partial class ALContext
                     getProcAddress == null ? &DllImport.GetProcAddressTrampoline : getProcAddress;
             }
 
-            var fname =
-                functionName.Length < 128
-                    ? stackalloc byte[functionName.Length]
-                    : new byte[functionName.Length];
+            var count = Encoding.UTF8.GetByteCount(functionName) + 1;
+            var fname = functionName.Length < 128 ? stackalloc byte[count] : new byte[count];
             fname[Encoding.UTF8.GetBytes(functionName, fname)] = 0;
             fixed (byte* pFName = fname)
             {
@@ -112,10 +115,8 @@ public partial class ALContext
                     : ((IALContext)alc).GetProcAddress(dev, "alGetProcAddress");
             }
 
-            var fname =
-                functionName.Length < 128
-                    ? stackalloc byte[functionName.Length]
-                    : new byte[functionName.Length];
+            var count = Encoding.UTF8.GetByteCount(functionName) + 1;
+            var fname = functionName.Length < 128 ? stackalloc byte[count] : new byte[count];
             fname[Encoding.UTF8.GetBytes(functionName, fname)] = 0;
             fixed (byte* pFName = fname)
             {
@@ -189,11 +190,17 @@ public partial class ALContext
             : CreateOpenAL(ctx);
     }
 
-    public static IALContext Create() => Create(new NativeContext());
+    public static IALContext Create()
+    {
+        var ctx = new NativeContext();
+        var ret = new ALContext(ctx);
+        ctx.ALC = ret;
+        return ret;
+    }
 
     unsafe DeviceHandle IALContext.OpenDevice(sbyte* devicename)
     {
-        var ret = OpenDevice(devicename);
+        var ret = OpenDeviceInternal(devicename);
         if (ret != nullptr)
         {
             CurrentDevice = ret;

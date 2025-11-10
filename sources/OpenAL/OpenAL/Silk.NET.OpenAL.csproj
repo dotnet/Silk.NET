@@ -8,5 +8,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
   </ItemGroup>
-  <Import Project="..\..\Core\Core\Silk.NET.Core.targets" />
 </Project>

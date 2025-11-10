@@ -21,9 +21,11 @@ partial class ALContext(INativeContext nativeContext) : IDisposable
 
     public partial class ThisThread : IALContext.Static
     {
-        public static ThreadLocal<IALContext> Underlying { get; } = new();
+        public static ThreadLocal<IALContext> Underlying { get; } = new(ContextFactory);
 
         public static void MakeCurrent(IALContext ctx) => Underlying.Value = ctx;
+
+        private static partial IALContext ContextFactory();
     }
 
     private readonly unsafe void*[] _slots = new void*[35];

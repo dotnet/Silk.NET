@@ -2001,9 +2001,9 @@ public partial class MixKhronosData(
                 {
                     // Handle the alias case
                     foreach (
-                        var ((_, applicable), value) in data
-                            .Annotations.Where(x => x.Key.ContainingSymbol == aliasedFunc)
-                            .ToArray()
+                        var ((_, applicable), value) in data.Annotations.Where(x =>
+                            x.Key.ContainingSymbol == aliasedFunc
+                        )
                     )
                     {
                         data.Annotations[(funcName, applicable)] = value;
@@ -2076,13 +2076,21 @@ public partial class MixKhronosData(
             }
 
             // Get the parameter group attributes
-            foreach (var param in func.Elements("param"))
+            foreach (var (paramIdx, param) in func.Elements("param").Select((x, i) => (i, x)))
             {
-                AddData(
-                    param,
+                var paramName =
                     param.Element("name")?.Value
-                        ?? throw new InvalidDataException("param with no name")
-                );
+                    ?? throw new InvalidDataException("param with no name");
+
+                // TODO ClangSharp currently erroneously renames "param" to "param<idx>"
+                // TODO Once fixed upstream, remove this hack.
+                // https://discord.com/channels/521092042781229087/587346162802229298/1437503858849878037
+                if (paramName == "param")
+                {
+                    paramName = $"{paramName}{paramIdx}";
+                }
+
+                AddData(param, paramName);
             }
         }
 

@@ -12,12 +12,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="home_resting_state_track_16.mp3" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
-      <Content Include="home_resting_state_track_16.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+      <PackageReference Include="NAudio.Core" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="NAudio.Core" />
+      <Content Include="beep.txt" />
+      <Content Include="beep.wav" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     </ItemGroup>
 
 </Project>

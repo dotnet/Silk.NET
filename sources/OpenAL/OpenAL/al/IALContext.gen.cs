@@ -281,11 +281,19 @@ public unsafe partial interface IALContext
 
         [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcGetString")]
+        static abstract sbyte* GetString(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int param1
+        );
+
+        [return: NativeTypeName("const ALCchar *")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         static abstract Ptr<sbyte> GetString(
             DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
         );
 
         [return: NativeTypeName("const ALCchar *")]
@@ -305,14 +313,6 @@ public unsafe partial interface IALContext
             DeviceHandle device,
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
             [NativeTypeName("ALCsizei")] int index
-        );
-
-        [return: NativeTypeName("const ALCchar *")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [NativeFunction("openal", EntryPoint = "alcGetString")]
-        static abstract sbyte* GetStringRaw(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
         );
 
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
@@ -719,9 +719,17 @@ public unsafe partial interface IALContext
 
     [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [NativeFunction("openal", EntryPoint = "alcGetString")]
+    sbyte* GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
+
+    [return: NativeTypeName("const ALCchar *")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
-    Ptr<sbyte> GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
+    Ptr<sbyte> GetString(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
+    );
 
     [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -741,11 +749,6 @@ public unsafe partial interface IALContext
         [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
         [NativeTypeName("ALCsizei")] int index
     );
-
-    [return: NativeTypeName("const ALCchar *")]
-    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [NativeFunction("openal", EntryPoint = "alcGetString")]
-    sbyte* GetStringRaw(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]

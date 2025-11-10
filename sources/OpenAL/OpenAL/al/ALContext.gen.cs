@@ -390,6 +390,14 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             }
         }
 
+        [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetString")]
+        [return: NativeTypeName("const ALCchar *")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        public static extern sbyte* GetString(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int param1
+        );
+
         [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
@@ -399,8 +407,8 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         )]
         public static Ptr<sbyte> GetString(
             DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
-        ) => (sbyte*)GetStringRaw(device, param1);
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
+        ) => (sbyte*)GetString(device, (int)param1);
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetStringiSOFT")]
         [return: NativeTypeName("const ALCchar *")]
@@ -423,14 +431,6 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
             [NativeTypeName("ALCsizei")] int index
         ) => (sbyte*)GetStringSOFT(device, (int)paramName, index);
-
-        [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetString")]
-        [return: NativeTypeName("const ALCchar *")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern sbyte* GetStringRaw(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
-        );
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
@@ -1060,13 +1060,24 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
 
         [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcGetString")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte* GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
+            T.GetString(device, param1);
+
+        [return: NativeTypeName("const ALCchar *")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<sbyte> GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-            T.GetString(device, param1);
+        public Ptr<sbyte> GetString(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
+        ) => T.GetString(device, param1);
 
         [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -1092,15 +1103,6 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
             [NativeTypeName("ALCsizei")] int index
         ) => T.GetStringSOFT(device, paramName, index);
-
-        [return: NativeTypeName("const ALCchar *")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [NativeFunction("openal", EntryPoint = "alcGetString")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public sbyte* GetStringRaw(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-            T.GetStringRaw(device, param1);
 
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
@@ -1785,6 +1787,17 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
 
         [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcGetString")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static sbyte* GetString(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int param1
+        ) => Underlying.Value!.GetString(device, param1);
+
+        [return: NativeTypeName("const ALCchar *")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
@@ -1792,7 +1805,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         )]
         public static Ptr<sbyte> GetString(
             DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
         ) => Underlying.Value!.GetString(device, param1);
 
         [return: NativeTypeName("const ALCchar *")]
@@ -1819,17 +1832,6 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
             [NativeTypeName("ALCsizei")] int index
         ) => Underlying.Value!.GetStringSOFT(device, paramName, index);
-
-        [return: NativeTypeName("const ALCchar *")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [NativeFunction("openal", EntryPoint = "alcGetString")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static sbyte* GetStringRaw(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
-        ) => Underlying.Value!.GetStringRaw(device, param1);
 
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
@@ -2840,8 +2842,27 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     ) => ThisThread.GetProcAddress2(device, funcName);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<sbyte> IALContext.GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-        (sbyte*)((IALContext)this).GetStringRaw(device, param1);
+    sbyte* IALContext.GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
+        (
+            (delegate* unmanaged<DeviceHandle, int, sbyte*>)(
+                _slots[21] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[21] = nativeContext.LoadFunction("alcGetString", "openal")
+            )
+        )(device, param1);
+
+    [return: NativeTypeName("const ALCchar *")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [NativeFunction("openal", EntryPoint = "alcGetString")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static sbyte* GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
+        ThisThread.GetString(device, param1);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<sbyte> IALContext.GetString(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
+    ) => (sbyte*)((IALContext)this).GetString(device, (int)param1);
 
     [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -2850,7 +2871,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<sbyte> GetString(
         DeviceHandle device,
-        [NativeTypeName("ALCenum")] int param1
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
     ) => ThisThread.GetString(device, param1);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -2894,25 +2915,6 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
         [NativeTypeName("ALCsizei")] int index
     ) => ThisThread.GetStringSOFT(device, paramName, index);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte* IALContext.GetStringRaw(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-        (
-            (delegate* unmanaged<DeviceHandle, int, sbyte*>)(
-                _slots[21] is not null and var loadedFnPtr
-                    ? loadedFnPtr
-                    : _slots[21] = nativeContext.LoadFunction("alcGetString", "openal")
-            )
-        )(device, param1);
-
-    [return: NativeTypeName("const ALCchar *")]
-    [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [NativeFunction("openal", EntryPoint = "alcGetString")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte* GetStringRaw(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int param1
-    ) => ThisThread.GetStringRaw(device, param1);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ContextHandle IALContext.GetThreadContext() =>

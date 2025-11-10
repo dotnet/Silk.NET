@@ -187,7 +187,7 @@ public static class LoaderInterface
             return 0;
         }
 
-        foreach (var alt in alts)
+        foreach (var alt in (IEnumerable<string>)[libraryName, .. alts])
         {
             if (NativeLibrary.TryLoad(alt, assembly, searchPath, out var handle))
             {
