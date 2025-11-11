@@ -5,12 +5,7 @@ namespace Silk.NET.OpenAL;
 
 public partial interface IALContext
 {
-    public DeviceHandle CurrentDevice
-    {
-        // TODO something better/more descriptive?
-        get => throw new NotSupportedException();
-        set => throw new NotSupportedException();
-    }
+    public DeviceHandle CurrentDevice { get; set; }
 
     IALContext Clone();
 }

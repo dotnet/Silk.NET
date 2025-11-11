@@ -9,6 +9,10 @@ namespace Silk.NET.OpenAL;
 
 public partial class ALContext
 {
+    public const string ErrMultipleDeviceSingleObject =
+        "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
+        + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
+
     static ALContext() =>
         LoaderInterface.RegisterAlternativeName(
             "openal",
@@ -32,6 +36,16 @@ public partial class ALContext
 
     public partial class StaticWrapper<T>
     {
+        public DeviceHandle CurrentDevice
+        {
+            get;
+            set =>
+                field =
+                    field == nullptr
+                        ? throw new InvalidOperationException(ErrMultipleDeviceSingleObject)
+                        : value;
+        }
+
         public IALContext Clone() => new StaticWrapper<T>();
     }
 
@@ -50,10 +64,7 @@ public partial class ALContext
         {
             if (field != nullptr)
             {
-                throw new InvalidOperationException(
-                    "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
-                        + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings"
-                );
+                throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
             }
 
             _getProcAddress = null;
@@ -182,12 +193,7 @@ public partial class ALContext
     public IAL CreateOpenAL(DeviceHandle device, Ref<int> attrList)
     {
         var ctx = CreateContext(device, attrList);
-        return ctx == nullptr
-            // TODO custom exception type
-            ? throw new InvalidOperationException(
-                $"alcCreateContext returned error: {(ErrorCode)GetError(device)}"
-            )
-            : CreateOpenAL(ctx);
+        return ctx == nullptr ? throw new OpenALException(GetError(device)) : CreateOpenAL(ctx);
     }
 
     public static IALContext Create()
