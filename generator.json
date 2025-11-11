@@ -204,7 +204,10 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHint": "vk"
+        "GlobalPrefixHint": "vk",
+        "PrefixOverrides": {
+          "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"
+        }
       },
       "AddVTables": {
         "VTables": [
