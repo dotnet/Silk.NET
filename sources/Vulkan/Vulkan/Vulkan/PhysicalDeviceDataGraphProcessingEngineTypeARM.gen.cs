@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PhysicalDeviceDataGraphProcessingEngineTypeARM
+public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
 {
     [SupportedApiProfile("vulkan")]
     DefaultARM = 0,

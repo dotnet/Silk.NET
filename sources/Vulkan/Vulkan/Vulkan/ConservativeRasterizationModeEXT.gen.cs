@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ConservativeRasterizationModeEXT
+public enum ConservativeRasterizationModeEXT : uint
 {
     [SupportedApiProfile(
         "vulkan",

@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum CoverageModulationModeNV
+public enum CoverageModulationModeNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
     NoneNV = 0,

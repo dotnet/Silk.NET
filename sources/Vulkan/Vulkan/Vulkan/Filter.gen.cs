@@ -8,8 +8,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum Filter
+public enum Filter : uint
 {
     [SupportedApiProfile(
         "vulkan",

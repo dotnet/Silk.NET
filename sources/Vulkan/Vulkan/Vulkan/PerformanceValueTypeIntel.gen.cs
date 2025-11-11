@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PerformanceValueTypeIntel
+public enum PerformanceValueTypeIntel : uint
 {
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     Uint32Intel = 0,

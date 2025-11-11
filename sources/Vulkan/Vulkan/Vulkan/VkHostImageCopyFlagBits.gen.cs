@@ -9,9 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum HostImageCopyFlags
+public enum HostImageCopyFlags : uint
 {
     None = 0,
 

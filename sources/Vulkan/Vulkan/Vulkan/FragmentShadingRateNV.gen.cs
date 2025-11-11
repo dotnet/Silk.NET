@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum FragmentShadingRateNV
+public enum FragmentShadingRateNV : uint
 {
     [SupportedApiProfile(
         "vulkan",

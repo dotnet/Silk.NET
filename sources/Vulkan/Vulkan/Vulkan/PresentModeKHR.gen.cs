@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PresentModeKHR
+public enum PresentModeKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     ImmediateKHR = 0,

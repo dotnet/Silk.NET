@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum FrontFace
+public enum FrontFace : uint
 {
     [SupportedApiProfile(
         "vulkan",

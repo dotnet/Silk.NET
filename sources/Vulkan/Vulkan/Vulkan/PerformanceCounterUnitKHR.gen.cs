@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PerformanceCounterUnitKHR
+public enum PerformanceCounterUnitKHR : uint
 {
     [SupportedApiProfile(
         "vulkan",

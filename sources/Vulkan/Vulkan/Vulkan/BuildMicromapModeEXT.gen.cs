@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum BuildMicromapModeEXT
+public enum BuildMicromapModeEXT : uint
 {
     [SupportedApiProfile(
         "vulkan",

@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DataGraphPipelineSessionBindPointTypeARM
+public enum DataGraphPipelineSessionBindPointTypeARM : uint
 {
     [SupportedApiProfile("vulkan")]
     MemoryARM = 0,

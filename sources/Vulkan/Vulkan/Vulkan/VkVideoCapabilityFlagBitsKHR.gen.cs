@@ -9,9 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoCapabilityFlagsKHR
+public enum VideoCapabilityFlagsKHR : uint
 {
     None = 0,
 

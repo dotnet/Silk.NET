@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum AntiLagStageAMD
+public enum AntiLagStageAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
     InputAMD = 0,

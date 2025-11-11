@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264PocType
+public enum StdVideoH264PocType : uint
 {
     [SupportedApiProfile("vulkan")]
     Type0 = 0,

@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum QueryPoolCreateFlags
+public enum QueryPoolCreateFlags : uint
 {
     [SupportedApiProfile("vulkan")]
     ResetBitKHR = 0x00000001,

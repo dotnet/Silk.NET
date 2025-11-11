@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum SamplerReductionMode
+public enum SamplerReductionMode : uint
 {
     [SupportedApiProfile(
         "vulkan",

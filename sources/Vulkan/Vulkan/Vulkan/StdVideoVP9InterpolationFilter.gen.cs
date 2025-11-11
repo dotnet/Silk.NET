@@ -8,8 +8,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoVP9InterpolationFilter
+public enum StdVideoVP9InterpolationFilter : uint
 {
     [SupportedApiProfile("vulkan")]
     Eighttap = 0,

@@ -9,9 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ResolveModeFlags
+public enum ResolveModeFlags : uint
 {
     [SupportedApiProfile(
         "vulkan",

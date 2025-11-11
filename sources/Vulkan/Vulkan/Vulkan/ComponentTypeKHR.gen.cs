@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ComponentTypeKHR
+public enum ComponentTypeKHR : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
     Float16KHR = 0,

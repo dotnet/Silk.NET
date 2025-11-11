@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum RasterizationOrderAMD
+public enum RasterizationOrderAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     StrictAMD = 0,

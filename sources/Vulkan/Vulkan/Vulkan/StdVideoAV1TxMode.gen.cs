@@ -9,8 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoAV1TxMode
+public enum StdVideoAV1TxMode : uint
 {
     [SupportedApiProfile("vulkan")]
     Only4X4 = 0,

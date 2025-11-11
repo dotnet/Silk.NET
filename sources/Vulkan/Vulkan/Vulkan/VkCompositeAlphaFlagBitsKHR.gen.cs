@@ -9,9 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum CompositeAlphaFlagsKHR
+public enum CompositeAlphaFlagsKHR : uint
 {
     None = 0,
 
