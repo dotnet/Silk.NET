@@ -12,21 +12,56 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpacePropertiesNV
 {
-    [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_extended_sparse_address_space"],
+        ImpliesSets = [
+            "VK_NV_extended_sparse_address_space+VK_KHR_get_physical_device_properties2",
+            "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType;
 
-    [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_extended_sparse_address_space"],
+        ImpliesSets = [
+            "VK_NV_extended_sparse_address_space+VK_KHR_get_physical_device_properties2",
+            "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("VkDeviceSize")]
-    [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_extended_sparse_address_space"],
+        ImpliesSets = [
+            "VK_NV_extended_sparse_address_space+VK_KHR_get_physical_device_properties2",
+            "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
+        ]
+    )]
     public ulong ExtendedSparseAddressSpaceSize;
 
     [NativeTypeName("VkImageUsageFlags")]
-    [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_extended_sparse_address_space"],
+        ImpliesSets = [
+            "VK_NV_extended_sparse_address_space+VK_KHR_get_physical_device_properties2",
+            "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
+        ]
+    )]
     public ImageUsageFlags ExtendedSparseImageUsageFlags;
 
     [NativeTypeName("VkBufferUsageFlags")]
-    [SupportedApiProfile("vulkan", ["VK_NV_extended_sparse_address_space"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_extended_sparse_address_space"],
+        ImpliesSets = [
+            "VK_NV_extended_sparse_address_space+VK_KHR_get_physical_device_properties2",
+            "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
+        ]
+    )]
     public BufferUsageFlags ExtendedSparseBufferUsageFlags;
 }

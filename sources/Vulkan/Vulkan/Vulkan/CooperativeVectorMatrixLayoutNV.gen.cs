@@ -13,15 +13,43 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public enum CooperativeVectorMatrixLayoutNV : uint
 {
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     RowMajorNV = 0,
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     ColumnMajorNV = 1,
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     InferencingOptimalNV = 2,
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     TrainingOptimalNV = 3,
 }

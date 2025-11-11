@@ -14,28 +14,68 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public StructureType SType;
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public void* PNext;
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public ShaderFloatControlsIndependence DenormBehaviorIndependence;
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public ShaderFloatControlsIndependence RoundingModeIndependence;
@@ -43,7 +83,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat16;
@@ -51,7 +101,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat32;
@@ -59,7 +119,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat64;
@@ -67,7 +137,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderDenormPreserveFloat16;
@@ -75,7 +155,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderDenormPreserveFloat32;
@@ -83,7 +173,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderDenormPreserveFloat64;
@@ -91,7 +191,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderDenormFlushToZeroFloat16;
@@ -99,7 +209,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderDenormFlushToZeroFloat32;
@@ -107,7 +227,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderDenormFlushToZeroFloat64;
@@ -115,7 +245,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderRoundingModeRTEFloat16;
@@ -123,7 +263,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderRoundingModeRTEFloat32;
@@ -131,7 +281,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderRoundingModeRTEFloat64;
@@ -139,7 +299,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderRoundingModeRTZFloat16;
@@ -147,7 +317,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderRoundingModeRTZFloat32;
@@ -155,7 +335,17 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> ShaderRoundingModeRTZFloat64;

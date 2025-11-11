@@ -10,39 +10,36 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
-public unsafe partial struct PhysicalDeviceMemoryDecompressionFeaturesNV
+public unsafe partial struct PerformanceCounterARM
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_memory_decompression"],
+        ["VK_ARM_performance_counters_by_region"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
     public StructureType SType;
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_memory_decompression"],
+        ["VK_ARM_performance_counters_by_region"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_memory_decompression"],
+        ["VK_ARM_performance_counters_by_region"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
-            "VK_VERSION_1_2",
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> MemoryDecompression;
+    public uint CounterID;
 }

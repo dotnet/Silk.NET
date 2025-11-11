@@ -17,8 +17,10 @@ public enum OutOfBandQueueTypeNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     RenderNV = 0,
@@ -27,8 +29,10 @@ public enum OutOfBandQueueTypeNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     PresentNV = 1,

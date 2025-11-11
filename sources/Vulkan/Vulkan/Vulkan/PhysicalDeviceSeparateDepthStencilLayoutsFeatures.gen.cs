@@ -14,14 +14,28 @@ public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public StructureType SType;
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     public void* PNext;

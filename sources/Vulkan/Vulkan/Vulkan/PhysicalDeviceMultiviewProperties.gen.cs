@@ -14,14 +14,32 @@ public unsafe partial struct PhysicalDeviceMultiviewProperties
 {
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     public StructureType SType;
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     public void* PNext;
@@ -29,7 +47,16 @@ public unsafe partial struct PhysicalDeviceMultiviewProperties
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     public uint MaxMultiviewViewCount;
@@ -37,7 +64,16 @@ public unsafe partial struct PhysicalDeviceMultiviewProperties
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     public uint MaxMultiviewInstanceIndex;

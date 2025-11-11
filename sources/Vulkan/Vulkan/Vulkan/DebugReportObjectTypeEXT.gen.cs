@@ -154,6 +154,10 @@ public enum DebugReportObjectTypeEXT : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_debug_report", "VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ],
         RequireAll = true
     )]
     CudaModuleNvEXT = 1000307000,
@@ -161,6 +165,10 @@ public enum DebugReportObjectTypeEXT : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_debug_report", "VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ],
         RequireAll = true
     )]
     CudaFunctionNvEXT = 1000307001,

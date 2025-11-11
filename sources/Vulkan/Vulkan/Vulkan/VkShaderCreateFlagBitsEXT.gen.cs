@@ -25,7 +25,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    LinkStageBitEXT = 0x00000001,
+    CreateLinkStageBitEXT = 0x00000001,
 
     [SupportedApiProfile(
         "vulkan",
@@ -39,7 +39,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    AllowVaryingSubgroupSizeBitEXT = 0x00000002,
+    CreateAllowVaryingSubgroupSizeBitEXT = 0x00000002,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    RequireFullSubgroupsBitEXT = 0x00000004,
+    CreateRequireFullSubgroupsBitEXT = 0x00000004,
 
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +64,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    NoTaskShaderBitEXT = 0x00000008,
+    CreateNoTaskShaderBitEXT = 0x00000008,
 
     [SupportedApiProfile(
         "vulkan",
@@ -75,7 +75,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DispatchBaseBitEXT = 0x00000010,
+    CreateDispatchBaseBitEXT = 0x00000010,
 
     [SupportedApiProfile(
         "vulkan",
@@ -87,7 +87,7 @@ public enum ShaderCreateFlagsEXT : uint
         ],
         RequireAll = true
     )]
-    FragmentShadingRateAttachmentBitEXT = 0x00000020,
+    CreateFragmentShadingRateAttachmentBitEXT = 0x00000020,
 
     [SupportedApiProfile(
         "vulkan",
@@ -99,7 +99,7 @@ public enum ShaderCreateFlagsEXT : uint
         ],
         RequireAll = true
     )]
-    FragmentDensityMapAttachmentBitEXT = 0x00000040,
+    CreateFragmentDensityMapAttachmentBitEXT = 0x00000040,
 
     [SupportedApiProfile(
         "vulkan",
@@ -110,5 +110,15 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    IndirectBindableBitEXT = 0x00000080,
+    CreateIndirectBindableBitEXT = 0x00000080,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_64bit_indexing"],
+        ImpliesSets = [
+            "VK_EXT_shader_64bit_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_64bit_indexing+VK_VERSION_1_1",
+        ]
+    )]
+    Create64BitIndexingBitEXT = 0x00008000,
 }

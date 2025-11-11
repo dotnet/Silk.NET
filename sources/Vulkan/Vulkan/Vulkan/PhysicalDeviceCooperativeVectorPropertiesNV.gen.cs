@@ -12,25 +12,67 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
 {
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType;
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("VkShaderStageFlags")]
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     public ShaderStageFlags CooperativeVectorSupportedStages;
 
     [NativeTypeName("VkBool32")]
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CooperativeVectorTrainingFloat16Accumulation;
 
     [NativeTypeName("VkBool32")]
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> CooperativeVectorTrainingFloat32Accumulation;
 
     [NativeTypeName("uint32_t")]
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     public uint MaxCooperativeVectorComponents;
 }

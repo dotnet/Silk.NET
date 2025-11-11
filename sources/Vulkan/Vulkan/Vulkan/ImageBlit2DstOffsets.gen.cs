@@ -10,7 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [InlineArray(2)]
-[SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+    MinVersion = "1.3"
+)]
 public partial struct ImageBlit2DstOffsets
 {
     [SupportedApiProfile("vulkan")]

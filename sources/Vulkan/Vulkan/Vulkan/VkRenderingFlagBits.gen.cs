@@ -16,13 +16,25 @@ public enum RenderingFlags : uint
 {
     None = 0,
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     ContentsSecondaryCommandBuffersBit = 0x00000001,
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     SuspendingBit = 0x00000002,
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     ResumingBit = 0x00000004,
 
     [SupportedApiProfile(
@@ -43,8 +55,30 @@ public enum RenderingFlags : uint
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     ContentsInlineBitKHR = 0x00000010,
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
     PerLayerFragmentDensityBitValve = 0x00000020,
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_KHR_maintenance10+VK_KHR_dynamic_rendering_local_read+VK_KHR_dynamic_rendering",
+            "VK_KHR_maintenance10+VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
+            "VK_KHR_maintenance10+VK_VERSION_1_4+VK_KHR_dynamic_rendering",
+            "VK_KHR_maintenance10+VK_VERSION_1_4+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
+        ]
+    )]
+    LocalReadConcurrentAccessControlBitKHR = 0x00000100,
 
     [SupportedApiProfile(
         "vulkan",

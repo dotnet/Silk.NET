@@ -53,8 +53,9 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_video_encode_av1"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
+        ["VK_KHR_video_encode_av1", "VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"],
+        RequireAll = true
     )]
     CompoundPredictionIntraRefreshBitKHR = 0x00000020,
 }

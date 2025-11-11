@@ -10,15 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
-public partial struct CopyMemoryToImageIndirectCommandNV
+public partial struct CopyMemoryToImageIndirectCommandKHR
 {
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
@@ -27,10 +26,9 @@ public partial struct CopyMemoryToImageIndirectCommandNV
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
@@ -39,10 +37,9 @@ public partial struct CopyMemoryToImageIndirectCommandNV
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
@@ -50,10 +47,9 @@ public partial struct CopyMemoryToImageIndirectCommandNV
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
@@ -61,10 +57,9 @@ public partial struct CopyMemoryToImageIndirectCommandNV
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
@@ -72,10 +67,9 @@ public partial struct CopyMemoryToImageIndirectCommandNV
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]

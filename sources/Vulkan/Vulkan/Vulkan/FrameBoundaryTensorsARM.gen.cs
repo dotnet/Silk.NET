@@ -12,18 +12,38 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryTensorsARM
 {
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public StructureType SType;
 
     [NativeTypeName("const void *")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeTypeName("uint32_t")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public uint TensorCount;
 
     [NativeTypeName("const VkTensorARM *")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public TensorARMHandle* PTensors;
 }

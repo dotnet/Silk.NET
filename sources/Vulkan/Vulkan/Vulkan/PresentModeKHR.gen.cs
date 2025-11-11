@@ -45,7 +45,11 @@ public enum PresentModeKHR : uint
     )]
     SharedContinuousRefreshKHR = 1000111001,
 
-    [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
     FifoLatestReadyKHR = 1000361000,
 
     [SupportedApiProfile(

@@ -12,22 +12,62 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
 {
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public StructureType SType;
 
     [NativeTypeName("const void *")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("VkPresentScalingFlagsKHR")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public PresentScalingFlagsKHR ScalingBehavior;
 
     [NativeTypeName("VkPresentGravityFlagsKHR")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public PresentGravityFlagsKHR PresentGravityX;
 
     [NativeTypeName("VkPresentGravityFlagsKHR")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public PresentGravityFlagsKHR PresentGravityY;
 }

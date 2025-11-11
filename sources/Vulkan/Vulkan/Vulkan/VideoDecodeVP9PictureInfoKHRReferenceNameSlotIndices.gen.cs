@@ -10,7 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [InlineArray(3)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_KHR_video_decode_vp9"],
+    ImpliesSets = ["VK_KHR_video_decode_queue"]
+)]
 public partial struct VideoDecodeVP9PictureInfoKHRReferenceNameSlotIndices
 {
     [SupportedApiProfile("vulkan")]

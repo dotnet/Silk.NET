@@ -9,9 +9,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[Transformed]
-[Flags]
-public enum PresentGravityFlagsEXT : uint
+[InlineArray(256)]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_ARM_performance_counters_by_region"],
+    ImpliesSets = [
+        "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+        "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+    ]
+)]
+public partial struct PerformanceCounterDescriptionARMName
 {
-    None = 0,
+    [SupportedApiProfile("vulkan")]
+    public sbyte E0;
 }

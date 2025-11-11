@@ -44,13 +44,34 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     MutableFormatBitKHR = 0x00000004,
 
-    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
     PresentId2BitKHR = 0x00000040,
 
-    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     PresentWait2BitKHR = 0x00000080,
 
-    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     DeferredMemoryAllocationBitKHR = 0x00000008,
 
     [SupportedApiProfile(

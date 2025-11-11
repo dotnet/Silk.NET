@@ -11,8 +11,9 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum MemoryDecompressionMethodFlagsNV : ulong
+public enum MemoryDecompressionMethodFlagsEXT : ulong
 {
     None = 0,
-    Gdeflate1X0BitNV = unchecked((ulong)0x00000001UL),
+    MemoryDecompressionMethodGdeflate1X0BitEXT = unchecked((ulong)0x00000001UL),
+    MemoryDecompressionMethodGdeflate1X0BitNV = unchecked((ulong)0x00000001UL),
 }

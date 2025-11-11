@@ -11,23 +11,68 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PresentScalingFlagsKHR : uint
 {
-    [SupportedApiProfile("vulkan")]
+    None = 0,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     OneToOneBitKHR = 0x00000001,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     AspectRatioStretchBitKHR = 0x00000002,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     StretchBitKHR = 0x00000004,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     OneToOneBitEXT = OneToOneBitKHR,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     AspectRatioStretchBitEXT = AspectRatioStretchBitKHR,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     StretchBitEXT = StretchBitKHR,
 }

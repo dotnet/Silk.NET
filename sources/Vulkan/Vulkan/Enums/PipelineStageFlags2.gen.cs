@@ -90,4 +90,6 @@ public enum PipelineStageFlags2 : ulong
     OpticalFlowBitNV = unchecked((ulong)0x20000000UL),
     ConvertCooperativeVectorMatrixBitNV = unchecked((ulong)0x100000000000UL),
     DataGraphBitARM = unchecked((ulong)0x40000000000UL),
+    CopyIndirectBitKHR = unchecked((ulong)0x400000000000UL),
+    MemoryDecompressionBitEXT = unchecked((ulong)0x200000000000UL),
 }

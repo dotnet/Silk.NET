@@ -17,8 +17,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     SimulationStartNV = 0,
@@ -27,8 +29,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     SimulationEndNV = 1,
@@ -37,8 +41,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     RendersubmitStartNV = 2,
@@ -47,8 +53,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     RendersubmitEndNV = 3,
@@ -57,8 +65,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     PresentStartNV = 4,
@@ -67,8 +77,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     PresentEndNV = 5,
@@ -77,8 +89,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     InputSampleNV = 6,
@@ -87,8 +101,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     TriggerFlashNV = 7,
@@ -97,8 +113,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     OutOfBandRendersubmitStartNV = 8,
@@ -107,8 +125,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     OutOfBandRendersubmitEndNV = 9,
@@ -117,8 +137,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     OutOfBandPresentStartNV = 10,
@@ -127,8 +149,10 @@ public enum LatencyMarkerNV : uint
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     OutOfBandPresentEndNV = 11,

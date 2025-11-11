@@ -12,18 +12,50 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainPresentModeInfoKHR
 {
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public StructureType SType;
 
     [NativeTypeName("const void *")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("uint32_t")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public uint SwapchainCount;
 
     [NativeTypeName("const VkPresentModeKHR *")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     public PresentModeKHR* PPresentModes;
 }

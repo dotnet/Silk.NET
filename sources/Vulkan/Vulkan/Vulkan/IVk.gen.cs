@@ -132,6 +132,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -151,6 +166,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -171,6 +201,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -190,6 +230,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -210,6 +260,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -229,6 +294,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -246,14 +326,28 @@ public unsafe partial interface IVk
             [NativeTypeName("VkDeviceMemory *")] Ref<DeviceMemoryHandle> pMemory
         );
 
-        [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_AMD_anti_lag"],
+            ImpliesSets = [
+                "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+                "VK_AMD_anti_lag+VK_VERSION_1_1",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
         static abstract void AntiLagUpdateAMD(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("const VkAntiLagDataAMD *")] AntiLagDataAMD* pData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_AMD_anti_lag"],
+            ImpliesSets = [
+                "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+                "VK_AMD_anti_lag+VK_VERSION_1_1",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
         static abstract void AntiLagUpdateAMD(
@@ -264,6 +358,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -281,6 +390,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -333,6 +457,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -351,7 +490,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory2")]
@@ -363,7 +519,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -391,7 +564,15 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
         static abstract Result BindDataGraphPipelineSessionMemoryARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -400,7 +581,15 @@ public unsafe partial interface IVk
                 BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
         static abstract Result BindDataGraphPipelineSessionMemoryARM(
@@ -413,6 +602,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -431,7 +635,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory2")]
@@ -443,7 +664,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -489,7 +727,7 @@ public unsafe partial interface IVk
             ImageLayout layout
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
         static abstract Result BindTensorMemoryARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -498,7 +736,7 @@ public unsafe partial interface IVk
                 BindTensorMemoryInfoARM* pBindInfos
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
         static abstract Result BindTensorMemoryARM(
@@ -689,6 +927,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -722,14 +975,32 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint index
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRendering")]
         static abstract void CmdBeginRendering(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkRenderingInfo *")] RenderingInfo* pRenderingInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRendering")]
         static abstract void CmdBeginRendering(
@@ -771,6 +1042,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -789,6 +1065,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -808,7 +1089,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRenderPass2")]
@@ -820,7 +1108,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -1021,6 +1316,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1044,6 +1349,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1065,7 +1380,11 @@ public unsafe partial interface IVk
             [NativeTypeName("const uint32_t *")] Ref<uint> pDynamicOffsets
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2")]
         static abstract void CmdBindDescriptorSets2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -1073,7 +1392,11 @@ public unsafe partial interface IVk
                 BindDescriptorSetsInfo* pBindDescriptorSetsInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2")]
         static abstract void CmdBindDescriptorSets2(
@@ -1102,6 +1425,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1118,7 +1446,11 @@ public unsafe partial interface IVk
             IndexType indexType
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2")]
         static abstract void CmdBindIndexBuffer2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -1160,6 +1492,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1309,6 +1651,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1329,6 +1676,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1347,7 +1699,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
         static abstract void CmdBindVertexBuffers2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -1359,7 +1720,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkDeviceSize *")] ulong* pStrides
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
         static abstract void CmdBindVertexBuffers2(
@@ -1414,6 +1784,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1437,6 +1812,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1461,6 +1841,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1481,14 +1866,32 @@ public unsafe partial interface IVk
             Filter filter
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBlitImage2")]
         static abstract void CmdBlitImage2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkBlitImageInfo2 *")] BlitImageInfo2* pBlitImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBlitImage2")]
         static abstract void CmdBlitImage2(
@@ -1745,6 +2148,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1765,6 +2173,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1786,6 +2199,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1807,6 +2230,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1829,6 +2262,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1850,6 +2293,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1872,6 +2320,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1895,6 +2348,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -1939,7 +2397,14 @@ public unsafe partial interface IVk
                 Ref<VideoCodingControlInfoKHR> pCodingControlInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
         static abstract void CmdConvertCooperativeVectorMatrixNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -1948,7 +2413,14 @@ public unsafe partial interface IVk
                 ConvertCooperativeVectorMatrixInfoNV* pInfos
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
         static abstract void CmdConvertCooperativeVectorMatrixNV(
@@ -1958,7 +2430,14 @@ public unsafe partial interface IVk
                 Ref<ConvertCooperativeVectorMatrixInfoNV> pInfos
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
         static abstract void CmdConvertCooperativeVectorMatrixNV(
@@ -2048,6 +2527,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2068,6 +2562,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2089,6 +2598,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2106,14 +2630,40 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkBufferCopy *")] BufferCopy pRegions
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBuffer2")]
         static abstract void CmdCopyBuffer2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkCopyBufferInfo2 *")] CopyBufferInfo2* pCopyBufferInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBuffer2")]
         static abstract void CmdCopyBuffer2(
@@ -2153,6 +2703,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2174,6 +2739,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2196,6 +2776,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2214,7 +2809,20 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkBufferImageCopy *")] BufferImageCopy pRegions
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBufferToImage2")]
         static abstract void CmdCopyBufferToImage2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -2222,7 +2830,20 @@ public unsafe partial interface IVk
                 CopyBufferToImageInfo2* pCopyBufferToImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBufferToImage2")]
         static abstract void CmdCopyBufferToImage2(
@@ -2265,6 +2886,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2287,6 +2923,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2310,6 +2961,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2329,14 +2995,40 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkImageCopy *")] ImageCopy pRegions
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImage2")]
         static abstract void CmdCopyImage2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkCopyImageInfo2 *")] CopyImageInfo2* pCopyImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImage2")]
         static abstract void CmdCopyImage2(
@@ -2376,6 +3068,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2397,6 +3104,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2419,6 +3141,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2437,7 +3174,20 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkBufferImageCopy *")] BufferImageCopy pRegions
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImageToBuffer2")]
         static abstract void CmdCopyImageToBuffer2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -2445,7 +3195,20 @@ public unsafe partial interface IVk
                 CopyImageToBufferInfo2* pCopyImageToBufferInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImageToBuffer2")]
         static abstract void CmdCopyImageToBuffer2(
@@ -2483,6 +3246,37 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkCopyImageToBufferInfo2 *")]
                 Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_copy_memory_indirect"],
+            ImpliesSets = [
+                "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+                "VK_VERSION_1_2",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectKHR")]
+        static abstract void CmdCopyMemoryIndirectKHR(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkCopyMemoryIndirectInfoKHR *")]
+                CopyMemoryIndirectInfoKHR* pCopyMemoryIndirectInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_copy_memory_indirect"],
+            ImpliesSets = [
+                "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+                "VK_VERSION_1_2",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectKHR")]
+        static abstract void CmdCopyMemoryIndirectKHR(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkCopyMemoryIndirectInfoKHR *")]
+                Ref<CopyMemoryIndirectInfoKHR> pCopyMemoryIndirectInfo
         );
 
         [SupportedApiProfile(
@@ -2531,6 +3325,37 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")]
                 Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_copy_memory_indirect"],
+            ImpliesSets = [
+                "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+                "VK_VERSION_1_2",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectKHR")]
+        static abstract void CmdCopyMemoryToImageIndirectKHR(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkCopyMemoryToImageIndirectInfoKHR *")]
+                CopyMemoryToImageIndirectInfoKHR* pCopyMemoryToImageIndirectInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_copy_memory_indirect"],
+            ImpliesSets = [
+                "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+                "VK_VERSION_1_2",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectKHR")]
+        static abstract void CmdCopyMemoryToImageIndirectKHR(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkCopyMemoryToImageIndirectInfoKHR *")]
+                Ref<CopyMemoryToImageIndirectInfoKHR> pCopyMemoryToImageIndirectInfo
         );
 
         [SupportedApiProfile(
@@ -2691,6 +3516,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2711,14 +3551,14 @@ public unsafe partial interface IVk
             [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
         static abstract void CmdCopyTensorARM(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkCopyTensorInfoARM *")] CopyTensorInfoARM* pCopyTensorInfo
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
         static abstract void CmdCopyTensorARM(
@@ -2832,6 +3672,47 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
+            ["VK_EXT_memory_decompression"],
+            ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryEXT")]
+        static abstract void CmdDecompressMemoryEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkDecompressMemoryInfoEXT *")]
+                DecompressMemoryInfoEXT* pDecompressMemoryInfoEXT
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_memory_decompression"],
+            ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryEXT")]
+        static abstract void CmdDecompressMemoryEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkDecompressMemoryInfoEXT *")]
+                Ref<DecompressMemoryInfoEXT> pDecompressMemoryInfoEXT
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_memory_decompression"],
+            ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountEXT")]
+        static abstract void CmdDecompressMemoryIndirectCountEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("VkMemoryDecompressionMethodFlagsEXT")]
+                MemoryDecompressionMethodFlagsEXT decompressionMethod,
+            [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
+            [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
+            [NativeTypeName("uint32_t")] uint maxDecompressionCount,
+            [NativeTypeName("uint32_t")] uint stride
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
             ["VK_NV_memory_decompression"],
             ImpliesSets = [
                 "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
@@ -2902,6 +3783,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -2920,7 +3811,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchBase")]
@@ -2950,7 +3854,15 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint groupCountZ
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
         static abstract void CmdDispatchDataGraphARM(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -2960,7 +3872,15 @@ public unsafe partial interface IVk
                 DataGraphPipelineDispatchInfoARM* pInfo
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
         static abstract void CmdDispatchDataGraphARM(
@@ -2974,6 +3894,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3023,6 +3953,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3074,6 +4009,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3095,6 +4035,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3114,7 +4059,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCount")]
@@ -3155,6 +4107,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3193,7 +4150,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCount")]
@@ -3249,7 +4213,11 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_EXT_mesh_shader+VK_KHR_draw_indirect_count", "VK_EXT_mesh_shader+VK_VERSION_1_2"],
+            [
+                "VK_EXT_mesh_shader+VK_AMD_draw_indirect_count",
+                "VK_EXT_mesh_shader+VK_KHR_draw_indirect_count",
+                "VK_EXT_mesh_shader+VK_VERSION_1_2",
+            ],
             ImpliesSets = [
                 "VK_EXT_mesh_shader+VK_KHR_spirv_1_4",
                 "VK_EXT_mesh_shader+VK_VERSION_1_2",
@@ -3268,7 +4236,11 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_NV_mesh_shader+VK_KHR_draw_indirect_count", "VK_NV_mesh_shader+VK_VERSION_1_2"],
+            [
+                "VK_NV_mesh_shader+VK_AMD_draw_indirect_count",
+                "VK_NV_mesh_shader+VK_KHR_draw_indirect_count",
+                "VK_NV_mesh_shader+VK_VERSION_1_2",
+            ],
             ImpliesSets = [
                 "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
                 "VK_NV_mesh_shader+VK_VERSION_1_1",
@@ -3530,6 +4502,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3561,7 +4548,16 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint index
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering")]
         static abstract void CmdEndRendering(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer
@@ -3584,7 +4580,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
         static abstract void CmdEndRendering2EXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("const VkRenderingEndInfoEXT *")] RenderingEndInfoEXT* pRenderingEndInfo
+            [NativeTypeName("const VkRenderingEndInfoKHR *")] RenderingEndInfoKHR* pRenderingEndInfo
         );
 
         [SupportedApiProfile(
@@ -3605,8 +4601,38 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
         static abstract void CmdEndRendering2EXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeTypeName("const VkRenderingEndInfoEXT *")]
-                Ref<RenderingEndInfoEXT> pRenderingEndInfo
+            [NativeTypeName("const VkRenderingEndInfoKHR *")]
+                Ref<RenderingEndInfoKHR> pRenderingEndInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_maintenance10"],
+            ImpliesSets = [
+                "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_maintenance10+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
+        static abstract void CmdEndRendering2KHR(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkRenderingEndInfoKHR *")] RenderingEndInfoKHR* pRenderingEndInfo
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_maintenance10"],
+            ImpliesSets = [
+                "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_maintenance10+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
+        static abstract void CmdEndRendering2KHR(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+            [NativeTypeName("const VkRenderingEndInfoKHR *")]
+                Ref<RenderingEndInfoKHR> pRenderingEndInfo
         );
 
         [SupportedApiProfile(
@@ -3626,6 +4652,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3641,7 +4672,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRenderPass2")]
@@ -3652,7 +4690,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -3748,6 +4793,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3766,6 +4826,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3784,6 +4859,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3865,6 +4955,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3900,6 +5005,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -3916,7 +5026,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdNextSubpass2")]
@@ -3928,7 +5045,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -4002,6 +5126,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4029,6 +5168,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4054,14 +5208,40 @@ public unsafe partial interface IVk
                 Ref<ImageMemoryBarrier> pImageMemoryBarriers
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier2")]
         static abstract void CmdPipelineBarrier2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier2")]
         static abstract void CmdPipelineBarrier2(
@@ -4161,6 +5341,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4182,6 +5372,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4201,14 +5401,22 @@ public unsafe partial interface IVk
             [NativeTypeName("const void *")] Ref pValues
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2")]
         static abstract void CmdPushConstants2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkPushConstantsInfo *")] PushConstantsInfo* pPushConstantsInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2")]
         static abstract void CmdPushConstants2(
@@ -4233,7 +5441,11 @@ public unsafe partial interface IVk
                 Ref<PushConstantsInfo> pPushConstantsInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet")]
         static abstract void CmdPushDescriptorSet(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -4244,7 +5456,11 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet* pDescriptorWrites
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet")]
         static abstract void CmdPushDescriptorSet(
@@ -4257,7 +5473,11 @@ public unsafe partial interface IVk
                 Ref<WriteDescriptorSet> pDescriptorWrites
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet")]
         static abstract void CmdPushDescriptorSet(
@@ -4268,7 +5488,11 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet pDescriptorWrites
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet2")]
         static abstract void CmdPushDescriptorSet2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -4276,7 +5500,11 @@ public unsafe partial interface IVk
                 PushDescriptorSetInfo* pPushDescriptorSetInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet2")]
         static abstract void CmdPushDescriptorSet2(
@@ -4368,7 +5596,11 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet pDescriptorWrites
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate")]
         static abstract void CmdPushDescriptorSetWithTemplate(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -4379,7 +5611,11 @@ public unsafe partial interface IVk
             [NativeTypeName("const void *")] void* pData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate")]
         static abstract void CmdPushDescriptorSetWithTemplate(
@@ -4391,7 +5627,11 @@ public unsafe partial interface IVk
             [NativeTypeName("const void *")] Ref pData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate2")]
         static abstract void CmdPushDescriptorSetWithTemplate2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -4399,7 +5639,11 @@ public unsafe partial interface IVk
                 PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate2")]
         static abstract void CmdPushDescriptorSetWithTemplate2(
@@ -4481,6 +5725,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4496,7 +5750,18 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2")]
         static abstract void CmdResetEvent2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -4522,6 +5787,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4541,6 +5821,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4563,6 +5848,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4586,6 +5876,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4605,14 +5900,32 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkImageResolve *")] ImageResolve pRegions
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdResolveImage2")]
         static abstract void CmdResolveImage2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
             [NativeTypeName("const VkResolveImageInfo2 *")] ResolveImageInfo2* pResolveImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdResolveImage2")]
         static abstract void CmdResolveImage2(
@@ -4694,6 +6007,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -4711,6 +6029,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -5198,7 +6521,16 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint coverageToColorLocation
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCullMode")]
         static abstract void CmdSetCullMode(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5222,6 +6554,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -5267,7 +6604,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkDepthBiasInfoEXT *")] Ref<DepthBiasInfoEXT> pDepthBiasInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnable")]
         static abstract void CmdSetDepthBiasEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5291,6 +6637,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -5306,7 +6657,16 @@ public unsafe partial interface IVk
             float maxDepthBounds
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnable")]
         static abstract void CmdSetDepthBoundsTestEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5407,7 +6767,16 @@ public unsafe partial interface IVk
             [NativeTypeName("VkBool32")] MaybeBool<uint> negativeOneToOne
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthCompareOp")]
         static abstract void CmdSetDepthCompareOp(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5428,7 +6797,16 @@ public unsafe partial interface IVk
             CompareOp depthCompareOp
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnable")]
         static abstract void CmdSetDepthTestEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5449,7 +6827,16 @@ public unsafe partial interface IVk
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthTestEnable
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnable")]
         static abstract void CmdSetDepthWriteEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5542,7 +6929,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDeviceMask")]
@@ -5642,6 +7046,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -5657,7 +7071,18 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetEvent2")]
         static abstract void CmdSetEvent2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5665,7 +7090,18 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetEvent2")]
         static abstract void CmdSetEvent2(
@@ -5880,7 +7316,16 @@ public unsafe partial interface IVk
                 Ref<FragmentShadingRateCombinerOpKHR> combinerOps
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetFrontFace")]
         static abstract void CmdSetFrontFace(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5917,7 +7362,11 @@ public unsafe partial interface IVk
                 LineRasterizationMode lineRasterizationMode
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineStipple")]
         static abstract void CmdSetLineStipple(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -5973,6 +7422,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6094,7 +7548,16 @@ public unsafe partial interface IVk
             PolygonMode polygonMode
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnable")]
         static abstract void CmdSetPrimitiveRestartEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6115,7 +7578,16 @@ public unsafe partial interface IVk
             [NativeTypeName("VkBool32")] MaybeBool<uint> primitiveRestartEnable
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveTopology")]
         static abstract void CmdSetPrimitiveTopology(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6180,7 +7652,16 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint rasterizationStream
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnable")]
         static abstract void CmdSetRasterizerDiscardEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6215,7 +7696,11 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint pipelineStackSize
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingAttachmentLocations")]
         static abstract void CmdSetRenderingAttachmentLocations(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6223,7 +7708,11 @@ public unsafe partial interface IVk
                 RenderingAttachmentLocationInfo* pLocationInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingAttachmentLocations")]
         static abstract void CmdSetRenderingAttachmentLocations(
@@ -6263,7 +7752,11 @@ public unsafe partial interface IVk
                 Ref<RenderingAttachmentLocationInfo> pLocationInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingInputAttachmentIndices")]
         static abstract void CmdSetRenderingInputAttachmentIndices(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6271,7 +7764,11 @@ public unsafe partial interface IVk
                 RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingInputAttachmentIndices")]
         static abstract void CmdSetRenderingInputAttachmentIndices(
@@ -6406,6 +7903,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6425,6 +7927,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6445,6 +7952,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6461,7 +7973,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkRect2D *")] Rect2D pScissors
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissorWithCount")]
         static abstract void CmdSetScissorWithCount(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6469,7 +7990,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkRect2D *")] Rect2D* pScissors
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissorWithCount")]
         static abstract void CmdSetScissorWithCount(
@@ -6478,7 +8008,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkRect2D *")] Ref<Rect2D> pScissors
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissorWithCount")]
         static abstract void CmdSetScissorWithCount(
@@ -6550,6 +8089,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6565,7 +8109,16 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint compareMask
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilOp")]
         static abstract void CmdSetStencilOp(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6597,6 +8150,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6612,7 +8170,16 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint reference
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnable")]
         static abstract void CmdSetStencilTestEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6636,6 +8203,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6710,6 +8282,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6729,6 +8306,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6749,6 +8331,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -6869,7 +8456,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkViewportSwizzleNV *")] ViewportSwizzleNV pViewportSwizzles
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWithCount")]
         static abstract void CmdSetViewportWithCount(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -6877,7 +8473,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkViewport *")] Viewport* pViewports
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWithCount")]
         static abstract void CmdSetViewportWithCount(
@@ -6886,7 +8491,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkViewport *")] Ref<Viewport> pViewports
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWithCount")]
         static abstract void CmdSetViewportWithCount(
@@ -7134,6 +8748,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -7154,6 +8783,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -7187,6 +8831,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -7215,6 +8869,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -7241,7 +8905,18 @@ public unsafe partial interface IVk
                 Ref<ImageMemoryBarrier> pImageMemoryBarriers
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWaitEvents2")]
         static abstract void CmdWaitEvents2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -7250,7 +8925,18 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfos
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWaitEvents2")]
         static abstract void CmdWaitEvents2(
@@ -7490,6 +9176,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -7506,7 +9207,20 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint query
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
         static abstract void CmdWriteTimestamp2(
             [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -7546,7 +9260,14 @@ public unsafe partial interface IVk
             [NativeTypeName("uint32_t")] uint shader
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
         static abstract Result ConvertCooperativeVectorMatrixNV(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -7554,7 +9275,14 @@ public unsafe partial interface IVk
                 ConvertCooperativeVectorMatrixInfoNV* pInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
         static abstract Result ConvertCooperativeVectorMatrixNV(
@@ -7629,7 +9357,16 @@ public unsafe partial interface IVk
                 Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCopyImageToImage")]
         static abstract Result CopyImageToImage(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -7637,7 +9374,16 @@ public unsafe partial interface IVk
                 CopyImageToImageInfo* pCopyImageToImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCopyImageToImage")]
         static abstract Result CopyImageToImage(
@@ -7679,7 +9425,16 @@ public unsafe partial interface IVk
                 Ref<CopyImageToImageInfo> pCopyImageToImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCopyImageToMemory")]
         static abstract Result CopyImageToMemory(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -7687,7 +9442,16 @@ public unsafe partial interface IVk
                 CopyImageToMemoryInfo* pCopyImageToMemoryInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCopyImageToMemory")]
         static abstract Result CopyImageToMemory(
@@ -7762,7 +9526,16 @@ public unsafe partial interface IVk
                 Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToImage")]
         static abstract Result CopyMemoryToImage(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -7770,7 +9543,16 @@ public unsafe partial interface IVk
                 CopyMemoryToImageInfo* pCopyMemoryToImageInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToImage")]
         static abstract Result CopyMemoryToImage(
@@ -7986,6 +9768,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8005,6 +9802,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8025,6 +9837,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8044,6 +9866,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8065,6 +9897,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8084,6 +9931,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8105,6 +9967,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8127,6 +9999,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8188,7 +10070,15 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCuModuleNVX *")] Ref<CuModuleNVXHandle> pModule
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
         static abstract Result CreateDataGraphPipelinesARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -8201,7 +10091,15 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPipeline *")] PipelineHandle* pPipelines
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
         static abstract Result CreateDataGraphPipelinesARM(
@@ -8215,7 +10113,15 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPipeline *")] Ref<PipelineHandle> pPipelines
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
         static abstract Result CreateDataGraphPipelineSessionARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -8226,7 +10132,15 @@ public unsafe partial interface IVk
                 DataGraphPipelineSessionARMHandle* pSession
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
         static abstract Result CreateDataGraphPipelineSessionARM(
@@ -8304,6 +10218,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8324,6 +10248,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8345,6 +10279,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8365,6 +10309,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8385,7 +10339,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorUpdateTemplate")]
@@ -8400,7 +10367,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -8440,6 +10420,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8459,6 +10454,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8523,6 +10533,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8542,6 +10562,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8585,6 +10615,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8604,6 +10649,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8624,6 +10684,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8643,6 +10708,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8664,6 +10734,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8686,6 +10761,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8738,6 +10818,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8757,6 +10852,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8777,6 +10887,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8796,6 +10921,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8925,6 +11065,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -8943,6 +11098,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9068,6 +11238,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9088,6 +11268,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9109,6 +11299,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9129,6 +11329,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9147,7 +11357,20 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPipelineLayout *")] Ref<PipelineLayoutHandle> pPipelineLayout
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkCreatePrivateDataSlot")]
         static abstract Result CreatePrivateDataSlot(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -9157,7 +11380,20 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPrivateDataSlot *")] PrivateDataSlotHandle* pPrivateDataSlot
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCreatePrivateDataSlot")]
         static abstract Result CreatePrivateDataSlot(
@@ -9206,6 +11442,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9225,6 +11476,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9325,6 +11591,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9344,6 +11615,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9364,7 +11640,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateRenderPass2")]
@@ -9377,7 +11660,14 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -9421,6 +11711,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9440,6 +11740,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9459,7 +11769,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCreateSamplerYcbcrConversion")]
@@ -9474,7 +11797,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -9528,6 +11864,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9547,6 +11898,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9567,6 +11933,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9587,6 +11963,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9694,7 +12080,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkSwapchainKHR *")] Ref<SwapchainKHRHandle> pSwapchain
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
         static abstract Result CreateTensorARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -9703,7 +12089,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkTensorARM *")] TensorARMHandle* pTensor
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
         static abstract Result CreateTensorARM(
@@ -9713,7 +12099,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkTensorARM *")] Ref<TensorARMHandle> pTensor
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
         static abstract Result CreateTensorViewARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -9723,7 +12109,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkTensorViewARM *")] TensorViewARMHandle* pView
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
         static abstract Result CreateTensorViewARM(
@@ -9969,6 +12355,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -9987,6 +12388,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10006,6 +12422,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10024,6 +12450,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10043,6 +12479,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10061,6 +12512,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10111,7 +12577,15 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
         static abstract void DestroyDataGraphPipelineSessionARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -10120,7 +12594,15 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
         static abstract void DestroyDataGraphPipelineSessionARM(
@@ -10184,6 +12666,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10202,6 +12694,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10221,6 +12723,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10239,6 +12751,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10257,7 +12779,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
@@ -10270,7 +12805,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -10304,6 +12852,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10321,6 +12884,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10339,6 +12917,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10357,6 +12945,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10393,6 +12991,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10411,6 +13024,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10430,6 +13058,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10448,6 +13081,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10467,6 +13105,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10485,6 +13138,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10504,6 +13172,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10522,6 +13205,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10638,6 +13336,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10655,6 +13368,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10737,6 +13465,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10755,6 +13493,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10805,6 +13553,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10823,6 +13581,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10842,6 +13610,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10860,6 +13638,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10876,7 +13664,20 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyPrivateDataSlot")]
         static abstract void DestroyPrivateDataSlot(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -10884,7 +13685,20 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyPrivateDataSlot")]
         static abstract void DestroyPrivateDataSlot(
@@ -10927,6 +13741,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10945,6 +13774,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10964,6 +13808,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -10982,6 +13831,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11001,6 +13855,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11019,6 +13883,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11037,7 +13911,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkDestroySamplerYcbcrConversion")]
@@ -11050,7 +13937,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -11098,6 +13998,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11116,6 +14031,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11168,6 +14098,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11186,6 +14126,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11236,7 +14186,7 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
         static abstract void DestroyTensorARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -11244,7 +14194,7 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
         static abstract void DestroyTensorARM(
@@ -11253,7 +14203,7 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
         static abstract void DestroyTensorViewARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -11261,7 +14211,7 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
         static abstract void DestroyTensorViewARM(
@@ -11342,6 +14292,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11382,6 +14347,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11398,6 +14378,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11417,6 +14412,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11437,6 +14447,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11455,6 +14480,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11474,6 +14514,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11492,6 +14547,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11511,6 +14581,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11528,6 +14613,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11545,7 +14645,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkEnumerateInstanceVersion")]
@@ -11555,7 +14672,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -11566,7 +14700,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
@@ -11578,7 +14729,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -11604,6 +14772,47 @@ public unsafe partial interface IVk
             [NativeTypeName("VkInstance")] InstanceHandle instance,
             [NativeTypeName("uint32_t *")] Ref<uint> pPhysicalDeviceGroupCount,
             Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_performance_counters_by_region"],
+            ImpliesSets = [
+                "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+                "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+            ]
+        )]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM"
+        )]
+        static abstract Result EnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+            [NativeTypeName("uint32_t *")] uint* pCounterCount,
+            PerformanceCounterARM* pCounters,
+            PerformanceCounterDescriptionARM* pCounterDescriptions
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_performance_counters_by_region"],
+            ImpliesSets = [
+                "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+                "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction(
+            "vulkan",
+            EntryPoint = "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM"
+        )]
+        static abstract Result EnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM(
+            [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+            [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+            [NativeTypeName("uint32_t *")] Ref<uint> pCounterCount,
+            Ref<PerformanceCounterARM> pCounters,
+            Ref<PerformanceCounterDescriptionARM> pCounterDescriptions
         );
 
         [SupportedApiProfile(
@@ -11650,6 +14859,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11668,6 +14892,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11687,6 +14926,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11705,6 +14959,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11724,6 +14993,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11743,6 +15027,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11762,6 +15061,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11782,6 +15096,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11801,6 +15125,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11821,6 +15155,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -11839,6 +15188,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -12046,7 +15410,20 @@ public unsafe partial interface IVk
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
@@ -12058,7 +15435,20 @@ public unsafe partial interface IVk
         [return: NativeTypeName("VkDeviceAddress")]
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -12133,6 +15523,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -12151,6 +15556,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -12169,7 +15589,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements2")]
@@ -12182,7 +15619,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -12216,7 +15670,20 @@ public unsafe partial interface IVk
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
@@ -12228,7 +15695,20 @@ public unsafe partial interface IVk
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -12407,7 +15887,15 @@ public unsafe partial interface IVk
             Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
         static abstract Result GetDataGraphPipelineAvailablePropertiesARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -12417,7 +15905,15 @@ public unsafe partial interface IVk
             DataGraphPipelinePropertyARM* pProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
         static abstract Result GetDataGraphPipelineAvailablePropertiesARM(
@@ -12428,7 +15924,15 @@ public unsafe partial interface IVk
             Ref<DataGraphPipelinePropertyARM> pProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
         static abstract Result GetDataGraphPipelinePropertiesARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -12438,7 +15942,15 @@ public unsafe partial interface IVk
             DataGraphPipelinePropertyQueryResultARM* pProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
         static abstract Result GetDataGraphPipelinePropertiesARM(
@@ -12449,7 +15961,15 @@ public unsafe partial interface IVk
             Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction(
             "vulkan",
             EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM"
@@ -12462,7 +15982,15 @@ public unsafe partial interface IVk
             DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction(
             "vulkan",
@@ -12476,7 +16004,15 @@ public unsafe partial interface IVk
             Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction(
             "vulkan",
             EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM"
@@ -12488,7 +16024,15 @@ public unsafe partial interface IVk
             MemoryRequirements2* pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction(
             "vulkan",
@@ -12693,7 +16237,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutSupport")]
@@ -12706,7 +16263,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -12784,7 +16354,20 @@ public unsafe partial interface IVk
             Ref<AccelerationStructureCompatibilityKHR> pCompatibility
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirements")]
         static abstract void GetDeviceBufferMemoryRequirements(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -12793,7 +16376,20 @@ public unsafe partial interface IVk
             MemoryRequirements2* pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirements")]
         static abstract void GetDeviceBufferMemoryRequirements(
@@ -12855,7 +16451,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
@@ -12870,7 +16483,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -12969,7 +16599,20 @@ public unsafe partial interface IVk
                 Ref<DeviceGroupPresentModeFlagsKHR> pModes
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirements")]
         static abstract void GetDeviceImageMemoryRequirements(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -12978,7 +16621,20 @@ public unsafe partial interface IVk
             MemoryRequirements2* pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirements")]
         static abstract void GetDeviceImageMemoryRequirements(
@@ -13007,7 +16663,20 @@ public unsafe partial interface IVk
             Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirements")]
         static abstract void GetDeviceImageSparseMemoryRequirements(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -13017,7 +16686,20 @@ public unsafe partial interface IVk
             SparseImageMemoryRequirements2* pSparseMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirements")]
         static abstract void GetDeviceImageSparseMemoryRequirements(
@@ -13049,7 +16731,16 @@ public unsafe partial interface IVk
             Ref<SparseImageMemoryRequirements2> pSparseMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSubresourceLayout")]
         static abstract void GetDeviceImageSubresourceLayout(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -13058,7 +16749,16 @@ public unsafe partial interface IVk
             SubresourceLayout2* pLayout
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSubresourceLayout")]
         static abstract void GetDeviceImageSubresourceLayout(
@@ -13098,6 +16798,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13116,6 +16831,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13135,7 +16865,20 @@ public unsafe partial interface IVk
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
@@ -13148,7 +16891,20 @@ public unsafe partial interface IVk
         [return: NativeTypeName("uint64_t")]
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -13229,6 +16985,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13247,6 +17018,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13265,6 +17051,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13284,6 +17085,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13303,7 +17119,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceQueue2")]
@@ -13315,7 +17148,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -13359,7 +17209,7 @@ public unsafe partial interface IVk
             Ref<Extent2D> pMaxWorkgroupSize
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
         static abstract void GetDeviceTensorMemoryRequirementsARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -13368,7 +17218,7 @@ public unsafe partial interface IVk
             MemoryRequirements2* pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
         static abstract void GetDeviceTensorMemoryRequirementsARM(
@@ -13587,6 +17437,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13652,6 +17512,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13797,6 +17672,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13815,6 +17705,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13833,7 +17738,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements2")]
@@ -13846,7 +17768,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -13917,6 +17856,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13936,6 +17890,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -13955,7 +17924,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements2")]
@@ -13969,7 +17955,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -14006,6 +18009,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -14025,6 +18043,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -14042,7 +18075,16 @@ public unsafe partial interface IVk
             Ref<SubresourceLayout> pLayout
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageSubresourceLayout2")]
         static abstract void GetImageSubresourceLayout2(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -14051,7 +18093,16 @@ public unsafe partial interface IVk
             SubresourceLayout2* pLayout
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageSubresourceLayout2")]
         static abstract void GetImageSubresourceLayout2(
@@ -14215,6 +18266,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -14233,6 +18299,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -14252,8 +18333,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetLatencyTimingsNV")]
@@ -14267,8 +18350,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [Transformed]
@@ -14674,7 +18759,14 @@ public unsafe partial interface IVk
             Ref<CooperativeMatrixPropertiesNV> pProperties
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
         static abstract Result GetPhysicalDeviceCooperativeVectorPropertiesNV(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -14682,7 +18774,14 @@ public unsafe partial interface IVk
             CooperativeVectorPropertiesNV* pProperties
         );
 
-        [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_NV_cooperative_vector"],
+            ImpliesSets = [
+                "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+                "VK_NV_cooperative_vector+VK_VERSION_1_1",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
         static abstract Result GetPhysicalDeviceCooperativeVectorPropertiesNV(
@@ -14777,7 +18876,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
@@ -14790,7 +18906,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -14837,7 +18970,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
@@ -14850,7 +19000,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -14932,7 +19099,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
@@ -14945,7 +19129,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -14990,7 +19191,7 @@ public unsafe partial interface IVk
             Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
         static abstract void GetPhysicalDeviceExternalTensorPropertiesARM(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -14999,7 +19200,7 @@ public unsafe partial interface IVk
             ExternalTensorPropertiesARM* pExternalTensorProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
         static abstract void GetPhysicalDeviceExternalTensorPropertiesARM(
@@ -15012,6 +19213,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15029,6 +19245,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15046,7 +19277,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures2")]
@@ -15057,7 +19305,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15085,6 +19350,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15103,6 +19383,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15121,7 +19416,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
@@ -15133,7 +19445,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15197,6 +19526,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15219,6 +19563,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15241,7 +19600,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
@@ -15254,7 +19630,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15288,6 +19681,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15305,6 +19713,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15322,7 +19745,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
@@ -15333,7 +19773,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15458,6 +19915,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15475,6 +19947,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15492,7 +19979,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties2")]
@@ -15503,7 +20007,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15528,7 +20049,15 @@ public unsafe partial interface IVk
             Ref<PhysicalDeviceProperties2> pProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction(
             "vulkan",
             EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
@@ -15540,7 +20069,15 @@ public unsafe partial interface IVk
             QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction(
             "vulkan",
@@ -15553,7 +20090,15 @@ public unsafe partial interface IVk
             Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [NativeFunction(
             "vulkan",
             EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM"
@@ -15565,7 +20110,15 @@ public unsafe partial interface IVk
             QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_data_graph"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations",
+                "VK_KHR_maintenance5",
+                "VK_VERSION_1_3",
+            ]
+        )]
         [Transformed]
         [NativeFunction(
             "vulkan",
@@ -15620,6 +20173,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15638,6 +20206,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15656,7 +20239,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
@@ -15668,7 +20268,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15699,6 +20316,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15722,6 +20354,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -15745,7 +20392,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
@@ -15759,7 +20423,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -15991,7 +20672,20 @@ public unsafe partial interface IVk
             [NativeTypeName("VkBool32 *")] Ref<MaybeBool<uint>> pSupported
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolProperties")]
         static abstract Result GetPhysicalDeviceToolProperties(
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -15999,7 +20693,20 @@ public unsafe partial interface IVk
             PhysicalDeviceToolProperties* pToolProperties
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolProperties")]
         static abstract Result GetPhysicalDeviceToolProperties(
@@ -16159,6 +20866,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -16178,6 +20895,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -16416,7 +21143,20 @@ public unsafe partial interface IVk
             Ref<BaseOutStructure> pPipelineProperties
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
         static abstract void GetPrivateData(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -16426,7 +21166,20 @@ public unsafe partial interface IVk
             [NativeTypeName("uint64_t *")] ulong* pData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
         static abstract void GetPrivateData(
@@ -16475,6 +21228,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -16498,6 +21266,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -16743,6 +21526,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -16761,6 +21549,11 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -16777,7 +21570,11 @@ public unsafe partial interface IVk
             Ref<Extent2D> pGranularity
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetRenderingAreaGranularity")]
         static abstract void GetRenderingAreaGranularity(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -16785,7 +21582,11 @@ public unsafe partial interface IVk
             Extent2D* pGranularity
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetRenderingAreaGranularity")]
         static abstract void GetRenderingAreaGranularity(
@@ -16860,7 +21661,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValue")]
@@ -16872,7 +21686,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -17132,7 +21959,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
         static abstract void GetTensorMemoryRequirementsARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -17141,7 +21968,7 @@ public unsafe partial interface IVk
             MemoryRequirements2* pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
         static abstract void GetTensorMemoryRequirementsARM(
@@ -17151,7 +21978,12 @@ public unsafe partial interface IVk
             Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+            ImpliesSets = ["VK_VERSION_1_3"],
+            RequireAll = true
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorOpaqueCaptureDescriptorDataARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -17160,7 +21992,12 @@ public unsafe partial interface IVk
             void* pData
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+            ImpliesSets = ["VK_VERSION_1_3"],
+            RequireAll = true
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorOpaqueCaptureDescriptorDataARM(
@@ -17170,7 +22007,12 @@ public unsafe partial interface IVk
             Ref pData
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+            ImpliesSets = ["VK_VERSION_1_3"],
+            RequireAll = true
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorViewOpaqueCaptureDescriptorDataARM(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -17179,7 +22021,12 @@ public unsafe partial interface IVk
             void* pData
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+            ImpliesSets = ["VK_VERSION_1_3"],
+            RequireAll = true
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorViewOpaqueCaptureDescriptorDataARM(
@@ -17317,6 +22164,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17335,6 +22197,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17355,8 +22232,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkLatencySleepNV")]
@@ -17370,8 +22249,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [Transformed]
@@ -17385,6 +22266,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17406,6 +22302,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17425,7 +22336,16 @@ public unsafe partial interface IVk
             Ref2D ppData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkMapMemory2")]
         static abstract Result MapMemory2(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -17433,7 +22353,16 @@ public unsafe partial interface IVk
             void** ppData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkMapMemory2")]
         static abstract Result MapMemory2(
@@ -17462,6 +22391,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17481,6 +22420,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17536,6 +22485,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17555,6 +22519,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17597,8 +22576,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkQueueNotifyOutOfBandNV")]
@@ -17612,8 +22593,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [Transformed]
@@ -17650,6 +22633,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17669,6 +22667,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17686,7 +22699,20 @@ public unsafe partial interface IVk
             [NativeTypeName("VkFence")] FenceHandle fence
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkQueueSubmit2")]
         static abstract Result QueueSubmit2(
             [NativeTypeName("VkQueue")] QueueHandle queue,
@@ -17695,7 +22721,20 @@ public unsafe partial interface IVk
             [NativeTypeName("VkFence")] FenceHandle fence
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkQueueSubmit2")]
         static abstract Result QueueSubmit2(
@@ -17741,6 +22780,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17907,7 +22961,15 @@ public unsafe partial interface IVk
                 Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_swapchain_maintenance1"],
+            ImpliesSets = [
+                "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+                "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
         static abstract Result ReleaseSwapchainImagesKHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -17915,7 +22977,15 @@ public unsafe partial interface IVk
                 ReleaseSwapchainImagesInfoKHR* pReleaseInfo
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_swapchain_maintenance1"],
+            ImpliesSets = [
+                "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+                "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
         static abstract Result ReleaseSwapchainImagesKHR(
@@ -17927,6 +22997,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17944,6 +23029,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17962,6 +23062,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17980,6 +23090,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -17997,6 +23117,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18015,6 +23150,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18033,7 +23183,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkResetQueryPool")]
@@ -18109,6 +23272,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18146,8 +23319,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkSetLatencyMarkerNV")]
@@ -18162,8 +23337,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [Transformed]
@@ -18179,8 +23356,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkSetLatencySleepModeNV")]
@@ -18195,8 +23374,10 @@ public unsafe partial interface IVk
             "vulkan",
             ["VK_NV_low_latency2"],
             ImpliesSets = [
-                "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-                "VK_NV_low_latency2+VK_VERSION_1_2",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+                "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+                "VK_VERSION_1_2+VK_KHR_present_id",
+                "VK_VERSION_1_2+VK_KHR_present_id2",
             ]
         )]
         [Transformed]
@@ -18223,7 +23404,20 @@ public unsafe partial interface IVk
             [NativeTypeName("VkBool32")] MaybeBool<uint> localDimmingEnable
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkSetPrivateData")]
         static abstract Result SetPrivateData(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -18252,7 +23446,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkSignalSemaphore")]
@@ -18263,7 +23470,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -18325,7 +23545,16 @@ public unsafe partial interface IVk
                 Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkTransitionImageLayout")]
         static abstract Result TransitionImageLayout(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -18334,7 +23563,16 @@ public unsafe partial interface IVk
                 HostImageLayoutTransitionInfo* pTransitions
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkTransitionImageLayout")]
         static abstract Result TransitionImageLayout(
@@ -18381,7 +23619,24 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkTrimCommandPool")]
@@ -18408,6 +23663,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18422,14 +23692,32 @@ public unsafe partial interface IVk
             [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2")]
         static abstract Result UnmapMemory2(
             [NativeTypeName("VkDevice")] DeviceHandle device,
             [NativeTypeName("const VkMemoryUnmapInfo *")] MemoryUnmapInfo* pMemoryUnmapInfo
         );
 
-        [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.4"
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2")]
         static abstract Result UnmapMemory2(
@@ -18455,6 +23743,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18475,6 +23773,16 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18496,7 +23804,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
@@ -18510,7 +23831,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_1",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.1"
         )]
         [Transformed]
@@ -18692,6 +24026,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18712,6 +24061,21 @@ public unsafe partial interface IVk
         [SupportedApiProfile(
             "vulkan",
             [
+                "VK_BASE_VERSION_1_0",
+                "VK_BASE_VERSION_1_1",
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_0",
+                "VK_COMPUTE_VERSION_1_1",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_0",
+                "VK_GRAPHICS_VERSION_1_1",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
                 "VK_VERSION_1_0",
                 "VK_VERSION_1_1",
                 "VK_VERSION_1_2",
@@ -18730,7 +24094,16 @@ public unsafe partial interface IVk
             [NativeTypeName("uint64_t")] ulong timeout
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_present_wait2"],
+            ImpliesSets = [
+                "VK_KHR_get_surface_capabilities2",
+                "VK_KHR_present_id2",
+                "VK_KHR_surface",
+                "VK_KHR_swapchain",
+            ]
+        )]
         [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
         static abstract Result WaitForPresent2KHR(
             [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -18738,7 +24111,16 @@ public unsafe partial interface IVk
             [NativeTypeName("const VkPresentWait2InfoKHR *")] PresentWait2InfoKHR* pPresentWait2Info
         );
 
-        [SupportedApiProfile("vulkan")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_present_wait2"],
+            ImpliesSets = [
+                "VK_KHR_get_surface_capabilities2",
+                "VK_KHR_present_id2",
+                "VK_KHR_surface",
+                "VK_KHR_swapchain",
+            ]
+        )]
         [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
         static abstract Result WaitForPresent2KHR(
@@ -18763,7 +24145,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphores")]
@@ -18775,7 +24170,20 @@ public unsafe partial interface IVk
 
         [SupportedApiProfile(
             "vulkan",
-            ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+            [
+                "VK_BASE_VERSION_1_2",
+                "VK_BASE_VERSION_1_3",
+                "VK_BASE_VERSION_1_4",
+                "VK_COMPUTE_VERSION_1_2",
+                "VK_COMPUTE_VERSION_1_3",
+                "VK_COMPUTE_VERSION_1_4",
+                "VK_GRAPHICS_VERSION_1_2",
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
             MinVersion = "1.2"
         )]
         [Transformed]
@@ -19014,7 +24422,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkAllocateCommandBuffers")]
@@ -19027,7 +24456,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -19041,7 +24491,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkAllocateDescriptorSets")]
@@ -19054,7 +24520,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -19068,7 +24550,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkAllocateMemory")]
@@ -19081,7 +24584,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -19093,14 +24617,28 @@ public unsafe partial interface IVk
         [NativeTypeName("VkDeviceMemory *")] Ref<DeviceMemoryHandle> pMemory
     );
 
-    [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_anti_lag"],
+        ImpliesSets = [
+            "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_anti_lag+VK_VERSION_1_1",
+        ]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
     void AntiLagUpdateAMD(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkAntiLagDataAMD *")] AntiLagDataAMD* pData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_AMD_anti_lag"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_anti_lag"],
+        ImpliesSets = [
+            "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_anti_lag+VK_VERSION_1_1",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
     void AntiLagUpdateAMD(
@@ -19110,7 +24648,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkBeginCommandBuffer")]
@@ -19121,7 +24680,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -19166,7 +24746,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory")]
@@ -19179,7 +24780,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory2")]
@@ -19191,7 +24809,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -19219,7 +24854,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkBindBufferMemoryInfo *")] Ref<BindBufferMemoryInfo> pBindInfos
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
     Result BindDataGraphPipelineSessionMemoryARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -19228,7 +24867,11 @@ public unsafe partial interface IVk
             BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkBindDataGraphPipelineSessionMemoryARM")]
     Result BindDataGraphPipelineSessionMemoryARM(
@@ -19240,7 +24883,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory")]
@@ -19253,7 +24917,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory2")]
@@ -19265,7 +24946,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -19311,7 +25009,7 @@ public unsafe partial interface IVk
         ImageLayout layout
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
     Result BindTensorMemoryARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -19319,7 +25017,7 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkBindTensorMemoryInfoARM *")] BindTensorMemoryInfoARM* pBindInfos
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
     Result BindTensorMemoryARM(
@@ -19508,7 +25206,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginQuery")]
@@ -19536,14 +25255,22 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint index
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRendering")]
     void CmdBeginRendering(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkRenderingInfo *")] RenderingInfo* pRenderingInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRendering")]
     void CmdBeginRendering(
@@ -19584,7 +25311,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRenderPass")]
@@ -19596,7 +25334,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -19609,7 +25358,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginRenderPass2")]
@@ -19621,7 +25377,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -19818,7 +25581,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets")]
@@ -19835,7 +25614,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -19851,7 +25646,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const uint32_t *")] Ref<uint> pDynamicOffsets
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2")]
     void CmdBindDescriptorSets2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -19859,7 +25658,11 @@ public unsafe partial interface IVk
             BindDescriptorSetsInfo* pBindDescriptorSetsInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2")]
     void CmdBindDescriptorSets2(
@@ -19887,7 +25690,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer")]
@@ -19898,7 +25712,11 @@ public unsafe partial interface IVk
         IndexType indexType
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindIndexBuffer2")]
     void CmdBindIndexBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -19939,7 +25757,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindPipeline")]
@@ -20082,7 +25916,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers")]
@@ -20096,7 +25941,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20109,7 +25965,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkDeviceSize *")] Ref<ulong> pOffsets
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
     void CmdBindVertexBuffers2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -20121,7 +25981,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkDeviceSize *")] ulong* pStrides
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindVertexBuffers2")]
     void CmdBindVertexBuffers2(
@@ -20175,7 +26039,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBlitImage")]
@@ -20192,7 +26067,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20210,7 +26096,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20225,14 +26122,22 @@ public unsafe partial interface IVk
         Filter filter
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBlitImage2")]
     void CmdBlitImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkBlitImageInfo2 *")] BlitImageInfo2* pBlitImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBlitImage2")]
     void CmdBlitImage2(
@@ -20488,7 +26393,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdClearAttachments")]
@@ -20502,7 +26418,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20517,7 +26444,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdClearColorImage")]
@@ -20532,7 +26475,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20548,7 +26507,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20563,7 +26538,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdClearDepthStencilImage")]
@@ -20578,7 +26564,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20595,7 +26592,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20634,7 +26642,14 @@ public unsafe partial interface IVk
             Ref<VideoCodingControlInfoKHR> pCodingControlInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
     void CmdConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -20643,7 +26658,14 @@ public unsafe partial interface IVk
             ConvertCooperativeVectorMatrixInfoNV* pInfos
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
     void CmdConvertCooperativeVectorMatrixNV(
@@ -20653,7 +26675,14 @@ public unsafe partial interface IVk
             Ref<ConvertCooperativeVectorMatrixInfoNV> pInfos
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
     void CmdConvertCooperativeVectorMatrixNV(
@@ -20742,7 +26771,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBuffer")]
@@ -20756,7 +26806,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20771,7 +26842,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20783,14 +26875,40 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkBufferCopy *")] BufferCopy pRegions
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBuffer2")]
     void CmdCopyBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyBufferInfo2 *")] CopyBufferInfo2* pCopyBufferInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBuffer2")]
     void CmdCopyBuffer2(
@@ -20829,7 +26947,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBufferToImage")]
@@ -20844,7 +26983,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20860,7 +27020,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20873,7 +27054,20 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkBufferImageCopy *")] BufferImageCopy pRegions
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBufferToImage2")]
     void CmdCopyBufferToImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -20881,7 +27075,20 @@ public unsafe partial interface IVk
             CopyBufferToImageInfo2* pCopyBufferToImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyBufferToImage2")]
     void CmdCopyBufferToImage2(
@@ -20923,7 +27130,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImage")]
@@ -20939,7 +27167,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20956,7 +27205,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -20970,14 +27240,40 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkImageCopy *")] ImageCopy pRegions
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImage2")]
     void CmdCopyImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageInfo2 *")] CopyImageInfo2* pCopyImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImage2")]
     void CmdCopyImage2(
@@ -21016,7 +27312,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImageToBuffer")]
@@ -21031,7 +27348,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -21047,7 +27385,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -21060,7 +27419,20 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkBufferImageCopy *")] BufferImageCopy pRegions
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImageToBuffer2")]
     void CmdCopyImageToBuffer2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -21068,7 +27440,20 @@ public unsafe partial interface IVk
             CopyImageToBufferInfo2* pCopyImageToBufferInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyImageToBuffer2")]
     void CmdCopyImageToBuffer2(
@@ -21106,6 +27491,37 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyImageToBufferInfo2 *")]
             Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectKHR")]
+    void CmdCopyMemoryIndirectKHR(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkCopyMemoryIndirectInfoKHR *")]
+            CopyMemoryIndirectInfoKHR* pCopyMemoryIndirectInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectKHR")]
+    void CmdCopyMemoryIndirectKHR(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkCopyMemoryIndirectInfoKHR *")]
+            Ref<CopyMemoryIndirectInfoKHR> pCopyMemoryIndirectInfo
     );
 
     [SupportedApiProfile(
@@ -21154,6 +27570,37 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyMemoryToAccelerationStructureInfoKHR *")]
             Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectKHR")]
+    void CmdCopyMemoryToImageIndirectKHR(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkCopyMemoryToImageIndirectInfoKHR *")]
+            CopyMemoryToImageIndirectInfoKHR* pCopyMemoryToImageIndirectInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToImageIndirectKHR")]
+    void CmdCopyMemoryToImageIndirectKHR(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkCopyMemoryToImageIndirectInfoKHR *")]
+            Ref<CopyMemoryToImageIndirectInfoKHR> pCopyMemoryToImageIndirectInfo
     );
 
     [SupportedApiProfile(
@@ -21311,7 +27758,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyQueryPoolResults")]
@@ -21326,14 +27794,14 @@ public unsafe partial interface IVk
         [NativeTypeName("VkQueryResultFlags")] QueryResultFlags flags
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
     void CmdCopyTensorARM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkCopyTensorInfoARM *")] CopyTensorInfoARM* pCopyTensorInfo
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
     void CmdCopyTensorARM(
@@ -21425,6 +27893,47 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryEXT")]
+    void CmdDecompressMemoryEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkDecompressMemoryInfoEXT *")]
+            DecompressMemoryInfoEXT* pDecompressMemoryInfoEXT
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryEXT")]
+    void CmdDecompressMemoryEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkDecompressMemoryInfoEXT *")]
+            Ref<DecompressMemoryInfoEXT> pDecompressMemoryInfoEXT
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountEXT")]
+    void CmdDecompressMemoryIndirectCountEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("VkMemoryDecompressionMethodFlagsEXT")]
+            MemoryDecompressionMethodFlagsEXT decompressionMethod,
+        [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsAddress,
+        [NativeTypeName("VkDeviceAddress")] ulong indirectCommandsCountAddress,
+        [NativeTypeName("uint32_t")] uint maxDecompressionCount,
+        [NativeTypeName("uint32_t")] uint stride
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
         ["VK_NV_memory_decompression"],
         ImpliesSets = [
             "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
@@ -21494,7 +28003,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatch")]
@@ -21507,7 +28032,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchBase")]
@@ -21537,7 +28075,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint groupCountZ
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
     void CmdDispatchDataGraphARM(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -21546,7 +28088,11 @@ public unsafe partial interface IVk
             DataGraphPipelineDispatchInfoARM* pInfo
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
     void CmdDispatchDataGraphARM(
@@ -21558,7 +28104,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchIndirect")]
@@ -21600,7 +28162,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDraw")]
@@ -21645,7 +28218,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexed")]
@@ -21660,7 +28244,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirect")]
@@ -21674,7 +28269,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCount")]
@@ -21714,7 +28316,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirect")]
@@ -21747,7 +28360,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCount")]
@@ -21800,7 +28420,11 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_mesh_shader+VK_KHR_draw_indirect_count", "VK_EXT_mesh_shader+VK_VERSION_1_2"],
+        [
+            "VK_EXT_mesh_shader+VK_AMD_draw_indirect_count",
+            "VK_EXT_mesh_shader+VK_KHR_draw_indirect_count",
+            "VK_EXT_mesh_shader+VK_VERSION_1_2",
+        ],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMeshTasksIndirectCountEXT")]
@@ -21816,7 +28440,11 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_mesh_shader+VK_KHR_draw_indirect_count", "VK_NV_mesh_shader+VK_VERSION_1_2"],
+        [
+            "VK_NV_mesh_shader+VK_AMD_draw_indirect_count",
+            "VK_NV_mesh_shader+VK_KHR_draw_indirect_count",
+            "VK_NV_mesh_shader+VK_VERSION_1_2",
+        ],
         ImpliesSets = [
             "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
             "VK_NV_mesh_shader+VK_VERSION_1_1",
@@ -22072,7 +28700,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndQuery")]
@@ -22098,7 +28747,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint index
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering")]
     void CmdEndRendering([NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer);
 
@@ -22119,7 +28772,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
     void CmdEndRendering2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("const VkRenderingEndInfoEXT *")] RenderingEndInfoEXT* pRenderingEndInfo
+        [NativeTypeName("const VkRenderingEndInfoKHR *")] RenderingEndInfoKHR* pRenderingEndInfo
     );
 
     [SupportedApiProfile(
@@ -22140,7 +28793,36 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
     void CmdEndRendering2EXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeTypeName("const VkRenderingEndInfoEXT *")] Ref<RenderingEndInfoEXT> pRenderingEndInfo
+        [NativeTypeName("const VkRenderingEndInfoKHR *")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance10"],
+        ImpliesSets = [
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
+    void CmdEndRendering2KHR(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkRenderingEndInfoKHR *")] RenderingEndInfoKHR* pRenderingEndInfo
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance10"],
+        ImpliesSets = [
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
+    void CmdEndRendering2KHR(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
+        [NativeTypeName("const VkRenderingEndInfoKHR *")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
     );
 
     [SupportedApiProfile(
@@ -22157,7 +28839,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRenderPass")]
@@ -22165,7 +28858,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRenderPass2")]
@@ -22176,7 +28876,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -22270,7 +28977,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -22282,7 +29010,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdExecuteCommands")]
@@ -22294,7 +29043,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -22369,7 +29139,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdFillBuffer")]
@@ -22398,7 +29189,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdNextSubpass")]
@@ -22409,7 +29211,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdNextSubpass2")]
@@ -22421,7 +29230,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -22494,7 +29310,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier")]
@@ -22514,7 +29351,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -22534,14 +29392,40 @@ public unsafe partial interface IVk
             Ref<ImageMemoryBarrier> pImageMemoryBarriers
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier2")]
     void CmdPipelineBarrier2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPipelineBarrier2")]
     void CmdPipelineBarrier2(
@@ -22640,7 +29524,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants")]
@@ -22655,7 +29555,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -22669,14 +29585,22 @@ public unsafe partial interface IVk
         [NativeTypeName("const void *")] Ref pValues
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2")]
     void CmdPushConstants2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkPushConstantsInfo *")] PushConstantsInfo* pPushConstantsInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2")]
     void CmdPushConstants2(
@@ -22699,7 +29623,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkPushConstantsInfo *")] Ref<PushConstantsInfo> pPushConstantsInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet")]
     void CmdPushDescriptorSet(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -22710,7 +29638,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet* pDescriptorWrites
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet")]
     void CmdPushDescriptorSet(
@@ -22722,7 +29654,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkWriteDescriptorSet *")] Ref<WriteDescriptorSet> pDescriptorWrites
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet")]
     void CmdPushDescriptorSet(
@@ -22733,7 +29669,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet pDescriptorWrites
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet2")]
     void CmdPushDescriptorSet2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -22741,7 +29681,11 @@ public unsafe partial interface IVk
             PushDescriptorSetInfo* pPushDescriptorSetInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSet2")]
     void CmdPushDescriptorSet2(
@@ -22832,7 +29776,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkWriteDescriptorSet *")] WriteDescriptorSet pDescriptorWrites
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate")]
     void CmdPushDescriptorSetWithTemplate(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -22843,7 +29791,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const void *")] void* pData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate")]
     void CmdPushDescriptorSetWithTemplate(
@@ -22855,7 +29807,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const void *")] Ref pData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate2")]
     void CmdPushDescriptorSetWithTemplate2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -22863,7 +29819,11 @@ public unsafe partial interface IVk
             PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushDescriptorSetWithTemplate2")]
     void CmdPushDescriptorSetWithTemplate2(
@@ -22944,7 +29904,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent")]
@@ -22954,7 +29930,18 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetEvent2")]
     void CmdResetEvent2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -22979,7 +29966,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResetQueryPool")]
@@ -22992,7 +30000,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResolveImage")]
@@ -23008,7 +30027,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -23025,7 +30055,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -23039,14 +30080,22 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkImageResolve *")] ImageResolve pRegions
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResolveImage2")]
     void CmdResolveImage2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
         [NativeTypeName("const VkResolveImageInfo2 *")] ResolveImageInfo2* pResolveImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdResolveImage2")]
     void CmdResolveImage2(
@@ -23127,7 +30176,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetBlendConstants")]
@@ -23138,7 +30198,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -23619,7 +30690,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint coverageToColorLocation
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCullMode")]
     void CmdSetCullMode(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -23642,7 +30717,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBias")]
@@ -23682,7 +30768,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkDepthBiasInfoEXT *")] Ref<DepthBiasInfoEXT> pDepthBiasInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnable")]
     void CmdSetDepthBiasEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -23705,7 +30795,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBounds")]
@@ -23715,7 +30816,11 @@ public unsafe partial interface IVk
         float maxDepthBounds
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnable")]
     void CmdSetDepthBoundsTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -23815,7 +30920,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkBool32")] MaybeBool<uint> negativeOneToOne
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthCompareOp")]
     void CmdSetDepthCompareOp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -23836,7 +30945,11 @@ public unsafe partial interface IVk
         CompareOp depthCompareOp
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnable")]
     void CmdSetDepthTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -23857,7 +30970,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthTestEnable
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnable")]
     void CmdSetDepthWriteEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -23950,7 +31067,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDeviceMask")]
@@ -24049,7 +31183,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetEvent")]
@@ -24059,7 +31209,18 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPipelineStageFlags")] PipelineStageFlags stageMask
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetEvent2")]
     void CmdSetEvent2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24067,7 +31228,18 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetEvent2")]
     void CmdSetEvent2(
@@ -24282,7 +31454,11 @@ public unsafe partial interface IVk
             Ref<FragmentShadingRateCombinerOpKHR> combinerOps
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetFrontFace")]
     void CmdSetFrontFace(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24318,7 +31494,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkLineRasterizationModeEXT")] LineRasterizationMode lineRasterizationMode
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineStipple")]
     void CmdSetLineStipple(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24373,7 +31553,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineWidth")]
@@ -24489,7 +31680,11 @@ public unsafe partial interface IVk
         PolygonMode polygonMode
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnable")]
     void CmdSetPrimitiveRestartEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24510,7 +31705,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkBool32")] MaybeBool<uint> primitiveRestartEnable
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveTopology")]
     void CmdSetPrimitiveTopology(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24575,7 +31774,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint rasterizationStream
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnable")]
     void CmdSetRasterizerDiscardEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24610,7 +31813,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint pipelineStackSize
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingAttachmentLocations")]
     void CmdSetRenderingAttachmentLocations(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24618,7 +31825,11 @@ public unsafe partial interface IVk
             RenderingAttachmentLocationInfo* pLocationInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingAttachmentLocations")]
     void CmdSetRenderingAttachmentLocations(
@@ -24658,7 +31869,11 @@ public unsafe partial interface IVk
             Ref<RenderingAttachmentLocationInfo> pLocationInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingInputAttachmentIndices")]
     void CmdSetRenderingInputAttachmentIndices(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24666,7 +31881,11 @@ public unsafe partial interface IVk
             RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRenderingInputAttachmentIndices")]
     void CmdSetRenderingInputAttachmentIndices(
@@ -24800,7 +32019,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissor")]
@@ -24813,7 +32043,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -24827,7 +32068,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -24838,7 +32090,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkRect2D *")] Rect2D pScissors
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissorWithCount")]
     void CmdSetScissorWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24846,7 +32102,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkRect2D *")] Rect2D* pScissors
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissorWithCount")]
     void CmdSetScissorWithCount(
@@ -24855,7 +32115,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkRect2D *")] Ref<Rect2D> pScissors
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetScissorWithCount")]
     void CmdSetScissorWithCount(
@@ -24926,7 +32190,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilCompareMask")]
@@ -24936,7 +32211,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint compareMask
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilOp")]
     void CmdSetStencilOp(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -24967,7 +32246,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilReference")]
@@ -24977,7 +32267,11 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint reference
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnable")]
     void CmdSetStencilTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -25000,7 +32294,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilWriteMask")]
@@ -25068,7 +32373,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewport")]
@@ -25081,7 +32397,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -25095,7 +32422,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -25209,7 +32547,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkViewportSwizzleNV *")] ViewportSwizzleNV pViewportSwizzles
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWithCount")]
     void CmdSetViewportWithCount(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -25217,7 +32559,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkViewport *")] Viewport* pViewports
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWithCount")]
     void CmdSetViewportWithCount(
@@ -25226,7 +32572,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkViewport *")] Ref<Viewport> pViewports
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWithCount")]
     void CmdSetViewportWithCount(
@@ -25472,7 +32822,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdUpdateBuffer")]
@@ -25486,7 +32857,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -25513,7 +32905,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWaitEvents")]
@@ -25534,7 +32942,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -25555,7 +32979,18 @@ public unsafe partial interface IVk
             Ref<ImageMemoryBarrier> pImageMemoryBarriers
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWaitEvents2")]
     void CmdWaitEvents2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -25564,7 +32999,18 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkDependencyInfo *")] DependencyInfo* pDependencyInfos
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWaitEvents2")]
     void CmdWaitEvents2(
@@ -25803,7 +33249,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp")]
@@ -25814,7 +33281,20 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint query
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteTimestamp2")]
     void CmdWriteTimestamp2(
         [NativeTypeName("VkCommandBuffer")] CommandBufferHandle commandBuffer,
@@ -25854,7 +33334,14 @@ public unsafe partial interface IVk
         [NativeTypeName("uint32_t")] uint shader
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
     Result ConvertCooperativeVectorMatrixNV(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -25862,7 +33349,14 @@ public unsafe partial interface IVk
             ConvertCooperativeVectorMatrixInfoNV* pInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
     Result ConvertCooperativeVectorMatrixNV(
@@ -25937,7 +33431,16 @@ public unsafe partial interface IVk
             Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCopyImageToImage")]
     Result CopyImageToImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -25945,7 +33448,16 @@ public unsafe partial interface IVk
             CopyImageToImageInfo* pCopyImageToImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCopyImageToImage")]
     Result CopyImageToImage(
@@ -25987,7 +33499,16 @@ public unsafe partial interface IVk
             Ref<CopyImageToImageInfo> pCopyImageToImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCopyImageToMemory")]
     Result CopyImageToMemory(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -25995,7 +33516,16 @@ public unsafe partial interface IVk
             CopyImageToMemoryInfo* pCopyImageToMemoryInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCopyImageToMemory")]
     Result CopyImageToMemory(
@@ -26070,7 +33600,16 @@ public unsafe partial interface IVk
             Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToImage")]
     Result CopyMemoryToImage(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -26078,7 +33617,16 @@ public unsafe partial interface IVk
             CopyMemoryToImageInfo* pCopyMemoryToImageInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToImage")]
     Result CopyMemoryToImage(
@@ -26291,7 +33839,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateBuffer")]
@@ -26304,7 +33873,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26318,7 +33908,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateBufferView")]
@@ -26331,7 +33937,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26345,7 +33967,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateCommandPool")]
@@ -26358,7 +34001,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26372,7 +34036,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateComputePipelines")]
@@ -26388,7 +34068,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26442,7 +34138,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCuModuleNVX *")] Ref<CuModuleNVXHandle> pModule
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
     Result CreateDataGraphPipelinesARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -26455,7 +34155,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPipeline *")] PipelineHandle* pPipelines
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
     Result CreateDataGraphPipelinesARM(
@@ -26469,7 +34173,11 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPipeline *")] Ref<PipelineHandle> pPipelines
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
     Result CreateDataGraphPipelineSessionARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -26480,7 +34188,11 @@ public unsafe partial interface IVk
             DataGraphPipelineSessionARMHandle* pSession
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
     Result CreateDataGraphPipelineSessionARM(
@@ -26554,7 +34266,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorPool")]
@@ -26568,7 +34296,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26583,7 +34327,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorSetLayout")]
@@ -26597,7 +34357,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26612,7 +34388,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorUpdateTemplate")]
@@ -26627,7 +34416,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -26666,7 +34468,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDevice")]
@@ -26679,7 +34502,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26737,7 +34581,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateEvent")]
@@ -26750,7 +34610,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26786,7 +34662,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateFence")]
@@ -26799,7 +34696,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26813,7 +34731,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateFramebuffer")]
@@ -26826,7 +34755,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26840,7 +34780,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateGraphicsPipelines")]
@@ -26856,7 +34807,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26894,7 +34856,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateImage")]
@@ -26907,7 +34890,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -26921,7 +34925,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateImageView")]
@@ -26934,7 +34959,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27057,7 +35103,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateInstance")]
@@ -27069,7 +35136,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27187,7 +35275,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreatePipelineCache")]
@@ -27200,7 +35304,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27215,7 +35335,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreatePipelineLayout")]
@@ -27229,7 +35365,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27242,7 +35394,20 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPipelineLayout *")] Ref<PipelineLayoutHandle> pPipelineLayout
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkCreatePrivateDataSlot")]
     Result CreatePrivateDataSlot(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -27252,7 +35417,20 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPrivateDataSlot *")] PrivateDataSlotHandle* pPrivateDataSlot
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCreatePrivateDataSlot")]
     Result CreatePrivateDataSlot(
@@ -27300,7 +35478,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateQueryPool")]
@@ -27313,7 +35512,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27407,7 +35627,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateRenderPass")]
@@ -27420,7 +35651,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27434,7 +35676,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateRenderPass2")]
@@ -27447,7 +35696,14 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -27488,7 +35744,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateSampler")]
@@ -27501,7 +35773,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27515,7 +35803,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateSamplerYcbcrConversion")]
@@ -27530,7 +35831,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -27583,7 +35897,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateSemaphore")]
@@ -27596,7 +35931,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27610,7 +35966,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCreateShaderModule")]
@@ -27623,7 +35995,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -27723,7 +36111,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkSwapchainKHR *")] Ref<SwapchainKHRHandle> pSwapchain
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
     Result CreateTensorARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -27732,7 +36120,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkTensorARM *")] TensorARMHandle* pTensor
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
     Result CreateTensorARM(
@@ -27742,7 +36130,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkTensorARM *")] Ref<TensorARMHandle> pTensor
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
     Result CreateTensorViewARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -27751,7 +36139,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkTensorViewARM *")] TensorViewARMHandle* pView
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
     Result CreateTensorViewARM(
@@ -27979,7 +36367,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyBuffer")]
@@ -27991,7 +36400,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28004,7 +36434,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyBufferView")]
@@ -28016,7 +36462,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28029,7 +36491,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCommandPool")]
@@ -28041,7 +36524,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28086,7 +36590,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
     void DestroyDataGraphPipelineSessionARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -28094,7 +36602,11 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
     void DestroyDataGraphPipelineSessionARM(
@@ -28156,7 +36668,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorPool")]
@@ -28168,7 +36696,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28181,7 +36725,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorSetLayout")]
@@ -28193,7 +36753,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28206,7 +36782,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
@@ -28219,7 +36808,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -28252,7 +36854,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDevice")]
@@ -28263,7 +36886,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28275,7 +36919,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyEvent")]
@@ -28287,7 +36947,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28317,7 +36993,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyFence")]
@@ -28329,7 +37026,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28342,7 +37060,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyFramebuffer")]
@@ -28354,7 +37083,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28367,7 +37107,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyImage")]
@@ -28379,7 +37140,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28392,7 +37174,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyImageView")]
@@ -28404,7 +37207,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28514,7 +37338,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyInstance")]
@@ -28525,7 +37370,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28601,7 +37467,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipeline")]
@@ -28613,7 +37495,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28657,7 +37555,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineCache")]
@@ -28669,7 +37583,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28682,7 +37612,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineLayout")]
@@ -28694,7 +37640,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28705,7 +37667,20 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPrivateDataSlot")]
     void DestroyPrivateDataSlot(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -28713,7 +37688,20 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPrivateDataSlot")]
     void DestroyPrivateDataSlot(
@@ -28755,7 +37743,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyQueryPool")]
@@ -28767,7 +37776,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28780,7 +37810,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyRenderPass")]
@@ -28792,7 +37833,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28805,7 +37857,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySampler")]
@@ -28817,7 +37885,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28830,7 +37914,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySamplerYcbcrConversion")]
@@ -28842,7 +37939,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -28886,7 +37996,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySemaphore")]
@@ -28898,7 +38029,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -28944,7 +38096,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyShaderModule")]
@@ -28956,7 +38124,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29001,7 +38185,7 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
     void DestroyTensorARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -29009,7 +38193,7 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
     void DestroyTensorARM(
@@ -29018,7 +38202,7 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
     void DestroyTensorViewARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -29026,7 +38210,7 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkAllocationCallbacks *")] AllocationCallbacks* pAllocator
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
     void DestroyTensorViewARM(
@@ -29106,7 +38290,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkDeviceWaitIdle")]
@@ -29139,7 +38344,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEndCommandBuffer")]
@@ -29147,7 +38373,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumerateDeviceExtensionProperties")]
@@ -29160,7 +38407,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29174,7 +38442,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumerateDeviceLayerProperties")]
@@ -29186,7 +38475,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29199,7 +38509,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumerateInstanceExtensionProperties")]
@@ -29211,7 +38542,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29224,7 +38576,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumerateInstanceLayerProperties")]
@@ -29235,7 +38608,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29247,7 +38641,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumerateInstanceVersion")]
@@ -29255,7 +38666,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -29264,7 +38692,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
@@ -29276,7 +38721,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -29302,6 +38764,47 @@ public unsafe partial interface IVk
         [NativeTypeName("VkInstance")] InstanceHandle instance,
         [NativeTypeName("uint32_t *")] Ref<uint> pPhysicalDeviceGroupCount,
         Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
+    [NativeFunction(
+        "vulkan",
+        EntryPoint = "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM"
+    )]
+    Result EnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+        [NativeTypeName("uint32_t *")] uint* pCounterCount,
+        PerformanceCounterARM* pCounters,
+        PerformanceCounterDescriptionARM* pCounterDescriptions
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction(
+        "vulkan",
+        EntryPoint = "vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM"
+    )]
+    Result EnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM(
+        [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
+        [NativeTypeName("uint32_t")] uint queueFamilyIndex,
+        [NativeTypeName("uint32_t *")] Ref<uint> pCounterCount,
+        Ref<PerformanceCounterARM> pCounters,
+        Ref<PerformanceCounterDescriptionARM> pCounterDescriptions
     );
 
     [SupportedApiProfile(
@@ -29347,7 +38850,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDevices")]
@@ -29359,7 +38883,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29372,7 +38917,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkFlushMappedMemoryRanges")]
@@ -29384,7 +38950,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29397,7 +38984,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29410,7 +39018,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkFreeCommandBuffers")]
@@ -29423,7 +39052,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29437,7 +39087,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkFreeDescriptorSets")]
@@ -29450,7 +39116,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29464,7 +39146,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkFreeMemory")]
@@ -29476,7 +39179,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29677,7 +39401,20 @@ public unsafe partial interface IVk
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferDeviceAddress")]
@@ -29689,7 +39426,20 @@ public unsafe partial interface IVk
     [return: NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -29763,7 +39513,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements")]
@@ -29775,7 +39546,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -29788,7 +39580,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements2")]
@@ -29801,7 +39610,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -29835,7 +39661,20 @@ public unsafe partial interface IVk
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
@@ -29847,7 +39686,20 @@ public unsafe partial interface IVk
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -30026,7 +39878,11 @@ public unsafe partial interface IVk
         Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
     Result GetDataGraphPipelineAvailablePropertiesARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30036,7 +39892,11 @@ public unsafe partial interface IVk
         DataGraphPipelinePropertyARM* pProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
     Result GetDataGraphPipelineAvailablePropertiesARM(
@@ -30047,7 +39907,11 @@ public unsafe partial interface IVk
         Ref<DataGraphPipelinePropertyARM> pProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
     Result GetDataGraphPipelinePropertiesARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30057,7 +39921,11 @@ public unsafe partial interface IVk
         DataGraphPipelinePropertyQueryResultARM* pProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
     Result GetDataGraphPipelinePropertiesARM(
@@ -30068,7 +39936,11 @@ public unsafe partial interface IVk
         Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
     Result GetDataGraphPipelineSessionBindPointRequirementsARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30078,7 +39950,11 @@ public unsafe partial interface IVk
         DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
     Result GetDataGraphPipelineSessionBindPointRequirementsARM(
@@ -30089,7 +39965,11 @@ public unsafe partial interface IVk
         Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
     void GetDataGraphPipelineSessionMemoryRequirementsARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30098,7 +39978,11 @@ public unsafe partial interface IVk
         MemoryRequirements2* pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
     void GetDataGraphPipelineSessionMemoryRequirementsARM(
@@ -30299,7 +40183,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutSupport")]
@@ -30312,7 +40209,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -30390,7 +40300,20 @@ public unsafe partial interface IVk
         Ref<AccelerationStructureCompatibilityKHR> pCompatibility
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirements")]
     void GetDeviceBufferMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30399,7 +40322,20 @@ public unsafe partial interface IVk
         MemoryRequirements2* pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirements")]
     void GetDeviceBufferMemoryRequirements(
@@ -30461,7 +40397,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
@@ -30475,7 +40428,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -30573,7 +40543,20 @@ public unsafe partial interface IVk
             Ref<DeviceGroupPresentModeFlagsKHR> pModes
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirements")]
     void GetDeviceImageMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30582,7 +40565,20 @@ public unsafe partial interface IVk
         MemoryRequirements2* pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirements")]
     void GetDeviceImageMemoryRequirements(
@@ -30611,7 +40607,20 @@ public unsafe partial interface IVk
         Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirements")]
     void GetDeviceImageSparseMemoryRequirements(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30621,7 +40630,20 @@ public unsafe partial interface IVk
         SparseImageMemoryRequirements2* pSparseMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirements")]
     void GetDeviceImageSparseMemoryRequirements(
@@ -30653,7 +40675,16 @@ public unsafe partial interface IVk
         Ref<SparseImageMemoryRequirements2> pSparseMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSubresourceLayout")]
     void GetDeviceImageSubresourceLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30661,7 +40692,16 @@ public unsafe partial interface IVk
         SubresourceLayout2* pLayout
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSubresourceLayout")]
     void GetDeviceImageSubresourceLayout(
@@ -30699,7 +40739,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryCommitment")]
@@ -30711,7 +40772,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -30725,7 +40807,20 @@ public unsafe partial interface IVk
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
@@ -30738,7 +40833,20 @@ public unsafe partial interface IVk
     [return: NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -30817,7 +40925,28 @@ public unsafe partial interface IVk
     [return: NativeTypeName("PFN_vkVoidFunction")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
@@ -30829,7 +40958,28 @@ public unsafe partial interface IVk
     [return: NativeTypeName("PFN_vkVoidFunction")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -30841,7 +40991,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceQueue")]
@@ -30854,7 +41025,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -30868,7 +41060,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceQueue2")]
@@ -30880,7 +41089,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -30924,7 +41150,7 @@ public unsafe partial interface IVk
         Ref<Extent2D> pMaxWorkgroupSize
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
     void GetDeviceTensorMemoryRequirementsARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -30933,7 +41159,7 @@ public unsafe partial interface IVk
         MemoryRequirements2* pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
     void GetDeviceTensorMemoryRequirementsARM(
@@ -31150,7 +41376,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetEventStatus")]
@@ -31209,7 +41451,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetFenceStatus")]
@@ -31348,7 +41611,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements")]
@@ -31360,7 +41644,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -31373,7 +41678,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements2")]
@@ -31386,7 +41708,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -31456,7 +41795,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements")]
@@ -31469,7 +41829,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -31483,7 +41864,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements2")]
@@ -31497,7 +41895,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -31533,7 +41948,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSubresourceLayout")]
@@ -31546,7 +41982,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -31558,7 +42015,16 @@ public unsafe partial interface IVk
         Ref<SubresourceLayout> pLayout
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSubresourceLayout2")]
     void GetImageSubresourceLayout2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -31567,7 +42033,16 @@ public unsafe partial interface IVk
         SubresourceLayout2* pLayout
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSubresourceLayout2")]
     void GetImageSubresourceLayout2(
@@ -31730,7 +42205,28 @@ public unsafe partial interface IVk
     [return: NativeTypeName("PFN_vkVoidFunction")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
@@ -31742,7 +42238,28 @@ public unsafe partial interface IVk
     [return: NativeTypeName("PFN_vkVoidFunction")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -31756,8 +42273,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetLatencyTimingsNV")]
@@ -31771,8 +42290,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [Transformed]
@@ -32172,7 +42693,14 @@ public unsafe partial interface IVk
         Ref<CooperativeMatrixPropertiesNV> pProperties
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
     Result GetPhysicalDeviceCooperativeVectorPropertiesNV(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -32180,7 +42708,14 @@ public unsafe partial interface IVk
         CooperativeVectorPropertiesNV* pProperties
     );
 
-    [SupportedApiProfile("vulkan", ["VK_NV_cooperative_vector"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
     Result GetPhysicalDeviceCooperativeVectorPropertiesNV(
@@ -32275,7 +42810,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
@@ -32288,7 +42840,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32335,7 +42904,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
@@ -32348,7 +42934,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32424,7 +43027,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
@@ -32437,7 +43057,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32482,7 +43119,7 @@ public unsafe partial interface IVk
         Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
     void GetPhysicalDeviceExternalTensorPropertiesARM(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -32491,7 +43128,7 @@ public unsafe partial interface IVk
         ExternalTensorPropertiesARM* pExternalTensorProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
     void GetPhysicalDeviceExternalTensorPropertiesARM(
@@ -32503,7 +43140,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures")]
@@ -32514,7 +43172,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -32526,7 +43205,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures2")]
@@ -32537,7 +43233,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32564,7 +43277,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties")]
@@ -32576,7 +43310,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -32589,7 +43344,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
@@ -32601,7 +43373,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32664,7 +43453,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties")]
@@ -32680,7 +43490,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -32697,7 +43528,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
@@ -32710,7 +43558,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32743,7 +43608,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties")]
@@ -32754,7 +43640,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -32766,7 +43673,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
@@ -32777,7 +43701,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32901,7 +43842,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties")]
@@ -32912,7 +43874,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -32924,7 +43907,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties2")]
@@ -32935,7 +43935,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -32960,7 +43977,11 @@ public unsafe partial interface IVk
         Ref<PhysicalDeviceProperties2> pProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction(
         "vulkan",
         EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM"
@@ -32972,7 +43993,11 @@ public unsafe partial interface IVk
         QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction(
         "vulkan",
@@ -32985,7 +44010,11 @@ public unsafe partial interface IVk
         Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
     Result GetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -32994,7 +44023,11 @@ public unsafe partial interface IVk
         QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
     Result GetPhysicalDeviceQueueFamilyDataGraphPropertiesARM(
@@ -33045,7 +44078,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
@@ -33057,7 +44111,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -33070,7 +44145,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
@@ -33082,7 +44174,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -33112,7 +44221,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
@@ -33129,7 +44259,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -33147,7 +44298,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
@@ -33161,7 +44329,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -33387,7 +44572,20 @@ public unsafe partial interface IVk
         [NativeTypeName("VkBool32 *")] Ref<MaybeBool<uint>> pSupported
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolProperties")]
     Result GetPhysicalDeviceToolProperties(
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceHandle physicalDevice,
@@ -33395,7 +44593,20 @@ public unsafe partial interface IVk
         PhysicalDeviceToolProperties* pToolProperties
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolProperties")]
     Result GetPhysicalDeviceToolProperties(
@@ -33552,7 +44763,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineCacheData")]
@@ -33565,7 +44792,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -33798,7 +45041,20 @@ public unsafe partial interface IVk
         Ref<BaseOutStructure> pPipelineProperties
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
     void GetPrivateData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -33808,7 +45064,20 @@ public unsafe partial interface IVk
         [NativeTypeName("uint64_t *")] ulong* pData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetPrivateData")]
     void GetPrivateData(
@@ -33856,7 +45125,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetQueryPoolResults")]
@@ -33873,7 +45163,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34112,7 +45423,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetRenderAreaGranularity")]
@@ -34124,7 +45446,18 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34135,7 +45468,11 @@ public unsafe partial interface IVk
         Ref<Extent2D> pGranularity
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetRenderingAreaGranularity")]
     void GetRenderingAreaGranularity(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -34143,7 +45480,11 @@ public unsafe partial interface IVk
         Extent2D* pGranularity
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetRenderingAreaGranularity")]
     void GetRenderingAreaGranularity(
@@ -34216,7 +45557,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreCounterValue")]
@@ -34228,7 +45582,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -34486,7 +45853,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRHandle swapchain
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
     void GetTensorMemoryRequirementsARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -34495,7 +45862,7 @@ public unsafe partial interface IVk
         MemoryRequirements2* pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
     void GetTensorMemoryRequirementsARM(
@@ -34505,7 +45872,12 @@ public unsafe partial interface IVk
         Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
     Result GetTensorOpaqueCaptureDescriptorDataARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -34514,7 +45886,12 @@ public unsafe partial interface IVk
         void* pData
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
     Result GetTensorOpaqueCaptureDescriptorDataARM(
@@ -34524,7 +45901,12 @@ public unsafe partial interface IVk
         Ref pData
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
     Result GetTensorViewOpaqueCaptureDescriptorDataARM(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -34533,7 +45915,12 @@ public unsafe partial interface IVk
         void* pData
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
     Result GetTensorViewOpaqueCaptureDescriptorDataARM(
@@ -34669,7 +46056,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkInvalidateMappedMemoryRanges")]
@@ -34681,7 +46089,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34696,8 +46125,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkLatencySleepNV")]
@@ -34711,8 +46142,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [Transformed]
@@ -34725,7 +46158,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory")]
@@ -34740,7 +46194,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34754,7 +46229,16 @@ public unsafe partial interface IVk
         Ref2D ppData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory2")]
     Result MapMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -34762,7 +46246,16 @@ public unsafe partial interface IVk
         void** ppData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory2")]
     Result MapMemory2(
@@ -34790,7 +46283,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkMergePipelineCaches")]
@@ -34803,7 +46312,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34851,7 +46376,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkQueueBindSparse")]
@@ -34864,7 +46410,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34899,8 +46466,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkQueueNotifyOutOfBandNV")]
@@ -34914,8 +46483,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [Transformed]
@@ -34951,7 +46522,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkQueueSubmit")]
@@ -34964,7 +46556,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -34976,7 +46589,20 @@ public unsafe partial interface IVk
         [NativeTypeName("VkFence")] FenceHandle fence
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkQueueSubmit2")]
     Result QueueSubmit2(
         [NativeTypeName("VkQueue")] QueueHandle queue,
@@ -34985,7 +46611,20 @@ public unsafe partial interface IVk
         [NativeTypeName("VkFence")] FenceHandle fence
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkQueueSubmit2")]
     Result QueueSubmit2(
@@ -35030,7 +46669,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkQueueWaitIdle")]
@@ -35187,7 +46847,15 @@ public unsafe partial interface IVk
             Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
     Result ReleaseSwapchainImagesKHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -35195,7 +46863,15 @@ public unsafe partial interface IVk
             ReleaseSwapchainImagesInfoKHR* pReleaseInfo
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
     Result ReleaseSwapchainImagesKHR(
@@ -35206,7 +46882,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkResetCommandBuffer")]
@@ -35217,7 +46914,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkResetCommandPool")]
@@ -35229,7 +46947,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkResetDescriptorPool")]
@@ -35241,7 +46975,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkResetEvent")]
@@ -35252,7 +47002,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkResetFences")]
@@ -35264,7 +47035,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -35277,7 +47069,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkResetQueryPool")]
@@ -35352,7 +47157,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkSetEvent")]
@@ -35384,8 +47205,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkSetLatencyMarkerNV")]
@@ -35400,8 +47223,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [Transformed]
@@ -35417,8 +47242,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkSetLatencySleepModeNV")]
@@ -35432,8 +47259,10 @@ public unsafe partial interface IVk
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     [Transformed]
@@ -35460,7 +47289,20 @@ public unsafe partial interface IVk
         [NativeTypeName("VkBool32")] MaybeBool<uint> localDimmingEnable
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkSetPrivateData")]
     Result SetPrivateData(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -35489,7 +47331,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkSignalSemaphore")]
@@ -35500,7 +47355,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]
@@ -35562,7 +47430,16 @@ public unsafe partial interface IVk
             Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkTransitionImageLayout")]
     Result TransitionImageLayout(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -35571,7 +47448,16 @@ public unsafe partial interface IVk
             HostImageLayoutTransitionInfo* pTransitions
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkTransitionImageLayout")]
     Result TransitionImageLayout(
@@ -35618,7 +47504,24 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkTrimCommandPool")]
@@ -35642,7 +47545,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory")]
@@ -35651,14 +47575,32 @@ public unsafe partial interface IVk
         [NativeTypeName("VkDeviceMemory")] DeviceMemoryHandle memory
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2")]
     Result UnmapMemory2(
         [NativeTypeName("VkDevice")] DeviceHandle device,
         [NativeTypeName("const VkMemoryUnmapInfo *")] MemoryUnmapInfo* pMemoryUnmapInfo
     );
 
-    [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2")]
     Result UnmapMemory2(
@@ -35683,7 +47625,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSets")]
@@ -35697,7 +47655,23 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -35712,7 +47686,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
@@ -35726,7 +47713,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.1"
     )]
     [Transformed]
@@ -35907,7 +47907,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForFences")]
@@ -35921,7 +47942,28 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_0", "VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_0",
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.0"
     )]
     [Transformed]
@@ -35934,7 +47976,16 @@ public unsafe partial interface IVk
         [NativeTypeName("uint64_t")] ulong timeout
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
     Result WaitForPresent2KHR(
         [NativeTypeName("VkDevice")] DeviceHandle device,
@@ -35942,7 +47993,16 @@ public unsafe partial interface IVk
         [NativeTypeName("const VkPresentWait2InfoKHR *")] PresentWait2InfoKHR* pPresentWait2Info
     );
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
     [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
     Result WaitForPresent2KHR(
@@ -35966,7 +48026,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkWaitSemaphores")]
@@ -35978,7 +48051,20 @@ public unsafe partial interface IVk
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.2"
     )]
     [Transformed]

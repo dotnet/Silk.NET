@@ -11,23 +11,68 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PresentGravityFlagsKHR : uint
 {
-    [SupportedApiProfile("vulkan")]
+    None = 0,
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     MinBitKHR = 0x00000001,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     MaxBitKHR = 0x00000002,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     CenteredBitKHR = 0x00000004,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     MinBitEXT = MinBitKHR,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     MaxBitEXT = MaxBitKHR,
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
     CenteredBitEXT = CenteredBitKHR,
 }

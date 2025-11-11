@@ -81,8 +81,9 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_video_encode_h264"],
-        ImpliesSets = ["VK_KHR_video_encode_queue"]
+        ["VK_KHR_video_encode_h264", "VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"],
+        RequireAll = true
     )]
     BPictureIntraRefreshBitKHR = 0x00000400,
 

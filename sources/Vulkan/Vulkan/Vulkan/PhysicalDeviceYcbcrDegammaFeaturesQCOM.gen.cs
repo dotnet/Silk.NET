@@ -12,13 +12,34 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
 {
-    [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType;
 
-    [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("VkBool32")]
-    [SupportedApiProfile("vulkan", ["VK_QCOM_ycbcr_degamma"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> YcbcrDegamma;
 }

@@ -10,7 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [InlineArray(16)]
-[SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_BASE_VERSION_1_4", "VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+    MinVersion = "1.4"
+)]
 public partial struct PhysicalDeviceHostImageCopyPropertiesOptimalTilingLayoutUUID
 {
     [SupportedApiProfile("vulkan")]

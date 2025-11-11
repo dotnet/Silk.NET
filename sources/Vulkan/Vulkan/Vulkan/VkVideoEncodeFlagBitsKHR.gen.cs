@@ -18,11 +18,8 @@ public enum VideoEncodeFlagsKHR : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_video_encode_quantization_map"],
-        ImpliesSets = [
-            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
-            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
-        ]
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     IntraRefreshBitKHR = 0x00000004,
 

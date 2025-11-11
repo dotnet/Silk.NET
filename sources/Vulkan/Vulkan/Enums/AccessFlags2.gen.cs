@@ -86,4 +86,6 @@ public enum AccessFlags2 : ulong
     OpticalFlowWriteBitNV = unchecked((ulong)0x80000000000UL),
     DataGraphReadBitARM = unchecked((ulong)0x800000000000UL),
     DataGraphWriteBitARM = unchecked((ulong)0x1000000000000UL),
+    MemoryDecompressionReadBitEXT = unchecked((ulong)0x80000000000000UL),
+    MemoryDecompressionWriteBitEXT = unchecked((ulong)0x100000000000000UL),
 }

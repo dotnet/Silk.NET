@@ -12,21 +12,46 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
 {
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public StructureType SType;
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public void* PNext;
 
     [NativeTypeName("size_t")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public nuint TensorCaptureReplayDescriptorDataSize;
 
     [NativeTypeName("size_t")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public nuint TensorViewCaptureReplayDescriptorDataSize;
 
     [NativeTypeName("size_t")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
     public nuint TensorDescriptorSize;
 }

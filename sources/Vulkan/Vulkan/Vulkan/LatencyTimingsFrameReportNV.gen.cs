@@ -16,8 +16,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public StructureType SType;
@@ -27,8 +29,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public void* PNext;
@@ -38,8 +42,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong PresentID;
@@ -49,8 +55,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong InputSampleTimeUs;
@@ -60,8 +68,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong SimStartTimeUs;
@@ -71,8 +81,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong SimEndTimeUs;
@@ -82,8 +94,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong RenderSubmitStartTimeUs;
@@ -93,8 +107,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong RenderSubmitEndTimeUs;
@@ -104,8 +120,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong PresentStartTimeUs;
@@ -115,8 +133,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong PresentEndTimeUs;
@@ -126,8 +146,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong DriverStartTimeUs;
@@ -137,8 +159,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong DriverEndTimeUs;
@@ -148,8 +172,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong OsRenderQueueStartTimeUs;
@@ -159,8 +185,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong OsRenderQueueEndTimeUs;
@@ -170,8 +198,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong GpuRenderStartTimeUs;
@@ -181,8 +211,10 @@ public unsafe partial struct LatencyTimingsFrameReportNV
         "vulkan",
         ["VK_NV_low_latency2"],
         ImpliesSets = [
-            "VK_NV_low_latency2+VK_KHR_timeline_semaphore",
-            "VK_NV_low_latency2+VK_VERSION_1_2",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id",
+            "VK_KHR_timeline_semaphore+VK_KHR_present_id2",
+            "VK_VERSION_1_2+VK_KHR_present_id",
+            "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
     public ulong GpuRenderEndTimeUs;

@@ -12,13 +12,34 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderReplicatedCompositesFeaturesEXT
 {
-    [SupportedApiProfile("vulkan", ["VK_EXT_shader_replicated_composites"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_replicated_composites"],
+        ImpliesSets = [
+            "VK_EXT_shader_replicated_composites+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType;
 
-    [SupportedApiProfile("vulkan", ["VK_EXT_shader_replicated_composites"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_replicated_composites"],
+        ImpliesSets = [
+            "VK_EXT_shader_replicated_composites+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("VkBool32")]
-    [SupportedApiProfile("vulkan", ["VK_EXT_shader_replicated_composites"])]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_replicated_composites"],
+        ImpliesSets = [
+            "VK_EXT_shader_replicated_composites+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> ShaderReplicatedComposites;
 }

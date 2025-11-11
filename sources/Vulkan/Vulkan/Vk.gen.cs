@@ -24,7 +24,7 @@ partial class Vk(INativeContext nativeContext) : IDisposable
         public static void MakeCurrent(IVk ctx) => Underlying.Value = ctx;
     }
 
-    private readonly unsafe void*[] _slots = new void*[696];
+    private readonly unsafe void*[] _slots = new void*[702];
 
     public static IVk Create(INativeContext ctx) => new Vk(ctx);
 

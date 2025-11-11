@@ -10,39 +10,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
-public unsafe partial struct PhysicalDeviceCopyMemoryIndirectPropertiesNV
+public partial struct CopyMemoryIndirectCommandKHR
 {
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public ulong SrcAddress;
 
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
-    public void* PNext;
+    public ulong DstAddress;
 
-    [NativeTypeName("VkQueueFlags")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_copy_memory_indirect"],
+        ["VK_KHR_copy_memory_indirect"],
         ImpliesSets = [
-            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
             "VK_VERSION_1_2",
         ]
     )]
-    public QueueFlags SupportedQueues;
+    public ulong Size;
 }

@@ -58,20 +58,20 @@ public enum GeometryInstanceFlagsKHR : uint
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_acceleration_structure"],
+        ["VK_EXT_opacity_micromap"],
         ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
     ForceOpacityMicromap2StateBitEXT = 0x00000010,
 
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_acceleration_structure"],
+        ["VK_EXT_opacity_micromap"],
         ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
     DisableOpacityMicromapsBitEXT = 0x00000020,
@@ -125,24 +125,4 @@ public enum GeometryInstanceFlagsKHR : uint
         ]
     )]
     ForceNoOpaqueBitNV = ForceNoOpaqueBitKHR,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    ForceOpacityMicromap2StateEXT = ForceOpacityMicromap2StateBitEXT,
-
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    DisableOpacityMicromapsEXT = DisableOpacityMicromapsBitEXT,
 }

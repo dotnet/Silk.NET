@@ -10,7 +10,20 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [InlineArray(256)]
-[SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
+[SupportedApiProfile(
+    "vulkan",
+    [
+        "VK_BASE_VERSION_1_3",
+        "VK_BASE_VERSION_1_4",
+        "VK_COMPUTE_VERSION_1_3",
+        "VK_COMPUTE_VERSION_1_4",
+        "VK_GRAPHICS_VERSION_1_3",
+        "VK_GRAPHICS_VERSION_1_4",
+        "VK_VERSION_1_3",
+        "VK_VERSION_1_4",
+    ],
+    MinVersion = "1.3"
+)]
 public partial struct PhysicalDeviceToolPropertiesDescription
 {
     [SupportedApiProfile("vulkan")]

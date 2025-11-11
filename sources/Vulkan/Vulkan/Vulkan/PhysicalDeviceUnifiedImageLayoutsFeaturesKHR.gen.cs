@@ -12,17 +12,45 @@ namespace Silk.NET.Vulkan;
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
 {
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_unified_image_layouts"],
+        ImpliesSets = [
+            "VK_KHR_unified_image_layouts+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
+        ]
+    )]
     public StructureType SType;
 
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_unified_image_layouts"],
+        ImpliesSets = [
+            "VK_KHR_unified_image_layouts+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
+        ]
+    )]
     public void* PNext;
 
     [NativeTypeName("VkBool32")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_unified_image_layouts"],
+        ImpliesSets = [
+            "VK_KHR_unified_image_layouts+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> UnifiedImageLayouts;
 
     [NativeTypeName("VkBool32")]
-    [SupportedApiProfile("vulkan")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_unified_image_layouts"],
+        ImpliesSets = [
+            "VK_KHR_unified_image_layouts+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
+        ]
+    )]
     public MaybeBool<uint> UnifiedImageLayoutsVideo;
 }

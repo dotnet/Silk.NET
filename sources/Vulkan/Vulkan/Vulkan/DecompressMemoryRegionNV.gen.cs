@@ -70,5 +70,5 @@ public partial struct DecompressMemoryRegionNV
             "VK_VERSION_1_2",
         ]
     )]
-    public MemoryDecompressionMethodFlagsNV DecompressionMethod;
+    public ulong DecompressionMethod;
 }

@@ -52,5 +52,6 @@ public enum BufferUsageFlags2 : ulong
     MicromapStorageBitEXT = unchecked((ulong)0x01000000UL),
     DataGraphForeignDescriptorBitARM = unchecked((ulong)0x20000000UL),
     TileMemoryBitQCOM = unchecked((ulong)0x08000000UL),
+    MemoryDecompressionBitEXT = unchecked((ulong)0x100000000UL),
     PreprocessBufferBitEXT = unchecked((ulong)0x80000000UL),
 }

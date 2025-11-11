@@ -11,7 +11,10 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum PresentScalingFlagsEXT : uint
+public enum TensorCreateFlagsARM : ulong
 {
     None = 0,
+    MutableFormatBitARM = unchecked((ulong)0x00000001UL),
+    ProtectedBitARM = unchecked((ulong)0x00000002UL),
+    DescriptorBufferCaptureReplayBitARM = unchecked((ulong)0x00000004UL),
 }
