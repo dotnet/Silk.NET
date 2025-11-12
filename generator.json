@@ -278,6 +278,7 @@
         "MixKhronosData",
         "ExtractNestedTyping",
         "TransformHandles",
+        "InterceptNativeFunctions",
         "TransformFunctions",
         "TransformProperties",
         "PrettifyNames",

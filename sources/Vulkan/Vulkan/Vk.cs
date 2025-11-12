@@ -6,6 +6,22 @@ namespace Silk.NET.Vulkan;
 
 public partial class Vk
 {
+    static Vk()
+    {
+        LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
+        LoaderInterface.RegisterAlternativeName("vulkan", "vulkan-1");
+        LoaderInterface.RegisterAlternativeName("vulkan", "MoltenVK");
+    }
+
+    public unsafe partial class DllImport
+    {
+        public static partial Result CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceTHandle* pInstance)
+            => CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
+
+        public static partial Result CreateDevice(PhysicalDeviceTHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceTHandle* pDevice)
+            => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
+    }
+
     // TODO: Clean this up and make this more similar to how the OpenAL bindings work
     private InstanceTHandle? _currentInstance;
     public InstanceTHandle? CurrentInstance
@@ -15,7 +31,8 @@ public partial class Vk
         {
             if (_currentInstance != null && _currentInstance != value)
                 throw new InvalidOperationException(
-                    "CurrentInstance has already been set. Please create a new API instance so that the loaded function pointers can be kept separate."
+                    "CurrentInstance cannot be changed once set, use another API object for additional devices. For more "
+                    + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings"
                 );
             _currentInstance = value;
         }
@@ -29,17 +46,11 @@ public partial class Vk
         {
             if (_currentDevice != null && _currentDevice != value)
                 throw new InvalidOperationException(
-                    "CurrentDevice has already been set. Please create a new API instance so that the loaded function pointers can be kept separate."
+                    "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
+                    + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings"
                 );
             _currentDevice = value;
         }
-    }
-
-    static Vk()
-    {
-        LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
-        LoaderInterface.RegisterAlternativeName("vulkan", "vulkan-1");
-        LoaderInterface.RegisterAlternativeName("vulkan", "MoltenVK");
     }
 
     public static IVk Create()
@@ -64,6 +75,26 @@ public partial class Vk
         Array.Copy(_slots, vk._slots, _slots.Length);
 
         return vk;
+    }
+
+    unsafe Result IVk.CreateDevice(PhysicalDeviceTHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceTHandle* pDevice)
+    {
+        Result result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
+        if (result == Result.Success)
+        {
+            CurrentDevice = *pDevice;
+        }
+        return result;
+    }
+
+    unsafe Result IVk.CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceTHandle* pInstance)
+    {
+        Result result = CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
+        if (result == Result.Success)
+        {
+            CurrentInstance = *pInstance;
+        }
+        return result;
     }
 
     private class NativeContext : INativeContext
