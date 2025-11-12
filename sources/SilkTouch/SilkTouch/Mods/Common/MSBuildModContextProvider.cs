@@ -233,5 +233,5 @@ public class MSBuildModContextProvider(ILogger<MSBuildModContextProvider> logger
     public LoggerVerbosity Verbosity { get; set; } = LoggerVerbosity.Detailed;
 
     /// <inheritdoc />
-    public string Parameters { get; set; } = string.Empty;
+    public string? Parameters { get; set; } = string.Empty;
 }
