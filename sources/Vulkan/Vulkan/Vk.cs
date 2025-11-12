@@ -6,6 +6,14 @@ namespace Silk.NET.Vulkan;
 
 public partial class Vk
 {
+    public const string ErrMultipleInstanceSingleObject =
+        "CurrentInstance cannot be changed once set, use another API object for additional instances. For more "
+        + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
+
+    public const string ErrMultipleDeviceSingleObject =
+        "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
+        + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
+
     static Vk()
     {
         LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
@@ -22,34 +30,84 @@ public partial class Vk
             => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
     }
 
-    // TODO: Clean this up and make this more similar to how the OpenAL bindings work
-    private InstanceTHandle? _currentInstance;
-    public InstanceTHandle? CurrentInstance
+    public partial class StaticWrapper<T>
     {
-        get => _currentInstance;
+        public InstanceTHandle CurrentInstance
+        {
+            get;
+            set
+            {
+                if (field == value)
+                {
+                    return;
+                }
+
+                if (field != nullptr)
+                {
+                    throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                }
+
+                field = value;
+            }
+        }
+
+        public DeviceTHandle CurrentDevice
+        {
+            get;
+            set
+            {
+                if (field == value)
+                {
+                    return;
+                }
+
+                if (field != nullptr)
+                {
+                    throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                }
+
+                field = value;
+            }
+        }
+
+        public IVk Clone() => new StaticWrapper<T>();
+    }
+
+    public InstanceTHandle CurrentInstance
+    {
+        get;
         set
         {
-            if (_currentInstance != null && _currentInstance != value)
-                throw new InvalidOperationException(
-                    "CurrentInstance cannot be changed once set, use another API object for additional devices. For more "
-                    + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings"
-                );
-            _currentInstance = value;
+            if (field == value)
+            {
+                return;
+            }
+
+            if (field != nullptr)
+            {
+                throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+            }
+
+            field = value;
         }
     }
 
-    private DeviceTHandle? _currentDevice;
-    public DeviceTHandle? CurrentDevice
+    public DeviceTHandle CurrentDevice
     {
-        get => _currentDevice;
+        get;
         set
         {
-            if (_currentDevice != null && _currentDevice != value)
-                throw new InvalidOperationException(
-                    "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
-                    + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings"
-                );
-            _currentDevice = value;
+            if (field == value)
+            {
+                return;
+            }
+
+            if (field != nullptr)
+            {
+                throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+            }
+
+            field = value;
         }
     }
 
@@ -116,13 +174,13 @@ public partial class Vk
                 return (delegate* unmanaged<InstanceTHandle, sbyte*, void*>)&GetInstanceProcAddr;
             }
 
-            void* ptr = Ivk.GetDeviceProcAddr(Vk.CurrentDevice.GetValueOrDefault(), functionName);
+            void* ptr = Ivk.GetDeviceProcAddr(Vk.CurrentDevice, functionName);
             if (ptr != null)
             {
                 return ptr;
             }
 
-            ptr = Ivk.GetInstanceProcAddr(Vk.CurrentInstance.GetValueOrDefault(), functionName);
+            ptr = Ivk.GetInstanceProcAddr(Vk.CurrentInstance, functionName);
             return ptr;
         }
 
