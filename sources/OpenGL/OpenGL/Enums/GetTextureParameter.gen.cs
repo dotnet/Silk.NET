@@ -75,5 +75,5 @@ public enum GetTextureParameter : uint
     SurfaceCompressionEXT = unchecked((uint)0x96C0),
     TextureBorderColorNV = unchecked((uint)0x1004),
     NormalMapOES = unchecked((uint)0x8511),
-    ReflectionMapOES = unchecked((uint)0x8512)
+    ReflectionMapOES = unchecked((uint)0x8512),
 }

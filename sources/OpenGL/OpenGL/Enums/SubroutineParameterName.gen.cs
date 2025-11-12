@@ -13,5 +13,5 @@ public enum SubroutineParameterName : uint
     UniformSize = unchecked((uint)0x8A38),
     UniformNameLength = unchecked((uint)0x8A39),
     NumCompatibleSubroutines = unchecked((uint)0x8E4A),
-    CompatibleSubroutines = unchecked((uint)0x8E4B)
+    CompatibleSubroutines = unchecked((uint)0x8E4B),
 }

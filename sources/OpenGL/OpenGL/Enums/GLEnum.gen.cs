@@ -5854,5 +5854,5 @@ public enum GLEnum : uint
     ClipPlane3IMG = unchecked((uint)0x3003),
     ClipPlane4IMG = unchecked((uint)0x3004),
     ClipPlane5IMG = unchecked((uint)0x3005),
-    MaxClipPlanesIMG = unchecked((uint)0x0D32)
+    MaxClipPlanesIMG = unchecked((uint)0x0D32),
 }

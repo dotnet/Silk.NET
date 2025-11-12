@@ -12,5 +12,5 @@ public enum TriangleFace : uint
 {
     Front = unchecked((uint)0x0404),
     Back = unchecked((uint)0x0405),
-    FrontAndBack = unchecked((uint)0x0408)
+    FrontAndBack = unchecked((uint)0x0408),
 }

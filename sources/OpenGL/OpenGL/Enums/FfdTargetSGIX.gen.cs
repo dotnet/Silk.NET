@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum FfdTargetSGIX : uint
 {
     GeometryDeformation = unchecked((uint)0x8194),
-    TextureDeformation = unchecked((uint)0x8195)
+    TextureDeformation = unchecked((uint)0x8195),
 }

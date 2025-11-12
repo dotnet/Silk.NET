@@ -12,5 +12,5 @@ public enum PathFontTarget : uint
 {
     StandardFontNameNV = unchecked((uint)0x9072),
     SystemFontNameNV = unchecked((uint)0x9073),
-    FileNameNV = unchecked((uint)0x9074)
+    FileNameNV = unchecked((uint)0x9074),
 }

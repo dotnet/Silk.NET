@@ -15,5 +15,5 @@ public enum PrecisionType : uint
     HighFloat = unchecked((uint)0x8DF2),
     LowInt = unchecked((uint)0x8DF3),
     MediumInt = unchecked((uint)0x8DF4),
-    HighInt = unchecked((uint)0x8DF5)
+    HighInt = unchecked((uint)0x8DF5),
 }

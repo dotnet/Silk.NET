@@ -684,11 +684,6 @@ public partial class ExtractNestedTyping(
                 _ => (null, null),
             };
 
-            if ((current as ParameterSyntax)?.Identifier.ToString() == "handler")
-            {
-                Debugger.Break();
-            }
-
             // If the native type name is actually the function pointer signature (i.e. not through a typedef) then we
             // should pass the native type name down when recursing.
             fallback = _fallbackFromOuterFunctionPointer ?? fallback;

@@ -14,9 +14,11 @@ using NUnit.Framework;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
+using Silk.NET.SilkTouch.Naming;
 using VerifyNUnit;
 using VerifyTests;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using NameTrimmer = Silk.NET.SilkTouch.Naming.NameTrimmer;
 
 namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
@@ -62,7 +64,7 @@ public class MixKhronosDataTests
                     new NullLogger<MixKhronosData>(),
                     new Options
                     {
-                        Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) }
+                        Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
                     }
                 );
                 await mod.InitializeAsync(new DummyModContext());
@@ -78,7 +80,6 @@ public class MixKhronosDataTests
             .SelectAwait(async s =>
                 s[0] is "gl.xml" or "cl.xml"
                     ? (object[])
-
                         [
                             s[0],
                             s[1],
@@ -89,7 +90,7 @@ public class MixKhronosDataTests
                                         )
                                     )
                                     .Select(ReadProfile)
-                            )
+                            ),
                         ]
                     : null
             )
@@ -152,11 +153,9 @@ public class MixKhronosDataTests
         )
         {
             var key = (
-                x.NativeName is "GLenum"
-                    ? "GLEnum"
-                    : x.NativeName.StartsWith("ErrorCodes")
-                        ? "ErrorCodes"
-                        : x.NativeName
+                x.NativeName is "GLenum" ? "GLEnum"
+                : x.NativeName.StartsWith("ErrorCodes") ? "ErrorCodes"
+                : x.NativeName
             ).Replace('.', '_').Trim();
             key = key[(key.LastIndexOf(' ') + 1)..];
             if (!baselineGroups.TryGetValue(key, out var constituents))
@@ -281,11 +280,10 @@ public class MixKhronosDataTests
                 .Options,
             Is.EquivalentTo(
                 (IEnumerable<string>)
-
                     [
                         "VK_KHR_depth_stencil_resolve+VK_KHR_get_physical_device_properties2",
                         "VK_KHR_depth_stencil_resolve+VK_VERSION_1_1",
-                        "VK_VERSION_1_2"
+                        "VK_VERSION_1_2",
                     ]
             )
         );
@@ -300,11 +298,118 @@ public class MixKhronosDataTests
                 .Options,
             Is.EquivalentTo(
                 (IEnumerable<string>)
-
                     [
                         "VK_EXT_queue_family_foreign+VK_KHR_sampler_ycbcr_conversion+VK_KHR_external_memory+VK_KHR_dedicated_allocation",
-                        "VK_EXT_queue_family_foreign+VK_VERSION_1_1"
+                        "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
                     ]
             )
         );
+
+    [Test]
+    public void OverzealousNameTrimming()
+    {
+        // This had an issue where GL_PIXEL_COUNT_NV and GL_PIXEL_COUNT_AVAILABLE_NV resulted in a trimming name of
+        // GL_PIXEL_COUNT_ resulting in GL_PIXEL_COUNT_NV becoming _NV which would in turn be turned into nothing.
+        var baseTrimmer = new NameTrimmer();
+        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration
+                    {
+                        UseExtensionVendorTrimmings = MixKhronosData
+                            .ExtensionVendorTrimmingMode
+                            .None,
+                    },
+                    Vendors = ["NV"],
+                    Groups =
+                    {
+                        {
+                            "OcclusionQueryParameterNameNV",
+                            new MixKhronosData.EnumGroup(
+                                "OcclusionQueryParameterNameNV",
+                                "uint",
+                                [],
+                                false,
+                                "NV",
+                                "Silk.NET.OpenGL"
+                            )
+                        },
+                    },
+                },
+            },
+        };
+        var names = new Dictionary<string, (string, List<string>?)>
+        {
+            { "GL_PIXEL_COUNT_NV", ("GL_PIXEL_COUNT_NV", []) },
+            { "GL_PIXEL_COUNT_AVAILABLE_NV", ("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
+        };
+        var ctx = new NameTrimmerContext
+        {
+            Container = "OcclusionQueryParameterNameNV",
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+            Names = names,
+            JobKey = "OpenGL",
+        };
+        baseTrimmer.Trim(ctx);
+        uut.Trim(ctx);
+        Assert.That(names["GL_PIXEL_COUNT_NV"].Item1, Is.EqualTo("PixelCount"));
+        Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Item1, Is.EqualTo("PixelCountAvailable"));
+    }
+
+    [Test]
+    public void OverzealousNameTrimmingFixupIsNotOverzealousForOpenAL()
+    {
+        var baseTrimmer = new NameTrimmer();
+        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenAL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration
+                    {
+                        UseExtensionVendorTrimmings = MixKhronosData
+                            .ExtensionVendorTrimmingMode
+                            .None,
+                    },
+                    Vendors = ["SOFT"],
+                    Groups =
+                    {
+                        {
+                            "VocalMorpherPhoneme",
+                            new MixKhronosData.EnumGroup(
+                                "VocalMorpherPhoneme",
+                                "uint",
+                                [],
+                                false,
+                                null,
+                                "Silk.NET.OpenAL"
+                            )
+                        },
+                    },
+                },
+            },
+        };
+        var names = new Dictionary<string, (string, List<string>?)>
+        {
+            { "AL_VOCAL_MORPHER_PHONEME_A", ("AL_VOCAL_MORPHER_PHONEME_A", null) },
+            { "AL_VOCAL_MORPHER_PHONEME_E", ("AL_VOCAL_MORPHER_PHONEME_E", null) },
+            { "AL_VOCAL_MORPHER_PHONEME_I", ("AL_VOCAL_MORPHER_PHONEME_I", null) },
+        };
+        var ctx = new NameTrimmerContext
+        {
+            Container = "VocalMorpherPhoneme",
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["al"] },
+            Names = names,
+            JobKey = "OpenAL",
+        };
+        baseTrimmer.Trim(ctx);
+        uut.Trim(ctx);
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Item1, Is.EqualTo("A"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Item1, Is.EqualTo("E"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Item1, Is.EqualTo("I"));
+    }
 }

@@ -15,5 +15,5 @@ public enum ShadingRateQCOM : uint
     Rate2X1Pixels = unchecked((uint)0x96A8),
     Rate2X2Pixels = unchecked((uint)0x96A9),
     Rate4X2Pixels = unchecked((uint)0x96AC),
-    Rate4X4Pixels = unchecked((uint)0x96AE)
+    Rate4X4Pixels = unchecked((uint)0x96AE),
 }

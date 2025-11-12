@@ -55,5 +55,5 @@ public enum PathRenderingTokenNV : uint
     RelativeRect = unchecked((uint)0xF7),
     ConicCurveTo = unchecked((uint)0x1A),
     RelativeConicCurveTo = unchecked((uint)0x1B),
-    SharedEdge = unchecked((uint)0xC0)
+    SharedEdge = unchecked((uint)0xC0),
 }

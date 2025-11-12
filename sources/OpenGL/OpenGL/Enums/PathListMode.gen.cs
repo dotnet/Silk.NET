@@ -12,5 +12,5 @@ public enum PathListMode : uint
 {
     AccumAdjacentPairsNV = unchecked((uint)0x90AD),
     AdjacentPairsNV = unchecked((uint)0x90AE),
-    FirstToRestNV = unchecked((uint)0x90AF)
+    FirstToRestNV = unchecked((uint)0x90AF),
 }

@@ -14,5 +14,5 @@ public enum NormalPointerType : uint
     Short = unchecked((uint)0x1402),
     Int = unchecked((uint)0x1404),
     Float = unchecked((uint)0x1406),
-    Double = unchecked((uint)0x140A)
+    Double = unchecked((uint)0x140A),
 }

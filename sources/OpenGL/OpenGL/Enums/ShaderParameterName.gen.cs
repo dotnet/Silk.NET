@@ -14,5 +14,5 @@ public enum ShaderParameterName : uint
     DeleteStatus = unchecked((uint)0x8B80),
     CompileStatus = unchecked((uint)0x8B81),
     InfoLogLength = unchecked((uint)0x8B84),
-    ShaderSourceLength = unchecked((uint)0x8B88)
+    ShaderSourceLength = unchecked((uint)0x8B88),
 }

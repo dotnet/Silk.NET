@@ -20,5 +20,5 @@ public enum ObjectIdentifier : uint
     Program = unchecked((uint)0x82E2),
     Query = unchecked((uint)0x82E3),
     ProgramPipeline = unchecked((uint)0x82E4),
-    Sampler = unchecked((uint)0x82E6)
+    Sampler = unchecked((uint)0x82E6),
 }

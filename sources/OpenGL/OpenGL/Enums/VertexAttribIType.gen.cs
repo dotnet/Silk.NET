@@ -15,5 +15,5 @@ public enum VertexAttribIType : uint
     Short = unchecked((uint)0x1402),
     UnsignedShort = unchecked((uint)0x1403),
     Int = unchecked((uint)0x1404),
-    UnsignedInt = unchecked((uint)0x1405)
+    UnsignedInt = unchecked((uint)0x1405),
 }

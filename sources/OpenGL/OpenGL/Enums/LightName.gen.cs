@@ -25,5 +25,5 @@ public enum LightName : uint
     FragmentLight4SGIX = unchecked((uint)0x8410),
     FragmentLight5SGIX = unchecked((uint)0x8411),
     FragmentLight6SGIX = unchecked((uint)0x8412),
-    FragmentLight7SGIX = unchecked((uint)0x8413)
+    FragmentLight7SGIX = unchecked((uint)0x8413),
 }

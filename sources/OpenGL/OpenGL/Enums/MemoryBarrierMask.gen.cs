@@ -40,5 +40,5 @@ public enum MemoryBarrierMask : uint
     AtomicCounterBarrierBitEXT = unchecked((uint)0x00001000),
     AllBarrierBitsEXT = unchecked((uint)0xFFFFFFFF),
     ShaderGlobalAccessBarrierBitNV = unchecked((uint)0x00000010),
-    ClientMappedBufferBarrierBitEXT = unchecked((uint)0x00004000)
+    ClientMappedBufferBarrierBitEXT = unchecked((uint)0x00004000),
 }

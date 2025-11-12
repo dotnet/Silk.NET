@@ -12,5 +12,5 @@ public enum PathCoverMode : uint
 {
     PathFillCoverModeNV = unchecked((uint)0x9082),
     ConvexHullNV = unchecked((uint)0x908B),
-    BoundingBoxNV = unchecked((uint)0x908D)
+    BoundingBoxNV = unchecked((uint)0x908D),
 }

@@ -12,5 +12,5 @@ public enum PathColor : uint
 {
     PrimaryColor = unchecked((uint)0x8577),
     PrimaryColorNV = unchecked((uint)0x852C),
-    SecondaryColorNV = unchecked((uint)0x852D)
+    SecondaryColorNV = unchecked((uint)0x852D),
 }

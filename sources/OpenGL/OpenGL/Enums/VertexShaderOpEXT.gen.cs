@@ -33,5 +33,5 @@ public enum VertexShaderOpEXT : uint
     Sub = unchecked((uint)0x8796),
     CrossProduct = unchecked((uint)0x8797),
     MultiplyMatrix = unchecked((uint)0x8798),
-    Mov = unchecked((uint)0x8799)
+    Mov = unchecked((uint)0x8799),
 }

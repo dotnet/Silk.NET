@@ -85,5 +85,5 @@ public enum TextureParameterName : uint
     TextureWrapROES = unchecked((uint)0x8072),
     TextureUnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
     TextureBorderColorNV = unchecked((uint)0x1004),
-    TextureFoveatedCutoffDensityQCOM = unchecked((uint)0x96A0)
+    TextureFoveatedCutoffDensityQCOM = unchecked((uint)0x96A0),
 }

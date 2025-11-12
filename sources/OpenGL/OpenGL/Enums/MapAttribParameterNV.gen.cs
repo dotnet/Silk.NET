@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum MapAttribParameterNV : uint
 {
     UOrder = unchecked((uint)0x86C3),
-    VOrder = unchecked((uint)0x86C4)
+    VOrder = unchecked((uint)0x86C4),
 }

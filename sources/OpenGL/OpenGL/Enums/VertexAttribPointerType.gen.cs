@@ -27,5 +27,5 @@ public enum VertexAttribPointerType : uint
     Int64ARB = unchecked((uint)0x140E),
     Int64NV = unchecked((uint)0x140E),
     UnsignedInt64NV = unchecked((uint)0x140F),
-    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368)
+    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368),
 }

@@ -14,5 +14,5 @@ public enum DebugSeverity : uint
     DebugSeverityHigh = unchecked((uint)0x9146),
     DebugSeverityMedium = unchecked((uint)0x9147),
     DebugSeverityLow = unchecked((uint)0x9148),
-    DebugSeverityNotification = unchecked((uint)0x826B)
+    DebugSeverityNotification = unchecked((uint)0x826B),
 }

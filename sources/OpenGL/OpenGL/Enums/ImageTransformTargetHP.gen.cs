@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ImageTransformTargetHP : uint
 {
-    ImageTransform2D = unchecked((uint)0x8161)
+    ImageTransform2D = unchecked((uint)0x8161),
 }

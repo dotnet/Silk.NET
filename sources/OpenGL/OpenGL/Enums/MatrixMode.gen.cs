@@ -13,5 +13,5 @@ public enum MatrixMode : uint
     Texture = unchecked((uint)0x1702),
     Modelview = unchecked((uint)0x1700),
     Projection = unchecked((uint)0x1701),
-    Modelview0EXT = unchecked((uint)0x1700)
+    Modelview0EXT = unchecked((uint)0x1700),
 }
