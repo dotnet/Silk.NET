@@ -121,7 +121,7 @@ public static class MetadataUtils
         string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
-        Predicate<T>? filter = default,
+        Predicate<(T Metadata, MetadataSources Sources)>? filter = default,
         T? defaultValue = default
     ) =>
         GetAllMetadata(metadataProviders, jobKey, parentSymbol, childSymbol, filter)
@@ -152,7 +152,7 @@ public static class MetadataUtils
         string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
-        Predicate<T>? filter = default
+        Predicate<(T Metadata, MetadataSources Sources)>? filter = default
     )
     {
         if (parentSymbol is null)
@@ -162,14 +162,16 @@ public static class MetadataUtils
 
         filter ??= static _ => true;
 
+        var foundChildMetadata = false;
         if (childSymbol is not null)
         {
             foreach (var provider in metadataProviders)
             {
                 if (provider.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var childMetadata))
                 {
-                    foreach (var child in childMetadata.Where(x => filter.Invoke(x)))
+                    foreach (var child in childMetadata.Where(x => filter.Invoke((x, MetadataSources.Child))))
                     {
+                        foundChildMetadata = true;
                         yield return child;
                     }
                 }
@@ -178,10 +180,15 @@ public static class MetadataUtils
 
         foreach (var provider in metadataProviders)
         {
-            // parentMetadata.FirstOrDefault(x => x.Profile == Profile.Profile) ?? parent
             if (provider.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentMetadata))
             {
-                foreach (var parent in parentMetadata.Where(x => filter.Invoke(x)))
+                var source = MetadataSources.Parent;
+                if (!foundChildMetadata)
+                {
+                    source |= MetadataSources.ParentFallback;
+                }
+
+                foreach (var parent in parentMetadata.Where(x => filter.Invoke((x, source))))
                 {
                     yield return parent;
                 }

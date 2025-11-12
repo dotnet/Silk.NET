@@ -83,7 +83,7 @@ public class AddApiProfiles(
                             jobKey,
                             _currentParentSymbol,
                             childSymbol,
-                            x => x.Profile == Profile.Profile,
+                            x => x.Metadata.Profile == Profile.Profile,
                             Profile
                         )
                         .GetSupportedApiProfileAttribute(),
