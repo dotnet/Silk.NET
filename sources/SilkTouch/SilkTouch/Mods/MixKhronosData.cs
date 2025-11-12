@@ -359,10 +359,6 @@ public partial class MixKhronosData(
             }
 
             job.AdditionalTypeRemappings[mapFrom] = mapTo;
-
-            // This is a hack to fix https://github.com/dotnet/ClangSharp/issues/618
-            // where bitfields are missing a type cast
-            job.AdditionalTypeRemappings[mapTo] = mapTo;
         }
     }
 
