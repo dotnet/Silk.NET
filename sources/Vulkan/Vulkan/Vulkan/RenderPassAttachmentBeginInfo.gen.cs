@@ -68,5 +68,5 @@ public unsafe partial struct RenderPassAttachmentBeginInfo
         ],
         MinVersion = "1.2"
     )]
-    public VkImageView_THandle* PAttachments;
+    public ImageViewTHandle* PAttachments;
 }

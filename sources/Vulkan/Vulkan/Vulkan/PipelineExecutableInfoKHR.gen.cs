@@ -40,7 +40,7 @@ public unsafe partial struct PipelineExecutableInfoKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public VkPipeline_THandle Pipeline;
+    public PipelineTHandle Pipeline;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

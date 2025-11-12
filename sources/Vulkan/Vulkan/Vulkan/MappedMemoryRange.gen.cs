@@ -95,7 +95,7 @@ public unsafe partial struct MappedMemoryRange
         ],
         MinVersion = "1.0"
     )]
-    public VkDeviceMemory_THandle Memory;
+    public DeviceMemoryTHandle Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

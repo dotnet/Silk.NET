@@ -59,5 +59,5 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
         ],
         RequireAll = true
     )]
-    public VkShaderEXT_THandle Shader;
+    public ShaderEXTTHandle Shader;
 }

@@ -44,7 +44,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public VkPipelineLayout_THandle Layout;
+    public PipelineLayoutTHandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

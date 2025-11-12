@@ -74,7 +74,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public VkImage_THandle* PImages;
+    public ImageTHandle* PImages;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -96,7 +96,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public VkBuffer_THandle* PBuffers;
+    public BufferTHandle* PBuffers;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

@@ -20,9 +20,9 @@ public unsafe partial struct DedicatedAllocationMemoryAllocateInfoNV
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public VkImage_THandle Image;
+    public ImageTHandle Image;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public VkBuffer_THandle Buffer;
+    public BufferTHandle Buffer;
 }

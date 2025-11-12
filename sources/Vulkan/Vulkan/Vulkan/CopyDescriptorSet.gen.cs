@@ -80,7 +80,7 @@ public unsafe partial struct CopyDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public VkDescriptorSet_THandle SrcSet;
+    public DescriptorSetTHandle SrcSet;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -152,7 +152,7 @@ public unsafe partial struct CopyDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public VkDescriptorSet_THandle DstSet;
+    public DescriptorSetTHandle DstSet;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

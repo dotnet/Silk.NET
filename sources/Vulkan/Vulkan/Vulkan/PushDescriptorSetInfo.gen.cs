@@ -39,7 +39,7 @@ public unsafe partial struct PushDescriptorSetInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public VkPipelineLayout_THandle Layout;
+    public PipelineLayoutTHandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

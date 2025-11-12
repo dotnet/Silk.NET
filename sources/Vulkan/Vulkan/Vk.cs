@@ -6,6 +6,35 @@ namespace Silk.NET.Vulkan;
 
 public partial class Vk
 {
+    // TODO: Clean this up and make this more similar to how the OpenAL bindings work
+    private InstanceTHandle? _currentInstance;
+    public InstanceTHandle? CurrentInstance
+    {
+        get => _currentInstance;
+        set
+        {
+            if (_currentInstance != null && _currentInstance != value)
+                throw new InvalidOperationException(
+                    "CurrentInstance has already been set. Please create a new API instance so that the loaded function pointers can be kept separate."
+                );
+            _currentInstance = value;
+        }
+    }
+
+    private DeviceTHandle? _currentDevice;
+    public DeviceTHandle? CurrentDevice
+    {
+        get => _currentDevice;
+        set
+        {
+            if (_currentDevice != null && _currentDevice != value)
+                throw new InvalidOperationException(
+                    "CurrentDevice has already been set. Please create a new API instance so that the loaded function pointers can be kept separate."
+                );
+            _currentDevice = value;
+        }
+    }
+
     static Vk()
     {
         LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
@@ -46,12 +75,12 @@ public partial class Vk
         {
             if (functionName == "vkGetDeviceProcAddr")
             {
-                return (delegate* unmanaged<DeviceHandle, sbyte*, void*>)&GetDeviceProcAddr;
+                return (delegate* unmanaged<DeviceTHandle, sbyte*, void*>)&GetDeviceProcAddr;
             }
 
             if (functionName == "vkGetInstanceProcAddr")
             {
-                return (delegate* unmanaged<InstanceHandle, sbyte*, void*>)&GetInstanceProcAddr;
+                return (delegate* unmanaged<InstanceTHandle, sbyte*, void*>)&GetInstanceProcAddr;
             }
 
             void* ptr = Ivk.GetDeviceProcAddr(Vk.CurrentDevice.GetValueOrDefault(), functionName);
@@ -65,13 +94,13 @@ public partial class Vk
         }
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName)
+        private static unsafe void* GetDeviceProcAddr(DeviceTHandle device, sbyte* pName)
         {
             return DllImport.GetDeviceProcAddr(device, pName);
         }
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName)
+        private static unsafe void* GetInstanceProcAddr(InstanceTHandle instance, sbyte* pName)
         {
             return DllImport.GetInstanceProcAddr(instance, pName);
         }

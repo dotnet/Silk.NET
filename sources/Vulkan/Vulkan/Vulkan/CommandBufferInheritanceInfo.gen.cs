@@ -95,7 +95,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkRenderPass_THandle RenderPass;
+    public RenderPassTHandle RenderPass;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -153,7 +153,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkFramebuffer_THandle Framebuffer;
+    public FramebufferTHandle Framebuffer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(

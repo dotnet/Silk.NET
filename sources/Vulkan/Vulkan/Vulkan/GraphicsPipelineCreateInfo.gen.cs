@@ -293,7 +293,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkPipelineLayout_THandle Layout;
+    public PipelineLayoutTHandle Layout;
 
     [NativeTypeName("VkRenderPass")]
     [SupportedApiProfile(
@@ -312,7 +312,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkRenderPass_THandle RenderPass;
+    public RenderPassTHandle RenderPass;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -350,7 +350,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkPipeline_THandle BasePipelineHandle;
+    public PipelineTHandle BasePipelineHandle;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

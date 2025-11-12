@@ -20,5 +20,5 @@ public unsafe partial struct MemoryDedicatedAllocateInfoTensorARM
 
     [NativeTypeName("VkTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public VkTensorARM_THandle Tensor;
+    public TensorARMTHandle Tensor;
 }

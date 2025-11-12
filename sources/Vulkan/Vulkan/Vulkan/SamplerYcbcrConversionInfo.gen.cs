@@ -70,5 +70,5 @@ public unsafe partial struct SamplerYcbcrConversionInfo
         ],
         MinVersion = "1.1"
     )]
-    public VkSamplerYcbcrConversion_THandle Conversion;
+    public SamplerYcbcrConversionTHandle Conversion;
 }

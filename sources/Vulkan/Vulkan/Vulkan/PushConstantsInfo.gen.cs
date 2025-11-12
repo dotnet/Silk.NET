@@ -30,7 +30,7 @@ public unsafe partial struct PushConstantsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public VkPipelineLayout_THandle Layout;
+    public PipelineLayoutTHandle Layout;
 
     [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(

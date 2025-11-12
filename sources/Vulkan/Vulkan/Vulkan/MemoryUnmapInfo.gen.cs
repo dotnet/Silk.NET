@@ -59,5 +59,5 @@ public unsafe partial struct MemoryUnmapInfo
         ],
         MinVersion = "1.4"
     )]
-    public VkDeviceMemory_THandle Memory;
+    public DeviceMemoryTHandle Memory;
 }

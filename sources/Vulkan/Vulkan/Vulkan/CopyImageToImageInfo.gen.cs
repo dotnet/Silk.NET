@@ -59,7 +59,7 @@ public unsafe partial struct CopyImageToImageInfo
         ],
         MinVersion = "1.4"
     )]
-    public VkImage_THandle SrcImage;
+    public ImageTHandle SrcImage;
 
     [SupportedApiProfile(
         "vulkan",
@@ -84,7 +84,7 @@ public unsafe partial struct CopyImageToImageInfo
         ],
         MinVersion = "1.4"
     )]
-    public VkImage_THandle DstImage;
+    public ImageTHandle DstImage;
 
     [SupportedApiProfile(
         "vulkan",

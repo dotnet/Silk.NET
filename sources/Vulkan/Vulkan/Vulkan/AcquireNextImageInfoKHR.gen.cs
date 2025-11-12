@@ -35,7 +35,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public VkSwapchainKHR_THandle Swapchain;
+    public SwapchainKHRTHandle Swapchain;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public VkSemaphore_THandle Semaphore;
+    public SemaphoreTHandle Semaphore;
 
     [NativeTypeName("VkFence")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public VkFence_THandle Fence;
+    public FenceTHandle Fence;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

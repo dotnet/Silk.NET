@@ -50,7 +50,7 @@ public unsafe partial struct CopyMemoryToMicromapInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public VkMicromapEXT_THandle Dst;
+    public MicromapEXTTHandle Dst;
 
     [SupportedApiProfile(
         "vulkan",

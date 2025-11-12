@@ -71,7 +71,7 @@ public unsafe partial struct MicromapBuildInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public VkMicromapEXT_THandle DstMicromap;
+    public MicromapEXTTHandle DstMicromap;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

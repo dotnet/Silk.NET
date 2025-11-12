@@ -124,7 +124,7 @@ public unsafe partial struct BindSparseInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkSemaphore_THandle* PWaitSemaphores;
+    public SemaphoreTHandle* PWaitSemaphores;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -356,5 +356,5 @@ public unsafe partial struct BindSparseInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkSemaphore_THandle* PSignalSemaphores;
+    public SemaphoreTHandle* PSignalSemaphores;
 }

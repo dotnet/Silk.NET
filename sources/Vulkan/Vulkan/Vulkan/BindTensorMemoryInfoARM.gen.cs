@@ -20,11 +20,11 @@ public unsafe partial struct BindTensorMemoryInfoARM
 
     [NativeTypeName("VkTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public VkTensorARM_THandle Tensor;
+    public TensorARMTHandle Tensor;
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public VkDeviceMemory_THandle Memory;
+    public DeviceMemoryTHandle Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]

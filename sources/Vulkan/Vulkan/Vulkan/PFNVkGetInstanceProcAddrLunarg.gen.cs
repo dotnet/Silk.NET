@@ -11,14 +11,11 @@ namespace Silk.NET.Vulkan;
 public readonly unsafe struct PFNVkGetInstanceProcAddrLunarg : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<
-        VkInstance_THandle,
-        sbyte*,
-        PFNVkGetInstanceProcAddrLunargP2> Handle =>
-        (delegate* unmanaged<VkInstance_THandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)Pointer;
+    public delegate* unmanaged<InstanceTHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> Handle =>
+        (delegate* unmanaged<InstanceTHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)Pointer;
 
     public PFNVkGetInstanceProcAddrLunarg(
-        delegate* unmanaged<VkInstance_THandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> ptr
+        delegate* unmanaged<InstanceTHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> ptr
     ) => Pointer = ptr;
 
     public PFNVkGetInstanceProcAddrLunarg(PFNVkGetInstanceProcAddrLunargDelegate proc) =>
@@ -27,13 +24,12 @@ public readonly unsafe struct PFNVkGetInstanceProcAddrLunarg : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator PFNVkGetInstanceProcAddrLunarg(
-        delegate* unmanaged<VkInstance_THandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> pfn
+        delegate* unmanaged<InstanceTHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
-        VkInstance_THandle,
+        InstanceTHandle,
         sbyte*,
         PFNVkGetInstanceProcAddrLunargP2>(PFNVkGetInstanceProcAddrLunarg pfn) =>
-        (delegate* unmanaged<VkInstance_THandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)
-            pfn.Pointer;
+        (delegate* unmanaged<InstanceTHandle, sbyte*, PFNVkGetInstanceProcAddrLunargP2>)pfn.Pointer;
 }

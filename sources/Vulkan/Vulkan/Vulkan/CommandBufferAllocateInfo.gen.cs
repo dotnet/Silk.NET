@@ -94,7 +94,7 @@ public unsafe partial struct CommandBufferAllocateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkCommandPool_THandle CommandPool;
+    public CommandPoolTHandle CommandPool;
 
     [SupportedApiProfile(
         "vulkan",

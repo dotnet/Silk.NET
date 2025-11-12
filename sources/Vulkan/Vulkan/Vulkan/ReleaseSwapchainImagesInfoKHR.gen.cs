@@ -44,7 +44,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public VkSwapchainKHR_THandle Swapchain;
+    public SwapchainKHRTHandle Swapchain;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

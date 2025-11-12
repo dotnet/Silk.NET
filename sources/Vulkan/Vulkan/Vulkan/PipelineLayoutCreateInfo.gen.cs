@@ -128,7 +128,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkDescriptorSetLayout_THandle* PSetLayouts;
+    public DescriptorSetLayoutTHandle* PSetLayouts;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -33,108 +33,108 @@ namespace Silk.NET.Vulkan;
 public unsafe partial struct PhysicalDeviceGroupPropertiesPhysicalDevices
 {
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E0;
+    public PhysicalDeviceTHandle E0;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E1;
+    public PhysicalDeviceTHandle E1;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E2;
+    public PhysicalDeviceTHandle E2;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E3;
+    public PhysicalDeviceTHandle E3;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E4;
+    public PhysicalDeviceTHandle E4;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E5;
+    public PhysicalDeviceTHandle E5;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E6;
+    public PhysicalDeviceTHandle E6;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E7;
+    public PhysicalDeviceTHandle E7;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E8;
+    public PhysicalDeviceTHandle E8;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E9;
+    public PhysicalDeviceTHandle E9;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E10;
+    public PhysicalDeviceTHandle E10;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E11;
+    public PhysicalDeviceTHandle E11;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E12;
+    public PhysicalDeviceTHandle E12;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E13;
+    public PhysicalDeviceTHandle E13;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E14;
+    public PhysicalDeviceTHandle E14;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E15;
+    public PhysicalDeviceTHandle E15;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E16;
+    public PhysicalDeviceTHandle E16;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E17;
+    public PhysicalDeviceTHandle E17;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E18;
+    public PhysicalDeviceTHandle E18;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E19;
+    public PhysicalDeviceTHandle E19;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E20;
+    public PhysicalDeviceTHandle E20;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E21;
+    public PhysicalDeviceTHandle E21;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E22;
+    public PhysicalDeviceTHandle E22;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E23;
+    public PhysicalDeviceTHandle E23;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E24;
+    public PhysicalDeviceTHandle E24;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E25;
+    public PhysicalDeviceTHandle E25;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E26;
+    public PhysicalDeviceTHandle E26;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E27;
+    public PhysicalDeviceTHandle E27;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E28;
+    public PhysicalDeviceTHandle E28;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E29;
+    public PhysicalDeviceTHandle E29;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E30;
+    public PhysicalDeviceTHandle E30;
 
     [SupportedApiProfile("vulkan")]
-    public VkPhysicalDevice_THandle E31;
+    public PhysicalDeviceTHandle E31;
 
     [SupportedApiProfile("vulkan")]
-    public ref VkPhysicalDevice_THandle this[int index]
+    public ref PhysicalDeviceTHandle this[int index]
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (VkPhysicalDevice_THandle* pThis = &E0)
+            fixed (PhysicalDeviceTHandle* pThis = &E0)
             {
                 return ref pThis[index];
             }

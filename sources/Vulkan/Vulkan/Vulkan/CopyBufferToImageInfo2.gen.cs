@@ -59,7 +59,7 @@ public unsafe partial struct CopyBufferToImageInfo2
         ],
         MinVersion = "1.3"
     )]
-    public VkBuffer_THandle SrcBuffer;
+    public BufferTHandle SrcBuffer;
 
     [NativeTypeName("VkImage")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public unsafe partial struct CopyBufferToImageInfo2
         ],
         MinVersion = "1.3"
     )]
-    public VkImage_THandle DstImage;
+    public ImageTHandle DstImage;
 
     [SupportedApiProfile(
         "vulkan",

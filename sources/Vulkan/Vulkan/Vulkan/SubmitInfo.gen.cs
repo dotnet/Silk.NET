@@ -124,7 +124,7 @@ public unsafe partial struct SubmitInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkSemaphore_THandle* PWaitSemaphores;
+    public SemaphoreTHandle* PWaitSemaphores;
 
     [NativeTypeName("const VkPipelineStageFlags *")]
     [SupportedApiProfile(
@@ -211,7 +211,7 @@ public unsafe partial struct SubmitInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkCommandBuffer_THandle* PCommandBuffers;
+    public CommandBufferTHandle* PCommandBuffers;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -269,5 +269,5 @@ public unsafe partial struct SubmitInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkSemaphore_THandle* PSignalSemaphores;
+    public SemaphoreTHandle* PSignalSemaphores;
 }

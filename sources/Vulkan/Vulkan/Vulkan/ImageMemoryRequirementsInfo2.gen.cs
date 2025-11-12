@@ -83,5 +83,5 @@ public unsafe partial struct ImageMemoryRequirementsInfo2
         ],
         MinVersion = "1.1"
     )]
-    public VkImage_THandle Image;
+    public ImageTHandle Image;
 }

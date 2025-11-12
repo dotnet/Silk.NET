@@ -52,7 +52,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public VkPipeline_THandle Pipeline;
+    public PipelineTHandle Pipeline;
 
     [NativeTypeName("const VkPipelineCreateInfoKHR *")]
     [SupportedApiProfile(

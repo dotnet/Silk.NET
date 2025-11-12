@@ -84,7 +84,7 @@ public unsafe partial struct FramebufferCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkRenderPass_THandle RenderPass;
+    public RenderPassTHandle RenderPass;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -122,7 +122,7 @@ public unsafe partial struct FramebufferCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkImageView_THandle* PAttachments;
+    public ImageViewTHandle* PAttachments;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -31,7 +31,7 @@ public unsafe partial struct RenderingAttachmentInfo
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public VkImageView_THandle ImageView;
+    public ImageViewTHandle ImageView;
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public unsafe partial struct RenderingAttachmentInfo
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public VkImageView_THandle ResolveImageView;
+    public ImageViewTHandle ResolveImageView;
 
     [SupportedApiProfile(
         "vulkan",

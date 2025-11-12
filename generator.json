@@ -277,13 +277,12 @@
         "AddApiProfiles",
         "MixKhronosData",
         "ExtractNestedTyping",
-        "PrettifyNames",
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
+        "PrettifyNames",
         "TransformEnums",
-        "AddVTables",
-        "TransformVulkan"
+        "AddVTables"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -304,12 +303,35 @@
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan"
       },
+      "InterceptNativeFunctions": {
+        "NativeFunctionNames": [
+          "vkCreateInstance",
+          "vkCreateDevice"
+        ]
+      },
+      "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
+        "UseDSL": true
+      },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["vk"],
         "PrefixOverrides": {
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"
         }
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RemoveMembers": [
+          {
+            "MemberName": "MaxEnum",
+            "MemberValue": "0x7FFFFFFF"
+          },
+          {
+            "MemberName": "Invalid",
+            "MemberValue": "0x7FFFFFFF"
+          }
+        ]
       },
       "AddVTables": {
         "VTables": [
@@ -322,23 +344,6 @@
           {
             "Kind": "ThisThread",
             "IsDefault": true
-          }
-        ]
-      },
-      "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
-        "UseDSL": true
-      },
-      "TransformEnums": {
-        "AddNoneMemberToFlags": true,
-        "RemoveMembers": [
-          {
-            "MemberName": "MaxEnum",
-            "MemberValue": "0x7FFFFFFF"
-          },
-          {
-            "MemberName": "Invalid",
-            "MemberValue": "0x7FFFFFFF"
           }
         ]
       }

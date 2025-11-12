@@ -36,7 +36,7 @@ public unsafe partial struct SparseBufferMemoryBindInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkBuffer_THandle Buffer;
+    public BufferTHandle Buffer;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

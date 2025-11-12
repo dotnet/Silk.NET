@@ -114,5 +114,5 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public VkMicromapEXT_THandle Micromap;
+    public MicromapEXTTHandle Micromap;
 }

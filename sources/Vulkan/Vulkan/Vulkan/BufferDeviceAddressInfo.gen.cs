@@ -71,5 +71,5 @@ public unsafe partial struct BufferDeviceAddressInfo
         ],
         MinVersion = "1.2"
     )]
-    public VkBuffer_THandle Buffer;
+    public BufferTHandle Buffer;
 }

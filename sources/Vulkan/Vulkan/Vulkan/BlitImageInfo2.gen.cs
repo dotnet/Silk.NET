@@ -31,7 +31,7 @@ public unsafe partial struct BlitImageInfo2
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public VkImage_THandle SrcImage;
+    public ImageTHandle SrcImage;
 
     [SupportedApiProfile(
         "vulkan",
@@ -46,7 +46,7 @@ public unsafe partial struct BlitImageInfo2
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public VkImage_THandle DstImage;
+    public ImageTHandle DstImage;
 
     [SupportedApiProfile(
         "vulkan",

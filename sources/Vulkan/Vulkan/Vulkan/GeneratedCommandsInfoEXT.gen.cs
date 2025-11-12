@@ -55,7 +55,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkIndirectExecutionSetEXT_THandle IndirectExecutionSet;
+    public IndirectExecutionSetEXTTHandle IndirectExecutionSet;
 
     [NativeTypeName("VkIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(
@@ -67,7 +67,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkIndirectCommandsLayoutEXT_THandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutEXTTHandle IndirectCommandsLayout;
 
     [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(

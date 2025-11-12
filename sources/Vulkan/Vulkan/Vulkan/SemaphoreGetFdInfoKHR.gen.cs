@@ -41,7 +41,7 @@ public unsafe partial struct SemaphoreGetFdInfoKHR
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public VkSemaphore_THandle Semaphore;
+    public SemaphoreTHandle Semaphore;
 
     [SupportedApiProfile(
         "vulkan",

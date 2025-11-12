@@ -100,7 +100,7 @@ public unsafe partial struct BufferViewCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public VkBuffer_THandle Buffer;
+    public BufferTHandle Buffer;
 
     [SupportedApiProfile(
         "vulkan",

@@ -47,5 +47,5 @@ public unsafe partial struct BufferCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkBuffer_THandle Buffer;
+    public BufferTHandle Buffer;
 }

@@ -138,7 +138,7 @@ public unsafe partial struct ShaderCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public VkDescriptorSetLayout_THandle* PSetLayouts;
+    public DescriptorSetLayoutTHandle* PSetLayouts;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

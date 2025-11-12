@@ -40,7 +40,7 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public VkDeviceMemory_THandle Memory;
+    public DeviceMemoryTHandle Memory;
 
     [SupportedApiProfile(
         "vulkan",

@@ -13,7 +13,7 @@ public unsafe partial struct DisplayPlanePropertiesKHR
 {
     [NativeTypeName("VkDisplayKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public VkDisplayKHR_THandle CurrentDisplay;
+    public DisplayKHRTHandle CurrentDisplay;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]

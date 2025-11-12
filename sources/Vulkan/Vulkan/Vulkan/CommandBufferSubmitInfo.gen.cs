@@ -58,7 +58,7 @@ public unsafe partial struct CommandBufferSubmitInfo
         ],
         MinVersion = "1.3"
     )]
-    public VkCommandBuffer_THandle CommandBuffer;
+    public CommandBufferTHandle CommandBuffer;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

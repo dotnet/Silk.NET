@@ -40,7 +40,7 @@ public unsafe partial struct DescriptorSetBindingReferenceValve
             "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
         ]
     )]
-    public VkDescriptorSetLayout_THandle DescriptorSetLayout;
+    public DescriptorSetLayoutTHandle DescriptorSetLayout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
