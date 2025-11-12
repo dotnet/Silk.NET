@@ -54,10 +54,8 @@
         "InputSourceRoot": "sources/SDL",
         "InputTestRoot": "tests/SDL"
       },
-      "ExtractNestedTyping": {
-        "GenerateEmptyStructsForMissingHandleTypes": true
-      },
       "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "TransformFunctions": {
@@ -210,9 +208,6 @@
           "Direct"
         ]
       },
-      "ExtractNestedTyping": {
-        "GenerateEmptyStructsForMissingHandleTypes": true
-      },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [
           "alcOpenDevice",
@@ -268,6 +263,7 @@
         "BenefitOfTheDoubtArrayTransformation": true
       },
       "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       }
     },
@@ -308,9 +304,6 @@
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan"
       },
-      "ExtractNestedTyping": {
-        "GenerateEmptyStructsForMissingHandleTypes": true
-      },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["vk"],
@@ -333,6 +326,7 @@
         ]
       },
       "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "TransformEnums": {

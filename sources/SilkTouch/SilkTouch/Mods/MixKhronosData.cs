@@ -358,6 +358,8 @@ public partial class MixKhronosData(
                 continue;
             }
 
+            Console.WriteLine($"{mapFrom}={mapTo}");
+
             job.AdditionalTypeRemappings[mapFrom] = mapTo;
         }
     }
