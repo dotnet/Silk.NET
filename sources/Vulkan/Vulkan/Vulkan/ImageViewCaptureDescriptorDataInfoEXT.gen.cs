@@ -47,5 +47,5 @@ public unsafe partial struct ImageViewCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ImageViewHandle ImageView;
+    public VkImageView_THandle ImageView;
 }

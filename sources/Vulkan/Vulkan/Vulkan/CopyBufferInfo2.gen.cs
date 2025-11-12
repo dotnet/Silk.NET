@@ -58,7 +58,7 @@ public unsafe partial struct CopyBufferInfo2
         ],
         MinVersion = "1.3"
     )]
-    public BufferHandle SrcBuffer;
+    public VkBuffer_THandle SrcBuffer;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -75,7 +75,7 @@ public unsafe partial struct CopyBufferInfo2
         ],
         MinVersion = "1.3"
     )]
-    public BufferHandle DstBuffer;
+    public VkBuffer_THandle DstBuffer;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -52,7 +52,7 @@ public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public ImageViewHandle ImageView;
+    public VkImageView_THandle ImageView;
 
     [SupportedApiProfile(
         "vulkan",

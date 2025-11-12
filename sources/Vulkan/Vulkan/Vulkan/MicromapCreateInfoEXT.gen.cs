@@ -51,7 +51,7 @@ public unsafe partial struct MicromapCreateInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public BufferHandle Buffer;
+    public VkBuffer_THandle Buffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

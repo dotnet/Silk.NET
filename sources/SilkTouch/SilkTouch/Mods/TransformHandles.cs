@@ -1,21 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.LocationTransformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -63,12 +55,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
     {
         await base.ExecuteAsync(ctx, ct);
 
-        // TODO: For debugging only
-        if (DateTime.Now != DateTime.UnixEpoch)
-        {
-            return;
-        }
-
         var project = ctx.SourceProject;
         if (project == null)
         {
@@ -82,14 +68,12 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         }
 
         var cfg = config.Get(ctx.JobKey);
-
-        // Find missing handle types
-        var handleDiscoverer = new MissingHandleTypeDiscoverer(logger, compilation, ct);
-        var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes();
-
-        // Second pass to modify project based on gathered data
         if (cfg.AssumeMissingTypesOpaque)
         {
+            // Find missing handle types
+            var handleDiscoverer = new MissingHandleTypeDiscoverer(logger, compilation, ct);
+            var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes();
+
             // Generate syntax nodes containing empty structs to represent the missing handle types
             var structGenerator = new EmptyStructGenerator();
             var syntaxNodes = structGenerator.GenerateSyntaxNodes(missingHandleTypes);
@@ -98,22 +82,20 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             foreach (var (fullyQualifiedName, node) in syntaxNodes)
             {
                 var relativePath = $"Handles/{PathForFullyQualified(fullyQualifiedName)}";
-                project = project
-                    ?.AddDocument(
-                        Path.GetFileName(relativePath),
-                        node.NormalizeWhitespace(),
-                        filePath: project.FullPath(relativePath)
-                    )
-                    .Project;
+                project = project.AddDocument(
+                    Path.GetFileName(relativePath),
+                    node.NormalizeWhitespace(),
+                    filePath: project.FullPath(relativePath)).Project;
+            }
+
+            // Update compilation
+            compilation = await project.GetCompilationAsync(ct);
+            if (compilation == null)
+            {
+                throw new InvalidOperationException("Failed to get compilation");
             }
         }
 
-        if (project == null)
-        {
-            return;
-        }
-
-        // Phase 1. Gather data before modifying
         // Find handle documents
         var handleTypeDiscoverer = new HandleTypeDiscoverer(project, compilation, ct);
         var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
@@ -138,14 +120,13 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             }
         }
 
-        // Phase 2. Modify project after gathering data
         // Do the two following transformation to all references of the handle types:
         // 1. Add -Handle suffix
         // 2. Reduce pointer dimensions
         ctx.SourceProject = project;
         await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, handleTypes, [
             new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle"))),
-            new PointerDimensionReductionTransformer()
+            new PointerDimensionReductionTransformer(),
         ], logger, ct);
         project = ctx.SourceProject;
 
@@ -249,12 +230,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
                             break;
                         }
+                        // Skip syntaxes that will never contain handle types
+                        case BaseTypeSyntax:
                         case AttributeSyntax:
                         {
-                            // Skip AttributeSyntaxes
-                            // A handle type will never be used as an attribute
                             isSuccess = true;
-
                             break;
                         }
                     }

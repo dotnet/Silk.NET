@@ -51,5 +51,5 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
             "VK_VERSION_1_1",
         ]
     )]
-    public AccelerationStructureNVHandle* PAccelerationStructures;
+    public VkAccelerationStructureNV_THandle* PAccelerationStructures;
 }

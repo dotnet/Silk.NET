@@ -20,11 +20,11 @@ public unsafe partial struct CopyTensorInfoARM
 
     [NativeTypeName("VkTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle SrcTensor;
+    public VkTensorARM_THandle SrcTensor;
 
     [NativeTypeName("VkTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle DstTensor;
+    public VkTensorARM_THandle DstTensor;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]

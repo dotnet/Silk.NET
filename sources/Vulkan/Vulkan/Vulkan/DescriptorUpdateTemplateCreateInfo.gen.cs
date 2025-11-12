@@ -153,7 +153,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
         ],
         MinVersion = "1.1"
     )]
-    public DescriptorSetLayoutHandle DescriptorSetLayout;
+    public VkDescriptorSetLayout_THandle DescriptorSetLayout;
 
     [SupportedApiProfile(
         "vulkan",
@@ -194,7 +194,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
         ],
         MinVersion = "1.1"
     )]
-    public PipelineLayoutHandle PipelineLayout;
+    public VkPipelineLayout_THandle PipelineLayout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

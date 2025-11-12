@@ -80,7 +80,7 @@ public unsafe partial struct WriteDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSetHandle DstSet;
+    public VkDescriptorSet_THandle DstSet;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -247,5 +247,5 @@ public unsafe partial struct WriteDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public BufferViewHandle* PTexelBufferView;
+    public VkBufferView_THandle* PTexelBufferView;
 }

@@ -267,7 +267,7 @@ public unsafe partial struct ImageMemoryBarrier
         ],
         MinVersion = "1.0"
     )]
-    public ImageHandle Image;
+    public VkImage_THandle Image;
 
     [SupportedApiProfile(
         "vulkan",

@@ -60,7 +60,7 @@ public unsafe partial struct CopyMemoryToImageInfo
         ],
         MinVersion = "1.4"
     )]
-    public ImageHandle DstImage;
+    public VkImage_THandle DstImage;
 
     [SupportedApiProfile(
         "vulkan",

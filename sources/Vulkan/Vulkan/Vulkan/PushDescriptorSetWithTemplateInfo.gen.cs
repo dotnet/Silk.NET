@@ -32,7 +32,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public DescriptorUpdateTemplateHandle DescriptorUpdateTemplate;
+    public VkDescriptorUpdateTemplate_THandle DescriptorUpdateTemplate;
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public PipelineLayoutHandle Layout;
+    public VkPipelineLayout_THandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

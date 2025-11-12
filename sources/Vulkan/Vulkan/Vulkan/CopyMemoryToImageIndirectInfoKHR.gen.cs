@@ -73,7 +73,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public ImageHandle DstImage;
+    public VkImage_THandle DstImage;
 
     [SupportedApiProfile(
         "vulkan",

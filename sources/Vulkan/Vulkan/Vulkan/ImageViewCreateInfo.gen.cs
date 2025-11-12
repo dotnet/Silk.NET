@@ -124,7 +124,7 @@ public unsafe partial struct ImageViewCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageHandle Image;
+    public VkImage_THandle Image;
 
     [SupportedApiProfile(
         "vulkan",

@@ -41,5 +41,5 @@ public unsafe partial struct PipelineInfoKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineHandle Pipeline;
+    public VkPipeline_THandle Pipeline;
 }

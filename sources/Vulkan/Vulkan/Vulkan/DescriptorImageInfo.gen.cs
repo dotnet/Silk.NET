@@ -32,7 +32,7 @@ public unsafe partial struct DescriptorImageInfo
         ],
         MinVersion = "1.0"
     )]
-    public SamplerHandle Sampler;
+    public VkSampler_THandle Sampler;
 
     [NativeTypeName("VkImageView")]
     [SupportedApiProfile(
@@ -56,7 +56,7 @@ public unsafe partial struct DescriptorImageInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageViewHandle ImageView;
+    public VkImageView_THandle ImageView;
 
     [SupportedApiProfile(
         "vulkan",

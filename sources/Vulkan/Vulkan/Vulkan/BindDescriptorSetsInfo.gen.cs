@@ -40,7 +40,7 @@ public unsafe partial struct BindDescriptorSetsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public PipelineLayoutHandle Layout;
+    public VkPipelineLayout_THandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct BindDescriptorSetsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public DescriptorSetHandle* PDescriptorSets;
+    public VkDescriptorSet_THandle* PDescriptorSets;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

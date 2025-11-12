@@ -44,7 +44,7 @@ public unsafe partial struct IndirectExecutionSetPipelineInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public PipelineHandle InitialPipeline;
+    public VkPipeline_THandle InitialPipeline;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

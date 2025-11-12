@@ -51,7 +51,7 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle AccelerationStructure;
+    public VkAccelerationStructureKHR_THandle AccelerationStructure;
 
     [NativeTypeName("VkAccelerationStructureNV")]
     [SupportedApiProfile(
@@ -67,5 +67,5 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public AccelerationStructureNVHandle AccelerationStructureNV;
+    public VkAccelerationStructureNV_THandle AccelerationStructureNV;
 }

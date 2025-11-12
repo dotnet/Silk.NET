@@ -72,7 +72,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle SrcAccelerationStructure;
+    public VkAccelerationStructureKHR_THandle SrcAccelerationStructure;
 
     [NativeTypeName("VkAccelerationStructureKHR")]
     [SupportedApiProfile(
@@ -83,7 +83,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle DstAccelerationStructure;
+    public VkAccelerationStructureKHR_THandle DstAccelerationStructure;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -83,7 +83,7 @@ public unsafe partial struct BindBufferMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public BufferHandle Buffer;
+    public VkBuffer_THandle Buffer;
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
@@ -108,7 +108,7 @@ public unsafe partial struct BindBufferMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public DeviceMemoryHandle Memory;
+    public VkDeviceMemory_THandle Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

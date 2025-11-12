@@ -39,5 +39,5 @@ public unsafe partial struct PipelineBinaryDataInfoKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public PipelineBinaryKHRHandle PipelineBinary;
+    public VkPipelineBinaryKHR_THandle PipelineBinary;
 }

@@ -58,7 +58,7 @@ public unsafe partial struct SemaphoreSubmitInfo
         ],
         MinVersion = "1.3"
     )]
-    public SemaphoreHandle Semaphore;
+    public VkSemaphore_THandle Semaphore;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

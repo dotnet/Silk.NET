@@ -46,7 +46,7 @@ public unsafe partial struct HostImageLayoutTransitionInfo
         ],
         MinVersion = "1.4"
     )]
-    public ImageHandle Image;
+    public VkImage_THandle Image;
 
     [SupportedApiProfile(
         "vulkan",

@@ -35,5 +35,5 @@ public unsafe partial struct DescriptorGetTensorInfoARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public TensorViewARMHandle TensorView;
+    public VkTensorViewARM_THandle TensorView;
 }

@@ -47,5 +47,5 @@ public unsafe partial struct SamplerCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public SamplerHandle Sampler;
+    public VkSampler_THandle Sampler;
 }

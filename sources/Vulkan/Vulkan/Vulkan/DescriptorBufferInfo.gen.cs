@@ -33,7 +33,7 @@ public unsafe partial struct DescriptorBufferInfo
         ],
         MinVersion = "1.0"
     )]
-    public BufferHandle Buffer;
+    public VkBuffer_THandle Buffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

@@ -126,7 +126,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public ShaderModuleHandle Module;
+    public VkShaderModule_THandle Module;
 
     [NativeTypeName("const char *")]
     [SupportedApiProfile(

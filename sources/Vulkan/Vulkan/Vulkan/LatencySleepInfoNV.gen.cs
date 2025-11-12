@@ -47,7 +47,7 @@ public unsafe partial struct LatencySleepInfoNV
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    public SemaphoreHandle SignalSemaphore;
+    public VkSemaphore_THandle SignalSemaphore;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

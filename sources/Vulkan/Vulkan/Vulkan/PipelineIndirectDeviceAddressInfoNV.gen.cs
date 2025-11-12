@@ -39,5 +39,5 @@ public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public PipelineHandle Pipeline;
+    public VkPipeline_THandle Pipeline;
 }

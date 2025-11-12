@@ -39,7 +39,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public FenceHandle Fence;
+    public VkFence_THandle Fence;
 
     [NativeTypeName("VkFenceImportFlags")]
     [SupportedApiProfile(
