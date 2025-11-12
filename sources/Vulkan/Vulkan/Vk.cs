@@ -79,21 +79,23 @@ public partial class Vk
 
     unsafe Result IVk.CreateDevice(PhysicalDeviceTHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceTHandle* pDevice)
     {
-        Result result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
+        var result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
         if (result == Result.Success)
         {
             CurrentDevice = *pDevice;
         }
+
         return result;
     }
 
     unsafe Result IVk.CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceTHandle* pInstance)
     {
-        Result result = CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
+        var result = CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
         if (result == Result.Success)
         {
             CurrentInstance = *pInstance;
         }
+
         return result;
     }
 
