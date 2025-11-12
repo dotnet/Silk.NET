@@ -32,12 +32,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <item><description>
 /// Extracting fixed buffers and anonymous structures contained within structures into separate types.
 /// </description></item>
-/// <item><description>
-/// Creating empty structs for types identified to be handle types.
-/// Handle types are identified by looking for missing types that are only referenced through a pointer.
-/// While these empty structs are usable by themselves, the <see cref="TransformHandles"/> mod can further transform
-/// these to be more user-friendly.
-/// </description></item>
 /// </list>
 /// </summary>
 public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
