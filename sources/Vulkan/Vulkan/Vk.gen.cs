@@ -19,9 +19,11 @@ partial class Vk(INativeContext nativeContext) : IDisposable
 
     public partial class ThisThread : IVk.Static
     {
-        public static ThreadLocal<IVk> Underlying { get; } = new();
+        public static ThreadLocal<IVk> Underlying { get; } = new(ContextFactory);
 
         public static void MakeCurrent(IVk ctx) => Underlying.Value = ctx;
+
+        private static partial IVk ContextFactory();
     }
 
     private readonly unsafe void*[] _slots = new void*[702];

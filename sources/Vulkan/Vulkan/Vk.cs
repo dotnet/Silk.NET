@@ -73,6 +73,11 @@ public partial class Vk
         public IVk Clone() => new StaticWrapper<T>();
     }
 
+    public partial class ThisThread
+    {
+        private static partial IVk ContextFactory() => Create();
+    }
+
     public InstanceTHandle CurrentInstance
     {
         get;
@@ -115,7 +120,6 @@ public partial class Vk
     {
         var context = new NativeContext();
         var vk = new Vk(context);
-
         context.Vk = vk;
 
         return vk;

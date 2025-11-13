@@ -344,7 +344,8 @@
           },
           {
             "Kind": "ThisThread",
-            "IsDefault": true
+            "IsDefault": true,
+            "GenerateFactoryPartial": true
           }
         ]
       }
