@@ -10,10 +10,34 @@ namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 /// <summary>
 /// Renames all references to each symbol with the specified new name.
 /// </summary>
-/// <param name="newNameLookup">The new names for each symbol.</param>
-public class IdentifierRenamingTransformer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup) : LocationTransformer
+public class IdentifierRenamingTransformer : LocationTransformer
 {
     private ISymbol symbol = null!;
+
+    private readonly IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup;
+
+    /// <summary>
+    /// Creates a new IdentifierRenamingTransformer.
+    /// </summary>
+    /// <param name="newNames">The new names for each symbol</param>
+    public IdentifierRenamingTransformer(IEnumerable<(ISymbol Symbol, string NewName)> newNames) : this(CreateNameLookup(newNames)) {}
+
+    /// <summary>
+    /// Creates a new IdentifierRenamingTransformer.
+    /// </summary>
+    /// <param name="newNameLookup">The new names for each symbol grouped by symbol name.</param>
+    public IdentifierRenamingTransformer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup)
+    {
+        this.newNameLookup = newNameLookup;
+    }
+
+    /// <summary>
+    /// Creates a name lookup dictionary designed for <see cref="IdentifierRenamingTransformer"/>.
+    /// </summary>
+    public static IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> CreateNameLookup(IEnumerable<(ISymbol Symbol, string NewName)> names)
+    {
+        return names.GroupBy(t => t.Symbol.Name).ToDictionary(group => group.Key, group => group.ToList());
+    }
 
     /// <inheritdoc />
     public override SyntaxNode GetNodeToModify(SyntaxNode current, ISymbol symbol)

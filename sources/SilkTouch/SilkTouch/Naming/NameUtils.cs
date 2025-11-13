@@ -335,9 +335,8 @@ public static partial class NameUtils
     )
     {
         var newNames = toRename.ToList();
-        var newNameLookup = newNames.GroupBy(t => t.Symbol.Name).ToDictionary(group => group.Key, group => group.ToList());
         await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, newNames.Select(x => x.Symbol), [
-            new IdentifierRenamingTransformer(newNameLookup),
+            new IdentifierRenamingTransformer(newNames),
         ], logger, ct);
     }
 }
