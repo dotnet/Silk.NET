@@ -41,7 +41,7 @@ public partial class ALContext
             get;
             set =>
                 field =
-                    field == nullptr
+                    field == nullptr && field != value
                         ? throw new InvalidOperationException(ErrMultipleDeviceSingleObject)
                         : value;
         }
