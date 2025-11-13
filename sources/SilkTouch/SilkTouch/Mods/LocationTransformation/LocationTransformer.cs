@@ -12,9 +12,10 @@ namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 public abstract class LocationTransformer : CSharpSyntaxRewriter
 {
     /// <summary>
-    /// Given a node, this method should return the given node, another node, or null.
+    /// Given a node, this method should return the given node, a parent node, or null.
     /// Returning null will lead to no node being modified.
-    /// Returning the another node will lead to the other node being modified instead of the original node.
+    /// Returning a parent node will lead to the parent node being modified instead of the original node.
+    /// Do not return child nodes.
     /// </summary>
     /// <param name="current">The current node.</param>
     /// <param name="symbol">The symbol that is associated with this node.</param>
