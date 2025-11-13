@@ -17,7 +17,14 @@ public abstract class LocationTransformer : CSharpSyntaxRewriter
     /// Returning the another node will lead to the other node being modified instead of the original node.
     /// </summary>
     /// <param name="current">The current node.</param>
-    /// <param name="context">Additional information about the syntax node being processed.</param>
+    /// <param name="symbol">The symbol that is associated with this node.</param>
     /// <returns>The given node, another node, or null.</returns>
-    public abstract SyntaxNode? GetNodeToModify(SyntaxNode current, LocationTransformerContext context);
+    public abstract SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol);
+
+    /// <summary>
+    /// Clone this location transformer for purposes of thread safety.
+    /// If the location transformer is already thread safe, the location transformer
+    /// does not need to be cloned.
+    /// </summary>
+    public abstract LocationTransformer GetThreadSafeCopy();
 }

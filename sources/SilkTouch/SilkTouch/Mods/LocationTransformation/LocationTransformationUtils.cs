@@ -2,12 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Concurrent;
-using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 
@@ -20,6 +16,11 @@ public static class LocationTransformationUtils
     /// Finds all references to the specified symbols and applies the specified transformations to them.
     /// Transformations will be done in order.
     /// </summary>
+    /// <param name="ctx">Mod context to use.</param>
+    /// <param name="symbols">Symbols to search for.</param>
+    /// <param name="transformers">Transformers to use on each found symbol reference.</param>
+    /// <param name="logger">Logger to use.</param>
+    /// <param name="ct">Cancellation token to use.</param>
     public static async Task ModifyAllReferencesAsync(
         IModContext ctx,
         IEnumerable<ISymbol> symbols,
@@ -27,108 +28,54 @@ public static class LocationTransformationUtils
         ILogger? logger = null,
         CancellationToken ct = default)
     {
-        // Convert to lists
-        // The parameters being IEnumerables is for convenience
-        var symbolList = symbols.ToList();
-        var transformersList = transformers.ToList();
-
-        if (ctx.SourceProject == null)
+        var sourceProject = ctx.SourceProject;
+        if (sourceProject == null)
         {
             return;
         }
 
-        var compilation = await ctx.SourceProject.GetCompilationAsync(ct);
-        if (compilation == null)
+        // We need to track both the original solution and modified solution
+        // The original is where we retrieve documents and semantic models
+        // The modified solution is where we place the results
+        IReadOnlyList<DocumentId> documentIds = [.. sourceProject.DocumentIds, .. ctx.TestProject?.DocumentIds ?? []];
+
+        var originalSolution = sourceProject.Solution;
+        var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
+        await Parallel.ForEachAsync(documentIds, ct, async (documentId, _) => {
+            var originalDocument = originalSolution.GetDocument(documentId);
+            if (originalDocument == null)
+            {
+                return;
+            }
+
+            var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
+            var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
+
+            if (originalRoot == null || semanticModel == null)
+            {
+                return;
+            }
+
+            // Since this is multithreaded, each thread needs their own copy of the rewriter and transformers
+            var rewriter = new Rewriter(symbols, transformers.Select(t => t.GetThreadSafeCopy()));
+            rewriter.Initialize(semanticModel);
+
+            var newRoot = rewriter.Visit(originalRoot);
+            newDocuments.TryAdd(documentId, newRoot);
+        });
+
+        var modifiedSolution = sourceProject.Solution;
+        foreach (var (documentId, newRoot) in newDocuments)
         {
-            return;
+            var modifiedDocument = modifiedSolution.GetDocument(documentId);
+            if (modifiedDocument == null)
+            {
+                return;
+            }
+
+            modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
         }
 
-        var locations = new ConcurrentBag<(Location Location, LocationTransformerContext Context)>();
-
-        // Add the locations of the declaration identifiers for each symbol
-        foreach (var symbol in symbolList)
-        {
-            foreach (var declaringSyntaxReference in symbol.DeclaringSyntaxReferences)
-            {
-                locations.Add((declaringSyntaxReference.GetSyntax().GetLocation(),
-                    new LocationTransformerContext(symbol, true, false)));
-            }
-        }
-
-        // Find all locations where the symbols are referenced
-        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
-        ImmutableHashSet<Document> documents = [..ctx.SourceProject.Documents, ..ctx.TestProject?.Documents ?? []];
-        await Parallel.ForEachAsync(
-            symbolList,
-            ct,
-            async (symbol, _) => {
-                var references = await SymbolFinder.FindReferencesAsync(symbol, ctx.SourceProject.Solution, documents, ct);
-                foreach (var reference in references)
-                {
-                    foreach (var location in reference.Locations)
-                    {
-                        locations.Add((location.Location,
-                            new LocationTransformerContext(symbol, false,
-                                location.IsCandidateLocation || location.IsImplicit)));
-                    }
-                }
-            }
-        );
-
-        // Group the locations by source tree. This will be used to prevent accidentally overwriting changes.
-        var solution = ctx.SourceProject.Solution;
-        var locationsBySourcetree = locations.GroupBy(l => l.Location.SourceTree);
-        foreach (var group in locationsBySourcetree)
-        {
-            var syntaxTree = group.Key;
-            if (syntaxTree == null)
-            {
-                continue;
-            }
-
-            var document = solution.GetDocument(syntaxTree);
-            if (document == null)
-            {
-                continue;
-            }
-
-            var syntaxRoot = await syntaxTree.GetRootAsync(ct);
-
-            // Modify each location
-            // We order the locations so that we modify starting from the end of the file
-            // This way we prevent changes from being accidentally overwriting changes
-            foreach (var (location, context) in group.OrderByDescending(l => l.Location.SourceSpan))
-            {
-                foreach (var transformer in transformersList)
-                {
-                    var syntaxNode = syntaxRoot.FindNode(location.SourceSpan);
-                    var nodeToModify = transformer.GetNodeToModify(syntaxNode, context);
-                    if (nodeToModify == null)
-                    {
-                        continue;
-                    }
-
-                    var newNode = transformer.Visit(nodeToModify);
-                    var originalLength = syntaxNode.FullSpan.Length;
-                    var newLength = newNode.FullSpan.Length;
-
-                    // Ensure that the new node's length is at least the original node's length
-                    // This is because the last few nodes processed usually make up the entire document
-                    // If the document's length has been reduced, then an ArgumentOutOfRangeException will be thrown
-                    if (originalLength - newLength > 0)
-                    {
-                        newNode = newNode.WithTrailingTrivia(TriviaList([..newNode.GetTrailingTrivia(), Whitespace(new string(' ', originalLength - newLength))]));
-                    }
-
-                    syntaxRoot = syntaxRoot.ReplaceNode(nodeToModify, newNode);
-                }
-            }
-
-            // Commit the changes to the solution
-            var newDocument = document.WithSyntaxRoot(syntaxRoot.NormalizeWhitespace());
-            solution = newDocument.Project.Solution;
-        }
-
-        ctx.SourceProject = solution.GetProject(ctx.SourceProject.Id);
+        ctx.SourceProject = modifiedSolution.GetProject(sourceProject.Id);
     }
 }

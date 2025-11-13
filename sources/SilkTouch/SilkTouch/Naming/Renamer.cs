@@ -47,7 +47,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     // ----- Types -----
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+    public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
@@ -63,7 +63,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
+    public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
@@ -79,7 +79,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
+    public override SyntaxNode VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (InterfaceDeclarationSyntax)base.VisitInterfaceDeclaration(node)!;
@@ -95,7 +95,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node)
+    public override SyntaxNode VisitRecordDeclaration(RecordDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (RecordDeclarationSyntax)base.VisitRecordDeclaration(node)!;
@@ -111,7 +111,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+    public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (DelegateDeclarationSyntax)base.VisitDelegateDeclaration(node)!;
@@ -127,7 +127,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+    public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
@@ -145,7 +145,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     // ----- Members -----
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+    public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (EnumMemberDeclarationSyntax)base.VisitEnumMemberDeclaration(node)!;
@@ -161,7 +161,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+    public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node)!;
@@ -177,7 +177,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitEventDeclaration(EventDeclarationSyntax node)
+    public override SyntaxNode VisitEventDeclaration(EventDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (EventDeclarationSyntax)base.VisitEventDeclaration(node)!;
@@ -193,7 +193,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
+    public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
@@ -209,7 +209,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
+    public override SyntaxNode VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (ConstructorDeclarationSyntax)base.VisitConstructorDeclaration(node)!;
@@ -225,7 +225,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitDestructorDeclaration(DestructorDeclarationSyntax node)
+    public override SyntaxNode VisitDestructorDeclaration(DestructorDeclarationSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (DestructorDeclarationSyntax)base.VisitDestructorDeclaration(node)!;
@@ -243,7 +243,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
     // ----- Other -----
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
+    public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
     {
         var symbol = semanticModel.GetSymbolInfo(node).Symbol ?? semanticModel.GetTypeInfo(node).Type;
         var current = (IdentifierNameSyntax)base.VisitIdentifierName(node)!;
@@ -260,7 +260,7 @@ public class Renamer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string Ne
 
     // This also covers fields
     /// <inheritdoc />
-    public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
+    public override SyntaxNode VisitVariableDeclarator(VariableDeclaratorSyntax node)
     {
         var symbol = semanticModel.GetDeclaredSymbol(node);
         var current = (VariableDeclaratorSyntax)base.VisitVariableDeclarator(node)!;
