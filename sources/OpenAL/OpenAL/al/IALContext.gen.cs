@@ -154,7 +154,7 @@ public unsafe partial interface IALContext
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         static abstract Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
             [NativeTypeName("ALCenum")] Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         );
 
@@ -187,7 +187,7 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
-        static abstract Constant<int, ErrorCode> GetError(DeviceHandle device);
+        static abstract Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device);
 
         [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -607,7 +607,7 @@ public unsafe partial interface IALContext
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-        [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
         [NativeTypeName("ALCenum")] Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
     );
 
@@ -634,7 +634,7 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
-    Constant<int, ErrorCode> GetError(DeviceHandle device);
+    Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device);
 
     [return: NativeTypeName("ALCenum")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]

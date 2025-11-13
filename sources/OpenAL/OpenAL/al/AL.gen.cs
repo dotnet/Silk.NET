@@ -378,7 +378,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alBufferDataStatic")]
         [SupportedApiProfile("al", ["AL_EXT_STATIC_BUFFER"])]
         public static extern void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("ALvoid *")] void* data,
             [NativeTypeName("ALsizei")] int size,
@@ -392,7 +392,7 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
             [NativeTypeName("ALvoid *")] Ref data,
             [NativeTypeName("ALsizei")] int size,
@@ -3786,15 +3786,15 @@ public unsafe partial class AL : IAL, IAL.Static
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetError")]
-        public static Constant<int, ErrorCode> GetError() =>
-            (Constant<int, ErrorCode>)(int)GetErrorRaw();
+        public static Constant<int, ALEnum, ErrorCode> GetError() =>
+            (Constant<int, ALEnum, ErrorCode>)(int)GetErrorRaw();
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-        public static Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
-            (Constant<int, ErrorCode>)(int)GetErrorDirectRaw(context);
+        public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
+            (Constant<int, ALEnum, ErrorCode>)(int)GetErrorDirectRaw(context);
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetErrorDirect")]
         [return: NativeTypeName("ALenum")]
@@ -8020,7 +8020,7 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("ALvoid *")] void* data,
             [NativeTypeName("ALsizei")] int size,
@@ -8034,7 +8034,7 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
             [NativeTypeName("ALvoid *")] Ref data,
             [NativeTypeName("ALsizei")] int size,
@@ -11222,7 +11222,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Constant<int, ErrorCode> GetError() => T.GetError();
+        public Constant<int, ALEnum, ErrorCode> GetError() => T.GetError();
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -11231,7 +11231,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
+        public Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
             T.GetErrorDirect(context);
 
         [return: NativeTypeName("ALenum")]
@@ -15488,7 +15488,7 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("ALvoid *")] void* data,
             [NativeTypeName("ALsizei")] int size,
@@ -15502,7 +15502,7 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
             [NativeTypeName("ALvoid *")] Ref data,
             [NativeTypeName("ALsizei")] int size,
@@ -19446,7 +19446,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Constant<int, ErrorCode> GetError() => Underlying.Value!.GetError();
+        public static Constant<int, ALEnum, ErrorCode> GetError() => Underlying.Value!.GetError();
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -19455,7 +19455,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
+        public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
             Underlying.Value!.GetErrorDirect(context);
 
         [return: NativeTypeName("ALenum")]
@@ -24749,7 +24749,7 @@ public unsafe partial class AL : IAL, IAL.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
         [NativeTypeName("ALvoid *")] void* data,
         [NativeTypeName("ALsizei")] int size,
@@ -24767,7 +24767,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
         [NativeTypeName("ALvoid *")] void* data,
         [NativeTypeName("ALsizei")] int size,
@@ -24776,7 +24776,7 @@ public unsafe partial class AL : IAL, IAL.Static
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAL.BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
         [NativeTypeName("ALvoid *")] Ref data,
         [NativeTypeName("ALsizei")] int size,
@@ -24794,7 +24794,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
         [NativeTypeName("ALvoid *")] Ref data,
         [NativeTypeName("ALsizei")] int size,
@@ -31084,26 +31084,26 @@ public unsafe partial class AL : IAL, IAL.Static
     ) => ThisThread.GetEnumValueDirect(context, ename);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, ErrorCode> IAL.GetError() =>
-        (Constant<int, ErrorCode>)(int)((IAL)this).GetErrorRaw();
+    Constant<int, ALEnum, ErrorCode> IAL.GetError() =>
+        (Constant<int, ALEnum, ErrorCode>)(int)((IAL)this).GetErrorRaw();
 
     [return: NativeTypeName("ALenum")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, ErrorCode> GetError() => ThisThread.GetError();
+    public static Constant<int, ALEnum, ErrorCode> GetError() => ThisThread.GetError();
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, ErrorCode> IAL.GetErrorDirect(ContextHandle context) =>
-        (Constant<int, ErrorCode>)(int)((IAL)this).GetErrorDirectRaw(context);
+    Constant<int, ALEnum, ErrorCode> IAL.GetErrorDirect(ContextHandle context) =>
+        (Constant<int, ALEnum, ErrorCode>)(int)((IAL)this).GetErrorDirectRaw(context);
 
     [return: NativeTypeName("ALenum")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
+    public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
         ThisThread.GetErrorDirect(context);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

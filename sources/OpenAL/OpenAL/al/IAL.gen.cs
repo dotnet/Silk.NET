@@ -299,7 +299,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_STATIC_BUFFER"])]
         [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
         static abstract void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("ALvoid *")] void* data,
             [NativeTypeName("ALsizei")] int size,
@@ -310,7 +310,7 @@ public unsafe partial interface IAL
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
         static abstract void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
             [NativeTypeName("ALvoid *")] Ref data,
             [NativeTypeName("ALsizei")] int size,
@@ -2629,13 +2629,13 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetError")]
-        static abstract Constant<int, ErrorCode> GetError();
+        static abstract Constant<int, ALEnum, ErrorCode> GetError();
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-        static abstract Constant<int, ErrorCode> GetErrorDirect(ContextHandle context);
+        static abstract Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context);
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -5764,7 +5764,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_STATIC_BUFFER"])]
     [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
     void BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
         [NativeTypeName("ALvoid *")] void* data,
         [NativeTypeName("ALsizei")] int size,
@@ -5775,7 +5775,7 @@ public unsafe partial interface IAL
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
     void BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
         [NativeTypeName("ALvoid *")] Ref data,
         [NativeTypeName("ALsizei")] int size,
@@ -8053,13 +8053,13 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetError")]
-    Constant<int, ErrorCode> GetError();
+    Constant<int, ALEnum, ErrorCode> GetError();
 
     [return: NativeTypeName("ALenum")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-    Constant<int, ErrorCode> GetErrorDirect(ContextHandle context);
+    Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context);
 
     [return: NativeTypeName("ALenum")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
