@@ -320,21 +320,6 @@ public static partial class NameUtils
         private static partial Regex Words();
     }
 
-    private static Location? IdentifierLocation(SyntaxNode? node) =>
-        node switch
-        {
-            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
-            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
-            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
-            EventDeclarationSyntax e => e.Identifier.GetLocation(),
-            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
-            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
-            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
-            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
-            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null,
-        };
-
     /// <summary>
     /// Rename all symbols with the given new names
     /// </summary>
@@ -344,8 +329,6 @@ public static partial class NameUtils
     /// <param name="logger">logger</param>
     /// <param name="includeDeclarations">whether to replace any declaration references or not</param>
     /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
-    /// <returns></returns>
-    /// <exception cref="ArgumentException"></exception>
     public static async Task RenameAllAsync(
         IModContext ctx,
         IEnumerable<(ISymbol Symbol, string NewName)> toRename,
@@ -355,9 +338,54 @@ public static partial class NameUtils
         bool includeCandidateLocations = false
     )
     {
-        var toRenameList = toRename.ToList();
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, toRenameList.Select(t => t.Symbol), [
-            new IdentifierRenamingTransformer(toRenameList, includeDeclarations, includeCandidateLocations)
-        ], logger, ct);
+        var sourceProject = ctx.SourceProject;
+        if (sourceProject == null)
+        {
+            return;
+        }
+
+        // We need to track both the original solution and modified solution
+        // The original is where we retrieve documents and semantic models
+        // The modified solution is where we place the results
+        IReadOnlyList<DocumentId> documentIds = [.. sourceProject.DocumentIds, .. ctx.TestProject?.DocumentIds ?? []];
+
+        var originalSolution = sourceProject.Solution;
+        var newNameLookup = toRename.GroupBy(t => t.Symbol.Name).ToDictionary(group => group.Key, group => group.ToList());
+        var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
+        await Parallel.ForEachAsync(documentIds, ct, async (documentId, _) => {
+            var originalDocument = originalSolution.GetDocument(documentId);
+            if (originalDocument == null)
+            {
+                return;
+            }
+
+            var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
+            var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
+
+            if (originalRoot == null || semanticModel == null)
+            {
+                return;
+            }
+
+            var renamer = new Renamer(newNameLookup);
+            renamer.Initialize(semanticModel);
+
+            var newRoot = renamer.Visit(originalRoot);
+            newDocuments.TryAdd(documentId, newRoot);
+        });
+
+        var modifiedSolution = sourceProject.Solution;
+        foreach (var (documentId, newRoot) in newDocuments)
+        {
+            var modifiedDocument = modifiedSolution.GetDocument(documentId);
+            if (modifiedDocument == null)
+            {
+                return;
+            }
+
+            modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
+        }
+
+        ctx.SourceProject = modifiedSolution.GetProject(sourceProject.Id);
     }
 }
