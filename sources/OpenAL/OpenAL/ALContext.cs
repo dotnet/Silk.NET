@@ -62,6 +62,11 @@ public partial class ALContext
         get;
         set
         {
+            if (field == value)
+            {
+                return;
+            }
+
             if (field != nullptr)
             {
                 throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
