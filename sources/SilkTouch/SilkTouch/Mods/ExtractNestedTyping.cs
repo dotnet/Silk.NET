@@ -67,6 +67,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             walker.Visit(node);
         }
 
+        // Second pass to modify existing files as per our discovery.
         var rewriter = new Rewriter(logger);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
