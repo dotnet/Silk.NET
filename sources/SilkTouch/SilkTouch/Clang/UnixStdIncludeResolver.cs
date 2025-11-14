@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Silk.NET.SilkTouch.Clang;
 
@@ -29,7 +27,7 @@ public partial class UnixStdIncludeResolver : IStdIncludeResolver
                 .Select(path => ClangIncludeFolderRegex().Match(path))
                 .Where(match => match.Success)
                 // Select the latest version
-                .OrderByDescending(match => int.Parse(match.Groups["Version"].Value))
+                .OrderByDescending(match => int.TryParse(match.Groups["Version"].Value, out var version) ? version : -1)
                 .FirstOrDefault()
                 ?.Value;
 
