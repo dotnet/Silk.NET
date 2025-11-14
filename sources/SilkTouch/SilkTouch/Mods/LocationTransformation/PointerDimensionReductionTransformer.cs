@@ -28,7 +28,7 @@ public class PointerDimensionReductionTransformer : LocationTransformer
     }
 
     /// <inheritdoc />
-    public override SyntaxNode? VisitPointerType(PointerTypeSyntax node) => node.ElementType;
+    public override SyntaxNode VisitPointerType(PointerTypeSyntax node) => node.ElementType;
 
     /// <inheritdoc />
     public override LocationTransformer GetThreadSafeCopy()
