@@ -47,12 +47,6 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             return;
         }
 
-        var compilation = await project.GetCompilationAsync(ct);
-        if (compilation == null)
-        {
-            throw new InvalidOperationException("Failed to get compilation");
-        }
-
         // First pass to gather data, such as the types to extract and generate
         var walker = new Walker();
         foreach (var doc in project.Documents)
