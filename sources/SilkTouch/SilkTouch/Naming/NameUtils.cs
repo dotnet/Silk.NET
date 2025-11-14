@@ -1,23 +1,12 @@
-﻿using System;
-using System.Buffers;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Buffers;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Text.RegularExpressions;
 using Humanizer;
-using Microsoft.Build.Evaluation;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Editing;
-using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.LocationTransformation;
-using Project = Microsoft.CodeAnalysis.Project;
 
 namespace Silk.NET.SilkTouch.Naming;
 
