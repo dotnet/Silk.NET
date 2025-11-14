@@ -40,10 +40,10 @@ public class IdentifierRenamingTransformer : LocationTransformer
     }
 
     /// <inheritdoc />
-    public override SyntaxNode GetNodeToModify(SyntaxNode current, ISymbol symbol)
+    public override SyntaxNode? GetNodeToModify(IReadOnlyList<SyntaxNode> hierarchy, ISymbol symbol)
     {
         this.symbol = symbol;
-        return current;
+        return hierarchy[0];
     }
 
     /// <inheritdoc />

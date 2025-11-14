@@ -41,6 +41,7 @@ public static class LocationTransformationUtils
 
         var originalSolution = sourceProject.Solution;
         var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
+        var symbolSet = new HashSet<ISymbol>(symbols, SymbolEqualityComparer.Default);
         await Parallel.ForEachAsync(documentIds, ct, async (documentId, _) => {
             var originalDocument = originalSolution.GetDocument(documentId);
             if (originalDocument == null)
@@ -57,7 +58,7 @@ public static class LocationTransformationUtils
             }
 
             // Since this is multithreaded, each thread needs their own copy of the rewriter and transformers
-            var rewriter = new Rewriter(symbols, transformers.Select(t => t.GetThreadSafeCopy()));
+            var rewriter = new Rewriter(symbolSet, [..transformers.Select(t => t.GetThreadSafeCopy())]);
             rewriter.Initialize(semanticModel);
 
             var newRoot = rewriter.Visit(originalRoot);

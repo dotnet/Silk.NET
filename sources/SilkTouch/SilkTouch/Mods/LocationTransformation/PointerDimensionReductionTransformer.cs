@@ -17,9 +17,9 @@ namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 public class PointerDimensionReductionTransformer : LocationTransformer
 {
     /// <inheritdoc />
-    public override SyntaxNode? GetNodeToModify(SyntaxNode current, ISymbol symbol)
+    public override SyntaxNode? GetNodeToModify(IReadOnlyList<SyntaxNode> hierarchy, ISymbol symbol)
     {
-        if (current.Parent is PointerTypeSyntax parent)
+        if (hierarchy.Count > 2 && hierarchy[1] is PointerTypeSyntax parent)
         {
             return parent;
         }
