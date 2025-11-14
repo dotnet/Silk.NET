@@ -55,7 +55,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
 
         // First pass to gather data, such as the types to extract and generate
         var walker = new Walker();
-        foreach (var doc in ctx.SourceProject?.Documents ?? [])
+        foreach (var doc in project.Documents)
         {
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
             if (fname is null)
@@ -73,7 +73,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
         rewriter.ExtractedEnums = enums.Keys;
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in project.DocumentIds)
         {
             var doc =
                 project.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
