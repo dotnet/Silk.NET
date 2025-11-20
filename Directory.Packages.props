@@ -39,7 +39,6 @@
     <PackageVersion Include="System.IO.Hashing" Version="10.0.0" />
     <!-- SilkTouch Unit Tests -->
     <PackageVersion Include="Silk.NET.BuildTools" Version="2.22.0" />
-    <PackageVersion Include="System.Linq.Async" Version="6.0.3" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.NUnit" Version="31.6.0" />
   </ItemGroup>

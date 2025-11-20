@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <PackageReference Include="Silk.NET.BuildTools" />
-    <PackageReference Include="System.Linq.Async" />
     <PackageReference Include="Verify.DiffPlex" />
     <PackageReference Include="Verify.NUnit" />
     <None Include="**/*.received.*" />
