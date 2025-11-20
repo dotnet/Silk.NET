@@ -39,6 +39,7 @@ public partial class UnixStdIncludeResolver : IStdIncludeResolver
 
     }
 
+    // This regex only matches numbers for the Version segment
     [GeneratedRegex("^/usr/lib/clang/(?<Version>\\d+)/include$")]
     private static partial Regex ClangIncludeFolderRegex();
 }
