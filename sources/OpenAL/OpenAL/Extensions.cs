@@ -21,10 +21,10 @@ public partial class ALContext
     public static void ThrowError(DeviceHandle device)
     {
         var err = GetError(device);
-        if (err != ErrorCode.NoError)
+        if (err != ContextErrorCode.NoError)
         {
             static void Throw(ErrorCode err) => throw new OpenALException(err);
-            Throw(err);
+            Throw((ErrorCode)(int)err);
         }
     }
 }
@@ -44,10 +44,10 @@ public static class Extensions
     public static void ThrowError(this IALContext alc, DeviceHandle device)
     {
         var err = alc.GetError(device);
-        if (err != ErrorCode.NoError)
+        if (err != ContextErrorCode.NoError)
         {
             static void Throw(ErrorCode err) => throw new OpenALException(err);
-            Throw(err);
+            Throw((ErrorCode)(int)err);
         }
     }
 }

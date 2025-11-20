@@ -11,14 +11,12 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [Transformed]
-public enum ErrorCode : uint
+public enum ContextErrorCode : uint
 {
     NoError = unchecked((uint)0),
-    InvalidName = unchecked((uint)0xA001),
-    InvalidEnum = unchecked((uint)0xA002),
-    InvalidValue = unchecked((uint)0xA003),
-    InvalidOperation = unchecked((uint)0xA004),
+    InvalidDevice = unchecked((uint)0xA001),
+    InvalidContEXT = unchecked((uint)0xA002),
+    InvalidEnum = unchecked((uint)0xA003),
+    InvalidValue = unchecked((uint)0xA004),
     OutOfMemory = unchecked((uint)0xA005),
-    StackOverflowEXT = unchecked((uint)0x19CD),
-    StackUnderflowEXT = unchecked((uint)0x19CE),
 }

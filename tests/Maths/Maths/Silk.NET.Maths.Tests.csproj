@@ -6,6 +6,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
+        <SilkDSLExempt>true</SilkDSLExempt>
     </PropertyGroup>
 
     <ItemGroup>

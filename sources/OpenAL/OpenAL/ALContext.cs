@@ -207,7 +207,9 @@ public partial class ALContext
     public IAL CreateOpenAL(DeviceHandle device, Ref<int> attrList)
     {
         var ctx = CreateContext(device, attrList);
-        return ctx == nullptr ? throw new OpenALException(GetError(device)) : CreateOpenAL(ctx);
+        return ctx == nullptr
+            ? throw new OpenALException((ErrorCode)(int)GetError(device))
+            : CreateOpenAL(ctx);
     }
 
     public static IALContext Create()

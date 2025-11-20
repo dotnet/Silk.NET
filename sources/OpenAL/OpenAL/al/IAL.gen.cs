@@ -299,7 +299,7 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_EXT_STATIC_BUFFER"])]
         [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
         static abstract void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("ALvoid *")] void* data,
             [NativeTypeName("ALsizei")] int size,
@@ -310,7 +310,7 @@ public unsafe partial interface IAL
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
         static abstract void BufferDataStatic(
-            [NativeTypeName("const ALuint")] uint buffer,
+            [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
             [NativeTypeName("ALvoid *")] Ref data,
             [NativeTypeName("ALsizei")] int size,
@@ -2629,13 +2629,13 @@ public unsafe partial interface IAL
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetError")]
-        static abstract Constant<int, ErrorCode> GetError();
+        static abstract Constant<int, ALEnum, ErrorCode> GetError();
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-        static abstract Constant<int, ErrorCode> GetErrorDirect(ContextHandle context);
+        static abstract Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context);
 
         [return: NativeTypeName("ALenum")]
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -3457,9 +3457,9 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
-            [NativeTypeName("ALint64SOFT *")] nint* value1,
-            [NativeTypeName("ALint64SOFT *")] nint* value2,
-            [NativeTypeName("ALint64SOFT *")] nint* value3
+            [NativeTypeName("ALint64SOFT *")] long* value1,
+            [NativeTypeName("ALint64SOFT *")] long* value2,
+            [NativeTypeName("ALint64SOFT *")] long* value3
         );
 
         [SupportedApiProfile(
@@ -3473,9 +3473,9 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param2,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value1,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value2,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value3
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value1,
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value2,
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value3
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -3483,9 +3483,9 @@ public unsafe partial interface IAL
         static abstract void GetSource3SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
-            [NativeTypeName("ALint64SOFT *")] nint* value1,
-            [NativeTypeName("ALint64SOFT *")] nint* value2,
-            [NativeTypeName("ALint64SOFT *")] nint* value3
+            [NativeTypeName("ALint64SOFT *")] long* value1,
+            [NativeTypeName("ALint64SOFT *")] long* value2,
+            [NativeTypeName("ALint64SOFT *")] long* value3
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -3494,9 +3494,9 @@ public unsafe partial interface IAL
         static abstract void GetSource3SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param1,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value1,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value2,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value3
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value1,
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value2,
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value3
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -3709,7 +3709,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
-            [NativeTypeName("ALint64SOFT *")] nint* value
+            [NativeTypeName("ALint64SOFT *")] long* value
         );
 
         [SupportedApiProfile(
@@ -3723,7 +3723,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -3731,7 +3731,7 @@ public unsafe partial interface IAL
         static abstract void GetSourcei64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
-            [NativeTypeName("ALint64SOFT *")] nint* value
+            [NativeTypeName("ALint64SOFT *")] long* value
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -3740,7 +3740,7 @@ public unsafe partial interface IAL
         static abstract void GetSourcei64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> value
+            [NativeTypeName("ALint64SOFT *")] Ref<long> value
         );
 
         [SupportedApiProfile(
@@ -3753,7 +3753,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
-            [NativeTypeName("ALint64SOFT *")] nint* values
+            [NativeTypeName("ALint64SOFT *")] long* values
         );
 
         [SupportedApiProfile(
@@ -3767,7 +3767,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> values
+            [NativeTypeName("ALint64SOFT *")] Ref<long> values
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -3775,7 +3775,7 @@ public unsafe partial interface IAL
         static abstract void GetSourcei64VSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
-            [NativeTypeName("ALint64SOFT *")] nint* values
+            [NativeTypeName("ALint64SOFT *")] long* values
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -3784,7 +3784,7 @@ public unsafe partial interface IAL
         static abstract void GetSourcei64VSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-            [NativeTypeName("ALint64SOFT *")] Ref<nint> values
+            [NativeTypeName("ALint64SOFT *")] Ref<long> values
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -4612,9 +4612,9 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
-            [NativeTypeName("ALint64SOFT")] nint value1,
-            [NativeTypeName("ALint64SOFT")] nint value2,
-            [NativeTypeName("ALint64SOFT")] nint value3
+            [NativeTypeName("ALint64SOFT")] long value1,
+            [NativeTypeName("ALint64SOFT")] long value2,
+            [NativeTypeName("ALint64SOFT")] long value3
         );
 
         [SupportedApiProfile(
@@ -4628,9 +4628,9 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param2,
-            [NativeTypeName("ALint64SOFT")] nint value1,
-            [NativeTypeName("ALint64SOFT")] nint value2,
-            [NativeTypeName("ALint64SOFT")] nint value3
+            [NativeTypeName("ALint64SOFT")] long value1,
+            [NativeTypeName("ALint64SOFT")] long value2,
+            [NativeTypeName("ALint64SOFT")] long value3
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -4638,9 +4638,9 @@ public unsafe partial interface IAL
         static abstract void Source3Soft(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
-            [NativeTypeName("ALint64SOFT")] nint value1,
-            [NativeTypeName("ALint64SOFT")] nint value2,
-            [NativeTypeName("ALint64SOFT")] nint value3
+            [NativeTypeName("ALint64SOFT")] long value1,
+            [NativeTypeName("ALint64SOFT")] long value2,
+            [NativeTypeName("ALint64SOFT")] long value3
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -4649,9 +4649,9 @@ public unsafe partial interface IAL
         static abstract void Source3Soft(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param1,
-            [NativeTypeName("ALint64SOFT")] nint value1,
-            [NativeTypeName("ALint64SOFT")] nint value2,
-            [NativeTypeName("ALint64SOFT")] nint value3
+            [NativeTypeName("ALint64SOFT")] long value1,
+            [NativeTypeName("ALint64SOFT")] long value2,
+            [NativeTypeName("ALint64SOFT")] long value3
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -4864,7 +4864,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
-            [NativeTypeName("ALint64SOFT")] nint value
+            [NativeTypeName("ALint64SOFT")] long value
         );
 
         [SupportedApiProfile(
@@ -4878,7 +4878,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-            [NativeTypeName("ALint64SOFT")] nint value
+            [NativeTypeName("ALint64SOFT")] long value
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -4886,7 +4886,7 @@ public unsafe partial interface IAL
         static abstract void SourceSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
-            [NativeTypeName("ALint64SOFT")] nint value
+            [NativeTypeName("ALint64SOFT")] long value
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -4895,7 +4895,7 @@ public unsafe partial interface IAL
         static abstract void SourceSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-            [NativeTypeName("ALint64SOFT")] nint value
+            [NativeTypeName("ALint64SOFT")] long value
         );
 
         [SupportedApiProfile(
@@ -4908,7 +4908,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
-            [NativeTypeName("const ALint64SOFT *")] nint* values
+            [NativeTypeName("const ALint64SOFT *")] long* values
         );
 
         [SupportedApiProfile(
@@ -4922,7 +4922,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-            [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
+            [NativeTypeName("const ALint64SOFT *")] Ref<long> values
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -4930,7 +4930,7 @@ public unsafe partial interface IAL
         static abstract void SourceSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
-            [NativeTypeName("const ALint64SOFT *")] nint* values
+            [NativeTypeName("const ALint64SOFT *")] long* values
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -4939,7 +4939,7 @@ public unsafe partial interface IAL
         static abstract void SourceSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-            [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
+            [NativeTypeName("const ALint64SOFT *")] Ref<long> values
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -5066,14 +5066,14 @@ public unsafe partial interface IAL
         static abstract void SourcePlayAtTimeDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimeSOFT")]
         static abstract void SourcePlayAtTimeSOFT(
             [NativeTypeName("ALuint")] uint source,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile(
@@ -5086,7 +5086,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] uint* sources,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile(
@@ -5100,7 +5100,7 @@ public unsafe partial interface IAL
             ContextHandle context,
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] Ref<uint> sources,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile(
@@ -5113,7 +5113,7 @@ public unsafe partial interface IAL
         static abstract void SourcePlayAtTimevDirectSOFT(
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint sources,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
@@ -5121,7 +5121,7 @@ public unsafe partial interface IAL
         static abstract void SourcePlayAtTimevSOFT(
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] uint* sources,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
@@ -5130,7 +5130,7 @@ public unsafe partial interface IAL
         static abstract void SourcePlayAtTimevSOFT(
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] Ref<uint> sources,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
@@ -5138,7 +5138,7 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
         static abstract void SourcePlayAtTimevSOFT(
             [NativeTypeName("const ALuint *")] uint sources,
-            [NativeTypeName("ALint64SOFT")] nint start_time
+            [NativeTypeName("ALint64SOFT")] long start_time
         );
 
         [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -5764,7 +5764,7 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_EXT_STATIC_BUFFER"])]
     [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
     void BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
         [NativeTypeName("ALvoid *")] void* data,
         [NativeTypeName("ALsizei")] int size,
@@ -5775,7 +5775,7 @@ public unsafe partial interface IAL
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferDataStatic")]
     void BufferDataStatic(
-        [NativeTypeName("const ALuint")] uint buffer,
+        [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, Format> format,
         [NativeTypeName("ALvoid *")] Ref data,
         [NativeTypeName("ALsizei")] int size,
@@ -8053,13 +8053,13 @@ public unsafe partial interface IAL
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetError")]
-    Constant<int, ErrorCode> GetError();
+    Constant<int, ALEnum, ErrorCode> GetError();
 
     [return: NativeTypeName("ALenum")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-    Constant<int, ErrorCode> GetErrorDirect(ContextHandle context);
+    Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context);
 
     [return: NativeTypeName("ALenum")]
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -8858,9 +8858,9 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
-        [NativeTypeName("ALint64SOFT *")] nint* value1,
-        [NativeTypeName("ALint64SOFT *")] nint* value2,
-        [NativeTypeName("ALint64SOFT *")] nint* value3
+        [NativeTypeName("ALint64SOFT *")] long* value1,
+        [NativeTypeName("ALint64SOFT *")] long* value2,
+        [NativeTypeName("ALint64SOFT *")] long* value3
     );
 
     [SupportedApiProfile(
@@ -8874,9 +8874,9 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param2,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value1,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value2,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value3
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value1,
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value2,
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value3
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -8884,9 +8884,9 @@ public unsafe partial interface IAL
     void GetSource3SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
-        [NativeTypeName("ALint64SOFT *")] nint* value1,
-        [NativeTypeName("ALint64SOFT *")] nint* value2,
-        [NativeTypeName("ALint64SOFT *")] nint* value3
+        [NativeTypeName("ALint64SOFT *")] long* value1,
+        [NativeTypeName("ALint64SOFT *")] long* value2,
+        [NativeTypeName("ALint64SOFT *")] long* value3
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -8895,9 +8895,9 @@ public unsafe partial interface IAL
     void GetSource3SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param1,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value1,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value2,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value3
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value1,
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value2,
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value3
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -9110,7 +9110,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
-        [NativeTypeName("ALint64SOFT *")] nint* value
+        [NativeTypeName("ALint64SOFT *")] long* value
     );
 
     [SupportedApiProfile(
@@ -9124,7 +9124,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -9132,7 +9132,7 @@ public unsafe partial interface IAL
     void GetSourcei64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
-        [NativeTypeName("ALint64SOFT *")] nint* value
+        [NativeTypeName("ALint64SOFT *")] long* value
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -9141,7 +9141,7 @@ public unsafe partial interface IAL
     void GetSourcei64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> value
+        [NativeTypeName("ALint64SOFT *")] Ref<long> value
     );
 
     [SupportedApiProfile(
@@ -9154,7 +9154,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
-        [NativeTypeName("ALint64SOFT *")] nint* values
+        [NativeTypeName("ALint64SOFT *")] long* values
     );
 
     [SupportedApiProfile(
@@ -9168,7 +9168,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> values
+        [NativeTypeName("ALint64SOFT *")] Ref<long> values
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -9176,7 +9176,7 @@ public unsafe partial interface IAL
     void GetSourcei64VSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
-        [NativeTypeName("ALint64SOFT *")] nint* values
+        [NativeTypeName("ALint64SOFT *")] long* values
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -9185,7 +9185,7 @@ public unsafe partial interface IAL
     void GetSourcei64VSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-        [NativeTypeName("ALint64SOFT *")] Ref<nint> values
+        [NativeTypeName("ALint64SOFT *")] Ref<long> values
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -9969,9 +9969,9 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
-        [NativeTypeName("ALint64SOFT")] nint value1,
-        [NativeTypeName("ALint64SOFT")] nint value2,
-        [NativeTypeName("ALint64SOFT")] nint value3
+        [NativeTypeName("ALint64SOFT")] long value1,
+        [NativeTypeName("ALint64SOFT")] long value2,
+        [NativeTypeName("ALint64SOFT")] long value3
     );
 
     [SupportedApiProfile(
@@ -9985,9 +9985,9 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param2,
-        [NativeTypeName("ALint64SOFT")] nint value1,
-        [NativeTypeName("ALint64SOFT")] nint value2,
-        [NativeTypeName("ALint64SOFT")] nint value3
+        [NativeTypeName("ALint64SOFT")] long value1,
+        [NativeTypeName("ALint64SOFT")] long value2,
+        [NativeTypeName("ALint64SOFT")] long value3
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -9995,9 +9995,9 @@ public unsafe partial interface IAL
     void Source3Soft(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
-        [NativeTypeName("ALint64SOFT")] nint value1,
-        [NativeTypeName("ALint64SOFT")] nint value2,
-        [NativeTypeName("ALint64SOFT")] nint value3
+        [NativeTypeName("ALint64SOFT")] long value1,
+        [NativeTypeName("ALint64SOFT")] long value2,
+        [NativeTypeName("ALint64SOFT")] long value3
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -10006,9 +10006,9 @@ public unsafe partial interface IAL
     void Source3Soft(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger3> param1,
-        [NativeTypeName("ALint64SOFT")] nint value1,
-        [NativeTypeName("ALint64SOFT")] nint value2,
-        [NativeTypeName("ALint64SOFT")] nint value3
+        [NativeTypeName("ALint64SOFT")] long value1,
+        [NativeTypeName("ALint64SOFT")] long value2,
+        [NativeTypeName("ALint64SOFT")] long value3
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -10221,7 +10221,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
-        [NativeTypeName("ALint64SOFT")] nint value
+        [NativeTypeName("ALint64SOFT")] long value
     );
 
     [SupportedApiProfile(
@@ -10235,7 +10235,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-        [NativeTypeName("ALint64SOFT")] nint value
+        [NativeTypeName("ALint64SOFT")] long value
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -10243,7 +10243,7 @@ public unsafe partial interface IAL
     void SourceSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
-        [NativeTypeName("ALint64SOFT")] nint value
+        [NativeTypeName("ALint64SOFT")] long value
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -10252,7 +10252,7 @@ public unsafe partial interface IAL
     void SourceSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-        [NativeTypeName("ALint64SOFT")] nint value
+        [NativeTypeName("ALint64SOFT")] long value
     );
 
     [SupportedApiProfile(
@@ -10265,7 +10265,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
-        [NativeTypeName("const ALint64SOFT *")] nint* values
+        [NativeTypeName("const ALint64SOFT *")] long* values
     );
 
     [SupportedApiProfile(
@@ -10279,7 +10279,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param2,
-        [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
+        [NativeTypeName("const ALint64SOFT *")] Ref<long> values
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -10287,7 +10287,7 @@ public unsafe partial interface IAL
     void SourceSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
-        [NativeTypeName("const ALint64SOFT *")] nint* values
+        [NativeTypeName("const ALint64SOFT *")] long* values
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -10296,7 +10296,7 @@ public unsafe partial interface IAL
     void SourceSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, ALEnum, SourceInteger> param1,
-        [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
+        [NativeTypeName("const ALint64SOFT *")] Ref<long> values
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
@@ -10417,14 +10417,14 @@ public unsafe partial interface IAL
     void SourcePlayAtTimeDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimeSOFT")]
     void SourcePlayAtTimeSOFT(
         [NativeTypeName("ALuint")] uint source,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile(
@@ -10437,7 +10437,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] uint* sources,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile(
@@ -10451,7 +10451,7 @@ public unsafe partial interface IAL
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] Ref<uint> sources,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile(
@@ -10464,7 +10464,7 @@ public unsafe partial interface IAL
     void SourcePlayAtTimevDirectSOFT(
         ContextHandle context,
         [NativeTypeName("const ALuint *")] uint sources,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
@@ -10472,7 +10472,7 @@ public unsafe partial interface IAL
     void SourcePlayAtTimevSOFT(
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] uint* sources,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
@@ -10481,7 +10481,7 @@ public unsafe partial interface IAL
     void SourcePlayAtTimevSOFT(
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] Ref<uint> sources,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
@@ -10489,7 +10489,7 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
     void SourcePlayAtTimevSOFT(
         [NativeTypeName("const ALuint *")] uint sources,
-        [NativeTypeName("ALint64SOFT")] nint start_time
+        [NativeTypeName("ALint64SOFT")] long start_time
     );
 
     [SupportedApiProfile("al", ["AL_EXT_direct_context"])]

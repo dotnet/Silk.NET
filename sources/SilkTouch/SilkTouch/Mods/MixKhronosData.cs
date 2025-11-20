@@ -12,7 +12,6 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Silk.NET.Core;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -2342,7 +2341,7 @@ public partial class MixKhronosData(
                     foreach (
                         var ((_, applicable), value) in data
                             .Annotations.Where(x => x.Key.ContainingSymbol == aliasedFunc)
-                            .ToArray()
+                            .ToArray() // <-- required to avoid multiple enumeration errors
                     )
                     {
                         data.Annotations[(funcName, applicable)] = value;
