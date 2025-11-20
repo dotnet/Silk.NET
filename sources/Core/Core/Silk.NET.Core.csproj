@@ -28,7 +28,4 @@
     <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
   </ItemGroup>
 
-  <!-- Dogfooding -->
-  <Import Project="Silk.NET.Core.targets" />
-
 </Project>

@@ -13,5 +13,5 @@ public enum CombinerScale : uint
     None = unchecked((uint)0),
     ScaleByTwoNV = unchecked((uint)0x853E),
     ScaleByFourNV = unchecked((uint)0x853F),
-    ScaleByOneHalfNV = unchecked((uint)0x8540)
+    ScaleByOneHalfNV = unchecked((uint)0x8540),
 }

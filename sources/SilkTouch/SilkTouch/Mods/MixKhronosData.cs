@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Humanizer;
 using Microsoft.CodeAnalysis;
@@ -18,7 +12,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.Core;
-using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
@@ -42,7 +35,7 @@ public partial class MixKhronosData(
         IApiMetadataProvider<SymbolConstraints>,
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
-    internal Dictionary<string, JobData> Jobs = new();
+    internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
         4
     );
@@ -53,7 +46,7 @@ public partial class MixKhronosData(
         {
             { "GLenum", "GLEnum" },
             { "EGLenum", "EGLEnum" },
-            { "GLbitfield", "GLEnum" }
+            { "GLbitfield", "GLEnum" },
         };
 
     internal class JobData
@@ -162,6 +155,24 @@ public partial class MixKhronosData(
         /// Default namespace for enums.
         /// </summary>
         public string? Namespace { get; init; }
+
+        /// <summary>
+        /// Whether Khronos-style extension naming conventions are not applicable here (e.g. OpenAL).
+        /// </summary>
+        public bool NonStandardExtensionNomenclature { get; init; }
+
+        /// <summary>
+        /// Additional extension vendors to recognise, typically used in conjunction with
+        /// <see cref="NonStandardExtensionNomenclature"/>.
+        /// </summary>
+        public List<string>? Vendors { get; init; }
+
+        /// <summary>
+        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
+        /// when determining a data type suffix to trim when <see cref="UseDataTypeTrimmings"/> is on. For example,
+        /// <c>Direct</c> for OpenAL.
+        /// </summary>
+        public List<string>? IgnoreNonVendorSuffixes { get; init; }
     }
 
     /// <summary>
@@ -184,7 +195,7 @@ public partial class MixKhronosData(
         /// <summary>
         /// Only trim Khronos/first-party extension vendor names i.e. KHR and ARB.
         /// </summary>
-        KhronosOnly
+        KhronosOnly,
     }
 
     private class ExtensionVendorTrimmingModeJsonConverter
@@ -230,7 +241,7 @@ public partial class MixKhronosData(
             Configuration = currentConfig,
             TypeMap = currentConfig.TypeMap is not null
                 ? new Dictionary<string, string>(currentConfig.TypeMap)
-                : []
+                : [],
         };
         job.TypeMap.TryAdd("int8_t", "sbyte");
         job.TypeMap.TryAdd("uint8_t", "byte");
@@ -252,7 +263,7 @@ public partial class MixKhronosData(
 
         logger.LogInformation("Reading Khronos XML from \"{}\"...", specPath);
         await using var fs = File.OpenRead(specPath);
-        var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
+        var xml = await XDocument.LoadAsync(fs, LoadOptions.None, CancellationToken.None);
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
         job.Vendors =
         [
@@ -260,12 +271,15 @@ public partial class MixKhronosData(
                 ?.Element("tags")
                 ?.Elements("tag")
                 .Attributes("name")
-                .Select(x => x.Value) ?? Enumerable.Empty<string>(),
-            .. xml.Element("registry")
-                ?.Element("extensions")
-                ?.Elements("extension")
-                .Attributes("name")
-                .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>()
+                .Select(x => x.Value) ?? [],
+            .. currentConfig.NonStandardExtensionNomenclature
+                ? []
+                : xml.Element("registry")
+                    ?.Element("extensions")
+                    ?.Elements("extension")
+                    .Attributes("name")
+                    .Select(x => x.Value.Split('_')[1].ToUpper()) ?? [],
+            .. currentConfig.Vendors ?? [],
         ];
         job.ApiSets = apiSets;
         job.SupportedApiProfiles = supportedApiProfiles;
@@ -443,7 +457,7 @@ public partial class MixKhronosData(
                 ImpliesSets = ImpliedSets?.ToArray(),
                 MaxVersion = EndVersion?.ToString(),
                 MinVersion = StartVersion?.ToString(),
-                RequireAll = RequireAll
+                RequireAll = RequireAll,
             };
     }
 
@@ -587,7 +601,7 @@ public partial class MixKhronosData(
                         ) // <-- future proofing
                         .Where(x => x != "compatibility") // <-- assuming default "gl" is "glcompatibility"
                         .Select(x => $"{variant}{x}"),
-                    .. profileVariations.TryGetValue(variant, out var v) ? v : []
+                    .. profileVariations.TryGetValue(variant, out var v) ? v : [],
                 ];
             }
         }
@@ -709,11 +723,10 @@ public partial class MixKhronosData(
         // Create a HashSet to store all the symbols in this feature.
         // If we're not using explicit dependencies, then we track the profile-wide symbol list. We assume that the
         // "number" order is being respected.
-        var symbols = explicitDependencies
-            ? inheritance[apiSet] = []
-            : inheritance.TryGetValue(variant, out var syms)
-                ? syms
-                : inheritance[variant] = [];
+        var symbols =
+            explicitDependencies ? inheritance[apiSet] = []
+            : inheritance.TryGetValue(variant, out var syms) ? syms
+            : inheritance[variant] = [];
 
         // If we're using implicit dependencies in the form of secondary APIs, the symbol changes we explicitly need to
         // inherit are contained in the pendingChanges dictionary for this variant.
@@ -839,7 +852,7 @@ public partial class MixKhronosData(
                 // The symbol has been removed, mark it with the end version.
                 evals[idx] = evals[idx] with
                 {
-                    EndVersion = number
+                    EndVersion = number,
                 };
             }
         }
@@ -1183,31 +1196,26 @@ public partial class MixKhronosData(
         }
     }
 
+    private bool _outputVendorInformationWarning = false;
+
     /// <inheritdoc />
-    public void Trim(
-        string? container,
-        string? hint,
-        string? jobKey,
-        Dictionary<string, (string Primary, List<string>? Secondary)>? names,
-        Dictionary<string, string>? prefixOverrides,
-        HashSet<string>? nonDeterminant,
-        ref string? identifiedPrefix
-    )
+    public void Trim(NameTrimmerContext context)
     {
-        if (names is null || jobKey is null)
+        if (context.Names is null || context.JobKey is null)
         {
             return;
         }
 
-        if (!Jobs.TryGetValue(jobKey, out var job))
+        if (!Jobs.TryGetValue(context.JobKey, out var job))
         {
             throw new InvalidOperationException(
                 "BeforeJobAsync has not run yet! MixKhronosData must come before PrettifyNames in the mod list."
             );
         }
 
-        if (job.Vendors?.Count is 0 or null)
+        if (job.Vendors?.Count is 0 or null && !_outputVendorInformationWarning)
         {
+            _outputVendorInformationWarning = true;
             logger.LogWarning(
                 "No vendor information present, assuming no XML was provided? Extension trimming will be skipped."
             );
@@ -1216,9 +1224,9 @@ public partial class MixKhronosData(
         // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
         // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
         // becomes BufferUsage.
-        if (container is null && job.Vendors is not null)
+        if (context.Container is null && job.Vendors is not null)
         {
-            foreach (var (original, (current, previous)) in names)
+            foreach (var (original, (current, previous)) in context.Names)
             {
                 if (job.Groups.TryGetValue(current, out var groupInfo))
                 {
@@ -1241,7 +1249,7 @@ public partial class MixKhronosData(
 
                     job.Groups[current] = groupInfo = groupInfo with
                     {
-                        ExclusiveVendor = vendorSuffix
+                        ExclusiveVendor = vendorSuffix,
                     };
 
                     if (notSafeToTrim)
@@ -1257,7 +1265,7 @@ public partial class MixKhronosData(
                         {
                             var sec = previous ?? [];
                             sec.Add(current);
-                            names[original] = (current[..^vendor.Length], sec);
+                            context.Names[original] = (current[..^vendor.Length], sec);
                             break;
                         }
                     }
@@ -1267,16 +1275,12 @@ public partial class MixKhronosData(
 
         // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
         var rewind = false;
-        if (container is not null && job.Groups.ContainsKey(container))
+        if (context.Container is not null && job.Groups.ContainsKey(context.Container))
         {
-            foreach (var (_, (current, previous)) in names)
+            foreach (var (_, (current, previous)) in context.Names)
             {
                 var prev = previous?.FirstOrDefault();
-                if (
-                    prev is not null
-                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
-                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
-                )
+                if (prev is not null && (job.Vendors?.Contains(current) ?? false))
                 {
                     rewind = true;
                 }
@@ -1285,7 +1289,7 @@ public partial class MixKhronosData(
 
         if (rewind)
         {
-            foreach (var (original, (current, previous)) in names)
+            foreach (var (original, (current, previous)) in context.Names)
             {
                 var prev = previous?.FirstOrDefault() ?? original;
                 var prevList = previous ?? [];
@@ -1299,15 +1303,15 @@ public partial class MixKhronosData(
                     prevList.Add(prev);
                 }
 
-                names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
+                context.Names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
             }
         }
 
         // Trim the extension vendor names
-        foreach (var (original, (current, previous)) in names)
+        foreach (var (original, (current, previous)) in context.Names)
         {
             // GLEnum is obviously trimmed, and we don't really want to do that.
-            if (container is null)
+            if (context.Container is null)
             {
                 var changed = false;
                 foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
@@ -1317,7 +1321,7 @@ public partial class MixKhronosData(
                         && name == $"{group.Namespace}Enum"
                     )
                     {
-                        names[original] = (name, []);
+                        context.Names[original] = (name, []);
                         changed = true;
                         break;
                     }
@@ -1345,7 +1349,7 @@ public partial class MixKhronosData(
                 // Sometimes we should keep the vendor prefix so we prefer the promoted functions.
                 // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
                 trimVendor =
-                    !names.ContainsKey(newOriginal)
+                    !context.Names.ContainsKey(newOriginal)
                     && (
                         job.Configuration.UseExtensionVendorTrimmings
                             == ExtensionVendorTrimmingMode.All
@@ -1355,8 +1359,8 @@ public partial class MixKhronosData(
                             && vendor is "KHR" or "ARB"
                         )
                         || (
-                            container is not null
-                            && job.Groups.TryGetValue(container, out var group)
+                            context.Container is not null
+                            && job.Groups.TryGetValue(context.Container, out var group)
                             && group.ExclusiveVendor == vendor
                         )
                     );
@@ -1364,7 +1368,7 @@ public partial class MixKhronosData(
                 {
                     newPrev ??= previous ?? [];
                     newPrev.Add(current);
-                    names[original] = (newCurrent, newPrev);
+                    context.Names[original] = (newCurrent, newPrev);
                 }
 
                 identifiedVendor = vendor;
@@ -1391,14 +1395,14 @@ public partial class MixKhronosData(
                 {
                     // If we're not trimming the vendor, this hack will be the primary name.
                     newPrev.Add(current);
-                    names[original] = (pretty + identifiedVendor, newPrev);
+                    context.Names[original] = (pretty + identifiedVendor, newPrev);
                 }
                 else
                 {
                     // If we are trimming the vendor, if at any point we have to fall back on the untrimmed version
                     // we'll want that version to be this hack.
                     newPrev.Add(pretty + identifiedVendor);
-                    names[original] = (pretty, newPrev);
+                    context.Names[original] = (pretty, newPrev);
                 }
             }
 
@@ -1415,7 +1419,7 @@ public partial class MixKhronosData(
                 {
                     // If we're not trimming the vendor, this hack will be the primary name.
                     newPrev.Add(current);
-                    names[original] = ($"{newCurrent} {identifiedVendor}", newPrev);
+                    context.Names[original] = ($"{newCurrent} {identifiedVendor}", newPrev);
                 }
                 else
                 {
@@ -1424,13 +1428,26 @@ public partial class MixKhronosData(
                     // original name because PrettifyNames orders by match length.
                     newPrev.Remove(current);
                     newPrev.Add($"{newCurrent} {identifiedVendor}");
-                    names[original] = (newCurrent, newPrev);
+                    context.Names[original] = (newCurrent, newPrev);
+                }
+            }
+
+            // If we have an additional non-vendor suffix (e.g. al*Direct) then let's trim it before we try to do the
+            // data type trimming
+            string? identifiedSuffix = null;
+            foreach (var suffix in job.Configuration.IgnoreNonVendorSuffixes ?? [])
+            {
+                if (newCurrent.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                {
+                    identifiedSuffix = suffix;
+                    newCurrent = newCurrent[..^suffix.Length];
+                    break;
                 }
             }
 
             if (
                 !job.Configuration.UseDataTypeTrimmings // don't trim data types
-                || container is null // don't trim type names
+                || context.Container is null // don't trim type names
                 || newCurrent.Count(x => x == '_') > 1 // is probably an enum
                 || EndingsToTrim().Match(newCurrent) is not { Success: true } match // we don't have a data type suffix
                 || EndingsNotToTrim().IsMatch(newCurrent) // we need to keep it
@@ -1441,6 +1458,7 @@ public partial class MixKhronosData(
 
             newPrev ??= previous ?? [];
             var newPrim = newCurrent.Remove(match.Index);
+            newPrim += identifiedSuffix;
             if (identifiedVendor is not null && trimVendor)
             {
                 // If the only difference between this function and other functions that could conflict is the vendor,
@@ -1462,7 +1480,7 @@ public partial class MixKhronosData(
                 newPrev.Add(current);
             }
 
-            names[original] = (newPrim, newPrev);
+            context.Names[original] = (newPrim, newPrev);
         }
     }
 
@@ -1607,10 +1625,11 @@ public partial class MixKhronosData(
         static TypeSyntax PointerToGroupPointer(TypeSyntax original, string group) =>
             original switch
             {
-                PointerTypeSyntax ptr
-                    => ptr.WithElementType(PointerToGroupPointer(ptr.ElementType, group)),
+                PointerTypeSyntax ptr => ptr.WithElementType(
+                    PointerToGroupPointer(ptr.ElementType, group)
+                ),
                 PredefinedTypeSyntax or IdentifierNameSyntax => IdentifierName(group),
-                _ => throw new ArgumentOutOfRangeException(nameof(original))
+                _ => throw new ArgumentOutOfRangeException(nameof(original)),
             };
 
         TypeSyntax? GetTypeTransformation(
@@ -1662,7 +1681,7 @@ public partial class MixKhronosData(
                     2 when otherGroup is not null => PointerToGroupPointer(type, group),
                     1 when otherGroup is not null => PointerToGroupPointer(type, otherGroup),
                     1 => PointerToGroupPointer(type, group),
-                    _ => null
+                    _ => null,
                 };
             }
 
@@ -1750,8 +1769,8 @@ public partial class MixKhronosData(
         "(sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
-            + "Arch|ArithAfresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix)$"
+            + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Rewind|Supported)$"
     )]
     private static partial Regex EndingsNotToTrim();
 
@@ -1831,6 +1850,9 @@ public partial class MixKhronosData(
         // therefore the result of this function will go mostly ignored.
         var anyNamespaced =
             doc.Element("registry")?.Elements("enums").Attributes("namespace").Any() ?? false;
+        var anyGLStyleGroups =
+            doc.Element("registry")?.Elements("enums").Elements("enum").Attributes("group").Any()
+            ?? false;
         var likelyOpenCL = false; // OpenCL specific
         var topLevelIntentionalExclusions = new HashSet<string>(); // OpenCL specific
         foreach (var block in doc.Element("registry")?.Elements("enums") ?? [])
@@ -1938,11 +1960,11 @@ public partial class MixKhronosData(
                             Namespace =
                                 enumNamespace is not null && groupInfo.Namespace == enumNamespace
                                     ? enumNamespace
-                                    : null
+                                    : null,
                         }
                         : new EnumGroup(
                             group,
-                            glGroups?.Length > 0 ? "GLenum" : null,
+                            anyGLStyleGroups ? "GLenum" : null,
                             [],
                             isBitmask,
                             thisVendor,
@@ -1981,7 +2003,7 @@ public partial class MixKhronosData(
                     foreach (
                         var ((_, applicable), value) in data
                             .Annotations.Where(x => x.Key.ContainingSymbol == aliasedFunc)
-                            .ToArray()
+                            .ToArray() // <-- required to avoid multiple enumeration errors
                     )
                     {
                         data.Annotations[(funcName, applicable)] = value;
@@ -2054,13 +2076,21 @@ public partial class MixKhronosData(
             }
 
             // Get the parameter group attributes
-            foreach (var param in func.Elements("param"))
+            foreach (var (paramIdx, param) in func.Elements("param").Select((x, i) => (i, x)))
             {
-                AddData(
-                    param,
+                var paramName =
                     param.Element("name")?.Value
-                        ?? throw new InvalidDataException("param with no name")
-                );
+                    ?? throw new InvalidDataException("param with no name");
+
+                // TODO ClangSharp currently erroneously renames "param" to "param<idx>"
+                // TODO Once fixed upstream, remove this hack.
+                // https://discord.com/channels/521092042781229087/587346162802229298/1437503858849878037
+                if (paramName == "param")
+                {
+                    paramName = $"{paramName}{paramIdx}";
+                }
+
+                AddData(param, paramName);
             }
         }
 

@@ -51,5 +51,5 @@ public enum ColorBuffer : uint
     ColorAttachment28 = unchecked((uint)0x8CFC),
     ColorAttachment29 = unchecked((uint)0x8CFD),
     ColorAttachment30 = unchecked((uint)0x8CFE),
-    ColorAttachment31 = unchecked((uint)0x8CFF)
+    ColorAttachment31 = unchecked((uint)0x8CFF),
 }

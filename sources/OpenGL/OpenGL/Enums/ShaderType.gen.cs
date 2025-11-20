@@ -17,5 +17,5 @@ public enum ShaderType : uint
     TessControlShader = unchecked((uint)0x8E88),
     ComputeShader = unchecked((uint)0x91B9),
     FragmentShaderARB = unchecked((uint)0x8B30),
-    VertexShaderARB = unchecked((uint)0x8B31)
+    VertexShaderARB = unchecked((uint)0x8B31),
 }

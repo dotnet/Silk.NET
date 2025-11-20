@@ -17,5 +17,5 @@ public enum StencilOp : uint
     Incr = unchecked((uint)0x1E02),
     Decr = unchecked((uint)0x1E03),
     IncrWrap = unchecked((uint)0x8507),
-    DecrWrap = unchecked((uint)0x8508)
+    DecrWrap = unchecked((uint)0x8508),
 }

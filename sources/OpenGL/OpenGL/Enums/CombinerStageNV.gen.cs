@@ -17,5 +17,5 @@ public enum CombinerStageNV : uint
     Combiner4 = unchecked((uint)0x8554),
     Combiner5 = unchecked((uint)0x8555),
     Combiner6 = unchecked((uint)0x8556),
-    Combiner7 = unchecked((uint)0x8557)
+    Combiner7 = unchecked((uint)0x8557),
 }

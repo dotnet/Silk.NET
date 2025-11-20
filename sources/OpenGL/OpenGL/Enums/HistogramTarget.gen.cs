@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum HistogramTarget : uint
 {
     Histogram = unchecked((uint)0x8024),
-    ProxyHistogram = unchecked((uint)0x8025)
+    ProxyHistogram = unchecked((uint)0x8025),
 }

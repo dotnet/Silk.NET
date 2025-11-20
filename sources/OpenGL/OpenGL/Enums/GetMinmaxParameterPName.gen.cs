@@ -13,5 +13,5 @@ public enum GetMinmaxParameterPName : uint
     Format = unchecked((uint)0x802F),
     Sink = unchecked((uint)0x8030),
     FormatEXT = unchecked((uint)0x802F),
-    SinkEXT = unchecked((uint)0x8030)
+    SinkEXT = unchecked((uint)0x8030),
 }

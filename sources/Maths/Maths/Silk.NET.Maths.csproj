@@ -8,6 +8,7 @@
         <DefineConstants>SSE;BTEC_INTRINSICS;MATHF;POH;AdvSIMD;$(DefineConstants)</DefineConstants>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <SilkDSLExempt>true</SilkDSLExempt>
     </PropertyGroup>
 
     <ItemGroup>

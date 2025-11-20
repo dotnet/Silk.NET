@@ -123,14 +123,43 @@ public static class MetadataUtils
         string? childSymbol = null,
         Predicate<T>? filter = default,
         T? defaultValue = default
+    ) =>
+        GetAllMetadata(metadataProviders, jobKey, parentSymbol, childSymbol, filter)
+            .FirstOrDefault(defaultValue);
+
+    /// <summary>
+    /// Gets all matching metadata items for a specific symbol.
+    /// </summary>
+    /// <param name="metadataProviders">The metadata providers.</param>
+    /// <param name="jobKey">The current job key.</param>
+    /// <param name="parentSymbol">
+    /// The parent symbol, optionally containing the symbol identified by <paramref name="childSymbol"/> if provided.
+    /// Used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/> if
+    /// <paramref name="childSymbol"/> is not <c>null</c>, <see cref="IApiMetadataProvider{T}.TryGetSymbolMetadata"/>
+    /// otherwise.
+    /// </param>
+    /// <param name="childSymbol">
+    /// The target symbol to get metadata for. If <c>null</c>, <paramref name="parentSymbol"/> represents the target
+    /// symbol. Otherwise, this is used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/>.
+    /// </param>
+    /// <param name="filter">
+    /// Filters the resolved metadata. If <c>null</c>, the first matching metadata item shall be used.
+    /// </param>
+    /// <typeparam name="T">The type of the metadata.</typeparam>
+    /// <returns>The metadata item.</returns>
+    public static IEnumerable<T?> GetAllMetadata<T>(
+        this IEnumerable<IApiMetadataProvider<IEnumerable<T>>> metadataProviders,
+        string? jobKey,
+        string? parentSymbol = null,
+        string? childSymbol = null,
+        Predicate<T>? filter = default
     )
     {
         if (parentSymbol is null)
         {
-            return defaultValue;
+            yield break;
         }
 
-        T? parent = default;
         foreach (var apimd in metadataProviders)
         {
             if (
@@ -139,21 +168,20 @@ public static class MetadataUtils
                 && vers.FirstOrDefault(x => filter?.Invoke(x) ?? true) is { } ver
             )
             {
-                return ver;
+                yield return ver;
+                continue;
             }
 
             // parentVers.FirstOrDefault(x => x.Profile == Profile.Profile) ?? parent
             if (
                 apimd.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentVers)
-                && (parent = parentVers.FirstOrDefault(x => filter?.Invoke(x) ?? true)) is not null
+                && parentVers.FirstOrDefault(x => filter?.Invoke(x) ?? true) is { } parent
                 && childSymbol is null
             )
             {
-                break;
+                yield return parent;
             }
         }
-
-        return parent ?? defaultValue;
     }
 
     /// <summary>

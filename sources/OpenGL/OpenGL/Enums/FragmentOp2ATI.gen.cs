@@ -14,5 +14,5 @@ public enum FragmentOp2ATI : uint
     Mul = unchecked((uint)0x8964),
     Sub = unchecked((uint)0x8965),
     Dot3 = unchecked((uint)0x8966),
-    Dot4 = unchecked((uint)0x8967)
+    Dot4 = unchecked((uint)0x8967),
 }

@@ -19,5 +19,5 @@ public enum ListNameType : uint
     Float = unchecked((uint)0x1406),
     X2Bytes = unchecked((uint)0x1407),
     X3Bytes = unchecked((uint)0x1408),
-    X4Bytes = unchecked((uint)0x1409)
+    X4Bytes = unchecked((uint)0x1409),
 }

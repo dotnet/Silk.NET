@@ -16,5 +16,5 @@ public enum SamplePatternEXT : uint
     X4Pass0 = unchecked((uint)0x80A4),
     X4Pass1 = unchecked((uint)0x80A5),
     X4Pass2 = unchecked((uint)0x80A6),
-    X4Pass3 = unchecked((uint)0x80A7)
+    X4Pass3 = unchecked((uint)0x80A7),
 }
