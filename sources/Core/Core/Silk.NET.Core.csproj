@@ -22,7 +22,6 @@
   <!-- Public API Tracking -->
   <PropertyGroup>
     <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' != ''">
     <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
