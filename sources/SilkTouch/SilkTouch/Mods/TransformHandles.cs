@@ -15,7 +15,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Identifies handle types by finding pointers to empty structs.
+/// Identifies handle types by finding pointers to empty structs or missing types.
 /// In general, a handle type is a struct that wraps an underlying opaque pointer (or some other underlying value).
 /// These handle types are then transformed by making the struct wrap the underlying pointer and
 /// reducing the dimension of pointers referencing that handle type by one.
@@ -485,7 +485,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
     private class HandleTypeRewriter(bool useDSL) : CSharpSyntaxRewriter
     {
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
             var structName = node.Identifier.Text;
             return node.WithIdentifier(Identifier(structName))
