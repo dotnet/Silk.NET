@@ -3,6 +3,7 @@
 
 using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -15,7 +16,8 @@ namespace Silk.NET.Maths
     [Serializable]
     [DataContract]
     public struct Plane<T>
-        : IEquatable<Plane<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        : IEquatable<Plane<T>>
+        where T : INumberBase<T>
     {
         /// <summary>The normal vector of the Plane.</summary>
         [DataMember]
@@ -173,7 +175,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Plane<short>(Plane<T> from)
-            => new((Vector3D<short>) from.Normal, Scalar.As<T, short>(from.Distance));
+            => new(from.Normal.AsSaturating<short>(), short.CreateSaturating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
@@ -212,7 +214,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted plane</returns>
-        public Plane<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
+        public Plane<TOther> As<TOther>() where TOther : INumberBase<TOther>
         {
             return new(Normal.As<TOther>(), Scalar.As<T, TOther>(Distance));
         }
