@@ -37,6 +37,7 @@
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="10.0.0" />
     <PackageVersion Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.14.2075" />
     <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0" />
     <PackageVersion Include="System.IO.Hashing" Version="10.0.0" />
     <!-- SilkTouch Unit Tests -->
     <PackageVersion Include="Silk.NET.BuildTools" Version="2.22.0" />

@@ -25,6 +25,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
     <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" />
     <PackageReference Include="System.CommandLine" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" />
     <PackageReference Include="System.IO.Hashing" />
   </ItemGroup>
 
