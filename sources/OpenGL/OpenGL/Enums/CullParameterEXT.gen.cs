@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum CullParameterEXT : uint
 {
     EyePosition = unchecked((uint)0x81AB),
-    ObjectPosition = unchecked((uint)0x81AC)
+    ObjectPosition = unchecked((uint)0x81AC),
 }

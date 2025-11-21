@@ -15,6 +15,4 @@
       <ProjectReference Include="..\Input\Input\Silk.NET.Input.csproj" />
     </ItemGroup>
 
-    <Import Project="../Core/Core/Silk.NET.Core.targets" />
-
 </Project>

@@ -12,5 +12,5 @@ public enum BufferAccess : uint
 {
     ReadOnly = unchecked((uint)0x88B8),
     WriteOnly = unchecked((uint)0x88B9),
-    ReadWrite = unchecked((uint)0x88BA)
+    ReadWrite = unchecked((uint)0x88BA),
 }

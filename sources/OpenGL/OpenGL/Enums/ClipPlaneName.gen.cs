@@ -23,5 +23,5 @@ public enum ClipPlaneName : uint
     Distance4 = unchecked((uint)0x3004),
     Distance5 = unchecked((uint)0x3005),
     Distance6 = unchecked((uint)0x3006),
-    Distance7 = unchecked((uint)0x3007)
+    Distance7 = unchecked((uint)0x3007),
 }

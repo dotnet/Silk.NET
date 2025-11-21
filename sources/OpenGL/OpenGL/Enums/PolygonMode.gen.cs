@@ -12,5 +12,5 @@ public enum PolygonMode : uint
 {
     Point = unchecked((uint)0x1B00),
     Line = unchecked((uint)0x1B01),
-    Fill = unchecked((uint)0x1B02)
+    Fill = unchecked((uint)0x1B02),
 }

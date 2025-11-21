@@ -13,5 +13,5 @@ public enum SyncParameterName : uint
     ObjectType = unchecked((uint)0x9112),
     SyncCondition = unchecked((uint)0x9113),
     SyncStatus = unchecked((uint)0x9114),
-    SyncFlags = unchecked((uint)0x9115)
+    SyncFlags = unchecked((uint)0x9115),
 }

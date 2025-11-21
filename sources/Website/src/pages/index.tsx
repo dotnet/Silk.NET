@@ -103,8 +103,8 @@ export default function Home(): JSX.Element {
     const {siteConfig} = useDocusaurusContext();
     return (
         <Layout
-            title={`Hello from ${siteConfig.title}`}
-            description="Description will go into a meta tag in <head />">
+            title="Silk.NET - High-Speed &amp; Advanced .NET Graphics &amp; Compute"
+            description="Your one-stop-shop for high performance .NET graphics &amp; compute. A .NET Foundation project.">
             <HomepageHeader/>
             <main>
                 <HomepageFeatures/>

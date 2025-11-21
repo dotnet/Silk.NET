@@ -14,5 +14,5 @@ public enum FramebufferParameterName : uint
     Height = unchecked((uint)0x9311),
     Layers = unchecked((uint)0x9312),
     Samples = unchecked((uint)0x9313),
-    FixedSampleLocations = unchecked((uint)0x9314)
+    FixedSampleLocations = unchecked((uint)0x9314),
 }

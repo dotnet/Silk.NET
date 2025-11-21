@@ -13,5 +13,5 @@ public enum PathFillMode : uint
     Invert = unchecked((uint)0x150A),
     PathFillModeNV = unchecked((uint)0x9080),
     CountUpNV = unchecked((uint)0x9088),
-    CountDownNV = unchecked((uint)0x9089)
+    CountDownNV = unchecked((uint)0x9089),
 }

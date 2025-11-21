@@ -16,5 +16,5 @@ public enum MaterialParameter : uint
     Emission = unchecked((uint)0x1600),
     Shininess = unchecked((uint)0x1601),
     AmbientAndDiffuse = unchecked((uint)0x1602),
-    ColorIndexes = unchecked((uint)0x1603)
+    ColorIndexes = unchecked((uint)0x1603),
 }

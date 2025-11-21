@@ -17,5 +17,5 @@ public enum VertexStreamATI : uint
     Stream4 = unchecked((uint)0x8770),
     Stream5 = unchecked((uint)0x8771),
     Stream6 = unchecked((uint)0x8772),
-    Stream7 = unchecked((uint)0x8773)
+    Stream7 = unchecked((uint)0x8773),
 }

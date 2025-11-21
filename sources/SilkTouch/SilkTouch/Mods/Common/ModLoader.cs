@@ -29,6 +29,8 @@ public class ModLoader
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
             nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),
+            nameof(ChangeNativeClass) => typeof(ChangeNativeClass),
+            nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
             _ => null,
         };
 }

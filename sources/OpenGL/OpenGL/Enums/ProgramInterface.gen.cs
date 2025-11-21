@@ -29,5 +29,5 @@ public enum ProgramInterface : uint
     GeometrySubroutineUniform = unchecked((uint)0x92F1),
     FragmentSubroutineUniform = unchecked((uint)0x92F2),
     ComputeSubroutineUniform = unchecked((uint)0x92F3),
-    TransformFeedbackVarying = unchecked((uint)0x92F4)
+    TransformFeedbackVarying = unchecked((uint)0x92F4),
 }

@@ -27,5 +27,5 @@ public enum UseProgramStageMask : uint
     FragmentShaderBitEXT = unchecked((uint)0x00000002),
     AllShaderBitsEXT = unchecked((uint)0xFFFFFFFF),
     TessControlShaderBitEXT = unchecked((uint)0x00000008),
-    TessEvaluationShaderBitEXT = unchecked((uint)0x00000010)
+    TessEvaluationShaderBitEXT = unchecked((uint)0x00000010),
 }

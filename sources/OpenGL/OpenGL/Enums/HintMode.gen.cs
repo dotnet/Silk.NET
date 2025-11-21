@@ -12,5 +12,5 @@ public enum HintMode : uint
 {
     DontCare = unchecked((uint)0x1100),
     Fastest = unchecked((uint)0x1101),
-    Nicest = unchecked((uint)0x1102)
+    Nicest = unchecked((uint)0x1102),
 }

@@ -167,7 +167,7 @@ public class FunctionTransformer(
                     var newIden = $"{function.Identifier}Raw";
                     var rep = new Dictionary<string, string>
                     {
-                        { function.Identifier.ToString(), newIden }
+                        { function.Identifier.ToString(), newIden },
                     };
 
                     // Any reference to the original function needs to be replaced as well.
@@ -273,7 +273,11 @@ public class FunctionTransformer(
             .WithExpressionBody(null)
             .WithSemicolonToken(default)
             .WithModifiers(
-                TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
+                TokenList(
+                    function.Modifiers.Where(x =>
+                        x.Kind() is not (SyntaxKind.ExternKeyword or SyntaxKind.PartialKeyword)
+                    )
+                )
             );
 
         transform(function);

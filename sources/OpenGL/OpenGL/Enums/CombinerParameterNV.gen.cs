@@ -12,5 +12,5 @@ public enum CombinerParameterNV : uint
 {
     Input = unchecked((uint)0x8542),
     Mapping = unchecked((uint)0x8543),
-    ComponentUsage = unchecked((uint)0x8544)
+    ComponentUsage = unchecked((uint)0x8544),
 }
