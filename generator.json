@@ -302,7 +302,11 @@
       },
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
-        "Namespace": "Silk.NET.Vulkan"
+        "Namespace": "Silk.NET.Vulkan",
+        "FlagsTypes": [
+          "VkFlags",
+          "VkFlags64"
+        ]
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [

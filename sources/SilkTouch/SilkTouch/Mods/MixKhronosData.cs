@@ -180,6 +180,16 @@ public partial class MixKhronosData(
         public string? Namespace { get; init; }
 
         /// <summary>
+        /// The base type used for flags/bitmask enums.
+        /// For example, VkFlags and VkFlags64 for Vulkan.
+        /// </summary>
+        /// <remarks>
+        /// This mainly affects remappings.
+        /// If some flags types are showing as integral types instead of their proper type, make sure this property is configured.
+        /// </remarks>
+        public string[] FlagsTypes { get; init; } = [];
+
+        /// <summary>
         /// Whether Khronos-style extension naming conventions are not applicable here (e.g. OpenAL).
         /// </summary>
         public bool NonStandardExtensionNomenclature { get; init; }
@@ -342,10 +352,12 @@ public partial class MixKhronosData(
         // We want Flags as the output, but in order to generate everything correctly,
         // we need to first map Flags to FlagBits, then rename FlagBits back to Flags (this is done in the rewriters).
         // Without this, ClangSharp will output the Flags types as the integral storage type instead of the enum
+        var flagsTypesSet = currentConfig.FlagsTypes.ToHashSet();
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var typedef = typeElement.Element("type")?.Value;
-            if (typedef != "VkFlags" && typedef != "VkFlags64")
+            var isFlagsType = typedef != null && flagsTypesSet.Contains(typedef);
+            if (!isFlagsType)
             {
                 continue;
             }
