@@ -45,5 +45,5 @@ public unsafe partial struct SurfaceCapabilitiesPresentWait2KHR
             "VK_KHR_swapchain",
         ]
     )]
-    public MaybeBool<uint> PresentWait2Supported;
+    public uint PresentWait2Supported;
 }

@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CustomBorderColors;
+    public uint CustomBorderColors;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CustomBorderColorWithoutFormat;
+    public uint CustomBorderColorWithoutFormat;
 }

@@ -2673,7 +2673,7 @@ public partial struct PhysicalDeviceLimits
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> TimestampComputeAndGraphics;
+    public uint TimestampComputeAndGraphics;
 
     [SupportedApiProfile(
         "vulkan",
@@ -2960,7 +2960,7 @@ public partial struct PhysicalDeviceLimits
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> StrictLines;
+    public uint StrictLines;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -2989,7 +2989,7 @@ public partial struct PhysicalDeviceLimits
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> StandardSampleLocations;
+    public uint StandardSampleLocations;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

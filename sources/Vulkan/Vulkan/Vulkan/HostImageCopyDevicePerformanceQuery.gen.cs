@@ -46,7 +46,7 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> OptimalDeviceAccess;
+    public uint OptimalDeviceAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -59,5 +59,5 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> IdenticalMemoryLayout;
+    public uint IdenticalMemoryLayout;
 }

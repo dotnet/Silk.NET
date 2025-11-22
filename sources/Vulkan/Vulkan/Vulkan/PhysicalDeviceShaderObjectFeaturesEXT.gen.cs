@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceShaderObjectFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> ShaderObject;
+    public uint ShaderObject;
 }

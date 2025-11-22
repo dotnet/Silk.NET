@@ -51,5 +51,5 @@ public unsafe partial struct DepthBiasRepresentationInfoEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DepthBiasExact;
+    public uint DepthBiasExact;
 }

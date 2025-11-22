@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceTileMemoryHeapPropertiesQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> QueueSubmitBoundary;
+    public uint QueueSubmitBoundary;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceTileMemoryHeapPropertiesQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TileBufferTransfers;
+    public uint TileBufferTransfers;
 }

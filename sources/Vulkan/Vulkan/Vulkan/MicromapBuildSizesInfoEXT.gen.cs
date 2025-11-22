@@ -62,5 +62,5 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> Discardable;
+    public uint Discardable;
 }

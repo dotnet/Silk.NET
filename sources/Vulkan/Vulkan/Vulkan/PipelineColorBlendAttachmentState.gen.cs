@@ -28,7 +28,7 @@ public partial struct PipelineColorBlendAttachmentState
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> BlendEnable;
+    public uint BlendEnable;
 
     [SupportedApiProfile(
         "vulkan",

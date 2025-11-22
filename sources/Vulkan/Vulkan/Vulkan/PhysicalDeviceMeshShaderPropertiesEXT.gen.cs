@@ -223,7 +223,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public MaybeBool<uint> PrefersLocalInvocationVertexOutput;
+    public uint PrefersLocalInvocationVertexOutput;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -231,7 +231,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public MaybeBool<uint> PrefersLocalInvocationPrimitiveOutput;
+    public uint PrefersLocalInvocationPrimitiveOutput;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -239,7 +239,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public MaybeBool<uint> PrefersCompactVertexOutput;
+    public uint PrefersCompactVertexOutput;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -247,5 +247,5 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public MaybeBool<uint> PrefersCompactPrimitiveOutput;
+    public uint PrefersCompactPrimitiveOutput;
 }

@@ -154,7 +154,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DeviceLUIDValid;
+    public uint DeviceLUIDValid;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -238,7 +238,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> SubgroupQuadOperationsInAllStages;
+    public uint SubgroupQuadOperationsInAllStages;
 
     [SupportedApiProfile(
         "vulkan",
@@ -321,7 +321,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ProtectedNoFault;
+    public uint ProtectedNoFault;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -27,5 +27,5 @@ public unsafe partial struct PhysicalDeviceShaderExpectAssumeFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> ShaderExpectAssume;
+    public uint ShaderExpectAssume;
 }

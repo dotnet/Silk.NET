@@ -52,5 +52,5 @@ public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TextureCompressionASTCHDR;
+    public uint TextureCompressionASTCHDR;
 }

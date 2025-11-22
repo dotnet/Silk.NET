@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public MaybeBool<uint> PipelineBinaryInternalCache;
+    public uint PipelineBinaryInternalCache;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public MaybeBool<uint> PipelineBinaryInternalCacheControl;
+    public uint PipelineBinaryInternalCacheControl;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -61,7 +61,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public MaybeBool<uint> PipelineBinaryPrefersInternalCache;
+    public uint PipelineBinaryPrefersInternalCache;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public MaybeBool<uint> PipelineBinaryPrecompiledInternalCache;
+    public uint PipelineBinaryPrecompiledInternalCache;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -83,5 +83,5 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public MaybeBool<uint> PipelineBinaryCompressedData;
+    public uint PipelineBinaryCompressedData;
 }

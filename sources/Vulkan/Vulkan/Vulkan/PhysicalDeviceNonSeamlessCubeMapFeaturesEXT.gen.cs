@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
             "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> NonSeamlessCubeMap;
+    public uint NonSeamlessCubeMap;
 }

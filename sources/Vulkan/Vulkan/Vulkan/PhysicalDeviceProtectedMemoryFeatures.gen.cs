@@ -82,5 +82,5 @@ public unsafe partial struct PhysicalDeviceProtectedMemoryFeatures
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> ProtectedMemory;
+    public uint ProtectedMemory;
 }

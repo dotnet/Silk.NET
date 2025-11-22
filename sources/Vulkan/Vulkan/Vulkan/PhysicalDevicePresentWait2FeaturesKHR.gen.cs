@@ -45,5 +45,5 @@ public unsafe partial struct PhysicalDevicePresentWait2FeaturesKHR
             "VK_KHR_swapchain",
         ]
     )]
-    public MaybeBool<uint> PresentWait2;
+    public uint PresentWait2;
 }

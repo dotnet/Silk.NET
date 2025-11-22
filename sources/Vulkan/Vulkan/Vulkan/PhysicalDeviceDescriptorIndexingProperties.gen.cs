@@ -79,7 +79,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderUniformBufferArrayNonUniformIndexingNative;
+    public uint ShaderUniformBufferArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -97,7 +97,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSampledImageArrayNonUniformIndexingNative;
+    public uint ShaderSampledImageArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -115,7 +115,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageBufferArrayNonUniformIndexingNative;
+    public uint ShaderStorageBufferArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -133,7 +133,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageImageArrayNonUniformIndexingNative;
+    public uint ShaderStorageImageArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -151,7 +151,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderInputAttachmentArrayNonUniformIndexingNative;
+    public uint ShaderInputAttachmentArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -169,7 +169,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> RobustBufferAccessUpdateAfterBind;
+    public uint RobustBufferAccessUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -187,7 +187,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> QuadDivergentImplicitLod;
+    public uint QuadDivergentImplicitLod;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> SubpassMergeFeedback;
+    public uint SubpassMergeFeedback;
 }

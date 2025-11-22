@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public MaybeBool<uint> PreferNonCoherent;
+    public uint PreferNonCoherent;
 
     [SupportedApiProfile(
         "vulkan",

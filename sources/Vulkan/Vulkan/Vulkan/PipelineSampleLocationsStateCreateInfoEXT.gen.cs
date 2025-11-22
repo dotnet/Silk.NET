@@ -41,7 +41,7 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> SampleLocationsEnable;
+    public uint SampleLocationsEnable;
 
     [SupportedApiProfile(
         "vulkan",

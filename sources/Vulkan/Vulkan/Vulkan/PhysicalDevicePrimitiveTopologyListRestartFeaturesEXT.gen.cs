@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
             "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PrimitiveTopologyListRestart;
+    public uint PrimitiveTopologyListRestart;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
             "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PrimitiveTopologyPatchListRestart;
+    public uint PrimitiveTopologyPatchListRestart;
 }

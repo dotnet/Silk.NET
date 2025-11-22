@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesN
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PerViewPositionAllComponents;
+    public uint PerViewPositionAllComponents;
 }

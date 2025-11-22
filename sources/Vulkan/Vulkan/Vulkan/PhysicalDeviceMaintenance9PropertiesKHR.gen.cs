@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> Image2DViewOf3DSparse;
+    public uint Image2DViewOf3DSparse;
 
     [SupportedApiProfile(
         "vulkan",

@@ -24,7 +24,7 @@ public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
-    public MaybeBool<uint> CoverageToColorEnable;
+    public uint CoverageToColorEnable;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]

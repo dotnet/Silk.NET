@@ -83,5 +83,5 @@ public unsafe partial struct ProtectedSubmitInfo
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> ProtectedSubmit;
+    public uint ProtectedSubmit;
 }

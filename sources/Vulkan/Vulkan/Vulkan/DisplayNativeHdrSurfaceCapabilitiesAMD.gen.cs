@@ -40,5 +40,5 @@ public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> LocalDimmingSupport;
+    public uint LocalDimmingSupport;
 }

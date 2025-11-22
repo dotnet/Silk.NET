@@ -31,5 +31,5 @@ public unsafe partial struct PartitionedAccelerationStructureFlagsNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public MaybeBool<uint> EnablePartitionTranslation;
+    public uint EnablePartitionTranslation;
 }

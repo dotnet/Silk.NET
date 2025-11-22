@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ProvokingVertexLast;
+    public uint ProvokingVertexLast;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TransformFeedbackPreservesProvokingVertex;
+    public uint TransformFeedbackPreservesProvokingVertex;
 }

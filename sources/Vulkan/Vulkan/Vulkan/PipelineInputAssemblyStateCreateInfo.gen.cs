@@ -102,5 +102,5 @@ public unsafe partial struct PipelineInputAssemblyStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> PrimitiveRestartEnable;
+    public uint PrimitiveRestartEnable;
 }

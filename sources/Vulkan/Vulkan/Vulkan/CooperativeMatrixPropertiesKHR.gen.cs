@@ -113,7 +113,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> SaturatingAccumulation;
+    public uint SaturatingAccumulation;
 
     [SupportedApiProfile(
         "vulkan",

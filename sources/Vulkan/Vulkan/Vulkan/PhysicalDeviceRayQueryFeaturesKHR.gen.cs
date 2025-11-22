@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceRayQueryFeaturesKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> RayQuery;
+    public uint RayQuery;
 }

@@ -83,7 +83,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public MaybeBool<uint> SaturatingAccumulation;
+    public uint SaturatingAccumulation;
 
     [SupportedApiProfile(
         "vulkan",

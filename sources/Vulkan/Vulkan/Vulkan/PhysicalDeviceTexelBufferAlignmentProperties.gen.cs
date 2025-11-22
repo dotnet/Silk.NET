@@ -67,7 +67,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> StorageTexelBufferOffsetSingleTexelAlignment;
+    public uint StorageTexelBufferOffsetSingleTexelAlignment;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
@@ -97,5 +97,5 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> UniformTexelBufferOffsetSingleTexelAlignment;
+    public uint UniformTexelBufferOffsetSingleTexelAlignment;
 }

@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR
         ["VK_EXT_present_mode_fifo_latest_ready"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public MaybeBool<uint> PresentModeFifoLatestReady;
+    public uint PresentModeFifoLatestReady;
 }

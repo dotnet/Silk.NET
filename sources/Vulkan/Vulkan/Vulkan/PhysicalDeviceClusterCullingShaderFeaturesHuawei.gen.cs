@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHuawei
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ClustercullingShader;
+    public uint ClustercullingShader;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHuawei
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> MultiviewClusterCullingShader;
+    public uint MultiviewClusterCullingShader;
 }

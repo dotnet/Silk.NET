@@ -40,7 +40,7 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
             "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ViewportScissor2D;
+    public uint ViewportScissor2D;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

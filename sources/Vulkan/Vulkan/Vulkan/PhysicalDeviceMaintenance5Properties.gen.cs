@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> EarlyFragmentMultisampleCoverageAfterSampleCounting;
+    public uint EarlyFragmentMultisampleCoverageAfterSampleCounting;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> EarlyFragmentSampleMaskTestBeforeSampleCounting;
+    public uint EarlyFragmentSampleMaskTestBeforeSampleCounting;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> DepthStencilSwizzleOneSupport;
+    public uint DepthStencilSwizzleOneSupport;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> PolygonModePointSize;
+    public uint PolygonModePointSize;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> NonStrictSinglePixelWideLinesUseParallelogram;
+    public uint NonStrictSinglePixelWideLinesUseParallelogram;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -111,5 +111,5 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> NonStrictWideLinesUseParallelogram;
+    public uint NonStrictWideLinesUseParallelogram;
 }

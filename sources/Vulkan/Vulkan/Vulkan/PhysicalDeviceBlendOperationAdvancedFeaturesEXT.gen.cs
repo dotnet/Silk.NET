@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedFeaturesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> AdvancedBlendCoherentOperations;
+    public uint AdvancedBlendCoherentOperations;
 }

@@ -30,7 +30,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderBufferFloat16Atomics;
+    public uint ShaderBufferFloat16Atomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -38,7 +38,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderBufferFloat16AtomicAdd;
+    public uint ShaderBufferFloat16AtomicAdd;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderBufferFloat16AtomicMinMax;
+    public uint ShaderBufferFloat16AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderBufferFloat32AtomicMinMax;
+    public uint ShaderBufferFloat32AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderBufferFloat64AtomicMinMax;
+    public uint ShaderBufferFloat64AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -70,7 +70,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderSharedFloat16Atomics;
+    public uint ShaderSharedFloat16Atomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -78,7 +78,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderSharedFloat16AtomicAdd;
+    public uint ShaderSharedFloat16AtomicAdd;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -86,7 +86,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderSharedFloat16AtomicMinMax;
+    public uint ShaderSharedFloat16AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -94,7 +94,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderSharedFloat32AtomicMinMax;
+    public uint ShaderSharedFloat32AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -102,7 +102,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> ShaderSharedFloat64AtomicMinMax;
+    public uint ShaderSharedFloat64AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -114,7 +114,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ImpliesSets = ["VK_EXT_shader_atomic_float"],
         RequireAll = true
     )]
-    public MaybeBool<uint> ShaderImageFloat32AtomicMinMax;
+    public uint ShaderImageFloat32AtomicMinMax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -122,5 +122,5 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public MaybeBool<uint> SparseImageFloat32AtomicMinMax;
+    public uint SparseImageFloat32AtomicMinMax;
 }

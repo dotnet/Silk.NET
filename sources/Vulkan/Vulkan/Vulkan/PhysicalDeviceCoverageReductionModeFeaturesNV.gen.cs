@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceCoverageReductionModeFeaturesNV
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CoverageReductionMode;
+    public uint CoverageReductionMode;
 }

@@ -36,5 +36,5 @@ public unsafe partial struct PhysicalDeviceGlobalPriorityQueryFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> GlobalPriorityQuery;
+    public uint GlobalPriorityQuery;
 }

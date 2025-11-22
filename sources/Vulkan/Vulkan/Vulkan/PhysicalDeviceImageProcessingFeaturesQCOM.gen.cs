@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> TextureSampleWeighted;
+    public uint TextureSampleWeighted;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> TextureBoxFilter;
+    public uint TextureBoxFilter;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -61,5 +61,5 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> TextureBlockMatch;
+    public uint TextureBlockMatch;
 }

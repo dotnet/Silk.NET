@@ -63,7 +63,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public MaybeBool<uint> VertexDynamicStride;
+    public uint VertexDynamicStride;
 
     [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(

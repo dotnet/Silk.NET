@@ -83,5 +83,5 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> VariableSampleLocations;
+    public uint VariableSampleLocations;
 }

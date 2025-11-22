@@ -41,7 +41,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShadingRateImageEnable;
+    public uint ShadingRateImageEnable;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

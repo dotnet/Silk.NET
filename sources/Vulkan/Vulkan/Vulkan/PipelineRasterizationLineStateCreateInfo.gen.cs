@@ -39,7 +39,7 @@ public unsafe partial struct PipelineRasterizationLineStateCreateInfo
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> StippledLineEnable;
+    public uint StippledLineEnable;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

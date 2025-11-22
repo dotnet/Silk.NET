@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDevice4444FormatsFeaturesEXT
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FormatA4R4G4B4;
+    public uint FormatA4R4G4B4;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDevice4444FormatsFeaturesEXT
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FormatA4B4G4R4;
+    public uint FormatA4B4G4R4;
 }

@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricFeaturesKHR
             "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FragmentShaderBarycentric;
+    public uint FragmentShaderBarycentric;
 }

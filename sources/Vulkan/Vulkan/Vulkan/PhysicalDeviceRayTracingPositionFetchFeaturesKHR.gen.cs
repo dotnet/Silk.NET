@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public MaybeBool<uint> RayTracingPositionFetch;
+    public uint RayTracingPositionFetch;
 }

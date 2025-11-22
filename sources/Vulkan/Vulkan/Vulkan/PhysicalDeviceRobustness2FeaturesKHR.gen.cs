@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> RobustBufferAccess2;
+    public uint RobustBufferAccess2;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> RobustImageAccess2;
+    public uint RobustImageAccess2;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,5 +62,5 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
             "VK_KHR_robustness2+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> NullDescriptor;
+    public uint NullDescriptor;
 }

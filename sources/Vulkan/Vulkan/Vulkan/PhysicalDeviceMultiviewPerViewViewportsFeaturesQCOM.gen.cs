@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
             "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> MultiviewPerViewViewports;
+    public uint MultiviewPerViewViewports;
 }

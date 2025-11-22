@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceMaintenance4Features
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> Maintenance4;
+    public uint Maintenance4;
 }

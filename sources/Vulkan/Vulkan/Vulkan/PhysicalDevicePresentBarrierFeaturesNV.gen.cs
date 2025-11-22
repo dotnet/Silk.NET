@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDevicePresentBarrierFeaturesNV
             "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PresentBarrier;
+    public uint PresentBarrier;
 }

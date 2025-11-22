@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
             "VK_NV_raw_access_chains+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderRawAccessChains;
+    public uint ShaderRawAccessChains;
 }

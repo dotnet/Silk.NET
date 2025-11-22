@@ -56,5 +56,5 @@ public unsafe partial struct PhysicalDeviceHostQueryResetFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> HostQueryReset;
+    public uint HostQueryReset;
 }

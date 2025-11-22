@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
             "VK_NV_linear_color_attachment+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> LinearColorAttachment;
+    public uint LinearColorAttachment;
 }

@@ -20,5 +20,5 @@ public unsafe partial struct CuModuleTexturingModeCreateInfoNVX
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public MaybeBool<uint> Use64BitTexturing;
+    public uint Use64BitTexturing;
 }

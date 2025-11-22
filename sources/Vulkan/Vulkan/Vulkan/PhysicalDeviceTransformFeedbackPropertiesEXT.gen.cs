@@ -106,7 +106,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TransformFeedbackQueries;
+    public uint TransformFeedbackQueries;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -117,7 +117,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TransformFeedbackStreamsLinesTriangles;
+    public uint TransformFeedbackStreamsLinesTriangles;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -128,7 +128,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TransformFeedbackRasterizationStreamSelect;
+    public uint TransformFeedbackRasterizationStreamSelect;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -139,5 +139,5 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TransformFeedbackDraw;
+    public uint TransformFeedbackDraw;
 }

@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDeviceShaderUntypedPointersFeaturesKHR
         ["VK_KHR_shader_untyped_pointers"],
         ImpliesSets = ["VK_KHR_get_physical_device_properties2"]
     )]
-    public MaybeBool<uint> ShaderUntypedPointers;
+    public uint ShaderUntypedPointers;
 }

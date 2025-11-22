@@ -41,5 +41,5 @@ public unsafe partial struct DevicePipelineBinaryInternalCacheControlKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public MaybeBool<uint> DisableInternalCache;
+    public uint DisableInternalCache;
 }

@@ -39,7 +39,7 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public MaybeBool<uint> IsText;
+    public uint IsText;
 
     [NativeTypeName("size_t")]
     [SupportedApiProfile(

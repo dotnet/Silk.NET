@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
         ["VK_EXT_pageable_device_local_memory"],
         ImpliesSets = ["VK_EXT_memory_priority"]
     )]
-    public MaybeBool<uint> PageableDeviceLocalMemory;
+    public uint PageableDeviceLocalMemory;
 }

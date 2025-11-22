@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> PipelineFragmentShadingRate;
+    public uint PipelineFragmentShadingRate;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -56,7 +56,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"],
         RequireAll = true
     )]
-    public MaybeBool<uint> PrimitiveFragmentShadingRate;
+    public uint PrimitiveFragmentShadingRate;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -68,5 +68,5 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> AttachmentFragmentShadingRate;
+    public uint AttachmentFragmentShadingRate;
 }

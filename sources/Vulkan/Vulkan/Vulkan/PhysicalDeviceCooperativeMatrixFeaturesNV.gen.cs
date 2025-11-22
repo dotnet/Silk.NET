@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CooperativeMatrix;
+    public uint CooperativeMatrix;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CooperativeMatrixRobustBufferAccess;
+    public uint CooperativeMatrixRobustBufferAccess;
 }

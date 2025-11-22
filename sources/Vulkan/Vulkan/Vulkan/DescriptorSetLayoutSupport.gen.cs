@@ -70,5 +70,5 @@ public unsafe partial struct DescriptorSetLayoutSupport
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> Supported;
+    public uint Supported;
 }

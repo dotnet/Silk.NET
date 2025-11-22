@@ -19,11 +19,11 @@ public unsafe partial struct PhysicalDeviceMaintenance7PropertiesKHR
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public MaybeBool<uint> RobustFragmentShadingRateAttachmentAccess;
+    public uint RobustFragmentShadingRateAttachmentAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public MaybeBool<uint> SeparateDepthStencilAttachmentAccess;
+    public uint SeparateDepthStencilAttachmentAccess;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]

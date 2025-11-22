@@ -32,5 +32,5 @@ public unsafe partial struct PhysicalDeviceDataGraphModelFeaturesQCOM
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    public MaybeBool<uint> DataGraphModel;
+    public uint DataGraphModel;
 }

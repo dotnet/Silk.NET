@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackFeaturesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TransformFeedback;
+    public uint TransformFeedback;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -56,5 +56,5 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackFeaturesEXT
         ],
         RequireAll = true
     )]
-    public MaybeBool<uint> GeometryStreams;
+    public uint GeometryStreams;
 }

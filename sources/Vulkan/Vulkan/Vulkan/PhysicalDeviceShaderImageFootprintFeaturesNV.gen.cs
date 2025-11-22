@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceShaderImageFootprintFeaturesNV
             "VK_NV_shader_image_footprint+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ImageFootprint;
+    public uint ImageFootprint;
 }

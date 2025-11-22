@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> IndirectMemoryCopy;
+    public uint IndirectMemoryCopy;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> IndirectMemoryToImageCopy;
+    public uint IndirectMemoryToImageCopy;
 }

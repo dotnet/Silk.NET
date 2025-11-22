@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
             "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> InheritedViewportScissor2D;
+    public uint InheritedViewportScissor2D;
 }

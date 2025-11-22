@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceSwapchainMaintenance1FeaturesKHR
             "VK_KHR_swapchain+VK_EXT_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> SwapchainMaintenance1;
+    public uint SwapchainMaintenance1;
 }

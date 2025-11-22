@@ -50,5 +50,5 @@ public unsafe partial struct AttachmentFeedbackLoopInfoEXT
             "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FeedbackLoopEnable;
+    public uint FeedbackLoopEnable;
 }

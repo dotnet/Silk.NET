@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CooperativeVector;
+    public uint CooperativeVector;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CooperativeVectorTraining;
+    public uint CooperativeVectorTraining;
 }

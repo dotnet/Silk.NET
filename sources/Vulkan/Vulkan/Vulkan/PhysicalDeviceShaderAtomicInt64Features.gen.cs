@@ -53,7 +53,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicInt64Features
             "VK_KHR_shader_atomic_int64+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderBufferInt64Atomics;
+    public uint ShaderBufferInt64Atomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -71,5 +71,5 @@ public unsafe partial struct PhysicalDeviceShaderAtomicInt64Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSharedInt64Atomics;
+    public uint ShaderSharedInt64Atomics;
 }

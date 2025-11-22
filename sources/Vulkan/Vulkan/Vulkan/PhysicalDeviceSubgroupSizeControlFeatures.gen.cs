@@ -41,9 +41,9 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> SubgroupSizeControl;
+    public uint SubgroupSizeControl;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> ComputeFullSubgroups;
+    public uint ComputeFullSubgroups;
 }

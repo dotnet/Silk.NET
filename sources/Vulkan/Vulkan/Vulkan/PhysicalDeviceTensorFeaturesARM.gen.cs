@@ -18,25 +18,25 @@ public unsafe partial struct PhysicalDeviceTensorFeaturesARM
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public MaybeBool<uint> TensorNonPacked;
+    public uint TensorNonPacked;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public MaybeBool<uint> ShaderTensorAccess;
+    public uint ShaderTensorAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public MaybeBool<uint> ShaderStorageTensorArrayDynamicIndexing;
+    public uint ShaderStorageTensorArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public MaybeBool<uint> ShaderStorageTensorArrayNonUniformIndexing;
+    public uint ShaderStorageTensorArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public MaybeBool<uint> DescriptorBindingStorageTensorUpdateAfterBind;
+    public uint DescriptorBindingStorageTensorUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public MaybeBool<uint> Tensors;
+    public uint Tensors;
 }

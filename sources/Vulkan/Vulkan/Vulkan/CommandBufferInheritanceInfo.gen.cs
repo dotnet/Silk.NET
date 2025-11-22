@@ -182,7 +182,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> OcclusionQueryEnable;
+    public uint OcclusionQueryEnable;
 
     [NativeTypeName("VkQueryControlFlags")]
     [SupportedApiProfile(

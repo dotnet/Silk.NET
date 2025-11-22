@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
             "VK_NV_shader_atomic_float16_vector+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderFloat16VectorAtomics;
+    public uint ShaderFloat16VectorAtomics;
 }

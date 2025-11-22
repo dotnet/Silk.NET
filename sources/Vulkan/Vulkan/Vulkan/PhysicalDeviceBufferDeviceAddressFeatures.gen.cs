@@ -53,7 +53,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> BufferDeviceAddress;
+    public uint BufferDeviceAddress;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeatures
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> BufferDeviceAddressCaptureReplay;
+    public uint BufferDeviceAddressCaptureReplay;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -95,5 +95,5 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeatures
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> BufferDeviceAddressMultiDevice;
+    public uint BufferDeviceAddressMultiDevice;
 }

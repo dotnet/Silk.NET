@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
             "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> RayTracingValidation;
+    public uint RayTracingValidation;
 }

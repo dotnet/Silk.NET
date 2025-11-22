@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
         ["VK_ARM_pipeline_opacity_micromap"],
         ImpliesSets = ["VK_EXT_opacity_micromap"]
     )]
-    public MaybeBool<uint> PipelineOpacityMicromap;
+    public uint PipelineOpacityMicromap;
 }

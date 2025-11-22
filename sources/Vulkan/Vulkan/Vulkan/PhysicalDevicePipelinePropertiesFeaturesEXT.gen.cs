@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDevicePipelinePropertiesFeaturesEXT
             "VK_EXT_pipeline_properties+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PipelinePropertiesIdentifier;
+    public uint PipelinePropertiesIdentifier;
 }

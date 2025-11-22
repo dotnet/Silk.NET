@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceAmigoProfilingFeaturesSEC
             "VK_SEC_amigo_profiling+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> AmigoProfiling;
+    public uint AmigoProfiling;
 }

@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
             "VK_EXT_texel_buffer_alignment+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TexelBufferAlignment;
+    public uint TexelBufferAlignment;
 }

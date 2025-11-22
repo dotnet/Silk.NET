@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceDiagnosticsConfigFeaturesNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DiagnosticsConfig;
+    public uint DiagnosticsConfig;
 }

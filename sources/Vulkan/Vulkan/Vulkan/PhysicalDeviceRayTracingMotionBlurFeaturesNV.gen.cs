@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public MaybeBool<uint> RayTracingMotionBlur;
+    public uint RayTracingMotionBlur;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public MaybeBool<uint> RayTracingMotionBlurPipelineTraceRaysIndirect;
+    public uint RayTracingMotionBlurPipelineTraceRaysIndirect;
 }

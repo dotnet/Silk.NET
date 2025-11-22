@@ -54,7 +54,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> PartitionIndependentIntraRefreshRegions;
+    public uint PartitionIndependentIntraRefreshRegions;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,5 +62,5 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> NonRectangularIntraRefreshRegions;
+    public uint NonRectangularIntraRefreshRegions;
 }

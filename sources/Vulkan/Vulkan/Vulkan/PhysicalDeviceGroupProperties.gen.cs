@@ -131,5 +131,5 @@ public unsafe partial struct PhysicalDeviceGroupProperties
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> SubsetAllocation;
+    public uint SubsetAllocation;
 }

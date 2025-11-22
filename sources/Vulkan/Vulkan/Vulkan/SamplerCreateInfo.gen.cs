@@ -265,7 +265,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> AnisotropyEnable;
+    public uint AnisotropyEnable;
 
     [SupportedApiProfile(
         "vulkan",
@@ -312,7 +312,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> CompareEnable;
+    public uint CompareEnable;
 
     [SupportedApiProfile(
         "vulkan",
@@ -415,5 +415,5 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> UnnormalizedCoordinates;
+    public uint UnnormalizedCoordinates;
 }

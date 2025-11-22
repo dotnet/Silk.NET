@@ -46,5 +46,5 @@ public unsafe partial struct DisplayPresentInfoKHR
         ["VK_KHR_display_swapchain"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_swapchain"]
     )]
-    public MaybeBool<uint> Persistent;
+    public uint Persistent;
 }

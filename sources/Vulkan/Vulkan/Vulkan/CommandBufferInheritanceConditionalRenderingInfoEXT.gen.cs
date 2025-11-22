@@ -41,5 +41,5 @@ public unsafe partial struct CommandBufferInheritanceConditionalRenderingInfoEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ConditionalRenderingEnable;
+    public uint ConditionalRenderingEnable;
 }

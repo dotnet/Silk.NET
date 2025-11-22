@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDeviceLegacyVertexAttributesFeaturesEXT
         ["VK_EXT_legacy_vertex_attributes"],
         ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
     )]
-    public MaybeBool<uint> LegacyVertexAttributes;
+    public uint LegacyVertexAttributes;
 }

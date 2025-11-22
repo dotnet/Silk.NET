@@ -209,5 +209,5 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> ForceExplicitReconstruction;
+    public uint ForceExplicitReconstruction;
 }

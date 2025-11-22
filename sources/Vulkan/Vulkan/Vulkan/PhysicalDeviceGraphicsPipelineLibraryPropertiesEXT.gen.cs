@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> GraphicsPipelineLibraryFastLinking;
+    public uint GraphicsPipelineLibraryFastLinking;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> GraphicsPipelineLibraryIndependentInterpolationDecoration;
+    public uint GraphicsPipelineLibraryIndependentInterpolationDecoration;
 }

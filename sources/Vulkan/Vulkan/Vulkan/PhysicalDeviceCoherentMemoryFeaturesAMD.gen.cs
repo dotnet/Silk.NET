@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceCoherentMemoryFeaturesAMD
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DeviceCoherentMemory;
+    public uint DeviceCoherentMemory;
 }

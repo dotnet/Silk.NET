@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceMultiDrawFeaturesEXT
             "VK_EXT_multi_draw+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> MultiDraw;
+    public uint MultiDraw;
 }

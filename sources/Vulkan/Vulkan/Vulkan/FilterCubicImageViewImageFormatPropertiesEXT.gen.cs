@@ -19,9 +19,9 @@ public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    public MaybeBool<uint> FilterCubic;
+    public uint FilterCubic;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    public MaybeBool<uint> FilterCubicMinmax;
+    public uint FilterCubicMinmax;
 }

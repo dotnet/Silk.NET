@@ -67,7 +67,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> HintSupported;
+    public uint HintSupported;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -79,7 +79,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> CostSupported;
+    public uint CostSupported;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -91,7 +91,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> BidirectionalFlowSupported;
+    public uint BidirectionalFlowSupported;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -103,7 +103,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> GlobalFlowSupported;
+    public uint GlobalFlowSupported;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

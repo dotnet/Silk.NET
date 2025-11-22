@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceTileMemoryHeapFeaturesQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> TileMemoryHeap;
+    public uint TileMemoryHeap;
 }

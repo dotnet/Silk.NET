@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
             "VK_KHR_shader_fma+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderFmaFloat16;
+    public uint ShaderFmaFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
             "VK_KHR_shader_fma+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderFmaFloat32;
+    public uint ShaderFmaFloat32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -61,5 +61,5 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
             "VK_KHR_shader_fma+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderFmaFloat64;
+    public uint ShaderFmaFloat64;
 }

@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DynamicPrimitiveTopologyUnrestricted;
+    public uint DynamicPrimitiveTopologyUnrestricted;
 }

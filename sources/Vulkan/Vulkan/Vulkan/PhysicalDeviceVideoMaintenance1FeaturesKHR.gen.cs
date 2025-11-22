@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDeviceVideoMaintenance1FeaturesKHR
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    public MaybeBool<uint> VideoMaintenance1;
+    public uint VideoMaintenance1;
 }

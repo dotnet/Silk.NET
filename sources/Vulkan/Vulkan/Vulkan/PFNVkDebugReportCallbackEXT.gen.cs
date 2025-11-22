@@ -20,7 +20,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
         sbyte*,
         sbyte*,
         void*,
-        MaybeBool<uint>> Handle =>
+        uint> Handle =>
         (delegate* unmanaged<
             DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
@@ -30,7 +30,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
             sbyte*,
             sbyte*,
             void*,
-            MaybeBool<uint>>)Pointer;
+            uint>)Pointer;
 
     public PFNVkDebugReportCallbackEXT(
         delegate* unmanaged<
@@ -42,7 +42,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
             sbyte*,
             sbyte*,
             void*,
-            MaybeBool<uint>> ptr
+            uint> ptr
     ) => Pointer = ptr;
 
     public PFNVkDebugReportCallbackEXT(PFNVkDebugReportCallbackEXTDelegate proc) =>
@@ -60,7 +60,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
             sbyte*,
             sbyte*,
             void*,
-            MaybeBool<uint>> pfn
+            uint> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<
@@ -72,7 +72,7 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
         sbyte*,
         sbyte*,
         void*,
-        MaybeBool<uint>>(PFNVkDebugReportCallbackEXT pfn) =>
+        uint>(PFNVkDebugReportCallbackEXT pfn) =>
         (delegate* unmanaged<
             DebugReportFlagsEXT,
             DebugReportObjectTypeEXT,
@@ -82,6 +82,6 @@ public readonly unsafe struct PFNVkDebugReportCallbackEXT : IDisposable
             sbyte*,
             sbyte*,
             void*,
-            MaybeBool<uint>>)
+            uint>)
             pfn.Pointer;
 }

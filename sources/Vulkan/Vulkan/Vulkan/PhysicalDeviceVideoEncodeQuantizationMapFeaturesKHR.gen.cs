@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> VideoEncodeQuantizationMap;
+    public uint VideoEncodeQuantizationMap;
 }

@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
             "VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> Image2DViewOf3D;
+    public uint Image2DViewOf3D;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
             "VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> Sampler2DViewOf3D;
+    public uint Sampler2DViewOf3D;
 }

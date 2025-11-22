@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderVrsFeaturesHuawei
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ClusterShadingRate;
+    public uint ClusterShadingRate;
 }

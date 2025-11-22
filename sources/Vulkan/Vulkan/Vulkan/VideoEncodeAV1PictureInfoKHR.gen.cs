@@ -69,7 +69,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> PrimaryReferenceCdfOnly;
+    public uint PrimaryReferenceCdfOnly;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -77,5 +77,5 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> GenerateObuExtensionHeader;
+    public uint GenerateObuExtensionHeader;
 }

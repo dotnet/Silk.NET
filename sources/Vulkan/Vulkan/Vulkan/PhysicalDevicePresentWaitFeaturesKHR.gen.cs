@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDevicePresentWaitFeaturesKHR
         ["VK_KHR_present_wait"],
         ImpliesSets = ["VK_KHR_present_id", "VK_KHR_swapchain"]
     )]
-    public MaybeBool<uint> PresentWait;
+    public uint PresentWait;
 }

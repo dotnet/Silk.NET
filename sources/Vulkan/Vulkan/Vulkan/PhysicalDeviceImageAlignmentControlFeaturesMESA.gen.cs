@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceImageAlignmentControlFeaturesMESA
             "VK_MESA_image_alignment_control+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ImageAlignmentControl;
+    public uint ImageAlignmentControl;
 }

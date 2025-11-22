@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceRenderPassStripedFeaturesARM
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> RenderPassStriped;
+    public uint RenderPassStriped;
 }

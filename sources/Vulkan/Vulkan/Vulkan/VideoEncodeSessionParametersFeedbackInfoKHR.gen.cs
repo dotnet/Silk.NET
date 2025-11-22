@@ -39,5 +39,5 @@ public unsafe partial struct VideoEncodeSessionParametersFeedbackInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> HasOverrides;
+    public uint HasOverrides;
 }

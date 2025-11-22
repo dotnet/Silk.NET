@@ -61,7 +61,7 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> FilterMinmaxSingleComponentFormats;
+    public uint FilterMinmaxSingleComponentFormats;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -79,5 +79,5 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> FilterMinmaxImageComponentMapping;
+    public uint FilterMinmaxImageComponentMapping;
 }

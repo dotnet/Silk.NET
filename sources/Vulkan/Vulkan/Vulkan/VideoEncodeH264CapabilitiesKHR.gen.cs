@@ -86,7 +86,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> ExpectDyadicTemporalLayerPattern;
+    public uint ExpectDyadicTemporalLayerPattern;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(
@@ -110,7 +110,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> PrefersGopRemainingFrames;
+    public uint PrefersGopRemainingFrames;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -118,7 +118,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> RequiresGopRemainingFrames;
+    public uint RequiresGopRemainingFrames;
 
     [NativeTypeName("VkVideoEncodeH264StdFlagsKHR")]
     [SupportedApiProfile(

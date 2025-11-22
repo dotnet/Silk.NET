@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceShaderFloat8FeaturesEXT
             "VK_EXT_shader_float8+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderFloat8;
+    public uint ShaderFloat8;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceShaderFloat8FeaturesEXT
             "VK_EXT_shader_float8+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderFloat8CooperativeMatrix;
+    public uint ShaderFloat8CooperativeMatrix;
 }

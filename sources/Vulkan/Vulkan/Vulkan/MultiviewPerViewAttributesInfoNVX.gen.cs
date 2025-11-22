@@ -48,7 +48,7 @@ public unsafe partial struct MultiviewPerViewAttributesInfoNVX
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PerViewAttributes;
+    public uint PerViewAttributes;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,5 +62,5 @@ public unsafe partial struct MultiviewPerViewAttributesInfoNVX
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PerViewAttributesPositionXOnly;
+    public uint PerViewAttributesPositionXOnly;
 }

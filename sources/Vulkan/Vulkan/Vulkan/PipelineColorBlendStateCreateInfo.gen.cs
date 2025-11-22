@@ -84,7 +84,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> LogicOpEnable;
+    public uint LogicOpEnable;
 
     [SupportedApiProfile(
         "vulkan",

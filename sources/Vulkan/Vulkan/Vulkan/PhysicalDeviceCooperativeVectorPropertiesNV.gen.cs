@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CooperativeVectorTrainingFloat16Accumulation;
+    public uint CooperativeVectorTrainingFloat16Accumulation;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> CooperativeVectorTrainingFloat32Accumulation;
+    public uint CooperativeVectorTrainingFloat32Accumulation;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

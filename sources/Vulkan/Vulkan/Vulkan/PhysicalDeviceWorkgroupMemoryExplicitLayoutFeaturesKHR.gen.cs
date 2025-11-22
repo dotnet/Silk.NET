@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
             "VK_KHR_workgroup_memory_explicit_layout+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> WorkgroupMemoryExplicitLayout;
+    public uint WorkgroupMemoryExplicitLayout;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
             "VK_KHR_workgroup_memory_explicit_layout+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> WorkgroupMemoryExplicitLayoutScalarBlockLayout;
+    public uint WorkgroupMemoryExplicitLayoutScalarBlockLayout;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
             "VK_KHR_workgroup_memory_explicit_layout+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> WorkgroupMemoryExplicitLayout8BitAccess;
+    public uint WorkgroupMemoryExplicitLayout8BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -73,5 +73,5 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
             "VK_KHR_workgroup_memory_explicit_layout+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> WorkgroupMemoryExplicitLayout16BitAccess;
+    public uint WorkgroupMemoryExplicitLayout16BitAccess;
 }

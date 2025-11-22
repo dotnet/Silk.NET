@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEX
         ["VK_EXT_pipeline_library_group_handles"],
         ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
     )]
-    public MaybeBool<uint> PipelineLibraryGroupHandles;
+    public uint PipelineLibraryGroupHandles;
 }

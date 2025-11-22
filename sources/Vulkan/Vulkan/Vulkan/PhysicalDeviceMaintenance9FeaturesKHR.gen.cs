@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceMaintenance9FeaturesKHR
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> Maintenance9;
+    public uint Maintenance9;
 }

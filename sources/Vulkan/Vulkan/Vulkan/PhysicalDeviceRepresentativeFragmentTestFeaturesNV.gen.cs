@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
             "VK_NV_representative_fragment_test+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> RepresentativeFragmentTest;
+    public uint RepresentativeFragmentTest;
 }

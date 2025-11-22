@@ -57,7 +57,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> StorageBuffer16BitAccess;
+    public uint StorageBuffer16BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -78,7 +78,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> UniformAndStorageBuffer16BitAccess;
+    public uint UniformAndStorageBuffer16BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -99,7 +99,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> StoragePushConstant16;
+    public uint StoragePushConstant16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -120,7 +120,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> StorageInputOutput16;
+    public uint StorageInputOutput16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -128,7 +128,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> Multiview;
+    public uint Multiview;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -149,7 +149,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> MultiviewGeometryShader;
+    public uint MultiviewGeometryShader;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -170,15 +170,15 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> MultiviewTessellationShader;
+    public uint MultiviewTessellationShader;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> VariablePointersStorageBuffer;
+    public uint VariablePointersStorageBuffer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> VariablePointers;
+    public uint VariablePointers;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -199,11 +199,11 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ProtectedMemory;
+    public uint ProtectedMemory;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> SamplerYcbcrConversion;
+    public uint SamplerYcbcrConversion;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -211,5 +211,5 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> ShaderDrawParameters;
+    public uint ShaderDrawParameters;
 }

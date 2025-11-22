@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FormatPack;
+    public uint FormatPack;
 }

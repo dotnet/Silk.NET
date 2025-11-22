@@ -310,6 +310,11 @@
           "vkCreateDevice"
         ]
       },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "VkBool32": null
+        }
+      },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true

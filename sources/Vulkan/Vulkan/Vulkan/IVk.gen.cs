@@ -1946,7 +1946,7 @@ public unsafe partial interface IVk
                 AccelerationStructureInfoNV* pInfo,
             [NativeTypeName("VkBuffer")] BufferTHandle instanceData,
             [NativeTypeName("VkDeviceSize")] ulong instanceOffset,
-            [NativeTypeName("VkBool32")] MaybeBool<uint> update,
+            [NativeTypeName("VkBool32")] uint update,
             [NativeTypeName("VkAccelerationStructureNV")] AccelerationStructureNVTHandle dst,
             [NativeTypeName("VkAccelerationStructureNV")] AccelerationStructureNVTHandle src,
             [NativeTypeName("VkBuffer")] BufferTHandle scratch,
@@ -4905,7 +4905,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdExecuteGeneratedCommandsEXT")]
         static abstract void CmdExecuteGeneratedCommandsEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
-            [NativeTypeName("VkBool32")] MaybeBool<uint> isPreprocessed,
+            [NativeTypeName("VkBool32")] uint isPreprocessed,
             [NativeTypeName("const VkGeneratedCommandsInfoEXT *")]
                 GeneratedCommandsInfoEXT* pGeneratedCommandsInfo
         );
@@ -4936,7 +4936,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdExecuteGeneratedCommandsNV")]
         static abstract void CmdExecuteGeneratedCommandsNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
-            [NativeTypeName("VkBool32")] MaybeBool<uint> isPreprocessed,
+            [NativeTypeName("VkBool32")] uint isPreprocessed,
             [NativeTypeName("const VkGeneratedCommandsInfoNV *")]
                 GeneratedCommandsInfoNV* pGeneratedCommandsInfo
         );
@@ -5976,6 +5976,21 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToCoverageEnableEXT")]
         static abstract void CmdSetAlphaToCoverageEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint alphaToCoverageEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToCoverageEnableEXT")]
+        static abstract void CmdSetAlphaToCoverageEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> alphaToCoverageEnable
         );
 
@@ -5987,6 +6002,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToOneEnableEXT")]
+        static abstract void CmdSetAlphaToOneEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint alphaToOneEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToOneEnableEXT")]
         static abstract void CmdSetAlphaToOneEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6201,7 +6231,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstAttachment,
             [NativeTypeName("uint32_t")] uint attachmentCount,
-            [NativeTypeName("const VkBool32 *")] MaybeBool<uint>* pColorBlendEnables
+            [NativeTypeName("const VkBool32 *")] uint* pColorBlendEnables
         );
 
         [SupportedApiProfile(
@@ -6218,7 +6248,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstAttachment,
             [NativeTypeName("uint32_t")] uint attachmentCount,
-            [NativeTypeName("const VkBool32 *")] Ref<MaybeBool<uint>> pColorBlendEnables
+            [NativeTypeName("const VkBool32 *")] Ref<uint> pColorBlendEnables
         );
 
         [SupportedApiProfile(
@@ -6234,7 +6264,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetColorBlendEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstAttachment,
-            [NativeTypeName("const VkBool32 *")] MaybeBool<uint> pColorBlendEnables
+            [NativeTypeName("const VkBool32 *")] uint pColorBlendEnables
         );
 
         [SupportedApiProfile(
@@ -6301,7 +6331,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetColorWriteEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint attachmentCount,
-            [NativeTypeName("const VkBool32 *")] MaybeBool<uint>* pColorWriteEnables
+            [NativeTypeName("const VkBool32 *")] uint* pColorWriteEnables
         );
 
         [SupportedApiProfile(
@@ -6317,7 +6347,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetColorWriteEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint attachmentCount,
-            [NativeTypeName("const VkBool32 *")] Ref<MaybeBool<uint>> pColorWriteEnables
+            [NativeTypeName("const VkBool32 *")] Ref<uint> pColorWriteEnables
         );
 
         [SupportedApiProfile(
@@ -6332,7 +6362,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetColorWriteEnableEXT")]
         static abstract void CmdSetColorWriteEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
-            [NativeTypeName("const VkBool32 *")] MaybeBool<uint> pColorWriteEnables
+            [NativeTypeName("const VkBool32 *")] uint pColorWriteEnables
         );
 
         [SupportedApiProfile(
@@ -6427,6 +6457,22 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageModulationTableEnableNV")]
         static abstract void CmdSetCoverageModulationTableEnableNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint coverageModulationTableEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_NV_framebuffer_mixed_samples"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageModulationTableEnableNV")]
+        static abstract void CmdSetCoverageModulationTableEnableNV(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> coverageModulationTableEnable
         );
 
@@ -6503,6 +6549,22 @@ public unsafe partial interface IVk
             ],
             RequireAll = true
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageToColorEnableNV")]
+        static abstract void CmdSetCoverageToColorEnableNV(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint coverageToColorEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_NV_fragment_coverage_to_color"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageToColorEnableNV")]
         static abstract void CmdSetCoverageToColorEnableNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6620,6 +6682,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnable")]
         static abstract void CmdSetDepthBiasEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthBiasEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnable")]
+        static abstract void CmdSetDepthBiasEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthBiasEnable
         );
 
@@ -6631,6 +6710,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
+        static abstract void CmdSetDepthBiasEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthBiasEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state2"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
         static abstract void CmdSetDepthBiasEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6673,6 +6767,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnable")]
         static abstract void CmdSetDepthBoundsTestEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthBoundsTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnable")]
+        static abstract void CmdSetDepthBoundsTestEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthBoundsTestEnable
         );
 
@@ -6687,6 +6798,21 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnableEXT")]
         static abstract void CmdSetDepthBoundsTestEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthBoundsTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnableEXT")]
+        static abstract void CmdSetDepthBoundsTestEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthBoundsTestEnable
         );
 
@@ -6698,6 +6824,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampEnableEXT")]
+        static abstract void CmdSetDepthClampEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthClampEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampEnableEXT")]
         static abstract void CmdSetDepthClampEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6752,6 +6893,22 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipEnableEXT")]
         static abstract void CmdSetDepthClipEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthClipEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_depth_clip_enable", "VK_EXT_extended_dynamic_state3"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipEnableEXT")]
+        static abstract void CmdSetDepthClipEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthClipEnable
         );
 
@@ -6764,6 +6921,22 @@ public unsafe partial interface IVk
             ],
             RequireAll = true
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipNegativeOneToOneEXT")]
+        static abstract void CmdSetDepthClipNegativeOneToOneEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint negativeOneToOne
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_depth_clip_control", "VK_EXT_extended_dynamic_state3"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipNegativeOneToOneEXT")]
         static abstract void CmdSetDepthClipNegativeOneToOneEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6813,6 +6986,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnable")]
         static abstract void CmdSetDepthTestEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnable")]
+        static abstract void CmdSetDepthTestEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthTestEnable
         );
 
@@ -6824,6 +7014,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnableEXT")]
+        static abstract void CmdSetDepthTestEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnableEXT")]
         static abstract void CmdSetDepthTestEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6843,6 +7048,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnable")]
         static abstract void CmdSetDepthWriteEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthWriteEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnable")]
+        static abstract void CmdSetDepthWriteEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> depthWriteEnable
         );
 
@@ -6854,6 +7076,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnableEXT")]
+        static abstract void CmdSetDepthWriteEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint depthWriteEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnableEXT")]
         static abstract void CmdSetDepthWriteEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -6977,6 +7214,21 @@ public unsafe partial interface IVk
                 "VK_EXT_discard_rectangles+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetDiscardRectangleEnableEXT")]
+        static abstract void CmdSetDiscardRectangleEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint discardRectangleEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_discard_rectangles"],
+            ImpliesSets = [
+                "VK_EXT_discard_rectangles+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_discard_rectangles+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDiscardRectangleEnableEXT")]
         static abstract void CmdSetDiscardRectangleEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -7157,7 +7409,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
             [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
-            [NativeTypeName("const VkBool32 *")] MaybeBool<uint>* pExclusiveScissorEnables
+            [NativeTypeName("const VkBool32 *")] uint* pExclusiveScissorEnables
         );
 
         [SupportedApiProfile(
@@ -7174,7 +7426,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
             [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
-            [NativeTypeName("const VkBool32 *")] Ref<MaybeBool<uint>> pExclusiveScissorEnables
+            [NativeTypeName("const VkBool32 *")] Ref<uint> pExclusiveScissorEnables
         );
 
         [SupportedApiProfile(
@@ -7190,7 +7442,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetExclusiveScissorEnableNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
-            [NativeTypeName("const VkBool32 *")] MaybeBool<uint> pExclusiveScissorEnables
+            [NativeTypeName("const VkBool32 *")] uint pExclusiveScissorEnables
         );
 
         [SupportedApiProfile(
@@ -7389,6 +7641,22 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineStippleEnableEXT")]
         static abstract void CmdSetLineStippleEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint stippledLineEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_EXT_line_rasterization"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineStippleEnableEXT")]
+        static abstract void CmdSetLineStippleEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> stippledLineEnable
         );
 
@@ -7452,6 +7720,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetLogicOpEnableEXT")]
+        static abstract void CmdSetLogicOpEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint logicOpEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetLogicOpEnableEXT")]
         static abstract void CmdSetLogicOpEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -7564,6 +7847,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnable")]
         static abstract void CmdSetPrimitiveRestartEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint primitiveRestartEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnable")]
+        static abstract void CmdSetPrimitiveRestartEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> primitiveRestartEnable
         );
 
@@ -7575,6 +7875,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
+        static abstract void CmdSetPrimitiveRestartEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint primitiveRestartEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state2"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
         static abstract void CmdSetPrimitiveRestartEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -7668,6 +7983,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnable")]
         static abstract void CmdSetRasterizerDiscardEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint rasterizerDiscardEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnable")]
+        static abstract void CmdSetRasterizerDiscardEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> rasterizerDiscardEnable
         );
 
@@ -7679,6 +8011,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
+        static abstract void CmdSetRasterizerDiscardEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint rasterizerDiscardEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state2"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
         static abstract void CmdSetRasterizerDiscardEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -7823,6 +8170,22 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetRepresentativeFragmentTestEnableNV")]
         static abstract void CmdSetRepresentativeFragmentTestEnableNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint representativeFragmentTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_NV_representative_fragment_test"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetRepresentativeFragmentTestEnableNV")]
+        static abstract void CmdSetRepresentativeFragmentTestEnableNV(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> representativeFragmentTestEnable
         );
 
@@ -7835,6 +8198,22 @@ public unsafe partial interface IVk
             ],
             RequireAll = true
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEnableEXT")]
+        static abstract void CmdSetSampleLocationsEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint sampleLocationsEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_EXT_sample_locations"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEnableEXT")]
         static abstract void CmdSetSampleLocationsEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -8086,6 +8465,22 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetShadingRateImageEnableNV")]
         static abstract void CmdSetShadingRateImageEnableNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint shadingRateImageEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_NV_shading_rate_image"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetShadingRateImageEnableNV")]
+        static abstract void CmdSetShadingRateImageEnableNV(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> shadingRateImageEnable
         );
 
@@ -8186,6 +8581,23 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnable")]
         static abstract void CmdSetStencilTestEnable(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint stencilTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            [
+                "VK_GRAPHICS_VERSION_1_3",
+                "VK_GRAPHICS_VERSION_1_4",
+                "VK_VERSION_1_3",
+                "VK_VERSION_1_4",
+            ],
+            MinVersion = "1.3"
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnable")]
+        static abstract void CmdSetStencilTestEnable(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
             [NativeTypeName("VkBool32")] MaybeBool<uint> stencilTestEnable
         );
 
@@ -8197,6 +8609,21 @@ public unsafe partial interface IVk
                 "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
             ]
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnableEXT")]
+        static abstract void CmdSetStencilTestEnableEXT(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint stencilTestEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnableEXT")]
         static abstract void CmdSetStencilTestEnableEXT(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -8566,6 +8993,22 @@ public unsafe partial interface IVk
             ],
             RequireAll = true
         )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingEnableNV")]
+        static abstract void CmdSetViewportWScalingEnableNV(
+            [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+            [NativeTypeName("VkBool32")] uint viewportWScalingEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_extended_dynamic_state3", "VK_NV_clip_space_w_scaling"],
+            ImpliesSets = [
+                "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+                "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+            ],
+            RequireAll = true
+        )]
+        [Transformed]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingEnableNV")]
         static abstract void CmdSetViewportWScalingEnableNV(
             [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -20684,7 +21127,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceTHandle physicalDevice,
             [NativeTypeName("uint32_t")] uint queueFamilyIndex,
             [NativeTypeName("VkSurfaceKHR")] SurfaceKHRTHandle surface,
-            [NativeTypeName("VkBool32 *")] MaybeBool<uint>* pSupported
+            [NativeTypeName("VkBool32 *")] uint* pSupported
         );
 
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
@@ -20694,7 +21137,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceTHandle physicalDevice,
             [NativeTypeName("uint32_t")] uint queueFamilyIndex,
             [NativeTypeName("VkSurfaceKHR")] SurfaceKHRTHandle surface,
-            [NativeTypeName("VkBool32 *")] Ref<MaybeBool<uint>> pSupported
+            [NativeTypeName("VkBool32 *")] Ref<uint> pSupported
         );
 
         [SupportedApiProfile(
@@ -23426,6 +23869,22 @@ public unsafe partial interface IVk
         static abstract void SetLocalDimmingAMD(
             [NativeTypeName("VkDevice")] DeviceTHandle device,
             [NativeTypeName("VkSwapchainKHR")] SwapchainKHRTHandle swapChain,
+            [NativeTypeName("VkBool32")] uint localDimmingEnable
+        );
+
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_AMD_display_native_hdr"],
+            ImpliesSets = [
+                "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+            ]
+        )]
+        [Transformed]
+        [NativeFunction("vulkan", EntryPoint = "vkSetLocalDimmingAMD")]
+        static abstract void SetLocalDimmingAMD(
+            [NativeTypeName("VkDevice")] DeviceTHandle device,
+            [NativeTypeName("VkSwapchainKHR")] SwapchainKHRTHandle swapChain,
             [NativeTypeName("VkBool32")] MaybeBool<uint> localDimmingEnable
         );
 
@@ -24079,7 +24538,7 @@ public unsafe partial interface IVk
             [NativeTypeName("VkDevice")] DeviceTHandle device,
             [NativeTypeName("uint32_t")] uint fenceCount,
             [NativeTypeName("const VkFence *")] FenceTHandle* pFences,
-            [NativeTypeName("VkBool32")] MaybeBool<uint> waitAll,
+            [NativeTypeName("VkBool32")] uint waitAll,
             [NativeTypeName("uint64_t")] ulong timeout
         );
 
@@ -26214,7 +26673,7 @@ public unsafe partial interface IVk
             AccelerationStructureInfoNV* pInfo,
         [NativeTypeName("VkBuffer")] BufferTHandle instanceData,
         [NativeTypeName("VkDeviceSize")] ulong instanceOffset,
-        [NativeTypeName("VkBool32")] MaybeBool<uint> update,
+        [NativeTypeName("VkBool32")] uint update,
         [NativeTypeName("VkAccelerationStructureNV")] AccelerationStructureNVTHandle dst,
         [NativeTypeName("VkAccelerationStructureNV")] AccelerationStructureNVTHandle src,
         [NativeTypeName("VkBuffer")] BufferTHandle scratch,
@@ -29114,7 +29573,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdExecuteGeneratedCommandsEXT")]
     void CmdExecuteGeneratedCommandsEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
-        [NativeTypeName("VkBool32")] MaybeBool<uint> isPreprocessed,
+        [NativeTypeName("VkBool32")] uint isPreprocessed,
         [NativeTypeName("const VkGeneratedCommandsInfoEXT *")]
             GeneratedCommandsInfoEXT* pGeneratedCommandsInfo
     );
@@ -29145,7 +29604,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdExecuteGeneratedCommandsNV")]
     void CmdExecuteGeneratedCommandsNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
-        [NativeTypeName("VkBool32")] MaybeBool<uint> isPreprocessed,
+        [NativeTypeName("VkBool32")] uint isPreprocessed,
         [NativeTypeName("const VkGeneratedCommandsInfoNV *")]
             GeneratedCommandsInfoNV* pGeneratedCommandsInfo
     );
@@ -30170,6 +30629,21 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToCoverageEnableEXT")]
     void CmdSetAlphaToCoverageEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint alphaToCoverageEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToCoverageEnableEXT")]
+    void CmdSetAlphaToCoverageEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> alphaToCoverageEnable
     );
 
@@ -30181,6 +30655,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToOneEnableEXT")]
+    void CmdSetAlphaToOneEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint alphaToOneEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetAlphaToOneEnableEXT")]
     void CmdSetAlphaToOneEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -30395,7 +30884,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
-        [NativeTypeName("const VkBool32 *")] MaybeBool<uint>* pColorBlendEnables
+        [NativeTypeName("const VkBool32 *")] uint* pColorBlendEnables
     );
 
     [SupportedApiProfile(
@@ -30412,7 +30901,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
         [NativeTypeName("uint32_t")] uint attachmentCount,
-        [NativeTypeName("const VkBool32 *")] Ref<MaybeBool<uint>> pColorBlendEnables
+        [NativeTypeName("const VkBool32 *")] Ref<uint> pColorBlendEnables
     );
 
     [SupportedApiProfile(
@@ -30428,7 +30917,7 @@ public unsafe partial interface IVk
     void CmdSetColorBlendEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstAttachment,
-        [NativeTypeName("const VkBool32 *")] MaybeBool<uint> pColorBlendEnables
+        [NativeTypeName("const VkBool32 *")] uint pColorBlendEnables
     );
 
     [SupportedApiProfile(
@@ -30495,7 +30984,7 @@ public unsafe partial interface IVk
     void CmdSetColorWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint attachmentCount,
-        [NativeTypeName("const VkBool32 *")] MaybeBool<uint>* pColorWriteEnables
+        [NativeTypeName("const VkBool32 *")] uint* pColorWriteEnables
     );
 
     [SupportedApiProfile(
@@ -30511,7 +31000,7 @@ public unsafe partial interface IVk
     void CmdSetColorWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint attachmentCount,
-        [NativeTypeName("const VkBool32 *")] Ref<MaybeBool<uint>> pColorWriteEnables
+        [NativeTypeName("const VkBool32 *")] Ref<uint> pColorWriteEnables
     );
 
     [SupportedApiProfile(
@@ -30526,7 +31015,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetColorWriteEnableEXT")]
     void CmdSetColorWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
-        [NativeTypeName("const VkBool32 *")] MaybeBool<uint> pColorWriteEnables
+        [NativeTypeName("const VkBool32 *")] uint pColorWriteEnables
     );
 
     [SupportedApiProfile(
@@ -30620,6 +31109,22 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageModulationTableEnableNV")]
     void CmdSetCoverageModulationTableEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint coverageModulationTableEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_NV_framebuffer_mixed_samples"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageModulationTableEnableNV")]
+    void CmdSetCoverageModulationTableEnableNV(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> coverageModulationTableEnable
     );
 
@@ -30696,6 +31201,22 @@ public unsafe partial interface IVk
         ],
         RequireAll = true
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageToColorEnableNV")]
+    void CmdSetCoverageToColorEnableNV(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint coverageToColorEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_NV_fragment_coverage_to_color"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageToColorEnableNV")]
     void CmdSetCoverageToColorEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -30803,6 +31324,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnable")]
     void CmdSetDepthBiasEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthBiasEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnable")]
+    void CmdSetDepthBiasEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthBiasEnable
     );
 
@@ -30814,6 +31347,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
+    void CmdSetDepthBiasEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthBiasEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBiasEnableEXT")]
     void CmdSetDepthBiasEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -30851,6 +31399,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnable")]
     void CmdSetDepthBoundsTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthBoundsTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnable")]
+    void CmdSetDepthBoundsTestEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthBoundsTestEnable
     );
 
@@ -30865,6 +31425,21 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnableEXT")]
     void CmdSetDepthBoundsTestEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthBoundsTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBoundsTestEnableEXT")]
+    void CmdSetDepthBoundsTestEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthBoundsTestEnable
     );
 
@@ -30876,6 +31451,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampEnableEXT")]
+    void CmdSetDepthClampEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthClampEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampEnableEXT")]
     void CmdSetDepthClampEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -30929,6 +31519,22 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipEnableEXT")]
     void CmdSetDepthClipEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthClipEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_enable", "VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipEnableEXT")]
+    void CmdSetDepthClipEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthClipEnable
     );
 
@@ -30941,6 +31547,22 @@ public unsafe partial interface IVk
         ],
         RequireAll = true
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipNegativeOneToOneEXT")]
+    void CmdSetDepthClipNegativeOneToOneEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint negativeOneToOne
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_control", "VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClipNegativeOneToOneEXT")]
     void CmdSetDepthClipNegativeOneToOneEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -30980,6 +31602,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnable")]
     void CmdSetDepthTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnable")]
+    void CmdSetDepthTestEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthTestEnable
     );
 
@@ -30994,6 +31628,21 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnableEXT")]
     void CmdSetDepthTestEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthTestEnableEXT")]
+    void CmdSetDepthTestEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> depthTestEnable
     );
 
@@ -31002,6 +31651,18 @@ public unsafe partial interface IVk
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnable")]
+    void CmdSetDepthWriteEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthWriteEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnable")]
     void CmdSetDepthWriteEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -31016,6 +31677,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnableEXT")]
+    void CmdSetDepthWriteEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint depthWriteEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthWriteEnableEXT")]
     void CmdSetDepthWriteEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -31139,6 +31815,21 @@ public unsafe partial interface IVk
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetDiscardRectangleEnableEXT")]
+    void CmdSetDiscardRectangleEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint discardRectangleEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_discard_rectangles"],
+        ImpliesSets = [
+            "VK_EXT_discard_rectangles+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_discard_rectangles+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDiscardRectangleEnableEXT")]
     void CmdSetDiscardRectangleEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -31319,7 +32010,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
-        [NativeTypeName("const VkBool32 *")] MaybeBool<uint>* pExclusiveScissorEnables
+        [NativeTypeName("const VkBool32 *")] uint* pExclusiveScissorEnables
     );
 
     [SupportedApiProfile(
@@ -31336,7 +32027,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
         [NativeTypeName("uint32_t")] uint exclusiveScissorCount,
-        [NativeTypeName("const VkBool32 *")] Ref<MaybeBool<uint>> pExclusiveScissorEnables
+        [NativeTypeName("const VkBool32 *")] Ref<uint> pExclusiveScissorEnables
     );
 
     [SupportedApiProfile(
@@ -31352,7 +32043,7 @@ public unsafe partial interface IVk
     void CmdSetExclusiveScissorEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("uint32_t")] uint firstExclusiveScissor,
-        [NativeTypeName("const VkBool32 *")] MaybeBool<uint> pExclusiveScissorEnables
+        [NativeTypeName("const VkBool32 *")] uint pExclusiveScissorEnables
     );
 
     [SupportedApiProfile(
@@ -31545,6 +32236,22 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineStippleEnableEXT")]
     void CmdSetLineStippleEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint stippledLineEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_EXT_line_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetLineStippleEnableEXT")]
+    void CmdSetLineStippleEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> stippledLineEnable
     );
 
@@ -31608,6 +32315,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetLogicOpEnableEXT")]
+    void CmdSetLogicOpEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint logicOpEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetLogicOpEnableEXT")]
     void CmdSetLogicOpEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -31715,6 +32437,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnable")]
     void CmdSetPrimitiveRestartEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint primitiveRestartEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnable")]
+    void CmdSetPrimitiveRestartEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> primitiveRestartEnable
     );
 
@@ -31726,6 +32460,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
+    void CmdSetPrimitiveRestartEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint primitiveRestartEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPrimitiveRestartEnableEXT")]
     void CmdSetPrimitiveRestartEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -31809,6 +32558,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnable")]
     void CmdSetRasterizerDiscardEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint rasterizerDiscardEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnable")]
+    void CmdSetRasterizerDiscardEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> rasterizerDiscardEnable
     );
 
@@ -31820,6 +32581,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
+    void CmdSetRasterizerDiscardEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint rasterizerDiscardEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRasterizerDiscardEnableEXT")]
     void CmdSetRasterizerDiscardEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -31964,6 +32740,22 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetRepresentativeFragmentTestEnableNV")]
     void CmdSetRepresentativeFragmentTestEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint representativeFragmentTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_NV_representative_fragment_test"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetRepresentativeFragmentTestEnableNV")]
+    void CmdSetRepresentativeFragmentTestEnableNV(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> representativeFragmentTestEnable
     );
 
@@ -31976,6 +32768,22 @@ public unsafe partial interface IVk
         ],
         RequireAll = true
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEnableEXT")]
+    void CmdSetSampleLocationsEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint sampleLocationsEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEnableEXT")]
     void CmdSetSampleLocationsEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -32212,6 +33020,22 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetShadingRateImageEnableNV")]
     void CmdSetShadingRateImageEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint shadingRateImageEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetShadingRateImageEnableNV")]
+    void CmdSetShadingRateImageEnableNV(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> shadingRateImageEnable
     );
 
@@ -32302,6 +33126,18 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnable")]
     void CmdSetStencilTestEnable(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint stencilTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnable")]
+    void CmdSetStencilTestEnable(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
         [NativeTypeName("VkBool32")] MaybeBool<uint> stencilTestEnable
     );
 
@@ -32313,6 +33149,21 @@ public unsafe partial interface IVk
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnableEXT")]
+    void CmdSetStencilTestEnableEXT(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint stencilTestEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetStencilTestEnableEXT")]
     void CmdSetStencilTestEnableEXT(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -32666,6 +33517,22 @@ public unsafe partial interface IVk
         ],
         RequireAll = true
     )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingEnableNV")]
+    void CmdSetViewportWScalingEnableNV(
+        [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
+        [NativeTypeName("VkBool32")] uint viewportWScalingEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3", "VK_NV_clip_space_w_scaling"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    [Transformed]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingEnableNV")]
     void CmdSetViewportWScalingEnableNV(
         [NativeTypeName("VkCommandBuffer")] CommandBufferTHandle commandBuffer,
@@ -44588,7 +45455,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceTHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRTHandle surface,
-        [NativeTypeName("VkBool32 *")] MaybeBool<uint>* pSupported
+        [NativeTypeName("VkBool32 *")] uint* pSupported
     );
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
@@ -44598,7 +45465,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkPhysicalDevice")] PhysicalDeviceTHandle physicalDevice,
         [NativeTypeName("uint32_t")] uint queueFamilyIndex,
         [NativeTypeName("VkSurfaceKHR")] SurfaceKHRTHandle surface,
-        [NativeTypeName("VkBool32 *")] Ref<MaybeBool<uint>> pSupported
+        [NativeTypeName("VkBool32 *")] Ref<uint> pSupported
     );
 
     [SupportedApiProfile(
@@ -47315,6 +48182,22 @@ public unsafe partial interface IVk
     void SetLocalDimmingAMD(
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("VkSwapchainKHR")] SwapchainKHRTHandle swapChain,
+        [NativeTypeName("VkBool32")] uint localDimmingEnable
+    );
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_display_native_hdr"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    [Transformed]
+    [NativeFunction("vulkan", EntryPoint = "vkSetLocalDimmingAMD")]
+    void SetLocalDimmingAMD(
+        [NativeTypeName("VkDevice")] DeviceTHandle device,
+        [NativeTypeName("VkSwapchainKHR")] SwapchainKHRTHandle swapChain,
         [NativeTypeName("VkBool32")] MaybeBool<uint> localDimmingEnable
     );
 
@@ -47965,7 +48848,7 @@ public unsafe partial interface IVk
         [NativeTypeName("VkDevice")] DeviceTHandle device,
         [NativeTypeName("uint32_t")] uint fenceCount,
         [NativeTypeName("const VkFence *")] FenceTHandle* pFences,
-        [NativeTypeName("VkBool32")] MaybeBool<uint> waitAll,
+        [NativeTypeName("VkBool32")] uint waitAll,
         [NativeTypeName("uint64_t")] ulong timeout
     );
 

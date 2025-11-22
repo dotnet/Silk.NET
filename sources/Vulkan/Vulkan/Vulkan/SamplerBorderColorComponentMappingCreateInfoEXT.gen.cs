@@ -38,5 +38,5 @@ public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
         ["VK_EXT_border_color_swizzle"],
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
-    public MaybeBool<uint> Srgb;
+    public uint Srgb;
 }

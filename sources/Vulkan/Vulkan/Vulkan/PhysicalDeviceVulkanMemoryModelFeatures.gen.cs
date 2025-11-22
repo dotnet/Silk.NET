@@ -52,11 +52,11 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> VulkanMemoryModel;
+    public uint VulkanMemoryModel;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> VulkanMemoryModelDeviceScope;
+    public uint VulkanMemoryModelDeviceScope;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -77,5 +77,5 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> VulkanMemoryModelAvailabilityVisibilityChains;
+    public uint VulkanMemoryModelAvailabilityVisibilityChains;
 }

@@ -30,5 +30,5 @@ public unsafe partial struct SubpassResolvePerformanceQueryEXT
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public MaybeBool<uint> Optimal;
+    public uint Optimal;
 }

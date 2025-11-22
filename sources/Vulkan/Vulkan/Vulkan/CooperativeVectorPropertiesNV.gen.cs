@@ -90,5 +90,5 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> Transpose;
+    public uint Transpose;
 }

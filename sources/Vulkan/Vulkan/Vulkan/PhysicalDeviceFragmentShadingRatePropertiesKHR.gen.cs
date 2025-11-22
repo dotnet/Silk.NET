@@ -76,7 +76,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> PrimitiveFragmentShadingRateWithMultipleViewports;
+    public uint PrimitiveFragmentShadingRateWithMultipleViewports;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -88,7 +88,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> LayeredShadingRateAttachments;
+    public uint LayeredShadingRateAttachments;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -100,7 +100,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateNonTrivialCombinerOps;
+    public uint FragmentShadingRateNonTrivialCombinerOps;
 
     [SupportedApiProfile(
         "vulkan",
@@ -158,7 +158,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateWithShaderDepthStencilWrites;
+    public uint FragmentShadingRateWithShaderDepthStencilWrites;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -170,7 +170,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateWithSampleMask;
+    public uint FragmentShadingRateWithSampleMask;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -182,7 +182,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateWithShaderSampleMask;
+    public uint FragmentShadingRateWithShaderSampleMask;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -194,7 +194,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateWithConservativeRasterization;
+    public uint FragmentShadingRateWithConservativeRasterization;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -206,7 +206,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateWithFragmentShaderInterlock;
+    public uint FragmentShadingRateWithFragmentShaderInterlock;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -218,7 +218,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateWithCustomSampleLocations;
+    public uint FragmentShadingRateWithCustomSampleLocations;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -230,5 +230,5 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> FragmentShadingRateStrictMultiplyCombiner;
+    public uint FragmentShadingRateStrictMultiplyCombiner;
 }

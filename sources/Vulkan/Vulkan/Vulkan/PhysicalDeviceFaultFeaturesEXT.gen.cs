@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceFaultFeaturesEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DeviceFault;
+    public uint DeviceFault;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct PhysicalDeviceFaultFeaturesEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DeviceFaultVendorBinary;
+    public uint DeviceFaultVendorBinary;
 }

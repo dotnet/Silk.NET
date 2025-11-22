@@ -30,5 +30,5 @@ public unsafe partial struct PhysicalDeviceLegacyVertexAttributesPropertiesEXT
         ["VK_EXT_legacy_vertex_attributes"],
         ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
     )]
-    public MaybeBool<uint> NativeUnalignedPerformance;
+    public uint NativeUnalignedPerformance;
 }

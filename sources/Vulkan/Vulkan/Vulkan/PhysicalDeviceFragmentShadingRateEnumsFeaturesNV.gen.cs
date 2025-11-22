@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public MaybeBool<uint> FragmentShadingRateEnums;
+    public uint FragmentShadingRateEnums;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -39,7 +39,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public MaybeBool<uint> SupersampleFragmentShadingRates;
+    public uint SupersampleFragmentShadingRates;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -47,5 +47,5 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public MaybeBool<uint> NoInvocationFragmentShadingRates;
+    public uint NoInvocationFragmentShadingRates;
 }

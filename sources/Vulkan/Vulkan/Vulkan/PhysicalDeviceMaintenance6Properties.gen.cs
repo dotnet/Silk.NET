@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> BlockTexelViewCompatibleMultipleLayers;
+    public uint BlockTexelViewCompatibleMultipleLayers;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -72,5 +72,5 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
         ],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> FragmentShadingRateClampCombinerInputs;
+    public uint FragmentShadingRateClampCombinerInputs;
 }

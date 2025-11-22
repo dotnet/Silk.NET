@@ -45,5 +45,5 @@ public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> SeparateDepthStencilLayouts;
+    public uint SeparateDepthStencilLayouts;
 }

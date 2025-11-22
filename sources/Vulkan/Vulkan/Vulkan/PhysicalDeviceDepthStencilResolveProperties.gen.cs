@@ -82,7 +82,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> IndependentResolveNone;
+    public uint IndependentResolveNone;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -97,5 +97,5 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> IndependentResolve;
+    public uint IndependentResolve;
 }

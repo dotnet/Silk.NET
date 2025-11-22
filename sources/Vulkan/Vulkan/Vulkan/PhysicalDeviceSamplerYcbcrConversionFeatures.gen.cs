@@ -53,5 +53,5 @@ public unsafe partial struct PhysicalDeviceSamplerYcbcrConversionFeatures
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> SamplerYcbcrConversion;
+    public uint SamplerYcbcrConversion;
 }

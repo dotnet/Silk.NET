@@ -40,7 +40,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DepthBiasControl;
+    public uint DepthBiasControl;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> LeastRepresentableValueForceUnormRepresentation;
+    public uint LeastRepresentableValueForceUnormRepresentation;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FloatRepresentation;
+    public uint FloatRepresentation;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -73,5 +73,5 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DepthBiasExact;
+    public uint DepthBiasExact;
 }

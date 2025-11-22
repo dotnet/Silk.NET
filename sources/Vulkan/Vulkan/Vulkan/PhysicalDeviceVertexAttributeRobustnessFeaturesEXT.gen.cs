@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceVertexAttributeRobustnessFeaturesEXT
             "VK_EXT_vertex_attribute_robustness+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> VertexAttributeRobustness;
+    public uint VertexAttributeRobustness;
 }

@@ -40,7 +40,7 @@ public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
             "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> EnableYDegamma;
+    public uint EnableYDegamma;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -51,5 +51,5 @@ public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
             "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> EnableCbCrDegamma;
+    public uint EnableCbCrDegamma;
 }

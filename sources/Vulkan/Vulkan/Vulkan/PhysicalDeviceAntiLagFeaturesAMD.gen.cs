@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> AntiLag;
+    public uint AntiLag;
 }

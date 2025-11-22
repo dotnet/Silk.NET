@@ -52,5 +52,5 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> FragmentDensityMapOffset;
+    public uint FragmentDensityMapOffset;
 }

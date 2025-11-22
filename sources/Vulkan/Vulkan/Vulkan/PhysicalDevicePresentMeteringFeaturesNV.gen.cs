@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDevicePresentMeteringFeaturesNV
             "VK_NV_present_metering+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> PresentMetering;
+    public uint PresentMetering;
 }

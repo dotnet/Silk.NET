@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorProperties
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public MaybeBool<uint> SupportsNonZeroFirstInstance;
+    public uint SupportsNonZeroFirstInstance;
 }

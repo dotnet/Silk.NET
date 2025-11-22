@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeatu
             "VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> DedicatedAllocationImageAliasing;
+    public uint DedicatedAllocationImageAliasing;
 }

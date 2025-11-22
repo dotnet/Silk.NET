@@ -41,7 +41,7 @@ public unsafe partial struct AccelerationStructureGeometryInstancesDataKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> ArrayOfPointers;
+    public uint ArrayOfPointers;
 
     [SupportedApiProfile(
         "vulkan",

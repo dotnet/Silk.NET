@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> CombinedImageSamplerDescriptorSingleArray;
+    public uint CombinedImageSamplerDescriptorSingleArray;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> BufferlessPushDescriptors;
+    public uint BufferlessPushDescriptors;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public MaybeBool<uint> AllowSamplerImageViewPostSubmitCreation;
+    public uint AllowSamplerImageViewPostSubmitCreation;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

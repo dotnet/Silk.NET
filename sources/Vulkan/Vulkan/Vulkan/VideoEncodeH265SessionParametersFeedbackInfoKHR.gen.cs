@@ -30,7 +30,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> HasStdVPSOverrides;
+    public uint HasStdVPSOverrides;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -38,7 +38,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> HasStdSPSOverrides;
+    public uint HasStdSPSOverrides;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -46,5 +46,5 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public MaybeBool<uint> HasStdPPSOverrides;
+    public uint HasStdPPSOverrides;
 }

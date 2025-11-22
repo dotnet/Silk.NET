@@ -34,5 +34,5 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionFeaturesEXT
             "VK_VERSION_1_2",
         ]
     )]
-    public MaybeBool<uint> MemoryDecompression;
+    public uint MemoryDecompression;
 }

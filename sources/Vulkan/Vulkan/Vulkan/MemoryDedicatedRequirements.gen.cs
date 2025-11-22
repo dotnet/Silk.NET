@@ -81,7 +81,7 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> PrefersDedicatedAllocation;
+    public uint PrefersDedicatedAllocation;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -106,5 +106,5 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public MaybeBool<uint> RequiresDedicatedAllocation;
+    public uint RequiresDedicatedAllocation;
 }

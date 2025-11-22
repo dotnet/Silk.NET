@@ -56,7 +56,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> SamplerMirrorClampToEdge;
+    public uint SamplerMirrorClampToEdge;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DrawIndirectCount;
+    public uint DrawIndirectCount;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> StorageBuffer8BitAccess;
+    public uint StorageBuffer8BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -93,7 +93,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> UniformAndStorageBuffer8BitAccess;
+    public uint UniformAndStorageBuffer8BitAccess;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -114,7 +114,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> StoragePushConstant8;
+    public uint StoragePushConstant8;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -125,7 +125,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
             "VK_KHR_shader_atomic_int64+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> ShaderBufferInt64Atomics;
+    public uint ShaderBufferInt64Atomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -146,7 +146,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSharedInt64Atomics;
+    public uint ShaderSharedInt64Atomics;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -167,11 +167,11 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderFloat16;
+    public uint ShaderFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> ShaderInt8;
+    public uint ShaderInt8;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -179,7 +179,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorIndexing;
+    public uint DescriptorIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -200,7 +200,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderInputAttachmentArrayDynamicIndexing;
+    public uint ShaderInputAttachmentArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -208,7 +208,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderUniformTexelBufferArrayDynamicIndexing;
+    public uint ShaderUniformTexelBufferArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -216,7 +216,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageTexelBufferArrayDynamicIndexing;
+    public uint ShaderStorageTexelBufferArrayDynamicIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -237,7 +237,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderUniformBufferArrayNonUniformIndexing;
+    public uint ShaderUniformBufferArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -245,7 +245,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSampledImageArrayNonUniformIndexing;
+    public uint ShaderSampledImageArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -253,7 +253,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageBufferArrayNonUniformIndexing;
+    public uint ShaderStorageBufferArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -274,7 +274,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageImageArrayNonUniformIndexing;
+    public uint ShaderStorageImageArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -295,7 +295,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderInputAttachmentArrayNonUniformIndexing;
+    public uint ShaderInputAttachmentArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -303,7 +303,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderUniformTexelBufferArrayNonUniformIndexing;
+    public uint ShaderUniformTexelBufferArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -324,7 +324,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageTexelBufferArrayNonUniformIndexing;
+    public uint ShaderStorageTexelBufferArrayNonUniformIndexing;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -345,7 +345,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingUniformBufferUpdateAfterBind;
+    public uint DescriptorBindingUniformBufferUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -353,7 +353,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingSampledImageUpdateAfterBind;
+    public uint DescriptorBindingSampledImageUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -361,7 +361,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingStorageImageUpdateAfterBind;
+    public uint DescriptorBindingStorageImageUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -369,7 +369,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingStorageBufferUpdateAfterBind;
+    public uint DescriptorBindingStorageBufferUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -377,7 +377,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingUniformTexelBufferUpdateAfterBind;
+    public uint DescriptorBindingUniformTexelBufferUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -385,7 +385,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingStorageTexelBufferUpdateAfterBind;
+    public uint DescriptorBindingStorageTexelBufferUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -393,7 +393,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingUpdateUnusedWhilePending;
+    public uint DescriptorBindingUpdateUnusedWhilePending;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -401,7 +401,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingPartiallyBound;
+    public uint DescriptorBindingPartiallyBound;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -422,7 +422,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> DescriptorBindingVariableDescriptorCount;
+    public uint DescriptorBindingVariableDescriptorCount;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -430,7 +430,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> RuntimeDescriptorArray;
+    public uint RuntimeDescriptorArray;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -438,11 +438,11 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> SamplerFilterMinmax;
+    public uint SamplerFilterMinmax;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public MaybeBool<uint> ScalarBlockLayout;
+    public uint ScalarBlockLayout;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -450,7 +450,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ImagelessFramebuffer;
+    public uint ImagelessFramebuffer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -458,7 +458,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> UniformBufferStandardLayout;
+    public uint UniformBufferStandardLayout;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -466,7 +466,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSubgroupExtendedTypes;
+    public uint ShaderSubgroupExtendedTypes;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -474,7 +474,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> SeparateDepthStencilLayouts;
+    public uint SeparateDepthStencilLayouts;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -482,7 +482,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> HostQueryReset;
+    public uint HostQueryReset;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -490,11 +490,11 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> TimelineSemaphore;
+    public uint TimelineSemaphore;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> BufferDeviceAddress;
+    public uint BufferDeviceAddress;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -515,7 +515,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> BufferDeviceAddressCaptureReplay;
+    public uint BufferDeviceAddressCaptureReplay;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -536,15 +536,15 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> BufferDeviceAddressMultiDevice;
+    public uint BufferDeviceAddressMultiDevice;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> VulkanMemoryModel;
+    public uint VulkanMemoryModel;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public MaybeBool<uint> VulkanMemoryModelDeviceScope;
+    public uint VulkanMemoryModelDeviceScope;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -565,7 +565,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> VulkanMemoryModelAvailabilityVisibilityChains;
+    public uint VulkanMemoryModelAvailabilityVisibilityChains;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -573,7 +573,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderOutputViewportIndex;
+    public uint ShaderOutputViewportIndex;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -581,7 +581,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderOutputLayer;
+    public uint ShaderOutputLayer;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -589,5 +589,5 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> SubgroupBroadcastDynamicId;
+    public uint SubgroupBroadcastDynamicId;
 }

@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDeviceImageCompressionControlSwapchainFeatu
         ["VK_EXT_image_compression_control_swapchain"],
         ImpliesSets = ["VK_EXT_image_compression_control"]
     )]
-    public MaybeBool<uint> ImageCompressionControlSwapchain;
+    public uint ImageCompressionControlSwapchain;
 }

@@ -52,7 +52,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct8BitUnsignedAccelerated;
+    public uint IntegerDotProduct8BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -67,7 +67,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct8BitSignedAccelerated;
+    public uint IntegerDotProduct8BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -82,7 +82,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct8BitMixedSignednessAccelerated;
+    public uint IntegerDotProduct8BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -97,7 +97,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct4X8BitPackedUnsignedAccelerated;
+    public uint IntegerDotProduct4X8BitPackedUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -112,7 +112,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct4X8BitPackedSignedAccelerated;
+    public uint IntegerDotProduct4X8BitPackedSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -127,7 +127,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct4X8BitPackedMixedSignednessAccelerated;
+    public uint IntegerDotProduct4X8BitPackedMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -142,7 +142,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct16BitUnsignedAccelerated;
+    public uint IntegerDotProduct16BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -157,7 +157,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct16BitSignedAccelerated;
+    public uint IntegerDotProduct16BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -172,7 +172,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct16BitMixedSignednessAccelerated;
+    public uint IntegerDotProduct16BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -187,7 +187,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct32BitUnsignedAccelerated;
+    public uint IntegerDotProduct32BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -202,7 +202,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct32BitSignedAccelerated;
+    public uint IntegerDotProduct32BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -217,7 +217,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct32BitMixedSignednessAccelerated;
+    public uint IntegerDotProduct32BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -232,7 +232,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct64BitUnsignedAccelerated;
+    public uint IntegerDotProduct64BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -247,7 +247,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct64BitSignedAccelerated;
+    public uint IntegerDotProduct64BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -262,7 +262,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProduct64BitMixedSignednessAccelerated;
+    public uint IntegerDotProduct64BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -277,7 +277,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating8BitUnsignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating8BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -292,7 +292,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating8BitSignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating8BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -307,7 +307,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -322,7 +322,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating4X8BitPackedUnsignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -337,7 +337,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating4X8BitPackedSignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -352,7 +352,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating4X8BitPackedMixedSignednessAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -367,7 +367,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating16BitUnsignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating16BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -382,7 +382,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating16BitSignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating16BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -397,7 +397,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -412,7 +412,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating32BitUnsignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating32BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -427,7 +427,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating32BitSignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating32BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -442,7 +442,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -457,7 +457,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating64BitUnsignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating64BitUnsignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -472,7 +472,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating64BitSignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating64BitSignedAccelerated;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -487,5 +487,5 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductProperties
         ],
         MinVersion = "1.3"
     )]
-    public MaybeBool<uint> IntegerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated;
 }

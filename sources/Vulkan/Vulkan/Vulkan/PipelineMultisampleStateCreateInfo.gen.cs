@@ -102,7 +102,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> SampleShadingEnable;
+    public uint SampleShadingEnable;
 
     [SupportedApiProfile(
         "vulkan",
@@ -158,7 +158,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> AlphaToCoverageEnable;
+    public uint AlphaToCoverageEnable;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -177,5 +177,5 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public MaybeBool<uint> AlphaToOneEnable;
+    public uint AlphaToOneEnable;
 }

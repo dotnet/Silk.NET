@@ -191,7 +191,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat16;
+    public uint ShaderSignedZeroInfNanPreserveFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -212,7 +212,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat32;
+    public uint ShaderSignedZeroInfNanPreserveFloat32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -233,7 +233,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat64;
+    public uint ShaderSignedZeroInfNanPreserveFloat64;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -254,7 +254,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderDenormPreserveFloat16;
+    public uint ShaderDenormPreserveFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -275,7 +275,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderDenormPreserveFloat32;
+    public uint ShaderDenormPreserveFloat32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -296,7 +296,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderDenormPreserveFloat64;
+    public uint ShaderDenormPreserveFloat64;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -317,7 +317,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderDenormFlushToZeroFloat16;
+    public uint ShaderDenormFlushToZeroFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -338,7 +338,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderDenormFlushToZeroFloat32;
+    public uint ShaderDenormFlushToZeroFloat32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -359,7 +359,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderDenormFlushToZeroFloat64;
+    public uint ShaderDenormFlushToZeroFloat64;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -380,7 +380,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderRoundingModeRTEFloat16;
+    public uint ShaderRoundingModeRTEFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -401,7 +401,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderRoundingModeRTEFloat32;
+    public uint ShaderRoundingModeRTEFloat32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -422,7 +422,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderRoundingModeRTEFloat64;
+    public uint ShaderRoundingModeRTEFloat64;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -443,7 +443,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderRoundingModeRTZFloat16;
+    public uint ShaderRoundingModeRTZFloat16;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -464,7 +464,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderRoundingModeRTZFloat32;
+    public uint ShaderRoundingModeRTZFloat32;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -485,7 +485,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderRoundingModeRTZFloat64;
+    public uint ShaderRoundingModeRTZFloat64;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -527,7 +527,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderUniformBufferArrayNonUniformIndexingNative;
+    public uint ShaderUniformBufferArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -548,7 +548,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderSampledImageArrayNonUniformIndexingNative;
+    public uint ShaderSampledImageArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -569,7 +569,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageBufferArrayNonUniformIndexingNative;
+    public uint ShaderStorageBufferArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -590,7 +590,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderStorageImageArrayNonUniformIndexingNative;
+    public uint ShaderStorageImageArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -611,7 +611,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> ShaderInputAttachmentArrayNonUniformIndexingNative;
+    public uint ShaderInputAttachmentArrayNonUniformIndexingNative;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -632,7 +632,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> RobustBufferAccessUpdateAfterBind;
+    public uint RobustBufferAccessUpdateAfterBind;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -653,7 +653,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> QuadDivergentImplicitLod;
+    public uint QuadDivergentImplicitLod;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -1031,7 +1031,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> IndependentResolveNone;
+    public uint IndependentResolveNone;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -1052,7 +1052,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> IndependentResolve;
+    public uint IndependentResolve;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -1073,7 +1073,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> FilterMinmaxSingleComponentFormats;
+    public uint FilterMinmaxSingleComponentFormats;
 
     [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
@@ -1094,7 +1094,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public MaybeBool<uint> FilterMinmaxImageComponentMapping;
+    public uint FilterMinmaxImageComponentMapping;
 
     [NativeTypeName("uint64_t")]
     [SupportedApiProfile(

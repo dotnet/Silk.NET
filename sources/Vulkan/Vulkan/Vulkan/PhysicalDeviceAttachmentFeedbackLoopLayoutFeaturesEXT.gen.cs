@@ -39,5 +39,5 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesE
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    public MaybeBool<uint> AttachmentFeedbackLoopLayout;
+    public uint AttachmentFeedbackLoopLayout;
 }
