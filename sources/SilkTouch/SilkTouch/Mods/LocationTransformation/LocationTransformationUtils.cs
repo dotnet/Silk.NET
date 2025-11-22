@@ -58,7 +58,7 @@ public static class LocationTransformationUtils
             }
 
             // Since this is multithreaded, each thread needs their own copy of the rewriter and transformers
-            var rewriter = new Rewriter(symbolSet, [..transformers.Select(t => t.GetThreadSafeCopy())]);
+            var rewriter = new LocationTransformationRewriter(symbolSet, [..transformers.Select(t => t.GetThreadSafeCopy())]);
             rewriter.Initialize(semanticModel);
 
             var newRoot = rewriter.Visit(originalRoot);

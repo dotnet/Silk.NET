@@ -17,6 +17,10 @@ public abstract class LocationTransformer : CSharpSyntaxRewriter
     /// Returning a parent node will lead to the parent node being modified instead of the current node.
     /// Do not return child nodes.
     /// </summary>
+    /// <remarks>
+    /// <see cref="SyntaxNode.Parent"/> does not work because the current node (index 0)
+    /// could already have been modified by a previous transformer.
+    /// </remarks>
     /// <param name="hierarchy">The node hierarchy as a reversed stack. Index 0 is the current node. Index 1 is its parent and so on.</param>
     /// <param name="symbol">The symbol that is associated with this node.</param>
     /// <returns>The given node, another node, or null.</returns>

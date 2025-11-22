@@ -6,13 +6,21 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 
 /// <summary>
-/// Renames all references to each symbol with the specified new name.
+/// Finds references to the provided symbols and applies a set of transformations on each referencing location.
+/// This is meant to be used by <see cref="LocationTransformationUtils.ModifyAllReferencesAsync"/>.
 /// </summary>
+/// <remarks>
+/// This rewriter identifies symbols and referencing locations when traversing downwards into the syntax tree
+/// and modifies the nodes only when coming back up.
+/// <br/>
+/// Modifying nodes cause them to be detached from the semantic model (meaning no symbol information),
+/// so this ensures that we gather all of the data we need before making changes.
+/// </remarks>
 /// <param name="symbols">Symbols to search for.</param>
 /// <param name="transformers">Transformers to use on each found symbol reference.</param>
-public class Rewriter(HashSet<ISymbol> symbols, List<LocationTransformer> transformers) : CSharpSyntaxRewriter
+public class LocationTransformationRewriter(HashSet<ISymbol> symbols, List<LocationTransformer> transformers) : CSharpSyntaxRewriter
 {
-    // Identifiers can also be referenced within XML doc, which are trivia nodes.
+    // Symbols can also be referenced within XML doc, which are trivia nodes.
     /// <inheritdoc />
     public override bool VisitIntoStructuredTrivia => true;
 
