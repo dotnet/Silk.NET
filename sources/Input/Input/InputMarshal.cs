@@ -369,7 +369,7 @@ public static class InputMarshal
             return (ListOwner<T>)
                 (object)
                     new ListOwner<Button<KeyName>>(
-                        new InputReadOnlyList<Button<KeyName>>((object)new ButtonList<KeyName>())
+                        new InputReadOnlyList<Button<KeyName>>(new ButtonList<KeyName>())
                     );
         }
 
@@ -379,7 +379,7 @@ public static class InputMarshal
                 (object)
                     new ListOwner<Button<JoystickButton>>(
                         new InputReadOnlyList<Button<JoystickButton>>(
-                            (object)new ButtonList<JoystickButton>()
+                            new ButtonList<JoystickButton>()
                         )
                     );
         }
@@ -390,12 +390,12 @@ public static class InputMarshal
                 (object)
                     new ListOwner<Button<PointerButton>>(
                         new InputReadOnlyList<Button<PointerButton>>(
-                            (object)new ButtonList<PointerButton>()
+                            new ButtonList<PointerButton>()
                         )
                     );
         }
 
-        return new ListOwner<T>(new InputReadOnlyList<T>((object)new List<T>(capacity)));
+        return new ListOwner<T>(new InputReadOnlyList<T>((new List<T>(capacity))));
     }
 
     /// <summary>
@@ -406,7 +406,7 @@ public static class InputMarshal
     /// <param name="other">The elements to populate the list with.</param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
-    public static ListOwner<T> Clone<T>(IReadOnlyList<T> other)
+   /* public static ListOwner<T> Clone<T>(IReadOnlyList<T> other)
     {
         // ReSharper disable once InvertIf <-- starting to really dislike this as it duplicates code
         if (other is InputReadOnlyList<T> irl)
@@ -478,7 +478,7 @@ public static class InputMarshal
             return ret;
         }
     }
-
+*/
     /// <summary>
     /// Sets the button state in the given button list.
     /// </summary>

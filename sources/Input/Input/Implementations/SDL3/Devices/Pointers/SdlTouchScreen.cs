@@ -7,6 +7,7 @@ internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerD
 {
     public static SdlTouchScreen CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
+        throw new NotImplementedException();
     }
 
     public bool Equals(IInputDevice? other)
@@ -43,7 +44,7 @@ internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerD
         }
     }
 
-    public SdlTouchScreen(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(sdlDeviceId, uniqueId, backend)
+    public SdlTouchScreen(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
     }
 }

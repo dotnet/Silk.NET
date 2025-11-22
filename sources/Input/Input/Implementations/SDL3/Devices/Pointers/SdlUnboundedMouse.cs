@@ -15,7 +15,7 @@ internal class SdlUnboundedMouse : SdlDevice, IMouse, ISdlDevice<SdlUnboundedMou
     public MouseState State => throw new NotImplementedException();
     public static SdlUnboundedMouse? CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
-
+        throw new NotImplementedException();
     }
 
     public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();

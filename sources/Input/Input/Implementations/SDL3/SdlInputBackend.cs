@@ -446,12 +446,13 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                         bounds.Min.ToSystem(),
                         bounds.Max.ToSystem()
                     );
+                Console.WriteLine($"Display bounds changed: {x.BoundedPointerTargetUpdate}");
                 break;
             }
             case EventType.WindowMouseLeave
                 : // do we need to do anything? we should probably track the current window of the pointer
             {
-                var x = (QueuedEventType.MouseExitedWindow, timestamp);
+                //var x = (QueuedEventType.MouseExitedWindow, timestamp);
                 break;
             }
 

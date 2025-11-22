@@ -7,15 +7,21 @@ namespace Silk.NET.Input.SDL3.Pointers;
 
 internal class SdlPen : SdlBoundedPointerDevice, ISdlDevice<SdlPen>
 {
+    public SdlPen(SdlInputBackend backend, nint silkId, uint sdlDeviceId, IReadOnlyList<IPointerTarget> targets, string name) : base(backend, silkId, sdlDeviceId)
+    {
+        Targets = targets;
+        Name = name;
+    }
+
     public static SdlPen CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
         throw new NotImplementedException();
     }
 
     public override PointerState State => throw new NotImplementedException();
+    public override IReadOnlyList<IPointerTarget> Targets { get; }
 
-    public SdlPen(uint sdlDeviceId, SdlInputBackend backend, IReadOnlyList<IPointerTarget> targets, InputMarshal.ListOwner<TargetPoint> boundedPoints) : base(sdlDeviceId, backend, targets, boundedPoints)
-    {
-    }
 
+    public override string Name { get; }
+    protected override void Release() => throw new NotImplementedException();
 }

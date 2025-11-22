@@ -8,7 +8,7 @@ namespace Silk.NET.Input.KeyHandling;
 /// <summary>
 /// A series of extension methods for making sense of <see cref="KeyName"/> values
 /// </summary>
-public static class KeyNameExtensions
+internal static class KeyNameExtensions
 {
     /// <summary>
     /// Returns true if the key would produce a character in common text editing scenarios. Includes whitespace.

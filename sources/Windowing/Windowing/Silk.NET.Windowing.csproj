@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-        <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net8.0-android;net9.0-android</TargetFrameworks>
-        <TargetFrameworks Condition="'$(SilkiOSDisabled)' != 'true'">$(TargetFrameworks);net8.0-ios;net9.0-ios</TargetFrameworks>
+        <TargetFrameworks>net10.0</TargetFrameworks>
+        <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net10.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="'$(SilkiOSDisabled)' != 'true'">$(TargetFrameworks);net10.0-ios</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>

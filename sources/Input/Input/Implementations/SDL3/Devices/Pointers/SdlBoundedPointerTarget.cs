@@ -67,10 +67,11 @@ internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 
         if (device.Backend == Backend)
         {
-            return Bounds != default ? device.BoundedPoints.List.Count : 0;
+            //return Bounds != default ? device.BoundedPoints.List.Count : 0;
         }
 
-        return device.Backend.BoundedPointerTarget.GetPointCount(pointer);
+        throw new NotImplementedException();
+        //return device.Backend.BoundedPointerTarget.GetPointCount(pointer);
     }
 
     public TargetPoint GetPoint(IPointerDevice pointer, int point)
@@ -78,7 +79,7 @@ internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
         if (
             pointer is not SdlBoundedPointerDevice { IsBounded: true } device
             || point < 0
-            || point >= device.BoundedPoints.List.Count
+                //|| point >= device.BoundedPoints.List.Count
         )
         {
             return default;
@@ -86,9 +87,10 @@ internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 
         if (device.Backend != Backend)
         {
-            return device.Backend.BoundedPointerTarget.GetPoint(pointer, point);
+       //     return device.Backend.BoundedPointerTarget.GetPoint(pointer, point);
         }
 
-        return Bounds != default ? device.BoundedPoints.List[point] : default;
+        throw new NotImplementedException();
+     //   return Bounds != default ? device.BoundedPoints.List[point] : default;
     }
 }

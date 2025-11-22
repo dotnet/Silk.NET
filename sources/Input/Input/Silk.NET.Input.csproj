@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+        <TargetFrameworks>net10.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <NoWarn>ST0005;$(NoWarn)</NoWarn>
+      <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,6 +13,5 @@
       <ProjectReference Include="..\..\Maths\Maths\Silk.NET.Maths.csproj" />
       <ProjectReference Include="..\..\SDL\SDL\Silk.NET.SDL.csproj" />
     </ItemGroup>
-  <Import Project="..\..\Core\Core\Silk.NET.Core.targets" />
 
 </Project>
