@@ -64,8 +64,8 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
         public EnumMemberFilter(EnumMemberFilterConfiguration configuration)
         {
-            TypeName = new Regex(configuration.TypeName);
-            MemberName = new Regex(configuration.MemberName);
+            TypeName = new Regex(configuration.TypeName, RegexOptions.Compiled);
+            MemberName = new Regex(configuration.MemberName, RegexOptions.Compiled);
 
             if (configuration.MemberValue != null)
             {
