@@ -673,7 +673,7 @@ public static class ModUtils
     /// Gets the native element type name indicated by the given attributes.
     /// </summary>
     /// <param name="attrs">The attributes.</param>
-    /// <param name="indirectionLevels">The expected number of indirection levels, for validation.</param>
+    /// <param name="indirectionLevels">The number of indirection levels.</param>
     /// <returns>The value if a valid type name was found, null otherwise.</returns>
     public static string? GetNativeElementTypeName(
         this IEnumerable<AttributeListSyntax> attrs,
