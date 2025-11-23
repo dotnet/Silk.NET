@@ -378,11 +378,16 @@ public partial class MixKhronosData(
         var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
 
+        if (proj == null)
+        {
+            return;
+        }
+
         // Rewrite phase 1
         var rewriter1 = new RewriterPhase1(jobData, logger);
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter1.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                 ?? throw new InvalidOperationException("Visit returned null.")
@@ -393,7 +398,7 @@ public partial class MixKhronosData(
         foreach (var (filePath, node) in rewriter1.GetMissingEnums())
         {
             proj = proj
-                ?.AddDocument(
+                .AddDocument(
                     Path.GetFileName(filePath),
                     node.NormalizeWhitespace(),
                     filePath: proj.FullPath(filePath)
@@ -403,13 +408,28 @@ public partial class MixKhronosData(
 
         // Rewrite phase 2
         var rewriter2 = new RewriterPhase2(jobData, rewriter1);
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter2.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                 ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
+        }
+
+        // Rename documents
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            if (doc.FilePath == null)
+            {
+                continue;
+            }
+
+            proj = doc
+                .WithFilePath(doc.FilePath.Replace("FlagBits", "Flags"))
+                .WithName(doc.Name.Replace("FlagBits", "Flags"))
+                .Project;
         }
 
         ctx.SourceProject = proj;
