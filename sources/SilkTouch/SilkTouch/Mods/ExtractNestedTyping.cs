@@ -208,17 +208,20 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             return default;
         }
 
-        var ret = attrs.GetNativeElementTypeName(out var readIndirectionLevels);
+        if (!attrs.TryParseNativeTypeName(out var info))
+        {
+            return null;
+        }
 
         // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
         // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
         // be something that is mapped into an enum.
-        if (ret is null || readIndirectionLevels == indirectionLevels)
+        if (info.IndirectionLevels == indirectionLevels)
         {
-            return ret;
+            return info.Name;
         }
 
-        InvalidateIfSeen(numericTypeNames, ret);
+        InvalidateIfSeen(numericTypeNames, info.Name);
         return null;
     }
 

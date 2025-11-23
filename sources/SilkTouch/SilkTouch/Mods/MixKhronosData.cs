@@ -1963,36 +1963,27 @@ public partial class MixKhronosData(
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             // Only match constant fields
-            if (
-                node.Declaration.Variables.Count != 1
-                || !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-            )
+            if (node.Declaration.Variables.Count != 1
+                || !node.Modifiers.Any(SyntaxKind.ConstKeyword))
             {
                 return base.VisitFieldDeclaration(node);
             }
 
-            var nativeType = node.AttributeLists.GetNativeTypeName();
-            switch (nativeType)
+            if (node.AttributeLists.TryParseNativeTypeName(out var info) && info.IsConst)
             {
-                // Handle case where the native name is in the form "#define NAME VALUE"
-                case not null when nativeType.StartsWith("#define "):
+                var name = info.Name.Replace("FlagBits", "Flags");
+                if (info.IsDefine)
                 {
-                    // Extract the "NAME" portion from the native name
-                    var nativeTypeSpan = nativeType.AsSpan()["#define ".Length..].Trim();
-                    var defineName = (
-                        nativeTypeSpan.IndexOf(' ') is >= 0 and var idx ? nativeTypeSpan[..idx] : nativeTypeSpan
-                    ).ToString();
-
-                    // Remove constants that match an API set name
+                    // Remove defines that match an API set name
                     // Eg: #define GL_VERSION_1_0 1
-                    if (job.ApiSets.ContainsKey(defineName))
+                    if (job.ApiSets.ContainsKey(name))
                     {
                         return null;
                     }
 
-                    // Remove constants that match an enum name
+                    // Remove constants that match an enum member name
                     // We save these constants so we can move them to the actual enum
-                    if (job.EnumsToGroups.TryGetValue(defineName, out var groups))
+                    if (job.EnumsToGroups.TryGetValue(name, out var groups))
                     {
                         foreach (var group in groups)
                         {
@@ -2001,29 +1992,17 @@ public partial class MixKhronosData(
 
                         return null;
                     }
-
-                    break;
                 }
-
-                // Handle case where the native name is in the form "const Type"
-                case not null when nativeType.StartsWith("const "):
+                else
                 {
-                    // Extract the "Type" portion from the native name
-                    var typeName = nativeType.AsSpan()["const ".Length..].Trim().ToString();
-
-                    // Vulkan/OpenXR enum name
-                    typeName = typeName.Replace("FlagBits", "Flags");
-
                     // Remove constants that match an enum group name
                     // We save these constants so we can move them to the actual enum
-                    if (job.Groups.TryGetValue(typeName, out var group))
+                    if (job.Groups.TryGetValue(name, out var group))
                     {
                         job.Groups[group.Name].Enums.Add(node.Declaration.Variables[0]);
 
                         return null;
                     }
-
-                    break;
                 }
             }
 
@@ -2122,8 +2101,13 @@ public partial class MixKhronosData(
             // ClangSharp does not know how to handle FlagBits and Flags types
             // Because of this ClangSharp outputs Flags types as uints or ulongs
             // We have to look at the NativeTypeName in order to determine the correct type
-            var nativeName = attributes.GetNativeElementTypeName(out var pointerDimension)?.Replace("FlagBits", "Flags");
-            if (nativeName == null || !nativeName.Contains("Flags"))
+            if (!attributes.TryParseNativeTypeName(out var info))
+            {
+                return false;
+            }
+
+            var nativeName = info.Name.Replace("FlagBits", "Flags");
+            if (!nativeName.Contains("Flags"))
             {
                 return false;
             }
@@ -2133,7 +2117,7 @@ public partial class MixKhronosData(
                 return false;
             }
 
-            managedName = nativeName + new string('*', pointerDimension);
+            managedName = nativeName + new string('*', info.IndirectionLevels);
 
             return true;
         }
