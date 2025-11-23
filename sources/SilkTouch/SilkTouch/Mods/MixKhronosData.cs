@@ -1971,16 +1971,16 @@ public partial class MixKhronosData(
                 return base.VisitFieldDeclaration(node);
             }
 
-            var nativeName = node.AttributeLists.GetNativeTypeName();
-            switch (nativeName)
+            var nativeType = node.AttributeLists.GetNativeTypeName();
+            switch (nativeType)
             {
                 // Handle case where the native name is in the form "#define NAME VALUE"
-                case {} s when s.StartsWith("#define "):
+                case not null when nativeType.StartsWith("#define "):
                 {
                     // Extract the "NAME" portion from the native name
-                    var nativeNameSpan = s.AsSpan()["#define ".Length..].Trim();
+                    var nativeTypeSpan = nativeType.AsSpan()["#define ".Length..].Trim();
                     var defineName = (
-                        nativeNameSpan.IndexOf(' ') is >= 0 and var idx ? nativeNameSpan[..idx] : nativeNameSpan
+                        nativeTypeSpan.IndexOf(' ') is >= 0 and var idx ? nativeTypeSpan[..idx] : nativeTypeSpan
                     ).ToString();
 
                     // Remove constants that match an API set name
@@ -2006,10 +2006,10 @@ public partial class MixKhronosData(
                 }
 
                 // Handle case where the native name is in the form "const Type"
-                case {} s when s.StartsWith("const "):
+                case not null when nativeType.StartsWith("const "):
                 {
                     // Extract the "Type" portion from the native name
-                    var typeName = s.AsSpan()["const ".Length..].Trim().ToString();
+                    var typeName = nativeType.AsSpan()["const ".Length..].Trim().ToString();
 
                     // Vulkan/OpenXR enum name
                     typeName = typeName.Replace("FlagBits", "Flags");
