@@ -5,7 +5,6 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using ClangSharp;
 using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -427,40 +426,9 @@ public partial class MixKhronosData(
             File.WriteAllText(tmp, rsp.GeneratorConfiguration.HeaderText);
             return rsp with
             {
-                GeneratorConfiguration = new PInvokeGeneratorConfiguration(
-                    rsp.GeneratorConfiguration.Language,
-                    rsp.GeneratorConfiguration.LanguageStandard,
-                    rsp.GeneratorConfiguration.DefaultNamespace,
-                    rsp.GeneratorConfiguration.OutputLocation,
-                    tmp,
-                    rsp.GeneratorConfiguration.OutputMode,
-                    rsp.GeneratorConfiguration.ReconstructOptions()
-                )
-                {
-                    DefaultClass = rsp.GeneratorConfiguration.DefaultClass,
-                    ExcludedNames = rsp.GeneratorConfiguration.ExcludedNames,
-                    IncludedNames = rsp.GeneratorConfiguration.IncludedNames,
-                    LibraryPath = rsp.GeneratorConfiguration.LibraryPath,
-                    MethodPrefixToStrip = rsp.GeneratorConfiguration.MethodPrefixToStrip,
-                    NativeTypeNamesToStrip = rsp.GeneratorConfiguration.NativeTypeNamesToStrip,
+                GeneratorConfiguration = (PInvokeGeneratorConfigWrapper.FromConfiguration(rsp.GeneratorConfiguration) with {
                     RemappedNames = rsp.GeneratorConfiguration.RemappedNames.Concat(job.AdditionalTypeRemappings).ToDictionary(),
-                    TraversalNames = rsp.GeneratorConfiguration.TraversalNames,
-                    TestOutputLocation = rsp.GeneratorConfiguration.TestOutputLocation,
-                    WithAccessSpecifiers = rsp.GeneratorConfiguration.WithAccessSpecifiers,
-                    WithAttributes = rsp.GeneratorConfiguration.WithAttributes,
-                    WithCallConvs = rsp.GeneratorConfiguration.WithCallConvs,
-                    WithClasses = rsp.GeneratorConfiguration.WithClasses,
-                    WithGuids = rsp.GeneratorConfiguration.WithGuids,
-                    WithLibraryPaths = rsp.GeneratorConfiguration.WithLibraryPaths,
-                    WithManualImports = rsp.GeneratorConfiguration.WithManualImports,
-                    WithNamespaces = rsp.GeneratorConfiguration.WithNamespaces,
-                    WithSetLastErrors = rsp.GeneratorConfiguration.WithSetLastErrors,
-                    WithSuppressGCTransitions = rsp.GeneratorConfiguration.WithSuppressGCTransitions,
-                    WithTransparentStructs = rsp.GeneratorConfiguration.WithTransparentStructs,
-                    WithTypes = rsp.GeneratorConfiguration.WithTypes,
-                    WithUsings = rsp.GeneratorConfiguration.WithUsings,
-                    WithPackings = rsp.GeneratorConfiguration.WithPackings,
-                }
+                }).ToConfiguration(),
             };
         }).ToList();
 
