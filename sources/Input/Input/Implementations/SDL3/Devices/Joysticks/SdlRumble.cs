@@ -5,7 +5,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3.Joysticks;
+namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 
 internal unsafe class SdlRumble : IReadOnlyList<IMotor>
 {

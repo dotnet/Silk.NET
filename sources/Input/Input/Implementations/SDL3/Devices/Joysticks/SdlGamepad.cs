@@ -4,7 +4,7 @@
 using System.Diagnostics;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3.Joysticks;
+namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 
 /// <summary>
 /// provides the IGamepad implementation for a joystick
@@ -40,21 +40,12 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         if (bindingsCount == 0)
         {
-            if (mappings == null)
-            {
-                var error = NativeBackend.GetError();
-                if (error.Native != null)
-                {
-                    Console.Error.WriteLine(error.ReadToString());
-                    NativeBackend.Free(error.Native);
-                }
-            }
-            else
+            if (mappings != null)
             {
                 NativeBackend.Free(mappings);
             }
 
-            Console.Error.WriteLine("No gamepad mappings found.");
+            SdlLog.Error("No gamepad mappings found.");
             return;
         }
 

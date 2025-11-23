@@ -3,12 +3,13 @@
 
 using System.Numerics;
 
-namespace Silk.NET.Input.SDL3.Pointers;
+namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal class SdlUnboundedMouse : SdlDevice, IMouse, ISdlDevice<SdlUnboundedMouse>
 {
-    private SdlUnboundedMouse(uint sdlDeviceId, nint silkId, SdlInputBackend backend) : base(backend, silkId, sdlDeviceId)
+    private SdlUnboundedMouse(uint sdlDeviceId, nint silkId, SdlInputBackend backend, ICursorConfiguration cursor) : base(backend, silkId, sdlDeviceId)
     {
+        Cursor = cursor;
     }
 
 
@@ -20,7 +21,7 @@ internal class SdlUnboundedMouse : SdlDevice, IMouse, ISdlDevice<SdlUnboundedMou
 
     public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
 
-    public ICursorConfiguration Cursor => Backend;
+    public ICursorConfiguration Cursor { get; }
 
     public bool TrySetPosition(Vector2 position) => throw new NotImplementedException();
 

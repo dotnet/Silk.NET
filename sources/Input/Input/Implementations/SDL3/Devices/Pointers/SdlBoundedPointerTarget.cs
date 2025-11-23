@@ -4,7 +4,7 @@
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3.Pointers;
+namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 {

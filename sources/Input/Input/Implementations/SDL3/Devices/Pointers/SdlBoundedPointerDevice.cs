@@ -1,9 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics.CodeAnalysis;
-
-namespace Silk.NET.Input.SDL3.Pointers;
+namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.

@@ -4,14 +4,14 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using Silk.NET.Input.SDL3.Joysticks;
-using Silk.NET.Input.SDL3.Pointers;
+using Silk.NET.Input.SDL3.Devices.Joysticks;
+using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlInputBackend : IInputBackend, ICursorConfiguration
+internal partial class SdlInputBackend : IInputBackend
 {
     private static readonly double _ticksPerNanosecond = Stopwatch.Frequency / 10e9d;
 
@@ -23,6 +23,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     private ISdl _sdl;
 
     public unsafe WindowHandle? FocusedWindow => _focusedWindow.Handle == null ? null : _focusedWindow;
+    public readonly ICursorConfiguration CursorConfiguration;
 
     public unsafe SdlInputBackend(SdlPlatformInfo info)
     {
@@ -54,6 +55,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
         }
 
         _epoch = epoch / epochMeasurements;
+        CursorConfiguration = new SdlCursor(Sdl);
 
         // ===============================================================================================
         // === If we ever need to share common state across window-specific "backends", use the below: ===
@@ -123,7 +125,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     public SdlUnboundedPointerTarget UnboundedPointerTarget =>
         field ??= new SdlUnboundedPointerTarget(this);
 
-    public ISdl Sdl => Info.Sdl ?? SDL.Sdl.Instance;
+    public ISdl Sdl=> Info.Sdl ?? SDL.Sdl.Instance;
 
     public string Name =>
         $"Silk.NET.Input Reference Implementation using SDL3 ({Sdl.GetPlatform().ReadToString()})";
@@ -133,30 +135,8 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
     public IReadOnlyList<IInputDevice> Devices => _devices;
 
     // TODO we can't query support for these modes, but should we try-it-and-see to be accurate?
-    public CursorModes SupportedModes =>
-        CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
 
     // TODO if you're using one input context for all windows, there is no way to specify a window for grabbed cursor mode
-
-    public CursorModes Mode
-    {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
-    }
-
-    public CursorStyles SupportedStyles => throw new NotImplementedException();
-
-    public CursorStyles Style
-    {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
-    }
-
-    public CustomCursor Image
-    {
-        get => throw new NotImplementedException();
-        set => throw new NotImplementedException();
-    }
 
     public HashSet<nint> DeviceRegistry { get; } = [];
 
@@ -338,6 +318,7 @@ internal class SdlInputBackend : IInputBackend, ICursorConfiguration
                         joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value);
                         break;
                     case EventType.JoystickBallMotion:
+                        // todo: ball events?
                         break;
                     case EventType.JoystickHatMotion:
                         joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value);

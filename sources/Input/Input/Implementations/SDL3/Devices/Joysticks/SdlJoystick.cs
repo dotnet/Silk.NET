@@ -4,7 +4,7 @@
 using System.Numerics;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3.Joysticks;
+namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 
 internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJoystick>, IOrderedDevice
 {

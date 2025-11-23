@@ -3,7 +3,7 @@
 
 using Silk.NET.Maths;
 
-namespace Silk.NET.Input.SDL3.Pointers;
+namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal class SdlUnboundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 {
@@ -45,6 +45,6 @@ internal class SdlUnboundedPointerTarget(SdlInputBackend backend) : IPointerTarg
         // i dont think so, but.... technically...
 
         var device = pointer as SdlDevice;
-        return device is not null && device.Backend == backend && (device.Backend.Mode & CursorModes.Unbounded) != 0;
+        return device is not null && device.Backend == backend && (device.Backend.CursorConfiguration.Mode & CursorModes.Unbounded) != 0;
     }
 }

@@ -8,55 +8,58 @@ namespace Silk.NET.Input.SDL3;
 
 internal static unsafe class BackendExtensions
 {
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static IntPtr FallbackUniqueId(this SdlInputBackend _, uint sdlDeviceId, nint uniqueId)
+    extension(SdlInputBackend backend)
     {
-        Console.Error.WriteLine("Failed to create a deterministically unique identifier for joystick");
-        return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
-    }
-
-    public static bool AttemptUniqueId(this SdlInputBackend sdlInputBackend, Ptr<sbyte> ptr, ref nint uniqueId1)
-    {
-        if (ptr.Native == null)
-            return false;
-
-        var name = ptr.ReadToString();
-        var bytes = Encoding.Default.GetBytes(name);
-        return AttemptUniqueId(sdlInputBackend, bytes, ref uniqueId1);
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static bool AttemptUniqueId<T>(this SdlInputBackend sdlInputBackend, T ptr, ref nint uniqueId1)
-        where T : unmanaged =>
-        AttemptUniqueId(sdlInputBackend, new ReadOnlySpan<byte>(&ptr, sizeof(T)), ref uniqueId1);
-
-    public static bool AttemptUniqueId(this SdlInputBackend sdlInputBackend, ReadOnlySpan<byte> bytes, ref nint uniqueId1)
-    {
-        uniqueId1 = Modify(uniqueId1, bytes);
-        return sdlInputBackend.DeviceRegistry.Add(uniqueId1);
-        static nint Modify(nint original, ReadOnlySpan<byte> withBytes)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public nint FallbackUniqueId(uint sdlDeviceId, nint uniqueId)
         {
-            if (sizeof(nint) == 4)
-            {
-                var hash = new HashCode();
-                foreach(var b in withBytes)
-                {
-                    hash.Add(b);
-                }
-
-                var hashCode = hash.ToHashCode();
-                return original ^ *(nint*)(&hashCode);
-            }
-
-            var hash64Bytes = (byte*)&original;
-
-            for (int i = 0; i < withBytes.Length; i += 8)
-            {
-                hash64Bytes[i % 8] ^= withBytes[i];
-            }
-
-            return *(nint*)hash64Bytes;
+            Console.Error.WriteLine("Failed to create a deterministically unique identifier for joystick");
+            return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
         }
 
+        public bool AttemptUniqueId(Ptr<sbyte> ptr, ref nint uniqueId1)
+        {
+            if (ptr.Native == null)
+                return false;
+
+            var name = ptr.ReadToString();
+            var bytes = Encoding.Default.GetBytes(name);
+            return AttemptUniqueId(backend, bytes, ref uniqueId1);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public bool AttemptUniqueId<T>(T ptr, ref nint uniqueId1)
+            where T : unmanaged =>
+            AttemptUniqueId(backend, new ReadOnlySpan<byte>(&ptr, sizeof(T)), ref uniqueId1);
+
+        public bool AttemptUniqueId(ReadOnlySpan<byte> bytes, ref nint uniqueId1)
+        {
+            uniqueId1 = Modify(uniqueId1, bytes);
+            return backend.DeviceRegistry.Add(uniqueId1);
+            static nint Modify(nint original, ReadOnlySpan<byte> withBytes)
+            {
+                if (sizeof(nint) == 4)
+                {
+                    var hash = new HashCode();
+                    foreach(var b in withBytes)
+                    {
+                        hash.Add(b);
+                    }
+
+                    var hashCode = hash.ToHashCode();
+                    return original ^ *(nint*)(&hashCode);
+                }
+
+                var hash64Bytes = (byte*)&original;
+
+                for (int i = 0; i < withBytes.Length; i += 8)
+                {
+                    hash64Bytes[i % 8] ^= withBytes[i];
+                }
+
+                return *(nint*)hash64Bytes;
+            }
+
+        }
     }
 }

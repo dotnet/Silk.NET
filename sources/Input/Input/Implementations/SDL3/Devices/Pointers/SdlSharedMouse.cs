@@ -4,18 +4,22 @@
 using System.Numerics;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3.Pointers;
+namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlSharedMouse>
 {
+    public override PointerState State => _state;
+    public ICursorConfiguration Cursor { get; }
+
     private readonly MouseState _state;
 
-    public unsafe SdlSharedMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend)
+    private SdlSharedMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend)
         : base(backend, uniqueId, sdlDeviceId)
     {
         IPointerTarget unboundedPointerTarget = backend.UnboundedPointerTarget;
         _state = new MouseState(new ButtonReadOnlyList<PointerButton>(_buttons),
             new InputReadOnlyList<TargetPoint>(_points), Vector2.Zero);
+        Cursor = backend.CursorConfiguration;
         float x = 0, y = 0;
         var buttonMask = NativeBackend.GetMouseState(x.AsRef(), y.AsRef());
         var pos = new Vector2(x, y);
@@ -51,13 +55,13 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
 
     private void AddTargetPoint(uint windowId, Vector2 pos, float pressure)
     {
-        if (!Backend.TryGetPointerTargetForWindow(windowId, out var windowTarget))
+        if (Backend.TryGetPointerTargetForWindow(windowId, out var windowTarget))
         {
-            AddUnboundedPoint(pos, pressure);
+            AddWindowPoint(pos, pressure, windowTarget);
         }
         else
         {
-            AddWindowPoint(pos, pressure, windowTarget);
+            AddUnboundedPoint(pos, pressure);
         }
     }
 
@@ -132,7 +136,6 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
         }
     }
 
-    public ICursorConfiguration Cursor => Backend;
 
     public bool TrySetPosition(Vector2 position)
     {
@@ -145,7 +148,6 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
         return false;
     }
 
-    public override PointerState State => _state;
 
     public void AddMotion(in MouseMotionEvent evtMotion)
     {

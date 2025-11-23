@@ -4,7 +4,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
-namespace Silk.NET.Input.SDL3.Joysticks;
+namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 
 // This partial class contains the logic for handling joystick-based device types such as SdlGamepad.
 internal sealed partial class SdlJoystick
