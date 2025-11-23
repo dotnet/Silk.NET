@@ -420,16 +420,11 @@ public partial class MixKhronosData(
     {
         var job = Jobs[key];
 
-        var tmp = Path.GetTempFileName();
-        rsps = rsps.Select(rsp =>
+        rsps = rsps.Select(rsp => rsp with
         {
-            File.WriteAllText(tmp, rsp.GeneratorConfiguration.HeaderText);
-            return rsp with
-            {
-                GeneratorConfiguration = (PInvokeGeneratorConfigWrapper.FromConfiguration(rsp.GeneratorConfiguration) with {
-                    RemappedNames = rsp.GeneratorConfiguration.RemappedNames.Concat(job.AdditionalTypeRemappings).ToDictionary(),
-                }).ToConfiguration(),
-            };
+            GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
+                RemappedNames = rsp.GeneratorConfiguration.RemappedNames.Concat(job.AdditionalTypeRemappings).ToDictionary(),
+            },
         }).ToList();
 
         return Task.FromResult(rsps);

@@ -7,6 +7,17 @@ using Silk.NET.SilkTouch.Mods;
 namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
+/// Extensions for <see cref="PInvokeGeneratorConfiguration"/>.
+/// </summary>
+public static class PInvokeGeneratorConfigurationExtensions
+{
+    /// <summary>
+    /// Creates a new wrapper from a <see cref="PInvokeGeneratorConfiguration"/> instance.
+    /// </summary>
+    public static PInvokeGeneratorConfigWrapper ToWrapper(this PInvokeGeneratorConfiguration config) => PInvokeGeneratorConfigWrapper.FromConfiguration(config);
+}
+
+/// <summary>
 /// This record class exists to make it easier to override a few properties in <see cref="PInvokeGeneratorConfiguration"/>
 /// </summary>
 public record class PInvokeGeneratorConfigWrapper
@@ -121,9 +132,17 @@ public record class PInvokeGeneratorConfigWrapper
     /// Creates a blank wrapper.
     /// </summary>
     /// <remarks>
-    /// You probably want <see cref="FromConfiguration"/>.
+    /// You probably want <see cref="PInvokeGeneratorConfigurationExtensions.ToWrapper"/>.
     /// </remarks>
     public PInvokeGeneratorConfigWrapper() { }
+
+    /// <inheritdoc cref="ToConfiguration" />
+    /// <remarks>
+    /// This cast is to improve the syntax when overriding properties of
+    /// <see cref="PInvokeGeneratorConfiguration"/> with the 'with' keyword
+    /// and needing to immediately cast back to <see cref="PInvokeGeneratorConfiguration"/> afterwards.
+    /// </remarks>
+    public static implicit operator PInvokeGeneratorConfiguration(PInvokeGeneratorConfigWrapper wrapper) => wrapper.ToConfiguration();
 
     /// <summary>
     /// Creates a new wrapper from a <see cref="PInvokeGeneratorConfiguration"/> instance.
