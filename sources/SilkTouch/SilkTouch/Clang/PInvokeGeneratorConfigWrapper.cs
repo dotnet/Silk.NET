@@ -194,7 +194,8 @@ public record class PInvokeGeneratorConfigWrapper
     {
         var tempHeaderFilePath = Path.GetTempFileName();
         File.WriteAllText(tempHeaderFilePath, HeaderText);
-        return new PInvokeGeneratorConfiguration(
+
+        var config = new PInvokeGeneratorConfiguration(
             Language,
             LanguageStandard,
             DefaultNamespace,
@@ -230,5 +231,10 @@ public record class PInvokeGeneratorConfigWrapper
             WithTypes = WithTypes,
             WithUsings = WithUsings,
         };
+
+        // Header is immediately read by PInvokeGeneratorConfiguration so we can delete it afterwards
+        File.Delete(tempHeaderFilePath);
+
+        return config;
     }
 }
