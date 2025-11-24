@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
+public enum VideoEncodeIntraRefreshModeFlagsKHR
 {
     [SupportedApiProfile(
         "vulkan",

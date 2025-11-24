@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ImageViewCreateFlags : uint
+public enum ImageViewCreateFlags
 {
     None = 0,
 

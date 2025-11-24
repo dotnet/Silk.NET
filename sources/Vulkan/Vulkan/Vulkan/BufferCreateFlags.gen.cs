@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum BufferCreateFlags : uint
+public enum BufferCreateFlags
 {
     None = 0,
 

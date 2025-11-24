@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DeviceFaultVendorBinaryHeaderVersionEXT : uint
+public enum DeviceFaultVendorBinaryHeaderVersionEXT
 {
     [SupportedApiProfile(
         "vulkan",

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum PrivateDataSlotCreateFlags : uint
+public enum PrivateDataSlotCreateFlags
 {
     None = 0,
 }

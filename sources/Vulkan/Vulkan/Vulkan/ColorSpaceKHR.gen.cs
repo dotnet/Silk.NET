@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ColorSpaceKHR : uint
+public enum ColorSpaceKHR
 {
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     SrgbNonlinearKHR = 0,

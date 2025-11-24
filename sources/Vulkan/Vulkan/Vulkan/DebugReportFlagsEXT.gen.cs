@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum DebugReportFlagsEXT : uint
+public enum DebugReportFlagsEXT
 {
     None = 0,
 

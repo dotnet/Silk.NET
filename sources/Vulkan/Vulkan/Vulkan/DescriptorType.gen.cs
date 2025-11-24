@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DescriptorType : uint
+public enum DescriptorType
 {
     [SupportedApiProfile(
         "vulkan",

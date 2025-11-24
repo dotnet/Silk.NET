@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum FormatFeatureFlags2 : ulong
+public enum FormatFeatureFlags2 : long
 {
     None = 0,
     SampledImageBit = unchecked((ulong)0x00000001UL),

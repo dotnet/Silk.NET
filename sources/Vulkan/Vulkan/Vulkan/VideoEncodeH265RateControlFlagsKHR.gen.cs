@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoEncodeH265RateControlFlagsKHR : uint
+public enum VideoEncodeH265RateControlFlagsKHR
 {
     None = 0,
 

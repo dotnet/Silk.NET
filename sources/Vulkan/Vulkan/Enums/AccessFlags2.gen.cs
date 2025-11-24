@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum AccessFlags2 : ulong
+public enum AccessFlags2 : long
 {
     None = unchecked((ulong)0UL),
     IndirectCommandReadBit = unchecked((ulong)0x00000001UL),

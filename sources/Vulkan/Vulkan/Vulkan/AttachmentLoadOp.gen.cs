@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum AttachmentLoadOp : uint
+public enum AttachmentLoadOp
 {
     [SupportedApiProfile(
         "vulkan",

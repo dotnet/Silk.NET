@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum AttachmentDescriptionFlags : uint
+public enum AttachmentDescriptionFlags
 {
     None = 0,
 

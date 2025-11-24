@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum SparseImageFormatFlags : uint
+public enum SparseImageFormatFlags
 {
     None = 0,
 

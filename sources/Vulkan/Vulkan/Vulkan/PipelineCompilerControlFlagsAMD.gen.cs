@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum PipelineCompilerControlFlagsAMD : uint
+public enum PipelineCompilerControlFlagsAMD
 {
     None = 0,
 }

@@ -341,7 +341,8 @@
             "MemberName": "Invalid",
             "MemberValue": "0x7FFFFFFF"
           }
-        ]
+        ],
+        "CoerceBackingTypes": "PreferSigned"
       },
       "AddVTables": {
         "VTables": [

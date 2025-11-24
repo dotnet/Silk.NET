@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ShaderCreateFlagsEXT : uint
+public enum ShaderCreateFlagsEXT
 {
     None = 0,
 

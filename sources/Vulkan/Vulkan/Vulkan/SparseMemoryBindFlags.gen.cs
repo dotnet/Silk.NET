@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum SparseMemoryBindFlags : uint
+public enum SparseMemoryBindFlags
 {
     None = 0,
 

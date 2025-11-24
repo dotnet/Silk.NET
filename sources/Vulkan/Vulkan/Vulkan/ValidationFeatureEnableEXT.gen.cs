@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ValidationFeatureEnableEXT : uint
+public enum ValidationFeatureEnableEXT
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     GpuAssistedEXT = 0,

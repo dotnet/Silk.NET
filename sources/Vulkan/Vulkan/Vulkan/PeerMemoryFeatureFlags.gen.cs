@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum PeerMemoryFeatureFlags : uint
+public enum PeerMemoryFeatureFlags
 {
     None = 0,
 

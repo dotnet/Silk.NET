@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum BufferUsageFlags2 : ulong
+public enum BufferUsageFlags2 : long
 {
     None = 0,
     TransferSrcBit = unchecked((ulong)0x00000001UL),

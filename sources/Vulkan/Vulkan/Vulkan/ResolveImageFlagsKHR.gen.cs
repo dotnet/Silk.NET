@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ResolveImageFlagsKHR : uint
+public enum ResolveImageFlagsKHR
 {
     None = 0,
 

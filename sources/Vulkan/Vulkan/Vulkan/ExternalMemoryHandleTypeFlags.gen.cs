@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ExternalMemoryHandleTypeFlags : uint
+public enum ExternalMemoryHandleTypeFlags
 {
     None = 0,
 

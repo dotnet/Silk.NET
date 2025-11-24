@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264ModificationOfPicNumsIdc : uint
+public enum StdVideoH264ModificationOfPicNumsIdc
 {
     [SupportedApiProfile("vulkan")]
     ShortTermSubtract = 0,

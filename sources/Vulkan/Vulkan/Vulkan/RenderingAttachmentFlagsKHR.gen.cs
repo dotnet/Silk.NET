@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum RenderingAttachmentFlagsKHR : uint
+public enum RenderingAttachmentFlagsKHR
 {
     None = 0,
 

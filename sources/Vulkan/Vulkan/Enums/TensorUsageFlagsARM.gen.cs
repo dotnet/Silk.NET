@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum TensorUsageFlagsARM : ulong
+public enum TensorUsageFlagsARM : long
 {
     None = 0,
     ShaderBitARM = unchecked((ulong)0x00000002UL),

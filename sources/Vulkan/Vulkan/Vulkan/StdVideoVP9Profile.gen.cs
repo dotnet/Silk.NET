@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoVP9Profile : uint
+public enum StdVideoVP9Profile
 {
     [SupportedApiProfile("vulkan")]
     Profile0 = 0,

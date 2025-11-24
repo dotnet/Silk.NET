@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum QueryPipelineStatisticFlags : uint
+public enum QueryPipelineStatisticFlags
 {
     None = 0,
 

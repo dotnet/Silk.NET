@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum RefreshObjectFlagsKHR : uint
+public enum RefreshObjectFlagsKHR
 {
     None = 0,
 }

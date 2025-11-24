@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum BorderColor : uint
+public enum BorderColor
 {
     [SupportedApiProfile(
         "vulkan",

@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum MemoryAllocateFlags : uint
+public enum MemoryAllocateFlags
 {
     None = 0,
 

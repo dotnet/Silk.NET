@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum IndirectExecutionSetInfoTypeEXT : uint
+public enum IndirectExecutionSetInfoTypeEXT
 {
     [SupportedApiProfile(
         "vulkan",

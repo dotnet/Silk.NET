@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum PipelineStageFlags2 : ulong
+public enum PipelineStageFlags2 : long
 {
     None = unchecked((ulong)0UL),
     TopOfPipeBit = unchecked((ulong)0x00000001UL),

@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoEncodeRgbChromaOffsetFlagsValve : uint
+public enum VideoEncodeRgbChromaOffsetFlagsValve
 {
     None = 0,
 

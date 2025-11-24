@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ClusterAccelerationStructureOpModeNV : uint
+public enum ClusterAccelerationStructureOpModeNV
 {
     [SupportedApiProfile(
         "vulkan",

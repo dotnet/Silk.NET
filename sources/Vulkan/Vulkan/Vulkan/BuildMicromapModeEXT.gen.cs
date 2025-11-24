@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum BuildMicromapModeEXT : uint
+public enum BuildMicromapModeEXT
 {
     [SupportedApiProfile(
         "vulkan",

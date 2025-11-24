@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum AccelerationStructureBuildTypeKHR : uint
+public enum AccelerationStructureBuildTypeKHR
 {
     [SupportedApiProfile(
         "vulkan",

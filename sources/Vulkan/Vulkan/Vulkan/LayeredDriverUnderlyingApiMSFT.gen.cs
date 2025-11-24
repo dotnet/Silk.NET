@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum LayeredDriverUnderlyingApiMSFT : uint
+public enum LayeredDriverUnderlyingApiMSFT
 {
     [SupportedApiProfile(
         "vulkan",

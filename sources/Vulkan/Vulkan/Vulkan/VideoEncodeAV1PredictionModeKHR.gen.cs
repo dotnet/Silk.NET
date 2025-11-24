@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VideoEncodeAV1PredictionModeKHR : uint
+public enum VideoEncodeAV1PredictionModeKHR
 {
     [SupportedApiProfile(
         "vulkan",

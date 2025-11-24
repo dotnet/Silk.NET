@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum OpticalFlowExecuteFlagsNV : uint
+public enum OpticalFlowExecuteFlagsNV
 {
     None = 0,
 

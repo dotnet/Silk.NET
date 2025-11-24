@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum OutOfBandQueueTypeNV : uint
+public enum OutOfBandQueueTypeNV
 {
     [SupportedApiProfile(
         "vulkan",

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum TensorCreateFlagsARM : ulong
+public enum TensorCreateFlagsARM : long
 {
     None = 0,
     MutableFormatBitARM = unchecked((ulong)0x00000001UL),

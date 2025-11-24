@@ -8,7 +8,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DisplayEventTypeEXT : uint
+public enum DisplayEventTypeEXT
 {
     [SupportedApiProfile(
         "vulkan",

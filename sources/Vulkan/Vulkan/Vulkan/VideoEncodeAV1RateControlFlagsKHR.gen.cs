@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoEncodeAV1RateControlFlagsKHR : uint
+public enum VideoEncodeAV1RateControlFlagsKHR
 {
     None = 0,
 

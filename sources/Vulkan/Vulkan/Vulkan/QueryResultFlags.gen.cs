@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum QueryResultFlags : uint
+public enum QueryResultFlags
 {
     None = 0,
 

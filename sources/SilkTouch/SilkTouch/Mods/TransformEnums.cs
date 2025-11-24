@@ -15,6 +15,26 @@ namespace Silk.NET.SilkTouch.Mods;
 public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) : IMod
 {
     /// <summary>
+    /// The preferred backing type for enums.
+    /// </summary>
+    public enum EnumBackingTypePreference
+    {
+        /// <summary>
+        /// Don't modify the backing type of enums.
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// Replace unsigned backing types with signed backing types.
+        /// </summary>
+        /// <remarks>
+        /// This can be used to ensure that the backing types of enums generated on Unix
+        /// match the backing types of enums generated on Windows.
+        /// </remarks>
+        PreferSigned,
+    }
+
+    /// <summary>
     /// TransformEnums mod configuration.
     /// </summary>
     public record Configuration
@@ -31,6 +51,12 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         /// This was originally designed to remove max enum value members.
         /// </remarks>
         public EnumMemberFilterConfiguration[] RemoveMembers { get; init; } = [];
+
+        /// <summary>
+        /// The strategy to use when coercing backing types.
+        /// Defaults to not modify the backing types at all.
+        /// </summary>
+        public EnumBackingTypePreference CoerceBackingTypes { get; init; } = EnumBackingTypePreference.None;
     }
 
     /// <summary>
@@ -158,6 +184,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
             // This list is used to defer the modification of the enum declaration syntax node
             // This is important because modifying the node will detach it from the semantic model
+            var originalNode = node;
             var members = node.Members.ToList();
 
             foreach (var filter in removeMemberFilters)
@@ -210,6 +237,50 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                         );
 
                     members.Insert(0, noneMember);
+                }
+            }
+
+            switch (config.CoerceBackingTypes)
+            {
+                case EnumBackingTypePreference.PreferSigned:
+                {
+                    var baseList = originalNode.BaseList;
+                    if (baseList == null)
+                    {
+                        break;
+                    }
+
+                    var baseTypes = baseList.Types
+                        .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
+                        {
+                            var type = semanticModel.GetTypeInfo(t.Type).Type;
+
+                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_UInt32)))
+                            {
+                                return null;
+                            }
+
+                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_UInt64)))
+                            {
+                                return SimpleBaseType(PredefinedType(Token(SyntaxKind.LongKeyword)));
+                            }
+
+                            return t;
+                        })
+                        .Where(x => x is not null)
+                        .Cast<BaseTypeSyntax>()
+                        .ToList();
+
+                    if (baseTypes.Count == 0)
+                    {
+                        node = node.WithBaseList(null);
+                    }
+                    else
+                    {
+                        node = node.WithBaseList(BaseList([..baseTypes]));
+                    }
+
+                    break;
                 }
             }
 

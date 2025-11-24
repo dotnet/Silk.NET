@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum SemaphoreCreateFlags : uint
+public enum SemaphoreCreateFlags
 {
     None = 0,
 }

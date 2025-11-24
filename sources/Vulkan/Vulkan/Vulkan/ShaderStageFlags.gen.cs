@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ShaderStageFlags : uint
+public enum ShaderStageFlags
 {
     None = 0,
 

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264NonVclNaluType : uint
+public enum StdVideoH264NonVclNaluType
 {
     [SupportedApiProfile("vulkan")]
     Sps = 0,

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoAV1FrameType : uint
+public enum StdVideoAV1FrameType
 {
     [SupportedApiProfile("vulkan")]
     Key = 0,

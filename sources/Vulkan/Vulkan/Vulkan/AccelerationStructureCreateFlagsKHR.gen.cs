@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum AccelerationStructureCreateFlagsKHR : uint
+public enum AccelerationStructureCreateFlagsKHR
 {
     None = 0,
 

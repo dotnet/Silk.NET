@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum DataGraphPipelineDispatchFlagsARM : ulong
+public enum DataGraphPipelineDispatchFlagsARM : long
 {
     None = 0,
 }

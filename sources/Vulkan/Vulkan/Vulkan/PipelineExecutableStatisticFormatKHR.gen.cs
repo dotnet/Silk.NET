@@ -8,7 +8,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineExecutableStatisticFormatKHR : uint
+public enum PipelineExecutableStatisticFormatKHR
 {
     [SupportedApiProfile(
         "vulkan",

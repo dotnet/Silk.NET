@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum PipelineDepthStencilStateCreateFlags : uint
+public enum PipelineDepthStencilStateCreateFlags
 {
     None = 0,
 

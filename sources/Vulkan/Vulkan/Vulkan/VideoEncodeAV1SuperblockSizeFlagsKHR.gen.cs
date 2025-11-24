@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoEncodeAV1SuperblockSizeFlagsKHR : uint
+public enum VideoEncodeAV1SuperblockSizeFlagsKHR
 {
     None = 0,
 

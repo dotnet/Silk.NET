@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum FrameBoundaryFlagsEXT : uint
+public enum FrameBoundaryFlagsEXT
 {
     None = 0,
 

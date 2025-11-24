@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum AccessFlags : uint
+public enum AccessFlags
 {
     [SupportedApiProfile(
         "vulkan",

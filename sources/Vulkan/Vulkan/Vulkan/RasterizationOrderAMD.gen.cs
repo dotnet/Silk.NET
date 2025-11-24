@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum RasterizationOrderAMD : uint
+public enum RasterizationOrderAMD
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     StrictAMD = 0,
