@@ -159,9 +159,9 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         }
 
         var rewriter = new Rewriter(config, removeMemberFilters, compilation);
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                 ?? throw new InvalidOperationException("Visit returned null.")
