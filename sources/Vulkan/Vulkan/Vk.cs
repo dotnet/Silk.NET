@@ -23,16 +23,16 @@ public partial class Vk
 
     public unsafe partial class DllImport
     {
-        public static partial Result CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceTHandle* pInstance)
+        public static partial Result CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceHandle* pInstance)
             => CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
 
-        public static partial Result CreateDevice(PhysicalDeviceTHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceTHandle* pDevice)
+        public static partial Result CreateDevice(PhysicalDeviceHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceHandle* pDevice)
             => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
     }
 
     public partial class StaticWrapper<T>
     {
-        public InstanceTHandle CurrentInstance
+        public InstanceHandle CurrentInstance
         {
             get;
             set
@@ -51,7 +51,7 @@ public partial class Vk
             }
         }
 
-        public DeviceTHandle CurrentDevice
+        public DeviceHandle CurrentDevice
         {
             get;
             set
@@ -78,7 +78,7 @@ public partial class Vk
         private static partial IVk ContextFactory() => Create();
     }
 
-    public InstanceTHandle CurrentInstance
+    public InstanceHandle CurrentInstance
     {
         get;
         set
@@ -97,7 +97,7 @@ public partial class Vk
         }
     }
 
-    public DeviceTHandle CurrentDevice
+    public DeviceHandle CurrentDevice
     {
         get;
         set
@@ -139,7 +139,7 @@ public partial class Vk
         return vk;
     }
 
-    unsafe Result IVk.CreateDevice(PhysicalDeviceTHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceTHandle* pDevice)
+    unsafe Result IVk.CreateDevice(PhysicalDeviceHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceHandle* pDevice)
     {
         var result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
         if (result == Result.Success)
@@ -150,7 +150,7 @@ public partial class Vk
         return result;
     }
 
-    unsafe Result IVk.CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceTHandle* pInstance)
+    unsafe Result IVk.CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceHandle* pInstance)
     {
         var result = CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
         if (result == Result.Success)
@@ -170,12 +170,12 @@ public partial class Vk
         {
             if (functionName == "vkGetDeviceProcAddr")
             {
-                return (delegate* unmanaged<DeviceTHandle, sbyte*, void*>)&GetDeviceProcAddr;
+                return (delegate* unmanaged<DeviceHandle, sbyte*, void*>)&GetDeviceProcAddr;
             }
 
             if (functionName == "vkGetInstanceProcAddr")
             {
-                return (delegate* unmanaged<InstanceTHandle, sbyte*, void*>)&GetInstanceProcAddr;
+                return (delegate* unmanaged<InstanceHandle, sbyte*, void*>)&GetInstanceProcAddr;
             }
 
             void* ptr = Ivk.GetDeviceProcAddr(Vk.CurrentDevice, functionName);
@@ -189,13 +189,13 @@ public partial class Vk
         }
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetDeviceProcAddr(DeviceTHandle device, sbyte* pName)
+        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName)
         {
             return DllImport.GetDeviceProcAddr(device, pName);
         }
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetInstanceProcAddr(InstanceTHandle instance, sbyte* pName)
+        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName)
         {
             return DllImport.GetInstanceProcAddr(instance, pName);
         }
