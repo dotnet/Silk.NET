@@ -1273,6 +1273,23 @@ public partial class MixKhronosData(
             }
         }
 
+        // Trim _T from the end of names
+        // This is targeted towards Vulkan handle type names, which end in _T
+        if (context.Container is null)
+        {
+            foreach (var (original, (current, previous)) in context.Names)
+            {
+                if (current.EndsWith("_T"))
+                {
+                    var newPrim = current[..^2];
+                    var newPrev = previous ?? [];
+                    newPrev.Add(current);
+
+                    context.Names[original] = (newPrim, newPrev);
+                }
+            }
+        }
+
         // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
         // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
         // becomes BufferUsage.
@@ -1499,23 +1516,6 @@ public partial class MixKhronosData(
             }
 
             context.Names[original] = (newPrim, newPrev);
-        }
-
-        // Trim _T from the end of names
-        // This is targeted towards Vulkan handle type names, which end in _T
-        if (context.Container is null)
-        {
-            foreach (var (original, (current, previous)) in context.Names)
-            {
-                if (current.EndsWith("_T"))
-                {
-                    var newPrim = current[..^2];
-                    var newPrev = previous ?? [];
-                    newPrev.Add(current);
-
-                    context.Names[original] = (newPrim, newPrev);
-                }
-            }
         }
     }
 
