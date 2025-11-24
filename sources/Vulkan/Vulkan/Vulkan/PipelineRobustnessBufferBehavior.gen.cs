@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PipelineRobustnessBufferBehavior
+public enum PipelineRobustnessBufferBehavior : uint
 {
     [SupportedApiProfile(
         "vulkan",

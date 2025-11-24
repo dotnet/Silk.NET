@@ -8,7 +8,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH265ChromaFormatIdc
+public enum StdVideoH265ChromaFormatIdc : uint
 {
     [SupportedApiProfile("vulkan")]
     IdcMonochrome = 0,

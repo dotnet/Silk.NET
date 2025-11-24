@@ -342,7 +342,7 @@
             "MemberValue": "0x7FFFFFFF"
           }
         ],
-        "CoerceBackingTypes": "PreferSigned",
+        "CoerceBackingTypes": "PreferUnsigned",
         "RewriteMemberValues": true
       },
       "AddVTables": {

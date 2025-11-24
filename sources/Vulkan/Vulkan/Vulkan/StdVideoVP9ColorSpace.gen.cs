@@ -8,7 +8,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoVP9ColorSpace
+public enum StdVideoVP9ColorSpace : uint
 {
     [SupportedApiProfile("vulkan")]
     Unknown = 0,

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum DataGraphPipelineSessionCreateFlagsARM : long
+public enum DataGraphPipelineSessionCreateFlagsARM : ulong
 {
     None = 0x0,
     ProtectedBitARM = 0x1,

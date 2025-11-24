@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum SubpassMergeStatusEXT
+public enum SubpassMergeStatusEXT : uint
 {
     [SupportedApiProfile(
         "vulkan",

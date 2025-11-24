@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum TensorViewCreateFlagsARM : long
+public enum TensorViewCreateFlagsARM : ulong
 {
     None = 0x0,
     DescriptorBufferCaptureReplayBitARM = 0x1,

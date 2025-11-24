@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum CommandBufferResetFlags
+public enum CommandBufferResetFlags : uint
 {
     None = 0x0,
 

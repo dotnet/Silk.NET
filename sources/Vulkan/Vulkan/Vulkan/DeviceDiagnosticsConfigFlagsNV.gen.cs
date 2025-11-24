@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum DeviceDiagnosticsConfigFlagsNV
+public enum DeviceDiagnosticsConfigFlagsNV : uint
 {
     None = 0x0,
 

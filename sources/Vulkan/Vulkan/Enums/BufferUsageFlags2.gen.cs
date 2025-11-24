@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum BufferUsageFlags2 : long
+public enum BufferUsageFlags2 : ulong
 {
     None = 0x0,
     TransferSrcBit = 0x1,

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum VertexInputRate
+public enum VertexInputRate : uint
 {
     [SupportedApiProfile(
         "vulkan",

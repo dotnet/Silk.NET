@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum ShaderModuleCreateFlags
+public enum ShaderModuleCreateFlags : uint
 {
     None = 0x0,
 }

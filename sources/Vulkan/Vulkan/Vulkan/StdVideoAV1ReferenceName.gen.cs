@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoAV1ReferenceName
+public enum StdVideoAV1ReferenceName : uint
 {
     [SupportedApiProfile("vulkan")]
     IntraFrame = 0,

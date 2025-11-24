@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum DisplayPowerStateEXT
+public enum DisplayPowerStateEXT : uint
 {
     [SupportedApiProfile(
         "vulkan",

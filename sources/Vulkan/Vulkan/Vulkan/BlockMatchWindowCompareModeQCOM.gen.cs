@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum BlockMatchWindowCompareModeQCOM
+public enum BlockMatchWindowCompareModeQCOM : uint
 {
     [SupportedApiProfile(
         "vulkan",

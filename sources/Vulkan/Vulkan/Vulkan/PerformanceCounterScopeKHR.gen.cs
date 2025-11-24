@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PerformanceCounterScopeKHR
+public enum PerformanceCounterScopeKHR : uint
 {
     [SupportedApiProfile(
         "vulkan",

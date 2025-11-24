@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum SurfaceTransformFlagsKHR
+public enum SurfaceTransformFlagsKHR : uint
 {
     None = 0x0,
 

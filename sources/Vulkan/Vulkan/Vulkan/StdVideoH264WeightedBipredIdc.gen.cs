@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264WeightedBipredIdc
+public enum StdVideoH264WeightedBipredIdc : uint
 {
     [SupportedApiProfile("vulkan")]
     Default = 0,

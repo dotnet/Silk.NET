@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264MemMgmtControlOp
+public enum StdVideoH264MemMgmtControlOp : uint
 {
     [SupportedApiProfile("vulkan")]
     End = 0,

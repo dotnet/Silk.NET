@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ViewportCoordinateSwizzleNV
+public enum ViewportCoordinateSwizzleNV : uint
 {
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     PositiveXNV = 0,

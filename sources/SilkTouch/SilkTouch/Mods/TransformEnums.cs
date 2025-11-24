@@ -32,6 +32,15 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         /// match the backing types of enums generated on Windows.
         /// </remarks>
         PreferSigned,
+
+        /// <summary>
+        /// Replace unsigned backing types with signed backing types.
+        /// </summary>
+        /// <remarks>
+        /// This can be used to ensure that the backing types of enums generated on Windows
+        /// match the backing types of enums generated on Unix.
+        /// </remarks>
+        PreferUnsigned,
     }
 
     /// <summary>
@@ -309,6 +318,47 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                     if (baseTypes.Count == 0)
                     {
                         node = node.WithBaseList(null);
+                    }
+                    else
+                    {
+                        node = node.WithBaseList(BaseList([..baseTypes]));
+                    }
+
+                    break;
+                }
+
+                case EnumBackingTypePreference.PreferUnsigned:
+                {
+                    var baseList = originalNode.BaseList;
+                    if (baseList == null)
+                    {
+                        break;
+                    }
+
+                    var baseTypes = baseList.Types
+                        .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
+                        {
+                            var type = semanticModel.GetTypeInfo(t.Type).Type;
+
+                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_Int32)))
+                            {
+                                return SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword)));
+                            }
+
+                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_Int64)))
+                            {
+                                return SimpleBaseType(PredefinedType(Token(SyntaxKind.ULongKeyword)));
+                            }
+
+                            return t;
+                        })
+                        .Where(x => x is not null)
+                        .Cast<BaseTypeSyntax>()
+                        .ToList();
+
+                    if (baseTypes.Count == 0)
+                    {
+                        node = node.WithBaseList(BaseList([SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword)))]));
                     }
                     else
                     {

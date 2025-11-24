@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoDecodeH264FieldOrderCount
+public enum StdVideoDecodeH264FieldOrderCount : uint
 {
     [SupportedApiProfile("vulkan")]
     Top = 0,

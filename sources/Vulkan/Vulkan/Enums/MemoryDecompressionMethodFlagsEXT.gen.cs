@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum MemoryDecompressionMethodFlagsEXT : long
+public enum MemoryDecompressionMethodFlagsEXT : ulong
 {
     None = 0x0,
     MemoryDecompressionMethodGdeflate1X0BitEXT = 0x1,

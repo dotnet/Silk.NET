@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum PhysicalDeviceSchedulingControlsFlagsARM : long
+public enum PhysicalDeviceSchedulingControlsFlagsARM : ulong
 {
     None = 0x0,
     ShaderCoreCountARM = 0x1,

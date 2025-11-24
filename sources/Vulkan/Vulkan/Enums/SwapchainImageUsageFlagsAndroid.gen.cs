@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum SwapchainImageUsageFlagsAndroid
+public enum SwapchainImageUsageFlagsAndroid : uint
 {
     None = 0x0,
 }

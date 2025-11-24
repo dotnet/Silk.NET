@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum PipelineStageFlags2 : long
+public enum PipelineStageFlags2 : ulong
 {
     None = 0x0,
     TopOfPipeBit = 0x1,

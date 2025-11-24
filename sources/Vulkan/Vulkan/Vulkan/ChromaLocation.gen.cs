@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ChromaLocation
+public enum ChromaLocation : uint
 {
     [SupportedApiProfile(
         "vulkan",

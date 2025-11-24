@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ProvokingVertexModeEXT
+public enum ProvokingVertexModeEXT : uint
 {
     [SupportedApiProfile(
         "vulkan",

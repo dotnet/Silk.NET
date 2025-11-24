@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum OpticalFlowPerformanceLevelNV
+public enum OpticalFlowPerformanceLevelNV : uint
 {
     [SupportedApiProfile(
         "vulkan",

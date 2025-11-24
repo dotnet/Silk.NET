@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum AccessFlags2 : long
+public enum AccessFlags2 : ulong
 {
     None = 0x0,
     IndirectCommandReadBit = 0x1,

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum IndirectCommandsLayoutUsageFlagsEXT
+public enum IndirectCommandsLayoutUsageFlagsEXT : uint
 {
     None = 0x0,
 

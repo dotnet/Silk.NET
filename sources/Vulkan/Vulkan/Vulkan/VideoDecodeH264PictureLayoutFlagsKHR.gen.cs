@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum VideoDecodeH264PictureLayoutFlagsKHR
+public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
 {
     [SupportedApiProfile(
         "vulkan",

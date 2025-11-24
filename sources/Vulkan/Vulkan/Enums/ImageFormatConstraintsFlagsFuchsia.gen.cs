@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum ImageFormatConstraintsFlagsFuchsia
+public enum ImageFormatConstraintsFlagsFuchsia : uint
 {
     None = 0x0,
 }

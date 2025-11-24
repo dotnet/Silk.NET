@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum QueryPoolSamplingModeIntel
+public enum QueryPoolSamplingModeIntel : uint
 {
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     ManualIntel = 0,

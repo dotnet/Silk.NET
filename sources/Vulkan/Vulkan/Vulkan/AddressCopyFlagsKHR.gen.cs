@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum AddressCopyFlagsKHR
+public enum AddressCopyFlagsKHR : uint
 {
     None = 0x0,
 

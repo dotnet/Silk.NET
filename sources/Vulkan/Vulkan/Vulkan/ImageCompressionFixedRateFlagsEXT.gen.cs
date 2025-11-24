@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum ImageCompressionFixedRateFlagsEXT
+public enum ImageCompressionFixedRateFlagsEXT : uint
 {
     [SupportedApiProfile(
         "vulkan",

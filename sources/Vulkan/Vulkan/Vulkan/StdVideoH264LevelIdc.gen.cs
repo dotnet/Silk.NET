@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoH264LevelIdc
+public enum StdVideoH264LevelIdc : uint
 {
     [SupportedApiProfile("vulkan")]
     Idc1X0 = 0,

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum WaylandSurfaceCreateFlagsKHR
+public enum WaylandSurfaceCreateFlagsKHR : uint
 {
     None = 0x0,
 }

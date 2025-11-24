@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum PerformanceOverrideTypeIntel
+public enum PerformanceOverrideTypeIntel : uint
 {
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     NullHardwareIntel = 0,

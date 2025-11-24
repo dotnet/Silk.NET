@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum PipelineCreateFlags2 : long
+public enum PipelineCreateFlags2 : ulong
 {
     None = 0x0,
     DisableOptimizationBit = 0x1,

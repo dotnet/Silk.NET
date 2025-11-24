@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum ValidationCheckEXT
+public enum ValidationCheckEXT : uint
 {
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     AllEXT = 0,

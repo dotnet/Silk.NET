@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum PerformanceCounterDescriptionFlagsKHR
+public enum PerformanceCounterDescriptionFlagsKHR : uint
 {
     None = 0x0,
 

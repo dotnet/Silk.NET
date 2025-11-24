@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum MemoryOverallocationBehaviorAMD
+public enum MemoryOverallocationBehaviorAMD : uint
 {
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     DefaultAMD = 0,

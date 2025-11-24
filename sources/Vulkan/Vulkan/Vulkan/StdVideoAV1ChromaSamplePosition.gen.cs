@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum StdVideoAV1ChromaSamplePosition
+public enum StdVideoAV1ChromaSamplePosition : uint
 {
     [SupportedApiProfile("vulkan")]
     Unknown = 0,

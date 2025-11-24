@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum SwapchainImageUsageFlagsOHOS
+public enum SwapchainImageUsageFlagsOHOS : uint
 {
     None = 0x0,
 }

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [Transformed]
 [Flags]
-public enum AccessFlags3KHR : long
+public enum AccessFlags3KHR : ulong
 {
     Access3NoneKHR = 0x0,
 }

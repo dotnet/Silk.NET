@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 [Flags]
-public enum DependencyFlags
+public enum DependencyFlags : uint
 {
     None = 0x0,
 

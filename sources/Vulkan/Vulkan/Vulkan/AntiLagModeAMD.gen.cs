@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
-public enum AntiLagModeAMD
+public enum AntiLagModeAMD : uint
 {
     [SupportedApiProfile(
         "vulkan",
