@@ -39,11 +39,20 @@ public partial class ALContext
         public DeviceHandle CurrentDevice
         {
             get;
-            set =>
-                field =
-                    field == nullptr && field != value
-                        ? throw new InvalidOperationException(ErrMultipleDeviceSingleObject)
-                        : value;
+            set
+            {
+                if (field == value)
+                {
+                    return;
+                }
+
+                if (field != nullptr)
+                {
+                    throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                }
+
+                field = value;
+            }
         }
 
         public IALContext Clone() => new StaticWrapper<T>();

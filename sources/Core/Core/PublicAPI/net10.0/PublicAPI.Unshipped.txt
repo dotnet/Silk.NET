@@ -1,0 +1,861 @@
+#nullable enable
+override Silk.NET.Core.AndroidPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.CocoaPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.GetHashCode() -> int
+override Silk.NET.Core.Constant<TUnderlying, TEnum1>.GetHashCode() -> int
+override Silk.NET.Core.EGLPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.MaybeBool<T, TScheme>.GetHashCode() -> int
+override Silk.NET.Core.MaybeBool<T>.GetHashCode() -> int
+override Silk.NET.Core.NullPtr.GetHashCode() -> int
+override Silk.NET.Core.Ptr.Equals(object? obj) -> bool
+override Silk.NET.Core.Ptr.GetHashCode() -> int
+override Silk.NET.Core.Ptr2D.Equals(object? obj) -> bool
+override Silk.NET.Core.Ptr2D.GetHashCode() -> int
+override Silk.NET.Core.Ptr2D<T>.Equals(object? obj) -> bool
+override Silk.NET.Core.Ptr2D<T>.GetHashCode() -> int
+override Silk.NET.Core.Ptr3D.Equals(object? obj) -> bool
+override Silk.NET.Core.Ptr3D.GetHashCode() -> int
+override Silk.NET.Core.Ptr3D<T>.Equals(object? obj) -> bool
+override Silk.NET.Core.Ptr3D<T>.GetHashCode() -> int
+override Silk.NET.Core.Ptr<T>.Equals(object? obj) -> bool
+override Silk.NET.Core.Ptr<T>.GetHashCode() -> int
+override Silk.NET.Core.Ref.Equals(object? obj) -> bool
+override Silk.NET.Core.Ref.GetHashCode() -> int
+override Silk.NET.Core.Ref2D.Equals(object? obj) -> bool
+override Silk.NET.Core.Ref2D.GetHashCode() -> int
+override Silk.NET.Core.Ref2D<T>.Equals(object? obj) -> bool
+override Silk.NET.Core.Ref2D<T>.GetHashCode() -> int
+override Silk.NET.Core.Ref3D.Equals(object? obj) -> bool
+override Silk.NET.Core.Ref3D.GetHashCode() -> int
+override Silk.NET.Core.Ref3D<T>.Equals(object? obj) -> bool
+override Silk.NET.Core.Ref3D<T>.GetHashCode() -> int
+override Silk.NET.Core.Ref<T>.Equals(object? obj) -> bool
+override Silk.NET.Core.Ref<T>.GetHashCode() -> int
+override Silk.NET.Core.UIKitPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.Utf8String.ToString() -> string!
+override Silk.NET.Core.VivantePlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.WaylandPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.Win32PlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.WinRTPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.X11PlatformInfo.GetHashCode() -> int
+readonly Silk.NET.Core.Ptr.Native -> void*
+readonly Silk.NET.Core.Ptr2D.Native -> Silk.NET.Core.Ptr*
+readonly Silk.NET.Core.Ptr2D<T>.Native -> Silk.NET.Core.Ptr<T>*
+readonly Silk.NET.Core.Ptr3D.Native -> Silk.NET.Core.Ptr2D*
+readonly Silk.NET.Core.Ptr3D<T>.Native -> Silk.NET.Core.Ptr2D<T>*
+readonly Silk.NET.Core.Ptr<T>.Native -> T*
+readonly Silk.NET.Core.Ref.Handle -> byte
+readonly Silk.NET.Core.Ref<T>.Handle -> T
+Silk.NET.Core.AndroidPlatformInfo
+Silk.NET.Core.AndroidPlatformInfo.AndroidPlatformInfo() -> void
+Silk.NET.Core.AndroidPlatformInfo.AndroidPlatformInfo(nint Window, nint Surface) -> void
+Silk.NET.Core.AndroidPlatformInfo.Deconstruct(out nint Window, out nint Surface) -> void
+Silk.NET.Core.AndroidPlatformInfo.Equals(Silk.NET.Core.AndroidPlatformInfo other) -> bool
+Silk.NET.Core.AndroidPlatformInfo.Surface.get -> nint
+Silk.NET.Core.AndroidPlatformInfo.Surface.init -> void
+Silk.NET.Core.AndroidPlatformInfo.Window.get -> nint
+Silk.NET.Core.AndroidPlatformInfo.Window.init -> void
+Silk.NET.Core.BreakneckLock
+Silk.NET.Core.BreakneckLock.BreakneckLock() -> void
+Silk.NET.Core.BreakneckLock.Enter(ref bool taken) -> void
+Silk.NET.Core.BreakneckLock.Exit() -> void
+Silk.NET.Core.BreakneckLock.Exit(bool insertMemBarrier) -> void
+Silk.NET.Core.BreakneckLock.ExitWithBarrier() -> void
+Silk.NET.Core.BreakneckLock.IsAcquired.get -> bool
+Silk.NET.Core.BreakneckLock.TryEnter(ref bool taken) -> void
+Silk.NET.Core.BreakneckLock.TryEnter(ref bool taken, System.TimeSpan timeout) -> void
+Silk.NET.Core.BreakneckLock.TryEnter(ref bool taken, uint iterations) -> void
+Silk.NET.Core.BreakneckRequest<TResource, TParameters>
+Silk.NET.Core.BreakneckRequest<TResource, TParameters>.BreakneckRequest() -> void
+Silk.NET.Core.BreakneckRequest<TResource, TParameters>.Provide(TResource resource) -> void
+Silk.NET.Core.BreakneckRequest<TResource, TParameters>.Request(TParameters parameters) -> TResource
+Silk.NET.Core.BreakneckRequest<TResource, TParameters>.TryGetRequest(out TParameters? parameters) -> bool
+Silk.NET.Core.BreakneckRequest<TResource>
+Silk.NET.Core.BreakneckRequest<TResource>.BreakneckRequest() -> void
+Silk.NET.Core.BreakneckRequest<TResource>.IsRequested.get -> bool
+Silk.NET.Core.BreakneckRequest<TResource>.Provide(TResource resource) -> void
+Silk.NET.Core.BreakneckRequest<TResource>.Request() -> TResource
+Silk.NET.Core.CocoaPlatformInfo
+Silk.NET.Core.CocoaPlatformInfo.CocoaPlatformInfo() -> void
+Silk.NET.Core.CocoaPlatformInfo.CocoaPlatformInfo(nint Window) -> void
+Silk.NET.Core.CocoaPlatformInfo.Deconstruct(out nint Window) -> void
+Silk.NET.Core.CocoaPlatformInfo.Equals(Silk.NET.Core.CocoaPlatformInfo other) -> bool
+Silk.NET.Core.CocoaPlatformInfo.Window.get -> nint
+Silk.NET.Core.CocoaPlatformInfo.Window.init -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Constant() -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Constant(TUnderlying Value) -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Deconstruct(out TUnderlying Value) -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Equals(Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> other) -> bool
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Value.get -> TUnderlying
+Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Value.init -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1>
+Silk.NET.Core.Constant<TUnderlying, TEnum1>.Constant() -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1>.Constant(TUnderlying Value) -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1>.Deconstruct(out TUnderlying Value) -> void
+Silk.NET.Core.Constant<TUnderlying, TEnum1>.Equals(Silk.NET.Core.Constant<TUnderlying, TEnum1> other) -> bool
+Silk.NET.Core.Constant<TUnderlying, TEnum1>.Value.get -> TUnderlying
+Silk.NET.Core.Constant<TUnderlying, TEnum1>.Value.init -> void
+Silk.NET.Core.CppAttributeListAttribute
+Silk.NET.Core.CppAttributeListAttribute.AttributeList.get -> string!
+Silk.NET.Core.CppAttributeListAttribute.CppAttributeListAttribute(string! attributeList) -> void
+Silk.NET.Core.Default
+Silk.NET.Core.Default.Default() -> void
+Silk.NET.Core.DSL
+Silk.NET.Core.EGLPlatformInfo
+Silk.NET.Core.EGLPlatformInfo.Deconstruct(out nint Display, out nint Surface) -> void
+Silk.NET.Core.EGLPlatformInfo.Display.get -> nint
+Silk.NET.Core.EGLPlatformInfo.Display.init -> void
+Silk.NET.Core.EGLPlatformInfo.EGLPlatformInfo() -> void
+Silk.NET.Core.EGLPlatformInfo.EGLPlatformInfo(nint Display, nint Surface) -> void
+Silk.NET.Core.EGLPlatformInfo.Equals(Silk.NET.Core.EGLPlatformInfo other) -> bool
+Silk.NET.Core.EGLPlatformInfo.Surface.get -> nint
+Silk.NET.Core.EGLPlatformInfo.Surface.init -> void
+Silk.NET.Core.IBoolScheme
+Silk.NET.Core.IBoolScheme.False<T>() -> T
+Silk.NET.Core.IBoolScheme.IsTrue<T>(T value) -> bool
+Silk.NET.Core.IBoolScheme.True<T>() -> T
+Silk.NET.Core.IGLContext
+Silk.NET.Core.IGLContext.IsCurrent.get -> bool
+Silk.NET.Core.IGLContext.IsCurrent.set -> void
+Silk.NET.Core.IGLContext.SwapBuffers() -> void
+Silk.NET.Core.IGLContext.SwapInterval.get -> int
+Silk.NET.Core.IGLContext.SwapInterval.set -> void
+Silk.NET.Core.IGLContext.VSync.get -> bool
+Silk.NET.Core.IGLContext.VSync.set -> void
+Silk.NET.Core.IGLContextSource
+Silk.NET.Core.IGLContextSource.GLContext.get -> Silk.NET.Core.IGLContext?
+Silk.NET.Core.INativeWindow
+Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo? info) -> bool
+Silk.NET.Core.Loader.DefaultNativeContext
+Silk.NET.Core.Loader.DefaultNativeContext.DefaultNativeContext() -> void
+Silk.NET.Core.Loader.DefaultNativeContext.Dispose() -> void
+Silk.NET.Core.Loader.DefaultNativeContext.LoadFunction(string! functionName, string! libraryNameHint) -> void*
+Silk.NET.Core.Loader.INativeContext
+Silk.NET.Core.Loader.INativeContext.LoadFunction(string! functionName, string! libraryNameHint) -> void*
+Silk.NET.Core.Loader.LambdaNativeContext
+Silk.NET.Core.Loader.LambdaNativeContext.Dispose() -> void
+Silk.NET.Core.Loader.LambdaNativeContext.LambdaNativeContext() -> void
+Silk.NET.Core.Loader.LambdaNativeContext.LambdaNativeContext(System.Func<string!, string!, nint>! loader) -> void
+Silk.NET.Core.Loader.LambdaNativeContext.LoadFunction(string! functionName, string! libraryNameHint) -> void*
+Silk.NET.Core.Loader.LoaderInterface
+Silk.NET.Core.MaybeBool<T, TScheme>
+Silk.NET.Core.MaybeBool<T, TScheme>.Deconstruct(out T Value) -> void
+Silk.NET.Core.MaybeBool<T, TScheme>.Equals(Silk.NET.Core.MaybeBool<T, TScheme> other) -> bool
+Silk.NET.Core.MaybeBool<T, TScheme>.MaybeBool() -> void
+Silk.NET.Core.MaybeBool<T, TScheme>.MaybeBool(T Value) -> void
+Silk.NET.Core.MaybeBool<T, TScheme>.Value.get -> T
+Silk.NET.Core.MaybeBool<T, TScheme>.Value.init -> void
+Silk.NET.Core.MaybeBool<T>
+Silk.NET.Core.MaybeBool<T>.Deconstruct(out T Value) -> void
+Silk.NET.Core.MaybeBool<T>.Equals(Silk.NET.Core.MaybeBool<T> other) -> bool
+Silk.NET.Core.MaybeBool<T>.MaybeBool() -> void
+Silk.NET.Core.MaybeBool<T>.MaybeBool(T Value) -> void
+Silk.NET.Core.MaybeBool<T>.Value.get -> T
+Silk.NET.Core.MaybeBool<T>.Value.init -> void
+Silk.NET.Core.NativeFunctionAttribute
+Silk.NET.Core.NativeFunctionAttribute.EntryPoint -> string?
+Silk.NET.Core.NativeFunctionAttribute.NativeFunctionAttribute(string! dllName) -> void
+Silk.NET.Core.NativeFunctionAttribute.Value.get -> string!
+Silk.NET.Core.NativeInheritanceAttribute
+Silk.NET.Core.NativeInheritanceAttribute.Name.get -> string!
+Silk.NET.Core.NativeInheritanceAttribute.NativeInheritanceAttribute(string! name) -> void
+Silk.NET.Core.NativeTypeNameAttribute
+Silk.NET.Core.NativeTypeNameAttribute.Name.get -> string!
+Silk.NET.Core.NativeTypeNameAttribute.NativeTypeNameAttribute(string! name) -> void
+Silk.NET.Core.NullPtr
+Silk.NET.Core.NullPtr.Equals(Silk.NET.Core.NullPtr other) -> bool
+Silk.NET.Core.NullPtr.NullPtr() -> void
+Silk.NET.Core.PointerExtensions
+Silk.NET.Core.Ptr
+Silk.NET.Core.Ptr.AsSpan<T>(int length) -> System.Span<T>
+Silk.NET.Core.Ptr.GetPinnableReference() -> byte
+Silk.NET.Core.Ptr.Handle.get -> byte
+Silk.NET.Core.Ptr.Ptr() -> void
+Silk.NET.Core.Ptr.Ptr(void* ptr) -> void
+Silk.NET.Core.Ptr.ReadToString() -> string!
+Silk.NET.Core.Ptr.this[nuint index].get -> byte
+Silk.NET.Core.Ptr.ToArray<T>(int length) -> T[]!
+Silk.NET.Core.Ptr2D
+Silk.NET.Core.Ptr2D.AsSpan<T>(int length) -> System.Span<T>
+Silk.NET.Core.Ptr2D.GetPinnableReference() -> void*
+Silk.NET.Core.Ptr2D.Handle.get -> byte
+Silk.NET.Core.Ptr2D.Ptr2D() -> void
+Silk.NET.Core.Ptr2D.Ptr2D(Silk.NET.Core.Ptr* ptr) -> void
+Silk.NET.Core.Ptr2D.Ptr2D(void** ptr) -> void
+Silk.NET.Core.Ptr2D.ReadToStringArray(int length) -> string?[]?
+Silk.NET.Core.Ptr2D.this[nuint index].get -> Silk.NET.Core.Ptr
+Silk.NET.Core.Ptr2D.ToArray<T>(int length) -> T[]!
+Silk.NET.Core.Ptr2D.ToArray<T>(int length, int[]! lengths) -> T[]![]!
+Silk.NET.Core.Ptr2D.Value.get -> byte
+Silk.NET.Core.Ptr2D<T>
+Silk.NET.Core.Ptr2D<T>.AsSpan(int length) -> System.Span<Silk.NET.Core.Ptr<T>>
+Silk.NET.Core.Ptr2D<T>.GetPinnableReference() -> T*
+Silk.NET.Core.Ptr2D<T>.Handle.get -> Silk.NET.Core.Ptr<T>
+Silk.NET.Core.Ptr2D<T>.Ptr2D() -> void
+Silk.NET.Core.Ptr2D<T>.Ptr2D(Silk.NET.Core.Ptr<T>* ptr) -> void
+Silk.NET.Core.Ptr2D<T>.Ptr2D(T** ptr) -> void
+Silk.NET.Core.Ptr2D<T>.Ptr2D(void** ptr) -> void
+Silk.NET.Core.Ptr2D<T>.this[nuint index].get -> Silk.NET.Core.Ptr<T>
+Silk.NET.Core.Ptr2D<T>.ToArray(int length) -> Silk.NET.Core.Ptr<T>[]!
+Silk.NET.Core.Ptr2D<T>.ToArray(int length, int[]! lengths) -> T[]![]!
+Silk.NET.Core.Ptr2D<T>.Value.get -> T
+Silk.NET.Core.Ptr3D
+Silk.NET.Core.Ptr3D.AsSpan<T>(int length) -> System.Span<T>
+Silk.NET.Core.Ptr3D.GetPinnableReference() -> void**
+Silk.NET.Core.Ptr3D.Handle.get -> byte
+Silk.NET.Core.Ptr3D.Ptr3D() -> void
+Silk.NET.Core.Ptr3D.Ptr3D(Silk.NET.Core.Ptr2D* ptr) -> void
+Silk.NET.Core.Ptr3D.Ptr3D(void*** ptr) -> void
+Silk.NET.Core.Ptr3D.ReadToStringArray(int length, int[]! lengths) -> string?[]?[]?
+Silk.NET.Core.Ptr3D.this[nuint index].get -> Silk.NET.Core.Ptr
+Silk.NET.Core.Ptr3D.ToArray<T>(int length) -> T[]!
+Silk.NET.Core.Ptr3D.ToArray<T>(int length, int[]! lengths) -> T[]![]!
+Silk.NET.Core.Ptr3D.ToArray<T>(int length, int[]! lengths0, int[]![]! lengths1) -> T[]![]![]!
+Silk.NET.Core.Ptr3D.Value.get -> byte
+Silk.NET.Core.Ptr3D<T>
+Silk.NET.Core.Ptr3D<T>.AsSpan(int length) -> System.Span<Silk.NET.Core.Ptr2D<T>>
+Silk.NET.Core.Ptr3D<T>.GetPinnableReference() -> T**
+Silk.NET.Core.Ptr3D<T>.Handle.get -> Silk.NET.Core.Ptr<T>
+Silk.NET.Core.Ptr3D<T>.Ptr3D() -> void
+Silk.NET.Core.Ptr3D<T>.Ptr3D(Silk.NET.Core.Ptr2D<T>* ptr) -> void
+Silk.NET.Core.Ptr3D<T>.Ptr3D(T*** ptr) -> void
+Silk.NET.Core.Ptr3D<T>.Ptr3D(void*** ptr) -> void
+Silk.NET.Core.Ptr3D<T>.this[nuint index].get -> Silk.NET.Core.Ptr<T>
+Silk.NET.Core.Ptr3D<T>.ToArray(int length) -> Silk.NET.Core.Ptr2D<T>[]!
+Silk.NET.Core.Ptr3D<T>.ToArray(int length, int[]! lengths) -> Silk.NET.Core.Ptr<T>[]![]!
+Silk.NET.Core.Ptr3D<T>.ToArray(int length, int[]! lengths0, int[]![]! lengths1) -> T[]![]![]!
+Silk.NET.Core.Ptr3D<T>.Value.get -> T
+Silk.NET.Core.Ptr<T>
+Silk.NET.Core.Ptr<T>.AsSpan(int length) -> System.Span<T>
+Silk.NET.Core.Ptr<T>.GetPinnableReference() -> T
+Silk.NET.Core.Ptr<T>.Handle.get -> T
+Silk.NET.Core.Ptr<T>.Ptr() -> void
+Silk.NET.Core.Ptr<T>.Ptr(T* ptr) -> void
+Silk.NET.Core.Ptr<T>.this[nuint index].get -> T
+Silk.NET.Core.Ptr<T>.ToArray(int length) -> T[]!
+Silk.NET.Core.Ref
+Silk.NET.Core.Ref.AsSpan(int length) -> System.Span<byte>
+Silk.NET.Core.Ref.GetPinnableReference() -> byte
+Silk.NET.Core.Ref.ReadToString() -> string!
+Silk.NET.Core.Ref.ReadToString(int length) -> string!
+Silk.NET.Core.Ref.Ref() -> void
+Silk.NET.Core.Ref.Ref(ref byte Ref) -> void
+Silk.NET.Core.Ref.this[nuint index].get -> byte
+Silk.NET.Core.Ref2D
+Silk.NET.Core.Ref2D.GetInteriorRef() -> byte
+Silk.NET.Core.Ref2D.GetPinnableReference() -> void*
+Silk.NET.Core.Ref2D.Ref.get -> Silk.NET.Core.Ref
+Silk.NET.Core.Ref2D.Ref2D() -> void
+Silk.NET.Core.Ref2D.Ref2D(ref Silk.NET.Core.Ref Ref) -> void
+Silk.NET.Core.Ref2D.this[nuint index].get -> Silk.NET.Core.Ref
+Silk.NET.Core.Ref2D<T>
+Silk.NET.Core.Ref2D<T>.GetInteriorRef() -> byte
+Silk.NET.Core.Ref2D<T>.GetPinnableReference() -> T*
+Silk.NET.Core.Ref2D<T>.Ref.get -> Silk.NET.Core.Ref<T>
+Silk.NET.Core.Ref2D<T>.Ref2D() -> void
+Silk.NET.Core.Ref2D<T>.Ref2D(ref Silk.NET.Core.Ref<T> Ref) -> void
+Silk.NET.Core.Ref2D<T>.this[nuint index].get -> Silk.NET.Core.Ref<T>
+Silk.NET.Core.Ref3D
+Silk.NET.Core.Ref3D.GetInteriorRef() -> byte
+Silk.NET.Core.Ref3D.GetPinnableReference() -> void**
+Silk.NET.Core.Ref3D.Ref.get -> Silk.NET.Core.Ref2D
+Silk.NET.Core.Ref3D.Ref3D() -> void
+Silk.NET.Core.Ref3D.Ref3D(ref Silk.NET.Core.Ref2D Ref) -> void
+Silk.NET.Core.Ref3D.this[nuint index].get -> Silk.NET.Core.Ref2D
+Silk.NET.Core.Ref3D<T>
+Silk.NET.Core.Ref3D<T>.GetInteriorRef() -> byte
+Silk.NET.Core.Ref3D<T>.GetPinnableReference() -> T**
+Silk.NET.Core.Ref3D<T>.Ref.get -> Silk.NET.Core.Ref2D<T>
+Silk.NET.Core.Ref3D<T>.Ref3D() -> void
+Silk.NET.Core.Ref3D<T>.Ref3D(ref Silk.NET.Core.Ref2D<T> Ref) -> void
+Silk.NET.Core.Ref3D<T>.this[nuint index].get -> Silk.NET.Core.Ref2D<T>
+Silk.NET.Core.Ref<T>
+Silk.NET.Core.Ref<T>.AsSpan(int length) -> System.Span<T>
+Silk.NET.Core.Ref<T>.GetPinnableReference() -> T
+Silk.NET.Core.Ref<T>.Ref() -> void
+Silk.NET.Core.Ref<T>.Ref(ref T Ref) -> void
+Silk.NET.Core.Ref<T>.this[nuint index].get -> T
+Silk.NET.Core.Requires64BitAttribute
+Silk.NET.Core.Requires64BitAttribute.Requires64BitAttribute() -> void
+Silk.NET.Core.SetsLastSystemErrorAttribute
+Silk.NET.Core.SetsLastSystemErrorAttribute.SetsLastSystemErrorAttribute() -> void
+Silk.NET.Core.SilkMarshal
+Silk.NET.Core.SupportedApiProfileAttribute
+Silk.NET.Core.SupportedApiProfileAttribute.ApiSets.get -> string![]?
+Silk.NET.Core.SupportedApiProfileAttribute.ApiSets.init -> void
+Silk.NET.Core.SupportedApiProfileAttribute.ImpliesSets.get -> string![]?
+Silk.NET.Core.SupportedApiProfileAttribute.ImpliesSets.init -> void
+Silk.NET.Core.SupportedApiProfileAttribute.MaxVersion.get -> string?
+Silk.NET.Core.SupportedApiProfileAttribute.MaxVersion.init -> void
+Silk.NET.Core.SupportedApiProfileAttribute.MinVersion.get -> string?
+Silk.NET.Core.SupportedApiProfileAttribute.MinVersion.init -> void
+Silk.NET.Core.SupportedApiProfileAttribute.Profile.get -> string!
+Silk.NET.Core.SupportedApiProfileAttribute.Profile.init -> void
+Silk.NET.Core.SupportedApiProfileAttribute.RequireAll.get -> bool
+Silk.NET.Core.SupportedApiProfileAttribute.RequireAll.init -> void
+Silk.NET.Core.SupportedApiProfileAttribute.SupportedApiProfileAttribute(string! profile, string![]? apiSets = null) -> void
+Silk.NET.Core.TransformedAttribute
+Silk.NET.Core.TransformedAttribute.IsTransformed.get -> bool
+Silk.NET.Core.TransformedAttribute.TransformedAttribute(bool isTransformed = true) -> void
+Silk.NET.Core.UIKitPlatformInfo
+Silk.NET.Core.UIKitPlatformInfo.ColorBuffer.get -> uint
+Silk.NET.Core.UIKitPlatformInfo.ColorBuffer.init -> void
+Silk.NET.Core.UIKitPlatformInfo.Deconstruct(out nint Window, out uint Framebuffer, out uint ColorBuffer, out uint ResolveFramebuffer) -> void
+Silk.NET.Core.UIKitPlatformInfo.Equals(Silk.NET.Core.UIKitPlatformInfo other) -> bool
+Silk.NET.Core.UIKitPlatformInfo.Framebuffer.get -> uint
+Silk.NET.Core.UIKitPlatformInfo.Framebuffer.init -> void
+Silk.NET.Core.UIKitPlatformInfo.ResolveFramebuffer.get -> uint
+Silk.NET.Core.UIKitPlatformInfo.ResolveFramebuffer.init -> void
+Silk.NET.Core.UIKitPlatformInfo.UIKitPlatformInfo() -> void
+Silk.NET.Core.UIKitPlatformInfo.UIKitPlatformInfo(nint Window, uint Framebuffer, uint ColorBuffer, uint ResolveFramebuffer) -> void
+Silk.NET.Core.UIKitPlatformInfo.Window.get -> nint
+Silk.NET.Core.UIKitPlatformInfo.Window.init -> void
+Silk.NET.Core.Utf8String
+Silk.NET.Core.Utf8String.Bytes.get -> System.ReadOnlySpan<byte>
+Silk.NET.Core.Utf8String.Utf8String() -> void
+Silk.NET.Core.Utf8String.Utf8String(System.ReadOnlySpan<byte> bytes) -> void
+Silk.NET.Core.VariantBool
+Silk.NET.Core.VariantBool.VariantBool() -> void
+Silk.NET.Core.Version32
+Silk.NET.Core.Version32.Major.get -> uint
+Silk.NET.Core.Version32.Minor.get -> uint
+Silk.NET.Core.Version32.Patch.get -> uint
+Silk.NET.Core.Version32.Value.get -> uint
+Silk.NET.Core.Version32.Variant.get -> uint
+Silk.NET.Core.Version32.Version32() -> void
+Silk.NET.Core.Version32.Version32(uint major, uint minor, uint patch = 0, uint variant = 0) -> void
+Silk.NET.Core.VivantePlatformInfo
+Silk.NET.Core.VivantePlatformInfo.Deconstruct(out nint Display, out nint Window) -> void
+Silk.NET.Core.VivantePlatformInfo.Display.get -> nint
+Silk.NET.Core.VivantePlatformInfo.Display.init -> void
+Silk.NET.Core.VivantePlatformInfo.Equals(Silk.NET.Core.VivantePlatformInfo other) -> bool
+Silk.NET.Core.VivantePlatformInfo.VivantePlatformInfo() -> void
+Silk.NET.Core.VivantePlatformInfo.VivantePlatformInfo(nint Display, nint Window) -> void
+Silk.NET.Core.VivantePlatformInfo.Window.get -> nint
+Silk.NET.Core.VivantePlatformInfo.Window.init -> void
+Silk.NET.Core.VtblIndexAttribute
+Silk.NET.Core.VtblIndexAttribute.Index.get -> uint
+Silk.NET.Core.VtblIndexAttribute.VtblIndexAttribute(uint index) -> void
+Silk.NET.Core.WaylandPlatformInfo
+Silk.NET.Core.WaylandPlatformInfo.Deconstruct(out nint Display, out nint Surface) -> void
+Silk.NET.Core.WaylandPlatformInfo.Display.get -> nint
+Silk.NET.Core.WaylandPlatformInfo.Display.init -> void
+Silk.NET.Core.WaylandPlatformInfo.Equals(Silk.NET.Core.WaylandPlatformInfo other) -> bool
+Silk.NET.Core.WaylandPlatformInfo.Surface.get -> nint
+Silk.NET.Core.WaylandPlatformInfo.Surface.init -> void
+Silk.NET.Core.WaylandPlatformInfo.WaylandPlatformInfo() -> void
+Silk.NET.Core.WaylandPlatformInfo.WaylandPlatformInfo(nint Display, nint Surface) -> void
+Silk.NET.Core.Win32PlatformInfo
+Silk.NET.Core.Win32PlatformInfo.Deconstruct(out nint Hwnd, out nint HDC, out nint HInstance) -> void
+Silk.NET.Core.Win32PlatformInfo.Equals(Silk.NET.Core.Win32PlatformInfo other) -> bool
+Silk.NET.Core.Win32PlatformInfo.HDC.get -> nint
+Silk.NET.Core.Win32PlatformInfo.HDC.init -> void
+Silk.NET.Core.Win32PlatformInfo.HInstance.get -> nint
+Silk.NET.Core.Win32PlatformInfo.HInstance.init -> void
+Silk.NET.Core.Win32PlatformInfo.Hwnd.get -> nint
+Silk.NET.Core.Win32PlatformInfo.Hwnd.init -> void
+Silk.NET.Core.Win32PlatformInfo.Win32PlatformInfo() -> void
+Silk.NET.Core.Win32PlatformInfo.Win32PlatformInfo(nint Hwnd, nint HDC, nint HInstance) -> void
+Silk.NET.Core.WinRTPlatformInfo
+Silk.NET.Core.WinRTPlatformInfo.Deconstruct(out nint Inspectable) -> void
+Silk.NET.Core.WinRTPlatformInfo.Equals(Silk.NET.Core.WinRTPlatformInfo other) -> bool
+Silk.NET.Core.WinRTPlatformInfo.Inspectable.get -> nint
+Silk.NET.Core.WinRTPlatformInfo.Inspectable.init -> void
+Silk.NET.Core.WinRTPlatformInfo.WinRTPlatformInfo() -> void
+Silk.NET.Core.WinRTPlatformInfo.WinRTPlatformInfo(nint Inspectable) -> void
+Silk.NET.Core.X11PlatformInfo
+Silk.NET.Core.X11PlatformInfo.Deconstruct(out nint Display, out nint Window) -> void
+Silk.NET.Core.X11PlatformInfo.Display.get -> nint
+Silk.NET.Core.X11PlatformInfo.Display.init -> void
+Silk.NET.Core.X11PlatformInfo.Equals(Silk.NET.Core.X11PlatformInfo other) -> bool
+Silk.NET.Core.X11PlatformInfo.Window.get -> nint
+Silk.NET.Core.X11PlatformInfo.Window.init -> void
+Silk.NET.Core.X11PlatformInfo.X11PlatformInfo() -> void
+Silk.NET.Core.X11PlatformInfo.X11PlatformInfo(nint Display, nint Window) -> void
+static Silk.NET.Core.AndroidPlatformInfo.operator !=(Silk.NET.Core.AndroidPlatformInfo left, Silk.NET.Core.AndroidPlatformInfo right) -> bool
+static Silk.NET.Core.AndroidPlatformInfo.operator ==(Silk.NET.Core.AndroidPlatformInfo left, Silk.NET.Core.AndroidPlatformInfo right) -> bool
+static Silk.NET.Core.BreakneckLock.Create() -> Silk.NET.Core.BreakneckLock
+static Silk.NET.Core.CocoaPlatformInfo.operator !=(Silk.NET.Core.CocoaPlatformInfo left, Silk.NET.Core.CocoaPlatformInfo right) -> bool
+static Silk.NET.Core.CocoaPlatformInfo.operator ==(Silk.NET.Core.CocoaPlatformInfo left, Silk.NET.Core.CocoaPlatformInfo right) -> bool
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TEnum1 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TEnum2 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TUnderlying value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator TEnum1(Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> value) -> TEnum1
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator TEnum2(Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> value) -> TEnum2
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator TUnderlying(Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> value) -> TUnderlying
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.operator !=(Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> left, Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> right) -> bool
+static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.operator ==(Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> left, Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2> right) -> bool
+static Silk.NET.Core.Constant<TUnderlying, TEnum1>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1>(TEnum1 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1>
+static Silk.NET.Core.Constant<TUnderlying, TEnum1>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1>(TUnderlying value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1>
+static Silk.NET.Core.Constant<TUnderlying, TEnum1>.implicit operator TEnum1(Silk.NET.Core.Constant<TUnderlying, TEnum1> value) -> TEnum1
+static Silk.NET.Core.Constant<TUnderlying, TEnum1>.implicit operator TUnderlying(Silk.NET.Core.Constant<TUnderlying, TEnum1> value) -> TUnderlying
+static Silk.NET.Core.Constant<TUnderlying, TEnum1>.operator !=(Silk.NET.Core.Constant<TUnderlying, TEnum1> left, Silk.NET.Core.Constant<TUnderlying, TEnum1> right) -> bool
+static Silk.NET.Core.Constant<TUnderlying, TEnum1>.operator ==(Silk.NET.Core.Constant<TUnderlying, TEnum1> left, Silk.NET.Core.Constant<TUnderlying, TEnum1> right) -> bool
+static Silk.NET.Core.Default.True<T>() -> T
+static Silk.NET.Core.DSL.nullptr.get -> Silk.NET.Core.NullPtr
+static Silk.NET.Core.EGLPlatformInfo.operator !=(Silk.NET.Core.EGLPlatformInfo left, Silk.NET.Core.EGLPlatformInfo right) -> bool
+static Silk.NET.Core.EGLPlatformInfo.operator ==(Silk.NET.Core.EGLPlatformInfo left, Silk.NET.Core.EGLPlatformInfo right) -> bool
+static Silk.NET.Core.Loader.LoaderInterface.AlternativeNames.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<string!>!>!
+static Silk.NET.Core.Loader.LoaderInterface.LoadAlternativeNames(string! libraryName, System.Reflection.Assembly! assembly, System.Runtime.InteropServices.DllImportSearchPath? searchPath) -> nint
+static Silk.NET.Core.Loader.LoaderInterface.LoadLibrary(string! name, System.Reflection.Assembly! asm) -> nint
+static Silk.NET.Core.Loader.LoaderInterface.RegisterAlternativeName(string! libraryName, string! altName) -> void
+static Silk.NET.Core.Loader.LoaderInterface.RegisterHook(System.Reflection.Assembly? asm) -> void
+static Silk.NET.Core.Loader.LoaderInterface.ResolvingLibrary -> System.Runtime.InteropServices.DllImportResolver?
+static Silk.NET.Core.MaybeBool<T, TScheme>.implicit operator bool(Silk.NET.Core.MaybeBool<T, TScheme> value) -> bool
+static Silk.NET.Core.MaybeBool<T, TScheme>.implicit operator Silk.NET.Core.MaybeBool<T, TScheme>(bool value) -> Silk.NET.Core.MaybeBool<T, TScheme>
+static Silk.NET.Core.MaybeBool<T, TScheme>.implicit operator Silk.NET.Core.MaybeBool<T, TScheme>(T Value) -> Silk.NET.Core.MaybeBool<T, TScheme>
+static Silk.NET.Core.MaybeBool<T, TScheme>.implicit operator T(Silk.NET.Core.MaybeBool<T, TScheme> value) -> T
+static Silk.NET.Core.MaybeBool<T, TScheme>.operator !=(Silk.NET.Core.MaybeBool<T, TScheme> left, Silk.NET.Core.MaybeBool<T, TScheme> right) -> bool
+static Silk.NET.Core.MaybeBool<T, TScheme>.operator ==(Silk.NET.Core.MaybeBool<T, TScheme> left, Silk.NET.Core.MaybeBool<T, TScheme> right) -> bool
+static Silk.NET.Core.MaybeBool<T>.implicit operator bool(Silk.NET.Core.MaybeBool<T> value) -> bool
+static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(bool value) -> Silk.NET.Core.MaybeBool<T>
+static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(T Value) -> Silk.NET.Core.MaybeBool<T>
+static Silk.NET.Core.MaybeBool<T>.implicit operator T(Silk.NET.Core.MaybeBool<T> value) -> T
+static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> left, Silk.NET.Core.MaybeBool<T> right) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> left, Silk.NET.Core.MaybeBool<T> right) -> bool
+static Silk.NET.Core.NullPtr.implicit operator void*(Silk.NET.Core.NullPtr _) -> void*
+static Silk.NET.Core.NullPtr.operator !=(Silk.NET.Core.NullPtr left, Silk.NET.Core.NullPtr right) -> bool
+static Silk.NET.Core.NullPtr.operator ==(Silk.NET.Core.NullPtr left, Silk.NET.Core.NullPtr right) -> bool
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<char> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<char> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<int> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<int> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<sbyte> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<sbyte> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<short> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<short> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<uint> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<uint> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<ushort> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<ushort> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<byte> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<byte> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<char> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<char> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<int> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<int> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<sbyte> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<sbyte> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<short> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<short> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<uint> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<uint> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<ushort> this) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ref<ushort> this, int length) -> string!
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<byte> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<char> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<int> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<sbyte> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<short> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<uint> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr2D<ushort> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<byte> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<char> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<int> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<sbyte> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<short> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<uint> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ptr3D<ushort> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<byte> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<char> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<int> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<sbyte> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<short> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<uint> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref2D<ushort> this, int length) -> string?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<byte> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<char> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<int> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<sbyte> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<short> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<uint> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<ushort> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.Ptr.explicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
+static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ref ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.explicit operator string!(Silk.NET.Core.Ptr ptr) -> string!
+static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(void* ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ptr.implicit operator void*(Silk.NET.Core.Ptr ptr) -> void*
+static Silk.NET.Core.Ptr.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator !=(Silk.NET.Core.Ptr lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr.operator !=(Silk.NET.Core.Ptr lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator !=(Silk.NET.Core.Ptr lh, Silk.NET.Core.Ref rh) -> bool
+static Silk.NET.Core.Ptr.operator !=(Silk.NET.Core.Ptr lh, void* rh) -> bool
+static Silk.NET.Core.Ptr.operator !=(Silk.NET.Core.Ref lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator !=(void* lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(Silk.NET.Core.Ptr lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(Silk.NET.Core.Ptr lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(Silk.NET.Core.Ptr lh, Silk.NET.Core.Ref rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(Silk.NET.Core.Ptr lh, void* rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(Silk.NET.Core.Ref lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr.operator ==(void* lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr2D.explicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.Ref2D ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.Ptr* ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(void* ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(void** ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ptr2D.implicit operator void*(Silk.NET.Core.Ptr2D ptr) -> void*
+static Silk.NET.Core.Ptr2D.implicit operator void**(Silk.NET.Core.Ptr2D ptr) -> void**
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.Ptr2D lh, void* rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.Ptr2D lh, void** rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(Silk.NET.Core.Ref2D lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(void* lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator !=(void** lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.Ptr2D lh, void* rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.Ptr2D lh, void** rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(Silk.NET.Core.Ref2D lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(void* lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D.operator ==(void** lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.explicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ref2D ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.explicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ref2D<T> ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ptr<T>* ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(T** ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(void* ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(void** ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ptr2D<T>.implicit operator T*(Silk.NET.Core.Ptr2D<T> ptr) -> T*
+static Silk.NET.Core.Ptr2D<T>.implicit operator T**(Silk.NET.Core.Ptr2D<T> ptr) -> T**
+static Silk.NET.Core.Ptr2D<T>.implicit operator void*(Silk.NET.Core.Ptr2D<T> ptr) -> void*
+static Silk.NET.Core.Ptr2D<T>.implicit operator void**(Silk.NET.Core.Ptr2D<T> ptr) -> void**
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, T* rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, T** rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, void* rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ptr2D<T> lh, void** rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(T* lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(T** lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(void* lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator !=(void** lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.Ptr2D rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, T* rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, T** rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, void* rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ptr2D<T> lh, void** rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(T* lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(T** lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(void* lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr2D<T>.operator ==(void** lh, Silk.NET.Core.Ptr2D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.Ref2D ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.Ptr2D* ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void* ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void** ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void*** ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ptr3D.implicit operator void*(Silk.NET.Core.Ptr3D ptr) -> void*
+static Silk.NET.Core.Ptr3D.implicit operator void**(Silk.NET.Core.Ptr3D ptr) -> void**
+static Silk.NET.Core.Ptr3D.implicit operator void***(Silk.NET.Core.Ptr3D ptr) -> void***
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.Ptr3D lh, void* rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.Ptr3D lh, void** rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(Silk.NET.Core.Ref2D lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(void* lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator !=(void** lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.Ptr3D lh, void* rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.Ptr3D lh, void** rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(Silk.NET.Core.Ref2D lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(void* lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D.operator ==(void** lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.explicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ref3D ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.explicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ref3D<T> ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ptr2D<T>* ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(T*** ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void* ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void** ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void*** ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ptr3D<T>.implicit operator T*(Silk.NET.Core.Ptr3D<T> ptr) -> T*
+static Silk.NET.Core.Ptr3D<T>.implicit operator T**(Silk.NET.Core.Ptr3D<T> ptr) -> T**
+static Silk.NET.Core.Ptr3D<T>.implicit operator T***(Silk.NET.Core.Ptr3D<T> ptr) -> T***
+static Silk.NET.Core.Ptr3D<T>.implicit operator void*(Silk.NET.Core.Ptr3D<T> ptr) -> void*
+static Silk.NET.Core.Ptr3D<T>.implicit operator void**(Silk.NET.Core.Ptr3D<T> ptr) -> void**
+static Silk.NET.Core.Ptr3D<T>.implicit operator void***(Silk.NET.Core.Ptr3D<T> ptr) -> void***
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, T* rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, T** rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, void* rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ptr3D<T> lh, void** rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(T* lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(T** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(void* lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator !=(void** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.Ptr3D rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, T* rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, T** rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, void* rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ptr3D<T> lh, void** rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(T* lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(T** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(void* lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr3D<T>.operator ==(void** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ref<T> ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.explicit operator string!(Silk.NET.Core.Ptr<T> ptr) -> string!
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr<T> ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(T* ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(void* ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr<T> ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ref<T>(Silk.NET.Core.Ptr<T> ptr) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ptr<T>.implicit operator T*(Silk.NET.Core.Ptr<T> ptr) -> T*
+static Silk.NET.Core.Ptr<T>.implicit operator void*(Silk.NET.Core.Ptr<T> ptr) -> void*
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.Ref<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr<T> lh, T* rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ptr<T> lh, void* rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(Silk.NET.Core.Ref<T> lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(T* lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator !=(void* lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.Ptr rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr<T> lh, Silk.NET.Core.Ref<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr<T> lh, T* rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ptr<T> lh, void* rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(Silk.NET.Core.Ref<T> lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(T* lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.operator ==(void* lh, Silk.NET.Core.Ptr<T> rh) -> bool
+static Silk.NET.Core.Ref.explicit operator byte*(Silk.NET.Core.Ref ptr) -> byte*
+static Silk.NET.Core.Ref.explicit operator string!(Silk.NET.Core.Ref ptr) -> string!
+static Silk.NET.Core.Ref.explicit operator void*(Silk.NET.Core.Ref ptr) -> void*
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(byte* ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(byte[,,]! array) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(byte[,]! array) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(byte[]! array) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(string! str) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(System.Span<byte> span) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.implicit operator Silk.NET.Core.Ref(void* ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref rh) -> bool
+static Silk.NET.Core.Ref.operator !=(Silk.NET.Core.Ref lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref.operator !=(Silk.NET.Core.Ref lh, Silk.NET.Core.Ref rh) -> bool
+static Silk.NET.Core.Ref.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref rh) -> bool
+static Silk.NET.Core.Ref.operator ==(Silk.NET.Core.Ref lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref.operator ==(Silk.NET.Core.Ref lh, Silk.NET.Core.Ref rh) -> bool
+static Silk.NET.Core.Ref2D.explicit operator byte**(Silk.NET.Core.Ref2D ptr) -> byte**
+static Silk.NET.Core.Ref2D.explicit operator void*(Silk.NET.Core.Ref2D ptr) -> void*
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ref2D ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref2D(byte** ptr) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref2D(byte*[]! array) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref2D(byte[]![]! array) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref2D(string![]! array) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D.implicit operator Silk.NET.Core.Ref2D(void* ptr) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ref2D.operator !=(Silk.NET.Core.Ref2D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref2D.operator !=(Silk.NET.Core.Ref2D lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ref2D.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ref2D.operator ==(Silk.NET.Core.Ref2D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref2D.operator ==(Silk.NET.Core.Ref2D lh, Silk.NET.Core.Ref2D rh) -> bool
+static Silk.NET.Core.Ref2D<T>.explicit operator T**(Silk.NET.Core.Ref2D<T> ptr) -> T**
+static Silk.NET.Core.Ref2D<T>.explicit operator void*(Silk.NET.Core.Ref2D<T> ptr) -> void*
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ref2D<T> ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ref2D<T> ptr) -> Silk.NET.Core.Ref2D
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(string?[]! array) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(T** ptr) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(T*[]! array) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(T[]![]! array) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ref2D<T>.implicit operator Silk.NET.Core.Ref2D<T>(void* ptr) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.Ref2D<T>.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ref2D<T>.operator !=(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref2D<T>.operator !=(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ref2D<T>.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ref2D<T>.operator ==(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref2D<T>.operator ==(Silk.NET.Core.Ref2D<T> lh, Silk.NET.Core.Ref2D<T> rh) -> bool
+static Silk.NET.Core.Ref3D.explicit operator byte***(Silk.NET.Core.Ref3D ptr) -> byte***
+static Silk.NET.Core.Ref3D.explicit operator void*(Silk.NET.Core.Ref3D ptr) -> void*
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ref3D ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref3D(byte*** ptr) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref3D(byte**[]! array) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref3D(byte[]![]![]! array) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref3D(string![]![]! array) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D.implicit operator Silk.NET.Core.Ref3D(void* ptr) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref3D rh) -> bool
+static Silk.NET.Core.Ref3D.operator !=(Silk.NET.Core.Ref3D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref3D.operator !=(Silk.NET.Core.Ref3D lh, Silk.NET.Core.Ref3D rh) -> bool
+static Silk.NET.Core.Ref3D.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref3D rh) -> bool
+static Silk.NET.Core.Ref3D.operator ==(Silk.NET.Core.Ref3D lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref3D.operator ==(Silk.NET.Core.Ref3D lh, Silk.NET.Core.Ref3D rh) -> bool
+static Silk.NET.Core.Ref3D<T>.explicit operator T***(Silk.NET.Core.Ref3D<T> ptr) -> T***
+static Silk.NET.Core.Ref3D<T>.explicit operator void*(Silk.NET.Core.Ref3D<T> ptr) -> void*
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ref3D<T> ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ref3D<T> ptr) -> Silk.NET.Core.Ref3D
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(string?[]![]! array) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(T*** ptr) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(T**[]! array) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(T[]![]![]! array) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ref3D<T>.implicit operator Silk.NET.Core.Ref3D<T>(void* ptr) -> Silk.NET.Core.Ref3D<T>
+static Silk.NET.Core.Ref3D<T>.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref3D<T> rh) -> bool
+static Silk.NET.Core.Ref3D<T>.operator !=(Silk.NET.Core.Ref3D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref3D<T>.operator !=(Silk.NET.Core.Ref3D<T> lh, Silk.NET.Core.Ref3D<T> rh) -> bool
+static Silk.NET.Core.Ref3D<T>.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref3D<T> rh) -> bool
+static Silk.NET.Core.Ref3D<T>.operator ==(Silk.NET.Core.Ref3D<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref3D<T>.operator ==(Silk.NET.Core.Ref3D<T> lh, Silk.NET.Core.Ref3D<T> rh) -> bool
+static Silk.NET.Core.Ref<T>.explicit operator string!(Silk.NET.Core.Ref<T> ptr) -> string!
+static Silk.NET.Core.Ref<T>.explicit operator T*(Silk.NET.Core.Ref<T> ptr) -> T*
+static Silk.NET.Core.Ref<T>.explicit operator void*(Silk.NET.Core.Ref<T> ptr) -> void*
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ref<T> ptr) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(string? str) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(System.ReadOnlySpan<T> span) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(System.Span<T> span) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(T* ptr) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(T[,,]! array) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(T[,]! array) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(T[]! array) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.implicit operator Silk.NET.Core.Ref<T>(void* ptr) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.Ref<T>.operator !=(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref<T> rh) -> bool
+static Silk.NET.Core.Ref<T>.operator !=(Silk.NET.Core.Ref<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref<T>.operator !=(Silk.NET.Core.Ref<T> lh, Silk.NET.Core.Ref<T> rh) -> bool
+static Silk.NET.Core.Ref<T>.operator ==(Silk.NET.Core.NullPtr lh, Silk.NET.Core.Ref<T> rh) -> bool
+static Silk.NET.Core.Ref<T>.operator ==(Silk.NET.Core.Ref<T> lh, Silk.NET.Core.NullPtr rh) -> bool
+static Silk.NET.Core.Ref<T>.operator ==(Silk.NET.Core.Ref<T> lh, Silk.NET.Core.Ref<T> rh) -> bool
+static Silk.NET.Core.SilkMarshal.AsRef2D<T>(this ref Silk.NET.Core.Ref<T> ref) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.SilkMarshal.AsRef2D<T>(this ref System.ReadOnlySpan<T> ref) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.SilkMarshal.AsRef2D<T>(this ref System.Span<T> ref) -> Silk.NET.Core.Ref2D<T>
+static Silk.NET.Core.SilkMarshal.AsRef<T>(this ref T ref) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.SilkMarshal.AsRef<T>(this System.ReadOnlySpan<T> ref) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.SilkMarshal.AsRef<T>(this System.Span<T> ref) -> Silk.NET.Core.Ref<T>
+static Silk.NET.Core.SilkMarshal.ConstCast<TFrom, TTo>(TFrom value) -> TTo
+static Silk.NET.Core.SilkMarshal.DelegateToPtr<T>(T! delegate) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.SilkMarshal.Free(Silk.NET.Core.Ptr ptr) -> void
+static Silk.NET.Core.SilkMarshal.JaggedArrayToPointerArray<T>(System.ReadOnlySpan<T[]!> array) -> T*[]!
+static Silk.NET.Core.SilkMarshal.JaggedArrayToPointerArray<T>(System.ReadOnlySpan<T[]![]!> array) -> T**[]!
+static Silk.NET.Core.SilkMarshal.JaggedArrayToPointerArray<T>(System.ReadOnlySpan<T[]![]![]!> array) -> T***[]!
+static Silk.NET.Core.SilkMarshal.NativeToArray<T>(System.Span<nint> span, int[]! lengths) -> T[]![]!
+static Silk.NET.Core.SilkMarshal.NativeToArray<T>(System.Span<nint> span, int[]! lengths0, int[]![]! lengths1) -> T[]![]![]!
+static Silk.NET.Core.SilkMarshal.NativeToString(ref byte native, nint charSize = 1) -> string?
+static Silk.NET.Core.SilkMarshal.NativeToStringArray(System.ReadOnlySpan<nint> native, int[]! lengths, nint charSize = 1) -> string?[]?[]?
+static Silk.NET.Core.SilkMarshal.NativeToStringArray(System.ReadOnlySpan<nint> native, int[]! lengths0, int[]! lengths1, nint charSize = 1) -> string?[]?[]?[]?
+static Silk.NET.Core.SilkMarshal.NativeToStringArray(System.ReadOnlySpan<nint> native, nint charSize = 1) -> string?[]?
+static Silk.NET.Core.SilkMarshal.StringArrayToArray(System.ReadOnlySpan<string?> strs, nint charSize = 1) -> byte[]?
+static Silk.NET.Core.SilkMarshal.StringArrayToNative(System.ReadOnlySpan<string![]![]!> strs, nint charSize = 1) -> byte
+static Silk.NET.Core.SilkMarshal.StringArrayToNative(System.ReadOnlySpan<string?> strs, nint charSize = 1) -> byte
+static Silk.NET.Core.SilkMarshal.StringArrayToNative(System.ReadOnlySpan<string?[]!> strs, nint charSize = 1) -> byte
+static Silk.NET.Core.SilkMarshal.StringToArray(System.ReadOnlySpan<char> str, nint charSize = 1) -> byte[]?
+static Silk.NET.Core.SilkMarshal.StringToNative(System.ReadOnlySpan<char> str, nint charSize = 1) -> byte
+static Silk.NET.Core.UIKitPlatformInfo.operator !=(Silk.NET.Core.UIKitPlatformInfo left, Silk.NET.Core.UIKitPlatformInfo right) -> bool
+static Silk.NET.Core.UIKitPlatformInfo.operator ==(Silk.NET.Core.UIKitPlatformInfo left, Silk.NET.Core.UIKitPlatformInfo right) -> bool
+static Silk.NET.Core.Utf8String.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Utf8String str) -> Silk.NET.Core.Ref
+static Silk.NET.Core.Utf8String.implicit operator Silk.NET.Core.Ref<byte>(Silk.NET.Core.Utf8String str) -> Silk.NET.Core.Ref<byte>
+static Silk.NET.Core.Utf8String.implicit operator Silk.NET.Core.Ref<sbyte>(Silk.NET.Core.Utf8String str) -> Silk.NET.Core.Ref<sbyte>
+static Silk.NET.Core.Utf8String.implicit operator Silk.NET.Core.Utf8String(System.ReadOnlySpan<byte> bytes) -> Silk.NET.Core.Utf8String
+static Silk.NET.Core.Utf8String.implicit operator Silk.NET.Core.Utf8String(System.ReadOnlySpan<sbyte> bytes) -> Silk.NET.Core.Utf8String
+static Silk.NET.Core.Utf8String.implicit operator string!(Silk.NET.Core.Utf8String str) -> string!
+static Silk.NET.Core.Utf8String.implicit operator System.ReadOnlySpan<byte>(Silk.NET.Core.Utf8String str) -> System.ReadOnlySpan<byte>
+static Silk.NET.Core.Utf8String.implicit operator System.ReadOnlySpan<sbyte>(Silk.NET.Core.Utf8String str) -> System.ReadOnlySpan<sbyte>
+static Silk.NET.Core.VariantBool.IsTrue<T>(T value) -> bool
+static Silk.NET.Core.VariantBool.True<T>() -> T
+static Silk.NET.Core.Version32.explicit operator Silk.NET.Core.Version32(uint val) -> Silk.NET.Core.Version32
+static Silk.NET.Core.Version32.implicit operator Silk.NET.Core.Version32(System.Version! version) -> Silk.NET.Core.Version32
+static Silk.NET.Core.Version32.implicit operator System.Version!(Silk.NET.Core.Version32 version) -> System.Version!
+static Silk.NET.Core.Version32.implicit operator uint(Silk.NET.Core.Version32 version) -> uint
+static Silk.NET.Core.VivantePlatformInfo.operator !=(Silk.NET.Core.VivantePlatformInfo left, Silk.NET.Core.VivantePlatformInfo right) -> bool
+static Silk.NET.Core.VivantePlatformInfo.operator ==(Silk.NET.Core.VivantePlatformInfo left, Silk.NET.Core.VivantePlatformInfo right) -> bool
+static Silk.NET.Core.WaylandPlatformInfo.operator !=(Silk.NET.Core.WaylandPlatformInfo left, Silk.NET.Core.WaylandPlatformInfo right) -> bool
+static Silk.NET.Core.WaylandPlatformInfo.operator ==(Silk.NET.Core.WaylandPlatformInfo left, Silk.NET.Core.WaylandPlatformInfo right) -> bool
+static Silk.NET.Core.Win32PlatformInfo.operator !=(Silk.NET.Core.Win32PlatformInfo left, Silk.NET.Core.Win32PlatformInfo right) -> bool
+static Silk.NET.Core.Win32PlatformInfo.operator ==(Silk.NET.Core.Win32PlatformInfo left, Silk.NET.Core.Win32PlatformInfo right) -> bool
+static Silk.NET.Core.WinRTPlatformInfo.operator !=(Silk.NET.Core.WinRTPlatformInfo left, Silk.NET.Core.WinRTPlatformInfo right) -> bool
+static Silk.NET.Core.WinRTPlatformInfo.operator ==(Silk.NET.Core.WinRTPlatformInfo left, Silk.NET.Core.WinRTPlatformInfo right) -> bool
+static Silk.NET.Core.X11PlatformInfo.operator !=(Silk.NET.Core.X11PlatformInfo left, Silk.NET.Core.X11PlatformInfo right) -> bool
+static Silk.NET.Core.X11PlatformInfo.operator ==(Silk.NET.Core.X11PlatformInfo left, Silk.NET.Core.X11PlatformInfo right) -> bool
+~override Silk.NET.Core.AndroidPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.AndroidPlatformInfo.ToString() -> string
+~override Silk.NET.Core.CocoaPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.CocoaPlatformInfo.ToString() -> string
+~override Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.Equals(object obj) -> bool
+~override Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.ToString() -> string
+~override Silk.NET.Core.Constant<TUnderlying, TEnum1>.Equals(object obj) -> bool
+~override Silk.NET.Core.Constant<TUnderlying, TEnum1>.ToString() -> string
+~override Silk.NET.Core.EGLPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.EGLPlatformInfo.ToString() -> string
+~override Silk.NET.Core.MaybeBool<T, TScheme>.Equals(object obj) -> bool
+~override Silk.NET.Core.MaybeBool<T, TScheme>.ToString() -> string
+~override Silk.NET.Core.MaybeBool<T>.Equals(object obj) -> bool
+~override Silk.NET.Core.MaybeBool<T>.ToString() -> string
+~override Silk.NET.Core.NullPtr.Equals(object obj) -> bool
+~override Silk.NET.Core.NullPtr.ToString() -> string
+~override Silk.NET.Core.UIKitPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.UIKitPlatformInfo.ToString() -> string
+~override Silk.NET.Core.VivantePlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.VivantePlatformInfo.ToString() -> string
+~override Silk.NET.Core.WaylandPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.WaylandPlatformInfo.ToString() -> string
+~override Silk.NET.Core.Win32PlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.Win32PlatformInfo.ToString() -> string
+~override Silk.NET.Core.WinRTPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.WinRTPlatformInfo.ToString() -> string
+~override Silk.NET.Core.X11PlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.X11PlatformInfo.ToString() -> string

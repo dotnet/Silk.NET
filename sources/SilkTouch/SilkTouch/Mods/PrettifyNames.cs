@@ -271,7 +271,7 @@ public class PrettifyNames(
             ?? throw new InvalidOperationException(
                 "Failed to obtain compilation for source project!"
             );
-        await RenameAllAsync(
+        await NameUtils.RenameAllAsync(
             ctx,
             types.SelectMany(x =>
             {
@@ -311,6 +311,7 @@ public class PrettifyNames(
                         ]
                     );
             }),
+            logger,
             ct
         );
         logger.LogDebug(
@@ -335,9 +336,7 @@ public class PrettifyNames(
                 continue;
             }
 
-            proj = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
-                .WithName(doc.Name.Replace(oldName, newName))
-                .Project;
+            proj = doc.ReplaceNameAndPath(oldName, newName).Project;
         }
 
         ctx.SourceProject = proj;
@@ -940,117 +939,6 @@ public class PrettifyNames(
             DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
             _ => null,
         };
-
-    private async Task RenameAllAsync(
-        IModContext ctx,
-        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
-        CancellationToken ct = default
-    )
-    {
-        if (ctx.SourceProject is null)
-        {
-            return;
-        }
-
-        var locations = new ConcurrentDictionary<Location, string>();
-        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
-        await Parallel.ForEachAsync(
-            toRename,
-            ct,
-            async (tuple, _) =>
-            {
-                // First, let's add all of the locations of the declaration identifiers.
-                var (symbol, newName) = tuple;
-                foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
-                {
-                    var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
-                    if (identifierLocation is not null)
-                    {
-                        locations.TryAdd(identifierLocation, newName);
-                    }
-                }
-
-                // Next, let's find all the references of the symbols.
-                var references = await SymbolFinder.FindReferencesAsync(
-                    symbol,
-                    ctx.SourceProject?.Solution
-                        ?? throw new ArgumentException("SourceProject is null"),
-                    ct
-                );
-
-                foreach (var referencedSymbol in references)
-                {
-                    foreach (var referencedSymbolLocation in referencedSymbol.Locations)
-                    {
-                        if (
-                            referencedSymbolLocation.IsCandidateLocation
-                            || referencedSymbolLocation.IsImplicit
-                        )
-                        {
-                            continue;
-                        }
-
-                        locations.TryAdd(referencedSymbolLocation.Location, newName);
-                    }
-                }
-            }
-        );
-
-        logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
-
-        // Now it's just a simple find and replace.
-        var sln = ctx.SourceProject.Solution;
-        var srcProjId = ctx.SourceProject.Id;
-        var testProjId = ctx.TestProject?.Id;
-        foreach (
-            var (syntaxTree, renameLocations) in locations
-                .GroupBy(x => x.Key.SourceTree)
-                .Select(x => (x.Key, x.OrderByDescending(y => y.Key.SourceSpan)))
-        )
-        {
-            if (
-                syntaxTree is null
-                || sln.GetDocument(syntaxTree) is not { } doc
-                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
-                || await syntaxTree.GetTextAsync(ct) is not { } text
-            )
-            {
-                continue;
-            }
-
-            var ogText = text;
-            foreach (var (location, newName) in renameLocations)
-            {
-                var contents = ogText.GetSubText(location.SourceSpan).ToString();
-                if (contents.Contains(' '))
-                {
-                    logger.LogWarning(
-                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
-                        contents,
-                        newName,
-                        location.GetLineSpan()
-                    );
-                    continue;
-                }
-
-                if (logger.IsEnabled(LogLevel.Trace))
-                {
-                    logger.LogTrace(
-                        "\"{}\" -> \"{}\" at {}",
-                        contents,
-                        newName,
-                        location.GetLineSpan()
-                    );
-                }
-
-                text = text.Replace(location.SourceSpan, newName);
-            }
-
-            sln = doc.WithText(text).Project.Solution;
-        }
-
-        ctx.SourceProject = sln.GetProject(srcProjId);
-    }
 
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)

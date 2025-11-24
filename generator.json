@@ -149,7 +149,10 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHints": ["gl"]
+        "GlobalPrefixHints": ["gl"],
+        "PrefixOverrides": {
+          "SyncObjectMask": "GL_SYNC"
+        }
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -262,6 +265,100 @@
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true
+      }
+    },
+    "Vulkan": {
+      "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
+      "Solution": "Silk.NET.sln",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "AddApiProfiles",
+        "MixKhronosData",
+        "ExtractNestedTyping",
+        "TransformHandles",
+        "InterceptNativeFunctions",
+        "TransformFunctions",
+        "TransformProperties",
+        "PrettifyNames",
+        "TransformEnums",
+        "AddVTables"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/vulkan/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/Vulkan",
+        "InputTestRoot": "tests/Vulkan"
+      },
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Profile": "vulkan",
+            "SourceSubdirectory": "vulkan"
+          }
+        ]
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
+        "Namespace": "Silk.NET.Vulkan",
+        "FlagsTypes": [
+          "VkFlags",
+          "VkFlags64"
+        ]
+      },
+      "InterceptNativeFunctions": {
+        "NativeFunctionNames": [
+          "vkCreateInstance",
+          "vkCreateDevice"
+        ]
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "VkBool32": null
+        }
+      },
+      "TransformHandles": {
+        "AssumeMissingTypesOpaque": true,
+        "UseDSL": true
+      },
+      "PrettifyNames": {
+        "LongAcronymThreshold": 4,
+        "GlobalPrefixHints": ["vk"],
+        "PrefixOverrides": {
+          "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"
+        }
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RemoveMembers": [
+          {
+            "MemberName": "MaxEnum",
+            "MemberValue": "0x7FFFFFFF"
+          },
+          {
+            "MemberName": "Invalid",
+            "MemberValue": "0x7FFFFFFF"
+          }
+        ],
+        "CoerceBackingTypes": "PreferUnsigned",
+        "RewriteMemberValues": true
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true,
+            "GenerateFactoryPartial": true
+          }
+        ]
       }
     }
   }

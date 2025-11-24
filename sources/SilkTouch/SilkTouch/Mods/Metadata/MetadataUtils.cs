@@ -121,7 +121,7 @@ public static class MetadataUtils
         string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
-        Predicate<T>? filter = default,
+        Predicate<(T Metadata, MetadataSources Sources)>? filter = default,
         T? defaultValue = default
     ) =>
         GetAllMetadata(metadataProviders, jobKey, parentSymbol, childSymbol, filter)
@@ -152,7 +152,7 @@ public static class MetadataUtils
         string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
-        Predicate<T>? filter = default
+        Predicate<(T Metadata, MetadataSources Sources)>? filter = default
     )
     {
         if (parentSymbol is null)
@@ -160,26 +160,38 @@ public static class MetadataUtils
             yield break;
         }
 
-        foreach (var apimd in metadataProviders)
-        {
-            if (
-                childSymbol is not null
-                && apimd.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var vers)
-                && vers.FirstOrDefault(x => filter?.Invoke(x) ?? true) is { } ver
-            )
-            {
-                yield return ver;
-                continue;
-            }
+        filter ??= static _ => true;
 
-            // parentVers.FirstOrDefault(x => x.Profile == Profile.Profile) ?? parent
-            if (
-                apimd.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentVers)
-                && parentVers.FirstOrDefault(x => filter?.Invoke(x) ?? true) is { } parent
-                && childSymbol is null
-            )
+        var foundChildMetadata = false;
+        if (childSymbol is not null)
+        {
+            foreach (var provider in metadataProviders)
             {
-                yield return parent;
+                if (provider.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var childMetadata))
+                {
+                    foreach (var child in childMetadata.Where(x => filter.Invoke((x, MetadataSources.Child))))
+                    {
+                        foundChildMetadata = true;
+                        yield return child;
+                    }
+                }
+            }
+        }
+
+        foreach (var provider in metadataProviders)
+        {
+            if (provider.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentMetadata))
+            {
+                var source = MetadataSources.Parent;
+                if (!foundChildMetadata)
+                {
+                    source |= MetadataSources.ParentFallback;
+                }
+
+                foreach (var parent in parentMetadata.Where(x => filter.Invoke((x, source))))
+                {
+                    yield return parent;
+                }
             }
         }
     }
