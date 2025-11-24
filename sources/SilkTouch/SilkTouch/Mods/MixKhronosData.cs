@@ -426,10 +426,7 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            proj = doc
-                .WithFilePath(doc.FilePath.Replace("FlagBits", "Flags"))
-                .WithName(doc.Name.Replace("FlagBits", "Flags"))
-                .Project;
+            proj = doc.ReplaceNameAndPath("FlagBits", "Flags").Project;
         }
 
         ctx.SourceProject = proj;

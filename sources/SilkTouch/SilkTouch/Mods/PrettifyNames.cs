@@ -336,9 +336,7 @@ public class PrettifyNames(
                 continue;
             }
 
-            proj = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
-                .WithName(doc.Name.Replace(oldName, newName))
-                .Project;
+            proj = doc.ReplaceNameAndPath(oldName, newName).Project;
         }
 
         ctx.SourceProject = proj;

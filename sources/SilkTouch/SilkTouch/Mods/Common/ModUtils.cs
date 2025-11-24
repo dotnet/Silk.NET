@@ -230,6 +230,22 @@ public static class ModUtils
             : relativePath;
 
     /// <summary>
+    /// Searches and replaces all occurrences of the <paramref name="oldValue"/> with the <paramref name="newValue"/> in the document name and project *relative* file path.
+    /// </summary>
+    public static Document ReplaceNameAndPath(this Document document, string oldValue, string newValue)
+    {
+        document = document.WithName(document.Name.Replace(oldValue, newValue));
+
+        var relativePath = document.RelativePath();
+        if (relativePath != null)
+        {
+            document = document.WithFilePath(FullPath(document.Project, relativePath.Replace(oldValue, newValue)));
+        }
+
+        return document;
+    }
+
+    /// <summary>
     /// Gets the new <see cref="ISymbol"/> matching the given old <see cref="ISymbol"/> in a new
     /// <see cref="Compilation"/>. This is useful for maintaining context after a mutating operation e.g. for getting a
     /// new type symbol instance after a rename operation.

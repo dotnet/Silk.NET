@@ -148,10 +148,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
 
             // Add -Handle suffix to end of document name
-            document = document.WithFilePath(
-                    document.FilePath!.Replace(originalName, $"{originalName}Handle")
-                )
-                .WithName(document.Name.Replace(originalName, $"{originalName}Handle"));
+            document = document.ReplaceNameAndPath(originalName, $"{originalName}Handle");
 
             project = document.Project;
         }
