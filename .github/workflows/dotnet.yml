@@ -28,7 +28,6 @@ jobs:
                 dotnet-version: |
                   9.0.x
                   10.0.x
-                dotnet-quality: 'preview'
             - name: Install Workloads
               run: dotnet workload restore
             - name: Pack
@@ -83,7 +82,6 @@ jobs:
                 dotnet-version: |
                   9.0.x
                   10.0.x
-                dotnet-quality: 'preview'
             - name: Install Workloads
               run: dotnet workload restore
             - name: Restore
