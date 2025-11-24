@@ -12,5 +12,5 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DataGraphPipelineDispatchFlagsARM : long
 {
-    None = 0,
+    None = 0x0,
 }

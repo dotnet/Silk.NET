@@ -13,12 +13,12 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SurfaceCounterFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    VblankBitEXT = 0x00000001,
+    VblankBitEXT = 0x1,
 }

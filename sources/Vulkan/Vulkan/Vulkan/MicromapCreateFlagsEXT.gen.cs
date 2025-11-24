@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum MicromapCreateFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,5 +22,5 @@ public enum MicromapCreateFlagsEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DeviceAddressCaptureReplayBitEXT = 0x00000001,
+    DeviceAddressCaptureReplayBitEXT = 0x1,
 }

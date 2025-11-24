@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineLayoutCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,5 +22,5 @@ public enum PipelineLayoutCreateFlags
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    IndependentSetsBitEXT = 0x00000002,
+    IndependentSetsBitEXT = 0x2,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DescriptorBindingFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +30,7 @@ public enum DescriptorBindingFlags
         ],
         MinVersion = "1.2"
     )]
-    UpdateAfterBindBit = 0x00000001,
+    UpdateAfterBindBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -47,7 +47,7 @@ public enum DescriptorBindingFlags
         ],
         MinVersion = "1.2"
     )]
-    UpdateUnusedWhilePendingBit = 0x00000002,
+    UpdateUnusedWhilePendingBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +64,7 @@ public enum DescriptorBindingFlags
         ],
         MinVersion = "1.2"
     )]
-    PartiallyBoundBit = 0x00000004,
+    PartiallyBoundBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -81,7 +81,7 @@ public enum DescriptorBindingFlags
         ],
         MinVersion = "1.2"
     )]
-    VariableDescriptorCountBit = 0x00000008,
+    VariableDescriptorCountBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",

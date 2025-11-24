@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeRgbRangeCompressionFlagsValve
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum VideoEncodeRgbRangeCompressionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    FullRangeBitValve = 0x00000001,
+    FullRangeBitValve = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -32,5 +32,5 @@ public enum VideoEncodeRgbRangeCompressionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    NarrowRangeBitValve = 0x00000002,
+    NarrowRangeBitValve = 0x2,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DescriptorSetLayoutCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -30,14 +30,14 @@ public enum DescriptorSetLayoutCreateFlags
         ],
         MinVersion = "1.2"
     )]
-    UpdateAfterBindPoolBit = 0x00000002,
+    UpdateAfterBindPoolBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    PushDescriptorBit = 0x00000001,
+    PushDescriptorBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +49,7 @@ public enum DescriptorSetLayoutCreateFlags
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferBitEXT = 0x00000010,
+    DescriptorBufferBitEXT = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -61,14 +61,14 @@ public enum DescriptorSetLayoutCreateFlags
             "VK_VERSION_1_3",
         ]
     )]
-    EmbeddedImmutableSamplersBitEXT = 0x00000020,
+    EmbeddedImmutableSamplersBitEXT = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    IndirectBindableBitNV = 0x00000080,
+    IndirectBindableBitNV = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -78,7 +78,7 @@ public enum DescriptorSetLayoutCreateFlags
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    HostOnlyPoolBitEXT = 0x00000004,
+    HostOnlyPoolBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -88,7 +88,7 @@ public enum DescriptorSetLayoutCreateFlags
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    PerStageBitNV = 0x00000040,
+    PerStageBitNV = 0x40,
 
     [SupportedApiProfile(
         "vulkan",

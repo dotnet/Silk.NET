@@ -13,14 +13,14 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalMemoryFeatureFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    DedicatedOnlyBitNV = 0x00000001,
+    DedicatedOnlyBitNV = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    ExportableBitNV = 0x00000002,
+    ExportableBitNV = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    ImportableBitNV = 0x00000004,
+    ImportableBitNV = 0x4,
 }

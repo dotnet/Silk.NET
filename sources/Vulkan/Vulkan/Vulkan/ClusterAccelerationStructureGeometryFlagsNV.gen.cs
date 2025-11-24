@@ -13,26 +13,26 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ClusterAccelerationStructureGeometryFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    CullDisableBitNV = 0x00000001,
+    CullDisableBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    NoDuplicateAnyhitInvocationBitNV = 0x00000002,
+    NoDuplicateAnyhitInvocationBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    OpaqueBitNV = 0x00000004,
+    OpaqueBitNV = 0x4,
 }

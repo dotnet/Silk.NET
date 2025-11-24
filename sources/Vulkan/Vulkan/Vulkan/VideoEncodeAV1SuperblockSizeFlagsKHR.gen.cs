@@ -13,19 +13,19 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeAV1SuperblockSizeFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size64BitKHR = 0x00000001,
+    Size64BitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size128BitKHR = 0x00000002,
+    Size128BitKHR = 0x2,
 }

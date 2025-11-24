@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum GeometryFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum GeometryFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    OpaqueBitKHR = 0x00000001,
+    OpaqueBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum GeometryFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    NoDuplicateAnyHitInvocationBitKHR = 0x00000002,
+    NoDuplicateAnyHitInvocationBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",

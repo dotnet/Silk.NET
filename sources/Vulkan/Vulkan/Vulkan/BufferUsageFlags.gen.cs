@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum BufferUsageFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    TransferSrcBit = 0x00000001,
+    TransferSrcBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -69,7 +69,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    TransferDstBit = 0x00000002,
+    TransferDstBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +97,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    UniformTexelBufferBit = 0x00000004,
+    UniformTexelBufferBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -125,7 +125,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    StorageTexelBufferBit = 0x00000008,
+    StorageTexelBufferBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -153,7 +153,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    UniformBufferBit = 0x00000010,
+    UniformBufferBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -181,7 +181,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    StorageBufferBit = 0x00000020,
+    StorageBufferBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -209,7 +209,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    IndexBufferBit = 0x00000040,
+    IndexBufferBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -237,7 +237,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexBufferBit = 0x00000080,
+    VertexBufferBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -265,7 +265,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    IndirectBufferBit = 0x00000100,
+    IndirectBufferBit = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -285,7 +285,7 @@ public enum BufferUsageFlags
         ],
         MinVersion = "1.2"
     )]
-    ShaderDeviceAddressBit = 0x00020000,
+    ShaderDeviceAddressBit = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -295,7 +295,7 @@ public enum BufferUsageFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeSrcBitKHR = 0x00002000,
+    VideoDecodeSrcBitKHR = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -305,7 +305,7 @@ public enum BufferUsageFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDstBitKHR = 0x00004000,
+    VideoDecodeDstBitKHR = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -315,7 +315,7 @@ public enum BufferUsageFlags
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackBufferBitEXT = 0x00000800,
+    TransformFeedbackBufferBitEXT = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -325,7 +325,7 @@ public enum BufferUsageFlags
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackCounterBufferBitEXT = 0x00001000,
+    TransformFeedbackCounterBufferBitEXT = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -335,7 +335,7 @@ public enum BufferUsageFlags
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    ConditionalRenderingBitEXT = 0x00000200,
+    ConditionalRenderingBitEXT = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -345,7 +345,7 @@ public enum BufferUsageFlags
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureBuildInputReadOnlyBitKHR = 0x00080000,
+    AccelerationStructureBuildInputReadOnlyBitKHR = 0x80000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -355,7 +355,7 @@ public enum BufferUsageFlags
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureStorageBitKHR = 0x00100000,
+    AccelerationStructureStorageBitKHR = 0x100000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -365,7 +365,7 @@ public enum BufferUsageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderBindingTableBitKHR = 0x00000400,
+    ShaderBindingTableBitKHR = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -375,7 +375,7 @@ public enum BufferUsageFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDstBitKHR = 0x00008000,
+    VideoEncodeDstBitKHR = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -385,7 +385,7 @@ public enum BufferUsageFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeSrcBitKHR = 0x00010000,
+    VideoEncodeSrcBitKHR = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -397,7 +397,7 @@ public enum BufferUsageFlags
             "VK_VERSION_1_3",
         ]
     )]
-    SamplerDescriptorBufferBitEXT = 0x00200000,
+    SamplerDescriptorBufferBitEXT = 0x200000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -409,7 +409,7 @@ public enum BufferUsageFlags
             "VK_VERSION_1_3",
         ]
     )]
-    ResourceDescriptorBufferBitEXT = 0x00400000,
+    ResourceDescriptorBufferBitEXT = 0x400000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -421,7 +421,7 @@ public enum BufferUsageFlags
             "VK_VERSION_1_3",
         ]
     )]
-    PushDescriptorsDescriptorBufferBitEXT = 0x04000000,
+    PushDescriptorsDescriptorBufferBitEXT = 0x4000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -431,7 +431,7 @@ public enum BufferUsageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapBuildInputReadOnlyBitEXT = 0x00800000,
+    MicromapBuildInputReadOnlyBitEXT = 0x800000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -441,7 +441,7 @@ public enum BufferUsageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapStorageBitEXT = 0x01000000,
+    MicromapStorageBitEXT = 0x1000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -451,7 +451,7 @@ public enum BufferUsageFlags
             "VK_VERSION_1_1",
         ]
     )]
-    TileMemoryBitQCOM = 0x08000000,
+    TileMemoryBitQCOM = 0x8000000,
 
     [SupportedApiProfile(
         "vulkan",

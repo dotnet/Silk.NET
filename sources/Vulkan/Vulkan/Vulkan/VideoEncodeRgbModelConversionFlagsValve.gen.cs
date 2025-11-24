@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeRgbModelConversionFlagsValve
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    RgbIdentityBitValve = 0x00000001,
+    RgbIdentityBitValve = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    YcbcrIdentityBitValve = 0x00000002,
+    YcbcrIdentityBitValve = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    Ycbcr709BitValve = 0x00000004,
+    Ycbcr709BitValve = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    Ycbcr601BitValve = 0x00000008,
+    Ycbcr601BitValve = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,5 +63,5 @@ public enum VideoEncodeRgbModelConversionFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    Ycbcr2020BitValve = 0x00000010,
+    Ycbcr2020BitValve = 0x10,
 }

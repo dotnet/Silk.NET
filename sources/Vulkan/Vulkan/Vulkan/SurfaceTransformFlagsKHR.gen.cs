@@ -13,32 +13,32 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SurfaceTransformFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    IdentityBitKHR = 0x00000001,
+    IdentityBitKHR = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    Rotate90BitKHR = 0x00000002,
+    Rotate90BitKHR = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    Rotate180BitKHR = 0x00000004,
+    Rotate180BitKHR = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    Rotate270BitKHR = 0x00000008,
+    Rotate270BitKHR = 0x8,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    HorizontalMirrorBitKHR = 0x00000010,
+    HorizontalMirrorBitKHR = 0x10,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    HorizontalMirrorRotate90BitKHR = 0x00000020,
+    HorizontalMirrorRotate90BitKHR = 0x20,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    HorizontalMirrorRotate180BitKHR = 0x00000040,
+    HorizontalMirrorRotate180BitKHR = 0x40,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    HorizontalMirrorRotate270BitKHR = 0x00000080,
+    HorizontalMirrorRotate270BitKHR = 0x80,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    InheritBitKHR = 0x00000100,
+    InheritBitKHR = 0x100,
 }

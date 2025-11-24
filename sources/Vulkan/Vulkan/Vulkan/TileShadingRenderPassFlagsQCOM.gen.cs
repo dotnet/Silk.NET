@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum TileShadingRenderPassFlagsQCOM
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum TileShadingRenderPassFlagsQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    EnableBitQCOM = 0x00000001,
+    EnableBitQCOM = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,5 +33,5 @@ public enum TileShadingRenderPassFlagsQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    PerTileExecutionBitQCOM = 0x00000002,
+    PerTileExecutionBitQCOM = 0x2,
 }

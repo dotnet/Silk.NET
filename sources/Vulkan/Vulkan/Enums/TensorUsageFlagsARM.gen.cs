@@ -12,10 +12,10 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum TensorUsageFlagsARM : long
 {
-    None = 0,
-    ShaderBitARM = unchecked((ulong)0x00000002UL),
-    TransferSrcBitARM = unchecked((ulong)0x00000004UL),
-    TransferDstBitARM = unchecked((ulong)0x00000008UL),
-    ImageAliasingBitARM = unchecked((ulong)0x00000010UL),
-    DataGraphBitARM = unchecked((ulong)0x00000020UL),
+    None = 0x0,
+    ShaderBitARM = 0x2,
+    TransferSrcBitARM = 0x4,
+    TransferDstBitARM = 0x8,
+    ImageAliasingBitARM = 0x10,
+    DataGraphBitARM = 0x20,
 }

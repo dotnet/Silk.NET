@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineShaderStageCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +27,7 @@ public enum PipelineShaderStageCreateFlags
         ],
         MinVersion = "1.3"
     )]
-    AllowVaryingSubgroupSizeBit = 0x00000001,
+    AllowVaryingSubgroupSizeBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum PipelineShaderStageCreateFlags
         ],
         MinVersion = "1.3"
     )]
-    RequireFullSubgroupsBit = 0x00000002,
+    RequireFullSubgroupsBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",

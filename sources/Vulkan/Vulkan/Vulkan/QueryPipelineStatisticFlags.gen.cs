@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum QueryPipelineStatisticFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +36,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    InputAssemblyVerticesBit = 0x00000001,
+    InputAssemblyVerticesBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -59,7 +59,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    InputAssemblyPrimitivesBit = 0x00000002,
+    InputAssemblyPrimitivesBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -82,7 +82,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexShaderInvocationsBit = 0x00000004,
+    VertexShaderInvocationsBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -105,7 +105,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    GeometryShaderInvocationsBit = 0x00000008,
+    GeometryShaderInvocationsBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -128,7 +128,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    GeometryShaderPrimitivesBit = 0x00000010,
+    GeometryShaderPrimitivesBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -151,7 +151,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    ClippingInvocationsBit = 0x00000020,
+    ClippingInvocationsBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -174,7 +174,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    ClippingPrimitivesBit = 0x00000040,
+    ClippingPrimitivesBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -197,7 +197,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    FragmentShaderInvocationsBit = 0x00000080,
+    FragmentShaderInvocationsBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -220,7 +220,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    TessellationControlShaderPatchesBit = 0x00000100,
+    TessellationControlShaderPatchesBit = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -243,7 +243,7 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    TessellationEvaluationShaderInvocationsBit = 0x00000200,
+    TessellationEvaluationShaderInvocationsBit = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -266,21 +266,21 @@ public enum QueryPipelineStatisticFlags
         ],
         MinVersion = "1.0"
     )]
-    ComputeShaderInvocationsBit = 0x00000400,
+    ComputeShaderInvocationsBit = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    TaskShaderInvocationsBitEXT = 0x00000800,
+    TaskShaderInvocationsBitEXT = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshShaderInvocationsBitEXT = 0x00001000,
+    MeshShaderInvocationsBitEXT = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -290,5 +290,5 @@ public enum QueryPipelineStatisticFlags
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    ClusterCullingShaderInvocationsBitHuawei = 0x00002000,
+    ClusterCullingShaderInvocationsBitHuawei = 0x2000,
 }

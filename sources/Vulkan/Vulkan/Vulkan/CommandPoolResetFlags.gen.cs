@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum CommandPoolResetFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,5 +40,5 @@ public enum CommandPoolResetFlags
         ],
         MinVersion = "1.0"
     )]
-    ReleaseResourcesBit = 0x00000001,
+    ReleaseResourcesBit = 0x1,
 }

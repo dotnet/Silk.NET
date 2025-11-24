@@ -20,7 +20,7 @@ public enum VideoEncodeRateControlModeFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0,
+    DefaultKHR = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +30,7 @@ public enum VideoEncodeRateControlModeFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DisabledBitKHR = 0x00000001,
+    DisabledBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum VideoEncodeRateControlModeFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CbrBitKHR = 0x00000002,
+    CbrBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -50,5 +50,5 @@ public enum VideoEncodeRateControlModeFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VbrBitKHR = 0x00000004,
+    VbrBitKHR = 0x4,
 }

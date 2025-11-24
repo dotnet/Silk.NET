@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ImageCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    CreateSparseBindingBit = 0x00000001,
+    CreateSparseBindingBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    CreateSparseResidencyBit = 0x00000002,
+    CreateSparseResidencyBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -96,7 +96,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    CreateSparseAliasedBit = 0x00000004,
+    CreateSparseAliasedBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -124,7 +124,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    CreateMutableFormatBit = 0x00000008,
+    CreateMutableFormatBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -152,7 +152,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    CreateCubeCompatibleBit = 0x00000010,
+    CreateCubeCompatibleBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -176,7 +176,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    CreateAliasBit = 0x00000400,
+    CreateAliasBit = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -200,7 +200,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    CreateSplitInstanceBindRegionsBit = 0x00000040,
+    CreateSplitInstanceBindRegionsBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -224,7 +224,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    Create2DArrayCompatibleBit = 0x00000020,
+    Create2DArrayCompatibleBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -248,7 +248,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    CreateBlockTexelViewCompatibleBit = 0x00000080,
+    CreateBlockTexelViewCompatibleBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -272,7 +272,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    CreateExtendedUsageBit = 0x00000100,
+    CreateExtendedUsageBit = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -296,7 +296,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    CreateProtectedBit = 0x00000800,
+    CreateProtectedBit = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -320,7 +320,7 @@ public enum ImageCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    CreateDisjointBit = 0x00000200,
+    CreateDisjointBit = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -330,7 +330,7 @@ public enum ImageCreateFlags
             "VK_NV_corner_sampled_image+VK_VERSION_1_1",
         ]
     )]
-    CreateCornerSampledBitNV = 0x00002000,
+    CreateCornerSampledBitNV = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -340,7 +340,7 @@ public enum ImageCreateFlags
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    CreateSampleLocationsCompatibleDepthBitEXT = 0x00001000,
+    CreateSampleLocationsCompatibleDepthBitEXT = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -350,7 +350,7 @@ public enum ImageCreateFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    CreateSubsampledBitEXT = 0x00004000,
+    CreateSubsampledBitEXT = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -362,14 +362,14 @@ public enum ImageCreateFlags
             "VK_VERSION_1_3",
         ]
     )]
-    CreateDescriptorBufferCaptureReplayBitEXT = 0x00010000,
+    CreateDescriptorBufferCaptureReplayBitEXT = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    CreateMultisampledRenderToSingleSampledBitEXT = 0x00040000,
+    CreateMultisampledRenderToSingleSampledBitEXT = 0x40000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -379,14 +379,14 @@ public enum ImageCreateFlags
             "VK_VERSION_1_1",
         ]
     )]
-    Create2DViewCompatibleBitEXT = 0x00020000,
+    Create2DViewCompatibleBitEXT = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    CreateVideoProfileIndependentBitKHR = 0x00100000,
+    CreateVideoProfileIndependentBitKHR = 0x100000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -402,7 +402,7 @@ public enum ImageCreateFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
         ]
     )]
-    CreateFragmentDensityMapOffsetBitEXT = 0x00008000,
+    CreateFragmentDensityMapOffsetBitEXT = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",

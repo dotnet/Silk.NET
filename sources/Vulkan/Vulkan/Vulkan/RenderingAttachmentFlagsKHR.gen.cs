@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum RenderingAttachmentFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +27,7 @@ public enum RenderingAttachmentFlagsKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    InputAttachmentFeedbackBitKHR = 0x00000001,
+    InputAttachmentFeedbackBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum RenderingAttachmentFlagsKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveSkipTransferFunctionBitKHR = 0x00000002,
+    ResolveSkipTransferFunctionBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -47,5 +47,5 @@ public enum RenderingAttachmentFlagsKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveEnableTransferFunctionBitKHR = 0x00000004,
+    ResolveEnableTransferFunctionBitKHR = 0x4,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum IndirectCommandsInputModeFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -24,7 +24,7 @@ public enum IndirectCommandsInputModeFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    VulkanIndexBufferEXT = 0x00000001,
+    VulkanIndexBufferEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -35,5 +35,5 @@ public enum IndirectCommandsInputModeFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    DxgiIndexBufferEXT = 0x00000002,
+    DxgiIndexBufferEXT = 0x2,
 }

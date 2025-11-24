@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SparseMemoryBindFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,5 +41,5 @@ public enum SparseMemoryBindFlags
         ],
         MinVersion = "1.0"
     )]
-    MetadataBit = 0x00000001,
+    MetadataBit = 0x1,
 }

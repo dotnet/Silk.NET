@@ -18,33 +18,33 @@ public enum VideoChromaSubsamplingFlagsKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    SubsamplingInvalidKHR = 0,
+    SubsamplingInvalidKHR = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    SubsamplingMonochromeBitKHR = 0x00000001,
+    SubsamplingMonochromeBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    Subsampling420BitKHR = 0x00000002,
+    Subsampling420BitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    Subsampling422BitKHR = 0x00000004,
+    Subsampling422BitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    Subsampling444BitKHR = 0x00000008,
+    Subsampling444BitKHR = 0x8,
 }

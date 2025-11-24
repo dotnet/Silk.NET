@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum CommandBufferUsageFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum CommandBufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    OneTimeSubmitBit = 0x00000001,
+    OneTimeSubmitBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum CommandBufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    RenderPassContinueBit = 0x00000002,
+    RenderPassContinueBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -96,5 +96,5 @@ public enum CommandBufferUsageFlags
         ],
         MinVersion = "1.0"
     )]
-    SimultaneousUseBit = 0x00000004,
+    SimultaneousUseBit = 0x4,
 }

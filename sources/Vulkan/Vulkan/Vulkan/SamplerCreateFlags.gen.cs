@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SamplerCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum SamplerCreateFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    SubsampledBitEXT = 0x00000001,
+    SubsampledBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum SamplerCreateFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    SubsampledCoarseReconstructionBitEXT = 0x00000002,
+    SubsampledCoarseReconstructionBitEXT = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -45,7 +45,7 @@ public enum SamplerCreateFlags
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitEXT = 0x00000008,
+    DescriptorBufferCaptureReplayBitEXT = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -55,7 +55,7 @@ public enum SamplerCreateFlags
             "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
         ]
     )]
-    NonSeamlessCubeMapBitEXT = 0x00000004,
+    NonSeamlessCubeMapBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -65,5 +65,5 @@ public enum SamplerCreateFlags
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    ImageProcessingBitQCOM = 0x00000010,
+    ImageProcessingBitQCOM = 0x10,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DeviceQueueCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,5 +37,5 @@ public enum DeviceQueueCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    ProtectedBit = 0x00000001,
+    ProtectedBit = 0x1,
 }

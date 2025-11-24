@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum IndirectCommandsLayoutUsageFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum IndirectCommandsLayoutUsageFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    ExplicitPreprocessBitEXT = 0x00000001,
+    ExplicitPreprocessBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -34,5 +34,5 @@ public enum IndirectCommandsLayoutUsageFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    UnorderedSequencesBitEXT = 0x00000002,
+    UnorderedSequencesBitEXT = 0x2,
 }

@@ -12,33 +12,33 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeH265TransformBlockSizeFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size4BitKHR = 0x00000001,
+    Size4BitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size8BitKHR = 0x00000002,
+    Size8BitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size16BitKHR = 0x00000004,
+    Size16BitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size32BitKHR = 0x00000008,
+    Size32BitKHR = 0x8,
 }

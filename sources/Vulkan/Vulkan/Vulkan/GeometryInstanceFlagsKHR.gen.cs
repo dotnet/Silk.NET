@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum GeometryInstanceFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum GeometryInstanceFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFacingCullDisableBitKHR = 0x00000001,
+    TriangleFacingCullDisableBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum GeometryInstanceFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFlipFacingBitKHR = 0x00000002,
+    TriangleFlipFacingBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum GeometryInstanceFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    ForceOpaqueBitKHR = 0x00000004,
+    ForceOpaqueBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum GeometryInstanceFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    ForceNoOpaqueBitKHR = 0x00000008,
+    ForceNoOpaqueBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,7 +63,7 @@ public enum GeometryInstanceFlagsKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    ForceOpacityMicromap2StateBitEXT = 0x00000010,
+    ForceOpacityMicromap2StateBitEXT = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +73,7 @@ public enum GeometryInstanceFlagsKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DisableOpacityMicromapsBitEXT = 0x00000020,
+    DisableOpacityMicromapsBitEXT = 0x20,
 
     [SupportedApiProfile(
         "vulkan",

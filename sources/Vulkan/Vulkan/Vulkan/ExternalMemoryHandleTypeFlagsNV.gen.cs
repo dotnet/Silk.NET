@@ -13,17 +13,17 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalMemoryHandleTypeFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    OpaqueWin32BitNV = 0x00000001,
+    OpaqueWin32BitNV = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    OpaqueWin32KmtBitNV = 0x00000002,
+    OpaqueWin32KmtBitNV = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    D3D11ImageBitNV = 0x00000004,
+    D3D11ImageBitNV = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    D3D11ImageKmtBitNV = 0x00000008,
+    D3D11ImageKmtBitNV = 0x8,
 }

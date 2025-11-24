@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DependencyFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum DependencyFlags
         ],
         MinVersion = "1.0"
     )]
-    ByRegionBit = 0x00000001,
+    ByRegionBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +65,7 @@ public enum DependencyFlags
         ],
         MinVersion = "1.1"
     )]
-    DeviceGroupBit = 0x00000004,
+    DeviceGroupBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -81,7 +81,7 @@ public enum DependencyFlags
         ],
         MinVersion = "1.1"
     )]
-    ViewLocalBit = 0x00000002,
+    ViewLocalBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -91,10 +91,10 @@ public enum DependencyFlags
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    FeedbackLoopBitEXT = 0x00000008,
+    FeedbackLoopBitEXT = 0x8,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    QueueFamilyOwnershipTransferUseAllStagesBitKHR = 0x00000020,
+    QueueFamilyOwnershipTransferUseAllStagesBitKHR = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -104,7 +104,7 @@ public enum DependencyFlags
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    AsymmetricEventBitKHR = 0x00000040,
+    AsymmetricEventBitKHR = 0x40,
 
     [SupportedApiProfile(
         "vulkan",

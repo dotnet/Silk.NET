@@ -13,19 +13,19 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoCapabilityFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ProtectedContentBitKHR = 0x00000001,
+    ProtectedContentBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    SeparateReferenceImagesBitKHR = 0x00000002,
+    SeparateReferenceImagesBitKHR = 0x2,
 }

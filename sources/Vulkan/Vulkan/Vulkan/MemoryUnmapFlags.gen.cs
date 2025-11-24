@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum MemoryUnmapFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,5 +22,5 @@ public enum MemoryUnmapFlags
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    ReserveBitEXT = 0x00000001,
+    ReserveBitEXT = 0x1,
 }

@@ -57,6 +57,16 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         /// Defaults to not modify the backing types at all.
         /// </summary>
         public EnumBackingTypePreference CoerceBackingTypes { get; init; } = EnumBackingTypePreference.None;
+
+        /// <summary>
+        /// Whether to rewrite enum member values or not.
+        /// Hexadecimal is used for [Flags] enums while decimal is used for normal enums.
+        /// For example: <c>unchecked((ulong)0x00000001UL)</c> would be replaced with <c>0x1</c> in [Flags] enums.
+        /// </summary>
+        /// <remarks>
+        /// This likely is required if <see cref="CoerceBackingTypes"/> is enabled.
+        /// </remarks>
+        public bool RewriteMemberValues { get; init; } = false;
     }
 
     /// <summary>
@@ -158,7 +168,8 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
             return;
         }
 
-        var rewriter = new Rewriter(config, removeMemberFilters, compilation);
+        var referenceDetector = new MemberReferenceDetector();
+        var rewriter = new Rewriter(config, removeMemberFilters, compilation, referenceDetector);
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -171,7 +182,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation) : CSharpSyntaxRewriter
+    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation, MemberReferenceDetector referenceDetector) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -229,15 +240,39 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
                 if (!hasNoneMember)
                 {
-                    var noneMember = EnumMemberDeclaration("None")
-                        .WithEqualsValue(
-                            EqualsValueClause(
-                                LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0))
-                            )
-                        );
-
+                    var noneMember = EnumMemberDeclaration("None").WithEqualsValue(CreateEqualsValueClause(0, isFlagsEnum));
                     members.Insert(0, noneMember);
                 }
+            }
+
+            if (config.RewriteMemberValues)
+            {
+                members = members
+                    .Select(m =>
+                    {
+                        if (m.Parent == null)
+                        {
+                            return m;
+                        }
+
+                        // Enum member contains a reference
+                        // We want to preserve these
+                        referenceDetector.Visit(m.EqualsValue);
+                        if (referenceDetector.ContainsReference)
+                        {
+                            return m;
+                        }
+
+                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
+                        if (fieldSymbol == null)
+                        {
+                            return m;
+                        }
+
+                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
+                    })
+                    .ToList();
             }
 
             switch (config.CoerceBackingTypes)
@@ -287,6 +322,31 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
             node = node.WithMembers([..members]);
 
             return base.VisitEnumDeclaration(node);
+        }
+
+        private EqualsValueClauseSyntax CreateEqualsValueClause(long value, bool useHex)
+        {
+            var stringValue = useHex ? $"0x{value:X}" : $"{value}";
+            return EqualsValueClause(
+                LiteralExpression(SyntaxKind.NumericLiteralExpression,
+                    Literal([], stringValue, value, [])));
+        }
+    }
+
+    private class MemberReferenceDetector : CSharpSyntaxWalker
+    {
+        public bool ContainsReference { get; private set; }
+
+        public override void VisitEqualsValueClause(EqualsValueClauseSyntax node)
+        {
+            ContainsReference = false;
+            base.VisitEqualsValueClause(node);
+        }
+
+        public override void VisitIdentifierName(IdentifierNameSyntax node)
+        {
+            base.VisitIdentifierName(node);
+            ContainsReference = true;
         }
     }
 }

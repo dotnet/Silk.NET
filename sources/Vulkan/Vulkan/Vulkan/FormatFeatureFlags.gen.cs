@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum FormatFeatureFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    SampledImageBit = 0x00000001,
+    SampledImageBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -69,7 +69,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    StorageImageBit = 0x00000002,
+    StorageImageBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +97,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    StorageImageAtomicBit = 0x00000004,
+    StorageImageAtomicBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -125,7 +125,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    UniformTexelBufferBit = 0x00000008,
+    UniformTexelBufferBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -153,7 +153,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    StorageTexelBufferBit = 0x00000010,
+    StorageTexelBufferBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -181,7 +181,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    StorageTexelBufferAtomicBit = 0x00000020,
+    StorageTexelBufferAtomicBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -209,7 +209,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexBufferBit = 0x00000040,
+    VertexBufferBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -237,7 +237,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    ColorAttachmentBit = 0x00000080,
+    ColorAttachmentBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -265,7 +265,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    ColorAttachmentBlendBit = 0x00000100,
+    ColorAttachmentBlendBit = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -293,7 +293,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    DepthStencilAttachmentBit = 0x00000200,
+    DepthStencilAttachmentBit = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -321,7 +321,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    BlitSrcBit = 0x00000400,
+    BlitSrcBit = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -349,7 +349,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    BlitDstBit = 0x00000800,
+    BlitDstBit = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -377,7 +377,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.0"
     )]
-    SampledImageFilterLinearBit = 0x00001000,
+    SampledImageFilterLinearBit = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -401,7 +401,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    TransferSrcBit = 0x00004000,
+    TransferSrcBit = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -425,7 +425,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    TransferDstBit = 0x00008000,
+    TransferDstBit = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -445,7 +445,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    MidpointChromaSamplesBit = 0x00020000,
+    MidpointChromaSamplesBit = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -465,7 +465,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    SampledImageYcbcrConversionLinearFilterBit = 0x00040000,
+    SampledImageYcbcrConversionLinearFilterBit = 0x40000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -485,7 +485,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    SampledImageYcbcrConversionSeparateReconstructionFilterBit = 0x00080000,
+    SampledImageYcbcrConversionSeparateReconstructionFilterBit = 0x80000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -505,7 +505,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    SampledImageYcbcrConversionChromaReconstructionExplicitBit = 0x00100000,
+    SampledImageYcbcrConversionChromaReconstructionExplicitBit = 0x100000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -525,7 +525,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit = 0x00200000,
+    SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit = 0x200000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -545,7 +545,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    DisjointBit = 0x00400000,
+    DisjointBit = 0x400000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -565,7 +565,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    CositedChromaSamplesBit = 0x00800000,
+    CositedChromaSamplesBit = 0x800000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -582,7 +582,7 @@ public enum FormatFeatureFlags
         ],
         MinVersion = "1.2"
     )]
-    SampledImageFilterMinmaxBit = 0x00010000,
+    SampledImageFilterMinmaxBit = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -592,7 +592,7 @@ public enum FormatFeatureFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeOutputBitKHR = 0x02000000,
+    VideoDecodeOutputBitKHR = 0x2000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -602,7 +602,7 @@ public enum FormatFeatureFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDpbBitKHR = 0x04000000,
+    VideoDecodeDpbBitKHR = 0x4000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -615,7 +615,7 @@ public enum FormatFeatureFlags
     AccelerationStructureVertexBufferBitKHR = 0x20000000,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    SampledImageFilterCubicBitEXT = 0x00002000,
+    SampledImageFilterCubicBitEXT = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -625,7 +625,7 @@ public enum FormatFeatureFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapBitEXT = 0x01000000,
+    FragmentDensityMapBitEXT = 0x1000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -646,7 +646,7 @@ public enum FormatFeatureFlags
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeInputBitKHR = 0x08000000,
+    VideoEncodeInputBitKHR = 0x8000000,
 
     [SupportedApiProfile(
         "vulkan",

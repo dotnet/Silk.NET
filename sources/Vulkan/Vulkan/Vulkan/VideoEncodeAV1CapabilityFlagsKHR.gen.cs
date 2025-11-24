@@ -13,42 +13,42 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeAV1CapabilityFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerRateControlGroupMinMaxQIndexBitKHR = 0x00000001,
+    PerRateControlGroupMinMaxQIndexBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    GenerateObuExtensionHeaderBitKHR = 0x00000002,
+    GenerateObuExtensionHeaderBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PrimaryReferenceCdfOnlyBitKHR = 0x00000004,
+    PrimaryReferenceCdfOnlyBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    FrameSizeOverrideBitKHR = 0x00000008,
+    FrameSizeOverrideBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    MotionVectorScalingBitKHR = 0x00000010,
+    MotionVectorScalingBitKHR = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -56,5 +56,5 @@ public enum VideoEncodeAV1CapabilityFlagsKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"],
         RequireAll = true
     )]
-    CompoundPredictionIntraRefreshBitKHR = 0x00000020,
+    CompoundPredictionIntraRefreshBitKHR = 0x20,
 }

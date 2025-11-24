@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum QueryResultFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum QueryResultFlags
         ],
         MinVersion = "1.0"
     )]
-    Result64Bit = 0x00000001,
+    Result64Bit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum QueryResultFlags
         ],
         MinVersion = "1.0"
     )]
-    ResultWaitBit = 0x00000002,
+    ResultWaitBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -96,7 +96,7 @@ public enum QueryResultFlags
         ],
         MinVersion = "1.0"
     )]
-    ResultWithAvailabilityBit = 0x00000004,
+    ResultWithAvailabilityBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -124,12 +124,12 @@ public enum QueryResultFlags
         ],
         MinVersion = "1.0"
     )]
-    ResultPartialBit = 0x00000008,
+    ResultPartialBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ResultWithStatusBitKHR = 0x00000010,
+    ResultWithStatusBitKHR = 0x10,
 }

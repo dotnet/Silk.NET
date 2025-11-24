@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PerformanceCounterDescriptionFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum PerformanceCounterDescriptionFlagsKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    PerformanceImpactingBitKHR = 0x00000001,
+    PerformanceImpactingBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,5 +33,5 @@ public enum PerformanceCounterDescriptionFlagsKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    ConcurrentlyImpactedBitKHR = 0x00000002,
+    ConcurrentlyImpactedBitKHR = 0x2,
 }

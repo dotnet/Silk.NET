@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeCapabilityFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum VideoEncodeCapabilityFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    PrecedingExternallyEncodedBytesBitKHR = 0x00000001,
+    PrecedingExternallyEncodedBytesBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +32,7 @@ public enum VideoEncodeCapabilityFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    InsufficientBitstreamBufferRangeDetectionBitKHR = 0x00000002,
+    InsufficientBitstreamBufferRangeDetectionBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -42,7 +42,7 @@ public enum VideoEncodeCapabilityFlagsKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    QuantizationDeltaMapBitKHR = 0x00000004,
+    QuantizationDeltaMapBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -52,5 +52,5 @@ public enum VideoEncodeCapabilityFlagsKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    EmphasisMapBitKHR = 0x00000008,
+    EmphasisMapBitKHR = 0x8,
 }

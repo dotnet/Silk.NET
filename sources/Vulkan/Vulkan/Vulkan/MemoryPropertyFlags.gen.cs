@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum MemoryPropertyFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum MemoryPropertyFlags
         ],
         MinVersion = "1.0"
     )]
-    DeviceLocalBit = 0x00000001,
+    DeviceLocalBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -69,7 +69,7 @@ public enum MemoryPropertyFlags
         ],
         MinVersion = "1.0"
     )]
-    HostVisibleBit = 0x00000002,
+    HostVisibleBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +97,7 @@ public enum MemoryPropertyFlags
         ],
         MinVersion = "1.0"
     )]
-    HostCoherentBit = 0x00000004,
+    HostCoherentBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -125,7 +125,7 @@ public enum MemoryPropertyFlags
         ],
         MinVersion = "1.0"
     )]
-    HostCachedBit = 0x00000008,
+    HostCachedBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -153,7 +153,7 @@ public enum MemoryPropertyFlags
         ],
         MinVersion = "1.0"
     )]
-    LazilyAllocatedBit = 0x00000010,
+    LazilyAllocatedBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -177,7 +177,7 @@ public enum MemoryPropertyFlags
         ],
         MinVersion = "1.1"
     )]
-    ProtectedBit = 0x00000020,
+    ProtectedBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -187,7 +187,7 @@ public enum MemoryPropertyFlags
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    DeviceCoherentBitAMD = 0x00000040,
+    DeviceCoherentBitAMD = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -197,7 +197,7 @@ public enum MemoryPropertyFlags
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    DeviceUncachedBitAMD = 0x00000080,
+    DeviceUncachedBitAMD = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -207,5 +207,5 @@ public enum MemoryPropertyFlags
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    RdmaCapableBitNV = 0x00000100,
+    RdmaCapableBitNV = 0x100,
 }

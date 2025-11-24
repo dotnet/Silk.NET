@@ -18,47 +18,47 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    NoneNV = 0,
+    NoneNV = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedDstImplicitDataBitNV = 0x00000001,
+    IndirectedDstImplicitDataBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedScratchDataBitNV = 0x00000002,
+    IndirectedScratchDataBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedDstAddressArrayBitNV = 0x00000004,
+    IndirectedDstAddressArrayBitNV = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedDstSizesArrayBitNV = 0x00000008,
+    IndirectedDstSizesArrayBitNV = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedSrcInfosArrayBitNV = 0x00000010,
+    IndirectedSrcInfosArrayBitNV = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedSrcInfosCountBitNV = 0x00000020,
+    IndirectedSrcInfosCountBitNV = 0x20,
 }

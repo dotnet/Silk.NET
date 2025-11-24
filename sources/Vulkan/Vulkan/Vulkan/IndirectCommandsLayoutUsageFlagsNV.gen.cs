@@ -13,26 +13,26 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum IndirectCommandsLayoutUsageFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    ExplicitPreprocessBitNV = 0x00000001,
+    ExplicitPreprocessBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    IndexedSequencesBitNV = 0x00000002,
+    IndexedSequencesBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    UnorderedSequencesBitNV = 0x00000004,
+    UnorderedSequencesBitNV = 0x4,
 }

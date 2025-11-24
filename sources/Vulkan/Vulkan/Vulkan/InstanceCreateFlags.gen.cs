@@ -12,8 +12,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum InstanceCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_portability_enumeration"])]
-    EnumeratePortabilityBitKHR = 0x00000001,
+    EnumeratePortabilityBitKHR = 0x1,
 }

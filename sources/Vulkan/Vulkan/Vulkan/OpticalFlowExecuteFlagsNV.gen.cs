@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum OpticalFlowExecuteFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -24,5 +24,5 @@ public enum OpticalFlowExecuteFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    DisableTemporalHintsBitNV = 0x00000001,
+    DisableTemporalHintsBitNV = 0x1,
 }

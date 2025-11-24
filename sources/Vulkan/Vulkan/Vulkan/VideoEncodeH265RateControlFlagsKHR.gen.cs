@@ -13,40 +13,40 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeH265RateControlFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    AttemptHrdComplianceBitKHR = 0x00000001,
+    AttemptHrdComplianceBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RegularGopBitKHR = 0x00000002,
+    RegularGopBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternFlatBitKHR = 0x00000004,
+    ReferencePatternFlatBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternDyadicBitKHR = 0x00000008,
+    ReferencePatternDyadicBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    TemporalSubLayerPatternDyadicBitKHR = 0x00000010,
+    TemporalSubLayerPatternDyadicBitKHR = 0x10,
 }

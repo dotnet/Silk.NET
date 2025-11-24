@@ -12,14 +12,14 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoSessionCreateFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ProtectedContentBitKHR = 0x00000001,
+    ProtectedContentBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -29,14 +29,14 @@ public enum VideoSessionCreateFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeParameterOptimizationsBitKHR = 0x00000002,
+    AllowEncodeParameterOptimizationsBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    InlineQueriesBitKHR = 0x00000004,
+    InlineQueriesBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -46,7 +46,7 @@ public enum VideoSessionCreateFlagsKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeQuantizationDeltaMapBitKHR = 0x00000008,
+    AllowEncodeQuantizationDeltaMapBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -56,7 +56,7 @@ public enum VideoSessionCreateFlagsKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeEmphasisMapBitKHR = 0x00000010,
+    AllowEncodeEmphasisMapBitKHR = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -64,5 +64,5 @@ public enum VideoSessionCreateFlagsKHR
         ImpliesSets = ["VK_KHR_video_queue"],
         RequireAll = true
     )]
-    InlineSessionParametersBitKHR = 0x00000020,
+    InlineSessionParametersBitKHR = 0x20,
 }

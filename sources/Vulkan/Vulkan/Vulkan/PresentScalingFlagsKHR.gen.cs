@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PresentScalingFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum PresentScalingFlagsKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    OneToOneBitKHR = 0x00000001,
+    OneToOneBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum PresentScalingFlagsKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    AspectRatioStretchBitKHR = 0x00000002,
+    AspectRatioStretchBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum PresentScalingFlagsKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    StretchBitKHR = 0x00000004,
+    StretchBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",

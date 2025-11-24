@@ -12,17 +12,17 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum CompositeAlphaFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    OpaqueBitKHR = 0x00000001,
+    OpaqueBitKHR = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    PreMultipliedBitKHR = 0x00000002,
+    PreMultipliedBitKHR = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    PostMultipliedBitKHR = 0x00000004,
+    PostMultipliedBitKHR = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    InheritBitKHR = 0x00000008,
+    InheritBitKHR = 0x8,
 }

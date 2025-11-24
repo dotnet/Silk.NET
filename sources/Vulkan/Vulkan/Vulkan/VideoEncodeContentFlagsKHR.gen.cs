@@ -21,7 +21,7 @@ public enum VideoEncodeContentFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0,
+    DefaultKHR = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +31,7 @@ public enum VideoEncodeContentFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CameraBitKHR = 0x00000001,
+    CameraBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum VideoEncodeContentFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DesktopBitKHR = 0x00000002,
+    DesktopBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -51,5 +51,5 @@ public enum VideoEncodeContentFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    RenderedBitKHR = 0x00000004,
+    RenderedBitKHR = 0x4,
 }

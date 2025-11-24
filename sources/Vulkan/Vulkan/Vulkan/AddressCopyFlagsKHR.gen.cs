@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum AddressCopyFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum AddressCopyFlagsKHR
             "VK_VERSION_1_2",
         ]
     )]
-    DeviceLocalBitKHR = 0x00000001,
+    DeviceLocalBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +32,7 @@ public enum AddressCopyFlagsKHR
             "VK_VERSION_1_2",
         ]
     )]
-    SparseBitKHR = 0x00000002,
+    SparseBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -42,5 +42,5 @@ public enum AddressCopyFlagsKHR
             "VK_VERSION_1_2",
         ]
     )]
-    ProtectedBitKHR = 0x00000004,
+    ProtectedBitKHR = 0x4,
 }

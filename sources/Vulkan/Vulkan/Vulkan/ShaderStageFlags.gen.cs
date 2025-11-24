@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ShaderStageFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -35,7 +35,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexBit = 0x00000001,
+    VertexBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -58,7 +58,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    TessellationControlBit = 0x00000002,
+    TessellationControlBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -81,7 +81,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    TessellationEvaluationBit = 0x00000004,
+    TessellationEvaluationBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -104,7 +104,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    GeometryBit = 0x00000008,
+    GeometryBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -127,7 +127,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    FragmentBit = 0x00000010,
+    FragmentBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -150,7 +150,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    ComputeBit = 0x00000020,
+    ComputeBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -173,7 +173,7 @@ public enum ShaderStageFlags
         ],
         MinVersion = "1.0"
     )]
-    AllGraphics = 0x0000001F,
+    AllGraphics = 0x1F,
 
     [SupportedApiProfile(
         "vulkan",
@@ -206,7 +206,7 @@ public enum ShaderStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RaygenBitKHR = 0x00000100,
+    RaygenBitKHR = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -216,7 +216,7 @@ public enum ShaderStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    AnyHitBitKHR = 0x00000200,
+    AnyHitBitKHR = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -226,7 +226,7 @@ public enum ShaderStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ClosestHitBitKHR = 0x00000400,
+    ClosestHitBitKHR = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -236,7 +236,7 @@ public enum ShaderStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    MissBitKHR = 0x00000800,
+    MissBitKHR = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -246,7 +246,7 @@ public enum ShaderStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    IntersectionBitKHR = 0x00001000,
+    IntersectionBitKHR = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -256,21 +256,21 @@ public enum ShaderStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CallableBitKHR = 0x00002000,
+    CallableBitKHR = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    TaskBitEXT = 0x00000040,
+    TaskBitEXT = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshBitEXT = 0x00000080,
+    MeshBitEXT = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -281,7 +281,7 @@ public enum ShaderStageFlags
             "VK_VERSION_1_3",
         ]
     )]
-    SubpassShadingBitHuawei = 0x00004000,
+    SubpassShadingBitHuawei = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -291,7 +291,7 @@ public enum ShaderStageFlags
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    ClusterCullingBitHuawei = 0x00080000,
+    ClusterCullingBitHuawei = 0x80000,
 
     [SupportedApiProfile(
         "vulkan",

@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ColorComponentFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +30,7 @@ public enum ColorComponentFlags
         ],
         MinVersion = "1.0"
     )]
-    RBit = 0x00000001,
+    RBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -48,7 +48,7 @@ public enum ColorComponentFlags
         ],
         MinVersion = "1.0"
     )]
-    GBit = 0x00000002,
+    GBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -66,7 +66,7 @@ public enum ColorComponentFlags
         ],
         MinVersion = "1.0"
     )]
-    BBit = 0x00000004,
+    BBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -84,5 +84,5 @@ public enum ColorComponentFlags
         ],
         MinVersion = "1.0"
     )]
-    ABit = 0x00000008,
+    ABit = 0x8,
 }

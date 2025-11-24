@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum EventCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +27,7 @@ public enum EventCreateFlags
         ],
         MinVersion = "1.3"
     )]
-    DeviceOnlyBit = 0x00000001,
+    DeviceOnlyBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum OpticalFlowSessionCreateFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -24,7 +24,7 @@ public enum OpticalFlowSessionCreateFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    EnableHintBitNV = 0x00000001,
+    EnableHintBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -35,7 +35,7 @@ public enum OpticalFlowSessionCreateFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    EnableCostBitNV = 0x00000002,
+    EnableCostBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -46,7 +46,7 @@ public enum OpticalFlowSessionCreateFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    EnableGlobalFlowBitNV = 0x00000004,
+    EnableGlobalFlowBitNV = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -57,7 +57,7 @@ public enum OpticalFlowSessionCreateFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    AllowRegionsBitNV = 0x00000008,
+    AllowRegionsBitNV = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,5 +68,5 @@ public enum OpticalFlowSessionCreateFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    BothDirectionsBitNV = 0x00000010,
+    BothDirectionsBitNV = 0x10,
 }

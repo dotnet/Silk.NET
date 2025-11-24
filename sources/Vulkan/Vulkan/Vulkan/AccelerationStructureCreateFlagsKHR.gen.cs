@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum AccelerationStructureCreateFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum AccelerationStructureCreateFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    DeviceAddressCaptureReplayBitKHR = 0x00000001,
+    DeviceAddressCaptureReplayBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -35,12 +35,12 @@ public enum AccelerationStructureCreateFlagsKHR
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitEXT = 0x00000008,
+    DescriptorBufferCaptureReplayBitEXT = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    MotionBitNV = 0x00000004,
+    MotionBitNV = 0x4,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum FramebufferCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +27,7 @@ public enum FramebufferCreateFlags
         ],
         MinVersion = "1.2"
     )]
-    ImagelessBit = 0x00000001,
+    ImagelessBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

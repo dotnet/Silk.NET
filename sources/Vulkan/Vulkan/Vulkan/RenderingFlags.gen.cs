@@ -13,28 +13,28 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum RenderingFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    ContentsSecondaryCommandBuffersBit = 0x00000001,
+    ContentsSecondaryCommandBuffersBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    SuspendingBit = 0x00000002,
+    SuspendingBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    ResumingBit = 0x00000004,
+    ResumingBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -49,10 +49,10 @@ public enum RenderingFlags
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    EnableLegacyDitheringBitEXT = 0x00000008,
+    EnableLegacyDitheringBitEXT = 0x8,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    ContentsInlineBitKHR = 0x00000010,
+    ContentsInlineBitKHR = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -62,7 +62,7 @@ public enum RenderingFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitValve = 0x00000020,
+    PerLayerFragmentDensityBitValve = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -77,7 +77,7 @@ public enum RenderingFlags
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    LocalReadConcurrentAccessControlBitKHR = 0x00000100,
+    LocalReadConcurrentAccessControlBitKHR = 0x100,
 
     [SupportedApiProfile(
         "vulkan",

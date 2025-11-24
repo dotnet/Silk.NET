@@ -21,7 +21,7 @@ public enum OpticalFlowUsageFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    UnknownNV = 0,
+    UnknownNV = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +32,7 @@ public enum OpticalFlowUsageFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    InputBitNV = 0x00000001,
+    InputBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum OpticalFlowUsageFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    OutputBitNV = 0x00000002,
+    OutputBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -54,7 +54,7 @@ public enum OpticalFlowUsageFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    HintBitNV = 0x00000004,
+    HintBitNV = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +65,7 @@ public enum OpticalFlowUsageFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    CostBitNV = 0x00000008,
+    CostBitNV = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -76,5 +76,5 @@ public enum OpticalFlowUsageFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    GlobalFlowBitNV = 0x00000010,
+    GlobalFlowBitNV = 0x10,
 }

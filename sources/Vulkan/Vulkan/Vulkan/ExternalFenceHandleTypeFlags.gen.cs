@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalFenceHandleTypeFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum ExternalFenceHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueFdBit = 0x00000001,
+    OpaqueFdBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +61,7 @@ public enum ExternalFenceHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueWin32Bit = 0x00000002,
+    OpaqueWin32Bit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +85,7 @@ public enum ExternalFenceHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueWin32KmtBit = 0x00000004,
+    OpaqueWin32KmtBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -109,7 +109,7 @@ public enum ExternalFenceHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    SyncFdBit = 0x00000008,
+    SyncFdBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",

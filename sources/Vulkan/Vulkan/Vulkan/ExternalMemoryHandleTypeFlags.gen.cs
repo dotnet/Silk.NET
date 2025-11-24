@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalMemoryHandleTypeFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueFdBit = 0x00000001,
+    OpaqueFdBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +61,7 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueWin32Bit = 0x00000002,
+    OpaqueWin32Bit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +85,7 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueWin32KmtBit = 0x00000004,
+    OpaqueWin32KmtBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -109,7 +109,7 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    D3D11TextureBit = 0x00000008,
+    D3D11TextureBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -133,7 +133,7 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    D3D11TextureKmtBit = 0x00000010,
+    D3D11TextureKmtBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -157,7 +157,7 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    D3D12HeapBit = 0x00000020,
+    D3D12HeapBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -181,14 +181,14 @@ public enum ExternalMemoryHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    D3D12ResourceBit = 0x00000040,
+    D3D12ResourceBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_dma_buf"],
         ImpliesSets = ["VK_KHR_external_memory_fd"]
     )]
-    DmaBufBitEXT = 0x00000200,
+    DmaBufBitEXT = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -198,7 +198,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    AndroidHardwareBufferBitAndroid = 0x00000400,
+    AndroidHardwareBufferBitAndroid = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -208,7 +208,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    HostAllocationBitEXT = 0x00000080,
+    HostAllocationBitEXT = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -218,7 +218,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    HostMappedForeignMemoryBitEXT = 0x00000100,
+    HostMappedForeignMemoryBitEXT = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -228,7 +228,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_VERSION_1_1",
         ]
     )]
-    ZirconVmoBitFuchsia = 0x00000800,
+    ZirconVmoBitFuchsia = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -238,7 +238,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    RdmaAddressBitNV = 0x00001000,
+    RdmaAddressBitNV = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -248,7 +248,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    OhNativeBufferBitOHOS = 0x00008000,
+    OhNativeBufferBitOHOS = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -258,7 +258,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    ScreenBufferBitQNX = 0x00004000,
+    ScreenBufferBitQNX = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -268,7 +268,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_external_memory_metal+VK_VERSION_1_1",
         ]
     )]
-    MtlbufferBitEXT = 0x00010000,
+    MtlbufferBitEXT = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -278,7 +278,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_external_memory_metal+VK_VERSION_1_1",
         ]
     )]
-    MtltextureBitEXT = 0x00020000,
+    MtltextureBitEXT = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -288,7 +288,7 @@ public enum ExternalMemoryHandleTypeFlags
             "VK_EXT_external_memory_metal+VK_VERSION_1_1",
         ]
     )]
-    MtlheapBitEXT = 0x00040000,
+    MtlheapBitEXT = 0x40000,
 
     [SupportedApiProfile(
         "vulkan",

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ShaderCreateFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -24,7 +24,7 @@ public enum ShaderCreateFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    CreateLinkStageBitEXT = 0x00000001,
+    CreateLinkStageBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -38,7 +38,7 @@ public enum ShaderCreateFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    CreateAllowVaryingSubgroupSizeBitEXT = 0x00000002,
+    CreateAllowVaryingSubgroupSizeBitEXT = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +52,7 @@ public enum ShaderCreateFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    CreateRequireFullSubgroupsBitEXT = 0x00000004,
+    CreateRequireFullSubgroupsBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,7 +63,7 @@ public enum ShaderCreateFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    CreateNoTaskShaderBitEXT = 0x00000008,
+    CreateNoTaskShaderBitEXT = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -74,7 +74,7 @@ public enum ShaderCreateFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    CreateDispatchBaseBitEXT = 0x00000010,
+    CreateDispatchBaseBitEXT = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -86,7 +86,7 @@ public enum ShaderCreateFlagsEXT
         ],
         RequireAll = true
     )]
-    CreateFragmentShadingRateAttachmentBitEXT = 0x00000020,
+    CreateFragmentShadingRateAttachmentBitEXT = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -98,7 +98,7 @@ public enum ShaderCreateFlagsEXT
         ],
         RequireAll = true
     )]
-    CreateFragmentDensityMapAttachmentBitEXT = 0x00000040,
+    CreateFragmentDensityMapAttachmentBitEXT = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -109,7 +109,7 @@ public enum ShaderCreateFlagsEXT
             "VK_VERSION_1_3",
         ]
     )]
-    CreateIndirectBindableBitEXT = 0x00000080,
+    CreateIndirectBindableBitEXT = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -119,5 +119,5 @@ public enum ShaderCreateFlagsEXT
             "VK_EXT_shader_64bit_indexing+VK_VERSION_1_1",
         ]
     )]
-    Create64BitIndexingBitEXT = 0x00008000,
+    Create64BitIndexingBitEXT = 0x8000,
 }

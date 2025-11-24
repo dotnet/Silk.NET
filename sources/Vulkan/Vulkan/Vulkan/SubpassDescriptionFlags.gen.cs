@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SubpassDescriptionFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum SubpassDescriptionFlags
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    PerViewAttributesBitNVX = 0x00000001,
+    PerViewAttributesBitNVX = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,13 +33,13 @@ public enum SubpassDescriptionFlags
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    PerViewPositionXOnlyBitNVX = 0x00000002,
+    PerViewPositionXOnlyBitNVX = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    FragmentRegionBitQCOM = 0x00000004,
+    FragmentRegionBitQCOM = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    ShaderResolveBitQCOM = 0x00000008,
+    ShaderResolveBitQCOM = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +49,7 @@ public enum SubpassDescriptionFlags
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    TileShadingApronBitQCOM = 0x00000100,
+    TileShadingApronBitQCOM = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -59,7 +59,7 @@ public enum SubpassDescriptionFlags
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentColorAccessBitEXT = 0x00000010,
+    RasterizationOrderAttachmentColorAccessBitEXT = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -69,7 +69,7 @@ public enum SubpassDescriptionFlags
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentDepthAccessBitEXT = 0x00000020,
+    RasterizationOrderAttachmentDepthAccessBitEXT = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -79,7 +79,7 @@ public enum SubpassDescriptionFlags
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentStencilAccessBitEXT = 0x00000040,
+    RasterizationOrderAttachmentStencilAccessBitEXT = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -89,7 +89,7 @@ public enum SubpassDescriptionFlags
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    EnableLegacyDitheringBitEXT = 0x00000080,
+    EnableLegacyDitheringBitEXT = 0x80,
 
     [SupportedApiProfile(
         "vulkan",

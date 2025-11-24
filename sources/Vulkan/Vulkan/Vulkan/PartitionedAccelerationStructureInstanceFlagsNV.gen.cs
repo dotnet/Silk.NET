@@ -13,40 +13,40 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PartitionedAccelerationStructureInstanceFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleFacingCullDisableBitNV = 0x00000001,
+    TriangleFacingCullDisableBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleFlipFacingBitNV = 0x00000002,
+    TriangleFlipFacingBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ForceOpaqueBitNV = 0x00000004,
+    ForceOpaqueBitNV = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ForceNoOpaqueBitNV = 0x00000008,
+    ForceNoOpaqueBitNV = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    EnableExplicitBoundingBoxNV = 0x00000010,
+    EnableExplicitBoundingBoxNV = 0x10,
 }

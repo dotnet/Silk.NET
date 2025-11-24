@@ -21,7 +21,7 @@ public enum ImageCompressionFlagsEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    DefaultEXT = 0,
+    DefaultEXT = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +31,7 @@ public enum ImageCompressionFlagsEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    FixedRateDefaultEXT = 0x00000001,
+    FixedRateDefaultEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum ImageCompressionFlagsEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    FixedRateExplicitEXT = 0x00000002,
+    FixedRateExplicitEXT = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -51,5 +51,5 @@ public enum ImageCompressionFlagsEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    DisabledEXT = 0x00000004,
+    DisabledEXT = 0x4,
 }

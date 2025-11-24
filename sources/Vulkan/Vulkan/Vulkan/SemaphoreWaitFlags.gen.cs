@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SemaphoreWaitFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum SemaphoreWaitFlags
         ],
         MinVersion = "1.2"
     )]
-    AnyBit = 0x00000001,
+    AnyBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

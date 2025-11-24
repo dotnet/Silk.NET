@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SampleCountFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count1Bit = 0x00000001,
+    Count1Bit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count2Bit = 0x00000002,
+    Count2Bit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -96,7 +96,7 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count4Bit = 0x00000004,
+    Count4Bit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -124,7 +124,7 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count8Bit = 0x00000008,
+    Count8Bit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -152,7 +152,7 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count16Bit = 0x00000010,
+    Count16Bit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -180,7 +180,7 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count32Bit = 0x00000020,
+    Count32Bit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -208,5 +208,5 @@ public enum SampleCountFlags
         ],
         MinVersion = "1.0"
     )]
-    Count64Bit = 0x00000040,
+    Count64Bit = 0x40,
 }

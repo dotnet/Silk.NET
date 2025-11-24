@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalMemoryFeatureFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum ExternalMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    DedicatedOnlyBit = 0x00000001,
+    DedicatedOnlyBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +61,7 @@ public enum ExternalMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ExportableBit = 0x00000002,
+    ExportableBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +85,7 @@ public enum ExternalMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ImportableBit = 0x00000004,
+    ImportableBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",

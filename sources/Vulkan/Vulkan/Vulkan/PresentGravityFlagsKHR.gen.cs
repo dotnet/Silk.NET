@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PresentGravityFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum PresentGravityFlagsKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MinBitKHR = 0x00000001,
+    MinBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum PresentGravityFlagsKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MaxBitKHR = 0x00000002,
+    MaxBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum PresentGravityFlagsKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    CenteredBitKHR = 0x00000004,
+    CenteredBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",

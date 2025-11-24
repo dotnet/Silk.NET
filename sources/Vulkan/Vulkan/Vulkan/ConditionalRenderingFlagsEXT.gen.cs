@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ConditionalRenderingFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,5 +22,5 @@ public enum ConditionalRenderingFlagsEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    InvertedBitEXT = 0x00000001,
+    InvertedBitEXT = 0x1,
 }

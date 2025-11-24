@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum AttachmentDescriptionFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +31,7 @@ public enum AttachmentDescriptionFlags
         ],
         MinVersion = "1.0"
     )]
-    MayAliasBit = 0x00000001,
+    MayAliasBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum AttachmentDescriptionFlags
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveSkipTransferFunctionBitKHR = 0x00000002,
+    ResolveSkipTransferFunctionBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -51,5 +51,5 @@ public enum AttachmentDescriptionFlags
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveEnableTransferFunctionBitKHR = 0x00000004,
+    ResolveEnableTransferFunctionBitKHR = 0x4,
 }

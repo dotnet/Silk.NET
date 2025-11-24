@@ -12,5 +12,5 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ImageConstraintsInfoFlagsFuchsia
 {
-    None = 0,
+    None = 0x0,
 }

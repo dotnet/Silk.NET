@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalSemaphoreHandleTypeFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum ExternalSemaphoreHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueFdBit = 0x00000001,
+    OpaqueFdBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +61,7 @@ public enum ExternalSemaphoreHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueWin32Bit = 0x00000002,
+    OpaqueWin32Bit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +85,7 @@ public enum ExternalSemaphoreHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    OpaqueWin32KmtBit = 0x00000004,
+    OpaqueWin32KmtBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -109,7 +109,7 @@ public enum ExternalSemaphoreHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    D3D12FenceBit = 0x00000008,
+    D3D12FenceBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -133,14 +133,14 @@ public enum ExternalSemaphoreHandleTypeFlags
         ],
         MinVersion = "1.1"
     )]
-    SyncFdBit = 0x00000010,
+    SyncFdBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_FUCHSIA_external_semaphore"],
         ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
     )]
-    ZirconEventBitFuchsia = 0x00000080,
+    ZirconEventBitFuchsia = 0x80,
 
     [SupportedApiProfile(
         "vulkan",

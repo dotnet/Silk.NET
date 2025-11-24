@@ -13,20 +13,20 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DebugReportFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    InformationBitEXT = 0x00000001,
+    InformationBitEXT = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    WarningBitEXT = 0x00000002,
+    WarningBitEXT = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PerformanceWarningBitEXT = 0x00000004,
+    PerformanceWarningBitEXT = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ErrorBitEXT = 0x00000008,
+    ErrorBitEXT = 0x8,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugBitEXT = 0x00000010,
+    DebugBitEXT = 0x10,
 }

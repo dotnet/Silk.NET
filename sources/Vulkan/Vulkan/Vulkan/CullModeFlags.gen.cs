@@ -29,7 +29,7 @@ public enum CullModeFlags
         ],
         MinVersion = "1.0"
     )]
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -47,7 +47,7 @@ public enum CullModeFlags
         ],
         MinVersion = "1.0"
     )]
-    FrontBit = 0x00000001,
+    FrontBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +65,7 @@ public enum CullModeFlags
         ],
         MinVersion = "1.0"
     )]
-    BackBit = 0x00000002,
+    BackBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -83,5 +83,5 @@ public enum CullModeFlags
         ],
         MinVersion = "1.0"
     )]
-    FrontAndBack = 0x00000003,
+    FrontAndBack = 0x3,
 }

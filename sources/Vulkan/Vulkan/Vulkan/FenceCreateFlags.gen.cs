@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum FenceCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,5 +40,5 @@ public enum FenceCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    SignaledBit = 0x00000001,
+    SignaledBit = 0x1,
 }

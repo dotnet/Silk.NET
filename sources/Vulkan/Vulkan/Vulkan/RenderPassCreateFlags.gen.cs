@@ -12,10 +12,10 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum RenderPassCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    TransformBitQCOM = 0x00000002,
+    TransformBitQCOM = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -25,5 +25,5 @@ public enum RenderPassCreateFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitValve = 0x00000004,
+    PerLayerFragmentDensityBitValve = 0x4,
 }

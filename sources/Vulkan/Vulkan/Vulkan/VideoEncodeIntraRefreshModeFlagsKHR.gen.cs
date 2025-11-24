@@ -18,33 +18,33 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    NoneKHR = 0,
+    NoneKHR = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerPicturePartitionBitKHR = 0x00000001,
+    PerPicturePartitionBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BlockBasedBitKHR = 0x00000002,
+    BlockBasedBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BlockRowBasedBitKHR = 0x00000004,
+    BlockRowBasedBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BlockColumnBasedBitKHR = 0x00000008,
+    BlockColumnBasedBitKHR = 0x8,
 }

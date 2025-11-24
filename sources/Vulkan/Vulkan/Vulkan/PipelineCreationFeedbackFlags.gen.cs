@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineCreationFeedbackFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +27,7 @@ public enum PipelineCreationFeedbackFlags
         ],
         MinVersion = "1.3"
     )]
-    ValidBit = 0x00000001,
+    ValidBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum PipelineCreationFeedbackFlags
         ],
         MinVersion = "1.3"
     )]
-    ApplicationPipelineCacheHitBit = 0x00000002,
+    ApplicationPipelineCacheHitBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -55,7 +55,7 @@ public enum PipelineCreationFeedbackFlags
         ],
         MinVersion = "1.3"
     )]
-    BasePipelineAccelerationBit = 0x00000004,
+    BasePipelineAccelerationBit = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
     ValidBitEXT = ValidBit,

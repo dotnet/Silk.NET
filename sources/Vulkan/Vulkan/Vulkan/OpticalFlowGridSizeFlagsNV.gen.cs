@@ -22,7 +22,7 @@ public enum OpticalFlowGridSizeFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    SizeUnknownNV = 0,
+    SizeUnknownNV = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum OpticalFlowGridSizeFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    Size1X1BitNV = 0x00000001,
+    Size1X1BitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -44,7 +44,7 @@ public enum OpticalFlowGridSizeFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    Size2X2BitNV = 0x00000002,
+    Size2X2BitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -55,7 +55,7 @@ public enum OpticalFlowGridSizeFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    Size4X4BitNV = 0x00000004,
+    Size4X4BitNV = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -66,5 +66,5 @@ public enum OpticalFlowGridSizeFlagsNV
             "VK_VERSION_1_3",
         ]
     )]
-    Size8X8BitNV = 0x00000008,
+    Size8X8BitNV = 0x8,
 }

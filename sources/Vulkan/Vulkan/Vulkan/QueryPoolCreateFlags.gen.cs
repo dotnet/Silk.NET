@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum QueryPoolCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,5 +23,5 @@ public enum QueryPoolCreateFlags
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ResetBitKHR = 0x00000001,
+    ResetBitKHR = 0x1,
 }

@@ -39,7 +39,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    IndirectCommandReadBit = 0x00000001,
+    IndirectCommandReadBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -67,7 +67,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    IndexReadBit = 0x00000002,
+    IndexReadBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -95,7 +95,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexAttributeReadBit = 0x00000004,
+    VertexAttributeReadBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -123,7 +123,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    UniformReadBit = 0x00000008,
+    UniformReadBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -151,7 +151,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    InputAttachmentReadBit = 0x00000010,
+    InputAttachmentReadBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -179,7 +179,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    ShaderReadBit = 0x00000020,
+    ShaderReadBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -207,7 +207,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    ShaderWriteBit = 0x00000040,
+    ShaderWriteBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -235,7 +235,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    ColorAttachmentReadBit = 0x00000080,
+    ColorAttachmentReadBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -263,7 +263,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    ColorAttachmentWriteBit = 0x00000100,
+    ColorAttachmentWriteBit = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -291,7 +291,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    DepthStencilAttachmentReadBit = 0x00000200,
+    DepthStencilAttachmentReadBit = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -319,7 +319,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    DepthStencilAttachmentWriteBit = 0x00000400,
+    DepthStencilAttachmentWriteBit = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -347,7 +347,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    TransferReadBit = 0x00000800,
+    TransferReadBit = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -375,7 +375,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    TransferWriteBit = 0x00001000,
+    TransferWriteBit = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -403,7 +403,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    HostReadBit = 0x00002000,
+    HostReadBit = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -431,7 +431,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    HostWriteBit = 0x00004000,
+    HostWriteBit = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -459,7 +459,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    MemoryReadBit = 0x00008000,
+    MemoryReadBit = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -487,7 +487,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.0"
     )]
-    MemoryWriteBit = 0x00010000,
+    MemoryWriteBit = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -503,7 +503,7 @@ public enum AccessFlags
         ],
         MinVersion = "1.3"
     )]
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -513,7 +513,7 @@ public enum AccessFlags
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackWriteBitEXT = 0x02000000,
+    TransformFeedbackWriteBitEXT = 0x2000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -523,7 +523,7 @@ public enum AccessFlags
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackCounterReadBitEXT = 0x04000000,
+    TransformFeedbackCounterReadBitEXT = 0x4000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -533,7 +533,7 @@ public enum AccessFlags
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackCounterWriteBitEXT = 0x08000000,
+    TransformFeedbackCounterWriteBitEXT = 0x8000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -543,7 +543,7 @@ public enum AccessFlags
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    ConditionalRenderingReadBitEXT = 0x00100000,
+    ConditionalRenderingReadBitEXT = 0x100000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -553,7 +553,7 @@ public enum AccessFlags
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    ColorAttachmentReadNoncoherentBitEXT = 0x00080000,
+    ColorAttachmentReadNoncoherentBitEXT = 0x80000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -563,7 +563,7 @@ public enum AccessFlags
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureReadBitKHR = 0x00200000,
+    AccelerationStructureReadBitKHR = 0x200000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -573,7 +573,7 @@ public enum AccessFlags
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureWriteBitKHR = 0x00400000,
+    AccelerationStructureWriteBitKHR = 0x400000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -583,7 +583,7 @@ public enum AccessFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapReadBitEXT = 0x01000000,
+    FragmentDensityMapReadBitEXT = 0x1000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -594,7 +594,7 @@ public enum AccessFlags
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentReadBitKHR = 0x00800000,
+    FragmentShadingRateAttachmentReadBitKHR = 0x800000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -605,7 +605,7 @@ public enum AccessFlags
             "VK_VERSION_1_3",
         ]
     )]
-    CommandPreprocessReadBitEXT = 0x00020000,
+    CommandPreprocessReadBitEXT = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -616,7 +616,7 @@ public enum AccessFlags
             "VK_VERSION_1_3",
         ]
     )]
-    CommandPreprocessWriteBitEXT = 0x00040000,
+    CommandPreprocessWriteBitEXT = 0x40000,
 
     [SupportedApiProfile(
         "vulkan",

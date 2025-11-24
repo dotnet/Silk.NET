@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum BuildAccelerationStructureFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowUpdateBitKHR = 0x00000001,
+    AllowUpdateBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowCompactionBitKHR = 0x00000002,
+    AllowCompactionBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PreferFastTraceBitKHR = 0x00000004,
+    PreferFastTraceBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PreferFastBuildBitKHR = 0x00000008,
+    PreferFastBuildBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,14 +63,14 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    LowMemoryBitKHR = 0x00000010,
+    LowMemoryBitKHR = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    MotionBitNV = 0x00000020,
+    MotionBitNV = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -80,7 +80,7 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowOpacityMicromapUpdateBitEXT = 0x00000040,
+    AllowOpacityMicromapUpdateBitEXT = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -90,7 +90,7 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowDisableOpacityMicromapsBitEXT = 0x00000080,
+    AllowDisableOpacityMicromapsBitEXT = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -100,21 +100,21 @@ public enum BuildAccelerationStructureFlagsKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowOpacityMicromapDataUpdateBitEXT = 0x00000100,
+    AllowOpacityMicromapDataUpdateBitEXT = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowDataAccessBitKHR = 0x00000800,
+    AllowDataAccessBitKHR = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowClusterOpacityMicromapsBitNV = 0x00001000,
+    AllowClusterOpacityMicromapsBitNV = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",

@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DeviceDiagnosticsConfigFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum DeviceDiagnosticsConfigFlagsNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableShaderDebugInfoBitNV = 0x00000001,
+    EnableShaderDebugInfoBitNV = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +32,7 @@ public enum DeviceDiagnosticsConfigFlagsNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableResourceTrackingBitNV = 0x00000002,
+    EnableResourceTrackingBitNV = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -42,7 +42,7 @@ public enum DeviceDiagnosticsConfigFlagsNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableAutomaticCheckpointsBitNV = 0x00000004,
+    EnableAutomaticCheckpointsBitNV = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -52,5 +52,5 @@ public enum DeviceDiagnosticsConfigFlagsNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableShaderErrorReportingBitNV = 0x00000008,
+    EnableShaderErrorReportingBitNV = 0x8,
 }

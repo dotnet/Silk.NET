@@ -12,16 +12,16 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DebugUtilsMessageTypeFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    GeneralBitEXT = 0x00000001,
+    GeneralBitEXT = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    ValidationBitEXT = 0x00000002,
+    ValidationBitEXT = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    PerformanceBitEXT = 0x00000004,
+    PerformanceBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -31,5 +31,5 @@ public enum DebugUtilsMessageTypeFlagsEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressBindingBitEXT = 0x00000008,
+    DeviceAddressBindingBitEXT = 0x8,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeFeedbackFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum VideoEncodeFeedbackFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BitstreamBufferOffsetBitKHR = 0x00000001,
+    BitstreamBufferOffsetBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum VideoEncodeFeedbackFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BitstreamBytesWrittenBitKHR = 0x00000002,
+    BitstreamBytesWrittenBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,5 +43,5 @@ public enum VideoEncodeFeedbackFlagsKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BitstreamHasOverridesBitKHR = 0x00000004,
+    BitstreamHasOverridesBitKHR = 0x4,
 }

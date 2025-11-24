@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DeviceGroupPresentModeFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -21,7 +21,7 @@ public enum DeviceGroupPresentModeFlagsKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    LocalBitKHR = 0x00000001,
+    LocalBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -29,7 +29,7 @@ public enum DeviceGroupPresentModeFlagsKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    RemoteBitKHR = 0x00000002,
+    RemoteBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum DeviceGroupPresentModeFlagsKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    SumBitKHR = 0x00000004,
+    SumBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -45,5 +45,5 @@ public enum DeviceGroupPresentModeFlagsKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    LocalMultiDeviceBitKHR = 0x00000008,
+    LocalMultiDeviceBitKHR = 0x8,
 }

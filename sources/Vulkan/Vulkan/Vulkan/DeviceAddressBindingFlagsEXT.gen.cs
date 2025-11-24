@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DeviceAddressBindingFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,5 +23,5 @@ public enum DeviceAddressBindingFlagsEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    InternalObjectBitEXT = 0x00000001,
+    InternalObjectBitEXT = 0x1,
 }

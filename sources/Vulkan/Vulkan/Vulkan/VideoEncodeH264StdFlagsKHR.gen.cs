@@ -13,145 +13,145 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeH264StdFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SeparateColorPlaneFlagSetBitKHR = 0x00000001,
+    SeparateColorPlaneFlagSetBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    QpprimeYZeroTransformBypassFlagSetBitKHR = 0x00000002,
+    QpprimeYZeroTransformBypassFlagSetBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ScalingMatrixPresentFlagSetBitKHR = 0x00000004,
+    ScalingMatrixPresentFlagSetBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ChromaQpIndexOffsetBitKHR = 0x00000008,
+    ChromaQpIndexOffsetBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SecondChromaQpIndexOffsetBitKHR = 0x00000010,
+    SecondChromaQpIndexOffsetBitKHR = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PicInitQpMinus26BitKHR = 0x00000020,
+    PicInitQpMinus26BitKHR = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    WeightedPredFlagSetBitKHR = 0x00000040,
+    WeightedPredFlagSetBitKHR = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    WeightedBipredIdcExplicitBitKHR = 0x00000080,
+    WeightedBipredIdcExplicitBitKHR = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    WeightedBipredIdcImplicitBitKHR = 0x00000100,
+    WeightedBipredIdcImplicitBitKHR = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Transform8X8ModeFlagSetBitKHR = 0x00000200,
+    Transform8X8ModeFlagSetBitKHR = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DirectSpatialMvPredFlagUnsetBitKHR = 0x00000400,
+    DirectSpatialMvPredFlagUnsetBitKHR = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EntropyCodingModeFlagUnsetBitKHR = 0x00000800,
+    EntropyCodingModeFlagUnsetBitKHR = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EntropyCodingModeFlagSetBitKHR = 0x00001000,
+    EntropyCodingModeFlagSetBitKHR = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Direct8X8InferenceFlagUnsetBitKHR = 0x00002000,
+    Direct8X8InferenceFlagUnsetBitKHR = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ConstrainedIntraPredFlagSetBitKHR = 0x00004000,
+    ConstrainedIntraPredFlagSetBitKHR = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeblockingFilterDisabledBitKHR = 0x00008000,
+    DeblockingFilterDisabledBitKHR = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeblockingFilterEnabledBitKHR = 0x00010000,
+    DeblockingFilterEnabledBitKHR = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeblockingFilterPartialBitKHR = 0x00020000,
+    DeblockingFilterPartialBitKHR = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SliceQpDeltaBitKHR = 0x00080000,
+    SliceQpDeltaBitKHR = 0x80000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DifferentSliceQpDeltaBitKHR = 0x00100000,
+    DifferentSliceQpDeltaBitKHR = 0x100000,
 }

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum BuildMicromapFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum BuildMicromapFlagsEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    PreferFastTraceBitEXT = 0x00000001,
+    PreferFastTraceBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum BuildMicromapFlagsEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    PreferFastBuildBitEXT = 0x00000002,
+    PreferFastBuildBitEXT = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,5 +43,5 @@ public enum BuildMicromapFlagsEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowCompactionBitEXT = 0x00000004,
+    AllowCompactionBitEXT = 0x4,
 }

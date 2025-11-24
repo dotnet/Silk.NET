@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum HostImageCopyFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum HostImageCopyFlags
         ],
         MinVersion = "1.4"
     )]
-    MemcpyBit = 0x00000001,
+    MemcpyBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

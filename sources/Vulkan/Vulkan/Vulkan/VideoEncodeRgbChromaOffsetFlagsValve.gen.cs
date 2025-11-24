@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeRgbChromaOffsetFlagsValve
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum VideoEncodeRgbChromaOffsetFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    CositedEvenBitValve = 0x00000001,
+    CositedEvenBitValve = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,5 +33,5 @@ public enum VideoEncodeRgbChromaOffsetFlagsValve
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    MidpointBitValve = 0x00000002,
+    MidpointBitValve = 0x2,
 }

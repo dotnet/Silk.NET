@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PeerMemoryFeatureFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +36,7 @@ public enum PeerMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    CopySrcBit = 0x00000001,
+    CopySrcBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -60,7 +60,7 @@ public enum PeerMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    CopyDstBit = 0x00000002,
+    CopyDstBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -84,7 +84,7 @@ public enum PeerMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    GenericSrcBit = 0x00000004,
+    GenericSrcBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -108,7 +108,7 @@ public enum PeerMemoryFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    GenericDstBit = 0x00000008,
+    GenericDstBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",

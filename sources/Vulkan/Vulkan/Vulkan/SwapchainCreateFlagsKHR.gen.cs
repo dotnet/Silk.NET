@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SwapchainCreateFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -20,7 +20,7 @@ public enum SwapchainCreateFlagsKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    SplitInstanceBindRegionsBitKHR = 0x00000001,
+    SplitInstanceBindRegionsBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +28,7 @@ public enum SwapchainCreateFlagsKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    ProtectedBitKHR = 0x00000002,
+    ProtectedBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,14 +40,14 @@ public enum SwapchainCreateFlagsKHR
             "VK_KHR_swapchain+VK_VERSION_1_1+VK_VERSION_1_2",
         ]
     )]
-    MutableFormatBitKHR = 0x00000004,
+    MutableFormatBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_id2"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
     )]
-    PresentId2BitKHR = 0x00000040,
+    PresentId2BitKHR = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -59,7 +59,7 @@ public enum SwapchainCreateFlagsKHR
             "VK_KHR_swapchain",
         ]
     )]
-    PresentWait2BitKHR = 0x00000080,
+    PresentWait2BitKHR = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -70,7 +70,7 @@ public enum SwapchainCreateFlagsKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    DeferredMemoryAllocationBitKHR = 0x00000008,
+    DeferredMemoryAllocationBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",

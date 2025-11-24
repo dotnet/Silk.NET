@@ -12,8 +12,8 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum TensorCreateFlagsARM : long
 {
-    None = 0,
-    MutableFormatBitARM = unchecked((ulong)0x00000001UL),
-    ProtectedBitARM = unchecked((ulong)0x00000002UL),
-    DescriptorBufferCaptureReplayBitARM = unchecked((ulong)0x00000004UL),
+    None = 0x0,
+    MutableFormatBitARM = 0x1,
+    ProtectedBitARM = 0x2,
+    DescriptorBufferCaptureReplayBitARM = 0x4,
 }

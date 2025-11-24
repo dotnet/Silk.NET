@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ExternalFenceFeatureFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +36,7 @@ public enum ExternalFenceFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ExportableBit = 0x00000001,
+    ExportableBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -60,7 +60,7 @@ public enum ExternalFenceFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ImportableBit = 0x00000002,
+    ImportableBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",

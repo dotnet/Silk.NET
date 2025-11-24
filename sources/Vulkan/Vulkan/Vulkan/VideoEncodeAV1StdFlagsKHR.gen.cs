@@ -12,33 +12,33 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeAV1StdFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    UniformTileSpacingFlagSetBitKHR = 0x00000001,
+    UniformTileSpacingFlagSetBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SkipModePresentUnsetBitKHR = 0x00000002,
+    SkipModePresentUnsetBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PrimaryRefFrameBitKHR = 0x00000004,
+    PrimaryRefFrameBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeltaQBitKHR = 0x00000008,
+    DeltaQBitKHR = 0x8,
 }

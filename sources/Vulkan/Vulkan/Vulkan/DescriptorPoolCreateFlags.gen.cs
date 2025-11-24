@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DescriptorPoolCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +36,7 @@ public enum DescriptorPoolCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    FreeDescriptorSetBit = 0x00000001,
+    FreeDescriptorSetBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum DescriptorPoolCreateFlags
         ],
         MinVersion = "1.2"
     )]
-    UpdateAfterBindBit = 0x00000002,
+    UpdateAfterBindBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -63,21 +63,21 @@ public enum DescriptorPoolCreateFlags
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    HostOnlyBitEXT = 0x00000004,
+    HostOnlyBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    AllowOverallocationSetsBitNV = 0x00000008,
+    AllowOverallocationSetsBitNV = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    AllowOverallocationPoolsBitNV = 0x00000010,
+    AllowOverallocationPoolsBitNV = 0x10,
 
     [SupportedApiProfile(
         "vulkan",

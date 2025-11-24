@@ -13,77 +13,77 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeH265CapabilityFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    HrdComplianceBitKHR = 0x00000001,
+    HrdComplianceBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PredictionWeightTableGeneratedBitKHR = 0x00000002,
+    PredictionWeightTableGeneratedBitKHR = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RowUnalignedSliceSegmentBitKHR = 0x00000004,
+    RowUnalignedSliceSegmentBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DifferentSliceSegmentTypeBitKHR = 0x00000008,
+    DifferentSliceSegmentTypeBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BFrameInL0ListBitKHR = 0x00000010,
+    BFrameInL0ListBitKHR = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BFrameInL1ListBitKHR = 0x00000020,
+    BFrameInL1ListBitKHR = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerPictureTypeMinMaxQpBitKHR = 0x00000040,
+    PerPictureTypeMinMaxQpBitKHR = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerSliceSegmentConstantQpBitKHR = 0x00000080,
+    PerSliceSegmentConstantQpBitKHR = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    MultipleTilesPerSliceSegmentBitKHR = 0x00000100,
+    MultipleTilesPerSliceSegmentBitKHR = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    MultipleSliceSegmentsPerTileBitKHR = 0x00000200,
+    MultipleSliceSegmentsPerTileBitKHR = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -91,7 +91,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"],
         RequireAll = true
     )]
-    BPictureIntraRefreshBitKHR = 0x00000800,
+    BPictureIntraRefreshBitKHR = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -102,5 +102,5 @@ public enum VideoEncodeH265CapabilityFlagsKHR
         ],
         RequireAll = true
     )]
-    CuQpDiffWraparoundBitKHR = 0x00000400,
+    CuQpDiffWraparoundBitKHR = 0x400,
 }

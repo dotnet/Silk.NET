@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum MemoryAllocateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum MemoryAllocateFlags
         ],
         MinVersion = "1.1"
     )]
-    DeviceMaskBit = 0x00000001,
+    DeviceMaskBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -57,7 +57,7 @@ public enum MemoryAllocateFlags
         ],
         MinVersion = "1.2"
     )]
-    DeviceAddressBit = 0x00000002,
+    DeviceAddressBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -77,7 +77,7 @@ public enum MemoryAllocateFlags
         ],
         MinVersion = "1.2"
     )]
-    DeviceAddressCaptureReplayBit = 0x00000004,
+    DeviceAddressCaptureReplayBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -87,7 +87,7 @@ public enum MemoryAllocateFlags
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    ZeroInitializeBitEXT = 0x00000008,
+    ZeroInitializeBitEXT = 0x8,
 
     [SupportedApiProfile(
         "vulkan",

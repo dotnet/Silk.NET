@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SparseImageFormatFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum SparseImageFormatFlags
         ],
         MinVersion = "1.0"
     )]
-    SingleMiptailBit = 0x00000001,
+    SingleMiptailBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum SparseImageFormatFlags
         ],
         MinVersion = "1.0"
     )]
-    AlignedMipSizeBit = 0x00000002,
+    AlignedMipSizeBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -96,5 +96,5 @@ public enum SparseImageFormatFlags
         ],
         MinVersion = "1.0"
     )]
-    NonstandardBlockSizeBit = 0x00000004,
+    NonstandardBlockSizeBit = 0x4,
 }

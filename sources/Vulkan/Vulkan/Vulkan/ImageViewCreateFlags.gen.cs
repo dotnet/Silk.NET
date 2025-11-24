@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ImageViewCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum ImageViewCreateFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapDynamicBitEXT = 0x00000001,
+    FragmentDensityMapDynamicBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -35,12 +35,12 @@ public enum ImageViewCreateFlags
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitEXT = 0x00000004,
+    DescriptorBufferCaptureReplayBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map2"],
         ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    FragmentDensityMapDeferredBitEXT = 0x00000002,
+    FragmentDensityMapDeferredBitEXT = 0x2,
 }

@@ -18,19 +18,19 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    ProgressiveKHR = 0,
+    ProgressiveKHR = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    InterlacedInterleavedLinesBitKHR = 0x00000001,
+    InterlacedInterleavedLinesBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    InterlacedSeparatePlanesBitKHR = 0x00000002,
+    InterlacedSeparatePlanesBitKHR = 0x2,
 }

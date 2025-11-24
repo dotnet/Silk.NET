@@ -25,7 +25,7 @@ public enum ResolveModeFlags
         ],
         MinVersion = "1.2"
     )]
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -39,7 +39,7 @@ public enum ResolveModeFlags
         ],
         MinVersion = "1.2"
     )]
-    SampleZeroBit = 0x00000001,
+    SampleZeroBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum ResolveModeFlags
         ],
         MinVersion = "1.2"
     )]
-    AverageBit = 0x00000002,
+    AverageBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -67,7 +67,7 @@ public enum ResolveModeFlags
         ],
         MinVersion = "1.2"
     )]
-    MinBit = 0x00000004,
+    MinBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -81,7 +81,7 @@ public enum ResolveModeFlags
         ],
         MinVersion = "1.2"
     )]
-    MaxBit = 0x00000008,
+    MaxBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -91,7 +91,7 @@ public enum ResolveModeFlags
         ],
         ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
     )]
-    ExternalFormatDownsampleBitAndroid = 0x00000010,
+    ExternalFormatDownsampleBitAndroid = 0x10,
 
     [SupportedApiProfile(
         "vulkan",

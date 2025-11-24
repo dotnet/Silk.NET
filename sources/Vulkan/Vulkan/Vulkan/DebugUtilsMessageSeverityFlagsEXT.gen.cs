@@ -13,17 +13,17 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DebugUtilsMessageSeverityFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    VerboseBitEXT = 0x00000001,
+    VerboseBitEXT = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    InfoBitEXT = 0x00000010,
+    InfoBitEXT = 0x10,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    WarningBitEXT = 0x00000100,
+    WarningBitEXT = 0x100,
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    ErrorBitEXT = 0x00001000,
+    ErrorBitEXT = 0x1000,
 }

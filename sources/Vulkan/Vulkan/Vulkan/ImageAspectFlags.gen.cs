@@ -39,7 +39,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.0"
     )]
-    ColorBit = 0x00000001,
+    ColorBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -67,7 +67,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.0"
     )]
-    DepthBit = 0x00000002,
+    DepthBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -95,7 +95,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.0"
     )]
-    StencilBit = 0x00000004,
+    StencilBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -123,7 +123,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.0"
     )]
-    MetadataBit = 0x00000008,
+    MetadataBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -147,7 +147,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.1"
     )]
-    Plane0Bit = 0x00000010,
+    Plane0Bit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -171,7 +171,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.1"
     )]
-    Plane1Bit = 0x00000020,
+    Plane1Bit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -195,7 +195,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.1"
     )]
-    Plane2Bit = 0x00000040,
+    Plane2Bit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -211,7 +211,7 @@ public enum ImageAspectFlags
         ],
         MinVersion = "1.3"
     )]
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -222,7 +222,7 @@ public enum ImageAspectFlags
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane0BitEXT = 0x00000080,
+    MemoryPlane0BitEXT = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -233,7 +233,7 @@ public enum ImageAspectFlags
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane1BitEXT = 0x00000100,
+    MemoryPlane1BitEXT = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -244,7 +244,7 @@ public enum ImageAspectFlags
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane2BitEXT = 0x00000200,
+    MemoryPlane2BitEXT = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -255,7 +255,7 @@ public enum ImageAspectFlags
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane3BitEXT = 0x00000400,
+    MemoryPlane3BitEXT = 0x400,
 
     [SupportedApiProfile(
         "vulkan",

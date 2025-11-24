@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ResolveImageFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum ResolveImageFlagsKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    SkipTransferFunctionBitKHR = 0x00000001,
+    SkipTransferFunctionBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,5 +33,5 @@ public enum ResolveImageFlagsKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    EnableTransferFunctionBitKHR = 0x00000002,
+    EnableTransferFunctionBitKHR = 0x2,
 }

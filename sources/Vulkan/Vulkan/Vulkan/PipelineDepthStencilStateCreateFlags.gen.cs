@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineDepthStencilStateCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum PipelineDepthStencilStateCreateFlags
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentDepthAccessBitEXT = 0x00000001,
+    RasterizationOrderAttachmentDepthAccessBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum PipelineDepthStencilStateCreateFlags
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentStencilAccessBitEXT = 0x00000002,
+    RasterizationOrderAttachmentStencilAccessBitEXT = 0x2,
 
     [SupportedApiProfile(
         "vulkan",

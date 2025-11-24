@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SubmitFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -29,7 +29,7 @@ public enum SubmitFlags
         ],
         MinVersion = "1.3"
     )]
-    ProtectedBit = 0x00000001,
+    ProtectedBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

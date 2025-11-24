@@ -39,7 +39,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    TopOfPipeBit = 0x00000001,
+    TopOfPipeBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -67,7 +67,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    DrawIndirectBit = 0x00000002,
+    DrawIndirectBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -95,7 +95,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexInputBit = 0x00000004,
+    VertexInputBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -123,7 +123,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    VertexShaderBit = 0x00000008,
+    VertexShaderBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -151,7 +151,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    TessellationControlShaderBit = 0x00000010,
+    TessellationControlShaderBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -179,7 +179,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    TessellationEvaluationShaderBit = 0x00000020,
+    TessellationEvaluationShaderBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -207,7 +207,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    GeometryShaderBit = 0x00000040,
+    GeometryShaderBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -235,7 +235,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    FragmentShaderBit = 0x00000080,
+    FragmentShaderBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
@@ -263,7 +263,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    EarlyFragmentTestsBit = 0x00000100,
+    EarlyFragmentTestsBit = 0x100,
 
     [SupportedApiProfile(
         "vulkan",
@@ -291,7 +291,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    LateFragmentTestsBit = 0x00000200,
+    LateFragmentTestsBit = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
@@ -319,7 +319,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    ColorAttachmentOutputBit = 0x00000400,
+    ColorAttachmentOutputBit = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
@@ -347,7 +347,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    ComputeShaderBit = 0x00000800,
+    ComputeShaderBit = 0x800,
 
     [SupportedApiProfile(
         "vulkan",
@@ -375,7 +375,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    TransferBit = 0x00001000,
+    TransferBit = 0x1000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -403,7 +403,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    BottomOfPipeBit = 0x00002000,
+    BottomOfPipeBit = 0x2000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -431,7 +431,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    HostBit = 0x00004000,
+    HostBit = 0x4000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -459,7 +459,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    AllGraphicsBit = 0x00008000,
+    AllGraphicsBit = 0x8000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -487,7 +487,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.0"
     )]
-    AllCommandsBit = 0x00010000,
+    AllCommandsBit = 0x10000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -503,7 +503,7 @@ public enum PipelineStageFlags
         ],
         MinVersion = "1.3"
     )]
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -513,7 +513,7 @@ public enum PipelineStageFlags
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackBitEXT = 0x01000000,
+    TransformFeedbackBitEXT = 0x1000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -523,7 +523,7 @@ public enum PipelineStageFlags
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    ConditionalRenderingBitEXT = 0x00040000,
+    ConditionalRenderingBitEXT = 0x40000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -533,7 +533,7 @@ public enum PipelineStageFlags
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureBuildBitKHR = 0x02000000,
+    AccelerationStructureBuildBitKHR = 0x2000000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -543,7 +543,7 @@ public enum PipelineStageFlags
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingShaderBitKHR = 0x00200000,
+    RayTracingShaderBitKHR = 0x200000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -553,7 +553,7 @@ public enum PipelineStageFlags
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityProcessBitEXT = 0x00800000,
+    FragmentDensityProcessBitEXT = 0x800000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -564,21 +564,21 @@ public enum PipelineStageFlags
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentBitKHR = 0x00400000,
+    FragmentShadingRateAttachmentBitKHR = 0x400000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    TaskShaderBitEXT = 0x00080000,
+    TaskShaderBitEXT = 0x80000,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshShaderBitEXT = 0x00100000,
+    MeshShaderBitEXT = 0x100000,
 
     [SupportedApiProfile(
         "vulkan",
@@ -589,7 +589,7 @@ public enum PipelineStageFlags
             "VK_VERSION_1_3",
         ]
     )]
-    CommandPreprocessBitEXT = 0x00020000,
+    CommandPreprocessBitEXT = 0x20000,
 
     [SupportedApiProfile(
         "vulkan",

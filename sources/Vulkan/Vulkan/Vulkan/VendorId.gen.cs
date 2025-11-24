@@ -38,7 +38,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdKhronos = 0x10000,
+    VendorIdKhronos = 65536,
 
     [SupportedApiProfile(
         "vulkan",
@@ -66,7 +66,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdVIV = 0x10001,
+    VendorIdVIV = 65537,
 
     [SupportedApiProfile(
         "vulkan",
@@ -94,7 +94,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdVSI = 0x10002,
+    VendorIdVSI = 65538,
 
     [SupportedApiProfile(
         "vulkan",
@@ -122,7 +122,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdKazan = 0x10003,
+    VendorIdKazan = 65539,
 
     [SupportedApiProfile(
         "vulkan",
@@ -150,7 +150,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdCodeplay = 0x10004,
+    VendorIdCodeplay = 65540,
 
     [SupportedApiProfile(
         "vulkan",
@@ -178,7 +178,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdMESA = 0x10005,
+    VendorIdMESA = 65541,
 
     [SupportedApiProfile(
         "vulkan",
@@ -206,7 +206,7 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdPocl = 0x10006,
+    VendorIdPocl = 65542,
 
     [SupportedApiProfile(
         "vulkan",
@@ -234,5 +234,5 @@ public enum VendorId
         ],
         MinVersion = "1.0"
     )]
-    VendorIdMobileye = 0x10007,
+    VendorIdMobileye = 65543,
 }

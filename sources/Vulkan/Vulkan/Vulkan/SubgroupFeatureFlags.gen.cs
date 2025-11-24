@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum SubgroupFeatureFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    BasicBit = 0x00000001,
+    BasicBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,7 +53,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    VoteBit = 0x00000002,
+    VoteBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +73,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ArithmeticBit = 0x00000004,
+    ArithmeticBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -93,7 +93,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    BallotBit = 0x00000008,
+    BallotBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -113,7 +113,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ShuffleBit = 0x00000010,
+    ShuffleBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -133,7 +133,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ShuffleRelativeBit = 0x00000020,
+    ShuffleRelativeBit = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
@@ -153,7 +153,7 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    ClusteredBit = 0x00000040,
+    ClusteredBit = 0x40,
 
     [SupportedApiProfile(
         "vulkan",
@@ -173,28 +173,28 @@ public enum SubgroupFeatureFlags
         ],
         MinVersion = "1.1"
     )]
-    QuadBit = 0x00000080,
+    QuadBit = 0x80,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    RotateBit = 0x00000200,
+    RotateBit = 0x200,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    RotateClusteredBit = 0x00000400,
+    RotateClusteredBit = 0x400,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shader_subgroup_partitioned"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    PartitionedBitNV = 0x00000100,
+    PartitionedBitNV = 0x100,
 
     [SupportedApiProfile(
         "vulkan",

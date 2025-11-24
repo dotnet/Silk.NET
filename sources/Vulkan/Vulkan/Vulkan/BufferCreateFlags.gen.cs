@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum BufferCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum BufferCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    SparseBindingBit = 0x00000001,
+    SparseBindingBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum BufferCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    SparseResidencyBit = 0x00000002,
+    SparseResidencyBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -96,7 +96,7 @@ public enum BufferCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    SparseAliasedBit = 0x00000004,
+    SparseAliasedBit = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -120,7 +120,7 @@ public enum BufferCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    ProtectedBit = 0x00000008,
+    ProtectedBit = 0x8,
 
     [SupportedApiProfile(
         "vulkan",
@@ -140,7 +140,7 @@ public enum BufferCreateFlags
         ],
         MinVersion = "1.2"
     )]
-    DeviceAddressCaptureReplayBit = 0x00000010,
+    DeviceAddressCaptureReplayBit = 0x10,
 
     [SupportedApiProfile(
         "vulkan",
@@ -152,14 +152,14 @@ public enum BufferCreateFlags
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitEXT = 0x00000020,
+    DescriptorBufferCaptureReplayBitEXT = 0x20,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    VideoProfileIndependentBitKHR = 0x00000040,
+    VideoProfileIndependentBitKHR = 0x40,
 
     [SupportedApiProfile(
         "vulkan",

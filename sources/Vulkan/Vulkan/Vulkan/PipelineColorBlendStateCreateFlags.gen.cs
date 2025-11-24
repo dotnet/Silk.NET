@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineColorBlendStateCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum PipelineColorBlendStateCreateFlags
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentAccessBitEXT = 0x00000001,
+    RasterizationOrderAttachmentAccessBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

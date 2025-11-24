@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum QueryControlFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -41,5 +41,5 @@ public enum QueryControlFlags
         ],
         MinVersion = "1.0"
     )]
-    PreciseBit = 0x00000001,
+    PreciseBit = 0x1,
 }

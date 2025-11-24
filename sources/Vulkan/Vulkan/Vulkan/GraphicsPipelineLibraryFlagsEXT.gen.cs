@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum GraphicsPipelineLibraryFlagsEXT
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum GraphicsPipelineLibraryFlagsEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    VertexInputInterfaceBitEXT = 0x00000001,
+    VertexInputInterfaceBitEXT = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +33,7 @@ public enum GraphicsPipelineLibraryFlagsEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    PreRasterizationShadersBitEXT = 0x00000002,
+    PreRasterizationShadersBitEXT = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +43,7 @@ public enum GraphicsPipelineLibraryFlagsEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    FragmentShaderBitEXT = 0x00000004,
+    FragmentShaderBitEXT = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -53,5 +53,5 @@ public enum GraphicsPipelineLibraryFlagsEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    FragmentOutputInterfaceBitEXT = 0x00000008,
+    FragmentOutputInterfaceBitEXT = 0x8,
 }

@@ -13,12 +13,12 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum ClusterAccelerationStructureClusterFlagsNV
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowDisableOpacityMicromapsNV = 0x00000001,
+    AllowDisableOpacityMicromapsNV = 0x1,
 }

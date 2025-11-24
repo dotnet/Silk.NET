@@ -12,14 +12,14 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum VideoEncodeFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    IntraRefreshBitKHR = 0x00000004,
+    IntraRefreshBitKHR = 0x4,
 
     [SupportedApiProfile(
         "vulkan",
@@ -29,7 +29,7 @@ public enum VideoEncodeFlagsKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    WithQuantizationDeltaMapBitKHR = 0x00000001,
+    WithQuantizationDeltaMapBitKHR = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -39,5 +39,5 @@ public enum VideoEncodeFlagsKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    WithEmphasisMapBitKHR = 0x00000002,
+    WithEmphasisMapBitKHR = 0x2,
 }

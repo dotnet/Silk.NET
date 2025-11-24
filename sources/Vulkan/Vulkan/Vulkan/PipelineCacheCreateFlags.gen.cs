@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum PipelineCacheCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -26,10 +26,10 @@ public enum PipelineCacheCreateFlags
         ],
         MinVersion = "1.3"
     )]
-    ExternallySynchronizedBit = 0x00000001,
+    ExternallySynchronizedBit = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    InternallySynchronizedMergeBitKHR = 0x00000008,
+    InternallySynchronizedMergeBitKHR = 0x8,
 
     [SupportedApiProfile(
         "vulkan",

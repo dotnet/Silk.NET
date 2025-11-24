@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum FenceImportFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum FenceImportFlags
         ],
         MinVersion = "1.1"
     )]
-    TemporaryBit = 0x00000001,
+    TemporaryBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",

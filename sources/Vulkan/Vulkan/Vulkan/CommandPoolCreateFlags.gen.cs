@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum CommandPoolCreateFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -39,7 +39,7 @@ public enum CommandPoolCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    TransientBit = 0x00000001,
+    TransientBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -67,7 +67,7 @@ public enum CommandPoolCreateFlags
         ],
         MinVersion = "1.0"
     )]
-    ResetCommandBufferBit = 0x00000002,
+    ResetCommandBufferBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -91,5 +91,5 @@ public enum CommandPoolCreateFlags
         ],
         MinVersion = "1.1"
     )]
-    ProtectedBit = 0x00000004,
+    ProtectedBit = 0x4,
 }

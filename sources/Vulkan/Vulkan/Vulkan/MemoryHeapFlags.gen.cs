@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum MemoryHeapFlags
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum MemoryHeapFlags
         ],
         MinVersion = "1.0"
     )]
-    DeviceLocalBit = 0x00000001,
+    DeviceLocalBit = 0x1,
 
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +64,7 @@ public enum MemoryHeapFlags
         ],
         MinVersion = "1.1"
     )]
-    MultiInstanceBit = 0x00000002,
+    MultiInstanceBit = 0x2,
 
     [SupportedApiProfile(
         "vulkan",
@@ -74,7 +74,7 @@ public enum MemoryHeapFlags
             "VK_VERSION_1_1",
         ]
     )]
-    TileMemoryBitQCOM = 0x00000008,
+    TileMemoryBitQCOM = 0x8,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     MultiInstanceBitKHR = MultiInstanceBit,

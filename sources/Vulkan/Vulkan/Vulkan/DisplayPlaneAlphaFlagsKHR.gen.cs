@@ -13,17 +13,17 @@ namespace Silk.NET.Vulkan;
 [Flags]
 public enum DisplayPlaneAlphaFlagsKHR
 {
-    None = 0,
+    None = 0x0,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    OpaqueBitKHR = 0x00000001,
+    OpaqueBitKHR = 0x1,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    GlobalBitKHR = 0x00000002,
+    GlobalBitKHR = 0x2,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelBitKHR = 0x00000004,
+    PerPixelBitKHR = 0x4,
 
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelPremultipliedBitKHR = 0x00000008,
+    PerPixelPremultipliedBitKHR = 0x8,
 }
