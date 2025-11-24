@@ -289,12 +289,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                 case EnumBackingTypePreference.PreferSigned:
                 {
                     var baseList = originalNode.BaseList;
-                    if (baseList == null)
-                    {
-                        break;
-                    }
-
-                    var baseTypes = baseList.Types
+                    var baseTypes = (baseList?.Types ?? [])
                         .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
                         {
                             var type = semanticModel.GetTypeInfo(t.Type).Type;
@@ -330,12 +325,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                 case EnumBackingTypePreference.PreferUnsigned:
                 {
                     var baseList = originalNode.BaseList;
-                    if (baseList == null)
-                    {
-                        break;
-                    }
-
-                    var baseTypes = baseList.Types
+                    var baseTypes = (baseList?.Types ?? [])
                         .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
                         {
                             var type = semanticModel.GetTypeInfo(t.Type).Type;
