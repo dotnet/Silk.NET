@@ -125,7 +125,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         // 2. Reduce pointer dimensions
         ctx.SourceProject = project;
         await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, handleTypes, [
-            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, $"{t.Name}Handle"))),
+            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, GetNewHandleTypeName(t.Name)))),
             new PointerDimensionReductionTransformer(),
         ], logger, ct);
         project = ctx.SourceProject;
@@ -147,13 +147,28 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             // Rewrite handle struct to include handle members
             document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
 
-            // Add -Handle suffix to end of document name
-            document = document.ReplaceNameAndPath(originalName, $"{originalName}Handle");
+            // Rename document to match type name
+            document = document.ReplaceNameAndPath(originalName, GetNewHandleTypeName(originalName));
 
             project = document.Project;
         }
 
         ctx.SourceProject = project;
+
+        return;
+
+        string GetNewHandleTypeName(string name)
+        {
+            // TODO: Hack: This is a temporary fix for trimming _T off of Vulkan handle structs. Remove after implementing the new prettification strategy and things should still work.
+            if (name.EndsWith("_T"))
+            {
+                name = name[..^2];
+            }
+
+            name += "Handle";
+
+            return name;
+        }
     }
 
     private class MissingHandleTypeDiscoverer(ILogger logger, Compilation compilation, CancellationToken ct) : SymbolVisitor

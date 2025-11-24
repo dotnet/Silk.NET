@@ -50,7 +50,7 @@ public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public ImageViewTHandle ImageView;
+    public ImageViewHandle ImageView;
 
     [SupportedApiProfile(
         "vulkan",

@@ -60,7 +60,7 @@ public unsafe partial struct MemoryMapInfo
         ],
         MinVersion = "1.4"
     )]
-    public DeviceMemoryTHandle Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

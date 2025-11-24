@@ -79,7 +79,7 @@ public unsafe partial struct DescriptorSetAllocateInfo
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorPoolTHandle DescriptorPool;
+    public DescriptorPoolHandle DescriptorPool;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
@@ -127,5 +127,5 @@ public unsafe partial struct DescriptorSetAllocateInfo
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSetLayoutTHandle* PSetLayouts;
+    public DescriptorSetLayoutHandle* PSetLayouts;
 }

@@ -38,7 +38,7 @@ public unsafe partial struct SparseImageOpaqueMemoryBindInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageTHandle Image;
+    public ImageHandle Image;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

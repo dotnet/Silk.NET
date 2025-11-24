@@ -59,5 +59,5 @@ public unsafe partial struct MemoryUnmapInfo
         ],
         MinVersion = "1.4"
     )]
-    public DeviceMemoryTHandle Memory;
+    public DeviceMemoryHandle Memory;
 }

@@ -31,5 +31,5 @@ public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
         ["VK_KHR_get_surface_capabilities2"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public SurfaceKHRTHandle Surface;
+    public SurfaceKHRHandle Surface;
 }

@@ -81,7 +81,7 @@ public unsafe partial struct BindImageMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public ImageTHandle Image;
+    public ImageHandle Image;
 
     [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
@@ -106,7 +106,7 @@ public unsafe partial struct BindImageMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public DeviceMemoryTHandle Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

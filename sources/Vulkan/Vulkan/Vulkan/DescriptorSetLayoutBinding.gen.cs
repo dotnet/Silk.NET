@@ -127,5 +127,5 @@ public unsafe partial struct DescriptorSetLayoutBinding
         ],
         MinVersion = "1.0"
     )]
-    public SamplerTHandle* PImmutableSamplers;
+    public SamplerHandle* PImmutableSamplers;
 }

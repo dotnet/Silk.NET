@@ -83,5 +83,5 @@ public unsafe partial struct ImageSparseMemoryRequirementsInfo2
         ],
         MinVersion = "1.1"
     )]
-    public ImageTHandle Image;
+    public ImageHandle Image;
 }

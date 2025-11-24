@@ -113,7 +113,7 @@ public unsafe partial struct SemaphoreWaitInfo
         ],
         MinVersion = "1.2"
     )]
-    public SemaphoreTHandle* PSemaphores;
+    public SemaphoreHandle* PSemaphores;
 
     [NativeTypeName("const uint64_t *")]
     [SupportedApiProfile(

@@ -82,7 +82,7 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
         ],
         MinVersion = "1.1"
     )]
-    public ImageTHandle Image;
+    public ImageHandle Image;
 
     [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
@@ -107,5 +107,5 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
         ],
         MinVersion = "1.1"
     )]
-    public BufferTHandle Buffer;
+    public BufferHandle Buffer;
 }

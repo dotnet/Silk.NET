@@ -35,7 +35,7 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public SwapchainKHRTHandle Swapchain;
+    public SwapchainKHRHandle Swapchain;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

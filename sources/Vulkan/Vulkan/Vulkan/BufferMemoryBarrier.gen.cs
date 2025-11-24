@@ -211,7 +211,7 @@ public unsafe partial struct BufferMemoryBarrier
         ],
         MinVersion = "1.0"
     )]
-    public BufferTHandle Buffer;
+    public BufferHandle Buffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

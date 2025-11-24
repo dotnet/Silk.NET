@@ -41,7 +41,7 @@ public unsafe partial struct VideoEncodeQuantizationMapInfoKHR
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    public ImageViewTHandle QuantizationMap;
+    public ImageViewHandle QuantizationMap;
 
     [SupportedApiProfile(
         "vulkan",

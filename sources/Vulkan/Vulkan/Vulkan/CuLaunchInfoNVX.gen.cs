@@ -20,7 +20,7 @@ public unsafe partial struct CuLaunchInfoNVX
 
     [NativeTypeName("VkCuFunctionNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuFunctionNVXTHandle Function;
+    public CuFunctionNVXHandle Function;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]

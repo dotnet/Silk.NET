@@ -65,7 +65,7 @@ public unsafe partial struct RenderPassBeginInfo
         ],
         MinVersion = "1.0"
     )]
-    public RenderPassTHandle RenderPass;
+    public RenderPassHandle RenderPass;
 
     [NativeTypeName("VkFramebuffer")]
     [SupportedApiProfile(
@@ -84,7 +84,7 @@ public unsafe partial struct RenderPassBeginInfo
         ],
         MinVersion = "1.0"
     )]
-    public FramebufferTHandle Framebuffer;
+    public FramebufferHandle Framebuffer;
 
     [SupportedApiProfile(
         "vulkan",

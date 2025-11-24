@@ -83,5 +83,5 @@ public unsafe partial struct BufferMemoryRequirementsInfo2
         ],
         MinVersion = "1.1"
     )]
-    public BufferTHandle Buffer;
+    public BufferHandle Buffer;
 }

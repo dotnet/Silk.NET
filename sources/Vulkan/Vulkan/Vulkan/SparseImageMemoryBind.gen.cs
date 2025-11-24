@@ -121,7 +121,7 @@ public unsafe partial struct SparseImageMemoryBind
         ],
         MinVersion = "1.0"
     )]
-    public DeviceMemoryTHandle Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

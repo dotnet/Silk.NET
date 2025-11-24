@@ -127,7 +127,7 @@ public unsafe partial struct ComputePipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public PipelineLayoutTHandle Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
@@ -151,7 +151,7 @@ public unsafe partial struct ComputePipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public PipelineTHandle BasePipelineHandle;
+    public PipelineHandle BasePipelineHandle;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

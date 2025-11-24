@@ -55,5 +55,5 @@ public unsafe partial struct IndirectExecutionSetShaderLayoutInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public DescriptorSetLayoutTHandle* PSetLayouts;
+    public DescriptorSetLayoutHandle* PSetLayouts;
 }

@@ -41,7 +41,7 @@ public unsafe partial struct ConditionalRenderingBeginInfoEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public BufferTHandle Buffer;
+    public BufferHandle Buffer;
 
     [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(

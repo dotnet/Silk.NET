@@ -71,5 +71,5 @@ public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfo
         ],
         MinVersion = "1.2"
     )]
-    public DeviceMemoryTHandle Memory;
+    public DeviceMemoryHandle Memory;
 }

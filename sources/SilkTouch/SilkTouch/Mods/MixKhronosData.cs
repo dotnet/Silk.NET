@@ -1509,7 +1509,7 @@ public partial class MixKhronosData(
             {
                 if (current.EndsWith("_T"))
                 {
-                    var newPrim = current.Substring(0, current.Length - 2);
+                    var newPrim = current[..^2];
                     var newPrev = previous ?? [];
                     newPrev.Add(current);
 

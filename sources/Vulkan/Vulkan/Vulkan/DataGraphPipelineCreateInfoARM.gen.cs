@@ -40,7 +40,7 @@ public unsafe partial struct DataGraphPipelineCreateInfoARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public PipelineLayoutTHandle Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeTypeName("uint32_t")]
     [SupportedApiProfile(

@@ -40,7 +40,7 @@ public unsafe partial struct FenceGetFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public FenceTHandle Fence;
+    public FenceHandle Fence;
 
     [SupportedApiProfile(
         "vulkan",

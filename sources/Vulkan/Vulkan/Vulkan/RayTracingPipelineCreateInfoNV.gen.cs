@@ -107,7 +107,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public PipelineLayoutTHandle Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
@@ -118,7 +118,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public PipelineTHandle BasePipelineHandle;
+    public PipelineHandle BasePipelineHandle;
 
     [NativeTypeName("int32_t")]
     [SupportedApiProfile(

@@ -55,5 +55,5 @@ public unsafe partial struct SwapchainPresentFenceInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public FenceTHandle* PFences;
+    public FenceHandle* PFences;
 }
