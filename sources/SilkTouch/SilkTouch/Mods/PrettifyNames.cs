@@ -456,14 +456,10 @@ public class PrettifyNames(
                     continue;
                 }
 
-                // TODO: Not sure what changed here. Need to check history.
-                // var span = nativeName.AsSpan();
-                // var containerSpan = span[..span.IndexOf('.')];
-                // if (containerSpan.Equals("*", StringComparison.Ordinal) || containerSpan.Equals(container, StringComparison.Ordinal))
-
                 // Check whether the override is for this type.
-                var span = context.Container.AsSpan();
-                if (span[..span.IndexOf('.')] is "*" || span[..span.IndexOf('.')] == context.Container)
+                var span = nativeName.AsSpan();
+                var containerSpan = span[..span.IndexOf('.')];
+                if (containerSpan.Equals("*", StringComparison.Ordinal) || containerSpan.Equals(context.Container, StringComparison.Ordinal))
                 {
                     nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
                 }
