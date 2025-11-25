@@ -925,21 +925,6 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    private Location? IdentifierLocation(SyntaxNode? node) =>
-        node switch
-        {
-            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
-            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
-            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
-            EventDeclarationSyntax e => e.Identifier.GetLocation(),
-            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
-            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
-            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
-            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
-            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null,
-        };
-
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
