@@ -12,6 +12,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Marks identifiers with the [NativeName] attribute.
 /// </summary>
+[ModConfiguration<Configuration>]
 public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg) : IMod
 {
     /// <summary>
