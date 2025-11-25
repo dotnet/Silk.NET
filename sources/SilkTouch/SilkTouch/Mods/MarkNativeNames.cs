@@ -24,7 +24,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
         /// Should identifiers marked with the [Transformed] attribute be included?
         /// These are ignored by default.
         /// </summary>
-        public bool IncludeTransformed { get; init; } = false;
+        public bool IncludeTransformed { get; init; } = true; // TODO: We probably want this to be false by default. Leaving as true during development though.
 
         // TODO: Probably add an exclude regex list
     }
@@ -46,7 +46,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
             return;
         }
 
-        var rewriter = new Rewriter();
+        var rewriter = new Rewriter(config);
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -59,21 +59,18 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter : ModCSharpSyntaxRewriter
+    private class Rewriter(Configuration config) : ModCSharpSyntaxRewriter
     {
-        /// <inheritdoc />
-        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
-            node = node.WithAttributeLists(AddNativeNameAttributeIfMissing(node.AttributeLists, node.Identifier));
-
-            return node;
-        }
-
-        private SyntaxList<AttributeListSyntax> AddNativeNameAttributeIfMissing(SyntaxList<AttributeListSyntax> attributes, SyntaxToken identifier)
+        private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(SyntaxList<AttributeListSyntax> attributes, SyntaxToken identifier)
         {
             var hasNativeNameAttribute = attributes.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName")));
             if (hasNativeNameAttribute)
+            {
+                return attributes;
+            }
+
+            var hasTransformedAttribute = attributes.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.Transformed")));
+            if (hasTransformedAttribute && !config.IncludeTransformed)
             {
                 return attributes;
             }
@@ -91,6 +88,69 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
                 nativeNameAttribute,
                 ..attributes,
             ];
+        }
+
+        // ----- Types -----
+
+        /// <inheritdoc />
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
+            return node;
+        }
+
+        /// <inheritdoc />
+        public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
+            return node;
+        }
+
+        // ----- Members -----
+
+        /// <inheritdoc />
+        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = (EnumMemberDeclarationSyntax)base.VisitEnumMemberDeclaration(node)!;
+            return node;
+        }
+
+        /// <inheritdoc />
+        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = (PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node)!;
+            return node;
+        }
+
+        /// <inheritdoc />
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
+            return node;
+        }
+
+        /// <inheritdoc />
+        public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            // This just uses the first declared field's identifier in cases where a field declares multiple variables
+            // Eg: int a, b;
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Declaration.Variables.First().Identifier));
+            node = (FieldDeclarationSyntax)base.VisitFieldDeclaration(node)!;
+            return node;
+        }
+
+        // ----- Other -----
+
+        public override SyntaxNode VisitParameter(ParameterSyntax node)
+        {
+            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = (ParameterSyntax)base.VisitParameter(node)!;
+            return node;
         }
     }
 }
