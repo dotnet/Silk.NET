@@ -14,6 +14,7 @@ override Silk.NET.Core.HString.Equals(object? obj) -> bool
 override Silk.NET.Core.HString.GetHashCode() -> int
 override Silk.NET.Core.HString.ToString() -> string!
 override Silk.NET.Core.MaybeBool<T, TScheme>.GetHashCode() -> int
+override Silk.NET.Core.MaybeBool<T>.GetHashCode() -> int
 override Silk.NET.Core.NullPtr.GetHashCode() -> int
 override Silk.NET.Core.Ptr.Equals(object? obj) -> bool
 override Silk.NET.Core.Ptr.GetHashCode() -> int
@@ -360,6 +361,8 @@ Silk.NET.Core.MaybeBool<T, TScheme>.MaybeBool(T Value) -> void
 Silk.NET.Core.MaybeBool<T, TScheme>.Value.get -> T
 Silk.NET.Core.MaybeBool<T, TScheme>.Value.init -> void
 Silk.NET.Core.MaybeBool<T>
+Silk.NET.Core.MaybeBool<T>.Deconstruct(out T Value) -> void
+Silk.NET.Core.MaybeBool<T>.Equals(Silk.NET.Core.MaybeBool<T> other) -> bool
 Silk.NET.Core.MaybeBool<T>.MaybeBool() -> void
 Silk.NET.Core.MaybeBool<T>.MaybeBool(T Value) -> void
 Silk.NET.Core.MaybeBool<T>.Value.get -> T
@@ -775,8 +778,10 @@ static Silk.NET.Core.MaybeBool<T>.implicit operator bool(Silk.NET.Core.MaybeBool
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(bool value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(T Value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator T(Silk.NET.Core.MaybeBool<T> value) -> T
+static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> left, Silk.NET.Core.MaybeBool<T> right) -> bool
 static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> lh, T rh) -> bool
 static Silk.NET.Core.MaybeBool<T>.operator !=(T lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> left, Silk.NET.Core.MaybeBool<T> right) -> bool
 static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> lh, T rh) -> bool
 static Silk.NET.Core.MaybeBool<T>.operator ==(T lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
 static Silk.NET.Core.NullPtr.implicit operator void*(Silk.NET.Core.NullPtr _) -> void*
@@ -1222,6 +1227,8 @@ static Silk.NET.Core.X11PlatformInfo.operator ==(Silk.NET.Core.X11PlatformInfo l
 ~override Silk.NET.Core.EGLPlatformInfo.ToString() -> string
 ~override Silk.NET.Core.MaybeBool<T, TScheme>.Equals(object obj) -> bool
 ~override Silk.NET.Core.MaybeBool<T, TScheme>.ToString() -> string
+~override Silk.NET.Core.MaybeBool<T>.Equals(object obj) -> bool
+~override Silk.NET.Core.MaybeBool<T>.ToString() -> string
 ~override Silk.NET.Core.NullPtr.Equals(object obj) -> bool
 ~override Silk.NET.Core.NullPtr.ToString() -> string
 ~override Silk.NET.Core.UIKitPlatformInfo.Equals(object obj) -> bool
