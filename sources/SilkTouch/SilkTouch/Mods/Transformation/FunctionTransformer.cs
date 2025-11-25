@@ -191,6 +191,44 @@ public class FunctionTransformer(
             {
                 // Try to add the original function as-is
                 ret.Insert(idx, new(function, !discrims.Add(discrim), true));
+
+                // TODO: Not sure what changed here. Need to check history.
+                // if (discrims.Add(discrim))
+                // {
+                //     ret.Insert(idx, function);
+                // }
+                // else
+                // {
+                //     // Sometimes when functions are transformed they only differ by return type. C# doesn't allow
+                //     // this, so we add a suffix to the original function to differentiate them.
+                //     var newIden = $"{function.Identifier}Raw";
+                //     var rep = new Dictionary<string, string>
+                //     {
+                //         { function.Identifier.ToString(), newIden },
+                //     };
+                //
+                //     // Any reference to the original function needs to be replaced as well.
+                //     foreach (ref var added in CollectionsMarshal.AsSpan(ret)[idx..])
+                //     {
+                //         added = (MethodDeclarationSyntax)added.ReplaceIdentifiers(rep);
+                //     }
+                //
+                //     // Add the suffixed function
+                //     var newFun = function
+                //         .WithRenameSafeAttributeLists()
+                //         .WithIdentifier(Identifier(newIden));
+                //     discrim = ModUtils.DiscrimStr(
+                //         function.Modifiers,
+                //         function.TypeParameterList,
+                //         newIden,
+                //         function.ParameterList,
+                //         returnType: null
+                //     );
+                //     if (discrims.Add(discrim))
+                //     {
+                //         ret.Insert(idx, newFun);
+                //     }
+                // }
             }
 
             ctx.Original = null;
@@ -363,7 +401,11 @@ public class FunctionTransformer(
                 )
             )
             .WithModifiers(
-                TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
+                TokenList(
+                    function.Modifiers.Where(x =>
+                        x.Kind() is not (SyntaxKind.ExternKeyword or SyntaxKind.PartialKeyword)
+                    )
+                )
             );
 
         transform(function);

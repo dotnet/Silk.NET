@@ -1,19 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using ClangSharp;
+﻿using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Logging;
-using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -62,43 +53,11 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
                 with[symbol] = ModUtils.GroupedRegexReplace(regexes, toNamespace);
             }
 
-            File.WriteAllText(tmp, rsp.GeneratorConfiguration.HeaderText);
             rsps[i] = rsp with
             {
-                GeneratorConfiguration = new PInvokeGeneratorConfiguration(
-                    rsp.GeneratorConfiguration.Language,
-                    rsp.GeneratorConfiguration.LanguageStandard,
-                    def,
-                    rsp.GeneratorConfiguration.OutputLocation,
-                    tmp,
-                    rsp.GeneratorConfiguration.OutputMode,
-                    rsp.GeneratorConfiguration.ReconstructOptions()
-                )
-                {
-                    DefaultClass = rsp.GeneratorConfiguration.DefaultClass,
-                    ExcludedNames = rsp.GeneratorConfiguration.ExcludedNames,
-                    IncludedNames = rsp.GeneratorConfiguration.IncludedNames,
-                    LibraryPath = rsp.GeneratorConfiguration.LibraryPath,
-                    MethodPrefixToStrip = rsp.GeneratorConfiguration.MethodPrefixToStrip,
-                    NativeTypeNamesToStrip = rsp.GeneratorConfiguration.NativeTypeNamesToStrip,
-                    RemappedNames = rsp.GeneratorConfiguration.RemappedNames,
-                    TraversalNames = rsp.GeneratorConfiguration.TraversalNames,
-                    TestOutputLocation = rsp.GeneratorConfiguration.TestOutputLocation,
-                    WithAccessSpecifiers = rsp.GeneratorConfiguration.WithAccessSpecifiers,
-                    WithAttributes = rsp.GeneratorConfiguration.WithAttributes,
-                    WithCallConvs = rsp.GeneratorConfiguration.WithCallConvs,
-                    WithClasses = rsp.GeneratorConfiguration.WithClasses,
-                    WithGuids = rsp.GeneratorConfiguration.WithGuids,
-                    WithLibraryPaths = rsp.GeneratorConfiguration.WithLibraryPaths,
-                    WithManualImports = rsp.GeneratorConfiguration.WithManualImports,
+                GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
+                    DefaultNamespace = def,
                     WithNamespaces = with,
-                    WithSetLastErrors = rsp.GeneratorConfiguration.WithSetLastErrors,
-                    WithSuppressGCTransitions =
-                        rsp.GeneratorConfiguration.WithSuppressGCTransitions,
-                    WithTransparentStructs = rsp.GeneratorConfiguration.WithTransparentStructs,
-                    WithTypes = rsp.GeneratorConfiguration.WithTypes,
-                    WithUsings = rsp.GeneratorConfiguration.WithUsings,
-                    WithPackings = rsp.GeneratorConfiguration.WithPackings,
                 },
             };
 
@@ -115,7 +74,6 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
                 .ToHashSet(),
             regexes
         );
-        File.Delete(tmp);
         return Task.FromResult(rsps);
     }
 

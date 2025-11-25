@@ -19,5 +19,5 @@ public enum ImageTransformPNameHP : uint
     RotateOriginY = unchecked((uint)0x815B),
     MagFilter = unchecked((uint)0x815C),
     MinFilter = unchecked((uint)0x815D),
-    CubicWeight = unchecked((uint)0x815E)
+    CubicWeight = unchecked((uint)0x815E),
 }

@@ -20,5 +20,5 @@ public enum CopyImageSubDataTarget : uint
     TextureRectAngle = unchecked((uint)0x84F5),
     Texture2DMultisample = unchecked((uint)0x9100),
     Texture2DMultisampleArray = unchecked((uint)0x9102),
-    TextureCubeMapArray = unchecked((uint)0x9009)
+    TextureCubeMapArray = unchecked((uint)0x9009),
 }

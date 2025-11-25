@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum MeshMode1 : uint
 {
     Point = unchecked((uint)0x1B00),
-    Line = unchecked((uint)0x1B01)
+    Line = unchecked((uint)0x1B01),
 }

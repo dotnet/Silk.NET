@@ -83,5 +83,5 @@ public enum InvalidateFramebufferAttachment : uint
     ColorAttachment15NV = unchecked((uint)0x8CEF),
     ColorAttachment0OES = unchecked((uint)0x8CE0),
     DepthAttachmentOES = unchecked((uint)0x8D00),
-    StencilAttachmentOES = unchecked((uint)0x8D20)
+    StencilAttachmentOES = unchecked((uint)0x8D20),
 }

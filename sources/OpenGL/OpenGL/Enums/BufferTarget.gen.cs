@@ -24,5 +24,5 @@ public enum BufferTarget : uint
     DispatchIndirectBuffer = unchecked((uint)0x90EE),
     ShaderStorageBuffer = unchecked((uint)0x90D2),
     QueryBuffer = unchecked((uint)0x9192),
-    ParameterBuffer = unchecked((uint)0x80EE)
+    ParameterBuffer = unchecked((uint)0x80EE),
 }

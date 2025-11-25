@@ -180,6 +180,11 @@ internal class MSBuildModContext(
                     )
                 )
                 {
+                    logger.LogWarning(
+                        "Invalid document \"{}\" ({}) generated, please check the syntax root and file path.",
+                        doc.Name,
+                        doc.Id
+                    );
                     return;
                 }
 

@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureStorageMaskAMD : uint
 {
-    TextureStorageSparseBit = unchecked((uint)0x00000001)
+    TextureStorageSparseBit = unchecked((uint)0x00000001),
 }

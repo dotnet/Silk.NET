@@ -14,5 +14,5 @@ public enum TextureCoordName : uint
     T = unchecked((uint)0x2001),
     R = unchecked((uint)0x2002),
     Q = unchecked((uint)0x2003),
-    TextureGenStrOES = unchecked((uint)0x8D60)
+    TextureGenStrOES = unchecked((uint)0x8D60),
 }

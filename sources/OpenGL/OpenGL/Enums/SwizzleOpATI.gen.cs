@@ -13,5 +13,5 @@ public enum SwizzleOpATI : uint
     Str = unchecked((uint)0x8976),
     Stq = unchecked((uint)0x8977),
     StrDr = unchecked((uint)0x8978),
-    StqDq = unchecked((uint)0x8979)
+    StqDq = unchecked((uint)0x8979),
 }

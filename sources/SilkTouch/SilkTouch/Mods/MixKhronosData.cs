@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using Humanizer;
 using Microsoft.CodeAnalysis;
@@ -17,13 +11,13 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Silk.NET.Core;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using Silk.NET.SilkTouch.Utility;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using Type = System.Type;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -38,12 +32,13 @@ public partial class MixKhronosData(
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
 )
     : IMod,
+        IResponseFileMod,
         INameTrimmer,
         IFunctionTransformer,
         IApiMetadataProvider<SymbolConstraints>,
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
-    internal Dictionary<string, JobData> Jobs = new();
+    internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
         4
     );
@@ -122,6 +117,26 @@ public partial class MixKhronosData(
         /// modifying the original configuration object. It is used in the same way.
         /// </summary>
         public Dictionary<string, string> TypeMap { get; init; } = [];
+
+        /// <summary>
+        /// This tracks a set of enum members marked with the deprecated="aliased" attribute.
+        /// These are removed from the generated bindings.
+        /// </summary>
+        /// <remarks>
+        /// At the time this was added, only Vulkan seems to use the deprecated="aliased" attribute.
+        /// These names tend to cause name collisions after names are prettified so removing these
+        /// prevents these issues. This can cause API breakages, but because these are aliases,
+        /// these are easily solvable breakages.
+        /// </remarks>
+        public HashSet<string> DeprecatedAliases = [];
+
+        /// <summary>
+        /// Additional type remappings to pass to ClangSharp.
+        /// </summary>
+        /// <remarks>
+        /// This was added for Vulkan Flags/FlagBits remappings.
+        /// </remarks>
+        public Dictionary<string, string> AdditionalTypeRemappings = [];
     }
 
     /// <summary>
@@ -163,6 +178,34 @@ public partial class MixKhronosData(
         /// Default namespace for enums.
         /// </summary>
         public string? Namespace { get; init; }
+
+        /// <summary>
+        /// The base type used for flags/bitmask enums.
+        /// For example, VkFlags and VkFlags64 for Vulkan.
+        /// </summary>
+        /// <remarks>
+        /// This mainly affects remappings.
+        /// If some flags types are showing as integral types instead of their proper type, make sure this property is configured.
+        /// </remarks>
+        public string[] FlagsTypes { get; init; } = [];
+
+        /// <summary>
+        /// Whether Khronos-style extension naming conventions are not applicable here (e.g. OpenAL).
+        /// </summary>
+        public bool NonStandardExtensionNomenclature { get; init; }
+
+        /// <summary>
+        /// Additional extension vendors to recognise, typically used in conjunction with
+        /// <see cref="NonStandardExtensionNomenclature"/>.
+        /// </summary>
+        public List<string>? Vendors { get; init; }
+
+        /// <summary>
+        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
+        /// when determining a data type suffix to trim when <see cref="UseDataTypeTrimmings"/> is on. For example,
+        /// <c>Direct</c> for OpenAL.
+        /// </summary>
+        public List<string>? IgnoreNonVendorSuffixes { get; init; }
     }
 
     /// <summary>
@@ -253,24 +296,46 @@ public partial class MixKhronosData(
 
         logger.LogInformation("Reading Khronos XML from \"{}\"...", specPath);
         await using var fs = File.OpenRead(specPath);
-        var xml = await XDocument.LoadAsync(fs, LoadOptions.None, default);
+        var xml = await XDocument.LoadAsync(fs, LoadOptions.None, CancellationToken.None);
+
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
+        job.ApiSets = apiSets;
+        job.SupportedApiProfiles = supportedApiProfiles;
+
+        var profiles = supportedApiProfiles.SelectMany(x => x.Value).Select(x => x.Profile).ToHashSet();
+
         job.Vendors =
         [
             .. xml.Element("registry")
                 ?.Element("tags")
                 ?.Elements("tag")
                 .Attributes("name")
-                .Select(x => x.Value) ?? Enumerable.Empty<string>(),
-            .. xml.Element("registry")
-                ?.Element("extensions")
-                ?.Elements("extension")
-                .Attributes("name")
-                .Select(x => x.Value.Split('_')[1].ToUpper()) ?? Enumerable.Empty<string>(),
+                .Select(x => x.Value) ?? [],
+            .. currentConfig.NonStandardExtensionNomenclature
+                ? []
+                : xml.Element("registry")
+                    ?.Element("extensions")
+                    ?.Elements("extension")
+                    // Only include vendors who have extensions that match a declared profile
+                    // This is mainly to exclude extensions that are declared as supported="disabled"
+                    .Where(ext =>
+                    {
+                        var supportedProfiles = ext.Attribute("supported")?.Value.Split("|") ?? [];
+                        return profiles.Intersect(supportedProfiles).Any();
+                    })
+                    .Attributes("name")
+                    // Extract the second part from the extension name
+                    // Eg: GL_NV_command_list -> NV
+                    .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
+            .. currentConfig.Vendors ?? [],
         ];
-        job.ApiSets = apiSets;
-        job.SupportedApiProfiles = supportedApiProfiles;
+
+        job.DeprecatedAliases = xml.Descendants()
+            .Where(x => x.Attribute("deprecated")?.Value == "aliased" && x.Attribute("name") != null)
+            .Select(x => x.Attribute("name")!.Value).ToHashSet();
+
         ReadGroups(xml, job, job.Vendors);
+
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var type = typeElement.Element("name")?.Value;
@@ -282,6 +347,30 @@ public partial class MixKhronosData(
 
             job.TypeMap.TryAdd(type, baseType);
         }
+
+        // Add mappings from Flags storage types to FlagBits enums types
+        // We want Flags as the output, but in order to generate everything correctly,
+        // we need to first map Flags to FlagBits, then rename FlagBits back to Flags (this is done in the rewriters).
+        // Without this, ClangSharp will output the Flags types as the integral storage type instead of the enum
+        var flagsTypesSet = currentConfig.FlagsTypes.ToHashSet();
+        foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
+        {
+            var typedef = typeElement.Element("type")?.Value;
+            var isFlagsType = typedef != null && flagsTypesSet.Contains(typedef);
+            if (!isFlagsType)
+            {
+                continue;
+            }
+
+            var mapFrom = typeElement.Element("name")?.Value;
+            var mapTo = typeElement.Attribute("requires")?.Value;
+            if (mapFrom == null || mapTo == null)
+            {
+                continue;
+            }
+
+            job.AdditionalTypeRemappings[mapFrom] = mapTo;
+        }
     }
 
     /// <inheritdoc />
@@ -289,136 +378,74 @@ public partial class MixKhronosData(
     {
         var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
-        var rewriter = new Rewriter(jobData);
-        foreach (var docId in proj?.DocumentIds ?? [])
+
+        if (proj == null)
         {
-            var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            return;
+        }
+
+        // Rewrite phase 1
+        var rewriter1 = new RewriterPhase1(jobData, logger);
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                    ?? throw new InvalidOperationException("Visit returned null.")
+                rewriter1.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
-        foreach (var (fname, node) in GetNewSyntaxTrees(jobData, rewriter))
+        // Add missing enum types
+        foreach (var (filePath, node) in rewriter1.GetMissingEnums())
         {
             proj = proj
-                ?.AddDocument(
-                    Path.GetFileName(fname),
+                .AddDocument(
+                    Path.GetFileName(filePath),
                     node.NormalizeWhitespace(),
-                    filePath: proj.FullPath(fname)
+                    filePath: proj.FullPath(filePath)
                 )
                 .Project;
+        }
+
+        // Rewrite phase 2
+        var rewriter2 = new RewriterPhase2(jobData, rewriter1);
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            proj = doc.WithSyntaxRoot(
+                rewriter2.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
+        }
+
+        // Rename documents
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            if (doc.FilePath == null)
+            {
+                continue;
+            }
+
+            proj = doc.ReplaceNameAndPath("FlagBits", "Flags").Project;
         }
 
         ctx.SourceProject = proj;
     }
 
-    private IEnumerable<(string, SyntaxNode)> GetNewSyntaxTrees(JobData jobData, Rewriter rewriter)
+    /// <inheritdoc />
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
-        foreach (var (groupName, groupInfo) in jobData.Groups)
+        var job = Jobs[key];
+
+        rsps = rsps.Select(rsp => rsp with
         {
-            if (!rewriter.AlreadyPresentGroups.Contains(groupName))
-            {
-                var baseType = groupInfo.Type ?? groupName;
-                while (jobData.TypeMap.TryGetValue(baseType, out var ty))
-                {
-                    baseType = ty;
-                }
+            GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
+                RemappedNames = rsp.GeneratorConfiguration.RemappedNames.Concat(job.AdditionalTypeRemappings).ToDictionary(),
+            },
+        }).ToList();
 
-                if (baseType == groupName)
-                {
-                    logger?.LogError(
-                        "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
-                            + "This enum group will be skipped.",
-                        groupName
-                    );
-                    continue;
-                }
-
-                var ns = groupInfo
-                    .Enums.Select(x => x.NamespaceFromSyntaxNode())
-                    .Distinct()
-                    .Select((x, i) => (x, i))
-                    .LastOrDefault()
-                    is
-                    (var n, 0)
-                    ? n
-                    : null;
-
-                ns ??= jobData.Configuration.Namespace;
-                if (ns is null)
-                {
-                    logger?.LogError(
-                        "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
-                            + "This enum group will be skipped.",
-                        groupName
-                    );
-                    continue;
-                }
-
-                yield return (
-                    $"Enums/{groupName}.gen.cs",
-                    CompilationUnit()
-                        .WithMembers(
-                            SingletonList<MemberDeclarationSyntax>(
-                                FileScopedNamespaceDeclaration(
-                                        ModUtils.NamespaceIntoIdentifierName(ns)
-                                    )
-                                    .WithMembers(
-                                        SingletonList<MemberDeclarationSyntax>(
-                                            EnumDeclaration(groupName)
-                                                .WithModifiers(
-                                                    TokenList(Token(SyntaxKind.PublicKeyword))
-                                                )
-                                                .WithAttributeLists(
-                                                    SingletonList(
-                                                        AttributeList(
-                                                            SingletonSeparatedList(
-                                                                Attribute(
-                                                                    IdentifierName("Transformed")
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                                .WithBaseList(
-                                                    BaseList(
-                                                        SingletonSeparatedList<BaseTypeSyntax>(
-                                                            SimpleBaseType(IdentifierName(baseType))
-                                                        )
-                                                    )
-                                                )
-                                                .WithMembers(
-                                                    SeparatedList(
-                                                        groupInfo.Enums.Select(x =>
-                                                            EnumMemberDeclaration(
-                                                                    x.Identifier.ToString()
-                                                                )
-                                                                // TODO actually eval the expression to see if necessary?
-                                                                .WithEqualsValue(
-                                                                    x.Initializer?.WithValue(
-                                                                        CheckedExpression(
-                                                                            SyntaxKind.UncheckedExpression,
-                                                                            CastExpression(
-                                                                                IdentifierName(
-                                                                                    baseType
-                                                                                ),
-                                                                                x.Initializer.Value
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                )
-                                                        )
-                                                    )
-                                                )
-                                        )
-                                    )
-                            )
-                        )
-                );
-            }
-        }
+        return Task.FromResult(rsps);
     }
 
     internal record EnumGroup(
@@ -623,7 +650,6 @@ public partial class MixKhronosData(
                         _listSeparators,
                         StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
                     ) ?? [];
-            Debug.Assert((depends.Length > 0) == explicitDependencies);
 
             // Evaluate all of the elements.
             for (var i = 0; i < allApis.Length; i++)
@@ -1183,42 +1209,94 @@ public partial class MixKhronosData(
         }
     }
 
+    private bool _outputVendorInformationWarning = false;
+
     /// <inheritdoc />
-    public void Trim(
-        string? container,
-        string? hint,
-        string? jobKey,
-        Dictionary<string, (string Primary, List<string>? Secondary)>? names,
-        Dictionary<string, string>? prefixOverrides,
-        HashSet<string>? nonDeterminant,
-        ref string? identifiedPrefix
-    )
+    public void Trim(NameTrimmerContext context)
     {
-        if (names is null || jobKey is null)
+        if (context.Names is null || context.JobKey is null)
         {
             return;
         }
 
-        if (!Jobs.TryGetValue(jobKey, out var job))
+        if (!Jobs.TryGetValue(context.JobKey, out var job))
         {
             throw new InvalidOperationException(
                 "BeforeJobAsync has not run yet! MixKhronosData must come before PrettifyNames in the mod list."
             );
         }
 
-        if (job.Vendors?.Count is 0 or null)
+        if (job.Vendors?.Count is 0 or null && !_outputVendorInformationWarning)
         {
+            _outputVendorInformationWarning = true;
             logger.LogWarning(
                 "No vendor information present, assuming no XML was provided? Extension trimming will be skipped."
             );
         }
 
+        // NameTrimmer trims member names by looking for a common prefix and removing it
+        // This sometimes trims too much and leads to only the vendor suffix remaining
+        // This is bad because the next block of code removes the vendor suffix, leaving only an empty string or underscore
+        // This means we have to rewind back to the previous name (minus the prefix, such as GL_)
+        var rewind = false;
+        if (context.Container is not null && job.Groups.ContainsKey(context.Container))
+        {
+            foreach (var (_, (current, previous)) in context.Names)
+            {
+                var prev = previous?.FirstOrDefault();
+                if (prev is not null && (job.Vendors?.Contains(current.Trim('_')) ?? false)
+                )
+                {
+                    rewind = true;
+
+                    break;
+                }
+            }
+        }
+
+        if (rewind)
+        {
+            foreach (var (original, (current, previous)) in context.Names)
+            {
+                var prev = previous?.FirstOrDefault() ?? original;
+                var prevList = previous ?? [];
+                var next = prev[(prev.IndexOf('_') + 1)..];
+                if (next == prev)
+                {
+                    prevList.Remove(prev);
+                }
+                else if (!prevList.Contains(prev))
+                {
+                    prevList.Add(prev);
+                }
+
+                context.Names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
+            }
+        }
+
+        // Trim _T from the end of names
+        // This is targeted towards Vulkan handle type names, which end in _T
+        if (context.Container is null)
+        {
+            foreach (var (original, (current, previous)) in context.Names)
+            {
+                if (current.EndsWith("_T"))
+                {
+                    var newPrim = current[..^2];
+                    var newPrev = previous ?? [];
+                    newPrev.Add(current);
+
+                    context.Names[original] = (newPrim, newPrev);
+                }
+            }
+        }
+
         // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
         // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
         // becomes BufferUsage.
-        if (container is null && job.Vendors is not null)
+        if (context.Container is null && job.Vendors is not null)
         {
-            foreach (var (original, (current, previous)) in names)
+            foreach (var (original, (current, previous)) in context.Names)
             {
                 if (job.Groups.TryGetValue(current, out var groupInfo))
                 {
@@ -1257,7 +1335,7 @@ public partial class MixKhronosData(
                         {
                             var sec = previous ?? [];
                             sec.Add(current);
-                            names[original] = (current[..^vendor.Length], sec);
+                            context.Names[original] = (current[..^vendor.Length], sec);
                             break;
                         }
                     }
@@ -1265,49 +1343,11 @@ public partial class MixKhronosData(
             }
         }
 
-        // Sometimes we get a little overzealous, so let's unwind back to just the GL_ being snipped
-        var rewind = false;
-        if (container is not null && job.Groups.ContainsKey(container))
-        {
-            foreach (var (_, (current, previous)) in names)
-            {
-                var prev = previous?.FirstOrDefault();
-                if (
-                    prev is not null
-                    && current.AsSpan().Count('_') - prev.AsSpan().Count('_') <= 1
-                    && (current.Length <= 4 || (job.Vendors?.Contains(current) ?? false))
-                )
-                {
-                    rewind = true;
-                }
-            }
-        }
-
-        if (rewind)
-        {
-            foreach (var (original, (current, previous)) in names)
-            {
-                var prev = previous?.FirstOrDefault() ?? original;
-                var prevList = previous ?? [];
-                var next = prev[(prev.IndexOf('_') + 1)..];
-                if (next == prev)
-                {
-                    prevList.Remove(prev);
-                }
-                else if (!prevList.Contains(prev))
-                {
-                    prevList.Add(prev);
-                }
-
-                names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
-            }
-        }
-
         // Trim the extension vendor names
-        foreach (var (original, (current, previous)) in names)
+        foreach (var (original, (current, previous)) in context.Names)
         {
             // GLEnum is obviously trimmed, and we don't really want to do that.
-            if (container is null)
+            if (context.Container is null)
             {
                 var changed = false;
                 foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
@@ -1317,7 +1357,7 @@ public partial class MixKhronosData(
                         && name == $"{group.Namespace}Enum"
                     )
                     {
-                        names[original] = (name, []);
+                        context.Names[original] = (name, []);
                         changed = true;
                         break;
                     }
@@ -1345,7 +1385,7 @@ public partial class MixKhronosData(
                 // Sometimes we should keep the vendor prefix so we prefer the promoted functions.
                 // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
                 trimVendor =
-                    !names.ContainsKey(newOriginal)
+                    !context.Names.ContainsKey(newOriginal)
                     && (
                         job.Configuration.UseExtensionVendorTrimmings
                             == ExtensionVendorTrimmingMode.All
@@ -1355,8 +1395,8 @@ public partial class MixKhronosData(
                             && vendor is "KHR" or "ARB"
                         )
                         || (
-                            container is not null
-                            && job.Groups.TryGetValue(container, out var group)
+                            context.Container is not null
+                            && job.Groups.TryGetValue(context.Container, out var group)
                             && group.ExclusiveVendor == vendor
                         )
                     );
@@ -1364,7 +1404,7 @@ public partial class MixKhronosData(
                 {
                     newPrev ??= previous ?? [];
                     newPrev.Add(current);
-                    names[original] = (newCurrent, newPrev);
+                    context.Names[original] = (newCurrent, newPrev);
                 }
 
                 identifiedVendor = vendor;
@@ -1391,14 +1431,14 @@ public partial class MixKhronosData(
                 {
                     // If we're not trimming the vendor, this hack will be the primary name.
                     newPrev.Add(current);
-                    names[original] = (pretty + identifiedVendor, newPrev);
+                    context.Names[original] = (pretty + identifiedVendor, newPrev);
                 }
                 else
                 {
                     // If we are trimming the vendor, if at any point we have to fall back on the untrimmed version
                     // we'll want that version to be this hack.
                     newPrev.Add(pretty + identifiedVendor);
-                    names[original] = (pretty, newPrev);
+                    context.Names[original] = (pretty, newPrev);
                 }
             }
 
@@ -1415,7 +1455,7 @@ public partial class MixKhronosData(
                 {
                     // If we're not trimming the vendor, this hack will be the primary name.
                     newPrev.Add(current);
-                    names[original] = ($"{newCurrent} {identifiedVendor}", newPrev);
+                    context.Names[original] = ($"{newCurrent} {identifiedVendor}", newPrev);
                 }
                 else
                 {
@@ -1424,13 +1464,26 @@ public partial class MixKhronosData(
                     // original name because PrettifyNames orders by match length.
                     newPrev.Remove(current);
                     newPrev.Add($"{newCurrent} {identifiedVendor}");
-                    names[original] = (newCurrent, newPrev);
+                    context.Names[original] = (newCurrent, newPrev);
+                }
+            }
+
+            // If we have an additional non-vendor suffix (e.g. al*Direct) then let's trim it before we try to do the
+            // data type trimming
+            string? identifiedSuffix = null;
+            foreach (var suffix in job.Configuration.IgnoreNonVendorSuffixes ?? [])
+            {
+                if (newCurrent.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                {
+                    identifiedSuffix = suffix;
+                    newCurrent = newCurrent[..^suffix.Length];
+                    break;
                 }
             }
 
             if (
                 !job.Configuration.UseDataTypeTrimmings // don't trim data types
-                || container is null // don't trim type names
+                || context.Container is null // don't trim type names
                 || newCurrent.Count(x => x == '_') > 1 // is probably an enum
                 || EndingsToTrim().Match(newCurrent) is not { Success: true } match // we don't have a data type suffix
                 || EndingsNotToTrim().IsMatch(newCurrent) // we need to keep it
@@ -1441,6 +1494,7 @@ public partial class MixKhronosData(
 
             newPrev ??= previous ?? [];
             var newPrim = newCurrent.Remove(match.Index);
+            newPrim += identifiedSuffix;
             if (identifiedVendor is not null && trimVendor)
             {
                 // If the only difference between this function and other functions that could conflict is the vendor,
@@ -1462,7 +1516,7 @@ public partial class MixKhronosData(
                 newPrev.Add(current);
             }
 
-            names[original] = (newPrim, newPrev);
+            context.Names[original] = (newPrim, newPrev);
         }
     }
 
@@ -1722,16 +1776,23 @@ public partial class MixKhronosData(
         string? jobKey,
         string nativeName,
         [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
-    ) =>
-        (
-            metadata =
-                jobKey is null
-                || !Jobs.TryGetValue(jobKey, out var job)
-                || !(job.SupportedApiProfiles?.TryGetValue(nativeName, out var mdList) ?? false)
-                    ? null
-                    : mdList
-        )
-            is not null;
+    )
+    {
+        if (jobKey is null || !Jobs.TryGetValue(jobKey, out var job) || job.SupportedApiProfiles is null)
+        {
+            metadata = null;
+            return false;
+        }
+
+        if (!job.SupportedApiProfiles.TryGetValue(nativeName, out var mdList))
+        {
+            metadata = null;
+            return false;
+        }
+
+        metadata = mdList;
+        return true;
+    }
 
     /// <summary>
     /// This regex matches against known OpenGL function endings, picking them out from function names.
@@ -1751,76 +1812,332 @@ public partial class MixKhronosData(
         "(sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
-            + "Arch|ArithAfresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix)$"
+            + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Rewind|Supported)$"
     )]
     private static partial Regex EndingsNotToTrim();
 
-    private class Rewriter(JobData job) : CSharpSyntaxRewriter(true)
+    /// <summary>
+    /// This rewriter focuses on adding missing enums.
+    /// <para/>
+    /// Extracts enum constants that are defined as fields and moves them to their actual enum types.
+    /// Begins renaming FlagBits enums to Flags.
+    /// </summary>
+    /// <remarks>
+    /// This rewriter is split into two phases because NamespaceFromSyntaxNode breaks due to
+    /// the FieldDeclarationSyntax being modified.
+    /// </remarks>
+    private class RewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
+        /// <summary>
+        /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
+        /// </summary>
         public HashSet<string> AlreadyPresentGroups { get; } = [];
+
+        /// <summary>
+        /// Tracks enums that exist in the project.
+        /// Note that this includes any enum, including enums not present in <see cref="MixKhronosData.JobData.Groups"/>.
+        /// </summary>
+        public HashSet<string> AllKnownEnums { get; } = [];
+
+        public IEnumerable<(string FilePath, SyntaxNode Node)> GetMissingEnums()
+        {
+            var results = new List<(string FilePath, SyntaxNode Node)>();
+
+            // Generate initial syntax trees
+            foreach (var (groupName, groupInfo) in job.Groups)
+            {
+                if (!AlreadyPresentGroups.Contains(groupName))
+                {
+                    var baseType = groupInfo.Type ?? groupName;
+                    while (job.TypeMap.TryGetValue(baseType, out var ty))
+                    {
+                        baseType = ty;
+                    }
+
+                    if (baseType == groupName)
+                    {
+                        logger?.LogError(
+                            "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
+                                + "This enum group will be skipped.",
+                            groupName
+                        );
+                        continue;
+                    }
+
+                    var ns = groupInfo
+                        .Enums.Select(x => x.NamespaceFromSyntaxNode())
+                        .Distinct()
+                        .Select((x, i) => (x, i))
+                        .LastOrDefault()
+                        is
+                        (var n, 0)
+                        ? n
+                        : null;
+
+                    ns ??= job.Configuration.Namespace;
+                    if (ns is null)
+                    {
+                        logger?.LogError(
+                            "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
+                                + "This enum group will be skipped.",
+                            groupName
+                        );
+                        continue;
+                    }
+
+                    AllKnownEnums.Add(groupName);
+
+                    results.Add((
+                        $"Enums/{groupName}.gen.cs",
+                        CompilationUnit()
+                            .WithMembers(
+                                SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(
+                                                EnumDeclaration(groupName)
+                                                    .WithModifiers(
+                                                        TokenList(Token(SyntaxKind.PublicKeyword))
+                                                    )
+                                                    .WithAttributeLists(
+                                                        SingletonList(
+                                                            AttributeList(
+                                                                SingletonSeparatedList(
+                                                                    Attribute(
+                                                                        IdentifierName("Transformed")
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                    .WithBaseList(
+                                                        BaseList(
+                                                            SingletonSeparatedList<BaseTypeSyntax>(
+                                                                SimpleBaseType(IdentifierName(baseType))
+                                                            )
+                                                        )
+                                                    )
+                                                    .WithMembers(
+                                                        SeparatedList(
+                                                            groupInfo.Enums.Select(x =>
+                                                                EnumMemberDeclaration(
+                                                                        x.Identifier.ToString()
+                                                                    )
+                                                                    // TODO actually eval the expression to see if necessary?
+                                                                    .WithEqualsValue(
+                                                                        x.Initializer?.WithValue(
+                                                                            CheckedExpression(
+                                                                                SyntaxKind.UncheckedExpression,
+                                                                                CastExpression(
+                                                                                    IdentifierName(
+                                                                                        baseType
+                                                                                    ),
+                                                                                    x.Initializer.Value
+                                                                                )
+                                                                            )
+                                                                        )
+                                                                    )
+                                                            )
+                                                        )
+                                                    )
+                                            )
+                                        )
+                                )
+                            )
+                    ));
+                }
+            }
+
+            return results;
+        }
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
+            // Remove empty classes
             var ret = base.VisitClassDeclaration(node);
             return ret is ClassDeclarationSyntax { Members.Count: 0 } ? null : ret;
         }
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var iden = node.Identifier.ToString();
-            if (iden.Contains("FlagBits"))
+            // Track which enums already exist
+            var identifier = node.Identifier.ToString();
+            identifier = identifier.Replace("FlagBits", "Flags");
+
+            AllKnownEnums.Add(identifier);
+
+            if (job.Groups.TryGetValue(identifier, out var group)
+                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any())
             {
-                iden = iden.Replace("FlagBits", "Flags");
+                AlreadyPresentGroups.Add(identifier);
             }
-            if (
-                job.Groups.ContainsKey(iden)
-                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
+
+            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(identifier)));
+        }
+
+        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            // Only match constant fields
+            if (node.Declaration.Variables.Count != 1
+                || !node.Modifiers.Any(SyntaxKind.ConstKeyword))
             {
-                AlreadyPresentGroups.Add(iden);
-                return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(iden)));
+                return base.VisitFieldDeclaration(node);
             }
+
+            if (node.AttributeLists.TryParseNativeTypeName(out var info) && info.IsConst)
+            {
+                var name = info.Name.Replace("FlagBits", "Flags");
+                if (info.IsDefine)
+                {
+                    // Remove defines that match an API set name
+                    // Eg: #define GL_VERSION_1_0 1
+                    if (job.ApiSets.ContainsKey(name))
+                    {
+                        return null;
+                    }
+
+                    // Remove constants that match an enum member name
+                    // We save these constants so we can move them to the actual enum
+                    if (job.EnumsToGroups.TryGetValue(name, out var groups))
+                    {
+                        foreach (var group in groups)
+                        {
+                            job.Groups[group].Enums.Add(node.Declaration.Variables[0]);
+                        }
+
+                        return null;
+                    }
+                }
+                else
+                {
+                    // Remove constants that match an enum group name
+                    // We save these constants so we can move them to the actual enum
+                    if (job.Groups.TryGetValue(name, out var group))
+                    {
+                        job.Groups[group.Name].Enums.Add(node.Declaration.Variables[0]);
+
+                        return null;
+                    }
+                }
+            }
+
+            return base.VisitFieldDeclaration(node);
+        }
+    }
+
+    /// <summary>
+    /// Finishes renaming FlagBits enums to Flags.
+    /// Marks bitmask enums with the [Flags] attribute.
+    /// Replaces uint/ulong with the actual enum type for FlagBits/Flags types.
+    /// Removes deprecated aliases.
+    /// </summary>
+    private class RewriterPhase2(JobData job, RewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
+    {
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
+
+        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            var identifier = node.Identifier.ToString();
+
+            if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
+            {
+                // Remove deprecated aliases
+                node = node.WithMembers([
+                    ..node.Members.Where(m => !job.DeprecatedAliases.Contains(m.Identifier.ValueText))
+                ]);
+            }
+
+            if (job.Groups.TryGetValue(identifier, out var group) && group.KnownBitmask)
+            {
+                // Add [Flags] attribute
+                var flagsAttribute = AttributeList(
+                    SingletonSeparatedList(
+                        Attribute(IdentifierName("Flags"))));
+
+                node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
+            }
+
             return base.VisitEnumDeclaration(node);
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
-            if (
-                node.Declaration.Variables.Count != 1
-                || !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-            )
+            if (node.Declaration.Variables.Any(v => job.DeprecatedAliases.Contains(v.Identifier.ValueText)))
             {
-                return base.VisitFieldDeclaration(node);
-            }
+                // Remove deprecated aliases
+                node = node.WithDeclaration(node.Declaration.WithVariables([
+                    ..node.Declaration.Variables.Where(v => !job.DeprecatedAliases.Contains(v.Identifier.ValueText))
+                ]));
 
-            var nativeName = node.AttributeLists.GetNativeTypeName();
-            if (nativeName is null || !nativeName.StartsWith("#define "))
-            {
-                return base.VisitFieldDeclaration(node);
-            }
-
-            var nnSpan = nativeName.AsSpan()["#define ".Length..].Trim();
-            nativeName = (
-                nnSpan.IndexOf(' ') is >= 0 and var idx ? nnSpan[..idx] : nnSpan
-            ).ToString();
-
-            if (job.ApiSets.ContainsKey(nativeName))
-            {
-                return null;
-            }
-
-            if (job.EnumsToGroups.TryGetValue(nativeName, out var groups))
-            {
-                foreach (var group in groups)
+                if (node.Declaration.Variables.Count == 0)
                 {
-                    job.Groups[group].Enums.Add(node.Declaration.Variables[0]);
+                    return null;
                 }
+            }
 
-                return null;
+            if (TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            {
+                node = node.WithDeclaration(node.Declaration.WithType(ParseTypeName(managedName)));
             }
 
             return base.VisitFieldDeclaration(node);
+        }
+
+        public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            if (job.DeprecatedAliases.Contains(node.Identifier.ValueText))
+            {
+                return null;
+            }
+
+            return base.VisitPropertyDeclaration(node);
+        }
+
+        public override SyntaxNode? VisitParameter(ParameterSyntax node)
+        {
+            if (TryGetManagedEnumType(node.AttributeLists, out var managedName))
+            {
+                node = node.WithType(ParseTypeName(managedName));
+            }
+
+            return base.VisitParameter(node);
+        }
+
+        /// <summary>
+        /// Parses the attribute list and uses the [NativeTypeName] attribute to determine the correct enum type.
+        /// </summary>
+        /// <remarks>
+        /// This method is intentionally implemented in a naive manner to keep things simple.
+        /// </remarks>
+        private bool TryGetManagedEnumType(SyntaxList<AttributeListSyntax> attributes, [NotNullWhen(true)] out string? managedName)
+        {
+            managedName = null;
+
+            // ClangSharp does not know how to handle FlagBits and Flags types
+            // Because of this ClangSharp outputs Flags types as uints or ulongs
+            // We have to look at the NativeTypeName in order to determine the correct type
+            if (!attributes.TryParseNativeTypeName(out var info))
+            {
+                return false;
+            }
+
+            var nativeName = info.Name.Replace("FlagBits", "Flags");
+            if (!nativeName.Contains("Flags"))
+            {
+                return false;
+            }
+
+            if (!phase1.AllKnownEnums.Contains(nativeName))
+            {
+                return false;
+            }
+
+            managedName = nativeName + new string('*', info.IndirectionLevels);
+
+            return true;
         }
     }
 
@@ -1832,6 +2149,9 @@ public partial class MixKhronosData(
         // therefore the result of this function will go mostly ignored.
         var anyNamespaced =
             doc.Element("registry")?.Elements("enums").Attributes("namespace").Any() ?? false;
+        var anyGLStyleGroups =
+            doc.Element("registry")?.Elements("enums").Elements("enum").Attributes("group").Any()
+            ?? false;
         var likelyOpenCL = false; // OpenCL specific
         var topLevelIntentionalExclusions = new HashSet<string>(); // OpenCL specific
         foreach (var block in doc.Element("registry")?.Elements("enums") ?? [])
@@ -1859,9 +2179,12 @@ public partial class MixKhronosData(
             }
 
             // Vulkan/OpenXR enum name
-            if (groupName?.Contains("FlagBits") ?? false)
+            groupName = groupName?.Replace("FlagBits", "Flags");
+
+            // Skip Vulkan API Constants since it is not an enum
+            if (block.Attribute("type")?.Value == "constants")
             {
-                groupName = groupName.Replace("FlagBits", "Flags");
+                continue;
             }
 
             // Special cases for OpenCL contributed by @Alexx999 for 2.X and ported to 3.0 from:
@@ -1877,7 +2200,7 @@ public partial class MixKhronosData(
             static bool IsUngroupable(string groupName) =>
                 IsIntentionalExclusion(groupName)
                 || groupName.StartsWith("enums") // these are unnamed
-                || groupName is "cl_device_info"; // bug in cl.xml - see see https://github.com/KhronosGroup/OpenCL-Docs/pull/779
+                || groupName is "cl_device_info"; // bug in cl.xml - see https://github.com/KhronosGroup/OpenCL-Docs/pull/779
 
             // ...continued from:
             // https://github.com/dotnet/Silk.NET/blob/d8919600/src/Core/Silk.NET.BuildTools/Converters/Readers/OpenCLReader.cs#L855-L870
@@ -1943,7 +2266,7 @@ public partial class MixKhronosData(
                         }
                         : new EnumGroup(
                             group,
-                            glGroups?.Length > 0 ? "GLenum" : null,
+                            anyGLStyleGroups ? "GLenum" : null,
                             [],
                             isBitmask,
                             thisVendor,
@@ -1953,6 +2276,19 @@ public partial class MixKhronosData(
                     // Mark this enum.
                     enumToGroups.Add(group);
                 }
+            }
+
+            // Some enum groups don't have members, meaning that the code above won't catch them
+            if (groupName != null && !data.Groups.ContainsKey(groupName))
+            {
+                data.Groups[groupName] = new EnumGroup(
+                    groupName,
+                    null,
+                    [],
+                    isBitmask,
+                    VendorFromString(groupName, vendors),
+                    enumNamespace
+                );
             }
         }
 
@@ -1982,7 +2318,7 @@ public partial class MixKhronosData(
                     foreach (
                         var ((_, applicable), value) in data
                             .Annotations.Where(x => x.Key.ContainingSymbol == aliasedFunc)
-                            .ToArray()
+                            .ToArray() // <-- Required to avoid modification while enumerating errors
                     )
                     {
                         data.Annotations[(funcName, applicable)] = value;
@@ -2055,13 +2391,21 @@ public partial class MixKhronosData(
             }
 
             // Get the parameter group attributes
-            foreach (var param in func.Elements("param"))
+            foreach (var (paramIdx, param) in func.Elements("param").Select((x, i) => (i, x)))
             {
-                AddData(
-                    param,
+                var paramName =
                     param.Element("name")?.Value
-                        ?? throw new InvalidDataException("param with no name")
-                );
+                    ?? throw new InvalidDataException("param with no name");
+
+                // TODO ClangSharp currently erroneously renames "param" to "param<idx>"
+                // TODO Once fixed upstream, remove this hack.
+                // https://discord.com/channels/521092042781229087/587346162802229298/1437503858849878037
+                if (paramName == "param")
+                {
+                    paramName = $"{paramName}{paramIdx}";
+                }
+
+                AddData(param, paramName);
             }
         }
 

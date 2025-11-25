@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
-    <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net8.0-android</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net10.0-android</TargetFrameworks>
     <SilkDescription>Native binaries for SDL3.</SilkDescription>
     <SilkNativePackage>true</SilkNativePackage>
     <SilkNativeHasAndroidJars>true</SilkNativeHasAndroidJars>
     <SilkNativeiOSLinkerFlags>-framework AudioToolbox -framework AVFoundation -framework CoreAudio -framework CoreBluetooth -framework CoreFoundation -framework CoreGraphics -framework CoreHaptics -framework CoreMotion -framework CoreVideo -framework GameController -framework IOKit -framework Metal -framework OpenGLES -framework QuartzCore -framework UIKit -framework Foundation</SilkNativeiOSLinkerFlags>
     <EnableDefaultAndroidItems>false</EnableDefaultAndroidItems>
+    <PackageLicenseExpression>Zlib</PackageLicenseExpression>
   </PropertyGroup>
 </Project>

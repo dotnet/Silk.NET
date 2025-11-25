@@ -153,5 +153,5 @@ public enum EnableCap : uint
     FramebufferFetchNoncoherentQCOM = unchecked((uint)0x96A2),
     ShadingRatePreserveAspectRatioQCOM = unchecked((uint)0x96A5),
     TextureCubeMapOES = unchecked((uint)0x8513),
-    TextureGenStrOES = unchecked((uint)0x8D60)
+    TextureGenStrOES = unchecked((uint)0x8D60),
 }

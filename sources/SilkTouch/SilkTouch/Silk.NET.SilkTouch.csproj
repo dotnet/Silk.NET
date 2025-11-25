@@ -6,12 +6,13 @@
     <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     <SilkTrimmingExempt>true</SilkTrimmingExempt>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="ClangSharp.PInvokeGenerator" />
     <PackageReference Include="CSharpier.Core" />
     <PackageReference Include="Humanizer.Core" />
-    <PackageReference Include="Microsoft.Build.Locator"/>
-    <PackageReference Include="Microsoft.Build.Tasks.Core" ExcludeAssets="runtime"/>
+    <PackageReference Include="Microsoft.Build.Locator" />
+    <PackageReference Include="Microsoft.Build.Framework" PrivateAssets="all" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" />
@@ -23,13 +24,15 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
     <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" />
     <PackageReference Include="System.CommandLine" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" />
     <PackageReference Include="System.IO.Hashing" />
-    <!-- This is not used but it is used transitively and the version pulled in has a vulnerability -->
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Clang\VisualStudioVarPrint.bat" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj"/>
+    <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
   </ItemGroup>
 </Project>

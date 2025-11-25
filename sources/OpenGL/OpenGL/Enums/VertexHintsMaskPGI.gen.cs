@@ -27,5 +27,5 @@ public enum VertexHintsMaskPGI : uint
     Texcoord3Bit = unchecked((uint)0x40000000),
     Texcoord4Bit = unchecked((uint)0x80000000),
     Vertex23Bit = unchecked((uint)0x00000004),
-    Vertex4Bit = unchecked((uint)0x00000008)
+    Vertex4Bit = unchecked((uint)0x00000008),
 }

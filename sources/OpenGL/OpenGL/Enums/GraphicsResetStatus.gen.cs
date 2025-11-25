@@ -13,5 +13,5 @@ public enum GraphicsResetStatus : uint
     NoError = unchecked((uint)0),
     GuiltyContextReset = unchecked((uint)0x8253),
     InnocentContextReset = unchecked((uint)0x8254),
-    UnknownContextReset = unchecked((uint)0x8255)
+    UnknownContextReset = unchecked((uint)0x8255),
 }

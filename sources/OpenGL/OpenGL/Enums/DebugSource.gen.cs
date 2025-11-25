@@ -16,5 +16,5 @@ public enum DebugSource : uint
     DebugSourceShaderCompiler = unchecked((uint)0x8248),
     DebugSourceThirdParty = unchecked((uint)0x8249),
     DebugSourceApplication = unchecked((uint)0x824A),
-    DebugSourceOther = unchecked((uint)0x824B)
+    DebugSourceOther = unchecked((uint)0x824B),
 }

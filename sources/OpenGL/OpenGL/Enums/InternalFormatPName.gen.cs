@@ -81,5 +81,5 @@ public enum InternalFormatPName : uint
     TextureView = unchecked((uint)0x82B5),
     ViewCompatibilityClass = unchecked((uint)0x82B6),
     ClearTexture = unchecked((uint)0x9365),
-    NumSurfaceCompressionFixedRatesEXT = unchecked((uint)0x8F6E)
+    NumSurfaceCompressionFixedRatesEXT = unchecked((uint)0x8F6E),
 }

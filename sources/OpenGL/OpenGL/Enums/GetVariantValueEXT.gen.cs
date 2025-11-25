@@ -13,5 +13,5 @@ public enum GetVariantValueEXT : uint
     Value = unchecked((uint)0x87E4),
     Datatype = unchecked((uint)0x87E5),
     ArrayStride = unchecked((uint)0x87E6),
-    ArrayType = unchecked((uint)0x87E7)
+    ArrayType = unchecked((uint)0x87E7),
 }

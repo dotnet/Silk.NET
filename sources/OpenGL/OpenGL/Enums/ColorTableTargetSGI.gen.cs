@@ -23,5 +23,5 @@ public enum ColorTableTargetSGI : uint
     ProxyPostConvolutionColorTableSGI = unchecked((uint)0x80D4),
     ProxyPostColorMatrixColorTableSGI = unchecked((uint)0x80D5),
     TextureColorTableSGI = unchecked((uint)0x80BC),
-    ProxyTextureColorTableSGI = unchecked((uint)0x80BD)
+    ProxyTextureColorTableSGI = unchecked((uint)0x80BD),
 }
