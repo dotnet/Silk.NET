@@ -68,12 +68,7 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
                     var attributes = list.Attributes;
                     attributes = [..attributes.Where(attribute => !config.Remove.Contains(attribute.Name.ToString()))];
 
-                    if (attributes.Count == 0)
-                    {
-                        return null;
-                    }
-
-                    return AttributeList(attributes);
+                    return attributes.Count == 0 ? null : list.WithAttributes(attributes);
                 })
                 .Where(list => list != null)
                 .Cast<AttributeListSyntax>();

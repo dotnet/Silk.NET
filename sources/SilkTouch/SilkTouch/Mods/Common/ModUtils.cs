@@ -699,12 +699,7 @@ public static class ModUtils
                 var attributes = list.Attributes;
                 attributes = [..attributes.Where(attribute => !attribute.IsAttribute("Silk.NET.Core.NativeName"))];
 
-                if (attributes.Count == 0)
-                {
-                    return null;
-                }
-
-                return AttributeList(attributes);
+                return attributes.Count == 0 ? null : list.WithAttributes(attributes);
             })
             .Where(list => list != null)
             .Prepend(nativeNameAttribute)
