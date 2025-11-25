@@ -702,8 +702,8 @@ public static class ModUtils
                 return attributes.Count == 0 ? null : list.WithAttributes(attributes);
             })
             .Where(list => list != null)
-            .Prepend(nativeNameAttribute)
-            .Cast<AttributeListSyntax>());
+            .Cast<AttributeListSyntax>()
+            .Prepend(nativeNameAttribute));
     }
 
     /// <summary>

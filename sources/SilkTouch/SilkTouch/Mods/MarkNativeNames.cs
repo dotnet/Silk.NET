@@ -61,20 +61,20 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
 
     private class Rewriter(Configuration config) : ModCSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(SyntaxList<AttributeListSyntax> attributes, SyntaxToken identifier)
+        private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
-            if (attributes.TryGetNativeName(out _))
+            if (attributeLists.TryGetNativeName(out _))
             {
-                return attributes;
+                return attributeLists;
             }
 
-            var hasTransformedAttribute = attributes.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.Transformed")));
+            var hasTransformedAttribute = attributeLists.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.Transformed")));
             if (hasTransformedAttribute && !config.IncludeTransformed)
             {
-                return attributes;
+                return attributeLists;
             }
 
-            return attributes.WithNativeName(identifier.Text);
+            return attributeLists.WithNativeName(identifier.Text);
         }
 
         // ----- Types -----
