@@ -80,7 +80,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
                 Attribute(
                     IdentifierName("NativeName"),
                     AttributeArgumentList([
-                        AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{nativeName}\"", nativeName)))
+                        AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{nativeName}\"", nativeName))),
                     ])),
             ]);
 
