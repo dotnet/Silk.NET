@@ -276,6 +276,7 @@
         "ClangScraper",
         "AddApiProfiles",
         "MixKhronosData",
+        "MarkNativeNames",
         "ExtractNestedTyping",
         "TransformHandles",
         "InterceptNativeFunctions",
