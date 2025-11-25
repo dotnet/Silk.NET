@@ -1,9 +1,12 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -58,6 +61,36 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
 
     private class Rewriter : ModCSharpSyntaxRewriter
     {
+        /// <inheritdoc />
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
+            node = node.WithAttributeLists(AddNativeNameAttributeIfMissing(node.AttributeLists, node.Identifier));
 
+            return node;
+        }
+
+        private SyntaxList<AttributeListSyntax> AddNativeNameAttributeIfMissing(SyntaxList<AttributeListSyntax> attributes, SyntaxToken identifier)
+        {
+            var hasNativeNameAttribute = attributes.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName")));
+            if (hasNativeNameAttribute)
+            {
+                return attributes;
+            }
+
+            var nativeName = identifier.Text;
+            var nativeNameAttribute = AttributeList([
+                Attribute(
+                    IdentifierName("NativeName"),
+                    AttributeArgumentList([
+                        AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{nativeName}\"", nativeName)))
+                    ])),
+            ]);
+
+            return [
+                nativeNameAttribute,
+                ..attributes,
+            ];
+        }
     }
 }
