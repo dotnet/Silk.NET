@@ -190,17 +190,17 @@ public class PrettifyNames(
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
                     ? val.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(
                         x,
-                        (x, null)
+                        (GetOverriddenName(typeName, x, cfg.NameOverrides!, translator), null)
                     ))
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
                 types[typeName] = (
                     newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
-                    // TODO deprecate secondaries if they're within the baseline?
-                    constNames
-                        .Concat(prettifiedOnly)
-                        .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify(translator)),
+                                                                          // TODO deprecate secondaries if they're within the baseline?
+                    constNames.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(x.Key, (x.Value.Primary.Prettify(translator), x.Value.Item2)))
+                        .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
+                        .ToDictionary(x => x.Key, x => x.Value.Primary),
                     functionNames?.ToDictionary(
                         x => x.Key,
                         x => x.Value.Primary.Prettify(translator)
@@ -215,9 +215,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
                 types[name] = (
-                    name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
-                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator)),
+                    GetOverriddenName(null, name, cfg.NameOverrides!, translator, true), // <-- lenient about caps for type names (e.g. GL)
+                    nonFunctions?.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, translator)),
+                    functions?.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, translator)),
                     isEnum
                 );
             }
@@ -263,11 +263,13 @@ public class PrettifyNames(
         var sw = Stopwatch.StartNew();
         logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
         ctx.SourceProject = proj;
+
         var comp =
             await proj.GetCompilationAsync(ct)
             ?? throw new InvalidOperationException(
                 "Failed to obtain compilation for source project!"
             );
+
         await NameUtils.RenameAllAsync(
             ctx,
             types.SelectMany(x =>
@@ -311,6 +313,7 @@ public class PrettifyNames(
             logger,
             ct
         );
+
         logger.LogDebug(
             "Reference renaming took {} seconds for {}.",
             sw.Elapsed.TotalSeconds,
@@ -333,10 +336,84 @@ public class PrettifyNames(
                 continue;
             }
 
-            proj = doc.ReplaceNameAndPath(oldName, newName).Project;
+            var originalName = doc.Name;
+            doc = doc.ReplaceNameAndPath(oldName, newName);
+
+            var found = false;
+            if (doc.FilePath is not null)
+            {
+                foreach (var checkDocId in proj.DocumentIds)
+                {
+                    if (checkDocId == docId)
+                        continue;
+
+                    var checkDoc = proj.GetDocument(checkDocId);
+
+                    if (checkDoc is null ||
+                        checkDoc.FilePath is null)
+                        continue;
+
+                    if (checkDoc.FilePath == doc.FilePath)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+
+            if (found)
+            {
+                logger.LogError($"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}");
+            }
+            else
+                proj = doc.Project;
         }
 
         ctx.SourceProject = proj;
+    }
+
+    private string GetOverriddenName(
+        string? container,
+        string name,
+        Dictionary<string, string>? nameOverrides,
+        NameUtils.NameTransformer translator,
+        bool allowAllCaps = false)
+    {
+        foreach (
+            var (nativeName, overriddenName) in nameOverrides
+                ?? Enumerable.Empty<KeyValuePair<string, string>>()
+        )
+        {
+            var nameToAdd = nativeName;
+            if (nativeName.Contains('.'))
+            {
+                // We're processing a type dictionary, so don't add a member thing.
+                if (container is null)
+                {
+                    continue;
+                }
+
+                // Check whether the override is for this type.
+                var span = nativeName.AsSpan();
+                var containerSpan = span[..span.IndexOf('.')];
+                if (!containerSpan.Equals("*", StringComparison.Ordinal) && !containerSpan.Equals(container, StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
+                if (nameToAdd == name)
+                {
+                    return overriddenName;
+                }
+            }
+            else if (nativeName == name)
+            {
+                return overriddenName;
+            }
+        }
+        return name.Prettify(translator, allowAllCaps);
     }
 
     private void Trim(
@@ -363,11 +440,9 @@ public class PrettifyNames(
                 }
 
                 // Check whether the override is for this type.
-                var span = context.Container.AsSpan();
-                if (
-                    span[..span.IndexOf('.')] is "*"
-                    || span[..span.IndexOf('.')] == context.Container
-                )
+                var span = nativeName.AsSpan();
+                var containerSpan = span[..span.IndexOf('.')];
+                if (containerSpan.Equals("*", StringComparison.Ordinal) || containerSpan.Equals(context.Container, StringComparison.Ordinal))
                 {
                     nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
                 }
@@ -729,7 +804,7 @@ public class PrettifyNames(
 
             // Merge with the other partials.
             (inner.NonFunctions ??= new List<string>()).AddRange(
-                _classInProgress.Value.NonFunctions
+                _classInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true)
             );
             (inner.Functions ??= new List<(string, MethodDeclarationSyntax)>()).AddRange(
                 _classInProgress.Value.Functions
@@ -916,6 +991,15 @@ public class PrettifyNames(
             {
                 logger.LogWarning(
                     "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
+                        + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForGuidMember)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
                         + "conflicts with members of other types.",
                     responseFile.FilePath,
                     key
