@@ -44,7 +44,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
     }
 
     /// <summary>
-    /// TransformEnums mod configuration.
+    /// <see cref="TransformEnums"/> mod configuration.
     /// </summary>
     public record Configuration
     {
