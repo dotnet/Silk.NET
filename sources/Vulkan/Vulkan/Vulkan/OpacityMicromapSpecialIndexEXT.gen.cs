@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkOpacityMicromapSpecialIndexEXT")]
 [SupportedApiProfile("vulkan")]
-public enum OpacityMicromapSpecialIndexEXT : uint
+public enum OpacityMicromapSpecialIndexEXT
 {
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_EXT")]
     [SupportedApiProfile(

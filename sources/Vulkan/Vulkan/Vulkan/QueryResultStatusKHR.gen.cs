@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueryResultStatusKHR")]
 [SupportedApiProfile("vulkan")]
-public enum QueryResultStatusKHR : uint
+public enum QueryResultStatusKHR
 {
     [NativeName("VK_QUERY_RESULT_STATUS_ERROR_KHR")]
     [SupportedApiProfile(

@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkResult")]
 [SupportedApiProfile("vulkan")]
-public enum Result : uint
+public enum Result
 {
     [NativeName("VK_SUCCESS")]
     [SupportedApiProfile(

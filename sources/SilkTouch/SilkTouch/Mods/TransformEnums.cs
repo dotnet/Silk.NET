@@ -254,36 +254,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                 }
             }
 
-            if (config.RewriteMemberValues)
-            {
-                members = members
-                    .Select(m =>
-                    {
-                        if (m.Parent == null)
-                        {
-                            return m;
-                        }
-
-                        // Enum member contains a reference
-                        // We want to preserve these
-                        referenceDetector.Visit(m.EqualsValue);
-                        if (referenceDetector.ContainsReference)
-                        {
-                            return m;
-                        }
-
-                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
-                        if (fieldSymbol == null)
-                        {
-                            return m;
-                        }
-
-                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
-                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
-                    })
-                    .ToList();
-            }
-
+            // This code uses the semantic model for members so it has to run before the members are rewritten below
             switch (config.CoerceBackingTypes)
             {
                 case EnumBackingTypePreference.PreferSigned:
@@ -324,6 +295,28 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
                 case EnumBackingTypePreference.PreferUnsigned:
                 {
+                    var hasNegativeValues = members.Any(m => {
+                        if (m.Parent == null)
+                        {
+                            return false;
+                        }
+
+                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
+                        if (fieldSymbol == null)
+                        {
+                            return false;
+                        }
+
+                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        return value < 0;
+                    });
+
+                    if (hasNegativeValues)
+                    {
+                        // Enum has negative values, we can't use an unsigned backing type
+                        break;
+                    }
+
                     var baseList = originalNode.BaseList;
                     var baseTypes = (baseList?.Types ?? [])
                         .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
@@ -357,6 +350,36 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
                     break;
                 }
+            }
+
+            if (config.RewriteMemberValues)
+            {
+                members = members
+                    .Select(m =>
+                    {
+                        if (m.Parent == null)
+                        {
+                            return m;
+                        }
+
+                        // Enum member contains a reference
+                        // We want to preserve these
+                        referenceDetector.Visit(m.EqualsValue);
+                        if (referenceDetector.ContainsReference)
+                        {
+                            return m;
+                        }
+
+                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
+                        if (fieldSymbol == null)
+                        {
+                            return m;
+                        }
+
+                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
+                    })
+                    .ToList();
             }
 
             node = node.WithMembers([..members]);
