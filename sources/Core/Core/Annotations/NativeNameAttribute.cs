@@ -11,6 +11,7 @@ namespace Silk.NET.Core;
     | AttributeTargets.Enum
     | AttributeTargets.Property
     | AttributeTargets.Field
+    | AttributeTargets.Method
     | AttributeTargets.Parameter
     | AttributeTargets.ReturnValue,
     AllowMultiple = false,
