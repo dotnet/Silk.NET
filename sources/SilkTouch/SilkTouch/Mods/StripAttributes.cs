@@ -20,11 +20,8 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
     public record Configuration
     {
         /// <summary>
-        /// The list of attribute types to remove.
+        /// The list of attribute types to remove. These must be exact matches.
         /// </summary>
-        /// <remarks>
-        /// These must be exact matches, making this more native than <see cref="ModUtils.IsAttribute"/>.
-        /// </remarks>
         public HashSet<string> Remove { get; init; } = new();
     }
 
