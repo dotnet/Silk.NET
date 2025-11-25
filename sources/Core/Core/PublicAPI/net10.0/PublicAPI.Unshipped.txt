@@ -160,6 +160,9 @@ Silk.NET.Core.NativeFunctionAttribute.Value.get -> string!
 Silk.NET.Core.NativeInheritanceAttribute
 Silk.NET.Core.NativeInheritanceAttribute.Name.get -> string!
 Silk.NET.Core.NativeInheritanceAttribute.NativeInheritanceAttribute(string! name) -> void
+Silk.NET.Core.NativeNameAttribute
+Silk.NET.Core.NativeNameAttribute.Name.get -> string!
+Silk.NET.Core.NativeNameAttribute.NativeNameAttribute(string! name) -> void
 Silk.NET.Core.NativeTypeNameAttribute
 Silk.NET.Core.NativeTypeNameAttribute.Name.get -> string!
 Silk.NET.Core.NativeTypeNameAttribute.NativeTypeNameAttribute(string! name) -> void
