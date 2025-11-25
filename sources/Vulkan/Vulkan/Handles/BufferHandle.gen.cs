@@ -12,6 +12,11 @@ public readonly unsafe partial struct BufferHandle
 {
     public readonly void* Handle;
 
+    public BufferHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(BufferHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is BufferHandle other && Equals(other);

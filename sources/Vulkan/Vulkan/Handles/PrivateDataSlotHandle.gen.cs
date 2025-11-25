@@ -12,6 +12,11 @@ public readonly unsafe partial struct PrivateDataSlotHandle
 {
     public readonly void* Handle;
 
+    public PrivateDataSlotHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(PrivateDataSlotHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is PrivateDataSlotHandle other && Equals(other);

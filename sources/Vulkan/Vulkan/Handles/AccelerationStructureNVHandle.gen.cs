@@ -12,6 +12,11 @@ public readonly unsafe partial struct AccelerationStructureNVHandle
 {
     public readonly void* Handle;
 
+    public AccelerationStructureNVHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(AccelerationStructureNVHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

@@ -12,6 +12,11 @@ public readonly unsafe partial struct PipelineLayoutHandle
 {
     public readonly void* Handle;
 
+    public PipelineLayoutHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(PipelineLayoutHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is PipelineLayoutHandle other && Equals(other);

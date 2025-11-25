@@ -12,6 +12,11 @@ public readonly unsafe partial struct DebugReportCallbackEXTHandle
 {
     public readonly void* Handle;
 
+    public DebugReportCallbackEXTHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(DebugReportCallbackEXTHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

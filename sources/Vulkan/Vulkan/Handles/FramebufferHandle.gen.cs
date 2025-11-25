@@ -12,6 +12,11 @@ public readonly unsafe partial struct FramebufferHandle
 {
     public readonly void* Handle;
 
+    public FramebufferHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(FramebufferHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is FramebufferHandle other && Equals(other);

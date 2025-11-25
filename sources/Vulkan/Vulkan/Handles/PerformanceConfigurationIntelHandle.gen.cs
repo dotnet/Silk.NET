@@ -12,6 +12,11 @@ public readonly unsafe partial struct PerformanceConfigurationIntelHandle
 {
     public readonly void* Handle;
 
+    public PerformanceConfigurationIntelHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(PerformanceConfigurationIntelHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

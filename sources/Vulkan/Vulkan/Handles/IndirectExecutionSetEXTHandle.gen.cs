@@ -12,6 +12,11 @@ public readonly unsafe partial struct IndirectExecutionSetEXTHandle
 {
     public readonly void* Handle;
 
+    public IndirectExecutionSetEXTHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(IndirectExecutionSetEXTHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

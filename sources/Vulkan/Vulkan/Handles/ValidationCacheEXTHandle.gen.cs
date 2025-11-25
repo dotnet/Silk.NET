@@ -12,6 +12,11 @@ public readonly unsafe partial struct ValidationCacheEXTHandle
 {
     public readonly void* Handle;
 
+    public ValidationCacheEXTHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(ValidationCacheEXTHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

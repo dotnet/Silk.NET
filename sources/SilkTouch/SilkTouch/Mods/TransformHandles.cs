@@ -518,14 +518,35 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
         private static IEnumerable<MemberDeclarationSyntax> GetDefaultHandleMembers(string structName)
         {
+            var backingType = PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword)));
+
             yield return FieldDeclaration(
                     VariableDeclaration(
-                        PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
+                        backingType,
                         SingletonSeparatedList(VariableDeclarator("Handle"))
                     )
                 )
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.ReadOnlyKeyword))
+                );
+
+            yield return ConstructorDeclaration(Identifier(structName))
+                .WithModifiers(
+                    TokenList(Token(SyntaxKind.PublicKeyword))
+                )
+                .WithParameterList(ParameterList(
+                    SingletonSeparatedList(Parameter(Identifier("handle")).WithType(backingType)))
+                )
+                .WithBody(
+                    Block(
+                        ExpressionStatement(
+                            AssignmentExpression(
+                                SyntaxKind.SimpleAssignmentExpression,
+                                IdentifierName("Handle"),
+                                IdentifierName("handle")
+                            )
+                        )
+                    )
                 );
 
             yield return MethodDeclaration(

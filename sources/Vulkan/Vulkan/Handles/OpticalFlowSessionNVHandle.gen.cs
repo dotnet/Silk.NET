@@ -12,6 +12,11 @@ public readonly unsafe partial struct OpticalFlowSessionNVHandle
 {
     public readonly void* Handle;
 
+    public OpticalFlowSessionNVHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(OpticalFlowSessionNVHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

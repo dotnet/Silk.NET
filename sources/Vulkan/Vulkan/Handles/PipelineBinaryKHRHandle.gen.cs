@@ -12,6 +12,11 @@ public readonly unsafe partial struct PipelineBinaryKHRHandle
 {
     public readonly void* Handle;
 
+    public PipelineBinaryKHRHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(PipelineBinaryKHRHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

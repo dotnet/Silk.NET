@@ -12,6 +12,11 @@ public readonly unsafe partial struct CuModuleNVXHandle
 {
     public readonly void* Handle;
 
+    public CuModuleNVXHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(CuModuleNVXHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is CuModuleNVXHandle other && Equals(other);

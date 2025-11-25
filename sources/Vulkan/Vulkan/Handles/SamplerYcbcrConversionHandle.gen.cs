@@ -12,6 +12,11 @@ public readonly unsafe partial struct SamplerYcbcrConversionHandle
 {
     public readonly void* Handle;
 
+    public SamplerYcbcrConversionHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(SamplerYcbcrConversionHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

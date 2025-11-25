@@ -12,6 +12,11 @@ public readonly unsafe partial struct FenceHandle
 {
     public readonly void* Handle;
 
+    public FenceHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(FenceHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is FenceHandle other && Equals(other);

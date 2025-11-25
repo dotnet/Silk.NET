@@ -12,6 +12,11 @@ public readonly unsafe partial struct DescriptorPoolHandle
 {
     public readonly void* Handle;
 
+    public DescriptorPoolHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(DescriptorPoolHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is DescriptorPoolHandle other && Equals(other);

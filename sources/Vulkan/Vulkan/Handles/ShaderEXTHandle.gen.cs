@@ -12,6 +12,11 @@ public readonly unsafe partial struct ShaderEXTHandle
 {
     public readonly void* Handle;
 
+    public ShaderEXTHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(ShaderEXTHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is ShaderEXTHandle other && Equals(other);

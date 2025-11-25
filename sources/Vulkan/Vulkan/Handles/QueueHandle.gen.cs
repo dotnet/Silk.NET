@@ -12,6 +12,11 @@ public readonly unsafe partial struct QueueHandle
 {
     public readonly void* Handle;
 
+    public QueueHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(QueueHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is QueueHandle other && Equals(other);

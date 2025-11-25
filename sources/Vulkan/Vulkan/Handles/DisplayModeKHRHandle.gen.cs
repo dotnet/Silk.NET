@@ -12,6 +12,11 @@ public readonly unsafe partial struct DisplayModeKHRHandle
 {
     public readonly void* Handle;
 
+    public DisplayModeKHRHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(DisplayModeKHRHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is DisplayModeKHRHandle other && Equals(other);

@@ -12,6 +12,11 @@ public readonly unsafe partial struct VideoSessionKHRHandle
 {
     public readonly void* Handle;
 
+    public VideoSessionKHRHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(VideoSessionKHRHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is VideoSessionKHRHandle other && Equals(other);

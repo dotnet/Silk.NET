@@ -12,6 +12,11 @@ public readonly unsafe partial struct EventHandle
 {
     public readonly void* Handle;
 
+    public EventHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(EventHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is EventHandle other && Equals(other);

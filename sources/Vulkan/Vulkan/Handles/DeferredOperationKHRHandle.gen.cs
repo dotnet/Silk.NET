@@ -12,6 +12,11 @@ public readonly unsafe partial struct DeferredOperationKHRHandle
 {
     public readonly void* Handle;
 
+    public DeferredOperationKHRHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(DeferredOperationKHRHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

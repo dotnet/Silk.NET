@@ -12,6 +12,11 @@ public readonly unsafe partial struct CommandPoolHandle
 {
     public readonly void* Handle;
 
+    public CommandPoolHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(CommandPoolHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is CommandPoolHandle other && Equals(other);

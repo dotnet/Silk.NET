@@ -12,6 +12,11 @@ public readonly unsafe partial struct ImageHandle
 {
     public readonly void* Handle;
 
+    public ImageHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(ImageHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is ImageHandle other && Equals(other);

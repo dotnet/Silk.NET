@@ -12,6 +12,11 @@ public readonly unsafe partial struct DataGraphPipelineSessionARMHandle
 {
     public readonly void* Handle;
 
+    public DataGraphPipelineSessionARMHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(DataGraphPipelineSessionARMHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

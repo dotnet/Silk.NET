@@ -12,6 +12,11 @@ public readonly unsafe partial struct TensorViewARMHandle
 {
     public readonly void* Handle;
 
+    public TensorViewARMHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(TensorViewARMHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is TensorViewARMHandle other && Equals(other);

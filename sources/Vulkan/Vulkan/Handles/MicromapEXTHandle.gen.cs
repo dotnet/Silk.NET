@@ -12,6 +12,11 @@ public readonly unsafe partial struct MicromapEXTHandle
 {
     public readonly void* Handle;
 
+    public MicromapEXTHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(MicromapEXTHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is MicromapEXTHandle other && Equals(other);

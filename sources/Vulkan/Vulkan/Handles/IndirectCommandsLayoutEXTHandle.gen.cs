@@ -12,6 +12,11 @@ public readonly unsafe partial struct IndirectCommandsLayoutEXTHandle
 {
     public readonly void* Handle;
 
+    public IndirectCommandsLayoutEXTHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(IndirectCommandsLayoutEXTHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>
