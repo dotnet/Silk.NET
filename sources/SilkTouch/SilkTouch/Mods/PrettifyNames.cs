@@ -1,10 +1,7 @@
-﻿using System.Collections.Concurrent;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.FindSymbols;
-using Microsoft.CodeAnalysis.Rename;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
@@ -341,21 +338,6 @@ public class PrettifyNames(
 
         ctx.SourceProject = proj;
     }
-
-    private static readonly SymbolRenameOptions _typeRenameOptions =
-        new(
-            RenameOverloads: false,
-            RenameInStrings: false,
-            RenameInComments: false,
-            RenameFile: true
-        );
-    private static readonly SymbolRenameOptions _memberRenameOptions =
-        new(
-            RenameOverloads: true,
-            RenameInStrings: false,
-            RenameInComments: false,
-            RenameFile: false
-        );
 
     private void Trim(
         NameTrimmerContext context,
