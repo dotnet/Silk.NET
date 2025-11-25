@@ -339,7 +339,7 @@ public class PrettifyNames(
             }
 
             var originalName = doc.Name;
-            proj = doc.ReplaceNameAndPath(oldName, newName).Project;
+            doc = doc.ReplaceNameAndPath(oldName, newName);
 
             var found = false;
             if (doc.FilePath is not null)
