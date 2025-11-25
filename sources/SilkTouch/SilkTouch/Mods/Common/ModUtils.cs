@@ -660,6 +660,58 @@ public static class ModUtils
     }
 
     /// <summary>
+    /// Gets the value of the native name attribute from the given attribute list.
+    /// </summary>
+    public static bool TryGetNativeName(this IEnumerable<AttributeListSyntax> attributeLists, out string? nativeName)
+    {
+        var nativeNameAttribute = attributeLists.SelectMany(list => list.Attributes).FirstOrDefault(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName"));
+        if (nativeNameAttribute == null)
+        {
+            nativeName = null;
+            return false;
+        }
+
+        nativeName = nativeNameAttribute.ArgumentList?.Arguments
+            .Select(arg =>
+                arg.IsKind(SyntaxKind.StringLiteralExpression)
+                    ? (arg.Expression as LiteralExpressionSyntax)?.Token.Value
+                    : null)
+            .OfType<string>()
+            .FirstOrDefault();
+
+        return nativeName != null;
+    }
+
+    /// <summary>
+    /// Sets or replaces the native name attribute in the given attribute list.
+    /// </summary>
+    public static SyntaxList<AttributeListSyntax> WithNativeName(this IEnumerable<AttributeListSyntax> attributeLists, string nativeName)
+    {
+        var nativeNameAttribute = AttributeList([
+            Attribute(
+                IdentifierName("NativeName"),
+                AttributeArgumentList([
+                    AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{nativeName}\"", nativeName))),
+                ])),
+        ]);
+
+        return List(attributeLists.Select(list => {
+                var attributes = list.Attributes;
+                attributes = [..attributes.Where(attribute => !attribute.IsAttribute("Silk.NET.Core.NativeName"))];
+
+                if (attributes.Count == 0)
+                {
+                    return null;
+                }
+
+                return AttributeList(attributes);
+            })
+            .Where(list => list != null)
+            .Prepend(nativeNameAttribute)
+            .Cast<AttributeListSyntax>());
+    }
+
+    /// <summary>
     /// Retrieves the native type name within the given attribute list.
     /// </summary>
     /// <param name="attrs">The attributes.</param>

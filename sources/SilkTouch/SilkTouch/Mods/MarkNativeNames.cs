@@ -63,8 +63,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
     {
         private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(SyntaxList<AttributeListSyntax> attributes, SyntaxToken identifier)
         {
-            var hasNativeNameAttribute = attributes.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName")));
-            if (hasNativeNameAttribute)
+            if (attributes.TryGetNativeName(out _))
             {
                 return attributes;
             }
@@ -75,19 +74,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
                 return attributes;
             }
 
-            var nativeName = identifier.Text;
-            var nativeNameAttribute = AttributeList([
-                Attribute(
-                    IdentifierName("NativeName"),
-                    AttributeArgumentList([
-                        AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{nativeName}\"", nativeName))),
-                    ])),
-            ]);
-
-            return [
-                nativeNameAttribute,
-                ..attributes,
-            ];
+            return attributes.WithNativeName(identifier.Text);
         }
 
         // ----- Types -----
