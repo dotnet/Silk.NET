@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceInlineUniformBlockFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceInlineUniformBlockFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,6 +27,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,11 +42,11 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("inlineUniformBlock")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint InlineUniformBlock;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingInlineUniformBlockUpdateAfterBind")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint DescriptorBindingInlineUniformBlockUpdateAfterBind;
 }

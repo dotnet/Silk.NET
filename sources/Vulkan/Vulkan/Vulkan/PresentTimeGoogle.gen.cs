@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPresentTimeGOOGLE")]
 [SupportedApiProfile("vulkan")]
 public partial struct PresentTimeGoogle
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("presentID")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],
@@ -19,7 +20,7 @@ public partial struct PresentTimeGoogle
     )]
     public uint PresentID;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("desiredPresentTime")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],

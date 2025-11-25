@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVendorId")]
 [SupportedApiProfile("vulkan")]
 public enum VendorId : uint
 {
+    [NativeName("VK_VENDOR_ID_KHRONOS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,6 +41,7 @@ public enum VendorId : uint
     )]
     VendorIdKhronos = 65536,
 
+    [NativeName("VK_VENDOR_ID_VIV")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +70,7 @@ public enum VendorId : uint
     )]
     VendorIdVIV = 65537,
 
+    [NativeName("VK_VENDOR_ID_VSI")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,6 +99,7 @@ public enum VendorId : uint
     )]
     VendorIdVSI = 65538,
 
+    [NativeName("VK_VENDOR_ID_KAZAN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,6 +128,7 @@ public enum VendorId : uint
     )]
     VendorIdKazan = 65539,
 
+    [NativeName("VK_VENDOR_ID_CODEPLAY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,6 +157,7 @@ public enum VendorId : uint
     )]
     VendorIdCodeplay = 65540,
 
+    [NativeName("VK_VENDOR_ID_MESA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -180,6 +186,7 @@ public enum VendorId : uint
     )]
     VendorIdMESA = 65541,
 
+    [NativeName("VK_VENDOR_ID_POCL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -208,6 +215,7 @@ public enum VendorId : uint
     )]
     VendorIdPocl = 65542,
 
+    [NativeName("VK_VENDOR_ID_MOBILEYE")]
     [SupportedApiProfile(
         "vulkan",
         [

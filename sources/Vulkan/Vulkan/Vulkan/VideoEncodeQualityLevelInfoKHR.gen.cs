@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeQualityLevelInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeQualityLevelInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -21,7 +23,7 @@ public unsafe partial struct VideoEncodeQualityLevelInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -32,7 +34,7 @@ public unsafe partial struct VideoEncodeQualityLevelInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("qualityLevel")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],

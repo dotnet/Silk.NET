@@ -7,22 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkPresentModeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum PresentModeKHR : uint
 {
+    [NativeName("VK_PRESENT_MODE_IMMEDIATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     ImmediateKHR = 0,
 
+    [NativeName("VK_PRESENT_MODE_MAILBOX_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     MailboxKHR = 1,
 
+    [NativeName("VK_PRESENT_MODE_FIFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     FifoKHR = 2,
 
+    [NativeName("VK_PRESENT_MODE_FIFO_RELAXED_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     FifoRelaxedKHR = 3,
 
+    [NativeName("VK_PRESENT_MODE_SHARED_DEMAND_REFRESH_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shared_presentable_image"],
@@ -33,6 +38,7 @@ public enum PresentModeKHR : uint
     )]
     SharedDemandRefreshKHR = 1000111000,
 
+    [NativeName("VK_PRESENT_MODE_SHARED_CONTINUOUS_REFRESH_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shared_presentable_image"],
@@ -43,6 +49,7 @@ public enum PresentModeKHR : uint
     )]
     SharedContinuousRefreshKHR = 1000111001,
 
+    [NativeName("VK_PRESENT_MODE_FIFO_LATEST_READY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_mode_fifo_latest_ready"],
@@ -50,6 +57,7 @@ public enum PresentModeKHR : uint
     )]
     FifoLatestReadyKHR = 1000361000,
 
+    [NativeName("VK_PRESENT_MODE_FIFO_LATEST_READY_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_present_mode_fifo_latest_ready"],

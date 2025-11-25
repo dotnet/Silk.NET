@@ -8,98 +8,103 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoDecodeAV1PictureInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoDecodeAV1PictureInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1PictureInfoFlags Flags;
 
+    [NativeName("frame_type")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FrameType FrameType;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("current_frame_id")]
     [SupportedApiProfile("vulkan")]
     public uint CurrentFrameId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("OrderHint")]
     [SupportedApiProfile("vulkan")]
     public byte OrderHint;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("primary_ref_frame")]
     [SupportedApiProfile("vulkan")]
     public byte PrimaryRefFrame;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("refresh_frame_flags")]
     [SupportedApiProfile("vulkan")]
     public byte RefreshFrameFlags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
+    [NativeName("interpolation_filter")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1InterpolationFilter InterpolationFilter;
 
+    [NativeName("TxMode")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1TxMode TxMode;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("delta_q_res")]
     [SupportedApiProfile("vulkan")]
     public byte DeltaQRes;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("delta_lf_res")]
     [SupportedApiProfile("vulkan")]
     public byte DeltaLfRes;
 
-    [NativeTypeName("uint8_t[2]")]
+    [NativeName("SkipModeFrame")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1PictureInfoSkipModeFrame SkipModeFrame;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("coded_denom")]
     [SupportedApiProfile("vulkan")]
     public byte CodedDenom;
 
-    [NativeTypeName("uint8_t[3]")]
+    [NativeName("reserved2")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1PictureInfoReserved2 Reserved2;
 
-    [NativeTypeName("uint8_t[8]")]
+    [NativeName("OrderHints")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1PictureInfoOrderHints OrderHints;
 
-    [NativeTypeName("uint32_t[8]")]
+    [NativeName("expectedFrameId")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1PictureInfoExpectedFrameId ExpectedFrameId;
 
-    [NativeTypeName("const StdVideoAV1TileInfo *")]
+    [NativeName("pTileInfo")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1TileInfo* PTileInfo;
 
-    [NativeTypeName("const StdVideoAV1Quantization *")]
+    [NativeName("pQuantization")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1Quantization* PQuantization;
 
-    [NativeTypeName("const StdVideoAV1Segmentation *")]
+    [NativeName("pSegmentation")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1Segmentation* PSegmentation;
 
-    [NativeTypeName("const StdVideoAV1LoopFilter *")]
+    [NativeName("pLoopFilter")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopFilter* PLoopFilter;
 
-    [NativeTypeName("const StdVideoAV1CDEF *")]
+    [NativeName("pCDEF")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1CDEF* Pcdef;
 
-    [NativeTypeName("const StdVideoAV1LoopRestoration *")]
+    [NativeName("pLoopRestoration")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopRestoration* PLoopRestoration;
 
-    [NativeTypeName("const StdVideoAV1GlobalMotion *")]
+    [NativeName("pGlobalMotion")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1GlobalMotion* PGlobalMotion;
 
-    [NativeTypeName("const StdVideoAV1FilmGrain *")]
+    [NativeName("pFilmGrain")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrain* PFilmGrain;
 }

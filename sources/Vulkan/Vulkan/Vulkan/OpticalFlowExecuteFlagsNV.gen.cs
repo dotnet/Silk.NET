@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkOpticalFlowExecuteFlagsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum OpticalFlowExecuteFlagsNV : uint
 {
     None = 0x0,
 
+    [NativeName("VK_OPTICAL_FLOW_EXECUTE_DISABLE_TEMPORAL_HINTS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

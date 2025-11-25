@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -17,7 +19,7 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
     )]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("geometryIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -31,7 +33,7 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
         set { Bitfield = (Bitfield & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("uint32_t : 5")]
+    [NativeName("reserved")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -45,7 +47,7 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
         set { Bitfield = (Bitfield & ~(0x1Fu << 24)) | ((value & 0x1Fu) << 24); }
     }
 
-    [NativeTypeName("uint32_t : 3")]
+    [NativeName("geometryFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceClusterAccelerationStructurePropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertiesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxVerticesPerCluster")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint MaxVerticesPerCluster;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTrianglesPerCluster")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint MaxTrianglesPerCluster;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("clusterScratchByteAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -49,7 +52,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint ClusterScratchByteAlignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("clusterByteAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -57,7 +60,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint ClusterByteAlignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("clusterTemplateByteAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -65,7 +68,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint ClusterTemplateByteAlignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("clusterBottomLevelByteAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -73,7 +76,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint ClusterBottomLevelByteAlignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("clusterTemplateBoundsByteAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -81,7 +84,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
     )]
     public uint ClusterTemplateBoundsByteAlignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxClusterGeometryIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

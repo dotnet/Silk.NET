@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyImageToImageInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyImageToImageInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -22,7 +24,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +37,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkHostImageCopyFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public HostImageCopyFlags Flags;
 
-    [NativeTypeName("VkImage")]
+    [NativeName("srcImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,6 +63,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageHandle SrcImage;
 
+    [NativeName("srcImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -73,7 +76,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageLayout SrcImageLayout;
 
-    [NativeTypeName("VkImage")]
+    [NativeName("dstImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,6 +89,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageHandle DstImage;
 
+    [NativeName("dstImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +102,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageLayout DstImageLayout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("regionCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -111,7 +115,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public uint RegionCount;
 
-    [NativeTypeName("const VkImageCopy2 *")]
+    [NativeName("pRegions")]
     [SupportedApiProfile(
         "vulkan",
         [

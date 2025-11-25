@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceSubpassMergeFeedbackFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("subpassMergeFeedback")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],

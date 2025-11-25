@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("maxWorkGroupCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
     )]
     public PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupCount MaxWorkGroupCount;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("maxWorkGroupSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
     )]
     public PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupSize MaxWorkGroupSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxOutputClusterCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHuawei
     )]
     public uint MaxOutputClusterCount;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("indirectBufferOffsetAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],

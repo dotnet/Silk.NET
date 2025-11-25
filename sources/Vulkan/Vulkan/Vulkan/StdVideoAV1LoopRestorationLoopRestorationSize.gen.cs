@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_LoopRestorationSize_e__FixedBuffer")]
 [InlineArray(3)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1LoopRestorationLoopRestorationSize
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public ushort E0;
 }

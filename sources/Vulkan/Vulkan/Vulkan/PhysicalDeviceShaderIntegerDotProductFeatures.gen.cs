@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShaderIntegerDotProductFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderIntegerDotProductFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +40,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerDotProductFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderIntegerDotProduct")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint ShaderIntegerDotProduct;
 }

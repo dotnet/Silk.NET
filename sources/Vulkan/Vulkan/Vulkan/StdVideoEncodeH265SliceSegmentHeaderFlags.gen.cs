@@ -6,13 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH265SliceSegmentHeaderFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("first_slice_segment_in_pic_flag")]
     [SupportedApiProfile("vulkan")]
     public uint first_slice_segment_in_pic_flag
     {
@@ -22,7 +24,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("dependent_slice_segment_flag")]
     [SupportedApiProfile("vulkan")]
     public uint dependent_slice_segment_flag
     {
@@ -32,7 +34,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("slice_sao_luma_flag")]
     [SupportedApiProfile("vulkan")]
     public uint slice_sao_luma_flag
     {
@@ -42,7 +44,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("slice_sao_chroma_flag")]
     [SupportedApiProfile("vulkan")]
     public uint slice_sao_chroma_flag
     {
@@ -52,7 +54,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("num_ref_idx_active_override_flag")]
     [SupportedApiProfile("vulkan")]
     public uint num_ref_idx_active_override_flag
     {
@@ -62,7 +64,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("mvd_l1_zero_flag")]
     [SupportedApiProfile("vulkan")]
     public uint mvd_l1_zero_flag
     {
@@ -72,7 +74,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("cabac_init_flag")]
     [SupportedApiProfile("vulkan")]
     public uint cabac_init_flag
     {
@@ -82,7 +84,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("cu_chroma_qp_offset_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint cu_chroma_qp_offset_enabled_flag
     {
@@ -92,7 +94,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("deblocking_filter_override_flag")]
     [SupportedApiProfile("vulkan")]
     public uint deblocking_filter_override_flag
     {
@@ -102,7 +104,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("slice_deblocking_filter_disabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint slice_deblocking_filter_disabled_flag
     {
@@ -112,7 +114,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("collocated_from_l0_flag")]
     [SupportedApiProfile("vulkan")]
     public uint collocated_from_l0_flag
     {
@@ -122,7 +124,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("slice_loop_filter_across_slices_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint slice_loop_filter_across_slices_enabled_flag
     {
@@ -132,7 +134,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11); }
     }
 
-    [NativeTypeName("uint32_t : 20")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public uint reserved
     {

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_dstOffsets_e__FixedBuffer")]
 [InlineArray(2)]
 [SupportedApiProfile(
     "vulkan",
@@ -16,6 +17,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct ImageBlit2DstOffsets
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public Offset3D E0;
 }

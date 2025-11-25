@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceCornerSampledImageFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_corner_sampled_image"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_corner_sampled_image"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("cornerSampledImage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_corner_sampled_image"],

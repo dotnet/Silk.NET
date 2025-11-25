@@ -8,48 +8,51 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH264PictureParameterSet")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoH264PictureParameterSet
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264PpsFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte SeqParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("pic_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte PicParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_ref_idx_l0_default_active_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefIdxL0DefaultActiveMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_ref_idx_l1_default_active_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefIdxL1DefaultActiveMinus1;
 
+    [NativeName("weighted_bipred_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264WeightedBipredIdc WeightedBipredIdc;
 
-    [NativeTypeName("int8_t")]
+    [NativeName("pic_init_qp_minus26")]
     [SupportedApiProfile("vulkan")]
     public sbyte PicInitQpMinus26;
 
-    [NativeTypeName("int8_t")]
+    [NativeName("pic_init_qs_minus26")]
     [SupportedApiProfile("vulkan")]
     public sbyte PicInitQsMinus26;
 
-    [NativeTypeName("int8_t")]
+    [NativeName("chroma_qp_index_offset")]
     [SupportedApiProfile("vulkan")]
     public sbyte ChromaQpIndexOffset;
 
-    [NativeTypeName("int8_t")]
+    [NativeName("second_chroma_qp_index_offset")]
     [SupportedApiProfile("vulkan")]
     public sbyte SecondChromaQpIndexOffset;
 
-    [NativeTypeName("const StdVideoH264ScalingLists *")]
+    [NativeName("pScalingLists")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ScalingLists* PScalingLists;
 }

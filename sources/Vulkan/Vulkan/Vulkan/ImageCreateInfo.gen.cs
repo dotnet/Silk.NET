@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkImageCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,6 +99,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public ImageCreateFlags Flags;
 
+    [NativeName("imageType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,6 +128,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public ImageType ImageType;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -153,6 +157,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public Format Format;
 
+    [NativeName("extent")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -181,7 +186,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public Extent3D Extent;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("mipLevels")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -210,7 +215,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public uint MipLevels;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("arrayLayers")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -239,6 +244,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public uint ArrayLayers;
 
+    [NativeName("samples")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -267,6 +273,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public SampleCountFlags Samples;
 
+    [NativeName("tiling")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -295,7 +302,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public ImageTiling Tiling;
 
-    [NativeTypeName("VkImageUsageFlags")]
+    [NativeName("usage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -324,6 +331,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public ImageUsageFlags Usage;
 
+    [NativeName("sharingMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -352,7 +360,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public SharingMode SharingMode;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueFamilyIndexCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -381,7 +389,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public uint QueueFamilyIndexCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pQueueFamilyIndices")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -410,6 +418,7 @@ public unsafe partial struct ImageCreateInfo
     )]
     public uint* PQueueFamilyIndices;
 
+    [NativeName("initialLayout")]
     [SupportedApiProfile(
         "vulkan",
         [

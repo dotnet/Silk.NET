@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkBuildAccelerationStructureModeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum BuildAccelerationStructureModeKHR : uint
 {
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -22,6 +23,7 @@ public enum BuildAccelerationStructureModeKHR : uint
     )]
     BuildKHR = 0,
 
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

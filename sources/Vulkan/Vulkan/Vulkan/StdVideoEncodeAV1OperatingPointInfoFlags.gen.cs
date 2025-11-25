@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeAV1OperatingPointInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("decoder_model_present_for_this_op")]
     [SupportedApiProfile("vulkan")]
     public uint decoder_model_present_for_this_op
     {
@@ -24,7 +26,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("low_delay_mode_flag")]
     [SupportedApiProfile("vulkan")]
     public uint low_delay_mode_flag
     {
@@ -34,7 +36,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("initial_display_delay_present_for_this_op")]
     [SupportedApiProfile("vulkan")]
     public uint initial_display_delay_present_for_this_op
     {
@@ -44,7 +46,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 29")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public uint reserved
     {

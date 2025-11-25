@@ -7,16 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueryLowLatencySupportNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueryLowLatencySupportNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
     public void* PNext;
 
+    [NativeName("pQueriedLowLatencyData")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
     public void* PQueriedLowLatencyData;
 }

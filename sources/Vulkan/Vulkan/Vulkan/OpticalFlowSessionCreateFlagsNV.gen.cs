@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkOpticalFlowSessionCreateFlagsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum OpticalFlowSessionCreateFlagsNV : uint
 {
     None = 0x0,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ENABLE_HINT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -26,6 +27,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
     )]
     EnableHintBitNV = 0x1,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ENABLE_COST_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -37,6 +39,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
     )]
     EnableCostBitNV = 0x2,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ENABLE_GLOBAL_FLOW_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -48,6 +51,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
     )]
     EnableGlobalFlowBitNV = 0x4,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ALLOW_REGIONS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -59,6 +63,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
     )]
     AllowRegionsBitNV = 0x8,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_BOTH_DIRECTIONS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

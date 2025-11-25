@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorSetHostMappingFeaturesValve
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceDescriptorSetHostMappingFeaturesValve
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceDescriptorSetHostMappingFeaturesValve
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorSetHostMapping")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],

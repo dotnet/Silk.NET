@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkClusterAccelerationStructureOpTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum ClusterAccelerationStructureOpTypeNV : uint
 {
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_MOVE_OBJECTS_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -19,6 +20,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     MoveObjectsNV = 0,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_CLUSTERS_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -26,6 +28,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     BuildClustersBottomLevelNV = 1,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -33,6 +36,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     BuildTriangleClusterNV = 2,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_TRIANGLE_CLUSTER_TEMPLATE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -40,6 +44,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     BuildTriangleClusterTemplateNV = 3,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_INSTANTIATE_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -47,6 +52,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     InstantiateTriangleClusterNV = 4,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_GET_CLUSTER_TEMPLATE_INDICES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

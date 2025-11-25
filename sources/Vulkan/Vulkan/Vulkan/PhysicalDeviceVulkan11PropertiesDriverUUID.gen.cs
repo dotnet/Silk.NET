@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_driverUUID_e__FixedBuffer")]
 [InlineArray(16)]
 [SupportedApiProfile(
     "vulkan",
@@ -29,6 +30,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PhysicalDeviceVulkan11PropertiesDriverUUID
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

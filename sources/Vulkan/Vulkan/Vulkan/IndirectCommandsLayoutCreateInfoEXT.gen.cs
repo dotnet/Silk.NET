@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsLayoutCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -21,7 +23,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -33,7 +35,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkIndirectCommandsLayoutUsageFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -45,7 +47,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public IndirectCommandsLayoutUsageFlagsEXT Flags;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("shaderStages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -57,7 +59,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public ShaderStageFlags ShaderStages;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("indirectStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -69,7 +71,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public uint IndirectStride;
 
-    [NativeTypeName("VkPipelineLayout")]
+    [NativeName("pipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -81,7 +83,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public PipelineLayoutHandle PipelineLayout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("tokenCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -93,7 +95,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
     )]
     public uint TokenCount;
 
-    [NativeTypeName("const VkIndirectCommandsLayoutTokenEXT *")]
+    [NativeName("pTokens")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

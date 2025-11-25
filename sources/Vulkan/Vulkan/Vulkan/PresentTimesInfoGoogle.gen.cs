@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPresentTimesInfoGOOGLE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentTimesInfoGoogle
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],
@@ -17,7 +19,7 @@ public unsafe partial struct PresentTimesInfoGoogle
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],
@@ -25,7 +27,7 @@ public unsafe partial struct PresentTimesInfoGoogle
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("swapchainCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],
@@ -33,7 +35,7 @@ public unsafe partial struct PresentTimesInfoGoogle
     )]
     public uint SwapchainCount;
 
-    [NativeTypeName("const VkPresentTimeGOOGLE *")]
+    [NativeName("pTimes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],

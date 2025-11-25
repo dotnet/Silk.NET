@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkClusterAccelerationStructureOpModeNV")]
 [SupportedApiProfile("vulkan")]
 public enum ClusterAccelerationStructureOpModeNV : uint
 {
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_MODE_IMPLICIT_DESTINATIONS_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -19,6 +20,7 @@ public enum ClusterAccelerationStructureOpModeNV : uint
     )]
     ImplicitDestinationsNV = 0,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_MODE_EXPLICIT_DESTINATIONS_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -26,6 +28,7 @@ public enum ClusterAccelerationStructureOpModeNV : uint
     )]
     ExplicitDestinationsNV = 1,
 
+    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_MODE_COMPUTE_SIZES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

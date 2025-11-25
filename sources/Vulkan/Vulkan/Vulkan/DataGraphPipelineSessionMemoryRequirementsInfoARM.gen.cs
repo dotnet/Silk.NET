@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDataGraphPipelineSessionMemoryRequirementsInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -18,7 +20,7 @@ public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -26,7 +28,7 @@ public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDataGraphPipelineSessionARM")]
+    [NativeName("session")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -34,6 +36,7 @@ public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
     )]
     public DataGraphPipelineSessionARMHandle Session;
 
+    [NativeName("bindPoint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -41,7 +44,7 @@ public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
     )]
     public DataGraphPipelineSessionBindPointARM BindPoint;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("objectIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

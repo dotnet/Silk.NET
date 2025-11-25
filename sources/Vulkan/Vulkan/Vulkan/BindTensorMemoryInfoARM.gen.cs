@@ -8,25 +8,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindTensorMemoryInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindTensorMemoryInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeTypeName("VkTensorARM")]
+    [NativeName("tensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorARMHandle Tensor;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public DeviceMemoryHandle Memory;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("memoryOffset")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ulong MemoryOffset;
 }

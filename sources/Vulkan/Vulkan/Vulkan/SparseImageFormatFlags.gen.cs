@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSparseImageFormatFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum SparseImageFormatFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_SPARSE_IMAGE_FORMAT_SINGLE_MIPTAIL_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,6 +43,7 @@ public enum SparseImageFormatFlags : uint
     )]
     SingleMiptailBit = 0x1,
 
+    [NativeName("VK_SPARSE_IMAGE_FORMAT_ALIGNED_MIP_SIZE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,6 +72,7 @@ public enum SparseImageFormatFlags : uint
     )]
     AlignedMipSizeBit = 0x2,
 
+    [NativeName("VK_SPARSE_IMAGE_FORMAT_NONSTANDARD_BLOCK_SIZE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

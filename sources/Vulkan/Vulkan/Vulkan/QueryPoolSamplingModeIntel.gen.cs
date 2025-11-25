@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkQueryPoolSamplingModeINTEL")]
 [SupportedApiProfile("vulkan")]
 public enum QueryPoolSamplingModeIntel : uint
 {
+    [NativeName("VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     ManualIntel = 0,
 }

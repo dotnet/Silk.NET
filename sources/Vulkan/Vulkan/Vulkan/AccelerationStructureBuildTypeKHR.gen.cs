@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkAccelerationStructureBuildTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum AccelerationStructureBuildTypeKHR : uint
 {
+    [NativeName("VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,6 +22,7 @@ public enum AccelerationStructureBuildTypeKHR : uint
     )]
     HostKHR = 0,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_BUILD_TYPE_DEVICE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -31,6 +33,7 @@ public enum AccelerationStructureBuildTypeKHR : uint
     )]
     DeviceKHR = 1,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_OR_DEVICE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoDecodeCapabilityFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoDecodeCapabilityFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_COINCIDE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -24,6 +25,7 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
     )]
     DpbAndOutputCoincideBitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_DISTINCT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],

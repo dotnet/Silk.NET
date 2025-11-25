@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoVP9LoopFilterFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9LoopFilterFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("loop_filter_delta_enabled")]
     [SupportedApiProfile("vulkan")]
     public uint loop_filter_delta_enabled
     {
@@ -24,7 +26,7 @@ public partial struct StdVideoVP9LoopFilterFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("loop_filter_delta_update")]
     [SupportedApiProfile("vulkan")]
     public uint loop_filter_delta_update
     {
@@ -34,7 +36,7 @@ public partial struct StdVideoVP9LoopFilterFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 30")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public uint reserved
     {

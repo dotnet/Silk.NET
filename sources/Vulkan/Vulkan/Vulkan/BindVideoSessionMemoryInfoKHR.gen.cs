@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindVideoSessionMemoryInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindVideoSessionMemoryInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,7 +20,7 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -26,7 +28,7 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("memoryBindIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -34,7 +36,7 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
     )]
     public uint MemoryBindIndex;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -42,7 +44,7 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("memoryOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -50,7 +52,7 @@ public unsafe partial struct BindVideoSessionMemoryInfoKHR
     )]
     public ulong MemoryOffset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("memorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

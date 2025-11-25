@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoDecodeAV1ReferenceInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAV1ReferenceInfoFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("disable_frame_end_update_cdf")]
     [SupportedApiProfile("vulkan")]
     public uint disable_frame_end_update_cdf
     {
@@ -24,7 +26,7 @@ public partial struct StdVideoDecodeAV1ReferenceInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("segmentation_enabled")]
     [SupportedApiProfile("vulkan")]
     public uint segmentation_enabled
     {
@@ -34,7 +36,7 @@ public partial struct StdVideoDecodeAV1ReferenceInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 30")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public uint reserved
     {

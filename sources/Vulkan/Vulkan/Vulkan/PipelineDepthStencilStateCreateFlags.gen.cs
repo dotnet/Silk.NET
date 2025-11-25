@@ -8,13 +8,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkPipelineDepthStencilStateCreateFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PipelineDepthStencilStateCreateFlags : uint
 {
     None = 0x0,
 
+    [NativeName(
+        "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -25,6 +28,9 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentDepthAccessBitEXT = 0x1,
 
+    [NativeName(
+        "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -35,6 +41,9 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentStencilAccessBitEXT = 0x2,
 
+    [NativeName(
+        "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_rasterization_order_attachment_access"],
@@ -45,6 +54,9 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
 
+    [NativeName(
+        "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_rasterization_order_attachment_access"],

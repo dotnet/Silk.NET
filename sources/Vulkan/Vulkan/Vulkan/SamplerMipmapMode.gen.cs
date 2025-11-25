@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSamplerMipmapMode")]
 [SupportedApiProfile("vulkan")]
 public enum SamplerMipmapMode : uint
 {
+    [NativeName("VK_SAMPLER_MIPMAP_MODE_NEAREST")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,6 +35,7 @@ public enum SamplerMipmapMode : uint
     )]
     Nearest = 0,
 
+    [NativeName("VK_SAMPLER_MIPMAP_MODE_LINEAR")]
     [SupportedApiProfile(
         "vulkan",
         [

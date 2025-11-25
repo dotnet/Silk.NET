@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMemoryAllocateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryAllocateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct MemoryAllocateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct MemoryAllocateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("allocationSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct MemoryAllocateInfo
     )]
     public ulong AllocationSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("memoryTypeIndex")]
     [SupportedApiProfile(
         "vulkan",
         [

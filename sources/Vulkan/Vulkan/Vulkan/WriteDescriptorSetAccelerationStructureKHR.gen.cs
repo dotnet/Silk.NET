@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkWriteDescriptorSetAccelerationStructureKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -20,7 +22,7 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -31,7 +33,7 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("accelerationStructureCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -42,7 +44,7 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
     )]
     public uint AccelerationStructureCount;
 
-    [NativeTypeName("const VkAccelerationStructureKHR *")]
+    [NativeName("pAccelerationStructures")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

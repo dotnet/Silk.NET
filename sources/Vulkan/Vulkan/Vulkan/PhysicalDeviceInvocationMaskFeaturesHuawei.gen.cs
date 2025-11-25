@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceInvocationMaskFeaturesHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHuawei
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_invocation_mask"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHuawei
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_invocation_mask"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHuawei
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("invocationMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_invocation_mask"],

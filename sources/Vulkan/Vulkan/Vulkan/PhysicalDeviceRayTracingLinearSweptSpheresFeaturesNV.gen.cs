@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("spheres")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
     )]
     public uint Spheres;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("linearSweptSpheres")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],

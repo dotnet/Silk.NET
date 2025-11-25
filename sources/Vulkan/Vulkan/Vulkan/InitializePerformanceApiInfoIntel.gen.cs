@@ -7,16 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkInitializePerformanceApiInfoINTEL")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct InitializePerformanceApiInfoIntel
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public void* PNext;
 
+    [NativeName("pUserData")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public void* PUserData;
 }

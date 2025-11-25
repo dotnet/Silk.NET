@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceClusterCullingShaderVrsFeaturesHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceClusterCullingShaderVrsFeaturesHuawei
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderVrsFeaturesHuawei
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderVrsFeaturesHuawei
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("clusterShadingRate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],

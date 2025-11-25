@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindDataGraphPipelineSessionMemoryInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -18,7 +20,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -26,7 +28,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDataGraphPipelineSessionARM")]
+    [NativeName("session")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -34,6 +36,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
     )]
     public DataGraphPipelineSessionARMHandle Session;
 
+    [NativeName("bindPoint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -41,7 +44,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
     )]
     public DataGraphPipelineSessionBindPointARM BindPoint;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("objectIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -49,7 +52,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
     )]
     public uint ObjectIndex;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -57,7 +60,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("memoryOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

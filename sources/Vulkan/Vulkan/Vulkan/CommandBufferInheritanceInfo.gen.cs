@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCommandBufferInheritanceInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferInheritanceInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkRenderPass")]
+    [NativeName("renderPass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public RenderPassHandle RenderPass;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("subpass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +128,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public uint Subpass;
 
-    [NativeTypeName("VkFramebuffer")]
+    [NativeName("framebuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,7 +157,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public FramebufferHandle Framebuffer;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("occlusionQueryEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -184,7 +186,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public uint OcclusionQueryEnable;
 
-    [NativeTypeName("VkQueryControlFlags")]
+    [NativeName("queryFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -213,7 +215,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
     )]
     public QueryControlFlags QueryFlags;
 
-    [NativeTypeName("VkQueryPipelineStatisticFlags")]
+    [NativeName("pipelineStatistics")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoEncodeAV1RateControlFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoEncodeAV1RateControlFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_REGULAR_GOP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -21,6 +22,7 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
     )]
     RegularGopBitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -28,6 +30,7 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
     )]
     TemporalLayerPatternDyadicBitKHR = 0x2,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -35,6 +38,7 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
     )]
     ReferencePatternFlatBitKHR = 0x4,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

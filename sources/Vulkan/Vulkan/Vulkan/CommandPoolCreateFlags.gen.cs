@@ -6,13 +6,14 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCommandPoolCreateFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum CommandPoolCreateFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_COMMAND_POOL_CREATE_TRANSIENT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,6 +42,7 @@ public enum CommandPoolCreateFlags : uint
     )]
     TransientBit = 0x1,
 
+    [NativeName("VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,6 +71,7 @@ public enum CommandPoolCreateFlags : uint
     )]
     ResetCommandBufferBit = 0x2,
 
+    [NativeName("VK_COMMAND_POOL_CREATE_PROTECTED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

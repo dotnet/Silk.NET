@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeRateControlLayerInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -21,7 +23,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -32,7 +34,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("averageBitrate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -43,7 +45,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
     )]
     public ulong AverageBitrate;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("maxBitrate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -54,7 +56,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
     )]
     public ulong MaxBitrate;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frameRateNumerator")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -65,7 +67,7 @@ public unsafe partial struct VideoEncodeRateControlLayerInfoKHR
     )]
     public uint FrameRateNumerator;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frameRateDenominator")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],

@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDescriptorType")]
 [SupportedApiProfile("vulkan")]
 public enum DescriptorType : uint
 {
+    [NativeName("VK_DESCRIPTOR_TYPE_SAMPLER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,6 +35,7 @@ public enum DescriptorType : uint
     )]
     Sampler = 0,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,6 +59,7 @@ public enum DescriptorType : uint
     )]
     CombinedImageSampler = 1,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,6 +83,7 @@ public enum DescriptorType : uint
     )]
     SampledImage = 2,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_STORAGE_IMAGE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -103,6 +107,7 @@ public enum DescriptorType : uint
     )]
     StorageImage = 3,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,6 +131,7 @@ public enum DescriptorType : uint
     )]
     UniformTexelBuffer = 4,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -149,6 +155,7 @@ public enum DescriptorType : uint
     )]
     StorageTexelBuffer = 5,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -172,6 +179,7 @@ public enum DescriptorType : uint
     )]
     UniformBuffer = 6,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_STORAGE_BUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -195,6 +203,7 @@ public enum DescriptorType : uint
     )]
     StorageBuffer = 7,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -218,6 +227,7 @@ public enum DescriptorType : uint
     )]
     UniformBufferDynamic = 8,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -241,6 +251,7 @@ public enum DescriptorType : uint
     )]
     StorageBufferDynamic = 9,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -264,6 +275,7 @@ public enum DescriptorType : uint
     )]
     InputAttachment = 10,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -278,6 +290,7 @@ public enum DescriptorType : uint
     )]
     InlineUniformBlock = 1000138000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -288,6 +301,7 @@ public enum DescriptorType : uint
     )]
     AccelerationStructureKHR = 1000150000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -298,6 +312,7 @@ public enum DescriptorType : uint
     )]
     AccelerationStructureNV = 1000165000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_SAMPLE_WEIGHT_IMAGE_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -308,6 +323,7 @@ public enum DescriptorType : uint
     )]
     SampleWeightImageQCOM = 1000440000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_BLOCK_MATCH_IMAGE_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -318,9 +334,11 @@ public enum DescriptorType : uint
     )]
     BlockMatchImageQCOM = 1000440001,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorARM = 1000460000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
@@ -331,6 +349,7 @@ public enum DescriptorType : uint
     )]
     MutableEXT = 1000351000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_PARTITIONED_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -338,6 +357,7 @@ public enum DescriptorType : uint
     )]
     PartitionedAccelerationStructureNV = 1000570000,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_inline_uniform_block"],
@@ -348,6 +368,7 @@ public enum DescriptorType : uint
     )]
     InlineUniformBlockEXT = InlineUniformBlock,
 
+    [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_mutable_descriptor_type"],

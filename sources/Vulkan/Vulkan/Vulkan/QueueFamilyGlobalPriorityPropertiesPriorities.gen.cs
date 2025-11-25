@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_priorities_e__FixedBuffer")]
 [InlineArray(16)]
 [SupportedApiProfile(
     "vulkan",
@@ -16,6 +17,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct QueueFamilyGlobalPriorityPropertiesPriorities
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public QueueGlobalPriority E0;
 }

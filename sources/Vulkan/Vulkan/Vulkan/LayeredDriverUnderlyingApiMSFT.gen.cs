@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkLayeredDriverUnderlyingApiMSFT")]
 [SupportedApiProfile("vulkan")]
 public enum LayeredDriverUnderlyingApiMSFT : uint
 {
+    [NativeName("VK_LAYERED_DRIVER_UNDERLYING_API_NONE_MSFT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_MSFT_layered_driver"],
@@ -21,6 +22,7 @@ public enum LayeredDriverUnderlyingApiMSFT : uint
     )]
     NoneMSFT = 0,
 
+    [NativeName("VK_LAYERED_DRIVER_UNDERLYING_API_D3D12_MSFT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_MSFT_layered_driver"],

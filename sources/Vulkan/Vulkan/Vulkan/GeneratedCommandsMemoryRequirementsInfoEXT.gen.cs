@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGeneratedCommandsMemoryRequirementsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -22,7 +24,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -34,7 +36,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkIndirectExecutionSetEXT")]
+    [NativeName("indirectExecutionSet")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -46,7 +48,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public IndirectExecutionSetEXTHandle IndirectExecutionSet;
 
-    [NativeTypeName("VkIndirectCommandsLayoutEXT")]
+    [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -58,7 +60,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public IndirectCommandsLayoutEXTHandle IndirectCommandsLayout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSequenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -70,7 +72,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public uint MaxSequenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDrawCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVertexInputAttributeDescription")]
 [SupportedApiProfile("vulkan")]
 public partial struct VertexInputAttributeDescription
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("location")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +31,7 @@ public partial struct VertexInputAttributeDescription
     )]
     public uint Location;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("binding")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,6 +50,7 @@ public partial struct VertexInputAttributeDescription
     )]
     public uint Binding;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +69,7 @@ public partial struct VertexInputAttributeDescription
     )]
     public Format Format;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         [

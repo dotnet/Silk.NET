@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderPassMultiviewCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassMultiviewCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +29,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +46,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("subpassCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +63,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public uint SubpassCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pViewMasks")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -78,7 +80,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public uint* PViewMasks;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dependencyCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,7 +97,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public uint DependencyCount;
 
-    [NativeTypeName("const int32_t *")]
+    [NativeName("pViewOffsets")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,7 +114,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public int* PViewOffsets;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("correlationMaskCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -129,7 +131,7 @@ public unsafe partial struct RenderPassMultiviewCreateInfo
     )]
     public uint CorrelationMaskCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pCorrelationMasks")]
     [SupportedApiProfile(
         "vulkan",
         [

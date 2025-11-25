@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineViewportShadingRateImageStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -32,7 +34,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shadingRateImageEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -43,7 +45,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
     )]
     public uint ShadingRateImageEnable;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewportCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -54,7 +56,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
     )]
     public uint ViewportCount;
 
-    [NativeTypeName("const VkShadingRatePaletteNV *")]
+    [NativeName("pShadingRatePalettes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],

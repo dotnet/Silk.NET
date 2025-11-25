@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceFrameBoundaryFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFrameBoundaryFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceFrameBoundaryFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceFrameBoundaryFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("frameBoundary")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],

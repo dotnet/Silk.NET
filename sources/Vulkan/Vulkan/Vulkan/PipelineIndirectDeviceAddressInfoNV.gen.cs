@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineIndirectDeviceAddressInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -18,7 +20,7 @@ public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -26,6 +28,7 @@ public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
     )]
     public void* PNext;
 
+    [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -33,7 +36,7 @@ public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
     )]
     public PipelineBindPoint PipelineBindPoint;
 
-    [NativeTypeName("VkPipeline")]
+    [NativeName("pipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],

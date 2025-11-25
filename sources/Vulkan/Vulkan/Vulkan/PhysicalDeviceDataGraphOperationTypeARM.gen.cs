@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkPhysicalDeviceDataGraphOperationTypeARM")]
 [SupportedApiProfile("vulkan")]
 public enum PhysicalDeviceDataGraphOperationTypeARM : uint
 {
+    [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_OPERATION_TYPE_SPIRV_EXTENDED_INSTRUCTION_SET_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -19,6 +20,7 @@ public enum PhysicalDeviceDataGraphOperationTypeARM : uint
     )]
     SpirvExtendedInstructionSetARM = 0,
 
+    [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_OPERATION_TYPE_NEURAL_MODEL_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_data_graph_model"],
@@ -26,6 +28,7 @@ public enum PhysicalDeviceDataGraphOperationTypeARM : uint
     )]
     NeuralModelQCOM = 1000629000,
 
+    [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_OPERATION_TYPE_BUILTIN_MODEL_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_data_graph_model"],

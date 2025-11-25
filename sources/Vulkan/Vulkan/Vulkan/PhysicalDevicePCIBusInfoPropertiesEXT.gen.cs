@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevicePCIBusInfoPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pci_bus_info"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pci_bus_info"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pciDomain")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pci_bus_info"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
     )]
     public uint PciDomain;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pciBus")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pci_bus_info"],
@@ -52,7 +55,7 @@ public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
     )]
     public uint PciBus;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pciDevice")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pci_bus_info"],
@@ -63,7 +66,7 @@ public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
     )]
     public uint PciDevice;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pciFunction")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pci_bus_info"],

@@ -8,61 +8,63 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH265ShortTermRefPicSet")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ShortTermRefPicSet
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ShortTermRefPicSetFlags Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("delta_idx_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint DeltaIdxMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("use_delta_flag")]
     [SupportedApiProfile("vulkan")]
     public ushort UseDeltaFlag;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("abs_delta_rps_minus1")]
     [SupportedApiProfile("vulkan")]
     public ushort AbsDeltaRpsMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("used_by_curr_pic_flag")]
     [SupportedApiProfile("vulkan")]
     public ushort UsedByCurrPicFlag;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("used_by_curr_pic_s0_flag")]
     [SupportedApiProfile("vulkan")]
     public ushort UsedByCurrPicS0Flag;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("used_by_curr_pic_s1_flag")]
     [SupportedApiProfile("vulkan")]
     public ushort UsedByCurrPicS1Flag;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public ushort Reserved1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved2")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved2;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved3")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved3;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_negative_pics")]
     [SupportedApiProfile("vulkan")]
     public byte NumNegativePics;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_positive_pics")]
     [SupportedApiProfile("vulkan")]
     public byte NumPositivePics;
 
-    [NativeTypeName("uint16_t[16]")]
+    [NativeName("delta_poc_s0_minus1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ShortTermRefPicSetDeltaPocS0Minus1 DeltaPocS0Minus1;
 
-    [NativeTypeName("uint16_t[16]")]
+    [NativeName("delta_poc_s1_minus1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ShortTermRefPicSetDeltaPocS1Minus1 DeltaPocS1Minus1;
 }

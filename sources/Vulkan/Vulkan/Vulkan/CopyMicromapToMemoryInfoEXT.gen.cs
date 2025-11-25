@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyMicromapToMemoryInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMicromapToMemoryInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -21,7 +23,7 @@ public unsafe partial struct CopyMicromapToMemoryInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -32,7 +34,7 @@ public unsafe partial struct CopyMicromapToMemoryInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkMicromapEXT")]
+    [NativeName("src")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -43,6 +45,7 @@ public unsafe partial struct CopyMicromapToMemoryInfoEXT
     )]
     public MicromapEXTHandle Src;
 
+    [NativeName("dst")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -53,6 +56,7 @@ public unsafe partial struct CopyMicromapToMemoryInfoEXT
     )]
     public DeviceOrHostAddressKHR Dst;
 
+    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

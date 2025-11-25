@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSparseImageOpaqueMemoryBindInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SparseImageOpaqueMemoryBindInfo
 {
-    [NativeTypeName("VkImage")]
+    [NativeName("image")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +41,7 @@ public unsafe partial struct SparseImageOpaqueMemoryBindInfo
     )]
     public ImageHandle Image;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bindCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +70,7 @@ public unsafe partial struct SparseImageOpaqueMemoryBindInfo
     )]
     public uint BindCount;
 
-    [NativeTypeName("const VkSparseMemoryBind *")]
+    [NativeName("pBinds")]
     [SupportedApiProfile(
         "vulkan",
         [

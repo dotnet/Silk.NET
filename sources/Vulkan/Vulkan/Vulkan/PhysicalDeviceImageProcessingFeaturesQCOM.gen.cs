@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceImageProcessingFeaturesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("textureSampleWeighted")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
     )]
     public uint TextureSampleWeighted;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("textureBoxFilter")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -52,7 +55,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
     )]
     public uint TextureBoxFilter;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("textureBlockMatch")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],

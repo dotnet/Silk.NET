@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkOpacityMicromapFormatEXT")]
 [SupportedApiProfile("vulkan")]
 public enum OpacityMicromapFormatEXT : uint
 {
+    [NativeName("VK_OPACITY_MICROMAP_FORMAT_2_STATE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -22,6 +23,7 @@ public enum OpacityMicromapFormatEXT : uint
     )]
     Format2StateEXT = 1,
 
+    [NativeName("VK_OPACITY_MICROMAP_FORMAT_4_STATE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

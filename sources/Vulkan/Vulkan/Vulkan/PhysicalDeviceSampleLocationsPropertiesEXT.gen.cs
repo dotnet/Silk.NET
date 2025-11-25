@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceSampleLocationsPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSampleCountFlags")]
+    [NativeName("sampleLocationSampleCounts")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -42,6 +45,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     )]
     public SampleCountFlags SampleLocationSampleCounts;
 
+    [NativeName("maxSampleLocationGridSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -52,7 +56,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     )]
     public Extent2D MaxSampleLocationGridSize;
 
-    [NativeTypeName("float[2]")]
+    [NativeName("sampleLocationCoordinateRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -63,7 +67,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     )]
     public PhysicalDeviceSampleLocationsPropertiesEXTSampleLocationCoordinateRange SampleLocationCoordinateRange;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("sampleLocationSubPixelBits")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -74,7 +78,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     )]
     public uint SampleLocationSubPixelBits;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("variableSampleLocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

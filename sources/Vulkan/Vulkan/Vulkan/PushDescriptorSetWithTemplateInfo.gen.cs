@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPushDescriptorSetWithTemplateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PushDescriptorSetWithTemplateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -18,7 +20,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -26,7 +28,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDescriptorUpdateTemplate")]
+    [NativeName("descriptorUpdateTemplate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -34,7 +36,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
     )]
     public DescriptorUpdateTemplateHandle DescriptorUpdateTemplate;
 
-    [NativeTypeName("VkPipelineLayout")]
+    [NativeName("layout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -42,7 +44,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("set")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -50,7 +52,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
     )]
     public uint Set;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

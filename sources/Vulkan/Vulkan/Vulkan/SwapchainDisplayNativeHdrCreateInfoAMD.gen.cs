@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSwapchainDisplayNativeHdrCreateInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_display_native_hdr"],
@@ -21,7 +23,7 @@ public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_display_native_hdr"],
@@ -32,7 +34,7 @@ public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("localDimmingEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_display_native_hdr"],

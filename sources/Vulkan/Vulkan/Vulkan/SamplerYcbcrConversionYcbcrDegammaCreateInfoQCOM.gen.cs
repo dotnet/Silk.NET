@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_ycbcr_degamma"],
@@ -21,6 +23,7 @@ public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_ycbcr_degamma"],
@@ -31,7 +34,7 @@ public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("enableYDegamma")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_ycbcr_degamma"],
@@ -42,7 +45,7 @@ public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
     )]
     public uint EnableYDegamma;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("enableCbCrDegamma")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_ycbcr_degamma"],

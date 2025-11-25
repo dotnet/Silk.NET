@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageAlignmentControlCreateInfoMESA")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageAlignmentControlCreateInfoMESA
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_MESA_image_alignment_control"],
@@ -21,7 +23,7 @@ public unsafe partial struct ImageAlignmentControlCreateInfoMESA
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_MESA_image_alignment_control"],
@@ -32,7 +34,7 @@ public unsafe partial struct ImageAlignmentControlCreateInfoMESA
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maximumRequestedAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_MESA_image_alignment_control"],

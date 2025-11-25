@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkImageTiling")]
 [SupportedApiProfile("vulkan")]
 public enum ImageTiling : uint
 {
+    [NativeName("VK_IMAGE_TILING_OPTIMAL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,6 +41,7 @@ public enum ImageTiling : uint
     )]
     Optimal = 0,
 
+    [NativeName("VK_IMAGE_TILING_LINEAR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +70,7 @@ public enum ImageTiling : uint
     )]
     Linear = 1,
 
+    [NativeName("VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureBuildGeometryInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,7 +23,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,6 +34,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public void* PNext;
 
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -42,7 +45,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public AccelerationStructureTypeKHR Type;
 
-    [NativeTypeName("VkBuildAccelerationStructureFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -53,6 +56,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public BuildAccelerationStructureFlagsKHR Flags;
 
+    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -63,7 +67,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public BuildAccelerationStructureModeKHR Mode;
 
-    [NativeTypeName("VkAccelerationStructureKHR")]
+    [NativeName("srcAccelerationStructure")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -74,7 +78,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public AccelerationStructureKHRHandle SrcAccelerationStructure;
 
-    [NativeTypeName("VkAccelerationStructureKHR")]
+    [NativeName("dstAccelerationStructure")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -85,7 +89,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public AccelerationStructureKHRHandle DstAccelerationStructure;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("geometryCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -96,7 +100,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public uint GeometryCount;
 
-    [NativeTypeName("const VkAccelerationStructureGeometryKHR *")]
+    [NativeName("pGeometries")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -107,7 +111,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public AccelerationStructureGeometryKHR* PGeometries;
 
-    [NativeTypeName("const VkAccelerationStructureGeometryKHR *const *")]
+    [NativeName("ppGeometries")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -118,6 +122,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     )]
     public AccelerationStructureGeometryKHR** PpGeometries;
 
+    [NativeName("scratchData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

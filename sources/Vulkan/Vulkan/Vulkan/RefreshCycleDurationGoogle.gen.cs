@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRefreshCycleDurationGOOGLE")]
 [SupportedApiProfile("vulkan")]
 public partial struct RefreshCycleDurationGoogle
 {
-    [NativeTypeName("uint64_t")]
+    [NativeName("refreshDuration")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GOOGLE_display_timing"],

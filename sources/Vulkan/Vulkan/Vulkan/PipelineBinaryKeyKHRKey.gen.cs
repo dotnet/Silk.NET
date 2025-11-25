@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_key_e__FixedBuffer")]
 [InlineArray(32)]
 [SupportedApiProfile(
     "vulkan",
@@ -19,6 +20,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PipelineBinaryKeyKHRKey
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceMultisampledRenderToSingleSampledFeat
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceMultisampledRenderToSingleSampledFeat
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multisampledRenderToSingleSampled")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceCooperativeMatrixFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("cooperativeMatrix")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
     )]
     public uint CooperativeMatrix;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("cooperativeMatrixRobustBufferAccess")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],

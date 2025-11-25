@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoEncodeAV1PredictionModeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeAV1PredictionModeKHR : uint
 {
+    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_INTRA_ONLY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -19,6 +20,7 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
     )]
     IntraOnlyKHR = 0,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_SINGLE_REFERENCE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -26,6 +28,7 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
     )]
     SingleReferenceKHR = 1,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_UNIDIRECTIONAL_COMPOUND_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -33,6 +36,7 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
     )]
     UnidirectionalCompoundKHR = 2,
 
+    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_BIDIRECTIONAL_COMPOUND_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

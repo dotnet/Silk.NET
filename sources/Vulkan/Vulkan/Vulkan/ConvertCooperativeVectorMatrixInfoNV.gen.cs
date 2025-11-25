@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkConvertCooperativeVectorMatrixInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -21,7 +23,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -32,7 +34,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("size_t")]
+    [NativeName("srcSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -43,6 +45,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public nuint SrcSize;
 
+    [NativeName("srcData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -53,7 +56,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public DeviceOrHostAddressConstKHR SrcData;
 
-    [NativeTypeName("size_t *")]
+    [NativeName("pDstSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -64,6 +67,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public nuint* PDstSize;
 
+    [NativeName("dstData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -74,6 +78,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public DeviceOrHostAddressKHR DstData;
 
+    [NativeName("srcComponentType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -84,6 +89,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public ComponentTypeKHR SrcComponentType;
 
+    [NativeName("dstComponentType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -94,7 +100,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public ComponentTypeKHR DstComponentType;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numRows")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -105,7 +111,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public uint NumRows;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numColumns")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -116,6 +122,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public uint NumColumns;
 
+    [NativeName("srcLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -126,7 +133,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public CooperativeVectorMatrixLayoutNV SrcLayout;
 
-    [NativeTypeName("size_t")]
+    [NativeName("srcStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -137,6 +144,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public nuint SrcStride;
 
+    [NativeName("dstLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -147,7 +155,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
     )]
     public CooperativeVectorMatrixLayoutNV DstLayout;
 
-    [NativeTypeName("size_t")]
+    [NativeName("dstStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],

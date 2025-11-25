@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineViewportExclusiveScissorStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],
@@ -32,7 +34,7 @@ public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("exclusiveScissorCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],
@@ -43,7 +45,7 @@ public unsafe partial struct PipelineViewportExclusiveScissorStateCreateInfoNV
     )]
     public uint ExclusiveScissorCount;
 
-    [NativeTypeName("const VkRect2D *")]
+    [NativeName("pExclusiveScissors")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_int32_e__FixedBuffer")]
 [InlineArray(4)]
 [SupportedApiProfile(
     "vulkan",
@@ -32,6 +33,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct ClearColorValueInt32
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public int E0;
 }

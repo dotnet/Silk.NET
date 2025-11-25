@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCubicFilterWeightsQCOM")]
 [SupportedApiProfile("vulkan")]
 public enum CubicFilterWeightsQCOM : uint
 {
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_CATMULL_ROM_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
@@ -18,6 +19,7 @@ public enum CubicFilterWeightsQCOM : uint
     )]
     CatmullRomQCOM = 0,
 
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_ZERO_TANGENT_CARDINAL_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
@@ -25,6 +27,7 @@ public enum CubicFilterWeightsQCOM : uint
     )]
     ZeroTangentCardinalQCOM = 1,
 
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_B_SPLINE_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
@@ -32,6 +35,7 @@ public enum CubicFilterWeightsQCOM : uint
     )]
     BSplineQCOM = 2,
 
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_MITCHELL_NETRAVALI_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],

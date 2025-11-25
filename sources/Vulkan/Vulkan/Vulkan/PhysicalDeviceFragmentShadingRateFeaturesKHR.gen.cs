@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceFragmentShadingRateFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -22,6 +24,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pipelineFragmentShadingRate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -45,7 +48,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
     )]
     public uint PipelineFragmentShadingRate;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("primitiveFragmentShadingRate")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +61,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
     )]
     public uint PrimitiveFragmentShadingRate;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("attachmentFragmentShadingRate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSubmitInfo2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubmitInfo2
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +29,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +46,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSubmitFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +63,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public SubmitFlags Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("waitSemaphoreInfoCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -78,7 +80,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public uint WaitSemaphoreInfoCount;
 
-    [NativeTypeName("const VkSemaphoreSubmitInfo *")]
+    [NativeName("pWaitSemaphoreInfos")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,7 +97,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public SemaphoreSubmitInfo* PWaitSemaphoreInfos;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("commandBufferInfoCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,7 +114,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public uint CommandBufferInfoCount;
 
-    [NativeTypeName("const VkCommandBufferSubmitInfo *")]
+    [NativeName("pCommandBufferInfos")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -129,7 +131,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public CommandBufferSubmitInfo* PCommandBufferInfos;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("signalSemaphoreInfoCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -146,7 +148,7 @@ public unsafe partial struct SubmitInfo2
     )]
     public uint SignalSemaphoreInfoCount;
 
-    [NativeTypeName("const VkSemaphoreSubmitInfo *")]
+    [NativeName("pSignalSemaphoreInfos")]
     [SupportedApiProfile(
         "vulkan",
         [

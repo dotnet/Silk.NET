@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkColorComponentFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ColorComponentFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_COLOR_COMPONENT_R_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,6 +33,7 @@ public enum ColorComponentFlags : uint
     )]
     RBit = 0x1,
 
+    [NativeName("VK_COLOR_COMPONENT_G_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,6 +52,7 @@ public enum ColorComponentFlags : uint
     )]
     GBit = 0x2,
 
+    [NativeName("VK_COLOR_COMPONENT_B_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +71,7 @@ public enum ColorComponentFlags : uint
     )]
     BBit = 0x4,
 
+    [NativeName("VK_COLOR_COMPONENT_A_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

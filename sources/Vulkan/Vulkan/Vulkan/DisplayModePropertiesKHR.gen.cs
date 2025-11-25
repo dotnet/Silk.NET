@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDisplayModePropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayModePropertiesKHR
 {
-    [NativeTypeName("VkDisplayModeKHR")]
+    [NativeName("displayMode")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayModeKHRHandle DisplayMode;
 
+    [NativeName("parameters")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayModeParametersKHR Parameters;
 }

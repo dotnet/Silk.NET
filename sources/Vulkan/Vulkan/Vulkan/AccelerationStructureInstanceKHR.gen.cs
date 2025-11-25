@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureInstanceKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureInstanceKHR
 {
+    [NativeName("transform")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,6 +23,7 @@ public partial struct AccelerationStructureInstanceKHR
     )]
     public TransformMatrixKHR Transform;
 
+    [NativeName("_bitfield1")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -31,7 +34,7 @@ public partial struct AccelerationStructureInstanceKHR
     )]
     public uint Bitfield1;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("instanceCustomIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -48,7 +51,7 @@ public partial struct AccelerationStructureInstanceKHR
         set { Bitfield1 = (Bitfield1 & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("uint32_t : 8")]
+    [NativeName("mask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -65,6 +68,7 @@ public partial struct AccelerationStructureInstanceKHR
         set { Bitfield1 = (Bitfield1 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24); }
     }
 
+    [NativeName("_bitfield2")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -75,7 +79,7 @@ public partial struct AccelerationStructureInstanceKHR
     )]
     public uint Bitfield2;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("instanceShaderBindingTableRecordOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -92,7 +96,7 @@ public partial struct AccelerationStructureInstanceKHR
         set { Bitfield2 = (Bitfield2 & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("VkGeometryInstanceFlagsKHR : 8")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -109,7 +113,7 @@ public partial struct AccelerationStructureInstanceKHR
         set { Bitfield2 = (Bitfield2 & ~(0xFFu << 24)) | (((uint)(value) & 0xFFu) << 24); }
     }
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("accelerationStructureReference")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

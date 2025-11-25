@@ -7,19 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoVP9Profile")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoVP9Profile : uint
 {
+    [NativeName("STD_VIDEO_VP9_PROFILE_0")]
     [SupportedApiProfile("vulkan")]
     Profile0 = 0,
 
+    [NativeName("STD_VIDEO_VP9_PROFILE_1")]
     [SupportedApiProfile("vulkan")]
     Profile1 = 1,
 
+    [NativeName("STD_VIDEO_VP9_PROFILE_2")]
     [SupportedApiProfile("vulkan")]
     Profile2 = 2,
 
+    [NativeName("STD_VIDEO_VP9_PROFILE_3")]
     [SupportedApiProfile("vulkan")]
     Profile3 = 3,
 }

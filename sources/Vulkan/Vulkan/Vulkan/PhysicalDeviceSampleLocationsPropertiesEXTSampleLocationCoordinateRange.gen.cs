@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_sampleLocationCoordinateRange_e__FixedBuffer")]
 [InlineArray(2)]
 [SupportedApiProfile(
     "vulkan",
@@ -19,6 +20,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PhysicalDeviceSampleLocationsPropertiesEXTSampleLocationCoordinateRange
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public float E0;
 }

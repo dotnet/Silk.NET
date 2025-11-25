@@ -6,10 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCopyMicromapModeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum CopyMicromapModeEXT : uint
 {
+    [NativeName("VK_COPY_MICROMAP_MODE_CLONE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -20,6 +21,7 @@ public enum CopyMicromapModeEXT : uint
     )]
     CloneEXT = 0,
 
+    [NativeName("VK_COPY_MICROMAP_MODE_SERIALIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -30,6 +32,7 @@ public enum CopyMicromapModeEXT : uint
     )]
     SerializeEXT = 1,
 
+    [NativeName("VK_COPY_MICROMAP_MODE_DESERIALIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -40,6 +43,7 @@ public enum CopyMicromapModeEXT : uint
     )]
     DeserializeEXT = 2,
 
+    [NativeName("VK_COPY_MICROMAP_MODE_COMPACT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

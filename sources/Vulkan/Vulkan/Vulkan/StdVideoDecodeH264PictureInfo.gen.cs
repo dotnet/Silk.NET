@@ -8,37 +8,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoDecodeH264PictureInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH264PictureInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH264PictureInfoFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte SeqParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("pic_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte PicParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved2")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved2;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("frame_num")]
     [SupportedApiProfile("vulkan")]
     public ushort FrameNum;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("idr_pic_id")]
     [SupportedApiProfile("vulkan")]
     public ushort IdrPicId;
 
-    [NativeTypeName("int32_t[2]")]
+    [NativeName("PicOrderCnt")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH264PictureInfoPicOrderCnt PicOrderCnt;
 }

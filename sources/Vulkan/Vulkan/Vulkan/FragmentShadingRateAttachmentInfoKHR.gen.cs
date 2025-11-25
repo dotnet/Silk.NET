@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFragmentShadingRateAttachmentInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FragmentShadingRateAttachmentInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -21,7 +23,7 @@ public unsafe partial struct FragmentShadingRateAttachmentInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -33,7 +35,7 @@ public unsafe partial struct FragmentShadingRateAttachmentInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("const VkAttachmentReference2 *")]
+    [NativeName("pFragmentShadingRateAttachment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -45,6 +47,7 @@ public unsafe partial struct FragmentShadingRateAttachmentInfoKHR
     )]
     public AttachmentReference2* PFragmentShadingRateAttachment;
 
+    [NativeName("shadingRateAttachmentTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],

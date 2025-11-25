@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkHostImageCopyDevicePerformanceQuery")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct HostImageCopyDevicePerformanceQuery
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +38,7 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("optimalDeviceAccess")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +51,7 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
     )]
     public uint OptimalDeviceAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("identicalMemoryLayout")]
     [SupportedApiProfile(
         "vulkan",
         [

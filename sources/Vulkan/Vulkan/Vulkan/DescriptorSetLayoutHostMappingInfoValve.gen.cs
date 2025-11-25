@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorSetLayoutHostMappingInfoVALVE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetLayoutHostMappingInfoValve
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],
@@ -20,6 +22,7 @@ public unsafe partial struct DescriptorSetLayoutHostMappingInfoValve
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],
@@ -30,7 +33,7 @@ public unsafe partial struct DescriptorSetLayoutHostMappingInfoValve
     )]
     public void* PNext;
 
-    [NativeTypeName("size_t")]
+    [NativeName("descriptorOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],
@@ -41,7 +44,7 @@ public unsafe partial struct DescriptorSetLayoutHostMappingInfoValve
     )]
     public nuint DescriptorOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_descriptor_set_host_mapping"],

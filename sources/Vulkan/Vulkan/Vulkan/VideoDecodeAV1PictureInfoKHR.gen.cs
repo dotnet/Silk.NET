@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoDecodeAV1PictureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeAV1PictureInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("const StdVideoDecodeAV1PictureInfo *")]
+    [NativeName("pStdPictureInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public StdVideoDecodeAV1PictureInfo* PStdPictureInfo;
 
-    [NativeTypeName("int32_t[7]")]
+    [NativeName("referenceNameSlotIndices")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -42,7 +44,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public VideoDecodeAV1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frameHeaderOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -50,7 +52,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public uint FrameHeaderOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("tileCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -58,7 +60,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public uint TileCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pTileOffsets")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -66,7 +68,7 @@ public unsafe partial struct VideoDecodeAV1PictureInfoKHR
     )]
     public uint* PTileOffsets;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pTileSizes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],

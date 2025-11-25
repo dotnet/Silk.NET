@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -17,6 +19,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -24,7 +27,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBufferFloat16Atomics")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -32,7 +35,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderBufferFloat16Atomics;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBufferFloat16AtomicAdd")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -40,7 +43,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderBufferFloat16AtomicAdd;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBufferFloat16AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -48,7 +51,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderBufferFloat16AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBufferFloat32AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -56,7 +59,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderBufferFloat32AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBufferFloat64AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderBufferFloat64AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSharedFloat16Atomics")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -72,7 +75,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderSharedFloat16Atomics;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSharedFloat16AtomicAdd")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -80,7 +83,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderSharedFloat16AtomicAdd;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSharedFloat16AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -88,7 +91,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderSharedFloat16AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSharedFloat32AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -96,7 +99,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderSharedFloat32AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSharedFloat64AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],
@@ -104,7 +107,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderSharedFloat64AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderImageFloat32AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -116,7 +119,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
     )]
     public uint ShaderImageFloat32AtomicMinMax;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("sparseImageFloat32AtomicMinMax")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_atomic_float2"],

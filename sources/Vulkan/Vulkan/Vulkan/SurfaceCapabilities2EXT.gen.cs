@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSurfaceCapabilities2EXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfaceCapabilities2EXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -18,6 +20,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -25,7 +28,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("minImageCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -33,7 +36,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public uint MinImageCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxImageCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -41,6 +44,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public uint MaxImageCount;
 
+    [NativeName("currentExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -48,6 +52,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public Extent2D CurrentExtent;
 
+    [NativeName("minImageExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -55,6 +60,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public Extent2D MinImageExtent;
 
+    [NativeName("maxImageExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -62,7 +68,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public Extent2D MaxImageExtent;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxImageArrayLayers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -70,7 +76,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public uint MaxImageArrayLayers;
 
-    [NativeTypeName("VkSurfaceTransformFlagsKHR")]
+    [NativeName("supportedTransforms")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -78,6 +84,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public SurfaceTransformFlagsKHR SupportedTransforms;
 
+    [NativeName("currentTransform")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -85,7 +92,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public SurfaceTransformFlagsKHR CurrentTransform;
 
-    [NativeTypeName("VkCompositeAlphaFlagsKHR")]
+    [NativeName("supportedCompositeAlpha")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -93,7 +100,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public CompositeAlphaFlagsKHR SupportedCompositeAlpha;
 
-    [NativeTypeName("VkImageUsageFlags")]
+    [NativeName("supportedUsageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
@@ -101,7 +108,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
     )]
     public ImageUsageFlags SupportedUsageFlags;
 
-    [NativeTypeName("VkSurfaceCounterFlagsEXT")]
+    [NativeName("supportedSurfaceCounters")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],

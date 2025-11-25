@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoDecodeH264PictureLayoutFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
 {
+    [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_PROGRESSIVE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -20,6 +21,7 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
     )]
     ProgressiveKHR = 0x0,
 
+    [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_INTERLEAVED_LINES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -27,6 +29,7 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
     )]
     InterlacedInterleavedLinesBitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_SEPARATE_PLANES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],

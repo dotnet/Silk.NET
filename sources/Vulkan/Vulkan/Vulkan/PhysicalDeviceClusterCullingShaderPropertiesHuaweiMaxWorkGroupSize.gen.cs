@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_maxWorkGroupSize_e__FixedBuffer")]
 [InlineArray(3)]
 [SupportedApiProfile(
     "vulkan",
@@ -19,6 +20,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupSize
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

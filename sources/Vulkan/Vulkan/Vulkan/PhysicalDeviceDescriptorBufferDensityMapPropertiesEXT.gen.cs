@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferDensityMapPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferDensityMapPropertiesE
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -35,7 +38,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferDensityMapPropertiesE
     )]
     public void* PNext;
 
-    [NativeTypeName("size_t")]
+    [NativeName("combinedImageSamplerDensityMapDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],

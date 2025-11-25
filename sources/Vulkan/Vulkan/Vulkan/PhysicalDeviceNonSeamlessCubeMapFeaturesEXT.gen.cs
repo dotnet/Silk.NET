@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_non_seamless_cube_map"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_non_seamless_cube_map"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nonSeamlessCubeMap")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_non_seamless_cube_map"],

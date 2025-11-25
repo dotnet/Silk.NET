@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_computeWorkGroupSize_e__FixedBuffer")]
 [InlineArray(3)]
 [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
 public partial struct ShaderStatisticsInfoAMDComputeWorkGroupSize
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

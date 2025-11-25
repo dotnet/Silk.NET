@@ -7,24 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerformanceOverrideInfoINTEL")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceOverrideInfoIntel
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public void* PNext;
 
+    [NativeName("type")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public PerformanceOverrideTypeIntel Type;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("enable")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public uint Enable;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("parameter")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public ulong Parameter;
 }

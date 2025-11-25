@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceTileShadingFeaturesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShading")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShading;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingFragmentStage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -52,7 +55,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingFragmentStage;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingColorAttachments")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -63,7 +66,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingColorAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingDepthAttachments")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -74,7 +77,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingDepthAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingStencilAttachments")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -85,7 +88,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingStencilAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingInputAttachments")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -96,7 +99,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingInputAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingSampledAttachments")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -107,7 +110,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingSampledAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingPerTileDraw")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -118,7 +121,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingPerTileDraw;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingPerTileDispatch")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -129,7 +132,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingPerTileDispatch;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingDispatchTile")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -140,7 +143,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingDispatchTile;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingApron")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -151,7 +154,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingApron;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingAnisotropicApron")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -162,7 +165,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingAnisotropicApron;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingAtomicOps")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -173,7 +176,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     )]
     public uint TileShadingAtomicOps;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("tileShadingImageProcessing")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],

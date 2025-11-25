@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkAccelerationStructureMemoryRequirementsTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum AccelerationStructureMemoryRequirementsTypeNV : uint
 {
+    [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -21,6 +22,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
     )]
     ObjectNV = 0,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -31,6 +33,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
     )]
     BuildScratchNV = 1,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

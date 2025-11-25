@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAcquireNextImageInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AcquireNextImageInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -19,7 +21,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -28,7 +30,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSwapchainKHR")]
+    [NativeName("swapchain")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -37,7 +39,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
     )]
     public SwapchainKHRHandle Swapchain;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("timeout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -46,7 +48,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
     )]
     public ulong Timeout;
 
-    [NativeTypeName("VkSemaphore")]
+    [NativeName("semaphore")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -55,7 +57,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
     )]
     public SemaphoreHandle Semaphore;
 
-    [NativeTypeName("VkFence")]
+    [NativeName("fence")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -64,7 +66,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
     )]
     public FenceHandle Fence;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("deviceMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],

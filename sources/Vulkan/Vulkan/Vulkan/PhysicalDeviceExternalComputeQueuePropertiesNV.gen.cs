@@ -7,20 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceExternalComputeQueuePropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExternalComputeQueuePropertiesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("externalDataSize")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public uint ExternalDataSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxExternalQueues")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public uint MaxExternalQueues;
 }

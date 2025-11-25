@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkAccessFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum AccessFlags : uint
 {
+    [NativeName("VK_ACCESS_INDIRECT_COMMAND_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,6 +42,7 @@ public enum AccessFlags : uint
     )]
     IndirectCommandReadBit = 0x1,
 
+    [NativeName("VK_ACCESS_INDEX_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,6 +71,7 @@ public enum AccessFlags : uint
     )]
     IndexReadBit = 0x2,
 
+    [NativeName("VK_ACCESS_VERTEX_ATTRIBUTE_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,6 +100,7 @@ public enum AccessFlags : uint
     )]
     VertexAttributeReadBit = 0x4,
 
+    [NativeName("VK_ACCESS_UNIFORM_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,6 +129,7 @@ public enum AccessFlags : uint
     )]
     UniformReadBit = 0x8,
 
+    [NativeName("VK_ACCESS_INPUT_ATTACHMENT_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -153,6 +158,7 @@ public enum AccessFlags : uint
     )]
     InputAttachmentReadBit = 0x10,
 
+    [NativeName("VK_ACCESS_SHADER_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -181,6 +187,7 @@ public enum AccessFlags : uint
     )]
     ShaderReadBit = 0x20,
 
+    [NativeName("VK_ACCESS_SHADER_WRITE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -209,6 +216,7 @@ public enum AccessFlags : uint
     )]
     ShaderWriteBit = 0x40,
 
+    [NativeName("VK_ACCESS_COLOR_ATTACHMENT_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -237,6 +245,7 @@ public enum AccessFlags : uint
     )]
     ColorAttachmentReadBit = 0x80,
 
+    [NativeName("VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -265,6 +274,7 @@ public enum AccessFlags : uint
     )]
     ColorAttachmentWriteBit = 0x100,
 
+    [NativeName("VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -293,6 +303,7 @@ public enum AccessFlags : uint
     )]
     DepthStencilAttachmentReadBit = 0x200,
 
+    [NativeName("VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -321,6 +332,7 @@ public enum AccessFlags : uint
     )]
     DepthStencilAttachmentWriteBit = 0x400,
 
+    [NativeName("VK_ACCESS_TRANSFER_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -349,6 +361,7 @@ public enum AccessFlags : uint
     )]
     TransferReadBit = 0x800,
 
+    [NativeName("VK_ACCESS_TRANSFER_WRITE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -377,6 +390,7 @@ public enum AccessFlags : uint
     )]
     TransferWriteBit = 0x1000,
 
+    [NativeName("VK_ACCESS_HOST_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -405,6 +419,7 @@ public enum AccessFlags : uint
     )]
     HostReadBit = 0x2000,
 
+    [NativeName("VK_ACCESS_HOST_WRITE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -433,6 +448,7 @@ public enum AccessFlags : uint
     )]
     HostWriteBit = 0x4000,
 
+    [NativeName("VK_ACCESS_MEMORY_READ_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -461,6 +477,7 @@ public enum AccessFlags : uint
     )]
     MemoryReadBit = 0x8000,
 
+    [NativeName("VK_ACCESS_MEMORY_WRITE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -489,6 +506,7 @@ public enum AccessFlags : uint
     )]
     MemoryWriteBit = 0x10000,
 
+    [NativeName("VK_ACCESS_NONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -505,6 +523,7 @@ public enum AccessFlags : uint
     )]
     None = 0x0,
 
+    [NativeName("VK_ACCESS_TRANSFORM_FEEDBACK_WRITE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -515,6 +534,7 @@ public enum AccessFlags : uint
     )]
     TransformFeedbackWriteBitEXT = 0x2000000,
 
+    [NativeName("VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -525,6 +545,7 @@ public enum AccessFlags : uint
     )]
     TransformFeedbackCounterReadBitEXT = 0x4000000,
 
+    [NativeName("VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_WRITE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -535,6 +556,7 @@ public enum AccessFlags : uint
     )]
     TransformFeedbackCounterWriteBitEXT = 0x8000000,
 
+    [NativeName("VK_ACCESS_CONDITIONAL_RENDERING_READ_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conditional_rendering"],
@@ -545,6 +567,7 @@ public enum AccessFlags : uint
     )]
     ConditionalRenderingReadBitEXT = 0x100000,
 
+    [NativeName("VK_ACCESS_COLOR_ATTACHMENT_READ_NONCOHERENT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -555,6 +578,7 @@ public enum AccessFlags : uint
     )]
     ColorAttachmentReadNoncoherentBitEXT = 0x80000,
 
+    [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_READ_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -565,6 +589,7 @@ public enum AccessFlags : uint
     )]
     AccelerationStructureReadBitKHR = 0x200000,
 
+    [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_WRITE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -575,6 +600,7 @@ public enum AccessFlags : uint
     )]
     AccelerationStructureWriteBitKHR = 0x400000,
 
+    [NativeName("VK_ACCESS_FRAGMENT_DENSITY_MAP_READ_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -585,6 +611,7 @@ public enum AccessFlags : uint
     )]
     FragmentDensityMapReadBitEXT = 0x1000000,
 
+    [NativeName("VK_ACCESS_FRAGMENT_SHADING_RATE_ATTACHMENT_READ_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -596,6 +623,7 @@ public enum AccessFlags : uint
     )]
     FragmentShadingRateAttachmentReadBitKHR = 0x800000,
 
+    [NativeName("VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -607,6 +635,7 @@ public enum AccessFlags : uint
     )]
     CommandPreprocessReadBitEXT = 0x20000,
 
+    [NativeName("VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -618,6 +647,7 @@ public enum AccessFlags : uint
     )]
     CommandPreprocessWriteBitEXT = 0x40000,
 
+    [NativeName("VK_ACCESS_SHADING_RATE_IMAGE_READ_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -628,6 +658,7 @@ public enum AccessFlags : uint
     )]
     ShadingRateImageReadBitNV = FragmentShadingRateAttachmentReadBitKHR,
 
+    [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_READ_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -638,6 +669,7 @@ public enum AccessFlags : uint
     )]
     AccelerationStructureReadBitNV = AccelerationStructureReadBitKHR,
 
+    [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_WRITE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -648,6 +680,7 @@ public enum AccessFlags : uint
     )]
     AccelerationStructureWriteBitNV = AccelerationStructureWriteBitKHR,
 
+    [NativeName("VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -655,6 +688,7 @@ public enum AccessFlags : uint
     )]
     CommandPreprocessReadBitNV = CommandPreprocessReadBitEXT,
 
+    [NativeName("VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -662,6 +696,7 @@ public enum AccessFlags : uint
     )]
     CommandPreprocessWriteBitNV = CommandPreprocessWriteBitEXT,
 
+    [NativeName("VK_ACCESS_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_synchronization2"],

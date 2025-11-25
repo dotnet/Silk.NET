@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineColorBlendStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineColorBlendStateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineColorBlendStateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +69,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public PipelineColorBlendStateCreateFlags Flags;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("logicOpEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,6 +88,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public uint LogicOpEnable;
 
+    [NativeName("logicOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -100,7 +103,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public LogicOp LogicOp;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("attachmentCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -119,7 +122,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public uint AttachmentCount;
 
-    [NativeTypeName("const VkPipelineColorBlendAttachmentState *")]
+    [NativeName("pAttachments")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -138,7 +141,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public PipelineColorBlendAttachmentState* PAttachments;
 
-    [NativeTypeName("float[4]")]
+    [NativeName("blendConstants")]
     [SupportedApiProfile(
         "vulkan",
         [

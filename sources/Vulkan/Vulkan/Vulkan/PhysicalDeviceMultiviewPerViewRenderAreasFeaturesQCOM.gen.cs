@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQC
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQC
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiviewPerViewRenderAreas")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],

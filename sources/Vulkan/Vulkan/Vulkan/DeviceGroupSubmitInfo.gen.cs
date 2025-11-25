@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceGroupSubmitInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupSubmitInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +37,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +62,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("waitSemaphoreCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +87,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public uint WaitSemaphoreCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pWaitSemaphoreDeviceIndices")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -110,7 +112,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public uint* PWaitSemaphoreDeviceIndices;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("commandBufferCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -135,7 +137,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public uint CommandBufferCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pCommandBufferDeviceMasks")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -160,7 +162,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public uint* PCommandBufferDeviceMasks;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("signalSemaphoreCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -185,7 +187,7 @@ public unsafe partial struct DeviceGroupSubmitInfo
     )]
     public uint SignalSemaphoreCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pSignalSemaphoreDeviceIndices")]
     [SupportedApiProfile(
         "vulkan",
         [

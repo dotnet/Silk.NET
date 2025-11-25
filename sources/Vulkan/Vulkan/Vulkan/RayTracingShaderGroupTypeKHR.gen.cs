@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkRayTracingShaderGroupTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum RayTracingShaderGroupTypeKHR : uint
 {
+    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -21,6 +22,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
     )]
     GeneralKHR = 0,
 
+    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -31,6 +33,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
     )]
     TrianglesHitGroupKHR = 1,
 
+    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -41,6 +44,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
     )]
     ProceduralHitGroupKHR = 2,
 
+    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -51,6 +55,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
     )]
     GeneralNV = GeneralKHR,
 
+    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -61,6 +66,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
     )]
     TrianglesHitGroupNV = TrianglesHitGroupKHR,
 
+    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSemaphoreWaitFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum SemaphoreWaitFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_SEMAPHORE_WAIT_ANY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,6 +36,7 @@ public enum SemaphoreWaitFlags : uint
     )]
     AnyBit = 0x1,
 
+    [NativeName("VK_SEMAPHORE_WAIT_ANY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_timeline_semaphore"],

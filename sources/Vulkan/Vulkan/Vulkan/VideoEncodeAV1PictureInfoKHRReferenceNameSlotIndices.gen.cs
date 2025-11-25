@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_referenceNameSlotIndices_e__FixedBuffer")]
 [InlineArray(7)]
 [SupportedApiProfile(
     "vulkan",
@@ -16,6 +17,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct VideoEncodeAV1PictureInfoKHRReferenceNameSlotIndices
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public int E0;
 }

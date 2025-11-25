@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkLatencyMarkerNV")]
 [SupportedApiProfile("vulkan")]
 public enum LatencyMarkerNV : uint
 {
+    [NativeName("VK_LATENCY_MARKER_SIMULATION_START_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -24,6 +25,7 @@ public enum LatencyMarkerNV : uint
     )]
     SimulationStartNV = 0,
 
+    [NativeName("VK_LATENCY_MARKER_SIMULATION_END_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -36,6 +38,7 @@ public enum LatencyMarkerNV : uint
     )]
     SimulationEndNV = 1,
 
+    [NativeName("VK_LATENCY_MARKER_RENDERSUBMIT_START_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -48,6 +51,7 @@ public enum LatencyMarkerNV : uint
     )]
     RendersubmitStartNV = 2,
 
+    [NativeName("VK_LATENCY_MARKER_RENDERSUBMIT_END_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -60,6 +64,7 @@ public enum LatencyMarkerNV : uint
     )]
     RendersubmitEndNV = 3,
 
+    [NativeName("VK_LATENCY_MARKER_PRESENT_START_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -72,6 +77,7 @@ public enum LatencyMarkerNV : uint
     )]
     PresentStartNV = 4,
 
+    [NativeName("VK_LATENCY_MARKER_PRESENT_END_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -84,6 +90,7 @@ public enum LatencyMarkerNV : uint
     )]
     PresentEndNV = 5,
 
+    [NativeName("VK_LATENCY_MARKER_INPUT_SAMPLE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -96,6 +103,7 @@ public enum LatencyMarkerNV : uint
     )]
     InputSampleNV = 6,
 
+    [NativeName("VK_LATENCY_MARKER_TRIGGER_FLASH_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -108,6 +116,7 @@ public enum LatencyMarkerNV : uint
     )]
     TriggerFlashNV = 7,
 
+    [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_RENDERSUBMIT_START_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -120,6 +129,7 @@ public enum LatencyMarkerNV : uint
     )]
     OutOfBandRendersubmitStartNV = 8,
 
+    [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_RENDERSUBMIT_END_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -132,6 +142,7 @@ public enum LatencyMarkerNV : uint
     )]
     OutOfBandRendersubmitEndNV = 9,
 
+    [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_PRESENT_START_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -144,6 +155,7 @@ public enum LatencyMarkerNV : uint
     )]
     OutOfBandPresentStartNV = 10,
 
+    [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_PRESENT_END_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

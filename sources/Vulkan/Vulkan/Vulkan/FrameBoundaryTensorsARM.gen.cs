@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFrameBoundaryTensorsARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryTensorsARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
@@ -19,7 +21,7 @@ public unsafe partial struct FrameBoundaryTensorsARM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
@@ -28,7 +30,7 @@ public unsafe partial struct FrameBoundaryTensorsARM
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("tensorCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
@@ -37,7 +39,7 @@ public unsafe partial struct FrameBoundaryTensorsARM
     )]
     public uint TensorCount;
 
-    [NativeTypeName("const VkTensorARM *")]
+    [NativeName("pTensors")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_frame_boundary"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDepthBiasControlFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthBiasControl")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
     )]
     public uint DepthBiasControl;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("leastRepresentableValueForceUnormRepresentation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
     )]
     public uint LeastRepresentableValueForceUnormRepresentation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("floatRepresentation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
     )]
     public uint FloatRepresentation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthBiasExact")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],

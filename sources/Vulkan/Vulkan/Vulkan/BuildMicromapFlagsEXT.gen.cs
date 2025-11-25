@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkBuildMicromapFlagsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum BuildMicromapFlagsEXT : uint
 {
     None = 0x0,
 
+    [NativeName("VK_BUILD_MICROMAP_PREFER_FAST_TRACE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -25,6 +26,7 @@ public enum BuildMicromapFlagsEXT : uint
     )]
     PreferFastTraceBitEXT = 0x1,
 
+    [NativeName("VK_BUILD_MICROMAP_PREFER_FAST_BUILD_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -35,6 +37,7 @@ public enum BuildMicromapFlagsEXT : uint
     )]
     PreferFastBuildBitEXT = 0x2,
 
+    [NativeName("VK_BUILD_MICROMAP_ALLOW_COMPACTION_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

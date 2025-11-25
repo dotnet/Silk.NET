@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkPresentGravityFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PresentGravityFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_PRESENT_GRAVITY_MIN_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -25,6 +26,7 @@ public enum PresentGravityFlagsKHR : uint
     )]
     MinBitKHR = 0x1,
 
+    [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -35,6 +37,7 @@ public enum PresentGravityFlagsKHR : uint
     )]
     MaxBitKHR = 0x2,
 
+    [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -45,6 +48,7 @@ public enum PresentGravityFlagsKHR : uint
     )]
     CenteredBitKHR = 0x4,
 
+    [NativeName("VK_PRESENT_GRAVITY_MIN_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -55,6 +59,7 @@ public enum PresentGravityFlagsKHR : uint
     )]
     MinBitEXT = MinBitKHR,
 
+    [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -65,6 +70,7 @@ public enum PresentGravityFlagsKHR : uint
     )]
     MaxBitEXT = MaxBitKHR,
 
+    [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],

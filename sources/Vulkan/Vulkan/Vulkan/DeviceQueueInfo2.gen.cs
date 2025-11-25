@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceQueueInfo2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceQueueInfo2
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct DeviceQueueInfo2
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,7 +61,7 @@ public unsafe partial struct DeviceQueueInfo2
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceQueueCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +86,7 @@ public unsafe partial struct DeviceQueueInfo2
     )]
     public DeviceQueueCreateFlags Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueFamilyIndex")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -109,7 +111,7 @@ public unsafe partial struct DeviceQueueInfo2
     )]
     public uint QueueFamilyIndex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueIndex")]
     [SupportedApiProfile(
         "vulkan",
         [

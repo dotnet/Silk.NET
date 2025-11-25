@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkResult")]
 [SupportedApiProfile("vulkan")]
-public enum Result
+public enum Result : uint
 {
+    [NativeName("VK_SUCCESS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,6 +41,7 @@ public enum Result
     )]
     Success = 0,
 
+    [NativeName("VK_NOT_READY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,6 +70,7 @@ public enum Result
     )]
     NotReady = 1,
 
+    [NativeName("VK_TIMEOUT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,6 +99,7 @@ public enum Result
     )]
     Timeout = 2,
 
+    [NativeName("VK_EVENT_SET")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -123,6 +128,7 @@ public enum Result
     )]
     EventSet = 3,
 
+    [NativeName("VK_EVENT_RESET")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -151,6 +157,7 @@ public enum Result
     )]
     EventReset = 4,
 
+    [NativeName("VK_INCOMPLETE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -179,6 +186,7 @@ public enum Result
     )]
     Incomplete = 5,
 
+    [NativeName("VK_ERROR_OUT_OF_HOST_MEMORY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -207,6 +215,7 @@ public enum Result
     )]
     ErrorOutOfHostMemory = -1,
 
+    [NativeName("VK_ERROR_OUT_OF_DEVICE_MEMORY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -235,6 +244,7 @@ public enum Result
     )]
     ErrorOutOfDeviceMemory = -2,
 
+    [NativeName("VK_ERROR_INITIALIZATION_FAILED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -263,6 +273,7 @@ public enum Result
     )]
     ErrorInitializationFailed = -3,
 
+    [NativeName("VK_ERROR_DEVICE_LOST")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -291,6 +302,7 @@ public enum Result
     )]
     ErrorDeviceLost = -4,
 
+    [NativeName("VK_ERROR_MEMORY_MAP_FAILED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -319,6 +331,7 @@ public enum Result
     )]
     ErrorMemoryMapFailed = -5,
 
+    [NativeName("VK_ERROR_LAYER_NOT_PRESENT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -347,6 +360,7 @@ public enum Result
     )]
     ErrorLayerNotPresent = -6,
 
+    [NativeName("VK_ERROR_EXTENSION_NOT_PRESENT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -375,6 +389,7 @@ public enum Result
     )]
     ErrorExtensionNotPresent = -7,
 
+    [NativeName("VK_ERROR_FEATURE_NOT_PRESENT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -403,6 +418,7 @@ public enum Result
     )]
     ErrorFeatureNotPresent = -8,
 
+    [NativeName("VK_ERROR_INCOMPATIBLE_DRIVER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -431,6 +447,7 @@ public enum Result
     )]
     ErrorIncompatibleDriver = -9,
 
+    [NativeName("VK_ERROR_TOO_MANY_OBJECTS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -459,6 +476,7 @@ public enum Result
     )]
     ErrorTooManyObjects = -10,
 
+    [NativeName("VK_ERROR_FORMAT_NOT_SUPPORTED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -487,6 +505,7 @@ public enum Result
     )]
     ErrorFormatNotSupported = -11,
 
+    [NativeName("VK_ERROR_FRAGMENTED_POOL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -515,6 +534,7 @@ public enum Result
     )]
     ErrorFragmentedPool = -12,
 
+    [NativeName("VK_ERROR_UNKNOWN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -543,6 +563,7 @@ public enum Result
     )]
     ErrorUnknown = -13,
 
+    [NativeName("VK_ERROR_VALIDATION_FAILED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -571,6 +592,7 @@ public enum Result
     )]
     ErrorValidationFailed = -1000011001,
 
+    [NativeName("VK_ERROR_OUT_OF_POOL_MEMORY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -595,6 +617,7 @@ public enum Result
     )]
     ErrorOutOfPoolMemory = -1000069000,
 
+    [NativeName("VK_ERROR_INVALID_EXTERNAL_HANDLE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -619,6 +642,7 @@ public enum Result
     )]
     ErrorInvalidExternalHandle = -1000072003,
 
+    [NativeName("VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -639,6 +663,7 @@ public enum Result
     )]
     ErrorInvalidOpaqueCaptureAddress = -1000257000,
 
+    [NativeName("VK_ERROR_FRAGMENTATION")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -656,6 +681,7 @@ public enum Result
     )]
     ErrorFragmentation = -1000161000,
 
+    [NativeName("VK_PIPELINE_COMPILE_REQUIRED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -670,6 +696,7 @@ public enum Result
     )]
     PipelineCompileRequired = 1000297000,
 
+    [NativeName("VK_ERROR_NOT_PERMITTED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -682,18 +709,23 @@ public enum Result
     )]
     ErrorNotPermitted = -1000174001,
 
+    [NativeName("VK_ERROR_SURFACE_LOST_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     ErrorSurfaceLostKHR = -1000000000,
 
+    [NativeName("VK_ERROR_NATIVE_WINDOW_IN_USE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     ErrorNativeWindowInUseKHR = -1000000001,
 
+    [NativeName("VK_SUBOPTIMAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     SuboptimalKHR = 1000001003,
 
+    [NativeName("VK_ERROR_OUT_OF_DATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     ErrorOutOfDateKHR = -1000001004,
 
+    [NativeName("VK_ERROR_INCOMPATIBLE_DISPLAY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_display_swapchain"],
@@ -701,9 +733,11 @@ public enum Result
     )]
     ErrorIncompatibleDisplayKHR = -1000003001,
 
+    [NativeName("VK_ERROR_INVALID_SHADER_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_glsl_shader"])]
     ErrorInvalidShaderNV = -1000012000,
 
+    [NativeName("VK_ERROR_IMAGE_USAGE_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -711,6 +745,7 @@ public enum Result
     )]
     ErrorImageUsageNotSupportedKHR = -1000023000,
 
+    [NativeName("VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -718,6 +753,7 @@ public enum Result
     )]
     ErrorVideoPictureLayoutNotSupportedKHR = -1000023001,
 
+    [NativeName("VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -725,6 +761,7 @@ public enum Result
     )]
     ErrorVideoProfileOperationNotSupportedKHR = -1000023002,
 
+    [NativeName("VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -732,6 +769,7 @@ public enum Result
     )]
     ErrorVideoProfileFormatNotSupportedKHR = -1000023003,
 
+    [NativeName("VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -739,6 +777,7 @@ public enum Result
     )]
     ErrorVideoProfileCodecNotSupportedKHR = -1000023004,
 
+    [NativeName("VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -746,6 +785,7 @@ public enum Result
     )]
     ErrorVideoStdVersionNotSupportedKHR = -1000023005,
 
+    [NativeName("VK_ERROR_INVALID_DRM_FORMAT_MODIFIER_PLANE_LAYOUT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -757,6 +797,7 @@ public enum Result
     )]
     ErrorInvalidDrmFormatModifierPlaneLayoutEXT = -1000158000,
 
+    [NativeName("VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_full_screen_exclusive"],
@@ -767,18 +808,23 @@ public enum Result
     )]
     ErrorFullScreenExclusiveModeLostEXT = -1000255000,
 
+    [NativeName("VK_THREAD_IDLE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     ThreadIdleKHR = 1000268000,
 
+    [NativeName("VK_THREAD_DONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     ThreadDoneKHR = 1000268001,
 
+    [NativeName("VK_OPERATION_DEFERRED_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     OperationDeferredKHR = 1000268002,
 
+    [NativeName("VK_OPERATION_NOT_DEFERRED_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     OperationNotDeferredKHR = 1000268003,
 
+    [NativeName("VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -789,6 +835,7 @@ public enum Result
     )]
     ErrorInvalidVideoStdParametersKHR = -1000299000,
 
+    [NativeName("VK_ERROR_COMPRESSION_EXHAUSTED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_compression_control"],
@@ -799,6 +846,7 @@ public enum Result
     )]
     ErrorCompressionExhaustedEXT = -1000338000,
 
+    [NativeName("VK_INCOMPATIBLE_SHADER_BINARY_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -810,6 +858,7 @@ public enum Result
     )]
     IncompatibleShaderBinaryEXT = 1000482000,
 
+    [NativeName("VK_PIPELINE_BINARY_MISSING_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -820,6 +869,7 @@ public enum Result
     )]
     PipelineBinaryMissingKHR = 1000483000,
 
+    [NativeName("VK_ERROR_NOT_ENOUGH_SPACE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -830,12 +880,15 @@ public enum Result
     )]
     ErrorNotEnoughSpaceKHR = -1000483000,
 
+    [NativeName("VK_ERROR_VALIDATION_FAILED_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     ErrorValidationFailedEXT = ErrorValidationFailed,
 
+    [NativeName("VK_ERROR_OUT_OF_POOL_MEMORY_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     ErrorOutOfPoolMemoryKHR = ErrorOutOfPoolMemory,
 
+    [NativeName("VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory"],
@@ -846,6 +899,7 @@ public enum Result
     )]
     ErrorInvalidExternalHandleKHR = ErrorInvalidExternalHandle,
 
+    [NativeName("VK_ERROR_FRAGMENTATION_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],
@@ -856,9 +910,11 @@ public enum Result
     )]
     ErrorFragmentationEXT = ErrorFragmentation,
 
+    [NativeName("VK_ERROR_NOT_PERMITTED_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     ErrorNotPermittedEXT = ErrorNotPermitted,
 
+    [NativeName("VK_ERROR_NOT_PERMITTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_global_priority"],
@@ -869,6 +925,7 @@ public enum Result
     )]
     ErrorNotPermittedKHR = ErrorNotPermitted,
 
+    [NativeName("VK_ERROR_INVALID_DEVICE_ADDRESS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -879,6 +936,7 @@ public enum Result
     )]
     ErrorInvalidDeviceAddressEXT = ErrorInvalidOpaqueCaptureAddress,
 
+    [NativeName("VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_buffer_device_address"],
@@ -889,6 +947,7 @@ public enum Result
     )]
     ErrorInvalidOpaqueCaptureAddressKHR = ErrorInvalidOpaqueCaptureAddress,
 
+    [NativeName("VK_PIPELINE_COMPILE_REQUIRED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_creation_cache_control"],
@@ -899,6 +958,7 @@ public enum Result
     )]
     PipelineCompileRequiredEXT = PipelineCompileRequired,
 
+    [NativeName("VK_ERROR_PIPELINE_COMPILE_REQUIRED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_creation_cache_control"],

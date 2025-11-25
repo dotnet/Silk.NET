@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMemoryDecompressionPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkMemoryDecompressionMethodFlagsEXT")]
+    [NativeName("decompressionMethods")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesEXT
     )]
     public MemoryDecompressionMethodFlagsEXT DecompressionMethods;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("maxDecompressionIndirectCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],

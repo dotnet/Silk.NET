@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCommandBufferInheritanceViewportScissorInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],
@@ -20,7 +22,7 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],
@@ -31,7 +33,7 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("viewportScissor2D")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],
@@ -42,7 +44,7 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
     )]
     public uint ViewportScissor2D;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewportDepthCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],
@@ -53,7 +55,7 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
     )]
     public uint ViewportDepthCount;
 
-    [NativeTypeName("const VkViewport *")]
+    [NativeName("pViewportDepths")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],

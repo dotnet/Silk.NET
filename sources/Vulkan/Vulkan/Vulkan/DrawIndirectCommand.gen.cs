@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDrawIndirectCommand")]
 [SupportedApiProfile("vulkan")]
 public partial struct DrawIndirectCommand
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("vertexCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +30,7 @@ public partial struct DrawIndirectCommand
     )]
     public uint VertexCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +49,7 @@ public partial struct DrawIndirectCommand
     )]
     public uint InstanceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("firstVertex")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +68,7 @@ public partial struct DrawIndirectCommand
     )]
     public uint FirstVertex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("firstInstance")]
     [SupportedApiProfile(
         "vulkan",
         [

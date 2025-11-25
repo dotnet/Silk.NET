@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSubgroupFeatureFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum SubgroupFeatureFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_SUBGROUP_FEATURE_BASIC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,6 +36,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     BasicBit = 0x1,
 
+    [NativeName("VK_SUBGROUP_FEATURE_VOTE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -55,6 +57,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     VoteBit = 0x2,
 
+    [NativeName("VK_SUBGROUP_FEATURE_ARITHMETIC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -75,6 +78,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     ArithmeticBit = 0x4,
 
+    [NativeName("VK_SUBGROUP_FEATURE_BALLOT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,6 +99,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     BallotBit = 0x8,
 
+    [NativeName("VK_SUBGROUP_FEATURE_SHUFFLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -115,6 +120,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     ShuffleBit = 0x10,
 
+    [NativeName("VK_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -135,6 +141,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     ShuffleRelativeBit = 0x20,
 
+    [NativeName("VK_SUBGROUP_FEATURE_CLUSTERED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,6 +162,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     ClusteredBit = 0x40,
 
+    [NativeName("VK_SUBGROUP_FEATURE_QUAD_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -175,6 +183,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     QuadBit = 0x80,
 
+    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -182,6 +191,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     RotateBit = 0x200,
 
+    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -189,6 +199,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     RotateClusteredBit = 0x400,
 
+    [NativeName("VK_SUBGROUP_FEATURE_PARTITIONED_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shader_subgroup_partitioned"],
@@ -196,6 +207,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     PartitionedBitNV = 0x100,
 
+    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_subgroup_rotate"],
@@ -206,6 +218,7 @@ public enum SubgroupFeatureFlags : uint
     )]
     RotateBitKHR = RotateBit,
 
+    [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_subgroup_rotate"],

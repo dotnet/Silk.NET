@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_reserved1_e__FixedBuffer")]
 [InlineArray(5)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1SequenceHeaderReserved1
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

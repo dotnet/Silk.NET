@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[Transformed]
 public readonly unsafe struct PFNVkGetInstanceProcAddrLunargP2 : IDisposable
 {
     private readonly void* Pointer;

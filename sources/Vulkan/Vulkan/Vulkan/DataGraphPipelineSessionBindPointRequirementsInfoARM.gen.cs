@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDataGraphPipelineSessionBindPointRequirementsInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineSessionBindPointRequirementsInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -17,7 +19,7 @@ public unsafe partial struct DataGraphPipelineSessionBindPointRequirementsInfoAR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -25,7 +27,7 @@ public unsafe partial struct DataGraphPipelineSessionBindPointRequirementsInfoAR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDataGraphPipelineSessionARM")]
+    [NativeName("session")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

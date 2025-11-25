@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSubmitFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum SubmitFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_SUBMIT_PROTECTED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,6 +32,7 @@ public enum SubmitFlags : uint
     )]
     ProtectedBit = 0x1,
 
+    [NativeName("VK_SUBMIT_PROTECTED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_synchronization2"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkAccelerationStructureTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum AccelerationStructureTypeKHR : uint
 {
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -22,6 +23,7 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     TopLevelKHR = 0,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,6 +34,7 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     BottomLevelKHR = 1,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -42,6 +45,7 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     GenericKHR = 2,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -52,6 +56,7 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     TopLevelNV = TopLevelKHR,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

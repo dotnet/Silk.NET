@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueueFamilyGlobalPriorityProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyGlobalPriorityProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -22,6 +24,7 @@ public unsafe partial struct QueueFamilyGlobalPriorityProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +37,7 @@ public unsafe partial struct QueueFamilyGlobalPriorityProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("priorityCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -47,7 +50,7 @@ public unsafe partial struct QueueFamilyGlobalPriorityProperties
     )]
     public uint PriorityCount;
 
-    [NativeTypeName("VkQueueGlobalPriority[16]")]
+    [NativeName("priorities")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindImageMemorySwapchainInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindImageMemorySwapchainInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -19,7 +21,7 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -28,7 +30,7 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSwapchainKHR")]
+    [NativeName("swapchain")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -37,7 +39,7 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
     )]
     public SwapchainKHRHandle Swapchain;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("imageIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],

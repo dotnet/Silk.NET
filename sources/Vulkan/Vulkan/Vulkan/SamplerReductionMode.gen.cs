@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSamplerReductionMode")]
 [SupportedApiProfile("vulkan")]
 public enum SamplerReductionMode : uint
 {
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum SamplerReductionMode : uint
     )]
     WeightedAverage = 0,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,6 +48,7 @@ public enum SamplerReductionMode : uint
     )]
     Min = 1,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_MAX")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,6 +66,7 @@ public enum SamplerReductionMode : uint
     )]
     Max = 2,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_RANGECLAMP_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_clamp"],
@@ -73,6 +77,7 @@ public enum SamplerReductionMode : uint
     )]
     WeightedAverageRangeclampQCOM = 1000521000,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sampler_filter_minmax"],
@@ -83,6 +88,7 @@ public enum SamplerReductionMode : uint
     )]
     WeightedAverageEXT = WeightedAverage,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sampler_filter_minmax"],
@@ -93,6 +99,7 @@ public enum SamplerReductionMode : uint
     )]
     MinEXT = Min,
 
+    [NativeName("VK_SAMPLER_REDUCTION_MODE_MAX_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sampler_filter_minmax"],

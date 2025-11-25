@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoVP9FrameType")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoVP9FrameType : uint
 {
+    [NativeName("STD_VIDEO_VP9_FRAME_TYPE_KEY")]
     [SupportedApiProfile("vulkan")]
     Key = 0,
 
+    [NativeName("STD_VIDEO_VP9_FRAME_TYPE_NON_KEY")]
     [SupportedApiProfile("vulkan")]
     NonKey = 1,
 }

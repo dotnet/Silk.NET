@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoEncodeH265CapabilityFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoEncodeH265CapabilityFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_HRD_COMPLIANCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -22,6 +23,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     HrdComplianceBitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -29,6 +31,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     PredictionWeightTableGeneratedBitKHR = 0x2,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_ROW_UNALIGNED_SLICE_SEGMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -36,6 +39,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     RowUnalignedSliceSegmentBitKHR = 0x4,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_SLICE_SEGMENT_TYPE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -43,6 +47,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     DifferentSliceSegmentTypeBitKHR = 0x8,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L0_LIST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -50,6 +55,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     BFrameInL0ListBitKHR = 0x10,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -57,6 +63,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     BFrameInL1ListBitKHR = 0x20,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_PER_PICTURE_TYPE_MIN_MAX_QP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -64,6 +71,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     PerPictureTypeMinMaxQpBitKHR = 0x40,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_PER_SLICE_SEGMENT_CONSTANT_QP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -71,6 +79,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     PerSliceSegmentConstantQpBitKHR = 0x80,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILES_PER_SLICE_SEGMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -78,6 +87,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     MultipleTilesPerSliceSegmentBitKHR = 0x100,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_SEGMENTS_PER_TILE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -85,6 +95,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     MultipleSliceSegmentsPerTileBitKHR = 0x200,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_intra_refresh"],
@@ -93,6 +104,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
     )]
     BPictureIntraRefreshBitKHR = 0x800,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_CU_QP_DIFF_WRAPAROUND_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_quantization_map"],

@@ -8,31 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerformanceValueDataINTEL")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceValueDataIntel
 {
+    [NativeName("value32")]
     [FieldOffset(0)]
-    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public uint Value32;
 
+    [NativeName("value64")]
     [FieldOffset(0)]
-    [NativeTypeName("uint64_t")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public ulong Value64;
 
+    [NativeName("valueFloat")]
     [FieldOffset(0)]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public float ValueFloat;
 
+    [NativeName("valueBool")]
     [FieldOffset(0)]
-    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public uint ValueBool;
 
+    [NativeName("valueString")]
     [FieldOffset(0)]
-    [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public sbyte* ValueString;
 }

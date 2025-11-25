@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoChromaSubsamplingFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoChromaSubsamplingFlagsKHR : uint
 {
+    [NativeName("VK_VIDEO_CHROMA_SUBSAMPLING_INVALID_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -20,6 +21,7 @@ public enum VideoChromaSubsamplingFlagsKHR : uint
     )]
     SubsamplingInvalidKHR = 0x0,
 
+    [NativeName("VK_VIDEO_CHROMA_SUBSAMPLING_MONOCHROME_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -27,6 +29,7 @@ public enum VideoChromaSubsamplingFlagsKHR : uint
     )]
     SubsamplingMonochromeBitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_CHROMA_SUBSAMPLING_420_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -34,6 +37,7 @@ public enum VideoChromaSubsamplingFlagsKHR : uint
     )]
     Subsampling420BitKHR = 0x2,
 
+    [NativeName("VK_VIDEO_CHROMA_SUBSAMPLING_422_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -41,6 +45,7 @@ public enum VideoChromaSubsamplingFlagsKHR : uint
     )]
     Subsampling422BitKHR = 0x4,
 
+    [NativeName("VK_VIDEO_CHROMA_SUBSAMPLING_444_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

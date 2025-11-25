@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkMemoryUnmapFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum MemoryUnmapFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_MEMORY_UNMAP_RESERVE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],

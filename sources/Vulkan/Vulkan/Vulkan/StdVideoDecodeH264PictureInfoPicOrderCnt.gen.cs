@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_PicOrderCnt_e__FixedBuffer")]
 [InlineArray(2)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH264PictureInfoPicOrderCnt
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public int E0;
 }

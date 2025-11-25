@@ -7,31 +7,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoAV1ReferenceName")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAV1ReferenceName : uint
 {
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_INTRA_FRAME")]
     [SupportedApiProfile("vulkan")]
     IntraFrame = 0,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_LAST_FRAME")]
     [SupportedApiProfile("vulkan")]
     LastFrame = 1,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_LAST2_FRAME")]
     [SupportedApiProfile("vulkan")]
     Last2Frame = 2,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_LAST3_FRAME")]
     [SupportedApiProfile("vulkan")]
     Last3Frame = 3,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_GOLDEN_FRAME")]
     [SupportedApiProfile("vulkan")]
     GoldenFrame = 4,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_BWDREF_FRAME")]
     [SupportedApiProfile("vulkan")]
     BwdrefFrame = 5,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_ALTREF2_FRAME")]
     [SupportedApiProfile("vulkan")]
     Altref2Frame = 6,
 
+    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_ALTREF_FRAME")]
     [SupportedApiProfile("vulkan")]
     AltrefFrame = 7,
 }

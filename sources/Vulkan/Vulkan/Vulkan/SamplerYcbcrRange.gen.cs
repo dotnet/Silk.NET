@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSamplerYcbcrRange")]
 [SupportedApiProfile("vulkan")]
 public enum SamplerYcbcrRange : uint
 {
+    [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_FULL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,6 +32,7 @@ public enum SamplerYcbcrRange : uint
     )]
     ItuFull = 0,
 
+    [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_NARROW")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,6 +53,7 @@ public enum SamplerYcbcrRange : uint
     )]
     ItuNarrow = 1,
 
+    [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_FULL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -61,6 +64,7 @@ public enum SamplerYcbcrRange : uint
     )]
     ItuFullKHR = ItuFull,
 
+    [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_NARROW_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],

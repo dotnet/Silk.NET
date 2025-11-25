@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_compute_shader_derivatives"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_compute_shader_derivatives"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("computeDerivativeGroupQuads")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_compute_shader_derivatives"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
     )]
     public uint ComputeDerivativeGroupQuads;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("computeDerivativeGroupLinear")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_compute_shader_derivatives"],

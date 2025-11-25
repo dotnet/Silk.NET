@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_expectedFrameId_e__FixedBuffer")]
 [InlineArray(8)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAV1PictureInfoExpectedFrameId
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

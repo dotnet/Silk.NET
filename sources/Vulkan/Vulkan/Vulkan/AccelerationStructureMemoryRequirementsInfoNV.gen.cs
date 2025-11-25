@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureMemoryRequirementsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -21,7 +23,7 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -32,6 +34,7 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
     )]
     public void* PNext;
 
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -42,7 +45,7 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
     )]
     public AccelerationStructureMemoryRequirementsTypeNV Type;
 
-    [NativeTypeName("VkAccelerationStructureNV")]
+    [NativeName("accelerationStructure")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

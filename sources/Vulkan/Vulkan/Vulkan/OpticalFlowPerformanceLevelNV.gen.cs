@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkOpticalFlowPerformanceLevelNV")]
 [SupportedApiProfile("vulkan")]
 public enum OpticalFlowPerformanceLevelNV : uint
 {
+    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_UNKNOWN_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -23,6 +24,7 @@ public enum OpticalFlowPerformanceLevelNV : uint
     )]
     UnknownNV = 0,
 
+    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_SLOW_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -34,6 +36,7 @@ public enum OpticalFlowPerformanceLevelNV : uint
     )]
     SlowNV = 1,
 
+    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_MEDIUM_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -45,6 +48,7 @@ public enum OpticalFlowPerformanceLevelNV : uint
     )]
     MediumNV = 2,
 
+    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_FAST_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

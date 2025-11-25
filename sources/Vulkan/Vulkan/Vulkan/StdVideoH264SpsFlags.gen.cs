@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH264SpsFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264SpsFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constraint_set0_flag")]
     [SupportedApiProfile("vulkan")]
     public uint constraint_set0_flag
     {
@@ -24,7 +26,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constraint_set1_flag")]
     [SupportedApiProfile("vulkan")]
     public uint constraint_set1_flag
     {
@@ -34,7 +36,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constraint_set2_flag")]
     [SupportedApiProfile("vulkan")]
     public uint constraint_set2_flag
     {
@@ -44,7 +46,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constraint_set3_flag")]
     [SupportedApiProfile("vulkan")]
     public uint constraint_set3_flag
     {
@@ -54,7 +56,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constraint_set4_flag")]
     [SupportedApiProfile("vulkan")]
     public uint constraint_set4_flag
     {
@@ -64,7 +66,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constraint_set5_flag")]
     [SupportedApiProfile("vulkan")]
     public uint constraint_set5_flag
     {
@@ -74,7 +76,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("direct_8x8_inference_flag")]
     [SupportedApiProfile("vulkan")]
     public uint direct_8x8_inference_flag
     {
@@ -84,7 +86,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("mb_adaptive_frame_field_flag")]
     [SupportedApiProfile("vulkan")]
     public uint mb_adaptive_frame_field_flag
     {
@@ -94,7 +96,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("frame_mbs_only_flag")]
     [SupportedApiProfile("vulkan")]
     public uint frame_mbs_only_flag
     {
@@ -104,7 +106,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("delta_pic_order_always_zero_flag")]
     [SupportedApiProfile("vulkan")]
     public uint delta_pic_order_always_zero_flag
     {
@@ -114,7 +116,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("separate_colour_plane_flag")]
     [SupportedApiProfile("vulkan")]
     public uint separate_colour_plane_flag
     {
@@ -124,7 +126,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("gaps_in_frame_num_value_allowed_flag")]
     [SupportedApiProfile("vulkan")]
     public uint gaps_in_frame_num_value_allowed_flag
     {
@@ -134,7 +136,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("qpprime_y_zero_transform_bypass_flag")]
     [SupportedApiProfile("vulkan")]
     public uint qpprime_y_zero_transform_bypass_flag
     {
@@ -144,7 +146,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("frame_cropping_flag")]
     [SupportedApiProfile("vulkan")]
     public uint frame_cropping_flag
     {
@@ -154,7 +156,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 13)) | ((value & 0x1u) << 13); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("seq_scaling_matrix_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint seq_scaling_matrix_present_flag
     {
@@ -164,7 +166,7 @@ public partial struct StdVideoH264SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 14)) | ((value & 0x1u) << 14); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("vui_parameters_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint vui_parameters_present_flag
     {

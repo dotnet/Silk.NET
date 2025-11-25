@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkGeometryFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum GeometryFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_GEOMETRY_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -25,6 +26,7 @@ public enum GeometryFlagsKHR : uint
     )]
     OpaqueBitKHR = 0x1,
 
+    [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -35,6 +37,7 @@ public enum GeometryFlagsKHR : uint
     )]
     NoDuplicateAnyHitInvocationBitKHR = 0x2,
 
+    [NativeName("VK_GEOMETRY_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -45,6 +48,7 @@ public enum GeometryFlagsKHR : uint
     )]
     OpaqueBitNV = OpaqueBitKHR,
 
+    [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkExternalFenceHandleTypeFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ExternalFenceHandleTypeFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,6 +40,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueFdBit = 0x1,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,6 +65,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32Bit = 0x2,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,6 +90,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBit = 0x4,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -111,6 +115,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     SyncFdBit = 0x8,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_capabilities"],
@@ -121,6 +126,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueFdBitKHR = OpaqueFdBit,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_capabilities"],
@@ -131,6 +137,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32BitKHR = OpaqueWin32Bit,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_capabilities"],
@@ -141,6 +148,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
 
+    [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_capabilities"],

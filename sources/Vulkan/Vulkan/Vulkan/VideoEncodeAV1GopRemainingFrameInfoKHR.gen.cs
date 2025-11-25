@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeAV1GopRemainingFrameInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1GopRemainingFrameInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -17,7 +19,7 @@ public unsafe partial struct VideoEncodeAV1GopRemainingFrameInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -25,7 +27,7 @@ public unsafe partial struct VideoEncodeAV1GopRemainingFrameInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("useGopRemainingFrames")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -33,7 +35,7 @@ public unsafe partial struct VideoEncodeAV1GopRemainingFrameInfoKHR
     )]
     public uint UseGopRemainingFrames;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("gopRemainingIntra")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -41,7 +43,7 @@ public unsafe partial struct VideoEncodeAV1GopRemainingFrameInfoKHR
     )]
     public uint GopRemainingIntra;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("gopRemainingPredictive")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -49,7 +51,7 @@ public unsafe partial struct VideoEncodeAV1GopRemainingFrameInfoKHR
     )]
     public uint GopRemainingPredictive;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("gopRemainingBipredictive")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

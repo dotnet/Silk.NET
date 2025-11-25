@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceCooperativeVectorFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("cooperativeVector")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorFeaturesNV
     )]
     public uint CooperativeVector;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("cooperativeVectorTraining")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],

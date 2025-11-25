@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkExternalBufferProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalBufferProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,6 +37,7 @@ public unsafe partial struct ExternalBufferProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,6 +62,7 @@ public unsafe partial struct ExternalBufferProperties
     )]
     public void* PNext;
 
+    [NativeName("externalMemoryProperties")]
     [SupportedApiProfile(
         "vulkan",
         [

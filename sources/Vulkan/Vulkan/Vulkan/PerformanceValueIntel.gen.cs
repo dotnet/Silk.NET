@@ -8,12 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerformanceValueINTEL")]
 [SupportedApiProfile("vulkan")]
 public partial struct PerformanceValueIntel
 {
+    [NativeName("type")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public PerformanceValueTypeIntel Type;
 
+    [NativeName("data")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public PerformanceValueDataIntel Data;
 }

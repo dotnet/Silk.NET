@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkScopeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ScopeKHR : uint
 {
+    [NativeName("VK_SCOPE_DEVICE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -22,6 +23,7 @@ public enum ScopeKHR : uint
     )]
     DeviceKHR = 1,
 
+    [NativeName("VK_SCOPE_WORKGROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -32,6 +34,7 @@ public enum ScopeKHR : uint
     )]
     WorkgroupKHR = 2,
 
+    [NativeName("VK_SCOPE_SUBGROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -42,6 +45,7 @@ public enum ScopeKHR : uint
     )]
     SubgroupKHR = 3,
 
+    [NativeName("VK_SCOPE_QUEUE_FAMILY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -52,6 +56,7 @@ public enum ScopeKHR : uint
     )]
     QueueFamilyKHR = 5,
 
+    [NativeName("VK_SCOPE_DEVICE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -62,6 +67,7 @@ public enum ScopeKHR : uint
     )]
     DeviceNV = DeviceKHR,
 
+    [NativeName("VK_SCOPE_WORKGROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -72,6 +78,7 @@ public enum ScopeKHR : uint
     )]
     WorkgroupNV = WorkgroupKHR,
 
+    [NativeName("VK_SCOPE_SUBGROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -82,6 +89,7 @@ public enum ScopeKHR : uint
     )]
     SubgroupNV = SubgroupKHR,
 
+    [NativeName("VK_SCOPE_QUEUE_FAMILY_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],

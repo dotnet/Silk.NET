@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceSubpassShadingFeaturesHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHuawei
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_subpass_shading"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHuawei
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_subpass_shading"],
@@ -32,7 +35,7 @@ public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHuawei
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("subpassShading")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_subpass_shading"],

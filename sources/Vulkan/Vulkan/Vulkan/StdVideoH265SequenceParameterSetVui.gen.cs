@@ -8,108 +8,111 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH265SequenceParameterSetVui")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoH265SequenceParameterSetVui
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SpsVuiFlags Flags;
 
+    [NativeName("aspect_ratio_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265AspectRatioIdc AspectRatioIdc;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("sar_width")]
     [SupportedApiProfile("vulkan")]
     public ushort SarWidth;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("sar_height")]
     [SupportedApiProfile("vulkan")]
     public ushort SarHeight;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("video_format")]
     [SupportedApiProfile("vulkan")]
     public byte VideoFormat;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("colour_primaries")]
     [SupportedApiProfile("vulkan")]
     public byte ColourPrimaries;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("transfer_characteristics")]
     [SupportedApiProfile("vulkan")]
     public byte TransferCharacteristics;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("matrix_coeffs")]
     [SupportedApiProfile("vulkan")]
     public byte MatrixCoeffs;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("chroma_sample_loc_type_top_field")]
     [SupportedApiProfile("vulkan")]
     public byte ChromaSampleLocTypeTopField;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("chroma_sample_loc_type_bottom_field")]
     [SupportedApiProfile("vulkan")]
     public byte ChromaSampleLocTypeBottomField;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved2")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved2;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("def_disp_win_left_offset")]
     [SupportedApiProfile("vulkan")]
     public ushort DefDispWinLeftOffset;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("def_disp_win_right_offset")]
     [SupportedApiProfile("vulkan")]
     public ushort DefDispWinRightOffset;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("def_disp_win_top_offset")]
     [SupportedApiProfile("vulkan")]
     public ushort DefDispWinTopOffset;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("def_disp_win_bottom_offset")]
     [SupportedApiProfile("vulkan")]
     public ushort DefDispWinBottomOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vui_num_units_in_tick")]
     [SupportedApiProfile("vulkan")]
     public uint VuiNumUnitsInTick;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vui_time_scale")]
     [SupportedApiProfile("vulkan")]
     public uint VuiTimeScale;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vui_num_ticks_poc_diff_one_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint VuiNumTicksPocDiffOneMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("min_spatial_segmentation_idc")]
     [SupportedApiProfile("vulkan")]
     public ushort MinSpatialSegmentationIdc;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("reserved3")]
     [SupportedApiProfile("vulkan")]
     public ushort Reserved3;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("max_bytes_per_pic_denom")]
     [SupportedApiProfile("vulkan")]
     public byte MaxBytesPerPicDenom;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("max_bits_per_min_cu_denom")]
     [SupportedApiProfile("vulkan")]
     public byte MaxBitsPerMinCuDenom;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("log2_max_mv_length_horizontal")]
     [SupportedApiProfile("vulkan")]
     public byte Log2MaxMvLengthHorizontal;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("log2_max_mv_length_vertical")]
     [SupportedApiProfile("vulkan")]
     public byte Log2MaxMvLengthVertical;
 
-    [NativeTypeName("const StdVideoH265HrdParameters *")]
+    [NativeName("pHrdParameters")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265HrdParameters* PHrdParameters;
 }

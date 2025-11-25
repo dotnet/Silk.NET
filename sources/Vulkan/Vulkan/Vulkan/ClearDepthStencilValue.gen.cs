@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClearDepthStencilValue")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClearDepthStencilValue
 {
+    [NativeName("depth")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +30,7 @@ public partial struct ClearDepthStencilValue
     )]
     public float Depth;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stencil")]
     [SupportedApiProfile(
         "vulkan",
         [

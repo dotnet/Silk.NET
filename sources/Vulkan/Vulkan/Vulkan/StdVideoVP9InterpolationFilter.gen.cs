@@ -6,22 +6,27 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoVP9InterpolationFilter")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoVP9InterpolationFilter : uint
 {
+    [NativeName("STD_VIDEO_VP9_INTERPOLATION_FILTER_EIGHTTAP")]
     [SupportedApiProfile("vulkan")]
     Eighttap = 0,
 
+    [NativeName("STD_VIDEO_VP9_INTERPOLATION_FILTER_EIGHTTAP_SMOOTH")]
     [SupportedApiProfile("vulkan")]
     EighttapSmooth = 1,
 
+    [NativeName("STD_VIDEO_VP9_INTERPOLATION_FILTER_EIGHTTAP_SHARP")]
     [SupportedApiProfile("vulkan")]
     EighttapSharp = 2,
 
+    [NativeName("STD_VIDEO_VP9_INTERPOLATION_FILTER_BILINEAR")]
     [SupportedApiProfile("vulkan")]
     Bilinear = 3,
 
+    [NativeName("STD_VIDEO_VP9_INTERPOLATION_FILTER_SWITCHABLE")]
     [SupportedApiProfile("vulkan")]
     Switchable = 4,
 }

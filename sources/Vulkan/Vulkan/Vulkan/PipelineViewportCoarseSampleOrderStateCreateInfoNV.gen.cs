@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineViewportCoarseSampleOrderStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -20,7 +22,7 @@ public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -31,6 +33,7 @@ public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
     )]
     public void* PNext;
 
+    [NativeName("sampleOrderType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -41,7 +44,7 @@ public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
     )]
     public CoarseSampleOrderTypeNV SampleOrderType;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("customSampleOrderCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -52,7 +55,7 @@ public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
     )]
     public uint CustomSampleOrderCount;
 
-    [NativeTypeName("const VkCoarseSampleOrderCustomNV *")]
+    [NativeName("pCustomSampleOrders")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],

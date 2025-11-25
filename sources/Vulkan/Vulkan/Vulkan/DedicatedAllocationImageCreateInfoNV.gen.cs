@@ -8,17 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDedicatedAllocationImageCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DedicatedAllocationImageCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dedicatedAllocation")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public uint DedicatedAllocation;
 }

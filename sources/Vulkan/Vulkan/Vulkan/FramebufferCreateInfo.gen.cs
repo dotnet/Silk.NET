@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFramebufferCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FramebufferCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkFramebufferCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +69,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public FramebufferCreateFlags Flags;
 
-    [NativeTypeName("VkRenderPass")]
+    [NativeName("renderPass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +88,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public RenderPassHandle RenderPass;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("attachmentCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,7 +107,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public uint AttachmentCount;
 
-    [NativeTypeName("const VkImageView *")]
+    [NativeName("pAttachments")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,7 +126,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public ImageViewHandle* PAttachments;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("width")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -143,7 +145,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public uint Width;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("height")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -162,7 +164,7 @@ public unsafe partial struct FramebufferCreateInfo
     )]
     public uint Height;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("layers")]
     [SupportedApiProfile(
         "vulkan",
         [

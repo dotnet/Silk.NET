@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImportFenceFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImportFenceFdInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -19,7 +21,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -30,7 +32,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkFence")]
+    [NativeName("fence")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -41,7 +43,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
     )]
     public FenceHandle Fence;
 
-    [NativeTypeName("VkFenceImportFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -52,6 +54,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
     )]
     public FenceImportFlags Flags;
 
+    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -62,6 +65,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
     )]
     public ExternalFenceHandleTypeFlags HandleType;
 
+    [NativeName("fd")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],

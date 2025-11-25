@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkBuildMicromapModeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum BuildMicromapModeEXT : uint
 {
+    [NativeName("VK_BUILD_MICROMAP_MODE_BUILD_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDataGraphPipelinePropertyARM")]
 [SupportedApiProfile("vulkan")]
 public enum DataGraphPipelinePropertyARM : uint
 {
+    [NativeName("VK_DATA_GRAPH_PIPELINE_PROPERTY_CREATION_LOG_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -19,6 +20,7 @@ public enum DataGraphPipelinePropertyARM : uint
     )]
     CreationLogARM = 0,
 
+    [NativeName("VK_DATA_GRAPH_PIPELINE_PROPERTY_IDENTIFIER_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

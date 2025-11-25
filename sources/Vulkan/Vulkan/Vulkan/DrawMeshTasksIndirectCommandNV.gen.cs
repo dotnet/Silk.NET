@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDrawMeshTasksIndirectCommandNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct DrawMeshTasksIndirectCommandNV
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("taskCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_mesh_shader"],
@@ -22,7 +23,7 @@ public partial struct DrawMeshTasksIndirectCommandNV
     )]
     public uint TaskCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("firstTask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_mesh_shader"],

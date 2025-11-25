@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkOpticalFlowGridSizeFlagsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum OpticalFlowGridSizeFlagsNV : uint
 {
+    [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_UNKNOWN_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -24,6 +25,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
     )]
     SizeUnknownNV = 0x0,
 
+    [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_1X1_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -35,6 +37,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
     )]
     Size1X1BitNV = 0x1,
 
+    [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_2X2_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -46,6 +49,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
     )]
     Size2X2BitNV = 0x2,
 
+    [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_4X4_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -57,6 +61,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
     )]
     Size4X4BitNV = 0x4,
 
+    [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_8X8_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

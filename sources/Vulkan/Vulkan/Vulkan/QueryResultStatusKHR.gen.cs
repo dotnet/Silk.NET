@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueryResultStatusKHR")]
 [SupportedApiProfile("vulkan")]
-public enum QueryResultStatusKHR
+public enum QueryResultStatusKHR : uint
 {
+    [NativeName("VK_QUERY_RESULT_STATUS_ERROR_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,6 +20,7 @@ public enum QueryResultStatusKHR
     )]
     ErrorKHR = -1,
 
+    [NativeName("VK_QUERY_RESULT_STATUS_NOT_READY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -25,6 +28,7 @@ public enum QueryResultStatusKHR
     )]
     NotReadyKHR = 0,
 
+    [NativeName("VK_QUERY_RESULT_STATUS_COMPLETE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -32,6 +36,7 @@ public enum QueryResultStatusKHR
     )]
     CompleteKHR = 1,
 
+    [NativeName("VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],

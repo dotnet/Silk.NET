@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageSubresourceLayers")]
 [SupportedApiProfile("vulkan")]
 public partial struct ImageSubresourceLayers
 {
-    [NativeTypeName("VkImageAspectFlags")]
+    [NativeName("aspectMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +41,7 @@ public partial struct ImageSubresourceLayers
     )]
     public ImageAspectFlags AspectMask;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("mipLevel")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +70,7 @@ public partial struct ImageSubresourceLayers
     )]
     public uint MipLevel;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("baseArrayLayer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +99,7 @@ public partial struct ImageSubresourceLayers
     )]
     public uint BaseArrayLayer;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("layerCount")]
     [SupportedApiProfile(
         "vulkan",
         [

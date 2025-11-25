@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevice16BitStorageFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevice16BitStorageFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,6 +33,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +54,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storageBuffer16BitAccess")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -59,7 +62,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
     )]
     public uint StorageBuffer16BitAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("uniformAndStorageBuffer16BitAccess")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +83,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
     )]
     public uint UniformAndStorageBuffer16BitAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storagePushConstant16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,7 +104,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
     )]
     public uint StoragePushConstant16;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storageInputOutput16")]
     [SupportedApiProfile(
         "vulkan",
         [

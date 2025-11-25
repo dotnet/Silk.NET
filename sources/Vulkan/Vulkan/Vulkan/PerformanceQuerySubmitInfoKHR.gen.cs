@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerformanceQuerySubmitInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceQuerySubmitInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -21,7 +23,7 @@ public unsafe partial struct PerformanceQuerySubmitInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -32,7 +34,7 @@ public unsafe partial struct PerformanceQuerySubmitInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("counterPassIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],

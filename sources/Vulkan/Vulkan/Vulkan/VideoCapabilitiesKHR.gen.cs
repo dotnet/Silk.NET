@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoCapabilitiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -17,6 +19,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -24,7 +27,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoCapabilityFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -32,7 +35,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public VideoCapabilityFlagsKHR Flags;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("minBitstreamBufferOffsetAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -40,7 +43,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public ulong MinBitstreamBufferOffsetAlignment;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("minBitstreamBufferSizeAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -48,6 +51,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public ulong MinBitstreamBufferSizeAlignment;
 
+    [NativeName("pictureAccessGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -55,6 +59,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public Extent2D PictureAccessGranularity;
 
+    [NativeName("minCodedExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -62,6 +67,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public Extent2D MinCodedExtent;
 
+    [NativeName("maxCodedExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -69,7 +75,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public Extent2D MaxCodedExtent;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDpbSlots")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -77,7 +83,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public uint MaxDpbSlots;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxActiveReferencePictures")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -85,6 +91,7 @@ public unsafe partial struct VideoCapabilitiesKHR
     )]
     public uint MaxActiveReferencePictures;
 
+    [NativeName("stdHeaderVersion")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkMemoryAllocateFlags")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum MemoryAllocateFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,6 +40,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceMaskBit = 0x1,
 
+    [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,6 +61,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceAddressBit = 0x2,
 
+    [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -79,6 +82,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceAddressCaptureReplayBit = 0x4,
 
+    [NativeName("VK_MEMORY_ALLOCATE_ZERO_INITIALIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_zero_initialize_device_memory"],
@@ -89,6 +93,7 @@ public enum MemoryAllocateFlags : uint
     )]
     ZeroInitializeBitEXT = 0x8,
 
+    [NativeName("VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],
@@ -96,6 +101,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceMaskBitKHR = DeviceMaskBit,
 
+    [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_buffer_device_address"],
@@ -106,6 +112,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceAddressBitKHR = DeviceAddressBit,
 
+    [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_buffer_device_address"],

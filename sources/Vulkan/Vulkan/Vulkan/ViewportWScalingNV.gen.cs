@@ -8,12 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkViewportWScalingNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ViewportWScalingNV
 {
+    [NativeName("xcoeff")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public float Xcoeff;
 
+    [NativeName("ycoeff")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public float Ycoeff;
 }

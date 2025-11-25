@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkPerformanceCounterUnitKHR")]
 [SupportedApiProfile("vulkan")]
 public enum PerformanceCounterUnitKHR : uint
 {
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_GENERIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -22,6 +23,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     GenericKHR = 0,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_PERCENTAGE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -32,6 +34,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     PercentageKHR = 1,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_NANOSECONDS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -42,6 +45,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     NanosecondsKHR = 2,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_BYTES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -52,6 +56,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     BytesKHR = 3,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_BYTES_PER_SECOND_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -62,6 +67,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     BytesPerSecondKHR = 4,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_KELVIN_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -72,6 +78,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     KelvinKHR = 5,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_WATTS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -82,6 +89,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     WattsKHR = 6,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_VOLTS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -92,6 +100,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     VoltsKHR = 7,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_AMPS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -102,6 +111,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     AmpsKHR = 8,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_HERTZ_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -112,6 +122,7 @@ public enum PerformanceCounterUnitKHR : uint
     )]
     HertzKHR = 9,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_UNIT_CYCLES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],

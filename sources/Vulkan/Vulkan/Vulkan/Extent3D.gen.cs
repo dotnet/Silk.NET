@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkExtent3D")]
 [SupportedApiProfile("vulkan")]
 public partial struct Extent3D
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("width")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +41,7 @@ public partial struct Extent3D
     )]
     public uint Width;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("height")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +70,7 @@ public partial struct Extent3D
     )]
     public uint Height;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("depth")]
     [SupportedApiProfile(
         "vulkan",
         [

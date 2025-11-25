@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkFrontFace")]
 [SupportedApiProfile("vulkan")]
 public enum FrontFace : uint
 {
+    [NativeName("VK_FRONT_FACE_COUNTER_CLOCKWISE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,6 +31,7 @@ public enum FrontFace : uint
     )]
     CounterClockwise = 0,
 
+    [NativeName("VK_FRONT_FACE_CLOCKWISE")]
     [SupportedApiProfile(
         "vulkan",
         [

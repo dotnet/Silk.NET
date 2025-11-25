@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkHdrVividDynamicMetadataHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct HdrVividDynamicMetadataHuawei
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_hdr_vivid"],
@@ -21,7 +23,7 @@ public unsafe partial struct HdrVividDynamicMetadataHuawei
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_hdr_vivid"],
@@ -32,7 +34,7 @@ public unsafe partial struct HdrVividDynamicMetadataHuawei
     )]
     public void* PNext;
 
-    [NativeTypeName("size_t")]
+    [NativeName("dynamicMetadataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_hdr_vivid"],
@@ -43,7 +45,7 @@ public unsafe partial struct HdrVividDynamicMetadataHuawei
     )]
     public nuint DynamicMetadataSize;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pDynamicMetadata")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_hdr_vivid"],

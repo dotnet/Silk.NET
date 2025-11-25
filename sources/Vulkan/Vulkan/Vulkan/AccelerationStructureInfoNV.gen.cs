@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -21,7 +23,7 @@ public unsafe partial struct AccelerationStructureInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -32,7 +34,7 @@ public unsafe partial struct AccelerationStructureInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAccelerationStructureTypeNV")]
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -43,7 +45,7 @@ public unsafe partial struct AccelerationStructureInfoNV
     )]
     public AccelerationStructureTypeKHR Type;
 
-    [NativeTypeName("VkBuildAccelerationStructureFlagsNV")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -54,7 +56,7 @@ public unsafe partial struct AccelerationStructureInfoNV
     )]
     public BuildAccelerationStructureFlagsKHR Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -65,7 +67,7 @@ public unsafe partial struct AccelerationStructureInfoNV
     )]
     public uint InstanceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("geometryCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -76,7 +78,7 @@ public unsafe partial struct AccelerationStructureInfoNV
     )]
     public uint GeometryCount;
 
-    [NativeTypeName("const VkGeometryNV *")]
+    [NativeName("pGeometries")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

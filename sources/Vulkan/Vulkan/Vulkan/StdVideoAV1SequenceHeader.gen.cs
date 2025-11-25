@@ -8,60 +8,63 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoAV1SequenceHeader")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoAV1SequenceHeader
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1SequenceHeaderFlags Flags;
 
+    [NativeName("seq_profile")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1Profile SeqProfile;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("frame_width_bits_minus_1")]
     [SupportedApiProfile("vulkan")]
     public byte FrameWidthBitsMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("frame_height_bits_minus_1")]
     [SupportedApiProfile("vulkan")]
     public byte FrameHeightBitsMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("max_frame_width_minus_1")]
     [SupportedApiProfile("vulkan")]
     public ushort MaxFrameWidthMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("max_frame_height_minus_1")]
     [SupportedApiProfile("vulkan")]
     public ushort MaxFrameHeightMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("delta_frame_id_length_minus_2")]
     [SupportedApiProfile("vulkan")]
     public byte DeltaFrameIdLengthMinus2;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("additional_frame_id_length_minus_1")]
     [SupportedApiProfile("vulkan")]
     public byte AdditionalFrameIdLengthMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("order_hint_bits_minus_1")]
     [SupportedApiProfile("vulkan")]
     public byte OrderHintBitsMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_force_integer_mv")]
     [SupportedApiProfile("vulkan")]
     public byte SeqForceIntegerMv;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_force_screen_content_tools")]
     [SupportedApiProfile("vulkan")]
     public byte SeqForceScreenContentTools;
 
-    [NativeTypeName("uint8_t[5]")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1SequenceHeaderReserved1 Reserved1;
 
-    [NativeTypeName("const StdVideoAV1ColorConfig *")]
+    [NativeName("pColorConfig")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1ColorConfig* PColorConfig;
 
-    [NativeTypeName("const StdVideoAV1TimingInfo *")]
+    [NativeName("pTimingInfo")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1TimingInfo* PTimingInfo;
 }

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeSessionRgbConversionCreateInfoVALVE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeSessionRgbConversionCreateInfoValve
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
@@ -21,7 +23,7 @@ public unsafe partial struct VideoEncodeSessionRgbConversionCreateInfoValve
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
@@ -32,6 +34,7 @@ public unsafe partial struct VideoEncodeSessionRgbConversionCreateInfoValve
     )]
     public void* PNext;
 
+    [NativeName("rgbModel")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
@@ -42,6 +45,7 @@ public unsafe partial struct VideoEncodeSessionRgbConversionCreateInfoValve
     )]
     public VideoEncodeRgbModelConversionFlagsValve RgbModel;
 
+    [NativeName("rgbRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
@@ -52,6 +56,7 @@ public unsafe partial struct VideoEncodeSessionRgbConversionCreateInfoValve
     )]
     public VideoEncodeRgbRangeCompressionFlagsValve RgbRange;
 
+    [NativeName("xChromaOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
@@ -62,6 +67,7 @@ public unsafe partial struct VideoEncodeSessionRgbConversionCreateInfoValve
     )]
     public VideoEncodeRgbChromaOffsetFlagsValve XChromaOffset;
 
+    [NativeName("yChromaOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],

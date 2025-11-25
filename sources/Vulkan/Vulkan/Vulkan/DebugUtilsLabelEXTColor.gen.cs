@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_color_e__FixedBuffer")]
 [InlineArray(4)]
 [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
 public partial struct DebugUtilsLabelEXTColor
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public float E0;
 }

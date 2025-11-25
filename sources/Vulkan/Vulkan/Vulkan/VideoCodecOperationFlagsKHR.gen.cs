@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoCodecOperationFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoCodecOperationFlagsKHR : uint
 {
+    [NativeName("VK_VIDEO_CODEC_OPERATION_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -20,6 +21,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     NoneKHR = 0x0,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -27,6 +29,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     EncodeH264BitKHR = 0x10000,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -34,6 +37,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     EncodeH265BitKHR = 0x20000,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -41,6 +45,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeH264BitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -48,6 +53,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeH265BitKHR = 0x2,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_av1"],
@@ -55,6 +61,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeAv1BitKHR = 0x4,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -62,6 +69,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     EncodeAv1BitKHR = 0x40000,
 
+    [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_VP9_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],

@@ -7,21 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkValidationFlagsEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ValidationFlagsEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("disabledValidationCheckCount")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public uint DisabledValidationCheckCount;
 
-    [NativeTypeName("const VkValidationCheckEXT *")]
+    [NativeName("pDisabledValidationChecks")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public ValidationCheckEXT* PDisabledValidationChecks;
 }

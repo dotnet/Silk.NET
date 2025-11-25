@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevicePointClippingProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePointClippingProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,6 +29,7 @@ public unsafe partial struct PhysicalDevicePointClippingProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,6 +46,7 @@ public unsafe partial struct PhysicalDevicePointClippingProperties
     )]
     public void* PNext;
 
+    [NativeName("pointClippingBehavior")]
     [SupportedApiProfile(
         "vulkan",
         [

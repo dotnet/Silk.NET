@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSubpassMergeStatusEXT")]
 [SupportedApiProfile("vulkan")]
 public enum SubpassMergeStatusEXT : uint
 {
+    [NativeName("VK_SUBPASS_MERGE_STATUS_MERGED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -22,6 +23,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     MergedEXT = 0,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_DISALLOWED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -32,6 +34,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     DisallowedEXT = 1,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_SIDE_EFFECTS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -42,6 +45,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedSideEffectsEXT = 2,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_SAMPLES_MISMATCH_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -52,6 +56,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedSamplesMismatchEXT = 3,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_VIEWS_MISMATCH_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -62,6 +67,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedViewsMismatchEXT = 4,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_ALIASING_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -72,6 +78,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedAliasingEXT = 5,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_DEPENDENCIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -82,6 +89,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedDependenciesEXT = 6,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_INCOMPATIBLE_INPUT_ATTACHMENT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -92,6 +100,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedIncompatibleInputAttachmentEXT = 7,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_TOO_MANY_ATTACHMENTS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -102,6 +111,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedTooManyAttachmentsEXT = 8,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_INSUFFICIENT_STORAGE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -112,6 +122,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedInsufficientStorageEXT = 9,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_DEPTH_STENCIL_COUNT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -122,6 +133,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedDepthStencilCountEXT = 10,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_RESOLVE_ATTACHMENT_REUSE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -132,6 +144,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedResolveAttachmentReuseEXT = 11,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_SINGLE_SUBPASS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -142,6 +155,7 @@ public enum SubpassMergeStatusEXT : uint
     )]
     NotMergedSingleSubpassEXT = 12,
 
+    [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_UNSPECIFIED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMultiDrawInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct MultiDrawInfoEXT
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("firstVertex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multi_draw"],
@@ -22,7 +23,7 @@ public partial struct MultiDrawInfoEXT
     )]
     public uint FirstVertex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vertexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multi_draw"],

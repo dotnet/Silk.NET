@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDepthBiasRepresentationEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DepthBiasRepresentationEXT : uint
 {
+    [NativeName("VK_DEPTH_BIAS_REPRESENTATION_LEAST_REPRESENTABLE_VALUE_FORMAT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -22,6 +23,7 @@ public enum DepthBiasRepresentationEXT : uint
     )]
     LeastRepresentableValueFormatEXT = 0,
 
+    [NativeName("VK_DEPTH_BIAS_REPRESENTATION_LEAST_REPRESENTABLE_VALUE_FORCE_UNORM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -32,6 +34,7 @@ public enum DepthBiasRepresentationEXT : uint
     )]
     LeastRepresentableValueForceUnormEXT = 1,
 
+    [NativeName("VK_DEPTH_BIAS_REPRESENTATION_FLOAT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],

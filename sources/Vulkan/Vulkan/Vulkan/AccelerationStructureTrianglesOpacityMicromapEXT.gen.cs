@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureTrianglesOpacityMicromapEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -20,6 +22,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -30,6 +33,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public void* PNext;
 
+    [NativeName("indexType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -40,6 +44,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public IndexType IndexType;
 
+    [NativeName("indexBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -50,7 +55,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public DeviceOrHostAddressConstKHR IndexBuffer;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("indexStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -61,7 +66,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public ulong IndexStride;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("baseTriangle")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -72,7 +77,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public uint BaseTriangle;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("usageCountsCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -83,7 +88,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public uint UsageCountsCount;
 
-    [NativeTypeName("const VkMicromapUsageEXT *")]
+    [NativeName("pUsageCounts")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -94,7 +99,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public MicromapUsageEXT* PUsageCounts;
 
-    [NativeTypeName("const VkMicromapUsageEXT *const *")]
+    [NativeName("ppUsageCounts")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -105,7 +110,7 @@ public unsafe partial struct AccelerationStructureTrianglesOpacityMicromapEXT
     )]
     public MicromapUsageEXT** PpUsageCounts;
 
-    [NativeTypeName("VkMicromapEXT")]
+    [NativeName("micromap")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

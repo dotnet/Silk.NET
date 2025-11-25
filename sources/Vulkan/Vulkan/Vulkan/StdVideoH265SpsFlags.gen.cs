@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH265SpsFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265SpsFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_temporal_id_nesting_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_temporal_id_nesting_flag
     {
@@ -24,7 +26,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("separate_colour_plane_flag")]
     [SupportedApiProfile("vulkan")]
     public uint separate_colour_plane_flag
     {
@@ -34,7 +36,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("conformance_window_flag")]
     [SupportedApiProfile("vulkan")]
     public uint conformance_window_flag
     {
@@ -44,7 +46,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_sub_layer_ordering_info_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_sub_layer_ordering_info_present_flag
     {
@@ -54,7 +56,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("scaling_list_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint scaling_list_enabled_flag
     {
@@ -64,7 +66,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_scaling_list_data_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_scaling_list_data_present_flag
     {
@@ -74,7 +76,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("amp_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint amp_enabled_flag
     {
@@ -84,7 +86,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sample_adaptive_offset_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sample_adaptive_offset_enabled_flag
     {
@@ -94,7 +96,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("pcm_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint pcm_enabled_flag
     {
@@ -104,7 +106,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("pcm_loop_filter_disabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint pcm_loop_filter_disabled_flag
     {
@@ -114,7 +116,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("long_term_ref_pics_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint long_term_ref_pics_present_flag
     {
@@ -124,7 +126,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_temporal_mvp_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_temporal_mvp_enabled_flag
     {
@@ -134,7 +136,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("strong_intra_smoothing_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint strong_intra_smoothing_enabled_flag
     {
@@ -144,7 +146,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("vui_parameters_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint vui_parameters_present_flag
     {
@@ -154,7 +156,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 13)) | ((value & 0x1u) << 13); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_extension_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_extension_present_flag
     {
@@ -164,7 +166,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 14)) | ((value & 0x1u) << 14); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_range_extension_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_range_extension_flag
     {
@@ -174,7 +176,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("transform_skip_rotation_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint transform_skip_rotation_enabled_flag
     {
@@ -184,7 +186,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 16)) | ((value & 0x1u) << 16); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("transform_skip_context_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint transform_skip_context_enabled_flag
     {
@@ -194,7 +196,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 17)) | ((value & 0x1u) << 17); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("implicit_rdpcm_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint implicit_rdpcm_enabled_flag
     {
@@ -204,7 +206,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 18)) | ((value & 0x1u) << 18); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("explicit_rdpcm_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint explicit_rdpcm_enabled_flag
     {
@@ -214,7 +216,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 19)) | ((value & 0x1u) << 19); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("extended_precision_processing_flag")]
     [SupportedApiProfile("vulkan")]
     public uint extended_precision_processing_flag
     {
@@ -224,7 +226,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 20)) | ((value & 0x1u) << 20); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("intra_smoothing_disabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint intra_smoothing_disabled_flag
     {
@@ -234,7 +236,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 21)) | ((value & 0x1u) << 21); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("high_precision_offsets_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint high_precision_offsets_enabled_flag
     {
@@ -244,7 +246,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("persistent_rice_adaptation_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint persistent_rice_adaptation_enabled_flag
     {
@@ -254,7 +256,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("cabac_bypass_alignment_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint cabac_bypass_alignment_enabled_flag
     {
@@ -264,7 +266,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 24)) | ((value & 0x1u) << 24); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_scc_extension_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_scc_extension_flag
     {
@@ -274,7 +276,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 25)) | ((value & 0x1u) << 25); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_curr_pic_ref_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_curr_pic_ref_enabled_flag
     {
@@ -284,7 +286,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 26)) | ((value & 0x1u) << 26); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("palette_mode_enabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint palette_mode_enabled_flag
     {
@@ -294,7 +296,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 27)) | ((value & 0x1u) << 27); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("sps_palette_predictor_initializers_present_flag")]
     [SupportedApiProfile("vulkan")]
     public uint sps_palette_predictor_initializers_present_flag
     {
@@ -304,7 +306,7 @@ public partial struct StdVideoH265SpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 28)) | ((value & 0x1u) << 28); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("intra_boundary_filtering_disabled_flag")]
     [SupportedApiProfile("vulkan")]
     public uint intra_boundary_filtering_disabled_flag
     {

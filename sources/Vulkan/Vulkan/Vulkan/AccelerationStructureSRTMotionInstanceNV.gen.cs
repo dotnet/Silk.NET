@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureSRTMotionInstanceNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureSRTMotionInstanceNV
 {
+    [NativeName("transformT0")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -18,6 +20,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
     )]
     public SRTDataNV TransformT0;
 
+    [NativeName("transformT1")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -25,6 +28,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
     )]
     public SRTDataNV TransformT1;
 
+    [NativeName("_bitfield1")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -32,7 +36,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
     )]
     public uint Bitfield1;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("instanceCustomIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -46,7 +50,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         set { Bitfield1 = (Bitfield1 & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("uint32_t : 8")]
+    [NativeName("mask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -60,6 +64,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         set { Bitfield1 = (Bitfield1 & ~(0xFFu << 24)) | ((value & 0xFFu) << 24); }
     }
 
+    [NativeName("_bitfield2")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -67,7 +72,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
     )]
     public uint Bitfield2;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("instanceShaderBindingTableRecordOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -81,7 +86,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         set { Bitfield2 = (Bitfield2 & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("VkGeometryInstanceFlagsKHR : 8")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -95,7 +100,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         set { Bitfield2 = (Bitfield2 & ~(0xFFu << 24)) | (((uint)(value) & 0xFFu) << 24); }
     }
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("accelerationStructureReference")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],

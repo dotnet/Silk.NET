@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoComponentBitDepthFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoComponentBitDepthFlagsKHR : uint
 {
+    [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_INVALID_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -20,6 +21,7 @@ public enum VideoComponentBitDepthFlagsKHR : uint
     )]
     DepthInvalidKHR = 0x0,
 
+    [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_8_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -27,6 +29,7 @@ public enum VideoComponentBitDepthFlagsKHR : uint
     )]
     Depth8BitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_10_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -34,6 +37,7 @@ public enum VideoComponentBitDepthFlagsKHR : uint
     )]
     Depth10BitKHR = 0x4,
 
+    [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_12_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

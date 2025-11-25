@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkShaderFloatControlsIndependence")]
 [SupportedApiProfile("vulkan")]
 public enum ShaderFloatControlsIndependence : uint
 {
+    [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     Independence32BitOnly = 0,
 
+    [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,6 +48,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     IndependenceAll = 1,
 
+    [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,6 +66,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     IndependenceNone = 2,
 
+    [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_float_controls"],
@@ -73,6 +77,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     Independence32BitOnlyKHR = Independence32BitOnly,
 
+    [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_float_controls"],
@@ -83,6 +88,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     IndependenceAllKHR = IndependenceAll,
 
+    [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_float_controls"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDisplaySurfaceStereoTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum DisplaySurfaceStereoTypeNV : uint
 {
+    [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_NONE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],
@@ -19,6 +20,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
     )]
     NoneNV = 0,
 
+    [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_ONBOARD_DIN_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],
@@ -26,6 +28,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
     )]
     OnboardDinNV = 1,
 
+    [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_HDMI_3D_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],
@@ -33,6 +36,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
     )]
     Hdmi3DNV = 2,
 
+    [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_INBAND_DISPLAYPORT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],

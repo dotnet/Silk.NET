@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_pipelineCacheUUID_e__FixedBuffer")]
 [InlineArray(16)]
 [SupportedApiProfile(
     "vulkan",
@@ -37,6 +38,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PhysicalDevicePropertiesPipelineCacheUUID
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRayTracingPipelineCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingPipelineCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -21,7 +23,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -32,7 +34,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -43,7 +45,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public PipelineCreateFlags Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stageCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -54,7 +56,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public uint StageCount;
 
-    [NativeTypeName("const VkPipelineShaderStageCreateInfo *")]
+    [NativeName("pStages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -65,7 +67,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public PipelineShaderStageCreateInfo* PStages;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("groupCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -76,7 +78,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public uint GroupCount;
 
-    [NativeTypeName("const VkRayTracingShaderGroupCreateInfoNV *")]
+    [NativeName("pGroups")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -87,7 +89,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public RayTracingShaderGroupCreateInfoNV* PGroups;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxRecursionDepth")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -98,7 +100,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public uint MaxRecursionDepth;
 
-    [NativeTypeName("VkPipelineLayout")]
+    [NativeName("layout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -109,7 +111,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeTypeName("VkPipeline")]
+    [NativeName("basePipelineHandle")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -120,7 +122,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
     )]
     public PipelineHandle BasePipelineHandle;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("basePipelineIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

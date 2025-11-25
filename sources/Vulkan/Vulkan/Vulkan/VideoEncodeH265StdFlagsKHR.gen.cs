@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoEncodeH265StdFlagsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoEncodeH265StdFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_SEPARATE_COLOR_PLANE_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -22,6 +23,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     SeparateColorPlaneFlagSetBitKHR = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_SAMPLE_ADAPTIVE_OFFSET_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -29,6 +31,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     SampleAdaptiveOffsetEnabledFlagSetBitKHR = 0x2,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_SCALING_LIST_DATA_PRESENT_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -36,6 +39,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     ScalingListDataPresentFlagSetBitKHR = 0x4,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_PCM_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -43,6 +47,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     PcmEnabledFlagSetBitKHR = 0x8,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_SPS_TEMPORAL_MVP_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -50,6 +55,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     SpsTemporalMvpEnabledFlagSetBitKHR = 0x10,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_INIT_QP_MINUS26_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -57,6 +63,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     InitQpMinus26BitKHR = 0x20,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_WEIGHTED_PRED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -64,6 +71,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     WeightedPredFlagSetBitKHR = 0x40,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_WEIGHTED_BIPRED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -71,6 +79,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     WeightedBipredFlagSetBitKHR = 0x80,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -78,6 +87,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     Log2ParallelMergeLevelMinus2BitKHR = 0x100,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_SIGN_DATA_HIDING_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -85,6 +95,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     SignDataHidingEnabledFlagSetBitKHR = 0x200,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_TRANSFORM_SKIP_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -92,6 +103,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     TransformSkipEnabledFlagSetBitKHR = 0x400,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_TRANSFORM_SKIP_ENABLED_FLAG_UNSET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -99,6 +111,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     TransformSkipEnabledFlagUnsetBitKHR = 0x800,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_PPS_SLICE_CHROMA_QP_OFFSETS_PRESENT_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -106,6 +119,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     PpsSliceChromaQpOffsetsPresentFlagSetBitKHR = 0x1000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_TRANSQUANT_BYPASS_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -113,6 +127,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     TransquantBypassEnabledFlagSetBitKHR = 0x2000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_CONSTRAINED_INTRA_PRED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -120,6 +135,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     ConstrainedIntraPredFlagSetBitKHR = 0x4000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_ENTROPY_CODING_SYNC_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -127,6 +143,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     EntropyCodingSyncEnabledFlagSetBitKHR = 0x8000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_DEBLOCKING_FILTER_OVERRIDE_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -134,6 +151,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     DeblockingFilterOverrideEnabledFlagSetBitKHR = 0x10000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_DEPENDENT_SLICE_SEGMENTS_ENABLED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -141,6 +159,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     DependentSliceSegmentsEnabledFlagSetBitKHR = 0x20000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_DEPENDENT_SLICE_SEGMENT_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -148,6 +167,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     DependentSliceSegmentFlagSetBitKHR = 0x40000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_SLICE_QP_DELTA_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -155,6 +175,7 @@ public enum VideoEncodeH265StdFlagsKHR : uint
     )]
     SliceQpDeltaBitKHR = 0x80000,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_STD_DIFFERENT_SLICE_QP_DELTA_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkAccelerationStructureMotionInstanceTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum AccelerationStructureMotionInstanceTypeNV : uint
 {
+    [NativeName("VK_ACCELERATION_STRUCTURE_MOTION_INSTANCE_TYPE_STATIC_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -19,6 +20,7 @@ public enum AccelerationStructureMotionInstanceTypeNV : uint
     )]
     StaticNV = 0,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_MOTION_INSTANCE_TYPE_MATRIX_MOTION_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -26,6 +28,7 @@ public enum AccelerationStructureMotionInstanceTypeNV : uint
     )]
     MatrixMotionNV = 1,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_MOTION_INSTANCE_TYPE_SRT_MOTION_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],

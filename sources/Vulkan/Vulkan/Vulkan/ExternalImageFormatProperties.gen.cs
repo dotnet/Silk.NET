@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkExternalImageFormatProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalImageFormatProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,6 +36,7 @@ public unsafe partial struct ExternalImageFormatProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,6 +61,7 @@ public unsafe partial struct ExternalImageFormatProperties
     )]
     public void* PNext;
 
+    [NativeName("externalMemoryProperties")]
     [SupportedApiProfile(
         "vulkan",
         [

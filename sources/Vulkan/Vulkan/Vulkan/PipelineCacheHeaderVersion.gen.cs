@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkPipelineCacheHeaderVersion")]
 [SupportedApiProfile("vulkan")]
 public enum PipelineCacheHeaderVersion : uint
 {
+    [NativeName("VK_PIPELINE_CACHE_HEADER_VERSION_ONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,6 +36,7 @@ public enum PipelineCacheHeaderVersion : uint
     )]
     One = 1,
 
+    [NativeName("VK_PIPELINE_CACHE_HEADER_VERSION_DATA_GRAPH_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_data_graph_model"],

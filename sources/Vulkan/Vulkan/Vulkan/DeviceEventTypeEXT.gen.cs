@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDeviceEventTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DeviceEventTypeEXT : uint
 {
+    [NativeName("VK_DEVICE_EVENT_TYPE_DISPLAY_HOTPLUG_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_control"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAttachmentDescription")]
 [SupportedApiProfile("vulkan")]
 public partial struct AttachmentDescription
 {
-    [NativeTypeName("VkAttachmentDescriptionFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,6 +31,7 @@ public partial struct AttachmentDescription
     )]
     public AttachmentDescriptionFlags Flags;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,6 +50,7 @@ public partial struct AttachmentDescription
     )]
     public Format Format;
 
+    [NativeName("samples")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,6 +69,7 @@ public partial struct AttachmentDescription
     )]
     public SampleCountFlags Samples;
 
+    [NativeName("loadOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,6 +88,7 @@ public partial struct AttachmentDescription
     )]
     public AttachmentLoadOp LoadOp;
 
+    [NativeName("storeOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,6 +107,7 @@ public partial struct AttachmentDescription
     )]
     public AttachmentStoreOp StoreOp;
 
+    [NativeName("stencilLoadOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -120,6 +126,7 @@ public partial struct AttachmentDescription
     )]
     public AttachmentLoadOp StencilLoadOp;
 
+    [NativeName("stencilStoreOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -138,6 +145,7 @@ public partial struct AttachmentDescription
     )]
     public AttachmentStoreOp StencilStoreOp;
 
+    [NativeName("initialLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,6 +164,7 @@ public partial struct AttachmentDescription
     )]
     public ImageLayout InitialLayout;
 
+    [NativeName("finalLayout")]
     [SupportedApiProfile(
         "vulkan",
         [

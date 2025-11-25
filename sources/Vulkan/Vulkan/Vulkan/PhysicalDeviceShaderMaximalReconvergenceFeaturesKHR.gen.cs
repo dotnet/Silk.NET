@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShaderMaximalReconvergenceFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_maximal_reconvergence"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_maximal_reconvergence"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderMaximalReconvergence")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_maximal_reconvergence"],

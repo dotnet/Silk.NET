@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_description_e__FixedBuffer")]
 [InlineArray(256)]
 [SupportedApiProfile(
     "vulkan",
@@ -25,6 +26,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PhysicalDeviceToolPropertiesDescription
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

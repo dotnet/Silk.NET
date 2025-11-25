@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGeneratedCommandsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -18,7 +20,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -26,6 +28,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public void* PNext;
 
+    [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -33,7 +36,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public PipelineBindPoint PipelineBindPoint;
 
-    [NativeTypeName("VkPipeline")]
+    [NativeName("pipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -41,7 +44,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public PipelineHandle Pipeline;
 
-    [NativeTypeName("VkIndirectCommandsLayoutNV")]
+    [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -49,7 +52,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public IndirectCommandsLayoutNVHandle IndirectCommandsLayout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("streamCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -57,7 +60,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public uint StreamCount;
 
-    [NativeTypeName("const VkIndirectCommandsStreamNV *")]
+    [NativeName("pStreams")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -65,7 +68,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public IndirectCommandsStreamNV* PStreams;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("sequencesCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -73,7 +76,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public uint SequencesCount;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("preprocessBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -81,7 +84,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public BufferHandle PreprocessBuffer;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("preprocessOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -89,7 +92,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public ulong PreprocessOffset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("preprocessSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -97,7 +100,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public ulong PreprocessSize;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("sequencesCountBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -105,7 +108,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public BufferHandle SequencesCountBuffer;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("sequencesCountOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -113,7 +116,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public ulong SequencesCountOffset;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("sequencesIndexBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -121,7 +124,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
     )]
     public BufferHandle SequencesIndexBuffer;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("sequencesIndexOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

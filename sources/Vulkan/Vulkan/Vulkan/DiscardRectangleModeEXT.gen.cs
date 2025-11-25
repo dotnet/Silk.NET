@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDiscardRectangleModeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DiscardRectangleModeEXT : uint
 {
+    [NativeName("VK_DISCARD_RECTANGLE_MODE_INCLUSIVE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -22,6 +23,7 @@ public enum DiscardRectangleModeEXT : uint
     )]
     InclusiveEXT = 0,
 
+    [NativeName("VK_DISCARD_RECTANGLE_MODE_EXCLUSIVE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],

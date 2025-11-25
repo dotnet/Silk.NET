@@ -8,21 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDebugMarkerMarkerInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DebugMarkerMarkerInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     public void* PNext;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pMarkerName")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     public sbyte* PMarkerName;
 
-    [NativeTypeName("float[4]")]
+    [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     public DebugMarkerMarkerInfoEXTColor Color;
 }

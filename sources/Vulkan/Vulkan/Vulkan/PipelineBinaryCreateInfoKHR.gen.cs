@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineBinaryCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineBinaryCreateInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -32,7 +34,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("const VkPipelineBinaryKeysAndDataKHR *")]
+    [NativeName("pKeysAndDataInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -43,7 +45,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
     )]
     public PipelineBinaryKeysAndDataKHR* PKeysAndDataInfo;
 
-    [NativeTypeName("VkPipeline")]
+    [NativeName("pipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -54,7 +56,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
     )]
     public PipelineHandle Pipeline;
 
-    [NativeTypeName("const VkPipelineCreateInfoKHR *")]
+    [NativeName("pPipelineCreateInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],

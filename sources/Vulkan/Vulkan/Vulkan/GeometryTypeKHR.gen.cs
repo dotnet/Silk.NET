@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkGeometryTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum GeometryTypeKHR : uint
 {
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -22,6 +23,7 @@ public enum GeometryTypeKHR : uint
     )]
     TrianglesKHR = 0,
 
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,6 +34,7 @@ public enum GeometryTypeKHR : uint
     )]
     AabbsKHR = 1,
 
+    [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -42,6 +45,7 @@ public enum GeometryTypeKHR : uint
     )]
     InstancesKHR = 2,
 
+    [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -49,6 +53,7 @@ public enum GeometryTypeKHR : uint
     )]
     SpheresNV = 1000429004,
 
+    [NativeName("VK_GEOMETRY_TYPE_LINEAR_SWEPT_SPHERES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -56,6 +61,7 @@ public enum GeometryTypeKHR : uint
     )]
     LinearSweptSpheresNV = 1000429005,
 
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -66,6 +72,7 @@ public enum GeometryTypeKHR : uint
     )]
     TrianglesNV = TrianglesKHR,
 
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkExportSemaphoreCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExportSemaphoreCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +37,7 @@ public unsafe partial struct ExportSemaphoreCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +62,7 @@ public unsafe partial struct ExportSemaphoreCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkExternalSemaphoreHandleTypeFlags")]
+    [NativeName("handleTypes")]
     [SupportedApiProfile(
         "vulkan",
         [

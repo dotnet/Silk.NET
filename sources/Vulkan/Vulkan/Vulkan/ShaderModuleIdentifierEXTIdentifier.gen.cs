@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_identifier_e__FixedBuffer")]
 [InlineArray(32)]
 [SupportedApiProfile(
     "vulkan",
@@ -20,6 +21,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct ShaderModuleIdentifierEXTIdentifier
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

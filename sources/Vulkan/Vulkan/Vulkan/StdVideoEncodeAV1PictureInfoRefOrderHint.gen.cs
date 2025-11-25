@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_ref_order_hint_e__FixedBuffer")]
 [InlineArray(8)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAV1PictureInfoRefOrderHint
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

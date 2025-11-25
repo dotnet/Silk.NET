@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMemoryRequirements")]
 [SupportedApiProfile("vulkan")]
 public partial struct MemoryRequirements
 {
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +41,7 @@ public partial struct MemoryRequirements
     )]
     public ulong Size;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("alignment")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +70,7 @@ public partial struct MemoryRequirements
     )]
     public ulong Alignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("memoryTypeBits")]
     [SupportedApiProfile(
         "vulkan",
         [

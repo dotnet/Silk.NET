@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoDecodeVP9PictureInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeVP9PictureInfoFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("error_resilient_mode")]
     [SupportedApiProfile("vulkan")]
     public uint error_resilient_mode
     {
@@ -24,7 +26,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("intra_only")]
     [SupportedApiProfile("vulkan")]
     public uint intra_only
     {
@@ -34,7 +36,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("allow_high_precision_mv")]
     [SupportedApiProfile("vulkan")]
     public uint allow_high_precision_mv
     {
@@ -44,7 +46,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("refresh_frame_context")]
     [SupportedApiProfile("vulkan")]
     public uint refresh_frame_context
     {
@@ -54,7 +56,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("frame_parallel_decoding_mode")]
     [SupportedApiProfile("vulkan")]
     public uint frame_parallel_decoding_mode
     {
@@ -64,7 +66,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("segmentation_enabled")]
     [SupportedApiProfile("vulkan")]
     public uint segmentation_enabled
     {
@@ -74,7 +76,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("show_frame")]
     [SupportedApiProfile("vulkan")]
     public uint show_frame
     {
@@ -84,7 +86,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("UsePrevFrameMvs")]
     [SupportedApiProfile("vulkan")]
     public uint UsePrevFrameMvs
     {
@@ -94,7 +96,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public uint reserved
     {

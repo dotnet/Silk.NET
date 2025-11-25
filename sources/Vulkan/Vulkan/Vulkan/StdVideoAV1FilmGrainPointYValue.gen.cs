@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_point_y_value_e__FixedBuffer")]
 [InlineArray(14)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1FilmGrainPointYValue
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

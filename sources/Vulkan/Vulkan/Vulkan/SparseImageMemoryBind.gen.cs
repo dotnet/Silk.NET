@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSparseImageMemoryBind")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SparseImageMemoryBind
 {
+    [NativeName("subresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,6 +40,7 @@ public unsafe partial struct SparseImageMemoryBind
     )]
     public ImageSubresource Subresource;
 
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,6 +69,7 @@ public unsafe partial struct SparseImageMemoryBind
     )]
     public Offset3D Offset;
 
+    [NativeName("extent")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -94,7 +98,7 @@ public unsafe partial struct SparseImageMemoryBind
     )]
     public Extent3D Extent;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -123,7 +127,7 @@ public unsafe partial struct SparseImageMemoryBind
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("memoryOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,7 +156,7 @@ public unsafe partial struct SparseImageMemoryBind
     )]
     public ulong MemoryOffset;
 
-    [NativeTypeName("VkSparseMemoryBindFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [

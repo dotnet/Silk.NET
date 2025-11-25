@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkIndirectCommandsLayoutUsageFlagsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum IndirectCommandsLayoutUsageFlagsNV : uint
 {
     None = 0x0,
 
+    [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_EXPLICIT_PREPROCESS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -22,6 +23,7 @@ public enum IndirectCommandsLayoutUsageFlagsNV : uint
     )]
     ExplicitPreprocessBitNV = 0x1,
 
+    [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_INDEXED_SEQUENCES_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -29,6 +31,7 @@ public enum IndirectCommandsLayoutUsageFlagsNV : uint
     )]
     IndexedSequencesBitNV = 0x2,
 
+    [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceBufferMemoryRequirements")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceBufferMemoryRequirements
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +29,7 @@ public unsafe partial struct DeviceBufferMemoryRequirements
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +46,7 @@ public unsafe partial struct DeviceBufferMemoryRequirements
     )]
     public void* PNext;
 
-    [NativeTypeName("const VkBufferCreateInfo *")]
+    [NativeName("pCreateInfo")]
     [SupportedApiProfile(
         "vulkan",
         [

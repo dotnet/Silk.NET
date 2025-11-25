@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_explicitAABB_e__FixedBuffer")]
 [InlineArray(6)]
 [SupportedApiProfile(
     "vulkan",
@@ -16,6 +17,7 @@ namespace Silk.NET.Vulkan;
 )]
 public partial struct PartitionedAccelerationStructureWriteInstanceDataNVExplicitAABB
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public float E0;
 }

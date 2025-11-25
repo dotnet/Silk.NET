@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkEventCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct EventCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +35,7 @@ public unsafe partial struct EventCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +59,7 @@ public unsafe partial struct EventCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkEventCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [

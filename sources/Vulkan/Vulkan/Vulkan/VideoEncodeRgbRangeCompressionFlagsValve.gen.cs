@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkVideoEncodeRgbRangeCompressionFlagsVALVE")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoEncodeRgbRangeCompressionFlagsValve : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_RGB_RANGE_COMPRESSION_FULL_RANGE_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
@@ -24,6 +25,7 @@ public enum VideoEncodeRgbRangeCompressionFlagsValve : uint
     )]
     FullRangeBitValve = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_RGB_RANGE_COMPRESSION_NARROW_RANGE_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_video_encode_rgb_conversion"],
