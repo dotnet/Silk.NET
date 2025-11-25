@@ -33,6 +33,7 @@ public class ModLoader
             nameof(ChangeNativeClass) => typeof(ChangeNativeClass),
             nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
             nameof(MarkNativeNames) => typeof(MarkNativeNames),
+            nameof(StripAttributes) => typeof(StripAttributes),
             _ => null,
         };
 }
