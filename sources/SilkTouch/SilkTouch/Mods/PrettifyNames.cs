@@ -151,7 +151,7 @@ public class PrettifyNames(
                 }
                 else
                 {
-                    constNames = new Dictionary<string, CandidateNames>();
+                    constNames = [];
                 }
 
                 // Rename the functions. More often that not functions have different nomenclature to constants, so we
@@ -266,9 +266,7 @@ public class PrettifyNames(
 
         var comp =
             await proj.GetCompilationAsync(ct)
-            ?? throw new InvalidOperationException(
-                "Failed to obtain compilation for source project!"
-            );
+            ?? throw new InvalidOperationException("Failed to obtain compilation for source project!");
 
         await NameUtils.RenameAllAsync(
             ctx,
@@ -511,11 +509,7 @@ public class PrettifyNames(
         // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
         // renamed. We keep track of the first trimming name so that we can add it to conflictingTrimmingNames when we
         // do discover a conflict (along with the trimming name of the actual conflict).
-        var methDiscrims =
-            new Dictionary<
-                string,
-                (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)
-            >();
+        var methDiscrims = new Dictionary<string, (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)>();
         var conflictingTrimmingNames = new HashSet<string>();
         while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
         {
@@ -655,9 +649,7 @@ public class PrettifyNames(
                         // Update the output name.
                         var firstSecondary =
                             context.Names![first].Secondary
-                            ?? throw new InvalidOperationException(
-                                "More than one trimming name without secondary names."
-                            );
+                            ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
                         context.Names![first] = new CandidateNames(
@@ -700,9 +692,7 @@ public class PrettifyNames(
                 // Conflict resolution! Update the output name.
                 var secondary =
                     context.Names![conflictingTrimmingName].Secondary
-                    ?? throw new InvalidOperationException(
-                        "More than one trimming name without secondary names."
-                    );
+                    ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
                 context.Names![conflictingTrimmingName] = new CandidateNames(
@@ -737,27 +727,22 @@ public class PrettifyNames(
         }
     }
 
+    private record struct TypeData(List<string>? NonFunctions, List<FunctionData>? Functions, bool IsEnum);
+    private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
+
     private class Visitor : CSharpSyntaxWalker
     {
-        public Dictionary<
-            string,
-            (
-                List<string>? NonFunctions,
-                List<(string Name, MethodDeclarationSyntax Syntax)>? Functions,
-                bool IsEnum
-            )
-        > Types = new();
+        public Dictionary<string, TypeData> Types { get; } = new();
+        public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
+        public HashSet<string> NonDeterminant { get; } = new();
 
-        public Dictionary<string, List<string>> PrettifyOnlyTypes = new();
-        public HashSet<string> NonDeterminant { get; } = [];
-        private (
-            ClassDeclarationSyntax Class,
-            List<string> NonFunctions,
-            List<(string Name, MethodDeclarationSyntax Syntax)> Functions
-        )? _classInProgress;
-        private (EnumDeclarationSyntax Enum, List<string> EnumMembers)? _enumInProgress;
+        private ClassInProgress? _classInProgress;
+        private EnumInProgress? _enumInProgress;
         private FieldDeclarationSyntax? _visitingField = null;
         private bool _prettifyOnly;
+
+        private record struct ClassInProgress(ClassDeclarationSyntax Class, List<string> NonFunctions, List<FunctionData> Functions);
+        private record struct EnumInProgress(EnumDeclarationSyntax Enum, List<string> EnumMembers);
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
@@ -779,11 +764,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            _classInProgress = (
-                node,
-                new List<string>(),
-                new List<(string, MethodDeclarationSyntax)>()
-            );
+            _classInProgress = new ClassInProgress(node, [], []);
 
             // Recurse into the members.
             base.VisitClassDeclaration(node);
@@ -792,17 +773,13 @@ public class PrettifyNames(
             // Tolerate partial classes.
             if (!Types.TryGetValue(id, out var inner))
             {
-                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>(), false);
+                inner = new TypeData([], new List<FunctionData>(), false);
                 Types.Add(id, inner);
             }
 
             // Merge with the other partials.
-            (inner.NonFunctions ??= new List<string>()).AddRange(
-                _classInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true)
-            );
-            (inner.Functions ??= new List<(string, MethodDeclarationSyntax)>()).AddRange(
-                _classInProgress.Value.Functions
-            );
+            (inner.NonFunctions ??= []).AddRange(_classInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true));
+            (inner.Functions ??= []).AddRange(_classInProgress.Value.Functions);
             _classInProgress = null;
         }
 
@@ -845,7 +822,7 @@ public class PrettifyNames(
                 var tiden = type.Identifier.ToString();
                 if (!PrettifyOnlyTypes.TryGetValue(tiden, out var inner))
                 {
-                    inner = new List<string>();
+                    inner = [];
                     PrettifyOnlyTypes.Add(tiden, inner);
                 }
 
@@ -862,7 +839,7 @@ public class PrettifyNames(
         {
             if (node.Parent == _classInProgress?.Class)
             {
-                _classInProgress!.Value.Functions.Add((node.Identifier.ToString(), node));
+                _classInProgress!.Value.Functions.Add(new FunctionData(node.Identifier.ToString(), node));
             }
         }
 
@@ -899,7 +876,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            Types.Add(node.Identifier.ToString(), (null, null, false));
+            Types.Add(node.Identifier.ToString(), new TypeData(null, null, false));
         }
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
@@ -922,7 +899,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            Types[node.Identifier.ToString()] = (null, null, false);
+            Types[node.Identifier.ToString()] = new TypeData(null, null, false);
             base.VisitStructDeclaration(node);
         }
 
@@ -954,16 +931,16 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            _enumInProgress = (node, new List<string>());
+            _enumInProgress = new EnumInProgress(node, []);
             base.VisitEnumDeclaration(node);
             var id = _enumInProgress.Value.Enum.Identifier.ToString();
             if (!Types.TryGetValue(id, out var inner))
             {
-                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>(), true);
+                inner = new TypeData([], [], true);
                 Types.Add(id, inner);
             }
 
-            (inner.NonFunctions ??= new List<string>()).AddRange(_enumInProgress.Value.EnumMembers);
+            (inner.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
             _enumInProgress = null;
         }
     }
