@@ -39,18 +39,3 @@ public readonly struct NameTrimmerContext
     /// </summary>
     public HashSet<string> NonDeterminant { get; init; }
 }
-
-/// <summary>
-/// TODO
-/// </summary>
-/// <param name="Primary"></param>
-/// <param name="Secondary"></param>
-public record struct CandidateNames(string Primary, List<string>? Secondary);
-
-/// <summary>
-/// TODO
-/// </summary>
-/// <param name="Primary"></param>
-/// <param name="Secondary"></param>
-/// <param name="Original"></param>
-public record struct CandidateNamesWithOriginal(string Primary, List<string>? Secondary, string Original);
