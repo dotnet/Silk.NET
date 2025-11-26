@@ -1372,7 +1372,7 @@ public partial class MixKhronosData(
             List<string>? newPrev = null;
             string? identifiedVendor = null;
             var trimVendor = false;
-            foreach (var vendor in job.Vendors ?? Enumerable.Empty<string>())
+            foreach (var vendor in job.Vendors ?? [])
             {
                 if (!current.EndsWith(vendor))
                 {

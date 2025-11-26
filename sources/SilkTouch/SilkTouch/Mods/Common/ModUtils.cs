@@ -126,7 +126,7 @@ public static class ModUtils
     ) =>
         (modifiers?.Any(SyntaxKind.StaticKeyword) ?? false ? "static " : string.Empty)
         + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
-        + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
+        + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? [])})";
 
     /// <summary>
     /// Gets a string that can be used to discriminate a function-like element for baking purposes.

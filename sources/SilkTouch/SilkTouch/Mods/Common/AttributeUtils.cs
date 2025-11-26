@@ -250,7 +250,7 @@ public static class AttributeUtils
                 (x.Target is null && requireContext is null)
                 || (requireContext is { } rc && (x.Target?.Identifier.IsKind(rc) ?? false))
                     ? x.Attributes
-                    : Enumerable.Empty<AttributeSyntax>()
+                    : []
             )
             .FirstOrDefault(x => x.IsAttribute("Silk.NET.Core.NativeTypeName"))
             ?.ArgumentList?.Arguments.Select(x =>

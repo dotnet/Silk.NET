@@ -380,10 +380,7 @@ public class PrettifyNames(
         NameUtils.NameTransformer translator,
         bool allowAllCaps = false)
     {
-        foreach (
-            var (nativeName, overriddenName) in nameOverrides
-                ?? Enumerable.Empty<KeyValuePair<string, string>>()
-        )
+        foreach (var (nativeName, overriddenName) in nameOverrides ?? [])
         {
             var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
@@ -425,10 +422,7 @@ public class PrettifyNames(
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
         // automatic prefix determination for example
         var namesToTrim = context.Names!;
-        foreach (
-            var (nativeName, overriddenName) in context.Configuration.NameOverrides
-                ?? Enumerable.Empty<KeyValuePair<string, string>>()
-        )
+        foreach (var (nativeName, overriddenName) in context.Configuration.NameOverrides ?? [])
         {
             var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
@@ -471,7 +465,7 @@ public class PrettifyNames(
             // Apply the name override to the dictionary we actually use.
             context.Names![nameToAdd] = new CandidateNames(
                 overriddenName,
-                [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
+                [.. v.Secondary ?? [], nameToAdd]
             );
         }
 

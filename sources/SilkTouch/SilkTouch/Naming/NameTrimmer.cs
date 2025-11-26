@@ -134,7 +134,7 @@ public class NameTrimmer : INameTrimmer
             foreach (
                 var candidatePrefix in !string.IsNullOrWhiteSpace(identifiedPrefix)
                     ? [identifiedPrefix] // otherwise we fall back to the hints...
-                    : context.Configuration.GlobalPrefixHints ?? Enumerable.Empty<string>()
+                    : context.Configuration.GlobalPrefixHints ?? []
             )
             {
                 if (
