@@ -12,6 +12,11 @@ public readonly unsafe partial struct GPUFenceHandle
 {
     public readonly void* Handle;
 
+    public GPUFenceHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(GPUFenceHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is GPUFenceHandle other && Equals(other);

@@ -12,6 +12,11 @@ public readonly unsafe partial struct WindowHandle
 {
     public readonly void* Handle;
 
+    public WindowHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(WindowHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is WindowHandle other && Equals(other);

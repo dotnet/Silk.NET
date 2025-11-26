@@ -12,6 +12,11 @@ public readonly unsafe partial struct CursorHandle
 {
     public readonly void* Handle;
 
+    public CursorHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(CursorHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is CursorHandle other && Equals(other);

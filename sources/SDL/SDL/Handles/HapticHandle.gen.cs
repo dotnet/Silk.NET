@@ -12,6 +12,11 @@ public readonly unsafe partial struct HapticHandle
 {
     public readonly void* Handle;
 
+    public HapticHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(HapticHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is HapticHandle other && Equals(other);

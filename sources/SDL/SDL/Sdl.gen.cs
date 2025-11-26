@@ -12,7 +12,7 @@ namespace Silk.NET.SDL;
 
 partial class Sdl(INativeContext nativeContext) : IDisposable
 {
-    public partial class DllImport
+    public partial class DllImport : ISdl.Static
     {
         static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
     }
@@ -25,7 +25,7 @@ partial class Sdl(INativeContext nativeContext) : IDisposable
         public static void MakeCurrent(ISdl ctx) => Underlying.Value = ctx;
     }
 
-    private readonly unsafe void*[] _slots = new void*[1151];
+    private readonly unsafe void*[] _slots = new void*[1153];
     public static ISdl Instance { get; } = new StaticWrapper<DllImport>();
 
     public static ISdl Create() => Instance;

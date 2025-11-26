@@ -16,7 +16,7 @@ public unsafe partial struct TextEditingCandidatesEvent
     public uint Reserved;
 
     [NativeTypeName("Uint64")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
     public uint WindowID;

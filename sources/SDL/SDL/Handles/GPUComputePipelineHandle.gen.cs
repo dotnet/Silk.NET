@@ -12,6 +12,11 @@ public readonly unsafe partial struct GPUComputePipelineHandle
 {
     public readonly void* Handle;
 
+    public GPUComputePipelineHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(GPUComputePipelineHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) =>

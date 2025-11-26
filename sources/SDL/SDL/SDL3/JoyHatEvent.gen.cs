@@ -16,7 +16,7 @@ public partial struct JoyHatEvent
     public uint Reserved;
 
     [NativeTypeName("Uint64")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeTypeName("SDL_JoystickID")]
     public uint Which;

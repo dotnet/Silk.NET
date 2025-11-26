@@ -12,6 +12,11 @@ public readonly unsafe partial struct ThreadHandle
 {
     public readonly void* Handle;
 
+    public ThreadHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(ThreadHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is ThreadHandle other && Equals(other);

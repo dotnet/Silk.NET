@@ -12,6 +12,11 @@ public readonly unsafe partial struct MutexHandle
 {
     public readonly void* Handle;
 
+    public MutexHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(MutexHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is MutexHandle other && Equals(other);

@@ -12,6 +12,11 @@ public readonly unsafe partial struct SemaphoreHandle
 {
     public readonly void* Handle;
 
+    public SemaphoreHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(SemaphoreHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is SemaphoreHandle other && Equals(other);

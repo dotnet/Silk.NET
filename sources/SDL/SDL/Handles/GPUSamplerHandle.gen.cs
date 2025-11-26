@@ -12,6 +12,11 @@ public readonly unsafe partial struct GPUSamplerHandle
 {
     public readonly void* Handle;
 
+    public GPUSamplerHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(GPUSamplerHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is GPUSamplerHandle other && Equals(other);

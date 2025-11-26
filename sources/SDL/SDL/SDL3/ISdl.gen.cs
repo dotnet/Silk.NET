@@ -24,14 +24,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AcquireCameraFrame")]
         static abstract Surface* AcquireCameraFrame(
             CameraHandle camera,
-            [NativeTypeName("Uint64 *")] ulong* timestampNS
+            [NativeTypeName("Uint64 *")] nuint* timestampNS
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AcquireCameraFrame")]
         static abstract Ptr<Surface> AcquireCameraFrame(
             CameraHandle camera,
-            [NativeTypeName("Uint64 *")] Ref<ulong> timestampNS
+            [NativeTypeName("Uint64 *")] Ref<nuint> timestampNS
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
@@ -160,7 +160,7 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("SDL_TimerID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
         static abstract uint AddTimerNS(
-            [NativeTypeName("Uint64")] ulong interval,
+            [NativeTypeName("Uint64")] nuint interval,
             [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
             void* userdata
         );
@@ -169,7 +169,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
         static abstract uint AddTimerNS(
-            [NativeTypeName("Uint64")] ulong interval,
+            [NativeTypeName("Uint64")] nuint interval,
             [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
             Ref userdata
         );
@@ -180,8 +180,8 @@ public unsafe partial interface ISdl
         static abstract MaybeBool<byte> AddVulkanRenderSemaphores(
             RendererHandle renderer,
             [NativeTypeName("Uint32")] uint wait_stage_mask,
-            [NativeTypeName("Sint64")] long wait_semaphore,
-            [NativeTypeName("Sint64")] long signal_semaphore
+            [NativeTypeName("Sint64")] nint wait_semaphore,
+            [NativeTypeName("Sint64")] nint signal_semaphore
         );
 
         [return: NativeTypeName("bool")]
@@ -189,8 +189,8 @@ public unsafe partial interface ISdl
         static abstract byte AddVulkanRenderSemaphoresRaw(
             RendererHandle renderer,
             [NativeTypeName("Uint32")] uint wait_stage_mask,
-            [NativeTypeName("Sint64")] long wait_semaphore,
-            [NativeTypeName("Sint64")] long signal_semaphore
+            [NativeTypeName("Sint64")] nint wait_semaphore,
+            [NativeTypeName("Sint64")] nint signal_semaphore
         );
 
         [Transformed]
@@ -1469,7 +1469,7 @@ public unsafe partial interface ISdl
             int offset_y,
             int w,
             int h,
-            [NativeTypeName("SDL_WindowFlags")] ulong flags
+            [NativeTypeName("SDL_WindowFlags")] nuint flags
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
@@ -1654,7 +1654,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] sbyte* title,
             int w,
             int h,
-            [NativeTypeName("SDL_WindowFlags")] ulong flags
+            [NativeTypeName("SDL_WindowFlags")] nuint flags
         );
 
         [Transformed]
@@ -1663,7 +1663,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] Ref<sbyte> title,
             int w,
             int h,
-            [NativeTypeName("SDL_WindowFlags")] ulong flags
+            [NativeTypeName("SDL_WindowFlags")] nuint flags
         );
 
         [return: NativeTypeName("bool")]
@@ -1672,7 +1672,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] sbyte* title,
             int width,
             int height,
-            [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
+            [NativeTypeName("SDL_WindowFlags")] nuint window_flags,
             WindowHandle* window,
             RendererHandle* renderer
         );
@@ -1684,7 +1684,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("const char *")] Ref<sbyte> title,
             int width,
             int height,
-            [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
+            [NativeTypeName("SDL_WindowFlags")] nuint window_flags,
             Ref<WindowHandle> window,
             Ref<RendererHandle> renderer
         );
@@ -1707,7 +1707,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
         static abstract byte DateTimeToTime(
             [NativeTypeName("const SDL_DateTime *")] DateTime* dt,
-            [NativeTypeName("SDL_Time *")] long* ticks
+            [NativeTypeName("SDL_Time *")] nint* ticks
         );
 
         [return: NativeTypeName("bool")]
@@ -1715,17 +1715,17 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
         static abstract MaybeBool<byte> DateTimeToTime(
             [NativeTypeName("const SDL_DateTime *")] Ref<DateTime> dt,
-            [NativeTypeName("SDL_Time *")] Ref<long> ticks
+            [NativeTypeName("SDL_Time *")] Ref<nint> ticks
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_Delay")]
         static abstract void Delay([NativeTypeName("Uint32")] uint ms);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DelayNS")]
-        static abstract void DelayNS([NativeTypeName("Uint64")] ulong ns);
+        static abstract void DelayNS([NativeTypeName("Uint64")] nuint ns);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DelayPrecise")]
-        static abstract void DelayPrecise([NativeTypeName("Uint64")] ulong ns);
+        static abstract void DelayPrecise([NativeTypeName("Uint64")] nuint ns);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyAudioStream")]
         static abstract void DestroyAudioStream(AudioStreamHandle stream);
@@ -2684,17 +2684,17 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_ThreadID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentThreadID")]
-        static abstract ulong GetCurrentThreadID();
+        static abstract nuint GetCurrentThreadID();
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-        static abstract byte GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks);
+        static abstract byte GetCurrentTime([NativeTypeName("SDL_Time *")] nint* ticks);
 
         [return: NativeTypeName("bool")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
         static abstract MaybeBool<byte> GetCurrentTime(
-            [NativeTypeName("SDL_Time *")] Ref<long> ticks
+            [NativeTypeName("SDL_Time *")] Ref<nint> ticks
         );
 
         [return: NativeTypeName("const char *")]
@@ -3217,7 +3217,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadSteamHandle")]
-        static abstract ulong GetGamepadSteamHandle(GamepadHandle gamepad);
+        static abstract nuint GetGamepadSteamHandle(GamepadHandle gamepad);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -3427,7 +3427,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Sint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetIOSize")]
-        static abstract long GetIOSize(IOStreamHandle context);
+        static abstract nint GetIOSize(IOStreamHandle context);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetIOStatus")]
         static abstract IOStatus GetIOStatus(IOStreamHandle context);
@@ -3827,19 +3827,19 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Sint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumberProperty")]
-        static abstract long GetNumberProperty(
+        static abstract nint GetNumberProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("Sint64")] long default_value
+            [NativeTypeName("Sint64")] nint default_value
         );
 
         [return: NativeTypeName("Sint64")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumberProperty")]
-        static abstract long GetNumberProperty(
+        static abstract nint GetNumberProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("Sint64")] long default_value
+            [NativeTypeName("Sint64")] nint default_value
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumCameraDrivers")]
@@ -3912,11 +3912,11 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceCounter")]
-        static abstract ulong GetPerformanceCounter();
+        static abstract nuint GetPerformanceCounter();
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceFrequency")]
-        static abstract ulong GetPerformanceFrequency();
+        static abstract nuint GetPerformanceFrequency();
 
         [return: NativeTypeName("const SDL_PixelFormatDetails *")]
         [Transformed]
@@ -4593,7 +4593,7 @@ public unsafe partial interface ISdl
         static abstract byte GetStorageFileSize(
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
-            [NativeTypeName("Uint64 *")] ulong* length
+            [NativeTypeName("Uint64 *")] nuint* length
         );
 
         [return: NativeTypeName("bool")]
@@ -4602,7 +4602,7 @@ public unsafe partial interface ISdl
         static abstract MaybeBool<byte> GetStorageFileSize(
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
-            [NativeTypeName("Uint64 *")] Ref<ulong> length
+            [NativeTypeName("Uint64 *")] Ref<nuint> length
         );
 
         [return: NativeTypeName("bool")]
@@ -4624,7 +4624,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetStorageSpaceRemaining")]
-        static abstract ulong GetStorageSpaceRemaining(StorageHandle storage);
+        static abstract nuint GetStorageSpaceRemaining(StorageHandle storage);
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetStringProperty")]
@@ -4881,7 +4881,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_ThreadID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetThreadID")]
-        static abstract ulong GetThreadID(ThreadHandle thread);
+        static abstract nuint GetThreadID(ThreadHandle thread);
 
         [return: NativeTypeName("const char *")]
         [Transformed]
@@ -4897,11 +4897,11 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTicks")]
-        static abstract ulong GetTicks();
+        static abstract nuint GetTicks();
 
         [return: NativeTypeName("Uint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTicksNS")]
-        static abstract ulong GetTicksNS();
+        static abstract nuint GetTicksNS();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
         static abstract void* GetTLS([NativeTypeName("SDL_TLSID *")] AtomicInt* id);
@@ -4914,37 +4914,37 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceName")]
         static abstract Ptr<sbyte> GetTouchDeviceName(
-            [NativeTypeName("SDL_TouchID")] ulong touchID
+            [NativeTypeName("SDL_TouchID")] nuint touchID
         );
 
         [return: NativeTypeName("const char *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceName")]
-        static abstract sbyte* GetTouchDeviceNameRaw([NativeTypeName("SDL_TouchID")] ulong touchID);
+        static abstract sbyte* GetTouchDeviceNameRaw([NativeTypeName("SDL_TouchID")] nuint touchID);
 
         [return: NativeTypeName("SDL_TouchID *")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDevices")]
-        static abstract ulong* GetTouchDevices(int* count);
+        static abstract nuint* GetTouchDevices(int* count);
 
         [return: NativeTypeName("SDL_TouchID *")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDevices")]
-        static abstract Ptr<ulong> GetTouchDevices(Ref<int> count);
+        static abstract Ptr<nuint> GetTouchDevices(Ref<int> count);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceType")]
         static abstract TouchDeviceType GetTouchDeviceType(
-            [NativeTypeName("SDL_TouchID")] ulong touchID
+            [NativeTypeName("SDL_TouchID")] nuint touchID
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchFingers")]
         static abstract Finger** GetTouchFingers(
-            [NativeTypeName("SDL_TouchID")] ulong touchID,
+            [NativeTypeName("SDL_TouchID")] nuint touchID,
             int* count
         );
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchFingers")]
         static abstract Ptr2D<Finger> GetTouchFingers(
-            [NativeTypeName("SDL_TouchID")] ulong touchID,
+            [NativeTypeName("SDL_TouchID")] nuint touchID,
             Ref<int> count
         );
 
@@ -5012,7 +5012,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_WindowFlags")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFlags")]
-        static abstract ulong GetWindowFlags(WindowHandle window);
+        static abstract nuint GetWindowFlags(WindowHandle window);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromEvent")]
         static abstract WindowHandle GetWindowFromEvent(
@@ -6151,7 +6151,7 @@ public unsafe partial interface ISdl
         static abstract nuint IOvprintf(
             IOStreamHandle context,
             [NativeTypeName("const char *")] sbyte* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [return: NativeTypeName("size_t")]
@@ -6160,7 +6160,7 @@ public unsafe partial interface ISdl
         static abstract nuint IOvprintf(
             IOStreamHandle context,
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_isalnum")]
@@ -6584,7 +6584,7 @@ public unsafe partial interface ISdl
             int category,
             LogPriority priority,
             [NativeTypeName("const char *")] sbyte* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [Transformed]
@@ -6593,7 +6593,7 @@ public unsafe partial interface ISdl
             int category,
             LogPriority priority,
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [return: NativeTypeName("long")]
@@ -7319,17 +7319,17 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Uint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_rand_bits_r")]
-        static abstract uint RandBitsR([NativeTypeName("Uint64 *")] ulong* state);
+        static abstract uint RandBitsR([NativeTypeName("Uint64 *")] nuint* state);
 
         [return: NativeTypeName("Uint32")]
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_rand_bits_r")]
-        static abstract uint RandBitsR([NativeTypeName("Uint64 *")] Ref<ulong> state);
+        static abstract uint RandBitsR([NativeTypeName("Uint64 *")] Ref<nuint> state);
 
         [return: NativeTypeName("Sint32")]
         [NativeFunction("SDL3", EntryPoint = "SDL_rand_r")]
         static abstract int RandR(
-            [NativeTypeName("Uint64 *")] ulong* state,
+            [NativeTypeName("Uint64 *")] nuint* state,
             [NativeTypeName("Sint32")] int n
         );
 
@@ -7337,7 +7337,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_rand_r")]
         static abstract int RandR(
-            [NativeTypeName("Uint64 *")] Ref<ulong> state,
+            [NativeTypeName("Uint64 *")] Ref<nuint> state,
             [NativeTypeName("Sint32")] int n
         );
 
@@ -7345,11 +7345,11 @@ public unsafe partial interface ISdl
         static abstract float Randf();
 
         [NativeFunction("SDL3", EntryPoint = "SDL_randf_r")]
-        static abstract float RandfR([NativeTypeName("Uint64 *")] ulong* state);
+        static abstract float RandfR([NativeTypeName("Uint64 *")] nuint* state);
 
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_randf_r")]
-        static abstract float RandfR([NativeTypeName("Uint64 *")] Ref<ulong> state);
+        static abstract float RandfR([NativeTypeName("Uint64 *")] Ref<nuint> state);
 
         [return: NativeTypeName("size_t")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadIO")]
@@ -7441,7 +7441,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
         static abstract byte ReadS64BE(
             IOStreamHandle src,
-            [NativeTypeName("Sint64 *")] long* value
+            [NativeTypeName("Sint64 *")] nint* value
         );
 
         [return: NativeTypeName("bool")]
@@ -7449,14 +7449,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
         static abstract MaybeBool<byte> ReadS64BE(
             IOStreamHandle src,
-            [NativeTypeName("Sint64 *")] Ref<long> value
+            [NativeTypeName("Sint64 *")] Ref<nint> value
         );
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
         static abstract byte ReadS64LE(
             IOStreamHandle src,
-            [NativeTypeName("Sint64 *")] long* value
+            [NativeTypeName("Sint64 *")] nint* value
         );
 
         [return: NativeTypeName("bool")]
@@ -7464,7 +7464,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
         static abstract MaybeBool<byte> ReadS64LE(
             IOStreamHandle src,
-            [NativeTypeName("Sint64 *")] Ref<long> value
+            [NativeTypeName("Sint64 *")] Ref<nint> value
         );
 
         [return: NativeTypeName("bool")]
@@ -7485,7 +7485,7 @@ public unsafe partial interface ISdl
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             void* destination,
-            [NativeTypeName("Uint64")] ulong length
+            [NativeTypeName("Uint64")] nuint length
         );
 
         [return: NativeTypeName("bool")]
@@ -7495,7 +7495,7 @@ public unsafe partial interface ISdl
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             Ref destination,
-            [NativeTypeName("Uint64")] ulong length
+            [NativeTypeName("Uint64")] nuint length
         );
 
         [return: NativeTypeName("bool")]
@@ -7612,7 +7612,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
         static abstract byte ReadU64BE(
             IOStreamHandle src,
-            [NativeTypeName("Uint64 *")] ulong* value
+            [NativeTypeName("Uint64 *")] nuint* value
         );
 
         [return: NativeTypeName("bool")]
@@ -7620,14 +7620,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
         static abstract MaybeBool<byte> ReadU64BE(
             IOStreamHandle src,
-            [NativeTypeName("Uint64 *")] Ref<ulong> value
+            [NativeTypeName("Uint64 *")] Ref<nuint> value
         );
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
         static abstract byte ReadU64LE(
             IOStreamHandle src,
-            [NativeTypeName("Uint64 *")] ulong* value
+            [NativeTypeName("Uint64 *")] nuint* value
         );
 
         [return: NativeTypeName("bool")]
@@ -7635,7 +7635,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
         static abstract MaybeBool<byte> ReadU64LE(
             IOStreamHandle src,
-            [NativeTypeName("Uint64 *")] Ref<ulong> value
+            [NativeTypeName("Uint64 *")] Ref<nuint> value
         );
 
         [return: NativeTypeName("bool")]
@@ -8551,9 +8551,9 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Sint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SeekIO")]
-        static abstract long SeekIO(
+        static abstract nint SeekIO(
             IOStreamHandle context,
-            [NativeTypeName("Sint64")] long offset,
+            [NativeTypeName("Sint64")] nint offset,
             IOWhence whence
         );
 
@@ -8596,7 +8596,7 @@ public unsafe partial interface ISdl
         static abstract byte SendJoystickVirtualSensorData(
             JoystickHandle joystick,
             SensorType type,
-            [NativeTypeName("Uint64")] ulong sensor_timestamp,
+            [NativeTypeName("Uint64")] nuint sensor_timestamp,
             [NativeTypeName("const float *")] float* data,
             int num_values
         );
@@ -8607,7 +8607,7 @@ public unsafe partial interface ISdl
         static abstract MaybeBool<byte> SendJoystickVirtualSensorData(
             JoystickHandle joystick,
             SensorType type,
-            [NativeTypeName("Uint64")] ulong sensor_timestamp,
+            [NativeTypeName("Uint64")] nuint sensor_timestamp,
             [NativeTypeName("const float *")] Ref<float> data,
             int num_values
         );
@@ -8923,7 +8923,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
         static abstract byte SetErrorV(
             [NativeTypeName("const char *")] sbyte* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [return: NativeTypeName("bool")]
@@ -8931,7 +8931,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
         static abstract MaybeBool<byte> SetErrorV(
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
@@ -9349,6 +9349,38 @@ public unsafe partial interface ISdl
             float pressure
         );
 
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
+        static abstract MaybeBool<byte> SetLinuxThreadPriority(
+            [NativeTypeName("Sint64")] nint threadID,
+            int priority
+        );
+
+        [return: NativeTypeName("bool")]
+        [Transformed]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
+        static abstract MaybeBool<byte> SetLinuxThreadPriorityAndPolicy(
+            [NativeTypeName("Sint64")] nint threadID,
+            int sdlPriority,
+            int schedPolicy
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
+        static abstract byte SetLinuxThreadPriorityAndPolicyRaw(
+            [NativeTypeName("Sint64")] nint threadID,
+            int sdlPriority,
+            int schedPolicy
+        );
+
+        [return: NativeTypeName("bool")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
+        static abstract byte SetLinuxThreadPriorityRaw(
+            [NativeTypeName("Sint64")] nint threadID,
+            int priority
+        );
+
         [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
         static abstract void SetLogOutputFunction(
             [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
@@ -9413,7 +9445,7 @@ public unsafe partial interface ISdl
         static abstract byte SetNumberProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] sbyte* name,
-            [NativeTypeName("Sint64")] long value
+            [NativeTypeName("Sint64")] nint value
         );
 
         [return: NativeTypeName("bool")]
@@ -9422,7 +9454,7 @@ public unsafe partial interface ISdl
         static abstract MaybeBool<byte> SetNumberProperty(
             [NativeTypeName("SDL_PropertiesID")] uint props,
             [NativeTypeName("const char *")] Ref<sbyte> name,
-            [NativeTypeName("Sint64")] long value
+            [NativeTypeName("Sint64")] nint value
         );
 
         [return: NativeTypeName("bool")]
@@ -10390,7 +10422,7 @@ public unsafe partial interface ISdl
         static abstract float Sqrtf(float x);
 
         [NativeFunction("SDL3", EntryPoint = "SDL_srand")]
-        static abstract void Srand([NativeTypeName("Uint64")] ulong seed);
+        static abstract void Srand([NativeTypeName("Uint64")] nuint seed);
 
         [return: NativeTypeName("bool")]
         [Transformed]
@@ -10922,7 +10954,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("Sint64")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TellIO")]
-        static abstract long TellIO(IOStreamHandle context);
+        static abstract nint TellIO(IOStreamHandle context);
 
         [return: NativeTypeName("bool")]
         [Transformed]
@@ -10935,7 +10967,7 @@ public unsafe partial interface ISdl
 
         [return: NativeTypeName("SDL_Time")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeFromWindows")]
-        static abstract long TimeFromWindows(
+        static abstract nint TimeFromWindows(
             [NativeTypeName("Uint32")] uint dwLowDateTime,
             [NativeTypeName("Uint32")] uint dwHighDateTime
         );
@@ -10943,7 +10975,7 @@ public unsafe partial interface ISdl
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
         static abstract byte TimeToDateTime(
-            [NativeTypeName("SDL_Time")] long ticks,
+            [NativeTypeName("SDL_Time")] nint ticks,
             DateTime* dt,
             [NativeTypeName("bool")] byte localTime
         );
@@ -10952,14 +10984,14 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
         static abstract MaybeBool<byte> TimeToDateTime(
-            [NativeTypeName("SDL_Time")] long ticks,
+            [NativeTypeName("SDL_Time")] nint ticks,
             Ref<DateTime> dt,
             [NativeTypeName("bool")] MaybeBool<byte> localTime
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToWindows")]
         static abstract void TimeToWindows(
-            [NativeTypeName("SDL_Time")] long ticks,
+            [NativeTypeName("SDL_Time")] nint ticks,
             [NativeTypeName("Uint32 *")] uint* dwLowDateTime,
             [NativeTypeName("Uint32 *")] uint* dwHighDateTime
         );
@@ -10967,7 +10999,7 @@ public unsafe partial interface ISdl
         [Transformed]
         [NativeFunction("SDL3", EntryPoint = "SDL_TimeToWindows")]
         static abstract void TimeToWindows(
-            [NativeTypeName("SDL_Time")] long ticks,
+            [NativeTypeName("SDL_Time")] nint ticks,
             [NativeTypeName("Uint32 *")] Ref<uint> dwLowDateTime,
             [NativeTypeName("Uint32 *")] Ref<uint> dwHighDateTime
         );
@@ -11389,7 +11421,7 @@ public unsafe partial interface ISdl
         static abstract int Vasprintf(
             [NativeTypeName("char **")] sbyte** strp,
             [NativeTypeName("const char *")] sbyte* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [Transformed]
@@ -11397,7 +11429,7 @@ public unsafe partial interface ISdl
         static abstract int Vasprintf(
             [NativeTypeName("char **")] Ref2D<sbyte> strp,
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_vsnprintf")]
@@ -11405,7 +11437,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("char *")] sbyte* text,
             [NativeTypeName("size_t")] nuint maxlen,
             [NativeTypeName("const char *")] sbyte* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [Transformed]
@@ -11414,14 +11446,14 @@ public unsafe partial interface ISdl
             [NativeTypeName("char *")] Ref<sbyte> text,
             [NativeTypeName("size_t")] nuint maxlen,
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_vsscanf")]
         static abstract int Vsscanf(
             [NativeTypeName("const char *")] sbyte* text,
             [NativeTypeName("const char *")] sbyte* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [Transformed]
@@ -11429,7 +11461,7 @@ public unsafe partial interface ISdl
         static abstract int Vsscanf(
             [NativeTypeName("const char *")] Ref<sbyte> text,
             [NativeTypeName("const char *")] Ref<sbyte> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [NativeFunction("SDL3", EntryPoint = "SDL_vswprintf")]
@@ -11437,7 +11469,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("wchar_t *")] uint* text,
             [NativeTypeName("size_t")] nuint maxlen,
             [NativeTypeName("const wchar_t *")] uint* fmt,
-            [NativeTypeName("va_list")] sbyte* ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [Transformed]
@@ -11446,7 +11478,7 @@ public unsafe partial interface ISdl
             [NativeTypeName("wchar_t *")] Ref<uint> text,
             [NativeTypeName("size_t")] nuint maxlen,
             [NativeTypeName("const wchar_t *")] Ref<uint> fmt,
-            [NativeTypeName("va_list")] Ref<sbyte> ap
+            [NativeTypeName("va_list")] VaListTagHandle ap
         );
 
         [return: NativeTypeName("bool")]
@@ -11991,14 +12023,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
         static abstract MaybeBool<byte> WriteS64BE(
             IOStreamHandle dst,
-            [NativeTypeName("Sint64")] long value
+            [NativeTypeName("Sint64")] nint value
         );
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
         static abstract byte WriteS64BERaw(
             IOStreamHandle dst,
-            [NativeTypeName("Sint64")] long value
+            [NativeTypeName("Sint64")] nint value
         );
 
         [return: NativeTypeName("bool")]
@@ -12006,14 +12038,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
         static abstract MaybeBool<byte> WriteS64LE(
             IOStreamHandle dst,
-            [NativeTypeName("Sint64")] long value
+            [NativeTypeName("Sint64")] nint value
         );
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
         static abstract byte WriteS64LERaw(
             IOStreamHandle dst,
-            [NativeTypeName("Sint64")] long value
+            [NativeTypeName("Sint64")] nint value
         );
 
         [return: NativeTypeName("bool")]
@@ -12034,7 +12066,7 @@ public unsafe partial interface ISdl
             StorageHandle storage,
             [NativeTypeName("const char *")] sbyte* path,
             [NativeTypeName("const void *")] void* source,
-            [NativeTypeName("Uint64")] ulong length
+            [NativeTypeName("Uint64")] nuint length
         );
 
         [return: NativeTypeName("bool")]
@@ -12044,7 +12076,7 @@ public unsafe partial interface ISdl
             StorageHandle storage,
             [NativeTypeName("const char *")] Ref<sbyte> path,
             [NativeTypeName("const void *")] Ref source,
-            [NativeTypeName("Uint64")] ulong length
+            [NativeTypeName("Uint64")] nuint length
         );
 
         [return: NativeTypeName("bool")]
@@ -12162,14 +12194,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
         static abstract MaybeBool<byte> WriteU64BE(
             IOStreamHandle dst,
-            [NativeTypeName("Uint64")] ulong value
+            [NativeTypeName("Uint64")] nuint value
         );
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
         static abstract byte WriteU64BERaw(
             IOStreamHandle dst,
-            [NativeTypeName("Uint64")] ulong value
+            [NativeTypeName("Uint64")] nuint value
         );
 
         [return: NativeTypeName("bool")]
@@ -12177,14 +12209,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
         static abstract MaybeBool<byte> WriteU64LE(
             IOStreamHandle dst,
-            [NativeTypeName("Uint64")] ulong value
+            [NativeTypeName("Uint64")] nuint value
         );
 
         [return: NativeTypeName("bool")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
         static abstract byte WriteU64LERaw(
             IOStreamHandle dst,
-            [NativeTypeName("Uint64")] ulong value
+            [NativeTypeName("Uint64")] nuint value
         );
 
         [return: NativeTypeName("bool")]
@@ -12212,14 +12244,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireCameraFrame")]
     Surface* AcquireCameraFrame(
         CameraHandle camera,
-        [NativeTypeName("Uint64 *")] ulong* timestampNS
+        [NativeTypeName("Uint64 *")] nuint* timestampNS
     );
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireCameraFrame")]
     Ptr<Surface> AcquireCameraFrame(
         CameraHandle camera,
-        [NativeTypeName("Uint64 *")] Ref<ulong> timestampNS
+        [NativeTypeName("Uint64 *")] Ref<nuint> timestampNS
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
@@ -12335,7 +12367,7 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("SDL_TimerID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
     uint AddTimerNS(
-        [NativeTypeName("Uint64")] ulong interval,
+        [NativeTypeName("Uint64")] nuint interval,
         [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
         void* userdata
     );
@@ -12344,7 +12376,7 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddTimerNS")]
     uint AddTimerNS(
-        [NativeTypeName("Uint64")] ulong interval,
+        [NativeTypeName("Uint64")] nuint interval,
         [NativeTypeName("SDL_NSTimerCallback")] NSTimerCallback callback,
         Ref userdata
     );
@@ -12355,8 +12387,8 @@ public unsafe partial interface ISdl
     MaybeBool<byte> AddVulkanRenderSemaphores(
         RendererHandle renderer,
         [NativeTypeName("Uint32")] uint wait_stage_mask,
-        [NativeTypeName("Sint64")] long wait_semaphore,
-        [NativeTypeName("Sint64")] long signal_semaphore
+        [NativeTypeName("Sint64")] nint wait_semaphore,
+        [NativeTypeName("Sint64")] nint signal_semaphore
     );
 
     [return: NativeTypeName("bool")]
@@ -12364,8 +12396,8 @@ public unsafe partial interface ISdl
     byte AddVulkanRenderSemaphoresRaw(
         RendererHandle renderer,
         [NativeTypeName("Uint32")] uint wait_stage_mask,
-        [NativeTypeName("Sint64")] long wait_semaphore,
-        [NativeTypeName("Sint64")] long signal_semaphore
+        [NativeTypeName("Sint64")] nint wait_semaphore,
+        [NativeTypeName("Sint64")] nint signal_semaphore
     );
 
     [Transformed]
@@ -13595,7 +13627,7 @@ public unsafe partial interface ISdl
         int offset_y,
         int w,
         int h,
-        [NativeTypeName("SDL_WindowFlags")] ulong flags
+        [NativeTypeName("SDL_WindowFlags")] nuint flags
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateProcess")]
@@ -13762,7 +13794,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] sbyte* title,
         int w,
         int h,
-        [NativeTypeName("SDL_WindowFlags")] ulong flags
+        [NativeTypeName("SDL_WindowFlags")] nuint flags
     );
 
     [Transformed]
@@ -13771,7 +13803,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] Ref<sbyte> title,
         int w,
         int h,
-        [NativeTypeName("SDL_WindowFlags")] ulong flags
+        [NativeTypeName("SDL_WindowFlags")] nuint flags
     );
 
     [return: NativeTypeName("bool")]
@@ -13780,7 +13812,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] sbyte* title,
         int width,
         int height,
-        [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
+        [NativeTypeName("SDL_WindowFlags")] nuint window_flags,
         WindowHandle* window,
         RendererHandle* renderer
     );
@@ -13792,7 +13824,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("const char *")] Ref<sbyte> title,
         int width,
         int height,
-        [NativeTypeName("SDL_WindowFlags")] ulong window_flags,
+        [NativeTypeName("SDL_WindowFlags")] nuint window_flags,
         Ref<WindowHandle> window,
         Ref<RendererHandle> renderer
     );
@@ -13813,7 +13845,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
     byte DateTimeToTime(
         [NativeTypeName("const SDL_DateTime *")] DateTime* dt,
-        [NativeTypeName("SDL_Time *")] long* ticks
+        [NativeTypeName("SDL_Time *")] nint* ticks
     );
 
     [return: NativeTypeName("bool")]
@@ -13821,17 +13853,17 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_DateTimeToTime")]
     MaybeBool<byte> DateTimeToTime(
         [NativeTypeName("const SDL_DateTime *")] Ref<DateTime> dt,
-        [NativeTypeName("SDL_Time *")] Ref<long> ticks
+        [NativeTypeName("SDL_Time *")] Ref<nint> ticks
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_Delay")]
     void Delay([NativeTypeName("Uint32")] uint ms);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DelayNS")]
-    void DelayNS([NativeTypeName("Uint64")] ulong ns);
+    void DelayNS([NativeTypeName("Uint64")] nuint ns);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DelayPrecise")]
-    void DelayPrecise([NativeTypeName("Uint64")] ulong ns);
+    void DelayPrecise([NativeTypeName("Uint64")] nuint ns);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyAudioStream")]
     void DestroyAudioStream(AudioStreamHandle stream);
@@ -14734,16 +14766,16 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_ThreadID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentThreadID")]
-    ulong GetCurrentThreadID();
+    nuint GetCurrentThreadID();
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-    byte GetCurrentTime([NativeTypeName("SDL_Time *")] long* ticks);
+    byte GetCurrentTime([NativeTypeName("SDL_Time *")] nint* ticks);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentTime")]
-    MaybeBool<byte> GetCurrentTime([NativeTypeName("SDL_Time *")] Ref<long> ticks);
+    MaybeBool<byte> GetCurrentTime([NativeTypeName("SDL_Time *")] Ref<nint> ticks);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -15186,7 +15218,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGamepadSteamHandle")]
-    ulong GetGamepadSteamHandle(GamepadHandle gamepad);
+    nuint GetGamepadSteamHandle(GamepadHandle gamepad);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -15379,7 +15411,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Sint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetIOSize")]
-    long GetIOSize(IOStreamHandle context);
+    nint GetIOSize(IOStreamHandle context);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetIOStatus")]
     IOStatus GetIOStatus(IOStreamHandle context);
@@ -15744,19 +15776,19 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Sint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumberProperty")]
-    long GetNumberProperty(
+    nint GetNumberProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("Sint64")] long default_value
+        [NativeTypeName("Sint64")] nint default_value
     );
 
     [return: NativeTypeName("Sint64")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumberProperty")]
-    long GetNumberProperty(
+    nint GetNumberProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("Sint64")] long default_value
+        [NativeTypeName("Sint64")] nint default_value
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumCameraDrivers")]
@@ -15826,11 +15858,11 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceCounter")]
-    ulong GetPerformanceCounter();
+    nuint GetPerformanceCounter();
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceFrequency")]
-    ulong GetPerformanceFrequency();
+    nuint GetPerformanceFrequency();
 
     [return: NativeTypeName("const SDL_PixelFormatDetails *")]
     [Transformed]
@@ -16469,7 +16501,7 @@ public unsafe partial interface ISdl
     byte GetStorageFileSize(
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
-        [NativeTypeName("Uint64 *")] ulong* length
+        [NativeTypeName("Uint64 *")] nuint* length
     );
 
     [return: NativeTypeName("bool")]
@@ -16478,7 +16510,7 @@ public unsafe partial interface ISdl
     MaybeBool<byte> GetStorageFileSize(
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
-        [NativeTypeName("Uint64 *")] Ref<ulong> length
+        [NativeTypeName("Uint64 *")] Ref<nuint> length
     );
 
     [return: NativeTypeName("bool")]
@@ -16500,7 +16532,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetStorageSpaceRemaining")]
-    ulong GetStorageSpaceRemaining(StorageHandle storage);
+    nuint GetStorageSpaceRemaining(StorageHandle storage);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetStringProperty")]
@@ -16729,7 +16761,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_ThreadID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetThreadID")]
-    ulong GetThreadID(ThreadHandle thread);
+    nuint GetThreadID(ThreadHandle thread);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -16745,11 +16777,11 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTicks")]
-    ulong GetTicks();
+    nuint GetTicks();
 
     [return: NativeTypeName("Uint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTicksNS")]
-    ulong GetTicksNS();
+    nuint GetTicksNS();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
     void* GetTLS([NativeTypeName("SDL_TLSID *")] AtomicInt* id);
@@ -16761,30 +16793,30 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("const char *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceName")]
-    Ptr<sbyte> GetTouchDeviceName([NativeTypeName("SDL_TouchID")] ulong touchID);
+    Ptr<sbyte> GetTouchDeviceName([NativeTypeName("SDL_TouchID")] nuint touchID);
 
     [return: NativeTypeName("const char *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceName")]
-    sbyte* GetTouchDeviceNameRaw([NativeTypeName("SDL_TouchID")] ulong touchID);
+    sbyte* GetTouchDeviceNameRaw([NativeTypeName("SDL_TouchID")] nuint touchID);
 
     [return: NativeTypeName("SDL_TouchID *")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDevices")]
-    ulong* GetTouchDevices(int* count);
+    nuint* GetTouchDevices(int* count);
 
     [return: NativeTypeName("SDL_TouchID *")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDevices")]
-    Ptr<ulong> GetTouchDevices(Ref<int> count);
+    Ptr<nuint> GetTouchDevices(Ref<int> count);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceType")]
-    TouchDeviceType GetTouchDeviceType([NativeTypeName("SDL_TouchID")] ulong touchID);
+    TouchDeviceType GetTouchDeviceType([NativeTypeName("SDL_TouchID")] nuint touchID);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchFingers")]
-    Finger** GetTouchFingers([NativeTypeName("SDL_TouchID")] ulong touchID, int* count);
+    Finger** GetTouchFingers([NativeTypeName("SDL_TouchID")] nuint touchID, int* count);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchFingers")]
-    Ptr2D<Finger> GetTouchFingers([NativeTypeName("SDL_TouchID")] ulong touchID, Ref<int> count);
+    Ptr2D<Finger> GetTouchFingers([NativeTypeName("SDL_TouchID")] nuint touchID, Ref<int> count);
 
     [return: NativeTypeName("const char *")]
     [Transformed]
@@ -16840,7 +16872,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_WindowFlags")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFlags")]
-    ulong GetWindowFlags(WindowHandle window);
+    nuint GetWindowFlags(WindowHandle window);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowFromEvent")]
     WindowHandle GetWindowFromEvent([NativeTypeName("const SDL_Event *")] Event* @event);
@@ -17925,7 +17957,7 @@ public unsafe partial interface ISdl
     nuint IOvprintf(
         IOStreamHandle context,
         [NativeTypeName("const char *")] sbyte* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [return: NativeTypeName("size_t")]
@@ -17934,7 +17966,7 @@ public unsafe partial interface ISdl
     nuint IOvprintf(
         IOStreamHandle context,
         [NativeTypeName("const char *")] Ref<sbyte> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_isalnum")]
@@ -18325,7 +18357,7 @@ public unsafe partial interface ISdl
         int category,
         LogPriority priority,
         [NativeTypeName("const char *")] sbyte* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [Transformed]
@@ -18334,7 +18366,7 @@ public unsafe partial interface ISdl
         int category,
         LogPriority priority,
         [NativeTypeName("const char *")] Ref<sbyte> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [return: NativeTypeName("long")]
@@ -19049,31 +19081,31 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Uint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_rand_bits_r")]
-    uint RandBitsR([NativeTypeName("Uint64 *")] ulong* state);
+    uint RandBitsR([NativeTypeName("Uint64 *")] nuint* state);
 
     [return: NativeTypeName("Uint32")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_rand_bits_r")]
-    uint RandBitsR([NativeTypeName("Uint64 *")] Ref<ulong> state);
+    uint RandBitsR([NativeTypeName("Uint64 *")] Ref<nuint> state);
 
     [return: NativeTypeName("Sint32")]
     [NativeFunction("SDL3", EntryPoint = "SDL_rand_r")]
-    int RandR([NativeTypeName("Uint64 *")] ulong* state, [NativeTypeName("Sint32")] int n);
+    int RandR([NativeTypeName("Uint64 *")] nuint* state, [NativeTypeName("Sint32")] int n);
 
     [return: NativeTypeName("Sint32")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_rand_r")]
-    int RandR([NativeTypeName("Uint64 *")] Ref<ulong> state, [NativeTypeName("Sint32")] int n);
+    int RandR([NativeTypeName("Uint64 *")] Ref<nuint> state, [NativeTypeName("Sint32")] int n);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_randf")]
     float Randf();
 
     [NativeFunction("SDL3", EntryPoint = "SDL_randf_r")]
-    float RandfR([NativeTypeName("Uint64 *")] ulong* state);
+    float RandfR([NativeTypeName("Uint64 *")] nuint* state);
 
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_randf_r")]
-    float RandfR([NativeTypeName("Uint64 *")] Ref<ulong> state);
+    float RandfR([NativeTypeName("Uint64 *")] Ref<nuint> state);
 
     [return: NativeTypeName("size_t")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadIO")]
@@ -19137,21 +19169,21 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
-    byte ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
+    byte ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] nint* value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64BE")]
-    MaybeBool<byte> ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<long> value);
+    MaybeBool<byte> ReadS64BE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<nint> value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
-    byte ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] long* value);
+    byte ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] nint* value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS64LE")]
-    MaybeBool<byte> ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<long> value);
+    MaybeBool<byte> ReadS64LE(IOStreamHandle src, [NativeTypeName("Sint64 *")] Ref<nint> value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadS8")]
@@ -19168,7 +19200,7 @@ public unsafe partial interface ISdl
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         void* destination,
-        [NativeTypeName("Uint64")] ulong length
+        [NativeTypeName("Uint64")] nuint length
     );
 
     [return: NativeTypeName("bool")]
@@ -19178,7 +19210,7 @@ public unsafe partial interface ISdl
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         Ref destination,
-        [NativeTypeName("Uint64")] ulong length
+        [NativeTypeName("Uint64")] nuint length
     );
 
     [return: NativeTypeName("bool")]
@@ -19269,21 +19301,21 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
-    byte ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value);
+    byte ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] nuint* value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64BE")]
-    MaybeBool<byte> ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<ulong> value);
+    MaybeBool<byte> ReadU64BE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<nuint> value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
-    byte ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] ulong* value);
+    byte ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] nuint* value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU64LE")]
-    MaybeBool<byte> ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<ulong> value);
+    MaybeBool<byte> ReadU64LE(IOStreamHandle src, [NativeTypeName("Uint64 *")] Ref<nuint> value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReadU8")]
@@ -20138,7 +20170,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Sint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SeekIO")]
-    long SeekIO(IOStreamHandle context, [NativeTypeName("Sint64")] long offset, IOWhence whence);
+    nint SeekIO(IOStreamHandle context, [NativeTypeName("Sint64")] nint offset, IOWhence whence);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SendGamepadEffect")]
@@ -20179,7 +20211,7 @@ public unsafe partial interface ISdl
     byte SendJoystickVirtualSensorData(
         JoystickHandle joystick,
         SensorType type,
-        [NativeTypeName("Uint64")] ulong sensor_timestamp,
+        [NativeTypeName("Uint64")] nuint sensor_timestamp,
         [NativeTypeName("const float *")] float* data,
         int num_values
     );
@@ -20190,7 +20222,7 @@ public unsafe partial interface ISdl
     MaybeBool<byte> SendJoystickVirtualSensorData(
         JoystickHandle joystick,
         SensorType type,
-        [NativeTypeName("Uint64")] ulong sensor_timestamp,
+        [NativeTypeName("Uint64")] nuint sensor_timestamp,
         [NativeTypeName("const float *")] Ref<float> data,
         int num_values
     );
@@ -20498,7 +20530,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
     byte SetErrorV(
         [NativeTypeName("const char *")] sbyte* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [return: NativeTypeName("bool")]
@@ -20506,7 +20538,7 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
     MaybeBool<byte> SetErrorV(
         [NativeTypeName("const char *")] Ref<sbyte> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
@@ -20899,6 +20931,32 @@ public unsafe partial interface ISdl
         float pressure
     );
 
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
+    MaybeBool<byte> SetLinuxThreadPriority([NativeTypeName("Sint64")] nint threadID, int priority);
+
+    [return: NativeTypeName("bool")]
+    [Transformed]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
+    MaybeBool<byte> SetLinuxThreadPriorityAndPolicy(
+        [NativeTypeName("Sint64")] nint threadID,
+        int sdlPriority,
+        int schedPolicy
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
+    byte SetLinuxThreadPriorityAndPolicyRaw(
+        [NativeTypeName("Sint64")] nint threadID,
+        int sdlPriority,
+        int schedPolicy
+    );
+
+    [return: NativeTypeName("bool")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
+    byte SetLinuxThreadPriorityRaw([NativeTypeName("Sint64")] nint threadID, int priority);
+
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
     void SetLogOutputFunction(
         [NativeTypeName("SDL_LogOutputFunction")] LogOutputFunction callback,
@@ -20960,7 +21018,7 @@ public unsafe partial interface ISdl
     byte SetNumberProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] sbyte* name,
-        [NativeTypeName("Sint64")] long value
+        [NativeTypeName("Sint64")] nint value
     );
 
     [return: NativeTypeName("bool")]
@@ -20969,7 +21027,7 @@ public unsafe partial interface ISdl
     MaybeBool<byte> SetNumberProperty(
         [NativeTypeName("SDL_PropertiesID")] uint props,
         [NativeTypeName("const char *")] Ref<sbyte> name,
-        [NativeTypeName("Sint64")] long value
+        [NativeTypeName("Sint64")] nint value
     );
 
     [return: NativeTypeName("bool")]
@@ -21841,7 +21899,7 @@ public unsafe partial interface ISdl
     float Sqrtf(float x);
 
     [NativeFunction("SDL3", EntryPoint = "SDL_srand")]
-    void Srand([NativeTypeName("Uint64")] ulong seed);
+    void Srand([NativeTypeName("Uint64")] nuint seed);
 
     [return: NativeTypeName("bool")]
     [Transformed]
@@ -22369,7 +22427,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("Sint64")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TellIO")]
-    long TellIO(IOStreamHandle context);
+    nint TellIO(IOStreamHandle context);
 
     [return: NativeTypeName("bool")]
     [Transformed]
@@ -22382,7 +22440,7 @@ public unsafe partial interface ISdl
 
     [return: NativeTypeName("SDL_Time")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeFromWindows")]
-    long TimeFromWindows(
+    nint TimeFromWindows(
         [NativeTypeName("Uint32")] uint dwLowDateTime,
         [NativeTypeName("Uint32")] uint dwHighDateTime
     );
@@ -22390,7 +22448,7 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
     byte TimeToDateTime(
-        [NativeTypeName("SDL_Time")] long ticks,
+        [NativeTypeName("SDL_Time")] nint ticks,
         DateTime* dt,
         [NativeTypeName("bool")] byte localTime
     );
@@ -22399,14 +22457,14 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToDateTime")]
     MaybeBool<byte> TimeToDateTime(
-        [NativeTypeName("SDL_Time")] long ticks,
+        [NativeTypeName("SDL_Time")] nint ticks,
         Ref<DateTime> dt,
         [NativeTypeName("bool")] MaybeBool<byte> localTime
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToWindows")]
     void TimeToWindows(
-        [NativeTypeName("SDL_Time")] long ticks,
+        [NativeTypeName("SDL_Time")] nint ticks,
         [NativeTypeName("Uint32 *")] uint* dwLowDateTime,
         [NativeTypeName("Uint32 *")] uint* dwHighDateTime
     );
@@ -22414,7 +22472,7 @@ public unsafe partial interface ISdl
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_TimeToWindows")]
     void TimeToWindows(
-        [NativeTypeName("SDL_Time")] long ticks,
+        [NativeTypeName("SDL_Time")] nint ticks,
         [NativeTypeName("Uint32 *")] Ref<uint> dwLowDateTime,
         [NativeTypeName("Uint32 *")] Ref<uint> dwHighDateTime
     );
@@ -22829,7 +22887,7 @@ public unsafe partial interface ISdl
     int Vasprintf(
         [NativeTypeName("char **")] sbyte** strp,
         [NativeTypeName("const char *")] sbyte* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [Transformed]
@@ -22837,7 +22895,7 @@ public unsafe partial interface ISdl
     int Vasprintf(
         [NativeTypeName("char **")] Ref2D<sbyte> strp,
         [NativeTypeName("const char *")] Ref<sbyte> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_vsnprintf")]
@@ -22845,7 +22903,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("char *")] sbyte* text,
         [NativeTypeName("size_t")] nuint maxlen,
         [NativeTypeName("const char *")] sbyte* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [Transformed]
@@ -22854,14 +22912,14 @@ public unsafe partial interface ISdl
         [NativeTypeName("char *")] Ref<sbyte> text,
         [NativeTypeName("size_t")] nuint maxlen,
         [NativeTypeName("const char *")] Ref<sbyte> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_vsscanf")]
     int Vsscanf(
         [NativeTypeName("const char *")] sbyte* text,
         [NativeTypeName("const char *")] sbyte* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [Transformed]
@@ -22869,7 +22927,7 @@ public unsafe partial interface ISdl
     int Vsscanf(
         [NativeTypeName("const char *")] Ref<sbyte> text,
         [NativeTypeName("const char *")] Ref<sbyte> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [NativeFunction("SDL3", EntryPoint = "SDL_vswprintf")]
@@ -22877,7 +22935,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("wchar_t *")] uint* text,
         [NativeTypeName("size_t")] nuint maxlen,
         [NativeTypeName("const wchar_t *")] uint* fmt,
-        [NativeTypeName("va_list")] sbyte* ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [Transformed]
@@ -22886,7 +22944,7 @@ public unsafe partial interface ISdl
         [NativeTypeName("wchar_t *")] Ref<uint> text,
         [NativeTypeName("size_t")] nuint maxlen,
         [NativeTypeName("const wchar_t *")] Ref<uint> fmt,
-        [NativeTypeName("va_list")] Ref<sbyte> ap
+        [NativeTypeName("va_list")] VaListTagHandle ap
     );
 
     [return: NativeTypeName("bool")]
@@ -23383,20 +23441,20 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
-    MaybeBool<byte> WriteS64BE(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    MaybeBool<byte> WriteS64BE(IOStreamHandle dst, [NativeTypeName("Sint64")] nint value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64BE")]
-    byte WriteS64BERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    byte WriteS64BERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] nint value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
-    MaybeBool<byte> WriteS64LE(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    MaybeBool<byte> WriteS64LE(IOStreamHandle dst, [NativeTypeName("Sint64")] nint value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteS64LE")]
-    byte WriteS64LERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] long value);
+    byte WriteS64LERaw(IOStreamHandle dst, [NativeTypeName("Sint64")] nint value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
@@ -23413,7 +23471,7 @@ public unsafe partial interface ISdl
         StorageHandle storage,
         [NativeTypeName("const char *")] sbyte* path,
         [NativeTypeName("const void *")] void* source,
-        [NativeTypeName("Uint64")] ulong length
+        [NativeTypeName("Uint64")] nuint length
     );
 
     [return: NativeTypeName("bool")]
@@ -23423,7 +23481,7 @@ public unsafe partial interface ISdl
         StorageHandle storage,
         [NativeTypeName("const char *")] Ref<sbyte> path,
         [NativeTypeName("const void *")] Ref source,
-        [NativeTypeName("Uint64")] ulong length
+        [NativeTypeName("Uint64")] nuint length
     );
 
     [return: NativeTypeName("bool")]
@@ -23507,20 +23565,20 @@ public unsafe partial interface ISdl
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
-    MaybeBool<byte> WriteU64BE(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    MaybeBool<byte> WriteU64BE(IOStreamHandle dst, [NativeTypeName("Uint64")] nuint value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64BE")]
-    byte WriteU64BERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    byte WriteU64BERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] nuint value);
 
     [return: NativeTypeName("bool")]
     [Transformed]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
-    MaybeBool<byte> WriteU64LE(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    MaybeBool<byte> WriteU64LE(IOStreamHandle dst, [NativeTypeName("Uint64")] nuint value);
 
     [return: NativeTypeName("bool")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WriteU64LE")]
-    byte WriteU64LERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] ulong value);
+    byte WriteU64LERaw(IOStreamHandle dst, [NativeTypeName("Uint64")] nuint value);
 
     [return: NativeTypeName("bool")]
     [Transformed]

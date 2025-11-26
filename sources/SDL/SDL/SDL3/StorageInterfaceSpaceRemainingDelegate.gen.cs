@@ -9,4 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [Transformed]
-public unsafe delegate ulong StorageInterfaceSpaceRemainingDelegate(void* arg0);
+public unsafe delegate nuint StorageInterfaceSpaceRemainingDelegate(void* arg0);

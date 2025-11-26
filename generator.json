@@ -62,6 +62,9 @@
         "BoolTypes": {
           "SDL_bool": null
         }
+      },
+      "PrettifyNames": {
+        "GlobalPrefixHints": ["SDL"]
       }
     },
     "OpenGL": {

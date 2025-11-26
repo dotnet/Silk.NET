@@ -11,10 +11,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct NSTimerCallback : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, uint, ulong, ulong> Handle =>
-        (delegate* unmanaged<void*, uint, ulong, ulong>)Pointer;
+    public delegate* unmanaged<void*, uint, nuint, nuint> Handle =>
+        (delegate* unmanaged<void*, uint, nuint, nuint>)Pointer;
 
-    public NSTimerCallback(delegate* unmanaged<void*, uint, ulong, ulong> ptr) => Pointer = ptr;
+    public NSTimerCallback(delegate* unmanaged<void*, uint, nuint, nuint> ptr) => Pointer = ptr;
 
     public NSTimerCallback(NSTimerCallbackDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
@@ -22,10 +22,10 @@ public readonly unsafe struct NSTimerCallback : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator NSTimerCallback(
-        delegate* unmanaged<void*, uint, ulong, ulong> pfn
+        delegate* unmanaged<void*, uint, nuint, nuint> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, uint, ulong, ulong>(
+    public static implicit operator delegate* unmanaged<void*, uint, nuint, nuint>(
         NSTimerCallback pfn
-    ) => (delegate* unmanaged<void*, uint, ulong, ulong>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, uint, nuint, nuint>)pfn.Pointer;
 }

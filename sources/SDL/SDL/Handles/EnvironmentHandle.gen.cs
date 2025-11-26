@@ -12,6 +12,11 @@ public readonly unsafe partial struct EnvironmentHandle
 {
     public readonly void* Handle;
 
+    public EnvironmentHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(EnvironmentHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is EnvironmentHandle other && Equals(other);

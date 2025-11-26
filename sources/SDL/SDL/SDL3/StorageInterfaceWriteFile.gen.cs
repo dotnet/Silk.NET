@@ -12,10 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceWriteFile : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, void*, ulong, byte> Handle =>
-        (delegate* unmanaged<void*, sbyte*, void*, ulong, byte>)Pointer;
+    public delegate* unmanaged<void*, sbyte*, void*, nuint, byte> Handle =>
+        (delegate* unmanaged<void*, sbyte*, void*, nuint, byte>)Pointer;
 
-    public StorageInterfaceWriteFile(delegate* unmanaged<void*, sbyte*, void*, ulong, byte> ptr) =>
+    public StorageInterfaceWriteFile(delegate* unmanaged<void*, sbyte*, void*, nuint, byte> ptr) =>
         Pointer = ptr;
 
     public StorageInterfaceWriteFile(StorageInterfaceWriteFileDelegate proc) =>
@@ -24,10 +24,10 @@ public readonly unsafe struct StorageInterfaceWriteFile : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator StorageInterfaceWriteFile(
-        delegate* unmanaged<void*, sbyte*, void*, ulong, byte> pfn
+        delegate* unmanaged<void*, sbyte*, void*, nuint, byte> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, sbyte*, void*, ulong, byte>(
+    public static implicit operator delegate* unmanaged<void*, sbyte*, void*, nuint, byte>(
         StorageInterfaceWriteFile pfn
-    ) => (delegate* unmanaged<void*, sbyte*, void*, ulong, byte>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, sbyte*, void*, nuint, byte>)pfn.Pointer;
 }

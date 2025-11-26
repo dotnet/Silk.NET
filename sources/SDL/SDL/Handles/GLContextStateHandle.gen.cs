@@ -12,6 +12,11 @@ public readonly unsafe partial struct GLContextStateHandle
 {
     public readonly void* Handle;
 
+    public GLContextStateHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(GLContextStateHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is GLContextStateHandle other && Equals(other);

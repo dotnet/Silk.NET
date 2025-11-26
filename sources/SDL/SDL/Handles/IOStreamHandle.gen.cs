@@ -12,6 +12,11 @@ public readonly unsafe partial struct IOStreamHandle
 {
     public readonly void* Handle;
 
+    public IOStreamHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(IOStreamHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is IOStreamHandle other && Equals(other);

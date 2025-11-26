@@ -3,7 +3,6 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
@@ -15,7 +14,7 @@ public partial struct SensorEvent
     public uint Reserved;
 
     [NativeTypeName("Uint64")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeTypeName("SDL_SensorID")]
     public uint Which;
@@ -24,5 +23,5 @@ public partial struct SensorEvent
     public SensorEventData Data;
 
     [NativeTypeName("Uint64")]
-    public ulong SensorTimestamp;
+    public nuint SensorTimestamp;
 }

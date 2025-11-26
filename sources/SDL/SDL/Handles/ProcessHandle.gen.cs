@@ -12,6 +12,11 @@ public readonly unsafe partial struct ProcessHandle
 {
     public readonly void* Handle;
 
+    public ProcessHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(ProcessHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is ProcessHandle other && Equals(other);

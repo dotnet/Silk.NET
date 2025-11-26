@@ -12,6 +12,11 @@ public readonly unsafe partial struct GPURenderPassHandle
 {
     public readonly void* Handle;
 
+    public GPURenderPassHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(GPURenderPassHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is GPURenderPassHandle other && Equals(other);

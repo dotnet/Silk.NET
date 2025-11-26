@@ -12,6 +12,11 @@ public readonly unsafe partial struct SharedObjectHandle
 {
     public readonly void* Handle;
 
+    public SharedObjectHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(SharedObjectHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is SharedObjectHandle other && Equals(other);

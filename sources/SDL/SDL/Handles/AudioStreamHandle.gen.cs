@@ -12,6 +12,11 @@ public readonly unsafe partial struct AudioStreamHandle
 {
     public readonly void* Handle;
 
+    public AudioStreamHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(AudioStreamHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is AudioStreamHandle other && Equals(other);

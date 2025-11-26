@@ -12,6 +12,11 @@ public readonly unsafe partial struct JoystickHandle
 {
     public readonly void* Handle;
 
+    public JoystickHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(JoystickHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is JoystickHandle other && Equals(other);
