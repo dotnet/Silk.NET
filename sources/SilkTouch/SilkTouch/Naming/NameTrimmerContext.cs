@@ -26,10 +26,7 @@ public readonly struct NameTrimmerContext
     /// names or other names that are otherwise less preferred to the primary name are listed in the optional secondary
     /// list (in order of preference).
     /// </summary>
-    public required Dictionary<
-        string,
-        (string Primary, List<string>? Secondary)
-    >? Names { get; init; }
+    public required Dictionary<string, CandidateNames>? Names { get; init; }
 
     /// <summary>
     /// Gets the current configuration for the <see cref="PrettifyNames"/> mod.
@@ -42,3 +39,18 @@ public readonly struct NameTrimmerContext
     /// </summary>
     public HashSet<string> NonDeterminant { get; init; }
 }
+
+/// <summary>
+/// TODO
+/// </summary>
+/// <param name="Primary"></param>
+/// <param name="Secondary"></param>
+public record struct CandidateNames(string Primary, List<string>? Secondary);
+
+/// <summary>
+/// TODO
+/// </summary>
+/// <param name="Primary"></param>
+/// <param name="Secondary"></param>
+/// <param name="Original"></param>
+public record struct CandidateNamesWithOriginal(string Primary, List<string>? Secondary, string Original);

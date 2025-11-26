@@ -1269,7 +1269,7 @@ public partial class MixKhronosData(
                     prevList.Add(prev);
                 }
 
-                context.Names[original] = (prev[(prev.IndexOf('_') + 1)..], prevList);
+                context.Names[original] = new CandidateNames(prev[(prev.IndexOf('_') + 1)..], prevList);
             }
         }
 
@@ -1285,7 +1285,7 @@ public partial class MixKhronosData(
                     var newPrev = previous ?? [];
                     newPrev.Add(current);
 
-                    context.Names[original] = (newPrim, newPrev);
+                    context.Names[original] = new CandidateNames(newPrim, newPrev);
                 }
             }
         }
@@ -1334,7 +1334,7 @@ public partial class MixKhronosData(
                         {
                             var sec = previous ?? [];
                             sec.Add(current);
-                            context.Names[original] = (current[..^vendor.Length], sec);
+                            context.Names[original] = new CandidateNames(current[..^vendor.Length], sec);
                             break;
                         }
                     }
@@ -1356,7 +1356,7 @@ public partial class MixKhronosData(
                         && name == $"{group.Namespace}Enum"
                     )
                     {
-                        context.Names[original] = (name, []);
+                        context.Names[original] = new CandidateNames(name, null);
                         changed = true;
                         break;
                     }
@@ -1403,7 +1403,7 @@ public partial class MixKhronosData(
                 {
                     newPrev ??= previous ?? [];
                     newPrev.Add(current);
-                    context.Names[original] = (newCurrent, newPrev);
+                    context.Names[original] = new CandidateNames(newCurrent, newPrev);
                 }
 
                 identifiedVendor = vendor;
@@ -1430,14 +1430,14 @@ public partial class MixKhronosData(
                 {
                     // If we're not trimming the vendor, this hack will be the primary name.
                     newPrev.Add(current);
-                    context.Names[original] = (pretty + identifiedVendor, newPrev);
+                    context.Names[original] = new CandidateNames(pretty + identifiedVendor, newPrev);
                 }
                 else
                 {
                     // If we are trimming the vendor, if at any point we have to fall back on the untrimmed version
                     // we'll want that version to be this hack.
                     newPrev.Add(pretty + identifiedVendor);
-                    context.Names[original] = (pretty, newPrev);
+                    context.Names[original] = new CandidateNames(pretty, newPrev);
                 }
             }
 
@@ -1454,7 +1454,7 @@ public partial class MixKhronosData(
                 {
                     // If we're not trimming the vendor, this hack will be the primary name.
                     newPrev.Add(current);
-                    context.Names[original] = ($"{newCurrent} {identifiedVendor}", newPrev);
+                    context.Names[original] = new CandidateNames($"{newCurrent} {identifiedVendor}", newPrev);
                 }
                 else
                 {
@@ -1463,7 +1463,7 @@ public partial class MixKhronosData(
                     // original name because PrettifyNames orders by match length.
                     newPrev.Remove(current);
                     newPrev.Add($"{newCurrent} {identifiedVendor}");
-                    context.Names[original] = (newCurrent, newPrev);
+                    context.Names[original] = new CandidateNames(newCurrent, newPrev);
                 }
             }
 
@@ -1515,7 +1515,7 @@ public partial class MixKhronosData(
                 newPrev.Add(current);
             }
 
-            context.Names[original] = (newPrim, newPrev);
+            context.Names[original] = new CandidateNames(newPrim, newPrev);
         }
     }
 

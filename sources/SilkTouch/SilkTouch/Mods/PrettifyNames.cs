@@ -102,7 +102,7 @@ public class PrettifyNames(
             // Create a type name dictionary to trim the type names.
             var typeNames = visitor.Types.ToDictionary(
                 x => x.Key,
-                x => (x.Key, (List<string>?)null)
+                x => new CandidateNames(x.Key, null)
             );
 
             // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
@@ -131,7 +131,7 @@ public class PrettifyNames(
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
                 var constNames = consts?.ToDictionary(
                     x => x,
-                    x => (Primary: x, (List<string>?)null)
+                    x => new CandidateNames(x, null)
                 );
 
                 // Trim the constants if we have any.
@@ -151,14 +151,14 @@ public class PrettifyNames(
                 }
                 else
                 {
-                    constNames = new Dictionary<string, (string Primary, List<string>?)>();
+                    constNames = new Dictionary<string, CandidateNames>();
                 }
 
                 // Rename the functions. More often that not functions have different nomenclature to constants, so we
                 // treat them separately.
                 var functionNames = functions
                     ?.DistinctBy(x => x.Name)
-                    .ToDictionary(x => x.Name, x => (Primary: x.Name, (List<string>?)null));
+                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, null));
 
                 // Collect the syntax as this is used for conflict resolution in the Trim function.
                 var functionSyntax =
@@ -188,9 +188,9 @@ public class PrettifyNames(
 
                 // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(
+                    ? val.Select(x => new KeyValuePair<string, CandidateNames>(
                         x,
-                        (GetOverriddenName(typeName, x, cfg.NameOverrides!, translator), null)
+                        new CandidateNames(GetOverriddenName(typeName, x, cfg.NameOverrides!, translator), null)
                     ))
                     : [];
 
@@ -198,7 +198,7 @@ public class PrettifyNames(
                 types[typeName] = (
                     newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
                                                                           // TODO deprecate secondaries if they're within the baseline?
-                    constNames.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(x.Key, (x.Value.Primary.Prettify(translator), x.Value.Item2)))
+                    constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(translator), x.Value.Secondary)))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value.Primary),
                     functionNames?.ToDictionary(
@@ -469,7 +469,7 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            context.Names![nameToAdd] = (
+            context.Names![nameToAdd] = new CandidateNames(
                 overriddenName,
                 [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
             );
@@ -493,7 +493,7 @@ public class PrettifyNames(
         // Prefer shorter names
         foreach (var (trimmingName, (primary, secondary)) in context.Names!)
         {
-            context.Names![trimmingName] = (
+            context.Names![trimmingName] = new CandidateNames(
                 primary,
                 secondary?.OrderByDescending(x => x.Length).ToList()
             );
@@ -666,7 +666,7 @@ public class PrettifyNames(
                             );
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                        context.Names![first] = (
+                        context.Names![first] = new CandidateNames(
                             firstNextPrimary,
                             firstSecondary.Count == 0 ? null : firstSecondary
                         );
@@ -711,7 +711,7 @@ public class PrettifyNames(
                     );
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
-                context.Names![conflictingTrimmingName] = (
+                context.Names![conflictingTrimmingName] = new CandidateNames(
                     nextPrimary,
                     secondary.Count == 0 ? null : secondary
                 );

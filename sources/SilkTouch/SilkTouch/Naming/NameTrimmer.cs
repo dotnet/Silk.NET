@@ -32,8 +32,7 @@ public class NameTrimmer : INameTrimmer
     public void Trim(NameTrimmerContext context)
     {
         string? identifiedPrefix = null;
-        Dictionary<string, (string Primary, List<string>? Secondary, string Original)> localNames =
-            null!;
+        Dictionary<string, CandidateNamesWithOriginal> localNames = null!;
         var nPasses = HasRawPass
             ? HasNaivePass
                 ? 3
@@ -166,7 +165,7 @@ public class NameTrimmer : INameTrimmer
                 // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
                 // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
                 // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
-                context.Names![originalName] = (oldPrimary[prefixLen..].Trim('_'), sec);
+                context.Names![originalName] = new CandidateNames(oldPrimary[prefixLen..].Trim('_'), sec);
                 break;
             }
         }
@@ -191,13 +190,10 @@ public class NameTrimmer : INameTrimmer
     /// Returns the local names dictionary alongside it as well. That is, the mapping of the results of
     /// <see cref="GetTrimmingName"/> to the new name.
     /// </returns>
-    protected (
-        string Prefix,
-        Dictionary<string, (string Primary, List<string>? Secondary, string Original)>
-    )? GetPrefix(
+    protected (string Prefix, Dictionary<string, CandidateNamesWithOriginal>)? GetPrefix(
         string? container,
         string? hint,
-        Dictionary<string, (string Primary, List<string>? Secondary)>? names,
+        Dictionary<string,CandidateNames>? names,
         Dictionary<string, string>? prefixOverrides,
         HashSet<string>? nonDeterminant,
         bool getTrimmingName,
@@ -217,7 +213,7 @@ public class NameTrimmer : INameTrimmer
             : container ?? hint ?? string.Empty;
         var localNames = names.ToDictionary(
             x => getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false, hint) : x.Key,
-            x => (x.Value.Primary, x.Value.Secondary, x.Key)
+            x => new CandidateNamesWithOriginal(x.Value.Primary, x.Value.Secondary, x.Key)
         );
 
         // Set the prefix to the prefix override for this container, if it exists.
@@ -248,7 +244,7 @@ public class NameTrimmer : INameTrimmer
                 )
             : NameUtils.FindCommonPrefix(
                 localNames
-                    .Where(x => !(nonDeterminant?.Contains(x.Value.Key) ?? false))
+                    .Where(x => !(nonDeterminant?.Contains(x.Value.Original) ?? false))
                     .Select(x => x.Key)
                     .ToList(),
                 // If naive mode is on and we're trimming type names, allow full matches (method class is
