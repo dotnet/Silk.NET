@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum ContextProfileMask : uint
 {
     CoreProfileBit = unchecked((uint)0x00000001),

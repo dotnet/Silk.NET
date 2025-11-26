@@ -21,4 +21,10 @@ public enum ErrorCode : uint
     OutOfMemory = unchecked((uint)0xA005),
     StackOverflowEXT = unchecked((uint)0x19CD),
     StackUnderflowEXT = unchecked((uint)0x19CE),
+    CNoError = unchecked((uint)0),
+    CInvalidDevice = unchecked((uint)0xA001),
+    CInvalidContEXT = unchecked((uint)0xA002),
+    CInvalidEnum = unchecked((uint)0xA003),
+    CInvalidValue = unchecked((uint)0xA004),
+    COutOfMemory = unchecked((uint)0xA005),
 }

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum VertexHintsMaskPGI : uint
 {
     Color3Bit = unchecked((uint)0x00010000),

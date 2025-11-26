@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum BufferStorageMask : uint
 {
     MapReadBit = unchecked((uint)0x0001),

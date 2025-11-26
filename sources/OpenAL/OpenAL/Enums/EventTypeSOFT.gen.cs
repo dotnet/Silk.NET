@@ -13,7 +13,10 @@ namespace Silk.NET.OpenAL;
 [Transformed]
 public enum EventTypeSOFT : uint
 {
-    BufferCompleted = unchecked((uint)0x19A4),
-    SourceStateChanged = unchecked((uint)0x19A5),
-    Disconnected = unchecked((uint)0x19A6),
+    EventTypeBufferCompleted = unchecked((uint)0x19A4),
+    EventTypeSourceStateChanged = unchecked((uint)0x19A5),
+    EventTypeDisconnected = unchecked((uint)0x19A6),
+    CEventTypeDefaultDeviceChanged = unchecked((uint)0x19D6),
+    CEventTypeDeviceAdded = unchecked((uint)0x19D7),
+    CEventTypeDeviceRemoved = unchecked((uint)0x19D8),
 }

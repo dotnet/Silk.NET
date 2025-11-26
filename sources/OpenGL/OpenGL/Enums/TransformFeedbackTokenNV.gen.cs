@@ -14,5 +14,5 @@ public enum TransformFeedbackTokenNV : uint
     SkipComponents4 = unchecked((uint)-3),
     SkipComponents3 = unchecked((uint)-4),
     SkipComponents2 = unchecked((uint)-5),
-    SkipComponents1 = unchecked((uint) - 6),
+    SkipComponents1 = unchecked((uint)-6),
 }

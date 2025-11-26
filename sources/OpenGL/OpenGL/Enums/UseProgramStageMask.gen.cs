@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum UseProgramStageMask : uint
 {
     VertexShaderBit = unchecked((uint)0x00000001),

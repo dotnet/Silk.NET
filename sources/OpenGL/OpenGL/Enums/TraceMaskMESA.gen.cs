@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum TraceMaskMESA : uint { }

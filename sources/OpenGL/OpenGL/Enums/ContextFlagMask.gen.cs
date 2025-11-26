@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum ContextFlagMask : uint
 {
     ForwardCompatibleBit = unchecked((uint)0x00000001),

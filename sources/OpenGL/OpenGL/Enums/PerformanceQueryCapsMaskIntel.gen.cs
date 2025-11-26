@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [Transformed]
+[Flags]
 public enum PerformanceQueryCapsMaskIntel : uint
 {
     SingleContext = unchecked((uint)0x00000000),

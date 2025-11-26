@@ -62,7 +62,7 @@ public enum ALEnum : uint
     DopplerFactor = unchecked((uint)0xC000),
     DopplerVelocity = unchecked((uint)0xC001),
     DistanceModel = unchecked((uint)0xD000),
-    Invalid = unchecked((uint)-1),
+    Invalid = unchecked((uint)(-1)),
     IllegalEnum = unchecked((uint)0xA002),
     IllegalCommand = unchecked((uint)0xA004),
     InverseDistance = unchecked((uint)0xD001),

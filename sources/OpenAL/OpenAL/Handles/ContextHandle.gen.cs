@@ -14,6 +14,11 @@ public readonly unsafe partial struct ContextHandle
 {
     public readonly void* Handle;
 
+    public ContextHandle(void* handle)
+    {
+        Handle = handle;
+    }
+
     public bool Equals(ContextHandle other) => Handle == other.Handle;
 
     public override bool Equals(object? obj) => obj is ContextHandle other && Equals(other);
