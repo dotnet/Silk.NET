@@ -8,8 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccessFlags3KHR")]
 [Flags]
 public enum AccessFlags3KHR : ulong
 {
+    [NativeName("VK_ACCESS_3_NONE_KHR")]
     Access3NoneKHR = 0x0,
 }

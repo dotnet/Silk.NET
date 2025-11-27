@@ -1904,13 +1904,8 @@ public partial class MixKhronosData(
                                                     .WithAttributeLists(
                                                         SingletonList(
                                                             AttributeList(
-                                                                SingletonSeparatedList(
-                                                                    Attribute(
-                                                                        IdentifierName("Transformed")
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
+                                                                [Attribute(IdentifierName("Transformed"))]))
+                                                        .WithNativeName(groupName)
                                                     )
                                                     .WithBaseList(
                                                         BaseList(
@@ -1922,9 +1917,9 @@ public partial class MixKhronosData(
                                                     .WithMembers(
                                                         SeparatedList(
                                                             groupInfo.Enums.Select(x =>
-                                                                EnumMemberDeclaration(
-                                                                        x.Identifier.ToString()
-                                                                    )
+                                                                EnumMemberDeclaration(x.Identifier.ToString())
+                                                                    .WithAttributeLists(new SyntaxList<AttributeListSyntax>()
+                                                                        .WithNativeName(x.Identifier.Text))
                                                                     .WithEqualsValue(
                                                                         x.Initializer?.WithValue(
                                                                             CheckedExpression(

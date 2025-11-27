@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRefreshObjectFlagsKHR")]
 [Flags]
 public enum RefreshObjectFlagsKHR : uint
 {
