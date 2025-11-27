@@ -447,8 +447,16 @@ public partial class MixKhronosData(
         return Task.FromResult(rsps);
     }
 
+    /// <param name="Name">The name of the group. This is the name used for the C# enum.</param>
+    /// <param name="NativeName">The native name of the group, if available. This is the name used for the [NativeName] attribute.</param>
+    /// <param name="Type"></param>
+    /// <param name="Enums"></param>
+    /// <param name="KnownBitmask"></param>
+    /// <param name="ExclusiveVendor"></param>
+    /// <param name="Namespace"></param>
     internal record EnumGroup(
         string Name,
+        string? NativeName,
         string? Type,
         List<VariableDeclaratorSyntax> Enums,
         bool KnownBitmask,
@@ -1887,6 +1895,15 @@ public partial class MixKhronosData(
 
                     AllKnownEnums.Add(groupName);
 
+                    var attributes = SingletonList(
+                        AttributeList(
+                            [Attribute(IdentifierName("Transformed"))]));
+
+                    if (groupInfo.NativeName != null)
+                    {
+                        attributes = attributes.WithNativeName(groupInfo.NativeName);
+                    }
+
                     results.Add((
                         $"Enums/{groupName}.gen.cs",
                         CompilationUnit()
@@ -1901,12 +1918,7 @@ public partial class MixKhronosData(
                                                     .WithModifiers(
                                                         TokenList(Token(SyntaxKind.PublicKeyword))
                                                     )
-                                                    .WithAttributeLists(
-                                                        SingletonList(
-                                                            AttributeList(
-                                                                [Attribute(IdentifierName("Transformed"))]))
-                                                        .WithNativeName(groupName)
-                                                    )
+                                                    .WithAttributeLists(attributes)
                                                     .WithBaseList(
                                                         BaseList(
                                                             SingletonSeparatedList<BaseTypeSyntax>(
@@ -2158,11 +2170,13 @@ public partial class MixKhronosData(
                 enumNamespace is not null && !enumNamespace.All(char.IsUpper)
                     ? enumNamespace
                     : null;
+            var nativeName = groupName;
 
             // Create an ungrouped group as well i.e. GLEnum, WGLEnum, etc
             if (enumNamespace is not null)
             {
                 groupName ??= $"{enumNamespace}Enum";
+                nativeName ??= enumNamespace;
             }
 
             // OpenCL enum name
@@ -2172,6 +2186,7 @@ public partial class MixKhronosData(
             }
 
             // Vulkan/OpenXR enum name
+            nativeName ??= groupName;
             groupName = groupName?.Replace("FlagBits", "Flags");
 
             // Skip Vulkan API Constants since it is not an enum
@@ -2259,6 +2274,7 @@ public partial class MixKhronosData(
                         }
                         : new EnumGroup(
                             group,
+                            group,
                             anyGLStyleGroups ? "GLenum" : null,
                             [],
                             isBitmask,
@@ -2276,6 +2292,7 @@ public partial class MixKhronosData(
             {
                 data.Groups[groupName] = new EnumGroup(
                     groupName,
+                    nativeName,
                     null,
                     [],
                     isBitmask,
@@ -2425,6 +2442,7 @@ public partial class MixKhronosData(
             if (!data.Groups.ContainsKey(@enum.Value))
             {
                 data.Groups[@enum.Value] = new EnumGroup(
+                    @enum.Value,
                     @enum.Value,
                     // cl_properties and cl_bitfield are both cl_ulong which is ulong
                     "ulong",
@@ -2590,6 +2608,7 @@ public partial class MixKhronosData(
                 else
                 {
                     data.Groups[groupStr] = new EnumGroup(
+                        groupStr,
                         groupStr,
                         null,
                         [],
