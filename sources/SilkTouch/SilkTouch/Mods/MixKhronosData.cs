@@ -205,6 +205,11 @@ public partial class MixKhronosData(
         /// <c>Direct</c> for OpenAL.
         /// </summary>
         public List<string>? IgnoreNonVendorSuffixes { get; init; }
+
+        /// <summary>
+        /// The priority with which vendor suffixes are applied.
+        /// </summary>
+        public int VendorSuffixPriority { get; init; } = 0;
     }
 
     /// <summary>
@@ -375,6 +380,7 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
+        var currentConfig = cfg.Get(ctx.JobKey);
         var jobData = Jobs[ctx.JobKey];
         var proj = ctx.SourceProject;
 
@@ -417,7 +423,50 @@ public partial class MixKhronosData(
             ).Project;
         }
 
-        // Rename documents
+        // Rewrite phase 3
+        if (jobData.Vendors != null)
+        {
+            var compilation = await proj.GetCompilationAsync(ct);
+            if (compilation == null)
+            {
+                throw new Exception("Failed to get compilation");
+            }
+
+            var symbolsToRename = new List<(ISymbol Symbol, string NewName)>();
+            foreach (var docId in proj.DocumentIds)
+            {
+                var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                var syntaxTree = await doc.GetSyntaxTreeAsync(ct);
+                if (syntaxTree == null)
+                {
+                    continue;
+                }
+
+                var semanticModel = compilation.GetSemanticModel(syntaxTree);
+
+                var rewriter3 = new RewriterPhase3(symbolsToRename, jobData.Vendors, currentConfig.VendorSuffixPriority, semanticModel);
+                proj = doc.WithSyntaxRoot(
+                    rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                    ?? throw new InvalidOperationException("Visit returned null.")
+                ).Project;
+            }
+
+            // Revive symbols
+            compilation = await proj.GetCompilationAsync(ct);
+            if (compilation == null)
+            {
+                throw new Exception("Failed to get compilation");
+            }
+            symbolsToRename = symbolsToRename.Select(x => (compilation.GetNewSymbol(x.Symbol), x.NewName)).ToList();
+
+            // TODO: This approach doesn't really work
+            // // Remove identified extension suffixes from type names
+            // ctx.SourceProject = proj;
+            // await NameUtils.RenameAllAsync(ctx, symbolsToRename, logger, ct);
+            // proj = ctx.SourceProject!;
+        }
+
+        // Rename documents to account for FlagBits/Flags differences
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -2051,7 +2100,7 @@ public partial class MixKhronosData(
             {
                 // Remove deprecated aliases
                 node = node.WithMembers([
-                    ..node.Members.Where(m => !job.DeprecatedAliases.Contains(m.Identifier.ValueText))
+                    ..node.Members.Where(m => !job.DeprecatedAliases.Contains(m.Identifier.ValueText)),
                 ]);
             }
 
@@ -2074,7 +2123,7 @@ public partial class MixKhronosData(
             {
                 // Remove deprecated aliases
                 node = node.WithDeclaration(node.Declaration.WithVariables([
-                    ..node.Declaration.Variables.Where(v => !job.DeprecatedAliases.Contains(v.Identifier.ValueText))
+                    ..node.Declaration.Variables.Where(v => !job.DeprecatedAliases.Contains(v.Identifier.ValueText)),
                 ]));
 
                 if (node.Declaration.Variables.Count == 0)
@@ -2143,6 +2192,77 @@ public partial class MixKhronosData(
             managedName = nativeName + new string('*', info.IndirectionLevels);
 
             return true;
+        }
+    }
+
+    /// <summary>
+    /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
+    /// </summary>
+    /// <remarks>
+    /// Yes, this is a 3rd rewriter. This one requires a fresh semantic model though.
+    /// </remarks>
+    private class RewriterPhase3(List<(ISymbol Symbol, string NewName)> toRename, HashSet<string> vendors, int vendorSuffixPriority, SemanticModel semanticModel) : CSharpSyntaxRewriter
+    {
+        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(ISymbol? symbol, SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+        {
+            if (symbol == null)
+            {
+                return attributeLists;
+            }
+
+            var name = identifier.Text;
+            var handleSuffix = "_T";
+            if (name.EndsWith(handleSuffix))
+            {
+                name = name[..^handleSuffix.Length];
+                attributeLists = attributeLists.AddNameSuffix(handleSuffix, -1);
+            }
+
+            foreach (var vendor in vendors)
+            {
+                if (name.EndsWith(vendor))
+                {
+                    toRename.Add((symbol, $"{name[..^vendor.Length]}_"));
+                    attributeLists = attributeLists.AddNameSuffix(vendor, vendorSuffixPriority);
+
+                    break;
+                }
+            }
+
+            return attributeLists;
+        }
+
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            var symbol = semanticModel.GetDeclaredSymbol(node);
+            node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+        }
+
+        public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            var variable = node.Declaration.Variables.First();
+            var symbol = semanticModel.GetDeclaredSymbol(variable);
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, variable.Identifier));
+        }
+
+        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            var symbol = semanticModel.GetDeclaredSymbol(node);
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+        }
+
+        public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            var symbol = semanticModel.GetDeclaredSymbol(node);
+            node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+        }
+
+        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            var symbol = semanticModel.GetDeclaredSymbol(node);
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
         }
     }
 
