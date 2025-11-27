@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeRgbModelConversionFlagBitsVALVE")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoEncodeRgbModelConversionFlagsValve : uint
 {
     None = 0x0,

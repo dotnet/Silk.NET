@@ -10,14 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_maxWorkGroupSize_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_HUAWEI_cluster_culling_shader"],
-    ImpliesSets = [
-        "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
-        "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupSize
 {
     [NativeName("e0")]

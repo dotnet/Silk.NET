@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkShaderStageFlagBits")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ShaderStageFlags : uint
 {
     None = 0x0,

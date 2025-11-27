@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSwapchainCreateFlagBitsKHR")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum SwapchainCreateFlagsKHR : uint
 {
     None = 0x0,

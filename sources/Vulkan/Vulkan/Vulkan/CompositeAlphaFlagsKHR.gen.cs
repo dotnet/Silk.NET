@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCompositeAlphaFlagBitsKHR")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum CompositeAlphaFlagsKHR : uint
 {
     None = 0x0,

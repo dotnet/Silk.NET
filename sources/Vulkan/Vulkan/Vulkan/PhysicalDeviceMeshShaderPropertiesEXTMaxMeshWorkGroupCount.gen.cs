@@ -10,11 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_maxMeshWorkGroupCount_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_EXT_mesh_shader"],
-    ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceMeshShaderPropertiesEXTMaxMeshWorkGroupCount
 {
     [NativeName("e0")]

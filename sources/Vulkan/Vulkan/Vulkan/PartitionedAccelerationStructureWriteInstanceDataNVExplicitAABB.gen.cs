@@ -10,11 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_explicitAABB_e__FixedBuffer")]
 [InlineArray(6)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_NV_partitioned_acceleration_structure"],
-    ImpliesSets = ["VK_KHR_acceleration_structure"]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureWriteInstanceDataNVExplicitAABB
 {
     [NativeName("e0")]

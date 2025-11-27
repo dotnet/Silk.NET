@@ -10,14 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_heapBudget_e__FixedBuffer")]
 [InlineArray(16)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_EXT_memory_budget"],
-    ImpliesSets = [
-        "VK_EXT_memory_budget+VK_KHR_get_physical_device_properties2",
-        "VK_EXT_memory_budget+VK_VERSION_1_1",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceMemoryBudgetPropertiesEXTHeapBudget
 {
     [NativeName("e0")]

@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkConditionalRenderingFlagBitsEXT")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ConditionalRenderingFlagsEXT : uint
 {
     None = 0x0,

@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeviceDiagnosticsConfigFlagBitsNV")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum DeviceDiagnosticsConfigFlagsNV : uint
 {
     None = 0x0,

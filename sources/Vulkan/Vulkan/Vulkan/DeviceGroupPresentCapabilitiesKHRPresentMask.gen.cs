@@ -10,12 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_presentMask_e__FixedBuffer")]
 [InlineArray(32)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_KHR_swapchain", "VK_VERSION_1_1"],
-    ImpliesSets = ["VK_KHR_surface"],
-    RequireAll = true
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct DeviceGroupPresentCapabilitiesKHRPresentMask
 {
     [NativeName("e0")]

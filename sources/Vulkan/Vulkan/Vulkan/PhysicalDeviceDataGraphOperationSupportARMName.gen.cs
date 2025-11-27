@@ -10,11 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_name_e__FixedBuffer")]
 [InlineArray(128)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_ARM_data_graph"],
-    ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceDataGraphOperationSupportARMName
 {
     [NativeName("e0")]

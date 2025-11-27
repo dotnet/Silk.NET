@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkOpticalFlowGridSizeFlagBitsNV")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum OpticalFlowGridSizeFlagsNV : uint
 {
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_UNKNOWN_NV")]

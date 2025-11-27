@@ -10,14 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_description_e__FixedBuffer")]
 [InlineArray(256)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_EXT_subpass_merge_feedback"],
-    ImpliesSets = [
-        "VK_EXT_subpass_merge_feedback+VK_KHR_get_physical_device_properties2",
-        "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct RenderPassSubpassFeedbackInfoEXTDescription
 {
     [NativeName("e0")]

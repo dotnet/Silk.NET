@@ -7,8 +7,8 @@ using System.Runtime.CompilerServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCommandPoolCreateFlagBits")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum CommandPoolCreateFlags : uint
 {
     None = 0x0,

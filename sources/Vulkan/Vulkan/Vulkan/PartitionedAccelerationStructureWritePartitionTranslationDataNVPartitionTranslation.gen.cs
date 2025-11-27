@@ -10,11 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_partitionTranslation_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_NV_partitioned_acceleration_structure"],
-    ImpliesSets = ["VK_KHR_acceleration_structure"]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureWritePartitionTranslationDataNVPartitionTranslation
 {
     [NativeName("e0")]

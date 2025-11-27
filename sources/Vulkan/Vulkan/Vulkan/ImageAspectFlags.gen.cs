@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImageAspectFlagBits")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ImageAspectFlags : uint
 {
     [NativeName("VK_IMAGE_ASPECT_COLOR_BIT")]

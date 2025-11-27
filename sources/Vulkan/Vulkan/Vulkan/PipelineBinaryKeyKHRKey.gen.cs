@@ -10,14 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_key_e__FixedBuffer")]
 [InlineArray(32)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_KHR_pipeline_binary"],
-    ImpliesSets = [
-        "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
-        "VK_KHR_pipeline_binary+VK_VERSION_1_4",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PipelineBinaryKeyKHRKey
 {
     [NativeName("e0")]

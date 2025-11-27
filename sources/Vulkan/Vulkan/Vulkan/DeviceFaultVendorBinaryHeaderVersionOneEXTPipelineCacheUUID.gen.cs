@@ -10,14 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_pipelineCacheUUID_e__FixedBuffer")]
 [InlineArray(16)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_EXT_device_fault"],
-    ImpliesSets = [
-        "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
-        "VK_EXT_device_fault+VK_VERSION_1_1",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXTPipelineCacheUUID
 {
     [NativeName("e0")]

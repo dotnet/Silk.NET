@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoEncodeUsageFlagBitsKHR")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoEncodeUsageFlagsKHR : uint
 {
     [NativeName("VK_VIDEO_ENCODE_USAGE_DEFAULT_KHR")]

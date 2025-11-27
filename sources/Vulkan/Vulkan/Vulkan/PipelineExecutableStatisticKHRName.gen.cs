@@ -10,14 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_name_e__FixedBuffer")]
 [InlineArray(256)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_KHR_pipeline_executable_properties"],
-    ImpliesSets = [
-        "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
-        "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PipelineExecutableStatisticKHRName
 {
     [NativeName("e0")]

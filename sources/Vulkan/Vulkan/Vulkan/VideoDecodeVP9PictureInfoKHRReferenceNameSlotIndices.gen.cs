@@ -10,11 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_referenceNameSlotIndices_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_KHR_video_decode_vp9"],
-    ImpliesSets = ["VK_KHR_video_decode_queue"]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct VideoDecodeVP9PictureInfoKHRReferenceNameSlotIndices
 {
     [NativeName("e0")]

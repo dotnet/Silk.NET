@@ -8,25 +8,83 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[SupportedApiProfile("vulkan")]
 public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
 {
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     private readonly void* Pointer;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> Handle =>
         (delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void>)Pointer;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceMemoryReportCallbackEXT(
         delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> ptr
     ) => Pointer = ptr;
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public DeviceMemoryReportCallbackEXT(DeviceMemoryReportCallbackEXTDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public void Dispose() => SilkMarshal.Free(Pointer);
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public static implicit operator DeviceMemoryReportCallbackEXT(
         delegate* unmanaged<DeviceMemoryReportCallbackDataEXT*, void*, void> pfn
     ) => new(pfn);
 
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
     public static implicit operator delegate* unmanaged<
         DeviceMemoryReportCallbackDataEXT*,
         void*,

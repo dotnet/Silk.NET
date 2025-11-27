@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkIndirectCommandsLayoutUsageFlagBitsEXT")]
-[SupportedApiProfile("vulkan")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum IndirectCommandsLayoutUsageFlagsEXT : uint
 {
     None = 0x0,

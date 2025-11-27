@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[SupportedApiProfile("vulkan")]
 public unsafe delegate void DeviceMemoryReportCallbackEXTDelegate(
     DeviceMemoryReportCallbackDataEXT* arg0,
     void* arg1

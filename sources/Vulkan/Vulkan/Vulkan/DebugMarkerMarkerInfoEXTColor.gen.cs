@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_color_e__FixedBuffer")]
 [InlineArray(4)]
-[SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
+[SupportedApiProfile("vulkan")]
 public partial struct DebugMarkerMarkerInfoEXTColor
 {
     [NativeName("e0")]
