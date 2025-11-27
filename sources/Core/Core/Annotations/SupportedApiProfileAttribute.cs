@@ -19,7 +19,8 @@ namespace Silk.NET.Core;
         | AttributeTargets.Method
         | AttributeTargets.Module
         | AttributeTargets.Property
-        | AttributeTargets.Struct,
+        | AttributeTargets.Struct
+        | AttributeTargets.Delegate,
     AllowMultiple = true,
     Inherited = false
 )]
