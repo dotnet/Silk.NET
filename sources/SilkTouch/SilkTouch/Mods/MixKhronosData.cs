@@ -1925,7 +1925,6 @@ public partial class MixKhronosData(
                                                                 EnumMemberDeclaration(
                                                                         x.Identifier.ToString()
                                                                     )
-                                                                    // TODO actually eval the expression to see if necessary?
                                                                     .WithEqualsValue(
                                                                         x.Initializer?.WithValue(
                                                                             CheckedExpression(
