@@ -151,7 +151,6 @@
         ]
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
           "SyncObjectMask": "GL_SYNC"
@@ -233,7 +232,6 @@
         ]
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["alc", "al"],
         "NameOverrides": {
           "ALContext": "ALContext",
@@ -330,7 +328,6 @@
         "HandleSuffixPriority": 1
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["PFN_vk","vk"],
         "PrefixOverrides": {
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"

@@ -240,7 +240,7 @@ public static partial class NameUtils
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
 
-    internal partial class NameTransformer(int longAcronymThreshold) : ICulturedStringTransformer
+    internal partial class NameTransformer : ICulturedStringTransformer
     {
         public string Transform(string input) => Transform(input, null);
 
@@ -256,18 +256,8 @@ public static partial class NameUtils
                 {
                     continue;
                 }
-                if (
-                    word.Length > longAcronymThreshold
-                    || !AllCapitals(word)
-                    || (
-                        AllCapitals(input)
-                        && input.Length > longAcronymThreshold
-                        && matches.Length > 1
-                    )
-                )
-                {
-                    word = MakeFirstLetterUpper(word, culture);
-                }
+
+                word = MakeFirstLetterUpper(word, culture);
 
                 for (var j = i - 1; j >= 0; j--)
                 {

@@ -44,12 +44,6 @@ public class PrettifyNames(
         public Version? TrimmerBaseline { get; init; } = new(3, 0);
 
         /// <summary>
-        /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
-        /// capitals word.
-        /// </summary>
-        public int? LongAcronymThreshold { get; init; }
-
-        /// <summary>
         /// Multiple candidate name prefixes that may apply across all of the bindings generated.
         /// </summary>
         public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
@@ -80,7 +74,7 @@ public class PrettifyNames(
         // The dictionary containing mappings from the original type names to the new names of the type and its members
         var newNames = new Dictionary<string, RenamedType>();
 
-        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
+        var nameTransformer = new NameUtils.NameTransformer();
 
         // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
         if (cfg.TrimmerBaseline is not null)

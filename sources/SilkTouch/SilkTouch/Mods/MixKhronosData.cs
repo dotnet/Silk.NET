@@ -38,9 +38,7 @@ public partial class MixKhronosData(
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
     internal ConcurrentDictionary<string, JobData> Jobs = new();
-    private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
-        4
-    );
+    private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer();
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
     private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
