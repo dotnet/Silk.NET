@@ -18,7 +18,7 @@ public sealed class NameSuffixAttribute : Attribute
 {
     /// <param name="prefix">The prefix of the identifier.</param>
     /// <param name="priority">The priority with which the prefix is applied. Higher means the prefix is applied first.</param>
-    public NameSuffixAttribute(string prefix, int priority = 0)
+    public NameSuffixAttribute(string prefix, int priority)
     {
         Prefix = prefix;
         Priority = priority;

@@ -154,11 +154,11 @@ Silk.NET.Core.MaybeBool<T>.MaybeBool(T Value) -> void
 Silk.NET.Core.MaybeBool<T>.Value.get -> T
 Silk.NET.Core.MaybeBool<T>.Value.init -> void
 Silk.NET.Core.NamePrefixAttribute
-Silk.NET.Core.NamePrefixAttribute.NamePrefixAttribute(string! suffix, int priority = 0) -> void
+Silk.NET.Core.NamePrefixAttribute.NamePrefixAttribute(string! suffix, int priority) -> void
 Silk.NET.Core.NamePrefixAttribute.Priority.get -> int
 Silk.NET.Core.NamePrefixAttribute.Suffix.get -> string!
 Silk.NET.Core.NameSuffixAttribute
-Silk.NET.Core.NameSuffixAttribute.NameSuffixAttribute(string! prefix, int priority = 0) -> void
+Silk.NET.Core.NameSuffixAttribute.NameSuffixAttribute(string! prefix, int priority) -> void
 Silk.NET.Core.NameSuffixAttribute.Prefix.get -> string!
 Silk.NET.Core.NameSuffixAttribute.Priority.get -> int
 Silk.NET.Core.NativeFunctionAttribute

@@ -202,47 +202,19 @@ public static class AttributeUtils
     /// Adds a name prefix attribute to the given attribute list.
     /// </summary>
     public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string prefix, int priority = 0)
-    {
-        var prefixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{prefix}\"", prefix)));
-
-        AttributeArgumentListSyntax argumentList;
-        if (priority == 0)
-        {
-            argumentList = AttributeArgumentList([prefixArgument]);
-        }
-        else
-        {
-            var priorityArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(priority)));
-            argumentList = AttributeArgumentList([prefixArgument, priorityArgument]);
-        }
-
-        var attribute = AttributeList([
-            Attribute(IdentifierName("NamePrefix"), argumentList),
-        ]);
-
-        return [
-            attribute,
-            ..attributeLists,
-        ];
-    }
+        => attributeLists.AddNamePrefixOrSuffix("NamePrefix", prefix, priority);
 
     /// <summary>
     /// Adds a name suffix attribute to the given attribute list.
     /// </summary>
     public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string suffix, int priority = 0)
-    {
-        var suffixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{suffix}\"", suffix)));
+        => attributeLists.AddNamePrefixOrSuffix("NameSuffix", suffix, priority);
 
-        AttributeArgumentListSyntax argumentList;
-        if (priority == 0)
-        {
-            argumentList = AttributeArgumentList([suffixArgument]);
-        }
-        else
-        {
-            var priorityArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(priority)));
-            argumentList = AttributeArgumentList([suffixArgument, priorityArgument]);
-        }
+    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string attributeName, string affix, int priority)
+    {
+        var affixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{affix}\"", affix)));
+        var priorityArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(priority)));
+        var argumentList = AttributeArgumentList([affixArgument, priorityArgument]);
 
         var attribute = AttributeList([
             Attribute(IdentifierName("NameSuffix"), argumentList),
