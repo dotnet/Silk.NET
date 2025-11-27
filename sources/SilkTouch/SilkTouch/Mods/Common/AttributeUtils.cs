@@ -201,13 +201,13 @@ public static class AttributeUtils
     /// <summary>
     /// Adds a name prefix attribute to the given attribute list.
     /// </summary>
-    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string prefix, int priority = 0)
+    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string prefix, int priority)
         => attributeLists.AddNamePrefixOrSuffix("NamePrefix", prefix, priority);
 
     /// <summary>
     /// Adds a name suffix attribute to the given attribute list.
     /// </summary>
-    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string suffix, int priority = 0)
+    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string suffix, int priority)
         => attributeLists.AddNamePrefixOrSuffix("NameSuffix", suffix, priority);
 
     private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string attributeName, string affix, int priority)
