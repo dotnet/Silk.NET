@@ -10,7 +10,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Marks identifiers with the [NativeName] attribute.
 /// </summary>
 /// <remarks>
-/// This mod is currently kept pretty dumb and just applies [NativeName] attributes to everything.
+/// This mod is currently kept pretty dumb and just applies [NativeName] attributes to almost everything.
 /// This mod is best placed directly after ClangScraper.
 /// </remarks>
 public class MarkNativeNames : IMod
