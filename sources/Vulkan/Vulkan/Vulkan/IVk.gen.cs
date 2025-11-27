@@ -17606,7 +17606,7 @@ public unsafe partial interface IVk
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-        static abstract PFNVkVoidFunction GetDeviceProcAddr(
+        static abstract VoidFunction GetDeviceProcAddr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pName")] sbyte* pName
         );
@@ -17639,7 +17639,7 @@ public unsafe partial interface IVk
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-        static abstract PFNVkVoidFunction GetDeviceProcAddr(
+        static abstract VoidFunction GetDeviceProcAddr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pName")] Ref<sbyte> pName
         );
@@ -18905,7 +18905,7 @@ public unsafe partial interface IVk
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-        static abstract PFNVkVoidFunction GetInstanceProcAddr(
+        static abstract VoidFunction GetInstanceProcAddr(
             [NativeName("instance")] InstanceHandle instance,
             [NativeName("pName")] sbyte* pName
         );
@@ -18938,7 +18938,7 @@ public unsafe partial interface IVk
             MinVersion = "1.0"
         )]
         [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-        static abstract PFNVkVoidFunction GetInstanceProcAddr(
+        static abstract VoidFunction GetInstanceProcAddr(
             [NativeName("instance")] InstanceHandle instance,
             [NativeName("pName")] Ref<sbyte> pName
         );
@@ -42296,7 +42296,7 @@ public unsafe partial interface IVk
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-    PFNVkVoidFunction GetDeviceProcAddr(
+    VoidFunction GetDeviceProcAddr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pName")] sbyte* pName
     );
@@ -42329,7 +42329,7 @@ public unsafe partial interface IVk
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceProcAddr")]
-    PFNVkVoidFunction GetDeviceProcAddr(
+    VoidFunction GetDeviceProcAddr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pName")] Ref<sbyte> pName
     );
@@ -43594,7 +43594,7 @@ public unsafe partial interface IVk
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-    PFNVkVoidFunction GetInstanceProcAddr(
+    VoidFunction GetInstanceProcAddr(
         [NativeName("instance")] InstanceHandle instance,
         [NativeName("pName")] sbyte* pName
     );
@@ -43627,7 +43627,7 @@ public unsafe partial interface IVk
         MinVersion = "1.0"
     )]
     [NativeFunction("vulkan", EntryPoint = "vkGetInstanceProcAddr")]
-    PFNVkVoidFunction GetInstanceProcAddr(
+    VoidFunction GetInstanceProcAddr(
         [NativeName("instance")] InstanceHandle instance,
         [NativeName("pName")] Ref<sbyte> pName
     );

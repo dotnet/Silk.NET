@@ -54,7 +54,7 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public PFNVkDeviceMemoryReportCallbackEXT PfnUserCallback;
+    public DeviceMemoryReportCallbackEXT PfnUserCallback;
 
     [NativeName("pUserData")]
     [SupportedApiProfile(

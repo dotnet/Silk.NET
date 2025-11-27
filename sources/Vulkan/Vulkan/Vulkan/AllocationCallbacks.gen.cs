@@ -68,7 +68,7 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public PFNVkAllocationFunction PfnAllocation;
+    public AllocationFunction PfnAllocation;
 
     [NativeName("pfnReallocation")]
     [SupportedApiProfile(
@@ -97,7 +97,7 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public PFNVkReallocationFunction PfnReallocation;
+    public ReallocationFunction PfnReallocation;
 
     [NativeName("pfnFree")]
     [SupportedApiProfile(
@@ -126,7 +126,7 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public PFNVkFreeFunction PfnFree;
+    public FreeFunction PfnFree;
 
     [NativeName("pfnInternalAllocation")]
     [SupportedApiProfile(
@@ -155,7 +155,7 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public PFNVkInternalAllocationNotification PfnInternalAllocation;
+    public InternalAllocationNotification PfnInternalAllocation;
 
     [NativeName("pfnInternalFree")]
     [SupportedApiProfile(
@@ -184,5 +184,5 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public PFNVkInternalFreeNotification PfnInternalFree;
+    public InternalFreeNotification PfnInternalFree;
 }

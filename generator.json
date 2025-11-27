@@ -330,7 +330,7 @@
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
-        "GlobalPrefixHints": ["vk"],
+        "GlobalPrefixHints": ["PFN_vk","vk"],
         "PrefixOverrides": {
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"
         }
