@@ -22,6 +22,6 @@ public sealed class NativeNameAttribute : Attribute
     /// <param name="name">The native name of the identifier.</param>
     public NativeNameAttribute(string name) => Name = name;
 
-    /// <summary>The native name of the identifier that this attribute is placed on.</summary>
+    /// <summary>The native name of the identifier.</summary>
     public string Name { get; }
 }
