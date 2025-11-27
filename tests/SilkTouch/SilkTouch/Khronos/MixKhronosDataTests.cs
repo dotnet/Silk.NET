@@ -322,6 +322,7 @@ public class MixKhronosDataTests
                             "OcclusionQueryParameterNameNV",
                             new MixKhronosData.EnumGroup(
                                 "OcclusionQueryParameterNameNV",
+                                "OcclusionQueryParameterNameNV",
                                 "uint",
                                 [],
                                 false,
@@ -373,6 +374,7 @@ public class MixKhronosDataTests
                         {
                             "VocalMorpherPhoneme",
                             new MixKhronosData.EnumGroup(
+                                "VocalMorpherPhoneme",
                                 "VocalMorpherPhoneme",
                                 "uint",
                                 [],
