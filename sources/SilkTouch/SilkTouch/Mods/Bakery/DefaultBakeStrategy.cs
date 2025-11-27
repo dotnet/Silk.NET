@@ -197,9 +197,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     node.AttributeLists.Select(x =>
                             x.WithAttributes(
                                 SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        y.IsAttribute("Silk.NET.Core.SupportedApiAttribute")
-                                    )
+                                    x.Attributes.Where(y => y.IsAttribute("Silk.NET.Core.SupportedApiAttribute"))
                                 )
                             )
                         )

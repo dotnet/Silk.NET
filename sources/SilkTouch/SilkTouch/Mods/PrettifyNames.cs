@@ -755,11 +755,7 @@ public class PrettifyNames(
                 return;
             }
 
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
                 NonDeterminant.Add(node.Identifier.ToString());
             }
@@ -867,11 +863,7 @@ public class PrettifyNames(
                 return;
             }
 
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
                 NonDeterminant.Add(node.Identifier.ToString());
             }
@@ -890,11 +882,7 @@ public class PrettifyNames(
                 return;
             }
 
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
                 NonDeterminant.Add(node.Identifier.ToString());
             }
@@ -922,11 +910,7 @@ public class PrettifyNames(
                 return;
             }
 
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
                 NonDeterminant.Add(node.Identifier.ToString());
             }

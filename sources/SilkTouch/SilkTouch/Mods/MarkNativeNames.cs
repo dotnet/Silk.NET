@@ -68,7 +68,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
                 return attributeLists;
             }
 
-            var hasTransformedAttribute = attributeLists.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute("Silk.NET.Core.Transformed")));
+            var hasTransformedAttribute = attributeLists.ContainsAttribute("Silk.NET.Core.Transformed");
             if (hasTransformedAttribute && !config.IncludeTransformed)
             {
                 return attributeLists;

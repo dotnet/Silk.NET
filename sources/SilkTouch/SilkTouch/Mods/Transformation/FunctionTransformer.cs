@@ -251,9 +251,7 @@ public class FunctionTransformer(
                                     x.Attributes.Where(y =>
                                         !y.IsAttribute("System.Runtime.InteropServices.DllImport")
                                         && !y.IsAttribute("Silk.NET.Core.NativeFunction")
-                                        && !y.IsAttribute(
-                                            "System.Runtime.CompilerServices.MethodImpl"
-                                        )
+                                        && !y.IsAttribute("System.Runtime.CompilerServices.MethodImpl")
                                     )
                                 )
                             )

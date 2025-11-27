@@ -219,9 +219,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                     .ToList();
             }
 
-            var isFlagsEnum = node.AttributeLists.SelectMany(list => list.Attributes)
-                .Any(attribute => attribute.IsAttribute("System.Flags"));
-
+            var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
             if (isFlagsEnum && config.AddNoneMemberToFlags)
             {
                 // Add None member if it doesn't exist yet
