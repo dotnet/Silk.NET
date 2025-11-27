@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("AMD", 0)]
 [NativeName("VkShaderStatisticsInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public partial struct ShaderStatisticsInfoAMD

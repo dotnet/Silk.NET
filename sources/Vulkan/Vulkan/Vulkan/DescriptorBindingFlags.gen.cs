@@ -87,6 +87,7 @@ public enum DescriptorBindingFlags : uint
     )]
     VariableDescriptorCountBit = 0x8,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -98,6 +99,7 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateAfterBindBitEXT = UpdateAfterBindBit,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -109,6 +111,7 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateUnusedWhilePendingBitEXT = UpdateUnusedWhilePendingBit,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -120,6 +123,7 @@ public enum DescriptorBindingFlags : uint
     )]
     PartiallyBoundBitEXT = PartiallyBoundBit,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

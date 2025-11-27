@@ -88,6 +88,7 @@ public enum ResolveModeFlags : uint
     )]
     MaxBit = 0x8,
 
+    [NameSuffix("ANDROID", 0)]
     [NativeName("VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_BIT_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -99,6 +100,7 @@ public enum ResolveModeFlags : uint
     )]
     ExternalFormatDownsampleBitAndroid = 0x10,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -110,6 +112,7 @@ public enum ResolveModeFlags : uint
     )]
     NoneKHR = None,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -121,6 +124,7 @@ public enum ResolveModeFlags : uint
     )]
     SampleZeroBitKHR = SampleZeroBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -132,6 +136,7 @@ public enum ResolveModeFlags : uint
     )]
     AverageBitKHR = AverageBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_MIN_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -143,6 +148,7 @@ public enum ResolveModeFlags : uint
     )]
     MinBitKHR = MinBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_MAX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

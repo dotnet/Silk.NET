@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkIndirectExecutionSetInfoTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum IndirectExecutionSetInfoTypeEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_INDIRECT_EXECUTION_SET_INFO_TYPE_PIPELINES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -24,6 +26,7 @@ public enum IndirectExecutionSetInfoTypeEXT : uint
     )]
     PipelinesEXT = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_INDIRECT_EXECUTION_SET_INFO_TYPE_SHADER_OBJECTS_EXT")]
     [SupportedApiProfile(
         "vulkan",

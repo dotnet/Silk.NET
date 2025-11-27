@@ -37,7 +37,7 @@ public unsafe partial struct SparseImageMemoryBindInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageHandle Image;
+    public Image Image;
 
     [NativeName("bindCount")]
     [SupportedApiProfile(

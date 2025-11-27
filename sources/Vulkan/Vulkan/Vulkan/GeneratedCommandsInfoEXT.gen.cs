@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkGeneratedCommandsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsInfoEXT
@@ -57,7 +58,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectExecutionSetEXTHandle IndirectExecutionSet;
+    public IndirectExecutionSetEXT IndirectExecutionSet;
 
     [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
@@ -69,7 +70,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectCommandsLayoutEXTHandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutEXT IndirectCommandsLayout;
 
     [NativeName("indirectAddress")]
     [SupportedApiProfile(

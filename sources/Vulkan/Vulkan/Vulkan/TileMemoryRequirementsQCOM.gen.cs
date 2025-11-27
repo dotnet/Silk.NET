@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkTileMemoryRequirementsQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TileMemoryRequirementsQCOM

@@ -14,6 +14,7 @@ public enum MemoryUnmapFlags : uint
 {
     None = 0x0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_MEMORY_UNMAP_RESERVE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

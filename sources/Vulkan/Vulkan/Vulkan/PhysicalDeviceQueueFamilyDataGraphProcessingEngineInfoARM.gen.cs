@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM

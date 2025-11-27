@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkDeviceDiagnosticsConfigFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -14,6 +15,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
 {
     None = 0x0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_DEBUG_INFO_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,6 +27,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
     )]
     EnableShaderDebugInfoBitNV = 0x1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_RESOURCE_TRACKING_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,6 +39,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
     )]
     EnableResourceTrackingBitNV = 0x2,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_AUTOMATIC_CHECKPOINTS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,6 +51,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
     )]
     EnableAutomaticCheckpointsBitNV = 0x4,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_ERROR_REPORTING_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

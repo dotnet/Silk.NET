@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkMultiDrawIndexedInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct MultiDrawIndexedInfoEXT

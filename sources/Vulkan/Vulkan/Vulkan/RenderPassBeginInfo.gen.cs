@@ -67,7 +67,7 @@ public unsafe partial struct RenderPassBeginInfo
         ],
         MinVersion = "1.0"
     )]
-    public RenderPassHandle RenderPass;
+    public RenderPass RenderPass;
 
     [NativeName("framebuffer")]
     [SupportedApiProfile(
@@ -86,7 +86,7 @@ public unsafe partial struct RenderPassBeginInfo
         ],
         MinVersion = "1.0"
     )]
-    public FramebufferHandle Framebuffer;
+    public Framebuffer Framebuffer;
 
     [NativeName("renderArea")]
     [SupportedApiProfile(

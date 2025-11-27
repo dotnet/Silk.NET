@@ -82,7 +82,7 @@ public unsafe partial struct CopyDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSetHandle SrcSet;
+    public DescriptorSet SrcSet;
 
     [NativeName("srcBinding")]
     [SupportedApiProfile(
@@ -154,7 +154,7 @@ public unsafe partial struct CopyDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSetHandle DstSet;
+    public DescriptorSet DstSet;
 
     [NativeName("dstBinding")]
     [SupportedApiProfile(

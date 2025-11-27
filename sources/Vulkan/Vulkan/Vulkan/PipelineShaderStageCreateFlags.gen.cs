@@ -45,6 +45,7 @@ public enum PipelineShaderStageCreateFlags : uint
     )]
     RequireFullSubgroupsBit = 0x2,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -53,6 +54,7 @@ public enum PipelineShaderStageCreateFlags : uint
     )]
     AllowVaryingSubgroupSizeBitEXT = AllowVaryingSubgroupSizeBit,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

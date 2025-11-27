@@ -42,7 +42,7 @@ public unsafe partial struct BindDescriptorSetsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public PipelineLayoutHandle Layout;
+    public PipelineLayout Layout;
 
     [NativeName("firstSet")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct BindDescriptorSetsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public DescriptorSetHandle* PDescriptorSets;
+    public DescriptorSet* PDescriptorSets;
 
     [NativeName("dynamicOffsetCount")]
     [SupportedApiProfile(

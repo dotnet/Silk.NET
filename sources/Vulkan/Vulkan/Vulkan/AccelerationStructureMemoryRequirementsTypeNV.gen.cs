@@ -7,10 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkAccelerationStructureMemoryRequirementsTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum AccelerationStructureMemoryRequirementsTypeNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,6 +24,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
     )]
     ObjectNV = 0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +36,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
     )]
     BuildScratchNV = 1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV")]
     [SupportedApiProfile(
         "vulkan",

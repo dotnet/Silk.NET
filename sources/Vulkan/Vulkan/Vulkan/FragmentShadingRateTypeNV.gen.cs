@@ -7,10 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkFragmentShadingRateTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum FragmentShadingRateTypeNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_TYPE_FRAGMENT_SIZE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -19,6 +21,7 @@ public enum FragmentShadingRateTypeNV : uint
     )]
     FragmentSizeNV = 0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_TYPE_ENUMS_NV")]
     [SupportedApiProfile(
         "vulkan",

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkPipelineBinaryDataInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineBinaryDataInfoKHR
@@ -42,5 +43,5 @@ public unsafe partial struct PipelineBinaryDataInfoKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public PipelineBinaryKHRHandle PipelineBinary;
+    public PipelineBinaryKHR PipelineBinary;
 }

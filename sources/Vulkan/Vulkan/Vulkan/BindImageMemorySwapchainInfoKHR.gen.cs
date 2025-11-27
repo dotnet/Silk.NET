@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkBindImageMemorySwapchainInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindImageMemorySwapchainInfoKHR
@@ -37,7 +38,7 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public SwapchainKHRHandle Swapchain;
+    public SwapchainKHR Swapchain;
 
     [NativeName("imageIndex")]
     [SupportedApiProfile(

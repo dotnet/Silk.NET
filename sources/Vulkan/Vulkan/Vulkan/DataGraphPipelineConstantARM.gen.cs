@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkDataGraphPipelineConstantARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineConstantARM

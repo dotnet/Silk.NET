@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkPresentId2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentId2KHR

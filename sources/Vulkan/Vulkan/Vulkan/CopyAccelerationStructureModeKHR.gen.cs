@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkCopyAccelerationStructureModeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum CopyAccelerationStructureModeKHR : uint
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum CopyAccelerationStructureModeKHR : uint
     )]
     CloneKHR = 0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,6 +37,7 @@ public enum CopyAccelerationStructureModeKHR : uint
     )]
     CompactKHR = 1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_SERIALIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,6 +49,7 @@ public enum CopyAccelerationStructureModeKHR : uint
     )]
     SerializeKHR = 2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_DESERIALIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,6 +61,7 @@ public enum CopyAccelerationStructureModeKHR : uint
     )]
     DeserializeKHR = 3,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -67,6 +73,7 @@ public enum CopyAccelerationStructureModeKHR : uint
     )]
     CloneNV = CloneKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV")]
     [SupportedApiProfile(
         "vulkan",

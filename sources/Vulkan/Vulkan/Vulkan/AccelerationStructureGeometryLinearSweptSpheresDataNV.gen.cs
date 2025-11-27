@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkAccelerationStructureGeometryLinearSweptSpheresDataNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureGeometryLinearSweptSpheresDataNV

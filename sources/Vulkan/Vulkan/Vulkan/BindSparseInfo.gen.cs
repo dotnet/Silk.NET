@@ -126,7 +126,7 @@ public unsafe partial struct BindSparseInfo
         ],
         MinVersion = "1.0"
     )]
-    public SemaphoreHandle* PWaitSemaphores;
+    public Semaphore* PWaitSemaphores;
 
     [NativeName("bufferBindCount")]
     [SupportedApiProfile(
@@ -358,5 +358,5 @@ public unsafe partial struct BindSparseInfo
         ],
         MinVersion = "1.0"
     )]
-    public SemaphoreHandle* PSignalSemaphores;
+    public Semaphore* PSignalSemaphores;
 }

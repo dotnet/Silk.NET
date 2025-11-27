@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkTraceRaysIndirectCommand2KHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct TraceRaysIndirectCommand2KHR

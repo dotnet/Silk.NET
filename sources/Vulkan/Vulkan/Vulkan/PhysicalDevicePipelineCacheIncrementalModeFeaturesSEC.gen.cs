@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("SEC", 0)]
 [NativeName("VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC

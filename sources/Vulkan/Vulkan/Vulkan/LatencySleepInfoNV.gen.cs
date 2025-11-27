@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkLatencySleepInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LatencySleepInfoNV
@@ -49,7 +50,7 @@ public unsafe partial struct LatencySleepInfoNV
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    public SemaphoreHandle SignalSemaphore;
+    public Semaphore SignalSemaphore;
 
     [NativeName("value")]
     [SupportedApiProfile(

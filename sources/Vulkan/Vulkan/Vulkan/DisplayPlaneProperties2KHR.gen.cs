@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkDisplayPlaneProperties2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPlaneProperties2KHR

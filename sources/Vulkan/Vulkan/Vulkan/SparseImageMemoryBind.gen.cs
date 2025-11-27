@@ -125,7 +125,7 @@ public unsafe partial struct SparseImageMemoryBind
         ],
         MinVersion = "1.0"
     )]
-    public DeviceMemoryHandle Memory;
+    public DeviceMemory Memory;
 
     [NativeName("memoryOffset")]
     [SupportedApiProfile(

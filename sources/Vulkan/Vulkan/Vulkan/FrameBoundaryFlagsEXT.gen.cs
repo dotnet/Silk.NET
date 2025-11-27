@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkFrameBoundaryFlagBitsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -14,6 +15,7 @@ public enum FrameBoundaryFlagsEXT : uint
 {
     None = 0x0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_FRAME_BOUNDARY_FRAME_END_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkDataGraphModelCacheTypeQCOM")]
 [SupportedApiProfile("vulkan")]
 public enum DataGraphModelCacheTypeQCOM : uint
 {
+    [NameSuffix("QCOM", 0)]
     [NativeName("VK_DATA_GRAPH_MODEL_CACHE_TYPE_GENERIC_BINARY_QCOM")]
     [SupportedApiProfile(
         "vulkan",

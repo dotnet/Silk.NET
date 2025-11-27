@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkQueryResultStatusKHR")]
 [SupportedApiProfile("vulkan")]
 public enum QueryResultStatusKHR
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_ERROR_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -20,6 +22,7 @@ public enum QueryResultStatusKHR
     )]
     ErrorKHR = -1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_NOT_READY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,6 +31,7 @@ public enum QueryResultStatusKHR
     )]
     NotReadyKHR = 0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_COMPLETE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,6 +40,7 @@ public enum QueryResultStatusKHR
     )]
     CompleteKHR = 1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
     [SupportedApiProfile(
         "vulkan",

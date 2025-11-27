@@ -62,7 +62,7 @@ public unsafe partial struct CopyMemoryToImageInfo
         ],
         MinVersion = "1.4"
     )]
-    public ImageHandle DstImage;
+    public Image DstImage;
 
     [NativeName("dstImageLayout")]
     [SupportedApiProfile(

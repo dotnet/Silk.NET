@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkCooperativeVectorPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CooperativeVectorPropertiesNV

@@ -15,6 +15,7 @@ public enum SamplerCreateFlags : uint
 {
     None = 0x0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,6 +27,7 @@ public enum SamplerCreateFlags : uint
     )]
     SubsampledBitEXT = 0x1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_SUBSAMPLED_COARSE_RECONSTRUCTION_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,6 +39,7 @@ public enum SamplerCreateFlags : uint
     )]
     SubsampledCoarseReconstructionBitEXT = 0x2,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50,6 +53,7 @@ public enum SamplerCreateFlags : uint
     )]
     DescriptorBufferCaptureReplayBitEXT = 0x8,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_NON_SEAMLESS_CUBE_MAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,6 +65,7 @@ public enum SamplerCreateFlags : uint
     )]
     NonSeamlessCubeMapBitEXT = 0x4,
 
+    [NameSuffix("QCOM", 0)]
     [NativeName("VK_SAMPLER_CREATE_IMAGE_PROCESSING_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",

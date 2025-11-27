@@ -114,6 +114,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     GenericDstBit = 0x8,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_COPY_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -122,6 +123,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     CopySrcBitKHR = CopySrcBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_COPY_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -130,6 +132,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     CopyDstBitKHR = CopyDstBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -138,6 +141,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     GenericSrcBitKHR = GenericSrcBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkVertexInputBindingDescription2EXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VertexInputBindingDescription2EXT

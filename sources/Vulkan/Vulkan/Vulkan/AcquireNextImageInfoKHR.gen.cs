@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkAcquireNextImageInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AcquireNextImageInfoKHR
@@ -37,7 +38,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public SwapchainKHRHandle Swapchain;
+    public SwapchainKHR Swapchain;
 
     [NativeName("timeout")]
     [SupportedApiProfile(
@@ -55,7 +56,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public SemaphoreHandle Semaphore;
+    public Semaphore Semaphore;
 
     [NativeName("fence")]
     [SupportedApiProfile(
@@ -64,7 +65,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public FenceHandle Fence;
+    public Fence Fence;
 
     [NativeName("deviceMask")]
     [SupportedApiProfile(

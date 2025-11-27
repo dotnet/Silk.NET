@@ -407,10 +407,12 @@ public enum ImageLayout : uint
     )]
     RenderingLocalRead = 1000232000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_PRESENT_SRC_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     PresentSrcKHR = 1000001002,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_DECODE_DST_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -422,6 +424,7 @@ public enum ImageLayout : uint
     )]
     VideoDecodeDstKHR = 1000024000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_DECODE_SRC_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -433,6 +436,7 @@ public enum ImageLayout : uint
     )]
     VideoDecodeSrcKHR = 1000024001,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_DECODE_DPB_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -444,6 +448,7 @@ public enum ImageLayout : uint
     )]
     VideoDecodeDpbKHR = 1000024002,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_SHARED_PRESENT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -455,6 +460,7 @@ public enum ImageLayout : uint
     )]
     SharedPresentKHR = 1000111000,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -466,6 +472,7 @@ public enum ImageLayout : uint
     )]
     FragmentDensityMapOptimalEXT = 1000218000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -478,6 +485,7 @@ public enum ImageLayout : uint
     )]
     FragmentShadingRateAttachmentOptimalKHR = 1000164003,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_DST_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -489,6 +497,7 @@ public enum ImageLayout : uint
     )]
     VideoEncodeDstKHR = 1000299000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_SRC_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -500,6 +509,7 @@ public enum ImageLayout : uint
     )]
     VideoEncodeSrcKHR = 1000299001,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_DPB_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -511,6 +521,7 @@ public enum ImageLayout : uint
     )]
     VideoEncodeDpbKHR = 1000299002,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -522,10 +533,12 @@ public enum ImageLayout : uint
     )]
     AttachmentFeedbackLoopOptimalEXT = 1000339000,
 
+    [NameSuffix("ARM", 0)]
     [NativeName("VK_IMAGE_LAYOUT_TENSOR_ALIASING_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorAliasingARM = 1000460000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_QUANTIZATION_MAP_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -537,6 +550,7 @@ public enum ImageLayout : uint
     )]
     VideoEncodeQuantizationMapKHR = 1000553000,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -548,14 +562,17 @@ public enum ImageLayout : uint
     )]
     ZeroInitializedEXT = 1000620000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     DepthReadOnlyStencilAttachmentOptimalKHR = DepthReadOnlyStencilAttachmentOptimal,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     DepthAttachmentStencilReadOnlyOptimalKHR = DepthAttachmentStencilReadOnlyOptimal,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_IMAGE_LAYOUT_SHADING_RATE_OPTIMAL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -567,6 +584,7 @@ public enum ImageLayout : uint
     )]
     ShadingRateOptimalNV = FragmentShadingRateAttachmentOptimalKHR,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -578,6 +596,7 @@ public enum ImageLayout : uint
     )]
     RenderingLocalReadKHR = RenderingLocalRead,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -590,6 +609,7 @@ public enum ImageLayout : uint
     )]
     DepthAttachmentOptimalKHR = DepthAttachmentOptimal,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -602,6 +622,7 @@ public enum ImageLayout : uint
     )]
     DepthReadOnlyOptimalKHR = DepthReadOnlyOptimal,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -614,6 +635,7 @@ public enum ImageLayout : uint
     )]
     StencilAttachmentOptimalKHR = StencilAttachmentOptimal,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -626,6 +648,7 @@ public enum ImageLayout : uint
     )]
     StencilReadOnlyOptimalKHR = StencilReadOnlyOptimal,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -637,6 +660,7 @@ public enum ImageLayout : uint
     )]
     ReadOnlyOptimalKHR = ReadOnlyOptimal,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile(
         "vulkan",

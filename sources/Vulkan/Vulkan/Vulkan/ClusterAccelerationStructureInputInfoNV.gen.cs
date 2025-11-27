@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkClusterAccelerationStructureInputInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureInputInfoNV

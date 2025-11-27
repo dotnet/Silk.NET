@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoEncodeSessionParametersGetInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeSessionParametersGetInfoKHR
@@ -43,5 +44,5 @@ public unsafe partial struct VideoEncodeSessionParametersGetInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public VideoSessionParametersKHRHandle VideoSessionParameters;
+    public VideoSessionParametersKHR VideoSessionParameters;
 }

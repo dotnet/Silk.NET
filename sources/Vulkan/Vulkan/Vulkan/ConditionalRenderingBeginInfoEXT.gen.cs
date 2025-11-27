@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkConditionalRenderingBeginInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ConditionalRenderingBeginInfoEXT
@@ -43,7 +44,7 @@ public unsafe partial struct ConditionalRenderingBeginInfoEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public BufferHandle Buffer;
+    public Buffer Buffer;
 
     [NativeName("offset")]
     [SupportedApiProfile(

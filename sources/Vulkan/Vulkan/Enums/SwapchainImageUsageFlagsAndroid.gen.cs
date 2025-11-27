@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ANDROID", 0)]
 [NativeName("VkSwapchainImageUsageFlagsANDROID")]
 [Flags]
 public enum SwapchainImageUsageFlagsAndroid : uint

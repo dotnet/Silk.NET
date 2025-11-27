@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkSwapchainCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainCreateInfoKHR
@@ -26,7 +27,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("surface")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SurfaceKHRHandle Surface;
+    public SurfaceKHR Surface;
 
     [NativeName("minImageCount")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -82,5 +83,5 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("oldSwapchain")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SwapchainKHRHandle OldSwapchain;
+    public SwapchainKHR OldSwapchain;
 }

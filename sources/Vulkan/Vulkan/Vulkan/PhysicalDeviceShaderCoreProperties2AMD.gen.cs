@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("AMD", 0)]
 [NativeName("VkPhysicalDeviceShaderCoreProperties2AMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD

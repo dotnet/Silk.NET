@@ -70,6 +70,7 @@ public enum ImageTiling : uint
     )]
     Linear = 1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT")]
     [SupportedApiProfile(
         "vulkan",

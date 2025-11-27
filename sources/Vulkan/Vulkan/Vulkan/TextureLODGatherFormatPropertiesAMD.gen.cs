@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("AMD", 0)]
 [NativeName("VkTextureLODGatherFormatPropertiesAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TextureLODGatherFormatPropertiesAMD
@@ -34,6 +35,7 @@ public unsafe partial struct TextureLODGatherFormatPropertiesAMD
     )]
     public void* PNext;
 
+    [NameSuffix("AMD", 0)]
     [NativeName("supportsTextureGatherLODBiasAMD")]
     [SupportedApiProfile(
         "vulkan",

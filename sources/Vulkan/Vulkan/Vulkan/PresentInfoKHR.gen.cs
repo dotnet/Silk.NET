@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkPresentInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentInfoKHR
@@ -25,7 +26,7 @@ public unsafe partial struct PresentInfoKHR
 
     [NativeName("pWaitSemaphores")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SemaphoreHandle* PWaitSemaphores;
+    public Semaphore* PWaitSemaphores;
 
     [NativeName("swapchainCount")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -33,7 +34,7 @@ public unsafe partial struct PresentInfoKHR
 
     [NativeName("pSwapchains")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SwapchainKHRHandle* PSwapchains;
+    public SwapchainKHR* PSwapchains;
 
     [NativeName("pImageIndices")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]

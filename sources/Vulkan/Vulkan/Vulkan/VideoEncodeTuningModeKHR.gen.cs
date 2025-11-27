@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoEncodeTuningModeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeTuningModeKHR : uint
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum VideoEncodeTuningModeKHR : uint
     )]
     DefaultKHR = 0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_HIGH_QUALITY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,6 +37,7 @@ public enum VideoEncodeTuningModeKHR : uint
     )]
     HighQualityKHR = 1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_LOW_LATENCY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,6 +49,7 @@ public enum VideoEncodeTuningModeKHR : uint
     )]
     LowLatencyKHR = 2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_ULTRA_LOW_LATENCY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,6 +61,7 @@ public enum VideoEncodeTuningModeKHR : uint
     )]
     UltraLowLatencyKHR = 3,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_LOSSLESS_KHR")]
     [SupportedApiProfile(
         "vulkan",

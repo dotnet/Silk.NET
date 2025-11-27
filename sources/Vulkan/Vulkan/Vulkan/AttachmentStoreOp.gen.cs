@@ -58,6 +58,7 @@ public enum AttachmentStoreOp : uint
     )]
     None = 1000301000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_ATTACHMENT_STORE_OP_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -70,10 +71,12 @@ public enum AttachmentStoreOp : uint
     )]
     NoneKHR = None,
 
+    [NameSuffix("QCOM", 0)]
     [NativeName("VK_ATTACHMENT_STORE_OP_NONE_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_store_ops"])]
     NoneQCOM = None,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_ATTACHMENT_STORE_OP_NONE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
     NoneEXT = None,

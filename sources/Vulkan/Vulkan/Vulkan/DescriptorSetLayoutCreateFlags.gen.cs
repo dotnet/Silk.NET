@@ -41,6 +41,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     PushDescriptorBit = 0x1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -54,6 +55,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     DescriptorBufferBitEXT = 0x10,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_EMBEDDED_IMMUTABLE_SAMPLERS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -67,6 +69,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     EmbeddedImmutableSamplersBitEXT = 0x20,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_INDIRECT_BINDABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -75,6 +78,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     IndirectBindableBitNV = 0x80,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -86,6 +90,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     HostOnlyPoolBitEXT = 0x4,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PER_STAGE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -97,6 +102,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     PerStageBitNV = 0x40,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -108,6 +114,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     PushDescriptorBitKHR = PushDescriptorBit,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -119,6 +126,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     UpdateAfterBindPoolBitEXT = UpdateAfterBindPoolBit,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",

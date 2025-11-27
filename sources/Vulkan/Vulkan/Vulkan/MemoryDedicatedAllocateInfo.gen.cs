@@ -84,7 +84,7 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
         ],
         MinVersion = "1.1"
     )]
-    public ImageHandle Image;
+    public Image Image;
 
     [NativeName("buffer")]
     [SupportedApiProfile(
@@ -109,5 +109,5 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
         ],
         MinVersion = "1.1"
     )]
-    public BufferHandle Buffer;
+    public Buffer Buffer;
 }

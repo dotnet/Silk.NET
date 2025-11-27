@@ -14,10 +14,12 @@ public enum RenderPassCreateFlags : uint
 {
     None = 0x0,
 
+    [NameSuffix("QCOM", 0)]
     [NativeName("VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     TransformBitQCOM = 0x2,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_RENDER_PASS_CREATE_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",

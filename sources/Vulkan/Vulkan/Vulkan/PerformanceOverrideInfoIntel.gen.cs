@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("INTEL", 0)]
 [NativeName("VkPerformanceOverrideInfoINTEL")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceOverrideInfoIntel

@@ -8,26 +8,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkPhysicalDeviceLayeredApiKHR")]
 [SupportedApiProfile("vulkan")]
 public enum PhysicalDeviceLayeredApiKHR : uint
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_VULKAN_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     VulkanKHR = 0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_D3D12_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     D3D12KHR = 1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_METAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     MetalKHR = 2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_OPENGL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     OpenglKHR = 3,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_OPENGLES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     OpenglesKHR = 4,

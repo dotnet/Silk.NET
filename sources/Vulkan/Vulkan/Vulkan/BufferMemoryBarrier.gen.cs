@@ -213,7 +213,7 @@ public unsafe partial struct BufferMemoryBarrier
         ],
         MinVersion = "1.0"
     )]
-    public BufferHandle Buffer;
+    public Buffer Buffer;
 
     [NativeName("offset")]
     [SupportedApiProfile(

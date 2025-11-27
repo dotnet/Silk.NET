@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkDescriptorGetTensorInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorGetTensorInfoARM
@@ -37,5 +38,5 @@ public unsafe partial struct DescriptorGetTensorInfoARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public TensorViewARMHandle TensorView;
+    public TensorViewARM TensorView;
 }

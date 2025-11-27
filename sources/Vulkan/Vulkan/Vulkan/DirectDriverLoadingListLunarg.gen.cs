@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("LUNARG", 0)]
 [NativeName("VkDirectDriverLoadingListLUNARG")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DirectDriverLoadingListLunarg

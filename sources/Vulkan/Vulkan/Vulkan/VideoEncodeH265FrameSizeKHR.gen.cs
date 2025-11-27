@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoEncodeH265FrameSizeKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct VideoEncodeH265FrameSizeKHR

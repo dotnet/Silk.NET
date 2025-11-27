@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NVX", 0)]
 [NativeName("VkCuFunctionCreateInfoNVX")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CuFunctionCreateInfoNVX
@@ -21,7 +22,7 @@ public unsafe partial struct CuFunctionCreateInfoNVX
 
     [NativeName("module")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuModuleNVXHandle Module;
+    public CuModuleNVX Module;
 
     [NativeName("pName")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]

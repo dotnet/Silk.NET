@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("AMD", 0)]
 [NativeName("VkShaderCorePropertiesFlagBitsAMD")]
 [Flags]
 [SupportedApiProfile("vulkan")]

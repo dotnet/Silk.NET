@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkSurfaceCapabilities2EXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfaceCapabilities2EXT

@@ -30,6 +30,7 @@ public enum FramebufferCreateFlags : uint
     )]
     ImagelessBit = 0x1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

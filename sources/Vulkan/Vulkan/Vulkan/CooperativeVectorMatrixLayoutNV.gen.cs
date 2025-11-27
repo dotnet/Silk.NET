@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkCooperativeVectorMatrixLayoutNV")]
 [SupportedApiProfile("vulkan")]
 public enum CooperativeVectorMatrixLayoutNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_ROW_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
     )]
     RowMajorNV = 0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_COLUMN_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,6 +37,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
     )]
     ColumnMajorNV = 1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_INFERENCING_OPTIMAL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,6 +49,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
     )]
     InferencingOptimalNV = 2,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_TRAINING_OPTIMAL_NV")]
     [SupportedApiProfile(
         "vulkan",

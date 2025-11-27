@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkCopyMemoryToMicromapInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryToMicromapInfoEXT
@@ -53,7 +54,7 @@ public unsafe partial struct CopyMemoryToMicromapInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapEXTHandle Dst;
+    public MicromapEXT Dst;
 
     [NativeName("mode")]
     [SupportedApiProfile(

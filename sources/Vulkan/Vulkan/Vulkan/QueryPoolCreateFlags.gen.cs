@@ -15,6 +15,7 @@ public enum QueryPoolCreateFlags : uint
 {
     None = 0x0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUERY_POOL_CREATE_RESET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

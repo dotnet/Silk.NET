@@ -7,10 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkShaderCodeTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum ShaderCodeTypeEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SHADER_CODE_TYPE_BINARY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum ShaderCodeTypeEXT : uint
     )]
     BinaryEXT = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SHADER_CODE_TYPE_SPIRV_EXT")]
     [SupportedApiProfile(
         "vulkan",

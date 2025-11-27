@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkRayTracingPipelineCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingPipelineCreateInfoKHR
@@ -142,7 +143,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public PipelineLayoutHandle Layout;
+    public PipelineLayout Layout;
 
     [NativeName("basePipelineHandle")]
     [SupportedApiProfile(
@@ -153,7 +154,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public PipelineHandle BasePipelineHandle;
+    public Pipeline BasePipelineHandle;
 
     [NativeName("basePipelineIndex")]
     [SupportedApiProfile(

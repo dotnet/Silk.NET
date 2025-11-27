@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NVX", 0)]
 [NativeName("VkCuModuleTexturingModeCreateInfoNVX")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CuModuleTexturingModeCreateInfoNVX

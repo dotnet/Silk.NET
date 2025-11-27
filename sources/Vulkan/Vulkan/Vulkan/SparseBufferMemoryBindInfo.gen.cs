@@ -37,7 +37,7 @@ public unsafe partial struct SparseBufferMemoryBindInfo
         ],
         MinVersion = "1.0"
     )]
-    public BufferHandle Buffer;
+    public Buffer Buffer;
 
     [NativeName("bindCount")]
     [SupportedApiProfile(

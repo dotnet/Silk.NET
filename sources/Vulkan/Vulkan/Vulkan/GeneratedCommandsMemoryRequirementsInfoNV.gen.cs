@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkGeneratedCommandsMemoryRequirementsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
@@ -42,7 +43,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public PipelineHandle Pipeline;
+    public Pipeline Pipeline;
 
     [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
@@ -50,7 +51,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public IndirectCommandsLayoutNVHandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutNV IndirectCommandsLayout;
 
     [NativeName("maxSequencesCount")]
     [SupportedApiProfile(

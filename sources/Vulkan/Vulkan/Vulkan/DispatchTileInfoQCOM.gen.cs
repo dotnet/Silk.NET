@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkDispatchTileInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DispatchTileInfoQCOM

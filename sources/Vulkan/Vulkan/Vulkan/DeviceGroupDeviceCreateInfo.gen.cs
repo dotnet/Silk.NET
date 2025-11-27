@@ -110,5 +110,5 @@ public unsafe partial struct DeviceGroupDeviceCreateInfo
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceHandle* PPhysicalDevices;
+    public PhysicalDevice* PPhysicalDevices;
 }

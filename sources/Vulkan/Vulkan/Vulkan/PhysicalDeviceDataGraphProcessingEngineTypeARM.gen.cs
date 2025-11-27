@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkPhysicalDeviceDataGraphProcessingEngineTypeARM")]
 [SupportedApiProfile("vulkan")]
 public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
 {
+    [NameSuffix("ARM", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_DEFAULT_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -20,6 +22,7 @@ public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
     )]
     DefaultARM = 0,
 
+    [NameSuffix("QCOM", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_NEURAL_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,6 +31,7 @@ public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
     )]
     NeuralQCOM = 1000629000,
 
+    [NameSuffix("QCOM", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_COMPUTE_QCOM")]
     [SupportedApiProfile(
         "vulkan",

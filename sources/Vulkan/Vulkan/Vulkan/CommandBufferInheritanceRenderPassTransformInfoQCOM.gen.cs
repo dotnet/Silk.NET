@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkCommandBufferInheritanceRenderPassTransformInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM

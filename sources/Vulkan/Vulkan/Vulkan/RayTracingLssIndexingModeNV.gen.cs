@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkRayTracingLssIndexingModeNV")]
 [SupportedApiProfile("vulkan")]
 public enum RayTracingLssIndexingModeNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_RAY_TRACING_LSS_INDEXING_MODE_LIST_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -20,6 +22,7 @@ public enum RayTracingLssIndexingModeNV : uint
     )]
     ListNV = 0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_RAY_TRACING_LSS_INDEXING_MODE_SUCCESSIVE_NV")]
     [SupportedApiProfile(
         "vulkan",

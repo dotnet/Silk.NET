@@ -73,7 +73,7 @@ public unsafe partial struct SemaphoreSignalInfo
         ],
         MinVersion = "1.2"
     )]
-    public SemaphoreHandle Semaphore;
+    public Semaphore Semaphore;
 
     [NativeName("value")]
     [SupportedApiProfile(

@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkImportFenceFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImportFenceFdInfoKHR
@@ -41,7 +42,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public FenceHandle Fence;
+    public Fence Fence;
 
     [NativeName("flags")]
     [SupportedApiProfile(

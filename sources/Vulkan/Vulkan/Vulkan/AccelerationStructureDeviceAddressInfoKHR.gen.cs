@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkAccelerationStructureDeviceAddressInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureDeviceAddressInfoKHR
@@ -43,5 +44,5 @@ public unsafe partial struct AccelerationStructureDeviceAddressInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle AccelerationStructure;
+    public AccelerationStructureKHR AccelerationStructure;
 }

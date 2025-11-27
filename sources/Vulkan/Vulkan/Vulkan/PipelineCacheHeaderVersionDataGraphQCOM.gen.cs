@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkPipelineCacheHeaderVersionDataGraphQCOM")]
 [SupportedApiProfile("vulkan")]
 public partial struct PipelineCacheHeaderVersionDataGraphQCOM

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkDeviceOrHostAddressKHR")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]

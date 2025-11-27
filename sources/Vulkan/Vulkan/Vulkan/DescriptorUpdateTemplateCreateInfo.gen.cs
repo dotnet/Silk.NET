@@ -156,7 +156,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
         ],
         MinVersion = "1.1"
     )]
-    public DescriptorSetLayoutHandle DescriptorSetLayout;
+    public DescriptorSetLayout DescriptorSetLayout;
 
     [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
@@ -198,7 +198,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
         ],
         MinVersion = "1.1"
     )]
-    public PipelineLayoutHandle PipelineLayout;
+    public PipelineLayout PipelineLayout;
 
     [NativeName("set")]
     [SupportedApiProfile(

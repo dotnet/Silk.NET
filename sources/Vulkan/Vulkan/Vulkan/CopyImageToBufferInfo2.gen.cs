@@ -61,7 +61,7 @@ public unsafe partial struct CopyImageToBufferInfo2
         ],
         MinVersion = "1.3"
     )]
-    public ImageHandle SrcImage;
+    public Image SrcImage;
 
     [NativeName("srcImageLayout")]
     [SupportedApiProfile(
@@ -95,7 +95,7 @@ public unsafe partial struct CopyImageToBufferInfo2
         ],
         MinVersion = "1.3"
     )]
-    public BufferHandle DstBuffer;
+    public Buffer DstBuffer;
 
     [NativeName("regionCount")]
     [SupportedApiProfile(

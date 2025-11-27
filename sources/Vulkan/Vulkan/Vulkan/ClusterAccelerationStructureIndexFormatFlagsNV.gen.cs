@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkClusterAccelerationStructureIndexFormatFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,6 +16,7 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
 {
     None = 0x0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_8BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
     )]
     Format8BitNV = 0x1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_16BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,6 +34,7 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
     )]
     Format16BitNV = 0x2,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_32BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

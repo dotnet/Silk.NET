@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkDescriptorDataEXT")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
@@ -25,7 +26,7 @@ public unsafe partial struct DescriptorDataEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public SamplerHandle* PSampler;
+    public Sampler* PSampler;
 
     [NativeName("pCombinedImageSampler")]
     [FieldOffset(0)]

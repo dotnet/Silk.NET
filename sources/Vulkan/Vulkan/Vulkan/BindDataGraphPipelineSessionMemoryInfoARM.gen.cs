@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkBindDataGraphPipelineSessionMemoryInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
@@ -34,7 +35,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public DataGraphPipelineSessionARMHandle Session;
+    public DataGraphPipelineSessionARM Session;
 
     [NativeName("bindPoint")]
     [SupportedApiProfile(
@@ -58,7 +59,7 @@ public unsafe partial struct BindDataGraphPipelineSessionMemoryInfoARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public DeviceMemoryHandle Memory;
+    public DeviceMemory Memory;
 
     [NativeName("memoryOffset")]
     [SupportedApiProfile(

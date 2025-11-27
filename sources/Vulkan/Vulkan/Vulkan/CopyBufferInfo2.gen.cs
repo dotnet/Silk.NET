@@ -60,7 +60,7 @@ public unsafe partial struct CopyBufferInfo2
         ],
         MinVersion = "1.3"
     )]
-    public BufferHandle SrcBuffer;
+    public Buffer SrcBuffer;
 
     [NativeName("dstBuffer")]
     [SupportedApiProfile(
@@ -77,7 +77,7 @@ public unsafe partial struct CopyBufferInfo2
         ],
         MinVersion = "1.3"
     )]
-    public BufferHandle DstBuffer;
+    public Buffer DstBuffer;
 
     [NativeName("regionCount")]
     [SupportedApiProfile(

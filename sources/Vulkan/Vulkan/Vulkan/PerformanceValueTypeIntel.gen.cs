@@ -8,26 +8,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("INTEL", 0)]
 [NativeName("VkPerformanceValueTypeINTEL")]
 [SupportedApiProfile("vulkan")]
 public enum PerformanceValueTypeIntel : uint
 {
+    [NameSuffix("INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_UINT32_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     Uint32Intel = 0,
 
+    [NameSuffix("INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_UINT64_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     Uint64Intel = 1,
 
+    [NameSuffix("INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_FLOAT_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     FloatIntel = 2,
 
+    [NameSuffix("INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_BOOL_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     BoolIntel = 3,
 
+    [NameSuffix("INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_STRING_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     StringIntel = 4,

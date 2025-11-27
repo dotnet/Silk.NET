@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkDataGraphPipelineSessionCreateInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineSessionCreateInfoARM
@@ -42,5 +43,5 @@ public unsafe partial struct DataGraphPipelineSessionCreateInfoARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public PipelineHandle DataGraphPipeline;
+    public Pipeline DataGraphPipeline;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkSwapchainPresentFenceInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainPresentFenceInfoKHR
@@ -57,5 +58,5 @@ public unsafe partial struct SwapchainPresentFenceInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public FenceHandle* PFences;
+    public Fence* PFences;
 }

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkDrmFormatModifierProperties2EXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DrmFormatModifierProperties2EXT

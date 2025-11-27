@@ -15,6 +15,7 @@ public enum MemoryMapFlags : uint
 {
     None = 0x0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_MEMORY_MAP_PLACED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

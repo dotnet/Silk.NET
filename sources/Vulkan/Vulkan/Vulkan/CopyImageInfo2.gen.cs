@@ -60,7 +60,7 @@ public unsafe partial struct CopyImageInfo2
         ],
         MinVersion = "1.3"
     )]
-    public ImageHandle SrcImage;
+    public Image SrcImage;
 
     [NativeName("srcImageLayout")]
     [SupportedApiProfile(
@@ -94,7 +94,7 @@ public unsafe partial struct CopyImageInfo2
         ],
         MinVersion = "1.3"
     )]
-    public ImageHandle DstImage;
+    public Image DstImage;
 
     [NativeName("dstImageLayout")]
     [SupportedApiProfile(

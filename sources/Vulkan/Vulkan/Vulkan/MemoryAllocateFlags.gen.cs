@@ -82,6 +82,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceAddressCaptureReplayBit = 0x4,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_ZERO_INITIALIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -93,6 +94,7 @@ public enum MemoryAllocateFlags : uint
     )]
     ZeroInitializeBitEXT = 0x8,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -101,6 +103,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceMaskBitKHR = DeviceMaskBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -112,6 +115,7 @@ public enum MemoryAllocateFlags : uint
     )]
     DeviceAddressBitKHR = DeviceAddressBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

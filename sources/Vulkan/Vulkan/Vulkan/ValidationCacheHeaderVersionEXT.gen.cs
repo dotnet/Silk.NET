@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkValidationCacheHeaderVersionEXT")]
 [SupportedApiProfile("vulkan")]
 public enum ValidationCacheHeaderVersionEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     OneEXT = 1,

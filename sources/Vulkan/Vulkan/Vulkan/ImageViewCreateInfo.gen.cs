@@ -126,7 +126,7 @@ public unsafe partial struct ImageViewCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageHandle Image;
+    public Image Image;
 
     [NativeName("viewType")]
     [SupportedApiProfile(

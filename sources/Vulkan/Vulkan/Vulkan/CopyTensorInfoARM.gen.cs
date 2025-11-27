@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkCopyTensorInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyTensorInfoARM
@@ -22,11 +23,11 @@ public unsafe partial struct CopyTensorInfoARM
 
     [NativeName("srcTensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle SrcTensor;
+    public TensorARM SrcTensor;
 
     [NativeName("dstTensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle DstTensor;
+    public TensorARM DstTensor;
 
     [NativeName("regionCount")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]

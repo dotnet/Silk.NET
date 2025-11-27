@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkSetDescriptorBufferOffsetsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
@@ -46,7 +47,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public PipelineLayoutHandle Layout;
+    public PipelineLayout Layout;
 
     [NativeName("firstSet")]
     [SupportedApiProfile(

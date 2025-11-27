@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkRenderPassFragmentDensityMapCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT

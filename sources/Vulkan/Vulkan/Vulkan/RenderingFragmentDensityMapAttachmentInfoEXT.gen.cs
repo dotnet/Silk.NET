@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkRenderingFragmentDensityMapAttachmentInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
@@ -52,7 +53,7 @@ public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public ImageViewHandle ImageView;
+    public ImageView ImageView;
 
     [NativeName("imageLayout")]
     [SupportedApiProfile(

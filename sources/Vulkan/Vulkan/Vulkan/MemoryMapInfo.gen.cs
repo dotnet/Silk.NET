@@ -62,7 +62,7 @@ public unsafe partial struct MemoryMapInfo
         ],
         MinVersion = "1.4"
     )]
-    public DeviceMemoryHandle Memory;
+    public DeviceMemory Memory;
 
     [NativeName("offset")]
     [SupportedApiProfile(

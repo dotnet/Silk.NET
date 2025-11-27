@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("MESA", 0)]
 [NativeName("VkImageAlignmentControlCreateInfoMESA")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageAlignmentControlCreateInfoMESA

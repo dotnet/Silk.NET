@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkAttachmentSampleLocationsEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct AttachmentSampleLocationsEXT

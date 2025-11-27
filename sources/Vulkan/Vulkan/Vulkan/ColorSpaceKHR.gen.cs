@@ -8,14 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkColorSpaceKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ColorSpaceKHR : uint
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COLOR_SPACE_SRGB_NONLINEAR_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     SrgbNonlinearKHR = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DISPLAY_P3_NONLINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -24,6 +27,7 @@ public enum ColorSpaceKHR : uint
     )]
     DisplayP3NonlinearEXT = 1000104001,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_EXTENDED_SRGB_LINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32,6 +36,7 @@ public enum ColorSpaceKHR : uint
     )]
     ExtendedSrgbLinearEXT = 1000104002,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DISPLAY_P3_LINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,6 +45,7 @@ public enum ColorSpaceKHR : uint
     )]
     DisplayP3LinearEXT = 1000104003,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DCI_P3_NONLINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48,6 +54,7 @@ public enum ColorSpaceKHR : uint
     )]
     DciP3NonlinearEXT = 1000104004,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_BT709_LINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,6 +63,7 @@ public enum ColorSpaceKHR : uint
     )]
     Bt709LinearEXT = 1000104005,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_BT709_NONLINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,6 +72,7 @@ public enum ColorSpaceKHR : uint
     )]
     Bt709NonlinearEXT = 1000104006,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_BT2020_LINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -72,6 +81,7 @@ public enum ColorSpaceKHR : uint
     )]
     Bt2020LinearEXT = 1000104007,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_HDR10_ST2084_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -80,6 +90,7 @@ public enum ColorSpaceKHR : uint
     )]
     Hdr10St2084EXT = 1000104008,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DOLBYVISION_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -88,6 +99,7 @@ public enum ColorSpaceKHR : uint
     )]
     DolbyvisionEXT = 1000104009,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_HDR10_HLG_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -96,6 +108,7 @@ public enum ColorSpaceKHR : uint
     )]
     Hdr10HlgEXT = 1000104010,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_ADOBERGB_LINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -104,6 +117,7 @@ public enum ColorSpaceKHR : uint
     )]
     AdobergbLinearEXT = 1000104011,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_ADOBERGB_NONLINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -112,6 +126,7 @@ public enum ColorSpaceKHR : uint
     )]
     AdobergbNonlinearEXT = 1000104012,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_PASS_THROUGH_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -120,6 +135,7 @@ public enum ColorSpaceKHR : uint
     )]
     PassThroughEXT = 1000104013,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COLOR_SPACE_EXTENDED_SRGB_NONLINEAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -128,6 +144,7 @@ public enum ColorSpaceKHR : uint
     )]
     ExtendedSrgbNonlinearEXT = 1000104014,
 
+    [NameSuffix("AMD", 0)]
     [NativeName("VK_COLOR_SPACE_DISPLAY_NATIVE_AMD")]
     [SupportedApiProfile(
         "vulkan",

@@ -206,6 +206,7 @@ public enum ShaderStageFlags : uint
     )]
     All = 0x7FFFFFFF,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SHADER_STAGE_RAYGEN_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -217,6 +218,7 @@ public enum ShaderStageFlags : uint
     )]
     RaygenBitKHR = 0x100,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SHADER_STAGE_ANY_HIT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -228,6 +230,7 @@ public enum ShaderStageFlags : uint
     )]
     AnyHitBitKHR = 0x200,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -239,6 +242,7 @@ public enum ShaderStageFlags : uint
     )]
     ClosestHitBitKHR = 0x400,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SHADER_STAGE_MISS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -250,6 +254,7 @@ public enum ShaderStageFlags : uint
     )]
     MissBitKHR = 0x800,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SHADER_STAGE_INTERSECTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -261,6 +266,7 @@ public enum ShaderStageFlags : uint
     )]
     IntersectionBitKHR = 0x1000,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SHADER_STAGE_CALLABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -272,6 +278,7 @@ public enum ShaderStageFlags : uint
     )]
     CallableBitKHR = 0x2000,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SHADER_STAGE_TASK_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -280,6 +287,7 @@ public enum ShaderStageFlags : uint
     )]
     TaskBitEXT = 0x40,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_SHADER_STAGE_MESH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -288,6 +296,7 @@ public enum ShaderStageFlags : uint
     )]
     MeshBitEXT = 0x80,
 
+    [NameSuffix("HUAWEI", 0)]
     [NativeName("VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -300,6 +309,7 @@ public enum ShaderStageFlags : uint
     )]
     SubpassShadingBitHuawei = 0x4000,
 
+    [NameSuffix("HUAWEI", 0)]
     [NativeName("VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -311,6 +321,7 @@ public enum ShaderStageFlags : uint
     )]
     ClusterCullingBitHuawei = 0x80000,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_RAYGEN_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -322,6 +333,7 @@ public enum ShaderStageFlags : uint
     )]
     RaygenBitNV = RaygenBitKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_ANY_HIT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -333,6 +345,7 @@ public enum ShaderStageFlags : uint
     )]
     AnyHitBitNV = AnyHitBitKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_CLOSEST_HIT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -344,6 +357,7 @@ public enum ShaderStageFlags : uint
     )]
     ClosestHitBitNV = ClosestHitBitKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_MISS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -355,6 +369,7 @@ public enum ShaderStageFlags : uint
     )]
     MissBitNV = MissBitKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_INTERSECTION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -366,6 +381,7 @@ public enum ShaderStageFlags : uint
     )]
     IntersectionBitNV = IntersectionBitKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_CALLABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -377,6 +393,7 @@ public enum ShaderStageFlags : uint
     )]
     CallableBitNV = CallableBitKHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_TASK_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -388,6 +405,7 @@ public enum ShaderStageFlags : uint
     )]
     TaskBitNV = TaskBitEXT,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_SHADER_STAGE_MESH_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

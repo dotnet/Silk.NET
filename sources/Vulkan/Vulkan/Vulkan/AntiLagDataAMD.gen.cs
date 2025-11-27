@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("AMD", 0)]
 [NativeName("VkAntiLagDataAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AntiLagDataAMD

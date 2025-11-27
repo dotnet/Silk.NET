@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkIndirectCommandsLayoutUsageFlagBitsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -14,6 +15,7 @@ public enum IndirectCommandsLayoutUsageFlagsEXT : uint
 {
     None = 0x0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_EXPLICIT_PREPROCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,6 +28,7 @@ public enum IndirectCommandsLayoutUsageFlagsEXT : uint
     )]
     ExplicitPreprocessBitEXT = 0x1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

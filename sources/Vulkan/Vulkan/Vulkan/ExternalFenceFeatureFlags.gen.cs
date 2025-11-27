@@ -64,6 +64,7 @@ public enum ExternalFenceFeatureFlags : uint
     )]
     ImportableBit = 0x2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -75,6 +76,7 @@ public enum ExternalFenceFeatureFlags : uint
     )]
     ExportableBitKHR = ExportableBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

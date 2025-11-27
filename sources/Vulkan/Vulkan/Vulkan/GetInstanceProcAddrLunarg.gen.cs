@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("LUNARG", 0)]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct GetInstanceProcAddrLunarg : IDisposable
 {
@@ -15,12 +16,12 @@ public readonly unsafe struct GetInstanceProcAddrLunarg : IDisposable
     private readonly void* Pointer;
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    public delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrLunargP2> Handle =>
-        (delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrLunargP2>)Pointer;
+    public delegate* unmanaged<Instance, sbyte*, GetInstanceProcAddrLunargP2> Handle =>
+        (delegate* unmanaged<Instance, sbyte*, GetInstanceProcAddrLunargP2>)Pointer;
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public GetInstanceProcAddrLunarg(
-        delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrLunargP2> ptr
+        delegate* unmanaged<Instance, sbyte*, GetInstanceProcAddrLunargP2> ptr
     ) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
@@ -32,13 +33,13 @@ public readonly unsafe struct GetInstanceProcAddrLunarg : IDisposable
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public static implicit operator GetInstanceProcAddrLunarg(
-        delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrLunargP2> pfn
+        delegate* unmanaged<Instance, sbyte*, GetInstanceProcAddrLunargP2> pfn
     ) => new(pfn);
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public static implicit operator delegate* unmanaged<
-        InstanceHandle,
+        Instance,
         sbyte*,
         GetInstanceProcAddrLunargP2>(GetInstanceProcAddrLunarg pfn) =>
-        (delegate* unmanaged<InstanceHandle, sbyte*, GetInstanceProcAddrLunargP2>)pfn.Pointer;
+        (delegate* unmanaged<Instance, sbyte*, GetInstanceProcAddrLunargP2>)pfn.Pointer;
 }

@@ -7,11 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkOpticalFlowUsageFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum OpticalFlowUsageFlagsNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_UNKNOWN_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -24,6 +26,7 @@ public enum OpticalFlowUsageFlagsNV : uint
     )]
     UnknownNV = 0x0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_INPUT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,6 +39,7 @@ public enum OpticalFlowUsageFlagsNV : uint
     )]
     InputBitNV = 0x1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_OUTPUT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48,6 +52,7 @@ public enum OpticalFlowUsageFlagsNV : uint
     )]
     OutputBitNV = 0x2,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_HINT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -60,6 +65,7 @@ public enum OpticalFlowUsageFlagsNV : uint
     )]
     HintBitNV = 0x4,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_COST_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -72,6 +78,7 @@ public enum OpticalFlowUsageFlagsNV : uint
     )]
     CostBitNV = 0x8,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_GLOBAL_FLOW_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

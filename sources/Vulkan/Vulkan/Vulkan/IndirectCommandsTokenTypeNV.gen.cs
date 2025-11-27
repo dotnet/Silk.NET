@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkIndirectCommandsTokenTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum IndirectCommandsTokenTypeNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_SHADER_GROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -20,6 +22,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     ShaderGroupNV = 0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_STATE_FLAGS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,6 +31,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     StateFlagsNV = 1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_INDEX_BUFFER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,6 +40,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     IndexBufferNV = 2,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_VERTEX_BUFFER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -44,6 +49,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     VertexBufferNV = 3,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_PUSH_CONSTANT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,6 +58,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     PushConstantNV = 4,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -60,6 +67,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     DrawIndexedNV = 5,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -68,6 +76,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     DrawNV = 6,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_TASKS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -76,6 +85,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     DrawTasksNV = 7,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,6 +95,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     DrawMeshTasksNV = 1000328000,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_PIPELINE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -93,6 +104,7 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     PipelineNV = 1000428003,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DISPATCH_NV")]
     [SupportedApiProfile(
         "vulkan",

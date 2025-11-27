@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkConservativeRasterizationModeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum ConservativeRasterizationModeEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_DISABLED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum ConservativeRasterizationModeEXT : uint
     )]
     DisabledEXT = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_OVERESTIMATE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,6 +37,7 @@ public enum ConservativeRasterizationModeEXT : uint
     )]
     OverestimateEXT = 1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_UNDERESTIMATE_EXT")]
     [SupportedApiProfile(
         "vulkan",

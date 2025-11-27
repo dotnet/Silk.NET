@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkQueueFamilyOwnershipTransferPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyOwnershipTransferPropertiesKHR

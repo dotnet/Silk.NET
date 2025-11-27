@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("VALVE", 0)]
 [NativeName("VkVideoEncodeRgbModelConversionFlagBitsVALVE")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,6 +16,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve : uint
 {
     None = 0x0,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_RGB_IDENTITY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,6 +28,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve : uint
     )]
     RgbIdentityBitValve = 0x1,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_IDENTITY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,6 +40,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve : uint
     )]
     YcbcrIdentityBitValve = 0x2,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_709_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -48,6 +52,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve : uint
     )]
     Ycbcr709BitValve = 0x4,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_601_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -59,6 +64,7 @@ public enum VideoEncodeRgbModelConversionFlagsValve : uint
     )]
     Ycbcr601BitValve = 0x8,
 
+    [NameSuffix("VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_2020_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",

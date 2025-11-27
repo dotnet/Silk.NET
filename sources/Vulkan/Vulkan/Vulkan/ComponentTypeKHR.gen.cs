@@ -7,10 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkComponentTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ComponentTypeKHR : uint
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,6 +24,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float16KHR = 0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +36,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float32KHR = 1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44,6 +48,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float64KHR = 2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT8_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -55,6 +60,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint8KHR = 3,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -66,6 +72,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint16KHR = 4,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -77,6 +84,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint32KHR = 5,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -88,6 +96,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint64KHR = 6,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT8_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -99,6 +108,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint8KHR = 7,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -110,6 +120,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint16KHR = 8,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -121,6 +132,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint32KHR = 9,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -132,6 +144,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint64KHR = 10,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_BFLOAT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -144,6 +157,7 @@ public enum ComponentTypeKHR : uint
     )]
     Bfloat16KHR = 1000141000,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT8_PACKED_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -155,6 +169,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint8PackedNV = 1000491000,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT8_PACKED_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -166,6 +181,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint8PackedNV = 1000491001,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT8_E4M3_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -178,6 +194,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float8E4M3EXT = 1000491002,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT8_E5M2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -190,6 +207,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float8E5M2EXT = 1000491003,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT16_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -201,6 +219,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float16NV = Float16KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT32_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -212,6 +231,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float32NV = Float32KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT64_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -223,6 +243,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float64NV = Float64KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT8_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -234,6 +255,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint8NV = Sint8KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT16_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -245,6 +267,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint16NV = Sint16KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT32_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -256,6 +279,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint32NV = Sint32KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT64_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -267,6 +291,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint64NV = Sint64KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT8_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -278,6 +303,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint8NV = Uint8KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT16_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -289,6 +315,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint16NV = Uint16KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT32_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -300,6 +327,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint32NV = Uint32KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT64_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -311,6 +339,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint64NV = Uint64KHR,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT_E4M3_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -322,6 +351,7 @@ public enum ComponentTypeKHR : uint
     )]
     FloatE4M3NV = Float8E4M3EXT,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT_E5M2_NV")]
     [SupportedApiProfile(
         "vulkan",

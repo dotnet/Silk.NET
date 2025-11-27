@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkWriteIndirectExecutionSetPipelineEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteIndirectExecutionSetPipelineEXT
@@ -58,5 +59,5 @@ public unsafe partial struct WriteIndirectExecutionSetPipelineEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public PipelineHandle Pipeline;
+    public Pipeline Pipeline;
 }

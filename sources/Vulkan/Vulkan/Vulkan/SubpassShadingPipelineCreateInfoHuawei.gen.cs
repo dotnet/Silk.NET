@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("HUAWEI", 0)]
 [NativeName("VkSubpassShadingPipelineCreateInfoHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubpassShadingPipelineCreateInfoHuawei
@@ -45,7 +46,7 @@ public unsafe partial struct SubpassShadingPipelineCreateInfoHuawei
             "VK_VERSION_1_3",
         ]
     )]
-    public RenderPassHandle RenderPass;
+    public RenderPass RenderPass;
 
     [NativeName("subpass")]
     [SupportedApiProfile(

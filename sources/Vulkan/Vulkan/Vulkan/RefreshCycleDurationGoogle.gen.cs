@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("GOOGLE", 0)]
 [NativeName("VkRefreshCycleDurationGOOGLE")]
 [SupportedApiProfile("vulkan")]
 public partial struct RefreshCycleDurationGoogle

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkGeneratedCommandsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsInfoNV
@@ -42,7 +43,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public PipelineHandle Pipeline;
+    public Pipeline Pipeline;
 
     [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
@@ -50,7 +51,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public IndirectCommandsLayoutNVHandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutNV IndirectCommandsLayout;
 
     [NativeName("streamCount")]
     [SupportedApiProfile(
@@ -82,7 +83,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public BufferHandle PreprocessBuffer;
+    public Buffer PreprocessBuffer;
 
     [NativeName("preprocessOffset")]
     [SupportedApiProfile(
@@ -106,7 +107,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public BufferHandle SequencesCountBuffer;
+    public Buffer SequencesCountBuffer;
 
     [NativeName("sequencesCountOffset")]
     [SupportedApiProfile(
@@ -122,7 +123,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public BufferHandle SequencesIndexBuffer;
+    public Buffer SequencesIndexBuffer;
 
     [NativeName("sequencesIndexOffset")]
     [SupportedApiProfile(

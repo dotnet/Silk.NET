@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkMemoryGetFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryGetFdInfoKHR
@@ -42,7 +43,7 @@ public unsafe partial struct MemoryGetFdInfoKHR
             "VK_KHR_external_memory_fd+VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemoryHandle Memory;
+    public DeviceMemory Memory;
 
     [NativeName("handleType")]
     [SupportedApiProfile(

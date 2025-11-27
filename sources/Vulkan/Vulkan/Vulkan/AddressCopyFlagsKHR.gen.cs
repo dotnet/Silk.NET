@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkAddressCopyFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -14,6 +15,7 @@ public enum AddressCopyFlagsKHR : uint
 {
     None = 0x0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_ADDRESS_COPY_DEVICE_LOCAL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,6 +27,7 @@ public enum AddressCopyFlagsKHR : uint
     )]
     DeviceLocalBitKHR = 0x1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_ADDRESS_COPY_SPARSE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,6 +39,7 @@ public enum AddressCopyFlagsKHR : uint
     )]
     SparseBitKHR = 0x2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_ADDRESS_COPY_PROTECTED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

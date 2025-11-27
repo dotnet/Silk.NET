@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkGraphicsPipelineShaderGroupsCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
@@ -58,5 +59,5 @@ public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public PipelineHandle* PPipelines;
+    public Pipeline* PPipelines;
 }

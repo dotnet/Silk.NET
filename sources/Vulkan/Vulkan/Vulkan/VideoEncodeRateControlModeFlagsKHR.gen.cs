@@ -7,11 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoEncodeRateControlModeFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeRateControlModeFlagsKHR : uint
 {
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
     )]
     DefaultKHR = 0x0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DISABLED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,6 +37,7 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
     )]
     DisabledBitKHR = 0x1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_CBR_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,6 +49,7 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
     )]
     CbrBitKHR = 0x2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkGraphicsPipelineLibraryFlagBitsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,6 +16,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
 {
     None = 0x0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_VERTEX_INPUT_INTERFACE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,6 +28,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
     )]
     VertexInputInterfaceBitEXT = 0x1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,6 +40,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
     )]
     PreRasterizationShadersBitEXT = 0x2,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_SHADER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48,6 +52,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
     )]
     FragmentShaderBitEXT = 0x4,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_OUTPUT_INTERFACE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkPartitionedAccelerationStructureOpTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum PartitionedAccelerationStructureOpTypeNV : uint
 {
+    [NameSuffix("NV", 0)]
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_OP_TYPE_WRITE_INSTANCE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -20,6 +22,7 @@ public enum PartitionedAccelerationStructureOpTypeNV : uint
     )]
     WriteInstanceNV = 0,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_OP_TYPE_UPDATE_INSTANCE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,6 +31,7 @@ public enum PartitionedAccelerationStructureOpTypeNV : uint
     )]
     UpdateInstanceNV = 1,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_OP_TYPE_WRITE_PARTITION_TRANSLATION_NV")]
     [SupportedApiProfile(
         "vulkan",

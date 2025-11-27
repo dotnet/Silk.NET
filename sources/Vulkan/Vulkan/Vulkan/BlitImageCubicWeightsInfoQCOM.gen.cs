@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkBlitImageCubicWeightsInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BlitImageCubicWeightsInfoQCOM

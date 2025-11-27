@@ -30,6 +30,7 @@ public enum EventCreateFlags : uint
     )]
     DeviceOnlyBit = 0x1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("INTEL", 0)]
 [NativeName("VkPerformanceValueINTEL")]
 [SupportedApiProfile("vulkan")]
 public partial struct PerformanceValueIntel

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkRenderPassCreationControlEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassCreationControlEXT

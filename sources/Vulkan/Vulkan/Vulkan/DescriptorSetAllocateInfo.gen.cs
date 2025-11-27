@@ -81,7 +81,7 @@ public unsafe partial struct DescriptorSetAllocateInfo
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorPoolHandle DescriptorPool;
+    public DescriptorPool DescriptorPool;
 
     [NativeName("descriptorSetCount")]
     [SupportedApiProfile(
@@ -129,5 +129,5 @@ public unsafe partial struct DescriptorSetAllocateInfo
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSetLayoutHandle* PSetLayouts;
+    public DescriptorSetLayout* PSetLayouts;
 }

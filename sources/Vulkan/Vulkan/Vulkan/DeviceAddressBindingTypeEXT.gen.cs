@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkDeviceAddressBindingTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DeviceAddressBindingTypeEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_ADDRESS_BINDING_TYPE_BIND_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum DeviceAddressBindingTypeEXT : uint
     )]
     BindEXT = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_ADDRESS_BINDING_TYPE_UNBIND_EXT")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoPictureResourceInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoPictureResourceInfoKHR
@@ -58,5 +59,5 @@ public unsafe partial struct VideoPictureResourceInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public ImageViewHandle ImageViewBinding;
+    public ImageView ImageViewBinding;
 }

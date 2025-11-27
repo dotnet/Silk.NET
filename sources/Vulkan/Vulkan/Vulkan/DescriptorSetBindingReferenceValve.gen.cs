@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("VALVE", 0)]
 [NativeName("VkDescriptorSetBindingReferenceVALVE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetBindingReferenceValve
@@ -42,7 +43,7 @@ public unsafe partial struct DescriptorSetBindingReferenceValve
             "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
         ]
     )]
-    public DescriptorSetLayoutHandle DescriptorSetLayout;
+    public DescriptorSetLayout DescriptorSetLayout;
 
     [NativeName("binding")]
     [SupportedApiProfile(

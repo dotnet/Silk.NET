@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkDecompressMemoryRegionEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DecompressMemoryRegionEXT

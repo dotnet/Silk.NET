@@ -147,6 +147,7 @@ public enum BufferCreateFlags : uint
     )]
     DeviceAddressCaptureReplayBit = 0x10,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -160,6 +161,7 @@ public enum BufferCreateFlags : uint
     )]
     DescriptorBufferCaptureReplayBitEXT = 0x20,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -168,6 +170,7 @@ public enum BufferCreateFlags : uint
     )]
     VideoProfileIndependentBitKHR = 0x40,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -179,6 +182,7 @@ public enum BufferCreateFlags : uint
     )]
     DeviceAddressCaptureReplayBitEXT = DeviceAddressCaptureReplayBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

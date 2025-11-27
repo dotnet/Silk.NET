@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkStridedDeviceAddressRegionKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct StridedDeviceAddressRegionKHR

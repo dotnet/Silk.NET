@@ -36,6 +36,7 @@ public enum SemaphoreWaitFlags : uint
     )]
     AnyBit = 0x1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_SEMAPHORE_WAIT_ANY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkMicromapBuildInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MicromapBuildInfoEXT
@@ -75,7 +76,7 @@ public unsafe partial struct MicromapBuildInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapEXTHandle DstMicromap;
+    public MicromapEXT DstMicromap;
 
     [NativeName("usageCountsCount")]
     [SupportedApiProfile(

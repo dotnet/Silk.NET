@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkBindTensorMemoryInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindTensorMemoryInfoARM
@@ -22,11 +23,11 @@ public unsafe partial struct BindTensorMemoryInfoARM
 
     [NativeName("tensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle Tensor;
+    public TensorARM Tensor;
 
     [NativeName("memory")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public DeviceMemoryHandle Memory;
+    public DeviceMemory Memory;
 
     [NativeName("memoryOffset")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]

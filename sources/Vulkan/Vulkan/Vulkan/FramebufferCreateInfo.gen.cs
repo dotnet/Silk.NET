@@ -86,7 +86,7 @@ public unsafe partial struct FramebufferCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public RenderPassHandle RenderPass;
+    public RenderPass RenderPass;
 
     [NativeName("attachmentCount")]
     [SupportedApiProfile(
@@ -124,7 +124,7 @@ public unsafe partial struct FramebufferCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageViewHandle* PAttachments;
+    public ImageView* PAttachments;
 
     [NativeName("width")]
     [SupportedApiProfile(

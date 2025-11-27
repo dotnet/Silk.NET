@@ -97,7 +97,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
         ],
         MinVersion = "1.0"
     )]
-    public RenderPassHandle RenderPass;
+    public RenderPass RenderPass;
 
     [NativeName("subpass")]
     [SupportedApiProfile(
@@ -155,7 +155,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
         ],
         MinVersion = "1.0"
     )]
-    public FramebufferHandle Framebuffer;
+    public Framebuffer Framebuffer;
 
     [NativeName("occlusionQueryEnable")]
     [SupportedApiProfile(

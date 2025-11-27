@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoEncodeH264CapabilityFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,6 +16,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
 {
     None = 0x0,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_HRD_COMPLIANCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,6 +25,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     HrdComplianceBitKHR = 0x1,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,6 +34,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     PredictionWeightTableGeneratedBitKHR = 0x2,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_ROW_UNALIGNED_SLICE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -39,6 +43,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     RowUnalignedSliceBitKHR = 0x4,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_DIFFERENT_SLICE_TYPE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,6 +52,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     DifferentSliceTypeBitKHR = 0x8,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L0_LIST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -55,6 +61,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     BFrameInL0ListBitKHR = 0x10,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -63,6 +70,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     BFrameInL1ListBitKHR = 0x20,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_PER_PICTURE_TYPE_MIN_MAX_QP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -71,6 +79,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     PerPictureTypeMinMaxQpBitKHR = 0x40,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_PER_SLICE_CONSTANT_QP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -79,6 +88,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     PerSliceConstantQpBitKHR = 0x80,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_GENERATE_PREFIX_NALU_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -87,6 +97,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     GeneratePrefixNaluBitKHR = 0x100,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -96,6 +107,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
     )]
     BPictureIntraRefreshBitKHR = 0x400,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_MB_QP_DIFF_WRAPAROUND_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

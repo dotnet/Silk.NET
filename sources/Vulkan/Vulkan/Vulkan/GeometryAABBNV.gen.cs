@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkGeometryAABBNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeometryAABBNV
@@ -43,7 +44,7 @@ public unsafe partial struct GeometryAABBNV
             "VK_VERSION_1_1",
         ]
     )]
-    public BufferHandle AabbData;
+    public Buffer AabbData;
 
     [NativeName("numAABBs")]
     [SupportedApiProfile(

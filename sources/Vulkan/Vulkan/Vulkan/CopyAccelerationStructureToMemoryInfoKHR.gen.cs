@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkCopyAccelerationStructureToMemoryInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyAccelerationStructureToMemoryInfoKHR
@@ -43,7 +44,7 @@ public unsafe partial struct CopyAccelerationStructureToMemoryInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle Src;
+    public AccelerationStructureKHR Src;
 
     [NativeName("dst")]
     [SupportedApiProfile(

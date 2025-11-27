@@ -7,10 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkDeviceFaultAddressTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DeviceFaultAddressTypeEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_NONE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,6 +24,7 @@ public enum DeviceFaultAddressTypeEXT : uint
     )]
     NoneEXT = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33,6 +36,7 @@ public enum DeviceFaultAddressTypeEXT : uint
     )]
     ReadInvalidEXT = 1,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44,6 +48,7 @@ public enum DeviceFaultAddressTypeEXT : uint
     )]
     WriteInvalidEXT = 2,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -55,6 +60,7 @@ public enum DeviceFaultAddressTypeEXT : uint
     )]
     ExecuteInvalidEXT = 3,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -66,6 +72,7 @@ public enum DeviceFaultAddressTypeEXT : uint
     )]
     InstructionPointerUnknownEXT = 4,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -77,6 +84,7 @@ public enum DeviceFaultAddressTypeEXT : uint
     )]
     InstructionPointerInvalidEXT = 5,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",

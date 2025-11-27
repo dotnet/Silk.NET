@@ -130,7 +130,7 @@ public unsafe partial struct ComputePipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public PipelineLayoutHandle Layout;
+    public PipelineLayout Layout;
 
     [NativeName("basePipelineHandle")]
     [SupportedApiProfile(
@@ -154,7 +154,7 @@ public unsafe partial struct ComputePipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public PipelineHandle BasePipelineHandle;
+    public Pipeline BasePipelineHandle;
 
     [NativeName("basePipelineIndex")]
     [SupportedApiProfile(

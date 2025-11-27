@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkVideoSessionParametersCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoSessionParametersCreateInfoKHR
@@ -40,7 +41,7 @@ public unsafe partial struct VideoSessionParametersCreateInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionParametersKHRHandle VideoSessionParametersTemplate;
+    public VideoSessionParametersKHR VideoSessionParametersTemplate;
 
     [NativeName("videoSession")]
     [SupportedApiProfile(
@@ -48,5 +49,5 @@ public unsafe partial struct VideoSessionParametersCreateInfoKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionKHRHandle VideoSession;
+    public VideoSessionKHR VideoSession;
 }

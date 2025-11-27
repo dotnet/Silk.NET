@@ -48,7 +48,7 @@ public unsafe partial struct HostImageLayoutTransitionInfo
         ],
         MinVersion = "1.4"
     )]
-    public ImageHandle Image;
+    public Image Image;
 
     [NativeName("oldLayout")]
     [SupportedApiProfile(

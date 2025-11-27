@@ -90,6 +90,7 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     ImportableBit = 0x4,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -101,6 +102,7 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     DedicatedOnlyBitKHR = DedicatedOnlyBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -112,6 +114,7 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     ExportableBitKHR = ExportableBit,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

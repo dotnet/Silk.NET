@@ -73,5 +73,5 @@ public unsafe partial struct BufferDeviceAddressInfo
         ],
         MinVersion = "1.2"
     )]
-    public BufferHandle Buffer;
+    public Buffer Buffer;
 }

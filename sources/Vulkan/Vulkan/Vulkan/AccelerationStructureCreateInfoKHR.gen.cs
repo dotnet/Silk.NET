@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkAccelerationStructureCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureCreateInfoKHR
@@ -54,7 +55,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public BufferHandle Buffer;
+    public Buffer Buffer;
 
     [NativeName("offset")]
     [SupportedApiProfile(

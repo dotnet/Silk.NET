@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkReleaseSwapchainImagesInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ReleaseSwapchainImagesInfoKHR
@@ -46,7 +47,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public SwapchainKHRHandle Swapchain;
+    public SwapchainKHR Swapchain;
 
     [NativeName("imageIndexCount")]
     [SupportedApiProfile(

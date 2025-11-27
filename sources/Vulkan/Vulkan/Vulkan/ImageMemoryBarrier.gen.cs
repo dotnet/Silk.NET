@@ -271,7 +271,7 @@ public unsafe partial struct ImageMemoryBarrier
         ],
         MinVersion = "1.0"
     )]
-    public ImageHandle Image;
+    public Image Image;
 
     [NativeName("subresourceRange")]
     [SupportedApiProfile(

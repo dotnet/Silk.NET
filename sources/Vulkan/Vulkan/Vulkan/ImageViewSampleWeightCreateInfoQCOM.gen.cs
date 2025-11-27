@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkImageViewSampleWeightCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM

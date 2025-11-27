@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("ARM", 0)]
 [NativeName("VkFrameBoundaryTensorsARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryTensorsARM
@@ -46,5 +47,5 @@ public unsafe partial struct FrameBoundaryTensorsARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public TensorARMHandle* PTensors;
+    public TensorARM* PTensors;
 }

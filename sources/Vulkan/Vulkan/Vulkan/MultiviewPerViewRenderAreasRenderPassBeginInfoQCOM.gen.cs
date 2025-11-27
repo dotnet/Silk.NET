@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("QCOM", 0)]
 [NativeName("VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM

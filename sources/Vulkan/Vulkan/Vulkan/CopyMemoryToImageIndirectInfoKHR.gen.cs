@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("KHR", 0)]
 [NativeName("VkCopyMemoryToImageIndirectInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
@@ -76,7 +77,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public ImageHandle DstImage;
+    public Image DstImage;
 
     [NativeName("dstImageLayout")]
     [SupportedApiProfile(

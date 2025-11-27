@@ -44,6 +44,7 @@ public enum PipelineRobustnessBufferBehavior : uint
     )]
     RobustBufferAccess2 = 3,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DEVICE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -55,6 +56,7 @@ public enum PipelineRobustnessBufferBehavior : uint
     )]
     DeviceDefaultEXT = DeviceDefault,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DISABLED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -66,6 +68,7 @@ public enum PipelineRobustnessBufferBehavior : uint
     )]
     DisabledEXT = Disabled,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -77,6 +80,7 @@ public enum PipelineRobustnessBufferBehavior : uint
     )]
     RobustBufferAccessEXT = RobustBufferAccess,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_2_EXT")]
     [SupportedApiProfile(
         "vulkan",

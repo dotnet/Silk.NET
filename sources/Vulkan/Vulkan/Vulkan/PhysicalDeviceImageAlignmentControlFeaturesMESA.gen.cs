@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("MESA", 0)]
 [NativeName("VkPhysicalDeviceImageAlignmentControlFeaturesMESA")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageAlignmentControlFeaturesMESA

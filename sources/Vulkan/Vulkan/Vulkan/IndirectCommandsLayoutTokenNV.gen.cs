@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("NV", 0)]
 [NativeName("VkIndirectCommandsLayoutTokenNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsLayoutTokenNV
@@ -74,7 +75,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public PipelineLayoutHandle PushconstantPipelineLayout;
+    public PipelineLayout PushconstantPipelineLayout;
 
     [NativeName("pushconstantShaderStageFlags")]
     [SupportedApiProfile(

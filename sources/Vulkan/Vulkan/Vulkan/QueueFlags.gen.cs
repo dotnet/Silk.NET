@@ -156,6 +156,7 @@ public enum QueueFlags : uint
     )]
     ProtectedBit = 0x10,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUEUE_VIDEO_DECODE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -167,6 +168,7 @@ public enum QueueFlags : uint
     )]
     VideoDecodeBitKHR = 0x20,
 
+    [NameSuffix("KHR", 0)]
     [NativeName("VK_QUEUE_VIDEO_ENCODE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -178,6 +180,7 @@ public enum QueueFlags : uint
     )]
     VideoEncodeBitKHR = 0x40,
 
+    [NameSuffix("NV", 0)]
     [NativeName("VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -190,6 +193,7 @@ public enum QueueFlags : uint
     )]
     OpticalFlowBitNV = 0x100,
 
+    [NameSuffix("ARM", 0)]
     [NativeName("VK_QUEUE_DATA_GRAPH_BIT_ARM")]
     [SupportedApiProfile(
         "vulkan",

@@ -7,10 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("EXT", 0)]
 [NativeName("VkProvokingVertexModeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum ProvokingVertexModeEXT : uint
 {
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PROVOKING_VERTEX_MODE_FIRST_VERTEX_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,6 +24,7 @@ public enum ProvokingVertexModeEXT : uint
     )]
     FirstVertexEXT = 0,
 
+    [NameSuffix("EXT", 0)]
     [NativeName("VK_PROVOKING_VERTEX_MODE_LAST_VERTEX_EXT")]
     [SupportedApiProfile(
         "vulkan",
