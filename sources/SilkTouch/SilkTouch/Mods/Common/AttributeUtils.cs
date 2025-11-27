@@ -19,7 +19,7 @@ public static class AttributeUtils
     /// <summary>
     /// Determines (naively) whether the given attribute syntax represents the specified attribute.
     /// </summary>
-    /// <param name="node">The attribute syntax.</param>
+    /// <param name="node">The attribute syntax to check.</param>
     /// <param name="fullNameWithoutSuffix">
     /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
     /// </param>
@@ -33,6 +33,16 @@ public static class AttributeUtils
                || sep.EndsWith(fullNameWithoutSuffix)
                || sep.EndsWith($"{fullNameWithoutSuffix}Attribute");
     }
+
+    /// <summary>
+    /// Checks whether the given attribute syntax lists contains the specified attribute.
+    /// </summary>
+    /// <param name="attributeLists">The attribute syntax lists to check.</param>
+    /// <param name="fullNameWithoutSuffix">
+    /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
+    /// </param>
+    public static bool ContainsAttribute(this IEnumerable<AttributeListSyntax> attributeLists, string fullNameWithoutSuffix) =>
+        attributeLists.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute(fullNameWithoutSuffix)));
 
     /// <summary>
     /// Modifies the <see cref="DllImportAttribute"/>s the method may have to make them resistant to method identifier
