@@ -2,38 +2,22 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
 /// Marks identifiers with the [NativeName] attribute.
 /// </summary>
-[ModConfiguration<Configuration>]
-public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg) : IMod
+/// <remarks>
+/// This mod is currently kept pretty dumb and just applies [NativeName] attributes to everything.
+/// This mod is best placed directly after ClangScraper.
+/// </remarks>
+public class MarkNativeNames : IMod
 {
-    /// <summary>
-    /// <see cref="MarkNativeNames"/> mod configuration.
-    /// </summary>
-    public record Configuration
-    {
-        /// <summary>
-        /// Should identifiers marked with the [Transformed] attribute be included?
-        /// These are ignored by default.
-        /// </summary>
-        public bool IncludeTransformed { get; init; } = true; // TODO: We probably want this to be false by default. Leaving as true during development though.
-
-        // TODO: Probably add an exclude regex list
-    }
-
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var config = cfg.Get(ctx.JobKey);
-
         var proj = ctx.SourceProject;
         if (proj == null)
         {
@@ -46,7 +30,7 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
             return;
         }
 
-        var rewriter = new Rewriter(config);
+        var rewriter = new Rewriter();
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -59,17 +43,11 @@ public class MarkNativeNames(IOptionsSnapshot<MarkNativeNames.Configuration> cfg
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config) : ModCSharpSyntaxRewriter
+    private class Rewriter : ModCSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
             if (attributeLists.TryGetNativeName(out _))
-            {
-                return attributeLists;
-            }
-
-            var hasTransformedAttribute = attributeLists.ContainsAttribute("Silk.NET.Core.Transformed");
-            if (hasTransformedAttribute && !config.IncludeTransformed)
             {
                 return attributeLists;
             }
