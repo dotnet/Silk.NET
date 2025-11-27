@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccessFlags")]
+[NativeName("VkAccessFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum AccessFlags : uint

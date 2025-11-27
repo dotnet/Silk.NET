@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDebugReportFlagsEXT")]
+[NativeName("VkDebugReportFlagBitsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum DebugReportFlagsEXT : uint

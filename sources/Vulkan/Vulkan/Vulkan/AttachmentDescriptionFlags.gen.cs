@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAttachmentDescriptionFlags")]
+[NativeName("VkAttachmentDescriptionFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum AttachmentDescriptionFlags : uint

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryHeapFlags")]
+[NativeName("VkMemoryHeapFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum MemoryHeapFlags : uint

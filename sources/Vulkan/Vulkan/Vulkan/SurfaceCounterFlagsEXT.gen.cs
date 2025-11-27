@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSurfaceCounterFlagsEXT")]
+[NativeName("VkSurfaceCounterFlagBitsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum SurfaceCounterFlagsEXT : uint

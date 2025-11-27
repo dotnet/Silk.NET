@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPeerMemoryFeatureFlags")]
+[NativeName("VkPeerMemoryFeatureFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PeerMemoryFeatureFlags : uint

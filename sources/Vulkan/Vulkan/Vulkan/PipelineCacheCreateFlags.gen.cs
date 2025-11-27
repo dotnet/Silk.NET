@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCacheCreateFlags")]
+[NativeName("VkPipelineCacheCreateFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PipelineCacheCreateFlags : uint

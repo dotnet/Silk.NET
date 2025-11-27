@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalSemaphoreFeatureFlags")]
+[NativeName("VkExternalSemaphoreFeatureFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ExternalSemaphoreFeatureFlags : uint

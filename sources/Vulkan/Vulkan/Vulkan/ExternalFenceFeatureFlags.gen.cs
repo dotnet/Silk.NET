@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalFenceFeatureFlags")]
+[NativeName("VkExternalFenceFeatureFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ExternalFenceFeatureFlags : uint

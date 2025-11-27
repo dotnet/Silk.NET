@@ -277,9 +277,9 @@
       "Mods": [
         "AddIncludes",
         "ClangScraper",
+        "MarkNativeNames",
         "AddApiProfiles",
         "MixKhronosData",
-        "MarkNativeNames",
         "ExtractNestedTyping",
         "TransformHandles",
         "InterceptNativeFunctions",

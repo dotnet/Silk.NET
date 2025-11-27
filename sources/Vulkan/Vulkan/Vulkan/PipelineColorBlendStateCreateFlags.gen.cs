@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineColorBlendStateCreateFlags")]
+[NativeName("VkPipelineColorBlendStateCreateFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PipelineColorBlendStateCreateFlags : uint

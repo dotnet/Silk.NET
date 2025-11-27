@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectCommandsInputModeFlagsEXT")]
+[NativeName("VkIndirectCommandsInputModeFlagBitsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum IndirectCommandsInputModeFlagsEXT : uint

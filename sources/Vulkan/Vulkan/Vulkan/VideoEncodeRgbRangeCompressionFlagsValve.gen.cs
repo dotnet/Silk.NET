@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeRgbRangeCompressionFlagsVALVE")]
+[NativeName("VkVideoEncodeRgbRangeCompressionFlagBitsVALVE")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoEncodeRgbRangeCompressionFlagsValve : uint

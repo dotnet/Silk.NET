@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDebugUtilsMessageSeverityFlagsEXT")]
+[NativeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum DebugUtilsMessageSeverityFlagsEXT : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineStageFlags")]
+[NativeName("VkPipelineStageFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PipelineStageFlags : uint

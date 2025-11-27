@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMicromapCreateFlagsEXT")]
+[NativeName("VkMicromapCreateFlagBitsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum MicromapCreateFlagsEXT : uint

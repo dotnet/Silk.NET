@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFenceImportFlags")]
+[NativeName("VkFenceImportFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum FenceImportFlags : uint

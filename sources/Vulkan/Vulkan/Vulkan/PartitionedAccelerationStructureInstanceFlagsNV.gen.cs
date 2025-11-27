@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPartitionedAccelerationStructureInstanceFlagsNV")]
+[NativeName("VkPartitionedAccelerationStructureInstanceFlagBitsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PartitionedAccelerationStructureInstanceFlagsNV : uint

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkColorComponentFlags")]
+[NativeName("VkColorComponentFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ColorComponentFlags : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoChromaSubsamplingFlagsKHR")]
+[NativeName("VkVideoChromaSubsamplingFlagBitsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoChromaSubsamplingFlagsKHR : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPerformanceCounterDescriptionFlagsKHR")]
+[NativeName("VkPerformanceCounterDescriptionFlagBitsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum PerformanceCounterDescriptionFlagsKHR : uint

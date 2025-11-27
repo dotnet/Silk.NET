@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkResolveModeFlags")]
+[NativeName("VkResolveModeFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ResolveModeFlags : uint

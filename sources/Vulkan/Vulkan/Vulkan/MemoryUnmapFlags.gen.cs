@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryUnmapFlags")]
+[NativeName("VkMemoryUnmapFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum MemoryUnmapFlags : uint

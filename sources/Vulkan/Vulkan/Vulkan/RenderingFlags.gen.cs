@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderingFlags")]
+[NativeName("VkRenderingFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum RenderingFlags : uint

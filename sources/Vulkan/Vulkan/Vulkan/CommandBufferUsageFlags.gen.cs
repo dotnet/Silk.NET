@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCommandBufferUsageFlags")]
+[NativeName("VkCommandBufferUsageFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum CommandBufferUsageFlags : uint

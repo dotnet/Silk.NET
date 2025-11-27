@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubpassDescriptionFlags")]
+[NativeName("VkSubpassDescriptionFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum SubpassDescriptionFlags : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFormatFeatureFlags")]
+[NativeName("VkFormatFeatureFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum FormatFeatureFlags : uint

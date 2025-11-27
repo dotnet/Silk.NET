@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageCompressionFixedRateFlagsEXT")]
+[NativeName("VkImageCompressionFixedRateFlagBitsEXT")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ImageCompressionFixedRateFlagsEXT : uint

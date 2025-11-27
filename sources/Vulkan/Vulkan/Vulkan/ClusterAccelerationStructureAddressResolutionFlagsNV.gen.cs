@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureAddressResolutionFlagsNV")]
+[NativeName("VkClusterAccelerationStructureAddressResolutionFlagBitsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint

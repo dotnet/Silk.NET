@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSwapchainImageUsageFlagsOHOS")]
 [Flags]
 public enum SwapchainImageUsageFlagsOHOS : uint
 {

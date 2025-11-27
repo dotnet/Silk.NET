@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeometryInstanceFlagsKHR")]
+[NativeName("VkGeometryInstanceFlagBitsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum GeometryInstanceFlagsKHR : uint

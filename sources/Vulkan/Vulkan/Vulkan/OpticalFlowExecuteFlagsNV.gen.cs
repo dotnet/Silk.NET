@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkOpticalFlowExecuteFlagsNV")]
+[NativeName("VkOpticalFlowExecuteFlagBitsNV")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum OpticalFlowExecuteFlagsNV : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBuildAccelerationStructureFlagsKHR")]
+[NativeName("VkBuildAccelerationStructureFlagBitsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum BuildAccelerationStructureFlagsKHR : uint

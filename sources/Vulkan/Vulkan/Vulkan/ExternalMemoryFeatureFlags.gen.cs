@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalMemoryFeatureFlags")]
+[NativeName("VkExternalMemoryFeatureFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum ExternalMemoryFeatureFlags : uint

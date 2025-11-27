@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeIntraRefreshModeFlagsKHR")]
+[NativeName("VkVideoEncodeIntraRefreshModeFlagBitsKHR")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum VideoEncodeIntraRefreshModeFlagsKHR : uint

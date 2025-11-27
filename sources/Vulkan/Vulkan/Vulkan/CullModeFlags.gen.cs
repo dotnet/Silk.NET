@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCullModeFlags")]
+[NativeName("VkCullModeFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum CullModeFlags : uint

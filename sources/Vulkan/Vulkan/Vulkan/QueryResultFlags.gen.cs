@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueryResultFlags")]
+[NativeName("VkQueryResultFlagBits")]
 [SupportedApiProfile("vulkan")]
 [Flags]
 public enum QueryResultFlags : uint
