@@ -199,6 +199,62 @@ public static class AttributeUtils
     }
 
     /// <summary>
+    /// Adds a name prefix attribute to the given attribute list.
+    /// </summary>
+    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string prefix, int priority = 0)
+    {
+        var prefixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{prefix}\"", prefix)));
+
+        AttributeArgumentListSyntax argumentList;
+        if (priority == 0)
+        {
+            argumentList = AttributeArgumentList([prefixArgument]);
+        }
+        else
+        {
+            var priorityArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(priority)));
+            argumentList = AttributeArgumentList([prefixArgument, priorityArgument]);
+        }
+
+        var attribute = AttributeList([
+            Attribute(IdentifierName("NamePrefix"), argumentList),
+        ]);
+
+        return [
+            attribute,
+            ..attributeLists,
+        ];
+    }
+
+    /// <summary>
+    /// Adds a name suffix attribute to the given attribute list.
+    /// </summary>
+    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string suffix, int priority = 0)
+    {
+        var suffixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{suffix}\"", suffix)));
+
+        AttributeArgumentListSyntax argumentList;
+        if (priority == 0)
+        {
+            argumentList = AttributeArgumentList([suffixArgument]);
+        }
+        else
+        {
+            var priorityArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(priority)));
+            argumentList = AttributeArgumentList([suffixArgument, priorityArgument]);
+        }
+
+        var attribute = AttributeList([
+            Attribute(IdentifierName("NameSuffix"), argumentList),
+        ]);
+
+        return [
+            attribute,
+            ..attributeLists,
+        ];
+    }
+
+    /// <summary>
     /// Gets the value of the native name attribute from the given attribute list.
     /// </summary>
     public static bool TryGetNativeName(this IEnumerable<AttributeListSyntax> attributeLists, out string? nativeName)
