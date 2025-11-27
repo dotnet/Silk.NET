@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("Handle", 0)]
+[NativeName("VkOpticalFlowSessionNVHandle")]
 public readonly unsafe partial struct OpticalFlowSessionNVHandle
 {
     public readonly void* Handle;

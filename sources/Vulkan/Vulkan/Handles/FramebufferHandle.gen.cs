@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("Handle", 0)]
+[NativeName("VkFramebufferHandle")]
 public readonly unsafe partial struct FramebufferHandle
 {
     public readonly void* Handle;

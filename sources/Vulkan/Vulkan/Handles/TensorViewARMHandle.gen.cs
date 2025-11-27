@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("Handle", 0)]
+[NativeName("VkTensorViewARMHandle")]
 public readonly unsafe partial struct TensorViewARMHandle
 {
     public readonly void* Handle;

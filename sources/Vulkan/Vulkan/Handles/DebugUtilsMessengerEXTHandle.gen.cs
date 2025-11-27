@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("Handle", 0)]
+[NativeName("VkDebugUtilsMessengerEXTHandle")]
 public readonly unsafe partial struct DebugUtilsMessengerEXTHandle
 {
     public readonly void* Handle;

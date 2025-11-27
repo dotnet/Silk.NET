@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("Handle", 0)]
+[NativeName("VkIndirectCommandsLayoutEXTHandle")]
 public readonly unsafe partial struct IndirectCommandsLayoutEXTHandle
 {
     public readonly void* Handle;

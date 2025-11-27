@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NameSuffix("Handle", 0)]
+[NativeName("VkExternalComputeQueueNVHandle")]
 public readonly unsafe partial struct ExternalComputeQueueNVHandle
 {
     public readonly void* Handle;
