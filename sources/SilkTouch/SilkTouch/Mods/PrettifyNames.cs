@@ -262,6 +262,7 @@ public class PrettifyNames(
             }
         }
 
+        // Find symbols and rename their references
         var sw = Stopwatch.StartNew();
         logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
         ctx.SourceProject = proj;
