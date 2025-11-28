@@ -774,18 +774,30 @@ public class PrettifyNames(
         public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
         public HashSet<string> NonDeterminant { get; } = new();
 
-        private ClassInProgress? _classInProgress;
+        private TypeInProgress? _typeInProgress;
         private EnumInProgress? _enumInProgress;
         private FieldDeclarationSyntax? _visitingField = null;
         private bool _prettifyOnly;
 
-        private record struct ClassInProgress(ClassDeclarationSyntax Class, List<string> NonFunctions, List<FunctionData> Functions);
+        /// <summary>
+        /// While this is called a "type" in progress, this represents either a class or a struct.
+        /// </summary>
+        /// <param name="Type">The class or struct's declaration syntax node.</param>
+        /// <param name="NonFunctions">The names of the non-function members directly contained by the type.</param>
+        /// <param name="Functions">The names of the function members directly contained by the type.</param>
+        private record struct TypeInProgress(TypeDeclarationSyntax Type, List<string> NonFunctions, List<FunctionData> Functions);
+
+        /// <summary>
+        /// Represents an enum.
+        /// </summary>
+        /// <param name="Enum">The enum's declaration syntax node.</param>
+        /// <param name="EnumMembers">The names of the members directly contained by the enum.</param>
         private record struct EnumInProgress(EnumDeclarationSyntax Enum, List<string> EnumMembers);
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (
-                _classInProgress is not null // nesting is ignored for now
+                _typeInProgress is not null // nesting is ignored for now
                 || _enumInProgress is not null // class nested in an enum, wtf?
                 || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any() // again... nesting is ignored.
             )
@@ -798,7 +810,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            _classInProgress = new ClassInProgress(node, [], []);
+            _typeInProgress = new TypeInProgress(node, [], []);
 
             // Recurse into the members.
             base.VisitClassDeclaration(node);
@@ -812,9 +824,9 @@ public class PrettifyNames(
             }
 
             // Merge with the other partials.
-            (inner.NonFunctions ??= []).AddRange(_classInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true));
-            (inner.Functions ??= []).AddRange(_classInProgress.Value.Functions);
-            _classInProgress = null;
+            (inner.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true));
+            (inner.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
+            _typeInProgress = null;
         }
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -863,39 +875,39 @@ public class PrettifyNames(
                 var iden = node.Identifier.ToString();
                 inner.Add(iden);
             }
-            else if (_classInProgress is not null && !_prettifyOnly)
+            else if (_typeInProgress is not null && !_prettifyOnly)
             {
-                _classInProgress.Value.NonFunctions.Add(node.Identifier.ToString());
+                _typeInProgress.Value.NonFunctions.Add(node.Identifier.ToString());
             }
         }
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
-            if (node.Parent == _classInProgress?.Class)
+            if (node.Parent == _typeInProgress?.Type)
             {
-                _classInProgress!.Value.Functions.Add(new FunctionData(node.Identifier.ToString(), node));
+                _typeInProgress!.Value.Functions.Add(new FunctionData(node.Identifier.ToString(), node));
             }
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
-            if (node.Parent == _classInProgress?.Class)
+            if (node.Parent == _typeInProgress?.Type)
             {
-                _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
             }
         }
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
         {
             if (
-                _classInProgress is not null
+                _typeInProgress is not null
                 || _enumInProgress is not null
                 || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
             )
             {
-                if (node.Parent == _classInProgress?.Class)
+                if (node.Parent == _typeInProgress?.Type)
                 {
-                    _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                    _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
                 }
 
                 return;
@@ -912,7 +924,7 @@ public class PrettifyNames(
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
             if (
-                _classInProgress is not null
+                _typeInProgress is not null
                 || _enumInProgress is not null
                 || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
             )
@@ -940,7 +952,7 @@ public class PrettifyNames(
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             if (
-                _classInProgress is not null
+                _typeInProgress is not null
                 || _enumInProgress is not null
                 || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
             )
