@@ -87,7 +87,7 @@ public class PrettifyNames(
             )
         >();
 
-        var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
+        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
 
         // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
         if (cfg.TrimmerBaseline is not null)
@@ -192,20 +192,20 @@ public class PrettifyNames(
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
                     ? val.Select(x => new KeyValuePair<string, CandidateNames>(
                         x,
-                        new CandidateNames(GetOverriddenName(typeName, x, cfg.NameOverrides!, translator), null)
+                        new CandidateNames(GetOverriddenName(typeName, x, cfg.NameOverrides!, nameTransformer), null)
                     ))
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = (
-                    newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
+                    newTypeName.Prettify(nameTransformer, allowAllCaps: true), // <-- lenient about caps for type names
                                                                           // TODO deprecate secondaries if they're within the baseline?
-                    constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(translator), x.Value.Secondary)))
+                    constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(nameTransformer), x.Value.Secondary)))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value.Primary),
                     functionNames?.ToDictionary(
                         x => x.Key,
-                        x => x.Value.Primary.Prettify(translator)
+                        x => x.Value.Primary.Prettify(nameTransformer)
                     ),
                     isEnum
                 );
@@ -217,9 +217,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
                 newNames[name] = (
-                    GetOverriddenName(null, name, cfg.NameOverrides!, translator, true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions?.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, translator)),
-                    functions?.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, translator)),
+                    GetOverriddenName(null, name, cfg.NameOverrides!, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
+                    nonFunctions?.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, nameTransformer)),
+                    functions?.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, nameTransformer)),
                     isEnum
                 );
             }
@@ -377,7 +377,7 @@ public class PrettifyNames(
         string? container,
         string name,
         Dictionary<string, string>? nameOverrides,
-        NameUtils.NameTransformer translator,
+        NameUtils.NameTransformer nameTransformer,
         bool allowAllCaps = false)
     {
         foreach (var (nativeName, overriddenName) in nameOverrides ?? [])
@@ -410,7 +410,7 @@ public class PrettifyNames(
                 return overriddenName;
             }
         }
-        return name.Prettify(translator, allowAllCaps);
+        return name.Prettify(nameTransformer, allowAllCaps);
     }
 
     private void Trim(
