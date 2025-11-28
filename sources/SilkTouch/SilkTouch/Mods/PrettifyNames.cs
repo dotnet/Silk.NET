@@ -122,7 +122,7 @@ public class PrettifyNames(
                 );
             }
 
-            // Now rename everything within that type.
+            // Now rename everything within each type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
                 var (_, (consts, functions, isEnum)) = visitor.Types.First(x => x.Key == typeName);
