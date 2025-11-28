@@ -242,8 +242,8 @@ public class PrettifyNames(
             }
         }
 
-        // Before we rename, we should ensure name dependent things are correct e.g. DllImport explicitly specify their
-        // EntryPoint
+        // Before we rename, we should ensure name dependent things are correct
+        // e.g. DllImport explicitly specify their EntryPoint
         logger.LogDebug("Fixing up attributes for {} to make them safe for rename...", ctx.JobKey);
         var rewriter = new RenameSafeAttributeListsRewriter();
         var proj = ctx.SourceProject;
