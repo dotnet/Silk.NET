@@ -796,11 +796,7 @@ public class PrettifyNames(
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if (
-                _typeInProgress is not null // nesting is ignored for now
-                || _enumInProgress is not null // class nested in an enum, wtf?
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any() // again... nesting is ignored.
-            )
+            if (IsCurrentlyInType(node))
             {
                 return;
             }
@@ -859,11 +855,9 @@ public class PrettifyNames(
                 return;
             }
 
-            if (
-                _prettifyOnly
+            if (_prettifyOnly
                 && node.Parent?.Parent?.Parent is BaseTypeDeclarationSyntax type
-                && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null
-            )
+                && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null)
             {
                 var tiden = type.Identifier.ToString();
                 if (!PrettifyOnlyTypes.TryGetValue(tiden, out var inner))
@@ -899,11 +893,7 @@ public class PrettifyNames(
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
         {
-            if (
-                _typeInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
+            if (IsCurrentlyInType(node))
             {
                 if (node.Parent == _typeInProgress?.Type)
                 {
@@ -923,11 +913,7 @@ public class PrettifyNames(
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            if (
-                _typeInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
+            if (IsCurrentlyInType(node))
             {
                 return;
             }
@@ -951,11 +937,7 @@ public class PrettifyNames(
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            if (
-                _typeInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
+            if (IsCurrentlyInType(node))
             {
                 return;
             }
@@ -977,6 +959,19 @@ public class PrettifyNames(
             (inner.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
             _enumInProgress = null;
         }
+
+        /// <summary>
+        /// Returns whether we are currently inside of a type.
+        /// </summary>
+        /// <remarks>
+        /// Note that we currently do not handle nested types.
+        /// If we encounter a type while we are already in a type, we ignore that type.
+        /// If we encounter a non-type (i.e., a type member), we add the member to the type we are already in.
+        /// </remarks>
+        private bool IsCurrentlyInType(SyntaxNode node) =>
+            _typeInProgress is not null
+            || _enumInProgress is not null
+            || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
     }
 
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
