@@ -723,6 +723,34 @@ public class PrettifyNames(
         }
     }
 
+    /// <inheritdoc />
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
+    {
+        foreach (var responseFile in rsps)
+        {
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForEnums)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
+                    + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForGuidMember)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
+                    + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+        }
+
+        return Task.FromResult(rsps);
+    }
+
     /// <summary>
     /// Contains the new name of a type and mappings between original names and new names of its members.
     /// </summary>
@@ -945,33 +973,5 @@ public class PrettifyNames(
             (
                 (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
             ).WithRenameSafeAttributeLists();
-    }
-
-    /// <inheritdoc />
-    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
-    {
-        foreach (var responseFile in rsps)
-        {
-            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForEnums)
-            {
-                logger.LogWarning(
-                    "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
-                        + "conflicts with members of other types.",
-                    responseFile.FilePath,
-                    key
-                );
-            }
-            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForGuidMember)
-            {
-                logger.LogWarning(
-                    "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
-                        + "conflicts with members of other types.",
-                    responseFile.FilePath,
-                    key
-                );
-            }
-        }
-
-        return Task.FromResult(rsps);
     }
 }
