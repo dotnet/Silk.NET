@@ -76,15 +76,17 @@ public class PrettifyNames(
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
 
-        Dictionary<
+        // The dictionary containing mappings from the original type names to the new names of the type and its members
+        var newNames = new Dictionary<
             string,
             (
-                string NewName,
-                Dictionary<string, string>? NonFunctions,
-                Dictionary<string, string>? Functions,
-                bool IsEnum
+            string NewName,
+            Dictionary<string, string>? NonFunctions,
+            Dictionary<string, string>? Functions,
+            bool IsEnum
             )
-        > types = new();
+        >();
+
         var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
 
         // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
@@ -195,7 +197,7 @@ public class PrettifyNames(
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
-                types[typeName] = (
+                newNames[typeName] = (
                     newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
                                                                           // TODO deprecate secondaries if they're within the baseline?
                     constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(translator), x.Value.Secondary)))
@@ -214,7 +216,7 @@ public class PrettifyNames(
             // Prettify only if the user has not indicated they want to trim.
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
-                types[name] = (
+                newNames[name] = (
                     GetOverriddenName(null, name, cfg.NameOverrides!, translator, true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, translator)),
                     functions?.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, translator)),
@@ -225,7 +227,7 @@ public class PrettifyNames(
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions, _)) in types)
+            foreach (var (name, (newName, nonFunctions, functions, _)) in newNames)
             {
                 logger.LogDebug("{} = {}", name, newName);
                 foreach (var (old, @new) in nonFunctions ?? new())
@@ -270,7 +272,7 @@ public class PrettifyNames(
 
         await NameUtils.RenameAllAsync(
             ctx,
-            types.SelectMany(x =>
+            newNames.SelectMany(x =>
             {
                 var nonFunctionConflicts = x
                     .Value.NonFunctions?.Values.Where(y =>
@@ -325,7 +327,7 @@ public class PrettifyNames(
             var doc = proj.GetDocument(docId);
             if (
                 doc is not { FilePath: not null, Name: not null }
-                || types
+                || newNames
                     .OrderByDescending(x => x.Key.Length)
                     .FirstOrDefault(x => doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key))
                     is not { Key: { } oldName, Value.NewName: { } newName }
