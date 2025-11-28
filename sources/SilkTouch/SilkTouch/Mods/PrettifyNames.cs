@@ -367,7 +367,9 @@ public class PrettifyNames(
                 logger.LogError($"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}");
             }
             else
+            {
                 proj = doc.Project;
+            }
         }
 
         ctx.SourceProject = proj;
