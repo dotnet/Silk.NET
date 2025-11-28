@@ -982,8 +982,7 @@ public class PrettifyNames(
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            (
-                (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
-            ).WithRenameSafeAttributeLists();
+            ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!)
+                .WithRenameSafeAttributeLists();
     }
 }
