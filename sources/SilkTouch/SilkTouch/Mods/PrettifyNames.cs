@@ -77,15 +77,7 @@ public class PrettifyNames(
         }
 
         // The dictionary containing mappings from the original type names to the new names of the type and its members
-        var newNames = new Dictionary<
-            string,
-            (
-            string NewName,
-            Dictionary<string, string>? NonFunctions,
-            Dictionary<string, string>? Functions,
-            bool IsEnum
-            )
-        >();
+        var newNames = new Dictionary<string, RenamedType>();
 
         var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
 
@@ -197,9 +189,9 @@ public class PrettifyNames(
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
-                newNames[typeName] = (
+                newNames[typeName] = new RenamedType(
                     newTypeName.Prettify(nameTransformer, allowAllCaps: true), // <-- lenient about caps for type names
-                                                                          // TODO deprecate secondaries if they're within the baseline?
+                    // TODO deprecate secondaries if they're within the baseline?
                     constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(nameTransformer), x.Value.Secondary)))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value.Primary),
@@ -216,7 +208,7 @@ public class PrettifyNames(
             // Prettify only if the user has not indicated they want to trim.
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
-                newNames[name] = (
+                newNames[name] = new RenamedType(
                     GetOverriddenName(null, name, cfg.NameOverrides!, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions?.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, nameTransformer)),
                     functions?.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, nameTransformer)),
@@ -361,7 +353,6 @@ public class PrettifyNames(
                     }
                 }
             }
-
 
             if (found)
             {
@@ -731,6 +722,20 @@ public class PrettifyNames(
             }
         }
     }
+
+    /// <summary>
+    /// Contains the new name of a type and mappings between original names and new names of its members.
+    /// </summary>
+    /// <param name="NewName">The new name of the type.</param>
+    /// <param name="NonFunctions">The mappings from original names to new names of the type's non-function members.</param>
+    /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
+    /// <param name="IsEnum">Whether the type is an enum or not.</param>
+    private record struct RenamedType(
+        string NewName,
+        Dictionary<string, string>? NonFunctions,
+        Dictionary<string, string>? Functions,
+        bool IsEnum
+    );
 
     private record struct TypeData(List<string>? NonFunctions, List<FunctionData>? Functions, bool IsEnum);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
