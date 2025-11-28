@@ -776,7 +776,7 @@ public class PrettifyNames(
 
         private TypeInProgress? _typeInProgress;
         private EnumInProgress? _enumInProgress;
-        private FieldDeclarationSyntax? _visitingField = null;
+        private FieldDeclarationSyntax? _fieldInProgress = null;
         private bool _prettifyOnly;
 
         /// <summary>
@@ -828,29 +828,27 @@ public class PrettifyNames(
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             // Can't have a field within a field or an enum. This is basically a "wtf" check.
-            if (_visitingField is not null || _enumInProgress is not null)
+            if (_fieldInProgress is not null || _enumInProgress is not null)
             {
                 return;
             }
 
             // If it's not a constant then we only prettify.
-            if (
-                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                && !node.Modifiers.Any(SyntaxKind.StaticKeyword)
-            )
+            if (!node.Modifiers.Any(SyntaxKind.ConstKeyword)
+                && !node.Modifiers.Any(SyntaxKind.StaticKeyword))
             {
                 _prettifyOnly = true;
             }
 
-            _visitingField = node;
+            _fieldInProgress = node;
             base.VisitFieldDeclaration(node);
             _prettifyOnly = false;
-            _visitingField = null;
+            _fieldInProgress = null;
         }
 
         public override void VisitVariableDeclarator(VariableDeclaratorSyntax node)
         {
-            if (node.Parent?.Parent != _visitingField)
+            if (node.Parent?.Parent != _fieldInProgress)
             {
                 return;
             }
@@ -859,11 +857,11 @@ public class PrettifyNames(
                 && node.Parent?.Parent?.Parent is BaseTypeDeclarationSyntax type
                 && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null)
             {
-                var tiden = type.Identifier.ToString();
-                if (!PrettifyOnlyTypes.TryGetValue(tiden, out var inner))
+                var typeIndentifier = type.Identifier.Text;
+                if (!PrettifyOnlyTypes.TryGetValue(typeIndentifier, out var inner))
                 {
                     inner = [];
-                    PrettifyOnlyTypes.Add(tiden, inner);
+                    PrettifyOnlyTypes.Add(typeIndentifier, inner);
                 }
 
                 var iden = node.Identifier.ToString();
