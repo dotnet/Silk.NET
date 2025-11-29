@@ -850,15 +850,15 @@ public class PrettifyNames(
             var id = node.Identifier.ToString();
 
             // Tolerate partial classes.
-            if (!Types.TryGetValue(id, out var inner))
+            if (!Types.TryGetValue(id, out var typeData))
             {
-                inner = new TypeData([], new List<FunctionData>(), false);
-                Types.Add(id, inner);
+                typeData = new TypeData([], new List<FunctionData>(), false);
+                Types.Add(id, typeData);
             }
 
             // Merge with the other partials.
-            (inner.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(val => !inner.NonFunctions?.Contains(val) ?? true));
-            (inner.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
+            (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(val => !typeData.NonFunctions?.Contains(val) ?? true));
+            (typeData.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
             _typeInProgress = null;
         }
 
@@ -893,13 +893,13 @@ public class PrettifyNames(
             _enumInProgress = new EnumInProgress(node, []);
             base.VisitEnumDeclaration(node);
             var id = _enumInProgress.Value.Enum.Identifier.ToString();
-            if (!Types.TryGetValue(id, out var inner))
+            if (!Types.TryGetValue(id, out var typeData))
             {
-                inner = new TypeData([], [], true);
-                Types.Add(id, inner);
+                typeData = new TypeData([], [], true);
+                Types.Add(id, typeData);
             }
 
-            (inner.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
+            (typeData.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
             _enumInProgress = null;
         }
 
@@ -943,15 +943,15 @@ public class PrettifyNames(
                 && node.Parent?.Parent?.Parent is BaseTypeDeclarationSyntax type
                 && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null)
             {
-                var typeIndentifier = type.Identifier.Text;
-                if (!PrettifyOnlyTypes.TryGetValue(typeIndentifier, out var inner))
+                var typeIdentifier = type.Identifier.ToString();
+                if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
                 {
-                    inner = [];
-                    PrettifyOnlyTypes.Add(typeIndentifier, inner);
+                    typeData = [];
+                    PrettifyOnlyTypes.Add(typeIdentifier, typeData);
                 }
 
                 var iden = node.Identifier.ToString();
-                inner.Add(iden);
+                typeData.Add(iden);
             }
             else if (_typeInProgress is not null && !_prettifyOnly)
             {
