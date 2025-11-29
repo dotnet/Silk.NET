@@ -888,6 +888,22 @@ public class PrettifyNames(
             };
         }
 
+        private void ReportMemberAffixData(string typeIdentifier, string memberIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
+        {
+            if (!TryGetAffixData(attributeLists, out var affixData))
+            {
+                return;
+            }
+
+            if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
+            {
+                typeAffixData = new TypeAffixData(new AffixData([], []), null);
+            }
+
+            (typeAffixData.MemberAffixes ??= []).Add(memberIdentifier, affixData);
+            Affixes[typeIdentifier] = typeAffixData;
+        }
+
         // ----- Types -----
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
@@ -1028,6 +1044,8 @@ public class PrettifyNames(
                 foreach (var variable in node.Declaration.Variables)
                 {
                     var memberIdentifier = variable.Identifier.ToString();
+                    ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
                     if (prettifyOnly)
                     {
                         if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
@@ -1050,7 +1068,11 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
-                _typeInProgress!.Value.Functions.Add(new FunctionData(node.Identifier.ToString(), node));
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
+                var memberIdentifier = node.Identifier.ToString();
+                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
             }
         }
 
@@ -1058,26 +1080,25 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
-                var identifier = node.Identifier.ToString();
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
+                var memberIdentifier = node.Identifier.ToString();
+                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
                 // If it's not a constant then we only prettify.
                 var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.GetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
-                if (hasSetter
-                    && node.Parent is BaseTypeDeclarationSyntax type
-                    && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null)
+                if (hasSetter)
                 {
-                    var typeIdentifier = type.Identifier.ToString();
                     if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
                     {
                         typeData = [];
                         PrettifyOnlyTypes.Add(typeIdentifier, typeData);
                     }
 
-                    typeData.Add(identifier);
+                    typeData.Add(memberIdentifier);
                 }
                 else
                 {
-                    _typeInProgress!.Value.NonFunctions.Add(identifier);
+                    _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
                 }
             }
         }
