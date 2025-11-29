@@ -1,103 +1,114 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HPAINTBUFFER
+public readonly unsafe partial struct Hpaintbuffer
     : IComparable,
-        IComparable<HPAINTBUFFER>,
-        IEquatable<HPAINTBUFFER>,
+        IComparable<Hpaintbuffer>,
+        IEquatable<Hpaintbuffer>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HPAINTBUFFER(void* value)
+    public Hpaintbuffer(void* value)
     {
         Value = value;
     }
 
-    public static HPAINTBUFFER INVALID_VALUE => new HPAINTBUFFER((void*)(-1));
-    public static HPAINTBUFFER NULL => new HPAINTBUFFER(null);
+    public static Hpaintbuffer INVALID_VALUE => new Hpaintbuffer((void*)(-1));
+    public static Hpaintbuffer NULL => new Hpaintbuffer(null);
 
-    public static bool operator ==(HPAINTBUFFER left, HPAINTBUFFER right) =>
+    public static bool operator ==(Hpaintbuffer left, Hpaintbuffer right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HPAINTBUFFER left, HPAINTBUFFER right) =>
+    public static bool operator !=(Hpaintbuffer left, Hpaintbuffer right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HPAINTBUFFER left, HPAINTBUFFER right) =>
+    public static bool operator <(Hpaintbuffer left, Hpaintbuffer right) =>
         left.Value < right.Value;
 
-    public static bool operator <=(HPAINTBUFFER left, HPAINTBUFFER right) =>
+    public static bool operator <=(Hpaintbuffer left, Hpaintbuffer right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HPAINTBUFFER left, HPAINTBUFFER right) =>
+    public static bool operator >(Hpaintbuffer left, Hpaintbuffer right) =>
         left.Value > right.Value;
 
-    public static bool operator >=(HPAINTBUFFER left, HPAINTBUFFER right) =>
+    public static bool operator >=(Hpaintbuffer left, Hpaintbuffer right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HPAINTBUFFER(void* value) => new HPAINTBUFFER(value);
+    public static explicit operator Hpaintbuffer(void* value) => new Hpaintbuffer(value);
 
-    public static implicit operator void*(HPAINTBUFFER value) => value.Value;
+    public static implicit operator void*(Hpaintbuffer value) => value.Value;
 
-    public static explicit operator HPAINTBUFFER(HANDLE value) => new HPAINTBUFFER(value);
+    public static explicit operator Hpaintbuffer(Handle value) => new Hpaintbuffer(value);
 
-    public static implicit operator HANDLE(HPAINTBUFFER value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hpaintbuffer value) => new Handle(value.Value);
 
-    public static explicit operator HPAINTBUFFER(byte value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(byte value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator byte(HPAINTBUFFER value) => (byte)(value.Value);
+    public static explicit operator byte(Hpaintbuffer value) => (byte)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(short value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(short value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator short(HPAINTBUFFER value) => (short)(value.Value);
+    public static explicit operator short(Hpaintbuffer value) => (short)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(int value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(int value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator int(HPAINTBUFFER value) => (int)(value.Value);
+    public static explicit operator int(Hpaintbuffer value) => (int)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(long value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(long value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator long(HPAINTBUFFER value) => (long)(value.Value);
+    public static explicit operator long(Hpaintbuffer value) => (long)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(nint value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(nint value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static implicit operator nint(HPAINTBUFFER value) => (nint)(value.Value);
+    public static implicit operator nint(Hpaintbuffer value) => (nint)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(sbyte value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(sbyte value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HPAINTBUFFER value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hpaintbuffer value) => (sbyte)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(ushort value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(ushort value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HPAINTBUFFER value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hpaintbuffer value) => (ushort)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(uint value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(uint value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator uint(HPAINTBUFFER value) => (uint)(value.Value);
+    public static explicit operator uint(Hpaintbuffer value) => (uint)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(ulong value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(ulong value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HPAINTBUFFER value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hpaintbuffer value) => (ulong)(value.Value);
 
-    public static explicit operator HPAINTBUFFER(nuint value) =>
-        new HPAINTBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hpaintbuffer(nuint value) =>
+        new Hpaintbuffer(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HPAINTBUFFER value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hpaintbuffer value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HPAINTBUFFER other)
+        if (obj is Hpaintbuffer other)
         {
             return CompareTo(other);
         }
@@ -106,11 +117,11 @@ public readonly unsafe partial struct HPAINTBUFFER
             : throw new ArgumentException("obj is not an instance of HPAINTBUFFER.");
     }
 
-    public int CompareTo(HPAINTBUFFER other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hpaintbuffer other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HPAINTBUFFER other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hpaintbuffer other) && Equals(other);
 
-    public bool Equals(HPAINTBUFFER other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hpaintbuffer other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

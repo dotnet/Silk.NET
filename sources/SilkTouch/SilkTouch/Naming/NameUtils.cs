@@ -1,9 +1,12 @@
 ﻿using System.Buffers;
+using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Humanizer;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.LocationTransformation;
@@ -309,6 +312,21 @@ public static partial class NameUtils
         private static partial Regex Words();
     }
 
+    private static Location? IdentifierLocation(SyntaxNode? node) =>
+        node switch
+        {
+            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
+            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
+            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
+            EventDeclarationSyntax e => e.Identifier.GetLocation(),
+            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
+            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
+            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
+            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
+            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
+            _ => null,
+        };
+
     /// <summary>
     /// Rename all symbols with the given new names
     /// </summary>
@@ -316,7 +334,307 @@ public static partial class NameUtils
     /// <param name="toRename">list of symbols to rename with new names</param>
     /// <param name="ct">cancellation token</param>
     /// <param name="logger">logger</param>
-    public static async Task RenameAllAsync(
+    /// <param name="includeDeclarations">whether to replace any declaration references or not</param>
+    /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static async Task RenameAllRoslynAsync(
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        ILogger? logger = null,
+        CancellationToken ct = default,
+        bool includeDeclarations = true,
+        bool includeCandidateLocations = false
+    )
+    {
+        if (ctx.SourceProject is null)
+        {
+            return;
+        }
+
+        var locations = new ConcurrentDictionary<Location, string>();
+        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
+        await Parallel.ForEachAsync(
+            toRename,
+            ct,
+            async (tuple, _) => {
+                // First, let's add all of the locations of the declaration identifiers.
+                var (symbol, newName) = tuple;
+                if (includeDeclarations)
+                {
+                    foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
+                    {
+                        var identifierLocation = IdentifierLocation(
+                            await syntaxRef.GetSyntaxAsync(ct)
+                        );
+                        if (identifierLocation is not null)
+                        {
+                            locations.TryAdd(identifierLocation, newName);
+                        }
+                    }
+                }
+
+                // Next, let's find all the references of the symbols.
+                var references = await SymbolFinder.FindReferencesAsync(
+                    symbol,
+                    ctx.SourceProject?.Solution
+                        ?? throw new ArgumentException("SourceProject is null"),
+                    ct
+                );
+
+                foreach (var referencedSymbol in references)
+                {
+                    foreach (var referencedSymbolLocation in referencedSymbol.Locations)
+                    {
+                        if (
+                            !includeCandidateLocations
+                            && (
+                                referencedSymbolLocation.IsCandidateLocation
+                                || referencedSymbolLocation.IsImplicit
+                            )
+                        )
+                        {
+                            continue;
+                        }
+
+                        locations.TryAdd(referencedSymbolLocation.Location, newName);
+                    }
+                }
+            }
+        );
+
+        logger?.LogDebug(
+            "{} referencing locations for renames for {}",
+            locations.Count,
+            ctx.JobKey
+        );
+
+        // Now it's just a simple find and replace.
+        var sln = ctx.SourceProject.Solution;
+        var srcProjId = ctx.SourceProject.Id;
+        var testProjId = ctx.TestProject?.Id;
+        foreach (
+            var (syntaxTree, renameLocations) in locations
+                .GroupBy(x => x.Key.SourceTree)
+                .Select(x => (x.Key, x.OrderByDescending(y => y.Key.SourceSpan)))
+        )
+        {
+            if (
+                syntaxTree is null
+                || sln.GetDocument(syntaxTree) is not { } doc
+                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
+                || await syntaxTree.GetTextAsync(ct) is not { } text
+            )
+            {
+                continue;
+            }
+
+            var ogText = text;
+            foreach (var (location, newName) in renameLocations)
+            {
+                var contents = ogText.GetSubText(location.SourceSpan).ToString();
+                if (contents.Contains(' '))
+                {
+                    logger?.LogWarning(
+                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                    continue;
+                }
+
+                if (contents == "this" || contents == "base")
+                {
+                    continue;
+                }
+
+                if (logger?.IsEnabled(LogLevel.Trace) ?? false)
+                {
+                    logger?.LogTrace(
+                        "\"{}\" -> \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                }
+
+                text = text.Replace(location.SourceSpan, newName);
+            }
+
+            sln = doc.WithText(text).Project.Solution;
+        }
+
+        ctx.SourceProject = sln.GetProject(srcProjId);
+    }
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="nameMappings">list of names to rename with new names</param>
+    /// <param name="candidateLocations">potential Locations to check for remapping</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static async Task RemapAllAsync(
+        IModContext ctx,
+        Dictionary<string, string> nameMappings,
+        IEnumerable<Location> candidateLocations,
+        ILogger? logger = null,
+        CancellationToken ct = default
+    )
+    {
+        if (ctx.SourceProject is null)
+        {
+            return;
+        }
+
+
+        logger?.LogDebug(
+            "{} referencing locations for renames for {}",
+            candidateLocations.Count(),
+            ctx.JobKey
+        );
+
+        // Now it's just a simple find and replace.
+        var sln = ctx.SourceProject.Solution;
+        var srcProjId = ctx.SourceProject.Id;
+        var testProjId = ctx.TestProject?.Id;
+        foreach (
+            var (syntaxTree, renameLocations) in candidateLocations
+                .GroupBy(x => x?.SourceTree ?? default)
+                .Select(x => (x.Key, x.OrderByDescending(y => y.SourceSpan)))
+        )
+        {
+            if (
+                syntaxTree is null
+                || sln.GetDocument(syntaxTree) is not { } doc
+                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
+                || await syntaxTree.GetTextAsync(ct) is not { } text
+            )
+            {
+                continue;
+            }
+
+            var ogText = text;
+            foreach (var location in renameLocations)
+            {
+                var contents = ogText.GetSubText(location.SourceSpan).ToString();
+
+                if (!nameMappings.TryGetValue(contents, out string? newName))
+                {
+                    continue;
+                }
+
+                if (contents.Contains(' '))
+                {
+                    logger?.LogWarning(
+                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                    continue;
+                }
+
+                if (logger?.IsEnabled(LogLevel.Trace) ?? false)
+                {
+                    logger?.LogTrace(
+                        "\"{}\" -> \"{}\" at {}",
+                        contents,
+                        newName,
+                        location.GetLineSpan()
+                    );
+                }
+
+                text = text.Replace(location.SourceSpan, newName);
+            }
+
+            sln = doc.WithText(text).Project.Solution;
+        }
+
+        ctx.SourceProject = sln.GetProject(srcProjId);
+    }
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="toRename">list of symbols to rename with new names</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    /// <param name="includeDeclarations">whether to replace any declaration references or not</param>
+    /// <param name="includeCandidateLocations">should candidate references or implicit references be included</param>
+    public static async Task RenameAllAsync( // TODO: This is the 2nd to newest version. Switch to the newest version.
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        ILogger? logger = null,
+        CancellationToken ct = default,
+        bool includeDeclarations = true,
+        bool includeCandidateLocations = false
+    )
+    {
+        var sourceProject = ctx.SourceProject;
+        if (sourceProject == null)
+        {
+            return;
+        }
+
+        // We need to track both the original solution and modified solution
+        // The original is where we retrieve documents and semantic models
+        // The modified solution is where we place the results
+        IReadOnlyList<DocumentId> documentIds = [.. sourceProject.DocumentIds, .. ctx.TestProject?.DocumentIds ?? []];
+
+        var originalSolution = sourceProject.Solution;
+        var newNameLookup = toRename.GroupBy(t => t.Symbol.Name).ToDictionary(group => group.Key, group => group.ToList());
+        var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
+        await Parallel.ForEachAsync(documentIds, ct, async (documentId, _) => {
+            var originalDocument = originalSolution.GetDocument(documentId);
+            if (originalDocument == null)
+            {
+                return;
+            }
+
+            var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
+            var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
+
+            if (originalRoot == null || semanticModel == null)
+            {
+                return;
+            }
+
+            var renamer = new Renamer(newNameLookup);
+            renamer.Initialize(semanticModel);
+
+            var newRoot = renamer.Visit(originalRoot);
+            newDocuments.TryAdd(documentId, newRoot);
+        });
+
+        var modifiedSolution = sourceProject.Solution;
+        foreach (var (documentId, newRoot) in newDocuments)
+        {
+            var modifiedDocument = modifiedSolution.GetDocument(documentId);
+            if (modifiedDocument == null)
+            {
+                return;
+            }
+
+            modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
+        }
+
+        ctx.SourceProject = modifiedSolution.GetProject(sourceProject.Id);
+    }
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="toRename">list of symbols to rename with new names</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    public static async Task RenameAllAsyncLocationTransformer( // TODO: This is the newest version. Ideally we switch to this one. There should be no changes in the output.
         IModContext ctx,
         IEnumerable<(ISymbol Symbol, string NewName)> toRename,
         ILogger? logger = null,

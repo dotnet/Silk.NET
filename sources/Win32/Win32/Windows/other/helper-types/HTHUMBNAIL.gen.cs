@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HTHUMBNAIL
+public readonly unsafe partial struct Hthumbnail
     : IComparable,
-        IComparable<HTHUMBNAIL>,
-        IEquatable<HTHUMBNAIL>,
+        IComparable<Hthumbnail>,
+        IEquatable<Hthumbnail>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HTHUMBNAIL(void* value)
+    public Hthumbnail(void* value)
     {
         Value = value;
     }
 
-    public static HTHUMBNAIL INVALID_VALUE => new HTHUMBNAIL((void*)(-1));
-    public static HTHUMBNAIL NULL => new HTHUMBNAIL(null);
+    public static Hthumbnail INVALID_VALUE => new Hthumbnail((void*)(-1));
+    public static Hthumbnail NULL => new Hthumbnail(null);
 
-    public static bool operator ==(HTHUMBNAIL left, HTHUMBNAIL right) => left.Value == right.Value;
+    public static bool operator ==(Hthumbnail left, Hthumbnail right) => left.Value == right.Value;
 
-    public static bool operator !=(HTHUMBNAIL left, HTHUMBNAIL right) => left.Value != right.Value;
+    public static bool operator !=(Hthumbnail left, Hthumbnail right) => left.Value != right.Value;
 
-    public static bool operator <(HTHUMBNAIL left, HTHUMBNAIL right) => left.Value < right.Value;
+    public static bool operator <(Hthumbnail left, Hthumbnail right) => left.Value < right.Value;
 
-    public static bool operator <=(HTHUMBNAIL left, HTHUMBNAIL right) => left.Value <= right.Value;
+    public static bool operator <=(Hthumbnail left, Hthumbnail right) => left.Value <= right.Value;
 
-    public static bool operator >(HTHUMBNAIL left, HTHUMBNAIL right) => left.Value > right.Value;
+    public static bool operator >(Hthumbnail left, Hthumbnail right) => left.Value > right.Value;
 
-    public static bool operator >=(HTHUMBNAIL left, HTHUMBNAIL right) => left.Value >= right.Value;
+    public static bool operator >=(Hthumbnail left, Hthumbnail right) => left.Value >= right.Value;
 
-    public static explicit operator HTHUMBNAIL(void* value) => new HTHUMBNAIL(value);
+    public static explicit operator Hthumbnail(void* value) => new Hthumbnail(value);
 
-    public static implicit operator void*(HTHUMBNAIL value) => value.Value;
+    public static implicit operator void*(Hthumbnail value) => value.Value;
 
-    public static explicit operator HTHUMBNAIL(HANDLE value) => new HTHUMBNAIL(value);
+    public static explicit operator Hthumbnail(Handle value) => new Hthumbnail(value);
 
-    public static implicit operator HANDLE(HTHUMBNAIL value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hthumbnail value) => new Handle(value.Value);
 
-    public static explicit operator HTHUMBNAIL(byte value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(byte value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator byte(HTHUMBNAIL value) => (byte)(value.Value);
+    public static explicit operator byte(Hthumbnail value) => (byte)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(short value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(short value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator short(HTHUMBNAIL value) => (short)(value.Value);
+    public static explicit operator short(Hthumbnail value) => (short)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(int value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(int value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator int(HTHUMBNAIL value) => (int)(value.Value);
+    public static explicit operator int(Hthumbnail value) => (int)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(long value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(long value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator long(HTHUMBNAIL value) => (long)(value.Value);
+    public static explicit operator long(Hthumbnail value) => (long)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(nint value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(nint value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static implicit operator nint(HTHUMBNAIL value) => (nint)(value.Value);
+    public static implicit operator nint(Hthumbnail value) => (nint)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(sbyte value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(sbyte value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HTHUMBNAIL value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hthumbnail value) => (sbyte)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(ushort value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(ushort value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HTHUMBNAIL value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hthumbnail value) => (ushort)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(uint value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(uint value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator uint(HTHUMBNAIL value) => (uint)(value.Value);
+    public static explicit operator uint(Hthumbnail value) => (uint)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(ulong value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(ulong value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HTHUMBNAIL value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hthumbnail value) => (ulong)(value.Value);
 
-    public static explicit operator HTHUMBNAIL(nuint value) =>
-        new HTHUMBNAIL(unchecked((void*)(value)));
+    public static explicit operator Hthumbnail(nuint value) =>
+        new Hthumbnail(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HTHUMBNAIL value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hthumbnail value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HTHUMBNAIL other)
+        if (obj is Hthumbnail other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HTHUMBNAIL
             : throw new ArgumentException("obj is not an instance of HTHUMBNAIL.");
     }
 
-    public int CompareTo(HTHUMBNAIL other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hthumbnail other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HTHUMBNAIL other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hthumbnail other) && Equals(other);
 
-    public bool Equals(HTHUMBNAIL other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hthumbnail other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

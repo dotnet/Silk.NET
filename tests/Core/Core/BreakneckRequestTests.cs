@@ -36,7 +36,7 @@ public class BreakneckRequestTests
                 }
             })
             {
-                IsBackground = true
+                IsBackground = true,
             }.Start();
         }
 
@@ -91,7 +91,7 @@ public class BreakneckRequestTests
                 }
             })
             {
-                IsBackground = true
+                IsBackground = true,
             }.Start();
         }
 

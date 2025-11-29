@@ -1,5 +1,4 @@
-﻿using System;
-using Silk.NET.SilkTouch.Clang;
+﻿using Silk.NET.SilkTouch.Clang;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -32,6 +31,14 @@ public class ModLoader
             nameof(ClangScraper) => typeof(ClangScraper),
             nameof(ChangeNativeClass) => typeof(ChangeNativeClass),
             nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
+            nameof(TransformInterfaces) => typeof(TransformInterfaces),
+            nameof(TransformCOM) => typeof(TransformCOM),
+            nameof(DisableWarnings) => typeof(DisableWarnings),
+            nameof(ImportManualFiles) => typeof(ImportManualFiles),
+            nameof(RemapTypes) => typeof(RemapTypes),
+            nameof(RemoveStaticUsings) => typeof(RemoveStaticUsings),
+            nameof(DiscardOutput) => typeof(DiscardOutput),
+            nameof(FixOptionalParams) => typeof(FixOptionalParams),
             _ => null,
         };
 }

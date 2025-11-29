@@ -1,92 +1,103 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HWAVEOUT
+public readonly unsafe partial struct Hwaveout
     : IComparable,
-        IComparable<HWAVEOUT>,
-        IEquatable<HWAVEOUT>,
+        IComparable<Hwaveout>,
+        IEquatable<Hwaveout>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HWAVEOUT(void* value)
+    public Hwaveout(void* value)
     {
         Value = value;
     }
 
-    public static HWAVEOUT INVALID_VALUE => new HWAVEOUT((void*)(-1));
-    public static HWAVEOUT NULL => new HWAVEOUT(null);
+    public static Hwaveout INVALID_VALUE => new Hwaveout((void*)(-1));
+    public static Hwaveout NULL => new Hwaveout(null);
 
-    public static bool operator ==(HWAVEOUT left, HWAVEOUT right) => left.Value == right.Value;
+    public static bool operator ==(Hwaveout left, Hwaveout right) => left.Value == right.Value;
 
-    public static bool operator !=(HWAVEOUT left, HWAVEOUT right) => left.Value != right.Value;
+    public static bool operator !=(Hwaveout left, Hwaveout right) => left.Value != right.Value;
 
-    public static bool operator <(HWAVEOUT left, HWAVEOUT right) => left.Value < right.Value;
+    public static bool operator <(Hwaveout left, Hwaveout right) => left.Value < right.Value;
 
-    public static bool operator <=(HWAVEOUT left, HWAVEOUT right) => left.Value <= right.Value;
+    public static bool operator <=(Hwaveout left, Hwaveout right) => left.Value <= right.Value;
 
-    public static bool operator >(HWAVEOUT left, HWAVEOUT right) => left.Value > right.Value;
+    public static bool operator >(Hwaveout left, Hwaveout right) => left.Value > right.Value;
 
-    public static bool operator >=(HWAVEOUT left, HWAVEOUT right) => left.Value >= right.Value;
+    public static bool operator >=(Hwaveout left, Hwaveout right) => left.Value >= right.Value;
 
-    public static explicit operator HWAVEOUT(void* value) => new HWAVEOUT(value);
+    public static explicit operator Hwaveout(void* value) => new Hwaveout(value);
 
-    public static implicit operator void*(HWAVEOUT value) => value.Value;
+    public static implicit operator void*(Hwaveout value) => value.Value;
 
-    public static explicit operator HWAVEOUT(HANDLE value) => new HWAVEOUT(value);
+    public static explicit operator Hwaveout(Handle value) => new Hwaveout(value);
 
-    public static implicit operator HANDLE(HWAVEOUT value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hwaveout value) => new Handle(value.Value);
 
-    public static explicit operator HWAVEOUT(byte value) => new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(byte value) => new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator byte(HWAVEOUT value) => (byte)(value.Value);
+    public static explicit operator byte(Hwaveout value) => (byte)(value.Value);
 
-    public static explicit operator HWAVEOUT(short value) =>
-        new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(short value) =>
+        new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator short(HWAVEOUT value) => (short)(value.Value);
+    public static explicit operator short(Hwaveout value) => (short)(value.Value);
 
-    public static explicit operator HWAVEOUT(int value) => new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(int value) => new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator int(HWAVEOUT value) => (int)(value.Value);
+    public static explicit operator int(Hwaveout value) => (int)(value.Value);
 
-    public static explicit operator HWAVEOUT(long value) => new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(long value) => new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator long(HWAVEOUT value) => (long)(value.Value);
+    public static explicit operator long(Hwaveout value) => (long)(value.Value);
 
-    public static explicit operator HWAVEOUT(nint value) => new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(nint value) => new Hwaveout(unchecked((void*)(value)));
 
-    public static implicit operator nint(HWAVEOUT value) => (nint)(value.Value);
+    public static implicit operator nint(Hwaveout value) => (nint)(value.Value);
 
-    public static explicit operator HWAVEOUT(sbyte value) =>
-        new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(sbyte value) =>
+        new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HWAVEOUT value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hwaveout value) => (sbyte)(value.Value);
 
-    public static explicit operator HWAVEOUT(ushort value) =>
-        new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(ushort value) =>
+        new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HWAVEOUT value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hwaveout value) => (ushort)(value.Value);
 
-    public static explicit operator HWAVEOUT(uint value) => new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(uint value) => new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator uint(HWAVEOUT value) => (uint)(value.Value);
+    public static explicit operator uint(Hwaveout value) => (uint)(value.Value);
 
-    public static explicit operator HWAVEOUT(ulong value) =>
-        new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(ulong value) =>
+        new Hwaveout(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HWAVEOUT value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hwaveout value) => (ulong)(value.Value);
 
-    public static explicit operator HWAVEOUT(nuint value) =>
-        new HWAVEOUT(unchecked((void*)(value)));
+    public static explicit operator Hwaveout(nuint value) =>
+        new Hwaveout(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HWAVEOUT value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hwaveout value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HWAVEOUT other)
+        if (obj is Hwaveout other)
         {
             return CompareTo(other);
         }
@@ -95,11 +106,11 @@ public readonly unsafe partial struct HWAVEOUT
             : throw new ArgumentException("obj is not an instance of HWAVEOUT.");
     }
 
-    public int CompareTo(HWAVEOUT other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hwaveout other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HWAVEOUT other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hwaveout other) && Equals(other);
 
-    public bool Equals(HWAVEOUT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hwaveout other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

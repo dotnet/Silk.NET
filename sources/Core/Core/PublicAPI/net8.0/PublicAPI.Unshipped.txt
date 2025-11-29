@@ -1,4 +1,13 @@
 #nullable enable
+override Silk.NET.Core.Handle.Equals(object? obj) -> bool
+override Silk.NET.Core.Handle.GetHashCode() -> int
+override Silk.NET.Core.Handle.ToString() -> string!
+override Silk.NET.Core.HResult.Equals(object? obj) -> bool
+override Silk.NET.Core.HResult.GetHashCode() -> int
+override Silk.NET.Core.HResult.ToString() -> string!
+override Silk.NET.Core.HString.Equals(object? obj) -> bool
+override Silk.NET.Core.HString.GetHashCode() -> int
+override Silk.NET.Core.HString.ToString() -> string!
 override Silk.NET.Core.Ptr.Equals(object? obj) -> bool
 override Silk.NET.Core.Ptr.GetHashCode() -> int
 override Silk.NET.Core.Ptr2D.Equals(object? obj) -> bool
@@ -24,6 +33,9 @@ override Silk.NET.Core.Ref3D<T>.GetHashCode() -> int
 override Silk.NET.Core.Ref<T>.Equals(object? obj) -> bool
 override Silk.NET.Core.Ref<T>.GetHashCode() -> int
 override Silk.NET.Core.Utf8String.ToString() -> string!
+readonly Silk.NET.Core.Handle.Value -> void*
+readonly Silk.NET.Core.HResult.Value -> int
+readonly Silk.NET.Core.HString.Value -> void*
 readonly Silk.NET.Core.Ptr.Native -> void*
 readonly Silk.NET.Core.Ptr2D.Native -> Silk.NET.Core.Ptr*
 readonly Silk.NET.Core.Ptr2D<T>.Native -> Silk.NET.Core.Ptr<T>*
@@ -39,6 +51,63 @@ Silk.NET.Core.AndroidPlatformInfo.Surface.get -> nint
 Silk.NET.Core.AndroidPlatformInfo.Surface.init -> void
 Silk.NET.Core.AndroidPlatformInfo.Window.get -> nint
 Silk.NET.Core.AndroidPlatformInfo.Window.init -> void
+Silk.NET.Core.AsyncIUnknown
+Silk.NET.Core.AsyncIUnknown.AddRef() -> uint
+Silk.NET.Core.AsyncIUnknown.AsyncIUnknown() -> void
+Silk.NET.Core.AsyncIUnknown.AsyncIUnknown(Silk.NET.Core.Ptr3D vtbl) -> void
+Silk.NET.Core.AsyncIUnknown.AsyncIUnknown(Silk.NET.Core.Ptr<Silk.NET.Core.AsyncIUnknown.Native> vtbl) -> void
+Silk.NET.Core.AsyncIUnknown.Begin_AddRef() -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Begin_QueryInterface(Silk.NET.Core.Ref<System.Guid> riid) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Begin_QueryInterface(System.Guid* riid) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Begin_Release() -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Dispose() -> void
+Silk.NET.Core.AsyncIUnknown.Finish_AddRef() -> uint
+Silk.NET.Core.AsyncIUnknown.Finish_QueryInterface(Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Finish_QueryInterface(void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Finish_Release() -> uint
+Silk.NET.Core.AsyncIUnknown.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.AsyncIUnknown.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.AsyncIUnknown.Interface
+Silk.NET.Core.AsyncIUnknown.Interface.Begin_AddRef() -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Interface.Begin_QueryInterface(Silk.NET.Core.Ref<System.Guid> riid) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Interface.Begin_QueryInterface(System.Guid* riid) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Interface.Begin_Release() -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Interface.Finish_AddRef() -> uint
+Silk.NET.Core.AsyncIUnknown.Interface.Finish_QueryInterface(Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Interface.Finish_QueryInterface(void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Interface.Finish_Release() -> uint
+Silk.NET.Core.AsyncIUnknown.LpVtbl -> Silk.NET.Core.AsyncIUnknown.Native*
+Silk.NET.Core.AsyncIUnknown.Native
+Silk.NET.Core.AsyncIUnknown.Native.AddRef() -> uint
+Silk.NET.Core.AsyncIUnknown.Native.Begin_AddRef() -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Begin_QueryInterface(Silk.NET.Core.Ref<System.Guid> riid) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Begin_QueryInterface(System.Guid* riid) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Begin_Release() -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Finish_AddRef() -> uint
+Silk.NET.Core.AsyncIUnknown.Native.Finish_QueryInterface(Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Finish_QueryInterface(void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Finish_Release() -> uint
+Silk.NET.Core.AsyncIUnknown.Native.lpVtbl -> void**
+Silk.NET.Core.AsyncIUnknown.Native.Native() -> void
+Silk.NET.Core.AsyncIUnknown.Native.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Native.Release() -> uint
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.AddRef -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Begin_AddRef -> delegate* unmanaged<TSelf*, int>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Begin_QueryInterface -> delegate* unmanaged<TSelf*, System.Guid*, int>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Begin_Release -> delegate* unmanaged<TSelf*, int>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Finish_AddRef -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Finish_QueryInterface -> delegate* unmanaged<TSelf*, void**, int>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Finish_Release -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.QueryInterface -> delegate* unmanaged<TSelf*, System.Guid*, void**, int>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Release -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.AsyncIUnknown.Native.Vtbl<TSelf>.Vtbl() -> void
+Silk.NET.Core.AsyncIUnknown.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.AsyncIUnknown.Release() -> uint
 Silk.NET.Core.BreakneckLock
 Silk.NET.Core.BreakneckLock.BreakneckLock() -> void
 Silk.NET.Core.BreakneckLock.Enter(ref bool taken) -> void
@@ -87,10 +156,85 @@ Silk.NET.Core.EGLPlatformInfo.EGLPlatformInfo() -> void
 Silk.NET.Core.EGLPlatformInfo.EGLPlatformInfo(nint Display, nint Surface) -> void
 Silk.NET.Core.EGLPlatformInfo.Surface.get -> nint
 Silk.NET.Core.EGLPlatformInfo.Surface.init -> void
+Silk.NET.Core.Handle
+Silk.NET.Core.Handle.CompareTo(object? obj) -> int
+Silk.NET.Core.Handle.CompareTo(Silk.NET.Core.Handle other) -> int
+Silk.NET.Core.Handle.Equals(Silk.NET.Core.Handle other) -> bool
+Silk.NET.Core.Handle.Handle() -> void
+Silk.NET.Core.Handle.Handle(void* value) -> void
+Silk.NET.Core.Handle.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Core.HResult
+Silk.NET.Core.HResult.Code.get -> int
+Silk.NET.Core.HResult.CompareTo(object? obj) -> int
+Silk.NET.Core.HResult.CompareTo(Silk.NET.Core.HResult other) -> int
+Silk.NET.Core.HResult.Equals(Silk.NET.Core.HResult other) -> bool
+Silk.NET.Core.HResult.Facility.get -> int
+Silk.NET.Core.HResult.Failed.get -> bool
+Silk.NET.Core.HResult.HResult() -> void
+Silk.NET.Core.HResult.HResult(int severity, int facility, int code) -> void
+Silk.NET.Core.HResult.HResult(int value) -> void
+Silk.NET.Core.HResult.IsError.get -> bool
+Silk.NET.Core.HResult.IsFailure.get -> bool
+Silk.NET.Core.HResult.IsSuccess.get -> bool
+Silk.NET.Core.HResult.Severity.get -> int
+Silk.NET.Core.HResult.Succeeded.get -> bool
+Silk.NET.Core.HResult.Throw() -> void
+Silk.NET.Core.HResult.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Core.HString
+Silk.NET.Core.HString.CompareTo(object? obj) -> int
+Silk.NET.Core.HString.CompareTo(Silk.NET.Core.HString other) -> int
+Silk.NET.Core.HString.Equals(Silk.NET.Core.HString other) -> bool
+Silk.NET.Core.HString.HString() -> void
+Silk.NET.Core.HString.HString(void* value) -> void
+Silk.NET.Core.HString.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Core.IBoolScheme
 Silk.NET.Core.IBoolScheme.False<T>() -> T
 Silk.NET.Core.IBoolScheme.IsTrue<T>(T value) -> bool
 Silk.NET.Core.IBoolScheme.True<T>() -> T
+Silk.NET.Core.IClassFactory
+Silk.NET.Core.IClassFactory.AddRef() -> uint
+Silk.NET.Core.IClassFactory.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.CreateInstance<TCom>(Silk.NET.Core.IUnknown pUnkOuter, out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Dispose() -> void
+Silk.NET.Core.IClassFactory.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.IClassFactory.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.IClassFactory.IClassFactory() -> void
+Silk.NET.Core.IClassFactory.IClassFactory(Silk.NET.Core.Ptr3D vtbl) -> void
+Silk.NET.Core.IClassFactory.IClassFactory(Silk.NET.Core.Ptr<Silk.NET.Core.IClassFactory.Native> vtbl) -> void
+Silk.NET.Core.IClassFactory.Interface
+Silk.NET.Core.IClassFactory.Interface.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Interface.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Interface.LockServer(Silk.NET.Core.MaybeBool<int> fLock) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.LockServer(Silk.NET.Core.MaybeBool<int> fLock) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.LpVtbl -> Silk.NET.Core.IClassFactory.Native*
+Silk.NET.Core.IClassFactory.Native
+Silk.NET.Core.IClassFactory.Native.AddRef() -> uint
+Silk.NET.Core.IClassFactory.Native.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.CreateInstance(Silk.NET.Core.IUnknown pUnkOuter, System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.CreateInstance<TCom>(Silk.NET.Core.IUnknown pUnkOuter, out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.LockServer(Silk.NET.Core.MaybeBool<int> fLock) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.lpVtbl -> void**
+Silk.NET.Core.IClassFactory.Native.Native() -> void
+Silk.NET.Core.IClassFactory.Native.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Native.Release() -> uint
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.AddRef -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.CreateInstance -> delegate* unmanaged<TSelf*, Silk.NET.Core.IUnknown.Native*, System.Guid*, void**, int>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.LockServer -> delegate* unmanaged<TSelf*, Silk.NET.Core.MaybeBool<int>, int>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.QueryInterface -> delegate* unmanaged<TSelf*, System.Guid*, void**, int>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.Release -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.IClassFactory.Native.Vtbl<TSelf>.Vtbl() -> void
+Silk.NET.Core.IClassFactory.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IClassFactory.Release() -> uint
+Silk.NET.Core.IComVtbl
+Silk.NET.Core.IComVtbl.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.IComVtbl.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.IComVtbl<T>
 Silk.NET.Core.IGLContext
 Silk.NET.Core.IGLContext.IsCurrent.get -> bool
 Silk.NET.Core.IGLContext.IsCurrent.set -> void
@@ -101,8 +245,68 @@ Silk.NET.Core.IGLContext.VSync.get -> bool
 Silk.NET.Core.IGLContext.VSync.set -> void
 Silk.NET.Core.IGLContextSource
 Silk.NET.Core.IGLContextSource.GLContext.get -> Silk.NET.Core.IGLContext?
+Silk.NET.Core.IID
+Silk.NET.Core.IInspectable.GetIids(Silk.NET.Core.Ref<uint> iidCount, Silk.NET.Core.Ref2D<System.Guid> iids) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.GetIids(uint* iidCount, System.Guid** iids) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.GetRuntimeClassName(Silk.NET.Core.HString* className) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.GetRuntimeClassName(Silk.NET.Core.Ref<Silk.NET.Core.HString> className) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.GetTrustLevel(Silk.NET.Core.Ref<Silk.NET.Core.TrustLevel> trustLevel) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.GetTrustLevel(Silk.NET.Core.TrustLevel* trustLevel) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Interface.GetIids(Silk.NET.Core.Ref<uint> iidCount, Silk.NET.Core.Ref2D<System.Guid> iids) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Interface.GetIids(uint* iidCount, System.Guid** iids) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Interface.GetRuntimeClassName(Silk.NET.Core.HString* className) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Interface.GetRuntimeClassName(Silk.NET.Core.Ref<Silk.NET.Core.HString> className) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Interface.GetTrustLevel(Silk.NET.Core.Ref<Silk.NET.Core.TrustLevel> trustLevel) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Interface.GetTrustLevel(Silk.NET.Core.TrustLevel* trustLevel) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.GetIids(Silk.NET.Core.Ref<uint> iidCount, Silk.NET.Core.Ref2D<System.Guid> iids) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.GetIids(uint* iidCount, System.Guid** iids) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.GetRuntimeClassName(Silk.NET.Core.HString* className) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.GetRuntimeClassName(Silk.NET.Core.Ref<Silk.NET.Core.HString> className) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.GetTrustLevel(Silk.NET.Core.Ref<Silk.NET.Core.TrustLevel> trustLevel) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.GetTrustLevel(Silk.NET.Core.TrustLevel* trustLevel) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.lpVtbl -> void**
+Silk.NET.Core.IInspectable.Native.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.GetRuntimeClassName -> delegate* unmanaged<TSelf*, Silk.NET.Core.HString*, int>
+Silk.NET.Core.IInspectable.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IInspectable.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
 Silk.NET.Core.INativeWindow
+Silk.NET.Core.INativeGuid
+Silk.NET.Core.INativeGuid.NativeGuid.get -> System.Guid*
 Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo? info) -> bool
+Silk.NET.Core.IUnknown
+Silk.NET.Core.IUnknown.AddRef() -> uint
+Silk.NET.Core.IUnknown.Dispose() -> void
+Silk.NET.Core.IUnknown.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.IUnknown.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.IUnknown.Interface
+Silk.NET.Core.IUnknown.Interface.AddRef() -> uint
+Silk.NET.Core.IUnknown.Interface.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.Interface.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.Interface.Release() -> uint
+Silk.NET.Core.IUnknown.IUnknown() -> void
+Silk.NET.Core.IUnknown.IUnknown(Silk.NET.Core.Ptr3D vtbl) -> void
+Silk.NET.Core.IUnknown.IUnknown(Silk.NET.Core.Ptr<Silk.NET.Core.IUnknown.Native> vtbl) -> void
+Silk.NET.Core.IUnknown.LpVtbl -> Silk.NET.Core.IUnknown.Native*
+Silk.NET.Core.IUnknown.Native
+Silk.NET.Core.IUnknown.Native.AddRef() -> uint
+Silk.NET.Core.IUnknown.Native.lpVtbl -> void**
+Silk.NET.Core.IUnknown.Native.Native() -> void
+Silk.NET.Core.IUnknown.Native.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.Native.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.Native.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.Native.Release() -> uint
+Silk.NET.Core.IUnknown.Native.Vtbl<TSelf>
+Silk.NET.Core.IUnknown.Native.Vtbl<TSelf>.AddRef -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.IUnknown.Native.Vtbl<TSelf>.QueryInterface -> delegate* unmanaged<TSelf*, System.Guid*, void**, int>
+Silk.NET.Core.IUnknown.Native.Vtbl<TSelf>.Release -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.IUnknown.Native.Vtbl<TSelf>.Vtbl() -> void
+Silk.NET.Core.IUnknown.QueryInterface(Silk.NET.Core.Ref<System.Guid> riid, Silk.NET.Core.Ref2D ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.QueryInterface(System.Guid* riid, void** ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.QueryInterface<TCom>(out TCom ppvObject) -> Silk.NET.Core.HResult
+Silk.NET.Core.IUnknown.Release() -> uint
 Silk.NET.Core.Loader.DefaultNativeContext
 Silk.NET.Core.Loader.DefaultNativeContext.DefaultNativeContext() -> void
 Silk.NET.Core.Loader.DefaultNativeContext.Dispose() -> void
@@ -332,6 +536,18 @@ Silk.NET.Core.X11PlatformInfo.Window.get -> nint
 Silk.NET.Core.X11PlatformInfo.Window.init -> void
 Silk.NET.Core.X11PlatformInfo.X11PlatformInfo() -> void
 Silk.NET.Core.X11PlatformInfo.X11PlatformInfo(nint Display, nint Window) -> void
+static Silk.NET.Core.AsyncIUnknown.explicit operator Silk.NET.Core.AsyncIUnknown(nuint value) -> Silk.NET.Core.AsyncIUnknown
+static Silk.NET.Core.AsyncIUnknown.explicit operator Silk.NET.Core.AsyncIUnknown(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.AsyncIUnknown
+static Silk.NET.Core.AsyncIUnknown.explicit operator Silk.NET.Core.AsyncIUnknown(Silk.NET.Core.Ptr3D value) -> Silk.NET.Core.AsyncIUnknown
+static Silk.NET.Core.AsyncIUnknown.explicit operator Silk.NET.Core.AsyncIUnknown(Silk.NET.Core.Ptr<Silk.NET.Core.AsyncIUnknown.Native> value) -> Silk.NET.Core.AsyncIUnknown
+static Silk.NET.Core.AsyncIUnknown.explicit operator Silk.NET.Core.AsyncIUnknown(void*** value) -> Silk.NET.Core.AsyncIUnknown
+static Silk.NET.Core.AsyncIUnknown.implicit operator nuint(Silk.NET.Core.AsyncIUnknown value) -> nuint
+static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.AsyncIUnknown(Silk.NET.Core.AsyncIUnknown.Native* value) -> Silk.NET.Core.AsyncIUnknown
+static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.AsyncIUnknown.Native*(Silk.NET.Core.AsyncIUnknown value) -> Silk.NET.Core.AsyncIUnknown.Native*
+static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.IUnknown(Silk.NET.Core.AsyncIUnknown value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.AsyncIUnknown value) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.AsyncIUnknown.implicit operator Silk.NET.Core.Ptr<Silk.NET.Core.AsyncIUnknown.Native>(Silk.NET.Core.AsyncIUnknown value) -> Silk.NET.Core.Ptr<Silk.NET.Core.AsyncIUnknown.Native>
+static Silk.NET.Core.AsyncIUnknown.implicit operator void***(Silk.NET.Core.AsyncIUnknown value) -> void***
 static Silk.NET.Core.BreakneckLock.Create() -> Silk.NET.Core.BreakneckLock
 static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TEnum1 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
 static Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.implicit operator Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>(TEnum2 value) -> Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>
@@ -345,6 +561,127 @@ static Silk.NET.Core.Constant<TUnderlying, TEnum1>.implicit operator TEnum1(Silk
 static Silk.NET.Core.Constant<TUnderlying, TEnum1>.implicit operator TUnderlying(Silk.NET.Core.Constant<TUnderlying, TEnum1> value) -> TUnderlying
 static Silk.NET.Core.Default.True<T>() -> T
 static Silk.NET.Core.DSL.nullptr.get -> Silk.NET.Core.NullPtr
+static Silk.NET.Core.Handle.explicit operator byte(Silk.NET.Core.Handle value) -> byte
+static Silk.NET.Core.Handle.explicit operator int(Silk.NET.Core.Handle value) -> int
+static Silk.NET.Core.Handle.explicit operator long(Silk.NET.Core.Handle value) -> long
+static Silk.NET.Core.Handle.explicit operator sbyte(Silk.NET.Core.Handle value) -> sbyte
+static Silk.NET.Core.Handle.explicit operator short(Silk.NET.Core.Handle value) -> short
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(byte value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(int value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(long value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(nint value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(nuint value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(sbyte value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(short value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(uint value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(ulong value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(ushort value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator Silk.NET.Core.Handle(void* value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.explicit operator uint(Silk.NET.Core.Handle value) -> uint
+static Silk.NET.Core.Handle.explicit operator ulong(Silk.NET.Core.Handle value) -> ulong
+static Silk.NET.Core.Handle.explicit operator ushort(Silk.NET.Core.Handle value) -> ushort
+static Silk.NET.Core.Handle.implicit operator nint(Silk.NET.Core.Handle value) -> nint
+static Silk.NET.Core.Handle.implicit operator nuint(Silk.NET.Core.Handle value) -> nuint
+static Silk.NET.Core.Handle.implicit operator void*(Silk.NET.Core.Handle value) -> void*
+static Silk.NET.Core.Handle.INVALID_VALUE.get -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.NULL.get -> Silk.NET.Core.Handle
+static Silk.NET.Core.Handle.operator !=(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.Handle.operator <(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.Handle.operator <=(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.Handle.operator ==(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.Handle.operator >(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.Handle.operator >=(Silk.NET.Core.Handle left, Silk.NET.Core.Handle right) -> bool
+static Silk.NET.Core.HResult.Create(int severity, int facility, int code) -> int
+static Silk.NET.Core.HResult.explicit operator byte(Silk.NET.Core.HResult value) -> byte
+static Silk.NET.Core.HResult.explicit operator nuint(Silk.NET.Core.HResult value) -> nuint
+static Silk.NET.Core.HResult.explicit operator sbyte(Silk.NET.Core.HResult value) -> sbyte
+static Silk.NET.Core.HResult.explicit operator short(Silk.NET.Core.HResult value) -> short
+static Silk.NET.Core.HResult.explicit operator Silk.NET.Core.HResult(long value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.explicit operator Silk.NET.Core.HResult(nint value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.explicit operator Silk.NET.Core.HResult(nuint value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.explicit operator Silk.NET.Core.HResult(uint value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.explicit operator Silk.NET.Core.HResult(ulong value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.explicit operator uint(Silk.NET.Core.HResult value) -> uint
+static Silk.NET.Core.HResult.explicit operator ulong(Silk.NET.Core.HResult value) -> ulong
+static Silk.NET.Core.HResult.explicit operator ushort(Silk.NET.Core.HResult value) -> ushort
+static Silk.NET.Core.HResult.GetCode(int hr) -> int
+static Silk.NET.Core.HResult.GetFacility(int hr) -> int
+static Silk.NET.Core.HResult.GetSeverity(int hr) -> int
+static Silk.NET.Core.HResult.implicit operator int(Silk.NET.Core.HResult value) -> int
+static Silk.NET.Core.HResult.implicit operator long(Silk.NET.Core.HResult value) -> long
+static Silk.NET.Core.HResult.implicit operator nint(Silk.NET.Core.HResult value) -> nint
+static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(byte value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(int value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(sbyte value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(short value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.implicit operator Silk.NET.Core.HResult(ushort value) -> Silk.NET.Core.HResult
+static Silk.NET.Core.HResult.IndicatesError(int status) -> bool
+static Silk.NET.Core.HResult.IndicatesFailure(int hr) -> bool
+static Silk.NET.Core.HResult.IndicatesSuccess(int hr) -> bool
+static Silk.NET.Core.HResult.operator !=(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
+static Silk.NET.Core.HResult.operator <(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
+static Silk.NET.Core.HResult.operator <=(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
+static Silk.NET.Core.HResult.operator ==(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
+static Silk.NET.Core.HResult.operator >(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
+static Silk.NET.Core.HResult.operator >=(Silk.NET.Core.HResult left, Silk.NET.Core.HResult right) -> bool
+static Silk.NET.Core.HString.explicit operator byte(Silk.NET.Core.HString value) -> byte
+static Silk.NET.Core.HString.explicit operator int(Silk.NET.Core.HString value) -> int
+static Silk.NET.Core.HString.explicit operator long(Silk.NET.Core.HString value) -> long
+static Silk.NET.Core.HString.explicit operator sbyte(Silk.NET.Core.HString value) -> sbyte
+static Silk.NET.Core.HString.explicit operator short(Silk.NET.Core.HString value) -> short
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(byte value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(int value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(long value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(nint value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(nuint value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(sbyte value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(short value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(Silk.NET.Core.Handle value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(uint value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(ulong value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(ushort value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator Silk.NET.Core.HString(void* value) -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.explicit operator uint(Silk.NET.Core.HString value) -> uint
+static Silk.NET.Core.HString.explicit operator ulong(Silk.NET.Core.HString value) -> ulong
+static Silk.NET.Core.HString.explicit operator ushort(Silk.NET.Core.HString value) -> ushort
+static Silk.NET.Core.HString.implicit operator nint(Silk.NET.Core.HString value) -> nint
+static Silk.NET.Core.HString.implicit operator nuint(Silk.NET.Core.HString value) -> nuint
+static Silk.NET.Core.HString.implicit operator Silk.NET.Core.Handle(Silk.NET.Core.HString value) -> Silk.NET.Core.Handle
+static Silk.NET.Core.HString.implicit operator void*(Silk.NET.Core.HString value) -> void*
+static Silk.NET.Core.HString.INVALID_VALUE.get -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.NULL.get -> Silk.NET.Core.HString
+static Silk.NET.Core.HString.operator !=(Silk.NET.Core.HString left, Silk.NET.Core.HString right) -> bool
+static Silk.NET.Core.HString.operator <(Silk.NET.Core.HString left, Silk.NET.Core.HString right) -> bool
+static Silk.NET.Core.HString.operator <=(Silk.NET.Core.HString left, Silk.NET.Core.HString right) -> bool
+static Silk.NET.Core.HString.operator ==(Silk.NET.Core.HString left, Silk.NET.Core.HString right) -> bool
+static Silk.NET.Core.HString.operator >(Silk.NET.Core.HString left, Silk.NET.Core.HString right) -> bool
+static Silk.NET.Core.HString.operator >=(Silk.NET.Core.HString left, Silk.NET.Core.HString right) -> bool
+static Silk.NET.Core.IClassFactory.explicit operator Silk.NET.Core.IClassFactory(nuint value) -> Silk.NET.Core.IClassFactory
+static Silk.NET.Core.IClassFactory.explicit operator Silk.NET.Core.IClassFactory(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.IClassFactory
+static Silk.NET.Core.IClassFactory.explicit operator Silk.NET.Core.IClassFactory(Silk.NET.Core.Ptr3D value) -> Silk.NET.Core.IClassFactory
+static Silk.NET.Core.IClassFactory.explicit operator Silk.NET.Core.IClassFactory(Silk.NET.Core.Ptr<Silk.NET.Core.IClassFactory.Native> value) -> Silk.NET.Core.IClassFactory
+static Silk.NET.Core.IClassFactory.explicit operator Silk.NET.Core.IClassFactory(void*** value) -> Silk.NET.Core.IClassFactory
+static Silk.NET.Core.IClassFactory.implicit operator nuint(Silk.NET.Core.IClassFactory value) -> nuint
+static Silk.NET.Core.IClassFactory.implicit operator Silk.NET.Core.IClassFactory(Silk.NET.Core.IClassFactory.Native* value) -> Silk.NET.Core.IClassFactory
+static Silk.NET.Core.IClassFactory.implicit operator Silk.NET.Core.IClassFactory.Native*(Silk.NET.Core.IClassFactory value) -> Silk.NET.Core.IClassFactory.Native*
+static Silk.NET.Core.IClassFactory.implicit operator Silk.NET.Core.IUnknown(Silk.NET.Core.IClassFactory value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IClassFactory.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.IClassFactory value) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.IClassFactory.implicit operator Silk.NET.Core.Ptr<Silk.NET.Core.IClassFactory.Native>(Silk.NET.Core.IClassFactory value) -> Silk.NET.Core.Ptr<Silk.NET.Core.IClassFactory.Native>
+static Silk.NET.Core.IClassFactory.implicit operator void***(Silk.NET.Core.IClassFactory value) -> void***
+static Silk.NET.Core.IID.AsyncIUnknown.get -> System.Guid
+static Silk.NET.Core.IID.IClassFactory.get -> System.Guid
+static Silk.NET.Core.IID.IInspectable.get -> System.Guid
+static Silk.NET.Core.IID.IUnknown.get -> System.Guid
+static Silk.NET.Core.IUnknown.explicit operator Silk.NET.Core.IUnknown(nuint value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IUnknown.explicit operator Silk.NET.Core.IUnknown(Silk.NET.Core.Ptr3D value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IUnknown.explicit operator Silk.NET.Core.IUnknown(Silk.NET.Core.Ptr<Silk.NET.Core.IUnknown.Native> value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IUnknown.explicit operator Silk.NET.Core.IUnknown(void*** value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IUnknown.implicit operator nuint(Silk.NET.Core.IUnknown value) -> nuint
+static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.IUnknown(Silk.NET.Core.IUnknown.Native* value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.IUnknown.Native*(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.IUnknown.Native*
+static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.Ptr<Silk.NET.Core.IUnknown.Native>(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.Ptr<Silk.NET.Core.IUnknown.Native>
+static Silk.NET.Core.IUnknown.implicit operator void***(Silk.NET.Core.IUnknown value) -> void***
 static Silk.NET.Core.Loader.LoaderInterface.AlternativeNames.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<string!>!>!
 static Silk.NET.Core.Loader.LoaderInterface.LoadLibrary(string! name, System.Reflection.Assembly! asm) -> nint
 static Silk.NET.Core.Loader.LoaderInterface.LoadAlternativeNames(string! libraryName, System.Reflection.Assembly! assembly, System.Runtime.InteropServices.DllImportSearchPath? searchPath) -> nint
@@ -359,6 +696,10 @@ static Silk.NET.Core.MaybeBool<T>.implicit operator bool(Silk.NET.Core.MaybeBool
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(bool value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator Silk.NET.Core.MaybeBool<T>(T Value) -> Silk.NET.Core.MaybeBool<T>
 static Silk.NET.Core.MaybeBool<T>.implicit operator T(Silk.NET.Core.MaybeBool<T> value) -> T
+static Silk.NET.Core.MaybeBool<T>.operator !=(Silk.NET.Core.MaybeBool<T> lh, T rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator !=(T lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(Silk.NET.Core.MaybeBool<T> lh, T rh) -> bool
+static Silk.NET.Core.MaybeBool<T>.operator ==(T lh, Silk.NET.Core.MaybeBool<T> rh) -> bool
 static Silk.NET.Core.NullPtr.implicit operator void*(Silk.NET.Core.NullPtr _) -> void*
 static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this) -> string!
 static Silk.NET.Core.PointerExtensions.ReadToString(this Silk.NET.Core.Ptr<byte> this, int length) -> string!
@@ -418,8 +759,10 @@ static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3
 static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<ushort> this, int length, int[]! lengths) -> string?[]?[]?
 static Silk.NET.Core.Ptr.explicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
+static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nuint ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ref ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator string!(Silk.NET.Core.Ptr ptr) -> string!
+static Silk.NET.Core.Ptr.implicit operator nuint(Silk.NET.Core.Ptr ptr) -> nuint
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ptr(void* ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ref
@@ -442,7 +785,7 @@ static Silk.NET.Core.Ptr2D.explicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.R
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr2D
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(Silk.NET.Core.Ptr* ptr) -> Silk.NET.Core.Ptr2D
-static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(void* ptr) -> Silk.NET.Core.Ptr2D
+static Silk.NET.Core.Ptr2D.explicit operator Silk.NET.Core.Ptr2D(void* ptr) -> Silk.NET.Core.Ptr2D
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ptr2D(void** ptr) -> Silk.NET.Core.Ptr2D
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr2D.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ref2D
@@ -474,7 +817,7 @@ static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ptr2D ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(Silk.NET.Core.Ptr<T>* ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(T** ptr) -> Silk.NET.Core.Ptr2D<T>
-static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(void* ptr) -> Silk.NET.Core.Ptr2D<T>
+static Silk.NET.Core.Ptr2D<T>.explicit operator Silk.NET.Core.Ptr2D<T>(void* ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ptr2D<T>(void** ptr) -> Silk.NET.Core.Ptr2D<T>
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr2D<T>.implicit operator Silk.NET.Core.Ref2D(Silk.NET.Core.Ptr2D<T> ptr) -> Silk.NET.Core.Ref2D
@@ -517,8 +860,8 @@ static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.R
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.Ptr2D* ptr) -> Silk.NET.Core.Ptr3D
-static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void* ptr) -> Silk.NET.Core.Ptr3D
-static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void** ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(void* ptr) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.Ptr3D.explicit operator Silk.NET.Core.Ptr3D(void** ptr) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ptr3D(void*** ptr) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr3D.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ref3D
@@ -551,8 +894,8 @@ static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ptr2D<T>* ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(Silk.NET.Core.Ptr3D ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(T*** ptr) -> Silk.NET.Core.Ptr3D<T>
-static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void* ptr) -> Silk.NET.Core.Ptr3D<T>
-static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void** ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.explicit operator Silk.NET.Core.Ptr3D<T>(void* ptr) -> Silk.NET.Core.Ptr3D<T>
+static Silk.NET.Core.Ptr3D<T>.explicit operator Silk.NET.Core.Ptr3D<T>(void** ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ptr3D<T>(void*** ptr) -> Silk.NET.Core.Ptr3D<T>
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref
 static Silk.NET.Core.Ptr3D<T>.implicit operator Silk.NET.Core.Ref3D(Silk.NET.Core.Ptr3D<T> ptr) -> Silk.NET.Core.Ref3D
@@ -593,8 +936,12 @@ static Silk.NET.Core.Ptr3D<T>.operator ==(T* lh, Silk.NET.Core.Ptr3D<T> rh) -> b
 static Silk.NET.Core.Ptr3D<T>.operator ==(T** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
 static Silk.NET.Core.Ptr3D<T>.operator ==(void* lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
 static Silk.NET.Core.Ptr3D<T>.operator ==(void** lh, Silk.NET.Core.Ptr3D<T> rh) -> bool
+static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(nint ptr) -> Silk.NET.Core.Ptr<T>
+static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(nuint ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.explicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ref<T> ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.explicit operator string!(Silk.NET.Core.Ptr<T> ptr) -> string!
+static Silk.NET.Core.Ptr<T>.implicit operator nint(Silk.NET.Core.Ptr<T> ptr) -> nint
+static Silk.NET.Core.Ptr<T>.implicit operator nuint(Silk.NET.Core.Ptr<T> ptr) -> nuint
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ptr<T> ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.NullPtr ptr) -> Silk.NET.Core.Ptr<T>
 static Silk.NET.Core.Ptr<T>.implicit operator Silk.NET.Core.Ptr<T>(Silk.NET.Core.Ptr ptr) -> Silk.NET.Core.Ptr<T>
@@ -762,3 +1109,41 @@ static Silk.NET.Core.Version32.explicit operator Silk.NET.Core.Version32(uint va
 static Silk.NET.Core.Version32.implicit operator Silk.NET.Core.Version32(System.Version! version) -> Silk.NET.Core.Version32
 static Silk.NET.Core.Version32.implicit operator System.Version!(Silk.NET.Core.Version32 version) -> System.Version!
 static Silk.NET.Core.Version32.implicit operator uint(Silk.NET.Core.Version32 version) -> uint
+static Silk.NET.Core.IInspectable.explicit operator Silk.NET.Core.IInspectable(nuint value) -> Silk.NET.Core.IInspectable
+static Silk.NET.Core.IInspectable.explicit operator Silk.NET.Core.IInspectable(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.IInspectable
+static Silk.NET.Core.IInspectable.explicit operator Silk.NET.Core.IInspectable(Silk.NET.Core.Ptr3D value) -> Silk.NET.Core.IInspectable
+static Silk.NET.Core.IInspectable.explicit operator Silk.NET.Core.IInspectable(Silk.NET.Core.Ptr<Silk.NET.Core.IInspectable.Native> value) -> Silk.NET.Core.IInspectable
+static Silk.NET.Core.IInspectable.explicit operator Silk.NET.Core.IInspectable(void*** value) -> Silk.NET.Core.IInspectable
+static Silk.NET.Core.IInspectable.implicit operator nuint(Silk.NET.Core.IInspectable value) -> nuint
+static Silk.NET.Core.IInspectable.implicit operator Silk.NET.Core.IUnknown(Silk.NET.Core.IInspectable value) -> Silk.NET.Core.IUnknown
+static Silk.NET.Core.IInspectable.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.IInspectable value) -> Silk.NET.Core.Ptr3D
+static Silk.NET.Core.IInspectable.implicit operator Silk.NET.Core.Ptr<Silk.NET.Core.IInspectable.Native>(Silk.NET.Core.IInspectable value) -> Silk.NET.Core.Ptr<Silk.NET.Core.IInspectable.Native>
+static Silk.NET.Core.IInspectable.implicit operator Silk.NET.Core.IInspectable(Silk.NET.Core.IInspectable.Native* value) -> Silk.NET.Core.IInspectable
+static Silk.NET.Core.IInspectable.implicit operator Silk.NET.Core.IInspectable.Native*(Silk.NET.Core.IInspectable value) -> Silk.NET.Core.IInspectable.Native*
+static Silk.NET.Core.IInspectable.implicit operator void***(Silk.NET.Core.IInspectable value) -> void***
+Silk.NET.Core.IInspectable
+Silk.NET.Core.IInspectable.AddRef() -> uint
+Silk.NET.Core.IInspectable.Dispose() -> void
+Silk.NET.Core.IInspectable.GetAddressOf() -> Silk.NET.Core.Ptr2D
+Silk.NET.Core.IInspectable.GetAddressOf<TNativeInterface>() -> Silk.NET.Core.Ptr2D<TNativeInterface>
+Silk.NET.Core.IInspectable.IInspectable() -> void
+Silk.NET.Core.IInspectable.IInspectable(Silk.NET.Core.Ptr3D vtbl) -> void
+Silk.NET.Core.IInspectable.IInspectable(Silk.NET.Core.Ptr<Silk.NET.Core.IInspectable.Native> vtbl) -> void
+Silk.NET.Core.IInspectable.Interface
+Silk.NET.Core.IInspectable.LpVtbl -> Silk.NET.Core.IInspectable.Native*
+Silk.NET.Core.IInspectable.Native
+Silk.NET.Core.IInspectable.Native.AddRef() -> uint
+Silk.NET.Core.IInspectable.Native.Native() -> void
+Silk.NET.Core.IInspectable.Native.Release() -> uint
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.AddRef -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.GetIids -> delegate* unmanaged<TSelf*, uint*, System.Guid**, int>
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.GetTrustLevel -> delegate* unmanaged<TSelf*, Silk.NET.Core.TrustLevel*, int>
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.QueryInterface -> delegate* unmanaged<TSelf*, System.Guid*, void**, int>
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.Release -> delegate* unmanaged<TSelf*, uint>
+Silk.NET.Core.IInspectable.Native.Vtbl<TSelf>.Vtbl() -> void
+Silk.NET.Core.IInspectable.Release() -> uint
+Silk.NET.Core.TrustLevel
+Silk.NET.Core.TrustLevel.BaseTrust = 0 -> Silk.NET.Core.TrustLevel
+Silk.NET.Core.TrustLevel.FullTrust = 2 -> Silk.NET.Core.TrustLevel
+Silk.NET.Core.TrustLevel.PartialTrust = 1 -> Silk.NET.Core.TrustLevel

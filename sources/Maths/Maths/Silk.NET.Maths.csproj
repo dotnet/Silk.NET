@@ -1,40 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DefineConstants>SSE;BTEC_INTRINSICS;MATHF;POH;AdvSIMD;$(DefineConstants)</DefineConstants>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <SilkDSLExempt>true</SilkDSLExempt>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <DefineConstants>SSE;BTEC_INTRINSICS;MATHF;POH;AdvSIMD;$(DefineConstants)</DefineConstants>
-        <EnableNETAnalyzers>true</EnableNETAnalyzers>
-        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-        <SilkDSLExempt>true</SilkDSLExempt>
-    </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Scalar.As.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Scalar.As.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Scalar.As.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Scalar.As.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
 
-    <ItemGroup>
-        <Compile Update="Scalar.As.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>Scalar.As.tt</DependentUpon>
-        </Compile>
-    </ItemGroup>
+  <PropertyGroup>
+    <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != ''">
+    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Update="Scalar.As.tt">
-        <Generator>TextTemplatingFileGenerator</Generator>
-        <LastGenOutput>Scalar.As.cs</LastGenOutput>
-      </None>
-    </ItemGroup>
-
-    <PropertyGroup>
-      <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
-    </PropertyGroup>
-    <ItemGroup Condition="'$(TargetFramework)' != ''">
-      <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
-      <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-    </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
 </Project>

@@ -1,101 +1,112 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HTOUCHINPUT
+public readonly unsafe partial struct Htouchinput
     : IComparable,
-        IComparable<HTOUCHINPUT>,
-        IEquatable<HTOUCHINPUT>,
+        IComparable<Htouchinput>,
+        IEquatable<Htouchinput>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HTOUCHINPUT(void* value)
+    public Htouchinput(void* value)
     {
         Value = value;
     }
 
-    public static HTOUCHINPUT INVALID_VALUE => new HTOUCHINPUT((void*)(-1));
-    public static HTOUCHINPUT NULL => new HTOUCHINPUT(null);
+    public static Htouchinput INVALID_VALUE => new Htouchinput((void*)(-1));
+    public static Htouchinput NULL => new Htouchinput(null);
 
-    public static bool operator ==(HTOUCHINPUT left, HTOUCHINPUT right) =>
+    public static bool operator ==(Htouchinput left, Htouchinput right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HTOUCHINPUT left, HTOUCHINPUT right) =>
+    public static bool operator !=(Htouchinput left, Htouchinput right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HTOUCHINPUT left, HTOUCHINPUT right) => left.Value < right.Value;
+    public static bool operator <(Htouchinput left, Htouchinput right) => left.Value < right.Value;
 
-    public static bool operator <=(HTOUCHINPUT left, HTOUCHINPUT right) =>
+    public static bool operator <=(Htouchinput left, Htouchinput right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HTOUCHINPUT left, HTOUCHINPUT right) => left.Value > right.Value;
+    public static bool operator >(Htouchinput left, Htouchinput right) => left.Value > right.Value;
 
-    public static bool operator >=(HTOUCHINPUT left, HTOUCHINPUT right) =>
+    public static bool operator >=(Htouchinput left, Htouchinput right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HTOUCHINPUT(void* value) => new HTOUCHINPUT(value);
+    public static explicit operator Htouchinput(void* value) => new Htouchinput(value);
 
-    public static implicit operator void*(HTOUCHINPUT value) => value.Value;
+    public static implicit operator void*(Htouchinput value) => value.Value;
 
-    public static explicit operator HTOUCHINPUT(HANDLE value) => new HTOUCHINPUT(value);
+    public static explicit operator Htouchinput(Handle value) => new Htouchinput(value);
 
-    public static implicit operator HANDLE(HTOUCHINPUT value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Htouchinput value) => new Handle(value.Value);
 
-    public static explicit operator HTOUCHINPUT(byte value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(byte value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator byte(HTOUCHINPUT value) => (byte)(value.Value);
+    public static explicit operator byte(Htouchinput value) => (byte)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(short value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(short value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator short(HTOUCHINPUT value) => (short)(value.Value);
+    public static explicit operator short(Htouchinput value) => (short)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(int value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(int value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator int(HTOUCHINPUT value) => (int)(value.Value);
+    public static explicit operator int(Htouchinput value) => (int)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(long value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(long value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator long(HTOUCHINPUT value) => (long)(value.Value);
+    public static explicit operator long(Htouchinput value) => (long)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(nint value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(nint value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static implicit operator nint(HTOUCHINPUT value) => (nint)(value.Value);
+    public static implicit operator nint(Htouchinput value) => (nint)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(sbyte value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(sbyte value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HTOUCHINPUT value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Htouchinput value) => (sbyte)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(ushort value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(ushort value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HTOUCHINPUT value) => (ushort)(value.Value);
+    public static explicit operator ushort(Htouchinput value) => (ushort)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(uint value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(uint value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator uint(HTOUCHINPUT value) => (uint)(value.Value);
+    public static explicit operator uint(Htouchinput value) => (uint)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(ulong value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(ulong value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HTOUCHINPUT value) => (ulong)(value.Value);
+    public static explicit operator ulong(Htouchinput value) => (ulong)(value.Value);
 
-    public static explicit operator HTOUCHINPUT(nuint value) =>
-        new HTOUCHINPUT(unchecked((void*)(value)));
+    public static explicit operator Htouchinput(nuint value) =>
+        new Htouchinput(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HTOUCHINPUT value) => (nuint)(value.Value);
+    public static implicit operator nuint(Htouchinput value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HTOUCHINPUT other)
+        if (obj is Htouchinput other)
         {
             return CompareTo(other);
         }
@@ -104,11 +115,11 @@ public readonly unsafe partial struct HTOUCHINPUT
             : throw new ArgumentException("obj is not an instance of HTOUCHINPUT.");
     }
 
-    public int CompareTo(HTOUCHINPUT other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Htouchinput other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HTOUCHINPUT other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Htouchinput other) && Equals(other);
 
-    public bool Equals(HTOUCHINPUT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Htouchinput other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

@@ -1,98 +1,109 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HACCEL
+public readonly unsafe partial struct Haccel
     : IComparable,
-        IComparable<HACCEL>,
-        IEquatable<HACCEL>,
+        IComparable<Haccel>,
+        IEquatable<Haccel>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HACCEL(void* value)
+    public Haccel(void* value)
     {
         Value = value;
     }
 
-    public static HACCEL INVALID_VALUE => new HACCEL((void*)(-1));
-    public static HACCEL NULL => new HACCEL(null);
+    public static Haccel INVALID_VALUE => new Haccel((void*)(-1));
+    public static Haccel NULL => new Haccel(null);
 
-    public static bool operator ==(HACCEL left, HACCEL right) => left.Value == right.Value;
+    public static bool operator ==(Haccel left, Haccel right) => left.Value == right.Value;
 
-    public static bool operator !=(HACCEL left, HACCEL right) => left.Value != right.Value;
+    public static bool operator !=(Haccel left, Haccel right) => left.Value != right.Value;
 
-    public static bool operator <(HACCEL left, HACCEL right) => left.Value < right.Value;
+    public static bool operator <(Haccel left, Haccel right) => left.Value < right.Value;
 
-    public static bool operator <=(HACCEL left, HACCEL right) => left.Value <= right.Value;
+    public static bool operator <=(Haccel left, Haccel right) => left.Value <= right.Value;
 
-    public static bool operator >(HACCEL left, HACCEL right) => left.Value > right.Value;
+    public static bool operator >(Haccel left, Haccel right) => left.Value > right.Value;
 
-    public static bool operator >=(HACCEL left, HACCEL right) => left.Value >= right.Value;
+    public static bool operator >=(Haccel left, Haccel right) => left.Value >= right.Value;
 
-    public static explicit operator HACCEL(void* value) => new HACCEL(value);
+    public static explicit operator Haccel(void* value) => new Haccel(value);
 
-    public static implicit operator void*(HACCEL value) => value.Value;
+    public static implicit operator void*(Haccel value) => value.Value;
 
-    public static explicit operator HACCEL(HANDLE value) => new HACCEL(value);
+    public static explicit operator Haccel(Handle value) => new Haccel(value);
 
-    public static implicit operator HANDLE(HACCEL value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Haccel value) => new Handle(value.Value);
 
-    public static explicit operator HACCEL(byte value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(byte value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator byte(HACCEL value) => (byte)(value.Value);
+    public static explicit operator byte(Haccel value) => (byte)(value.Value);
 
-    public static explicit operator HACCEL(short value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(short value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator short(HACCEL value) => (short)(value.Value);
+    public static explicit operator short(Haccel value) => (short)(value.Value);
 
-    public static explicit operator HACCEL(int value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(int value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator int(HACCEL value) => (int)(value.Value);
+    public static explicit operator int(Haccel value) => (int)(value.Value);
 
-    public static explicit operator HACCEL(long value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(long value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator long(HACCEL value) => (long)(value.Value);
+    public static explicit operator long(Haccel value) => (long)(value.Value);
 
-    public static explicit operator HACCEL(nint value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(nint value) => new Haccel(unchecked((void*)(value)));
 
-    public static implicit operator nint(HACCEL value) => (nint)(value.Value);
+    public static implicit operator nint(Haccel value) => (nint)(value.Value);
 
-    public static explicit operator HACCEL(sbyte value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(sbyte value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HACCEL value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Haccel value) => (sbyte)(value.Value);
 
-    public static explicit operator HACCEL(ushort value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(ushort value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HACCEL value) => (ushort)(value.Value);
+    public static explicit operator ushort(Haccel value) => (ushort)(value.Value);
 
-    public static explicit operator HACCEL(uint value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(uint value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator uint(HACCEL value) => (uint)(value.Value);
+    public static explicit operator uint(Haccel value) => (uint)(value.Value);
 
-    public static explicit operator HACCEL(ulong value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(ulong value) => new Haccel(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HACCEL value) => (ulong)(value.Value);
+    public static explicit operator ulong(Haccel value) => (ulong)(value.Value);
 
-    public static explicit operator HACCEL(nuint value) => new HACCEL(unchecked((void*)(value)));
+    public static explicit operator Haccel(nuint value) => new Haccel(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HACCEL value) => (nuint)(value.Value);
+    public static implicit operator nuint(Haccel value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HACCEL other)
+        if (obj is Haccel other)
         {
             return CompareTo(other);
         }
         return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HACCEL.");
     }
 
-    public int CompareTo(HACCEL other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Haccel other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HACCEL other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Haccel other) && Equals(other);
 
-    public bool Equals(HACCEL other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Haccel other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

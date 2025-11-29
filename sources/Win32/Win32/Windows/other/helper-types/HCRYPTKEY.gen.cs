@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HCRYPTKEY
+public readonly unsafe partial struct Hcryptkey
     : IComparable,
-        IComparable<HCRYPTKEY>,
-        IEquatable<HCRYPTKEY>,
+        IComparable<Hcryptkey>,
+        IEquatable<Hcryptkey>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HCRYPTKEY(void* value)
+    public Hcryptkey(void* value)
     {
         Value = value;
     }
 
-    public static HCRYPTKEY INVALID_VALUE => new HCRYPTKEY((void*)(-1));
-    public static HCRYPTKEY NULL => new HCRYPTKEY(null);
+    public static Hcryptkey INVALID_VALUE => new Hcryptkey((void*)(-1));
+    public static Hcryptkey NULL => new Hcryptkey(null);
 
-    public static bool operator ==(HCRYPTKEY left, HCRYPTKEY right) => left.Value == right.Value;
+    public static bool operator ==(Hcryptkey left, Hcryptkey right) => left.Value == right.Value;
 
-    public static bool operator !=(HCRYPTKEY left, HCRYPTKEY right) => left.Value != right.Value;
+    public static bool operator !=(Hcryptkey left, Hcryptkey right) => left.Value != right.Value;
 
-    public static bool operator <(HCRYPTKEY left, HCRYPTKEY right) => left.Value < right.Value;
+    public static bool operator <(Hcryptkey left, Hcryptkey right) => left.Value < right.Value;
 
-    public static bool operator <=(HCRYPTKEY left, HCRYPTKEY right) => left.Value <= right.Value;
+    public static bool operator <=(Hcryptkey left, Hcryptkey right) => left.Value <= right.Value;
 
-    public static bool operator >(HCRYPTKEY left, HCRYPTKEY right) => left.Value > right.Value;
+    public static bool operator >(Hcryptkey left, Hcryptkey right) => left.Value > right.Value;
 
-    public static bool operator >=(HCRYPTKEY left, HCRYPTKEY right) => left.Value >= right.Value;
+    public static bool operator >=(Hcryptkey left, Hcryptkey right) => left.Value >= right.Value;
 
-    public static explicit operator HCRYPTKEY(void* value) => new HCRYPTKEY(value);
+    public static explicit operator Hcryptkey(void* value) => new Hcryptkey(value);
 
-    public static implicit operator void*(HCRYPTKEY value) => value.Value;
+    public static implicit operator void*(Hcryptkey value) => value.Value;
 
-    public static explicit operator HCRYPTKEY(HANDLE value) => new HCRYPTKEY(value);
+    public static explicit operator Hcryptkey(Handle value) => new Hcryptkey(value);
 
-    public static implicit operator HANDLE(HCRYPTKEY value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hcryptkey value) => new Handle(value.Value);
 
-    public static explicit operator HCRYPTKEY(byte value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(byte value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator byte(HCRYPTKEY value) => (byte)(value.Value);
+    public static explicit operator byte(Hcryptkey value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTKEY(short value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(short value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator short(HCRYPTKEY value) => (short)(value.Value);
+    public static explicit operator short(Hcryptkey value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTKEY(int value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(int value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator int(HCRYPTKEY value) => (int)(value.Value);
+    public static explicit operator int(Hcryptkey value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTKEY(long value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(long value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator long(HCRYPTKEY value) => (long)(value.Value);
+    public static explicit operator long(Hcryptkey value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTKEY(nint value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(nint value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static implicit operator nint(HCRYPTKEY value) => (nint)(value.Value);
+    public static implicit operator nint(Hcryptkey value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTKEY(sbyte value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(sbyte value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HCRYPTKEY value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hcryptkey value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTKEY(ushort value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(ushort value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HCRYPTKEY value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hcryptkey value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTKEY(uint value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(uint value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator uint(HCRYPTKEY value) => (uint)(value.Value);
+    public static explicit operator uint(Hcryptkey value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTKEY(ulong value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(ulong value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HCRYPTKEY value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hcryptkey value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTKEY(nuint value) =>
-        new HCRYPTKEY(unchecked((void*)(value)));
+    public static explicit operator Hcryptkey(nuint value) =>
+        new Hcryptkey(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HCRYPTKEY value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hcryptkey value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HCRYPTKEY other)
+        if (obj is Hcryptkey other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HCRYPTKEY
             : throw new ArgumentException("obj is not an instance of HCRYPTKEY.");
     }
 
-    public int CompareTo(HCRYPTKEY other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hcryptkey other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HCRYPTKEY other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hcryptkey other) && Equals(other);
 
-    public bool Equals(HCRYPTKEY other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hcryptkey other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

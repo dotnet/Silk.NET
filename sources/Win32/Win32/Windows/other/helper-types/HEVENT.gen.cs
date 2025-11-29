@@ -1,98 +1,109 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HEVENT
+public readonly unsafe partial struct Hevent
     : IComparable,
-        IComparable<HEVENT>,
-        IEquatable<HEVENT>,
+        IComparable<Hevent>,
+        IEquatable<Hevent>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HEVENT(void* value)
+    public Hevent(void* value)
     {
         Value = value;
     }
 
-    public static HEVENT INVALID_VALUE => new HEVENT((void*)(-1));
-    public static HEVENT NULL => new HEVENT(null);
+    public static Hevent INVALID_VALUE => new Hevent((void*)(-1));
+    public static Hevent NULL => new Hevent(null);
 
-    public static bool operator ==(HEVENT left, HEVENT right) => left.Value == right.Value;
+    public static bool operator ==(Hevent left, Hevent right) => left.Value == right.Value;
 
-    public static bool operator !=(HEVENT left, HEVENT right) => left.Value != right.Value;
+    public static bool operator !=(Hevent left, Hevent right) => left.Value != right.Value;
 
-    public static bool operator <(HEVENT left, HEVENT right) => left.Value < right.Value;
+    public static bool operator <(Hevent left, Hevent right) => left.Value < right.Value;
 
-    public static bool operator <=(HEVENT left, HEVENT right) => left.Value <= right.Value;
+    public static bool operator <=(Hevent left, Hevent right) => left.Value <= right.Value;
 
-    public static bool operator >(HEVENT left, HEVENT right) => left.Value > right.Value;
+    public static bool operator >(Hevent left, Hevent right) => left.Value > right.Value;
 
-    public static bool operator >=(HEVENT left, HEVENT right) => left.Value >= right.Value;
+    public static bool operator >=(Hevent left, Hevent right) => left.Value >= right.Value;
 
-    public static explicit operator HEVENT(void* value) => new HEVENT(value);
+    public static explicit operator Hevent(void* value) => new Hevent(value);
 
-    public static implicit operator void*(HEVENT value) => value.Value;
+    public static implicit operator void*(Hevent value) => value.Value;
 
-    public static explicit operator HEVENT(HANDLE value) => new HEVENT(value);
+    public static explicit operator Hevent(Handle value) => new Hevent(value);
 
-    public static implicit operator HANDLE(HEVENT value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hevent value) => new Handle(value.Value);
 
-    public static explicit operator HEVENT(byte value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(byte value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator byte(HEVENT value) => (byte)(value.Value);
+    public static explicit operator byte(Hevent value) => (byte)(value.Value);
 
-    public static explicit operator HEVENT(short value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(short value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator short(HEVENT value) => (short)(value.Value);
+    public static explicit operator short(Hevent value) => (short)(value.Value);
 
-    public static explicit operator HEVENT(int value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(int value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator int(HEVENT value) => (int)(value.Value);
+    public static explicit operator int(Hevent value) => (int)(value.Value);
 
-    public static explicit operator HEVENT(long value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(long value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator long(HEVENT value) => (long)(value.Value);
+    public static explicit operator long(Hevent value) => (long)(value.Value);
 
-    public static explicit operator HEVENT(nint value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(nint value) => new Hevent(unchecked((void*)(value)));
 
-    public static implicit operator nint(HEVENT value) => (nint)(value.Value);
+    public static implicit operator nint(Hevent value) => (nint)(value.Value);
 
-    public static explicit operator HEVENT(sbyte value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(sbyte value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HEVENT value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hevent value) => (sbyte)(value.Value);
 
-    public static explicit operator HEVENT(ushort value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(ushort value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HEVENT value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hevent value) => (ushort)(value.Value);
 
-    public static explicit operator HEVENT(uint value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(uint value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator uint(HEVENT value) => (uint)(value.Value);
+    public static explicit operator uint(Hevent value) => (uint)(value.Value);
 
-    public static explicit operator HEVENT(ulong value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(ulong value) => new Hevent(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HEVENT value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hevent value) => (ulong)(value.Value);
 
-    public static explicit operator HEVENT(nuint value) => new HEVENT(unchecked((void*)(value)));
+    public static explicit operator Hevent(nuint value) => new Hevent(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HEVENT value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hevent value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HEVENT other)
+        if (obj is Hevent other)
         {
             return CompareTo(other);
         }
         return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HEVENT.");
     }
 
-    public int CompareTo(HEVENT other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hevent other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HEVENT other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hevent other) && Equals(other);
 
-    public bool Equals(HEVENT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hevent other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

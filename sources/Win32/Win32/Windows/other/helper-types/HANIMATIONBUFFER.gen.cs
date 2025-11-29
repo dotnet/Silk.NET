@@ -1,103 +1,114 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HANIMATIONBUFFER
+public readonly unsafe partial struct Hanimationbuffer
     : IComparable,
-        IComparable<HANIMATIONBUFFER>,
-        IEquatable<HANIMATIONBUFFER>,
+        IComparable<Hanimationbuffer>,
+        IEquatable<Hanimationbuffer>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HANIMATIONBUFFER(void* value)
+    public Hanimationbuffer(void* value)
     {
         Value = value;
     }
 
-    public static HANIMATIONBUFFER INVALID_VALUE => new HANIMATIONBUFFER((void*)(-1));
-    public static HANIMATIONBUFFER NULL => new HANIMATIONBUFFER(null);
+    public static Hanimationbuffer INVALID_VALUE => new Hanimationbuffer((void*)(-1));
+    public static Hanimationbuffer NULL => new Hanimationbuffer(null);
 
-    public static bool operator ==(HANIMATIONBUFFER left, HANIMATIONBUFFER right) =>
+    public static bool operator ==(Hanimationbuffer left, Hanimationbuffer right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HANIMATIONBUFFER left, HANIMATIONBUFFER right) =>
+    public static bool operator !=(Hanimationbuffer left, Hanimationbuffer right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HANIMATIONBUFFER left, HANIMATIONBUFFER right) =>
+    public static bool operator <(Hanimationbuffer left, Hanimationbuffer right) =>
         left.Value < right.Value;
 
-    public static bool operator <=(HANIMATIONBUFFER left, HANIMATIONBUFFER right) =>
+    public static bool operator <=(Hanimationbuffer left, Hanimationbuffer right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HANIMATIONBUFFER left, HANIMATIONBUFFER right) =>
+    public static bool operator >(Hanimationbuffer left, Hanimationbuffer right) =>
         left.Value > right.Value;
 
-    public static bool operator >=(HANIMATIONBUFFER left, HANIMATIONBUFFER right) =>
+    public static bool operator >=(Hanimationbuffer left, Hanimationbuffer right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HANIMATIONBUFFER(void* value) => new HANIMATIONBUFFER(value);
+    public static explicit operator Hanimationbuffer(void* value) => new Hanimationbuffer(value);
 
-    public static implicit operator void*(HANIMATIONBUFFER value) => value.Value;
+    public static implicit operator void*(Hanimationbuffer value) => value.Value;
 
-    public static explicit operator HANIMATIONBUFFER(HANDLE value) => new HANIMATIONBUFFER(value);
+    public static explicit operator Hanimationbuffer(Handle value) => new Hanimationbuffer(value);
 
-    public static implicit operator HANDLE(HANIMATIONBUFFER value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hanimationbuffer value) => new Handle(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(byte value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(byte value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator byte(HANIMATIONBUFFER value) => (byte)(value.Value);
+    public static explicit operator byte(Hanimationbuffer value) => (byte)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(short value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(short value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator short(HANIMATIONBUFFER value) => (short)(value.Value);
+    public static explicit operator short(Hanimationbuffer value) => (short)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(int value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(int value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator int(HANIMATIONBUFFER value) => (int)(value.Value);
+    public static explicit operator int(Hanimationbuffer value) => (int)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(long value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(long value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator long(HANIMATIONBUFFER value) => (long)(value.Value);
+    public static explicit operator long(Hanimationbuffer value) => (long)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(nint value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(nint value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static implicit operator nint(HANIMATIONBUFFER value) => (nint)(value.Value);
+    public static implicit operator nint(Hanimationbuffer value) => (nint)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(sbyte value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(sbyte value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HANIMATIONBUFFER value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hanimationbuffer value) => (sbyte)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(ushort value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(ushort value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HANIMATIONBUFFER value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hanimationbuffer value) => (ushort)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(uint value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(uint value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator uint(HANIMATIONBUFFER value) => (uint)(value.Value);
+    public static explicit operator uint(Hanimationbuffer value) => (uint)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(ulong value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(ulong value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HANIMATIONBUFFER value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hanimationbuffer value) => (ulong)(value.Value);
 
-    public static explicit operator HANIMATIONBUFFER(nuint value) =>
-        new HANIMATIONBUFFER(unchecked((void*)(value)));
+    public static explicit operator Hanimationbuffer(nuint value) =>
+        new Hanimationbuffer(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HANIMATIONBUFFER value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hanimationbuffer value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HANIMATIONBUFFER other)
+        if (obj is Hanimationbuffer other)
         {
             return CompareTo(other);
         }
@@ -106,12 +117,12 @@ public readonly unsafe partial struct HANIMATIONBUFFER
             : throw new ArgumentException("obj is not an instance of HANIMATIONBUFFER.");
     }
 
-    public int CompareTo(HANIMATIONBUFFER other) =>
+    public int CompareTo(Hanimationbuffer other) =>
         ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HANIMATIONBUFFER other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hanimationbuffer other) && Equals(other);
 
-    public bool Equals(HANIMATIONBUFFER other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hanimationbuffer other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

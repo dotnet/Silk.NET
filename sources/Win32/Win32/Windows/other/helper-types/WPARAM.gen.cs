@@ -1,87 +1,98 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct WPARAM
+public readonly unsafe partial struct Wparam
     : IComparable,
-        IComparable<WPARAM>,
-        IEquatable<WPARAM>,
+        IComparable<Wparam>,
+        IEquatable<Wparam>,
         IFormattable
 {
     public readonly nuint Value;
 
-    public WPARAM(nuint value)
+    public Wparam(nuint value)
     {
         Value = value;
     }
 
-    public static bool operator ==(WPARAM left, WPARAM right) => left.Value == right.Value;
+    public static bool operator ==(Wparam left, Wparam right) => left.Value == right.Value;
 
-    public static bool operator !=(WPARAM left, WPARAM right) => left.Value != right.Value;
+    public static bool operator !=(Wparam left, Wparam right) => left.Value != right.Value;
 
-    public static bool operator <(WPARAM left, WPARAM right) => left.Value < right.Value;
+    public static bool operator <(Wparam left, Wparam right) => left.Value < right.Value;
 
-    public static bool operator <=(WPARAM left, WPARAM right) => left.Value <= right.Value;
+    public static bool operator <=(Wparam left, Wparam right) => left.Value <= right.Value;
 
-    public static bool operator >(WPARAM left, WPARAM right) => left.Value > right.Value;
+    public static bool operator >(Wparam left, Wparam right) => left.Value > right.Value;
 
-    public static bool operator >=(WPARAM left, WPARAM right) => left.Value >= right.Value;
+    public static bool operator >=(Wparam left, Wparam right) => left.Value >= right.Value;
 
-    public static implicit operator WPARAM(byte value) => new WPARAM(value);
+    public static implicit operator Wparam(byte value) => new Wparam(value);
 
-    public static explicit operator byte(WPARAM value) => (byte)(value.Value);
+    public static explicit operator byte(Wparam value) => (byte)(value.Value);
 
-    public static explicit operator WPARAM(short value) => new WPARAM(unchecked((nuint)(value)));
+    public static explicit operator Wparam(short value) => new Wparam(unchecked((nuint)(value)));
 
-    public static explicit operator short(WPARAM value) => (short)(value.Value);
+    public static explicit operator short(Wparam value) => (short)(value.Value);
 
-    public static explicit operator WPARAM(int value) => new WPARAM(unchecked((nuint)(value)));
+    public static explicit operator Wparam(int value) => new Wparam(unchecked((nuint)(value)));
 
-    public static explicit operator int(WPARAM value) => (int)(value.Value);
+    public static explicit operator int(Wparam value) => (int)(value.Value);
 
-    public static explicit operator WPARAM(long value) => new WPARAM(unchecked((nuint)(value)));
+    public static explicit operator Wparam(long value) => new Wparam(unchecked((nuint)(value)));
 
-    public static explicit operator long(WPARAM value) => (long)(value.Value);
+    public static explicit operator long(Wparam value) => (long)(value.Value);
 
-    public static explicit operator WPARAM(nint value) => new WPARAM(unchecked((nuint)(value)));
+    public static explicit operator Wparam(nint value) => new Wparam(unchecked((nuint)(value)));
 
-    public static explicit operator nint(WPARAM value) => (nint)(value.Value);
+    public static explicit operator nint(Wparam value) => (nint)(value.Value);
 
-    public static explicit operator WPARAM(sbyte value) => new WPARAM(unchecked((nuint)(value)));
+    public static explicit operator Wparam(sbyte value) => new Wparam(unchecked((nuint)(value)));
 
-    public static explicit operator sbyte(WPARAM value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Wparam value) => (sbyte)(value.Value);
 
-    public static implicit operator WPARAM(ushort value) => new WPARAM(value);
+    public static implicit operator Wparam(ushort value) => new Wparam(value);
 
-    public static explicit operator ushort(WPARAM value) => (ushort)(value.Value);
+    public static explicit operator ushort(Wparam value) => (ushort)(value.Value);
 
-    public static implicit operator WPARAM(uint value) => new WPARAM(value);
+    public static implicit operator Wparam(uint value) => new Wparam(value);
 
-    public static explicit operator uint(WPARAM value) => (uint)(value.Value);
+    public static explicit operator uint(Wparam value) => (uint)(value.Value);
 
-    public static explicit operator WPARAM(ulong value) => new WPARAM(unchecked((nuint)(value)));
+    public static explicit operator Wparam(ulong value) => new Wparam(unchecked((nuint)(value)));
 
-    public static implicit operator ulong(WPARAM value) => value.Value;
+    public static implicit operator ulong(Wparam value) => value.Value;
 
-    public static implicit operator WPARAM(nuint value) => new WPARAM(value);
+    public static implicit operator Wparam(nuint value) => new Wparam(value);
 
-    public static implicit operator nuint(WPARAM value) => value.Value;
+    public static implicit operator nuint(Wparam value) => value.Value;
 
     public int CompareTo(object? obj)
     {
-        if (obj is WPARAM other)
+        if (obj is Wparam other)
         {
             return CompareTo(other);
         }
         return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of WPARAM.");
     }
 
-    public int CompareTo(WPARAM other) => Value.CompareTo(other.Value);
+    public int CompareTo(Wparam other) => Value.CompareTo(other.Value);
 
-    public override bool Equals(object? obj) => (obj is WPARAM other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Wparam other) && Equals(other);
 
-    public bool Equals(WPARAM other) => Value.Equals(other.Value);
+    public bool Equals(Wparam other) => Value.Equals(other.Value);
 
     public override int GetHashCode() => Value.GetHashCode();
 

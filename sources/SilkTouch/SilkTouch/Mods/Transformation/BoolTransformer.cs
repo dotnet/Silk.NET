@@ -4,6 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -68,11 +70,42 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 )
             )
             {
+                var defaultAttr = param
+                    .AttributeLists.Select(attrList =>
+                        attrList.Attributes.FirstOrDefault(attr =>
+                            attr.IsAttribute("System.Runtime.InteropServices.DefaultParameterValue")
+                        )
+                    )
+                    .FirstOrDefault();
+
+                if (defaultAttr is not null && defaultAttr.ArgumentList?.Arguments.Count > 0)
+                {
+                    string argValue =
+                        defaultAttr.ArgumentList?.Arguments[0].Expression.ToString()
+                        ?? string.Empty;
+
+                    if (argValue != string.Empty && argValue != "true" && argValue != "false")
+                    {
+                        param = param.ReplaceNode(
+                            defaultAttr,
+                            defaultAttr.WithArgumentList(
+                                AttributeArgumentList(
+                                    SingletonSeparatedList(
+                                        AttributeArgument(
+                                            IdentifierName(argValue == "0" ? "false" : "true")
+                                        )
+                                    )
+                                )
+                            )
+                        );
+                    }
+                }
+
                 (@params ??= [.. current.ParameterList.Parameters])[i] = param.WithType(
                     string.IsNullOrWhiteSpace(paramBoolScheme)
                         ? GenericName(
                             Identifier("MaybeBool"),
-                            TypeArgumentList(SingletonSeparatedList(param.Type))
+                            TypeArgumentList(SingletonSeparatedList(param.Type!))
                         )
                         : GenericName(
                             Identifier("MaybeBool"),
@@ -80,7 +113,7 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                                 SeparatedList(
                                     // ReSharper disable once RedundantCast <-- false positive
                                     (IEnumerable<TypeSyntax>)
-                                        [param.Type, IdentifierName(paramBoolScheme)]
+                                        [param.Type!, IdentifierName(paramBoolScheme)]
                                 )
                             )
                         )

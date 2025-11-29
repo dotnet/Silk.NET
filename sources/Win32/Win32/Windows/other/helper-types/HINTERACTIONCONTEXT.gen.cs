@@ -1,105 +1,116 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HINTERACTIONCONTEXT
+public readonly unsafe partial struct Hinteractioncontext
     : IComparable,
-        IComparable<HINTERACTIONCONTEXT>,
-        IEquatable<HINTERACTIONCONTEXT>,
+        IComparable<Hinteractioncontext>,
+        IEquatable<Hinteractioncontext>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HINTERACTIONCONTEXT(void* value)
+    public Hinteractioncontext(void* value)
     {
         Value = value;
     }
 
-    public static HINTERACTIONCONTEXT INVALID_VALUE => new HINTERACTIONCONTEXT((void*)(-1));
-    public static HINTERACTIONCONTEXT NULL => new HINTERACTIONCONTEXT(null);
+    public static Hinteractioncontext INVALID_VALUE => new Hinteractioncontext((void*)(-1));
+    public static Hinteractioncontext NULL => new Hinteractioncontext(null);
 
-    public static bool operator ==(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) =>
+    public static bool operator ==(Hinteractioncontext left, Hinteractioncontext right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) =>
+    public static bool operator !=(Hinteractioncontext left, Hinteractioncontext right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) =>
+    public static bool operator <(Hinteractioncontext left, Hinteractioncontext right) =>
         left.Value < right.Value;
 
-    public static bool operator <=(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) =>
+    public static bool operator <=(Hinteractioncontext left, Hinteractioncontext right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) =>
+    public static bool operator >(Hinteractioncontext left, Hinteractioncontext right) =>
         left.Value > right.Value;
 
-    public static bool operator >=(HINTERACTIONCONTEXT left, HINTERACTIONCONTEXT right) =>
+    public static bool operator >=(Hinteractioncontext left, Hinteractioncontext right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HINTERACTIONCONTEXT(void* value) =>
-        new HINTERACTIONCONTEXT(value);
+    public static explicit operator Hinteractioncontext(void* value) =>
+        new Hinteractioncontext(value);
 
-    public static implicit operator void*(HINTERACTIONCONTEXT value) => value.Value;
+    public static implicit operator void*(Hinteractioncontext value) => value.Value;
 
-    public static explicit operator HINTERACTIONCONTEXT(HANDLE value) =>
-        new HINTERACTIONCONTEXT(value);
+    public static explicit operator Hinteractioncontext(Handle value) =>
+        new Hinteractioncontext(value);
 
-    public static implicit operator HANDLE(HINTERACTIONCONTEXT value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hinteractioncontext value) => new Handle(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(byte value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(byte value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator byte(HINTERACTIONCONTEXT value) => (byte)(value.Value);
+    public static explicit operator byte(Hinteractioncontext value) => (byte)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(short value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(short value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator short(HINTERACTIONCONTEXT value) => (short)(value.Value);
+    public static explicit operator short(Hinteractioncontext value) => (short)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(int value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(int value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator int(HINTERACTIONCONTEXT value) => (int)(value.Value);
+    public static explicit operator int(Hinteractioncontext value) => (int)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(long value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(long value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator long(HINTERACTIONCONTEXT value) => (long)(value.Value);
+    public static explicit operator long(Hinteractioncontext value) => (long)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(nint value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(nint value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static implicit operator nint(HINTERACTIONCONTEXT value) => (nint)(value.Value);
+    public static implicit operator nint(Hinteractioncontext value) => (nint)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(sbyte value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(sbyte value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HINTERACTIONCONTEXT value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hinteractioncontext value) => (sbyte)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(ushort value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(ushort value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HINTERACTIONCONTEXT value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hinteractioncontext value) => (ushort)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(uint value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(uint value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator uint(HINTERACTIONCONTEXT value) => (uint)(value.Value);
+    public static explicit operator uint(Hinteractioncontext value) => (uint)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(ulong value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(ulong value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HINTERACTIONCONTEXT value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hinteractioncontext value) => (ulong)(value.Value);
 
-    public static explicit operator HINTERACTIONCONTEXT(nuint value) =>
-        new HINTERACTIONCONTEXT(unchecked((void*)(value)));
+    public static explicit operator Hinteractioncontext(nuint value) =>
+        new Hinteractioncontext(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HINTERACTIONCONTEXT value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hinteractioncontext value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HINTERACTIONCONTEXT other)
+        if (obj is Hinteractioncontext other)
         {
             return CompareTo(other);
         }
@@ -108,12 +119,12 @@ public readonly unsafe partial struct HINTERACTIONCONTEXT
             : throw new ArgumentException("obj is not an instance of HINTERACTIONCONTEXT.");
     }
 
-    public int CompareTo(HINTERACTIONCONTEXT other) =>
+    public int CompareTo(Hinteractioncontext other) =>
         ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HINTERACTIONCONTEXT other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hinteractioncontext other) && Equals(other);
 
-    public bool Equals(HINTERACTIONCONTEXT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hinteractioncontext other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

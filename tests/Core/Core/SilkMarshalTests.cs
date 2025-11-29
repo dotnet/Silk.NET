@@ -4,6 +4,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Core.UnitTests;
 
-public class SilkMarshalTests
-{
-}
+public class SilkMarshalTests { }

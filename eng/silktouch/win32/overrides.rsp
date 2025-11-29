@@ -1,0 +1,14 @@
+--config
+dont-use-using-statics-for-guid-members
+dont-use-using-statics-for-enums
+--remap
+BOOL=MaybeBool<int>
+HMODULE=HModule
+ROPARAMIIDHANDLE=ROParamIIDHandle
+HANDLE=Handle
+HSTRING=HString
+HRESULT=HResult
+lpVtbl=LpVtbl
+__AnonymousEnum_ShlObj_core_L1245_C1=ISHCUTCMDID
+IEmailMailboxSmimeEncryptionAlgorithm=EmailMailboxSmimeEncryptionAlgorithm
+IEmailMailboxSmimeSigningAlgorithm=EmailMailboxSmimeSigningAlgorithm

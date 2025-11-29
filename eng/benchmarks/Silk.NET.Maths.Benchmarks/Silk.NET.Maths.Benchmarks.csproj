@@ -1,18 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net10.0</TargetFramework>
-        <DefineConstants>$(DefineConstants);MATHF</DefineConstants>
-        <SilkDSLExempt>true</SilkDSLExempt>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="BenchmarkDotNet" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\sources\Maths\Maths\Silk.NET.Maths.csproj" />
-    </ItemGroup>
-
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <DefineConstants>$(DefineConstants);MATHF</DefineConstants>
+    <SilkDSLExempt>true</SilkDSLExempt>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\sources\Maths\Maths\Silk.NET.Maths.csproj" />
+  </ItemGroup>
 </Project>

@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HDEVNOTIFY
+public readonly unsafe partial struct Hdevnotify
     : IComparable,
-        IComparable<HDEVNOTIFY>,
-        IEquatable<HDEVNOTIFY>,
+        IComparable<Hdevnotify>,
+        IEquatable<Hdevnotify>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HDEVNOTIFY(void* value)
+    public Hdevnotify(void* value)
     {
         Value = value;
     }
 
-    public static HDEVNOTIFY INVALID_VALUE => new HDEVNOTIFY((void*)(-1));
-    public static HDEVNOTIFY NULL => new HDEVNOTIFY(null);
+    public static Hdevnotify INVALID_VALUE => new Hdevnotify((void*)(-1));
+    public static Hdevnotify NULL => new Hdevnotify(null);
 
-    public static bool operator ==(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value == right.Value;
+    public static bool operator ==(Hdevnotify left, Hdevnotify right) => left.Value == right.Value;
 
-    public static bool operator !=(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value != right.Value;
+    public static bool operator !=(Hdevnotify left, Hdevnotify right) => left.Value != right.Value;
 
-    public static bool operator <(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value < right.Value;
+    public static bool operator <(Hdevnotify left, Hdevnotify right) => left.Value < right.Value;
 
-    public static bool operator <=(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value <= right.Value;
+    public static bool operator <=(Hdevnotify left, Hdevnotify right) => left.Value <= right.Value;
 
-    public static bool operator >(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value > right.Value;
+    public static bool operator >(Hdevnotify left, Hdevnotify right) => left.Value > right.Value;
 
-    public static bool operator >=(HDEVNOTIFY left, HDEVNOTIFY right) => left.Value >= right.Value;
+    public static bool operator >=(Hdevnotify left, Hdevnotify right) => left.Value >= right.Value;
 
-    public static explicit operator HDEVNOTIFY(void* value) => new HDEVNOTIFY(value);
+    public static explicit operator Hdevnotify(void* value) => new Hdevnotify(value);
 
-    public static implicit operator void*(HDEVNOTIFY value) => value.Value;
+    public static implicit operator void*(Hdevnotify value) => value.Value;
 
-    public static explicit operator HDEVNOTIFY(HANDLE value) => new HDEVNOTIFY(value);
+    public static explicit operator Hdevnotify(Handle value) => new Hdevnotify(value);
 
-    public static implicit operator HANDLE(HDEVNOTIFY value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hdevnotify value) => new Handle(value.Value);
 
-    public static explicit operator HDEVNOTIFY(byte value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(byte value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator byte(HDEVNOTIFY value) => (byte)(value.Value);
+    public static explicit operator byte(Hdevnotify value) => (byte)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(short value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(short value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator short(HDEVNOTIFY value) => (short)(value.Value);
+    public static explicit operator short(Hdevnotify value) => (short)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(int value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(int value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator int(HDEVNOTIFY value) => (int)(value.Value);
+    public static explicit operator int(Hdevnotify value) => (int)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(long value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(long value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator long(HDEVNOTIFY value) => (long)(value.Value);
+    public static explicit operator long(Hdevnotify value) => (long)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(nint value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(nint value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static implicit operator nint(HDEVNOTIFY value) => (nint)(value.Value);
+    public static implicit operator nint(Hdevnotify value) => (nint)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(sbyte value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(sbyte value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HDEVNOTIFY value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hdevnotify value) => (sbyte)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(ushort value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(ushort value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HDEVNOTIFY value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hdevnotify value) => (ushort)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(uint value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(uint value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator uint(HDEVNOTIFY value) => (uint)(value.Value);
+    public static explicit operator uint(Hdevnotify value) => (uint)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(ulong value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(ulong value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HDEVNOTIFY value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hdevnotify value) => (ulong)(value.Value);
 
-    public static explicit operator HDEVNOTIFY(nuint value) =>
-        new HDEVNOTIFY(unchecked((void*)(value)));
+    public static explicit operator Hdevnotify(nuint value) =>
+        new Hdevnotify(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HDEVNOTIFY value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hdevnotify value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HDEVNOTIFY other)
+        if (obj is Hdevnotify other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HDEVNOTIFY
             : throw new ArgumentException("obj is not an instance of HDEVNOTIFY.");
     }
 
-    public int CompareTo(HDEVNOTIFY other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hdevnotify other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HDEVNOTIFY other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hdevnotify other) && Equals(other);
 
-    public bool Equals(HDEVNOTIFY other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hdevnotify other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

@@ -1,98 +1,109 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HRSRC
+public readonly unsafe partial struct Hrsrc
     : IComparable,
-        IComparable<HRSRC>,
-        IEquatable<HRSRC>,
+        IComparable<Hrsrc>,
+        IEquatable<Hrsrc>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HRSRC(void* value)
+    public Hrsrc(void* value)
     {
         Value = value;
     }
 
-    public static HRSRC INVALID_VALUE => new HRSRC((void*)(-1));
-    public static HRSRC NULL => new HRSRC(null);
+    public static Hrsrc INVALID_VALUE => new Hrsrc((void*)(-1));
+    public static Hrsrc NULL => new Hrsrc(null);
 
-    public static bool operator ==(HRSRC left, HRSRC right) => left.Value == right.Value;
+    public static bool operator ==(Hrsrc left, Hrsrc right) => left.Value == right.Value;
 
-    public static bool operator !=(HRSRC left, HRSRC right) => left.Value != right.Value;
+    public static bool operator !=(Hrsrc left, Hrsrc right) => left.Value != right.Value;
 
-    public static bool operator <(HRSRC left, HRSRC right) => left.Value < right.Value;
+    public static bool operator <(Hrsrc left, Hrsrc right) => left.Value < right.Value;
 
-    public static bool operator <=(HRSRC left, HRSRC right) => left.Value <= right.Value;
+    public static bool operator <=(Hrsrc left, Hrsrc right) => left.Value <= right.Value;
 
-    public static bool operator >(HRSRC left, HRSRC right) => left.Value > right.Value;
+    public static bool operator >(Hrsrc left, Hrsrc right) => left.Value > right.Value;
 
-    public static bool operator >=(HRSRC left, HRSRC right) => left.Value >= right.Value;
+    public static bool operator >=(Hrsrc left, Hrsrc right) => left.Value >= right.Value;
 
-    public static explicit operator HRSRC(void* value) => new HRSRC(value);
+    public static explicit operator Hrsrc(void* value) => new Hrsrc(value);
 
-    public static implicit operator void*(HRSRC value) => value.Value;
+    public static implicit operator void*(Hrsrc value) => value.Value;
 
-    public static explicit operator HRSRC(HANDLE value) => new HRSRC(value);
+    public static explicit operator Hrsrc(Handle value) => new Hrsrc(value);
 
-    public static implicit operator HANDLE(HRSRC value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hrsrc value) => new Handle(value.Value);
 
-    public static explicit operator HRSRC(byte value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(byte value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator byte(HRSRC value) => (byte)(value.Value);
+    public static explicit operator byte(Hrsrc value) => (byte)(value.Value);
 
-    public static explicit operator HRSRC(short value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(short value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator short(HRSRC value) => (short)(value.Value);
+    public static explicit operator short(Hrsrc value) => (short)(value.Value);
 
-    public static explicit operator HRSRC(int value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(int value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator int(HRSRC value) => (int)(value.Value);
+    public static explicit operator int(Hrsrc value) => (int)(value.Value);
 
-    public static explicit operator HRSRC(long value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(long value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator long(HRSRC value) => (long)(value.Value);
+    public static explicit operator long(Hrsrc value) => (long)(value.Value);
 
-    public static explicit operator HRSRC(nint value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(nint value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static implicit operator nint(HRSRC value) => (nint)(value.Value);
+    public static implicit operator nint(Hrsrc value) => (nint)(value.Value);
 
-    public static explicit operator HRSRC(sbyte value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(sbyte value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HRSRC value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hrsrc value) => (sbyte)(value.Value);
 
-    public static explicit operator HRSRC(ushort value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(ushort value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HRSRC value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hrsrc value) => (ushort)(value.Value);
 
-    public static explicit operator HRSRC(uint value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(uint value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator uint(HRSRC value) => (uint)(value.Value);
+    public static explicit operator uint(Hrsrc value) => (uint)(value.Value);
 
-    public static explicit operator HRSRC(ulong value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(ulong value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HRSRC value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hrsrc value) => (ulong)(value.Value);
 
-    public static explicit operator HRSRC(nuint value) => new HRSRC(unchecked((void*)(value)));
+    public static explicit operator Hrsrc(nuint value) => new Hrsrc(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HRSRC value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hrsrc value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HRSRC other)
+        if (obj is Hrsrc other)
         {
             return CompareTo(other);
         }
         return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HRSRC.");
     }
 
-    public int CompareTo(HRSRC other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hrsrc other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HRSRC other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hrsrc other) && Equals(other);
 
-    public bool Equals(HRSRC other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hrsrc other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

@@ -1,92 +1,103 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HPROFILE
+public readonly unsafe partial struct Hprofile
     : IComparable,
-        IComparable<HPROFILE>,
-        IEquatable<HPROFILE>,
+        IComparable<Hprofile>,
+        IEquatable<Hprofile>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HPROFILE(void* value)
+    public Hprofile(void* value)
     {
         Value = value;
     }
 
-    public static HPROFILE INVALID_VALUE => new HPROFILE((void*)(-1));
-    public static HPROFILE NULL => new HPROFILE(null);
+    public static Hprofile INVALID_VALUE => new Hprofile((void*)(-1));
+    public static Hprofile NULL => new Hprofile(null);
 
-    public static bool operator ==(HPROFILE left, HPROFILE right) => left.Value == right.Value;
+    public static bool operator ==(Hprofile left, Hprofile right) => left.Value == right.Value;
 
-    public static bool operator !=(HPROFILE left, HPROFILE right) => left.Value != right.Value;
+    public static bool operator !=(Hprofile left, Hprofile right) => left.Value != right.Value;
 
-    public static bool operator <(HPROFILE left, HPROFILE right) => left.Value < right.Value;
+    public static bool operator <(Hprofile left, Hprofile right) => left.Value < right.Value;
 
-    public static bool operator <=(HPROFILE left, HPROFILE right) => left.Value <= right.Value;
+    public static bool operator <=(Hprofile left, Hprofile right) => left.Value <= right.Value;
 
-    public static bool operator >(HPROFILE left, HPROFILE right) => left.Value > right.Value;
+    public static bool operator >(Hprofile left, Hprofile right) => left.Value > right.Value;
 
-    public static bool operator >=(HPROFILE left, HPROFILE right) => left.Value >= right.Value;
+    public static bool operator >=(Hprofile left, Hprofile right) => left.Value >= right.Value;
 
-    public static explicit operator HPROFILE(void* value) => new HPROFILE(value);
+    public static explicit operator Hprofile(void* value) => new Hprofile(value);
 
-    public static implicit operator void*(HPROFILE value) => value.Value;
+    public static implicit operator void*(Hprofile value) => value.Value;
 
-    public static explicit operator HPROFILE(HANDLE value) => new HPROFILE(value);
+    public static explicit operator Hprofile(Handle value) => new Hprofile(value);
 
-    public static implicit operator HANDLE(HPROFILE value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hprofile value) => new Handle(value.Value);
 
-    public static explicit operator HPROFILE(byte value) => new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(byte value) => new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator byte(HPROFILE value) => (byte)(value.Value);
+    public static explicit operator byte(Hprofile value) => (byte)(value.Value);
 
-    public static explicit operator HPROFILE(short value) =>
-        new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(short value) =>
+        new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator short(HPROFILE value) => (short)(value.Value);
+    public static explicit operator short(Hprofile value) => (short)(value.Value);
 
-    public static explicit operator HPROFILE(int value) => new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(int value) => new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator int(HPROFILE value) => (int)(value.Value);
+    public static explicit operator int(Hprofile value) => (int)(value.Value);
 
-    public static explicit operator HPROFILE(long value) => new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(long value) => new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator long(HPROFILE value) => (long)(value.Value);
+    public static explicit operator long(Hprofile value) => (long)(value.Value);
 
-    public static explicit operator HPROFILE(nint value) => new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(nint value) => new Hprofile(unchecked((void*)(value)));
 
-    public static implicit operator nint(HPROFILE value) => (nint)(value.Value);
+    public static implicit operator nint(Hprofile value) => (nint)(value.Value);
 
-    public static explicit operator HPROFILE(sbyte value) =>
-        new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(sbyte value) =>
+        new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HPROFILE value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hprofile value) => (sbyte)(value.Value);
 
-    public static explicit operator HPROFILE(ushort value) =>
-        new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(ushort value) =>
+        new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HPROFILE value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hprofile value) => (ushort)(value.Value);
 
-    public static explicit operator HPROFILE(uint value) => new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(uint value) => new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator uint(HPROFILE value) => (uint)(value.Value);
+    public static explicit operator uint(Hprofile value) => (uint)(value.Value);
 
-    public static explicit operator HPROFILE(ulong value) =>
-        new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(ulong value) =>
+        new Hprofile(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HPROFILE value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hprofile value) => (ulong)(value.Value);
 
-    public static explicit operator HPROFILE(nuint value) =>
-        new HPROFILE(unchecked((void*)(value)));
+    public static explicit operator Hprofile(nuint value) =>
+        new Hprofile(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HPROFILE value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hprofile value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HPROFILE other)
+        if (obj is Hprofile other)
         {
             return CompareTo(other);
         }
@@ -95,11 +106,11 @@ public readonly unsafe partial struct HPROFILE
             : throw new ArgumentException("obj is not an instance of HPROFILE.");
     }
 
-    public int CompareTo(HPROFILE other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hprofile other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HPROFILE other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hprofile other) && Equals(other);
 
-    public bool Equals(HPROFILE other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hprofile other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

@@ -1,25 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+      <TargetFramework>net10.0</TargetFramework>
+      <SilkNUnitExempt>true</SilkNUnitExempt>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <IsPackable>false</IsPackable>
+      <IsTestProject>true</IsTestProject>
+      <SilkDSLExempt>true</SilkDSLExempt>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <SilkNUnitExempt>true</SilkNUnitExempt>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <IsPackable>false</IsPackable>
-        <IsTestProject>true</IsTestProject>
-        <SilkDSLExempt>true</SilkDSLExempt>
-    </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\sources\Maths\Maths\Silk.NET.Maths.csproj" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\sources\Maths\Maths\Silk.NET.Maths.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Microsoft.NET.Test.Sdk" />
-      <PackageReference Include="xunit" />
-      <PackageReference Include="xunit.runner.visualstudio">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-    </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>

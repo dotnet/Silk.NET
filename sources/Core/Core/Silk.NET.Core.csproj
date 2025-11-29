@@ -1,24 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <!-- NOTE: Multitargeting here will be a PITA due to the references to TFM below -->
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Silk.NET.Core.cs" />
     <None Include="FodyWeavers.xml" />
     <None Include="Silk.NET.Core.cs" Pack="true" PackagePath="build\$(TargetFramework)\Silk.NET.Core.cs" />
     <None Include="Silk.NET.Core.targets" Pack="true" PackagePath="build\$(TargetFramework)\$(PackageId).targets" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Fody" PrivateAssets="all" />
     <PackageReference Include="InlineIL.Fody" PrivateAssets="all" />
   </ItemGroup>
-
   <!-- Public API Tracking -->
   <PropertyGroup>
     <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
@@ -27,5 +23,4 @@
     <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
     <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
   </ItemGroup>
-
 </Project>

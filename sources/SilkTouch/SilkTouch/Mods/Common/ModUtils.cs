@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -131,9 +131,11 @@ public static class ModUtils
         IEnumerable<BaseParameterSyntax>? @params,
         TypeSyntax? returnType
     ) =>
-        (modifiers?.Any(SyntaxKind.StaticKeyword) ?? false ? "static " : string.Empty)
-        + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
-        + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? Enumerable.Empty<string>())})";
+        (
+            (modifiers?.Any(SyntaxKind.StaticKeyword) ?? false ? "static " : string.Empty)
+            + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
+            + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? Enumerable.Empty<string>())})"
+        ).Replace(" ", "");
 
     /// <summary>
     /// Gets a string that can be used to discriminate a function-like element for baking purposes.
@@ -404,6 +406,9 @@ public static class ModUtils
         var options = PInvokeGeneratorConfigurationOptions.None;
         options |= cfg.DontUseUsingStaticsForEnums
             ? PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForEnums
+            : PInvokeGeneratorConfigurationOptions.None;
+        options |= cfg.DontUseUsingStaticsForGuidMember
+            ? PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForGuidMember
             : PInvokeGeneratorConfigurationOptions.None;
         options |= cfg.ExcludeAnonymousFieldHelpers
             ? PInvokeGeneratorConfigurationOptions.ExcludeAnonymousFieldHelpers

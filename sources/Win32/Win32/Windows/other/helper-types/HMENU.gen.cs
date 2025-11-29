@@ -1,98 +1,109 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HMENU
+public readonly unsafe partial struct Hmenu
     : IComparable,
-        IComparable<HMENU>,
-        IEquatable<HMENU>,
+        IComparable<Hmenu>,
+        IEquatable<Hmenu>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HMENU(void* value)
+    public Hmenu(void* value)
     {
         Value = value;
     }
 
-    public static HMENU INVALID_VALUE => new HMENU((void*)(-1));
-    public static HMENU NULL => new HMENU(null);
+    public static Hmenu INVALID_VALUE => new Hmenu((void*)(-1));
+    public static Hmenu NULL => new Hmenu(null);
 
-    public static bool operator ==(HMENU left, HMENU right) => left.Value == right.Value;
+    public static bool operator ==(Hmenu left, Hmenu right) => left.Value == right.Value;
 
-    public static bool operator !=(HMENU left, HMENU right) => left.Value != right.Value;
+    public static bool operator !=(Hmenu left, Hmenu right) => left.Value != right.Value;
 
-    public static bool operator <(HMENU left, HMENU right) => left.Value < right.Value;
+    public static bool operator <(Hmenu left, Hmenu right) => left.Value < right.Value;
 
-    public static bool operator <=(HMENU left, HMENU right) => left.Value <= right.Value;
+    public static bool operator <=(Hmenu left, Hmenu right) => left.Value <= right.Value;
 
-    public static bool operator >(HMENU left, HMENU right) => left.Value > right.Value;
+    public static bool operator >(Hmenu left, Hmenu right) => left.Value > right.Value;
 
-    public static bool operator >=(HMENU left, HMENU right) => left.Value >= right.Value;
+    public static bool operator >=(Hmenu left, Hmenu right) => left.Value >= right.Value;
 
-    public static explicit operator HMENU(void* value) => new HMENU(value);
+    public static explicit operator Hmenu(void* value) => new Hmenu(value);
 
-    public static implicit operator void*(HMENU value) => value.Value;
+    public static implicit operator void*(Hmenu value) => value.Value;
 
-    public static explicit operator HMENU(HANDLE value) => new HMENU(value);
+    public static explicit operator Hmenu(Handle value) => new Hmenu(value);
 
-    public static implicit operator HANDLE(HMENU value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hmenu value) => new Handle(value.Value);
 
-    public static explicit operator HMENU(byte value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(byte value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator byte(HMENU value) => (byte)(value.Value);
+    public static explicit operator byte(Hmenu value) => (byte)(value.Value);
 
-    public static explicit operator HMENU(short value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(short value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator short(HMENU value) => (short)(value.Value);
+    public static explicit operator short(Hmenu value) => (short)(value.Value);
 
-    public static explicit operator HMENU(int value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(int value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator int(HMENU value) => (int)(value.Value);
+    public static explicit operator int(Hmenu value) => (int)(value.Value);
 
-    public static explicit operator HMENU(long value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(long value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator long(HMENU value) => (long)(value.Value);
+    public static explicit operator long(Hmenu value) => (long)(value.Value);
 
-    public static explicit operator HMENU(nint value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(nint value) => new Hmenu(unchecked((void*)(value)));
 
-    public static implicit operator nint(HMENU value) => (nint)(value.Value);
+    public static implicit operator nint(Hmenu value) => (nint)(value.Value);
 
-    public static explicit operator HMENU(sbyte value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(sbyte value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HMENU value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hmenu value) => (sbyte)(value.Value);
 
-    public static explicit operator HMENU(ushort value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(ushort value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HMENU value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hmenu value) => (ushort)(value.Value);
 
-    public static explicit operator HMENU(uint value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(uint value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator uint(HMENU value) => (uint)(value.Value);
+    public static explicit operator uint(Hmenu value) => (uint)(value.Value);
 
-    public static explicit operator HMENU(ulong value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(ulong value) => new Hmenu(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HMENU value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hmenu value) => (ulong)(value.Value);
 
-    public static explicit operator HMENU(nuint value) => new HMENU(unchecked((void*)(value)));
+    public static explicit operator Hmenu(nuint value) => new Hmenu(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HMENU value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hmenu value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HMENU other)
+        if (obj is Hmenu other)
         {
             return CompareTo(other);
         }
         return (obj is null) ? 1 : throw new ArgumentException("obj is not an instance of HMENU.");
     }
 
-    public int CompareTo(HMENU other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hmenu other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HMENU other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hmenu other) && Equals(other);
 
-    public bool Equals(HMENU other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hmenu other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

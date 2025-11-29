@@ -1,17 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net10.0-android</TargetFrameworks>
+    <TargetFrameworks Condition="'$(SilkiOSDisabled)' != 'true'">$(TargetFrameworks);net10.0-ios</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <TargetFrameworks>net10.0</TargetFrameworks>
-        <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net10.0-android</TargetFrameworks>
-        <TargetFrameworks Condition="'$(SilkiOSDisabled)' != 'true'">$(TargetFrameworks);net10.0-ios</TargetFrameworks>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
-      <ProjectReference Include="..\..\Maths\Maths\Silk.NET.Maths.csproj" />
-      <ProjectReference Include="..\..\SDL\SDL\Silk.NET.SDL.csproj" />
-    </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
+    <ProjectReference Include="..\..\Maths\Maths\Silk.NET.Maths.csproj" />
+    <ProjectReference Include="..\..\SDL\SDL\Silk.NET.SDL.csproj" />
+  </ItemGroup>
 </Project>
