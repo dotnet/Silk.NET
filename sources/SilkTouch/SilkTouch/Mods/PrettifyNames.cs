@@ -847,17 +847,17 @@ public class PrettifyNames(
 
             // Recurse into the members.
             base.VisitClassDeclaration(node);
-            var id = node.Identifier.ToString();
 
             // Tolerate partial classes.
-            if (!Types.TryGetValue(id, out var typeData))
+            var identifier = node.Identifier.ToString();
+            if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], new List<FunctionData>(), false);
-                Types.Add(id, typeData);
+                typeData = new TypeData([], [], false);
+                Types.Add(identifier, typeData);
             }
 
             // Merge with the other partials.
-            (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(val => !typeData.NonFunctions?.Contains(val) ?? true));
+            (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions?.Contains(nonFunction) ?? true));
             (typeData.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
             _typeInProgress = null;
         }
