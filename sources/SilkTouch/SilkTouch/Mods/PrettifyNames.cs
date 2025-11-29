@@ -304,7 +304,7 @@ public class PrettifyNames(
         {
             var doc = proj.GetDocument(docId);
             if (
-                doc is not { FilePath: not null, Name: not null }
+                doc is not { FilePath: not null }
                 || newNames
                     .OrderByDescending(x => x.Key.Length)
                     .FirstOrDefault(x => doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key))
