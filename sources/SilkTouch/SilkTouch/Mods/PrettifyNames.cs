@@ -857,19 +857,17 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
+            // Recurse into members.
             _typeInProgress = new TypeInProgress(node, [], []);
+            base.VisitClassDeclaration(node);
 
-            // Tolerate partials.
+            // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], [], false);
                 Types.Add(identifier, typeData);
             }
 
-            // Recurse into the members.
-            base.VisitClassDeclaration(node);
-
-            // Merge with the other partials.
             typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
             typeData.Functions.AddRange(_typeInProgress.Value.Functions);
 
@@ -889,19 +887,17 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
+            // Recurse into members
             _typeInProgress = new TypeInProgress(node, [], []);
+            base.VisitStructDeclaration(node);
 
-            // Tolerate partials.
+            // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], [], false);
                 Types.Add(identifier, typeData);
             }
 
-            // Recurse into the members.
-            base.VisitStructDeclaration(node);
-
-            // Merge with the other partials.
             typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
             typeData.Functions.AddRange(_typeInProgress.Value.Functions);
 
@@ -921,8 +917,11 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
+            // Recurse into members
             _enumInProgress = new EnumInProgress(node, []);
             base.VisitEnumDeclaration(node);
+
+            // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], [], true);
@@ -981,8 +980,8 @@ public class PrettifyNames(
 
             _fieldInProgress = node;
             base.VisitFieldDeclaration(node);
-            _prettifyOnly = false;
             _fieldInProgress = null;
+            _prettifyOnly = false;
         }
 
         public override void VisitVariableDeclarator(VariableDeclaratorSyntax node)
