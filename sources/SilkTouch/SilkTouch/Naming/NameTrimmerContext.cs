@@ -34,8 +34,8 @@ public readonly struct NameTrimmerContext
     public PrettifyNames.Configuration Configuration { get; init; }
 
     /// <summary>
-    /// Gets a set of original API names (i.e. key sto <see cref="Names"/>) that have been marked with
-    /// the <c>Transformed</c> attribute.
+    /// Gets a set of original API names (i.e. the key stored in <see cref="Names"/>) that have been marked with
+    /// the <c>[Transformed]</c> attribute.
     /// </summary>
     public HashSet<string> NonDeterminant { get; init; }
 }
