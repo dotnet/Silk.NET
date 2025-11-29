@@ -8,22 +8,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("ARM", 0)]
+[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkTensorCreateFlagsARM")]
 [Flags]
 public enum TensorCreateFlagsARM : ulong
 {
     None = 0x0,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_CREATE_MUTABLE_FORMAT_BIT_ARM")]
     MutableFormatBitARM = 0x1,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_CREATE_PROTECTED_BIT_ARM")]
     ProtectedBitARM = 0x2,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_ARM")]
     DescriptorBufferCaptureReplayBitARM = 0x4,
 }

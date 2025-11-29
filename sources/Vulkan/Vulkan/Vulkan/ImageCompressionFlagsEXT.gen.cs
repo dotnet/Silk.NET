@@ -8,13 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkImageCompressionFlagBitsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ImageCompressionFlagsEXT : uint
 {
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,7 +26,7 @@ public enum ImageCompressionFlagsEXT : uint
     )]
     DefaultEXT = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38,7 +38,7 @@ public enum ImageCompressionFlagsEXT : uint
     )]
     FixedRateDefaultEXT = 0x1,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_FIXED_RATE_EXPLICIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50,7 +50,7 @@ public enum ImageCompressionFlagsEXT : uint
     )]
     FixedRateExplicitEXT = 0x2,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_DISABLED_EXT")]
     [SupportedApiProfile(
         "vulkan",

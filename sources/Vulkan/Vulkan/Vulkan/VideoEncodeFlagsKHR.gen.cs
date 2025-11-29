@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,7 +15,7 @@ public enum VideoEncodeFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -24,7 +24,7 @@ public enum VideoEncodeFlagsKHR : uint
     )]
     IntraRefreshBitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_WITH_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +36,7 @@ public enum VideoEncodeFlagsKHR : uint
     )]
     WithQuantizationDeltaMapBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_WITH_EMPHASIS_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkSampleLocationsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SampleLocationsInfoEXT

@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkClusterAccelerationStructureTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum ClusterAccelerationStructureTypeNV : uint
 {
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_CLUSTERS_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum ClusterAccelerationStructureTypeNV : uint
     )]
     ClustersBottomLevelNV = 0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +31,7 @@ public enum ClusterAccelerationStructureTypeNV : uint
     )]
     TriangleClusterNV = 1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_TRIANGLE_CLUSTER_TEMPLATE_NV")]
     [SupportedApiProfile(
         "vulkan",

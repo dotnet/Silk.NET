@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("Handle", 0)]
+[NameAffix("Suffix", "Handle", 0)]
 [NativeName("VkSampler_T")]
 public readonly unsafe partial struct Sampler
 {

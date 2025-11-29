@@ -8,13 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkClusterAccelerationStructureAddressResolutionFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
 {
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_NONE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
     )]
     NoneNV = 0x0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_DST_IMPLICIT_DATA_BIT_NV"
     )]
@@ -34,7 +34,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
     )]
     IndirectedDstImplicitDataBitNV = 0x1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_SCRATCH_DATA_BIT_NV"
     )]
@@ -45,7 +45,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
     )]
     IndirectedScratchDataBitNV = 0x2,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_DST_ADDRESS_ARRAY_BIT_NV"
     )]
@@ -56,7 +56,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
     )]
     IndirectedDstAddressArrayBitNV = 0x4,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_DST_SIZES_ARRAY_BIT_NV"
     )]
@@ -67,7 +67,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
     )]
     IndirectedDstSizesArrayBitNV = 0x8,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_SRC_INFOS_ARRAY_BIT_NV"
     )]
@@ -78,7 +78,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
     )]
     IndirectedSrcInfosArrayBitNV = 0x10,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_SRC_INFOS_COUNT_BIT_NV"
     )]

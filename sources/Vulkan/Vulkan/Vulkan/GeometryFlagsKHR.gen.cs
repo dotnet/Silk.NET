@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkGeometryFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum GeometryFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +28,7 @@ public enum GeometryFlagsKHR : uint
     )]
     OpaqueBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum GeometryFlagsKHR : uint
     )]
     NoDuplicateAnyHitInvocationBitKHR = 0x2,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +52,7 @@ public enum GeometryFlagsKHR : uint
     )]
     OpaqueBitNV = OpaqueBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

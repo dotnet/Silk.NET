@@ -60,17 +60,17 @@ public enum PipelineCreationFeedbackFlags : uint
     )]
     BasePipelineAccelerationBit = 0x4,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
     ValidBitEXT = ValidBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATION_FEEDBACK_APPLICATION_PIPELINE_CACHE_HIT_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
     ApplicationPipelineCacheHitBitEXT = ApplicationPipelineCacheHitBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATION_FEEDBACK_BASE_PIPELINE_ACCELERATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
     BasePipelineAccelerationBitEXT = BasePipelineAccelerationBit,

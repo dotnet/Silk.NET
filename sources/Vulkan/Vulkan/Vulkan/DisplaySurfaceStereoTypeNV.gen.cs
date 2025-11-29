@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkDisplaySurfaceStereoTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum DisplaySurfaceStereoTypeNV : uint
 {
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_NONE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
     )]
     NoneNV = 0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_ONBOARD_DIN_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +31,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
     )]
     OnboardDinNV = 1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_HDMI_3D_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
     )]
     Hdmi3DNV = 2,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_INBAND_DISPLAYPORT_NV")]
     [SupportedApiProfile(
         "vulkan",

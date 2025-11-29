@@ -66,7 +66,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     IndependenceNone = 2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -78,7 +78,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     Independence32BitOnlyKHR = Independence32BitOnly,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -90,7 +90,7 @@ public enum ShaderFloatControlsIndependence : uint
     )]
     IndependenceAllKHR = IndependenceAll,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",

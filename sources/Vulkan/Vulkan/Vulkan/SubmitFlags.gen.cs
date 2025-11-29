@@ -32,7 +32,7 @@ public enum SubmitFlags : uint
     )]
     ProtectedBit = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBMIT_PROTECTED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

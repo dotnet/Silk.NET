@@ -5157,17 +5157,17 @@ public enum StructureType : uint
     )]
     RenderingInputAttachmentIndexInfo = 1000232002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     SwapchainCreateInfoKHR = 1000001000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     PresentInfoKHR = 1000001001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5177,7 +5177,7 @@ public enum StructureType : uint
     )]
     DeviceGroupPresentCapabilitiesKHR = 1000060007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5187,7 +5187,7 @@ public enum StructureType : uint
     )]
     ImageSwapchainCreateInfoKHR = 1000060008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_SWAPCHAIN_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5197,7 +5197,7 @@ public enum StructureType : uint
     )]
     BindImageMemorySwapchainInfoKHR = 1000060009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACQUIRE_NEXT_IMAGE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5207,7 +5207,7 @@ public enum StructureType : uint
     )]
     AcquireNextImageInfoKHR = 1000060010,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5217,7 +5217,7 @@ public enum StructureType : uint
     )]
     DeviceGroupPresentInfoKHR = 1000060011,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SWAPCHAIN_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5227,17 +5227,17 @@ public enum StructureType : uint
     )]
     DeviceGroupSwapchainCreateInfoKHR = 1000060012,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_MODE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     DisplayModeCreateInfoKHR = 1000002000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_SURFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     DisplaySurfaceCreateInfoKHR = 1000002001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_PRESENT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5246,57 +5246,57 @@ public enum StructureType : uint
     )]
     DisplayPresentInfoKHR = 1000003000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_XLIB_SURFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xlib_surface"], ImpliesSets = ["VK_KHR_surface"])]
     XlibSurfaceCreateInfoKHR = 1000004000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_XCB_SURFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_xcb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     XcbSurfaceCreateInfoKHR = 1000005000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_wayland_surface"], ImpliesSets = ["VK_KHR_surface"])]
     WaylandSurfaceCreateInfoKHR = 1000006000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANDROID_SURFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_android_surface"], ImpliesSets = ["VK_KHR_surface"])]
     AndroidSurfaceCreateInfoKHR = 1000008000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_win32_surface"], ImpliesSets = ["VK_KHR_surface"])]
     Win32SurfaceCreateInfoKHR = 1000009000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     DebugReportCallbackCreateInfoEXT = 1000011000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_RASTERIZATION_ORDER_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     PipelineRasterizationStateRasterizationOrderAMD = 1000018000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_MARKER_OBJECT_NAME_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     DebugMarkerObjectNameInfoEXT = 1000022000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_MARKER_OBJECT_TAG_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     DebugMarkerObjectTagInfoEXT = 1000022001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_MARKER_MARKER_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     DebugMarkerMarkerInfoEXT = 1000022002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5305,7 +5305,7 @@ public enum StructureType : uint
     )]
     VideoProfileInfoKHR = 1000023000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5314,7 +5314,7 @@ public enum StructureType : uint
     )]
     VideoCapabilitiesKHR = 1000023001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_PICTURE_RESOURCE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5323,7 +5323,7 @@ public enum StructureType : uint
     )]
     VideoPictureResourceInfoKHR = 1000023002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_SESSION_MEMORY_REQUIREMENTS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5332,7 +5332,7 @@ public enum StructureType : uint
     )]
     VideoSessionMemoryRequirementsKHR = 1000023003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_VIDEO_SESSION_MEMORY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5341,7 +5341,7 @@ public enum StructureType : uint
     )]
     BindVideoSessionMemoryInfoKHR = 1000023004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_SESSION_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5350,7 +5350,7 @@ public enum StructureType : uint
     )]
     VideoSessionCreateInfoKHR = 1000023005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5359,7 +5359,7 @@ public enum StructureType : uint
     )]
     VideoSessionParametersCreateInfoKHR = 1000023006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_SESSION_PARAMETERS_UPDATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5368,7 +5368,7 @@ public enum StructureType : uint
     )]
     VideoSessionParametersUpdateInfoKHR = 1000023007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_BEGIN_CODING_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5377,7 +5377,7 @@ public enum StructureType : uint
     )]
     VideoBeginCodingInfoKHR = 1000023008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_END_CODING_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5386,7 +5386,7 @@ public enum StructureType : uint
     )]
     VideoEndCodingInfoKHR = 1000023009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_CODING_CONTROL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5395,7 +5395,7 @@ public enum StructureType : uint
     )]
     VideoCodingControlInfoKHR = 1000023010,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_REFERENCE_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5404,7 +5404,7 @@ public enum StructureType : uint
     )]
     VideoReferenceSlotInfoKHR = 1000023011,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_VIDEO_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5413,7 +5413,7 @@ public enum StructureType : uint
     )]
     QueueFamilyVideoPropertiesKHR = 1000023012,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_PROFILE_LIST_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5422,7 +5422,7 @@ public enum StructureType : uint
     )]
     VideoProfileListInfoKHR = 1000023013,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_FORMAT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5431,7 +5431,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoFormatInfoKHR = 1000023014,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_FORMAT_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5440,7 +5440,7 @@ public enum StructureType : uint
     )]
     VideoFormatPropertiesKHR = 1000023015,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_QUERY_RESULT_STATUS_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5449,7 +5449,7 @@ public enum StructureType : uint
     )]
     QueueFamilyQueryResultStatusPropertiesKHR = 1000023016,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5461,7 +5461,7 @@ public enum StructureType : uint
     )]
     VideoDecodeInfoKHR = 1000024000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5473,7 +5473,7 @@ public enum StructureType : uint
     )]
     VideoDecodeCapabilitiesKHR = 1000024001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_USAGE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5485,22 +5485,22 @@ public enum StructureType : uint
     )]
     VideoDecodeUsageInfoKHR = 1000024002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_IMAGE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     DedicatedAllocationImageCreateInfoNV = 1000026000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_BUFFER_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     DedicatedAllocationBufferCreateInfoNV = 1000026001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_MEMORY_ALLOCATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     DedicatedAllocationMemoryAllocateInfoNV = 1000026002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TRANSFORM_FEEDBACK_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -5512,7 +5512,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTransformFeedbackFeaturesEXT = 1000028000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TRANSFORM_FEEDBACK_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -5524,7 +5524,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTransformFeedbackPropertiesEXT = 1000028001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_STREAM_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -5536,37 +5536,37 @@ public enum StructureType : uint
     )]
     PipelineRasterizationStateStreamCreateInfoEXT = 1000028002,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CU_MODULE_CREATE_INFO_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuModuleCreateInfoNVX = 1000029000,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CU_FUNCTION_CREATE_INFO_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuFunctionCreateInfoNVX = 1000029001,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CU_LAUNCH_INFO_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuLaunchInfoNVX = 1000029002,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CU_MODULE_TEXTURING_MODE_CREATE_INFO_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuModuleTexturingModeCreateInfoNVX = 1000029004,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_HANDLE_INFO_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     ImageViewHandleInfoNVX = 1000030000,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_ADDRESS_PROPERTIES_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     ImageViewAddressPropertiesNVX = 1000030001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5575,7 +5575,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264CapabilitiesKHR = 1000038000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5584,7 +5584,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264SessionParametersCreateInfoKHR = 1000038001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_ADD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5593,7 +5593,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264SessionParametersAddInfoKHR = 1000038002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5602,7 +5602,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264PictureInfoKHR = 1000038003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_DPB_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5611,7 +5611,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264DpbSlotInfoKHR = 1000038004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_NALU_SLICE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5620,7 +5620,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264NaluSliceInfoKHR = 1000038005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_GOP_REMAINING_FRAME_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5629,7 +5629,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264GopRemainingFrameInfoKHR = 1000038006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5638,7 +5638,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264ProfileInfoKHR = 1000038007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5647,7 +5647,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264RateControlInfoKHR = 1000038008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_RATE_CONTROL_LAYER_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5656,7 +5656,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264RateControlLayerInfoKHR = 1000038009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5665,7 +5665,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264SessionCreateInfoKHR = 1000038010,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_QUALITY_LEVEL_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5674,7 +5674,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264QualityLevelPropertiesKHR = 1000038011,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_GET_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5683,7 +5683,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264SessionParametersGetInfoKHR = 1000038012,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_SESSION_PARAMETERS_FEEDBACK_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5692,7 +5692,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264SessionParametersFeedbackInfoKHR = 1000038013,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5701,7 +5701,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265CapabilitiesKHR = 1000039000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5710,7 +5710,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265SessionParametersCreateInfoKHR = 1000039001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_ADD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5719,7 +5719,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265SessionParametersAddInfoKHR = 1000039002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5728,7 +5728,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265PictureInfoKHR = 1000039003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_DPB_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5737,7 +5737,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265DpbSlotInfoKHR = 1000039004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_NALU_SLICE_SEGMENT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5746,7 +5746,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265NaluSliceSegmentInfoKHR = 1000039005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_GOP_REMAINING_FRAME_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5755,7 +5755,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265GopRemainingFrameInfoKHR = 1000039006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5764,7 +5764,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265ProfileInfoKHR = 1000039007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5773,7 +5773,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265RateControlInfoKHR = 1000039009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_RATE_CONTROL_LAYER_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5782,7 +5782,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265RateControlLayerInfoKHR = 1000039010,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5791,7 +5791,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265SessionCreateInfoKHR = 1000039011,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_QUALITY_LEVEL_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5800,7 +5800,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265QualityLevelPropertiesKHR = 1000039012,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_GET_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5809,7 +5809,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265SessionParametersGetInfoKHR = 1000039013,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_SESSION_PARAMETERS_FEEDBACK_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5818,7 +5818,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265SessionParametersFeedbackInfoKHR = 1000039014,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5827,7 +5827,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264CapabilitiesKHR = 1000040000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5836,7 +5836,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264PictureInfoKHR = 1000040001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5845,7 +5845,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264ProfileInfoKHR = 1000040003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5854,7 +5854,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264SessionParametersCreateInfoKHR = 1000040004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_SESSION_PARAMETERS_ADD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5863,7 +5863,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264SessionParametersAddInfoKHR = 1000040005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_DPB_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5872,7 +5872,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264DpbSlotInfoKHR = 1000040006,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TEXTURE_LOD_GATHER_FORMAT_PROPERTIES_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -5884,7 +5884,7 @@ public enum StructureType : uint
     )]
     TextureLodGatherFormatPropertiesAMD = 1000041000,
 
-    [NameSuffix("GGP", 0)]
+    [NameAffix("Suffix", "GGP", 0)]
     [NativeName("VK_STRUCTURE_TYPE_STREAM_DESCRIPTOR_SURFACE_CREATE_INFO_GGP")]
     [SupportedApiProfile(
         "vulkan",
@@ -5893,7 +5893,7 @@ public enum StructureType : uint
     )]
     StreamDescriptorSurfaceCreateInfoGGP = 1000049000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CORNER_SAMPLED_IMAGE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -5905,7 +5905,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCornerSampledImageFeaturesNV = 1000050000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -5914,7 +5914,7 @@ public enum StructureType : uint
     )]
     ExternalMemoryImageCreateInfoNV = 1000056000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -5923,7 +5923,7 @@ public enum StructureType : uint
     )]
     ExportMemoryAllocateInfoNV = 1000056001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_WIN32_HANDLE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -5932,7 +5932,7 @@ public enum StructureType : uint
     )]
     ImportMemoryWin32HandleInfoNV = 1000057000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_WIN32_HANDLE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -5941,7 +5941,7 @@ public enum StructureType : uint
     )]
     ExportMemoryWin32HandleInfoNV = 1000057001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WIN32_KEYED_MUTEX_ACQUIRE_RELEASE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -5950,17 +5950,17 @@ public enum StructureType : uint
     )]
     Win32KeyedMutexAcquireReleaseInfoNV = 1000058000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VALIDATION_FLAGS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     ValidationFlagsEXT = 1000061000,
 
-    [NameSuffix("NN", 0)]
+    [NameAffix("Suffix", "NN", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VI_SURFACE_CREATE_INFO_NN")]
     [SupportedApiProfile("vulkan", ["VK_NN_vi_surface"], ImpliesSets = ["VK_KHR_surface"])]
     ViSurfaceCreateInfoNN = 1000062000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_ASTC_DECODE_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -5972,7 +5972,7 @@ public enum StructureType : uint
     )]
     ImageViewAstcDecodeModeEXT = 1000067000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ASTC_DECODE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -5984,7 +5984,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAstcDecodeFeaturesEXT = 1000067001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -5996,7 +5996,7 @@ public enum StructureType : uint
     )]
     ImportMemoryWin32HandleInfoKHR = 1000073000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6008,7 +6008,7 @@ public enum StructureType : uint
     )]
     ExportMemoryWin32HandleInfoKHR = 1000073001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_WIN32_HANDLE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6020,7 +6020,7 @@ public enum StructureType : uint
     )]
     MemoryWin32HandlePropertiesKHR = 1000073002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6032,7 +6032,7 @@ public enum StructureType : uint
     )]
     MemoryGetWin32HandleInfoKHR = 1000073003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_FD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6044,7 +6044,7 @@ public enum StructureType : uint
     )]
     ImportMemoryFdInfoKHR = 1000074000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_FD_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6056,7 +6056,7 @@ public enum StructureType : uint
     )]
     MemoryFdPropertiesKHR = 1000074001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_FD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6068,7 +6068,7 @@ public enum StructureType : uint
     )]
     MemoryGetFdInfoKHR = 1000074002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WIN32_KEYED_MUTEX_ACQUIRE_RELEASE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6077,7 +6077,7 @@ public enum StructureType : uint
     )]
     Win32KeyedMutexAcquireReleaseInfoKHR = 1000075000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6086,7 +6086,7 @@ public enum StructureType : uint
     )]
     ImportSemaphoreWin32HandleInfoKHR = 1000078000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6095,7 +6095,7 @@ public enum StructureType : uint
     )]
     ExportSemaphoreWin32HandleInfoKHR = 1000078001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_D3D12_FENCE_SUBMIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6104,7 +6104,7 @@ public enum StructureType : uint
     )]
     D3D12FenceSubmitInfoKHR = 1000078002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_GET_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6113,7 +6113,7 @@ public enum StructureType : uint
     )]
     SemaphoreGetWin32HandleInfoKHR = 1000078003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_FD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6125,7 +6125,7 @@ public enum StructureType : uint
     )]
     ImportSemaphoreFdInfoKHR = 1000079000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_GET_FD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6137,7 +6137,7 @@ public enum StructureType : uint
     )]
     SemaphoreGetFdInfoKHR = 1000079001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_CONDITIONAL_RENDERING_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6149,7 +6149,7 @@ public enum StructureType : uint
     )]
     CommandBufferInheritanceConditionalRenderingInfoEXT = 1000081000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CONDITIONAL_RENDERING_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6161,7 +6161,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceConditionalRenderingFeaturesEXT = 1000081001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CONDITIONAL_RENDERING_BEGIN_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6173,7 +6173,7 @@ public enum StructureType : uint
     )]
     ConditionalRenderingBeginInfoEXT = 1000081002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_REGIONS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6182,12 +6182,12 @@ public enum StructureType : uint
     )]
     PresentRegionsKHR = 1000084000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_W_SCALING_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     PipelineViewportWScalingStateCreateInfoNV = 1000087000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6196,7 +6196,7 @@ public enum StructureType : uint
     )]
     SurfaceCapabilities2EXT = 1000090000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_POWER_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6205,7 +6205,7 @@ public enum StructureType : uint
     )]
     DisplayPowerInfoEXT = 1000091000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_EVENT_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6214,7 +6214,7 @@ public enum StructureType : uint
     )]
     DeviceEventInfoEXT = 1000091001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_EVENT_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6223,7 +6223,7 @@ public enum StructureType : uint
     )]
     DisplayEventInfoEXT = 1000091002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_COUNTER_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6232,7 +6232,7 @@ public enum StructureType : uint
     )]
     SwapchainCounterCreateInfoEXT = 1000091003,
 
-    [NameSuffix("GOOGLE", 0)]
+    [NameAffix("Suffix", "GOOGLE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_TIMES_INFO_GOOGLE")]
     [SupportedApiProfile(
         "vulkan",
@@ -6241,7 +6241,7 @@ public enum StructureType : uint
     )]
     PresentTimesInfoGoogle = 1000092000,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_ATTRIBUTES_PROPERTIES_NVX")]
     [SupportedApiProfile(
         "vulkan",
@@ -6253,7 +6253,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX = 1000097000,
 
-    [NameSuffix("NVX", 0)]
+    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_ATTRIBUTES_INFO_NVX")]
     [SupportedApiProfile(
         "vulkan",
@@ -6268,12 +6268,12 @@ public enum StructureType : uint
     )]
     MultiviewPerViewAttributesInfoNVX = 1000044009,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_SWIZZLE_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     PipelineViewportSwizzleStateCreateInfoNV = 1000098000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISCARD_RECTANGLE_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6285,7 +6285,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDiscardRectanglePropertiesEXT = 1000099000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_DISCARD_RECTANGLE_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6297,7 +6297,7 @@ public enum StructureType : uint
     )]
     PipelineDiscardRectangleStateCreateInfoEXT = 1000099001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CONSERVATIVE_RASTERIZATION_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6309,7 +6309,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceConservativeRasterizationPropertiesEXT = 1000101000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_CONSERVATIVE_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6321,7 +6321,7 @@ public enum StructureType : uint
     )]
     PipelineRasterizationConservativeStateCreateInfoEXT = 1000101001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLIP_ENABLE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6333,7 +6333,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthClipEnableFeaturesEXT = 1000102000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_DEPTH_CLIP_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6345,12 +6345,12 @@ public enum StructureType : uint
     )]
     PipelineRasterizationDepthClipStateCreateInfoEXT = 1000102001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_HDR_METADATA_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     HdrMetadataEXT = 1000105000,
 
-    [NameSuffix("IMG", 0)]
+    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RELAXED_LINE_RASTERIZATION_FEATURES_IMG")]
     [SupportedApiProfile(
         "vulkan",
@@ -6362,7 +6362,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRelaxedLineRasterizationFeaturesIMG = 1000110000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SHARED_PRESENT_SURFACE_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6374,7 +6374,7 @@ public enum StructureType : uint
     )]
     SharedPresentSurfaceCapabilitiesKHR = 1000111000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_FENCE_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6383,7 +6383,7 @@ public enum StructureType : uint
     )]
     ImportFenceWin32HandleInfoKHR = 1000114000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_FENCE_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6392,7 +6392,7 @@ public enum StructureType : uint
     )]
     ExportFenceWin32HandleInfoKHR = 1000114001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FENCE_GET_WIN32_HANDLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6401,7 +6401,7 @@ public enum StructureType : uint
     )]
     FenceGetWin32HandleInfoKHR = 1000114002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_FENCE_FD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6413,7 +6413,7 @@ public enum StructureType : uint
     )]
     ImportFenceFdInfoKHR = 1000115000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FENCE_GET_FD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6425,7 +6425,7 @@ public enum StructureType : uint
     )]
     FenceGetFdInfoKHR = 1000115001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PERFORMANCE_QUERY_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6437,7 +6437,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePerformanceQueryFeaturesKHR = 1000116000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PERFORMANCE_QUERY_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6449,7 +6449,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePerformanceQueryPropertiesKHR = 1000116001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUERY_POOL_PERFORMANCE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6461,7 +6461,7 @@ public enum StructureType : uint
     )]
     QueryPoolPerformanceCreateInfoKHR = 1000116002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_QUERY_SUBMIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6473,7 +6473,7 @@ public enum StructureType : uint
     )]
     PerformanceQuerySubmitInfoKHR = 1000116003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACQUIRE_PROFILING_LOCK_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6485,7 +6485,7 @@ public enum StructureType : uint
     )]
     AcquireProfilingLockInfoKHR = 1000116004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6497,7 +6497,7 @@ public enum StructureType : uint
     )]
     PerformanceCounterKHR = 1000116005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_DESCRIPTION_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6509,7 +6509,7 @@ public enum StructureType : uint
     )]
     PerformanceCounterDescriptionKHR = 1000116006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SURFACE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6518,7 +6518,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSurfaceInfo2KHR = 1000119000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6527,7 +6527,7 @@ public enum StructureType : uint
     )]
     SurfaceCapabilities2KHR = 1000119001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_FORMAT_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6536,7 +6536,7 @@ public enum StructureType : uint
     )]
     SurfaceFormat2KHR = 1000119002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_PROPERTIES_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6545,7 +6545,7 @@ public enum StructureType : uint
     )]
     DisplayProperties2KHR = 1000121000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_PLANE_PROPERTIES_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6554,7 +6554,7 @@ public enum StructureType : uint
     )]
     DisplayPlaneProperties2KHR = 1000121001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_MODE_PROPERTIES_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6563,7 +6563,7 @@ public enum StructureType : uint
     )]
     DisplayModeProperties2KHR = 1000121002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_PLANE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6572,7 +6572,7 @@ public enum StructureType : uint
     )]
     DisplayPlaneInfo2KHR = 1000121003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_PLANE_CAPABILITIES_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6581,42 +6581,42 @@ public enum StructureType : uint
     )]
     DisplayPlaneCapabilities2KHR = 1000121004,
 
-    [NameSuffix("MVK", 0)]
+    [NameAffix("Suffix", "MVK", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IOS_SURFACE_CREATE_INFO_MVK")]
     [SupportedApiProfile("vulkan", ["VK_MVK_ios_surface"], ImpliesSets = ["VK_KHR_surface"])]
     IosSurfaceCreateInfoMVK = 1000122000,
 
-    [NameSuffix("MVK", 0)]
+    [NameAffix("Suffix", "MVK", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MACOS_SURFACE_CREATE_INFO_MVK")]
     [SupportedApiProfile("vulkan", ["VK_MVK_macos_surface"], ImpliesSets = ["VK_KHR_surface"])]
     MacosSurfaceCreateInfoMVK = 1000123000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_UTILS_OBJECT_NAME_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsObjectNameInfoEXT = 1000128000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_UTILS_OBJECT_TAG_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsObjectTagInfoEXT = 1000128001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_UTILS_LABEL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsLabelEXT = 1000128002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CALLBACK_DATA_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsMessengerCallbackDataEXT = 1000128003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsMessengerCreateInfoEXT = 1000128004,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_USAGE_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6628,7 +6628,7 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferUsageAndroid = 1000129000,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_PROPERTIES_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6640,7 +6640,7 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferPropertiesAndroid = 1000129001,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_FORMAT_PROPERTIES_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6652,7 +6652,7 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferFormatPropertiesAndroid = 1000129002,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_ANDROID_HARDWARE_BUFFER_INFO_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6664,7 +6664,7 @@ public enum StructureType : uint
     )]
     ImportAndroidHardwareBufferInfoAndroid = 1000129003,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_ANDROID_HARDWARE_BUFFER_INFO_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6676,7 +6676,7 @@ public enum StructureType : uint
     )]
     MemoryGetAndroidHardwareBufferInfoAndroid = 1000129004,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6688,7 +6688,7 @@ public enum StructureType : uint
     )]
     ExternalFormatAndroid = 1000129005,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_FORMAT_PROPERTIES_2_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -6703,7 +6703,7 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferFormatProperties2Android = 1000129006,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -6714,7 +6714,7 @@ public enum StructureType : uint
     )]
     AttachmentSampleCountInfoAMD = 1000044008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_BFLOAT16_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6726,7 +6726,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderBfloat16FeaturesKHR = 1000141000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLE_LOCATIONS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6738,7 +6738,7 @@ public enum StructureType : uint
     )]
     SampleLocationsInfoEXT = 1000143000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_SAMPLE_LOCATIONS_BEGIN_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6750,7 +6750,7 @@ public enum StructureType : uint
     )]
     RenderPassSampleLocationsBeginInfoEXT = 1000143001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SAMPLE_LOCATIONS_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6762,7 +6762,7 @@ public enum StructureType : uint
     )]
     PipelineSampleLocationsStateCreateInfoEXT = 1000143002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLE_LOCATIONS_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6774,7 +6774,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSampleLocationsPropertiesEXT = 1000143003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MULTISAMPLE_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6786,7 +6786,7 @@ public enum StructureType : uint
     )]
     MultisamplePropertiesEXT = 1000143004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BLEND_OPERATION_ADVANCED_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6798,7 +6798,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBlendOperationAdvancedFeaturesEXT = 1000148000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BLEND_OPERATION_ADVANCED_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6810,7 +6810,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBlendOperationAdvancedPropertiesEXT = 1000148001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_ADVANCED_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6822,12 +6822,12 @@ public enum StructureType : uint
     )]
     PipelineColorBlendAdvancedStateCreateInfoEXT = 1000148002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_TO_COLOR_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     PipelineCoverageToColorStateCreateInfoNV = 1000149000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_ACCELERATION_STRUCTURE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6839,7 +6839,7 @@ public enum StructureType : uint
     )]
     WriteDescriptorSetAccelerationStructureKHR = 1000150007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_GEOMETRY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6851,7 +6851,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureBuildGeometryInfoKHR = 1000150000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_DEVICE_ADDRESS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6863,7 +6863,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureDeviceAddressInfoKHR = 1000150002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_AABBS_DATA_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6875,7 +6875,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryAabbsDataKHR = 1000150003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_INSTANCES_DATA_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6887,7 +6887,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryInstancesDataKHR = 1000150004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_TRIANGLES_DATA_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6899,7 +6899,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryTrianglesDataKHR = 1000150005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6911,7 +6911,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryKHR = 1000150006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_VERSION_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6923,7 +6923,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureVersionInfoKHR = 1000150009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_ACCELERATION_STRUCTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6935,7 +6935,7 @@ public enum StructureType : uint
     )]
     CopyAccelerationStructureInfoKHR = 1000150010,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_ACCELERATION_STRUCTURE_TO_MEMORY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6947,7 +6947,7 @@ public enum StructureType : uint
     )]
     CopyAccelerationStructureToMemoryInfoKHR = 1000150011,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_ACCELERATION_STRUCTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6959,7 +6959,7 @@ public enum StructureType : uint
     )]
     CopyMemoryToAccelerationStructureInfoKHR = 1000150012,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ACCELERATION_STRUCTURE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6971,7 +6971,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAccelerationStructureFeaturesKHR = 1000150013,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ACCELERATION_STRUCTURE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6983,7 +6983,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAccelerationStructurePropertiesKHR = 1000150014,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6995,7 +6995,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureCreateInfoKHR = 1000150017,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_SIZES_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7007,7 +7007,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureBuildSizesInfoKHR = 1000150020,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7019,7 +7019,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingPipelineFeaturesKHR = 1000347000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7031,7 +7031,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingPipelinePropertiesKHR = 1000347001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7043,7 +7043,7 @@ public enum StructureType : uint
     )]
     RayTracingPipelineCreateInfoKHR = 1000150015,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_SHADER_GROUP_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7055,7 +7055,7 @@ public enum StructureType : uint
     )]
     RayTracingShaderGroupCreateInfoKHR = 1000150016,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_INTERFACE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7067,7 +7067,7 @@ public enum StructureType : uint
     )]
     RayTracingPipelineInterfaceCreateInfoKHR = 1000150018,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_QUERY_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7079,22 +7079,22 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayQueryFeaturesKHR = 1000348013,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_MODULATION_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
     PipelineCoverageModulationStateCreateInfoNV = 1000152000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SM_BUILTINS_FEATURES_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceShaderSmBuiltinsFeaturesNV = 1000154000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SM_BUILTINS_PROPERTIES_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceShaderSmBuiltinsPropertiesNV = 1000154001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DRM_FORMAT_MODIFIER_PROPERTIES_LIST_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7107,7 +7107,7 @@ public enum StructureType : uint
     )]
     DrmFormatModifierPropertiesListEXT = 1000158000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_DRM_FORMAT_MODIFIER_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7120,7 +7120,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageDrmFormatModifierInfoEXT = 1000158002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_DRM_FORMAT_MODIFIER_LIST_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7133,7 +7133,7 @@ public enum StructureType : uint
     )]
     ImageDrmFormatModifierListCreateInfoEXT = 1000158003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_DRM_FORMAT_MODIFIER_EXPLICIT_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7146,7 +7146,7 @@ public enum StructureType : uint
     )]
     ImageDrmFormatModifierExplicitCreateInfoEXT = 1000158004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_DRM_FORMAT_MODIFIER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7159,7 +7159,7 @@ public enum StructureType : uint
     )]
     ImageDrmFormatModifierPropertiesEXT = 1000158005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DRM_FORMAT_MODIFIER_PROPERTIES_LIST_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7175,17 +7175,17 @@ public enum StructureType : uint
     )]
     DrmFormatModifierPropertiesList2EXT = 1000158006,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VALIDATION_CACHE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     ValidationCacheCreateInfoEXT = 1000160000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SHADER_MODULE_VALIDATION_CACHE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     ShaderModuleValidationCacheCreateInfoEXT = 1000160001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_SHADING_RATE_IMAGE_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7197,7 +7197,7 @@ public enum StructureType : uint
     )]
     PipelineViewportShadingRateImageStateCreateInfoNV = 1000164000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADING_RATE_IMAGE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7209,7 +7209,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShadingRateImageFeaturesNV = 1000164001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADING_RATE_IMAGE_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7221,7 +7221,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShadingRateImagePropertiesNV = 1000164002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_COARSE_SAMPLE_ORDER_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7233,7 +7233,7 @@ public enum StructureType : uint
     )]
     PipelineViewportCoarseSampleOrderStateCreateInfoNV = 1000164005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7245,7 +7245,7 @@ public enum StructureType : uint
     )]
     RayTracingPipelineCreateInfoNV = 1000165000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7257,7 +7257,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureCreateInfoNV = 1000165001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GEOMETRY_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7269,7 +7269,7 @@ public enum StructureType : uint
     )]
     GeometryNV = 1000165003,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GEOMETRY_TRIANGLES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7281,7 +7281,7 @@ public enum StructureType : uint
     )]
     GeometryTrianglesNV = 1000165004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GEOMETRY_AABB_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7293,7 +7293,7 @@ public enum StructureType : uint
     )]
     GeometryAabbNV = 1000165005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_ACCELERATION_STRUCTURE_MEMORY_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7305,7 +7305,7 @@ public enum StructureType : uint
     )]
     BindAccelerationStructureMemoryInfoNV = 1000165006,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7317,7 +7317,7 @@ public enum StructureType : uint
     )]
     WriteDescriptorSetAccelerationStructureNV = 1000165007,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7329,7 +7329,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureMemoryRequirementsInfoNV = 1000165008,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7341,7 +7341,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingPropertiesNV = 1000165009,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RAY_TRACING_SHADER_GROUP_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7353,7 +7353,7 @@ public enum StructureType : uint
     )]
     RayTracingShaderGroupCreateInfoNV = 1000165011,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7365,7 +7365,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureInfoNV = 1000165012,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_REPRESENTATIVE_FRAGMENT_TEST_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7377,7 +7377,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRepresentativeFragmentTestFeaturesNV = 1000166000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_REPRESENTATIVE_FRAGMENT_TEST_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7389,17 +7389,17 @@ public enum StructureType : uint
     )]
     PipelineRepresentativeFragmentTestStateCreateInfoNV = 1000166001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_VIEW_IMAGE_FORMAT_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     PhysicalDeviceImageViewImageFormatInfoEXT = 1000170000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FILTER_CUBIC_IMAGE_VIEW_IMAGE_FORMAT_PROPERTIES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     FilterCubicImageViewImageFormatPropertiesEXT = 1000170001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_HOST_POINTER_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7411,7 +7411,7 @@ public enum StructureType : uint
     )]
     ImportMemoryHostPointerInfoEXT = 1000178000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_HOST_POINTER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7423,7 +7423,7 @@ public enum StructureType : uint
     )]
     MemoryHostPointerPropertiesEXT = 1000178001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_HOST_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7435,7 +7435,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalMemoryHostPropertiesEXT = 1000178002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CLOCK_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7447,12 +7447,12 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderClockFeaturesKHR = 1000181000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
     PipelineCompilerControlCreateInfoAMD = 1000183000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -7464,7 +7464,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderCorePropertiesAMD = 1000185000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7473,7 +7473,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH265CapabilitiesKHR = 1000187000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7482,7 +7482,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH265SessionParametersCreateInfoKHR = 1000187001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_SESSION_PARAMETERS_ADD_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7491,7 +7491,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH265SessionParametersAddInfoKHR = 1000187002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7500,7 +7500,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH265ProfileInfoKHR = 1000187003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7509,7 +7509,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH265PictureInfoKHR = 1000187004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_DPB_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7518,12 +7518,12 @@ public enum StructureType : uint
     )]
     VideoDecodeH265DpbSlotInfoKHR = 1000187005,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_OVERALLOCATION_CREATE_INFO_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     DeviceMemoryOverallocationCreateInfoAMD = 1000189000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7535,7 +7535,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVertexAttributeDivisorPropertiesEXT = 1000190000,
 
-    [NameSuffix("GGP", 0)]
+    [NameAffix("Suffix", "GGP", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_FRAME_TOKEN_GGP")]
     [SupportedApiProfile(
         "vulkan",
@@ -7544,7 +7544,7 @@ public enum StructureType : uint
     )]
     PresentFrameTokenGGP = 1000191000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MESH_SHADER_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7556,7 +7556,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMeshShaderFeaturesNV = 1000202000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MESH_SHADER_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7568,7 +7568,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMeshShaderPropertiesNV = 1000202001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_IMAGE_FOOTPRINT_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7580,7 +7580,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderImageFootprintFeaturesNV = 1000204000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_EXCLUSIVE_SCISSOR_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7592,7 +7592,7 @@ public enum StructureType : uint
     )]
     PipelineViewportExclusiveScissorStateCreateInfoNV = 1000205000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXCLUSIVE_SCISSOR_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7604,7 +7604,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExclusiveScissorFeaturesNV = 1000205002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CHECKPOINT_DATA_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7616,7 +7616,7 @@ public enum StructureType : uint
     )]
     CheckpointDataNV = 1000206000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7628,7 +7628,7 @@ public enum StructureType : uint
     )]
     QueueFamilyCheckpointPropertiesNV = 1000206001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_2_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7643,7 +7643,7 @@ public enum StructureType : uint
     )]
     QueueFamilyCheckpointProperties2NV = 1000314008,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CHECKPOINT_DATA_2_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -7658,7 +7658,7 @@ public enum StructureType : uint
     )]
     CheckpointData2NV = 1000314009,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_FUNCTIONS_2_FEATURES_INTEL")]
     [SupportedApiProfile(
         "vulkan",
@@ -7670,37 +7670,37 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderIntegerFunctions2FeaturesIntel = 1000209000,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUERY_POOL_PERFORMANCE_QUERY_CREATE_INFO_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     QueryPoolPerformanceQueryCreateInfoIntel = 1000210000,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INITIALIZE_PERFORMANCE_API_INFO_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     InitializePerformanceApiInfoIntel = 1000210001,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_MARKER_INFO_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceMarkerInfoIntel = 1000210002,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_STREAM_MARKER_INFO_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceStreamMarkerInfoIntel = 1000210003,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_OVERRIDE_INFO_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceOverrideInfoIntel = 1000210004,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_CONFIGURATION_ACQUIRE_INFO_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceConfigurationAcquireInfoIntel = 1000210005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PCI_BUS_INFO_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7712,7 +7712,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePciBusInfoPropertiesEXT = 1000212000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_NATIVE_HDR_SURFACE_CAPABILITIES_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -7724,7 +7724,7 @@ public enum StructureType : uint
     )]
     DisplayNativeHdrSurfaceCapabilitiesAMD = 1000213000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_DISPLAY_NATIVE_HDR_CREATE_INFO_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -7736,7 +7736,7 @@ public enum StructureType : uint
     )]
     SwapchainDisplayNativeHdrCreateInfoAMD = 1000213001,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGEPIPE_SURFACE_CREATE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -7745,12 +7745,12 @@ public enum StructureType : uint
     )]
     ImagepipeSurfaceCreateInfoFuchsia = 1000214000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_surface"], ImpliesSets = ["VK_KHR_surface"])]
     MetalSurfaceCreateInfoEXT = 1000217000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7762,7 +7762,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMapFeaturesEXT = 1000218000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7774,7 +7774,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMapPropertiesEXT = 1000218001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_FRAGMENT_DENSITY_MAP_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7786,7 +7786,7 @@ public enum StructureType : uint
     )]
     RenderPassFragmentDensityMapCreateInfoEXT = 1000218002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7801,7 +7801,7 @@ public enum StructureType : uint
     )]
     RenderingFragmentDensityMapAttachmentInfoEXT = 1000044007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7814,7 +7814,7 @@ public enum StructureType : uint
     )]
     FragmentShadingRateAttachmentInfoKHR = 1000226000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_SHADING_RATE_STATE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7827,7 +7827,7 @@ public enum StructureType : uint
     )]
     PipelineFragmentShadingRateStateCreateInfoKHR = 1000226001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7840,7 +7840,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShadingRatePropertiesKHR = 1000226002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7853,7 +7853,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShadingRateFeaturesKHR = 1000226003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7866,7 +7866,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShadingRateKHR = 1000226004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7882,7 +7882,7 @@ public enum StructureType : uint
     )]
     RenderingFragmentShadingRateAttachmentInfoKHR = 1000044006,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_2_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -7891,7 +7891,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderCoreProperties2AMD = 1000227000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COHERENT_MEMORY_FEATURES_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -7903,7 +7903,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCoherentMemoryFeaturesAMD = 1000229000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_IMAGE_ATOMIC_INT64_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7915,7 +7915,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderImageAtomicInt64FeaturesEXT = 1000234000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_QUAD_CONTROL_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7927,7 +7927,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderQuadControlFeaturesKHR = 1000235000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_BUDGET_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7939,7 +7939,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMemoryBudgetPropertiesEXT = 1000237000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PRIORITY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7951,7 +7951,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMemoryPriorityFeaturesEXT = 1000238000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_PRIORITY_ALLOCATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7963,7 +7963,7 @@ public enum StructureType : uint
     )]
     MemoryPriorityAllocateInfoEXT = 1000238001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PROTECTED_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7972,7 +7972,7 @@ public enum StructureType : uint
     )]
     SurfaceProtectedCapabilitiesKHR = 1000239000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEDICATED_ALLOCATION_IMAGE_ALIASING_FEATURES_NV"
     )]
@@ -7986,7 +7986,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV = 1000240000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7998,7 +7998,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBufferDeviceAddressFeaturesEXT = 1000244000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8010,12 +8010,12 @@ public enum StructureType : uint
     )]
     BufferDeviceAddressCreateInfoEXT = 1000244002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VALIDATION_FEATURES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     ValidationFeaturesEXT = 1000247000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_WAIT_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8024,7 +8024,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentWaitFeaturesKHR = 1000248000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8036,7 +8036,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeMatrixFeaturesNV = 1000249000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8048,7 +8048,7 @@ public enum StructureType : uint
     )]
     CooperativeMatrixPropertiesNV = 1000249001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8060,7 +8060,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeMatrixPropertiesNV = 1000249002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COVERAGE_REDUCTION_MODE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8072,7 +8072,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCoverageReductionModeFeaturesNV = 1000250000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_REDUCTION_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8084,7 +8084,7 @@ public enum StructureType : uint
     )]
     PipelineCoverageReductionStateCreateInfoNV = 1000250001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_MIXED_SAMPLES_COMBINATION_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8096,7 +8096,7 @@ public enum StructureType : uint
     )]
     FramebufferMixedSamplesCombinationNV = 1000250002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_INTERLOCK_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8108,7 +8108,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShaderInterlockFeaturesEXT = 1000251000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_YCBCR_IMAGE_ARRAYS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8120,7 +8120,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceYcbcrImageArraysFeaturesEXT = 1000252000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROVOKING_VERTEX_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8132,7 +8132,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceProvokingVertexFeaturesEXT = 1000254000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_PROVOKING_VERTEX_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8144,7 +8144,7 @@ public enum StructureType : uint
     )]
     PipelineRasterizationProvokingVertexStateCreateInfoEXT = 1000254001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROVOKING_VERTEX_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8156,7 +8156,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceProvokingVertexPropertiesEXT = 1000254002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_FULL_SCREEN_EXCLUSIVE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8168,7 +8168,7 @@ public enum StructureType : uint
     )]
     SurfaceFullScreenExclusiveInfoEXT = 1000255000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_FULL_SCREEN_EXCLUSIVE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8180,7 +8180,7 @@ public enum StructureType : uint
     )]
     SurfaceCapabilitiesFullScreenExclusiveEXT = 1000255002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_FULL_SCREEN_EXCLUSIVE_WIN32_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8193,12 +8193,12 @@ public enum StructureType : uint
     )]
     SurfaceFullScreenExclusiveWin32InfoEXT = 1000255001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_HEADLESS_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     HeadlessSurfaceCreateInfoEXT = 1000256000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8210,7 +8210,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderAtomicFloatFeaturesEXT = 1000260000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8222,7 +8222,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExtendedDynamicStateFeaturesEXT = 1000267000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_EXECUTABLE_PROPERTIES_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8234,7 +8234,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineExecutablePropertiesFeaturesKHR = 1000269000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8246,7 +8246,7 @@ public enum StructureType : uint
     )]
     PipelineInfoKHR = 1000269001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8258,7 +8258,7 @@ public enum StructureType : uint
     )]
     PipelineExecutablePropertiesKHR = 1000269002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8270,7 +8270,7 @@ public enum StructureType : uint
     )]
     PipelineExecutableInfoKHR = 1000269003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_STATISTIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8282,7 +8282,7 @@ public enum StructureType : uint
     )]
     PipelineExecutableStatisticKHR = 1000269004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INTERNAL_REPRESENTATION_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8294,7 +8294,7 @@ public enum StructureType : uint
     )]
     PipelineExecutableInternalRepresentationKHR = 1000269005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAP_MEMORY_PLACED_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8306,7 +8306,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMapMemoryPlacedFeaturesEXT = 1000272000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAP_MEMORY_PLACED_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8318,7 +8318,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMapMemoryPlacedPropertiesEXT = 1000272001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_MAP_PLACED_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8330,7 +8330,7 @@ public enum StructureType : uint
     )]
     MemoryMapPlacedInfoEXT = 1000272002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_2_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8339,7 +8339,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderAtomicFloat2FeaturesEXT = 1000273000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8348,7 +8348,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDeviceGeneratedCommandsPropertiesNV = 1000277000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GRAPHICS_SHADER_GROUP_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8357,7 +8357,7 @@ public enum StructureType : uint
     )]
     GraphicsShaderGroupCreateInfoNV = 1000277001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_SHADER_GROUPS_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8366,7 +8366,7 @@ public enum StructureType : uint
     )]
     GraphicsPipelineShaderGroupsCreateInfoNV = 1000277002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_COMMANDS_LAYOUT_TOKEN_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8375,7 +8375,7 @@ public enum StructureType : uint
     )]
     IndirectCommandsLayoutTokenNV = 1000277003,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_COMMANDS_LAYOUT_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8384,7 +8384,7 @@ public enum StructureType : uint
     )]
     IndirectCommandsLayoutCreateInfoNV = 1000277004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GENERATED_COMMANDS_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8393,7 +8393,7 @@ public enum StructureType : uint
     )]
     GeneratedCommandsInfoNV = 1000277005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GENERATED_COMMANDS_MEMORY_REQUIREMENTS_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8402,7 +8402,7 @@ public enum StructureType : uint
     )]
     GeneratedCommandsMemoryRequirementsInfoNV = 1000277006,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8411,7 +8411,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDeviceGeneratedCommandsFeaturesNV = 1000277007,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INHERITED_VIEWPORT_SCISSOR_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8423,7 +8423,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceInheritedViewportScissorFeaturesNV = 1000278000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_VIEWPORT_SCISSOR_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8435,7 +8435,7 @@ public enum StructureType : uint
     )]
     CommandBufferInheritanceViewportScissorInfoNV = 1000278001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8447,17 +8447,17 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTexelBufferAlignmentFeaturesEXT = 1000281000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDER_PASS_TRANSFORM_INFO_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     CommandBufferInheritanceRenderPassTransformInfoQCOM = 1000282000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_TRANSFORM_BEGIN_INFO_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     RenderPassTransformBeginInfoQCOM = 1000282001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_BIAS_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8469,7 +8469,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthBiasControlFeaturesEXT = 1000283000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEPTH_BIAS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8481,7 +8481,7 @@ public enum StructureType : uint
     )]
     DepthBiasInfoEXT = 1000283001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEPTH_BIAS_REPRESENTATION_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8493,7 +8493,7 @@ public enum StructureType : uint
     )]
     DepthBiasRepresentationInfoEXT = 1000283002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_MEMORY_REPORT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8505,7 +8505,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDeviceMemoryReportFeaturesEXT = 1000284000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_DEVICE_MEMORY_REPORT_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8517,7 +8517,7 @@ public enum StructureType : uint
     )]
     DeviceDeviceMemoryReportCreateInfoEXT = 1000284001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_REPORT_CALLBACK_DATA_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8529,7 +8529,7 @@ public enum StructureType : uint
     )]
     DeviceMemoryReportCallbackDataEXT = 1000284002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_CUSTOM_BORDER_COLOR_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8541,7 +8541,7 @@ public enum StructureType : uint
     )]
     SamplerCustomBorderColorCreateInfoEXT = 1000287000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUSTOM_BORDER_COLOR_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8553,7 +8553,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCustomBorderColorPropertiesEXT = 1000287001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUSTOM_BORDER_COLOR_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8565,12 +8565,12 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCustomBorderColorFeaturesEXT = 1000287002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_LIBRARY_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     PipelineLibraryCreateInfoKHR = 1000290000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_BARRIER_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8582,7 +8582,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentBarrierFeaturesNV = 1000292000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_PRESENT_BARRIER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8594,7 +8594,7 @@ public enum StructureType : uint
     )]
     SurfaceCapabilitiesPresentBarrierNV = 1000292001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_BARRIER_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8606,7 +8606,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentBarrierCreateInfoNV = 1000292002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_ID_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8618,7 +8618,7 @@ public enum StructureType : uint
     )]
     PresentIdKHR = 1000294000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_ID_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8630,7 +8630,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentIdFeaturesKHR = 1000294001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8642,7 +8642,7 @@ public enum StructureType : uint
     )]
     VideoEncodeInfoKHR = 1000299000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8654,7 +8654,7 @@ public enum StructureType : uint
     )]
     VideoEncodeRateControlInfoKHR = 1000299001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_LAYER_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8666,7 +8666,7 @@ public enum StructureType : uint
     )]
     VideoEncodeRateControlLayerInfoKHR = 1000299002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8678,7 +8678,7 @@ public enum StructureType : uint
     )]
     VideoEncodeCapabilitiesKHR = 1000299003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_USAGE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8690,7 +8690,7 @@ public enum StructureType : uint
     )]
     VideoEncodeUsageInfoKHR = 1000299004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_FEEDBACK_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8702,7 +8702,7 @@ public enum StructureType : uint
     )]
     QueryPoolVideoEncodeFeedbackCreateInfoKHR = 1000299005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_QUALITY_LEVEL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8714,7 +8714,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoEncodeQualityLevelInfoKHR = 1000299006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUALITY_LEVEL_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8726,7 +8726,7 @@ public enum StructureType : uint
     )]
     VideoEncodeQualityLevelPropertiesKHR = 1000299007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUALITY_LEVEL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8738,7 +8738,7 @@ public enum StructureType : uint
     )]
     VideoEncodeQualityLevelInfoKHR = 1000299008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_PARAMETERS_GET_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8750,7 +8750,7 @@ public enum StructureType : uint
     )]
     VideoEncodeSessionParametersGetInfoKHR = 1000299009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_PARAMETERS_FEEDBACK_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -8762,7 +8762,7 @@ public enum StructureType : uint
     )]
     VideoEncodeSessionParametersFeedbackInfoKHR = 1000299010,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8774,7 +8774,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8786,7 +8786,7 @@ public enum StructureType : uint
     )]
     DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_SHADING_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -8798,7 +8798,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTileShadingFeaturesQCOM = 1000309000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_SHADING_PROPERTIES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -8810,7 +8810,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTileShadingPropertiesQCOM = 1000309001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_TILE_SHADING_CREATE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -8822,7 +8822,7 @@ public enum StructureType : uint
     )]
     RenderPassTileShadingCreateInfoQCOM = 1000309002,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PER_TILE_BEGIN_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -8834,7 +8834,7 @@ public enum StructureType : uint
     )]
     PerTileBeginInfoQCOM = 1000309003,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PER_TILE_END_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -8846,7 +8846,7 @@ public enum StructureType : uint
     )]
     PerTileEndInfoQCOM = 1000309004,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPATCH_TILE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -8858,72 +8858,72 @@ public enum StructureType : uint
     )]
     DispatchTileInfoQCOM = 1000309005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUERY_LOW_LATENCY_SUPPORT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
     QueryLowLatencySupportNV = 1000310000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECT_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalObjectCreateInfoEXT = 1000311000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_OBJECTS_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalObjectsInfoEXT = 1000311001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_DEVICE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalDeviceInfoEXT = 1000311002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_COMMAND_QUEUE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalCommandQueueInfoEXT = 1000311003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_BUFFER_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalBufferInfoEXT = 1000311004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_METAL_BUFFER_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ImportMetalBufferInfoEXT = 1000311005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_TEXTURE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalTextureInfoEXT = 1000311006,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_METAL_TEXTURE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ImportMetalTextureInfoEXT = 1000311007,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_IO_SURFACE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalIoSurfaceInfoEXT = 1000311008,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_METAL_IO_SURFACE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ImportMetalIoSurfaceInfoEXT = 1000311009,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_METAL_SHARED_EVENT_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ExportMetalSharedEventInfoEXT = 1000311010,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_METAL_SHARED_EVENT_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_metal_objects"])]
     ImportMetalSharedEventInfoEXT = 1000311011,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8937,7 +8937,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorBufferPropertiesEXT = 1000316000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_DENSITY_MAP_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8951,7 +8951,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorBufferDensityMapPropertiesEXT = 1000316001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8965,7 +8965,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorBufferFeaturesEXT = 1000316002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_ADDRESS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8979,7 +8979,7 @@ public enum StructureType : uint
     )]
     DescriptorAddressInfoEXT = 1000316003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_GET_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8993,7 +8993,7 @@ public enum StructureType : uint
     )]
     DescriptorGetInfoEXT = 1000316004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9007,7 +9007,7 @@ public enum StructureType : uint
     )]
     BufferCaptureDescriptorDataInfoEXT = 1000316005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9021,7 +9021,7 @@ public enum StructureType : uint
     )]
     ImageCaptureDescriptorDataInfoEXT = 1000316006,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9035,7 +9035,7 @@ public enum StructureType : uint
     )]
     ImageViewCaptureDescriptorDataInfoEXT = 1000316007,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9049,7 +9049,7 @@ public enum StructureType : uint
     )]
     SamplerCaptureDescriptorDataInfoEXT = 1000316008,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OPAQUE_CAPTURE_DESCRIPTOR_DATA_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9063,7 +9063,7 @@ public enum StructureType : uint
     )]
     OpaqueCaptureDescriptorDataCreateInfoEXT = 1000316010,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_BUFFER_BINDING_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9077,7 +9077,7 @@ public enum StructureType : uint
     )]
     DescriptorBufferBindingInfoEXT = 1000316011,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_BUFFER_BINDING_PUSH_DESCRIPTOR_BUFFER_HANDLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9091,7 +9091,7 @@ public enum StructureType : uint
     )]
     DescriptorBufferBindingPushDescriptorBufferHandleEXT = 1000316012,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9108,7 +9108,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureCaptureDescriptorDataInfoEXT = 1000316009,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9120,7 +9120,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceGraphicsPipelineLibraryFeaturesEXT = 1000320000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9132,7 +9132,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT = 1000320001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_LIBRARY_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9144,7 +9144,7 @@ public enum StructureType : uint
     )]
     GraphicsPipelineLibraryCreateInfoEXT = 1000320002,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EARLY_AND_LATE_FRAGMENT_TESTS_FEATURES_AMD"
     )]
@@ -9158,7 +9158,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD = 1000321000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9170,7 +9170,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShaderBarycentricFeaturesKHR = 1000203000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9182,7 +9182,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShaderBarycentricPropertiesKHR = 1000322000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_UNIFORM_CONTROL_FLOW_FEATURES_KHR"
     )]
@@ -9193,7 +9193,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR = 1000323000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9202,7 +9202,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShadingRateEnumsPropertiesNV = 1000326000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9211,7 +9211,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentShadingRateEnumsFeaturesNV = 1000326001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_SHADING_RATE_ENUM_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9220,7 +9220,7 @@ public enum StructureType : uint
     )]
     PipelineFragmentShadingRateEnumStateCreateInfoNV = 1000326002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_MOTION_TRIANGLES_DATA_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9229,7 +9229,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryMotionTrianglesDataNV = 1000327000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_MOTION_BLUR_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9238,7 +9238,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingMotionBlurFeaturesNV = 1000327001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_MOTION_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9247,7 +9247,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureMotionInfoNV = 1000327002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MESH_SHADER_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9256,7 +9256,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMeshShaderFeaturesEXT = 1000328000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MESH_SHADER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9265,7 +9265,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMeshShaderPropertiesEXT = 1000328001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_YCBCR_2_PLANE_444_FORMATS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9277,7 +9277,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT = 1000330000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9286,7 +9286,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMap2FeaturesEXT = 1000332000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9295,7 +9295,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMap2PropertiesEXT = 1000332001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_COMMAND_TRANSFORM_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -9307,7 +9307,7 @@ public enum StructureType : uint
     )]
     CopyCommandTransformInfoQCOM = 1000333000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_WORKGROUP_MEMORY_EXPLICIT_LAYOUT_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9319,7 +9319,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR = 1000336000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9331,7 +9331,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageCompressionControlFeaturesEXT = 1000338000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_CONTROL_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9343,7 +9343,7 @@ public enum StructureType : uint
     )]
     ImageCompressionControlEXT = 1000338001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_COMPRESSION_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9355,7 +9355,7 @@ public enum StructureType : uint
     )]
     ImageCompressionPropertiesEXT = 1000338004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_LAYOUT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9367,7 +9367,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT = 1000339000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9379,7 +9379,7 @@ public enum StructureType : uint
     )]
     PhysicalDevice4444FormatsFeaturesEXT = 1000340000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FAULT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9391,7 +9391,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFaultFeaturesEXT = 1000341000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_FAULT_COUNTS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9403,7 +9403,7 @@ public enum StructureType : uint
     )]
     DeviceFaultCountsEXT = 1000341001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_FAULT_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9415,7 +9415,7 @@ public enum StructureType : uint
     )]
     DeviceFaultInfoEXT = 1000341002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RGBA10X6_FORMATS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9427,12 +9427,12 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRgba10X6FormatsFeaturesEXT = 1000344000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DIRECTFB_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_directfb_surface"], ImpliesSets = ["VK_KHR_surface"])]
     DirectfbSurfaceCreateInfoEXT = 1000346000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_INPUT_DYNAMIC_STATE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9444,7 +9444,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVertexInputDynamicStateFeaturesEXT = 1000352000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VERTEX_INPUT_BINDING_DESCRIPTION_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9456,7 +9456,7 @@ public enum StructureType : uint
     )]
     VertexInputBindingDescription2EXT = 1000352001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VERTEX_INPUT_ATTRIBUTE_DESCRIPTION_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9468,7 +9468,7 @@ public enum StructureType : uint
     )]
     VertexInputAttributeDescription2EXT = 1000352002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRM_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9480,7 +9480,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDrmPropertiesEXT = 1000353000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ADDRESS_BINDING_REPORT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9492,7 +9492,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAddressBindingReportFeaturesEXT = 1000354000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_ADDRESS_BINDING_CALLBACK_DATA_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9504,7 +9504,7 @@ public enum StructureType : uint
     )]
     DeviceAddressBindingCallbackDataEXT = 1000354001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLIP_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9516,7 +9516,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthClipControlFeaturesEXT = 1000355000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_DEPTH_CLIP_CONTROL_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9528,7 +9528,7 @@ public enum StructureType : uint
     )]
     PipelineViewportDepthClipControlCreateInfoEXT = 1000355001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVE_TOPOLOGY_LIST_RESTART_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9540,7 +9540,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT = 1000356000,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_ZIRCON_HANDLE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9552,7 +9552,7 @@ public enum StructureType : uint
     )]
     ImportMemoryZirconHandleInfoFuchsia = 1000364000,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_ZIRCON_HANDLE_PROPERTIES_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9564,7 +9564,7 @@ public enum StructureType : uint
     )]
     MemoryZirconHandlePropertiesFuchsia = 1000364001,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_ZIRCON_HANDLE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9576,7 +9576,7 @@ public enum StructureType : uint
     )]
     MemoryGetZirconHandleInfoFuchsia = 1000364002,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_ZIRCON_HANDLE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9585,7 +9585,7 @@ public enum StructureType : uint
     )]
     ImportSemaphoreZirconHandleInfoFuchsia = 1000365000,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_GET_ZIRCON_HANDLE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9594,7 +9594,7 @@ public enum StructureType : uint
     )]
     SemaphoreGetZirconHandleInfoFuchsia = 1000365001,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_COLLECTION_CREATE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9606,7 +9606,7 @@ public enum StructureType : uint
     )]
     BufferCollectionCreateInfoFuchsia = 1000366000,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_BUFFER_COLLECTION_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9618,7 +9618,7 @@ public enum StructureType : uint
     )]
     ImportMemoryBufferCollectionFuchsia = 1000366001,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_COLLECTION_IMAGE_CREATE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9630,7 +9630,7 @@ public enum StructureType : uint
     )]
     BufferCollectionImageCreateInfoFuchsia = 1000366002,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_COLLECTION_PROPERTIES_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9642,7 +9642,7 @@ public enum StructureType : uint
     )]
     BufferCollectionPropertiesFuchsia = 1000366003,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_CONSTRAINTS_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9654,7 +9654,7 @@ public enum StructureType : uint
     )]
     BufferConstraintsInfoFuchsia = 1000366004,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_COLLECTION_BUFFER_CREATE_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9666,7 +9666,7 @@ public enum StructureType : uint
     )]
     BufferCollectionBufferCreateInfoFuchsia = 1000366005,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_CONSTRAINTS_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9678,7 +9678,7 @@ public enum StructureType : uint
     )]
     ImageConstraintsInfoFuchsia = 1000366006,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_CONSTRAINTS_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9690,7 +9690,7 @@ public enum StructureType : uint
     )]
     ImageFormatConstraintsInfoFuchsia = 1000366007,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SYSMEM_COLOR_SPACE_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9702,7 +9702,7 @@ public enum StructureType : uint
     )]
     SysmemColorSpaceFuchsia = 1000366008,
 
-    [NameSuffix("FUCHSIA", 0)]
+    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_COLLECTION_CONSTRAINTS_INFO_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -9714,7 +9714,7 @@ public enum StructureType : uint
     )]
     BufferCollectionConstraintsInfoFuchsia = 1000366009,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -9727,7 +9727,7 @@ public enum StructureType : uint
     )]
     SubpassShadingPipelineCreateInfoHuawei = 1000369000,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -9740,7 +9740,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSubpassShadingFeaturesHuawei = 1000369001,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_PROPERTIES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -9753,7 +9753,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSubpassShadingPropertiesHuawei = 1000369002,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INVOCATION_MASK_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -9765,7 +9765,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceInvocationMaskFeaturesHuawei = 1000370000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_REMOTE_ADDRESS_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9777,7 +9777,7 @@ public enum StructureType : uint
     )]
     MemoryGetRemoteAddressInfoNV = 1000371000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_RDMA_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -9789,7 +9789,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalMemoryRdmaFeaturesNV = 1000371001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_PROPERTIES_IDENTIFIER_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9801,7 +9801,7 @@ public enum StructureType : uint
     )]
     PipelinePropertiesIdentifierEXT = 1000372000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROPERTIES_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9813,7 +9813,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelinePropertiesFeaturesEXT = 1000372001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAME_BOUNDARY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9825,7 +9825,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFrameBoundaryFeaturesEXT = 1000375000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FRAME_BOUNDARY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9837,7 +9837,7 @@ public enum StructureType : uint
     )]
     FrameBoundaryEXT = 1000375001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_FEATURES_EXT"
     )]
@@ -9848,7 +9848,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT = 1000376000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_RESOLVE_PERFORMANCE_QUERY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9857,7 +9857,7 @@ public enum StructureType : uint
     )]
     SubpassResolvePerformanceQueryEXT = 1000376001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9866,7 +9866,7 @@ public enum StructureType : uint
     )]
     MultisampledRenderToSingleSampledInfoEXT = 1000376002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_2_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9878,12 +9878,12 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExtendedDynamicState2FeaturesEXT = 1000377000,
 
-    [NameSuffix("QNX", 0)]
+    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
     [SupportedApiProfile("vulkan", ["VK_QNX_screen_surface"], ImpliesSets = ["VK_KHR_surface"])]
     ScreenSurfaceCreateInfoQNX = 1000378000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COLOR_WRITE_ENABLE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9895,7 +9895,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceColorWriteEnableFeaturesEXT = 1000381000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_COLOR_WRITE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9907,7 +9907,7 @@ public enum StructureType : uint
     )]
     PipelineColorWriteCreateInfoEXT = 1000381001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVES_GENERATED_QUERY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9916,7 +9916,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT = 1000382000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_MAINTENANCE_1_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9925,7 +9925,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingMaintenance1FeaturesKHR = 1000386000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_UNTYPED_POINTERS_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -9934,7 +9934,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderUntypedPointersFeaturesKHR = 1000387000,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_RGB_CONVERSION_FEATURES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -9946,7 +9946,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoEncodeRgbConversionFeaturesValve = 1000390000,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_RGB_CONVERSION_CAPABILITIES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -9958,7 +9958,7 @@ public enum StructureType : uint
     )]
     VideoEncodeRgbConversionCapabilitiesValve = 1000390001,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_PROFILE_RGB_CONVERSION_INFO_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -9970,7 +9970,7 @@ public enum StructureType : uint
     )]
     VideoEncodeProfileRgbConversionInfoValve = 1000390002,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_RGB_CONVERSION_CREATE_INFO_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -9982,7 +9982,7 @@ public enum StructureType : uint
     )]
     VideoEncodeSessionRgbConversionCreateInfoValve = 1000390003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_VIEW_MIN_LOD_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -9994,7 +9994,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageViewMinLodFeaturesEXT = 1000391000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_MIN_LOD_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10006,7 +10006,7 @@ public enum StructureType : uint
     )]
     ImageViewMinLodCreateInfoEXT = 1000391001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10018,7 +10018,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiDrawFeaturesEXT = 1000392000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10030,7 +10030,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiDrawPropertiesEXT = 1000392001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_2D_VIEW_OF_3D_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10042,17 +10042,17 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImage2DViewOf3DFeaturesEXT = 1000393000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TILE_IMAGE_FEATURES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     PhysicalDeviceShaderTileImageFeaturesEXT = 1000395000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TILE_IMAGE_PROPERTIES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     PhysicalDeviceShaderTileImagePropertiesEXT = 1000395001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MICROMAP_BUILD_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10064,7 +10064,7 @@ public enum StructureType : uint
     )]
     MicromapBuildInfoEXT = 1000396000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MICROMAP_VERSION_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10076,7 +10076,7 @@ public enum StructureType : uint
     )]
     MicromapVersionInfoEXT = 1000396001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MICROMAP_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10088,7 +10088,7 @@ public enum StructureType : uint
     )]
     CopyMicromapInfoEXT = 1000396002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MICROMAP_TO_MEMORY_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10100,7 +10100,7 @@ public enum StructureType : uint
     )]
     CopyMicromapToMemoryInfoEXT = 1000396003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_MICROMAP_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10112,7 +10112,7 @@ public enum StructureType : uint
     )]
     CopyMemoryToMicromapInfoEXT = 1000396004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPACITY_MICROMAP_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10124,7 +10124,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceOpacityMicromapFeaturesEXT = 1000396005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPACITY_MICROMAP_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10136,7 +10136,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceOpacityMicromapPropertiesEXT = 1000396006,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MICROMAP_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10148,7 +10148,7 @@ public enum StructureType : uint
     )]
     MicromapCreateInfoEXT = 1000396007,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MICROMAP_BUILD_SIZES_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10160,7 +10160,7 @@ public enum StructureType : uint
     )]
     MicromapBuildSizesInfoEXT = 1000396008,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_OPACITY_MICROMAP_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10172,7 +10172,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureTrianglesOpacityMicromapEXT = 1000396009,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -10184,7 +10184,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceClusterCullingShaderFeaturesHuawei = 1000404000,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_PROPERTIES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -10196,7 +10196,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceClusterCullingShaderPropertiesHuawei = 1000404001,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_VRS_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -10208,7 +10208,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceClusterCullingShaderVrsFeaturesHuawei = 1000404002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BORDER_COLOR_SWIZZLE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10217,7 +10217,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBorderColorSwizzleFeaturesEXT = 1000411000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_BORDER_COLOR_COMPONENT_MAPPING_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10226,7 +10226,7 @@ public enum StructureType : uint
     )]
     SamplerBorderColorComponentMappingCreateInfoEXT = 1000411001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PAGEABLE_DEVICE_LOCAL_MEMORY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10235,7 +10235,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT = 1000412000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10244,7 +10244,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderCorePropertiesARM = 1000415000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_SHADER_CORE_CONTROL_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10253,7 +10253,7 @@ public enum StructureType : uint
     )]
     DeviceQueueShaderCoreControlCreateInfoARM = 1000417000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10262,7 +10262,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSchedulingControlsFeaturesARM = 1000417001,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10271,7 +10271,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSchedulingControlsPropertiesARM = 1000417002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_SLICED_VIEW_OF_3D_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10283,7 +10283,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageSlicedViewOf3DFeaturesEXT = 1000418000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_SLICED_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10295,7 +10295,7 @@ public enum StructureType : uint
     )]
     ImageViewSlicedCreateInfoEXT = 1000418001,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_SET_HOST_MAPPING_FEATURES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -10307,7 +10307,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorSetHostMappingFeaturesValve = 1000420000,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_BINDING_REFERENCE_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -10319,7 +10319,7 @@ public enum StructureType : uint
     )]
     DescriptorSetBindingReferenceValve = 1000420001,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_HOST_MAPPING_INFO_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -10331,7 +10331,7 @@ public enum StructureType : uint
     )]
     DescriptorSetLayoutHostMappingInfoValve = 1000420002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_NON_SEAMLESS_CUBE_MAP_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10343,7 +10343,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceNonSeamlessCubeMapFeaturesEXT = 1000422000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RENDER_PASS_STRIPED_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10356,7 +10356,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRenderPassStripedFeaturesARM = 1000424000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RENDER_PASS_STRIPED_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10369,7 +10369,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRenderPassStripedPropertiesARM = 1000424001,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_BEGIN_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10382,7 +10382,7 @@ public enum StructureType : uint
     )]
     RenderPassStripeBeginInfoARM = 1000424002,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10395,7 +10395,7 @@ public enum StructureType : uint
     )]
     RenderPassStripeInfoARM = 1000424003,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_STRIPE_SUBMIT_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10408,7 +10408,7 @@ public enum StructureType : uint
     )]
     RenderPassStripeSubmitInfoARM = 1000424004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10421,7 +10421,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCopyMemoryIndirectFeaturesNV = 1000426000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_COMPUTE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10430,7 +10430,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV = 1000428000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_INDIRECT_BUFFER_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10439,7 +10439,7 @@ public enum StructureType : uint
     )]
     ComputePipelineIndirectBufferInfoNV = 1000428001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_INDIRECT_DEVICE_ADDRESS_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10448,7 +10448,7 @@ public enum StructureType : uint
     )]
     PipelineIndirectDeviceAddressInfoNV = 1000428002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_LINEAR_SWEPT_SPHERES_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10457,7 +10457,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV = 1000429008,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_LINEAR_SWEPT_SPHERES_DATA_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10466,7 +10466,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometryLinearSweptSpheresDataNV = 1000429009,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_SPHERES_DATA_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10475,7 +10475,7 @@ public enum StructureType : uint
     )]
     AccelerationStructureGeometrySpheresDataNV = 1000429010,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINEAR_COLOR_ATTACHMENT_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10487,7 +10487,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLinearColorAttachmentFeaturesNV = 1000430000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MAXIMAL_RECONVERGENCE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -10496,7 +10496,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR = 1000434000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT"
     )]
@@ -10507,7 +10507,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT = 1000437000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10519,7 +10519,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageProcessingFeaturesQCOM = 1000440000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_PROPERTIES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10531,7 +10531,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageProcessingPropertiesQCOM = 1000440001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_SAMPLE_WEIGHT_CREATE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10543,7 +10543,7 @@ public enum StructureType : uint
     )]
     ImageViewSampleWeightCreateInfoQCOM = 1000440002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_NESTED_COMMAND_BUFFER_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10555,7 +10555,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceNestedCommandBufferFeaturesEXT = 1000451000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_NESTED_COMMAND_BUFFER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10567,7 +10567,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceNestedCommandBufferPropertiesEXT = 1000451001,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_NATIVE_BUFFER_USAGE_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -10579,7 +10579,7 @@ public enum StructureType : uint
     )]
     NativeBufferUsageOHOS = 1000452000,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_NATIVE_BUFFER_PROPERTIES_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -10591,7 +10591,7 @@ public enum StructureType : uint
     )]
     NativeBufferPropertiesOHOS = 1000452001,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_NATIVE_BUFFER_FORMAT_PROPERTIES_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -10603,7 +10603,7 @@ public enum StructureType : uint
     )]
     NativeBufferFormatPropertiesOHOS = 1000452002,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_NATIVE_BUFFER_INFO_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -10615,7 +10615,7 @@ public enum StructureType : uint
     )]
     ImportNativeBufferInfoOHOS = 1000452003,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_NATIVE_BUFFER_INFO_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -10627,7 +10627,7 @@ public enum StructureType : uint
     )]
     MemoryGetNativeBufferInfoOHOS = 1000452004,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -10639,7 +10639,7 @@ public enum StructureType : uint
     )]
     ExternalFormatOHOS = 1000452005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_ACQUIRE_UNMODIFIED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10651,7 +10651,7 @@ public enum StructureType : uint
     )]
     ExternalMemoryAcquireUnmodifiedEXT = 1000453000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10663,7 +10663,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExtendedDynamicState3FeaturesEXT = 1000455000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_3_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10675,7 +10675,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExtendedDynamicState3PropertiesEXT = 1000455001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_MERGE_FEEDBACK_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10687,7 +10687,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSubpassMergeFeedbackFeaturesEXT = 1000458000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_CONTROL_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10699,7 +10699,7 @@ public enum StructureType : uint
     )]
     RenderPassCreationControlEXT = 1000458001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATION_FEEDBACK_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10711,7 +10711,7 @@ public enum StructureType : uint
     )]
     RenderPassCreationFeedbackCreateInfoEXT = 1000458002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_SUBPASS_FEEDBACK_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10723,107 +10723,107 @@ public enum StructureType : uint
     )]
     RenderPassSubpassFeedbackCreateInfoEXT = 1000458003,
 
-    [NameSuffix("LUNARG", 0)]
+    [NameAffix("Suffix", "LUNARG", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DIRECT_DRIVER_LOADING_INFO_LUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     DirectDriverLoadingInfoLunarg = 1000459000,
 
-    [NameSuffix("LUNARG", 0)]
+    [NameAffix("Suffix", "LUNARG", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DIRECT_DRIVER_LOADING_LIST_LUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     DirectDriverLoadingListLunarg = 1000459001,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_CREATE_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorCreateInfoARM = 1000460000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_VIEW_CREATE_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorViewCreateInfoARM = 1000460001,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_TENSOR_MEMORY_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     BindTensorMemoryInfoARM = 1000460002,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     WriteDescriptorSetTensorARM = 1000460003,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TENSOR_PROPERTIES_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     PhysicalDeviceTensorPropertiesARM = 1000460004,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_FORMAT_PROPERTIES_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorFormatPropertiesARM = 1000460005,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_DESCRIPTION_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorDescriptionARM = 1000460006,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_MEMORY_REQUIREMENTS_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorMemoryRequirementsInfoARM = 1000460007,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_MEMORY_BARRIER_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorMemoryBarrierARM = 1000460008,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TENSOR_FEATURES_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     PhysicalDeviceTensorFeaturesARM = 1000460009,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_TENSOR_MEMORY_REQUIREMENTS_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     DeviceTensorMemoryRequirementsARM = 1000460010,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_TENSOR_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     CopyTensorInfoARM = 1000460011,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_COPY_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorCopyARM = 1000460012,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_DEPENDENCY_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorDependencyInfoARM = 1000460013,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     MemoryDedicatedAllocateInfoTensorARM = 1000460014,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_TENSOR_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     PhysicalDeviceExternalTensorInfoARM = 1000460015,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_TENSOR_PROPERTIES_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     ExternalTensorPropertiesARM = 1000460016,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_TENSOR_CREATE_INFO_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     ExternalMemoryTensorCreateInfoARM = 1000460017,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_TENSOR_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10833,7 +10833,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorBufferTensorFeaturesARM = 1000460018,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_TENSOR_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10843,7 +10843,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorBufferTensorPropertiesARM = 1000460019,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_GET_TENSOR_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10853,7 +10853,7 @@ public enum StructureType : uint
     )]
     DescriptorGetTensorInfoARM = 1000460020,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_CAPTURE_DESCRIPTOR_DATA_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10863,7 +10863,7 @@ public enum StructureType : uint
     )]
     TensorCaptureDescriptorDataInfoARM = 1000460021,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TENSOR_VIEW_CAPTURE_DESCRIPTOR_DATA_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10873,7 +10873,7 @@ public enum StructureType : uint
     )]
     TensorViewCaptureDescriptorDataInfoARM = 1000460022,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FRAME_BOUNDARY_TENSORS_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -10883,7 +10883,7 @@ public enum StructureType : uint
     )]
     FrameBoundaryTensorsARM = 1000460023,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MODULE_IDENTIFIER_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10896,7 +10896,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderModuleIdentifierFeaturesEXT = 1000462000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MODULE_IDENTIFIER_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10909,7 +10909,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderModuleIdentifierPropertiesEXT = 1000462001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_MODULE_IDENTIFIER_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10922,7 +10922,7 @@ public enum StructureType : uint
     )]
     PipelineShaderStageModuleIdentifierCreateInfoEXT = 1000462002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SHADER_MODULE_IDENTIFIER_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10935,7 +10935,7 @@ public enum StructureType : uint
     )]
     ShaderModuleIdentifierEXT = 1000462003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_EXT"
     )]
@@ -10949,7 +10949,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT = 1000342000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPTICAL_FLOW_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10962,7 +10962,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceOpticalFlowFeaturesNV = 1000464000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPTICAL_FLOW_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10975,7 +10975,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceOpticalFlowPropertiesNV = 1000464001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OPTICAL_FLOW_IMAGE_FORMAT_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -10988,7 +10988,7 @@ public enum StructureType : uint
     )]
     OpticalFlowImageFormatInfoNV = 1000464002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OPTICAL_FLOW_IMAGE_FORMAT_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11001,7 +11001,7 @@ public enum StructureType : uint
     )]
     OpticalFlowImageFormatPropertiesNV = 1000464003,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OPTICAL_FLOW_SESSION_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11014,7 +11014,7 @@ public enum StructureType : uint
     )]
     OpticalFlowSessionCreateInfoNV = 1000464004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OPTICAL_FLOW_EXECUTE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11027,7 +11027,7 @@ public enum StructureType : uint
     )]
     OpticalFlowExecuteInfoNV = 1000464005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OPTICAL_FLOW_SESSION_CREATE_PRIVATE_DATA_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11040,7 +11040,7 @@ public enum StructureType : uint
     )]
     OpticalFlowSessionCreatePrivateDataInfoNV = 1000464010,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_DITHERING_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11052,7 +11052,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLegacyDitheringFeaturesEXT = 1000465000,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FORMAT_RESOLVE_FEATURES_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -11061,7 +11061,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalFormatResolveFeaturesAndroid = 1000468000,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FORMAT_RESOLVE_PROPERTIES_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -11070,7 +11070,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalFormatResolvePropertiesAndroid = 1000468001,
 
-    [NameSuffix("ANDROID", 0)]
+    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_FORMAT_RESOLVE_PROPERTIES_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -11079,7 +11079,7 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferFormatResolvePropertiesAndroid = 1000468002,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ANTI_LAG_FEATURES_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -11091,7 +11091,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAntiLagFeaturesAMD = 1000476000,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANTI_LAG_DATA_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -11103,7 +11103,7 @@ public enum StructureType : uint
     )]
     AntiLagDataAMD = 1000476001,
 
-    [NameSuffix("AMD", 0)]
+    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ANTI_LAG_PRESENTATION_INFO_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -11115,7 +11115,7 @@ public enum StructureType : uint
     )]
     AntiLagPresentationInfoAMD = 1000476002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_PRESENT_ID_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11124,7 +11124,7 @@ public enum StructureType : uint
     )]
     SurfaceCapabilitiesPresentId2KHR = 1000479000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_ID_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11133,7 +11133,7 @@ public enum StructureType : uint
     )]
     PresentId2KHR = 1000479001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_ID_2_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11142,7 +11142,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentId2FeaturesKHR = 1000479002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_PRESENT_WAIT_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11156,7 +11156,7 @@ public enum StructureType : uint
     )]
     SurfaceCapabilitiesPresentWait2KHR = 1000480000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_WAIT_2_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11170,7 +11170,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentWait2FeaturesKHR = 1000480001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRESENT_WAIT_2_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11184,7 +11184,7 @@ public enum StructureType : uint
     )]
     PresentWait2InfoKHR = 1000480002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_POSITION_FETCH_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11193,7 +11193,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingPositionFetchFeaturesKHR = 1000481000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11206,7 +11206,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderObjectFeaturesEXT = 1000482000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_OBJECT_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11219,7 +11219,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderObjectPropertiesEXT = 1000482001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SHADER_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11232,7 +11232,7 @@ public enum StructureType : uint
     )]
     ShaderCreateInfoEXT = 1000482002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_BINARY_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11244,7 +11244,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineBinaryFeaturesKHR = 1000483000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_BINARY_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11256,7 +11256,7 @@ public enum StructureType : uint
     )]
     PipelineBinaryCreateInfoKHR = 1000483001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_BINARY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11268,7 +11268,7 @@ public enum StructureType : uint
     )]
     PipelineBinaryInfoKHR = 1000483002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_BINARY_KEY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11280,7 +11280,7 @@ public enum StructureType : uint
     )]
     PipelineBinaryKeyKHR = 1000483003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_BINARY_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11292,7 +11292,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineBinaryPropertiesKHR = 1000483004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RELEASE_CAPTURED_PIPELINE_DATA_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11304,7 +11304,7 @@ public enum StructureType : uint
     )]
     ReleaseCapturedPipelineDataInfoKHR = 1000483005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_BINARY_DATA_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11316,7 +11316,7 @@ public enum StructureType : uint
     )]
     PipelineBinaryDataInfoKHR = 1000483006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11328,7 +11328,7 @@ public enum StructureType : uint
     )]
     PipelineCreateInfoKHR = 1000483007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_PIPELINE_BINARY_INTERNAL_CACHE_CONTROL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11340,7 +11340,7 @@ public enum StructureType : uint
     )]
     DevicePipelineBinaryInternalCacheControlKHR = 1000483008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_BINARY_HANDLES_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11352,7 +11352,7 @@ public enum StructureType : uint
     )]
     PipelineBinaryHandlesInfoKHR = 1000483009,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_PROPERTIES_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11364,7 +11364,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTilePropertiesFeaturesQCOM = 1000484000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TILE_PROPERTIES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11376,7 +11376,7 @@ public enum StructureType : uint
     )]
     TilePropertiesQCOM = 1000484001,
 
-    [NameSuffix("SEC", 0)]
+    [NameAffix("Suffix", "SEC", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_AMIGO_PROFILING_FEATURES_SEC")]
     [SupportedApiProfile(
         "vulkan",
@@ -11388,7 +11388,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAmigoProfilingFeaturesSEC = 1000485000,
 
-    [NameSuffix("SEC", 0)]
+    [NameAffix("Suffix", "SEC", 0)]
     [NativeName("VK_STRUCTURE_TYPE_AMIGO_PROFILING_SUBMIT_INFO_SEC")]
     [SupportedApiProfile(
         "vulkan",
@@ -11400,7 +11400,7 @@ public enum StructureType : uint
     )]
     AmigoProfilingSubmitInfoSEC = 1000485001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11412,7 +11412,7 @@ public enum StructureType : uint
     )]
     SurfacePresentModeKHR = 1000274000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11424,7 +11424,7 @@ public enum StructureType : uint
     )]
     SurfacePresentScalingCapabilitiesKHR = 1000274001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11436,7 +11436,7 @@ public enum StructureType : uint
     )]
     SurfacePresentModeCompatibilityKHR = 1000274002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11449,7 +11449,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSwapchainMaintenance1FeaturesKHR = 1000275000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11462,7 +11462,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentFenceInfoKHR = 1000275001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11475,7 +11475,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentModesCreateInfoKHR = 1000275002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11488,7 +11488,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentModeInfoKHR = 1000275003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11501,7 +11501,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentScalingCreateInfoKHR = 1000275004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11514,7 +11514,7 @@ public enum StructureType : uint
     )]
     ReleaseSwapchainImagesInfoKHR = 1000275005,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_VIEWPORTS_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11526,7 +11526,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM = 1000488000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11535,7 +11535,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingInvocationReorderFeaturesNV = 1000490000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11544,7 +11544,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingInvocationReorderPropertiesNV = 1000490001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_VECTOR_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11556,7 +11556,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeVectorFeaturesNV = 1000491000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_VECTOR_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11568,7 +11568,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeVectorPropertiesNV = 1000491001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COOPERATIVE_VECTOR_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11580,7 +11580,7 @@ public enum StructureType : uint
     )]
     CooperativeVectorPropertiesNV = 1000491002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CONVERT_COOPERATIVE_VECTOR_MATRIX_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11592,7 +11592,7 @@ public enum StructureType : uint
     )]
     ConvertCooperativeVectorMatrixInfoNV = 1000491004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_SPARSE_ADDRESS_SPACE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11604,7 +11604,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV = 1000492000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_SPARSE_ADDRESS_SPACE_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11616,7 +11616,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExtendedSparseAddressSpacePropertiesNV = 1000492001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11628,7 +11628,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMutableDescriptorTypeFeaturesEXT = 1000351000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11640,7 +11640,7 @@ public enum StructureType : uint
     )]
     MutableDescriptorTypeCreateInfoEXT = 1000351002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_VERTEX_ATTRIBUTES_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11649,7 +11649,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLegacyVertexAttributesFeaturesEXT = 1000495000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LEGACY_VERTEX_ATTRIBUTES_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11658,12 +11658,12 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLegacyVertexAttributesPropertiesEXT = 1000495001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_LAYER_SETTINGS_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     LayerSettingsCreateInfoEXT = 1000496000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11675,7 +11675,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderCoreBuiltinsFeaturesARM = 1000497000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_BUILTINS_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11687,7 +11687,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderCoreBuiltinsPropertiesARM = 1000497001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_LIBRARY_GROUP_HANDLES_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -11696,7 +11696,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT = 1000498000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_FEATURES_EXT"
     )]
@@ -11711,7 +11711,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT = 1000499000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_LATENCY_SLEEP_MODE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11725,7 +11725,7 @@ public enum StructureType : uint
     )]
     LatencySleepModeInfoNV = 1000505000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_LATENCY_SLEEP_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11739,7 +11739,7 @@ public enum StructureType : uint
     )]
     LatencySleepInfoNV = 1000505001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SET_LATENCY_MARKER_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11753,7 +11753,7 @@ public enum StructureType : uint
     )]
     SetLatencyMarkerInfoNV = 1000505002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GET_LATENCY_MARKER_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11767,7 +11767,7 @@ public enum StructureType : uint
     )]
     GetLatencyMarkerInfoNV = 1000505003,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_LATENCY_TIMINGS_FRAME_REPORT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11781,7 +11781,7 @@ public enum StructureType : uint
     )]
     LatencyTimingsFrameReportNV = 1000505004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_LATENCY_SUBMISSION_PRESENT_ID_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11795,7 +11795,7 @@ public enum StructureType : uint
     )]
     LatencySubmissionPresentIdNV = 1000505005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_OUT_OF_BAND_QUEUE_TYPE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11809,7 +11809,7 @@ public enum StructureType : uint
     )]
     OutOfBandQueueTypeInfoNV = 1000505006,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_LATENCY_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11823,7 +11823,7 @@ public enum StructureType : uint
     )]
     SwapchainLatencyCreateInfoNV = 1000505007,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_LATENCY_SURFACE_CAPABILITIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11837,7 +11837,7 @@ public enum StructureType : uint
     )]
     LatencySurfaceCapabilitiesNV = 1000505008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11849,7 +11849,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeMatrixFeaturesKHR = 1000506000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11861,7 +11861,7 @@ public enum StructureType : uint
     )]
     CooperativeMatrixPropertiesKHR = 1000506001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -11873,7 +11873,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeMatrixPropertiesKHR = 1000506002,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11882,7 +11882,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineCreateInfoARM = 1000507000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11891,7 +11891,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineSessionCreateInfoARM = 1000507001,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_RESOURCE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11900,7 +11900,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineResourceInfoARM = 1000507002,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CONSTANT_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11909,7 +11909,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineConstantARM = 1000507003,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_MEMORY_REQUIREMENTS_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11918,7 +11918,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineSessionMemoryRequirementsInfoARM = 1000507004,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_DATA_GRAPH_PIPELINE_SESSION_MEMORY_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11927,7 +11927,7 @@ public enum StructureType : uint
     )]
     BindDataGraphPipelineSessionMemoryInfoARM = 1000507005,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DATA_GRAPH_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11936,7 +11936,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDataGraphFeaturesARM = 1000507006,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SHADER_MODULE_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11945,7 +11945,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineShaderModuleCreateInfoARM = 1000507007,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_PROPERTY_QUERY_RESULT_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11954,7 +11954,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelinePropertyQueryResultARM = 1000507008,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11963,7 +11963,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineInfoARM = 1000507009,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_COMPILER_CONTROL_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11972,7 +11972,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineCompilerControlCreateInfoARM = 1000507010,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_BIND_POINT_REQUIREMENTS_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11981,7 +11981,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineSessionBindPointRequirementsInfoARM = 1000507011,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_BIND_POINT_REQUIREMENT_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11990,7 +11990,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineSessionBindPointRequirementARM = 1000507012,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_IDENTIFIER_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -11999,7 +11999,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineIdentifierCreateInfoARM = 1000507013,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_DISPATCH_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12008,7 +12008,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineDispatchInfoARM = 1000507014,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PROCESSING_ENGINE_CREATE_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12017,7 +12017,7 @@ public enum StructureType : uint
     )]
     DataGraphProcessingEngineCreateInfoARM = 1000507016,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_PROCESSING_ENGINE_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12026,7 +12026,7 @@ public enum StructureType : uint
     )]
     QueueFamilyDataGraphProcessingEnginePropertiesARM = 1000507017,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12035,7 +12035,7 @@ public enum StructureType : uint
     )]
     QueueFamilyDataGraphPropertiesARM = 1000507018,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_QUEUE_FAMILY_DATA_GRAPH_PROCESSING_ENGINE_INFO_ARM"
     )]
@@ -12046,7 +12046,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM = 1000507019,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_CONSTANT_TENSOR_SEMI_STRUCTURED_SPARSITY_INFO_ARM"
     )]
@@ -12058,7 +12058,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM = 1000507015,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_RENDER_AREAS_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12070,7 +12070,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM = 1000510000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MULTIVIEW_PER_VIEW_RENDER_AREAS_RENDER_PASS_BEGIN_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12082,7 +12082,7 @@ public enum StructureType : uint
     )]
     MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM = 1000510001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12094,7 +12094,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceComputeShaderDerivativesFeaturesKHR = 1000201000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12106,7 +12106,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceComputeShaderDerivativesPropertiesKHR = 1000511000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12115,7 +12115,7 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1CapabilitiesKHR = 1000512000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12124,7 +12124,7 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1PictureInfoKHR = 1000512001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12133,7 +12133,7 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1ProfileInfoKHR = 1000512003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12142,7 +12142,7 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1SessionParametersCreateInfoKHR = 1000512004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_DPB_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12151,7 +12151,7 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1DpbSlotInfoKHR = 1000512005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12160,7 +12160,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1CapabilitiesKHR = 1000513000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_SESSION_PARAMETERS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12169,7 +12169,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1SessionParametersCreateInfoKHR = 1000513001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12178,7 +12178,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1PictureInfoKHR = 1000513002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_DPB_SLOT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12187,7 +12187,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1DpbSlotInfoKHR = 1000513003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_AV1_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12196,7 +12196,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoEncodeAv1FeaturesKHR = 1000513004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12205,7 +12205,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1ProfileInfoKHR = 1000513005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_RATE_CONTROL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12214,7 +12214,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1RateControlInfoKHR = 1000513006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_RATE_CONTROL_LAYER_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12223,7 +12223,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1RateControlLayerInfoKHR = 1000513007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_QUALITY_LEVEL_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12232,7 +12232,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1QualityLevelPropertiesKHR = 1000513008,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_SESSION_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12241,7 +12241,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1SessionCreateInfoKHR = 1000513009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_GOP_REMAINING_FRAME_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12250,7 +12250,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1GopRemainingFrameInfoKHR = 1000513010,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_DECODE_VP9_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12259,7 +12259,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoDecodeVp9FeaturesKHR = 1000514000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_VP9_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12268,7 +12268,7 @@ public enum StructureType : uint
     )]
     VideoDecodeVp9CapabilitiesKHR = 1000514001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_VP9_PICTURE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12277,7 +12277,7 @@ public enum StructureType : uint
     )]
     VideoDecodeVp9PictureInfoKHR = 1000514002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_VP9_PROFILE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12286,7 +12286,7 @@ public enum StructureType : uint
     )]
     VideoDecodeVp9ProfileInfoKHR = 1000514003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_MAINTENANCE_1_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12295,7 +12295,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoMaintenance1FeaturesKHR = 1000515000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_INLINE_QUERY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12304,7 +12304,7 @@ public enum StructureType : uint
     )]
     VideoInlineQueryInfoKHR = 1000515001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PER_STAGE_DESCRIPTOR_SET_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12316,7 +12316,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePerStageDescriptorSetFeaturesNV = 1000516000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_2_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12325,7 +12325,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageProcessing2FeaturesQCOM = 1000518000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_2_PROPERTIES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12334,7 +12334,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageProcessing2PropertiesQCOM = 1000518001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_BLOCK_MATCH_WINDOW_CREATE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12343,7 +12343,7 @@ public enum StructureType : uint
     )]
     SamplerBlockMatchWindowCreateInfoQCOM = 1000518002,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_CUBIC_WEIGHTS_CREATE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12352,7 +12352,7 @@ public enum StructureType : uint
     )]
     SamplerCubicWeightsCreateInfoQCOM = 1000519000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUBIC_WEIGHTS_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12361,7 +12361,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCubicWeightsFeaturesQCOM = 1000519001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BLIT_IMAGE_CUBIC_WEIGHTS_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12370,7 +12370,7 @@ public enum StructureType : uint
     )]
     BlitImageCubicWeightsInfoQCOM = 1000519002,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_YCBCR_DEGAMMA_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12382,7 +12382,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceYcbcrDegammaFeaturesQCOM = 1000520000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_YCBCR_DEGAMMA_CREATE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12394,7 +12394,7 @@ public enum StructureType : uint
     )]
     SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM = 1000520001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUBIC_CLAMP_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12406,7 +12406,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCubicClampFeaturesQCOM = 1000521000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ATTACHMENT_FEEDBACK_LOOP_DYNAMIC_STATE_FEATURES_EXT"
     )]
@@ -12420,7 +12420,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT = 1000524000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFIED_IMAGE_LAYOUTS_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12432,7 +12432,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceUnifiedImageLayoutsFeaturesKHR = 1000527000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_FEEDBACK_LOOP_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12447,7 +12447,7 @@ public enum StructureType : uint
     )]
     AttachmentFeedbackLoopInfoEXT = 1000527001,
 
-    [NameSuffix("QNX", 0)]
+    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SCREEN_BUFFER_PROPERTIES_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -12459,7 +12459,7 @@ public enum StructureType : uint
     )]
     ScreenBufferPropertiesQNX = 1000529000,
 
-    [NameSuffix("QNX", 0)]
+    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SCREEN_BUFFER_FORMAT_PROPERTIES_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -12471,7 +12471,7 @@ public enum StructureType : uint
     )]
     ScreenBufferFormatPropertiesQNX = 1000529001,
 
-    [NameSuffix("QNX", 0)]
+    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_SCREEN_BUFFER_INFO_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -12483,7 +12483,7 @@ public enum StructureType : uint
     )]
     ImportScreenBufferInfoQNX = 1000529002,
 
-    [NameSuffix("QNX", 0)]
+    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -12495,7 +12495,7 @@ public enum StructureType : uint
     )]
     ExternalFormatQNX = 1000529003,
 
-    [NameSuffix("QNX", 0)]
+    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_SCREEN_BUFFER_FEATURES_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -12507,7 +12507,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalMemoryScreenBufferFeaturesQNX = 1000529004,
 
-    [NameSuffix("MSFT", 0)]
+    [NameAffix("Suffix", "MSFT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_DRIVER_PROPERTIES_MSFT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12519,7 +12519,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLayeredDriverPropertiesMSFT = 1000530000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12531,7 +12531,7 @@ public enum StructureType : uint
     )]
     CalibratedTimestampInfoKHR = 1000184000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SET_DESCRIPTOR_BUFFER_OFFSETS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12541,7 +12541,7 @@ public enum StructureType : uint
     )]
     SetDescriptorBufferOffsetsInfoEXT = 1000545007,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_DESCRIPTOR_BUFFER_EMBEDDED_SAMPLERS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12551,7 +12551,7 @@ public enum StructureType : uint
     )]
     BindDescriptorBufferEmbeddedSamplersInfoEXT = 1000545008,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_POOL_OVERALLOCATION_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12560,7 +12560,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorPoolOverallocationFeaturesNV = 1000546000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_MEMORY_HEAP_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12572,7 +12572,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTileMemoryHeapFeaturesQCOM = 1000547000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_MEMORY_HEAP_PROPERTIES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12584,7 +12584,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTileMemoryHeapPropertiesQCOM = 1000547001,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TILE_MEMORY_REQUIREMENTS_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12596,7 +12596,7 @@ public enum StructureType : uint
     )]
     TileMemoryRequirementsQCOM = 1000547002,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TILE_MEMORY_BIND_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12608,7 +12608,7 @@ public enum StructureType : uint
     )]
     TileMemoryBindInfoQCOM = 1000547003,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TILE_MEMORY_SIZE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -12621,7 +12621,7 @@ public enum StructureType : uint
     )]
     TileMemorySizeInfoQCOM = 1000547004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12633,7 +12633,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCopyMemoryIndirectFeaturesKHR = 1000549000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12645,7 +12645,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCopyMemoryIndirectPropertiesKHR = 1000426001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_INDIRECT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12657,7 +12657,7 @@ public enum StructureType : uint
     )]
     CopyMemoryIndirectInfoKHR = 1000549002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INDIRECT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12669,7 +12669,7 @@ public enum StructureType : uint
     )]
     CopyMemoryToImageIndirectInfoKHR = 1000549003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12678,7 +12678,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMemoryDecompressionFeaturesEXT = 1000427000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12687,7 +12687,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMemoryDecompressionPropertiesEXT = 1000427001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DECOMPRESS_MEMORY_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12696,7 +12696,7 @@ public enum StructureType : uint
     )]
     DecompressMemoryInfoEXT = 1000550002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_SURFACE_STEREO_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12705,7 +12705,7 @@ public enum StructureType : uint
     )]
     DisplaySurfaceStereoCreateInfoNV = 1000551000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DISPLAY_MODE_STEREO_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12714,7 +12714,7 @@ public enum StructureType : uint
     )]
     DisplayModeStereoPropertiesNV = 1000551001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_INTRA_REFRESH_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12723,7 +12723,7 @@ public enum StructureType : uint
     )]
     VideoEncodeIntraRefreshCapabilitiesKHR = 1000552000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_SESSION_INTRA_REFRESH_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12732,7 +12732,7 @@ public enum StructureType : uint
     )]
     VideoEncodeSessionIntraRefreshCreateInfoKHR = 1000552001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_INTRA_REFRESH_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12741,7 +12741,7 @@ public enum StructureType : uint
     )]
     VideoEncodeIntraRefreshInfoKHR = 1000552002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_REFERENCE_INTRA_REFRESH_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12750,7 +12750,7 @@ public enum StructureType : uint
     )]
     VideoReferenceIntraRefreshInfoKHR = 1000552003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_INTRA_REFRESH_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12759,7 +12759,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR = 1000552004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12771,7 +12771,7 @@ public enum StructureType : uint
     )]
     VideoEncodeQuantizationMapCapabilitiesKHR = 1000553000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_FORMAT_QUANTIZATION_MAP_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12783,7 +12783,7 @@ public enum StructureType : uint
     )]
     VideoFormatQuantizationMapPropertiesKHR = 1000553001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12795,7 +12795,7 @@ public enum StructureType : uint
     )]
     VideoEncodeQuantizationMapInfoKHR = 1000553002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_VIDEO_ENCODE_QUANTIZATION_MAP_SESSION_PARAMETERS_CREATE_INFO_KHR"
     )]
@@ -12809,7 +12809,7 @@ public enum StructureType : uint
     )]
     VideoEncodeQuantizationMapSessionParametersCreateInfoKHR = 1000553005,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_QUANTIZATION_MAP_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12821,7 +12821,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR = 1000553009,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H264_QUANTIZATION_MAP_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12834,7 +12834,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH264QuantizationMapCapabilitiesKHR = 1000553003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_H265_QUANTIZATION_MAP_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12847,7 +12847,7 @@ public enum StructureType : uint
     )]
     VideoEncodeH265QuantizationMapCapabilitiesKHR = 1000553004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_FORMAT_H265_QUANTIZATION_MAP_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12860,7 +12860,7 @@ public enum StructureType : uint
     )]
     VideoFormatH265QuantizationMapPropertiesKHR = 1000553006,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_AV1_QUANTIZATION_MAP_CAPABILITIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12873,7 +12873,7 @@ public enum StructureType : uint
     )]
     VideoEncodeAv1QuantizationMapCapabilitiesKHR = 1000553007,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_FORMAT_AV1_QUANTIZATION_MAP_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -12886,7 +12886,7 @@ public enum StructureType : uint
     )]
     VideoFormatAv1QuantizationMapPropertiesKHR = 1000553008,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAW_ACCESS_CHAINS_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12898,27 +12898,27 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRawAccessChainsFeaturesNV = 1000555000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_COMPUTE_QUEUE_DEVICE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     ExternalComputeQueueDeviceCreateInfoNV = 1000556000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_COMPUTE_QUEUE_CREATE_INFO_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     ExternalComputeQueueCreateInfoNV = 1000556001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_COMPUTE_QUEUE_DATA_PARAMS_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     ExternalComputeQueueDataParamsNV = 1000556002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_COMPUTE_QUEUE_PROPERTIES_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     PhysicalDeviceExternalComputeQueuePropertiesNV = 1000556003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_RELAXED_EXTENDED_INSTRUCTION_FEATURES_KHR"
     )]
@@ -12932,7 +12932,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR = 1000558000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMMAND_BUFFER_INHERITANCE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12944,32 +12944,32 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCommandBufferInheritanceFeaturesNV = 1000559000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_7_FEATURES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance7FeaturesKHR = 1000562000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_7_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance7PropertiesKHR = 1000562001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_API_PROPERTIES_LIST_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceLayeredApiPropertiesListKHR = 1000562002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_API_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceLayeredApiPropertiesKHR = 1000562003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LAYERED_API_VULKAN_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceLayeredApiVulkanPropertiesKHR = 1000562004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT16_VECTOR_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -12981,7 +12981,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderAtomicFloat16VectorFeaturesNV = 1000563000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_REPLICATED_COMPOSITES_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -12993,7 +12993,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderReplicatedCompositesFeaturesEXT = 1000564000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT8_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13005,7 +13005,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderFloat8FeaturesEXT = 1000567000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_VALIDATION_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13017,7 +13017,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRayTracingValidationFeaturesNV = 1000568000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_ACCELERATION_STRUCTURE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13026,7 +13026,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceClusterAccelerationStructureFeaturesNV = 1000569000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_ACCELERATION_STRUCTURE_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13035,7 +13035,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceClusterAccelerationStructurePropertiesNV = 1000569001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CLUSTER_ACCELERATION_STRUCTURE_CLUSTERS_BOTTOM_LEVEL_INPUT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13044,7 +13044,7 @@ public enum StructureType : uint
     )]
     ClusterAccelerationStructureClustersBottomLevelInputNV = 1000569002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CLUSTER_ACCELERATION_STRUCTURE_TRIANGLE_CLUSTER_INPUT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13053,7 +13053,7 @@ public enum StructureType : uint
     )]
     ClusterAccelerationStructureTriangleClusterInputNV = 1000569003,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CLUSTER_ACCELERATION_STRUCTURE_MOVE_OBJECTS_INPUT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13062,7 +13062,7 @@ public enum StructureType : uint
     )]
     ClusterAccelerationStructureMoveObjectsInputNV = 1000569004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CLUSTER_ACCELERATION_STRUCTURE_INPUT_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13071,7 +13071,7 @@ public enum StructureType : uint
     )]
     ClusterAccelerationStructureInputInfoNV = 1000569005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CLUSTER_ACCELERATION_STRUCTURE_COMMANDS_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13080,7 +13080,7 @@ public enum StructureType : uint
     )]
     ClusterAccelerationStructureCommandsInfoNV = 1000569006,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_CLUSTER_ACCELERATION_STRUCTURE_CREATE_INFO_NV"
     )]
@@ -13091,7 +13091,7 @@ public enum StructureType : uint
     )]
     RayTracingPipelineClusterAccelerationStructureCreateInfoNV = 1000569007,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PARTITIONED_ACCELERATION_STRUCTURE_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13100,7 +13100,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePartitionedAccelerationStructureFeaturesNV = 1000570000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PARTITIONED_ACCELERATION_STRUCTURE_PROPERTIES_NV"
     )]
@@ -13111,7 +13111,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePartitionedAccelerationStructurePropertiesNV = 1000570001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_PARTITIONED_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13120,7 +13120,7 @@ public enum StructureType : uint
     )]
     WriteDescriptorSetPartitionedAccelerationStructureNV = 1000570002,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PARTITIONED_ACCELERATION_STRUCTURE_INSTANCES_INPUT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13129,7 +13129,7 @@ public enum StructureType : uint
     )]
     PartitionedAccelerationStructureInstancesInputNV = 1000570003,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUILD_PARTITIONED_ACCELERATION_STRUCTURE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13138,7 +13138,7 @@ public enum StructureType : uint
     )]
     BuildPartitionedAccelerationStructureInfoNV = 1000570004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PARTITIONED_ACCELERATION_STRUCTURE_FLAGS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13147,7 +13147,7 @@ public enum StructureType : uint
     )]
     PartitionedAccelerationStructureFlagsNV = 1000570005,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13160,7 +13160,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT = 1000572000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13173,7 +13173,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT = 1000572001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GENERATED_COMMANDS_MEMORY_REQUIREMENTS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13186,7 +13186,7 @@ public enum StructureType : uint
     )]
     GeneratedCommandsMemoryRequirementsInfoEXT = 1000572002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_EXECUTION_SET_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13199,7 +13199,7 @@ public enum StructureType : uint
     )]
     IndirectExecutionSetCreateInfoEXT = 1000572003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GENERATED_COMMANDS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13212,7 +13212,7 @@ public enum StructureType : uint
     )]
     GeneratedCommandsInfoEXT = 1000572004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_COMMANDS_LAYOUT_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13225,7 +13225,7 @@ public enum StructureType : uint
     )]
     IndirectCommandsLayoutCreateInfoEXT = 1000572006,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_COMMANDS_LAYOUT_TOKEN_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13238,7 +13238,7 @@ public enum StructureType : uint
     )]
     IndirectCommandsLayoutTokenEXT = 1000572007,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_INDIRECT_EXECUTION_SET_PIPELINE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13251,7 +13251,7 @@ public enum StructureType : uint
     )]
     WriteIndirectExecutionSetPipelineEXT = 1000572008,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_INDIRECT_EXECUTION_SET_SHADER_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13264,7 +13264,7 @@ public enum StructureType : uint
     )]
     WriteIndirectExecutionSetShaderEXT = 1000572009,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_EXECUTION_SET_PIPELINE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13277,7 +13277,7 @@ public enum StructureType : uint
     )]
     IndirectExecutionSetPipelineInfoEXT = 1000572010,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_EXECUTION_SET_SHADER_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13290,7 +13290,7 @@ public enum StructureType : uint
     )]
     IndirectExecutionSetShaderInfoEXT = 1000572011,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_INDIRECT_EXECUTION_SET_SHADER_LAYOUT_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13303,7 +13303,7 @@ public enum StructureType : uint
     )]
     IndirectExecutionSetShaderLayoutInfoEXT = 1000572012,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GENERATED_COMMANDS_PIPELINE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13316,7 +13316,7 @@ public enum StructureType : uint
     )]
     GeneratedCommandsPipelineInfoEXT = 1000572013,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_GENERATED_COMMANDS_SHADER_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13329,17 +13329,17 @@ public enum StructureType : uint
     )]
     GeneratedCommandsShaderInfoEXT = 1000572014,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_8_FEATURES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance8FeaturesKHR = 1000574000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_BARRIER_ACCESS_FLAGS_3_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     MemoryBarrierAccessFlags3KHR = 1000574002,
 
-    [NameSuffix("MESA", 0)]
+    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ALIGNMENT_CONTROL_FEATURES_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -13351,7 +13351,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageAlignmentControlFeaturesMESA = 1000575000,
 
-    [NameSuffix("MESA", 0)]
+    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ALIGNMENT_CONTROL_PROPERTIES_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -13363,7 +13363,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageAlignmentControlPropertiesMESA = 1000575001,
 
-    [NameSuffix("MESA", 0)]
+    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_ALIGNMENT_CONTROL_CREATE_INFO_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -13375,7 +13375,7 @@ public enum StructureType : uint
     )]
     ImageAlignmentControlCreateInfoMESA = 1000575002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FMA_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13387,7 +13387,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderFmaFeaturesKHR = 1000579000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13399,7 +13399,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthClampControlFeaturesEXT = 1000582000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_DEPTH_CLAMP_CONTROL_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13411,7 +13411,7 @@ public enum StructureType : uint
     )]
     PipelineViewportDepthClampControlCreateInfoEXT = 1000582001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_9_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13423,7 +13423,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance9FeaturesKHR = 1000584000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_9_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13435,7 +13435,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance9PropertiesKHR = 1000584001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_OWNERSHIP_TRANSFER_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13447,7 +13447,7 @@ public enum StructureType : uint
     )]
     QueueFamilyOwnershipTransferPropertiesKHR = 1000584002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_MAINTENANCE_2_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13456,7 +13456,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVideoMaintenance2FeaturesKHR = 1000586000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H264_INLINE_SESSION_PARAMETERS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13466,7 +13466,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH264InlineSessionParametersInfoKHR = 1000586001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_H265_INLINE_SESSION_PARAMETERS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13476,7 +13476,7 @@ public enum StructureType : uint
     )]
     VideoDecodeH265InlineSessionParametersInfoKHR = 1000586002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_VIDEO_DECODE_AV1_INLINE_SESSION_PARAMETERS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13486,27 +13486,27 @@ public enum StructureType : uint
     )]
     VideoDecodeAv1InlineSessionParametersInfoKHR = 1000586003,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CREATE_INFO_OHOS")]
     [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
     SurfaceCreateInfoOHOS = 1000685000,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_NATIVE_BUFFER_OHOS")]
     [SupportedApiProfile("vulkan", ["VK_OHOS_native_buffer"])]
     NativeBufferOHOS = 1000453001,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_IMAGE_CREATE_INFO_OHOS")]
     [SupportedApiProfile("vulkan", ["VK_OHOS_native_buffer"])]
     SwapchainImageCreateInfoOHOS = 1000453002,
 
-    [NameSuffix("OHOS", 0)]
+    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENTATION_PROPERTIES_OHOS")]
     [SupportedApiProfile("vulkan", ["VK_OHOS_native_buffer"])]
     PhysicalDevicePresentationPropertiesOHOS = 1000453003,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HDR_VIVID_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -13518,7 +13518,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceHdrVividFeaturesHuawei = 1000590000,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_STRUCTURE_TYPE_HDR_VIVID_DYNAMIC_METADATA_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -13530,7 +13530,7 @@ public enum StructureType : uint
     )]
     HdrVividDynamicMetadataHuawei = 1000590001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_2_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13539,7 +13539,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeMatrix2FeaturesNV = 1000593000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13548,7 +13548,7 @@ public enum StructureType : uint
     )]
     CooperativeMatrixFlexibleDimensionsPropertiesNV = 1000593001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_2_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -13557,7 +13557,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCooperativeMatrix2PropertiesNV = 1000593002,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_OPACITY_MICROMAP_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13566,7 +13566,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineOpacityMicromapFeaturesARM = 1000596000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_METAL_HANDLE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13578,7 +13578,7 @@ public enum StructureType : uint
     )]
     ImportMemoryMetalHandleInfoEXT = 1000602000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_METAL_HANDLE_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13590,7 +13590,7 @@ public enum StructureType : uint
     )]
     MemoryMetalHandlePropertiesEXT = 1000602001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_GET_METAL_HANDLE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13602,7 +13602,7 @@ public enum StructureType : uint
     )]
     MemoryGetMetalHandleInfoEXT = 1000602002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13614,7 +13614,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthClampZeroOneFeaturesKHR = 1000421000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PERFORMANCE_COUNTERS_BY_REGION_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13626,7 +13626,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePerformanceCountersByRegionFeaturesARM = 1000605000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PERFORMANCE_COUNTERS_BY_REGION_PROPERTIES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13638,7 +13638,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePerformanceCountersByRegionPropertiesARM = 1000605001,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13650,7 +13650,7 @@ public enum StructureType : uint
     )]
     PerformanceCounterARM = 1000605002,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PERFORMANCE_COUNTER_DESCRIPTION_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13662,7 +13662,7 @@ public enum StructureType : uint
     )]
     PerformanceCounterDescriptionARM = 1000605003,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_PERFORMANCE_COUNTERS_BY_REGION_BEGIN_INFO_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13674,7 +13674,7 @@ public enum StructureType : uint
     )]
     RenderPassPerformanceCountersByRegionBeginInfoARM = 1000605004,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_ROBUSTNESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13686,7 +13686,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVertexAttributeRobustnessFeaturesEXT = 1000608000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FORMAT_PACK_FEATURES_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13698,7 +13698,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFormatPackFeaturesARM = 1000609000,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_LAYERED_FEATURES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -13710,7 +13710,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMapLayeredFeaturesValve = 1000611000,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_LAYERED_PROPERTIES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -13722,7 +13722,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMapLayeredPropertiesValve = 1000611001,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_DENSITY_MAP_LAYERED_CREATE_INFO_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -13734,7 +13734,7 @@ public enum StructureType : uint
     )]
     PipelineFragmentDensityMapLayeredCreateInfoValve = 1000611002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13746,7 +13746,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRobustness2FeaturesKHR = 1000286000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13758,7 +13758,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRobustness2PropertiesKHR = 1000286001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13776,7 +13776,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT = 1000425000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13794,7 +13794,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFragmentDensityMapOffsetPropertiesEXT = 1000425001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13812,7 +13812,7 @@ public enum StructureType : uint
     )]
     RenderPassFragmentDensityMapOffsetEndInfoEXT = 1000425002,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_DEVICE_MEMORY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13824,7 +13824,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT = 1000620000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13833,7 +13833,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR = 1000361000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_64_BIT_INDEXING_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13845,7 +13845,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShader64BitIndexingFeaturesEXT = 1000627000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DATA_GRAPH_MODEL_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13854,7 +13854,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDataGraphModelFeaturesQCOM = 1000629000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_BUILTIN_MODEL_CREATE_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -13863,7 +13863,7 @@ public enum StructureType : uint
     )]
     DataGraphPipelineBuiltinModelCreateInfoQCOM = 1000629001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_10_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13875,7 +13875,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance10FeaturesKHR = 1000630000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_10_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13887,7 +13887,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance10PropertiesKHR = 1000630001,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_FLAGS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13899,7 +13899,7 @@ public enum StructureType : uint
     )]
     RenderingAttachmentFlagsInfoKHR = 1000630002,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_END_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13911,7 +13911,7 @@ public enum StructureType : uint
     )]
     RenderingEndInfoKHR = 1000619003,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_MODE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -13923,7 +13923,7 @@ public enum StructureType : uint
     )]
     ResolveImageModeInfoKHR = 1000630004,
 
-    [NameSuffix("SEC", 0)]
+    [NameAffix("Suffix", "SEC", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CACHE_INCREMENTAL_MODE_FEATURES_SEC")]
     [SupportedApiProfile(
         "vulkan",
@@ -13935,7 +13935,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC = 1000637000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_UNIFORM_BUFFER_UNSIZED_ARRAY_FEATURES_EXT"
     )]
@@ -13987,7 +13987,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderDrawParameterFeatures = PhysicalDeviceShaderDrawParametersFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14000,7 +14000,7 @@ public enum StructureType : uint
     )]
     RenderingInfoKHR = RenderingInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14013,7 +14013,7 @@ public enum StructureType : uint
     )]
     RenderingAttachmentInfoKHR = RenderingAttachmentInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14026,7 +14026,7 @@ public enum StructureType : uint
     )]
     PipelineRenderingCreateInfoKHR = PipelineRenderingCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14039,7 +14039,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDynamicRenderingFeaturesKHR = PhysicalDeviceDynamicRenderingFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_RENDERING_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14052,7 +14052,7 @@ public enum StructureType : uint
     )]
     CommandBufferInheritanceRenderingInfoKHR = CommandBufferInheritanceRenderingInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_MULTIVIEW_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14064,7 +14064,7 @@ public enum StructureType : uint
     )]
     RenderPassMultiviewCreateInfoKHR = RenderPassMultiviewCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14076,7 +14076,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiviewFeaturesKHR = PhysicalDeviceMultiviewFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14088,52 +14088,52 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMultiviewPropertiesKHR = PhysicalDeviceMultiviewProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FEATURES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     PhysicalDeviceFeatures2KHR = PhysicalDeviceFeatures2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     PhysicalDeviceProperties2KHR = PhysicalDeviceProperties2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     FormatProperties2KHR = FormatProperties2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_PROPERTIES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     ImageFormatProperties2KHR = ImageFormatProperties2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_FORMAT_INFO_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     PhysicalDeviceImageFormatInfo2KHR = PhysicalDeviceImageFormatInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_PROPERTIES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     QueueFamilyProperties2KHR = QueueFamilyProperties2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PROPERTIES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     PhysicalDeviceMemoryProperties2KHR = PhysicalDeviceMemoryProperties2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     SparseImageFormatProperties2KHR = SparseImageFormatProperties2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     PhysicalDeviceSparseImageFormatInfo2KHR = PhysicalDeviceSparseImageFormatInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_FLAGS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14142,7 +14142,7 @@ public enum StructureType : uint
     )]
     MemoryAllocateFlagsInfoKHR = MemoryAllocateFlagsInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_RENDER_PASS_BEGIN_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14151,7 +14151,7 @@ public enum StructureType : uint
     )]
     DeviceGroupRenderPassBeginInfoKHR = DeviceGroupRenderPassBeginInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_COMMAND_BUFFER_BEGIN_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14160,7 +14160,7 @@ public enum StructureType : uint
     )]
     DeviceGroupCommandBufferBeginInfoKHR = DeviceGroupCommandBufferBeginInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_SUBMIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14169,7 +14169,7 @@ public enum StructureType : uint
     )]
     DeviceGroupSubmitInfoKHR = DeviceGroupSubmitInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14178,7 +14178,7 @@ public enum StructureType : uint
     )]
     DeviceGroupBindSparseInfoKHR = DeviceGroupBindSparseInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_DEVICE_GROUP_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14188,7 +14188,7 @@ public enum StructureType : uint
     )]
     BindBufferMemoryDeviceGroupInfoKHR = BindBufferMemoryDeviceGroupInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_DEVICE_GROUP_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14198,7 +14198,7 @@ public enum StructureType : uint
     )]
     BindImageMemoryDeviceGroupInfoKHR = BindImageMemoryDeviceGroupInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_HDR_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14211,7 +14211,7 @@ public enum StructureType : uint
     PhysicalDeviceTextureCompressionAstcHdrFeaturesEXT =
         PhysicalDeviceTextureCompressionAstcHdrFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_ROBUSTNESS_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14223,7 +14223,7 @@ public enum StructureType : uint
     )]
     PipelineRobustnessCreateInfoEXT = PipelineRobustnessCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14235,7 +14235,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineRobustnessFeaturesEXT = PhysicalDevicePipelineRobustnessFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_ROBUSTNESS_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14247,17 +14247,17 @@ public enum StructureType : uint
     )]
     PhysicalDevicePipelineRobustnessPropertiesEXT = PhysicalDevicePipelineRobustnessProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GROUP_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     PhysicalDeviceGroupPropertiesKHR = PhysicalDeviceGroupProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_GROUP_DEVICE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     DeviceGroupDeviceCreateInfoKHR = DeviceGroupDeviceCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_IMAGE_FORMAT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14269,7 +14269,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalImageFormatInfoKHR = PhysicalDeviceExternalImageFormatInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_IMAGE_FORMAT_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14281,7 +14281,7 @@ public enum StructureType : uint
     )]
     ExternalImageFormatPropertiesKHR = ExternalImageFormatProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_BUFFER_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14293,7 +14293,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalBufferInfoKHR = PhysicalDeviceExternalBufferInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_BUFFER_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14305,7 +14305,7 @@ public enum StructureType : uint
     )]
     ExternalBufferPropertiesKHR = ExternalBufferProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ID_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14317,7 +14317,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceIdPropertiesKHR = PhysicalDeviceIdProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_BUFFER_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14329,7 +14329,7 @@ public enum StructureType : uint
     )]
     ExternalMemoryBufferCreateInfoKHR = ExternalMemoryBufferCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_MEMORY_IMAGE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14341,7 +14341,7 @@ public enum StructureType : uint
     )]
     ExternalMemoryImageCreateInfoKHR = ExternalMemoryImageCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_MEMORY_ALLOCATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14353,7 +14353,7 @@ public enum StructureType : uint
     )]
     ExportMemoryAllocateInfoKHR = ExportMemoryAllocateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_SEMAPHORE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14365,7 +14365,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalSemaphoreInfoKHR = PhysicalDeviceExternalSemaphoreInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_SEMAPHORE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14377,7 +14377,7 @@ public enum StructureType : uint
     )]
     ExternalSemaphorePropertiesKHR = ExternalSemaphoreProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_SEMAPHORE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14386,7 +14386,7 @@ public enum StructureType : uint
     )]
     ExportSemaphoreCreateInfoKHR = ExportSemaphoreCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_DESCRIPTOR_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14398,7 +14398,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePushDescriptorPropertiesKHR = PhysicalDevicePushDescriptorProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT16_INT8_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14410,7 +14410,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT16_INT8_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14422,7 +14422,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFloat16Int8FeaturesKHR = PhysicalDeviceShaderFloat16Int8Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_16BIT_STORAGE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14434,12 +14434,12 @@ public enum StructureType : uint
     )]
     PhysicalDevice16BitStorageFeaturesKHR = PhysicalDevice16BitStorageFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     DescriptorUpdateTemplateCreateInfoKHR = DescriptorUpdateTemplateCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGELESS_FRAMEBUFFER_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14452,7 +14452,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImagelessFramebufferFeaturesKHR = PhysicalDeviceImagelessFramebufferFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENTS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14465,7 +14465,7 @@ public enum StructureType : uint
     )]
     FramebufferAttachmentsCreateInfoKHR = FramebufferAttachmentsCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FRAMEBUFFER_ATTACHMENT_IMAGE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14478,7 +14478,7 @@ public enum StructureType : uint
     )]
     FramebufferAttachmentImageInfoKHR = FramebufferAttachmentImageInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_ATTACHMENT_BEGIN_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14491,7 +14491,7 @@ public enum StructureType : uint
     )]
     RenderPassAttachmentBeginInfoKHR = RenderPassAttachmentBeginInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14500,7 +14500,7 @@ public enum StructureType : uint
     )]
     AttachmentDescription2KHR = AttachmentDescription2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14509,7 +14509,7 @@ public enum StructureType : uint
     )]
     AttachmentReference2KHR = AttachmentReference2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14518,7 +14518,7 @@ public enum StructureType : uint
     )]
     SubpassDescription2KHR = SubpassDescription2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DEPENDENCY_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14527,7 +14527,7 @@ public enum StructureType : uint
     )]
     SubpassDependency2KHR = SubpassDependency2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14536,7 +14536,7 @@ public enum StructureType : uint
     )]
     RenderPassCreateInfo2KHR = RenderPassCreateInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14545,7 +14545,7 @@ public enum StructureType : uint
     )]
     SubpassBeginInfoKHR = SubpassBeginInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_END_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14554,7 +14554,7 @@ public enum StructureType : uint
     )]
     SubpassEndInfoKHR = SubpassEndInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_FENCE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14566,7 +14566,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceExternalFenceInfoKHR = PhysicalDeviceExternalFenceInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXTERNAL_FENCE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14578,7 +14578,7 @@ public enum StructureType : uint
     )]
     ExternalFencePropertiesKHR = ExternalFenceProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_EXPORT_FENCE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14587,28 +14587,28 @@ public enum StructureType : uint
     )]
     ExportFenceCreateInfoKHR = ExportFenceCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_POINT_CLIPPING_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     PhysicalDevicePointClippingPropertiesKHR = PhysicalDevicePointClippingProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDER_PASS_INPUT_ATTACHMENT_ASPECT_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     RenderPassInputAttachmentAspectCreateInfoKHR = RenderPassInputAttachmentAspectCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_USAGE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     ImageViewUsageCreateInfoKHR = ImageViewUsageCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_DOMAIN_ORIGIN_STATE_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     PipelineTessellationDomainOriginStateCreateInfoKHR =
         PipelineTessellationDomainOriginStateCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTERS_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14620,7 +14620,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVariablePointersFeaturesKHR = PhysicalDeviceVariablePointersFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14632,7 +14632,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVariablePointerFeaturesKHR = PhysicalDeviceVariablePointersFeaturesKHR,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14644,7 +14644,7 @@ public enum StructureType : uint
     )]
     MemoryDedicatedRequirementsKHR = MemoryDedicatedRequirements,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14656,7 +14656,7 @@ public enum StructureType : uint
     )]
     MemoryDedicatedAllocateInfoKHR = MemoryDedicatedAllocateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_FILTER_MINMAX_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14668,7 +14668,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSamplerFilterMinmaxPropertiesEXT = PhysicalDeviceSamplerFilterMinmaxProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_REDUCTION_MODE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14680,7 +14680,7 @@ public enum StructureType : uint
     )]
     SamplerReductionModeCreateInfoEXT = SamplerReductionModeCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14692,7 +14692,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceInlineUniformBlockFeaturesEXT = PhysicalDeviceInlineUniformBlockFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INLINE_UNIFORM_BLOCK_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14704,7 +14704,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceInlineUniformBlockPropertiesEXT = PhysicalDeviceInlineUniformBlockProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14716,7 +14716,7 @@ public enum StructureType : uint
     )]
     WriteDescriptorSetInlineUniformBlockEXT = WriteDescriptorSetInlineUniformBlock,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_INLINE_UNIFORM_BLOCK_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14728,37 +14728,37 @@ public enum StructureType : uint
     )]
     DescriptorPoolInlineUniformBlockCreateInfoEXT = DescriptorPoolInlineUniformBlockCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_REQUIREMENTS_INFO_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     BufferMemoryRequirementsInfo2KHR = BufferMemoryRequirementsInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_REQUIREMENTS_INFO_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     ImageMemoryRequirementsInfo2KHR = ImageMemoryRequirementsInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     ImageSparseMemoryRequirementsInfo2KHR = ImageSparseMemoryRequirementsInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_REQUIREMENTS_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     MemoryRequirements2KHR = MemoryRequirements2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     SparseImageMemoryRequirements2KHR = SparseImageMemoryRequirements2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_LIST_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_image_format_list"])]
     ImageFormatListCreateInfoKHR = ImageFormatListCreateInfo,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -14769,7 +14769,7 @@ public enum StructureType : uint
     )]
     AttachmentSampleCountInfoNV = AttachmentSampleCountInfoAMD,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14781,7 +14781,7 @@ public enum StructureType : uint
     )]
     SamplerYcbcrConversionCreateInfoKHR = SamplerYcbcrConversionCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14793,7 +14793,7 @@ public enum StructureType : uint
     )]
     SamplerYcbcrConversionInfoKHR = SamplerYcbcrConversionInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_PLANE_MEMORY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14805,7 +14805,7 @@ public enum StructureType : uint
     )]
     BindImagePlaneMemoryInfoKHR = BindImagePlaneMemoryInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_PLANE_MEMORY_REQUIREMENTS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14817,7 +14817,7 @@ public enum StructureType : uint
     )]
     ImagePlaneMemoryRequirementsInfoKHR = ImagePlaneMemoryRequirementsInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_YCBCR_CONVERSION_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14829,7 +14829,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSamplerYcbcrConversionFeaturesKHR = PhysicalDeviceSamplerYcbcrConversionFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SAMPLER_YCBCR_CONVERSION_IMAGE_FORMAT_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14841,17 +14841,17 @@ public enum StructureType : uint
     )]
     SamplerYcbcrConversionImageFormatPropertiesKHR = SamplerYcbcrConversionImageFormatProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     BindBufferMemoryInfoKHR = BindBufferMemoryInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     BindImageMemoryInfoKHR = BindImageMemoryInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_BINDING_FLAGS_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14863,7 +14863,7 @@ public enum StructureType : uint
     )]
     DescriptorSetLayoutBindingFlagsCreateInfoEXT = DescriptorSetLayoutBindingFlagsCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14875,7 +14875,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorIndexingFeaturesEXT = PhysicalDeviceDescriptorIndexingFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_INDEXING_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14887,7 +14887,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDescriptorIndexingPropertiesEXT = PhysicalDeviceDescriptorIndexingProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_ALLOCATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14900,7 +14900,7 @@ public enum StructureType : uint
     DescriptorSetVariableDescriptorCountAllocateInfoEXT =
         DescriptorSetVariableDescriptorCountAllocateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_LAYOUT_SUPPORT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14913,7 +14913,7 @@ public enum StructureType : uint
     DescriptorSetVariableDescriptorCountLayoutSupportEXT =
         DescriptorSetVariableDescriptorCountLayoutSupport,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_3_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14925,7 +14925,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance3PropertiesKHR = PhysicalDeviceMaintenance3Properties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_SUPPORT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14937,12 +14937,12 @@ public enum StructureType : uint
     )]
     DescriptorSetLayoutSupportKHR = DescriptorSetLayoutSupport,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     DeviceQueueGlobalPriorityCreateInfoEXT = DeviceQueueGlobalPriorityCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_EXTENDED_TYPES_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14952,7 +14952,7 @@ public enum StructureType : uint
     PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR =
         PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_8BIT_STORAGE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14964,7 +14964,7 @@ public enum StructureType : uint
     )]
     PhysicalDevice8BitStorageFeaturesKHR = PhysicalDevice8BitStorageFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_INT64_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -14976,7 +14976,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderAtomicInt64FeaturesKHR = PhysicalDeviceShaderAtomicInt64Features,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_CALIBRATED_TIMESTAMP_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -14988,7 +14988,7 @@ public enum StructureType : uint
     )]
     CalibratedTimestampInfoEXT = CalibratedTimestampInfoKHR,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15000,7 +15000,7 @@ public enum StructureType : uint
     )]
     DeviceQueueGlobalPriorityCreateInfoKHR = DeviceQueueGlobalPriorityCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15012,7 +15012,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceGlobalPriorityQueryFeaturesKHR = PhysicalDeviceGlobalPriorityQueryFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15024,7 +15024,7 @@ public enum StructureType : uint
     )]
     QueueFamilyGlobalPriorityPropertiesKHR = QueueFamilyGlobalPriorityProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15036,7 +15036,7 @@ public enum StructureType : uint
     )]
     PipelineVertexInputDivisorStateCreateInfoEXT = PipelineVertexInputDivisorStateCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15048,12 +15048,12 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVertexAttributeDivisorFeaturesEXT = PhysicalDeviceVertexAttributeDivisorFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATION_FEEDBACK_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_pipeline_creation_feedback"])]
     PipelineCreationFeedbackCreateInfoEXT = PipelineCreationFeedbackCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15065,7 +15065,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDriverPropertiesKHR = PhysicalDeviceDriverProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FLOAT_CONTROLS_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15077,7 +15077,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceFloatControlsPropertiesKHR = PhysicalDeviceFloatControlsProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_STENCIL_RESOLVE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15089,7 +15089,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthStencilResolvePropertiesKHR = PhysicalDeviceDepthStencilResolveProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_DESCRIPTION_DEPTH_STENCIL_RESOLVE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15101,7 +15101,7 @@ public enum StructureType : uint
     )]
     SubpassDescriptionDepthStencilResolveKHR = SubpassDescriptionDepthStencilResolve,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_SHADER_DERIVATIVES_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -15114,7 +15114,7 @@ public enum StructureType : uint
     PhysicalDeviceComputeShaderDerivativesFeaturesNV =
         PhysicalDeviceComputeShaderDerivativesFeaturesKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -15127,7 +15127,7 @@ public enum StructureType : uint
     PhysicalDeviceFragmentShaderBarycentricFeaturesNV =
         PhysicalDeviceFragmentShaderBarycentricFeaturesKHR,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15139,7 +15139,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTimelineSemaphoreFeaturesKHR = PhysicalDeviceTimelineSemaphoreFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15151,7 +15151,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTimelineSemaphorePropertiesKHR = PhysicalDeviceTimelineSemaphoreProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15163,7 +15163,7 @@ public enum StructureType : uint
     )]
     SemaphoreTypeCreateInfoKHR = SemaphoreTypeCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15175,7 +15175,7 @@ public enum StructureType : uint
     )]
     TimelineSemaphoreSubmitInfoKHR = TimelineSemaphoreSubmitInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15187,7 +15187,7 @@ public enum StructureType : uint
     )]
     SemaphoreWaitInfoKHR = SemaphoreWaitInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15199,7 +15199,7 @@ public enum StructureType : uint
     )]
     SemaphoreSignalInfoKHR = SemaphoreSignalInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_MEMORY_MODEL_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15211,7 +15211,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVulkanMemoryModelFeaturesKHR = PhysicalDeviceVulkanMemoryModelFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15224,7 +15224,7 @@ public enum StructureType : uint
     PhysicalDeviceShaderTerminateInvocationFeaturesKHR =
         PhysicalDeviceShaderTerminateInvocationFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCALAR_BLOCK_LAYOUT_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15236,7 +15236,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceScalarBlockLayoutFeaturesEXT = PhysicalDeviceScalarBlockLayoutFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15245,7 +15245,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSubgroupSizeControlPropertiesEXT = PhysicalDeviceSubgroupSizeControlProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15255,7 +15255,7 @@ public enum StructureType : uint
     PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT =
         PipelineShaderStageRequiredSubgroupSizeCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15264,7 +15264,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSubgroupSizeControlFeaturesEXT = PhysicalDeviceSubgroupSizeControlFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_LOCAL_READ_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15277,7 +15277,7 @@ public enum StructureType : uint
     PhysicalDeviceDynamicRenderingLocalReadFeaturesKHR =
         PhysicalDeviceDynamicRenderingLocalReadFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_LOCATION_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15289,7 +15289,7 @@ public enum StructureType : uint
     )]
     RenderingAttachmentLocationInfoKHR = RenderingAttachmentLocationInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_INPUT_ATTACHMENT_INDEX_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15301,7 +15301,7 @@ public enum StructureType : uint
     )]
     RenderingInputAttachmentIndexInfoKHR = RenderingInputAttachmentIndexInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SEPARATE_DEPTH_STENCIL_LAYOUTS_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15315,7 +15315,7 @@ public enum StructureType : uint
     PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR =
         PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_STENCIL_LAYOUT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15328,7 +15328,7 @@ public enum StructureType : uint
     )]
     AttachmentReferenceStencilLayoutKHR = AttachmentReferenceStencilLayout,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_STENCIL_LAYOUT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15341,7 +15341,7 @@ public enum StructureType : uint
     )]
     AttachmentDescriptionStencilLayoutKHR = AttachmentDescriptionStencilLayout,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_ADDRESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15353,7 +15353,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBufferAddressFeaturesEXT = PhysicalDeviceBufferDeviceAddressFeaturesEXT,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15365,17 +15365,17 @@ public enum StructureType : uint
     )]
     BufferDeviceAddressInfoEXT = BufferDeviceAddressInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TOOL_PROPERTIES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
     PhysicalDeviceToolPropertiesEXT = PhysicalDeviceToolProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_STENCIL_USAGE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_separate_stencil_usage"])]
     ImageStencilUsageCreateInfoEXT = ImageStencilUsageCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_UNIFORM_BUFFER_STANDARD_LAYOUT_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15388,7 +15388,7 @@ public enum StructureType : uint
     PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR =
         PhysicalDeviceUniformBufferStandardLayoutFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_BUFFER_DEVICE_ADDRESS_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15400,7 +15400,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceBufferDeviceAddressFeaturesKHR = PhysicalDeviceBufferDeviceAddressFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_DEVICE_ADDRESS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15412,7 +15412,7 @@ public enum StructureType : uint
     )]
     BufferDeviceAddressInfoKHR = BufferDeviceAddressInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_OPAQUE_CAPTURE_ADDRESS_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15424,7 +15424,7 @@ public enum StructureType : uint
     )]
     BufferOpaqueCaptureAddressCreateInfoKHR = BufferOpaqueCaptureAddressCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_OPAQUE_CAPTURE_ADDRESS_ALLOCATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15436,7 +15436,7 @@ public enum StructureType : uint
     )]
     MemoryOpaqueCaptureAddressAllocateInfoKHR = MemoryOpaqueCaptureAddressAllocateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_OPAQUE_CAPTURE_ADDRESS_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15448,7 +15448,7 @@ public enum StructureType : uint
     )]
     DeviceMemoryOpaqueCaptureAddressInfoKHR = DeviceMemoryOpaqueCaptureAddressInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15460,7 +15460,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLineRasterizationFeaturesEXT = PhysicalDeviceLineRasterizationFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15472,7 +15472,7 @@ public enum StructureType : uint
     )]
     PipelineRasterizationLineStateCreateInfoEXT = PipelineRasterizationLineStateCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15484,7 +15484,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLineRasterizationPropertiesEXT = PhysicalDeviceLineRasterizationProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15496,7 +15496,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceHostQueryResetFeaturesEXT = PhysicalDeviceHostQueryResetFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15508,7 +15508,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceIndexTypeUint8FeaturesEXT = PhysicalDeviceIndexTypeUint8Features,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15521,7 +15521,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceHostImageCopyFeaturesEXT = PhysicalDeviceHostImageCopyFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_IMAGE_COPY_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15534,7 +15534,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceHostImageCopyPropertiesEXT = PhysicalDeviceHostImageCopyProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_TO_IMAGE_COPY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15547,7 +15547,7 @@ public enum StructureType : uint
     )]
     MemoryToImageCopyEXT = MemoryToImageCopy,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_TO_MEMORY_COPY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15560,7 +15560,7 @@ public enum StructureType : uint
     )]
     ImageToMemoryCopyEXT = ImageToMemoryCopy,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_MEMORY_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15573,7 +15573,7 @@ public enum StructureType : uint
     )]
     CopyImageToMemoryInfoEXT = CopyImageToMemoryInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_MEMORY_TO_IMAGE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15586,7 +15586,7 @@ public enum StructureType : uint
     )]
     CopyMemoryToImageInfoEXT = CopyMemoryToImageInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_LAYOUT_TRANSITION_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15599,7 +15599,7 @@ public enum StructureType : uint
     )]
     HostImageLayoutTransitionInfoEXT = HostImageLayoutTransitionInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_IMAGE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15612,7 +15612,7 @@ public enum StructureType : uint
     )]
     CopyImageToImageInfoEXT = CopyImageToImageInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_HOST_MEMCPY_SIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15625,7 +15625,7 @@ public enum StructureType : uint
     )]
     SubresourceHostMemcpySizeEXT = SubresourceHostMemcpySize,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_HOST_IMAGE_COPY_DEVICE_PERFORMANCE_QUERY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15638,17 +15638,17 @@ public enum StructureType : uint
     )]
     HostImageCopyDevicePerformanceQueryEXT = HostImageCopyDevicePerformanceQuery,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_MAP_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
     MemoryMapInfoKHR = MemoryMapInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_UNMAP_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
     MemoryUnmapInfoKHR = MemoryUnmapInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15657,7 +15657,7 @@ public enum StructureType : uint
     )]
     SurfacePresentModeEXT = SurfacePresentModeKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_SCALING_CAPABILITIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15666,7 +15666,7 @@ public enum StructureType : uint
     )]
     SurfacePresentScalingCapabilitiesEXT = SurfacePresentScalingCapabilitiesKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_PRESENT_MODE_COMPATIBILITY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15675,7 +15675,7 @@ public enum StructureType : uint
     )]
     SurfacePresentModeCompatibilityEXT = SurfacePresentModeCompatibilityKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SWAPCHAIN_MAINTENANCE_1_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15687,7 +15687,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSwapchainMaintenance1FeaturesEXT = PhysicalDeviceSwapchainMaintenance1FeaturesKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_FENCE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15699,7 +15699,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentFenceInfoEXT = SwapchainPresentFenceInfoKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODES_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15711,7 +15711,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentModesCreateInfoEXT = SwapchainPresentModesCreateInfoKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_MODE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15723,7 +15723,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentModeInfoEXT = SwapchainPresentModeInfoKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_PRESENT_SCALING_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15735,7 +15735,7 @@ public enum StructureType : uint
     )]
     SwapchainPresentScalingCreateInfoEXT = SwapchainPresentScalingCreateInfoKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RELEASE_SWAPCHAIN_IMAGES_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15747,7 +15747,7 @@ public enum StructureType : uint
     )]
     ReleaseSwapchainImagesInfoEXT = ReleaseSwapchainImagesInfoKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DEMOTE_TO_HELPER_INVOCATION_FEATURES_EXT"
     )]
@@ -15762,7 +15762,7 @@ public enum StructureType : uint
     PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT =
         PhysicalDeviceShaderDemoteToHelperInvocationFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15775,7 +15775,7 @@ public enum StructureType : uint
     PhysicalDeviceShaderIntegerDotProductFeaturesKHR =
         PhysicalDeviceShaderIntegerDotProductFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15788,7 +15788,7 @@ public enum StructureType : uint
     PhysicalDeviceShaderIntegerDotProductPropertiesKHR =
         PhysicalDeviceShaderIntegerDotProductProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15800,7 +15800,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceTexelBufferAlignmentPropertiesEXT = PhysicalDeviceTexelBufferAlignmentProperties,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15812,7 +15812,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRobustness2FeaturesEXT = PhysicalDeviceRobustness2FeaturesKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15824,7 +15824,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceRobustness2PropertiesEXT = PhysicalDeviceRobustness2PropertiesKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15836,7 +15836,7 @@ public enum StructureType : uint
     )]
     PhysicalDevicePrivateDataFeaturesEXT = PhysicalDevicePrivateDataFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15848,7 +15848,7 @@ public enum StructureType : uint
     )]
     DevicePrivateDataCreateInfoEXT = DevicePrivateDataCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PRIVATE_DATA_SLOT_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15860,7 +15860,7 @@ public enum StructureType : uint
     )]
     PrivateDataSlotCreateInfoEXT = PrivateDataSlotCreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15873,7 +15873,7 @@ public enum StructureType : uint
     PhysicalDevicePipelineCreationCacheControlFeaturesEXT =
         PhysicalDevicePipelineCreationCacheControlFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MEMORY_BARRIER_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15885,7 +15885,7 @@ public enum StructureType : uint
     )]
     MemoryBarrier2KHR = MemoryBarrier2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15897,7 +15897,7 @@ public enum StructureType : uint
     )]
     BufferMemoryBarrier2KHR = BufferMemoryBarrier2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15909,7 +15909,7 @@ public enum StructureType : uint
     )]
     ImageMemoryBarrier2KHR = ImageMemoryBarrier2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEPENDENCY_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15921,7 +15921,7 @@ public enum StructureType : uint
     )]
     DependencyInfoKHR = DependencyInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBMIT_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15933,7 +15933,7 @@ public enum StructureType : uint
     )]
     SubmitInfo2KHR = SubmitInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15945,7 +15945,7 @@ public enum StructureType : uint
     )]
     SemaphoreSubmitInfoKHR = SemaphoreSubmitInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15957,7 +15957,7 @@ public enum StructureType : uint
     )]
     CommandBufferSubmitInfoKHR = CommandBufferSubmitInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15969,7 +15969,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSynchronization2FeaturesKHR = PhysicalDeviceSynchronization2Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -15982,7 +15982,7 @@ public enum StructureType : uint
     PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR =
         PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -15994,7 +15994,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceImageRobustnessFeaturesEXT = PhysicalDeviceImageRobustnessFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16006,7 +16006,7 @@ public enum StructureType : uint
     )]
     CopyBufferInfo2KHR = CopyBufferInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16018,7 +16018,7 @@ public enum StructureType : uint
     )]
     CopyImageInfo2KHR = CopyImageInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_BUFFER_TO_IMAGE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16030,7 +16030,7 @@ public enum StructureType : uint
     )]
     CopyBufferToImageInfo2KHR = CopyBufferToImageInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_COPY_IMAGE_TO_BUFFER_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16042,7 +16042,7 @@ public enum StructureType : uint
     )]
     CopyImageToBufferInfo2KHR = CopyImageToBufferInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16054,7 +16054,7 @@ public enum StructureType : uint
     )]
     BlitImageInfo2KHR = BlitImageInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RESOLVE_IMAGE_INFO_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16066,7 +16066,7 @@ public enum StructureType : uint
     )]
     ResolveImageInfo2KHR = ResolveImageInfo2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_COPY_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16078,7 +16078,7 @@ public enum StructureType : uint
     )]
     BufferCopy2KHR = BufferCopy2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_COPY_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16090,7 +16090,7 @@ public enum StructureType : uint
     )]
     ImageCopy2KHR = ImageCopy2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_BLIT_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16102,7 +16102,7 @@ public enum StructureType : uint
     )]
     ImageBlit2KHR = ImageBlit2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16114,7 +16114,7 @@ public enum StructureType : uint
     )]
     BufferImageCopy2KHR = BufferImageCopy2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16126,7 +16126,7 @@ public enum StructureType : uint
     )]
     ImageResolve2KHR = ImageResolve2,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16138,7 +16138,7 @@ public enum StructureType : uint
     )]
     SubresourceLayout2EXT = SubresourceLayout2,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16150,7 +16150,7 @@ public enum StructureType : uint
     )]
     ImageSubresource2EXT = ImageSubresource2,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
         "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_FEATURES_ARM"
     )]
@@ -16165,7 +16165,7 @@ public enum StructureType : uint
     PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesARM =
         PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -16175,7 +16175,7 @@ public enum StructureType : uint
     PhysicalDeviceMutableDescriptorTypeFeaturesValve =
         PhysicalDeviceMutableDescriptorTypeFeaturesEXT,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -16184,7 +16184,7 @@ public enum StructureType : uint
     )]
     MutableDescriptorTypeCreateInfoValve = MutableDescriptorTypeCreateInfoEXT,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_3_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16196,7 +16196,7 @@ public enum StructureType : uint
     )]
     FormatProperties3KHR = FormatProperties3,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_MODE_FIFO_LATEST_READY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16206,7 +16206,7 @@ public enum StructureType : uint
     PhysicalDevicePresentModeFifoLatestReadyFeaturesEXT =
         PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16218,7 +16218,7 @@ public enum StructureType : uint
     )]
     PipelineInfoEXT = PipelineInfoKHR,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GLOBAL_PRIORITY_QUERY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16230,7 +16230,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceGlobalPriorityQueryFeaturesEXT = PhysicalDeviceGlobalPriorityQueryFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16242,27 +16242,27 @@ public enum StructureType : uint
     )]
     QueueFamilyGlobalPriorityPropertiesEXT = QueueFamilyGlobalPriorityProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_FEATURES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance4FeaturesKHR = PhysicalDeviceMaintenance4Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_4_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance4PropertiesKHR = PhysicalDeviceMaintenance4Properties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_BUFFER_MEMORY_REQUIREMENTS_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     DeviceBufferMemoryRequirementsKHR = DeviceBufferMemoryRequirements,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     DeviceImageMemoryRequirementsKHR = DeviceImageMemoryRequirements,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_ROTATE_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16274,7 +16274,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderSubgroupRotateFeaturesKHR = PhysicalDeviceShaderSubgroupRotateFeatures,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_ZERO_ONE_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16286,7 +16286,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDepthClampZeroOneFeaturesEXT = PhysicalDeviceDepthClampZeroOneFeaturesKHR,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -16299,7 +16299,7 @@ public enum StructureType : uint
     PhysicalDeviceFragmentDensityMapOffsetFeaturesQCOM =
         PhysicalDeviceFragmentDensityMapOffsetFeaturesEXT,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_PROPERTIES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -16312,7 +16312,7 @@ public enum StructureType : uint
     PhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM =
         PhysicalDeviceFragmentDensityMapOffsetPropertiesEXT,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBPASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -16324,7 +16324,7 @@ public enum StructureType : uint
     )]
     SubpassFragmentDensityMapOffsetEndInfoQCOM = RenderPassFragmentDensityMapOffsetEndInfoEXT,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -16337,7 +16337,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCopyMemoryIndirectPropertiesNV = PhysicalDeviceCopyMemoryIndirectPropertiesKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -16350,7 +16350,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMemoryDecompressionFeaturesNV = PhysicalDeviceMemoryDecompressionFeaturesEXT,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -16363,7 +16363,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMemoryDecompressionPropertiesNV = PhysicalDeviceMemoryDecompressionPropertiesEXT,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_PROTECTED_ACCESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16376,7 +16376,7 @@ public enum StructureType : uint
     PhysicalDevicePipelineProtectedAccessFeaturesEXT =
         PhysicalDevicePipelineProtectedAccessFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16385,7 +16385,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance5FeaturesKHR = PhysicalDeviceMaintenance5Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_5_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16394,7 +16394,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceMaintenance5PropertiesKHR = PhysicalDeviceMaintenance5Properties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_AREA_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16403,7 +16403,7 @@ public enum StructureType : uint
     )]
     RenderingAreaInfoKHR = RenderingAreaInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_IMAGE_SUBRESOURCE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16412,7 +16412,7 @@ public enum StructureType : uint
     )]
     DeviceImageSubresourceInfoKHR = DeviceImageSubresourceInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SUBRESOURCE_LAYOUT_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16421,7 +16421,7 @@ public enum StructureType : uint
     )]
     SubresourceLayout2KHR = SubresourceLayout2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_SUBRESOURCE_2_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16430,7 +16430,7 @@ public enum StructureType : uint
     )]
     ImageSubresource2KHR = ImageSubresource2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_CREATE_FLAGS_2_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16439,7 +16439,7 @@ public enum StructureType : uint
     )]
     PipelineCreateFlags2CreateInfoKHR = PipelineCreateFlags2CreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BUFFER_USAGE_FLAGS_2_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16448,7 +16448,7 @@ public enum StructureType : uint
     )]
     BufferUsageFlags2CreateInfoKHR = BufferUsageFlags2CreateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_SHADER_REQUIRED_SUBGROUP_SIZE_CREATE_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -16461,7 +16461,7 @@ public enum StructureType : uint
     )]
     ShaderRequiredSubgroupSizeCreateInfoEXT = PipelineShaderStageRequiredSubgroupSizeCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16474,7 +16474,7 @@ public enum StructureType : uint
     PhysicalDeviceVertexAttributeDivisorPropertiesKHR =
         PhysicalDeviceVertexAttributeDivisorProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_DIVISOR_STATE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16486,7 +16486,7 @@ public enum StructureType : uint
     )]
     PipelineVertexInputDivisorStateCreateInfoKHR = PipelineVertexInputDivisorStateCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_DIVISOR_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16498,7 +16498,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceVertexAttributeDivisorFeaturesKHR = PhysicalDeviceVertexAttributeDivisorFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_FLOAT_CONTROLS_2_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16507,7 +16507,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderFloatControls2FeaturesKHR = PhysicalDeviceShaderFloatControls2Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16519,7 +16519,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceIndexTypeUint8FeaturesKHR = PhysicalDeviceIndexTypeUint8Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16531,7 +16531,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLineRasterizationFeaturesKHR = PhysicalDeviceLineRasterizationFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_LINE_STATE_CREATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16543,7 +16543,7 @@ public enum StructureType : uint
     )]
     PipelineRasterizationLineStateCreateInfoKHR = PipelineRasterizationLineStateCreateInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16555,7 +16555,7 @@ public enum StructureType : uint
     )]
     PhysicalDeviceLineRasterizationPropertiesKHR = PhysicalDeviceLineRasterizationProperties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_EXPECT_ASSUME_FEATURES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16567,32 +16567,32 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderExpectAssumeFeaturesKHR = PhysicalDeviceShaderExpectAssumeFeatures,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_FEATURES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance6FeaturesKHR = PhysicalDeviceMaintenance6Features,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_6_PROPERTIES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     PhysicalDeviceMaintenance6PropertiesKHR = PhysicalDeviceMaintenance6Properties,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_MEMORY_STATUS_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     BindMemoryStatusKHR = BindMemoryStatus,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_BIND_DESCRIPTOR_SETS_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     BindDescriptorSetsInfoKHR = BindDescriptorSetsInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PUSH_CONSTANTS_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     PushConstantsInfoKHR = PushConstantsInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16602,7 +16602,7 @@ public enum StructureType : uint
     )]
     PushDescriptorSetInfoKHR = PushDescriptorSetInfo,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -16612,7 +16612,7 @@ public enum StructureType : uint
     )]
     PushDescriptorSetWithTemplateInfoKHR = PushDescriptorSetWithTemplateInfo,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_STRUCTURE_TYPE_RENDERING_END_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",

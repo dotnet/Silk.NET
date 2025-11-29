@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("HUAWEI", 0)]
+[NameAffix("Suffix", "HUAWEI", 0)]
 [NativeName("VkPhysicalDeviceHdrVividFeaturesHUAWEI")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceHdrVividFeaturesHuawei

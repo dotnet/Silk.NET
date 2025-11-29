@@ -171,7 +171,7 @@ public enum PipelineCreateFlags : uint
     )]
     ProtectedAccessOnlyBit = 0x40000000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_ANY_HIT_SHADERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -183,7 +183,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingNoNullAnyHitShadersBitKHR = 0x4000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_CLOSEST_HIT_SHADERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -195,7 +195,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingNoNullClosestHitShadersBitKHR = 0x8000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_MISS_SHADERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -207,7 +207,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingNoNullMissShadersBitKHR = 0x10000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_INTERSECTION_SHADERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -219,7 +219,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingNoNullIntersectionShadersBitKHR = 0x20000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_SKIP_TRIANGLES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -231,7 +231,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingSkipTrianglesBitKHR = 0x1000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_SKIP_AABBS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -243,7 +243,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingSkipAabbsBitKHR = 0x2000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -255,7 +255,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingShaderGroupHandleCaptureReplayBitKHR = 0x80000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -267,7 +267,7 @@ public enum PipelineCreateFlags : uint
     )]
     DeferCompileBitNV = 0x20,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -282,7 +282,7 @@ public enum PipelineCreateFlags : uint
     )]
     RenderingFragmentDensityMapAttachmentBitEXT = 0x400000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -298,7 +298,7 @@ public enum PipelineCreateFlags : uint
     )]
     RenderingFragmentShadingRateAttachmentBitKHR = 0x200000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -310,7 +310,7 @@ public enum PipelineCreateFlags : uint
     )]
     CaptureStatisticsBitKHR = 0x40,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -322,7 +322,7 @@ public enum PipelineCreateFlags : uint
     )]
     CaptureInternalRepresentationsBitKHR = 0x80,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_CREATE_INDIRECT_BINDABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -331,12 +331,12 @@ public enum PipelineCreateFlags : uint
     )]
     IndirectBindableBitNV = 0x40000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_LIBRARY_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     LibraryBitKHR = 0x800,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -350,7 +350,7 @@ public enum PipelineCreateFlags : uint
     )]
     DescriptorBufferBitEXT = 0x20000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -362,7 +362,7 @@ public enum PipelineCreateFlags : uint
     )]
     RetainLinkTimeOptimizationInfoBitEXT = 0x800000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -374,7 +374,7 @@ public enum PipelineCreateFlags : uint
     )]
     LinkTimeOptimizationBitEXT = 0x400,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -383,7 +383,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingAllowMotionBitNV = 0x100000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -395,7 +395,7 @@ public enum PipelineCreateFlags : uint
     )]
     ColorAttachmentFeedbackLoopBitEXT = 0x2000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -407,7 +407,7 @@ public enum PipelineCreateFlags : uint
     )]
     DepthStencilAttachmentFeedbackLoopBitEXT = 0x4000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -419,7 +419,7 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingOpacityMicromapBitEXT = 0x1000000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -428,7 +428,7 @@ public enum PipelineCreateFlags : uint
     )]
     ViewIndexFromDeviceIndexBitKHR = ViewIndexFromDeviceIndexBit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_DISPATCH_BASE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -437,7 +437,7 @@ public enum PipelineCreateFlags : uint
     )]
     DispatchBaseBitKHR = DispatchBaseBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_FAIL_ON_PIPELINE_COMPILE_REQUIRED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -449,7 +449,7 @@ public enum PipelineCreateFlags : uint
     )]
     FailOnPipelineCompileRequiredBitEXT = FailOnPipelineCompileRequiredBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -461,7 +461,7 @@ public enum PipelineCreateFlags : uint
     )]
     EarlyReturnOnFailureBitEXT = EarlyReturnOnFailureBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -473,7 +473,7 @@ public enum PipelineCreateFlags : uint
     )]
     NoProtectedAccessBitEXT = NoProtectedAccessBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

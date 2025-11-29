@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkShaderCreateFlagBitsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum ShaderCreateFlagsEXT : uint
 {
     None = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_LINK_STAGE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29,7 +29,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateLinkStageBitEXT = 0x1,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,7 +45,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateAllowVaryingSubgroupSizeBitEXT = 0x2,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +61,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateRequireFullSubgroupsBitEXT = 0x4,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_NO_TASK_SHADER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -74,7 +74,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateNoTaskShaderBitEXT = 0x8,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_DISPATCH_BASE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -87,7 +87,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateDispatchBaseBitEXT = 0x10,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -101,7 +101,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateFragmentShadingRateAttachmentBitEXT = 0x20,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -115,7 +115,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateFragmentDensityMapAttachmentBitEXT = 0x40,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -128,7 +128,7 @@ public enum ShaderCreateFlagsEXT : uint
     )]
     CreateIndirectBindableBitEXT = 0x80,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_64_BIT_INDEXING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

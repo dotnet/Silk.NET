@@ -279,7 +279,7 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     ComputeShaderInvocationsBit = 0x400,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_PIPELINE_STATISTIC_TASK_SHADER_INVOCATIONS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -288,7 +288,7 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     TaskShaderInvocationsBitEXT = 0x800,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -297,7 +297,7 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     MeshShaderInvocationsBitEXT = 0x1000,
 
-    [NameSuffix("HUAWEI", 0)]
+    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_QUERY_PIPELINE_STATISTIC_CLUSTER_CULLING_SHADER_INVOCATIONS_BIT_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",

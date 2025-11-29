@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkOutOfBandQueueTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum OutOfBandQueueTypeNV : uint
 {
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OUT_OF_BAND_QUEUE_TYPE_RENDER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +27,7 @@ public enum OutOfBandQueueTypeNV : uint
     )]
     RenderNV = 0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OUT_OF_BAND_QUEUE_TYPE_PRESENT_NV")]
     [SupportedApiProfile(
         "vulkan",

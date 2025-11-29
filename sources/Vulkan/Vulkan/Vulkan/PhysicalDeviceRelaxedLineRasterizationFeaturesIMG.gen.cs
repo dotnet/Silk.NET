@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("IMG", 0)]
+[NameAffix("Suffix", "IMG", 0)]
 [NativeName("VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRelaxedLineRasterizationFeaturesIMG

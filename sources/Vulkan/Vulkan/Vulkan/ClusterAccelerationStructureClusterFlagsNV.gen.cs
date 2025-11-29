@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkClusterAccelerationStructureClusterFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum ClusterAccelerationStructureClusterFlagsNV : uint
 {
     None = 0x0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_CLUSTER_ALLOW_DISABLE_OPACITY_MICROMAPS_NV")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkClusterAccelerationStructureOpTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum ClusterAccelerationStructureOpTypeNV : uint
 {
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_MOVE_OBJECTS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +22,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     MoveObjectsNV = 0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_CLUSTERS_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +31,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     BuildClustersBottomLevelNV = 1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     BuildTriangleClusterNV = 2,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_TRIANGLE_CLUSTER_TEMPLATE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +49,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     BuildTriangleClusterTemplateNV = 3,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_INSTANTIATE_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -58,7 +58,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
     )]
     InstantiateTriangleClusterNV = 4,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_GET_CLUSTER_TEMPLATE_INDICES_NV")]
     [SupportedApiProfile(
         "vulkan",

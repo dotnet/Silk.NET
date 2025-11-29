@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("QCOM", 0)]
+[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM

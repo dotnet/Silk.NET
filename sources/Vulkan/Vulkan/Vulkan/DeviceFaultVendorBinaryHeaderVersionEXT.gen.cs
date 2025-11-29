@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDeviceFaultVendorBinaryHeaderVersionEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DeviceFaultVendorBinaryHeaderVersionEXT : uint
 {
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_VENDOR_BINARY_HEADER_VERSION_ONE_EXT")]
     [SupportedApiProfile(
         "vulkan",

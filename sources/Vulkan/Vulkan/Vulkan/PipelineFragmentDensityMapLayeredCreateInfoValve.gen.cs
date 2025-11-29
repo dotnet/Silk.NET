@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("VALVE", 0)]
+[NameAffix("Suffix", "VALVE", 0)]
 [NativeName("VkPipelineFragmentDensityMapLayeredCreateInfoVALVE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineFragmentDensityMapLayeredCreateInfoValve

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("LUNARG", 0)]
+[NameAffix("Suffix", "LUNARG", 0)]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct GetInstanceProcAddrLunarg : IDisposable
 {

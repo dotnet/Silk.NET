@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkExternalMemoryFeatureFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,17 +16,17 @@ public enum ExternalMemoryFeatureFlagsNV : uint
 {
     None = 0x0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     DedicatedOnlyBitNV = 0x1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     ExportableBitNV = 0x2,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     ImportableBitNV = 0x4,

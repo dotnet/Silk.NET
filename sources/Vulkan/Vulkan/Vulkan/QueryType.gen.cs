@@ -99,7 +99,7 @@ public enum QueryType : uint
     )]
     Timestamp = 2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_RESULT_STATUS_ONLY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -108,7 +108,7 @@ public enum QueryType : uint
     )]
     ResultStatusOnlyKHR = 1000023000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -120,7 +120,7 @@ public enum QueryType : uint
     )]
     TransformFeedbackStreamEXT = 1000028004,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -132,7 +132,7 @@ public enum QueryType : uint
     )]
     PerformanceQueryKHR = 1000116000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -144,7 +144,7 @@ public enum QueryType : uint
     )]
     AccelerationStructureCompactedSizeKHR = 1000150000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -156,7 +156,7 @@ public enum QueryType : uint
     )]
     AccelerationStructureSerializationSizeKHR = 1000150001,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -168,12 +168,12 @@ public enum QueryType : uint
     )]
     AccelerationStructureCompactedSizeNV = 1000165000,
 
-    [NameSuffix("INTEL", 0)]
+    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceQueryIntel = 1000210000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_VIDEO_ENCODE_FEEDBACK_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -185,7 +185,7 @@ public enum QueryType : uint
     )]
     VideoEncodeFeedbackKHR = 1000299000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_MESH_PRIMITIVES_GENERATED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -194,7 +194,7 @@ public enum QueryType : uint
     )]
     MeshPrimitivesGeneratedEXT = 1000328000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -203,7 +203,7 @@ public enum QueryType : uint
     )]
     PrimitivesGeneratedEXT = 1000382000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_BOTTOM_LEVEL_POINTERS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -212,7 +212,7 @@ public enum QueryType : uint
     )]
     AccelerationStructureSerializationBottomLevelPointersKHR = 1000386000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -221,7 +221,7 @@ public enum QueryType : uint
     )]
     AccelerationStructureSizeKHR = 1000386001,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_MICROMAP_SERIALIZATION_SIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -233,7 +233,7 @@ public enum QueryType : uint
     )]
     MicromapSerializationSizeEXT = 1000396000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_MICROMAP_COMPACTED_SIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",

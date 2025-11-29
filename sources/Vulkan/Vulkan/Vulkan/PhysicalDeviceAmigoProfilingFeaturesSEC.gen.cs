@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("SEC", 0)]
+[NameAffix("Suffix", "SEC", 0)]
 [NativeName("VkPhysicalDeviceAmigoProfilingFeaturesSEC")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAmigoProfilingFeaturesSEC

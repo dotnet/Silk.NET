@@ -41,7 +41,7 @@ public enum VendorId : uint
     )]
     VendorIdKhronos = 65536,
 
-    [NameSuffix("VIV", 0)]
+    [NameAffix("Suffix", "VIV", 0)]
     [NativeName("VK_VENDOR_ID_VIV")]
     [SupportedApiProfile(
         "vulkan",
@@ -71,7 +71,7 @@ public enum VendorId : uint
     )]
     VendorIdVIV = 65537,
 
-    [NameSuffix("VSI", 0)]
+    [NameAffix("Suffix", "VSI", 0)]
     [NativeName("VK_VENDOR_ID_VSI")]
     [SupportedApiProfile(
         "vulkan",
@@ -159,7 +159,7 @@ public enum VendorId : uint
     )]
     VendorIdCodeplay = 65540,
 
-    [NameSuffix("MESA", 0)]
+    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_VENDOR_ID_MESA")]
     [SupportedApiProfile(
         "vulkan",

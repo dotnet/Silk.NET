@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkIndirectStateFlagBitsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum IndirectStateFlagsNV : uint
 {
     None = 0x0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_INDIRECT_STATE_FLAG_FRONTFACE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

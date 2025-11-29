@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkRenderingAttachmentFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,7 +15,7 @@ public enum RenderingAttachmentFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_ATTACHMENT_INPUT_ATTACHMENT_FEEDBACK_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +32,7 @@ public enum RenderingAttachmentFlagsKHR : uint
     )]
     InputAttachmentFeedbackBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_ATTACHMENT_RESOLVE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44,7 +44,7 @@ public enum RenderingAttachmentFlagsKHR : uint
     )]
     ResolveSkipTransferFunctionBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_ATTACHMENT_RESOLVE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

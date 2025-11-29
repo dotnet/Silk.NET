@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkRenderPassSubpassFeedbackInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct RenderPassSubpassFeedbackInfoEXT

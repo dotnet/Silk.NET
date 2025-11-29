@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("INTEL", 0)]
+[NameAffix("Suffix", "INTEL", 0)]
 [NativeName("VkPerformanceValueDataINTEL")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]

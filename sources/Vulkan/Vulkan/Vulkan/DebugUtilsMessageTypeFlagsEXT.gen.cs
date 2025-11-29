@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDebugUtilsMessageTypeFlagBitsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,22 +15,22 @@ public enum DebugUtilsMessageTypeFlagsEXT : uint
 {
     None = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     GeneralBitEXT = 0x1,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     ValidationBitEXT = 0x2,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     PerformanceBitEXT = 0x4,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_DEVICE_ADDRESS_BINDING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

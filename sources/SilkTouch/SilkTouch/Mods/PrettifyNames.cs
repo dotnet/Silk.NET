@@ -743,12 +743,11 @@ public class PrettifyNames(
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
-    private record struct NameAffix(string Affix, int Priority);
-    private record struct AffixData(NameAffix[] Prefixes, NameAffix[] Suffixes);
+    private record struct NameAffix(bool IsPrefix, string Affix, int Priority);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
-    private record struct TypeAffixData(AffixData TypeAffixes, Dictionary<string, AffixData>? MemberAffixes);
+    private record struct TypeAffixData(NameAffix[] TypeAffixes, Dictionary<string, NameAffix[]>? MemberAffixes);
 
     private class Visitor : CSharpSyntaxWalker
     {
@@ -818,73 +817,54 @@ public class PrettifyNames(
             || _enumInProgress is not null
             || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
 
-        private bool TryGetAffixData(SyntaxList<AttributeListSyntax> attributeLists, out AffixData affixData)
+        private bool TryGetAffixData(SyntaxList<AttributeListSyntax> attributeLists, out NameAffix[] affixes)
         {
-            affixData = new AffixData([], []);
+            affixes = [];
             foreach (var list in attributeLists)
             {
                 foreach (var attribute in list.Attributes)
                 {
-                    // 0 is none, 1 is prefix, 2 is suffix
-                    var type = 0;
-                    if (attribute.IsAttribute("Silk.NET.Core.NamePrefix"))
-                    {
-                        type = 1;
-                    }
-
-                    if (attribute.IsAttribute("Silk.NET.Core.NameSuffix"))
-                    {
-                        type = 2;
-                    }
-
-                    if (type == 0)
+                    if (!attribute.IsAttribute("Silk.NET.Core.NameAffix"))
                     {
                         continue;
                     }
 
                     if (attribute.ArgumentList != null)
                     {
-                        var affixArg = attribute.ArgumentList.Arguments[0];
-                        var priorityArg = attribute.ArgumentList.Arguments[1];
+                        var typeArg = attribute.ArgumentList.Arguments[0];
+                        var affixArg = attribute.ArgumentList.Arguments[1];
+                        var priorityArg = attribute.ArgumentList.Arguments[2];
 
+                        var type = (typeArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
                         var affix = (affixArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
                         var priority = (priorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? 0;
 
                         if (affix != null)
                         {
-                            if (type == 1)
-                            {
-                                affixData.Prefixes = [..affixData.Prefixes, new NameAffix(affix, priority)];
-                            }
-                            else
-                            {
-                                affixData.Suffixes = [..affixData.Suffixes, new NameAffix(affix, priority)];
-                            }
+                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, priority)];
                         }
                     }
                 }
             }
 
-            return affixData.Prefixes.Length != 0 || affixData.Suffixes.Length != 0;
+            return affixes.Length != 0;
         }
 
         private void ReportTypeAffixData(string typeIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
         {
-            if (!TryGetAffixData(attributeLists, out var affixData))
+            if (!TryGetAffixData(attributeLists, out var affixes))
             {
                 return;
             }
 
             if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
             {
-                typeAffixData = new TypeAffixData(new AffixData([], []), null);
+                typeAffixData = new TypeAffixData([], null);
             }
 
             Affixes[typeIdentifier] = typeAffixData with
             {
-                TypeAffixes = new AffixData(
-                    [..typeAffixData.TypeAffixes.Prefixes, ..affixData.Prefixes],
-                    [..typeAffixData.TypeAffixes.Suffixes, ..affixData.Suffixes]),
+                TypeAffixes = [..typeAffixData.TypeAffixes, ..affixes],
             };
         }
 
@@ -897,7 +877,7 @@ public class PrettifyNames(
 
             if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
             {
-                typeAffixData = new TypeAffixData(new AffixData([], []), null);
+                typeAffixData = new TypeAffixData([], null);
             }
 
             (typeAffixData.MemberAffixes ??= []).Add(memberIdentifier, affixData);

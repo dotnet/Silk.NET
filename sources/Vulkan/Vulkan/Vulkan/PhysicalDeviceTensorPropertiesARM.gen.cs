@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("ARM", 0)]
+[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkPhysicalDeviceTensorPropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTensorPropertiesARM

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkGeometryInstanceFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum GeometryInstanceFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +28,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleFacingCullDisableBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FLIP_FACING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleFlipFacingBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +52,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceOpaqueBitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +64,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceNoOpaqueBitKHR = 0x8,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -76,7 +76,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceOpacityMicromap2StateBitEXT = 0x10,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -88,7 +88,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     DisableOpacityMicromapsBitEXT = 0x20,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -100,7 +100,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleFrontCounterclockwiseBitKHR = TriangleFlipFacingBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -112,7 +112,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleCullDisableBitNV = TriangleFacingCullDisableBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -124,7 +124,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     TriangleFrontCounterclockwiseBitNV = TriangleFrontCounterclockwiseBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -136,7 +136,7 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceOpaqueBitNV = ForceOpaqueBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

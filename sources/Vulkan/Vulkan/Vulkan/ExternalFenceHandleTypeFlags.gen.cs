@@ -115,7 +115,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     SyncFdBit = 0x8,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -127,7 +127,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueFdBitKHR = OpaqueFdBit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -139,7 +139,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32BitKHR = OpaqueWin32Bit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -151,7 +151,7 @@ public enum ExternalFenceHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

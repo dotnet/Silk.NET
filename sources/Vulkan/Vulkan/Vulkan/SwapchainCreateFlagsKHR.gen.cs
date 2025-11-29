@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkSwapchainCreateFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,7 +15,7 @@ public enum SwapchainCreateFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     SplitInstanceBindRegionsBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_PROTECTED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35,7 +35,7 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     ProtectedBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +49,7 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     MutableFormatBitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_PRESENT_ID_2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -58,7 +58,7 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     PresentId2BitKHR = 0x40,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_PRESENT_WAIT_2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -72,7 +72,7 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     PresentWait2BitKHR = 0x80,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +85,7 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     DeferredMemoryAllocationBitKHR = 0x8,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

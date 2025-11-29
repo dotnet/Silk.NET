@@ -44,7 +44,7 @@ public enum LineRasterizationMode : uint
     )]
     RectangularSmooth = 3,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,7 +56,7 @@ public enum LineRasterizationMode : uint
     )]
     DefaultEXT = Default,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum LineRasterizationMode : uint
     )]
     RectangularEXT = Rectangular,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -80,7 +80,7 @@ public enum LineRasterizationMode : uint
     )]
     BresenhamEXT = Bresenham,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -92,7 +92,7 @@ public enum LineRasterizationMode : uint
     )]
     RectangularSmoothEXT = RectangularSmooth,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -104,7 +104,7 @@ public enum LineRasterizationMode : uint
     )]
     DefaultKHR = Default,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -116,7 +116,7 @@ public enum LineRasterizationMode : uint
     )]
     RectangularKHR = Rectangular,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -128,7 +128,7 @@ public enum LineRasterizationMode : uint
     )]
     BresenhamKHR = Bresenham,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR")]
     [SupportedApiProfile(
         "vulkan",
