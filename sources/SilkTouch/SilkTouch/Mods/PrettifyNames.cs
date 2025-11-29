@@ -744,11 +744,11 @@ public class PrettifyNames(
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
     private record struct NameAffix(string Affix, int Priority);
-    private record struct AffixData(List<NameAffix>? Prefixes, List<NameAffix>? Suffixes);
+    private record struct AffixData(NameAffix[] Prefixes, NameAffix[] Suffixes);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
-    private record struct TypeAffixData(AffixData TypeAffixes, Dictionary<string, AffixData> MemberAffixes);
+    private record struct TypeAffixData(AffixData TypeAffixes, Dictionary<string, AffixData>? MemberAffixes);
 
     private class Visitor : CSharpSyntaxWalker
     {
@@ -818,9 +818,9 @@ public class PrettifyNames(
             || _enumInProgress is not null
             || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
 
-        private AffixData GetAffixData(SyntaxList<AttributeListSyntax> attributeLists)
+        private bool TryGetAffixData(SyntaxList<AttributeListSyntax> attributeLists, out AffixData affixData)
         {
-            AffixData result = default;
+            affixData = new AffixData([], []);
             foreach (var list in attributeLists)
             {
                 foreach (var attribute in list.Attributes)
@@ -854,39 +854,38 @@ public class PrettifyNames(
                         {
                             if (type == 1)
                             {
-                                (result.Prefixes ??= []).Add(new NameAffix(affix, priority));
+                                affixData.Prefixes = [..affixData.Prefixes, new NameAffix(affix, priority)];
                             }
                             else
                             {
-                                (result.Suffixes ??= []).Add(new NameAffix(affix, priority));
+                                affixData.Suffixes = [..affixData.Suffixes, new NameAffix(affix, priority)];
                             }
                         }
                     }
                 }
             }
 
-            return result;
+            return affixData.Prefixes.Length != 0 || affixData.Suffixes.Length != 0;
         }
 
         private void ReportTypeAffixData(string typeIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
         {
+            if (!TryGetAffixData(attributeLists, out var affixData))
+            {
+                return;
+            }
+
             if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
             {
-                typeAffixData = new TypeAffixData(default, []);
+                typeAffixData = new TypeAffixData(new AffixData([], []), null);
             }
 
-            var affixData = GetAffixData(attributeLists);
-            if (typeAffixData.TypeAffixes.Prefixes != null)
+            Affixes[typeIdentifier] = typeAffixData with
             {
-                (affixData.Prefixes ??= []).AddRange(typeAffixData.TypeAffixes.Prefixes);
-            }
-
-            if (typeAffixData.TypeAffixes.Suffixes != null)
-            {
-                (affixData.Suffixes ??= []).AddRange(typeAffixData.TypeAffixes.Suffixes);
-            }
-
-            Affixes[typeIdentifier] = typeAffixData;
+                TypeAffixes = new AffixData(
+                    [..typeAffixData.TypeAffixes.Prefixes, ..affixData.Prefixes],
+                    [..typeAffixData.TypeAffixes.Suffixes, ..affixData.Suffixes]),
+            };
         }
 
         // ----- Types -----
