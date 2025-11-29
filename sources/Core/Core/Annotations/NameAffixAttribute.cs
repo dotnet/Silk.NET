@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Silk.NET.Core;
 
 /// <summary>
@@ -14,6 +16,7 @@ namespace Silk.NET.Core;
     AllowMultiple = false,
     Inherited = true
 )]
+[Conditional("DEBUG")]
 public sealed class NameAffixAttribute : Attribute
 {
     /// <param name="type">The type of affix. Either "Prefix" or "Suffix".</param>
