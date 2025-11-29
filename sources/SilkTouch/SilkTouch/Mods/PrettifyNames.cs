@@ -30,12 +30,12 @@ public class PrettifyNames(
         /// <summary>
         /// Corrections to the automatic prefix determination.
         /// </summary>
-        public Dictionary<string, string>? PrefixOverrides { get; init; }
+        public Dictionary<string, string> PrefixOverrides { get; init; } = [];
 
         /// <summary>
         /// Manually renamed native names.
         /// </summary>
-        public Dictionary<string, string>? NameOverrides { get; init; }
+        public Dictionary<string, string> NameOverrides { get; init; } = [];
 
         /// <summary>
         /// The base trimmer version. If null, trimming is disabled.
@@ -171,7 +171,7 @@ public class PrettifyNames(
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
                     ? val.Select(x => new KeyValuePair<string, CandidateNames>(
                         x,
-                        new CandidateNames(GetOverriddenName(typeName, x, cfg.NameOverrides!, nameTransformer), null)
+                        new CandidateNames(GetOverriddenName(typeName, x, cfg.NameOverrides, nameTransformer), null)
                     ))
                     : [];
 
@@ -196,9 +196,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
             {
                 newNames[name] = new RenamedType(
-                    GetOverriddenName(null, name, cfg.NameOverrides!, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, nameTransformer)),
-                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, nameTransformer)),
+                    GetOverriddenName(null, name, cfg.NameOverrides, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
+                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides, nameTransformer)),
+                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides, nameTransformer)),
                     isEnum
                 );
             }
@@ -209,12 +209,12 @@ public class PrettifyNames(
             foreach (var (name, (newName, nonFunctions, functions, _)) in newNames)
             {
                 logger.LogDebug("{} = {}", name, newName);
-                foreach (var (old, @new) in nonFunctions ?? new())
+                foreach (var (old, @new) in nonFunctions)
                 {
                     logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
                 }
 
-                foreach (var (old, @new) in functions ?? new())
+                foreach (var (old, @new) in functions)
                 {
                     logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
                 }
@@ -255,8 +255,8 @@ public class PrettifyNames(
             newNames.SelectMany(x =>
             {
                 var nonFunctionConflicts = x
-                    .Value.NonFunctions?.Values.Where(y =>
-                        x.Value.Functions?.ContainsValue(y) ?? false
+                    .Value.NonFunctions.Values.Where(y =>
+                        x.Value.Functions.ContainsValue(y)
                     )
                     .ToHashSet();
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
@@ -265,15 +265,15 @@ public class PrettifyNames(
                         [
                             .. Enumerable.SelectMany(
                                 [
-                                    .. x.Value.NonFunctions?.Select(z =>
-                                        nonFunctionConflicts?.Contains(z.Value) ?? false
+                                    .. x.Value.NonFunctions.Select(z =>
+                                        nonFunctionConflicts.Contains(z.Value)
                                             ? new KeyValuePair<string, string>(
                                                 z.Key,
                                                 $"{z.Value}Value"
                                             )
                                             : z
-                                    ) ?? [],
-                                    .. x.Value.Functions ?? [],
+                                    ),
+                                    .. x.Value.Functions,
                                 ],
                                 z =>
                                 {
@@ -357,13 +357,12 @@ public class PrettifyNames(
     private string GetOverriddenName(
         string? container,
         string name,
-        Dictionary<string, string>? nameOverrides,
+        Dictionary<string, string> nameOverrides,
         NameUtils.NameTransformer nameTransformer,
         bool allowAllCaps = false)
     {
-        foreach (var (nativeName, overriddenName) in nameOverrides ?? [])
+        foreach (var (nativeName, overriddenName) in nameOverrides)
         {
-            var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
             {
                 // We're processing a type dictionary, so don't add a member thing.
@@ -380,7 +379,7 @@ public class PrettifyNames(
                     continue;
                 }
 
-                nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
+                var nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
                 if (nameToAdd == name)
                 {
                     return overriddenName;
@@ -402,8 +401,8 @@ public class PrettifyNames(
     {
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
         // automatic prefix determination for example
-        var namesToTrim = context.Names!;
-        foreach (var (nativeName, overriddenName) in context.Configuration.NameOverrides ?? [])
+        var namesToTrim = context.Names;
+        foreach (var (nativeName, overriddenName) in context.Configuration.NameOverrides)
         {
             var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
@@ -444,7 +443,7 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            context.Names![nameToAdd] = new CandidateNames(
+            context.Names[nameToAdd] = new CandidateNames(
                 overriddenName,
                 [.. v.Secondary ?? [], nameToAdd]
             );
@@ -461,14 +460,14 @@ public class PrettifyNames(
         {
             foreach (var (evalName, result) in namesToTrim)
             {
-                context.Names![evalName] = result;
+                context.Names[evalName] = result;
             }
         }
 
         // Prefer shorter names
-        foreach (var (trimmingName, (primary, secondary)) in context.Names!)
+        foreach (var (trimmingName, (primary, secondary)) in context.Names)
         {
-            context.Names![trimmingName] = new CandidateNames(
+            context.Names[trimmingName] = new CandidateNames(
                 primary,
                 secondary?.OrderByDescending(x => x.Length).ToList()
             );
@@ -477,7 +476,7 @@ public class PrettifyNames(
         // Create a map from primaries to trimming names, to account for multiple overloads with the same primary and
         // same trimming name (i.e. it is a generated/transformed overload) but differing discriminators.
         var primaries = new Dictionary<string, HashSet<string>>();
-        foreach (var (trimmingName, (primary, _)) in context.Names!)
+        foreach (var (trimmingName, (primary, _)) in context.Names)
         {
             var trimmingNamesForPrimary = primaries.TryGetValue(primary, out var tnfp)
                 ? tnfp
@@ -516,7 +515,7 @@ public class PrettifyNames(
             foreach (var trimmingNameToEval in trimmingNamesForOldPrimary)
             {
                 // Do we even have a secondary to fall back on if there is a conflict?
-                if ((context.Names![trimmingNameToEval].Secondary?.Count ?? 0) == 0)
+                if ((context.Names[trimmingNameToEval].Secondary?.Count ?? 0) == 0)
                 {
                     noSecondaryTrimmingName ??= trimmingNameToEval;
                     nNoSecondaries++;
@@ -631,11 +630,11 @@ public class PrettifyNames(
                     {
                         // Update the output name.
                         var firstSecondary =
-                            context.Names![first].Secondary
+                            context.Names[first].Secondary
                             ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                        context.Names![first] = new CandidateNames(
+                        context.Names[first] = new CandidateNames(
                             firstNextPrimary,
                             firstSecondary.Count == 0 ? null : firstSecondary
                         );
@@ -674,11 +673,11 @@ public class PrettifyNames(
 
                 // Conflict resolution! Update the output name.
                 var secondary =
-                    context.Names![conflictingTrimmingName].Secondary
+                    context.Names[conflictingTrimmingName].Secondary
                     ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
-                context.Names![conflictingTrimmingName] = new CandidateNames(
+                context.Names[conflictingTrimmingName] = new CandidateNames(
                     nextPrimary,
                     secondary.Count == 0 ? null : secondary
                 );
@@ -747,8 +746,8 @@ public class PrettifyNames(
     /// <param name="IsEnum">Whether the type is an enum or not.</param>
     private record struct RenamedType(
         string NewName,
-        Dictionary<string, string>? NonFunctions,
-        Dictionary<string, string>? Functions,
+        Dictionary<string, string> NonFunctions,
+        Dictionary<string, string> Functions,
         bool IsEnum
     );
 
@@ -756,8 +755,8 @@ public class PrettifyNames(
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
 
     private record struct NameAffix(string Affix, int Priority);
-    private record struct AffixData(List<NameAffix>? Prefixes, List<NameAffix>? Suffixes);
-    private record struct TypeAffixData(AffixData TypeNameAffixes, Dictionary<string, AffixData>? MemberAffixes);
+    private record struct AffixData(List<NameAffix> Prefixes, List<NameAffix> Suffixes);
+    private record struct TypeAffixData(AffixData TypeNameAffixes, Dictionary<string, AffixData> MemberAffixes);
 
     private class Visitor : CSharpSyntaxWalker
     {

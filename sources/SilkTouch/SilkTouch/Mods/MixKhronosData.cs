@@ -1270,7 +1270,7 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public void Trim(NameTrimmerContext context)
     {
-        if (context.Names is null || context.JobKey is null)
+        if (context.JobKey is null)
         {
             return;
         }
@@ -1312,7 +1312,7 @@ public partial class MixKhronosData(
 
         if (rewind)
         {
-            foreach (var (original, (current, previous)) in context.Names)
+            foreach (var (original, (_, previous)) in context.Names)
             {
                 var prev = previous?.FirstOrDefault() ?? original;
                 var prevList = previous ?? [];
@@ -1638,7 +1638,7 @@ public partial class MixKhronosData(
             // Are the parameters transformable?
             for (var i = 0; i < @params.Count; i++)
             {
-                var param = current.ParameterList!.Parameters[i];
+                var param = current.ParameterList.Parameters[i];
                 if (
                     param.Type is null
                     || GetTypeTransformation(
@@ -2023,7 +2023,7 @@ public partial class MixKhronosData(
 
             AllKnownEnums.Add(identifier);
 
-            if (job.Groups.TryGetValue(identifier, out var group)
+            if (job.Groups.TryGetValue(identifier, out _)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any())
             {
                 AlreadyPresentGroups.Add(identifier);
@@ -2090,7 +2090,7 @@ public partial class MixKhronosData(
     /// </summary>
     private class RewriterPhase2(JobData job, RewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
     {
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
+        public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
