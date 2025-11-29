@@ -279,8 +279,8 @@
         "ClangScraper",
         "MarkNativeNames",
         "ExtractNestedTyping",
-        "MixKhronosData",
         "TransformHandles",
+        "MixKhronosData",
         "AddApiProfiles",
         "InterceptNativeFunctions",
         "TransformFunctions",
@@ -326,7 +326,8 @@
       },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true
+        "UseDSL": true,
+        "HandleSuffixPriority": 1
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
