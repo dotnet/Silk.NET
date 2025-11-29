@@ -2194,7 +2194,9 @@ public partial class MixKhronosData(
             if (name.EndsWith(handleSuffix))
             {
                 name = name[..^handleSuffix.Length];
-                attributeLists = attributeLists.AddNameSuffix(handleSuffix, -1);
+                attributeLists = attributeLists
+                    .AddNameSuffix(handleSuffix, -1)
+                    .WithNativeName(name);
             }
 
             foreach (var vendor in vendors)
