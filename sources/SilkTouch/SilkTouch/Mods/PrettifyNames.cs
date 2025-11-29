@@ -119,7 +119,7 @@ public class PrettifyNames(
             // Now rename everything within each type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
-                var (_, (consts, functions, _, isEnum)) = visitor.Types.First(x => x.Key == typeName);
+                var (_, (consts, functions, _)) = visitor.Types.First(x => x.Key == typeName);
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
@@ -185,28 +185,26 @@ public class PrettifyNames(
                     functionNames.ToDictionary(
                         x => x.Key,
                         x => x.Value.Primary.Prettify(nameTransformer)
-                    ),
-                    isEnum
+                    )
                 );
             }
         }
         else // (there's no trimming baseline)
         {
             // Prettify only if the user has not indicated they want to trim.
-            foreach (var (name, (nonFunctions, functions, _, isEnum)) in visitor.Types)
+            foreach (var (name, (nonFunctions, functions, _)) in visitor.Types)
             {
                 newNames[name] = new RenamedType(
                     GetOverriddenName(null, name, cfg.NameOverrides, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
                     nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides, nameTransformer)),
-                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides, nameTransformer)),
-                    isEnum
+                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides, nameTransformer))
                 );
             }
         }
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions, _)) in newNames)
+            foreach (var (name, (newName, nonFunctions, functions)) in newNames)
             {
                 logger.LogDebug("{} = {}", name, newName);
                 foreach (var (old, @new) in nonFunctions)
@@ -743,18 +741,12 @@ public class PrettifyNames(
     /// <param name="NewName">The new name of the type.</param>
     /// <param name="NonFunctions">The mappings from original names to new names of the type's non-function members.</param>
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
-    /// <param name="IsEnum">Whether the type is an enum or not.</param>
-    private record struct RenamedType(
-        string NewName,
-        Dictionary<string, string> NonFunctions,
-        Dictionary<string, string> Functions,
-        bool IsEnum
-    );
+    private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
     private record struct NameAffix(string Affix, int Priority);
     private record struct AffixData(List<NameAffix> Prefixes, List<NameAffix> Suffixes);
 
-    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions, Dictionary<string, AffixData> MemberAffixes, bool IsEnum);
+    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions, Dictionary<string, AffixData> MemberAffixes);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
 
     private class Visitor : CSharpSyntaxWalker
@@ -840,7 +832,7 @@ public class PrettifyNames(
             // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], [], [], false);
+                typeData = new TypeData([], [], []);
                 Types.Add(identifier, typeData);
             }
 
@@ -870,7 +862,7 @@ public class PrettifyNames(
             // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], [], [], false);
+                typeData = new TypeData([], [], []);
                 Types.Add(identifier, typeData);
             }
 
@@ -900,7 +892,7 @@ public class PrettifyNames(
             // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], [], [], true);
+                typeData = new TypeData([], [], []);
                 Types.Add(identifier, typeData);
             }
 
@@ -926,7 +918,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
-            Types.Add(identifier, new TypeData([], [], [], false));
+            Types.Add(identifier, new TypeData([], [], []));
         }
 
         // ----- Members -----
