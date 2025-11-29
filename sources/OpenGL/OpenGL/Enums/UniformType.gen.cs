@@ -87,5 +87,5 @@ public enum UniformType : uint
     DoubleMAT3X2 = unchecked((uint)0x8F4B),
     DoubleMAT3X4 = unchecked((uint)0x8F4C),
     DoubleMAT4X2 = unchecked((uint)0x8F4D),
-    DoubleMAT4X3 = unchecked((uint)0x8F4E)
+    DoubleMAT4X3 = unchecked((uint)0x8F4E),
 }

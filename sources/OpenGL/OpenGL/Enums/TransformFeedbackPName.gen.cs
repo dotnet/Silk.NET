@@ -14,5 +14,5 @@ public enum TransformFeedbackPName : uint
     BufferSize = unchecked((uint)0x8C85),
     BufferBinding = unchecked((uint)0x8C8F),
     Active = unchecked((uint)0x8E24),
-    Paused = unchecked((uint)0x8E23)
+    Paused = unchecked((uint)0x8E23),
 }

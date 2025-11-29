@@ -29,5 +29,5 @@ public enum ColorTableParameterPName : uint
     BlueSizeSGI = unchecked((uint)0x80DC),
     AlphaSizeSGI = unchecked((uint)0x80DD),
     LuminanceSizeSGI = unchecked((uint)0x80DE),
-    IntensitySizeSGI = unchecked((uint)0x80DF)
+    IntensitySizeSGI = unchecked((uint)0x80DF),
 }

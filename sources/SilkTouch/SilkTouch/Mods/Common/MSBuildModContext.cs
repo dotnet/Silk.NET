@@ -12,14 +12,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using CSharpier.Core;
-using CSharpier.Core.CSharp;
+using CSharpier;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using EndOfLine = CSharpier.Core.EndOfLine;
+using EndOfLine = CSharpier.EndOfLine;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -180,6 +179,11 @@ internal class MSBuildModContext(
                     )
                 )
                 {
+                    logger.LogWarning(
+                        "Invalid document \"{}\" ({}) generated, please check the syntax root and file path.",
+                        doc.Name,
+                        doc.Id
+                    );
                     return;
                 }
 
@@ -306,7 +310,7 @@ internal class MSBuildModContext(
         CancellationToken ct = default
     )
     {
-        var result = await CSharpFormatter.FormatAsync(
+        var result = await CodeFormatter.FormatAsync(
             root.NormalizeWhitespace().SyntaxTree,
             _opts,
             ct

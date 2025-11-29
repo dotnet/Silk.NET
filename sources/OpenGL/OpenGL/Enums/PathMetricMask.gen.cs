@@ -32,5 +32,5 @@ public enum PathMetricMask : uint
     FontUnderlinePositionBitNV = unchecked((uint)0x04000000),
     FontUnderlineThicknessBitNV = unchecked((uint)0x08000000),
     FontHasKerningBitNV = unchecked((uint)0x10000000),
-    FontNumGlyphIndicesBitNV = unchecked((uint)0x20000000)
+    FontNumGlyphIndicesBitNV = unchecked((uint)0x20000000),
 }

@@ -1,0 +1,26 @@
+set(CMAKE_SYSTEM_NAME "Linux")
+set(CMAKE_SYSTEM_PROCESSOR "aarch64")
+
+set(CMAKE_ASM_COMPILER "/usr/bin/aarch64-linux-gnu-gcc")
+set(CMAKE_C_COMPILER "/usr/bin/aarch64-linux-gnu-gcc")
+set(CMAKE_CXX_COMPILER "/usr/bin/aarch64-linux-gnu-g++")
+
+set(CMAKE_ADDR2LINE "/usr/bin/aarch64-linux-gnu-addr2line")
+set(CMAKE_AR "/usr/bin/aarch64-linux-gnu-ar")
+set(CMAKE_LINKER "/usr/bin/aarch64-linux-gnu-ld")
+set(CMAKE_NM "/usr/bin/aarch64-linux-gnu-nm")
+set(CMAKE_OBJCOPY "/usr/bin/aarch64-linux-gnu-objcopy")
+set(CMAKE_OBJDUMP "/usr/bin/aarch64-linux-gnu-objdump")
+set(CMAKE_RANLIB "/usr/bin/aarch64-linux-gnu-ranlib")
+set(CMAKE_READELF "/usr/bin/aarch64-linux-gnu-readelf")
+set(CMAKE_STRIP "/usr/bin/aarch64-linux-gnu-strip")
+
+set(PKG_CONFIG_EXECUTABLE "/usr/bin/pkg-config")
+set(ENV{PKG_CONFIG_LIBDIR} "/usr/lib/aarch64-linux-gnu/pkgconfig")
+set(ENV{PKG_CONFIG_PATH} "/usr/lib/pkgconfig:/usr/share/pkgconfig")
+
+set(CMAKE_FIND_ROOT_PATH "/usr/aarch64-linux-gnu")
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE BOTH)

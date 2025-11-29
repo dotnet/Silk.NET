@@ -7,13 +7,9 @@
     <DefineConstants>SSE;BTEC_INTRINSICS;MATHF;POH;AdvSIMD;$(DefineConstants)</DefineConstants>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <SilkDSLExempt>true</SilkDSLExempt>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Scalar.As.cs">
       <DesignTime>True</DesignTime>
@@ -27,9 +23,15 @@
       <LastGenOutput>Scalar.As.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.*.txt" />
+
+  <PropertyGroup>
+    <SilkTrackPublicAPI>true</SilkTrackPublicAPI>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != ''">
+    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Unshipped.txt" />
   </ItemGroup>
+
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>

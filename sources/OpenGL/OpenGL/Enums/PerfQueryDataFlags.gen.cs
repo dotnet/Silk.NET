@@ -12,5 +12,5 @@ public enum PerfQueryDataFlags : uint
 {
     WaitIntel = unchecked((uint)0x83FB),
     FlushIntel = unchecked((uint)0x83FA),
-    DonotFlushIntel = unchecked((uint)0x83F9)
+    DonotFlushIntel = unchecked((uint)0x83F9),
 }

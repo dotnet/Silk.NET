@@ -14,5 +14,5 @@ public enum AccumOp : uint
     Load = unchecked((uint)0x0101),
     Return = unchecked((uint)0x0102),
     Mult = unchecked((uint)0x0103),
-    Add = unchecked((uint)0x0104)
+    Add = unchecked((uint)0x0104),
 }

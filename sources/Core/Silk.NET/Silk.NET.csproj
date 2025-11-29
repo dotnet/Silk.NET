@@ -11,11 +11,9 @@
     <!-- Include sources/A/A/Silk.NET.A.csproj in the metapackage -->
     <SilkSourceRoot Include="$([System.IO.Directory]::GetDirectories(&quot;$(MSBuildThisFileDirectory)../../&quot;))" />
     <SilkSourceCategory Include="@(SilkSourceRoot->'%(Filename)')" />
-    <ProjectReference Include="@(SilkSourceCategory-&gt;'../../%(Filename)/%(Filename)/Silk.NET.%(Filename).csproj'-&gt;Exists())" />
-    <ProjectReference Remove="../../Win32/Win32/Silk.NET.Win32.csproj" />
-    <!-- TODO remove once Win32 is worked on -->
-    <ProjectReference Remove="../../SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj" />
-    <!-- Not user facing today. -->
+    <ProjectReference Include="@(SilkSourceCategory->'../../%(Filename)/%(Filename)/Silk.NET.%(Filename).csproj'->Exists())" />
+    <ProjectReference Remove="../../Win32/Win32/Silk.NET.Win32.csproj" /> <!-- TODO remove once Win32 is worked on -->
+    <ProjectReference Remove="../../SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj" /> <!-- Not user facing today. -->
     <SilkSourceCategory Remove="@(SilkSourceCategory)" />
     <SilkSourceRoot Remove="@(SilkSourceRoot)" />
   </ItemGroup>

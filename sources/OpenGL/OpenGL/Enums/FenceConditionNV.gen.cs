@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FenceConditionNV : uint
 {
-    AllCompleted = unchecked((uint)0x84F2)
+    AllCompleted = unchecked((uint)0x84F2),
 }

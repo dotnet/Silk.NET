@@ -13,5 +13,5 @@ public enum VertexShaderStorageTypeEXT : uint
     Variant = unchecked((uint)0x87C1),
     Invariant = unchecked((uint)0x87C2),
     LocalConstant = unchecked((uint)0x87C3),
-    Local = unchecked((uint)0x87C4)
+    Local = unchecked((uint)0x87C4),
 }

@@ -155,6 +155,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
                 )
+                .WithBaseList(
+                    BaseList(
+                        SingletonSeparatedList<BaseTypeSyntax>(
+                            SimpleBaseType(IdentifierName($"I{ctx.ClassName}.Static"))
+                        )
+                    )
+                )
                 .WithMembers(
                     SingletonList<MemberDeclarationSyntax>(
                         ConstructorDeclaration(Name)
@@ -360,19 +367,29 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx) =>
-            (
+        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx)
+        {
+            var current =
                 ctx.CurrentPartial
                 ?? ClassDeclaration(Name)
                     .WithModifiers(
                         TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
-                    )
-            ).AddMembers(
+                    );
+            if (!ctx.Original.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                // We only care about the stuff that appears in the interface at this time.
+                return current;
+            }
+            return current.AddMembers(
                 ctx.StaticDecl.WithModifiers(
                         TokenList(
                             new[] { Token(SyntaxKind.PublicKeyword) }.Concat(
                                 ctx.StaticDecl.Modifiers.Where(x =>
-                                    x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
+                                    x.Kind()
+                                        is not (
+                                            SyntaxKind.PublicKeyword
+                                            or SyntaxKind.PartialKeyword
+                                        )
                                 )
                             )
                         )
@@ -409,6 +426,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     )
                     .AddMaxOpt()
             );
+        }
     }
 
     /// <summary>
@@ -423,8 +441,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         public override bool IsStatic => false;
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx) =>
-            (
+        public override ClassDeclarationSyntax AddMethod(in VTableContext ctx)
+        {
+            var current =
                 ctx.CurrentPartial
                 ?? ClassDeclaration(Name)
                     .WithModifiers(
@@ -449,10 +468,21 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 )
                             )
                         )
+                    );
+            if (!ctx.Original.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                // We only care about the stuff that appears in the interface at this time.
+                return current;
+            }
+            return current.AddMembers(
+                ctx.InstanceDecl.WithBody(null)
+                    .WithModifiers(
+                        TokenList(
+                            ctx.InstanceDecl.Modifiers.Where(x =>
+                                !x.IsKind(SyntaxKind.PartialKeyword)
+                            )
+                        )
                     )
-            ).AddMembers(
-                ctx.InstanceDecl.AddModifiers(Token(SyntaxKind.PublicKeyword))
-                    .WithBody(null)
                     .WithExpressionBody(
                         ArrowExpressionClause(
                             InvocationExpression(
@@ -474,6 +504,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                     .AddMaxOpt()
             );
+        }
     }
 
     /// <summary>
@@ -490,6 +521,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
+        private ClassDeclarationSyntax? _currentClass;
         private VTable[] _vTables = vTables;
 
         private ClassDeclarationSyntax?[] _currentVTableOutputs = new ClassDeclarationSyntax?[
@@ -576,16 +608,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             return ret;
         }
 
+        private static string InterfaceKey(ClassDeclarationSyntax klass) => $"I{klass.Identifier}";
+
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if (_currentInterface is not null)
+            if (_currentClass is not null)
             {
                 return node;
             }
 
             // Get the interface containing the methods
             var ns = node.NamespaceFromSyntaxNode();
-            var key = $"I{node.Identifier}";
+            var key = InterfaceKey(node);
             var className = node.Identifier.ToString();
             _fullClassName = $"{ns}.{node.Identifier}";
             if (!_multiClass && _className is null)
@@ -623,10 +657,18 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 FullClassNames[className] = _fullClassName;
             }
 
-            _currentInterface = NewInterface(key, node);
+            _currentClass = node;
 
             // Visit the class - this should record the methods.
             var ret = (ClassDeclarationSyntax)base.VisitClassDeclaration(node)!;
+
+            _currentClass = null;
+            if (_currentInterface is null) // <-- there were no eligible methods.
+            {
+                // We shouldn't need to reset in this case.
+                return ret;
+            }
+
             ret = ret.WithMembers(
                     List<MemberDeclarationSyntax>(
                         // _currentVTableOutputs contains the partials for the vtable implementations within this
@@ -662,45 +704,45 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
 
             // Reset for the next partial.
-            _currentVTableOutputs.AsSpan().Clear();
             InterfacePartials.Add((ns, _currentInterface));
             _currentInterface = null;
+            _currentVTableOutputs.AsSpan().Clear();
             return ret;
-
-            static InterfaceDeclarationSyntax NewInterface(
-                string key,
-                MemberDeclarationSyntax node
-            ) =>
-                InterfaceDeclaration(key)
-                    .WithModifiers(
-                        TokenList(
-                            node.Modifiers.Where(x =>
-                                    x.Kind()
-                                        is SyntaxKind.PublicKeyword
-                                            or SyntaxKind.PrivateKeyword
-                                            or SyntaxKind.InternalKeyword
-                                            or SyntaxKind.ProtectedKeyword
-                                            or SyntaxKind.UnsafeKeyword
-                                )
-                                .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
-                        )
-                    )
-                    .AddMembers(
-                        InterfaceDeclaration("Static")
-                            .WithModifiers(
-                                TokenList(
-                                    Token(SyntaxKind.PublicKeyword),
-                                    Token(SyntaxKind.PartialKeyword)
-                                )
-                            )
-                    );
         }
+
+        private static InterfaceDeclarationSyntax NewInterface(
+            string key,
+            MemberDeclarationSyntax node
+        ) =>
+            InterfaceDeclaration(key)
+                .WithModifiers(
+                    TokenList(
+                        node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is SyntaxKind.PublicKeyword
+                                        or SyntaxKind.PrivateKeyword
+                                        or SyntaxKind.InternalKeyword
+                                        or SyntaxKind.ProtectedKeyword
+                                        or SyntaxKind.UnsafeKeyword
+                            )
+                            .Concat(Enumerable.Repeat(Token(SyntaxKind.PartialKeyword), 1))
+                    )
+                )
+                .AddMembers(
+                    InterfaceDeclaration("Static")
+                        .WithModifiers(
+                            TokenList(
+                                Token(SyntaxKind.PublicKeyword),
+                                Token(SyntaxKind.PartialKeyword)
+                            )
+                        )
+                );
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
             var parent = node.FirstAncestorOrSelf<ClassDeclarationSyntax>();
             if (
-                _currentInterface is null
+                _currentClass is null
                 || !node.AttributeLists.GetNativeFunctionInfo(
                     out var lib,
                     out var entryPoint,
@@ -720,6 +762,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
 
             entryPoint ??= node.Identifier.ToString();
+            _currentInterface ??= NewInterface(InterfaceKey(_currentClass), _currentClass);
 
             // Get the static interface within this interface
             var staticInterface = _currentInterface
@@ -756,12 +799,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             var staticDecl = baseDecl
                 .WithModifiers(
                     TokenList(
-                        baseDecl.Modifiers.Where(x =>
-                            x.Kind() is SyntaxKind.StaticKeyword or SyntaxKind.UnsafeKeyword
-                        )
+                        baseDecl.Modifiers.Where(x => x.Kind() is not SyntaxKind.ExternKeyword)
                     )
                 )
-                .AddModifiers(Token(SyntaxKind.AbstractKeyword))
                 .WithBody(node.Body)
                 .WithSemicolonToken(
                     node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
@@ -771,37 +811,61 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             // Create the instance declaration.
             var instanceDecl = baseDecl
                 .WithModifiers(
-                    TokenList(baseDecl.Modifiers.Where(x => x.IsKind(SyntaxKind.UnsafeKeyword)))
+                    TokenList(
+                        baseDecl.Modifiers.Where(x =>
+                            x.Kind() is not (SyntaxKind.StaticKeyword or SyntaxKind.ExternKeyword)
+                        )
+                    )
                 )
                 .WithBody(node.Body)
                 .WithSemicolonToken(
                     node.Body is not null ? default : Token(SyntaxKind.SemicolonToken)
                 )
                 .WithExpressionBody(node.ExpressionBody);
-            _currentInterface = _currentInterface.WithMembers(
-                List(
-                    _currentInterface
-                        .Members.Select(x =>
-                            x == staticInterface
-                                ? staticInterface = staticInterface.AddMembers(
-                                    staticDecl
+            if (node.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                _currentInterface = _currentInterface.WithMembers(
+                    List(
+                        _currentInterface
+                            .Members.Select(x =>
+                                x == staticInterface
+                                    ? staticInterface = staticInterface.AddMembers(
+                                        staticDecl
+                                            .WithModifiers(
+                                                TokenList(
+                                                    staticDecl.Modifiers.Where(y =>
+                                                        !y.IsKind(SyntaxKind.PublicKeyword)
+                                                        && !y.IsKind(SyntaxKind.PartialKeyword)
+                                                    )
+                                                )
+                                            )
+                                            .AddModifiers(Token(SyntaxKind.AbstractKeyword))
+                                            .WithBody(null)
+                                            .WithExpressionBody(null)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                    )
+                                    : x
+                            )
+                            .Concat(
+                                Enumerable.Repeat(
+                                    instanceDecl
+                                        .WithModifiers(
+                                            TokenList(
+                                                instanceDecl.Modifiers.Where(x =>
+                                                    !x.IsKind(SyntaxKind.PublicKeyword)
+                                                    && !x.IsKind(SyntaxKind.PartialKeyword)
+                                                )
+                                            )
+                                        )
                                         .WithBody(null)
                                         .WithExpressionBody(null)
-                                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                                    1
                                 )
-                                : x
-                        )
-                        .Concat(
-                            Enumerable.Repeat(
-                                instanceDecl
-                                    .WithBody(null)
-                                    .WithExpressionBody(null)
-                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                                1
                             )
-                        )
-                )
-            );
+                    )
+                );
+            }
 
             for (var i = 0; i < _vTables.Length; i++)
             {
@@ -835,60 +899,89 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             // For the instance implementation of the vtable interface, the class contains an INativeContext from which
             // we'll get function pointers, implementing the interface as a function pointer call. It's an explicit
             // implementation because otherwise the static and non-static functions will conflict.
-            _rwMethodCallsForExplicitInterfaceSpecifier = _currentInterface;
-            var nativeContextTramp = instanceDecl
-                .WithExplicitInterfaceSpecifier(
-                    ExplicitInterfaceSpecifier(
-                        IdentifierName(_currentInterface.Identifier.ToString())
-                    )
-                )
-                .WithAttributeLists(List<AttributeListSyntax>())
-                .WithExpressionBody(
-                    node.Body is null && node.ExpressionBody is null
-                        ? GenerateNativeContextTrampoline(
-                            lib,
-                            entryPoint,
-                            callConv,
-                            node.ParameterList,
-                            node.ReturnType,
-                            slot
+            // If it's partial, then don't output this declaration part as explicit interface methods don't support
+            // that.
+            if (!node.Modifiers.Any(SyntaxKind.PartialKeyword))
+            {
+                _rwMethodCallsForExplicitInterfaceSpecifier = _currentInterface;
+                var nativeContextTramp = instanceDecl
+                    .WithModifiers(
+                        TokenList(
+                            instanceDecl.Modifiers.Where(x =>
+                                x.Kind() is not SyntaxKind.PublicKeyword
+                            )
                         )
-                    : node.ExpressionBody is null ? null
-                    : VisitArrowExpressionClause(node.ExpressionBody) as ArrowExpressionClauseSyntax
-                )
-                .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
-                .WithSemicolonToken(node.Body is null ? Token(SyntaxKind.SemicolonToken) : default)
-                .AddMaxOpt();
-            _rwMethodCallsForExplicitInterfaceSpecifier = null;
-            _methods.Add(nativeContextTramp);
+                    )
+                    .WithExplicitInterfaceSpecifier(
+                        node.Modifiers.Any(SyntaxKind.PublicKeyword)
+                            ? ExplicitInterfaceSpecifier(
+                                IdentifierName(_currentInterface.Identifier.ToString())
+                            )
+                            : null
+                    )
+                    .WithExpressionBody(
+                        node.Body is null
+                        && node.ExpressionBody is null
+                        && node.Modifiers.Any(SyntaxKind.ExternKeyword)
+                            ? GenerateNativeContextTrampoline(
+                                lib,
+                                entryPoint,
+                                callConv,
+                                node.ParameterList,
+                                node.ReturnType,
+                                slot
+                            )
+                        : node.ExpressionBody is null ? null
+                        : VisitArrowExpressionClause(node.ExpressionBody)
+                            as ArrowExpressionClauseSyntax
+                    )
+                    .WithBody(node.Body is null ? null : VisitBlock(node.Body) as BlockSyntax)
+                    .WithSemicolonToken(
+                        node.Body is null ? Token(SyntaxKind.SemicolonToken) : default
+                    )
+                    .AddMaxOpt();
+                _rwMethodCallsForExplicitInterfaceSpecifier = null;
+                _methods.Add(nativeContextTramp);
+            }
 
             // For the static implementation, we basically forward to whatever is the "static default".
-            var staticDefaultProxy = node.WithBody(null)
-                .WithExpressionBody(
-                    ArrowExpressionClause(
-                        InvocationExpression(
-                            MemberAccessExpression(
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                IdentifierName(_staticDefault),
-                                IdentifierName(node.Identifier.ToString())
-                            ),
-                            ArgumentList(
-                                SeparatedList(
-                                    node.ParameterList.Parameters.Select(x =>
-                                        Argument(IdentifierName(x.Identifier))
+            // We only do this if the method is public - if not, then it's not in the interface and therefore not in the
+            // static default.
+            if (node.Modifiers.Any(SyntaxKind.PublicKeyword))
+            {
+                var staticDefaultProxy = node.WithBody(null)
+                    .WithExpressionBody(
+                        ArrowExpressionClause(
+                            InvocationExpression(
+                                MemberAccessExpression(
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    IdentifierName(_staticDefault),
+                                    IdentifierName(node.Identifier.ToString())
+                                ),
+                                ArgumentList(
+                                    SeparatedList(
+                                        node.ParameterList.Parameters.Select(x =>
+                                            Argument(IdentifierName(x.Identifier))
+                                        )
                                     )
                                 )
                             )
                         )
                     )
-                )
-                .WithModifiers(
-                    TokenList(node.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
-                )
-                .WithAttributeLists(staticDecl.AttributeLists)
-                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                .AddMaxOpt();
-            _methods.Add(staticDefaultProxy);
+                    .WithModifiers(
+                        TokenList(
+                            node.Modifiers.Where(x =>
+                                x.Kind()
+                                    is not (SyntaxKind.ExternKeyword or SyntaxKind.PartialKeyword)
+                            )
+                        )
+                    )
+                    .WithAttributeLists(staticDecl.AttributeLists)
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    .AddMaxOpt();
+                _methods.Add(staticDefaultProxy);
+            }
+
             return null;
         }
 
@@ -904,7 +997,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 node.Expression is IdentifierNameSyntax { Identifier: var tok }
                 && (
                     type?.Members.Any(x =>
-                        x.ChildTokens()
+                        x.Modifiers.Any(SyntaxKind.PublicKeyword)
+                        && x.ChildTokens()
                             .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
                             .ToString() == tok.ToString()
                     ) ?? false
@@ -942,6 +1036,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     continue;
                 }
 
+                if (!EntryPoints.TryGetValue(nonInterface, out var entryPoints))
+                {
+                    continue;
+                }
+
                 var nonInterfaceIden = nonInterface[(nonInterface.LastIndexOf('.') + 1)..];
                 var ns = nonInterface[..nonInterface.LastIndexOf('.')];
                 var boilerplate = ClassDeclaration(nonInterfaceIden)
@@ -959,12 +1058,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                     )
                                 )
                                 .Where(x => x is not null)
-                                .Concat(
-                                    GenerateTopLevelBoilerplate(
-                                        nonInterfaceIden,
-                                        EntryPoints[nonInterface]
-                                    )
-                                )!
+                                .Concat(GenerateTopLevelBoilerplate(nonInterfaceIden, entryPoints))!
                         )
                     )
                     .WithParameterList(
@@ -1301,6 +1395,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                     )
             );
+
+        public void Reset()
+        {
+            InterfacePartials.Clear();
+            ClassName = null;
+            _methods.Clear();
+        }
     }
 
     /// <inheritdoc />
@@ -1353,8 +1454,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 continue;
             }
 
-            rw.InterfacePartials.Clear();
-            rw.ClassName = null;
+            rw.Reset();
             proj = doc.WithSyntaxRoot(
                 rw.Visit(node)?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null")

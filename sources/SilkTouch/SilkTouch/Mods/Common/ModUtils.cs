@@ -232,6 +232,22 @@ public static class ModUtils
             : relativePath;
 
     /// <summary>
+    /// Searches and replaces all occurrences of the <paramref name="oldValue"/> with the <paramref name="newValue"/> in the document name and project *relative* file path.
+    /// </summary>
+    public static Document ReplaceNameAndPath(this Document document, string oldValue, string newValue)
+    {
+        document = document.WithName(document.Name.Replace(oldValue, newValue));
+
+        var relativePath = document.RelativePath();
+        if (relativePath != null)
+        {
+            document = document.WithFilePath(FullPath(document.Project, relativePath.Replace(oldValue, newValue)));
+        }
+
+        return document;
+    }
+
+    /// <summary>
     /// Gets the new <see cref="ISymbol"/> matching the given old <see cref="ISymbol"/> in a new
     /// <see cref="Compilation"/>. This is useful for maintaining context after a mutating operation e.g. for getting a
     /// new type symbol instance after a rename operation.
@@ -515,13 +531,13 @@ public static class ModUtils
     }
 
     /// <summary>
-    /// Determines (naively) whether the given attribute syntax represents a <see cref="DllImportAttribute"/>.
+    /// Determines (naively) whether the given attribute syntax represents the specified attribute.
     /// </summary>
     /// <param name="node">The attribute syntax.</param>
     /// <param name="fullNameWithoutSuffix">
     /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
     /// </param>
-    /// <returns>Whether it is probably a DllImport.</returns>
+    /// <returns>Whether it is probably the specified attribute.</returns>
     public static bool IsAttribute(this AttributeSyntax node, string fullNameWithoutSuffix)
     {
         var sep = node.Name.ToString().Split("::").Last();
@@ -678,38 +694,102 @@ public static class ModUtils
     /// Gets the native element type name indicated by the given attributes.
     /// </summary>
     /// <param name="attrs">The attributes.</param>
-    /// <param name="indirectionLevels">The expected number of indirection levels, for validation.</param>
-    /// <returns>The value if a valid type name was found, null otherwise.</returns>
-    public static string? GetNativeElementTypeName(
+    /// <param name="info">The parsed native type info. Invalid if this method returns false.</param>
+    /// <returns>Whether the type name was successfully parsed.</returns>
+    /// <remarks>
+    /// This does not handle all of the possible cases.
+    /// </remarks>
+    public static bool TryParseNativeTypeName(
         this IEnumerable<AttributeListSyntax> attrs,
-        out int indirectionLevels
+        out NativeTypeNameInfo info
     )
     {
-        var nativeTypeName = attrs.GetNativeTypeName().AsSpan();
+        var nativeTypeNameString = attrs.GetNativeTypeName();
+        var nativeTypeName = nativeTypeNameString.AsSpan();
         if (nativeTypeName.Length == 0)
         {
-            indirectionLevels = -1;
-            return null;
+            // Name does not exist
+            info = default;
+            return false;
         }
 
-        // Trim off the const.
-        if (nativeTypeName.StartsWith("const "))
+        switch (nativeTypeName)
         {
-            nativeTypeName = nativeTypeName["const ".Length..];
-        }
+            // Handle case: "#define NAME VALUE"
+            case {} when nativeTypeName.StartsWith("#define "):
+            {
+                // Trim off the #define
+                var nativeTypeSpan = nativeTypeName["#define ".Length..].Trim();
 
-        // Isolate the type name to just the type name.
-        indirectionLevels = nativeTypeName.Count('*');
-        if (nativeTypeName.IndexOf('*') is not -1 and var idx)
-        {
-            nativeTypeName = nativeTypeName[..idx];
-        }
+                var indexOfFirstSpace = nativeTypeSpan.IndexOf(' ');
+                if (indexOfFirstSpace < 0)
+                {
+                    info = new NativeTypeNameInfo()
+                    {
+                        Name = nativeTypeName.ToString(),
+                        Value = null,
+                        IndirectionLevels = 0,
+                        IsDefine = true,
+                        IsConst = true,
+                    };
 
-        // Hopefully given the above, after we've removed any whitespace there may be we *should* just have the enum.
-        nativeTypeName = nativeTypeName.Trim();
-        return nativeTypeName.ContainsAnyExcept(NameUtils.IdentifierChars)
-            ? null
-            : nativeTypeName.ToString();
+                    return true;
+                }
+
+                var name = nativeTypeSpan[..indexOfFirstSpace];
+                var value = nativeTypeSpan[indexOfFirstSpace..];
+
+                info = new NativeTypeNameInfo()
+                {
+                    Name = name.ToString(),
+                    Value = value.ToString(),
+                    IndirectionLevels = 0,
+                    IsDefine = true,
+                    IsConst = true,
+                };
+
+                return true;
+            }
+
+            // Handle cases: "const NAME **", "NAME **"
+            case {}:
+            {
+                // Trim off the const
+                var isConst = false;
+                if (nativeTypeName.StartsWith("const "))
+                {
+                    nativeTypeName = nativeTypeName["const ".Length..].Trim();
+                    isConst = true;
+                }
+
+                // Isolate the name
+                var indirectionLevels = nativeTypeName.Count('*');
+                if (nativeTypeName.IndexOf('*') is not -1 and var idx)
+                {
+                    nativeTypeName = nativeTypeName[..idx];
+                }
+                nativeTypeName = nativeTypeName.Trim();
+
+                if (nativeTypeName.ContainsAnyExcept(NameUtils.IdentifierChars))
+                {
+                    // Unsupported format
+                    // Eg: const uint32_t[8]
+                    info = default;
+                    return false;
+                }
+
+                info = new NativeTypeNameInfo()
+                {
+                    Name = nativeTypeName.ToString(),
+                    Value = null,
+                    IndirectionLevels = indirectionLevels,
+                    IsDefine = false,
+                    IsConst = isConst,
+                };
+
+                return true;
+            }
+        }
     }
 
     /// <summary>

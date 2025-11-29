@@ -17,5 +17,5 @@ public enum CombinerMappingNV : uint
     HalfBiasNormal = unchecked((uint)0x853A),
     HalfBiasNegate = unchecked((uint)0x853B),
     SignedIdentity = unchecked((uint)0x853C),
-    SignedNegate = unchecked((uint)0x853D)
+    SignedNegate = unchecked((uint)0x853D),
 }

@@ -51,5 +51,5 @@ public enum PixelStoreParameter : uint
     UnpackSkipPixelsEXT = unchecked((uint)0x0CF4),
     PackRowLengthNV = unchecked((uint)0x0D02),
     PackSkipRowsNV = unchecked((uint)0x0D03),
-    PackSkipPixelsNV = unchecked((uint)0x0D04)
+    PackSkipPixelsNV = unchecked((uint)0x0D04),
 }

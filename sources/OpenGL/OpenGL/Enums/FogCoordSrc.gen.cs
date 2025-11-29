@@ -14,5 +14,5 @@ public enum FogCoordSrc : uint
     FragmentDepth = unchecked((uint)0x8452),
     FogCoord = unchecked((uint)0x8451),
     FogCoordinateEXT = unchecked((uint)0x8451),
-    FragmentDepthEXT = unchecked((uint)0x8452)
+    FragmentDepthEXT = unchecked((uint)0x8452),
 }

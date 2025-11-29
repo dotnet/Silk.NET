@@ -1,22 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using NUnit.Framework;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
-using VerifyNUnit;
-using VerifyTests;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using NameTrimmer = Silk.NET.SilkTouch.Naming.NameTrimmer;
 
 namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
@@ -56,7 +50,7 @@ public class MixKhronosDataTests
         IEnumerable<string> files = ["gl.xml", "wgl.xml", "glx.xml", "cl.xml", "vk.xml"];
         return files
             .ToAsyncEnumerable()
-            .SelectAwait(async x =>
+            .Select(async (x, ct) =>
             {
                 var mod = new MixKhronosData(
                     new NullLogger<MixKhronosData>(),
@@ -65,7 +59,7 @@ public class MixKhronosDataTests
                         Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
                     }
                 );
-                await mod.InitializeAsync(new DummyModContext());
+                await mod.InitializeAsync(new DummyModContext(), ct);
                 return (object[])[x, mod.Jobs[""]];
             });
     }
@@ -75,7 +69,7 @@ public class MixKhronosDataTests
 
     private static IAsyncEnumerable<object[]> RegressionTestCases() =>
         TestCases()
-            .SelectAwait(async s =>
+            .Select(async (object[] s, CancellationToken ct) =>
                 s[0] is "gl.xml" or "cl.xml"
                     ? (object[])
                         [
@@ -302,4 +296,112 @@ public class MixKhronosDataTests
                     ]
             )
         );
+
+    [Test]
+    public void OverzealousNameTrimming()
+    {
+        // This had an issue where GL_PIXEL_COUNT_NV and GL_PIXEL_COUNT_AVAILABLE_NV resulted in a trimming name of
+        // GL_PIXEL_COUNT_ resulting in GL_PIXEL_COUNT_NV becoming _NV which would in turn be turned into nothing.
+        var baseTrimmer = new NameTrimmer();
+        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration
+                    {
+                        UseExtensionVendorTrimmings = MixKhronosData
+                            .ExtensionVendorTrimmingMode
+                            .None,
+                    },
+                    Vendors = ["NV"],
+                    Groups =
+                    {
+                        {
+                            "OcclusionQueryParameterNameNV",
+                            new MixKhronosData.EnumGroup(
+                                "OcclusionQueryParameterNameNV",
+                                "uint",
+                                [],
+                                false,
+                                "NV",
+                                "Silk.NET.OpenGL"
+                            )
+                        },
+                    },
+                },
+            },
+        };
+        var names = new Dictionary<string, (string, List<string>?)>
+        {
+            { "GL_PIXEL_COUNT_NV", ("GL_PIXEL_COUNT_NV", []) },
+            { "GL_PIXEL_COUNT_AVAILABLE_NV", ("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
+        };
+        var ctx = new NameTrimmerContext
+        {
+            Container = "OcclusionQueryParameterNameNV",
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+            Names = names,
+            JobKey = "OpenGL",
+        };
+        baseTrimmer.Trim(ctx);
+        uut.Trim(ctx);
+        Assert.That(names["GL_PIXEL_COUNT_NV"].Item1, Is.EqualTo("PixelCount"));
+        Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Item1, Is.EqualTo("PixelCountAvailable"));
+    }
+
+    [Test]
+    public void OverzealousNameTrimmingFixupIsNotOverzealousForOpenAL()
+    {
+        var baseTrimmer = new NameTrimmer();
+        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenAL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration
+                    {
+                        UseExtensionVendorTrimmings = MixKhronosData
+                            .ExtensionVendorTrimmingMode
+                            .None,
+                    },
+                    Vendors = ["SOFT"],
+                    Groups =
+                    {
+                        {
+                            "VocalMorpherPhoneme",
+                            new MixKhronosData.EnumGroup(
+                                "VocalMorpherPhoneme",
+                                "uint",
+                                [],
+                                false,
+                                null,
+                                "Silk.NET.OpenAL"
+                            )
+                        },
+                    },
+                },
+            },
+        };
+        var names = new Dictionary<string, (string, List<string>?)>
+        {
+            { "AL_VOCAL_MORPHER_PHONEME_A", ("AL_VOCAL_MORPHER_PHONEME_A", null) },
+            { "AL_VOCAL_MORPHER_PHONEME_E", ("AL_VOCAL_MORPHER_PHONEME_E", null) },
+            { "AL_VOCAL_MORPHER_PHONEME_I", ("AL_VOCAL_MORPHER_PHONEME_I", null) },
+        };
+        var ctx = new NameTrimmerContext
+        {
+            Container = "VocalMorpherPhoneme",
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["al"] },
+            Names = names,
+            JobKey = "OpenAL",
+        };
+        baseTrimmer.Trim(ctx);
+        uut.Trim(ctx);
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Item1, Is.EqualTo("A"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Item1, Is.EqualTo("E"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Item1, Is.EqualTo("I"));
+    }
 }

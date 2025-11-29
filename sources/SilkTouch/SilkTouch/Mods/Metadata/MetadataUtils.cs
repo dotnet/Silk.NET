@@ -121,39 +121,79 @@ public static class MetadataUtils
         string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
-        Predicate<T>? filter = default,
+        Predicate<(T Metadata, MetadataSources Sources)>? filter = default,
         T? defaultValue = default
+    ) =>
+        GetAllMetadata(metadataProviders, jobKey, parentSymbol, childSymbol, filter)
+            .FirstOrDefault(defaultValue);
+
+    /// <summary>
+    /// Gets all matching metadata items for a specific symbol.
+    /// </summary>
+    /// <param name="metadataProviders">The metadata providers.</param>
+    /// <param name="jobKey">The current job key.</param>
+    /// <param name="parentSymbol">
+    /// The parent symbol, optionally containing the symbol identified by <paramref name="childSymbol"/> if provided.
+    /// Used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/> if
+    /// <paramref name="childSymbol"/> is not <c>null</c>, <see cref="IApiMetadataProvider{T}.TryGetSymbolMetadata"/>
+    /// otherwise.
+    /// </param>
+    /// <param name="childSymbol">
+    /// The target symbol to get metadata for. If <c>null</c>, <paramref name="parentSymbol"/> represents the target
+    /// symbol. Otherwise, this is used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/>.
+    /// </param>
+    /// <param name="filter">
+    /// Filters the resolved metadata. If <c>null</c>, the first matching metadata item shall be used.
+    /// </param>
+    /// <typeparam name="T">The type of the metadata.</typeparam>
+    /// <returns>The metadata item.</returns>
+    public static IEnumerable<T?> GetAllMetadata<T>(
+        this IEnumerable<IApiMetadataProvider<IEnumerable<T>>> metadataProviders,
+        string? jobKey,
+        string? parentSymbol = null,
+        string? childSymbol = null,
+        Predicate<(T Metadata, MetadataSources Sources)>? filter = default
     )
     {
         if (parentSymbol is null)
         {
-            return defaultValue;
+            yield break;
         }
 
-        T? parent = default;
-        foreach (var apimd in metadataProviders)
+        filter ??= static _ => true;
+
+        var foundChildMetadata = false;
+        if (childSymbol is not null)
         {
-            if (
-                childSymbol is not null
-                && apimd.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var vers)
-                && vers.FirstOrDefault(x => filter?.Invoke(x) ?? true) is { } ver
-            )
+            foreach (var provider in metadataProviders)
             {
-                return ver;
-            }
-
-            // parentVers.FirstOrDefault(x => x.Profile == Profile.Profile) ?? parent
-            if (
-                apimd.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentVers)
-                && (parent = parentVers.FirstOrDefault(x => filter?.Invoke(x) ?? true)) is not null
-                && childSymbol is null
-            )
-            {
-                break;
+                if (provider.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var childMetadata))
+                {
+                    foreach (var child in childMetadata.Where(x => filter.Invoke((x, MetadataSources.Child))))
+                    {
+                        foundChildMetadata = true;
+                        yield return child;
+                    }
+                }
             }
         }
 
-        return parent ?? defaultValue;
+        foreach (var provider in metadataProviders)
+        {
+            if (provider.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentMetadata))
+            {
+                var source = MetadataSources.Parent;
+                if (!foundChildMetadata)
+                {
+                    source |= MetadataSources.ParentFallback;
+                }
+
+                foreach (var parent in parentMetadata.Where(x => filter.Invoke((x, source))))
+                {
+                    yield return parent;
+                }
+            }
+        }
     }
 
     /// <summary>

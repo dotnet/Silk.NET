@@ -25,5 +25,5 @@ public enum LogicOp : uint
     CopyInverted = unchecked((uint)0x150C),
     OrInverted = unchecked((uint)0x150D),
     Nand = unchecked((uint)0x150E),
-    Set = unchecked((uint)0x150F)
+    Set = unchecked((uint)0x150F),
 }

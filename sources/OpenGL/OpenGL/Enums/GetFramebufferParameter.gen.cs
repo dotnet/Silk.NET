@@ -20,5 +20,5 @@ public enum GetFramebufferParameter : uint
     FramebufferDefaultHeight = unchecked((uint)0x9311),
     FramebufferDefaultLayers = unchecked((uint)0x9312),
     FramebufferDefaultSamples = unchecked((uint)0x9313),
-    FramebufferDefaultFixedSampleLocations = unchecked((uint)0x9314)
+    FramebufferDefaultFixedSampleLocations = unchecked((uint)0x9314),
 }

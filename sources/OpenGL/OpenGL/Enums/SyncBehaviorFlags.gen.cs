@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SyncBehaviorFlags : uint
 {
-    None = unchecked((uint)0)
+    None = unchecked((uint)0),
 }

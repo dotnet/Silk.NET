@@ -25,5 +25,5 @@ public enum MapBufferAccessMask : uint
     InvalidateRangeBitEXT = unchecked((uint)0x0004),
     InvalidateBufferBitEXT = unchecked((uint)0x0008),
     FlushExplicitBitEXT = unchecked((uint)0x0010),
-    UnsynchronizedBitEXT = unchecked((uint)0x0020)
+    UnsynchronizedBitEXT = unchecked((uint)0x0020),
 }

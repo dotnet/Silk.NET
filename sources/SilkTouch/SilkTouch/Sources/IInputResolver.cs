@@ -86,8 +86,6 @@ public interface IInputResolver
                 traversals[j] = await ResolvePath(traversals[j]);
             }
 
-            var tmp = Path.GetTempFileName();
-            await File.WriteAllTextAsync(tmp, rsp.GeneratorConfiguration.HeaderText);
             rsps[i] = rsp with
             {
                 Files = files,
@@ -95,44 +93,11 @@ public interface IInputResolver
                     (await TryResolvePath(rsp.FileDirectory))?.Replace('\\', '/')
                     ?? rsp.FileDirectory,
                 ClangCommandLineArgs = rsp.ClangCommandLineArgs,
-                GeneratorConfiguration = new PInvokeGeneratorConfiguration(
-                    rsp.GeneratorConfiguration.Language,
-                    rsp.GeneratorConfiguration.LanguageStandard,
-                    rsp.GeneratorConfiguration.DefaultNamespace,
-                    await ResolvePath(rsp.GeneratorConfiguration.OutputLocation),
-                    tmp,
-                    rsp.GeneratorConfiguration.OutputMode,
-                    rsp.GeneratorConfiguration.ReconstructOptions()
-                )
-                {
-                    WithClasses = rsp.GeneratorConfiguration.WithClasses,
-                    WithGuids = rsp.GeneratorConfiguration.WithGuids,
-                    DefaultClass = rsp.GeneratorConfiguration.DefaultClass,
-                    ExcludedNames = rsp.GeneratorConfiguration.ExcludedNames,
-                    ExcludeFnptrCodegen = rsp.GeneratorConfiguration.ExcludeFnptrCodegen,
-                    IncludedNames = rsp.GeneratorConfiguration.IncludedNames,
-                    LibraryPath = rsp.GeneratorConfiguration.LibraryPath,
-                    MethodPrefixToStrip = rsp.GeneratorConfiguration.MethodPrefixToStrip,
-                    NativeTypeNamesToStrip = rsp.GeneratorConfiguration.NativeTypeNamesToStrip,
-                    RemappedNames = rsp.GeneratorConfiguration.RemappedNames,
+                GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
+                    OutputLocation = await ResolvePath(rsp.GeneratorConfiguration.OutputLocation),
                     TraversalNames = traversals,
-                    WithAttributes = rsp.GeneratorConfiguration.WithAttributes,
-                    WithCallConvs = rsp.GeneratorConfiguration.WithCallConvs,
-                    WithNamespaces = rsp.GeneratorConfiguration.WithNamespaces,
-                    WithTypes = rsp.GeneratorConfiguration.WithTypes,
-                    WithUsings = rsp.GeneratorConfiguration.WithUsings,
-                    WithPackings = rsp.GeneratorConfiguration.WithPackings,
-                    WithAccessSpecifiers = rsp.GeneratorConfiguration.WithAccessSpecifiers,
-                    WithLibraryPaths = rsp.GeneratorConfiguration.WithLibraryPaths,
-                    WithManualImports = rsp.GeneratorConfiguration.WithManualImports,
-                    WithTransparentStructs = rsp.GeneratorConfiguration.WithTransparentStructs,
-                    WithSetLastErrors = rsp.GeneratorConfiguration.WithSetLastErrors,
-                    WithSuppressGCTransitions =
-                        rsp.GeneratorConfiguration.WithSuppressGCTransitions,
-                    TestOutputLocation = await ResolvePath(
-                        rsp.GeneratorConfiguration.TestOutputLocation
-                    )
-                }
+                    TestOutputLocation = await ResolvePath(rsp.GeneratorConfiguration.TestOutputLocation),
+                },
             };
             progressService?.SetProgress(i / (float)rsps.Count);
         }

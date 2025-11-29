@@ -19,5 +19,5 @@ public enum TextureWrapMode : uint
     ClampToBorderARB = unchecked((uint)0x812D),
     ClampToBorderSGIS = unchecked((uint)0x812D),
     ClampToEdgeSGIS = unchecked((uint)0x812F),
-    ClampToBorderNV = unchecked((uint)0x812D)
+    ClampToBorderNV = unchecked((uint)0x812D),
 }

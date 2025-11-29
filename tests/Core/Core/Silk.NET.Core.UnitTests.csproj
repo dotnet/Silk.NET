@@ -4,9 +4,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\..\sources\Core\Core\Silk.NET.Core.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\..\..\sources\Core\Core\Silk.NET.Core.cs">
       <Link>Silk.NET.Core.cs</Link>

@@ -41,5 +41,5 @@ public enum FragmentShaderConATI : uint
     Con28 = unchecked((uint)0x895D),
     Con29 = unchecked((uint)0x895E),
     Con30 = unchecked((uint)0x895F),
-    Con31 = unchecked((uint)0x8960)
+    Con31 = unchecked((uint)0x8960),
 }

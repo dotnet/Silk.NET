@@ -363,7 +363,11 @@ public class FunctionTransformer(
                 )
             )
             .WithModifiers(
-                TokenList(function.Modifiers.Where(x => !x.IsKind(SyntaxKind.ExternKeyword)))
+                TokenList(
+                    function.Modifiers.Where(x =>
+                        x.Kind() is not (SyntaxKind.ExternKeyword or SyntaxKind.PartialKeyword)
+                    )
+                )
             );
 
         transform(function);

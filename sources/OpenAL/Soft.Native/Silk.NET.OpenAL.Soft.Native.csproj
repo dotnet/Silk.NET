@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net8.0-android</TargetFrameworks>
+    <SilkDescription>Native binaries for OpenAL Soft.</SilkDescription>
+    <SilkNativePackage>true</SilkNativePackage>
+    <SilkNativeHasAndroidJars>true</SilkNativeHasAndroidJars>
+    <SilkNativeiOSLinkerFlags>-framework CoreAudio -framework CoreFoundation -framework AudioUnit -framework ApplicationServices -framework AudioToolbox</SilkNativeiOSLinkerFlags>
+    <EnableDefaultAndroidItems>false</EnableDefaultAndroidItems>
+    <PackageLicenseExpression>LGPL-2.1+</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>

@@ -6,10 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
     <ProjectReference Include="..\..\Maths\Maths\Silk.NET.Maths.csproj" />
     <ProjectReference Include="..\..\SDL\SDL\Silk.NET.SDL.csproj" />
   </ItemGroup>
-  <Import Project="..\..\Core\Core\Silk.NET.Core.targets" />
 </Project>

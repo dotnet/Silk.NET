@@ -270,4 +270,7 @@
     </ItemGroup>
     <Copy SourceFiles="@(SilkThisRidItems)" DestinationFiles="@(SilkThisRidItems->'$(OutDir)%(TargetPath)')" />
   </Target>
+
+  <!-- DSL dogfooding -->
+  <Import Project="$(MSBuildThisFileDirectory)sources/Core/Core/Silk.NET.Core.targets" Condition="'$(SilkDSLExempt)' != 'true' and '$(SilkNativePackage)' != 'true' and '$(SilkMetapackage)' != 'true'" />
 </Project>

@@ -682,7 +682,9 @@ static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.IUnknown.Native*(S
 static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.Ptr3D(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.Ptr3D
 static Silk.NET.Core.IUnknown.implicit operator Silk.NET.Core.Ptr<Silk.NET.Core.IUnknown.Native>(Silk.NET.Core.IUnknown value) -> Silk.NET.Core.Ptr<Silk.NET.Core.IUnknown.Native>
 static Silk.NET.Core.IUnknown.implicit operator void***(Silk.NET.Core.IUnknown value) -> void***
+static Silk.NET.Core.Loader.LoaderInterface.AlternativeNames.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<string!>!>!
 static Silk.NET.Core.Loader.LoaderInterface.LoadLibrary(string! name, System.Reflection.Assembly! asm) -> nint
+static Silk.NET.Core.Loader.LoaderInterface.LoadAlternativeNames(string! libraryName, System.Reflection.Assembly! assembly, System.Runtime.InteropServices.DllImportSearchPath? searchPath) -> nint
 static Silk.NET.Core.Loader.LoaderInterface.RegisterAlternativeName(string! libraryName, string! altName) -> void
 static Silk.NET.Core.Loader.LoaderInterface.RegisterHook(System.Reflection.Assembly? asm) -> void
 static Silk.NET.Core.Loader.LoaderInterface.ResolvingLibrary -> System.Runtime.InteropServices.DllImportResolver?

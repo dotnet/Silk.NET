@@ -12,5 +12,5 @@ public enum Buffer : uint
 {
     Color = unchecked((uint)0x1800),
     Depth = unchecked((uint)0x1801),
-    Stencil = unchecked((uint)0x1802)
+    Stencil = unchecked((uint)0x1802),
 }

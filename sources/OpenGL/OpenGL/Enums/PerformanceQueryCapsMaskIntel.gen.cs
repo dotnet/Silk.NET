@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum PerformanceQueryCapsMaskIntel : uint
 {
     SingleContext = unchecked((uint)0x00000000),
-    GlobalContext = unchecked((uint)0x00000001)
+    GlobalContext = unchecked((uint)0x00000001),
 }

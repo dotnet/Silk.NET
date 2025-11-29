@@ -17,5 +17,5 @@ public enum WeightPointerType : uint
     Int = unchecked((uint)0x1404),
     UnsignedInt = unchecked((uint)0x1405),
     Float = unchecked((uint)0x1406),
-    Double = unchecked((uint)0x140A)
+    Double = unchecked((uint)0x140A),
 }
