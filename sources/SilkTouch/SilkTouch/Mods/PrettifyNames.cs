@@ -744,11 +744,11 @@ public class PrettifyNames(
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
     private record struct NameAffix(string Affix, int Priority);
-    private record struct AffixData(List<NameAffix> Prefixes, List<NameAffix> Suffixes);
+    private record struct AffixData(List<NameAffix>? Prefixes, List<NameAffix>? Suffixes);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
-    private record struct TypeAffixData(AffixData TypeNameAffixes, Dictionary<string, AffixData> MemberAffixes);
+    private record struct TypeAffixData(AffixData TypeAffixes, Dictionary<string, AffixData> MemberAffixes);
 
     private class Visitor : CSharpSyntaxWalker
     {
@@ -818,6 +818,77 @@ public class PrettifyNames(
             || _enumInProgress is not null
             || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
 
+        private AffixData GetAffixData(SyntaxList<AttributeListSyntax> attributeLists)
+        {
+            AffixData result = default;
+            foreach (var list in attributeLists)
+            {
+                foreach (var attribute in list.Attributes)
+                {
+                    // 0 is none, 1 is prefix, 2 is suffix
+                    var type = 0;
+                    if (attribute.IsAttribute("Silk.NET.Core.NamePrefix"))
+                    {
+                        type = 1;
+                    }
+
+                    if (attribute.IsAttribute("Silk.NET.Core.NameSuffix"))
+                    {
+                        type = 2;
+                    }
+
+                    if (type == 0)
+                    {
+                        continue;
+                    }
+
+                    if (attribute.ArgumentList != null)
+                    {
+                        var affixArg = attribute.ArgumentList.Arguments[0];
+                        var priorityArg = attribute.ArgumentList.Arguments[1];
+
+                        var affix = (affixArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
+                        var priority = (priorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? 0;
+
+                        if (affix != null)
+                        {
+                            if (type == 1)
+                            {
+                                (result.Prefixes ??= []).Add(new NameAffix(affix, priority));
+                            }
+                            else
+                            {
+                                (result.Suffixes ??= []).Add(new NameAffix(affix, priority));
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private void ReportTypeAffixData(string typeIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
+        {
+            if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
+            {
+                typeAffixData = new TypeAffixData(default, []);
+            }
+
+            var affixData = GetAffixData(attributeLists);
+            if (typeAffixData.TypeAffixes.Prefixes != null)
+            {
+                (affixData.Prefixes ??= []).AddRange(typeAffixData.TypeAffixes.Prefixes);
+            }
+
+            if (typeAffixData.TypeAffixes.Suffixes != null)
+            {
+                (affixData.Suffixes ??= []).AddRange(typeAffixData.TypeAffixes.Suffixes);
+            }
+
+            Affixes[typeIdentifier] = typeAffixData;
+        }
+
         // ----- Types -----
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
@@ -832,6 +903,8 @@ public class PrettifyNames(
             {
                 NonDeterminant.Add(identifier);
             }
+
+            ReportTypeAffixData(identifier, node.AttributeLists);
 
             // Recurse into members.
             _typeInProgress = new TypeInProgress(node, [], []);
@@ -863,6 +936,8 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
+            ReportTypeAffixData(identifier, node.AttributeLists);
+
             // Recurse into members
             _typeInProgress = new TypeInProgress(node, [], []);
             base.VisitStructDeclaration(node);
@@ -892,6 +967,8 @@ public class PrettifyNames(
             {
                 NonDeterminant.Add(identifier);
             }
+
+            ReportTypeAffixData(identifier, node.AttributeLists);
 
             // Recurse into members
             _enumInProgress = new EnumInProgress(node, []);
@@ -926,6 +1003,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
+            ReportTypeAffixData(identifier, node.AttributeLists);
             Types.Add(identifier, new TypeData([], []));
         }
 
