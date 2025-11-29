@@ -967,8 +967,8 @@ public class PrettifyNames(
                     PrettifyOnlyTypes.Add(typeIdentifier, typeData);
                 }
 
-                var iden = node.Identifier.ToString();
-                typeData.Add(iden);
+                var identifier = node.Identifier.ToString();
+                typeData.Add(identifier);
             }
             else if (_typeInProgress is not null && !_prettifyOnly)
             {
@@ -988,7 +988,26 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
-                _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                // If it's not a constant then we only prettify.
+                var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.GetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
+                if (hasSetter
+                    && node.Parent is BaseTypeDeclarationSyntax type
+                    && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null)
+                {
+                    var typeIdentifier = type.Identifier.ToString();
+                    if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                    {
+                        typeData = [];
+                        PrettifyOnlyTypes.Add(typeIdentifier, typeData);
+                    }
+
+                    var identifier = node.Identifier.ToString();
+                    typeData.Add(identifier);
+                }
+                else
+                {
+                    _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                }
             }
         }
 
