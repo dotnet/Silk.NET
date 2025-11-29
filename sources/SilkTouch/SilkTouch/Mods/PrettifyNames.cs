@@ -799,21 +799,6 @@ public class PrettifyNames(
         private EnumInProgress? _enumInProgress;
 
         /// <summary>
-        /// Tracks the field that we currently are visiting.
-        /// </summary>
-        private FieldDeclarationSyntax? _fieldInProgress = null;
-
-        /// <summary>
-        /// Whether we should only prettify the identifiers we encounter.
-        /// </summary>
-        /// <remarks>
-        /// We either trim and prettify, or we only prettify, the identifiers that we find.
-        /// For example, constants are typically prefixed in C since their names are globally scoped, so we trim in addition to prettifying.
-        /// On the other hand, struct properties are typically non-prefixed, so we only prettify the properties.
-        /// </remarks>
-        private bool _prettifyOnly;
-
-        /// <summary>
         /// While this is called a "type" in progress, this represents either a class or a struct.
         /// </summary>
         /// <param name="Type">The class or struct's declaration syntax node.</param>
@@ -964,49 +949,31 @@ public class PrettifyNames(
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
-            // Can't have a field within a field or an enum. This is basically a "wtf" check.
-            if (_fieldInProgress is not null || _enumInProgress is not null)
-            {
-                return;
-            }
+            // If it's not a constant then we only prettify
+            // C constants are globally scoped and typically prefixed, so we trim in addition to prettifying
+            var prettifyOnly = !node.Modifiers.Any(SyntaxKind.ConstKeyword) && !node.Modifiers.Any(SyntaxKind.StaticKeyword);
 
-            // If it's not a constant then we only prettify.
-            if (!node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                && !node.Modifiers.Any(SyntaxKind.StaticKeyword))
+            if (node.Parent == _typeInProgress?.Type)
             {
-                _prettifyOnly = true;
-            }
-
-            _fieldInProgress = node;
-            base.VisitFieldDeclaration(node);
-            _fieldInProgress = null;
-            _prettifyOnly = false;
-        }
-
-        public override void VisitVariableDeclarator(VariableDeclaratorSyntax node)
-        {
-            if (node.Parent?.Parent != _fieldInProgress)
-            {
-                return;
-            }
-
-            if (_prettifyOnly
-                && node.Parent?.Parent?.Parent is BaseTypeDeclarationSyntax type
-                && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null)
-            {
-                var typeIdentifier = type.Identifier.ToString();
-                if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
+                foreach (var variable in node.Declaration.Variables)
                 {
-                    typeData = [];
-                    PrettifyOnlyTypes.Add(typeIdentifier, typeData);
-                }
+                    var memberIdentifier = variable.Identifier.ToString();
+                    if (prettifyOnly)
+                    {
+                        if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                        {
+                            typeData = [];
+                            PrettifyOnlyTypes.Add(typeIdentifier, typeData);
+                        }
 
-                var identifier = node.Identifier.ToString();
-                typeData.Add(identifier);
-            }
-            else if (_typeInProgress is not null && !_prettifyOnly)
-            {
-                _typeInProgress.Value.NonFunctions.Add(node.Identifier.ToString());
+                        typeData.Add(memberIdentifier);
+                    }
+                    else
+                    {
+                        _typeInProgress.Value.NonFunctions.Add(memberIdentifier);
+                    }
+                }
             }
         }
 
