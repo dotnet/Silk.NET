@@ -119,7 +119,7 @@ public class PrettifyNames(
             // Now rename everything within each type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
-                var (_, (consts, functions, isEnum)) = visitor.Types.First(x => x.Key == typeName);
+                var (_, (consts, functions, _, isEnum)) = visitor.Types.First(x => x.Key == typeName);
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
@@ -193,7 +193,7 @@ public class PrettifyNames(
         else // (there's no trimming baseline)
         {
             // Prettify only if the user has not indicated they want to trim.
-            foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
+            foreach (var (name, (nonFunctions, functions, _, isEnum)) in visitor.Types)
             {
                 newNames[name] = new RenamedType(
                     GetOverriddenName(null, name, cfg.NameOverrides, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
@@ -751,12 +751,11 @@ public class PrettifyNames(
         bool IsEnum
     );
 
-    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions, bool IsEnum);
-    private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
-
     private record struct NameAffix(string Affix, int Priority);
     private record struct AffixData(List<NameAffix> Prefixes, List<NameAffix> Suffixes);
-    private record struct TypeAffixData(AffixData TypeNameAffixes, Dictionary<string, AffixData> MemberAffixes);
+
+    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions, Dictionary<string, AffixData> MemberAffixes, bool IsEnum);
+    private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
 
     private class Visitor : CSharpSyntaxWalker
     {
@@ -771,13 +770,6 @@ public class PrettifyNames(
         /// These names do not participate in trimming and are only prettified.
         /// </summary>
         public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
-
-        /// <summary>
-        /// A mapping from type names to the type's affix data, which contains mappings from member names to each member's affix data.
-        /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
-        /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
-        /// </summary>
-        public Dictionary<string, TypeAffixData> Affixes { get; } = new();
 
         /// <summary>
         /// A set of type names marked with the [Transformed] attribute.
@@ -848,7 +840,7 @@ public class PrettifyNames(
             // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], [], false);
+                typeData = new TypeData([], [], [], false);
                 Types.Add(identifier, typeData);
             }
 
@@ -878,7 +870,7 @@ public class PrettifyNames(
             // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], [], false);
+                typeData = new TypeData([], [], [], false);
                 Types.Add(identifier, typeData);
             }
 
@@ -908,7 +900,7 @@ public class PrettifyNames(
             // Merge with existing data in case of partials
             if (!Types.TryGetValue(identifier, out var typeData))
             {
-                typeData = new TypeData([], [], true);
+                typeData = new TypeData([], [], [], true);
                 Types.Add(identifier, typeData);
             }
 
@@ -934,7 +926,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(identifier);
             }
 
-            Types.Add(identifier, new TypeData([], [], false));
+            Types.Add(identifier, new TypeData([], [], [], false));
         }
 
         // ----- Members -----
