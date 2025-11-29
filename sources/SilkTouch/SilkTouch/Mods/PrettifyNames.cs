@@ -768,6 +768,10 @@ public class PrettifyNames(
     private record struct TypeData(List<string>? NonFunctions, List<FunctionData>? Functions, bool IsEnum);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
 
+    private record struct NameAffix(string Affix, int Priority);
+    private record struct AffixData(List<NameAffix>? Prefixes, List<NameAffix>? Suffixes);
+    private record struct TypeAffixData(AffixData TypeNameAffixes, Dictionary<string, AffixData>? MemberAffixes);
+
     private class Visitor : CSharpSyntaxWalker
     {
         /// <summary>
@@ -781,6 +785,13 @@ public class PrettifyNames(
         /// These names do not participate in trimming and are only prettified.
         /// </summary>
         public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
+
+        /// <summary>
+        /// A mapping from type names to the type's affix data, which contains mappings from member names to each member's affix data.
+        /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
+        /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
+        /// </summary>
+        public Dictionary<string, TypeAffixData> Affixes { get; } = new();
 
         /// <summary>
         /// A set of type names marked with the [Transformed] attribute.
