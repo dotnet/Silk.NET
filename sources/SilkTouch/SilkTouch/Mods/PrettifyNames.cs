@@ -851,15 +851,15 @@ public class PrettifyNames(
                 return;
             }
 
+            var identifier = node.Identifier.ToString();
             if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
-                NonDeterminant.Add(node.Identifier.ToString());
+                NonDeterminant.Add(identifier);
             }
 
             _typeInProgress = new TypeInProgress(node, [], []);
 
             // Tolerate partials.
-            var identifier = node.Identifier.ToString();
             if (!Types.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], [], false);
@@ -883,15 +883,15 @@ public class PrettifyNames(
                 return;
             }
 
+            var identifier = node.Identifier.ToString();
             if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
-                NonDeterminant.Add(node.Identifier.ToString());
+                NonDeterminant.Add(identifier);
             }
 
             _typeInProgress = new TypeInProgress(node, [], []);
 
             // Tolerate partials.
-            var identifier = node.Identifier.ToString();
             if (!Types.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], [], false);
@@ -915,18 +915,18 @@ public class PrettifyNames(
                 return;
             }
 
+            var identifier = node.Identifier.ToString();
             if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
-                NonDeterminant.Add(node.Identifier.ToString());
+                NonDeterminant.Add(identifier);
             }
 
             _enumInProgress = new EnumInProgress(node, []);
             base.VisitEnumDeclaration(node);
-            var id = _enumInProgress.Value.Enum.Identifier.ToString();
-            if (!Types.TryGetValue(id, out var typeData))
+            if (!Types.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], [], true);
-                Types.Add(id, typeData);
+                Types.Add(identifier, typeData);
             }
 
             typeData.NonFunctions.AddRange(_enumInProgress.Value.EnumMembers);
@@ -935,11 +935,12 @@ public class PrettifyNames(
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
         {
+            var identifier = node.Identifier.ToString();
             if (IsCurrentlyInType(node))
             {
                 if (node.Parent == _typeInProgress?.Type)
                 {
-                    _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                    _typeInProgress!.Value.NonFunctions.Add(identifier);
                 }
 
                 return;
@@ -947,10 +948,10 @@ public class PrettifyNames(
 
             if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
             {
-                NonDeterminant.Add(node.Identifier.ToString());
+                NonDeterminant.Add(identifier);
             }
 
-            Types.Add(node.Identifier.ToString(), new TypeData([], [], false));
+            Types.Add(identifier, new TypeData([], [], false));
         }
 
         // ----- Members -----
@@ -1023,6 +1024,8 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
+                var identifier = node.Identifier.ToString();
+
                 // If it's not a constant then we only prettify.
                 var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.GetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
                 if (hasSetter
@@ -1036,12 +1039,11 @@ public class PrettifyNames(
                         PrettifyOnlyTypes.Add(typeIdentifier, typeData);
                     }
 
-                    var identifier = node.Identifier.ToString();
                     typeData.Add(identifier);
                 }
                 else
                 {
-                    _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                    _typeInProgress!.Value.NonFunctions.Add(identifier);
                 }
             }
         }
