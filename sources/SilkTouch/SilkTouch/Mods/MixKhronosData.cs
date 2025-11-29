@@ -442,28 +442,12 @@ public partial class MixKhronosData(
                     continue;
                 }
 
-                var semanticModel = compilation.GetSemanticModel(syntaxTree);
-
-                var rewriter3 = new RewriterPhase3(symbolsToRename, jobData.Vendors, currentConfig.VendorSuffixPriority, semanticModel);
+                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixPriority);
                 proj = doc.WithSyntaxRoot(
                     rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null.")
                 ).Project;
             }
-
-            // Revive symbols
-            compilation = await proj.GetCompilationAsync(ct);
-            if (compilation == null)
-            {
-                throw new Exception("Failed to get compilation");
-            }
-            symbolsToRename = symbolsToRename.Select(x => (compilation.GetNewSymbol(x.Symbol), x.NewName)).ToList();
-
-            // TODO: This approach doesn't really work
-            // // Remove identified extension suffixes from type names
-            // ctx.SourceProject = proj;
-            // await NameUtils.RenameAllAsync(ctx, symbolsToRename, logger, ct);
-            // proj = ctx.SourceProject!;
         }
 
         // Rename documents to account for FlagBits/Flags differences
@@ -2199,17 +2183,12 @@ public partial class MixKhronosData(
     /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
     /// </summary>
     /// <remarks>
-    /// Yes, this is a 3rd rewriter. This one requires a fresh semantic model though.
+    /// Yes, this is a 3rd rewriter.
     /// </remarks>
-    private class RewriterPhase3(List<(ISymbol Symbol, string NewName)> toRename, HashSet<string> vendors, int vendorSuffixPriority, SemanticModel semanticModel) : CSharpSyntaxRewriter
+    private class RewriterPhase3(HashSet<string> vendors, int vendorSuffixPriority) : CSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(ISymbol? symbol, SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
-            if (symbol == null)
-            {
-                return attributeLists;
-            }
-
             var name = identifier.Text;
             var handleSuffix = "_T";
             if (name.EndsWith(handleSuffix))
@@ -2222,7 +2201,6 @@ public partial class MixKhronosData(
             {
                 if (name.EndsWith(vendor))
                 {
-                    toRename.Add((symbol, $"{name[..^vendor.Length]}_"));
                     attributeLists = attributeLists.AddNameSuffix(vendor, vendorSuffixPriority);
 
                     break;
@@ -2234,36 +2212,27 @@ public partial class MixKhronosData(
 
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
             node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
         }
 
         public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             var variable = node.Declaration.Variables.First();
-            var symbol = semanticModel.GetDeclaredSymbol(variable);
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, variable.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier));
         }
 
-        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-        {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
-        }
+        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
 
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
             node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
         }
 
-        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
-        }
+        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
