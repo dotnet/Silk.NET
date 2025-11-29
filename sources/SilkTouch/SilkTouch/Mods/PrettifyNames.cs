@@ -1008,7 +1008,11 @@ public class PrettifyNames(
         {
             if (node.Parent == _enumInProgress?.Enum)
             {
-                _enumInProgress!.Value.EnumMembers.Add(node.Identifier.ToString());
+                var typeIdentifier = _enumInProgress!.Value.Enum.Identifier.ToString();
+                var memberIdentifier = node.Identifier.ToString();
+                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                _enumInProgress!.Value.EnumMembers.Add(memberIdentifier);
             }
         }
 
