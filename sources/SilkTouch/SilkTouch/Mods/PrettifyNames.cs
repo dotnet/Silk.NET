@@ -123,62 +123,49 @@ public class PrettifyNames(
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
-                var constNames = consts?.ToDictionary(
+                var constNames = consts.ToDictionary(
                     x => x,
                     x => new CandidateNames(x, null)
                 );
 
-                // Trim the constants if we have any.
-                if (constNames is not null)
-                {
-                    Trim(
-                        new NameTrimmerContext
-                        {
-                            Container = typeName,
-                            Names = constNames,
-                            Configuration = cfg,
-                            JobKey = ctx.JobKey,
-                            NonDeterminant = visitor.NonDeterminant,
-                        },
-                        trimmers
-                    );
-                }
-                else
-                {
-                    constNames = [];
-                }
+                // Trim the constants.
+                Trim(
+                    new NameTrimmerContext
+                    {
+                        Container = typeName,
+                        Names = constNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    trimmers
+                );
 
                 // Rename the functions. More often that not functions have different nomenclature to constants, so we
                 // treat them separately.
                 var functionNames = functions
-                    ?.DistinctBy(x => x.Name)
+                    .DistinctBy(x => x.Name)
                     .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, null));
 
                 // Collect the syntax as this is used for conflict resolution in the Trim function.
-                var functionSyntax =
-                    functions is null || functionNames is null
-                        ? null
-                        : functionNames.Keys.ToDictionary(
-                            x => x,
-                            x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
-                        );
+                var functionSyntax = functionNames.Keys.ToDictionary(
+                    x => x,
+                    x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
+                );
 
-                // Now trim if we have any functions.
-                if (functionNames is not null)
-                {
-                    Trim(
-                        new NameTrimmerContext
-                        {
-                            Container = typeName,
-                            Names = functionNames,
-                            Configuration = cfg,
-                            JobKey = ctx.JobKey,
-                            NonDeterminant = visitor.NonDeterminant,
-                        },
-                        trimmers,
-                        functionSyntax
-                    );
-                }
+                // Trim the functions.
+                Trim(
+                    new NameTrimmerContext
+                    {
+                        Container = typeName,
+                        Names = functionNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    trimmers,
+                    functionSyntax
+                );
 
                 // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
@@ -195,7 +182,7 @@ public class PrettifyNames(
                     constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(nameTransformer), x.Value.Secondary)))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value.Primary),
-                    functionNames?.ToDictionary(
+                    functionNames.ToDictionary(
                         x => x.Key,
                         x => x.Value.Primary.Prettify(nameTransformer)
                     ),
@@ -210,8 +197,8 @@ public class PrettifyNames(
             {
                 newNames[name] = new RenamedType(
                     GetOverriddenName(null, name, cfg.NameOverrides!, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions?.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, nameTransformer)),
-                    functions?.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, nameTransformer)),
+                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides!, nameTransformer)),
+                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides!, nameTransformer)),
                     isEnum
                 );
             }
@@ -765,7 +752,7 @@ public class PrettifyNames(
         bool IsEnum
     );
 
-    private record struct TypeData(List<string>? NonFunctions, List<FunctionData>? Functions, bool IsEnum);
+    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions, bool IsEnum);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
 
     private record struct NameAffix(string Affix, int Priority);
@@ -868,8 +855,8 @@ public class PrettifyNames(
             base.VisitClassDeclaration(node);
 
             // Merge with the other partials.
-            (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions?.Contains(nonFunction) ?? true));
-            (typeData.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
+            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
+            typeData.Functions.AddRange(_typeInProgress.Value.Functions);
 
             _typeInProgress = null;
         }
@@ -900,8 +887,8 @@ public class PrettifyNames(
             base.VisitStructDeclaration(node);
 
             // Merge with the other partials.
-            (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions?.Contains(nonFunction) ?? true));
-            (typeData.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
+            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
+            typeData.Functions.AddRange(_typeInProgress.Value.Functions);
 
             _typeInProgress = null;
         }
@@ -927,7 +914,7 @@ public class PrettifyNames(
                 Types.Add(id, typeData);
             }
 
-            (typeData.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
+            typeData.NonFunctions.AddRange(_enumInProgress.Value.EnumMembers);
             _enumInProgress = null;
         }
 
@@ -1039,7 +1026,7 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            Types.Add(node.Identifier.ToString(), new TypeData(null, null, false));
+            Types.Add(node.Identifier.ToString(), new TypeData([], [], false));
         }
 
         /// <summary>
