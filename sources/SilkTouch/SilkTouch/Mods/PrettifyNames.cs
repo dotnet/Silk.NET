@@ -774,9 +774,29 @@ public class PrettifyNames(
         public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
         public HashSet<string> NonDeterminant { get; } = new();
 
+        /// <summary>
+        /// Tracks the type that we currently are visiting.
+        /// </summary>
         private TypeInProgress? _typeInProgress;
+
+        /// <summary>
+        /// Tracks the enum that we currently are visiting.
+        /// </summary>
         private EnumInProgress? _enumInProgress;
+
+        /// <summary>
+        /// Tracks the field that we currently are visiting.
+        /// </summary>
         private FieldDeclarationSyntax? _fieldInProgress = null;
+
+        /// <summary>
+        /// Whether we should only prettify the identifiers we encounter.
+        /// </summary>
+        /// <remarks>
+        /// We either trim and prettify, or we only prettify, the identifiers that we find.
+        /// For example, constants are typically prefixed in C, so we trim in addition to prettifying.
+        /// On the other hand, struct properties are typically non-prefixed, so we only prettify the properties.
+        /// </remarks>
         private bool _prettifyOnly;
 
         /// <summary>
