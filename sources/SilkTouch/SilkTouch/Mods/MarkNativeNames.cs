@@ -11,6 +11,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 /// <remarks>
 /// This mod is currently kept pretty dumb and just applies [NativeName] attributes to almost everything.
+/// Syntax nodes not output by ClangSharp are intentionally not processed.
 /// This mod is best placed directly after ClangScraper.
 /// </remarks>
 public class MarkNativeNames : IMod
