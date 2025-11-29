@@ -862,6 +862,55 @@ public class PrettifyNames(
             _typeInProgress = null;
         }
 
+        public override void VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            if (IsCurrentlyInType(node))
+            {
+                return;
+            }
+
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
+            }
+
+            Types[node.Identifier.ToString()] = new TypeData(null, null, false);
+            base.VisitStructDeclaration(node);
+        }
+
+        public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            if (IsCurrentlyInType(node))
+            {
+                return;
+            }
+
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
+            }
+
+            _enumInProgress = new EnumInProgress(node, []);
+            base.VisitEnumDeclaration(node);
+            var id = _enumInProgress.Value.Enum.Identifier.ToString();
+            if (!Types.TryGetValue(id, out var inner))
+            {
+                inner = new TypeData([], [], true);
+                Types.Add(id, inner);
+            }
+
+            (inner.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
+            _enumInProgress = null;
+        }
+
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            if (node.Parent == _enumInProgress?.Enum)
+            {
+                _enumInProgress!.Value.EnumMembers.Add(node.Identifier.ToString());
+            }
+        }
+
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             // Can't have a field within a field or an enum. This is basically a "wtf" check.
@@ -944,55 +993,6 @@ public class PrettifyNames(
             }
 
             Types.Add(node.Identifier.ToString(), new TypeData(null, null, false));
-        }
-
-        public override void VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            if (IsCurrentlyInType(node))
-            {
-                return;
-            }
-
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            Types[node.Identifier.ToString()] = new TypeData(null, null, false);
-            base.VisitStructDeclaration(node);
-        }
-
-        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            if (node.Parent == _enumInProgress?.Enum)
-            {
-                _enumInProgress!.Value.EnumMembers.Add(node.Identifier.ToString());
-            }
-        }
-
-        public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
-        {
-            if (IsCurrentlyInType(node))
-            {
-                return;
-            }
-
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            _enumInProgress = new EnumInProgress(node, []);
-            base.VisitEnumDeclaration(node);
-            var id = _enumInProgress.Value.Enum.Identifier.ToString();
-            if (!Types.TryGetValue(id, out var inner))
-            {
-                inner = new TypeData([], [], true);
-                Types.Add(id, inner);
-            }
-
-            (inner.NonFunctions ??= []).AddRange(_enumInProgress.Value.EnumMembers);
-            _enumInProgress = null;
         }
 
         /// <summary>
