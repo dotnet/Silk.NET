@@ -829,6 +829,21 @@ public class PrettifyNames(
         /// <param name="EnumMembers">The names of the members directly contained by the enum.</param>
         private record struct EnumInProgress(EnumDeclarationSyntax Enum, List<string> EnumMembers);
 
+        /// <summary>
+        /// Returns whether we are currently inside of a type.
+        /// </summary>
+        /// <remarks>
+        /// Note that we currently do not handle nested types.
+        /// If we encounter a type while we are already in a type, we ignore that type.
+        /// If we encounter a non-type (i.e., a type member), we add the member to the type we are already in.
+        /// </remarks>
+        private bool IsCurrentlyInType(SyntaxNode node) =>
+            _typeInProgress is not null
+            || _enumInProgress is not null
+            || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
+
+        // ----- Types -----
+
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (IsCurrentlyInType(node))
@@ -917,6 +932,28 @@ public class PrettifyNames(
             typeData.NonFunctions.AddRange(_enumInProgress.Value.EnumMembers);
             _enumInProgress = null;
         }
+
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            if (IsCurrentlyInType(node))
+            {
+                if (node.Parent == _typeInProgress?.Type)
+                {
+                    _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                }
+
+                return;
+            }
+
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(node.Identifier.ToString());
+            }
+
+            Types.Add(node.Identifier.ToString(), new TypeData([], [], false));
+        }
+
+        // ----- Members -----
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
         {
@@ -1008,39 +1045,6 @@ public class PrettifyNames(
                 }
             }
         }
-
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
-            if (IsCurrentlyInType(node))
-            {
-                if (node.Parent == _typeInProgress?.Type)
-                {
-                    _typeInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
-                }
-
-                return;
-            }
-
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            Types.Add(node.Identifier.ToString(), new TypeData([], [], false));
-        }
-
-        /// <summary>
-        /// Returns whether we are currently inside of a type.
-        /// </summary>
-        /// <remarks>
-        /// Note that we currently do not handle nested types.
-        /// If we encounter a type while we are already in a type, we ignore that type.
-        /// If we encounter a non-type (i.e., a type member), we add the member to the type we are already in.
-        /// </remarks>
-        private bool IsCurrentlyInType(SyntaxNode node) =>
-            _typeInProgress is not null
-            || _enumInProgress is not null
-            || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
     }
 
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
