@@ -770,8 +770,25 @@ public class PrettifyNames(
 
     private class Visitor : CSharpSyntaxWalker
     {
+        /// <summary>
+        /// A mapping from type names to their member names (along with some additional info).
+        /// These names are first trimmed, then prettified.
+        /// </summary>
         public Dictionary<string, TypeData> Types { get; } = new();
+
+        /// <summary>
+        /// A mapping from type names to their member names.
+        /// These names do not participate in trimming and are only prettified.
+        /// </summary>
         public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
+
+        /// <summary>
+        /// A set of type names marked with the [Transformed] attribute.
+        /// </summary>
+        /// <remarks>
+        /// These are not used for prefix determination since they can contain identifiers that
+        /// are not part of the original source code.
+        /// </remarks>
         public HashSet<string> NonDeterminant { get; } = new();
 
         /// <summary>
@@ -794,7 +811,7 @@ public class PrettifyNames(
         /// </summary>
         /// <remarks>
         /// We either trim and prettify, or we only prettify, the identifiers that we find.
-        /// For example, constants are typically prefixed in C, so we trim in addition to prettifying.
+        /// For example, constants are typically prefixed in C since their names are globally scoped, so we trim in addition to prettifying.
         /// On the other hand, struct properties are typically non-prefixed, so we only prettify the properties.
         /// </remarks>
         private bool _prettifyOnly;
