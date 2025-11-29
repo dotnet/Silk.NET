@@ -18,7 +18,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
 
     [NativeName("decoder_model_present_for_this_op")]
     [SupportedApiProfile("vulkan")]
-    public uint decoder_model_present_for_this_op
+    public uint DecoderModelPresentForThisOp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
 
     [NativeName("low_delay_mode_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint low_delay_mode_flag
+    public uint LowDelayModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
 
     [NativeName("initial_display_delay_present_for_this_op")]
     [SupportedApiProfile("vulkan")]
-    public uint initial_display_delay_present_for_this_op
+    public uint InitialDisplayDelayPresentForThisOp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -48,7 +48,7 @@ public partial struct StdVideoEncodeAV1OperatingPointInfoFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1FFFFFFFu; }

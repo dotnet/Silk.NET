@@ -18,7 +18,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
 
     [NativeName("general_tier_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint general_tier_flag
+    public uint TierFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
 
     [NativeName("general_progressive_source_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint general_progressive_source_flag
+    public uint ProgressiveSourceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
 
     [NativeName("general_interlaced_source_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint general_interlaced_source_flag
+    public uint InterlacedSourceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -48,7 +48,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
 
     [NativeName("general_non_packed_constraint_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint general_non_packed_constraint_flag
+    public uint NonPackedConstraintFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -58,7 +58,7 @@ public partial struct StdVideoH265ProfileTierLevelFlags
 
     [NativeName("general_frame_only_constraint_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint general_frame_only_constraint_flag
+    public uint FrameOnlyConstraintFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }

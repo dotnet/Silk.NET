@@ -18,7 +18,7 @@ public partial struct StdVideoEncodeH264ReferenceInfoFlags
 
     [NativeName("used_for_long_term_reference")]
     [SupportedApiProfile("vulkan")]
-    public uint used_for_long_term_reference
+    public uint UsedForLongTermReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoEncodeH264ReferenceInfoFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x7FFFFFFFu; }

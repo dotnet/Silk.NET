@@ -17,7 +17,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("nal_hrd_parameters_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint nal_hrd_parameters_present_flag
+    public uint NalHrdParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -27,7 +27,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("vcl_hrd_parameters_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vcl_hrd_parameters_present_flag
+    public uint VclHrdParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -37,7 +37,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("sub_pic_hrd_params_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sub_pic_hrd_params_present_flag
+    public uint SubPicHrdParamsPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -47,7 +47,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("sub_pic_cpb_params_in_pic_timing_sei_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sub_pic_cpb_params_in_pic_timing_sei_flag
+    public uint SubPicCpbParamsInPicTimingSeiFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -57,7 +57,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("fixed_pic_rate_general_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint fixed_pic_rate_general_flag
+    public uint FixedPicRateGeneralFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0xFFu; }
@@ -67,7 +67,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("fixed_pic_rate_within_cvs_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint fixed_pic_rate_within_cvs_flag
+    public uint FixedPicRateWithinCvsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 12) & 0xFFu; }
@@ -77,7 +77,7 @@ public partial struct StdVideoH265HrdFlags
 
     [NativeName("low_delay_hrd_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint low_delay_hrd_flag
+    public uint LowDelayHrdFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 20) & 0xFFu; }

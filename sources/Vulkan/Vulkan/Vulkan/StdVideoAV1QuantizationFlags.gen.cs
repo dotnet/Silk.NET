@@ -18,7 +18,7 @@ public partial struct StdVideoAV1QuantizationFlags
 
     [NativeName("using_qmatrix")]
     [SupportedApiProfile("vulkan")]
-    public uint using_qmatrix
+    public uint UsingQmatrix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoAV1QuantizationFlags
 
     [NativeName("diff_uv_delta")]
     [SupportedApiProfile("vulkan")]
-    public uint diff_uv_delta
+    public uint DiffUvDelta
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoAV1QuantizationFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }

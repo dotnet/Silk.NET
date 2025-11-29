@@ -18,7 +18,7 @@ public partial struct StdVideoAV1ColorConfigFlags
 
     [NativeName("mono_chrome")]
     [SupportedApiProfile("vulkan")]
-    public uint mono_chrome
+    public uint MonoChrome
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoAV1ColorConfigFlags
 
     [NativeName("color_range")]
     [SupportedApiProfile("vulkan")]
-    public uint color_range
+    public uint ColorRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoAV1ColorConfigFlags
 
     [NativeName("separate_uv_delta_q")]
     [SupportedApiProfile("vulkan")]
-    public uint separate_uv_delta_q
+    public uint SeparateUvDeltaQ
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -48,7 +48,7 @@ public partial struct StdVideoAV1ColorConfigFlags
 
     [NativeName("color_description_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint color_description_present_flag
+    public uint ColorDescriptionPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -58,7 +58,7 @@ public partial struct StdVideoAV1ColorConfigFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0xFFFFFFFu; }

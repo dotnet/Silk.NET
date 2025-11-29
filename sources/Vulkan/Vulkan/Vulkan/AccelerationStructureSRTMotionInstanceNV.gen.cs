@@ -43,7 +43,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint instanceCustomIndex
+    public uint InstanceCustomIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield1 & 0xFFFFFFu; }
@@ -57,7 +57,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint mask
+    public uint Mask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield1 >> 24) & 0xFFu; }
@@ -79,7 +79,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint instanceShaderBindingTableRecordOffset
+    public uint InstanceShaderBindingTableRecordOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield2 & 0xFFFFFFu; }
@@ -93,7 +93,7 @@ public partial struct AccelerationStructureSRTMotionInstanceNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public GeometryInstanceFlagsKHR flags
+    public GeometryInstanceFlagsKHR Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (GeometryInstanceFlagsKHR)((Bitfield2 >> 24) & 0xFFu); }

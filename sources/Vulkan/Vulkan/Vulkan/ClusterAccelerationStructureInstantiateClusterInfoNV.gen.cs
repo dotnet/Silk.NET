@@ -35,7 +35,7 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint geometryIndexOffset
+    public uint GeometryIndexOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0xFFFFFFu; }
@@ -49,7 +49,7 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 24) & 0xFFu; }

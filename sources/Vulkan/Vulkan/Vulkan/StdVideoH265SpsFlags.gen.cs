@@ -18,7 +18,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_temporal_id_nesting_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_temporal_id_nesting_flag
+    public uint SpsTemporalIdNestingFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("separate_colour_plane_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint separate_colour_plane_flag
+    public uint SeparateColourPlaneFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("conformance_window_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint conformance_window_flag
+    public uint ConformanceWindowFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -48,7 +48,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_sub_layer_ordering_info_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_sub_layer_ordering_info_present_flag
+    public uint SpsSubLayerOrderingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -58,7 +58,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("scaling_list_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint scaling_list_enabled_flag
+    public uint ScalingListEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -68,7 +68,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_scaling_list_data_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_scaling_list_data_present_flag
+    public uint SpsScalingListDataPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x1u; }
@@ -78,7 +78,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("amp_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint amp_enabled_flag
+    public uint AmpEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 6) & 0x1u; }
@@ -88,7 +88,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sample_adaptive_offset_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sample_adaptive_offset_enabled_flag
+    public uint SampleAdaptiveOffsetEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 7) & 0x1u; }
@@ -98,7 +98,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("pcm_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint pcm_enabled_flag
+    public uint PcmEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 8) & 0x1u; }
@@ -108,7 +108,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("pcm_loop_filter_disabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint pcm_loop_filter_disabled_flag
+    public uint PcmLoopFilterDisabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 9) & 0x1u; }
@@ -118,7 +118,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("long_term_ref_pics_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint long_term_ref_pics_present_flag
+    public uint LongTermRefPicsPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 10) & 0x1u; }
@@ -128,7 +128,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_temporal_mvp_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_temporal_mvp_enabled_flag
+    public uint SpsTemporalMvpEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 11) & 0x1u; }
@@ -138,7 +138,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("strong_intra_smoothing_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint strong_intra_smoothing_enabled_flag
+    public uint StrongIntraSmoothingEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 12) & 0x1u; }
@@ -148,7 +148,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("vui_parameters_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vui_parameters_present_flag
+    public uint VuiParametersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 13) & 0x1u; }
@@ -158,7 +158,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_extension_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_extension_present_flag
+    public uint SpsExtensionPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 14) & 0x1u; }
@@ -168,7 +168,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_range_extension_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_range_extension_flag
+    public uint SpsRangeExtensionFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 15) & 0x1u; }
@@ -178,7 +178,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("transform_skip_rotation_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint transform_skip_rotation_enabled_flag
+    public uint TransformSkipRotationEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 16) & 0x1u; }
@@ -188,7 +188,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("transform_skip_context_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint transform_skip_context_enabled_flag
+    public uint TransformSkipContextEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 17) & 0x1u; }
@@ -198,7 +198,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("implicit_rdpcm_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint implicit_rdpcm_enabled_flag
+    public uint ImplicitRdpcmEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 18) & 0x1u; }
@@ -208,7 +208,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("explicit_rdpcm_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint explicit_rdpcm_enabled_flag
+    public uint ExplicitRdpcmEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 19) & 0x1u; }
@@ -218,7 +218,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("extended_precision_processing_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint extended_precision_processing_flag
+    public uint ExtendedPrecisionProcessingFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 20) & 0x1u; }
@@ -228,7 +228,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("intra_smoothing_disabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint intra_smoothing_disabled_flag
+    public uint IntraSmoothingDisabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 21) & 0x1u; }
@@ -238,7 +238,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("high_precision_offsets_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint high_precision_offsets_enabled_flag
+    public uint HighPrecisionOffsetsEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 22) & 0x1u; }
@@ -248,7 +248,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("persistent_rice_adaptation_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint persistent_rice_adaptation_enabled_flag
+    public uint PersistentRiceAdaptationEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 23) & 0x1u; }
@@ -258,7 +258,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("cabac_bypass_alignment_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint cabac_bypass_alignment_enabled_flag
+    public uint CabacBypassAlignmentEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 24) & 0x1u; }
@@ -268,7 +268,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_scc_extension_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_scc_extension_flag
+    public uint SpsSccExtensionFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 25) & 0x1u; }
@@ -278,7 +278,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_curr_pic_ref_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_curr_pic_ref_enabled_flag
+    public uint SpsCurrPicRefEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 26) & 0x1u; }
@@ -288,7 +288,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("palette_mode_enabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint palette_mode_enabled_flag
+    public uint PaletteModeEnabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 27) & 0x1u; }
@@ -298,7 +298,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("sps_palette_predictor_initializers_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint sps_palette_predictor_initializers_present_flag
+    public uint SpsPalettePredictorInitializersPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 28) & 0x1u; }
@@ -308,7 +308,7 @@ public partial struct StdVideoH265SpsFlags
 
     [NativeName("intra_boundary_filtering_disabled_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint intra_boundary_filtering_disabled_flag
+    public uint IntraBoundaryFilteringDisabledFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 29) & 0x1u; }

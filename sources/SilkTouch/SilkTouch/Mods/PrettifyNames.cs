@@ -845,10 +845,7 @@ public class PrettifyNames(
 
             _typeInProgress = new TypeInProgress(node, [], []);
 
-            // Recurse into the members.
-            base.VisitClassDeclaration(node);
-
-            // Tolerate partial classes.
+            // Tolerate partials.
             var identifier = node.Identifier.ToString();
             if (!Types.TryGetValue(identifier, out var typeData))
             {
@@ -856,9 +853,13 @@ public class PrettifyNames(
                 Types.Add(identifier, typeData);
             }
 
+            // Recurse into the members.
+            base.VisitClassDeclaration(node);
+
             // Merge with the other partials.
             (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions?.Contains(nonFunction) ?? true));
             (typeData.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
+
             _typeInProgress = null;
         }
 
@@ -874,8 +875,24 @@ public class PrettifyNames(
                 NonDeterminant.Add(node.Identifier.ToString());
             }
 
-            Types[node.Identifier.ToString()] = new TypeData(null, null, false);
+            _typeInProgress = new TypeInProgress(node, [], []);
+
+            // Tolerate partials.
+            var identifier = node.Identifier.ToString();
+            if (!Types.TryGetValue(identifier, out var typeData))
+            {
+                typeData = new TypeData([], [], false);
+                Types.Add(identifier, typeData);
+            }
+
+            // Recurse into the members.
             base.VisitStructDeclaration(node);
+
+            // Merge with the other partials.
+            (typeData.NonFunctions ??= []).AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions?.Contains(nonFunction) ?? true));
+            (typeData.Functions ??= []).AddRange(_typeInProgress.Value.Functions);
+
+            _typeInProgress = null;
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)

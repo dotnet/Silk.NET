@@ -27,7 +27,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
 
     [NativeName("is_reference")]
     [SupportedApiProfile("vulkan")]
-    public uint is_reference
+    public uint IsReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -37,7 +37,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
 
     [NativeName("no_output_of_prior_pics_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint no_output_of_prior_pics_flag
+    public uint NoOutputOfPriorPicsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -47,7 +47,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
 
     [NativeName("long_term_reference_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint long_term_reference_flag
+    public uint LongTermReferenceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -57,7 +57,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
 
     [NativeName("adaptive_ref_pic_marking_mode_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint adaptive_ref_pic_marking_mode_flag
+    public uint AdaptiveRefPicMarkingModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -67,7 +67,7 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x7FFFFFFu; }

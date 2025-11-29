@@ -44,7 +44,7 @@ public partial struct AccelerationStructureInstanceKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint instanceCustomIndex
+    public uint InstanceCustomIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield1 & 0xFFFFFFu; }
@@ -61,7 +61,7 @@ public partial struct AccelerationStructureInstanceKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint mask
+    public uint Mask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield1 >> 24) & 0xFFu; }
@@ -89,7 +89,7 @@ public partial struct AccelerationStructureInstanceKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint instanceShaderBindingTableRecordOffset
+    public uint InstanceShaderBindingTableRecordOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield2 & 0xFFFFFFu; }
@@ -106,7 +106,7 @@ public partial struct AccelerationStructureInstanceKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public GeometryInstanceFlagsKHR flags
+    public GeometryInstanceFlagsKHR Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (GeometryInstanceFlagsKHR)((Bitfield2 >> 24) & 0xFFu); }

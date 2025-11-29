@@ -48,7 +48,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
 
     [NativeName("short_term_ref_pic_set_sps_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint short_term_ref_pic_set_sps_flag
+    public uint ShortTermRefPicSetSpsFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }

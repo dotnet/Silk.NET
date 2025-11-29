@@ -18,7 +18,7 @@ public partial struct StdVideoVP9LoopFilterFlags
 
     [NativeName("loop_filter_delta_enabled")]
     [SupportedApiProfile("vulkan")]
-    public uint loop_filter_delta_enabled
+    public uint LoopFilterDeltaEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoVP9LoopFilterFlags
 
     [NativeName("loop_filter_delta_update")]
     [SupportedApiProfile("vulkan")]
-    public uint loop_filter_delta_update
+    public uint LoopFilterDeltaUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoVP9LoopFilterFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }

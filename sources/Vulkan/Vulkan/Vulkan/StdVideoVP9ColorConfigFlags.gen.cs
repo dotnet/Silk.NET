@@ -16,7 +16,7 @@ public partial struct StdVideoVP9ColorConfigFlags
 
     [NativeName("color_range")]
     [SupportedApiProfile("vulkan")]
-    public uint color_range
+    public uint ColorRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -26,7 +26,7 @@ public partial struct StdVideoVP9ColorConfigFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x7FFFFFFFu; }

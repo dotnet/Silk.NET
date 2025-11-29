@@ -17,7 +17,7 @@ public partial struct StdVideoH265ShortTermRefPicSetFlags
 
     [NativeName("inter_ref_pic_set_prediction_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint inter_ref_pic_set_prediction_flag
+    public uint InterRefPicSetPredictionFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -27,7 +27,7 @@ public partial struct StdVideoH265ShortTermRefPicSetFlags
 
     [NativeName("delta_rps_sign")]
     [SupportedApiProfile("vulkan")]
-    public uint delta_rps_sign
+    public uint DeltaRpsSign
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }

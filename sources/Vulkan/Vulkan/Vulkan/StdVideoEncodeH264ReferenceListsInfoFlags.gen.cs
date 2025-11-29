@@ -18,7 +18,7 @@ public partial struct StdVideoEncodeH264ReferenceListsInfoFlags
 
     [NativeName("ref_pic_list_modification_flag_l0")]
     [SupportedApiProfile("vulkan")]
-    public uint ref_pic_list_modification_flag_l0
+    public uint FPicListModificationFlagL0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoEncodeH264ReferenceListsInfoFlags
 
     [NativeName("ref_pic_list_modification_flag_l1")]
     [SupportedApiProfile("vulkan")]
-    public uint ref_pic_list_modification_flag_l1
+    public uint FPicListModificationFlagL1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoEncodeH264ReferenceListsInfoFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Served
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }

@@ -18,7 +18,7 @@ public partial struct StdVideoH265VpsFlags
 
     [NativeName("vps_temporal_id_nesting_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_temporal_id_nesting_flag
+    public uint TemporalIdNestingFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoH265VpsFlags
 
     [NativeName("vps_sub_layer_ordering_info_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_sub_layer_ordering_info_present_flag
+    public uint SubLayerOrderingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoH265VpsFlags
 
     [NativeName("vps_timing_info_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_timing_info_present_flag
+    public uint TimingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -48,7 +48,7 @@ public partial struct StdVideoH265VpsFlags
 
     [NativeName("vps_poc_proportional_to_timing_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_poc_proportional_to_timing_flag
+    public uint PocProportionalToTimingFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }

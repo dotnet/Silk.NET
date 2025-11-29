@@ -42,7 +42,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint triangleCount
+    public uint TriangleCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1FFu; }
@@ -56,7 +56,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint vertexCount
+    public uint VertexCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 9) & 0x1FFu; }
@@ -70,7 +70,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint positionTruncateBitCount
+    public uint PositionTruncateBitCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 18) & 0x3Fu; }
@@ -84,7 +84,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint indexType
+    public uint IndexType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 24) & 0xFu; }
@@ -98,7 +98,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint opacityMicromapIndexType
+    public uint OpacityMicromapIndexType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 28) & 0xFu; }

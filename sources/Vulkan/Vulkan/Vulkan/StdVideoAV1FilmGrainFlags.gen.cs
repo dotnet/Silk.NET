@@ -18,7 +18,7 @@ public partial struct StdVideoAV1FilmGrainFlags
 
     [NativeName("chroma_scaling_from_luma")]
     [SupportedApiProfile("vulkan")]
-    public uint chroma_scaling_from_luma
+    public uint ChromaScalingFromLuma
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoAV1FilmGrainFlags
 
     [NativeName("overlap_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint overlap_flag
+    public uint OverlapFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoAV1FilmGrainFlags
 
     [NativeName("clip_to_restricted_range")]
     [SupportedApiProfile("vulkan")]
-    public uint clip_to_restricted_range
+    public uint ClipToRestrictedRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -48,7 +48,7 @@ public partial struct StdVideoAV1FilmGrainFlags
 
     [NativeName("update_grain")]
     [SupportedApiProfile("vulkan")]
-    public uint update_grain
+    public uint UpdateGrain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -58,7 +58,7 @@ public partial struct StdVideoAV1FilmGrainFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0xFFFFFFFu; }

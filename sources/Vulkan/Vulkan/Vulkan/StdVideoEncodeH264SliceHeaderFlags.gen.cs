@@ -17,7 +17,7 @@ public partial struct StdVideoEncodeH264SliceHeaderFlags
 
     [NativeName("direct_spatial_mv_pred_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint direct_spatial_mv_pred_flag
+    public uint DirectSpatialMvPredFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -27,7 +27,7 @@ public partial struct StdVideoEncodeH264SliceHeaderFlags
 
     [NativeName("num_ref_idx_active_override_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint num_ref_idx_active_override_flag
+    public uint NumRefIdxActiveOverrideFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -37,7 +37,7 @@ public partial struct StdVideoEncodeH264SliceHeaderFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }

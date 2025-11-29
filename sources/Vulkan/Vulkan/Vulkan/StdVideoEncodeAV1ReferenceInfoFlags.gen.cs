@@ -18,7 +18,7 @@ public partial struct StdVideoEncodeAV1ReferenceInfoFlags
 
     [NativeName("disable_frame_end_update_cdf")]
     [SupportedApiProfile("vulkan")]
-    public uint disable_frame_end_update_cdf
+    public uint DisableFrameEndUpdateCdf
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -28,7 +28,7 @@ public partial struct StdVideoEncodeAV1ReferenceInfoFlags
 
     [NativeName("segmentation_enabled")]
     [SupportedApiProfile("vulkan")]
-    public uint segmentation_enabled
+    public uint SegmentationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -38,7 +38,7 @@ public partial struct StdVideoEncodeAV1ReferenceInfoFlags
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }
