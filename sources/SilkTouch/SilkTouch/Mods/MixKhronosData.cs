@@ -1363,6 +1363,7 @@ public partial class MixKhronosData(
                 break;
             }
 
+            // TODO: Consider removing. Diff results for all Khronos APIs before removing.
             // Below is a hack to ensure extension vendors are capitalised for enums (which are all caps and therefore
             // will not be treated as an acronym)
             if (
@@ -1394,6 +1395,7 @@ public partial class MixKhronosData(
                 }
             }
 
+            // TODO: Consider removing. Diff results for all Khronos APIs before removing.
             // Another hack to make sure that extension vendors are preserved as acronyms e.g. glTexImage4DSGIS was
             // becoming glTexImage4Dsgis instead of glTexImage4DSGIS
             if (
