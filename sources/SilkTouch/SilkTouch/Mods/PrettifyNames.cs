@@ -172,24 +172,17 @@ public class PrettifyNames(
 
                 // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(x => new KeyValuePair<string, CandidateNames>(
-                        x,
-                        new CandidateNames(GetOverriddenName(typeName, x, cfg.NameOverrides, nameTransformer), null)
-                    ))
+                    ? val.Select(type => new KeyValuePair<string, string>(type, GetOverriddenName(typeName, type, cfg.NameOverrides, nameTransformer)))
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
                     newTypeName.Prettify(nameTransformer, allowAllCaps: true), // <-- lenient about caps for type names
 
-                    // TODO deprecate secondaries if they're within the baseline?
                     constNames
-                        .Select(type =>
-                            new KeyValuePair<string, CandidateNames>(
-                                type.Key,
-                                new CandidateNames(type.Value.Primary.Prettify(nameTransformer), type.Value.Secondary)))
+                        .Select(type => new KeyValuePair<string, string>(type.Key, type.Value.Primary.Prettify(nameTransformer)))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
-                        .ToDictionary(x => x.Key, x => x.Value.Primary),
+                        .ToDictionary(x => x.Key, x => x.Value),
 
                     functionNames.ToDictionary(
                         x => x.Key,
