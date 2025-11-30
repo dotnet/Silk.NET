@@ -1363,65 +1363,6 @@ public partial class MixKhronosData(
                 break;
             }
 
-            // TODO: Consider removing. Diff results for all Khronos APIs before removing.
-            // Below is a hack to ensure extension vendors are capitalised for enums (which are all caps and therefore
-            // will not be treated as an acronym)
-            if (
-                current.All(x => !char.IsLetter(x) || char.IsUpper(x))
-                && identifiedVendor is not null
-            )
-            {
-                newPrev ??= previous ?? [];
-                var pretty = newCurrent.Prettify();
-
-                // Hack to ensure extension vendors are preserved as acronyms
-                if (char.IsUpper(pretty[^1]))
-                {
-                    pretty += ' ';
-                }
-
-                if (!trimVendor)
-                {
-                    // If we're not trimming the vendor, this hack will be the primary name.
-                    newPrev.Add(current);
-                    context.Names[original] = new CandidateNames(pretty + identifiedVendor, newPrev);
-                }
-                else
-                {
-                    // If we are trimming the vendor, if at any point we have to fall back on the untrimmed version
-                    // we'll want that version to be this hack.
-                    newPrev.Add(pretty + identifiedVendor);
-                    context.Names[original] = new CandidateNames(pretty, newPrev);
-                }
-            }
-
-            // TODO: Consider removing. Diff results for all Khronos APIs before removing.
-            // Another hack to make sure that extension vendors are preserved as acronyms e.g. glTexImage4DSGIS was
-            // becoming glTexImage4Dsgis instead of glTexImage4DSGIS
-            if (
-                current.Any(char.IsLower)
-                && char.IsUpper(newCurrent[^1])
-                && identifiedVendor is not null
-            )
-            {
-                newPrev ??= previous ?? [];
-                if (!trimVendor)
-                {
-                    // If we're not trimming the vendor, this hack will be the primary name.
-                    newPrev.Add(current);
-                    context.Names[original] = new CandidateNames($"{newCurrent} {identifiedVendor}", newPrev);
-                }
-                else
-                {
-                    // If we are trimming the vendor, if at any point we have to fall back on the untrimmed version
-                    // we'll want that version to be this hack. Note that to do this we actually have to nuke the
-                    // original name because PrettifyNames orders by match length.
-                    newPrev.Remove(current);
-                    newPrev.Add($"{newCurrent} {identifiedVendor}");
-                    context.Names[original] = new CandidateNames(newCurrent, newPrev);
-                }
-            }
-
             // If we have an additional non-vendor suffix (e.g. al*Direct) then let's trim it before we try to do the
             // data type trimming
             string? identifiedSuffix = null;
@@ -2131,6 +2072,8 @@ public partial class MixKhronosData(
             return attributeLists;
         }
 
+        // ----- Types -----
+
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
             node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
@@ -2143,16 +2086,21 @@ public partial class MixKhronosData(
             return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier));
         }
 
-        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
-
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
             return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
         }
 
+        // ----- Members -----
+
         public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+
+        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
     }
 

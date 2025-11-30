@@ -230,6 +230,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint")] int value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -243,7 +244,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alBufferCallbackDirectSOFT")]
-        static abstract void BufferCallbackDirectSoft(
+        static abstract void BufferCallbackDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
@@ -252,6 +253,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid *")] void* userptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -266,7 +268,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferCallbackDirectSOFT")]
-        static abstract void BufferCallbackDirectSoft(
+        static abstract void BufferCallbackDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
@@ -275,9 +277,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid *")] Ref userptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [NativeFunction("openal", EntryPoint = "alBufferCallbackSOFT")]
-        static abstract void BufferCallbackSoft(
+        static abstract void BufferCallbackSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("ALsizei")] int freq,
@@ -285,10 +288,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid *")] void* userptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferCallbackSOFT")]
-        static abstract void BufferCallbackSoft(
+        static abstract void BufferCallbackSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
             [NativeTypeName("ALsizei")] int freq,
@@ -580,9 +584,10 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALint *")] Ref<int> values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alBufferSamplesSOFT")]
-        static abstract void BufferSamplesSoft(
+        static abstract void BufferSamplesSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALuint")] uint samplerate,
             [NativeTypeName("ALenum")] int internalformat,
@@ -592,10 +597,11 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALvoid *")] void* data
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferSamplesSOFT")]
-        static abstract void BufferSamplesSoft(
+        static abstract void BufferSamplesSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALuint")] uint samplerate,
             [NativeTypeName("ALenum")] int internalformat,
@@ -605,6 +611,7 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALvoid *")] Ref data
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -618,7 +625,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alBufferSubDataDirectSOFT")]
-        static abstract void BufferSubDataDirectSoft(
+        static abstract void BufferSubDataDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
@@ -627,6 +634,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALsizei")] int length
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -641,7 +649,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferSubDataDirectSOFT")]
-        static abstract void BufferSubDataDirectSoft(
+        static abstract void BufferSubDataDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
@@ -650,9 +658,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALsizei")] int length
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_sub_data"])]
         [NativeFunction("openal", EntryPoint = "alBufferSubDataSOFT")]
-        static abstract void BufferSubDataSoft(
+        static abstract void BufferSubDataSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int format,
             [NativeTypeName("const ALvoid *")] void* data,
@@ -660,10 +669,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALsizei")] int length
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_sub_data"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferSubDataSOFT")]
-        static abstract void BufferSubDataSoft(
+        static abstract void BufferSubDataSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
             [NativeTypeName("const ALvoid *")] Ref data,
@@ -671,9 +681,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALsizei")] int length
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alBufferSubSamplesSOFT")]
-        static abstract void BufferSubSamplesSoft(
+        static abstract void BufferSubSamplesSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
@@ -682,10 +693,11 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALvoid *")] void* data
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alBufferSubSamplesSOFT")]
-        static abstract void BufferSubSamplesSoft(
+        static abstract void BufferSubSamplesSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
@@ -694,50 +706,55 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALvoid *")] Ref data
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackDirectEXT")]
-        static abstract void DebugMessageCallbackDirectExt(
+        static abstract void DebugMessageCallbackDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
             void* userParam
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackDirectEXT")]
-        static abstract void DebugMessageCallbackDirectExt(
+        static abstract void DebugMessageCallbackDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
             Ref userParam
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackEXT")]
-        static abstract void DebugMessageCallbackExt(
+        static abstract void DebugMessageCallbackEXT(
             [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
             void* userParam
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackEXT")]
-        static abstract void DebugMessageCallbackExt(
+        static abstract void DebugMessageCallbackEXT(
             [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
             Ref userParam
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
-        static abstract void DebugMessageControlDirectExt(
+        static abstract void DebugMessageControlDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int source,
             [NativeTypeName("ALenum")] int type,
@@ -747,13 +764,14 @@ public unsafe partial interface IAl
             [NativeTypeName("ALboolean")] sbyte enable
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
-        static abstract void DebugMessageControlDirectExt(
+        static abstract void DebugMessageControlDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -763,13 +781,14 @@ public unsafe partial interface IAl
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
-        static abstract void DebugMessageControlDirectExt(
+        static abstract void DebugMessageControlDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -778,9 +797,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
-        static abstract void DebugMessageControlExt(
+        static abstract void DebugMessageControlEXT(
             [NativeTypeName("ALenum")] int source,
             [NativeTypeName("ALenum")] int type,
             [NativeTypeName("ALenum")] int severity,
@@ -789,10 +809,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALboolean")] sbyte enable
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
-        static abstract void DebugMessageControlExt(
+        static abstract void DebugMessageControlEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
@@ -801,10 +822,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
-        static abstract void DebugMessageControlExt(
+        static abstract void DebugMessageControlEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
@@ -812,12 +834,13 @@ public unsafe partial interface IAl
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
-        static abstract void DebugMessageInsertDirectExt(
+        static abstract void DebugMessageInsertDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int source,
             [NativeTypeName("ALenum")] int type,
@@ -827,13 +850,14 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] sbyte* message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
-        static abstract void DebugMessageInsertDirectExt(
+        static abstract void DebugMessageInsertDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -843,13 +867,14 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
-        static abstract void DebugMessageInsertDirectExt(
+        static abstract void DebugMessageInsertDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -858,9 +883,10 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] sbyte message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
-        static abstract void DebugMessageInsertExt(
+        static abstract void DebugMessageInsertEXT(
             [NativeTypeName("ALenum")] int source,
             [NativeTypeName("ALenum")] int type,
             [NativeTypeName("ALuint")] uint id,
@@ -869,10 +895,11 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] sbyte* message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
-        static abstract void DebugMessageInsertExt(
+        static abstract void DebugMessageInsertEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
@@ -881,10 +908,11 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
-        static abstract void DebugMessageInsertExt(
+        static abstract void DebugMessageInsertEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
@@ -892,6 +920,7 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] sbyte message
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -905,11 +934,12 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alDeferUpdatesDirectSOFT")]
-        static abstract void DeferUpdatesDirectSoft(ContextHandle context);
+        static abstract void DeferUpdatesDirectSOFT(ContextHandle context);
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_deferred_updates"])]
         [NativeFunction("openal", EntryPoint = "alDeferUpdatesSOFT")]
-        static abstract void DeferUpdatesSoft();
+        static abstract void DeferUpdatesSOFT();
 
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [Transformed]
@@ -1454,6 +1484,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALenum")] Constant<int, AlEnum, EnableCap> capability
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -1467,12 +1498,13 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alEventCallbackDirectSOFT")]
-        static abstract void EventCallbackDirectSoft(
+        static abstract void EventCallbackDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
             void* userParam
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -1487,27 +1519,30 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEventCallbackDirectSOFT")]
-        static abstract void EventCallbackDirectSoft(
+        static abstract void EventCallbackDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
             Ref userParam
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [NativeFunction("openal", EntryPoint = "alEventCallbackSOFT")]
-        static abstract void EventCallbackSoft(
+        static abstract void EventCallbackSOFT(
             [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
             void* userParam
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEventCallbackSOFT")]
-        static abstract void EventCallbackSoft(
+        static abstract void EventCallbackSOFT(
             [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
             Ref userParam
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -1521,13 +1556,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alEventControlDirectSOFT")]
-        static abstract void EventControlDirectSoft(
+        static abstract void EventControlDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALenum *")] int* types,
             [NativeTypeName("ALboolean")] sbyte enable
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -1542,13 +1578,14 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEventControlDirectSOFT")]
-        static abstract void EventControlDirectSoft(
+        static abstract void EventControlDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALenum *")] Ref<int> types,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -1563,33 +1600,36 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEventControlDirectSOFT")]
-        static abstract void EventControlDirectSoft(
+        static abstract void EventControlDirectSOFT(
             ContextHandle context,
             [NativeTypeName("const ALenum *")] int types,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [NativeFunction("openal", EntryPoint = "alEventControlSOFT")]
-        static abstract void EventControlSoft(
+        static abstract void EventControlSOFT(
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALenum *")] int* types,
             [NativeTypeName("ALboolean")] sbyte enable
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEventControlSOFT")]
-        static abstract void EventControlSoft(
+        static abstract void EventControlSOFT(
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALenum *")] Ref<int> types,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alEventControlSOFT")]
-        static abstract void EventControlSoft(
+        static abstract void EventControlSOFT(
             [NativeTypeName("const ALenum *")] int types,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         );
@@ -2351,6 +2391,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint *")] Ref<int> value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -2364,7 +2405,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrDirectSOFT")]
-        static abstract void GetBuffer3PtrDirectSoft(
+        static abstract void GetBuffer3PtrDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
@@ -2373,6 +2414,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid **")] void** ptr2
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -2387,7 +2429,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrDirectSOFT")]
-        static abstract void GetBuffer3PtrDirectSoft(
+        static abstract void GetBuffer3PtrDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
@@ -2396,9 +2438,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid **")] Ref2D ptr2
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrSOFT")]
-        static abstract void GetBuffer3PtrSoft(
+        static abstract void GetBuffer3PtrSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALvoid **")] void** ptr0,
@@ -2406,10 +2449,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid **")] void** ptr2
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrSOFT")]
-        static abstract void GetBuffer3PtrSoft(
+        static abstract void GetBuffer3PtrSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
@@ -2585,6 +2629,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint *")] Ref<int> values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -2598,13 +2643,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrDirectSOFT")]
-        static abstract void GetBufferPtrDirectSoft(
+        static abstract void GetBufferPtrDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALvoid **")] void** ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -2619,30 +2665,33 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrDirectSOFT")]
-        static abstract void GetBufferPtrDirectSoft(
+        static abstract void GetBufferPtrDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrSOFT")]
-        static abstract void GetBufferPtrSoft(
+        static abstract void GetBufferPtrSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALvoid **")] void** ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrSOFT")]
-        static abstract void GetBufferPtrSoft(
+        static abstract void GetBufferPtrSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -2656,13 +2705,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrvDirectSOFT")]
-        static abstract void GetBufferPtrvDirectSoft(
+        static abstract void GetBufferPtrvDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALvoid **")] void** ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -2677,33 +2727,36 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrvDirectSOFT")]
-        static abstract void GetBufferPtrvDirectSoft(
+        static abstract void GetBufferPtrvDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrvSOFT")]
-        static abstract void GetBufferPtrvSoft(
+        static abstract void GetBufferPtrvSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALvoid **")] void** ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBufferPtrvSOFT")]
-        static abstract void GetBufferPtrvSoft(
+        static abstract void GetBufferPtrvSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alGetBufferSamplesSOFT")]
-        static abstract void GetBufferSamplesSoft(
+        static abstract void GetBufferSamplesSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
@@ -2712,10 +2765,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid *")] void* data
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetBufferSamplesSOFT")]
-        static abstract void GetBufferSamplesSoft(
+        static abstract void GetBufferSamplesSOFT(
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
@@ -2724,13 +2778,14 @@ public unsafe partial interface IAl
             [NativeTypeName("ALvoid *")] Ref data
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-        static abstract uint GetDebugMessageLogDirectExt(
+        static abstract uint GetDebugMessageLogDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
@@ -2742,6 +2797,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] sbyte* logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
@@ -2749,7 +2805,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-        static abstract uint GetDebugMessageLogDirectExt(
+        static abstract uint GetDebugMessageLogDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
@@ -2761,6 +2817,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
@@ -2768,7 +2825,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-        static abstract uint GetDebugMessageLogDirectExt(
+        static abstract uint GetDebugMessageLogDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
@@ -2780,6 +2837,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
@@ -2787,7 +2845,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-        static abstract uint GetDebugMessageLogDirectExt(
+        static abstract uint GetDebugMessageLogDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
@@ -2799,10 +2857,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-        static abstract uint GetDebugMessageLogExt(
+        static abstract uint GetDebugMessageLogEXT(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
             [NativeTypeName("ALenum *")] int* sources,
@@ -2813,11 +2872,12 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] sbyte* logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-        static abstract uint GetDebugMessageLogExt(
+        static abstract uint GetDebugMessageLogEXT(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
             [NativeTypeName("ALenum *")] Ref<int> sources,
@@ -2828,11 +2888,12 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-        static abstract uint GetDebugMessageLogExt(
+        static abstract uint GetDebugMessageLogEXT(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
             [NativeTypeName("ALenum *")] Ref<AlEnum> sources,
@@ -2843,11 +2904,12 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [return: NativeTypeName("ALuint")]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-        static abstract uint GetDebugMessageLogExt(
+        static abstract uint GetDebugMessageLogEXT(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
             [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
@@ -3732,12 +3794,13 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint *")] Ref<int> values
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alGetObjectLabelDirectEXT")]
-        static abstract void GetObjectLabelDirectExt(
+        static abstract void GetObjectLabelDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int identifier,
             [NativeTypeName("ALuint")] uint name,
@@ -3746,13 +3809,14 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] sbyte* label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetObjectLabelDirectEXT")]
-        static abstract void GetObjectLabelDirectExt(
+        static abstract void GetObjectLabelDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
@@ -3761,22 +3825,24 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetObjectLabelDirectEXT")]
-        static abstract sbyte GetObjectLabelDirectExt(
+        static abstract sbyte GetObjectLabelDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("ALsizei *")] Ref<int> length
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alGetObjectLabelEXT")]
-        static abstract void GetObjectLabelExt(
+        static abstract void GetObjectLabelEXT(
             [NativeTypeName("ALenum")] int identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("ALsizei")] int bufSize,
@@ -3784,10 +3850,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] sbyte* label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetObjectLabelEXT")]
-        static abstract void GetObjectLabelExt(
+        static abstract void GetObjectLabelEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("ALsizei")] int bufSize,
@@ -3795,36 +3862,40 @@ public unsafe partial interface IAl
             [NativeTypeName("ALchar *")] Ref<sbyte> label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetObjectLabelEXT")]
-        static abstract sbyte GetObjectLabelExt(
+        static abstract sbyte GetObjectLabelEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("ALsizei *")] Ref<int> length
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alGetPointerDirectEXT")]
-        static abstract void* GetPointerDirectExt(
+        static abstract void* GetPointerDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointerDirectEXT")]
-        static abstract Ptr GetPointerDirectExt(
+        static abstract Ptr GetPointerDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -3838,11 +3909,12 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetPointerDirectSOFT")]
-        static abstract void* GetPointerDirectSoft(
+        static abstract void* GetPointerDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -3857,56 +3929,63 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointerDirectSOFT")]
-        static abstract Ptr GetPointerDirectSoft(
+        static abstract Ptr GetPointerDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alGetPointerEXT")]
-        static abstract void* GetPointerExt([NativeTypeName("ALenum")] int pname);
+        static abstract void* GetPointerEXT([NativeTypeName("ALenum")] int pname);
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointerEXT")]
-        static abstract Ptr GetPointerExt(
+        static abstract Ptr GetPointerEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [NativeFunction("openal", EntryPoint = "alGetPointerSOFT")]
-        static abstract void* GetPointerSoft([NativeTypeName("ALenum")] int pname);
+        static abstract void* GetPointerSOFT([NativeTypeName("ALenum")] int pname);
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointerSOFT")]
-        static abstract Ptr GetPointerSoft(
+        static abstract Ptr GetPointerSOFT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-        static abstract void GetPointerDirectExt(
+        static abstract void GetPointervDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname,
             void** values
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-        static abstract void GetPointerDirectExt(
+        static abstract void GetPointervDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
             Ref2D values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -3920,12 +3999,13 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-        static abstract void GetPointerDirectSoft(
+        static abstract void GetPointervDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname,
             void** values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -3940,32 +4020,36 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-        static abstract void GetPointerDirectSoft(
+        static abstract void GetPointervDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
             Ref2D values
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alGetPointervEXT")]
-        static abstract void GetPointerExt([NativeTypeName("ALenum")] int pname, void** values);
+        static abstract void GetPointervEXT([NativeTypeName("ALenum")] int pname, void** values);
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointervEXT")]
-        static abstract void GetPointerExt(
+        static abstract void GetPointervEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
             Ref2D values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [NativeFunction("openal", EntryPoint = "alGetPointervSOFT")]
-        static abstract void GetPointerSoft([NativeTypeName("ALenum")] int pname, void** values);
+        static abstract void GetPointervSOFT([NativeTypeName("ALenum")] int pname, void** values);
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetPointervSOFT")]
-        static abstract void GetPointerSoft(
+        static abstract void GetPointervSOFT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
             Ref2D values
         );
@@ -4000,6 +4084,7 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] Ref<sbyte> fname
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4013,7 +4098,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-        static abstract void GetSource3DirectSoft(
+        static abstract void GetSource3DDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4022,6 +4107,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALdouble *")] double* value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4036,7 +4122,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-        static abstract void GetSource3DirectSoft(
+        static abstract void GetSource3DDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4045,9 +4131,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALdouble *")] Ref<double> value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSource3dSOFT")]
-        static abstract void GetSource3Soft(
+        static abstract void GetSource3DSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble *")] double* value1,
@@ -4055,10 +4142,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALdouble *")] double* value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3dSOFT")]
-        static abstract void GetSource3Soft(
+        static abstract void GetSource3DSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble *")] Ref<double> value1,
@@ -4137,6 +4225,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint *")] Ref<int> value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4150,7 +4239,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-        static abstract void GetSource3DirectSoft(
+        static abstract void GetSource3I64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -4159,6 +4248,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint64SOFT *")] nint* value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4173,7 +4263,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-        static abstract void GetSource3DirectSoft(
+        static abstract void GetSource3I64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param2,
@@ -4182,9 +4272,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint64SOFT *")] Ref<nint> value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSource3i64SOFT")]
-        static abstract void GetSource3Soft(
+        static abstract void GetSource3I64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint64SOFT *")] nint* value1,
@@ -4192,10 +4283,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint64SOFT *")] nint* value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSource3i64SOFT")]
-        static abstract void GetSource3Soft(
+        static abstract void GetSource3I64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param1,
             [NativeTypeName("ALint64SOFT *")] Ref<nint> value1,
@@ -4232,6 +4324,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint *")] Ref<int> value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4245,13 +4338,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-        static abstract void GetSourceDirectSoft(
+        static abstract void GetSourcedDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALdouble *")] double* value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4266,30 +4360,33 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-        static abstract void GetSourceDirectSoft(
+        static abstract void GetSourcedDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
             [NativeTypeName("ALdouble *")] Ref<double> value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSourcedSOFT")]
-        static abstract void GetSourceSoft(
+        static abstract void GetSourcedSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble *")] double* value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcedSOFT")]
-        static abstract void GetSourceSoft(
+        static abstract void GetSourcedSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
             [NativeTypeName("ALdouble *")] Ref<double> value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4303,13 +4400,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSourcedvDirectSOFT")]
-        static abstract void GetSourcedvDirectSoft(
+        static abstract void GetSourcedvDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALdouble *")] double* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4324,25 +4422,27 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcedvDirectSOFT")]
-        static abstract void GetSourcedvDirectSoft(
+        static abstract void GetSourcedvDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
             [NativeTypeName("ALdouble *")] Ref<double> values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSourcedvSOFT")]
-        static abstract void GetSourcedvSoft(
+        static abstract void GetSourcedvSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble *")] double* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcedvSOFT")]
-        static abstract void GetSourcedvSoft(
+        static abstract void GetSourcedvSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
             [NativeTypeName("ALdouble *")] Ref<double> values
@@ -4449,6 +4549,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint *")] Ref<int> value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4462,13 +4563,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64DirectSOFT")]
-        static abstract void GetSourcei64DirectSoft(
+        static abstract void GetSourcei64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint64SOFT *")] nint* value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4483,30 +4585,33 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64DirectSOFT")]
-        static abstract void GetSourcei64DirectSoft(
+        static abstract void GetSourcei64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
             [NativeTypeName("ALint64SOFT *")] Ref<nint> value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64SOFT")]
-        static abstract void GetSourcei64Soft(
+        static abstract void GetSourcei64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint64SOFT *")] nint* value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64SOFT")]
-        static abstract void GetSourcei64Soft(
+        static abstract void GetSourcei64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
             [NativeTypeName("ALint64SOFT *")] Ref<nint> value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4520,13 +4625,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-        static abstract void GetSourcei64VDirectSoft(
+        static abstract void GetSourcei64VDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint64SOFT *")] nint* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -4541,25 +4647,27 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-        static abstract void GetSourcei64VDirectSoft(
+        static abstract void GetSourcei64VDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
             [NativeTypeName("ALint64SOFT *")] Ref<nint> values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-        static abstract void GetSourcei64VSoft(
+        static abstract void GetSourcei64VSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint64SOFT *")] nint* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-        static abstract void GetSourcei64VSoft(
+        static abstract void GetSourcei64VSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
             [NativeTypeName("ALint64SOFT *")] Ref<nint> values
@@ -4668,6 +4776,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALenum")] Constant<int, AlEnum, StringPName> param1
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [return: NativeTypeName("const ALchar *")]
         [
             SupportedApiProfile(
@@ -4682,12 +4791,13 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-        static abstract sbyte* GetStringDirectSoft(
+        static abstract sbyte* GetStringiDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int pname,
             [NativeTypeName("ALsizei")] int index
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [return: NativeTypeName("const ALchar *")]
         [
             SupportedApiProfile(
@@ -4703,25 +4813,27 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-        static abstract Ptr<sbyte> GetStringDirectSoft(
+        static abstract Ptr<sbyte> GetStringiDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, StringPName> pname,
             [NativeTypeName("ALsizei")] int index
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [return: NativeTypeName("const ALchar *")]
         [SupportedApiProfile("al", ["AL_SOFT_source_resampler"])]
         [NativeFunction("openal", EntryPoint = "alGetStringiSOFT")]
-        static abstract sbyte* GetStringSoft(
+        static abstract sbyte* GetStringiSOFT(
             [NativeTypeName("ALenum")] int pname,
             [NativeTypeName("ALsizei")] int index
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [return: NativeTypeName("const ALchar *")]
         [SupportedApiProfile("al", ["AL_SOFT_source_resampler"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alGetStringiSOFT")]
-        static abstract Ptr<sbyte> GetStringSoft(
+        static abstract Ptr<sbyte> GetStringiSOFT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, StringPName> pname,
             [NativeTypeName("ALsizei")] int index
         );
@@ -4791,18 +4903,22 @@ public unsafe partial interface IAl
             [NativeTypeName("ALuint")] uint buffer
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-        static abstract MaybeBool<sbyte> IsBufferFormatSupportedSoft(
+        static abstract MaybeBool<sbyte> IsBufferFormatSupportedSOFT(
             [NativeTypeName("ALenum")] int format
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-        static abstract sbyte IsBufferFormatSupportedSoftRaw([NativeTypeName("ALenum")] int format);
+        static abstract sbyte IsBufferFormatSupportedSoftRawSOFT(
+            [NativeTypeName("ALenum")] int format
+        );
 
         [return: NativeTypeName("ALboolean")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -5207,12 +5323,13 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALint *")] Ref<int> values
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alObjectLabelDirectEXT")]
-        static abstract void ObjectLabelDirectExt(
+        static abstract void ObjectLabelDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int identifier,
             [NativeTypeName("ALuint")] uint name,
@@ -5220,13 +5337,14 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] sbyte* label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alObjectLabelDirectEXT")]
-        static abstract void ObjectLabelDirectExt(
+        static abstract void ObjectLabelDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
@@ -5234,58 +5352,65 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] Ref<sbyte> label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alObjectLabelDirectEXT")]
-        static abstract void ObjectLabelDirectExt(
+        static abstract void ObjectLabelDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("const ALchar *")] sbyte label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alObjectLabelEXT")]
-        static abstract void ObjectLabelExt(
+        static abstract void ObjectLabelEXT(
             [NativeTypeName("ALenum")] int identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] sbyte* label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alObjectLabelEXT")]
-        static abstract void ObjectLabelExt(
+        static abstract void ObjectLabelEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alObjectLabelEXT")]
-        static abstract void ObjectLabelExt(
+        static abstract void ObjectLabelEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
             [NativeTypeName("ALuint")] uint name,
             [NativeTypeName("const ALchar *")] sbyte label
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alPopDebugGroupDirectEXT")]
-        static abstract void PopDebugGroupDirectExt(ContextHandle context);
+        static abstract void PopDebugGroupDirectEXT(ContextHandle context);
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alPopDebugGroupEXT")]
-        static abstract void PopDebugGroupExt();
+        static abstract void PopDebugGroupEXT();
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5299,18 +5424,20 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alProcessUpdatesDirectSOFT")]
-        static abstract void ProcessUpdatesDirectSoft(ContextHandle context);
+        static abstract void ProcessUpdatesDirectSOFT(ContextHandle context);
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_deferred_updates"])]
         [NativeFunction("openal", EntryPoint = "alProcessUpdatesSOFT")]
-        static abstract void ProcessUpdatesSoft();
+        static abstract void ProcessUpdatesSOFT();
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
-        static abstract void PushDebugGroupDirectExt(
+        static abstract void PushDebugGroupDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] int source,
             [NativeTypeName("ALuint")] uint id,
@@ -5318,13 +5445,14 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] sbyte* message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
-        static abstract void PushDebugGroupDirectExt(
+        static abstract void PushDebugGroupDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
@@ -5332,42 +5460,46 @@ public unsafe partial interface IAl
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [
             SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
-        static abstract void PushDebugGroupDirectExt(
+        static abstract void PushDebugGroupDirectEXT(
             ContextHandle context,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
-        static abstract void PushDebugGroupExt(
+        static abstract void PushDebugGroupEXT(
             [NativeTypeName("ALenum")] int source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] sbyte* message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
-        static abstract void PushDebugGroupExt(
+        static abstract void PushDebugGroupEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         );
 
+        [NameAffix("Suffix", "EXT", 0)]
         [SupportedApiProfile("al", ["AL_EXT_debug"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
-        static abstract void PushDebugGroupExt(
+        static abstract void PushDebugGroupEXT(
             [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
@@ -5458,6 +5590,7 @@ public unsafe partial interface IAl
         [NativeFunction("openal", EntryPoint = "alRequestFoldbackStopDirect")]
         static abstract void RequestFoldbackStopDirect(ContextHandle context);
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5471,7 +5604,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSource3dDirectSOFT")]
-        static abstract void Source3DirectSoft(
+        static abstract void Source3DDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -5480,9 +5613,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALdouble")] double value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alSource3dSOFT")]
-        static abstract void Source3Soft(
+        static abstract void Source3DSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble")] double value1,
@@ -5561,6 +5695,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint")] int value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5574,7 +5709,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSource3i64DirectSOFT")]
-        static abstract void Source3DirectSoft(
+        static abstract void Source3I64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
@@ -5583,6 +5718,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint64SOFT")] nint value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5597,7 +5733,7 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSource3i64DirectSOFT")]
-        static abstract void Source3DirectSoft(
+        static abstract void Source3I64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param2,
@@ -5606,9 +5742,10 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint64SOFT")] nint value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alSource3i64SOFT")]
-        static abstract void Source3Soft(
+        static abstract void Source3I64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint64SOFT")] nint value1,
@@ -5616,10 +5753,11 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint64SOFT")] nint value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSource3i64SOFT")]
-        static abstract void Source3Soft(
+        static abstract void Source3I64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param1,
             [NativeTypeName("ALint64SOFT")] nint value1,
@@ -5656,6 +5794,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint")] int value3
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5669,13 +5808,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSourcedDirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void SourcedDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALdouble")] double value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5690,30 +5830,33 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcedDirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void SourcedDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
             [NativeTypeName("ALdouble")] double value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alSourcedSOFT")]
-        static abstract void SourceSoft(
+        static abstract void SourcedSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALdouble")] double value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcedSOFT")]
-        static abstract void SourceSoft(
+        static abstract void SourcedSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
             [NativeTypeName("ALdouble")] double value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5727,13 +5870,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void SourcedvDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("const ALdouble *")] double* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5748,25 +5892,27 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void SourcedvDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
             [NativeTypeName("const ALdouble *")] Ref<double> values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alSourcedvSOFT")]
-        static abstract void SourceSoft(
+        static abstract void SourcedvSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("const ALdouble *")] double* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcedvSOFT")]
-        static abstract void SourceSoft(
+        static abstract void SourcedvSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
             [NativeTypeName("const ALdouble *")] Ref<double> values
@@ -5873,6 +6019,7 @@ public unsafe partial interface IAl
             [NativeTypeName("ALint")] int value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5886,13 +6033,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSourcei64DirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void Sourcei64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("ALint64SOFT")] nint value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5907,30 +6055,33 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcei64DirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void Sourcei64DirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
             [NativeTypeName("ALint64SOFT")] nint value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alSourcei64SOFT")]
-        static abstract void SourceSoft(
+        static abstract void Sourcei64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("ALint64SOFT")] nint value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcei64SOFT")]
-        static abstract void SourceSoft(
+        static abstract void Sourcei64SOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
             [NativeTypeName("ALint64SOFT")] nint value
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5944,13 +6095,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void Sourcei64VDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param2,
             [NativeTypeName("const ALint64SOFT *")] nint* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -5965,25 +6117,27 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-        static abstract void SourceDirectSoft(
+        static abstract void Sourcei64VDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
             [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alSourcei64vSOFT")]
-        static abstract void SourceSoft(
+        static abstract void Sourcei64VSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] int param1,
             [NativeTypeName("const ALint64SOFT *")] nint* values
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcei64vSOFT")]
-        static abstract void SourceSoft(
+        static abstract void Sourcei64VSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
             [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
@@ -6128,6 +6282,7 @@ public unsafe partial interface IAl
         [NativeFunction("openal", EntryPoint = "alSourcePlay")]
         static abstract void SourcePlay([NativeTypeName("ALuint")] uint source);
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -6141,19 +6296,21 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimeDirectSOFT")]
-        static abstract void SourcePlayAtTimeDirectSoft(
+        static abstract void SourcePlayAtTimeDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimeSOFT")]
-        static abstract void SourcePlayAtTimeSoft(
+        static abstract void SourcePlayAtTimeSOFT(
             [NativeTypeName("ALuint")] uint source,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -6167,13 +6324,14 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevDirectSOFT")]
-        static abstract void SourcePlayAtTimevDirectSoft(
+        static abstract void SourcePlayAtTimevDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] uint* sources,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -6188,13 +6346,14 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevDirectSOFT")]
-        static abstract void SourcePlayAtTimevDirectSoft(
+        static abstract void SourcePlayAtTimevDirectSOFT(
             ContextHandle context,
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] Ref<uint> sources,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [
             SupportedApiProfile(
                 "al",
@@ -6209,33 +6368,36 @@ public unsafe partial interface IAl
         ]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevDirectSOFT")]
-        static abstract void SourcePlayAtTimevDirectSoft(
+        static abstract void SourcePlayAtTimevDirectSOFT(
             ContextHandle context,
             [NativeTypeName("const ALuint *")] uint sources,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
-        static abstract void SourcePlayAtTimevSoft(
+        static abstract void SourcePlayAtTimevSOFT(
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] uint* sources,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
-        static abstract void SourcePlayAtTimevSoft(
+        static abstract void SourcePlayAtTimevSOFT(
             [NativeTypeName("ALsizei")] int n,
             [NativeTypeName("const ALuint *")] Ref<uint> sources,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
 
+        [NameAffix("Suffix", "SOFT", 0)]
         [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
-        static abstract void SourcePlayAtTimevSoft(
+        static abstract void SourcePlayAtTimevSOFT(
             [NativeTypeName("const ALuint *")] uint sources,
             [NativeTypeName("ALint64SOFT")] nint start_time
         );
@@ -6869,6 +7031,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint")] int value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -6882,7 +7045,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alBufferCallbackDirectSOFT")]
-    void BufferCallbackDirectSoft(
+    void BufferCallbackDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
@@ -6891,6 +7054,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid *")] void* userptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -6905,7 +7069,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferCallbackDirectSOFT")]
-    void BufferCallbackDirectSoft(
+    void BufferCallbackDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
@@ -6914,9 +7078,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid *")] Ref userptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [NativeFunction("openal", EntryPoint = "alBufferCallbackSOFT")]
-    void BufferCallbackSoft(
+    void BufferCallbackSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
         [NativeTypeName("ALsizei")] int freq,
@@ -6924,10 +7089,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid *")] void* userptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferCallbackSOFT")]
-    void BufferCallbackSoft(
+    void BufferCallbackSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
         [NativeTypeName("ALsizei")] int freq,
@@ -7219,9 +7385,10 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALint *")] Ref<int> values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alBufferSamplesSOFT")]
-    void BufferSamplesSoft(
+    void BufferSamplesSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALuint")] uint samplerate,
         [NativeTypeName("ALenum")] int internalformat,
@@ -7231,10 +7398,11 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALvoid *")] void* data
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferSamplesSOFT")]
-    void BufferSamplesSoft(
+    void BufferSamplesSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALuint")] uint samplerate,
         [NativeTypeName("ALenum")] int internalformat,
@@ -7244,6 +7412,7 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALvoid *")] Ref data
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -7257,7 +7426,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alBufferSubDataDirectSOFT")]
-    void BufferSubDataDirectSoft(
+    void BufferSubDataDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
@@ -7266,6 +7435,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALsizei")] int length
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -7280,7 +7450,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferSubDataDirectSOFT")]
-    void BufferSubDataDirectSoft(
+    void BufferSubDataDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
@@ -7289,9 +7459,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALsizei")] int length
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_sub_data"])]
     [NativeFunction("openal", EntryPoint = "alBufferSubDataSOFT")]
-    void BufferSubDataSoft(
+    void BufferSubDataSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int format,
         [NativeTypeName("const ALvoid *")] void* data,
@@ -7299,10 +7470,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALsizei")] int length
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_sub_data"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferSubDataSOFT")]
-    void BufferSubDataSoft(
+    void BufferSubDataSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, Format> format,
         [NativeTypeName("const ALvoid *")] Ref data,
@@ -7310,9 +7482,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALsizei")] int length
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alBufferSubSamplesSOFT")]
-    void BufferSubSamplesSoft(
+    void BufferSubSamplesSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
@@ -7321,10 +7494,11 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALvoid *")] void* data
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alBufferSubSamplesSOFT")]
-    void BufferSubSamplesSoft(
+    void BufferSubSamplesSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
@@ -7333,50 +7507,55 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALvoid *")] Ref data
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackDirectEXT")]
-    void DebugMessageCallbackDirectExt(
+    void DebugMessageCallbackDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
         void* userParam
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackDirectEXT")]
-    void DebugMessageCallbackDirectExt(
+    void DebugMessageCallbackDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
         Ref userParam
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackEXT")]
-    void DebugMessageCallbackExt(
+    void DebugMessageCallbackEXT(
         [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
         void* userParam
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageCallbackEXT")]
-    void DebugMessageCallbackExt(
+    void DebugMessageCallbackEXT(
         [NativeTypeName("ALDEBUGPROCEXT")] DebugProcExt callback,
         Ref userParam
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
-    void DebugMessageControlDirectExt(
+    void DebugMessageControlDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int source,
         [NativeTypeName("ALenum")] int type,
@@ -7386,13 +7565,14 @@ public unsafe partial interface IAl
         [NativeTypeName("ALboolean")] sbyte enable
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
-    void DebugMessageControlDirectExt(
+    void DebugMessageControlDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -7402,13 +7582,14 @@ public unsafe partial interface IAl
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
-    void DebugMessageControlDirectExt(
+    void DebugMessageControlDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -7417,9 +7598,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
-    void DebugMessageControlExt(
+    void DebugMessageControlEXT(
         [NativeTypeName("ALenum")] int source,
         [NativeTypeName("ALenum")] int type,
         [NativeTypeName("ALenum")] int severity,
@@ -7428,10 +7610,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALboolean")] sbyte enable
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
-    void DebugMessageControlExt(
+    void DebugMessageControlEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
@@ -7440,10 +7623,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
-    void DebugMessageControlExt(
+    void DebugMessageControlEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
@@ -7451,12 +7635,13 @@ public unsafe partial interface IAl
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
-    void DebugMessageInsertDirectExt(
+    void DebugMessageInsertDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int source,
         [NativeTypeName("ALenum")] int type,
@@ -7466,13 +7651,14 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] sbyte* message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
-    void DebugMessageInsertDirectExt(
+    void DebugMessageInsertDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -7482,13 +7668,14 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
-    void DebugMessageInsertDirectExt(
+    void DebugMessageInsertDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
@@ -7497,9 +7684,10 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] sbyte message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
-    void DebugMessageInsertExt(
+    void DebugMessageInsertEXT(
         [NativeTypeName("ALenum")] int source,
         [NativeTypeName("ALenum")] int type,
         [NativeTypeName("ALuint")] uint id,
@@ -7508,10 +7696,11 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] sbyte* message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
-    void DebugMessageInsertExt(
+    void DebugMessageInsertEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
@@ -7520,10 +7709,11 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
-    void DebugMessageInsertExt(
+    void DebugMessageInsertEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
@@ -7531,6 +7721,7 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] sbyte message
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -7544,11 +7735,12 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alDeferUpdatesDirectSOFT")]
-    void DeferUpdatesDirectSoft(ContextHandle context);
+    void DeferUpdatesDirectSOFT(ContextHandle context);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_deferred_updates"])]
     [NativeFunction("openal", EntryPoint = "alDeferUpdatesSOFT")]
-    void DeferUpdatesSoft();
+    void DeferUpdatesSOFT();
 
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [Transformed]
@@ -8075,102 +8267,112 @@ public unsafe partial interface IAl
         [NativeTypeName("ALenum")] Constant<int, AlEnum, EnableCap> capability
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alEventCallbackDirectSOFT")]
-    void EventCallbackDirectSoft(
+    void EventCallbackDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
         void* userParam
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEventCallbackDirectSOFT")]
-    void EventCallbackDirectSoft(
+    void EventCallbackDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
         Ref userParam
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [NativeFunction("openal", EntryPoint = "alEventCallbackSOFT")]
-    void EventCallbackSoft(
+    void EventCallbackSOFT(
         [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
         void* userParam
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEventCallbackSOFT")]
-    void EventCallbackSoft(
+    void EventCallbackSOFT(
         [NativeTypeName("ALEVENTPROCSOFT")] EventProcSoft callback,
         Ref userParam
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alEventControlDirectSOFT")]
-    void EventControlDirectSoft(
+    void EventControlDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALenum *")] int* types,
         [NativeTypeName("ALboolean")] sbyte enable
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEventControlDirectSOFT")]
-    void EventControlDirectSoft(
+    void EventControlDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALenum *")] Ref<int> types,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEventControlDirectSOFT")]
-    void EventControlDirectSoft(
+    void EventControlDirectSOFT(
         ContextHandle context,
         [NativeTypeName("const ALenum *")] int types,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [NativeFunction("openal", EntryPoint = "alEventControlSOFT")]
-    void EventControlSoft(
+    void EventControlSOFT(
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALenum *")] int* types,
         [NativeTypeName("ALboolean")] sbyte enable
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEventControlSOFT")]
-    void EventControlSoft(
+    void EventControlSOFT(
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALenum *")] Ref<int> types,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alEventControlSOFT")]
-    void EventControlSoft(
+    void EventControlSOFT(
         [NativeTypeName("const ALenum *")] int types,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     );
@@ -8917,6 +9119,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint *")] Ref<int> value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -8930,7 +9133,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrDirectSOFT")]
-    void GetBuffer3PtrDirectSoft(
+    void GetBuffer3PtrDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
@@ -8939,6 +9142,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid **")] void** ptr2
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -8953,7 +9157,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrDirectSOFT")]
-    void GetBuffer3PtrDirectSoft(
+    void GetBuffer3PtrDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
@@ -8962,9 +9166,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid **")] Ref2D ptr2
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrSOFT")]
-    void GetBuffer3PtrSoft(
+    void GetBuffer3PtrSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALvoid **")] void** ptr0,
@@ -8972,10 +9177,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid **")] void** ptr2
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBuffer3PtrSOFT")]
-    void GetBuffer3PtrSoft(
+    void GetBuffer3PtrSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr0,
@@ -9151,6 +9357,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint *")] Ref<int> values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -9164,13 +9371,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrDirectSOFT")]
-    void GetBufferPtrDirectSoft(
+    void GetBufferPtrDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALvoid **")] void** ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -9185,30 +9393,33 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrDirectSOFT")]
-    void GetBufferPtrDirectSoft(
+    void GetBufferPtrDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrSOFT")]
-    void GetBufferPtrSoft(
+    void GetBufferPtrSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALvoid **")] void** ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrSOFT")]
-    void GetBufferPtrSoft(
+    void GetBufferPtrSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -9222,13 +9433,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrvDirectSOFT")]
-    void GetBufferPtrvDirectSoft(
+    void GetBufferPtrvDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALvoid **")] void** ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -9243,33 +9455,36 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrvDirectSOFT")]
-    void GetBufferPtrvDirectSoft(
+    void GetBufferPtrvDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrvSOFT")]
-    void GetBufferPtrvSoft(
+    void GetBufferPtrvSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALvoid **")] void** ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_callback_buffer"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBufferPtrvSOFT")]
-    void GetBufferPtrvSoft(
+    void GetBufferPtrvSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alGetBufferSamplesSOFT")]
-    void GetBufferSamplesSoft(
+    void GetBufferSamplesSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
@@ -9278,10 +9493,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid *")] void* data
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetBufferSamplesSOFT")]
-    void GetBufferSamplesSoft(
+    void GetBufferSamplesSOFT(
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
@@ -9290,13 +9506,14 @@ public unsafe partial interface IAl
         [NativeTypeName("ALvoid *")] Ref data
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-    uint GetDebugMessageLogDirectExt(
+    uint GetDebugMessageLogDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
@@ -9308,6 +9525,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] sbyte* logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
@@ -9315,7 +9533,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-    uint GetDebugMessageLogDirectExt(
+    uint GetDebugMessageLogDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
@@ -9327,6 +9545,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
@@ -9334,7 +9553,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-    uint GetDebugMessageLogDirectExt(
+    uint GetDebugMessageLogDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
@@ -9346,6 +9565,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
@@ -9353,7 +9573,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogDirectEXT")]
-    uint GetDebugMessageLogDirectExt(
+    uint GetDebugMessageLogDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
@@ -9365,10 +9585,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-    uint GetDebugMessageLogExt(
+    uint GetDebugMessageLogEXT(
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
         [NativeTypeName("ALenum *")] int* sources,
@@ -9379,11 +9600,12 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] sbyte* logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-    uint GetDebugMessageLogExt(
+    uint GetDebugMessageLogEXT(
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
         [NativeTypeName("ALenum *")] Ref<int> sources,
@@ -9394,11 +9616,12 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-    uint GetDebugMessageLogExt(
+    uint GetDebugMessageLogEXT(
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
         [NativeTypeName("ALenum *")] Ref<AlEnum> sources,
@@ -9409,11 +9632,12 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [return: NativeTypeName("ALuint")]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetDebugMessageLogEXT")]
-    uint GetDebugMessageLogExt(
+    uint GetDebugMessageLogEXT(
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
         [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
@@ -10277,12 +10501,13 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint *")] Ref<int> values
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alGetObjectLabelDirectEXT")]
-    void GetObjectLabelDirectExt(
+    void GetObjectLabelDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int identifier,
         [NativeTypeName("ALuint")] uint name,
@@ -10291,13 +10516,14 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] sbyte* label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetObjectLabelDirectEXT")]
-    void GetObjectLabelDirectExt(
+    void GetObjectLabelDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
@@ -10306,22 +10532,24 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetObjectLabelDirectEXT")]
-    sbyte GetObjectLabelDirectExt(
+    sbyte GetObjectLabelDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("ALsizei *")] Ref<int> length
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alGetObjectLabelEXT")]
-    void GetObjectLabelExt(
+    void GetObjectLabelEXT(
         [NativeTypeName("ALenum")] int identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("ALsizei")] int bufSize,
@@ -10329,10 +10557,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] sbyte* label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetObjectLabelEXT")]
-    void GetObjectLabelExt(
+    void GetObjectLabelEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("ALsizei")] int bufSize,
@@ -10340,135 +10569,152 @@ public unsafe partial interface IAl
         [NativeTypeName("ALchar *")] Ref<sbyte> label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetObjectLabelEXT")]
-    sbyte GetObjectLabelExt(
+    sbyte GetObjectLabelEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("ALsizei *")] Ref<int> length
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alGetPointerDirectEXT")]
-    void* GetPointerDirectExt(ContextHandle context, [NativeTypeName("ALenum")] int pname);
+    void* GetPointerDirectEXT(ContextHandle context, [NativeTypeName("ALenum")] int pname);
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointerDirectEXT")]
-    Ptr GetPointerDirectExt(
+    Ptr GetPointerDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alGetPointerDirectSOFT")]
-    void* GetPointerDirectSoft(ContextHandle context, [NativeTypeName("ALenum")] int pname);
+    void* GetPointerDirectSOFT(ContextHandle context, [NativeTypeName("ALenum")] int pname);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointerDirectSOFT")]
-    Ptr GetPointerDirectSoft(
+    Ptr GetPointerDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alGetPointerEXT")]
-    void* GetPointerExt([NativeTypeName("ALenum")] int pname);
+    void* GetPointerEXT([NativeTypeName("ALenum")] int pname);
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointerEXT")]
-    Ptr GetPointerExt([NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname);
+    Ptr GetPointerEXT([NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [NativeFunction("openal", EntryPoint = "alGetPointerSOFT")]
-    void* GetPointerSoft([NativeTypeName("ALenum")] int pname);
+    void* GetPointerSOFT([NativeTypeName("ALenum")] int pname);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointerSOFT")]
-    Ptr GetPointerSoft([NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname);
+    Ptr GetPointerSOFT([NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname);
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-    void GetPointerDirectExt(
+    void GetPointervDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int pname,
         void** values
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectEXT")]
-    void GetPointerDirectExt(
+    void GetPointervDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
         Ref2D values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-    void GetPointerDirectSoft(
+    void GetPointervDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int pname,
         void** values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "AL_SOFT_events"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointervDirectSOFT")]
-    void GetPointerDirectSoft(
+    void GetPointervDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
         Ref2D values
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alGetPointervEXT")]
-    void GetPointerExt([NativeTypeName("ALenum")] int pname, void** values);
+    void GetPointervEXT([NativeTypeName("ALenum")] int pname, void** values);
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointervEXT")]
-    void GetPointerExt(
+    void GetPointervEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
         Ref2D values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [NativeFunction("openal", EntryPoint = "alGetPointervSOFT")]
-    void GetPointerSoft([NativeTypeName("ALenum")] int pname, void** values);
+    void GetPointervSOFT([NativeTypeName("ALenum")] int pname, void** values);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetPointervSOFT")]
-    void GetPointerSoft(
+    void GetPointervSOFT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, PointerPName> pname,
         Ref2D values
     );
@@ -10503,6 +10749,7 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] Ref<sbyte> fname
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10516,7 +10763,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-    void GetSource3DirectSoft(
+    void GetSource3DDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -10525,6 +10772,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALdouble *")] double* value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10539,7 +10787,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3dDirectSOFT")]
-    void GetSource3DirectSoft(
+    void GetSource3DDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -10548,9 +10796,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALdouble *")] Ref<double> value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSource3dSOFT")]
-    void GetSource3Soft(
+    void GetSource3DSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble *")] double* value1,
@@ -10558,10 +10807,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALdouble *")] double* value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3dSOFT")]
-    void GetSource3Soft(
+    void GetSource3DSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble *")] Ref<double> value1,
@@ -10640,6 +10890,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint *")] Ref<int> value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10653,7 +10904,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-    void GetSource3DirectSoft(
+    void GetSource3I64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -10662,6 +10913,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint64SOFT *")] nint* value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10676,7 +10928,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3i64DirectSOFT")]
-    void GetSource3DirectSoft(
+    void GetSource3I64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param2,
@@ -10685,9 +10937,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint64SOFT *")] Ref<nint> value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSource3i64SOFT")]
-    void GetSource3Soft(
+    void GetSource3I64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint64SOFT *")] nint* value1,
@@ -10695,10 +10948,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint64SOFT *")] nint* value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSource3i64SOFT")]
-    void GetSource3Soft(
+    void GetSource3I64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param1,
         [NativeTypeName("ALint64SOFT *")] Ref<nint> value1,
@@ -10735,6 +10989,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint *")] Ref<int> value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10748,13 +11003,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-    void GetSourceDirectSoft(
+    void GetSourcedDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALdouble *")] double* value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10769,30 +11025,33 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcedDirectSOFT")]
-    void GetSourceDirectSoft(
+    void GetSourcedDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
         [NativeTypeName("ALdouble *")] Ref<double> value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcedSOFT")]
-    void GetSourceSoft(
+    void GetSourcedSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble *")] double* value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcedSOFT")]
-    void GetSourceSoft(
+    void GetSourcedSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
         [NativeTypeName("ALdouble *")] Ref<double> value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10806,13 +11065,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcedvDirectSOFT")]
-    void GetSourcedvDirectSoft(
+    void GetSourcedvDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALdouble *")] double* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10827,25 +11087,27 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcedvDirectSOFT")]
-    void GetSourcedvDirectSoft(
+    void GetSourcedvDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
         [NativeTypeName("ALdouble *")] Ref<double> values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcedvSOFT")]
-    void GetSourcedvSoft(
+    void GetSourcedvSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble *")] double* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcedvSOFT")]
-    void GetSourcedvSoft(
+    void GetSourcedvSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
         [NativeTypeName("ALdouble *")] Ref<double> values
@@ -10952,6 +11214,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint *")] Ref<int> value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10965,13 +11228,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64DirectSOFT")]
-    void GetSourcei64DirectSoft(
+    void GetSourcei64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint64SOFT *")] nint* value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -10986,30 +11250,33 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64DirectSOFT")]
-    void GetSourcei64DirectSoft(
+    void GetSourcei64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
         [NativeTypeName("ALint64SOFT *")] Ref<nint> value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64SOFT")]
-    void GetSourcei64Soft(
+    void GetSourcei64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint64SOFT *")] nint* value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64SOFT")]
-    void GetSourcei64Soft(
+    void GetSourcei64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
         [NativeTypeName("ALint64SOFT *")] Ref<nint> value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -11023,13 +11290,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-    void GetSourcei64VDirectSoft(
+    void GetSourcei64VDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint64SOFT *")] nint* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -11044,25 +11312,27 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-    void GetSourcei64VDirectSoft(
+    void GetSourcei64VDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
         [NativeTypeName("ALint64SOFT *")] Ref<nint> values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-    void GetSourcei64VSoft(
+    void GetSourcei64VSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint64SOFT *")] nint* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-    void GetSourcei64VSoft(
+    void GetSourcei64VSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
         [NativeTypeName("ALint64SOFT *")] Ref<nint> values
@@ -11166,6 +11436,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALenum")] Constant<int, AlEnum, StringPName> param1
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [return: NativeTypeName("const ALchar *")]
     [
         SupportedApiProfile(
@@ -11180,12 +11451,13 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-    sbyte* GetStringDirectSoft(
+    sbyte* GetStringiDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int pname,
         [NativeTypeName("ALsizei")] int index
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [return: NativeTypeName("const ALchar *")]
     [
         SupportedApiProfile(
@@ -11201,25 +11473,27 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetStringiDirectSOFT")]
-    Ptr<sbyte> GetStringDirectSoft(
+    Ptr<sbyte> GetStringiDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, StringPName> pname,
         [NativeTypeName("ALsizei")] int index
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [return: NativeTypeName("const ALchar *")]
     [SupportedApiProfile("al", ["AL_SOFT_source_resampler"])]
     [NativeFunction("openal", EntryPoint = "alGetStringiSOFT")]
-    sbyte* GetStringSoft(
+    sbyte* GetStringiSOFT(
         [NativeTypeName("ALenum")] int pname,
         [NativeTypeName("ALsizei")] int index
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [return: NativeTypeName("const ALchar *")]
     [SupportedApiProfile("al", ["AL_SOFT_source_resampler"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alGetStringiSOFT")]
-    Ptr<sbyte> GetStringSoft(
+    Ptr<sbyte> GetStringiSOFT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, StringPName> pname,
         [NativeTypeName("ALsizei")] int index
     );
@@ -11281,16 +11555,18 @@ public unsafe partial interface IAl
     [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
     sbyte IsBufferDirectRaw(ContextHandle context, [NativeTypeName("ALuint")] uint buffer);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-    MaybeBool<sbyte> IsBufferFormatSupportedSoft([NativeTypeName("ALenum")] int format);
+    MaybeBool<sbyte> IsBufferFormatSupportedSOFT([NativeTypeName("ALenum")] int format);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-    sbyte IsBufferFormatSupportedSoftRaw([NativeTypeName("ALenum")] int format);
+    sbyte IsBufferFormatSupportedSoftRawSOFT([NativeTypeName("ALenum")] int format);
 
     [return: NativeTypeName("ALboolean")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -11666,12 +11942,13 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALint *")] Ref<int> values
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alObjectLabelDirectEXT")]
-    void ObjectLabelDirectExt(
+    void ObjectLabelDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int identifier,
         [NativeTypeName("ALuint")] uint name,
@@ -11679,13 +11956,14 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] sbyte* label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alObjectLabelDirectEXT")]
-    void ObjectLabelDirectExt(
+    void ObjectLabelDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
@@ -11693,58 +11971,65 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] Ref<sbyte> label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alObjectLabelDirectEXT")]
-    void ObjectLabelDirectExt(
+    void ObjectLabelDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("const ALchar *")] sbyte label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alObjectLabelEXT")]
-    void ObjectLabelExt(
+    void ObjectLabelEXT(
         [NativeTypeName("ALenum")] int identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] sbyte* label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alObjectLabelEXT")]
-    void ObjectLabelExt(
+    void ObjectLabelEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alObjectLabelEXT")]
-    void ObjectLabelExt(
+    void ObjectLabelEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, ObjectIdentifier> identifier,
         [NativeTypeName("ALuint")] uint name,
         [NativeTypeName("const ALchar *")] sbyte label
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alPopDebugGroupDirectEXT")]
-    void PopDebugGroupDirectExt(ContextHandle context);
+    void PopDebugGroupDirectEXT(ContextHandle context);
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alPopDebugGroupEXT")]
-    void PopDebugGroupExt();
+    void PopDebugGroupEXT();
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -11758,18 +12043,20 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alProcessUpdatesDirectSOFT")]
-    void ProcessUpdatesDirectSoft(ContextHandle context);
+    void ProcessUpdatesDirectSOFT(ContextHandle context);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_deferred_updates"])]
     [NativeFunction("openal", EntryPoint = "alProcessUpdatesSOFT")]
-    void ProcessUpdatesSoft();
+    void ProcessUpdatesSOFT();
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
-    void PushDebugGroupDirectExt(
+    void PushDebugGroupDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] int source,
         [NativeTypeName("ALuint")] uint id,
@@ -11777,13 +12064,14 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] sbyte* message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
-    void PushDebugGroupDirectExt(
+    void PushDebugGroupDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
@@ -11791,42 +12079,46 @@ public unsafe partial interface IAl
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [
         SupportedApiProfile("al", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true),
         SupportedApiProfile("alc", ["AL_EXT_debug", "AL_EXT_direct_context"], RequireAll = true)
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
-    void PushDebugGroupDirectExt(
+    void PushDebugGroupDirectEXT(
         ContextHandle context,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("const ALchar *")] sbyte message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
-    void PushDebugGroupExt(
+    void PushDebugGroupEXT(
         [NativeTypeName("ALenum")] int source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] sbyte* message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
-    void PushDebugGroupExt(
+    void PushDebugGroupEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     );
 
+    [NameAffix("Suffix", "EXT", 0)]
     [SupportedApiProfile("al", ["AL_EXT_debug"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
-    void PushDebugGroupExt(
+    void PushDebugGroupEXT(
         [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("const ALchar *")] sbyte message
@@ -11893,6 +12185,7 @@ public unsafe partial interface IAl
     [NativeFunction("openal", EntryPoint = "alRequestFoldbackStopDirect")]
     void RequestFoldbackStopDirect(ContextHandle context);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -11906,7 +12199,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSource3dDirectSOFT")]
-    void Source3DirectSoft(
+    void Source3DDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -11915,9 +12208,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALdouble")] double value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alSource3dSOFT")]
-    void Source3Soft(
+    void Source3DSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble")] double value1,
@@ -11996,6 +12290,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint")] int value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12009,7 +12304,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSource3i64DirectSOFT")]
-    void Source3DirectSoft(
+    void Source3I64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
@@ -12018,6 +12313,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint64SOFT")] nint value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12032,7 +12328,7 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSource3i64DirectSOFT")]
-    void Source3DirectSoft(
+    void Source3I64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param2,
@@ -12041,9 +12337,10 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint64SOFT")] nint value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alSource3i64SOFT")]
-    void Source3Soft(
+    void Source3I64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint64SOFT")] nint value1,
@@ -12051,10 +12348,11 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint64SOFT")] nint value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSource3i64SOFT")]
-    void Source3Soft(
+    void Source3I64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger3> param1,
         [NativeTypeName("ALint64SOFT")] nint value1,
@@ -12091,6 +12389,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint")] int value3
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12104,13 +12403,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSourcedDirectSOFT")]
-    void SourceDirectSoft(
+    void SourcedDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALdouble")] double value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12125,30 +12425,33 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcedDirectSOFT")]
-    void SourceDirectSoft(
+    void SourcedDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
         [NativeTypeName("ALdouble")] double value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alSourcedSOFT")]
-    void SourceSoft(
+    void SourcedSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALdouble")] double value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcedSOFT")]
-    void SourceSoft(
+    void SourcedSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
         [NativeTypeName("ALdouble")] double value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12162,13 +12465,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-    void SourceDirectSoft(
+    void SourcedvDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("const ALdouble *")] double* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12183,25 +12487,27 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcedvDirectSOFT")]
-    void SourceDirectSoft(
+    void SourcedvDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param2,
         [NativeTypeName("const ALdouble *")] Ref<double> values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alSourcedvSOFT")]
-    void SourceSoft(
+    void SourcedvSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("const ALdouble *")] double* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcedvSOFT")]
-    void SourceSoft(
+    void SourcedvSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceDouble> param1,
         [NativeTypeName("const ALdouble *")] Ref<double> values
@@ -12308,6 +12614,7 @@ public unsafe partial interface IAl
         [NativeTypeName("ALint")] int value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12321,13 +12628,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSourcei64DirectSOFT")]
-    void SourceDirectSoft(
+    void Sourcei64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("ALint64SOFT")] nint value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12342,30 +12650,33 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcei64DirectSOFT")]
-    void SourceDirectSoft(
+    void Sourcei64DirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
         [NativeTypeName("ALint64SOFT")] nint value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alSourcei64SOFT")]
-    void SourceSoft(
+    void Sourcei64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("ALint64SOFT")] nint value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcei64SOFT")]
-    void SourceSoft(
+    void Sourcei64SOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
         [NativeTypeName("ALint64SOFT")] nint value
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12379,13 +12690,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-    void SourceDirectSoft(
+    void Sourcei64VDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param2,
         [NativeTypeName("const ALint64SOFT *")] nint* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12400,25 +12712,27 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcei64vDirectSOFT")]
-    void SourceDirectSoft(
+    void Sourcei64VDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param2,
         [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alSourcei64vSOFT")]
-    void SourceSoft(
+    void Sourcei64VSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] int param1,
         [NativeTypeName("const ALint64SOFT *")] nint* values
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcei64vSOFT")]
-    void SourceSoft(
+    void Sourcei64VSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALenum")] Constant<int, AlEnum, SourceInteger> param1,
         [NativeTypeName("const ALint64SOFT *")] Ref<nint> values
@@ -12557,6 +12871,7 @@ public unsafe partial interface IAl
     [NativeFunction("openal", EntryPoint = "alSourcePlay")]
     void SourcePlay([NativeTypeName("ALuint")] uint source);
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12570,19 +12885,21 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimeDirectSOFT")]
-    void SourcePlayAtTimeDirectSoft(
+    void SourcePlayAtTimeDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimeSOFT")]
-    void SourcePlayAtTimeSoft(
+    void SourcePlayAtTimeSOFT(
         [NativeTypeName("ALuint")] uint source,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12596,13 +12913,14 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevDirectSOFT")]
-    void SourcePlayAtTimevDirectSoft(
+    void SourcePlayAtTimevDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] uint* sources,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12617,13 +12935,14 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevDirectSOFT")]
-    void SourcePlayAtTimevDirectSoft(
+    void SourcePlayAtTimevDirectSOFT(
         ContextHandle context,
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] Ref<uint> sources,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [
         SupportedApiProfile(
             "al",
@@ -12638,33 +12957,36 @@ public unsafe partial interface IAl
     ]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevDirectSOFT")]
-    void SourcePlayAtTimevDirectSoft(
+    void SourcePlayAtTimevDirectSOFT(
         ContextHandle context,
         [NativeTypeName("const ALuint *")] uint sources,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
-    void SourcePlayAtTimevSoft(
+    void SourcePlayAtTimevSOFT(
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] uint* sources,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
-    void SourcePlayAtTimevSoft(
+    void SourcePlayAtTimevSOFT(
         [NativeTypeName("ALsizei")] int n,
         [NativeTypeName("const ALuint *")] Ref<uint> sources,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
 
+    [NameAffix("Suffix", "SOFT", 0)]
     [SupportedApiProfile("al", ["AL_SOFT_source_start_delay"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alSourcePlayAtTimevSOFT")]
-    void SourcePlayAtTimevSoft(
+    void SourcePlayAtTimevSOFT(
         [NativeTypeName("const ALuint *")] uint sources,
         [NativeTypeName("ALint64SOFT")] nint start_time
     );
