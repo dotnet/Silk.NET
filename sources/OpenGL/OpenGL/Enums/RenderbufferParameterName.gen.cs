@@ -13,51 +13,51 @@ public enum RenderbufferParameterName : uint
 {
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
-    Widthoes = unchecked((uint)0x8D42),
+    WidthOES = unchecked((uint)0x8D42),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
-    Heightoes = unchecked((uint)0x8D43),
+    HeightOES = unchecked((uint)0x8D43),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
-    InternalFormatoes = unchecked((uint)0x8D44),
+    InternalFormatOES = unchecked((uint)0x8D44),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
-    RedSizeoes = unchecked((uint)0x8D50),
+    RedSizeOES = unchecked((uint)0x8D50),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
-    GreenSizeoes = unchecked((uint)0x8D51),
+    GreenSizeOES = unchecked((uint)0x8D51),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
-    BlueSizeoes = unchecked((uint)0x8D52),
+    BlueSizeOES = unchecked((uint)0x8D52),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
-    AlphaSizeoes = unchecked((uint)0x8D53),
+    AlphaSizeOES = unchecked((uint)0x8D53),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
-    DepthSizeoes = unchecked((uint)0x8D54),
+    DepthSizeOES = unchecked((uint)0x8D54),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
-    StencilSizeoes = unchecked((uint)0x8D55),
+    StencilSizeOES = unchecked((uint)0x8D55),
 
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
-    Samplesapple = unchecked((uint)0x8CAB),
+    SamplesAPPLE = unchecked((uint)0x8CAB),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
-    Samplesext = unchecked((uint)0x8CAB),
+    SamplesEXT = unchecked((uint)0x8CAB),
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
-    Samplesimg = unchecked((uint)0x9133),
+    SamplesIMG = unchecked((uint)0x9133),
 
     [NativeName("GL_RENDERBUFFER_SAMPLES")]
     Samples = unchecked((uint)0x8CAB),
@@ -91,57 +91,57 @@ public enum RenderbufferParameterName : uint
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_RENDERBUFFER_STORAGE_SAMPLES_AMD")]
-    StorageSamplesamd = unchecked((uint)0x91B2),
+    StorageSamplesAMD = unchecked((uint)0x91B2),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_WIDTH_EXT")]
-    Widthext = unchecked((uint)0x8D42),
+    WidthEXT = unchecked((uint)0x8D42),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_HEIGHT_EXT")]
-    Heightext = unchecked((uint)0x8D43),
+    HeightEXT = unchecked((uint)0x8D43),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_EXT")]
-    InternalFormatext = unchecked((uint)0x8D44),
+    InternalFormatEXT = unchecked((uint)0x8D44),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_RED_SIZE_EXT")]
-    RedSizeext = unchecked((uint)0x8D50),
+    RedSizeEXT = unchecked((uint)0x8D50),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_GREEN_SIZE_EXT")]
-    GreenSizeext = unchecked((uint)0x8D51),
+    GreenSizeEXT = unchecked((uint)0x8D51),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_BLUE_SIZE_EXT")]
-    BlueSizeext = unchecked((uint)0x8D52),
+    BlueSizeEXT = unchecked((uint)0x8D52),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_EXT")]
-    AlphaSizeext = unchecked((uint)0x8D53),
+    AlphaSizeEXT = unchecked((uint)0x8D53),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_EXT")]
-    DepthSizeext = unchecked((uint)0x8D54),
+    DepthSizeEXT = unchecked((uint)0x8D54),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_EXT")]
-    StencilSizeext = unchecked((uint)0x8D55),
+    StencilSizeEXT = unchecked((uint)0x8D55),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_COVERAGE_SAMPLES_NV")]
-    CoverageSamplesnv = unchecked((uint)0x8CAB),
+    CoverageSamplesNV = unchecked((uint)0x8CAB),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_COLOR_SAMPLES_NV")]
-    ColorSamplesnv = unchecked((uint)0x8E10),
+    ColorSamplesNV = unchecked((uint)0x8E10),
 
     [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_ANGLE")]
-    Samplesangle = unchecked((uint)0x8CAB),
+    SamplesANGLE = unchecked((uint)0x8CAB),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_NV")]
-    Samplesnv = unchecked((uint)0x8CAB),
+    SamplesNV = unchecked((uint)0x8CAB),
 }

@@ -103,65 +103,65 @@ public enum PixelTransferParameter : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_RED_SCALE_EXT")]
-    PostConvolutionRedScaleext = unchecked((uint)0x801C),
+    PostConvolutionRedScaleEXT = unchecked((uint)0x801C),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_GREEN_SCALE_EXT")]
-    PostConvolutionGreenScaleext = unchecked((uint)0x801D),
+    PostConvolutionGreenScaleEXT = unchecked((uint)0x801D),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_BLUE_SCALE_EXT")]
-    PostConvolutionBlueScaleext = unchecked((uint)0x801E),
+    PostConvolutionBlueScaleEXT = unchecked((uint)0x801E),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_ALPHA_SCALE_EXT")]
-    PostConvolutionAlphaScaleext = unchecked((uint)0x801F),
+    PostConvolutionAlphaScaleEXT = unchecked((uint)0x801F),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_RED_BIAS_EXT")]
-    PostConvolutionRedBiasext = unchecked((uint)0x8020),
+    PostConvolutionRedBiasEXT = unchecked((uint)0x8020),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_GREEN_BIAS_EXT")]
-    PostConvolutionGreenBiasext = unchecked((uint)0x8021),
+    PostConvolutionGreenBiasEXT = unchecked((uint)0x8021),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_BLUE_BIAS_EXT")]
-    PostConvolutionBlueBiasext = unchecked((uint)0x8022),
+    PostConvolutionBlueBiasEXT = unchecked((uint)0x8022),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_ALPHA_BIAS_EXT")]
-    PostConvolutionAlphaBiasext = unchecked((uint)0x8023),
+    PostConvolutionAlphaBiasEXT = unchecked((uint)0x8023),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_RED_SCALE_SGI")]
-    PostColorMatrixRedScalesgi = unchecked((uint)0x80B4),
+    PostColorMatrixRedScaleSGI = unchecked((uint)0x80B4),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_GREEN_SCALE_SGI")]
-    PostColorMatrixGreenScalesgi = unchecked((uint)0x80B5),
+    PostColorMatrixGreenScaleSGI = unchecked((uint)0x80B5),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_BLUE_SCALE_SGI")]
-    PostColorMatrixBlueScalesgi = unchecked((uint)0x80B6),
+    PostColorMatrixBlueScaleSGI = unchecked((uint)0x80B6),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_ALPHA_SCALE_SGI")]
-    PostColorMatrixAlphaScalesgi = unchecked((uint)0x80B7),
+    PostColorMatrixAlphaScaleSGI = unchecked((uint)0x80B7),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_RED_BIAS_SGI")]
-    PostColorMatrixRedBiassgi = unchecked((uint)0x80B8),
+    PostColorMatrixRedBiasSGI = unchecked((uint)0x80B8),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI")]
-    PostColorMatrixGreenBiassgi = unchecked((uint)0x80B9),
+    PostColorMatrixGreenBiasSGI = unchecked((uint)0x80B9),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI")]
-    PostColorMatrixBlueBiassgi = unchecked((uint)0x80BA),
+    PostColorMatrixBlueBiasSGI = unchecked((uint)0x80BA),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI")]
-    PostColorMatrixAlphaBiassgi = unchecked((uint)0x80BB),
+    PostColorMatrixAlphaBiasSGI = unchecked((uint)0x80BB),
 }

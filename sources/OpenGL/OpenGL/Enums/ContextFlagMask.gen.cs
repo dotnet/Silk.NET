@@ -26,17 +26,17 @@ public enum ContextFlagMask : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB")]
-    RobustAccessBitarb = unchecked((uint)0x00000004),
+    RobustAccessBitARB = unchecked((uint)0x00000004),
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR")]
-    NoErrorBitkhr = unchecked((uint)0x00000008),
+    NoErrorBitKHR = unchecked((uint)0x00000008),
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT_KHR")]
-    DebugBitkhr = unchecked((uint)0x00000002),
+    DebugBitKHR = unchecked((uint)0x00000002),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT")]
-    ProtectedContentBitext = unchecked((uint)0x00000010),
+    ProtectedContentBitEXT = unchecked((uint)0x00000010),
 }

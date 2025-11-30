@@ -13,7 +13,7 @@ public enum TextureGenParameter : uint
 {
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_GEN_MODE_OES")]
-    TextureGenModeoes = unchecked((uint)0x2500),
+    TextureGenModeOES = unchecked((uint)0x2500),
 
     [NativeName("GL_TEXTURE_GEN_MODE")]
     TextureGenMode = unchecked((uint)0x2500),
@@ -26,17 +26,17 @@ public enum TextureGenParameter : uint
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_POINT_SGIS")]
-    EyePointsgis = unchecked((uint)0x81F4),
+    EyePointSGIS = unchecked((uint)0x81F4),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_POINT_SGIS")]
-    ObjectPointsgis = unchecked((uint)0x81F5),
+    ObjectPointSGIS = unchecked((uint)0x81F5),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_LINE_SGIS")]
-    EyeLinesgis = unchecked((uint)0x81F6),
+    EyeLineSGIS = unchecked((uint)0x81F6),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_LINE_SGIS")]
-    ObjectLinesgis = unchecked((uint)0x81F7),
+    ObjectLineSGIS = unchecked((uint)0x81F7),
 }

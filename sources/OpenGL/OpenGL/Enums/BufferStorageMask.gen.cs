@@ -14,11 +14,11 @@ public enum BufferStorageMask : uint
 {
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitext = unchecked((uint)0x0001),
+    MapReadBitEXT = unchecked((uint)0x0001),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitext = unchecked((uint)0x0002),
+    MapWriteBitEXT = unchecked((uint)0x0002),
 
     [NativeName("GL_MAP_READ_BIT")]
     MapReadBit = unchecked((uint)0x0001),
@@ -40,29 +40,29 @@ public enum BufferStorageMask : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SPARSE_STORAGE_BIT_ARB")]
-    SparseStorageBitarb = unchecked((uint)0x0400),
+    SparseStorageBitARB = unchecked((uint)0x0400),
 
     [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_LGPU_SEPARATE_STORAGE_BIT_NVX")]
-    LgpuSeparateStorageBitnvx = unchecked((uint)0x0800),
+    LgpuSeparateStorageBitNVX = unchecked((uint)0x0800),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PER_GPU_STORAGE_BIT_NV")]
-    PerGpuStorageBitnv = unchecked((uint)0x0800),
+    PerGpuStorageBitNV = unchecked((uint)0x0800),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
-    MapPersistentBitext = unchecked((uint)0x0040),
+    MapPersistentBitEXT = unchecked((uint)0x0040),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_COHERENT_BIT_EXT")]
-    MapCoherentBitext = unchecked((uint)0x0080),
+    MapCoherentBitEXT = unchecked((uint)0x0080),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
-    DynamicStorageBitext = unchecked((uint)0x0100),
+    DynamicStorageBitEXT = unchecked((uint)0x0100),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
-    ClientStorageBitext = unchecked((uint)0x0200),
+    ClientStorageBitEXT = unchecked((uint)0x0200),
 }

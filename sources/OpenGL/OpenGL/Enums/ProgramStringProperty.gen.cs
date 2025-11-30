@@ -13,5 +13,5 @@ public enum ProgramStringProperty : uint
 {
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_STRING_ARB")]
-    ProgramStringarb = unchecked((uint)0x8628),
+    ProgramStringARB = unchecked((uint)0x8628),
 }

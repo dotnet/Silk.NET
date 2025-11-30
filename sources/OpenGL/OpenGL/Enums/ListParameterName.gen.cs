@@ -13,5 +13,5 @@ public enum ListParameterName : uint
 {
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LIST_PRIORITY_SGIX")]
-    ListPrioritysgix = unchecked((uint)0x8182),
+    ListPrioritySGIX = unchecked((uint)0x8182),
 }

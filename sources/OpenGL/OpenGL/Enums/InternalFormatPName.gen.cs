@@ -226,5 +226,5 @@ public enum InternalFormatPName : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
-    NumSurfaceCompressionFixedRatesext = unchecked((uint)0x8F6E),
+    NumSurfaceCompressionFixedRatesEXT = unchecked((uint)0x8F6E),
 }

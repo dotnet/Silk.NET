@@ -22,17 +22,17 @@ public enum TextureGenMode : uint
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_DISTANCE_TO_POINT_SGIS")]
-    EyeDistanceToPointsgis = unchecked((uint)0x81F0),
+    EyeDistanceToPointSGIS = unchecked((uint)0x81F0),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_DISTANCE_TO_POINT_SGIS")]
-    ObjectDistanceToPointsgis = unchecked((uint)0x81F1),
+    ObjectDistanceToPointSGIS = unchecked((uint)0x81F1),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_DISTANCE_TO_LINE_SGIS")]
-    EyeDistanceToLinesgis = unchecked((uint)0x81F2),
+    EyeDistanceToLineSGIS = unchecked((uint)0x81F2),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_DISTANCE_TO_LINE_SGIS")]
-    ObjectDistanceToLinesgis = unchecked((uint)0x81F3),
+    ObjectDistanceToLineSGIS = unchecked((uint)0x81F3),
 }

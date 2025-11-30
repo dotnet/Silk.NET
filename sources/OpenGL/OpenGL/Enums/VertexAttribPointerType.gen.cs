@@ -52,21 +52,21 @@ public enum VertexAttribPointerType : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_ARB")]
-    UnsignedInt64Arb = unchecked((uint)0x140F),
+    UnsignedInt64ARB = unchecked((uint)0x140F),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_ARB")]
-    Int64Arb = unchecked((uint)0x140E),
+    Int64ARB = unchecked((uint)0x140E),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT64_NV")]
-    Int64Nv = unchecked((uint)0x140E),
+    Int64NV = unchecked((uint)0x140E),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT64_NV")]
-    UnsignedInt64Nv = unchecked((uint)0x140F),
+    UnsignedInt64NV = unchecked((uint)0x140F),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
-    UnsignedInt2X10X10X10Revext = unchecked((uint)0x8368),
+    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368),
 }

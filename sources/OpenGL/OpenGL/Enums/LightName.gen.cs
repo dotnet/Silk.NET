@@ -37,33 +37,33 @@ public enum LightName : uint
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
-    FragmentLight0Sgix = unchecked((uint)0x840C),
+    FragmentLight0SGIX = unchecked((uint)0x840C),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
-    FragmentLight1Sgix = unchecked((uint)0x840D),
+    FragmentLight1SGIX = unchecked((uint)0x840D),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
-    FragmentLight2Sgix = unchecked((uint)0x840E),
+    FragmentLight2SGIX = unchecked((uint)0x840E),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
-    FragmentLight3Sgix = unchecked((uint)0x840F),
+    FragmentLight3SGIX = unchecked((uint)0x840F),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
-    FragmentLight4Sgix = unchecked((uint)0x8410),
+    FragmentLight4SGIX = unchecked((uint)0x8410),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
-    FragmentLight5Sgix = unchecked((uint)0x8411),
+    FragmentLight5SGIX = unchecked((uint)0x8411),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
-    FragmentLight6Sgix = unchecked((uint)0x8412),
+    FragmentLight6SGIX = unchecked((uint)0x8412),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
-    FragmentLight7Sgix = unchecked((uint)0x8413),
+    FragmentLight7SGIX = unchecked((uint)0x8413),
 }

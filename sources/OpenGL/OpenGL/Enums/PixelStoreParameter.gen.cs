@@ -61,105 +61,105 @@ public enum PixelStoreParameter : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PACK_SKIP_IMAGES_EXT")]
-    PackSkipImagesext = unchecked((uint)0x806B),
+    PackSkipImagesEXT = unchecked((uint)0x806B),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PACK_IMAGE_HEIGHT_EXT")]
-    PackImageHeightext = unchecked((uint)0x806C),
+    PackImageHeightEXT = unchecked((uint)0x806C),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_SKIP_IMAGES_EXT")]
-    UnpackSkipImagesext = unchecked((uint)0x806D),
+    UnpackSkipImagesEXT = unchecked((uint)0x806D),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_IMAGE_HEIGHT_EXT")]
-    UnpackImageHeightext = unchecked((uint)0x806E),
+    UnpackImageHeightEXT = unchecked((uint)0x806E),
 
     [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_PACK_RESAMPLE_OML")]
-    PackResampleoml = unchecked((uint)0x8984),
+    PackResampleOML = unchecked((uint)0x8984),
 
     [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_UNPACK_RESAMPLE_OML")]
-    UnpackResampleoml = unchecked((uint)0x8985),
+    UnpackResampleOML = unchecked((uint)0x8985),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PACK_SKIP_VOLUMES_SGIS")]
-    PackSkipVolumessgis = unchecked((uint)0x8130),
+    PackSkipVolumesSGIS = unchecked((uint)0x8130),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PACK_IMAGE_DEPTH_SGIS")]
-    PackImageDepthsgis = unchecked((uint)0x8131),
+    PackImageDepthSGIS = unchecked((uint)0x8131),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_UNPACK_SKIP_VOLUMES_SGIS")]
-    UnpackSkipVolumessgis = unchecked((uint)0x8132),
+    UnpackSkipVolumesSGIS = unchecked((uint)0x8132),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_UNPACK_IMAGE_DEPTH_SGIS")]
-    UnpackImageDepthsgis = unchecked((uint)0x8133),
+    UnpackImageDepthSGIS = unchecked((uint)0x8133),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_WIDTH_SGIX")]
-    PixelTileWidthsgix = unchecked((uint)0x8140),
+    PixelTileWidthSGIX = unchecked((uint)0x8140),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_HEIGHT_SGIX")]
-    PixelTileHeightsgix = unchecked((uint)0x8141),
+    PixelTileHeightSGIX = unchecked((uint)0x8141),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_GRID_WIDTH_SGIX")]
-    PixelTileGridWidthsgix = unchecked((uint)0x8142),
+    PixelTileGridWidthSGIX = unchecked((uint)0x8142),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_GRID_HEIGHT_SGIX")]
-    PixelTileGridHeightsgix = unchecked((uint)0x8143),
+    PixelTileGridHeightSGIX = unchecked((uint)0x8143),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_GRID_DEPTH_SGIX")]
-    PixelTileGridDepthsgix = unchecked((uint)0x8144),
+    PixelTileGridDepthSGIX = unchecked((uint)0x8144),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_CACHE_SIZE_SGIX")]
-    PixelTileCacheSizesgix = unchecked((uint)0x8145),
+    PixelTileCacheSizeSGIX = unchecked((uint)0x8145),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PACK_RESAMPLE_SGIX")]
-    PackResamplesgix = unchecked((uint)0x842E),
+    PackResampleSGIX = unchecked((uint)0x842E),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_UNPACK_RESAMPLE_SGIX")]
-    UnpackResamplesgix = unchecked((uint)0x842F),
+    UnpackResampleSGIX = unchecked((uint)0x842F),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PACK_SUBSAMPLE_RATE_SGIX")]
-    PackSubsampleRatesgix = unchecked((uint)0x85A0),
+    PackSubsampleRateSGIX = unchecked((uint)0x85A0),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_UNPACK_SUBSAMPLE_RATE_SGIX")]
-    UnpackSubsampleRatesgix = unchecked((uint)0x85A1),
+    UnpackSubsampleRateSGIX = unchecked((uint)0x85A1),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
-    UnpackRowLengthext = unchecked((uint)0x0CF2),
+    UnpackRowLengthEXT = unchecked((uint)0x0CF2),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
-    UnpackSkipRowsext = unchecked((uint)0x0CF3),
+    UnpackSkipRowsEXT = unchecked((uint)0x0CF3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
-    UnpackSkipPixelsext = unchecked((uint)0x0CF4),
+    UnpackSkipPixelsEXT = unchecked((uint)0x0CF4),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PACK_ROW_LENGTH_NV")]
-    PackRowLengthnv = unchecked((uint)0x0D02),
+    PackRowLengthNV = unchecked((uint)0x0D02),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PACK_SKIP_ROWS_NV")]
-    PackSkipRowsnv = unchecked((uint)0x0D03),
+    PackSkipRowsNV = unchecked((uint)0x0D03),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PACK_SKIP_PIXELS_NV")]
-    PackSkipPixelsnv = unchecked((uint)0x0D04),
+    PackSkipPixelsNV = unchecked((uint)0x0D04),
 }

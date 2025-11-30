@@ -98,6 +98,7 @@ public class PrettifyNames(
             var trimmers = trimmerProviders
                 .SelectMany(x => x.Get(ctx.JobKey))
                 .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
+                .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
                 .OrderBy(x => x.Version)
                 .ToArray();
 
@@ -177,16 +178,16 @@ public class PrettifyNames(
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
-                    ApplyAffixes(newTypeName.Prettify(), null, typeName, visitor.AffixTypes),
+                    newTypeName.Prettify(),
 
                     constNames.ToDictionary(
                         x => x.Key,
-                        x => ApplyAffixes(x.Value.Primary.Prettify(), typeName, x.Key, visitor.AffixTypes)
+                        x => x.Value.Primary.Prettify()
                     ),
 
                     functionNames.ToDictionary(
                         x => x.Key,
-                        x => ApplyAffixes(x.Value.Primary.Prettify(), typeName, x.Key, visitor.AffixTypes)
+                        x => x.Value.Primary.Prettify()
                     )
                 );
             }
@@ -404,7 +405,7 @@ public class PrettifyNames(
         }
 
         // Remove affixes, prettify, and add affixes back
-        return ApplyAffixes(RemoveAffixes(name, container, name, affixTypes).Prettify(), container, name, affixTypes);
+        return ApplyAffixes(RemoveAffixes(name, container, name, affixTypes), container, name, affixTypes).Prettify();
     }
 
     private void Trim(
@@ -806,16 +807,32 @@ public class PrettifyNames(
             {
                 if (affix.IsPrefix)
                 {
-                    nameToModify = affix.Affix + nameToModify;
+                    nameToModify = PreventPrettificationHack(affix.Affix) + nameToModify;
                 }
                 else
                 {
-                    nameToModify += affix.Affix;
+                    nameToModify += PreventPrettificationHack(affix.Affix);
                 }
             }
         }
 
         return nameToModify;
+
+        string PreventPrettificationHack(string affix)
+        {
+            var result = "";
+            foreach (var c in affix)
+            {
+                if (NameUtils.Uppercase.Contains(c))
+                {
+                    result += ' ';
+                }
+
+                result += c;
+            }
+
+            return result + ' ';
+        }
     }
 
     /// <inheritdoc />
@@ -1232,6 +1249,40 @@ public class PrettifyNames(
             foreach (var (original, (primary, secondary)) in context.Names)
             {
                 var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes);
+                var secondaries = secondary ?? [];
+                secondaries.Add(primary);
+
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
+    }
+
+    private class NameAffixerLateTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
+    {
+        /// <summary>
+        /// Use low version to ensure this trimmer runs first.
+        /// </summary>
+        public Version Version => new(0, 0, 0);
+
+        public void Trim(NameTrimmerContext context)
+        {
+            if (context.Container == null)
+            {
+                foreach (var (original, (primary, secondary)) in context.Names)
+                {
+                    var newPrimary = ApplyAffixes(primary, null, original, affixTypes);
+                    var secondaries = secondary ?? [];
+                    secondaries.Add(primary);
+
+                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
+                }
+
+                return;
+            }
+
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes);
                 var secondaries = secondary ?? [];
                 secondaries.Add(primary);
 

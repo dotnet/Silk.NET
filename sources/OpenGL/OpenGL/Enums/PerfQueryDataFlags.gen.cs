@@ -13,13 +13,13 @@ public enum PerfQueryDataFlags : uint
 {
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_WAIT_INTEL")]
-    Waitintel = unchecked((uint)0x83FB),
+    WaitINTEL = unchecked((uint)0x83FB),
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_FLUSH_INTEL")]
-    Flushintel = unchecked((uint)0x83FA),
+    FlushINTEL = unchecked((uint)0x83FA),
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_DONOT_FLUSH_INTEL")]
-    DonotFlushintel = unchecked((uint)0x83F9),
+    DonotFlushINTEL = unchecked((uint)0x83F9),
 }

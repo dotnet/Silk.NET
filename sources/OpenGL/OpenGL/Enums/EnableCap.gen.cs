@@ -127,11 +127,11 @@ public enum EnableCap : uint
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapoes = unchecked((uint)0x8513),
+    TextureCubeMapOES = unchecked((uint)0x8513),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStroes = unchecked((uint)0x8D60),
+    TextureGenStrOES = unchecked((uint)0x8D60),
 
     [NativeName("GL_POLYGON_SMOOTH")]
     PolygonSmooth = unchecked((uint)0x0B41),
@@ -265,7 +265,7 @@ public enum EnableCap : uint
 
     [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectangle = unchecked((uint)0x84F5),
+    TextureRectANGLE = unchecked((uint)0x84F5),
 
     [NativeName("GL_PRIMITIVE_RESTART")]
     PrimitiveRestart = unchecked((uint)0x8F9D),
@@ -305,193 +305,193 @@ public enum EnableCap : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_ARB")]
-    TextureCubeMaparb = unchecked((uint)0x8513),
+    TextureCubeMapARB = unchecked((uint)0x8513),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE_ARB")]
-    TextureRectAnglearb = unchecked((uint)0x84F5),
+    TextureRectangleARB = unchecked((uint)0x84F5),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_1D_EXT")]
-    Convolution1Dext = unchecked((uint)0x8010),
+    Convolution1DEXT = unchecked((uint)0x8010),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_2D_EXT")]
-    Convolution2Dext = unchecked((uint)0x8011),
+    Convolution2DEXT = unchecked((uint)0x8011),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SEPARABLE_2D_EXT")]
-    Separable2Dext = unchecked((uint)0x8012),
+    Separable2DEXT = unchecked((uint)0x8012),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_EXT")]
-    Histogramext = unchecked((uint)0x8024),
+    HistogramEXT = unchecked((uint)0x8024),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MINMAX_EXT")]
-    Minmaxext = unchecked((uint)0x802E),
+    MinmaxEXT = unchecked((uint)0x802E),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RESCALE_NORMAL_EXT")]
-    RescaleNormalext = unchecked((uint)0x803A),
+    RescaleNormalEXT = unchecked((uint)0x803A),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHARED_TEXTURE_PALETTE_EXT")]
-    SharedTexturePaletteext = unchecked((uint)0x81FB),
+    SharedTexturePaletteEXT = unchecked((uint)0x81FB),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_3D_EXT")]
-    Texture3Dext = unchecked((uint)0x806F),
+    Texture3DEXT = unchecked((uint)0x806F),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_EXT")]
-    TextureCubeMapext = unchecked((uint)0x8513),
+    TextureCubeMapEXT = unchecked((uint)0x8513),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
-    ShadingRateImagePerPrimitivenv = unchecked((uint)0x95B1),
+    ShadingRateImagePerPrimitiveNV = unchecked((uint)0x95B1),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE_NV")]
-    TextureRectAnglenv = unchecked((uint)0x84F5),
+    TextureRectangleNV = unchecked((uint)0x84F5),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_MULTISAMPLE_SGIS")]
-    Multisamplesgis = unchecked((uint)0x809D),
+    MultisampleSGIS = unchecked((uint)0x809D),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_MASK_SGIS")]
-    SampleAlphaToMasksgis = unchecked((uint)0x809E),
+    SampleAlphaToMaskSGIS = unchecked((uint)0x809E),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE_SGIS")]
-    SampleAlphaToOnesgis = unchecked((uint)0x809F),
+    SampleAlphaToOneSGIS = unchecked((uint)0x809F),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_MASK_SGIS")]
-    SampleMasksgis = unchecked((uint)0x80A0),
+    SampleMaskSGIS = unchecked((uint)0x80A0),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PIXEL_TEXTURE_SGIS")]
-    PixelTexturesgis = unchecked((uint)0x8353),
+    PixelTextureSGIS = unchecked((uint)0x8353),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_4D_SGIS")]
-    Texture4Dsgis = unchecked((uint)0x8134),
+    Texture4DSGIS = unchecked((uint)0x8134),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_HISTOGRAM_SGIX")]
-    AsyncHistogramsgix = unchecked((uint)0x832C),
+    AsyncHistogramSGIX = unchecked((uint)0x832C),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_TEX_IMAGE_SGIX")]
-    AsyncTexImagesgix = unchecked((uint)0x835C),
+    AsyncTexImageSGIX = unchecked((uint)0x835C),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_DRAW_PIXELS_SGIX")]
-    AsyncDrawPixelssgix = unchecked((uint)0x835D),
+    AsyncDrawPixelsSGIX = unchecked((uint)0x835D),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_READ_PIXELS_SGIX")]
-    AsyncReadPixelssgix = unchecked((uint)0x835E),
+    AsyncReadPixelsSGIX = unchecked((uint)0x835E),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_CALLIGRAPHIC_FRAGMENT_SGIX")]
-    CalligraphicFragmentsgix = unchecked((uint)0x8183),
+    CalligraphicFragmentSGIX = unchecked((uint)0x8183),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FOG_OFFSET_SGIX")]
-    FogOffsetsgix = unchecked((uint)0x8198),
+    FogOffsetSGIX = unchecked((uint)0x8198),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHTING_SGIX")]
-    FragmentLightingsgix = unchecked((uint)0x8400),
+    FragmentLightingSGIX = unchecked((uint)0x8400),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_COLOR_MATERIAL_SGIX")]
-    FragmentColorMaterialsgix = unchecked((uint)0x8401),
+    FragmentColorMaterialSGIX = unchecked((uint)0x8401),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
-    FragmentLight0Sgix = unchecked((uint)0x840C),
+    FragmentLight0SGIX = unchecked((uint)0x840C),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
-    FragmentLight1Sgix = unchecked((uint)0x840D),
+    FragmentLight1SGIX = unchecked((uint)0x840D),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
-    FragmentLight2Sgix = unchecked((uint)0x840E),
+    FragmentLight2SGIX = unchecked((uint)0x840E),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
-    FragmentLight3Sgix = unchecked((uint)0x840F),
+    FragmentLight3SGIX = unchecked((uint)0x840F),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
-    FragmentLight4Sgix = unchecked((uint)0x8410),
+    FragmentLight4SGIX = unchecked((uint)0x8410),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
-    FragmentLight5Sgix = unchecked((uint)0x8411),
+    FragmentLight5SGIX = unchecked((uint)0x8411),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
-    FragmentLight6Sgix = unchecked((uint)0x8412),
+    FragmentLight6SGIX = unchecked((uint)0x8412),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
-    FragmentLight7Sgix = unchecked((uint)0x8413),
+    FragmentLight7SGIX = unchecked((uint)0x8413),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAMEZOOM_SGIX")]
-    Framezoomsgix = unchecked((uint)0x818B),
+    FramezoomSGIX = unchecked((uint)0x818B),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_INTERLACE_SGIX")]
-    Interlacesgix = unchecked((uint)0x8094),
+    InterlaceSGIX = unchecked((uint)0x8094),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_IR_INSTRUMENT1_SGIX")]
-    IrInstrument1Sgix = unchecked((uint)0x817F),
+    IrInstrument1SGIX = unchecked((uint)0x817F),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TEX_GEN_SGIX")]
-    PixelTexGensgix = unchecked((uint)0x8139),
+    PixelTexGenSGIX = unchecked((uint)0x8139),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_REFERENCE_PLANE_SGIX")]
-    ReferencePlanesgix = unchecked((uint)0x817D),
+    ReferencePlaneSGIX = unchecked((uint)0x817D),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_SGIX")]
-    Spritesgix = unchecked((uint)0x8148),
+    SpriteSGIX = unchecked((uint)0x8148),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_SGI")]
-    ColorTablesgi = unchecked((uint)0x80D0),
+    ColorTableSGI = unchecked((uint)0x80D0),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    PostConvolutionColorTablesgi = unchecked((uint)0x80D1),
+    PostConvolutionColorTableSGI = unchecked((uint)0x80D1),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    PostColorMatrixColorTablesgi = unchecked((uint)0x80D2),
+    PostColorMatrixColorTableSGI = unchecked((uint)0x80D2),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
-    TextureColorTablesgi = unchecked((uint)0x80BC),
+    TextureColorTableSGI = unchecked((uint)0x80BC),
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
-    FetchPerSamplearm = unchecked((uint)0x8F65),
+    FetchPerSampleARM = unchecked((uint)0x8F65),
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
-    FramebufferFetchNoncoherentqcom = unchecked((uint)0x96A2),
+    FramebufferFetchNoncoherentQCOM = unchecked((uint)0x96A2),
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
-    ShadingRatePreserveAspectRatioqcom = unchecked((uint)0x96A5),
+    ShadingRatePreserveAspectRatioQCOM = unchecked((uint)0x96A5),
 }

@@ -19,29 +19,29 @@ public enum TextureMagFilter : uint
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_DETAIL_SGIS")]
-    LinearDetailsgis = unchecked((uint)0x8097),
+    LinearDetailSGIS = unchecked((uint)0x8097),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_DETAIL_ALPHA_SGIS")]
-    LinearDetailAlphasgis = unchecked((uint)0x8098),
+    LinearDetailAlphaSGIS = unchecked((uint)0x8098),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_DETAIL_COLOR_SGIS")]
-    LinearDetailColorsgis = unchecked((uint)0x8099),
+    LinearDetailColorSGIS = unchecked((uint)0x8099),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_SHARPEN_SGIS")]
-    LinearSharpensgis = unchecked((uint)0x80AD),
+    LinearSharpenSGIS = unchecked((uint)0x80AD),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_SHARPEN_ALPHA_SGIS")]
-    LinearSharpenAlphasgis = unchecked((uint)0x80AE),
+    LinearSharpenAlphaSGIS = unchecked((uint)0x80AE),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_SHARPEN_COLOR_SGIS")]
-    LinearSharpenColorsgis = unchecked((uint)0x80AF),
+    LinearSharpenColorSGIS = unchecked((uint)0x80AF),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FILTER4_SGIS")]
-    Filter4Sgis = unchecked((uint)0x8146),
+    Filter4SGIS = unchecked((uint)0x8146),
 }

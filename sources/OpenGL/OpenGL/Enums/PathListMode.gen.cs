@@ -13,13 +13,13 @@ public enum PathListMode : uint
 {
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ACCUM_ADJACENT_PAIRS_NV")]
-    AccumAdjacentPairsnv = unchecked((uint)0x90AD),
+    AccumAdjacentPairsNV = unchecked((uint)0x90AD),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ADJACENT_PAIRS_NV")]
-    AdjacentPairsnv = unchecked((uint)0x90AE),
+    AdjacentPairsNV = unchecked((uint)0x90AE),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FIRST_TO_REST_NV")]
-    FirstToRestnv = unchecked((uint)0x90AF),
+    FirstToRestNV = unchecked((uint)0x90AF),
 }

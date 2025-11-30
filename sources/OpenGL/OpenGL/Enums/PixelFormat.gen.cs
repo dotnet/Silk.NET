@@ -34,11 +34,11 @@ public enum PixelFormat : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGRA_EXT")]
-    Bgraext = unchecked((uint)0x80E1),
+    BgraEXT = unchecked((uint)0x80E1),
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_BGRA_IMG")]
-    Bgraimg = unchecked((uint)0x80E1),
+    BgraIMG = unchecked((uint)0x80E1),
 
     [NativeName("GL_STENCIL_INDEX")]
     StencilIndex = unchecked((uint)0x1901),
@@ -96,29 +96,29 @@ public enum PixelFormat : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ABGR_EXT")]
-    Abgrext = unchecked((uint)0x8000),
+    AbgrEXT = unchecked((uint)0x8000),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGR_EXT")]
-    Bgrext = unchecked((uint)0x80E0),
+    BgrEXT = unchecked((uint)0x80E0),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYK_EXT")]
-    Cmykext = unchecked((uint)0x800C),
+    CmykEXT = unchecked((uint)0x800C),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYKA_EXT")]
-    Cmykaext = unchecked((uint)0x800D),
+    CmykaEXT = unchecked((uint)0x800D),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_422_SGIX")]
-    Ycrcb422Sgix = unchecked((uint)0x81BB),
+    Ycrcb422SGIX = unchecked((uint)0x81BB),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_444_SGIX")]
-    Ycrcb444Sgix = unchecked((uint)0x81BC),
+    Ycrcb444SGIX = unchecked((uint)0x81BC),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RED_EXT")]
-    Redext = unchecked((uint)0x1903),
+    RedEXT = unchecked((uint)0x1903),
 }

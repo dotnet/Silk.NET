@@ -22,7 +22,7 @@ public enum DrawBufferMode : uint
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_NONE_OES")]
-    Noneoes = unchecked((uint)0),
+    NoneOES = unchecked((uint)0),
 
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),
@@ -155,65 +155,65 @@ public enum DrawBufferMode : uint
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_NV")]
-    ColorAttachment0Nv = unchecked((uint)0x8CE0),
+    ColorAttachment0NV = unchecked((uint)0x8CE0),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT1_NV")]
-    ColorAttachment1Nv = unchecked((uint)0x8CE1),
+    ColorAttachment1NV = unchecked((uint)0x8CE1),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT2_NV")]
-    ColorAttachment2Nv = unchecked((uint)0x8CE2),
+    ColorAttachment2NV = unchecked((uint)0x8CE2),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT3_NV")]
-    ColorAttachment3Nv = unchecked((uint)0x8CE3),
+    ColorAttachment3NV = unchecked((uint)0x8CE3),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT4_NV")]
-    ColorAttachment4Nv = unchecked((uint)0x8CE4),
+    ColorAttachment4NV = unchecked((uint)0x8CE4),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT5_NV")]
-    ColorAttachment5Nv = unchecked((uint)0x8CE5),
+    ColorAttachment5NV = unchecked((uint)0x8CE5),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT6_NV")]
-    ColorAttachment6Nv = unchecked((uint)0x8CE6),
+    ColorAttachment6NV = unchecked((uint)0x8CE6),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT7_NV")]
-    ColorAttachment7Nv = unchecked((uint)0x8CE7),
+    ColorAttachment7NV = unchecked((uint)0x8CE7),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT8_NV")]
-    ColorAttachment8Nv = unchecked((uint)0x8CE8),
+    ColorAttachment8NV = unchecked((uint)0x8CE8),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT9_NV")]
-    ColorAttachment9Nv = unchecked((uint)0x8CE9),
+    ColorAttachment9NV = unchecked((uint)0x8CE9),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT10_NV")]
-    ColorAttachment10Nv = unchecked((uint)0x8CEA),
+    ColorAttachment10NV = unchecked((uint)0x8CEA),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT11_NV")]
-    ColorAttachment11Nv = unchecked((uint)0x8CEB),
+    ColorAttachment11NV = unchecked((uint)0x8CEB),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT12_NV")]
-    ColorAttachment12Nv = unchecked((uint)0x8CEC),
+    ColorAttachment12NV = unchecked((uint)0x8CEC),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT13_NV")]
-    ColorAttachment13Nv = unchecked((uint)0x8CED),
+    ColorAttachment13NV = unchecked((uint)0x8CED),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT14_NV")]
-    ColorAttachment14Nv = unchecked((uint)0x8CEE),
+    ColorAttachment14NV = unchecked((uint)0x8CEE),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
-    ColorAttachment15Nv = unchecked((uint)0x8CEF),
+    ColorAttachment15NV = unchecked((uint)0x8CEF),
 }

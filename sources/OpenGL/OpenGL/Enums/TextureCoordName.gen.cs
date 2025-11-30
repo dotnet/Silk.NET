@@ -13,7 +13,7 @@ public enum TextureCoordName : uint
 {
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStroes = unchecked((uint)0x8D60),
+    TextureGenStrOES = unchecked((uint)0x8D60),
 
     [NativeName("GL_S")]
     S = unchecked((uint)0x2000),

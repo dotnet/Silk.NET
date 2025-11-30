@@ -31,17 +31,17 @@ public enum TextureWrapMode : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_ARB")]
-    ClampToBorderarb = unchecked((uint)0x812D),
+    ClampToBorderARB = unchecked((uint)0x812D),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_SGIS")]
-    ClampToBordersgis = unchecked((uint)0x812D),
+    ClampToBorderSGIS = unchecked((uint)0x812D),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_CLAMP_TO_EDGE_SGIS")]
-    ClampToEdgesgis = unchecked((uint)0x812F),
+    ClampToEdgeSGIS = unchecked((uint)0x812F),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_NV")]
-    ClampToBordernv = unchecked((uint)0x812D),
+    ClampToBorderNV = unchecked((uint)0x812D),
 }

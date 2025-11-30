@@ -13,21 +13,21 @@ public enum SemaphoreParameterName : uint
 {
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_D3D12_FENCE_VALUE_EXT")]
-    D3D12FenceValueext = unchecked((uint)0x9595),
+    D3D12FenceValueEXT = unchecked((uint)0x9595),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TIMELINE_SEMAPHORE_VALUE_NV")]
-    TimelineSemaphoreValuenv = unchecked((uint)0x9595),
+    TimelineSemaphoreValueNV = unchecked((uint)0x9595),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEMAPHORE_TYPE_NV")]
-    SemaphoreTypenv = unchecked((uint)0x95B3),
+    SemaphoreTypeNV = unchecked((uint)0x95B3),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEMAPHORE_TYPE_BINARY_NV")]
-    SemaphoreTypeBinarynv = unchecked((uint)0x95B4),
+    SemaphoreTypeBinaryNV = unchecked((uint)0x95B4),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEMAPHORE_TYPE_TIMELINE_NV")]
-    SemaphoreTypeTimelinenv = unchecked((uint)0x95B5),
+    SemaphoreTypeTimelineNV = unchecked((uint)0x95B5),
 }

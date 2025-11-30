@@ -19,7 +19,7 @@ public enum ReadBufferMode : uint
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_NONE_OES")]
-    Noneoes = unchecked((uint)0),
+    NoneOES = unchecked((uint)0),
 
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),

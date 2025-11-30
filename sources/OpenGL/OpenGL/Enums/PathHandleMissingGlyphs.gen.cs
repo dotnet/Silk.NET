@@ -13,9 +13,9 @@ public enum PathHandleMissingGlyphs : uint
 {
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SKIP_MISSING_GLYPH_NV")]
-    SkipMissingGlyphnv = unchecked((uint)0x90A9),
+    SkipMissingGlyphNV = unchecked((uint)0x90A9),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_USE_MISSING_GLYPH_NV")]
-    UseMissingGlyphnv = unchecked((uint)0x90AA),
+    UseMissingGlyphNV = unchecked((uint)0x90AA),
 }

@@ -40,165 +40,165 @@ public enum HintTarget : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB")]
-    FragmentShaderDerivativeHintarb = unchecked((uint)0x8B8B),
+    FragmentShaderDerivativeHintARB = unchecked((uint)0x8B8B),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPRESSION_HINT_ARB")]
-    TextureCompressionHintarb = unchecked((uint)0x84EF),
+    TextureCompressionHintARB = unchecked((uint)0x84EF),
 
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TEXTURE_STORAGE_HINT_APPLE")]
-    TextureStorageHintapple = unchecked((uint)0x85BC),
+    TextureStorageHintAPPLE = unchecked((uint)0x85BC),
 
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TRANSFORM_HINT_APPLE")]
-    TransformHintapple = unchecked((uint)0x85B1),
+    TransformHintAPPLE = unchecked((uint)0x85B1),
 
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ARRAY_STORAGE_HINT_APPLE")]
-    VertexArrayStorageHintapple = unchecked((uint)0x851F),
+    VertexArrayStorageHintAPPLE = unchecked((uint)0x851F),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_VOLUME_CLIPPING_HINT_EXT")]
-    ClipVolumeClippingHintext = unchecked((uint)0x80F0),
+    ClipVolumeClippingHintEXT = unchecked((uint)0x80F0),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PACK_CMYK_HINT_EXT")]
-    PackCmykHintext = unchecked((uint)0x800E),
+    PackCmykHintEXT = unchecked((uint)0x800E),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_CMYK_HINT_EXT")]
-    UnpackCmykHintext = unchecked((uint)0x800F),
+    UnpackCmykHintEXT = unchecked((uint)0x800F),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTISAMPLE_FILTER_HINT_NV")]
-    MultisampleFilterHintnv = unchecked((uint)0x8534),
+    MultisampleFilterHintNV = unchecked((uint)0x8534),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_PREFER_DOUBLEBUFFER_HINT_PGI")]
-    PreferDoublebufferHintpgi = unchecked((uint)0x1A1F8),
+    PreferDoublebufferHintPGI = unchecked((uint)0x1A1F8),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_CONSERVE_MEMORY_HINT_PGI")]
-    ConserveMemoryHintpgi = unchecked((uint)0x1A1FD),
+    ConserveMemoryHintPGI = unchecked((uint)0x1A1FD),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_RECLAIM_MEMORY_HINT_PGI")]
-    ReclaimMemoryHintpgi = unchecked((uint)0x1A1FE),
+    ReclaimMemoryHintPGI = unchecked((uint)0x1A1FE),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_NATIVE_GRAPHICS_BEGIN_HINT_PGI")]
-    NativeGraphicsBeginHintpgi = unchecked((uint)0x1A203),
+    NativeGraphicsBeginHintPGI = unchecked((uint)0x1A203),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_NATIVE_GRAPHICS_END_HINT_PGI")]
-    NativeGraphicsEndHintpgi = unchecked((uint)0x1A204),
+    NativeGraphicsEndHintPGI = unchecked((uint)0x1A204),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALWAYS_FAST_HINT_PGI")]
-    AlwaysFastHintpgi = unchecked((uint)0x1A20C),
+    AlwaysFastHintPGI = unchecked((uint)0x1A20C),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALWAYS_SOFT_HINT_PGI")]
-    AlwaysSoftHintpgi = unchecked((uint)0x1A20D),
+    AlwaysSoftHintPGI = unchecked((uint)0x1A20D),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_OBJ_HINT_PGI")]
-    AllowDrawObjHintpgi = unchecked((uint)0x1A20E),
+    AllowDrawObjHintPGI = unchecked((uint)0x1A20E),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_WIN_HINT_PGI")]
-    AllowDrawWinHintpgi = unchecked((uint)0x1A20F),
+    AllowDrawWinHintPGI = unchecked((uint)0x1A20F),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_FRG_HINT_PGI")]
-    AllowDrawFrgHintpgi = unchecked((uint)0x1A210),
+    AllowDrawFrgHintPGI = unchecked((uint)0x1A210),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_MEM_HINT_PGI")]
-    AllowDrawMemHintpgi = unchecked((uint)0x1A211),
+    AllowDrawMemHintPGI = unchecked((uint)0x1A211),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_STRICT_DEPTHFUNC_HINT_PGI")]
-    StrictDepthfuncHintpgi = unchecked((uint)0x1A216),
+    StrictDepthfuncHintPGI = unchecked((uint)0x1A216),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_STRICT_LIGHTING_HINT_PGI")]
-    StrictLightingHintpgi = unchecked((uint)0x1A217),
+    StrictLightingHintPGI = unchecked((uint)0x1A217),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_STRICT_SCISSOR_HINT_PGI")]
-    StrictScissorHintpgi = unchecked((uint)0x1A218),
+    StrictScissorHintPGI = unchecked((uint)0x1A218),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_FULL_STIPPLE_HINT_PGI")]
-    FullStippleHintpgi = unchecked((uint)0x1A219),
+    FullStippleHintPGI = unchecked((uint)0x1A219),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_CLIP_NEAR_HINT_PGI")]
-    ClipNearHintpgi = unchecked((uint)0x1A220),
+    ClipNearHintPGI = unchecked((uint)0x1A220),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_CLIP_FAR_HINT_PGI")]
-    ClipFarHintpgi = unchecked((uint)0x1A221),
+    ClipFarHintPGI = unchecked((uint)0x1A221),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_WIDE_LINE_HINT_PGI")]
-    WideLineHintpgi = unchecked((uint)0x1A222),
+    WideLineHintPGI = unchecked((uint)0x1A222),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_BACK_NORMALS_HINT_PGI")]
-    BackNormalsHintpgi = unchecked((uint)0x1A223),
+    BackNormalsHintPGI = unchecked((uint)0x1A223),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_VERTEX_DATA_HINT_PGI")]
-    VertexDataHintpgi = unchecked((uint)0x1A22A),
+    VertexDataHintPGI = unchecked((uint)0x1A22A),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_VERTEX_CONSISTENT_HINT_PGI")]
-    VertexConsistentHintpgi = unchecked((uint)0x1A22B),
+    VertexConsistentHintPGI = unchecked((uint)0x1A22B),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MATERIAL_SIDE_HINT_PGI")]
-    MaterialSideHintpgi = unchecked((uint)0x1A22C),
+    MaterialSideHintPGI = unchecked((uint)0x1A22C),
 
     [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAX_VERTEX_HINT_PGI")]
-    MaxVertexHintpgi = unchecked((uint)0x1A22D),
+    MaxVertexHintPGI = unchecked((uint)0x1A22D),
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_GENERATE_MIPMAP_HINT_SGIS")]
-    GenerateMipmapHintsgis = unchecked((uint)0x8192),
+    GenerateMipmapHintSGIS = unchecked((uint)0x8192),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_CONVOLUTION_HINT_SGIX")]
-    ConvolutionHintsgix = unchecked((uint)0x8316),
+    ConvolutionHintSGIX = unchecked((uint)0x8316),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SCALEBIAS_HINT_SGIX")]
-    ScalebiasHintsgix = unchecked((uint)0x8322),
+    ScalebiasHintSGIX = unchecked((uint)0x8322),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MULTI_BUFFER_HINT_SGIX")]
-    TextureMultiBufferHintsgix = unchecked((uint)0x812E),
+    TextureMultiBufferHintSGIX = unchecked((uint)0x812E),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_VERTEX_PRECLIP_SGIX")]
-    VertexPreclipsgix = unchecked((uint)0x83EE),
+    VertexPreclipSGIX = unchecked((uint)0x83EE),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_VERTEX_PRECLIP_HINT_SGIX")]
-    VertexPreclipHintsgix = unchecked((uint)0x83EF),
+    VertexPreclipHintSGIX = unchecked((uint)0x83EF),
 
     [NameAffix("Suffix", "WIN", 0)]
     [NativeName("GL_PHONG_HINT_WIN")]
-    PhongHintwin = unchecked((uint)0x80EB),
+    PhongHintWIN = unchecked((uint)0x80EB),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
-    FragmentShaderDerivativeHintoes = unchecked((uint)0x8B8B),
+    FragmentShaderDerivativeHintOES = unchecked((uint)0x8B8B),
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
-    BinningControlHintqcom = unchecked((uint)0x8FB0),
+    BinningControlHintQCOM = unchecked((uint)0x8FB0),
 }

@@ -13,7 +13,7 @@ public enum TextureEnvTarget : uint
 {
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_ENV")]
-    TextureEnv = unchecked((uint)0x2300),
+    TextureENV = unchecked((uint)0x2300),
 
     [NativeName("GL_TEXTURE_FILTER_CONTROL")]
     TextureFilterControl = unchecked((uint)0x8500),

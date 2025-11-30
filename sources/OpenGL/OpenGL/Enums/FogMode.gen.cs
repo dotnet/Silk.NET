@@ -22,5 +22,5 @@ public enum FogMode : uint
 
     [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FOG_FUNC_SGIS")]
-    FogFuncsgis = unchecked((uint)0x812A),
+    FogFuncSGIS = unchecked((uint)0x812A),
 }

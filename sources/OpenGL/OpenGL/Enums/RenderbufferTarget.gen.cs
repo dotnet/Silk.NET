@@ -13,7 +13,7 @@ public enum RenderbufferTarget : uint
 {
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_OES")]
-    Renderbufferoes = unchecked((uint)0x8D41),
+    RenderbufferOES = unchecked((uint)0x8D41),
 
     [NativeName("GL_RENDERBUFFER")]
     Renderbuffer = unchecked((uint)0x8D41),

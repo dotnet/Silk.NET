@@ -31,9 +31,9 @@ public enum TextureEnvMode : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REPLACE_EXT")]
-    Replaceext = unchecked((uint)0x8062),
+    ReplaceEXT = unchecked((uint)0x8062),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_ENV_BIAS_SGIX")]
-    TextureEnvBiassgix = unchecked((uint)0x80BE),
+    TextureEnvBiasSGIX = unchecked((uint)0x80BE),
 }

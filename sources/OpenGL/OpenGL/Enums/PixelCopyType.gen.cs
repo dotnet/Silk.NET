@@ -13,15 +13,15 @@ public enum PixelCopyType : uint
 {
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_EXT")]
-    Colorext = unchecked((uint)0x1800),
+    ColorEXT = unchecked((uint)0x1800),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_EXT")]
-    Depthext = unchecked((uint)0x1801),
+    DepthEXT = unchecked((uint)0x1801),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_EXT")]
-    Stencilext = unchecked((uint)0x1802),
+    StencilEXT = unchecked((uint)0x1802),
 
     [NativeName("GL_COLOR")]
     Color = unchecked((uint)0x1800),

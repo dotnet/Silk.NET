@@ -13,9 +13,9 @@ public enum PathStringFormat : uint
 {
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FORMAT_SVG_NV")]
-    Svgnv = unchecked((uint)0x9070),
+    SvgNV = unchecked((uint)0x9070),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FORMAT_PS_NV")]
-    Psnv = unchecked((uint)0x9071),
+    PsNV = unchecked((uint)0x9071),
 }

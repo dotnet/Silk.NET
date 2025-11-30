@@ -13,7 +13,7 @@ public enum FramebufferTarget : uint
 {
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_OES")]
-    Framebufferoes = unchecked((uint)0x8D40),
+    FramebufferOES = unchecked((uint)0x8D40),
 
     [NativeName("GL_READ_FRAMEBUFFER")]
     ReadFramebuffer = unchecked((uint)0x8CA8),

@@ -34,7 +34,7 @@ public enum CopyImageSubDataTarget : uint
 
     [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectangle = unchecked((uint)0x84F5),
+    TextureRectANGLE = unchecked((uint)0x84F5),
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE")]
     Texture2DMultisample = unchecked((uint)0x9100),

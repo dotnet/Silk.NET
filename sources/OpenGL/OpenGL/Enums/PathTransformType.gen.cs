@@ -16,33 +16,33 @@ public enum PathTransformType : uint
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_X_NV")]
-    TranslateXnv = unchecked((uint)0x908E),
+    TranslateXNV = unchecked((uint)0x908E),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_Y_NV")]
-    TranslateYnv = unchecked((uint)0x908F),
+    TranslateYNV = unchecked((uint)0x908F),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_2D_NV")]
-    Translate2Dnv = unchecked((uint)0x9090),
+    Translate2DNV = unchecked((uint)0x9090),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_3D_NV")]
-    Translate3Dnv = unchecked((uint)0x9091),
+    Translate3DNV = unchecked((uint)0x9091),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_AFFINE_2D_NV")]
-    Affine2Dnv = unchecked((uint)0x9092),
+    Affine2DNV = unchecked((uint)0x9092),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_AFFINE_3D_NV")]
-    Affine3Dnv = unchecked((uint)0x9094),
+    Affine3DNV = unchecked((uint)0x9094),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_AFFINE_2D_NV")]
-    TransposeAffine2Dnv = unchecked((uint)0x9096),
+    TransposeAffine2DNV = unchecked((uint)0x9096),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_AFFINE_3D_NV")]
-    TransposeAffine3Dnv = unchecked((uint)0x9098),
+    TransposeAffine3DNV = unchecked((uint)0x9098),
 }

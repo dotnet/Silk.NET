@@ -43,29 +43,29 @@ public enum GetPointervPName : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_POINTER_EXT")]
-    VertexArrayPointerext = unchecked((uint)0x808E),
+    VertexArrayPointerEXT = unchecked((uint)0x808E),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_ARRAY_POINTER_EXT")]
-    NormalArrayPointerext = unchecked((uint)0x808F),
+    NormalArrayPointerEXT = unchecked((uint)0x808F),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_POINTER_EXT")]
-    ColorArrayPointerext = unchecked((uint)0x8090),
+    ColorArrayPointerEXT = unchecked((uint)0x8090),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_ARRAY_POINTER_EXT")]
-    IndexArrayPointerext = unchecked((uint)0x8091),
+    IndexArrayPointerEXT = unchecked((uint)0x8091),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER_EXT")]
-    TextureCoordArrayPointerext = unchecked((uint)0x8092),
+    TextureCoordArrayPointerEXT = unchecked((uint)0x8092),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER_EXT")]
-    EdgeFlagArrayPointerext = unchecked((uint)0x8093),
+    EdgeFlagArrayPointerEXT = unchecked((uint)0x8093),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_INSTRUMENT_BUFFER_POINTER_SGIX")]
-    InstrumentBufferPointersgix = unchecked((uint)0x8180),
+    InstrumentBufferPointerSGIX = unchecked((uint)0x8180),
 }

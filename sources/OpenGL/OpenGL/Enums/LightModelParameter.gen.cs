@@ -25,5 +25,5 @@ public enum LightModelParameter : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
-    ColorControlext = unchecked((uint)0x81F8),
+    ColorControlEXT = unchecked((uint)0x81F8),
 }

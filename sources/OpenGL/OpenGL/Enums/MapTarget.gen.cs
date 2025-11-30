@@ -67,9 +67,9 @@ public enum MapTarget : uint
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_GEOMETRY_DEFORMATION_SGIX")]
-    GeometryDeformationsgix = unchecked((uint)0x8194),
+    GeometryDeformationSGIX = unchecked((uint)0x8194),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_DEFORMATION_SGIX")]
-    TextureDeformationsgix = unchecked((uint)0x8195),
+    TextureDeformationSGIX = unchecked((uint)0x8195),
 }

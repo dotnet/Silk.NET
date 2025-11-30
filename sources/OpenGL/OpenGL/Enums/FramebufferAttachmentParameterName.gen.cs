@@ -13,27 +13,27 @@ public enum FramebufferAttachmentParameterName : uint
 {
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
-    ObjectTypeoes = unchecked((uint)0x8CD0),
+    ObjectTypeOES = unchecked((uint)0x8CD0),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
-    ObjectNameoes = unchecked((uint)0x8CD1),
+    ObjectNameOES = unchecked((uint)0x8CD1),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
-    TextureLeveloes = unchecked((uint)0x8CD2),
+    TextureLevelOES = unchecked((uint)0x8CD2),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
-    TextureCubeMapFaceoes = unchecked((uint)0x8CD3),
+    TextureCubeMapFaceOES = unchecked((uint)0x8CD3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
-    TextureSamplesext = unchecked((uint)0x8D6C),
+    TextureSamplesEXT = unchecked((uint)0x8D6C),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
-    ColorEncodingext = unchecked((uint)0x8210),
+    ColorEncodingEXT = unchecked((uint)0x8210),
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING")]
     ColorEncoding = unchecked((uint)0x8210),
@@ -79,57 +79,57 @@ public enum FramebufferAttachmentParameterName : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB")]
-    Layeredarb = unchecked((uint)0x8DA7),
+    LayeredARB = unchecked((uint)0x8DA7),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT")]
-    ObjectTypeext = unchecked((uint)0x8CD0),
+    ObjectTypeEXT = unchecked((uint)0x8CD0),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT")]
-    ObjectNameext = unchecked((uint)0x8CD1),
+    ObjectNameEXT = unchecked((uint)0x8CD1),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT")]
-    TextureLevelext = unchecked((uint)0x8CD2),
+    TextureLevelEXT = unchecked((uint)0x8CD2),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT")]
-    TextureCubeMapFaceext = unchecked((uint)0x8CD3),
+    TextureCubeMapFaceEXT = unchecked((uint)0x8CD3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT")]
-    Texture3DZoffsetext = unchecked((uint)0x8CD4),
+    Texture3DZoffsetEXT = unchecked((uint)0x8CD4),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT")]
-    Layeredext = unchecked((uint)0x8DA7),
+    LayeredEXT = unchecked((uint)0x8DA7),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT")]
-    TextureLayerext = unchecked((uint)0x8CD4),
+    TextureLayerEXT = unchecked((uint)0x8CD4),
 
     [NameAffix("Suffix", "OVR", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR")]
-    TextureNumViewsovr = unchecked((uint)0x9630),
+    TextureNumViewsOVR = unchecked((uint)0x9630),
 
     [NameAffix("Suffix", "OVR", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR")]
-    TextureBaseViewIndexovr = unchecked((uint)0x9632),
+    TextureBaseViewIndexOVR = unchecked((uint)0x9632),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
-    Layeredoes = unchecked((uint)0x8DA7),
+    LayeredOES = unchecked((uint)0x8DA7),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
-    Texture3DZoffsetoes = unchecked((uint)0x8CD4),
+    Texture3DZoffsetOES = unchecked((uint)0x8CD4),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
-    ComponentTypeext = unchecked((uint)0x8211),
+    ComponentTypeEXT = unchecked((uint)0x8211),
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
-    TextureScaleimg = unchecked((uint)0x913F),
+    TextureScaleIMG = unchecked((uint)0x913F),
 }

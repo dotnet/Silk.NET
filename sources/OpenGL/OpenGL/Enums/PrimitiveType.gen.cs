@@ -58,41 +58,41 @@ public enum PrimitiveType : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LINES_ADJACENCY_ARB")]
-    LinesAdjacencyarb = unchecked((uint)0x000A),
+    LinesAdjacencyARB = unchecked((uint)0x000A),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
-    LineStripAdjacencyarb = unchecked((uint)0x000B),
+    LineStripAdjacencyARB = unchecked((uint)0x000B),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
-    TrianglesAdjacencyarb = unchecked((uint)0x000C),
+    TrianglesAdjacencyARB = unchecked((uint)0x000C),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
-    TriangleStripAdjacencyarb = unchecked((uint)0x000D),
+    TriangleStripAdjacencyARB = unchecked((uint)0x000D),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINES_ADJACENCY_EXT")]
-    LinesAdjacencyext = unchecked((uint)0x000A),
+    LinesAdjacencyEXT = unchecked((uint)0x000A),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_EXT")]
-    LineStripAdjacencyext = unchecked((uint)0x000B),
+    LineStripAdjacencyEXT = unchecked((uint)0x000B),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_EXT")]
-    TrianglesAdjacencyext = unchecked((uint)0x000C),
+    TrianglesAdjacencyEXT = unchecked((uint)0x000C),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
-    TriangleStripAdjacencyext = unchecked((uint)0x000D),
+    TriangleStripAdjacencyEXT = unchecked((uint)0x000D),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PATCHES_EXT")]
-    Patchesext = unchecked((uint)0x000E),
+    PatchesEXT = unchecked((uint)0x000E),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUADS_EXT")]
-    Quadsext = unchecked((uint)0x0007),
+    QuadsEXT = unchecked((uint)0x0007),
 }

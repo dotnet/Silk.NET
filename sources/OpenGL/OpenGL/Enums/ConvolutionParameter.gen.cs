@@ -40,33 +40,33 @@ public enum ConvolutionParameter : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_BORDER_MODE_EXT")]
-    ConvolutionBorderModeext = unchecked((uint)0x8013),
+    ConvolutionBorderModeEXT = unchecked((uint)0x8013),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_FILTER_SCALE_EXT")]
-    ConvolutionFilterScaleext = unchecked((uint)0x8014),
+    ConvolutionFilterScaleEXT = unchecked((uint)0x8014),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_FILTER_BIAS_EXT")]
-    ConvolutionFilterBiasext = unchecked((uint)0x8015),
+    ConvolutionFilterBiasEXT = unchecked((uint)0x8015),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_FORMAT_EXT")]
-    ConvolutionFormatext = unchecked((uint)0x8017),
+    ConvolutionFormatEXT = unchecked((uint)0x8017),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_WIDTH_EXT")]
-    ConvolutionWidthext = unchecked((uint)0x8018),
+    ConvolutionWidthEXT = unchecked((uint)0x8018),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_HEIGHT_EXT")]
-    ConvolutionHeightext = unchecked((uint)0x8019),
+    ConvolutionHeightEXT = unchecked((uint)0x8019),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CONVOLUTION_WIDTH_EXT")]
-    MaxConvolutionWidthext = unchecked((uint)0x801A),
+    MaxConvolutionWidthEXT = unchecked((uint)0x801A),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CONVOLUTION_HEIGHT_EXT")]
-    MaxConvolutionHeightext = unchecked((uint)0x801B),
+    MaxConvolutionHeightEXT = unchecked((uint)0x801B),
 }

@@ -25,5 +25,5 @@ public enum PathGenMode : uint
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
-    PathObjectBoundingBoxnv = unchecked((uint)0x908A),
+    PathObjectBoundingBoxNV = unchecked((uint)0x908A),
 }

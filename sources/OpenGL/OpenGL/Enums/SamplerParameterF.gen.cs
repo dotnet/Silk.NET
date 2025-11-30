@@ -28,5 +28,5 @@ public enum SamplerParameterF : uint
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    UnnormalizedCoordinatesarm = unchecked((uint)0x8F6A),
+    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 }

@@ -43,41 +43,41 @@ public enum ColorTableParameterPName : uint
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_SCALE_SGI")]
-    Scalesgi = unchecked((uint)0x80D6),
+    ScaleSGI = unchecked((uint)0x80D6),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_BIAS_SGI")]
-    Biassgi = unchecked((uint)0x80D7),
+    BiasSGI = unchecked((uint)0x80D7),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_FORMAT_SGI")]
-    Formatsgi = unchecked((uint)0x80D8),
+    FormatSGI = unchecked((uint)0x80D8),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_WIDTH_SGI")]
-    Widthsgi = unchecked((uint)0x80D9),
+    WidthSGI = unchecked((uint)0x80D9),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_RED_SIZE_SGI")]
-    RedSizesgi = unchecked((uint)0x80DA),
+    RedSizeSGI = unchecked((uint)0x80DA),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_GREEN_SIZE_SGI")]
-    GreenSizesgi = unchecked((uint)0x80DB),
+    GreenSizeSGI = unchecked((uint)0x80DB),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_BLUE_SIZE_SGI")]
-    BlueSizesgi = unchecked((uint)0x80DC),
+    BlueSizeSGI = unchecked((uint)0x80DC),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_ALPHA_SIZE_SGI")]
-    AlphaSizesgi = unchecked((uint)0x80DD),
+    AlphaSizeSGI = unchecked((uint)0x80DD),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_LUMINANCE_SIZE_SGI")]
-    LuminanceSizesgi = unchecked((uint)0x80DE),
+    LuminanceSizeSGI = unchecked((uint)0x80DE),
 
     [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_INTENSITY_SIZE_SGI")]
-    IntensitySizesgi = unchecked((uint)0x80DF),
+    IntensitySizeSGI = unchecked((uint)0x80DF),
 }

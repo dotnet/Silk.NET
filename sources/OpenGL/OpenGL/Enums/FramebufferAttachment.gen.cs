@@ -118,5 +118,5 @@ public enum FramebufferAttachment : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_ATTACHMENT_EXT")]
-    ShadingRateAttachmentext = unchecked((uint)0x96D1),
+    ShadingRateAttachmentEXT = unchecked((uint)0x96D1),
 }

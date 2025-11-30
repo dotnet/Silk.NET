@@ -35,45 +35,45 @@ public enum UseProgramStageMask : uint
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_SHADER_BIT_NV")]
-    MeshShaderBitnv = unchecked((uint)0x00000040),
+    MeshShaderBitNV = unchecked((uint)0x00000040),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TASK_SHADER_BIT_NV")]
-    TaskShaderBitnv = unchecked((uint)0x00000080),
+    TaskShaderBitNV = unchecked((uint)0x00000080),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_SHADER_BIT_OES")]
-    GeometryShaderBitoes = unchecked((uint)0x00000004),
+    GeometryShaderBitOES = unchecked((uint)0x00000004),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_BIT_OES")]
-    TessControlShaderBitoes = unchecked((uint)0x00000008),
+    TessControlShaderBitOES = unchecked((uint)0x00000008),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT_OES")]
-    TessEvaluationShaderBitoes = unchecked((uint)0x00000010),
+    TessEvaluationShaderBitOES = unchecked((uint)0x00000010),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_SHADER_BIT_EXT")]
-    GeometryShaderBitext = unchecked((uint)0x00000004),
+    GeometryShaderBitEXT = unchecked((uint)0x00000004),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
-    VertexShaderBitext = unchecked((uint)0x00000001),
+    VertexShaderBitEXT = unchecked((uint)0x00000001),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADER_BIT_EXT")]
-    FragmentShaderBitext = unchecked((uint)0x00000002),
+    FragmentShaderBitEXT = unchecked((uint)0x00000002),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALL_SHADER_BITS_EXT")]
-    AllShaderBitsext = unchecked((uint)0xFFFFFFFF),
+    AllShaderBitsEXT = unchecked((uint)0xFFFFFFFF),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_BIT_EXT")]
-    TessControlShaderBitext = unchecked((uint)0x00000008),
+    TessControlShaderBitEXT = unchecked((uint)0x00000008),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT_EXT")]
-    TessEvaluationShaderBitext = unchecked((uint)0x00000010),
+    TessEvaluationShaderBitEXT = unchecked((uint)0x00000010),
 }

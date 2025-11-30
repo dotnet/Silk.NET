@@ -16,13 +16,13 @@ public enum PathFillMode : uint
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_MODE_NV")]
-    PathFillModenv = unchecked((uint)0x9080),
+    PathFillModeNV = unchecked((uint)0x9080),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COUNT_UP_NV")]
-    CountUpnv = unchecked((uint)0x9088),
+    CountUpNV = unchecked((uint)0x9088),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COUNT_DOWN_NV")]
-    CountDownnv = unchecked((uint)0x9089),
+    CountDownNV = unchecked((uint)0x9089),
 }

@@ -31,9 +31,9 @@ public enum ShaderType : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAGMENT_SHADER_ARB")]
-    FragmentShaderarb = unchecked((uint)0x8B30),
+    FragmentShaderARB = unchecked((uint)0x8B30),
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_SHADER_ARB")]
-    VertexShaderarb = unchecked((uint)0x8B31),
+    VertexShaderARB = unchecked((uint)0x8B31),
 }

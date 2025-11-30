@@ -22,5 +22,5 @@ public enum MatrixMode : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW0_EXT")]
-    Modelview0Ext = unchecked((uint)0x1700),
+    Modelview0EXT = unchecked((uint)0x1700),
 }

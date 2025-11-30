@@ -31,5 +31,5 @@ public enum FogParameter : uint
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FOG_OFFSET_VALUE_SGIX")]
-    OffsetValuesgix = unchecked((uint)0x8199),
+    OffsetValueSGIX = unchecked((uint)0x8199),
 }

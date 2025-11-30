@@ -80,13 +80,13 @@ public enum AttribMask : uint
 
     [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MULTISAMPLE_BIT_ARB")]
-    MultisampleBitarb = unchecked((uint)0x20000000),
+    MultisampleBitARB = unchecked((uint)0x20000000),
 
     [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_MULTISAMPLE_BIT_3DFX")]
-    MultisampleBit3Dfx = unchecked((uint)0x20000000),
+    MultisampleBit3DFX = unchecked((uint)0x20000000),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MULTISAMPLE_BIT_EXT")]
-    MultisampleBitext = unchecked((uint)0x20000000),
+    MultisampleBitEXT = unchecked((uint)0x20000000),
 }

@@ -13,17 +13,17 @@ public enum InstancedPathCoverMode : uint
 {
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_COVER_MODE_NV")]
-    PathFillCoverModenv = unchecked((uint)0x9082),
+    PathFillCoverModeNV = unchecked((uint)0x9082),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONVEX_HULL_NV")]
-    ConvexHullnv = unchecked((uint)0x908B),
+    ConvexHullNV = unchecked((uint)0x908B),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOUNDING_BOX_NV")]
-    BoundingBoxnv = unchecked((uint)0x908D),
+    BoundingBoxNV = unchecked((uint)0x908D),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOUNDING_BOX_OF_BOUNDING_BOXES_NV")]
-    BoundingBoxOfBoundingBoxesnv = unchecked((uint)0x909C),
+    BoundingBoxOfBoundingBoxesNV = unchecked((uint)0x909C),
 }
