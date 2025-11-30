@@ -473,6 +473,7 @@ static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3
 static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<short> this, int length, int[]! lengths) -> string?[]?[]?
 static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<uint> this, int length, int[]! lengths) -> string?[]?[]?
 static Silk.NET.Core.PointerExtensions.ReadToStringArray(this Silk.NET.Core.Ref3D<ushort> this, int length, int[]! lengths) -> string?[]?[]?
+static Silk.NET.Core.PointerExtensions.TryReadToSpan(this Silk.NET.Core.Ptr<sbyte> this, ref System.Span<char> span) -> bool
 static Silk.NET.Core.Ptr.explicit operator nint(Silk.NET.Core.Ptr ptr) -> nint
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(nint ptr) -> Silk.NET.Core.Ptr
 static Silk.NET.Core.Ptr.explicit operator Silk.NET.Core.Ptr(Silk.NET.Core.Ref ptr) -> Silk.NET.Core.Ptr
