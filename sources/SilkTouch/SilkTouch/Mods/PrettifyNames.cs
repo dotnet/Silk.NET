@@ -172,7 +172,7 @@ public class PrettifyNames(
 
                 // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(type => new KeyValuePair<string, string>(type, GetOverriddenName(typeName, type, cfg.NameOverrides, nameTransformer)))
+                    ? val.Select(memberName => new KeyValuePair<string, string>(memberName, GetOverriddenName(typeName, memberName, cfg.NameOverrides, nameTransformer)))
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
