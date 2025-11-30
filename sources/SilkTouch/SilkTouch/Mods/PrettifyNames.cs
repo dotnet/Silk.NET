@@ -82,7 +82,7 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
             {
                 newNames[name] = new RenamedType(
-                    GetOverriddenName(null, name, cfg.NameOverrides, true), // <-- lenient about caps for type names (e.g. GL)
+                    GetOverriddenName(null, name, cfg.NameOverrides),
                     nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides)),
                     functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides))
                 );
@@ -331,13 +331,15 @@ public class PrettifyNames(
                 foreach (var checkDocId in proj.DocumentIds)
                 {
                     if (checkDocId == docId)
+                    {
                         continue;
+                    }
 
                     var checkDoc = proj.GetDocument(checkDocId);
-
-                    if (checkDoc is null ||
-                        checkDoc.FilePath is null)
+                    if (checkDoc?.FilePath is null)
+                    {
                         continue;
+                    }
 
                     if (checkDoc.FilePath == doc.FilePath)
                     {
@@ -363,8 +365,7 @@ public class PrettifyNames(
     private string GetOverriddenName(
         string? container,
         string name,
-        Dictionary<string, string> nameOverrides,
-        bool allowAllCaps = false)
+        Dictionary<string, string> nameOverrides)
     {
         foreach (var (nativeName, overriddenName) in nameOverrides)
         {
