@@ -74,8 +74,6 @@ public class PrettifyNames(
         // The dictionary containing mappings from the original type names to the new names of the type and its members
         var newNames = new Dictionary<string, RenamedType>();
 
-        var nameTransformer = new NameUtils.NameTransformer();
-
         // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
         if (cfg.TrimmerBaseline is not null)
         {
@@ -166,21 +164,21 @@ public class PrettifyNames(
 
                 // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
                 var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(memberName => new KeyValuePair<string, string>(memberName, GetOverriddenName(typeName, memberName, cfg.NameOverrides, nameTransformer)))
+                    ? val.Select(memberName => new KeyValuePair<string, string>(memberName, GetOverriddenName(typeName, memberName, cfg.NameOverrides)))
                     : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
-                    newTypeName.Prettify(nameTransformer),
+                    newTypeName.Prettify(),
 
                     constNames
-                        .Select(type => new KeyValuePair<string, string>(type.Key, type.Value.Primary.Prettify(nameTransformer)))
+                        .Select(type => new KeyValuePair<string, string>(type.Key, type.Value.Primary.Prettify()))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value),
 
                     functionNames.ToDictionary(
                         x => x.Key,
-                        x => x.Value.Primary.Prettify(nameTransformer)
+                        x => x.Value.Primary.Prettify()
                     )
                 );
             }
@@ -191,9 +189,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.Types)
             {
                 newNames[name] = new RenamedType(
-                    GetOverriddenName(null, name, cfg.NameOverrides, nameTransformer, true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides, nameTransformer)),
-                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides, nameTransformer))
+                    GetOverriddenName(null, name, cfg.NameOverrides, true), // <-- lenient about caps for type names (e.g. GL)
+                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides)),
+                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides))
                 );
             }
         }
@@ -352,7 +350,6 @@ public class PrettifyNames(
         string? container,
         string name,
         Dictionary<string, string> nameOverrides,
-        NameUtils.NameTransformer nameTransformer,
         bool allowAllCaps = false)
     {
         foreach (var (nativeName, overriddenName) in nameOverrides)
@@ -384,7 +381,8 @@ public class PrettifyNames(
                 return overriddenName;
             }
         }
-        return name.Prettify(nameTransformer);
+
+        return name.Prettify();
     }
 
     private void Trim(

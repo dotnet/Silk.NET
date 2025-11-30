@@ -38,7 +38,6 @@ public partial class MixKhronosData(
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
     internal ConcurrentDictionary<string, JobData> Jobs = new();
-    private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer();
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
     private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
@@ -1457,7 +1456,7 @@ public partial class MixKhronosData(
             )
             {
                 newPrev ??= previous ?? [];
-                var pretty = newCurrent.Prettify(_transformer);
+                var pretty = newCurrent.Prettify();
 
                 // Hack to ensure extension vendors are preserved as acronyms
                 if (char.IsUpper(pretty[^1]))
