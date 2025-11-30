@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AppIterate_func")]
 public readonly unsafe struct AppIterateFunc : IDisposable
 {
     private readonly void* Pointer;

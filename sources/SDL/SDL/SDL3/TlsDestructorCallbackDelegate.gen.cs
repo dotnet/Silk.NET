@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_TLSDestructorCallback")]
 public unsafe delegate void TlsDestructorCallbackDelegate(void* arg0);

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("PFN_vkFreeFunction")]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct FreeFunction : IDisposable
 {

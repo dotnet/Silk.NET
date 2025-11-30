@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_EnumeratePropertiesCallback")]
 public readonly unsafe struct EnumeratePropertiesCallback : IDisposable
 {
     private readonly void* Pointer;

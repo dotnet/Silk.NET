@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_TLSDestructorCallback")]
 public readonly unsafe struct TlsDestructorCallback : IDisposable
 {
     private readonly void* Pointer;

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AudioStreamCallback")]
 public unsafe delegate void AudioStreamCallbackDelegate(
     void* arg0,
     AudioStreamHandle arg1,

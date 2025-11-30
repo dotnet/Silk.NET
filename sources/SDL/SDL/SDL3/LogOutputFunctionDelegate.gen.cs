@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_LogOutputFunction")]
 public unsafe delegate void LogOutputFunctionDelegate(
     void* arg0,
     int arg1,

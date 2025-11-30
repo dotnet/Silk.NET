@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("PFN_vkGetInstanceProcAddrLUNARG_p2")]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct GetInstanceProcAddrLunargP2 : IDisposable
 {

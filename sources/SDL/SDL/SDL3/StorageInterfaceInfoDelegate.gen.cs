@@ -8,5 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_StorageInterface_info")]
 [Transformed]
 public unsafe delegate byte StorageInterfaceInfoDelegate(void* arg0, sbyte* arg1, PathInfo* arg2);

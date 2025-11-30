@@ -6,6 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+[NativeName("SDL_VirtualJoystickDesc_RumbleTriggers")]
 [Transformed]
 public unsafe delegate byte VirtualJoystickDescRumbleTriggersDelegate(
     void* arg0,

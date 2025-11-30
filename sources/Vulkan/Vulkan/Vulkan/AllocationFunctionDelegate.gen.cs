@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("PFN_vkAllocationFunction")]
 [SupportedApiProfile("vulkan")]
 public unsafe delegate void* AllocationFunctionDelegate(
     void* arg0,

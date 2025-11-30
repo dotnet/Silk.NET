@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("PFN_vkDebugUtilsMessengerCallbackEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe delegate uint DebugUtilsMessengerCallbackExtDelegate(
     DebugUtilsMessageSeverityFlagsEXT arg0,

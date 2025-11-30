@@ -6,6 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+[NativeName("SDL_VirtualJoystickDesc_Update")]
 [Transformed]
 public readonly unsafe struct VirtualJoystickDescUpdate : IDisposable
 {

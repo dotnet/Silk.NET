@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("LPALFOLDBACKCALLBACK")]
 public readonly unsafe struct FoldbackCallback : IDisposable
 {
     private readonly void* Pointer;

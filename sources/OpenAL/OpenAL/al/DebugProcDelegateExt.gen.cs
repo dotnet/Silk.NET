@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("ALDEBUGPROCEXT")]
 public unsafe delegate void DebugProcDelegateExt(
     int arg0,
     int arg1,
