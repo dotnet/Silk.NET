@@ -286,7 +286,7 @@ public enum QueryPipelineStatisticFlags : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    TaskShaderInvocationsBitext = 0x800,
+    TaskShaderInvocationsBitEXT = 0x800,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
@@ -295,7 +295,7 @@ public enum QueryPipelineStatisticFlags : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshShaderInvocationsBitext = 0x1000,
+    MeshShaderInvocationsBitEXT = 0x1000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_QUERY_PIPELINE_STATISTIC_CLUSTER_CULLING_SHADER_INVOCATIONS_BIT_HUAWEI")]
@@ -307,5 +307,5 @@ public enum QueryPipelineStatisticFlags : uint
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    ClusterCullingShaderInvocationsBithuawei = 0x2000,
+    ClusterCullingShaderInvocationsBitHUAWEI = 0x2000,
 }

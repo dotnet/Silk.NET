@@ -10,8 +10,8 @@ namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
 public unsafe delegate uint DebugReportCallbackExtDelegate(
-    DebugReportFlagsExt arg0,
-    DebugReportObjectTypeExt arg1,
+    DebugReportFlagsEXT arg0,
+    DebugReportObjectTypeEXT arg1,
     ulong arg2,
     nuint arg3,
     int arg4,

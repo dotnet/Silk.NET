@@ -270,7 +270,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDstBitkhr = 0x400,
+    VideoDecodeDstBitKHR = 0x400,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
@@ -282,7 +282,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeSrcBitkhr = 0x800,
+    VideoDecodeSrcBitKHR = 0x800,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_DECODE_DPB_BIT_KHR")]
@@ -294,7 +294,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDpbBitkhr = 0x1000,
+    VideoDecodeDpbBitKHR = 0x1000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
@@ -306,7 +306,7 @@ public enum ImageUsageFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapBitext = 0x200,
+    FragmentDensityMapBitEXT = 0x200,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
@@ -319,7 +319,7 @@ public enum ImageUsageFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentBitkhr = 0x100,
+    FragmentShadingRateAttachmentBitKHR = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
@@ -331,7 +331,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDstBitkhr = 0x2000,
+    VideoEncodeDstBitKHR = 0x2000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
@@ -343,7 +343,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeSrcBitkhr = 0x4000,
+    VideoEncodeSrcBitKHR = 0x4000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
@@ -355,7 +355,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDpbBitkhr = 0x8000,
+    VideoEncodeDpbBitKHR = 0x8000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_USAGE_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
@@ -367,7 +367,7 @@ public enum ImageUsageFlags : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    AttachmentFeedbackLoopBitext = 0x80000,
+    AttachmentFeedbackLoopBitEXT = 0x80000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
@@ -379,7 +379,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
         ]
     )]
-    InvocationMaskBithuawei = 0x40000,
+    InvocationMaskBitHUAWEI = 0x40000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM")]
@@ -391,7 +391,7 @@ public enum ImageUsageFlags : uint
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    SampleWeightBitqcom = 0x100000,
+    SampleWeightBitQCOM = 0x100000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM")]
@@ -403,12 +403,12 @@ public enum ImageUsageFlags : uint
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    SampleBlockMatchBitqcom = 0x200000,
+    SampleBlockMatchBitQCOM = 0x200000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_IMAGE_USAGE_TENSOR_ALIASING_BIT_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    TensorAliasingBitarm = 0x800000,
+    TensorAliasingBitARM = 0x800000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_USAGE_TILE_MEMORY_BIT_QCOM")]
@@ -420,7 +420,7 @@ public enum ImageUsageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TileMemoryBitqcom = 0x8000000,
+    TileMemoryBitQCOM = 0x8000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
@@ -432,7 +432,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeQuantizationDeltaMapBitkhr = 0x2000000,
+    VideoEncodeQuantizationDeltaMapBitKHR = 0x2000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
@@ -444,7 +444,7 @@ public enum ImageUsageFlags : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeEmphasisMapBitkhr = 0x4000000,
+    VideoEncodeEmphasisMapBitKHR = 0x4000000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV")]
@@ -456,7 +456,7 @@ public enum ImageUsageFlags : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    ShadingRateImageBitnv = FragmentShadingRateAttachmentBitkhr,
+    ShadingRateImageBitNV = FragmentShadingRateAttachmentBitKHR,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT")]
@@ -469,5 +469,5 @@ public enum ImageUsageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    HostTransferBitext = HostTransferBit,
+    HostTransferBitEXT = HostTransferBit,
 }

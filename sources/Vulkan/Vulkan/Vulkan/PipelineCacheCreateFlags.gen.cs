@@ -32,7 +32,7 @@ public enum PipelineCacheCreateFlags : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CACHE_CREATE_INTERNALLY_SYNCHRONIZED_MERGE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    InternallySynchronizedMergeBitkhr = 0x8,
+    InternallySynchronizedMergeBitKHR = 0x8,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT_EXT")]
@@ -44,5 +44,5 @@ public enum PipelineCacheCreateFlags : uint
             "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
         ]
     )]
-    ExternallySynchronizedBitext = ExternallySynchronizedBit,
+    ExternallySynchronizedBitEXT = ExternallySynchronizedBit,
 }

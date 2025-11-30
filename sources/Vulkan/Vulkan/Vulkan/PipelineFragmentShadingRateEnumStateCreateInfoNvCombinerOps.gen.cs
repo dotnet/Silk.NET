@@ -15,5 +15,5 @@ public partial struct PipelineFragmentShadingRateEnumStateCreateInfoNvCombinerOp
 {
     [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
-    public FragmentShadingRateCombinerOpKhr E0;
+    public FragmentShadingRateCombinerOpKHR E0;
 }

@@ -181,7 +181,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingNoNullAnyHitShadersBitkhr = 0x4000,
+    RayTracingNoNullAnyHitShadersBitKHR = 0x4000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_CLOSEST_HIT_SHADERS_BIT_KHR")]
@@ -193,7 +193,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingNoNullClosestHitShadersBitkhr = 0x8000,
+    RayTracingNoNullClosestHitShadersBitKHR = 0x8000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_MISS_SHADERS_BIT_KHR")]
@@ -205,7 +205,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingNoNullMissShadersBitkhr = 0x10000,
+    RayTracingNoNullMissShadersBitKHR = 0x10000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_NO_NULL_INTERSECTION_SHADERS_BIT_KHR")]
@@ -217,7 +217,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingNoNullIntersectionShadersBitkhr = 0x20000,
+    RayTracingNoNullIntersectionShadersBitKHR = 0x20000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_SKIP_TRIANGLES_BIT_KHR")]
@@ -229,7 +229,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingSkipTrianglesBitkhr = 0x1000,
+    RayTracingSkipTrianglesBitKHR = 0x1000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_SKIP_AABBS_BIT_KHR")]
@@ -241,7 +241,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingSkipAabbsBitkhr = 0x2000,
+    RayTracingSkipAabbsBitKHR = 0x2000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BIT_KHR")]
@@ -253,7 +253,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingShaderGroupHandleCaptureReplayBitkhr = 0x80000,
+    RayTracingShaderGroupHandleCaptureReplayBitKHR = 0x80000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV")]
@@ -265,7 +265,7 @@ public enum PipelineCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    DeferCompileBitnv = 0x20,
+    DeferCompileBitNV = 0x20,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
@@ -280,7 +280,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    RenderingFragmentDensityMapAttachmentBitext = 0x400000,
+    RenderingFragmentDensityMapAttachmentBitEXT = 0x400000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_RENDERING_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
@@ -296,7 +296,7 @@ public enum PipelineCreateFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    RenderingFragmentShadingRateAttachmentBitkhr = 0x200000,
+    RenderingFragmentShadingRateAttachmentBitKHR = 0x200000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR")]
@@ -308,7 +308,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    CaptureStatisticsBitkhr = 0x40,
+    CaptureStatisticsBitKHR = 0x40,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR")]
@@ -320,7 +320,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    CaptureInternalRepresentationsBitkhr = 0x80,
+    CaptureInternalRepresentationsBitKHR = 0x80,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_CREATE_INDIRECT_BINDABLE_BIT_NV")]
@@ -329,12 +329,12 @@ public enum PipelineCreateFlags : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    IndirectBindableBitnv = 0x40000,
+    IndirectBindableBitNV = 0x40000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_LIBRARY_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
-    LibraryBitkhr = 0x800,
+    LibraryBitKHR = 0x800,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT")]
@@ -348,7 +348,7 @@ public enum PipelineCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferBitext = 0x20000000,
+    DescriptorBufferBitEXT = 0x20000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
@@ -360,7 +360,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    RetainLinkTimeOptimizationInfoBitext = 0x800000,
+    RetainLinkTimeOptimizationInfoBitEXT = 0x800000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_BIT_EXT")]
@@ -372,7 +372,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    LinkTimeOptimizationBitext = 0x400,
+    LinkTimeOptimizationBitEXT = 0x400,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
@@ -381,7 +381,7 @@ public enum PipelineCreateFlags : uint
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    RayTracingAllowMotionBitnv = 0x100000,
+    RayTracingAllowMotionBitNV = 0x100000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
@@ -393,7 +393,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    ColorAttachmentFeedbackLoopBitext = 0x2000000,
+    ColorAttachmentFeedbackLoopBitEXT = 0x2000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_DEPTH_STENCIL_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
@@ -405,7 +405,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    DepthStencilAttachmentFeedbackLoopBitext = 0x4000000,
+    DepthStencilAttachmentFeedbackLoopBitEXT = 0x4000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
@@ -417,7 +417,7 @@ public enum PipelineCreateFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    RayTracingOpacityMicromapBitext = 0x1000000,
+    RayTracingOpacityMicromapBitEXT = 0x1000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
@@ -426,7 +426,7 @@ public enum PipelineCreateFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    ViewIndexFromDeviceIndexBitkhr = ViewIndexFromDeviceIndexBit,
+    ViewIndexFromDeviceIndexBitKHR = ViewIndexFromDeviceIndexBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_CREATE_DISPATCH_BASE_BIT_KHR")]
@@ -435,7 +435,7 @@ public enum PipelineCreateFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    DispatchBaseBitkhr = DispatchBaseBit,
+    DispatchBaseBitKHR = DispatchBaseBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_FAIL_ON_PIPELINE_COMPILE_REQUIRED_BIT_EXT")]
@@ -447,7 +447,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
         ]
     )]
-    FailOnPipelineCompileRequiredBitext = FailOnPipelineCompileRequiredBit,
+    FailOnPipelineCompileRequiredBitEXT = FailOnPipelineCompileRequiredBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
@@ -459,7 +459,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
         ]
     )]
-    EarlyReturnOnFailureBitext = EarlyReturnOnFailureBit,
+    EarlyReturnOnFailureBitEXT = EarlyReturnOnFailureBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
@@ -471,7 +471,7 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
         ]
     )]
-    NoProtectedAccessBitext = NoProtectedAccessBit,
+    NoProtectedAccessBitEXT = NoProtectedAccessBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]
@@ -483,5 +483,5 @@ public enum PipelineCreateFlags : uint
             "VK_EXT_pipeline_protected_access+VK_VERSION_1_1",
         ]
     )]
-    ProtectedAccessOnlyBitext = ProtectedAccessOnlyBit,
+    ProtectedAccessOnlyBitEXT = ProtectedAccessOnlyBit,
 }

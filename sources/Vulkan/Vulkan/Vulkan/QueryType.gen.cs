@@ -106,7 +106,7 @@ public enum QueryType : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ResultStatusOnlykhr = 1000023000,
+    ResultStatusOnlyKHR = 1000023000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT")]
@@ -118,7 +118,7 @@ public enum QueryType : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackStreamext = 1000028004,
+    TransformFeedbackStreamEXT = 1000028004,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR")]
@@ -130,7 +130,7 @@ public enum QueryType : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    PerformanceQuerykhr = 1000116000,
+    PerformanceQueryKHR = 1000116000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_KHR")]
@@ -142,7 +142,7 @@ public enum QueryType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureCompactedSizekhr = 1000150000,
+    AccelerationStructureCompactedSizeKHR = 1000150000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_SIZE_KHR")]
@@ -154,7 +154,7 @@ public enum QueryType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureSerializationSizekhr = 1000150001,
+    AccelerationStructureSerializationSizeKHR = 1000150001,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV")]
@@ -166,12 +166,12 @@ public enum QueryType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AccelerationStructureCompactedSizenv = 1000165000,
+    AccelerationStructureCompactedSizeNV = 1000165000,
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    PerformanceQueryintel = 1000210000,
+    PerformanceQueryINTEL = 1000210000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_VIDEO_ENCODE_FEEDBACK_KHR")]
@@ -183,7 +183,7 @@ public enum QueryType : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeFeedbackkhr = 1000299000,
+    VideoEncodeFeedbackKHR = 1000299000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_MESH_PRIMITIVES_GENERATED_EXT")]
@@ -192,7 +192,7 @@ public enum QueryType : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshPrimitivesGeneratedext = 1000328000,
+    MeshPrimitivesGeneratedEXT = 1000328000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]
@@ -201,7 +201,7 @@ public enum QueryType : uint
         ["VK_EXT_primitives_generated_query"],
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
-    PrimitivesGeneratedext = 1000382000,
+    PrimitivesGeneratedEXT = 1000382000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_BOTTOM_LEVEL_POINTERS_KHR")]
@@ -210,7 +210,7 @@ public enum QueryType : uint
         ["VK_KHR_ray_tracing_maintenance1"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AccelerationStructureSerializationBottomLevelPointerskhr = 1000386000,
+    AccelerationStructureSerializationBottomLevelPointersKHR = 1000386000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SIZE_KHR")]
@@ -219,7 +219,7 @@ public enum QueryType : uint
         ["VK_KHR_ray_tracing_maintenance1"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AccelerationStructureSizekhr = 1000386001,
+    AccelerationStructureSizeKHR = 1000386001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_MICROMAP_SERIALIZATION_SIZE_EXT")]
@@ -231,7 +231,7 @@ public enum QueryType : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapSerializationSizeext = 1000396000,
+    MicromapSerializationSizeEXT = 1000396000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUERY_TYPE_MICROMAP_COMPACTED_SIZE_EXT")]
@@ -243,5 +243,5 @@ public enum QueryType : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapCompactedSizeext = 1000396001,
+    MicromapCompactedSizeEXT = 1000396001,
 }

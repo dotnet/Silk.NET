@@ -98,7 +98,7 @@ public enum ResolveModeFlags : uint
         ],
         ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
     )]
-    ExternalFormatDownsampleBitandroid = 0x10,
+    ExternalFormatDownsampleBitANDROID = 0x10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_NONE_KHR")]
@@ -110,7 +110,7 @@ public enum ResolveModeFlags : uint
             "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
         ]
     )]
-    Nonekhr = None,
+    NoneKHR = None,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT_KHR")]
@@ -122,7 +122,7 @@ public enum ResolveModeFlags : uint
             "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
         ]
     )]
-    SampleZeroBitkhr = SampleZeroBit,
+    SampleZeroBitKHR = SampleZeroBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT_KHR")]
@@ -134,7 +134,7 @@ public enum ResolveModeFlags : uint
             "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
         ]
     )]
-    AverageBitkhr = AverageBit,
+    AverageBitKHR = AverageBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_MIN_BIT_KHR")]
@@ -146,7 +146,7 @@ public enum ResolveModeFlags : uint
             "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
         ]
     )]
-    MinBitkhr = MinBit,
+    MinBitKHR = MinBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RESOLVE_MODE_MAX_BIT_KHR")]
@@ -158,5 +158,5 @@ public enum ResolveModeFlags : uint
             "VK_KHR_depth_stencil_resolve+VK_VERSION_1_2",
         ]
     )]
-    MaxBitkhr = MaxBit,
+    MaxBitKHR = MaxBit,
 }

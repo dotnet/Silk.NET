@@ -47,5 +47,5 @@ public enum FenceImportFlags : uint
         ["VK_KHR_external_fence"],
         ImpliesSets = ["VK_KHR_external_fence_capabilities"]
     )]
-    TemporaryBitkhr = TemporaryBit,
+    TemporaryBitKHR = TemporaryBit,
 }

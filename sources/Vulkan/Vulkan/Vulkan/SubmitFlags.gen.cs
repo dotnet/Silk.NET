@@ -42,5 +42,5 @@ public enum SubmitFlags : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    ProtectedBitkhr = ProtectedBit,
+    ProtectedBitKHR = ProtectedBit,
 }

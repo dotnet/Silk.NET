@@ -232,7 +232,7 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane0Bitext = 0x80,
+    MemoryPlane0BitEXT = 0x80,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_1_BIT_EXT")]
@@ -245,7 +245,7 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane1Bitext = 0x100,
+    MemoryPlane1BitEXT = 0x100,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_2_BIT_EXT")]
@@ -258,7 +258,7 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane2Bitext = 0x200,
+    MemoryPlane2BitEXT = 0x200,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_3_BIT_EXT")]
@@ -271,7 +271,7 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MemoryPlane3Bitext = 0x400,
+    MemoryPlane3BitEXT = 0x400,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_PLANE_0_BIT_KHR")]
@@ -283,7 +283,7 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Plane0Bitkhr = Plane0Bit,
+    Plane0BitKHR = Plane0Bit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT_KHR")]
@@ -295,7 +295,7 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Plane1Bitkhr = Plane1Bit,
+    Plane1BitKHR = Plane1Bit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT_KHR")]
@@ -307,10 +307,10 @@ public enum ImageAspectFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Plane2Bitkhr = Plane2Bit,
+    Plane2BitKHR = Plane2Bit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_NONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
-    Nonekhr = None,
+    NoneKHR = None,
 }

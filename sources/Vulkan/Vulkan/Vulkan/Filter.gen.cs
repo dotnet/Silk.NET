@@ -61,10 +61,10 @@ public enum Filter : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FILTER_CUBIC_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    Cubicext = 1000015000,
+    CubicEXT = 1000015000,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FILTER_CUBIC_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
-    Cubicimg = Cubicext,
+    CubicIMG = CubicEXT,
 }

@@ -69,7 +69,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Viv = 65537,
+    VIV = 65537,
 
     [NameAffix("Suffix", "VSI", 0)]
     [NativeName("VK_VENDOR_ID_VSI")]
@@ -99,7 +99,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Vsi = 65538,
+    VSI = 65538,
 
     [NativeName("VK_VENDOR_ID_KAZAN")]
     [SupportedApiProfile(
@@ -187,7 +187,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Mesa = 65541,
+    MESA = 65541,
 
     [NativeName("VK_VENDOR_ID_POCL")]
     [SupportedApiProfile(

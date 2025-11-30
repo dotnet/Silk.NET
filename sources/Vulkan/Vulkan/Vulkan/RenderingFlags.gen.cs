@@ -54,12 +54,12 @@ public enum RenderingFlags : uint
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    EnableLegacyDitheringBitext = 0x8,
+    EnableLegacyDitheringBitEXT = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    ContentsInlineBitkhr = 0x10,
+    ContentsInlineBitKHR = 0x10,
 
     [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
@@ -71,7 +71,7 @@ public enum RenderingFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitvalve = 0x20,
+    PerLayerFragmentDensityBitVALVE = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
@@ -88,7 +88,7 @@ public enum RenderingFlags : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    LocalReadConcurrentAccessControlBitkhr = 0x100,
+    LocalReadConcurrentAccessControlBitKHR = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
@@ -101,7 +101,7 @@ public enum RenderingFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ContentsSecondaryCommandBuffersBitkhr = ContentsSecondaryCommandBuffersBit,
+    ContentsSecondaryCommandBuffersBitKHR = ContentsSecondaryCommandBuffersBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_SUSPENDING_BIT_KHR")]
@@ -114,7 +114,7 @@ public enum RenderingFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    SuspendingBitkhr = SuspendingBit,
+    SuspendingBitKHR = SuspendingBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_RESUMING_BIT_KHR")]
@@ -127,7 +127,7 @@ public enum RenderingFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ResumingBitkhr = ResumingBit,
+    ResumingBitKHR = ResumingBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
@@ -139,5 +139,5 @@ public enum RenderingFlags : uint
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    ContentsInlineBitext = ContentsInlineBitkhr,
+    ContentsInlineBitEXT = ContentsInlineBitKHR,
 }

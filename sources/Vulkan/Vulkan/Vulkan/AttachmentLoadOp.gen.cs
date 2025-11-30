@@ -79,10 +79,10 @@ public enum AttachmentLoadOp : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ATTACHMENT_LOAD_OP_NONE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
-    Noneext = None,
+    NoneEXT = None,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ATTACHMENT_LOAD_OP_NONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_load_store_op_none"])]
-    Nonekhr = None,
+    NoneKHR = None,
 }

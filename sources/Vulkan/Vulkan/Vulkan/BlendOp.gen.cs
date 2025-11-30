@@ -117,7 +117,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Zeroext = 1000148000,
+    ZeroEXT = 1000148000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SRC_EXT")]
@@ -129,7 +129,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Srcext = 1000148001,
+    SrcEXT = 1000148001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DST_EXT")]
@@ -141,7 +141,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Dstext = 1000148002,
+    DstEXT = 1000148002,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SRC_OVER_EXT")]
@@ -153,7 +153,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    SrcOverext = 1000148003,
+    SrcOverEXT = 1000148003,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DST_OVER_EXT")]
@@ -165,7 +165,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    DstOverext = 1000148004,
+    DstOverEXT = 1000148004,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SRC_IN_EXT")]
@@ -177,7 +177,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    SrcInext = 1000148005,
+    SrcInEXT = 1000148005,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DST_IN_EXT")]
@@ -189,7 +189,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    DstInext = 1000148006,
+    DstInEXT = 1000148006,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SRC_OUT_EXT")]
@@ -201,7 +201,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    SrcOutext = 1000148007,
+    SrcOutEXT = 1000148007,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DST_OUT_EXT")]
@@ -213,7 +213,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    DstOutext = 1000148008,
+    DstOutEXT = 1000148008,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SRC_ATOP_EXT")]
@@ -225,7 +225,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    SrcAtopext = 1000148009,
+    SrcAtopEXT = 1000148009,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DST_ATOP_EXT")]
@@ -237,7 +237,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    DstAtopext = 1000148010,
+    DstAtopEXT = 1000148010,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_XOR_EXT")]
@@ -249,7 +249,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Xorext = 1000148011,
+    XorEXT = 1000148011,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_MULTIPLY_EXT")]
@@ -261,7 +261,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Multiplyext = 1000148012,
+    MultiplyEXT = 1000148012,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SCREEN_EXT")]
@@ -273,7 +273,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Screenext = 1000148013,
+    ScreenEXT = 1000148013,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_OVERLAY_EXT")]
@@ -285,7 +285,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Overlayext = 1000148014,
+    OverlayEXT = 1000148014,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DARKEN_EXT")]
@@ -297,7 +297,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Darkenext = 1000148015,
+    DarkenEXT = 1000148015,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_LIGHTEN_EXT")]
@@ -309,7 +309,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Lightenext = 1000148016,
+    LightenEXT = 1000148016,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_COLORDODGE_EXT")]
@@ -321,7 +321,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Colordodgeext = 1000148017,
+    ColordodgeEXT = 1000148017,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_COLORBURN_EXT")]
@@ -333,7 +333,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Colorburnext = 1000148018,
+    ColorburnEXT = 1000148018,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_HARDLIGHT_EXT")]
@@ -345,7 +345,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Hardlightext = 1000148019,
+    HardlightEXT = 1000148019,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_SOFTLIGHT_EXT")]
@@ -357,7 +357,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Softlightext = 1000148020,
+    SoftlightEXT = 1000148020,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_DIFFERENCE_EXT")]
@@ -369,7 +369,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Differenceext = 1000148021,
+    DifferenceEXT = 1000148021,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_EXCLUSION_EXT")]
@@ -381,7 +381,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Exclusionext = 1000148022,
+    ExclusionEXT = 1000148022,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_INVERT_EXT")]
@@ -393,7 +393,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Invertext = 1000148023,
+    InvertEXT = 1000148023,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_INVERT_RGB_EXT")]
@@ -405,7 +405,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    InvertRgbext = 1000148024,
+    InvertRgbEXT = 1000148024,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_LINEARDODGE_EXT")]
@@ -417,7 +417,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Lineardodgeext = 1000148025,
+    LineardodgeEXT = 1000148025,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_LINEARBURN_EXT")]
@@ -429,7 +429,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Linearburnext = 1000148026,
+    LinearburnEXT = 1000148026,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_VIVIDLIGHT_EXT")]
@@ -441,7 +441,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Vividlightext = 1000148027,
+    VividlightEXT = 1000148027,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_LINEARLIGHT_EXT")]
@@ -453,7 +453,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Linearlightext = 1000148028,
+    LinearlightEXT = 1000148028,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_PINLIGHT_EXT")]
@@ -465,7 +465,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Pinlightext = 1000148029,
+    PinlightEXT = 1000148029,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_HARDMIX_EXT")]
@@ -477,7 +477,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Hardmixext = 1000148030,
+    HardmixEXT = 1000148030,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_HSL_HUE_EXT")]
@@ -489,7 +489,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    HslHueext = 1000148031,
+    HslHueEXT = 1000148031,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_HSL_SATURATION_EXT")]
@@ -501,7 +501,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    HslSaturationext = 1000148032,
+    HslSaturationEXT = 1000148032,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_HSL_COLOR_EXT")]
@@ -513,7 +513,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    HslColorext = 1000148033,
+    HslColorEXT = 1000148033,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_HSL_LUMINOSITY_EXT")]
@@ -525,7 +525,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    HslLuminosityext = 1000148034,
+    HslLuminosityEXT = 1000148034,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_PLUS_EXT")]
@@ -537,7 +537,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Plusext = 1000148035,
+    PlusEXT = 1000148035,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_PLUS_CLAMPED_EXT")]
@@ -549,7 +549,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    PlusClampedext = 1000148036,
+    PlusClampedEXT = 1000148036,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_PLUS_CLAMPED_ALPHA_EXT")]
@@ -561,7 +561,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    PlusClampedAlphaext = 1000148037,
+    PlusClampedAlphaEXT = 1000148037,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_PLUS_DARKER_EXT")]
@@ -573,7 +573,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    PlusDarkerext = 1000148038,
+    PlusDarkerEXT = 1000148038,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_MINUS_EXT")]
@@ -585,7 +585,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Minusext = 1000148039,
+    MinusEXT = 1000148039,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_MINUS_CLAMPED_EXT")]
@@ -597,7 +597,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    MinusClampedext = 1000148040,
+    MinusClampedEXT = 1000148040,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_CONTRAST_EXT")]
@@ -609,7 +609,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Contrastext = 1000148041,
+    ContrastEXT = 1000148041,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_INVERT_OVG_EXT")]
@@ -621,7 +621,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    InvertOvgext = 1000148042,
+    InvertOvgEXT = 1000148042,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_RED_EXT")]
@@ -633,7 +633,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Redext = 1000148043,
+    RedEXT = 1000148043,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_GREEN_EXT")]
@@ -645,7 +645,7 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Greenext = 1000148044,
+    GreenEXT = 1000148044,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OP_BLUE_EXT")]
@@ -657,5 +657,5 @@ public enum BlendOp : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    Blueext = 1000148045,
+    BlueEXT = 1000148045,
 }

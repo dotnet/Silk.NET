@@ -25,7 +25,7 @@ public enum ImageViewCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapDynamicBitext = 0x1,
+    FragmentDensityMapDynamicBitEXT = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
@@ -39,7 +39,7 @@ public enum ImageViewCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitext = 0x4,
+    DescriptorBufferCaptureReplayBitEXT = 0x4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
@@ -48,5 +48,5 @@ public enum ImageViewCreateFlags : uint
         ["VK_EXT_fragment_density_map2"],
         ImpliesSets = ["VK_EXT_fragment_density_map"]
     )]
-    FragmentDensityMapDeferredBitext = 0x2,
+    FragmentDensityMapDeferredBitEXT = 0x2,
 }

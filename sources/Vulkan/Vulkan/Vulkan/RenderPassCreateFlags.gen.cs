@@ -17,7 +17,7 @@ public enum RenderPassCreateFlags : uint
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    TransformBitqcom = 0x2,
+    TransformBitQCOM = 0x2,
 
     [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_RENDER_PASS_CREATE_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
@@ -29,5 +29,5 @@ public enum RenderPassCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitvalve = 0x4,
+    PerLayerFragmentDensityBitVALVE = 0x4,
 }

@@ -97,7 +97,7 @@ public enum DescriptorBindingFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    UpdateAfterBindBitext = UpdateAfterBindBit,
+    UpdateAfterBindBitEXT = UpdateAfterBindBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT_EXT")]
@@ -109,7 +109,7 @@ public enum DescriptorBindingFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    UpdateUnusedWhilePendingBitext = UpdateUnusedWhilePendingBit,
+    UpdateUnusedWhilePendingBitEXT = UpdateUnusedWhilePendingBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT")]
@@ -121,7 +121,7 @@ public enum DescriptorBindingFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    PartiallyBoundBitext = PartiallyBoundBit,
+    PartiallyBoundBitEXT = PartiallyBoundBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT_EXT")]
@@ -133,5 +133,5 @@ public enum DescriptorBindingFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    VariableDescriptorCountBitext = VariableDescriptorCountBit,
+    VariableDescriptorCountBitEXT = VariableDescriptorCountBit,
 }

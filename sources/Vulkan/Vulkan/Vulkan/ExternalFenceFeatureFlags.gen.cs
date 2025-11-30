@@ -74,7 +74,7 @@ public enum ExternalFenceFeatureFlags : uint
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    ExportableBitkhr = ExportableBit,
+    ExportableBitKHR = ExportableBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT_KHR")]
@@ -86,5 +86,5 @@ public enum ExternalFenceFeatureFlags : uint
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    ImportableBitkhr = ImportableBit,
+    ImportableBitKHR = ImportableBit,
 }

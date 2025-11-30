@@ -121,7 +121,7 @@ public enum PeerMemoryFeatureFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    CopySrcBitkhr = CopySrcBit,
+    CopySrcBitKHR = CopySrcBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_COPY_DST_BIT_KHR")]
@@ -130,7 +130,7 @@ public enum PeerMemoryFeatureFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    CopyDstBitkhr = CopyDstBit,
+    CopyDstBitKHR = CopyDstBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_SRC_BIT_KHR")]
@@ -139,7 +139,7 @@ public enum PeerMemoryFeatureFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    GenericSrcBitkhr = GenericSrcBit,
+    GenericSrcBitKHR = GenericSrcBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_DST_BIT_KHR")]
@@ -148,5 +148,5 @@ public enum PeerMemoryFeatureFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    GenericDstBitkhr = GenericDstBit,
+    GenericDstBitKHR = GenericDstBit,
 }

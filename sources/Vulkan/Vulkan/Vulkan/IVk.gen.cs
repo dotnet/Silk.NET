@@ -22,7 +22,7 @@ public unsafe partial interface IVk
         static abstract Result AcquireDrmDisplayExt(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("drmFd")] int drmFd,
-            [NativeName("display")] DisplayHandleKhr display
+            [NativeName("display")] DisplayHandleKHR display
         );
 
         [NativeName("vkAcquireNextImage2KHR")]
@@ -35,7 +35,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImage2KHR")]
         static abstract Result AcquireNextImage2Khr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pAcquireInfo")] AcquireNextImageInfoKhr* pAcquireInfo,
+            [NativeName("pAcquireInfo")] AcquireNextImageInfoKHR* pAcquireInfo,
             [NativeName("pImageIndex")] uint* pImageIndex
         );
 
@@ -49,7 +49,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImage2KHR")]
         static abstract Result AcquireNextImage2Khr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pAcquireInfo")] Ref<AcquireNextImageInfoKhr> pAcquireInfo,
+            [NativeName("pAcquireInfo")] Ref<AcquireNextImageInfoKHR> pAcquireInfo,
             [NativeName("pImageIndex")] Ref<uint> pImageIndex
         );
 
@@ -58,7 +58,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
         static abstract Result AcquireNextImageKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("timeout")] ulong timeout,
             [NativeName("semaphore")] SemaphoreHandle semaphore,
             [NativeName("fence")] FenceHandle fence,
@@ -70,7 +70,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
         static abstract Result AcquireNextImageKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("timeout")] ulong timeout,
             [NativeName("semaphore")] SemaphoreHandle semaphore,
             [NativeName("fence")] FenceHandle fence,
@@ -82,8 +82,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
         static abstract Result AcquirePerformanceConfigurationIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pAcquireInfo")] PerformanceConfigurationAcquireInfoIntel* pAcquireInfo,
-            [NativeName("pConfiguration")] PerformanceConfigurationHandleIntel* pConfiguration
+            [NativeName("pAcquireInfo")] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo,
+            [NativeName("pConfiguration")] PerformanceConfigurationHandleINTEL* pConfiguration
         );
 
         [NativeName("vkAcquirePerformanceConfigurationINTEL")]
@@ -91,8 +91,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
         static abstract Result AcquirePerformanceConfigurationIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pAcquireInfo")] Ref<PerformanceConfigurationAcquireInfoIntel> pAcquireInfo,
-            [NativeName("pConfiguration")] Ref<PerformanceConfigurationHandleIntel> pConfiguration
+            [NativeName("pAcquireInfo")] Ref<PerformanceConfigurationAcquireInfoINTEL> pAcquireInfo,
+            [NativeName("pConfiguration")] Ref<PerformanceConfigurationHandleINTEL> pConfiguration
         );
 
         [NativeName("vkAcquireProfilingLockKHR")]
@@ -107,7 +107,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireProfilingLockKHR")]
         static abstract Result AcquireProfilingLockKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] AcquireProfilingLockInfoKhr* pInfo
+            [NativeName("pInfo")] AcquireProfilingLockInfoKHR* pInfo
         );
 
         [NativeName("vkAcquireProfilingLockKHR")]
@@ -122,7 +122,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAcquireProfilingLockKHR")]
         static abstract Result AcquireProfilingLockKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<AcquireProfilingLockInfoKhr> pInfo
+            [NativeName("pInfo")] Ref<AcquireProfilingLockInfoKHR> pInfo
         );
 
         [NativeName("vkAllocateCommandBuffers")]
@@ -333,7 +333,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
         static abstract void AntiLagUpdateAmd(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pData")] AntiLagDataAmd* pData
+            [NativeName("pData")] AntiLagDataAMD* pData
         );
 
         [NativeName("vkAntiLagUpdateAMD")]
@@ -348,7 +348,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
         static abstract void AntiLagUpdateAmd(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pData")] Ref<AntiLagDataAmd> pData
+            [NativeName("pData")] Ref<AntiLagDataAMD> pData
         );
 
         [NativeName("vkBeginCommandBuffer")]
@@ -430,7 +430,7 @@ public unsafe partial interface IVk
         static abstract Result BindAccelerationStructureMemoryNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("bindInfoCount")] uint bindInfoCount,
-            [NativeName("pBindInfos")] BindAccelerationStructureMemoryInfoNv* pBindInfos
+            [NativeName("pBindInfos")] BindAccelerationStructureMemoryInfoNV* pBindInfos
         );
 
         [NativeName("vkBindAccelerationStructureMemoryNV")]
@@ -446,7 +446,7 @@ public unsafe partial interface IVk
         static abstract Result BindAccelerationStructureMemoryNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("bindInfoCount")] uint bindInfoCount,
-            [NativeName("pBindInfos")] Ref<BindAccelerationStructureMemoryInfoNv> pBindInfos
+            [NativeName("pBindInfos")] Ref<BindAccelerationStructureMemoryInfoNV> pBindInfos
         );
 
         [NativeName("vkBindBufferMemory")]
@@ -576,7 +576,7 @@ public unsafe partial interface IVk
         static abstract Result BindDataGraphPipelineSessionMemoryArm(
             [NativeName("device")] DeviceHandle device,
             [NativeName("bindInfoCount")] uint bindInfoCount,
-            [NativeName("pBindInfos")] BindDataGraphPipelineSessionMemoryInfoArm* pBindInfos
+            [NativeName("pBindInfos")] BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
         );
 
         [NativeName("vkBindDataGraphPipelineSessionMemoryARM")]
@@ -593,7 +593,7 @@ public unsafe partial interface IVk
         static abstract Result BindDataGraphPipelineSessionMemoryArm(
             [NativeName("device")] DeviceHandle device,
             [NativeName("bindInfoCount")] uint bindInfoCount,
-            [NativeName("pBindInfos")] Ref<BindDataGraphPipelineSessionMemoryInfoArm> pBindInfos
+            [NativeName("pBindInfos")] Ref<BindDataGraphPipelineSessionMemoryInfoARM> pBindInfos
         );
 
         [NativeName("vkBindImageMemory")]
@@ -722,8 +722,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBindOpticalFlowSessionImageNV")]
         static abstract Result BindOpticalFlowSessionImageNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("session")] OpticalFlowSessionHandleNv session,
-            [NativeName("bindingPoint")] OpticalFlowSessionBindingPointNv bindingPoint,
+            [NativeName("session")] OpticalFlowSessionHandleNV session,
+            [NativeName("bindingPoint")] OpticalFlowSessionBindingPointNV bindingPoint,
             [NativeName("view")] ImageViewHandle view,
             [NativeName("layout")] ImageLayout layout
         );
@@ -734,7 +734,7 @@ public unsafe partial interface IVk
         static abstract Result BindTensorMemoryArm(
             [NativeName("device")] DeviceHandle device,
             [NativeName("bindInfoCount")] uint bindInfoCount,
-            [NativeName("pBindInfos")] BindTensorMemoryInfoArm* pBindInfos
+            [NativeName("pBindInfos")] BindTensorMemoryInfoARM* pBindInfos
         );
 
         [NativeName("vkBindTensorMemoryARM")]
@@ -743,7 +743,7 @@ public unsafe partial interface IVk
         static abstract Result BindTensorMemoryArm(
             [NativeName("device")] DeviceHandle device,
             [NativeName("bindInfoCount")] uint bindInfoCount,
-            [NativeName("pBindInfos")] Ref<BindTensorMemoryInfoArm> pBindInfos
+            [NativeName("pBindInfos")] Ref<BindTensorMemoryInfoARM> pBindInfos
         );
 
         [NativeName("vkBindVideoSessionMemoryKHR")]
@@ -755,10 +755,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBindVideoSessionMemoryKHR")]
         static abstract Result BindVideoSessionMemoryKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+            [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
             [NativeName("bindSessionMemoryInfoCount")] uint bindSessionMemoryInfoCount,
             [NativeName("pBindSessionMemoryInfos")]
-                BindVideoSessionMemoryInfoKhr* pBindSessionMemoryInfos
+                BindVideoSessionMemoryInfoKHR* pBindSessionMemoryInfos
         );
 
         [NativeName("vkBindVideoSessionMemoryKHR")]
@@ -770,10 +770,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBindVideoSessionMemoryKHR")]
         static abstract Result BindVideoSessionMemoryKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+            [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
             [NativeName("bindSessionMemoryInfoCount")] uint bindSessionMemoryInfoCount,
             [NativeName("pBindSessionMemoryInfos")]
-                Ref<BindVideoSessionMemoryInfoKhr> pBindSessionMemoryInfos
+                Ref<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos
         );
 
         [NativeName("vkBuildAccelerationStructuresKHR")]
@@ -788,11 +788,11 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBuildAccelerationStructuresKHR")]
         static abstract Result BuildAccelerationStructuresKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKhr* pInfos,
+            [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKHR* pInfos,
             [NativeName("ppBuildRangeInfos")]
-                AccelerationStructureBuildRangeInfoKhr** ppBuildRangeInfos
+                AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
         );
 
         [NativeName("vkBuildAccelerationStructuresKHR")]
@@ -807,11 +807,11 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBuildAccelerationStructuresKHR")]
         static abstract Result BuildAccelerationStructuresKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKhr> pInfos,
+            [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
             [NativeName("ppBuildRangeInfos")]
-                Ref2D<AccelerationStructureBuildRangeInfoKhr> ppBuildRangeInfos
+                Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
         );
 
         [NativeName("vkBuildMicromapsEXT")]
@@ -826,9 +826,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBuildMicromapsEXT")]
         static abstract Result BuildMicromapsExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] MicromapBuildInfoExt* pInfos
+            [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
         );
 
         [NativeName("vkBuildMicromapsEXT")]
@@ -843,9 +843,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkBuildMicromapsEXT")]
         static abstract Result BuildMicromapsExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] Ref<MicromapBuildInfoExt> pInfos
+            [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
         );
 
         [NativeName("vkCmdBeginConditionalRenderingEXT")]
@@ -861,7 +861,7 @@ public unsafe partial interface IVk
         static abstract void CmdBeginConditionalRenderingExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pConditionalRenderingBegin")]
-                ConditionalRenderingBeginInfoExt* pConditionalRenderingBegin
+                ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin
         );
 
         [NativeName("vkCmdBeginConditionalRenderingEXT")]
@@ -877,7 +877,7 @@ public unsafe partial interface IVk
         static abstract void CmdBeginConditionalRenderingExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pConditionalRenderingBegin")]
-                Ref<ConditionalRenderingBeginInfoExt> pConditionalRenderingBegin
+                Ref<ConditionalRenderingBeginInfoEXT> pConditionalRenderingBegin
         );
 
         [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
@@ -885,7 +885,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
         static abstract void CmdBeginDebugUtilsLabelExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+            [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
         [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
@@ -893,7 +893,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
         static abstract void CmdBeginDebugUtilsLabelExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
         );
 
         [NativeName("vkCmdBeginPerTileExecutionQCOM")]
@@ -908,7 +908,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginPerTileExecutionQCOM")]
         static abstract void CmdBeginPerTileExecutionQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pPerTileBeginInfo")] PerTileBeginInfoQcom* pPerTileBeginInfo
+            [NativeName("pPerTileBeginInfo")] PerTileBeginInfoQCOM* pPerTileBeginInfo
         );
 
         [NativeName("vkCmdBeginPerTileExecutionQCOM")]
@@ -923,7 +923,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginPerTileExecutionQCOM")]
         static abstract void CmdBeginPerTileExecutionQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pPerTileBeginInfo")] Ref<PerTileBeginInfoQcom> pPerTileBeginInfo
+            [NativeName("pPerTileBeginInfo")] Ref<PerTileBeginInfoQCOM> pPerTileBeginInfo
         );
 
         [NativeName("vkCmdBeginQuery")]
@@ -1204,7 +1204,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginVideoCodingKHR")]
         static abstract void CmdBeginVideoCodingKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pBeginInfo")] VideoBeginCodingInfoKhr* pBeginInfo
+            [NativeName("pBeginInfo")] VideoBeginCodingInfoKHR* pBeginInfo
         );
 
         [NativeName("vkCmdBeginVideoCodingKHR")]
@@ -1216,7 +1216,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginVideoCodingKHR")]
         static abstract void CmdBeginVideoCodingKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pBeginInfo")] Ref<VideoBeginCodingInfoKhr> pBeginInfo
+            [NativeName("pBeginInfo")] Ref<VideoBeginCodingInfoKHR> pBeginInfo
         );
 
         [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
@@ -1230,7 +1230,7 @@ public unsafe partial interface IVk
         static abstract void CmdBindDescriptorBufferEmbeddedSamplers2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pBindDescriptorBufferEmbeddedSamplersInfo")]
-                BindDescriptorBufferEmbeddedSamplersInfoExt* pBindDescriptorBufferEmbeddedSamplersInfo
+                BindDescriptorBufferEmbeddedSamplersInfoEXT* pBindDescriptorBufferEmbeddedSamplersInfo
         );
 
         [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
@@ -1244,7 +1244,7 @@ public unsafe partial interface IVk
         static abstract void CmdBindDescriptorBufferEmbeddedSamplers2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pBindDescriptorBufferEmbeddedSamplersInfo")]
-                Ref<BindDescriptorBufferEmbeddedSamplersInfoExt> pBindDescriptorBufferEmbeddedSamplersInfo
+                Ref<BindDescriptorBufferEmbeddedSamplersInfoEXT> pBindDescriptorBufferEmbeddedSamplersInfo
         );
 
         [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplersEXT")]
@@ -1281,7 +1281,7 @@ public unsafe partial interface IVk
         static abstract void CmdBindDescriptorBuffersExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("bufferCount")] uint bufferCount,
-            [NativeName("pBindingInfos")] DescriptorBufferBindingInfoExt* pBindingInfos
+            [NativeName("pBindingInfos")] DescriptorBufferBindingInfoEXT* pBindingInfos
         );
 
         [NativeName("vkCmdBindDescriptorBuffersEXT")]
@@ -1299,7 +1299,7 @@ public unsafe partial interface IVk
         static abstract void CmdBindDescriptorBuffersExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("bufferCount")] uint bufferCount,
-            [NativeName("pBindingInfos")] Ref<DescriptorBufferBindingInfoExt> pBindingInfos
+            [NativeName("pBindingInfos")] Ref<DescriptorBufferBindingInfoEXT> pBindingInfos
         );
 
         [NativeName("vkCmdBindDescriptorBuffersEXT")]
@@ -1316,7 +1316,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
         static abstract void CmdBindDescriptorBuffersExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pBindingInfos")] DescriptorBufferBindingInfoExt pBindingInfos
+            [NativeName("pBindingInfos")] DescriptorBufferBindingInfoEXT pBindingInfos
         );
 
         [NativeName("vkCmdBindDescriptorSets")]
@@ -1558,7 +1558,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("stageCount")] uint stageCount,
             [NativeName("pStages")] ShaderStageFlags* pStages,
-            [NativeName("pShaders")] ShaderHandleExt* pShaders
+            [NativeName("pShaders")] ShaderHandleEXT* pShaders
         );
 
         [NativeName("vkCmdBindShadersEXT")]
@@ -1576,7 +1576,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("stageCount")] uint stageCount,
             [NativeName("pStages")] Ref<ShaderStageFlags> pStages,
-            [NativeName("pShaders")] Ref<ShaderHandleExt> pShaders
+            [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
         );
 
         [NativeName("vkCmdBindShadingRateImageNV")]
@@ -1607,7 +1607,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindTileMemoryQCOM")]
         static abstract void CmdBindTileMemoryQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pTileMemoryBindInfo")] TileMemoryBindInfoQcom* pTileMemoryBindInfo
+            [NativeName("pTileMemoryBindInfo")] TileMemoryBindInfoQCOM* pTileMemoryBindInfo
         );
 
         [NativeName("vkCmdBindTileMemoryQCOM")]
@@ -1622,7 +1622,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindTileMemoryQCOM")]
         static abstract void CmdBindTileMemoryQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pTileMemoryBindInfo")] Ref<TileMemoryBindInfoQcom> pTileMemoryBindInfo
+            [NativeName("pTileMemoryBindInfo")] Ref<TileMemoryBindInfoQCOM> pTileMemoryBindInfo
         );
 
         [NativeName("vkCmdBindTransformFeedbackBuffersEXT")]
@@ -1961,12 +1961,12 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
         static abstract void CmdBuildAccelerationStructureNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] AccelerationStructureInfoNv* pInfo,
+            [NativeName("pInfo")] AccelerationStructureInfoNV* pInfo,
             [NativeName("instanceData")] BufferHandle instanceData,
             [NativeName("instanceOffset")] ulong instanceOffset,
             [NativeName("update")] uint update,
-            [NativeName("dst")] AccelerationStructureHandleNv dst,
-            [NativeName("src")] AccelerationStructureHandleNv src,
+            [NativeName("dst")] AccelerationStructureHandleNV dst,
+            [NativeName("src")] AccelerationStructureHandleNV src,
             [NativeName("scratch")] BufferHandle scratch,
             [NativeName("scratchOffset")] ulong scratchOffset
         );
@@ -1983,12 +1983,12 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
         static abstract void CmdBuildAccelerationStructureNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<AccelerationStructureInfoNv> pInfo,
+            [NativeName("pInfo")] Ref<AccelerationStructureInfoNV> pInfo,
             [NativeName("instanceData")] BufferHandle instanceData,
             [NativeName("instanceOffset")] ulong instanceOffset,
             [NativeName("update")] MaybeBool<uint> update,
-            [NativeName("dst")] AccelerationStructureHandleNv dst,
-            [NativeName("src")] AccelerationStructureHandleNv src,
+            [NativeName("dst")] AccelerationStructureHandleNV dst,
+            [NativeName("src")] AccelerationStructureHandleNV src,
             [NativeName("scratch")] BufferHandle scratch,
             [NativeName("scratchOffset")] ulong scratchOffset
         );
@@ -2006,7 +2006,7 @@ public unsafe partial interface IVk
         static abstract void CmdBuildAccelerationStructuresIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKhr* pInfos,
+            [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKHR* pInfos,
             [NativeName("pIndirectDeviceAddresses")] ulong* pIndirectDeviceAddresses,
             [NativeName("pIndirectStrides")] uint* pIndirectStrides,
             [NativeName("ppMaxPrimitiveCounts")] uint** ppMaxPrimitiveCounts
@@ -2025,7 +2025,7 @@ public unsafe partial interface IVk
         static abstract void CmdBuildAccelerationStructuresIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKhr> pInfos,
+            [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
             [NativeName("pIndirectDeviceAddresses")] Ref<ulong> pIndirectDeviceAddresses,
             [NativeName("pIndirectStrides")] Ref<uint> pIndirectStrides,
             [NativeName("ppMaxPrimitiveCounts")] Ref2D<uint> ppMaxPrimitiveCounts
@@ -2044,9 +2044,9 @@ public unsafe partial interface IVk
         static abstract void CmdBuildAccelerationStructuresKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKhr* pInfos,
+            [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKHR* pInfos,
             [NativeName("ppBuildRangeInfos")]
-                AccelerationStructureBuildRangeInfoKhr** ppBuildRangeInfos
+                AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
         );
 
         [NativeName("vkCmdBuildAccelerationStructuresKHR")]
@@ -2062,9 +2062,9 @@ public unsafe partial interface IVk
         static abstract void CmdBuildAccelerationStructuresKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKhr> pInfos,
+            [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
             [NativeName("ppBuildRangeInfos")]
-                Ref2D<AccelerationStructureBuildRangeInfoKhr> ppBuildRangeInfos
+                Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
         );
 
         [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
@@ -2076,7 +2076,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildClusterAccelerationStructureIndirectNV")]
         static abstract void CmdBuildClusterAccelerationStructureIndirectNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pCommandInfos")] ClusterAccelerationStructureCommandsInfoNv* pCommandInfos
+            [NativeName("pCommandInfos")] ClusterAccelerationStructureCommandsInfoNV* pCommandInfos
         );
 
         [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
@@ -2089,7 +2089,7 @@ public unsafe partial interface IVk
         static abstract void CmdBuildClusterAccelerationStructureIndirectNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pCommandInfos")]
-                Ref<ClusterAccelerationStructureCommandsInfoNv> pCommandInfos
+                Ref<ClusterAccelerationStructureCommandsInfoNV> pCommandInfos
         );
 
         [NativeName("vkCmdBuildMicromapsEXT")]
@@ -2105,7 +2105,7 @@ public unsafe partial interface IVk
         static abstract void CmdBuildMicromapsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] MicromapBuildInfoExt* pInfos
+            [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
         );
 
         [NativeName("vkCmdBuildMicromapsEXT")]
@@ -2121,7 +2121,7 @@ public unsafe partial interface IVk
         static abstract void CmdBuildMicromapsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] Ref<MicromapBuildInfoExt> pInfos
+            [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
         );
 
         [NativeName("vkCmdBuildMicromapsEXT")]
@@ -2136,7 +2136,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
         static abstract void CmdBuildMicromapsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfos")] MicromapBuildInfoExt pInfos
+            [NativeName("pInfos")] MicromapBuildInfoEXT pInfos
         );
 
         [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
@@ -2148,7 +2148,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildPartitionedAccelerationStructuresNV")]
         static abstract void CmdBuildPartitionedAccelerationStructuresNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pBuildInfo")] BuildPartitionedAccelerationStructureInfoNv* pBuildInfo
+            [NativeName("pBuildInfo")] BuildPartitionedAccelerationStructureInfoNV* pBuildInfo
         );
 
         [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
@@ -2160,7 +2160,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildPartitionedAccelerationStructuresNV")]
         static abstract void CmdBuildPartitionedAccelerationStructuresNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pBuildInfo")] Ref<BuildPartitionedAccelerationStructureInfoNv> pBuildInfo
+            [NativeName("pBuildInfo")] Ref<BuildPartitionedAccelerationStructureInfoNV> pBuildInfo
         );
 
         [NativeName("vkCmdClearAttachments")]
@@ -2399,7 +2399,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdControlVideoCodingKHR")]
         static abstract void CmdControlVideoCodingKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pCodingControlInfo")] VideoCodingControlInfoKhr* pCodingControlInfo
+            [NativeName("pCodingControlInfo")] VideoCodingControlInfoKHR* pCodingControlInfo
         );
 
         [NativeName("vkCmdControlVideoCodingKHR")]
@@ -2411,7 +2411,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdControlVideoCodingKHR")]
         static abstract void CmdControlVideoCodingKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pCodingControlInfo")] Ref<VideoCodingControlInfoKhr> pCodingControlInfo
+            [NativeName("pCodingControlInfo")] Ref<VideoCodingControlInfoKHR> pCodingControlInfo
         );
 
         [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
@@ -2427,7 +2427,7 @@ public unsafe partial interface IVk
         static abstract void CmdConvertCooperativeVectorMatrixNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNv* pInfos
+            [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV* pInfos
         );
 
         [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
@@ -2443,7 +2443,7 @@ public unsafe partial interface IVk
         static abstract void CmdConvertCooperativeVectorMatrixNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("infoCount")] uint infoCount,
-            [NativeName("pInfos")] Ref<ConvertCooperativeVectorMatrixInfoNv> pInfos
+            [NativeName("pInfos")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfos
         );
 
         [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
@@ -2458,7 +2458,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
         static abstract void CmdConvertCooperativeVectorMatrixNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNv pInfos
+            [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV pInfos
         );
 
         [NativeName("vkCmdCopyAccelerationStructureKHR")]
@@ -2473,7 +2473,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureKHR")]
         static abstract void CmdCopyAccelerationStructureKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] CopyAccelerationStructureInfoKhr* pInfo
+            [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
         );
 
         [NativeName("vkCmdCopyAccelerationStructureKHR")]
@@ -2488,7 +2488,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureKHR")]
         static abstract void CmdCopyAccelerationStructureKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKhr> pInfo
+            [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
         );
 
         [NativeName("vkCmdCopyAccelerationStructureNV")]
@@ -2503,9 +2503,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureNV")]
         static abstract void CmdCopyAccelerationStructureNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("dst")] AccelerationStructureHandleNv dst,
-            [NativeName("src")] AccelerationStructureHandleNv src,
-            [NativeName("mode")] CopyAccelerationStructureModeKhr mode
+            [NativeName("dst")] AccelerationStructureHandleNV dst,
+            [NativeName("src")] AccelerationStructureHandleNV src,
+            [NativeName("mode")] CopyAccelerationStructureModeKHR mode
         );
 
         [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
@@ -2520,7 +2520,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR")]
         static abstract void CmdCopyAccelerationStructureToMemoryKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKhr* pInfo
+            [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
         );
 
         [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
@@ -2535,7 +2535,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR")]
         static abstract void CmdCopyAccelerationStructureToMemoryKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKhr> pInfo
+            [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
         );
 
         [NativeName("vkCmdCopyBuffer")]
@@ -3283,7 +3283,7 @@ public unsafe partial interface IVk
         static abstract void CmdCopyMemoryIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pCopyMemoryIndirectInfo")]
-                CopyMemoryIndirectInfoKhr* pCopyMemoryIndirectInfo
+                CopyMemoryIndirectInfoKHR* pCopyMemoryIndirectInfo
         );
 
         [NativeName("vkCmdCopyMemoryIndirectKHR")]
@@ -3299,7 +3299,7 @@ public unsafe partial interface IVk
         static abstract void CmdCopyMemoryIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pCopyMemoryIndirectInfo")]
-                Ref<CopyMemoryIndirectInfoKhr> pCopyMemoryIndirectInfo
+                Ref<CopyMemoryIndirectInfoKHR> pCopyMemoryIndirectInfo
         );
 
         [NativeName("vkCmdCopyMemoryIndirectNV")]
@@ -3332,7 +3332,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR")]
         static abstract void CmdCopyMemoryToAccelerationStructureKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKhr* pInfo
+            [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
         );
 
         [NativeName("vkCmdCopyMemoryToAccelerationStructureKHR")]
@@ -3347,7 +3347,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR")]
         static abstract void CmdCopyMemoryToAccelerationStructureKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKhr> pInfo
+            [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
         );
 
         [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
@@ -3363,7 +3363,7 @@ public unsafe partial interface IVk
         static abstract void CmdCopyMemoryToImageIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pCopyMemoryToImageIndirectInfo")]
-                CopyMemoryToImageIndirectInfoKhr* pCopyMemoryToImageIndirectInfo
+                CopyMemoryToImageIndirectInfoKHR* pCopyMemoryToImageIndirectInfo
         );
 
         [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
@@ -3379,7 +3379,7 @@ public unsafe partial interface IVk
         static abstract void CmdCopyMemoryToImageIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pCopyMemoryToImageIndirectInfo")]
-                Ref<CopyMemoryToImageIndirectInfoKhr> pCopyMemoryToImageIndirectInfo
+                Ref<CopyMemoryToImageIndirectInfoKHR> pCopyMemoryToImageIndirectInfo
         );
 
         [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
@@ -3456,7 +3456,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToMicromapEXT")]
         static abstract void CmdCopyMemoryToMicromapExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] CopyMemoryToMicromapInfoExt* pInfo
+            [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
         );
 
         [NativeName("vkCmdCopyMemoryToMicromapEXT")]
@@ -3471,7 +3471,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToMicromapEXT")]
         static abstract void CmdCopyMemoryToMicromapExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoExt> pInfo
+            [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
         );
 
         [NativeName("vkCmdCopyMicromapEXT")]
@@ -3486,7 +3486,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapEXT")]
         static abstract void CmdCopyMicromapExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] CopyMicromapInfoExt* pInfo
+            [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
         );
 
         [NativeName("vkCmdCopyMicromapEXT")]
@@ -3501,7 +3501,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapEXT")]
         static abstract void CmdCopyMicromapExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<CopyMicromapInfoExt> pInfo
+            [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
         );
 
         [NativeName("vkCmdCopyMicromapToMemoryEXT")]
@@ -3516,7 +3516,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapToMemoryEXT")]
         static abstract void CmdCopyMicromapToMemoryExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] CopyMicromapToMemoryInfoExt* pInfo
+            [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
         );
 
         [NativeName("vkCmdCopyMicromapToMemoryEXT")]
@@ -3531,7 +3531,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapToMemoryEXT")]
         static abstract void CmdCopyMicromapToMemoryExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoExt> pInfo
+            [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoEXT> pInfo
         );
 
         [NativeName("vkCmdCopyQueryPoolResults")]
@@ -3578,7 +3578,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
         static abstract void CmdCopyTensorArm(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pCopyTensorInfo")] CopyTensorInfoArm* pCopyTensorInfo
+            [NativeName("pCopyTensorInfo")] CopyTensorInfoARM* pCopyTensorInfo
         );
 
         [NativeName("vkCmdCopyTensorARM")]
@@ -3586,7 +3586,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
         static abstract void CmdCopyTensorArm(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pCopyTensorInfo")] Ref<CopyTensorInfoArm> pCopyTensorInfo
+            [NativeName("pCopyTensorInfo")] Ref<CopyTensorInfoARM> pCopyTensorInfo
         );
 
         [NativeName("vkCmdCuLaunchKernelNVX")]
@@ -3594,7 +3594,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
         static abstract void CmdCuLaunchKernelNvx(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pLaunchInfo")] CuLaunchInfoNvx* pLaunchInfo
+            [NativeName("pLaunchInfo")] CuLaunchInfoNVX* pLaunchInfo
         );
 
         [NativeName("vkCmdCuLaunchKernelNVX")]
@@ -3602,7 +3602,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
         static abstract void CmdCuLaunchKernelNvx(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pLaunchInfo")] Ref<CuLaunchInfoNvx> pLaunchInfo
+            [NativeName("pLaunchInfo")] Ref<CuLaunchInfoNVX> pLaunchInfo
         );
 
         [NativeName("vkCmdDebugMarkerBeginEXT")]
@@ -3614,7 +3614,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerBeginEXT")]
         static abstract void CmdDebugMarkerBeginExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoExt* pMarkerInfo
+            [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
         );
 
         [NativeName("vkCmdDebugMarkerBeginEXT")]
@@ -3626,7 +3626,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerBeginEXT")]
         static abstract void CmdDebugMarkerBeginExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoExt> pMarkerInfo
+            [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
         );
 
         [NativeName("vkCmdDebugMarkerEndEXT")]
@@ -3649,7 +3649,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerInsertEXT")]
         static abstract void CmdDebugMarkerInsertExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoExt* pMarkerInfo
+            [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
         );
 
         [NativeName("vkCmdDebugMarkerInsertEXT")]
@@ -3661,7 +3661,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerInsertEXT")]
         static abstract void CmdDebugMarkerInsertExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoExt> pMarkerInfo
+            [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
         );
 
         [NativeName("vkCmdDecodeVideoKHR")]
@@ -3676,7 +3676,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDecodeVideoKHR")]
         static abstract void CmdDecodeVideoKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pDecodeInfo")] VideoDecodeInfoKhr* pDecodeInfo
+            [NativeName("pDecodeInfo")] VideoDecodeInfoKHR* pDecodeInfo
         );
 
         [NativeName("vkCmdDecodeVideoKHR")]
@@ -3691,7 +3691,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDecodeVideoKHR")]
         static abstract void CmdDecodeVideoKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pDecodeInfo")] Ref<VideoDecodeInfoKhr> pDecodeInfo
+            [NativeName("pDecodeInfo")] Ref<VideoDecodeInfoKHR> pDecodeInfo
         );
 
         [NativeName("vkCmdDecompressMemoryEXT")]
@@ -3704,7 +3704,7 @@ public unsafe partial interface IVk
         static abstract void CmdDecompressMemoryExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pDecompressMemoryInfoEXT")]
-                DecompressMemoryInfoExt* pDecompressMemoryInfoEXT
+                DecompressMemoryInfoEXT* pDecompressMemoryInfoEXT
         );
 
         [NativeName("vkCmdDecompressMemoryEXT")]
@@ -3717,7 +3717,7 @@ public unsafe partial interface IVk
         static abstract void CmdDecompressMemoryExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pDecompressMemoryInfoEXT")]
-                Ref<DecompressMemoryInfoExt> pDecompressMemoryInfoEXT
+                Ref<DecompressMemoryInfoEXT> pDecompressMemoryInfoEXT
         );
 
         [NativeName("vkCmdDecompressMemoryIndirectCountEXT")]
@@ -3730,7 +3730,7 @@ public unsafe partial interface IVk
         static abstract void CmdDecompressMemoryIndirectCountExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("decompressionMethod")]
-                MemoryDecompressionMethodFlagsExt decompressionMethod,
+                MemoryDecompressionMethodFlagsEXT decompressionMethod,
             [NativeName("indirectCommandsAddress")] ulong indirectCommandsAddress,
             [NativeName("indirectCommandsCountAddress")] ulong indirectCommandsCountAddress,
             [NativeName("maxDecompressionCount")] uint maxDecompressionCount,
@@ -3770,7 +3770,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("decompressRegionCount")] uint decompressRegionCount,
             [NativeName("pDecompressMemoryRegions")]
-                DecompressMemoryRegionNv* pDecompressMemoryRegions
+                DecompressMemoryRegionNV* pDecompressMemoryRegions
         );
 
         [NativeName("vkCmdDecompressMemoryNV")]
@@ -3788,7 +3788,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("decompressRegionCount")] uint decompressRegionCount,
             [NativeName("pDecompressMemoryRegions")]
-                Ref<DecompressMemoryRegionNv> pDecompressMemoryRegions
+                Ref<DecompressMemoryRegionNV> pDecompressMemoryRegions
         );
 
         [NativeName("vkCmdDecompressMemoryNV")]
@@ -3805,7 +3805,7 @@ public unsafe partial interface IVk
         static abstract void CmdDecompressMemoryNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pDecompressMemoryRegions")]
-                DecompressMemoryRegionNv pDecompressMemoryRegions
+                DecompressMemoryRegionNV pDecompressMemoryRegions
         );
 
         [NativeName("vkCmdDispatch")]
@@ -3898,8 +3898,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
         static abstract void CmdDispatchDataGraphArm(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("session")] DataGraphPipelineSessionHandleArm session,
-            [NativeName("pInfo")] DataGraphPipelineDispatchInfoArm* pInfo
+            [NativeName("session")] DataGraphPipelineSessionHandleARM session,
+            [NativeName("pInfo")] DataGraphPipelineDispatchInfoARM* pInfo
         );
 
         [NativeName("vkCmdDispatchDataGraphARM")]
@@ -3915,8 +3915,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
         static abstract void CmdDispatchDataGraphArm(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("session")] DataGraphPipelineSessionHandleArm session,
-            [NativeName("pInfo")] Ref<DataGraphPipelineDispatchInfoArm> pInfo
+            [NativeName("session")] DataGraphPipelineSessionHandleARM session,
+            [NativeName("pInfo")] Ref<DataGraphPipelineDispatchInfoARM> pInfo
         );
 
         [NativeName("vkCmdDispatchIndirect")]
@@ -3960,7 +3960,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
         static abstract void CmdDispatchTileQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pDispatchTileInfo")] DispatchTileInfoQcom* pDispatchTileInfo
+            [NativeName("pDispatchTileInfo")] DispatchTileInfoQCOM* pDispatchTileInfo
         );
 
         [NativeName("vkCmdDispatchTileQCOM")]
@@ -3975,7 +3975,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
         static abstract void CmdDispatchTileQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pDispatchTileInfo")] Ref<DispatchTileInfoQcom> pDispatchTileInfo
+            [NativeName("pDispatchTileInfo")] Ref<DispatchTileInfoQCOM> pDispatchTileInfo
         );
 
         [NativeName("vkCmdDraw")]
@@ -4366,7 +4366,7 @@ public unsafe partial interface IVk
         static abstract void CmdDrawMultiExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("drawCount")] uint drawCount,
-            [NativeName("pVertexInfo")] MultiDrawInfoExt* pVertexInfo,
+            [NativeName("pVertexInfo")] MultiDrawInfoEXT* pVertexInfo,
             [NativeName("instanceCount")] uint instanceCount,
             [NativeName("firstInstance")] uint firstInstance,
             [NativeName("stride")] uint stride
@@ -4385,7 +4385,7 @@ public unsafe partial interface IVk
         static abstract void CmdDrawMultiExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("drawCount")] uint drawCount,
-            [NativeName("pVertexInfo")] Ref<MultiDrawInfoExt> pVertexInfo,
+            [NativeName("pVertexInfo")] Ref<MultiDrawInfoEXT> pVertexInfo,
             [NativeName("instanceCount")] uint instanceCount,
             [NativeName("firstInstance")] uint firstInstance,
             [NativeName("stride")] uint stride
@@ -4403,7 +4403,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMultiEXT")]
         static abstract void CmdDrawMultiExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pVertexInfo")] MultiDrawInfoExt pVertexInfo,
+            [NativeName("pVertexInfo")] MultiDrawInfoEXT pVertexInfo,
             [NativeName("instanceCount")] uint instanceCount,
             [NativeName("firstInstance")] uint firstInstance,
             [NativeName("stride")] uint stride
@@ -4422,7 +4422,7 @@ public unsafe partial interface IVk
         static abstract void CmdDrawMultiIndexedExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("drawCount")] uint drawCount,
-            [NativeName("pIndexInfo")] MultiDrawIndexedInfoExt* pIndexInfo,
+            [NativeName("pIndexInfo")] MultiDrawIndexedInfoEXT* pIndexInfo,
             [NativeName("instanceCount")] uint instanceCount,
             [NativeName("firstInstance")] uint firstInstance,
             [NativeName("stride")] uint stride,
@@ -4442,7 +4442,7 @@ public unsafe partial interface IVk
         static abstract void CmdDrawMultiIndexedExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("drawCount")] uint drawCount,
-            [NativeName("pIndexInfo")] Ref<MultiDrawIndexedInfoExt> pIndexInfo,
+            [NativeName("pIndexInfo")] Ref<MultiDrawIndexedInfoEXT> pIndexInfo,
             [NativeName("instanceCount")] uint instanceCount,
             [NativeName("firstInstance")] uint firstInstance,
             [NativeName("stride")] uint stride,
@@ -4461,7 +4461,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMultiIndexedEXT")]
         static abstract void CmdDrawMultiIndexedExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pIndexInfo")] MultiDrawIndexedInfoExt pIndexInfo,
+            [NativeName("pIndexInfo")] MultiDrawIndexedInfoEXT pIndexInfo,
             [NativeName("instanceCount")] uint instanceCount,
             [NativeName("firstInstance")] uint firstInstance,
             [NativeName("stride")] uint stride,
@@ -4480,7 +4480,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEncodeVideoKHR")]
         static abstract void CmdEncodeVideoKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pEncodeInfo")] VideoEncodeInfoKhr* pEncodeInfo
+            [NativeName("pEncodeInfo")] VideoEncodeInfoKHR* pEncodeInfo
         );
 
         [NativeName("vkCmdEncodeVideoKHR")]
@@ -4495,7 +4495,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEncodeVideoKHR")]
         static abstract void CmdEncodeVideoKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pEncodeInfo")] Ref<VideoEncodeInfoKhr> pEncodeInfo
+            [NativeName("pEncodeInfo")] Ref<VideoEncodeInfoKHR> pEncodeInfo
         );
 
         [NativeName("vkCmdEndConditionalRenderingEXT")]
@@ -4531,7 +4531,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndPerTileExecutionQCOM")]
         static abstract void CmdEndPerTileExecutionQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pPerTileEndInfo")] PerTileEndInfoQcom* pPerTileEndInfo
+            [NativeName("pPerTileEndInfo")] PerTileEndInfoQCOM* pPerTileEndInfo
         );
 
         [NativeName("vkCmdEndPerTileExecutionQCOM")]
@@ -4546,7 +4546,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndPerTileExecutionQCOM")]
         static abstract void CmdEndPerTileExecutionQcom(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pPerTileEndInfo")] Ref<PerTileEndInfoQcom> pPerTileEndInfo
+            [NativeName("pPerTileEndInfo")] Ref<PerTileEndInfoQCOM> pPerTileEndInfo
         );
 
         [NativeName("vkCmdEndQuery")]
@@ -4634,7 +4634,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
         static abstract void CmdEndRendering2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pRenderingEndInfo")] RenderingEndInfoKhr* pRenderingEndInfo
+            [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
         );
 
         [NativeName("vkCmdEndRendering2EXT")]
@@ -4655,7 +4655,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
         static abstract void CmdEndRendering2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKhr> pRenderingEndInfo
+            [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
         );
 
         [NativeName("vkCmdEndRendering2KHR")]
@@ -4670,7 +4670,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
         static abstract void CmdEndRendering2Khr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pRenderingEndInfo")] RenderingEndInfoKhr* pRenderingEndInfo
+            [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
         );
 
         [NativeName("vkCmdEndRendering2KHR")]
@@ -4685,7 +4685,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
         static abstract void CmdEndRendering2Khr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKhr> pRenderingEndInfo
+            [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
         );
 
         [NativeName("vkCmdEndRenderingKHR")]
@@ -4832,7 +4832,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndVideoCodingKHR")]
         static abstract void CmdEndVideoCodingKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pEndCodingInfo")] VideoEndCodingInfoKhr* pEndCodingInfo
+            [NativeName("pEndCodingInfo")] VideoEndCodingInfoKHR* pEndCodingInfo
         );
 
         [NativeName("vkCmdEndVideoCodingKHR")]
@@ -4844,7 +4844,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndVideoCodingKHR")]
         static abstract void CmdEndVideoCodingKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pEndCodingInfo")] Ref<VideoEndCodingInfoKhr> pEndCodingInfo
+            [NativeName("pEndCodingInfo")] Ref<VideoEndCodingInfoKHR> pEndCodingInfo
         );
 
         [NativeName("vkCmdExecuteCommands")]
@@ -4962,7 +4962,7 @@ public unsafe partial interface IVk
         static abstract void CmdExecuteGeneratedCommandsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("isPreprocessed")] uint isPreprocessed,
-            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoExt* pGeneratedCommandsInfo
+            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoEXT* pGeneratedCommandsInfo
         );
 
         [NativeName("vkCmdExecuteGeneratedCommandsEXT")]
@@ -4980,7 +4980,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("isPreprocessed")] MaybeBool<uint> isPreprocessed,
             [NativeName("pGeneratedCommandsInfo")]
-                Ref<GeneratedCommandsInfoExt> pGeneratedCommandsInfo
+                Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo
         );
 
         [NativeName("vkCmdExecuteGeneratedCommandsNV")]
@@ -4993,7 +4993,7 @@ public unsafe partial interface IVk
         static abstract void CmdExecuteGeneratedCommandsNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("isPreprocessed")] uint isPreprocessed,
-            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNv* pGeneratedCommandsInfo
+            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
         );
 
         [NativeName("vkCmdExecuteGeneratedCommandsNV")]
@@ -5007,7 +5007,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("isPreprocessed")] MaybeBool<uint> isPreprocessed,
             [NativeName("pGeneratedCommandsInfo")]
-                Ref<GeneratedCommandsInfoNv> pGeneratedCommandsInfo
+                Ref<GeneratedCommandsInfoNV> pGeneratedCommandsInfo
         );
 
         [NativeName("vkCmdFillBuffer")]
@@ -5051,7 +5051,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
         static abstract void CmdInsertDebugUtilsLabelExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+            [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
         [NativeName("vkCmdInsertDebugUtilsLabelEXT")]
@@ -5059,7 +5059,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
         static abstract void CmdInsertDebugUtilsLabelExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
         );
 
         [NativeName("vkCmdNextSubpass")]
@@ -5164,8 +5164,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdOpticalFlowExecuteNV")]
         static abstract void CmdOpticalFlowExecuteNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("session")] OpticalFlowSessionHandleNv session,
-            [NativeName("pExecuteInfo")] OpticalFlowExecuteInfoNv* pExecuteInfo
+            [NativeName("session")] OpticalFlowSessionHandleNV session,
+            [NativeName("pExecuteInfo")] OpticalFlowExecuteInfoNV* pExecuteInfo
         );
 
         [NativeName("vkCmdOpticalFlowExecuteNV")]
@@ -5181,8 +5181,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdOpticalFlowExecuteNV")]
         static abstract void CmdOpticalFlowExecuteNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("session")] OpticalFlowSessionHandleNv session,
-            [NativeName("pExecuteInfo")] Ref<OpticalFlowExecuteInfoNv> pExecuteInfo
+            [NativeName("session")] OpticalFlowSessionHandleNV session,
+            [NativeName("pExecuteInfo")] Ref<OpticalFlowExecuteInfoNV> pExecuteInfo
         );
 
         [NativeName("vkCmdPipelineBarrier")]
@@ -5352,7 +5352,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdPreprocessGeneratedCommandsEXT")]
         static abstract void CmdPreprocessGeneratedCommandsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoExt* pGeneratedCommandsInfo,
+            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoEXT* pGeneratedCommandsInfo,
             [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
         );
 
@@ -5370,7 +5370,7 @@ public unsafe partial interface IVk
         static abstract void CmdPreprocessGeneratedCommandsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pGeneratedCommandsInfo")]
-                Ref<GeneratedCommandsInfoExt> pGeneratedCommandsInfo,
+                Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo,
             [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
         );
 
@@ -5383,7 +5383,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
         static abstract void CmdPreprocessGeneratedCommandsNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNv* pGeneratedCommandsInfo
+            [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
         );
 
         [NativeName("vkCmdPreprocessGeneratedCommandsNV")]
@@ -5396,7 +5396,7 @@ public unsafe partial interface IVk
         static abstract void CmdPreprocessGeneratedCommandsNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pGeneratedCommandsInfo")]
-                Ref<GeneratedCommandsInfoNv> pGeneratedCommandsInfo
+                Ref<GeneratedCommandsInfoNV> pGeneratedCommandsInfo
         );
 
         [NativeName("vkCmdPushConstants")]
@@ -6196,9 +6196,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
         static abstract void CmdSetCoarseSampleOrderNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("sampleOrderType")] CoarseSampleOrderTypeNv sampleOrderType,
+            [NativeName("sampleOrderType")] CoarseSampleOrderTypeNV sampleOrderType,
             [NativeName("customSampleOrderCount")] uint customSampleOrderCount,
-            [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNv* pCustomSampleOrders
+            [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV* pCustomSampleOrders
         );
 
         [NativeName("vkCmdSetCoarseSampleOrderNV")]
@@ -6213,9 +6213,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
         static abstract void CmdSetCoarseSampleOrderNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("sampleOrderType")] CoarseSampleOrderTypeNv sampleOrderType,
+            [NativeName("sampleOrderType")] CoarseSampleOrderTypeNV sampleOrderType,
             [NativeName("customSampleOrderCount")] uint customSampleOrderCount,
-            [NativeName("pCustomSampleOrders")] Ref<CoarseSampleOrderCustomNv> pCustomSampleOrders
+            [NativeName("pCustomSampleOrders")] Ref<CoarseSampleOrderCustomNV> pCustomSampleOrders
         );
 
         [NativeName("vkCmdSetCoarseSampleOrderNV")]
@@ -6230,8 +6230,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
         static abstract void CmdSetCoarseSampleOrderNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("sampleOrderType")] CoarseSampleOrderTypeNv sampleOrderType,
-            [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNv pCustomSampleOrders
+            [NativeName("sampleOrderType")] CoarseSampleOrderTypeNV sampleOrderType,
+            [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV pCustomSampleOrders
         );
 
         [NativeName("vkCmdSetColorBlendAdvancedEXT")]
@@ -6249,7 +6249,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstAttachment")] uint firstAttachment,
             [NativeName("attachmentCount")] uint attachmentCount,
-            [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedExt* pColorBlendAdvanced
+            [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT* pColorBlendAdvanced
         );
 
         [NativeName("vkCmdSetColorBlendAdvancedEXT")]
@@ -6267,7 +6267,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstAttachment")] uint firstAttachment,
             [NativeName("attachmentCount")] uint attachmentCount,
-            [NativeName("pColorBlendAdvanced")] Ref<ColorBlendAdvancedExt> pColorBlendAdvanced
+            [NativeName("pColorBlendAdvanced")] Ref<ColorBlendAdvancedEXT> pColorBlendAdvanced
         );
 
         [NativeName("vkCmdSetColorBlendAdvancedEXT")]
@@ -6284,7 +6284,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetColorBlendAdvancedExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstAttachment")] uint firstAttachment,
-            [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedExt pColorBlendAdvanced
+            [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT pColorBlendAdvanced
         );
 
         [NativeName("vkCmdSetColorBlendEnableEXT")]
@@ -6351,7 +6351,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstAttachment")] uint firstAttachment,
             [NativeName("attachmentCount")] uint attachmentCount,
-            [NativeName("pColorBlendEquations")] ColorBlendEquationExt* pColorBlendEquations
+            [NativeName("pColorBlendEquations")] ColorBlendEquationEXT* pColorBlendEquations
         );
 
         [NativeName("vkCmdSetColorBlendEquationEXT")]
@@ -6368,7 +6368,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstAttachment")] uint firstAttachment,
             [NativeName("attachmentCount")] uint attachmentCount,
-            [NativeName("pColorBlendEquations")] Ref<ColorBlendEquationExt> pColorBlendEquations
+            [NativeName("pColorBlendEquations")] Ref<ColorBlendEquationEXT> pColorBlendEquations
         );
 
         [NativeName("vkCmdSetColorBlendEquationEXT")]
@@ -6384,7 +6384,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetColorBlendEquationExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstAttachment")] uint firstAttachment,
-            [NativeName("pColorBlendEquations")] ColorBlendEquationExt pColorBlendEquations
+            [NativeName("pColorBlendEquations")] ColorBlendEquationEXT pColorBlendEquations
         );
 
         [NativeName("vkCmdSetColorWriteEnableEXT")]
@@ -6498,7 +6498,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetConservativeRasterizationModeExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("conservativeRasterizationMode")]
-                ConservativeRasterizationModeExt conservativeRasterizationMode
+                ConservativeRasterizationModeEXT conservativeRasterizationMode
         );
 
         [NativeName("vkCmdSetCoverageModulationModeNV")]
@@ -6514,7 +6514,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageModulationModeNV")]
         static abstract void CmdSetCoverageModulationModeNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("coverageModulationMode")] CoverageModulationModeNv coverageModulationMode
+            [NativeName("coverageModulationMode")] CoverageModulationModeNV coverageModulationMode
         );
 
         [NativeName("vkCmdSetCoverageModulationTableEnableNV")]
@@ -6613,7 +6613,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageReductionModeNV")]
         static abstract void CmdSetCoverageReductionModeNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("coverageReductionMode")] CoverageReductionModeNv coverageReductionMode
+            [NativeName("coverageReductionMode")] CoverageReductionModeNV coverageReductionMode
         );
 
         [NativeName("vkCmdSetCoverageToColorEnableNV")]
@@ -6733,7 +6733,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBias2EXT")]
         static abstract void CmdSetDepthBias2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pDepthBiasInfo")] DepthBiasInfoExt* pDepthBiasInfo
+            [NativeName("pDepthBiasInfo")] DepthBiasInfoEXT* pDepthBiasInfo
         );
 
         [NativeName("vkCmdSetDepthBias2EXT")]
@@ -6748,7 +6748,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBias2EXT")]
         static abstract void CmdSetDepthBias2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pDepthBiasInfo")] Ref<DepthBiasInfoExt> pDepthBiasInfo
+            [NativeName("pDepthBiasInfo")] Ref<DepthBiasInfoEXT> pDepthBiasInfo
         );
 
         [NativeName("vkCmdSetDepthBiasEnable")]
@@ -6947,8 +6947,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampRangeEXT")]
         static abstract void CmdSetDepthClampRangeExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("depthClampMode")] DepthClampModeExt depthClampMode,
-            [NativeName("pDepthClampRange")] DepthClampRangeExt* pDepthClampRange
+            [NativeName("depthClampMode")] DepthClampModeEXT depthClampMode,
+            [NativeName("pDepthClampRange")] DepthClampRangeEXT* pDepthClampRange
         );
 
         [NativeName("vkCmdSetDepthClampRangeEXT")]
@@ -6965,8 +6965,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampRangeEXT")]
         static abstract void CmdSetDepthClampRangeExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("depthClampMode")] DepthClampModeExt depthClampMode,
-            [NativeName("pDepthClampRange")] Ref<DepthClampRangeExt> pDepthClampRange
+            [NativeName("depthClampMode")] DepthClampModeEXT depthClampMode,
+            [NativeName("pDepthClampRange")] Ref<DepthClampRangeEXT> pDepthClampRange
         );
 
         [NativeName("vkCmdSetDepthClipEnableEXT")]
@@ -7204,7 +7204,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetDescriptorBufferOffsets2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pSetDescriptorBufferOffsetsInfo")]
-                SetDescriptorBufferOffsetsInfoExt* pSetDescriptorBufferOffsetsInfo
+                SetDescriptorBufferOffsetsInfoEXT* pSetDescriptorBufferOffsetsInfo
         );
 
         [NativeName("vkCmdSetDescriptorBufferOffsets2EXT")]
@@ -7218,7 +7218,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetDescriptorBufferOffsets2Ext(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pSetDescriptorBufferOffsetsInfo")]
-                Ref<SetDescriptorBufferOffsetsInfoExt> pSetDescriptorBufferOffsetsInfo
+                Ref<SetDescriptorBufferOffsetsInfoEXT> pSetDescriptorBufferOffsetsInfo
         );
 
         [NativeName("vkCmdSetDescriptorBufferOffsetsEXT")]
@@ -7398,7 +7398,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetDiscardRectangleModeEXT")]
         static abstract void CmdSetDiscardRectangleModeExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("discardRectangleMode")] DiscardRectangleModeExt discardRectangleMode
+            [NativeName("discardRectangleMode")] DiscardRectangleModeEXT discardRectangleMode
         );
 
         [NativeName("vkCmdSetEvent")]
@@ -7627,8 +7627,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
         static abstract void CmdSetFragmentShadingRateEnumNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("shadingRate")] FragmentShadingRateNv shadingRate,
-            [NativeName("combinerOps")] FragmentShadingRateCombinerOpKhr* combinerOps
+            [NativeName("shadingRate")] FragmentShadingRateNV shadingRate,
+            [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
         );
 
         [NativeName("vkCmdSetFragmentShadingRateEnumNV")]
@@ -7640,8 +7640,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
         static abstract void CmdSetFragmentShadingRateEnumNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("shadingRate")] FragmentShadingRateNv shadingRate,
-            [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKhr> combinerOps
+            [NativeName("shadingRate")] FragmentShadingRateNV shadingRate,
+            [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKHR> combinerOps
         );
 
         [NativeName("vkCmdSetFragmentShadingRateKHR")]
@@ -7658,7 +7658,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetFragmentShadingRateKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pFragmentSize")] Extent2D* pFragmentSize,
-            [NativeName("combinerOps")] FragmentShadingRateCombinerOpKhr* combinerOps
+            [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
         );
 
         [NativeName("vkCmdSetFragmentShadingRateKHR")]
@@ -7675,7 +7675,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetFragmentShadingRateKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pFragmentSize")] Ref<Extent2D> pFragmentSize,
-            [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKhr> combinerOps
+            [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKHR> combinerOps
         );
 
         [NativeName("vkCmdSetFrontFace")]
@@ -7891,7 +7891,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
         static abstract Result CmdSetPerformanceMarkerIntel(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] PerformanceMarkerInfoIntel* pMarkerInfo
+            [NativeName("pMarkerInfo")] PerformanceMarkerInfoINTEL* pMarkerInfo
         );
 
         [NativeName("vkCmdSetPerformanceMarkerINTEL")]
@@ -7899,7 +7899,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
         static abstract Result CmdSetPerformanceMarkerIntel(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] Ref<PerformanceMarkerInfoIntel> pMarkerInfo
+            [NativeName("pMarkerInfo")] Ref<PerformanceMarkerInfoINTEL> pMarkerInfo
         );
 
         [NativeName("vkCmdSetPerformanceOverrideINTEL")]
@@ -7907,7 +7907,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
         static abstract Result CmdSetPerformanceOverrideIntel(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pOverrideInfo")] PerformanceOverrideInfoIntel* pOverrideInfo
+            [NativeName("pOverrideInfo")] PerformanceOverrideInfoINTEL* pOverrideInfo
         );
 
         [NativeName("vkCmdSetPerformanceOverrideINTEL")]
@@ -7915,7 +7915,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
         static abstract Result CmdSetPerformanceOverrideIntel(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pOverrideInfo")] Ref<PerformanceOverrideInfoIntel> pOverrideInfo
+            [NativeName("pOverrideInfo")] Ref<PerformanceOverrideInfoINTEL> pOverrideInfo
         );
 
         [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -7923,7 +7923,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
         static abstract Result CmdSetPerformanceStreamMarkerIntel(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] PerformanceStreamMarkerInfoIntel* pMarkerInfo
+            [NativeName("pMarkerInfo")] PerformanceStreamMarkerInfoINTEL* pMarkerInfo
         );
 
         [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -7931,7 +7931,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
         static abstract Result CmdSetPerformanceStreamMarkerIntel(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMarkerInfo")] Ref<PerformanceStreamMarkerInfoIntel> pMarkerInfo
+            [NativeName("pMarkerInfo")] Ref<PerformanceStreamMarkerInfoINTEL> pMarkerInfo
         );
 
         [NativeName("vkCmdSetPolygonModeEXT")]
@@ -8058,7 +8058,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetProvokingVertexModeEXT")]
         static abstract void CmdSetProvokingVertexModeExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("provokingVertexMode")] ProvokingVertexModeExt provokingVertexMode
+            [NativeName("provokingVertexMode")] ProvokingVertexModeEXT provokingVertexMode
         );
 
         [NativeName("vkCmdSetRasterizationSamplesEXT")]
@@ -8360,7 +8360,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEXT")]
         static abstract void CmdSetSampleLocationsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pSampleLocationsInfo")] SampleLocationsInfoExt* pSampleLocationsInfo
+            [NativeName("pSampleLocationsInfo")] SampleLocationsInfoEXT* pSampleLocationsInfo
         );
 
         [NativeName("vkCmdSetSampleLocationsEXT")]
@@ -8375,7 +8375,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEXT")]
         static abstract void CmdSetSampleLocationsExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pSampleLocationsInfo")] Ref<SampleLocationsInfoExt> pSampleLocationsInfo
+            [NativeName("pSampleLocationsInfo")] Ref<SampleLocationsInfoEXT> pSampleLocationsInfo
         );
 
         [NativeName("vkCmdSetSampleMaskEXT")]
@@ -8824,10 +8824,10 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("vertexBindingDescriptionCount")] uint vertexBindingDescriptionCount,
             [NativeName("pVertexBindingDescriptions")]
-                VertexInputBindingDescription2Ext* pVertexBindingDescriptions,
+                VertexInputBindingDescription2EXT* pVertexBindingDescriptions,
             [NativeName("vertexAttributeDescriptionCount")] uint vertexAttributeDescriptionCount,
             [NativeName("pVertexAttributeDescriptions")]
-                VertexInputAttributeDescription2Ext* pVertexAttributeDescriptions
+                VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions
         );
 
         [NativeName("vkCmdSetVertexInputEXT")]
@@ -8844,10 +8844,10 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("vertexBindingDescriptionCount")] uint vertexBindingDescriptionCount,
             [NativeName("pVertexBindingDescriptions")]
-                Ref<VertexInputBindingDescription2Ext> pVertexBindingDescriptions,
+                Ref<VertexInputBindingDescription2EXT> pVertexBindingDescriptions,
             [NativeName("vertexAttributeDescriptionCount")] uint vertexAttributeDescriptionCount,
             [NativeName("pVertexAttributeDescriptions")]
-                Ref<VertexInputAttributeDescription2Ext> pVertexAttributeDescriptions
+                Ref<VertexInputAttributeDescription2EXT> pVertexAttributeDescriptions
         );
 
         [NativeName("vkCmdSetViewport")]
@@ -8938,7 +8938,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
             [NativeName("viewportCount")] uint viewportCount,
-            [NativeName("pShadingRatePalettes")] ShadingRatePaletteNv* pShadingRatePalettes
+            [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV* pShadingRatePalettes
         );
 
         [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
@@ -8955,7 +8955,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
             [NativeName("viewportCount")] uint viewportCount,
-            [NativeName("pShadingRatePalettes")] Ref<ShadingRatePaletteNv> pShadingRatePalettes
+            [NativeName("pShadingRatePalettes")] Ref<ShadingRatePaletteNV> pShadingRatePalettes
         );
 
         [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
@@ -8971,7 +8971,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetViewportShadingRatePaletteNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
-            [NativeName("pShadingRatePalettes")] ShadingRatePaletteNv pShadingRatePalettes
+            [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV pShadingRatePalettes
         );
 
         [NativeName("vkCmdSetViewportSwizzleNV")]
@@ -8989,7 +8989,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
             [NativeName("viewportCount")] uint viewportCount,
-            [NativeName("pViewportSwizzles")] ViewportSwizzleNv* pViewportSwizzles
+            [NativeName("pViewportSwizzles")] ViewportSwizzleNV* pViewportSwizzles
         );
 
         [NativeName("vkCmdSetViewportSwizzleNV")]
@@ -9007,7 +9007,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
             [NativeName("viewportCount")] uint viewportCount,
-            [NativeName("pViewportSwizzles")] Ref<ViewportSwizzleNv> pViewportSwizzles
+            [NativeName("pViewportSwizzles")] Ref<ViewportSwizzleNV> pViewportSwizzles
         );
 
         [NativeName("vkCmdSetViewportSwizzleNV")]
@@ -9024,7 +9024,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetViewportSwizzleNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
-            [NativeName("pViewportSwizzles")] ViewportSwizzleNv pViewportSwizzles
+            [NativeName("pViewportSwizzles")] ViewportSwizzleNV pViewportSwizzles
         );
 
         [NativeName("vkCmdSetViewportWithCount")]
@@ -9166,7 +9166,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
             [NativeName("viewportCount")] uint viewportCount,
-            [NativeName("pViewportWScalings")] ViewportWScalingNv* pViewportWScalings
+            [NativeName("pViewportWScalings")] ViewportWScalingNV* pViewportWScalings
         );
 
         [NativeName("vkCmdSetViewportWScalingNV")]
@@ -9176,7 +9176,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
             [NativeName("viewportCount")] uint viewportCount,
-            [NativeName("pViewportWScalings")] Ref<ViewportWScalingNv> pViewportWScalings
+            [NativeName("pViewportWScalings")] Ref<ViewportWScalingNV> pViewportWScalings
         );
 
         [NativeName("vkCmdSetViewportWScalingNV")]
@@ -9185,7 +9185,7 @@ public unsafe partial interface IVk
         static abstract void CmdSetViewportWScalingNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("firstViewport")] uint firstViewport,
-            [NativeName("pViewportWScalings")] ViewportWScalingNv pViewportWScalings
+            [NativeName("pViewportWScalings")] ViewportWScalingNV pViewportWScalings
         );
 
         [NativeName("vkCmdSubpassShadingHUAWEI")]
@@ -9229,13 +9229,13 @@ public unsafe partial interface IVk
         static abstract void CmdTraceRaysIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pRaygenShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pRaygenShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable,
             [NativeName("pMissShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pMissShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pMissShaderBindingTable,
             [NativeName("pHitShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pHitShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pHitShaderBindingTable,
             [NativeName("pCallableShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pCallableShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pCallableShaderBindingTable,
             [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
         );
 
@@ -9252,13 +9252,13 @@ public unsafe partial interface IVk
         static abstract void CmdTraceRaysIndirectKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pRaygenShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pRaygenShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable,
             [NativeName("pMissShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pMissShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable,
             [NativeName("pHitShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pHitShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable,
             [NativeName("pCallableShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pCallableShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable,
             [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
         );
 
@@ -9275,13 +9275,13 @@ public unsafe partial interface IVk
         static abstract void CmdTraceRaysKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pRaygenShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pRaygenShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable,
             [NativeName("pMissShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pMissShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pMissShaderBindingTable,
             [NativeName("pHitShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pHitShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pHitShaderBindingTable,
             [NativeName("pCallableShaderBindingTable")]
-                StridedDeviceAddressRegionKhr* pCallableShaderBindingTable,
+                StridedDeviceAddressRegionKHR* pCallableShaderBindingTable,
             [NativeName("width")] uint width,
             [NativeName("height")] uint height,
             [NativeName("depth")] uint depth
@@ -9300,13 +9300,13 @@ public unsafe partial interface IVk
         static abstract void CmdTraceRaysKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pRaygenShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pRaygenShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable,
             [NativeName("pMissShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pMissShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable,
             [NativeName("pHitShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pHitShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable,
             [NativeName("pCallableShaderBindingTable")]
-                Ref<StridedDeviceAddressRegionKhr> pCallableShaderBindingTable,
+                Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable,
             [NativeName("width")] uint width,
             [NativeName("height")] uint height,
             [NativeName("depth")] uint depth
@@ -9591,7 +9591,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
             [NativeName("pAccelerationStructures")]
-                AccelerationStructureHandleKhr* pAccelerationStructures,
+                AccelerationStructureHandleKHR* pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9611,7 +9611,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
             [NativeName("pAccelerationStructures")]
-                Ref<AccelerationStructureHandleKhr> pAccelerationStructures,
+                Ref<AccelerationStructureHandleKHR> pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9630,7 +9630,7 @@ public unsafe partial interface IVk
         static abstract void CmdWriteAccelerationStructuresPropertiesKhr(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pAccelerationStructures")]
-                AccelerationStructureHandleKhr pAccelerationStructures,
+                AccelerationStructureHandleKHR pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9650,7 +9650,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
             [NativeName("pAccelerationStructures")]
-                AccelerationStructureHandleNv* pAccelerationStructures,
+                AccelerationStructureHandleNV* pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9670,7 +9670,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
             [NativeName("pAccelerationStructures")]
-                Ref<AccelerationStructureHandleNv> pAccelerationStructures,
+                Ref<AccelerationStructureHandleNV> pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9689,7 +9689,7 @@ public unsafe partial interface IVk
         static abstract void CmdWriteAccelerationStructuresPropertiesNv(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("pAccelerationStructures")]
-                AccelerationStructureHandleNv pAccelerationStructures,
+                AccelerationStructureHandleNV pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9733,7 +9733,7 @@ public unsafe partial interface IVk
         static abstract void CmdWriteMicromapsPropertiesExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("micromapCount")] uint micromapCount,
-            [NativeName("pMicromaps")] MicromapHandleExt* pMicromaps,
+            [NativeName("pMicromaps")] MicromapHandleEXT* pMicromaps,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9752,7 +9752,7 @@ public unsafe partial interface IVk
         static abstract void CmdWriteMicromapsPropertiesExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("micromapCount")] uint micromapCount,
-            [NativeName("pMicromaps")] Ref<MicromapHandleExt> pMicromaps,
+            [NativeName("pMicromaps")] Ref<MicromapHandleEXT> pMicromaps,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9770,7 +9770,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteMicromapsPropertiesEXT")]
         static abstract void CmdWriteMicromapsPropertiesExt(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("pMicromaps")] MicromapHandleExt pMicromaps,
+            [NativeName("pMicromaps")] MicromapHandleEXT pMicromaps,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("queryPool")] QueryPoolHandle queryPool,
             [NativeName("firstQuery")] uint firstQuery
@@ -9879,7 +9879,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
         static abstract Result ConvertCooperativeVectorMatrixNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ConvertCooperativeVectorMatrixInfoNv* pInfo
+            [NativeName("pInfo")] ConvertCooperativeVectorMatrixInfoNV* pInfo
         );
 
         [NativeName("vkConvertCooperativeVectorMatrixNV")]
@@ -9894,7 +9894,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
         static abstract Result ConvertCooperativeVectorMatrixNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ConvertCooperativeVectorMatrixInfoNv> pInfo
+            [NativeName("pInfo")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfo
         );
 
         [NativeName("vkCopyAccelerationStructureKHR")]
@@ -9909,8 +9909,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureKHR")]
         static abstract Result CopyAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] CopyAccelerationStructureInfoKhr* pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
         );
 
         [NativeName("vkCopyAccelerationStructureKHR")]
@@ -9925,8 +9925,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureKHR")]
         static abstract Result CopyAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKhr> pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
         );
 
         [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
@@ -9941,8 +9941,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureToMemoryKHR")]
         static abstract Result CopyAccelerationStructureToMemoryKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKhr* pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
         );
 
         [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
@@ -9957,8 +9957,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureToMemoryKHR")]
         static abstract Result CopyAccelerationStructureToMemoryKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKhr> pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
         );
 
         [NativeName("vkCopyImageToImage")]
@@ -10105,8 +10105,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToAccelerationStructureKHR")]
         static abstract Result CopyMemoryToAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKhr* pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
         );
 
         [NativeName("vkCopyMemoryToAccelerationStructureKHR")]
@@ -10121,8 +10121,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToAccelerationStructureKHR")]
         static abstract Result CopyMemoryToAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKhr> pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
         );
 
         [NativeName("vkCopyMemoryToImage")]
@@ -10203,8 +10203,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToMicromapEXT")]
         static abstract Result CopyMemoryToMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] CopyMemoryToMicromapInfoExt* pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
         );
 
         [NativeName("vkCopyMemoryToMicromapEXT")]
@@ -10219,8 +10219,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToMicromapEXT")]
         static abstract Result CopyMemoryToMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoExt> pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
         );
 
         [NativeName("vkCopyMicromapEXT")]
@@ -10235,8 +10235,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapEXT")]
         static abstract Result CopyMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] CopyMicromapInfoExt* pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
         );
 
         [NativeName("vkCopyMicromapEXT")]
@@ -10251,8 +10251,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapEXT")]
         static abstract Result CopyMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] Ref<CopyMicromapInfoExt> pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
         );
 
         [NativeName("vkCopyMicromapToMemoryEXT")]
@@ -10267,8 +10267,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapToMemoryEXT")]
         static abstract Result CopyMicromapToMemoryExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] CopyMicromapToMemoryInfoExt* pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
         );
 
         [NativeName("vkCopyMicromapToMemoryEXT")]
@@ -10283,8 +10283,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapToMemoryEXT")]
         static abstract Result CopyMicromapToMemoryExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-            [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoExt> pInfo
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+            [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoEXT> pInfo
         );
 
         [NativeName("vkCreateAccelerationStructureKHR")]
@@ -10299,10 +10299,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureKHR")]
         static abstract Result CreateAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] AccelerationStructureCreateInfoKhr* pCreateInfo,
+            [NativeName("pCreateInfo")] AccelerationStructureCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pAccelerationStructure")]
-                AccelerationStructureHandleKhr* pAccelerationStructure
+                AccelerationStructureHandleKHR* pAccelerationStructure
         );
 
         [NativeName("vkCreateAccelerationStructureKHR")]
@@ -10317,10 +10317,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureKHR")]
         static abstract Result CreateAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoKhr> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pAccelerationStructure")]
-                Ref<AccelerationStructureHandleKhr> pAccelerationStructure
+                Ref<AccelerationStructureHandleKHR> pAccelerationStructure
         );
 
         [NativeName("vkCreateAccelerationStructureNV")]
@@ -10335,10 +10335,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureNV")]
         static abstract Result CreateAccelerationStructureNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] AccelerationStructureCreateInfoNv* pCreateInfo,
+            [NativeName("pCreateInfo")] AccelerationStructureCreateInfoNV* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pAccelerationStructure")]
-                AccelerationStructureHandleNv* pAccelerationStructure
+                AccelerationStructureHandleNV* pAccelerationStructure
         );
 
         [NativeName("vkCreateAccelerationStructureNV")]
@@ -10353,10 +10353,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureNV")]
         static abstract Result CreateAccelerationStructureNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoNv> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoNV> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pAccelerationStructure")]
-                Ref<AccelerationStructureHandleNv> pAccelerationStructure
+                Ref<AccelerationStructureHandleNV> pAccelerationStructure
         );
 
         [NativeName("vkCreateBuffer")]
@@ -10628,9 +10628,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
         static abstract Result CreateCuFunctionNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] CuFunctionCreateInfoNvx* pCreateInfo,
+            [NativeName("pCreateInfo")] CuFunctionCreateInfoNVX* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pFunction")] CuFunctionHandleNvx* pFunction
+            [NativeName("pFunction")] CuFunctionHandleNVX* pFunction
         );
 
         [NativeName("vkCreateCuFunctionNVX")]
@@ -10638,9 +10638,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
         static abstract Result CreateCuFunctionNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<CuFunctionCreateInfoNvx> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<CuFunctionCreateInfoNVX> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pFunction")] Ref<CuFunctionHandleNvx> pFunction
+            [NativeName("pFunction")] Ref<CuFunctionHandleNVX> pFunction
         );
 
         [NativeName("vkCreateCuModuleNVX")]
@@ -10648,9 +10648,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
         static abstract Result CreateCuModuleNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] CuModuleCreateInfoNvx* pCreateInfo,
+            [NativeName("pCreateInfo")] CuModuleCreateInfoNVX* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pModule")] CuModuleHandleNvx* pModule
+            [NativeName("pModule")] CuModuleHandleNVX* pModule
         );
 
         [NativeName("vkCreateCuModuleNVX")]
@@ -10658,9 +10658,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
         static abstract Result CreateCuModuleNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<CuModuleCreateInfoNvx> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<CuModuleCreateInfoNVX> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pModule")] Ref<CuModuleHandleNvx> pModule
+            [NativeName("pModule")] Ref<CuModuleHandleNVX> pModule
         );
 
         [NativeName("vkCreateDataGraphPipelinesARM")]
@@ -10676,10 +10676,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
         static abstract Result CreateDataGraphPipelinesArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] DataGraphPipelineCreateInfoArm* pCreateInfos,
+            [NativeName("pCreateInfos")] DataGraphPipelineCreateInfoARM* pCreateInfos,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pPipelines")] PipelineHandle* pPipelines
         );
@@ -10697,10 +10697,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
         static abstract Result CreateDataGraphPipelinesArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] Ref<DataGraphPipelineCreateInfoArm> pCreateInfos,
+            [NativeName("pCreateInfos")] Ref<DataGraphPipelineCreateInfoARM> pCreateInfos,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
@@ -10718,9 +10718,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
         static abstract Result CreateDataGraphPipelineSessionArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] DataGraphPipelineSessionCreateInfoArm* pCreateInfo,
+            [NativeName("pCreateInfo")] DataGraphPipelineSessionCreateInfoARM* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pSession")] DataGraphPipelineSessionHandleArm* pSession
+            [NativeName("pSession")] DataGraphPipelineSessionHandleARM* pSession
         );
 
         [NativeName("vkCreateDataGraphPipelineSessionARM")]
@@ -10736,9 +10736,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
         static abstract Result CreateDataGraphPipelineSessionArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<DataGraphPipelineSessionCreateInfoArm> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<DataGraphPipelineSessionCreateInfoARM> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pSession")] Ref<DataGraphPipelineSessionHandleArm> pSession
+            [NativeName("pSession")] Ref<DataGraphPipelineSessionHandleARM> pSession
         );
 
         [NativeName("vkCreateDebugReportCallbackEXT")]
@@ -10746,9 +10746,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
         static abstract Result CreateDebugReportCallbackExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] DebugReportCallbackCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] DebugReportCallbackCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pCallback")] DebugReportCallbackHandleExt* pCallback
+            [NativeName("pCallback")] DebugReportCallbackHandleEXT* pCallback
         );
 
         [NativeName("vkCreateDebugReportCallbackEXT")]
@@ -10756,9 +10756,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
         static abstract Result CreateDebugReportCallbackExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] Ref<DebugReportCallbackCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<DebugReportCallbackCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pCallback")] Ref<DebugReportCallbackHandleExt> pCallback
+            [NativeName("pCallback")] Ref<DebugReportCallbackHandleEXT> pCallback
         );
 
         [NativeName("vkCreateDebugUtilsMessengerEXT")]
@@ -10766,9 +10766,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
         static abstract Result CreateDebugUtilsMessengerExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] DebugUtilsMessengerCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] DebugUtilsMessengerCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pMessenger")] DebugUtilsMessengerHandleExt* pMessenger
+            [NativeName("pMessenger")] DebugUtilsMessengerHandleEXT* pMessenger
         );
 
         [NativeName("vkCreateDebugUtilsMessengerEXT")]
@@ -10776,9 +10776,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
         static abstract Result CreateDebugUtilsMessengerExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] Ref<DebugUtilsMessengerCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<DebugUtilsMessengerCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pMessenger")] Ref<DebugUtilsMessengerHandleExt> pMessenger
+            [NativeName("pMessenger")] Ref<DebugUtilsMessengerHandleEXT> pMessenger
         );
 
         [NativeName("vkCreateDeferredOperationKHR")]
@@ -10787,7 +10787,7 @@ public unsafe partial interface IVk
         static abstract Result CreateDeferredOperationKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pDeferredOperation")] DeferredOperationHandleKhr* pDeferredOperation
+            [NativeName("pDeferredOperation")] DeferredOperationHandleKHR* pDeferredOperation
         );
 
         [NativeName("vkCreateDeferredOperationKHR")]
@@ -10796,7 +10796,7 @@ public unsafe partial interface IVk
         static abstract Result CreateDeferredOperationKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pDeferredOperation")] Ref<DeferredOperationHandleKhr> pDeferredOperation
+            [NativeName("pDeferredOperation")] Ref<DeferredOperationHandleKHR> pDeferredOperation
         );
 
         [NativeName("vkCreateDescriptorPool")]
@@ -11072,10 +11072,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
         static abstract Result CreateDisplayModeKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display,
-            [NativeName("pCreateInfo")] DisplayModeCreateInfoKhr* pCreateInfo,
+            [NativeName("display")] DisplayHandleKHR display,
+            [NativeName("pCreateInfo")] DisplayModeCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pMode")] DisplayModeHandleKhr* pMode
+            [NativeName("pMode")] DisplayModeHandleKHR* pMode
         );
 
         [NativeName("vkCreateDisplayModeKHR")]
@@ -11083,10 +11083,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
         static abstract Result CreateDisplayModeKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display,
-            [NativeName("pCreateInfo")] Ref<DisplayModeCreateInfoKhr> pCreateInfo,
+            [NativeName("display")] DisplayHandleKHR display,
+            [NativeName("pCreateInfo")] Ref<DisplayModeCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pMode")] Ref<DisplayModeHandleKhr> pMode
+            [NativeName("pMode")] Ref<DisplayModeHandleKHR> pMode
         );
 
         [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
@@ -11094,9 +11094,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
         static abstract Result CreateDisplayPlaneSurfaceKhr(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] DisplaySurfaceCreateInfoKhr* pCreateInfo,
+            [NativeName("pCreateInfo")] DisplaySurfaceCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pSurface")] SurfaceHandleKhr* pSurface
+            [NativeName("pSurface")] SurfaceHandleKHR* pSurface
         );
 
         [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
@@ -11104,9 +11104,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
         static abstract Result CreateDisplayPlaneSurfaceKhr(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] Ref<DisplaySurfaceCreateInfoKhr> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<DisplaySurfaceCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pSurface")] Ref<SurfaceHandleKhr> pSurface
+            [NativeName("pSurface")] Ref<SurfaceHandleKHR> pSurface
         );
 
         [NativeName("vkCreateEvent")]
@@ -11174,9 +11174,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
         static abstract Result CreateExternalComputeQueueNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] ExternalComputeQueueCreateInfoNv* pCreateInfo,
+            [NativeName("pCreateInfo")] ExternalComputeQueueCreateInfoNV* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pExternalQueue")] ExternalComputeQueueHandleNv* pExternalQueue
+            [NativeName("pExternalQueue")] ExternalComputeQueueHandleNV* pExternalQueue
         );
 
         [NativeName("vkCreateExternalComputeQueueNV")]
@@ -11184,9 +11184,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
         static abstract Result CreateExternalComputeQueueNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<ExternalComputeQueueCreateInfoNv> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<ExternalComputeQueueCreateInfoNV> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pExternalQueue")] Ref<ExternalComputeQueueHandleNv> pExternalQueue
+            [NativeName("pExternalQueue")] Ref<ExternalComputeQueueHandleNV> pExternalQueue
         );
 
         [NativeName("vkCreateFence")]
@@ -11372,9 +11372,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateHeadlessSurfaceEXT")]
         static abstract Result CreateHeadlessSurfaceExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] HeadlessSurfaceCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] HeadlessSurfaceCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pSurface")] SurfaceHandleKhr* pSurface
+            [NativeName("pSurface")] SurfaceHandleKHR* pSurface
         );
 
         [NativeName("vkCreateHeadlessSurfaceEXT")]
@@ -11386,9 +11386,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateHeadlessSurfaceEXT")]
         static abstract Result CreateHeadlessSurfaceExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("pCreateInfo")] Ref<HeadlessSurfaceCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<HeadlessSurfaceCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pSurface")] Ref<SurfaceHandleKhr> pSurface
+            [NativeName("pSurface")] Ref<SurfaceHandleKHR> pSurface
         );
 
         [NativeName("vkCreateImage")]
@@ -11544,10 +11544,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutEXT")]
         static abstract Result CreateIndirectCommandsLayoutExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pIndirectCommandsLayout")]
-                IndirectCommandsLayoutHandleExt* pIndirectCommandsLayout
+                IndirectCommandsLayoutHandleEXT* pIndirectCommandsLayout
         );
 
         [NativeName("vkCreateIndirectCommandsLayoutEXT")]
@@ -11563,10 +11563,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutEXT")]
         static abstract Result CreateIndirectCommandsLayoutExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pIndirectCommandsLayout")]
-                Ref<IndirectCommandsLayoutHandleExt> pIndirectCommandsLayout
+                Ref<IndirectCommandsLayoutHandleEXT> pIndirectCommandsLayout
         );
 
         [NativeName("vkCreateIndirectCommandsLayoutNV")]
@@ -11578,10 +11578,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
         static abstract Result CreateIndirectCommandsLayoutNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoNv* pCreateInfo,
+            [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoNV* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pIndirectCommandsLayout")]
-                IndirectCommandsLayoutHandleNv* pIndirectCommandsLayout
+                IndirectCommandsLayoutHandleNV* pIndirectCommandsLayout
         );
 
         [NativeName("vkCreateIndirectCommandsLayoutNV")]
@@ -11593,10 +11593,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
         static abstract Result CreateIndirectCommandsLayoutNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoNv> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoNV> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pIndirectCommandsLayout")]
-                Ref<IndirectCommandsLayoutHandleNv> pIndirectCommandsLayout
+                Ref<IndirectCommandsLayoutHandleNV> pIndirectCommandsLayout
         );
 
         [NativeName("vkCreateIndirectExecutionSetEXT")]
@@ -11612,10 +11612,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectExecutionSetEXT")]
         static abstract Result CreateIndirectExecutionSetExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] IndirectExecutionSetCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] IndirectExecutionSetCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pIndirectExecutionSet")]
-                IndirectExecutionSetHandleExt* pIndirectExecutionSet
+                IndirectExecutionSetHandleEXT* pIndirectExecutionSet
         );
 
         [NativeName("vkCreateIndirectExecutionSetEXT")]
@@ -11631,10 +11631,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectExecutionSetEXT")]
         static abstract Result CreateIndirectExecutionSetExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<IndirectExecutionSetCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<IndirectExecutionSetCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pIndirectExecutionSet")]
-                Ref<IndirectExecutionSetHandleExt> pIndirectExecutionSet
+                Ref<IndirectExecutionSetHandleEXT> pIndirectExecutionSet
         );
 
         [NativeName("vkCreateInstance")]
@@ -11717,9 +11717,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateMicromapEXT")]
         static abstract Result CreateMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] MicromapCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] MicromapCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pMicromap")] MicromapHandleExt* pMicromap
+            [NativeName("pMicromap")] MicromapHandleEXT* pMicromap
         );
 
         [NativeName("vkCreateMicromapEXT")]
@@ -11734,9 +11734,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateMicromapEXT")]
         static abstract Result CreateMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<MicromapCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<MicromapCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pMicromap")] Ref<MicromapHandleExt> pMicromap
+            [NativeName("pMicromap")] Ref<MicromapHandleEXT> pMicromap
         );
 
         [NativeName("vkCreateOpticalFlowSessionNV")]
@@ -11752,9 +11752,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateOpticalFlowSessionNV")]
         static abstract Result CreateOpticalFlowSessionNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] OpticalFlowSessionCreateInfoNv* pCreateInfo,
+            [NativeName("pCreateInfo")] OpticalFlowSessionCreateInfoNV* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pSession")] OpticalFlowSessionHandleNv* pSession
+            [NativeName("pSession")] OpticalFlowSessionHandleNV* pSession
         );
 
         [NativeName("vkCreateOpticalFlowSessionNV")]
@@ -11770,9 +11770,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateOpticalFlowSessionNV")]
         static abstract Result CreateOpticalFlowSessionNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<OpticalFlowSessionCreateInfoNv> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<OpticalFlowSessionCreateInfoNV> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pSession")] Ref<OpticalFlowSessionHandleNv> pSession
+            [NativeName("pSession")] Ref<OpticalFlowSessionHandleNV> pSession
         );
 
         [NativeName("vkCreatePipelineBinariesKHR")]
@@ -11787,9 +11787,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreatePipelineBinariesKHR")]
         static abstract Result CreatePipelineBinariesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] PipelineBinaryCreateInfoKhr* pCreateInfo,
+            [NativeName("pCreateInfo")] PipelineBinaryCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pBinaries")] PipelineBinaryHandlesInfoKhr* pBinaries
+            [NativeName("pBinaries")] PipelineBinaryHandlesInfoKHR* pBinaries
         );
 
         [NativeName("vkCreatePipelineBinariesKHR")]
@@ -11804,9 +11804,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreatePipelineBinariesKHR")]
         static abstract Result CreatePipelineBinariesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<PipelineBinaryCreateInfoKhr> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<PipelineBinaryCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pBinaries")] Ref<PipelineBinaryHandlesInfoKhr> pBinaries
+            [NativeName("pBinaries")] Ref<PipelineBinaryHandlesInfoKHR> pBinaries
         );
 
         [NativeName("vkCreatePipelineCache")]
@@ -12091,10 +12091,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateRayTracingPipelinesKHR")]
         static abstract Result CreateRayTracingPipelinesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoKhr* pCreateInfos,
+            [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoKHR* pCreateInfos,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pPipelines")] PipelineHandle* pPipelines
         );
@@ -12111,10 +12111,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateRayTracingPipelinesKHR")]
         static abstract Result CreateRayTracingPipelinesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+            [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
             [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoKhr> pCreateInfos,
+            [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoKHR> pCreateInfos,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
@@ -12133,7 +12133,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoNv* pCreateInfos,
+            [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoNV* pCreateInfos,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pPipelines")] PipelineHandle* pPipelines
         );
@@ -12152,7 +12152,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoNv> pCreateInfos,
+            [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoNV> pCreateInfos,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
@@ -12569,9 +12569,9 @@ public unsafe partial interface IVk
         static abstract Result CreateShadersExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] ShaderCreateInfoExt* pCreateInfos,
+            [NativeName("pCreateInfos")] ShaderCreateInfoEXT* pCreateInfos,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pShaders")] ShaderHandleExt* pShaders
+            [NativeName("pShaders")] ShaderHandleEXT* pShaders
         );
 
         [NativeName("vkCreateShadersEXT")]
@@ -12588,9 +12588,9 @@ public unsafe partial interface IVk
         static abstract Result CreateShadersExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("createInfoCount")] uint createInfoCount,
-            [NativeName("pCreateInfos")] Ref<ShaderCreateInfoExt> pCreateInfos,
+            [NativeName("pCreateInfos")] Ref<ShaderCreateInfoEXT> pCreateInfos,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pShaders")] Ref<ShaderHandleExt> pShaders
+            [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
         );
 
         [NativeName("vkCreateSharedSwapchainsKHR")]
@@ -12603,9 +12603,9 @@ public unsafe partial interface IVk
         static abstract Result CreateSharedSwapchainsKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("swapchainCount")] uint swapchainCount,
-            [NativeName("pCreateInfos")] SwapchainCreateInfoKhr* pCreateInfos,
+            [NativeName("pCreateInfos")] SwapchainCreateInfoKHR* pCreateInfos,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pSwapchains")] SwapchainHandleKhr* pSwapchains
+            [NativeName("pSwapchains")] SwapchainHandleKHR* pSwapchains
         );
 
         [NativeName("vkCreateSharedSwapchainsKHR")]
@@ -12618,9 +12618,9 @@ public unsafe partial interface IVk
         static abstract Result CreateSharedSwapchainsKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("swapchainCount")] uint swapchainCount,
-            [NativeName("pCreateInfos")] Ref<SwapchainCreateInfoKhr> pCreateInfos,
+            [NativeName("pCreateInfos")] Ref<SwapchainCreateInfoKHR> pCreateInfos,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pSwapchains")] Ref<SwapchainHandleKhr> pSwapchains
+            [NativeName("pSwapchains")] Ref<SwapchainHandleKHR> pSwapchains
         );
 
         [NativeName("vkCreateSwapchainKHR")]
@@ -12628,9 +12628,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
         static abstract Result CreateSwapchainKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] SwapchainCreateInfoKhr* pCreateInfo,
+            [NativeName("pCreateInfo")] SwapchainCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pSwapchain")] SwapchainHandleKhr* pSwapchain
+            [NativeName("pSwapchain")] SwapchainHandleKHR* pSwapchain
         );
 
         [NativeName("vkCreateSwapchainKHR")]
@@ -12638,9 +12638,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
         static abstract Result CreateSwapchainKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<SwapchainCreateInfoKhr> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<SwapchainCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pSwapchain")] Ref<SwapchainHandleKhr> pSwapchain
+            [NativeName("pSwapchain")] Ref<SwapchainHandleKHR> pSwapchain
         );
 
         [NativeName("vkCreateTensorARM")]
@@ -12648,9 +12648,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
         static abstract Result CreateTensorArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] TensorCreateInfoArm* pCreateInfo,
+            [NativeName("pCreateInfo")] TensorCreateInfoARM* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pTensor")] TensorHandleArm* pTensor
+            [NativeName("pTensor")] TensorHandleARM* pTensor
         );
 
         [NativeName("vkCreateTensorARM")]
@@ -12658,9 +12658,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
         static abstract Result CreateTensorArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<TensorCreateInfoArm> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<TensorCreateInfoARM> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pTensor")] Ref<TensorHandleArm> pTensor
+            [NativeName("pTensor")] Ref<TensorHandleARM> pTensor
         );
 
         [NativeName("vkCreateTensorViewARM")]
@@ -12668,9 +12668,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
         static abstract Result CreateTensorViewArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] TensorViewCreateInfoArm* pCreateInfo,
+            [NativeName("pCreateInfo")] TensorViewCreateInfoARM* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pView")] TensorViewHandleArm* pView
+            [NativeName("pView")] TensorViewHandleARM* pView
         );
 
         [NativeName("vkCreateTensorViewARM")]
@@ -12678,9 +12678,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
         static abstract Result CreateTensorViewArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<TensorViewCreateInfoArm> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<TensorViewCreateInfoARM> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pView")] Ref<TensorViewHandleArm> pView
+            [NativeName("pView")] Ref<TensorViewHandleARM> pView
         );
 
         [NativeName("vkCreateValidationCacheEXT")]
@@ -12688,9 +12688,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
         static abstract Result CreateValidationCacheExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] ValidationCacheCreateInfoExt* pCreateInfo,
+            [NativeName("pCreateInfo")] ValidationCacheCreateInfoEXT* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pValidationCache")] ValidationCacheHandleExt* pValidationCache
+            [NativeName("pValidationCache")] ValidationCacheHandleEXT* pValidationCache
         );
 
         [NativeName("vkCreateValidationCacheEXT")]
@@ -12698,9 +12698,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
         static abstract Result CreateValidationCacheExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<ValidationCacheCreateInfoExt> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<ValidationCacheCreateInfoEXT> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pValidationCache")] Ref<ValidationCacheHandleExt> pValidationCache
+            [NativeName("pValidationCache")] Ref<ValidationCacheHandleEXT> pValidationCache
         );
 
         [NativeName("vkCreateVideoSessionKHR")]
@@ -12712,9 +12712,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionKHR")]
         static abstract Result CreateVideoSessionKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] VideoSessionCreateInfoKhr* pCreateInfo,
+            [NativeName("pCreateInfo")] VideoSessionCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-            [NativeName("pVideoSession")] VideoSessionHandleKhr* pVideoSession
+            [NativeName("pVideoSession")] VideoSessionHandleKHR* pVideoSession
         );
 
         [NativeName("vkCreateVideoSessionKHR")]
@@ -12726,9 +12726,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionKHR")]
         static abstract Result CreateVideoSessionKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<VideoSessionCreateInfoKhr> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<VideoSessionCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-            [NativeName("pVideoSession")] Ref<VideoSessionHandleKhr> pVideoSession
+            [NativeName("pVideoSession")] Ref<VideoSessionHandleKHR> pVideoSession
         );
 
         [NativeName("vkCreateVideoSessionParametersKHR")]
@@ -12740,10 +12740,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionParametersKHR")]
         static abstract Result CreateVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] VideoSessionParametersCreateInfoKhr* pCreateInfo,
+            [NativeName("pCreateInfo")] VideoSessionParametersCreateInfoKHR* pCreateInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pVideoSessionParameters")]
-                VideoSessionParametersHandleKhr* pVideoSessionParameters
+                VideoSessionParametersHandleKHR* pVideoSessionParameters
         );
 
         [NativeName("vkCreateVideoSessionParametersKHR")]
@@ -12755,10 +12755,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionParametersKHR")]
         static abstract Result CreateVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pCreateInfo")] Ref<VideoSessionParametersCreateInfoKhr> pCreateInfo,
+            [NativeName("pCreateInfo")] Ref<VideoSessionParametersCreateInfoKHR> pCreateInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pVideoSessionParameters")]
-                Ref<VideoSessionParametersHandleKhr> pVideoSessionParameters
+                Ref<VideoSessionParametersHandleKHR> pVideoSessionParameters
         );
 
         [NativeName("vkDebugMarkerSetObjectNameEXT")]
@@ -12770,7 +12770,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
         static abstract Result DebugMarkerSetObjectNameExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pNameInfo")] DebugMarkerObjectNameInfoExt* pNameInfo
+            [NativeName("pNameInfo")] DebugMarkerObjectNameInfoEXT* pNameInfo
         );
 
         [NativeName("vkDebugMarkerSetObjectNameEXT")]
@@ -12782,7 +12782,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
         static abstract Result DebugMarkerSetObjectNameExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pNameInfo")] Ref<DebugMarkerObjectNameInfoExt> pNameInfo
+            [NativeName("pNameInfo")] Ref<DebugMarkerObjectNameInfoEXT> pNameInfo
         );
 
         [NativeName("vkDebugMarkerSetObjectTagEXT")]
@@ -12794,7 +12794,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
         static abstract Result DebugMarkerSetObjectTagExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pTagInfo")] DebugMarkerObjectTagInfoExt* pTagInfo
+            [NativeName("pTagInfo")] DebugMarkerObjectTagInfoEXT* pTagInfo
         );
 
         [NativeName("vkDebugMarkerSetObjectTagEXT")]
@@ -12806,7 +12806,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
         static abstract Result DebugMarkerSetObjectTagExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pTagInfo")] Ref<DebugMarkerObjectTagInfoExt> pTagInfo
+            [NativeName("pTagInfo")] Ref<DebugMarkerObjectTagInfoEXT> pTagInfo
         );
 
         [NativeName("vkDebugReportMessageEXT")]
@@ -12814,8 +12814,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
         static abstract void DebugReportMessageExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("flags")] DebugReportFlagsExt flags,
-            [NativeName("objectType")] DebugReportObjectTypeExt objectType,
+            [NativeName("flags")] DebugReportFlagsEXT flags,
+            [NativeName("objectType")] DebugReportObjectTypeEXT objectType,
             [NativeName("@object")] ulong @object,
             [NativeName("location")] nuint location,
             [NativeName("messageCode")] int messageCode,
@@ -12828,8 +12828,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
         static abstract void DebugReportMessageExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("flags")] DebugReportFlagsExt flags,
-            [NativeName("objectType")] DebugReportObjectTypeExt objectType,
+            [NativeName("flags")] DebugReportFlagsEXT flags,
+            [NativeName("objectType")] DebugReportObjectTypeEXT objectType,
             [NativeName("@object")] ulong @object,
             [NativeName("location")] nuint location,
             [NativeName("messageCode")] int messageCode,
@@ -12842,7 +12842,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDeferredOperationJoinKHR")]
         static abstract Result DeferredOperationJoinKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("operation")] DeferredOperationHandleKhr operation
+            [NativeName("operation")] DeferredOperationHandleKHR operation
         );
 
         [NativeName("vkDestroyAccelerationStructureKHR")]
@@ -12858,7 +12858,7 @@ public unsafe partial interface IVk
         static abstract void DestroyAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructure")]
-                AccelerationStructureHandleKhr accelerationStructure,
+                AccelerationStructureHandleKHR accelerationStructure,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -12875,7 +12875,7 @@ public unsafe partial interface IVk
         static abstract void DestroyAccelerationStructureKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructure")]
-                AccelerationStructureHandleKhr accelerationStructure,
+                AccelerationStructureHandleKHR accelerationStructure,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -12892,7 +12892,7 @@ public unsafe partial interface IVk
         static abstract void DestroyAccelerationStructureNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructure")]
-                AccelerationStructureHandleNv accelerationStructure,
+                AccelerationStructureHandleNV accelerationStructure,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -12909,7 +12909,7 @@ public unsafe partial interface IVk
         static abstract void DestroyAccelerationStructureNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructure")]
-                AccelerationStructureHandleNv accelerationStructure,
+                AccelerationStructureHandleNV accelerationStructure,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13112,7 +13112,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
         static abstract void DestroyCuFunctionNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("function")] CuFunctionHandleNvx function,
+            [NativeName("function")] CuFunctionHandleNVX function,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13121,7 +13121,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
         static abstract void DestroyCuFunctionNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("function")] CuFunctionHandleNvx function,
+            [NativeName("function")] CuFunctionHandleNVX function,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13130,7 +13130,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
         static abstract void DestroyCuModuleNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("module")] CuModuleHandleNvx module,
+            [NativeName("module")] CuModuleHandleNVX module,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13139,7 +13139,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
         static abstract void DestroyCuModuleNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("module")] CuModuleHandleNvx module,
+            [NativeName("module")] CuModuleHandleNVX module,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13156,7 +13156,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
         static abstract void DestroyDataGraphPipelineSessionArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("session")] DataGraphPipelineSessionHandleArm session,
+            [NativeName("session")] DataGraphPipelineSessionHandleARM session,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13173,7 +13173,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
         static abstract void DestroyDataGraphPipelineSessionArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("session")] DataGraphPipelineSessionHandleArm session,
+            [NativeName("session")] DataGraphPipelineSessionHandleARM session,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13182,7 +13182,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
         static abstract void DestroyDebugReportCallbackExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("callback")] DebugReportCallbackHandleExt callback,
+            [NativeName("callback")] DebugReportCallbackHandleEXT callback,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13191,7 +13191,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
         static abstract void DestroyDebugReportCallbackExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("callback")] DebugReportCallbackHandleExt callback,
+            [NativeName("callback")] DebugReportCallbackHandleEXT callback,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13200,7 +13200,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
         static abstract void DestroyDebugUtilsMessengerExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("messenger")] DebugUtilsMessengerHandleExt messenger,
+            [NativeName("messenger")] DebugUtilsMessengerHandleEXT messenger,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13209,7 +13209,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
         static abstract void DestroyDebugUtilsMessengerExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("messenger")] DebugUtilsMessengerHandleExt messenger,
+            [NativeName("messenger")] DebugUtilsMessengerHandleEXT messenger,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13218,7 +13218,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
         static abstract void DestroyDeferredOperationKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("operation")] DeferredOperationHandleKhr operation,
+            [NativeName("operation")] DeferredOperationHandleKHR operation,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13227,7 +13227,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
         static abstract void DestroyDeferredOperationKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("operation")] DeferredOperationHandleKhr operation,
+            [NativeName("operation")] DeferredOperationHandleKHR operation,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13550,7 +13550,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
         static abstract void DestroyExternalComputeQueueNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
+            [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13559,7 +13559,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
         static abstract void DestroyExternalComputeQueueNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
+            [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13829,7 +13829,7 @@ public unsafe partial interface IVk
         static abstract void DestroyIndirectCommandsLayoutExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("indirectCommandsLayout")]
-                IndirectCommandsLayoutHandleExt indirectCommandsLayout,
+                IndirectCommandsLayoutHandleEXT indirectCommandsLayout,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13847,7 +13847,7 @@ public unsafe partial interface IVk
         static abstract void DestroyIndirectCommandsLayoutExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("indirectCommandsLayout")]
-                IndirectCommandsLayoutHandleExt indirectCommandsLayout,
+                IndirectCommandsLayoutHandleEXT indirectCommandsLayout,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13861,7 +13861,7 @@ public unsafe partial interface IVk
         static abstract void DestroyIndirectCommandsLayoutNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("indirectCommandsLayout")]
-                IndirectCommandsLayoutHandleNv indirectCommandsLayout,
+                IndirectCommandsLayoutHandleNV indirectCommandsLayout,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13875,7 +13875,7 @@ public unsafe partial interface IVk
         static abstract void DestroyIndirectCommandsLayoutNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("indirectCommandsLayout")]
-                IndirectCommandsLayoutHandleNv indirectCommandsLayout,
+                IndirectCommandsLayoutHandleNV indirectCommandsLayout,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13892,7 +13892,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyIndirectExecutionSetEXT")]
         static abstract void DestroyIndirectExecutionSetExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -13909,7 +13909,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyIndirectExecutionSetEXT")]
         static abstract void DestroyIndirectExecutionSetExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -13991,7 +13991,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyMicromapEXT")]
         static abstract void DestroyMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("micromap")] MicromapHandleExt micromap,
+            [NativeName("micromap")] MicromapHandleEXT micromap,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14007,7 +14007,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyMicromapEXT")]
         static abstract void DestroyMicromapExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("micromap")] MicromapHandleExt micromap,
+            [NativeName("micromap")] MicromapHandleEXT micromap,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14024,7 +14024,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyOpticalFlowSessionNV")]
         static abstract void DestroyOpticalFlowSessionNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("session")] OpticalFlowSessionHandleNv session,
+            [NativeName("session")] OpticalFlowSessionHandleNV session,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14041,7 +14041,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyOpticalFlowSessionNV")]
         static abstract void DestroyOpticalFlowSessionNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("session")] OpticalFlowSessionHandleNv session,
+            [NativeName("session")] OpticalFlowSessionHandleNV session,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14115,7 +14115,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
         static abstract void DestroyPipelineBinaryKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pipelineBinary")] PipelineBinaryHandleKhr pipelineBinary,
+            [NativeName("pipelineBinary")] PipelineBinaryHandleKHR pipelineBinary,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14131,7 +14131,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
         static abstract void DestroyPipelineBinaryKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pipelineBinary")] PipelineBinaryHandleKhr pipelineBinary,
+            [NativeName("pipelineBinary")] PipelineBinaryHandleKHR pipelineBinary,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14666,7 +14666,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyShaderEXT")]
         static abstract void DestroyShaderExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("shader")] ShaderHandleExt shader,
+            [NativeName("shader")] ShaderHandleEXT shader,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14683,7 +14683,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyShaderEXT")]
         static abstract void DestroyShaderExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("shader")] ShaderHandleExt shader,
+            [NativeName("shader")] ShaderHandleEXT shader,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14750,7 +14750,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
         static abstract void DestroySurfaceKhr(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14759,7 +14759,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
         static abstract void DestroySurfaceKhr(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14768,7 +14768,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
         static abstract void DestroySwapchainKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14777,7 +14777,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
         static abstract void DestroySwapchainKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14786,7 +14786,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
         static abstract void DestroyTensorArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("tensor")] TensorHandleArm tensor,
+            [NativeName("tensor")] TensorHandleARM tensor,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14795,7 +14795,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
         static abstract void DestroyTensorArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("tensor")] TensorHandleArm tensor,
+            [NativeName("tensor")] TensorHandleARM tensor,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14804,7 +14804,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
         static abstract void DestroyTensorViewArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("tensorView")] TensorViewHandleArm tensorView,
+            [NativeName("tensorView")] TensorViewHandleARM tensorView,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14813,7 +14813,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
         static abstract void DestroyTensorViewArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("tensorView")] TensorViewHandleArm tensorView,
+            [NativeName("tensorView")] TensorViewHandleARM tensorView,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14822,7 +14822,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
         static abstract void DestroyValidationCacheExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+            [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14831,7 +14831,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
         static abstract void DestroyValidationCacheExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+            [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14844,7 +14844,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyVideoSessionKHR")]
         static abstract void DestroyVideoSessionKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+            [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14857,7 +14857,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDestroyVideoSessionKHR")]
         static abstract void DestroyVideoSessionKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+            [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14871,7 +14871,7 @@ public unsafe partial interface IVk
         static abstract void DestroyVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("videoSessionParameters")]
-                VideoSessionParametersHandleKhr videoSessionParameters,
+                VideoSessionParametersHandleKHR videoSessionParameters,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -14885,7 +14885,7 @@ public unsafe partial interface IVk
         static abstract void DestroyVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("videoSessionParameters")]
-                VideoSessionParametersHandleKhr videoSessionParameters,
+                VideoSessionParametersHandleKHR videoSessionParameters,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -14928,8 +14928,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDisplayPowerControlEXT")]
         static abstract Result DisplayPowerControlExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("display")] DisplayHandleKhr display,
-            [NativeName("pDisplayPowerInfo")] DisplayPowerInfoExt* pDisplayPowerInfo
+            [NativeName("display")] DisplayHandleKHR display,
+            [NativeName("pDisplayPowerInfo")] DisplayPowerInfoEXT* pDisplayPowerInfo
         );
 
         [NativeName("vkDisplayPowerControlEXT")]
@@ -14941,8 +14941,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDisplayPowerControlEXT")]
         static abstract Result DisplayPowerControlExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("display")] DisplayHandleKhr display,
-            [NativeName("pDisplayPowerInfo")] Ref<DisplayPowerInfoExt> pDisplayPowerInfo
+            [NativeName("display")] DisplayHandleKHR display,
+            [NativeName("pDisplayPowerInfo")] Ref<DisplayPowerInfoEXT> pDisplayPowerInfo
         );
 
         [NativeName("vkEndCommandBuffer")]
@@ -15404,9 +15404,9 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
             [NativeName("pCounterCount")] uint* pCounterCount,
-            [NativeName("pCounters")] PerformanceCounterArm* pCounters,
+            [NativeName("pCounters")] PerformanceCounterARM* pCounters,
             [NativeName("pCounterDescriptions")]
-                PerformanceCounterDescriptionArm* pCounterDescriptions
+                PerformanceCounterDescriptionARM* pCounterDescriptions
         );
 
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM")]
@@ -15426,9 +15426,9 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
             [NativeName("pCounterCount")] Ref<uint> pCounterCount,
-            [NativeName("pCounters")] Ref<PerformanceCounterArm> pCounters,
+            [NativeName("pCounters")] Ref<PerformanceCounterARM> pCounters,
             [NativeName("pCounterDescriptions")]
-                Ref<PerformanceCounterDescriptionArm> pCounterDescriptions
+                Ref<PerformanceCounterDescriptionARM> pCounterDescriptions
         );
 
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
@@ -15448,9 +15448,9 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
             [NativeName("pCounterCount")] uint* pCounterCount,
-            [NativeName("pCounters")] PerformanceCounterKhr* pCounters,
+            [NativeName("pCounters")] PerformanceCounterKHR* pCounters,
             [NativeName("pCounterDescriptions")]
-                PerformanceCounterDescriptionKhr* pCounterDescriptions
+                PerformanceCounterDescriptionKHR* pCounterDescriptions
         );
 
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
@@ -15470,9 +15470,9 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
             [NativeName("pCounterCount")] Ref<uint> pCounterCount,
-            [NativeName("pCounters")] Ref<PerformanceCounterKhr> pCounters,
+            [NativeName("pCounters")] Ref<PerformanceCounterKHR> pCounters,
             [NativeName("pCounterDescriptions")]
-                Ref<PerformanceCounterDescriptionKhr> pCounterDescriptions
+                Ref<PerformanceCounterDescriptionKHR> pCounterDescriptions
         );
 
         [NativeName("vkEnumeratePhysicalDevices")]
@@ -15855,10 +15855,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
         static abstract void GetAccelerationStructureBuildSizesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-            [NativeName("pBuildInfo")] AccelerationStructureBuildGeometryInfoKhr* pBuildInfo,
+            [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+            [NativeName("pBuildInfo")] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo,
             [NativeName("pMaxPrimitiveCounts")] uint* pMaxPrimitiveCounts,
-            [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKhr* pSizeInfo
+            [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
         );
 
         [NativeName("vkGetAccelerationStructureBuildSizesKHR")]
@@ -15873,10 +15873,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
         static abstract void GetAccelerationStructureBuildSizesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-            [NativeName("pBuildInfo")] Ref<AccelerationStructureBuildGeometryInfoKhr> pBuildInfo,
+            [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+            [NativeName("pBuildInfo")] Ref<AccelerationStructureBuildGeometryInfoKHR> pBuildInfo,
             [NativeName("pMaxPrimitiveCounts")] Ref<uint> pMaxPrimitiveCounts,
-            [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKhr> pSizeInfo
+            [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
         [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
@@ -15891,7 +15891,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
         static abstract ulong GetAccelerationStructureDeviceAddressKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] AccelerationStructureDeviceAddressInfoKhr* pInfo
+            [NativeName("pInfo")] AccelerationStructureDeviceAddressInfoKHR* pInfo
         );
 
         [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
@@ -15906,7 +15906,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
         static abstract ulong GetAccelerationStructureDeviceAddressKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<AccelerationStructureDeviceAddressInfoKhr> pInfo
+            [NativeName("pInfo")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
         );
 
         [NativeName("vkGetAccelerationStructureHandleNV")]
@@ -15922,7 +15922,7 @@ public unsafe partial interface IVk
         static abstract Result GetAccelerationStructureHandleNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructure")]
-                AccelerationStructureHandleNv accelerationStructure,
+                AccelerationStructureHandleNV accelerationStructure,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pData")] void* pData
         );
@@ -15940,7 +15940,7 @@ public unsafe partial interface IVk
         static abstract Result GetAccelerationStructureHandleNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructure")]
-                AccelerationStructureHandleNv accelerationStructure,
+                AccelerationStructureHandleNV accelerationStructure,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pData")] Ref pData
         );
@@ -15957,7 +15957,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
         static abstract void GetAccelerationStructureMemoryRequirementsNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] AccelerationStructureMemoryRequirementsInfoNv* pInfo,
+            [NativeName("pInfo")] AccelerationStructureMemoryRequirementsInfoNV* pInfo,
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
@@ -15973,7 +15973,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
         static abstract void GetAccelerationStructureMemoryRequirementsNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<AccelerationStructureMemoryRequirementsInfoNv> pInfo,
+            [NativeName("pInfo")] Ref<AccelerationStructureMemoryRequirementsInfoNV> pInfo,
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
@@ -15997,7 +15997,7 @@ public unsafe partial interface IVk
         )]
         static abstract Result GetAccelerationStructureOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] AccelerationStructureCaptureDescriptorDataInfoExt* pInfo,
+            [NativeName("pInfo")] AccelerationStructureCaptureDescriptorDataInfoEXT* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -16021,7 +16021,7 @@ public unsafe partial interface IVk
         )]
         static abstract Result GetAccelerationStructureOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<AccelerationStructureCaptureDescriptorDataInfoExt> pInfo,
+            [NativeName("pInfo")] Ref<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -16375,7 +16375,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetBufferOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] BufferCaptureDescriptorDataInfoExt* pInfo,
+            [NativeName("pInfo")] BufferCaptureDescriptorDataInfoEXT* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -16393,7 +16393,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetBufferOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<BufferCaptureDescriptorDataInfoExt> pInfo,
+            [NativeName("pInfo")] Ref<BufferCaptureDescriptorDataInfoEXT> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -16410,7 +16410,7 @@ public unsafe partial interface IVk
         static abstract Result GetCalibratedTimestampsExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("timestampCount")] uint timestampCount,
-            [NativeName("pTimestampInfos")] CalibratedTimestampInfoKhr* pTimestampInfos,
+            [NativeName("pTimestampInfos")] CalibratedTimestampInfoKHR* pTimestampInfos,
             [NativeName("pTimestamps")] ulong* pTimestamps,
             [NativeName("pMaxDeviation")] ulong* pMaxDeviation
         );
@@ -16428,7 +16428,7 @@ public unsafe partial interface IVk
         static abstract Result GetCalibratedTimestampsExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("timestampCount")] uint timestampCount,
-            [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKhr> pTimestampInfos,
+            [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
             [NativeName("pTimestamps")] Ref<ulong> pTimestamps,
             [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
         );
@@ -16446,7 +16446,7 @@ public unsafe partial interface IVk
         static abstract Result GetCalibratedTimestampsKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("timestampCount")] uint timestampCount,
-            [NativeName("pTimestampInfos")] CalibratedTimestampInfoKhr* pTimestampInfos,
+            [NativeName("pTimestampInfos")] CalibratedTimestampInfoKHR* pTimestampInfos,
             [NativeName("pTimestamps")] ulong* pTimestamps,
             [NativeName("pMaxDeviation")] ulong* pMaxDeviation
         );
@@ -16464,7 +16464,7 @@ public unsafe partial interface IVk
         static abstract Result GetCalibratedTimestampsKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("timestampCount")] uint timestampCount,
-            [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKhr> pTimestampInfos,
+            [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
             [NativeName("pTimestamps")] Ref<ulong> pTimestamps,
             [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
         );
@@ -16478,8 +16478,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetClusterAccelerationStructureBuildSizesNV")]
         static abstract void GetClusterAccelerationStructureBuildSizesNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ClusterAccelerationStructureInputInfoNv* pInfo,
-            [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKhr* pSizeInfo
+            [NativeName("pInfo")] ClusterAccelerationStructureInputInfoNV* pInfo,
+            [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
         );
 
         [NativeName("vkGetClusterAccelerationStructureBuildSizesNV")]
@@ -16491,8 +16491,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetClusterAccelerationStructureBuildSizesNV")]
         static abstract void GetClusterAccelerationStructureBuildSizesNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ClusterAccelerationStructureInputInfoNv> pInfo,
-            [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKhr> pSizeInfo
+            [NativeName("pInfo")] Ref<ClusterAccelerationStructureInputInfoNV> pInfo,
+            [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
         [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
@@ -16508,9 +16508,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
         static abstract Result GetDataGraphPipelineAvailablePropertiesArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] DataGraphPipelineInfoArm* pPipelineInfo,
+            [NativeName("pPipelineInfo")] DataGraphPipelineInfoARM* pPipelineInfo,
             [NativeName("pPropertiesCount")] uint* pPropertiesCount,
-            [NativeName("pProperties")] DataGraphPipelinePropertyArm* pProperties
+            [NativeName("pProperties")] DataGraphPipelinePropertyARM* pProperties
         );
 
         [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
@@ -16526,9 +16526,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
         static abstract Result GetDataGraphPipelineAvailablePropertiesArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoArm> pPipelineInfo,
+            [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoARM> pPipelineInfo,
             [NativeName("pPropertiesCount")] Ref<uint> pPropertiesCount,
-            [NativeName("pProperties")] Ref<DataGraphPipelinePropertyArm> pProperties
+            [NativeName("pProperties")] Ref<DataGraphPipelinePropertyARM> pProperties
         );
 
         [NativeName("vkGetDataGraphPipelinePropertiesARM")]
@@ -16544,9 +16544,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
         static abstract Result GetDataGraphPipelinePropertiesArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] DataGraphPipelineInfoArm* pPipelineInfo,
+            [NativeName("pPipelineInfo")] DataGraphPipelineInfoARM* pPipelineInfo,
             [NativeName("propertiesCount")] uint propertiesCount,
-            [NativeName("pProperties")] DataGraphPipelinePropertyQueryResultArm* pProperties
+            [NativeName("pProperties")] DataGraphPipelinePropertyQueryResultARM* pProperties
         );
 
         [NativeName("vkGetDataGraphPipelinePropertiesARM")]
@@ -16562,9 +16562,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
         static abstract Result GetDataGraphPipelinePropertiesArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoArm> pPipelineInfo,
+            [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoARM> pPipelineInfo,
             [NativeName("propertiesCount")] uint propertiesCount,
-            [NativeName("pProperties")] Ref<DataGraphPipelinePropertyQueryResultArm> pProperties
+            [NativeName("pProperties")] Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
         );
 
         [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
@@ -16583,10 +16583,10 @@ public unsafe partial interface IVk
         )]
         static abstract Result GetDataGraphPipelineSessionBindPointRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] DataGraphPipelineSessionBindPointRequirementsInfoArm* pInfo,
+            [NativeName("pInfo")] DataGraphPipelineSessionBindPointRequirementsInfoARM* pInfo,
             [NativeName("pBindPointRequirementCount")] uint* pBindPointRequirementCount,
             [NativeName("pBindPointRequirements")]
-                DataGraphPipelineSessionBindPointRequirementArm* pBindPointRequirements
+                DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
         );
 
         [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
@@ -16605,10 +16605,10 @@ public unsafe partial interface IVk
         )]
         static abstract Result GetDataGraphPipelineSessionBindPointRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<DataGraphPipelineSessionBindPointRequirementsInfoArm> pInfo,
+            [NativeName("pInfo")] Ref<DataGraphPipelineSessionBindPointRequirementsInfoARM> pInfo,
             [NativeName("pBindPointRequirementCount")] Ref<uint> pBindPointRequirementCount,
             [NativeName("pBindPointRequirements")]
-                Ref<DataGraphPipelineSessionBindPointRequirementArm> pBindPointRequirements
+                Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
         );
 
         [NativeName("vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
@@ -16627,7 +16627,7 @@ public unsafe partial interface IVk
         )]
         static abstract void GetDataGraphPipelineSessionMemoryRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] DataGraphPipelineSessionMemoryRequirementsInfoArm* pInfo,
+            [NativeName("pInfo")] DataGraphPipelineSessionMemoryRequirementsInfoARM* pInfo,
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
@@ -16647,7 +16647,7 @@ public unsafe partial interface IVk
         )]
         static abstract void GetDataGraphPipelineSessionMemoryRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<DataGraphPipelineSessionMemoryRequirementsInfoArm> pInfo,
+            [NativeName("pInfo")] Ref<DataGraphPipelineSessionMemoryRequirementsInfoARM> pInfo,
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
@@ -16656,7 +16656,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationMaxConcurrencyKHR")]
         static abstract uint GetDeferredOperationMaxConcurrencyKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("operation")] DeferredOperationHandleKhr operation
+            [NativeName("operation")] DeferredOperationHandleKHR operation
         );
 
         [NativeName("vkGetDeferredOperationResultKHR")]
@@ -16664,7 +16664,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationResultKHR")]
         static abstract Result GetDeferredOperationResultKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("operation")] DeferredOperationHandleKhr operation
+            [NativeName("operation")] DeferredOperationHandleKHR operation
         );
 
         [NativeName("vkGetDescriptorEXT")]
@@ -16681,7 +16681,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorEXT")]
         static abstract void GetDescriptorExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pDescriptorInfo")] DescriptorGetInfoExt* pDescriptorInfo,
+            [NativeName("pDescriptorInfo")] DescriptorGetInfoEXT* pDescriptorInfo,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pDescriptor")] void* pDescriptor
         );
@@ -16700,7 +16700,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorEXT")]
         static abstract void GetDescriptorExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pDescriptorInfo")] Ref<DescriptorGetInfoExt> pDescriptorInfo,
+            [NativeName("pDescriptorInfo")] Ref<DescriptorGetInfoEXT> pDescriptorInfo,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pDescriptor")] Ref pDescriptor
         );
@@ -16787,8 +16787,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
         static abstract void GetDescriptorSetLayoutHostMappingInfoValve(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pBindingReference")] DescriptorSetBindingReferenceValve* pBindingReference,
-            [NativeName("pHostMapping")] DescriptorSetLayoutHostMappingInfoValve* pHostMapping
+            [NativeName("pBindingReference")] DescriptorSetBindingReferenceVALVE* pBindingReference,
+            [NativeName("pHostMapping")] DescriptorSetLayoutHostMappingInfoVALVE* pHostMapping
         );
 
         [NativeName("vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
@@ -16804,8 +16804,8 @@ public unsafe partial interface IVk
         static abstract void GetDescriptorSetLayoutHostMappingInfoValve(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pBindingReference")]
-                Ref<DescriptorSetBindingReferenceValve> pBindingReference,
-            [NativeName("pHostMapping")] Ref<DescriptorSetLayoutHostMappingInfoValve> pHostMapping
+                Ref<DescriptorSetBindingReferenceVALVE> pBindingReference,
+            [NativeName("pHostMapping")] Ref<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping
         );
 
         [NativeName("vkGetDescriptorSetLayoutSizeEXT")]
@@ -16940,8 +16940,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
         static abstract void GetDeviceAccelerationStructureCompatibilityKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pVersionInfo")] AccelerationStructureVersionInfoKhr* pVersionInfo,
-            [NativeName("pCompatibility")] AccelerationStructureCompatibilityKhr* pCompatibility
+            [NativeName("pVersionInfo")] AccelerationStructureVersionInfoKHR* pVersionInfo,
+            [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
         );
 
         [NativeName("vkGetDeviceAccelerationStructureCompatibilityKHR")]
@@ -16956,8 +16956,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
         static abstract void GetDeviceAccelerationStructureCompatibilityKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pVersionInfo")] Ref<AccelerationStructureVersionInfoKhr> pVersionInfo,
-            [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKhr> pCompatibility
+            [NativeName("pVersionInfo")] Ref<AccelerationStructureVersionInfoKHR> pVersionInfo,
+            [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKHR> pCompatibility
         );
 
         [NativeName("vkGetDeviceBufferMemoryRequirements")]
@@ -17034,8 +17034,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceFaultInfoEXT")]
         static abstract Result GetDeviceFaultInfoExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pFaultCounts")] DeviceFaultCountsExt* pFaultCounts,
-            [NativeName("pFaultInfo")] DeviceFaultInfoExt* pFaultInfo
+            [NativeName("pFaultCounts")] DeviceFaultCountsEXT* pFaultCounts,
+            [NativeName("pFaultInfo")] DeviceFaultInfoEXT* pFaultInfo
         );
 
         [NativeName("vkGetDeviceFaultInfoEXT")]
@@ -17050,8 +17050,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceFaultInfoEXT")]
         static abstract Result GetDeviceFaultInfoExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pFaultCounts")] Ref<DeviceFaultCountsExt> pFaultCounts,
-            [NativeName("pFaultInfo")] Ref<DeviceFaultInfoExt> pFaultInfo
+            [NativeName("pFaultCounts")] Ref<DeviceFaultCountsEXT> pFaultCounts,
+            [NativeName("pFaultInfo")] Ref<DeviceFaultInfoEXT> pFaultInfo
         );
 
         [NativeName("vkGetDeviceGroupPeerMemoryFeatures")]
@@ -17159,7 +17159,7 @@ public unsafe partial interface IVk
         static abstract Result GetDeviceGroupPresentCapabilitiesKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pDeviceGroupPresentCapabilities")]
-                DeviceGroupPresentCapabilitiesKhr* pDeviceGroupPresentCapabilities
+                DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities
         );
 
         [NativeName("vkGetDeviceGroupPresentCapabilitiesKHR")]
@@ -17173,7 +17173,7 @@ public unsafe partial interface IVk
         static abstract Result GetDeviceGroupPresentCapabilitiesKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pDeviceGroupPresentCapabilities")]
-                Ref<DeviceGroupPresentCapabilitiesKhr> pDeviceGroupPresentCapabilities
+                Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
         );
 
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
@@ -17186,8 +17186,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR")]
         static abstract Result GetDeviceGroupSurfacePresentModesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("surface")] SurfaceHandleKhr surface,
-            [NativeName("pModes")] DeviceGroupPresentModeFlagsKhr* pModes
+            [NativeName("surface")] SurfaceHandleKHR surface,
+            [NativeName("pModes")] DeviceGroupPresentModeFlagsKHR* pModes
         );
 
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
@@ -17200,8 +17200,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR")]
         static abstract Result GetDeviceGroupSurfacePresentModesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("surface")] SurfaceHandleKhr surface,
-            [NativeName("pModes")] Ref<DeviceGroupPresentModeFlagsKhr> pModes
+            [NativeName("surface")] SurfaceHandleKHR surface,
+            [NativeName("pModes")] Ref<DeviceGroupPresentModeFlagsKHR> pModes
         );
 
         [NativeName("vkGetDeviceImageMemoryRequirements")]
@@ -17558,8 +17558,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMicromapCompatibilityEXT")]
         static abstract void GetDeviceMicromapCompatibilityExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pVersionInfo")] MicromapVersionInfoExt* pVersionInfo,
-            [NativeName("pCompatibility")] AccelerationStructureCompatibilityKhr* pCompatibility
+            [NativeName("pVersionInfo")] MicromapVersionInfoEXT* pVersionInfo,
+            [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
         );
 
         [NativeName("vkGetDeviceMicromapCompatibilityEXT")]
@@ -17574,8 +17574,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMicromapCompatibilityEXT")]
         static abstract void GetDeviceMicromapCompatibilityExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pVersionInfo")] Ref<MicromapVersionInfoExt> pVersionInfo,
-            [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKhr> pCompatibility
+            [NativeName("pVersionInfo")] Ref<MicromapVersionInfoEXT> pVersionInfo,
+            [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKHR> pCompatibility
         );
 
         [NativeName("vkGetDeviceProcAddr")]
@@ -17813,7 +17813,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
         static abstract void GetDeviceTensorMemoryRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] DeviceTensorMemoryRequirementsArm* pInfo,
+            [NativeName("pInfo")] DeviceTensorMemoryRequirementsARM* pInfo,
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
@@ -17822,7 +17822,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
         static abstract void GetDeviceTensorMemoryRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<DeviceTensorMemoryRequirementsArm> pInfo,
+            [NativeName("pInfo")] Ref<DeviceTensorMemoryRequirementsARM> pInfo,
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
@@ -17835,9 +17835,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModeProperties2KHR")]
         static abstract Result GetDisplayModeProperties2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display,
+            [NativeName("display")] DisplayHandleKHR display,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] DisplayModeProperties2Khr* pProperties
+            [NativeName("pProperties")] DisplayModeProperties2KHR* pProperties
         );
 
         [NativeName("vkGetDisplayModeProperties2KHR")]
@@ -17849,9 +17849,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModeProperties2KHR")]
         static abstract Result GetDisplayModeProperties2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display,
+            [NativeName("display")] DisplayHandleKHR display,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<DisplayModeProperties2Khr> pProperties
+            [NativeName("pProperties")] Ref<DisplayModeProperties2KHR> pProperties
         );
 
         [NativeName("vkGetDisplayModePropertiesKHR")]
@@ -17859,9 +17859,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
         static abstract Result GetDisplayModePropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display,
+            [NativeName("display")] DisplayHandleKHR display,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] DisplayModePropertiesKhr* pProperties
+            [NativeName("pProperties")] DisplayModePropertiesKHR* pProperties
         );
 
         [NativeName("vkGetDisplayModePropertiesKHR")]
@@ -17869,9 +17869,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
         static abstract Result GetDisplayModePropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display,
+            [NativeName("display")] DisplayHandleKHR display,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<DisplayModePropertiesKhr> pProperties
+            [NativeName("pProperties")] Ref<DisplayModePropertiesKHR> pProperties
         );
 
         [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
@@ -17883,8 +17883,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
         static abstract Result GetDisplayPlaneCapabilities2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pDisplayPlaneInfo")] DisplayPlaneInfo2Khr* pDisplayPlaneInfo,
-            [NativeName("pCapabilities")] DisplayPlaneCapabilities2Khr* pCapabilities
+            [NativeName("pDisplayPlaneInfo")] DisplayPlaneInfo2KHR* pDisplayPlaneInfo,
+            [NativeName("pCapabilities")] DisplayPlaneCapabilities2KHR* pCapabilities
         );
 
         [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
@@ -17896,8 +17896,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
         static abstract Result GetDisplayPlaneCapabilities2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pDisplayPlaneInfo")] Ref<DisplayPlaneInfo2Khr> pDisplayPlaneInfo,
-            [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilities2Khr> pCapabilities
+            [NativeName("pDisplayPlaneInfo")] Ref<DisplayPlaneInfo2KHR> pDisplayPlaneInfo,
+            [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilities2KHR> pCapabilities
         );
 
         [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
@@ -17905,9 +17905,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
         static abstract Result GetDisplayPlaneCapabilitiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("mode")] DisplayModeHandleKhr mode,
+            [NativeName("mode")] DisplayModeHandleKHR mode,
             [NativeName("planeIndex")] uint planeIndex,
-            [NativeName("pCapabilities")] DisplayPlaneCapabilitiesKhr* pCapabilities
+            [NativeName("pCapabilities")] DisplayPlaneCapabilitiesKHR* pCapabilities
         );
 
         [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
@@ -17915,9 +17915,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
         static abstract Result GetDisplayPlaneCapabilitiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("mode")] DisplayModeHandleKhr mode,
+            [NativeName("mode")] DisplayModeHandleKHR mode,
             [NativeName("planeIndex")] uint planeIndex,
-            [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilitiesKhr> pCapabilities
+            [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilitiesKHR> pCapabilities
         );
 
         [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -17927,7 +17927,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("planeIndex")] uint planeIndex,
             [NativeName("pDisplayCount")] uint* pDisplayCount,
-            [NativeName("pDisplays")] DisplayHandleKhr* pDisplays
+            [NativeName("pDisplays")] DisplayHandleKHR* pDisplays
         );
 
         [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -17937,7 +17937,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("planeIndex")] uint planeIndex,
             [NativeName("pDisplayCount")] Ref<uint> pDisplayCount,
-            [NativeName("pDisplays")] Ref<DisplayHandleKhr> pDisplays
+            [NativeName("pDisplays")] Ref<DisplayHandleKHR> pDisplays
         );
 
         [NativeName("vkGetDrmDisplayEXT")]
@@ -17951,7 +17951,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("drmFd")] int drmFd,
             [NativeName("connectorId")] uint connectorId,
-            [NativeName("display")] DisplayHandleKhr* display
+            [NativeName("display")] DisplayHandleKHR* display
         );
 
         [NativeName("vkGetDrmDisplayEXT")]
@@ -17965,7 +17965,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("drmFd")] int drmFd,
             [NativeName("connectorId")] uint connectorId,
-            [NativeName("display")] Ref<DisplayHandleKhr> display
+            [NativeName("display")] Ref<DisplayHandleKHR> display
         );
 
         [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
@@ -17981,7 +17981,7 @@ public unsafe partial interface IVk
         static abstract Result GetDynamicRenderingTilePropertiesQcom(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pRenderingInfo")] RenderingInfo* pRenderingInfo,
-            [NativeName("pProperties")] TilePropertiesQcom* pProperties
+            [NativeName("pProperties")] TilePropertiesQCOM* pProperties
         );
 
         [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
@@ -17997,7 +17997,7 @@ public unsafe partial interface IVk
         static abstract Result GetDynamicRenderingTilePropertiesQcom(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pRenderingInfo")] Ref<RenderingInfo> pRenderingInfo,
-            [NativeName("pProperties")] Ref<TilePropertiesQcom> pProperties
+            [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
         );
 
         [NativeName("vkGetEncodedVideoSessionParametersKHR")]
@@ -18013,9 +18013,9 @@ public unsafe partial interface IVk
         static abstract Result GetEncodedVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pVideoSessionParametersInfo")]
-                VideoEncodeSessionParametersGetInfoKhr* pVideoSessionParametersInfo,
+                VideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo,
             [NativeName("pFeedbackInfo")]
-                VideoEncodeSessionParametersFeedbackInfoKhr* pFeedbackInfo,
+                VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo,
             [NativeName("pDataSize")] nuint* pDataSize,
             [NativeName("pData")] void* pData
         );
@@ -18033,9 +18033,9 @@ public unsafe partial interface IVk
         static abstract Result GetEncodedVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pVideoSessionParametersInfo")]
-                Ref<VideoEncodeSessionParametersGetInfoKhr> pVideoSessionParametersInfo,
+                Ref<VideoEncodeSessionParametersGetInfoKHR> pVideoSessionParametersInfo,
             [NativeName("pFeedbackInfo")]
-                Ref<VideoEncodeSessionParametersFeedbackInfoKhr> pFeedbackInfo,
+                Ref<VideoEncodeSessionParametersFeedbackInfoKHR> pFeedbackInfo,
             [NativeName("pDataSize")] Ref<nuint> pDataSize,
             [NativeName("pData")] Ref pData
         );
@@ -18072,8 +18072,8 @@ public unsafe partial interface IVk
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
         static abstract void GetExternalComputeQueueDataNv(
-            [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
-            [NativeName("@params")] ExternalComputeQueueDataParamsNv* @params,
+            [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
+            [NativeName("@params")] ExternalComputeQueueDataParamsNV* @params,
             [NativeName("pData")] void* pData
         );
 
@@ -18081,8 +18081,8 @@ public unsafe partial interface IVk
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
         static abstract void GetExternalComputeQueueDataNv(
-            [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
-            [NativeName("@params")] Ref<ExternalComputeQueueDataParamsNv> @params,
+            [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
+            [NativeName("@params")] Ref<ExternalComputeQueueDataParamsNV> @params,
             [NativeName("pData")] Ref pData
         );
 
@@ -18098,7 +18098,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetFenceFdKHR")]
         static abstract Result GetFenceFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pGetFdInfo")] FenceGetFdInfoKhr* pGetFdInfo,
+            [NativeName("pGetFdInfo")] FenceGetFdInfoKHR* pGetFdInfo,
             [NativeName("pFd")] int* pFd
         );
 
@@ -18114,7 +18114,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetFenceFdKHR")]
         static abstract Result GetFenceFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pGetFdInfo")] Ref<FenceGetFdInfoKhr> pGetFdInfo,
+            [NativeName("pGetFdInfo")] Ref<FenceGetFdInfoKHR> pGetFdInfo,
             [NativeName("pFd")] Ref<int> pFd
         );
 
@@ -18165,7 +18165,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("framebuffer")] FramebufferHandle framebuffer,
             [NativeName("pPropertiesCount")] uint* pPropertiesCount,
-            [NativeName("pProperties")] TilePropertiesQcom* pProperties
+            [NativeName("pProperties")] TilePropertiesQCOM* pProperties
         );
 
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
@@ -18182,7 +18182,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("framebuffer")] FramebufferHandle framebuffer,
             [NativeName("pPropertiesCount")] Ref<uint> pPropertiesCount,
-            [NativeName("pProperties")] Ref<TilePropertiesQcom> pProperties
+            [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
         );
 
         [NativeName("vkGetGeneratedCommandsMemoryRequirementsEXT")]
@@ -18198,7 +18198,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT")]
         static abstract void GetGeneratedCommandsMemoryRequirementsExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoExt* pInfo,
+            [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoEXT* pInfo,
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
@@ -18215,7 +18215,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT")]
         static abstract void GetGeneratedCommandsMemoryRequirementsExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoExt> pInfo,
+            [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoEXT> pInfo,
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
@@ -18228,7 +18228,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
         static abstract void GetGeneratedCommandsMemoryRequirementsNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoNv* pInfo,
+            [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoNV* pInfo,
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
@@ -18241,7 +18241,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
         static abstract void GetGeneratedCommandsMemoryRequirementsNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoNv> pInfo,
+            [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoNV> pInfo,
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
@@ -18259,7 +18259,7 @@ public unsafe partial interface IVk
         static abstract Result GetImageDrmFormatModifierPropertiesExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("image")] ImageHandle image,
-            [NativeName("pProperties")] ImageDrmFormatModifierPropertiesExt* pProperties
+            [NativeName("pProperties")] ImageDrmFormatModifierPropertiesEXT* pProperties
         );
 
         [NativeName("vkGetImageDrmFormatModifierPropertiesEXT")]
@@ -18276,7 +18276,7 @@ public unsafe partial interface IVk
         static abstract Result GetImageDrmFormatModifierPropertiesExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("image")] ImageHandle image,
-            [NativeName("pProperties")] Ref<ImageDrmFormatModifierPropertiesExt> pProperties
+            [NativeName("pProperties")] Ref<ImageDrmFormatModifierPropertiesEXT> pProperties
         );
 
         [NativeName("vkGetImageMemoryRequirements")]
@@ -18439,7 +18439,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetImageOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ImageCaptureDescriptorDataInfoExt* pInfo,
+            [NativeName("pInfo")] ImageCaptureDescriptorDataInfoEXT* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -18457,7 +18457,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetImageOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ImageCaptureDescriptorDataInfoExt> pInfo,
+            [NativeName("pInfo")] Ref<ImageCaptureDescriptorDataInfoEXT> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -18797,7 +18797,7 @@ public unsafe partial interface IVk
         static abstract Result GetImageViewAddressNvx(
             [NativeName("device")] DeviceHandle device,
             [NativeName("imageView")] ImageViewHandle imageView,
-            [NativeName("pProperties")] ImageViewAddressPropertiesNvx* pProperties
+            [NativeName("pProperties")] ImageViewAddressPropertiesNVX* pProperties
         );
 
         [NativeName("vkGetImageViewAddressNVX")]
@@ -18806,7 +18806,7 @@ public unsafe partial interface IVk
         static abstract Result GetImageViewAddressNvx(
             [NativeName("device")] DeviceHandle device,
             [NativeName("imageView")] ImageViewHandle imageView,
-            [NativeName("pProperties")] Ref<ImageViewAddressPropertiesNvx> pProperties
+            [NativeName("pProperties")] Ref<ImageViewAddressPropertiesNVX> pProperties
         );
 
         [NativeName("vkGetImageViewHandle64NVX")]
@@ -18814,7 +18814,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
         static abstract ulong GetImageViewHandle64Nvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ImageViewHandleInfoNvx* pInfo
+            [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
         );
 
         [NativeName("vkGetImageViewHandle64NVX")]
@@ -18822,7 +18822,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
         static abstract ulong GetImageViewHandle64Nvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ImageViewHandleInfoNvx> pInfo
+            [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
         );
 
         [NativeName("vkGetImageViewHandleNVX")]
@@ -18830,7 +18830,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
         static abstract uint GetImageViewHandleNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ImageViewHandleInfoNvx* pInfo
+            [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
         );
 
         [NativeName("vkGetImageViewHandleNVX")]
@@ -18838,7 +18838,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
         static abstract uint GetImageViewHandleNvx(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ImageViewHandleInfoNvx> pInfo
+            [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
         );
 
         [NativeName("vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
@@ -18855,7 +18855,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetImageViewOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ImageViewCaptureDescriptorDataInfoExt* pInfo,
+            [NativeName("pInfo")] ImageViewCaptureDescriptorDataInfoEXT* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -18873,7 +18873,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetImageViewOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ImageViewCaptureDescriptorDataInfoExt> pInfo,
+            [NativeName("pInfo")] Ref<ImageViewCaptureDescriptorDataInfoEXT> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -18957,8 +18957,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetLatencyTimingsNV")]
         static abstract void GetLatencyTimingsNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pLatencyMarkerInfo")] GetLatencyMarkerInfoNv* pLatencyMarkerInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pLatencyMarkerInfo")] GetLatencyMarkerInfoNV* pLatencyMarkerInfo
         );
 
         [NativeName("vkGetLatencyTimingsNV")]
@@ -18975,8 +18975,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetLatencyTimingsNV")]
         static abstract void GetLatencyTimingsNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pLatencyMarkerInfo")] Ref<GetLatencyMarkerInfoNv> pLatencyMarkerInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pLatencyMarkerInfo")] Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
         );
 
         [NativeName("vkGetMemoryFdKHR")]
@@ -18991,7 +18991,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdKHR")]
         static abstract Result GetMemoryFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pGetFdInfo")] MemoryGetFdInfoKhr* pGetFdInfo,
+            [NativeName("pGetFdInfo")] MemoryGetFdInfoKHR* pGetFdInfo,
             [NativeName("pFd")] int* pFd
         );
 
@@ -19007,7 +19007,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdKHR")]
         static abstract Result GetMemoryFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pGetFdInfo")] Ref<MemoryGetFdInfoKhr> pGetFdInfo,
+            [NativeName("pGetFdInfo")] Ref<MemoryGetFdInfoKHR> pGetFdInfo,
             [NativeName("pFd")] Ref<int> pFd
         );
 
@@ -19025,7 +19025,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
             [NativeName("fd")] int fd,
-            [NativeName("pMemoryFdProperties")] MemoryFdPropertiesKhr* pMemoryFdProperties
+            [NativeName("pMemoryFdProperties")] MemoryFdPropertiesKHR* pMemoryFdProperties
         );
 
         [NativeName("vkGetMemoryFdPropertiesKHR")]
@@ -19042,7 +19042,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
             [NativeName("fd")] int fd,
-            [NativeName("pMemoryFdProperties")] Ref<MemoryFdPropertiesKhr> pMemoryFdProperties
+            [NativeName("pMemoryFdProperties")] Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
         );
 
         [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
@@ -19060,7 +19060,7 @@ public unsafe partial interface IVk
             [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
             [NativeName("pHostPointer")] void* pHostPointer,
             [NativeName("pMemoryHostPointerProperties")]
-                MemoryHostPointerPropertiesExt* pMemoryHostPointerProperties
+                MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
         );
 
         [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
@@ -19078,7 +19078,7 @@ public unsafe partial interface IVk
             [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
             [NativeName("pHostPointer")] Ref pHostPointer,
             [NativeName("pMemoryHostPointerProperties")]
-                Ref<MemoryHostPointerPropertiesExt> pMemoryHostPointerProperties
+                Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
         );
 
         [NativeName("vkGetMemoryRemoteAddressNV")]
@@ -19094,7 +19094,7 @@ public unsafe partial interface IVk
         static abstract Result GetMemoryRemoteAddressNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pMemoryGetRemoteAddressInfo")]
-                MemoryGetRemoteAddressInfoNv* pMemoryGetRemoteAddressInfo,
+                MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo,
             [NativeName("pAddress")] void** pAddress
         );
 
@@ -19111,7 +19111,7 @@ public unsafe partial interface IVk
         static abstract Result GetMemoryRemoteAddressNv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pMemoryGetRemoteAddressInfo")]
-                Ref<MemoryGetRemoteAddressInfoNv> pMemoryGetRemoteAddressInfo,
+                Ref<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo,
             [NativeName("pAddress")] Ref2D pAddress
         );
 
@@ -19127,9 +19127,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMicromapBuildSizesEXT")]
         static abstract void GetMicromapBuildSizesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-            [NativeName("pBuildInfo")] MicromapBuildInfoExt* pBuildInfo,
-            [NativeName("pSizeInfo")] MicromapBuildSizesInfoExt* pSizeInfo
+            [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+            [NativeName("pBuildInfo")] MicromapBuildInfoEXT* pBuildInfo,
+            [NativeName("pSizeInfo")] MicromapBuildSizesInfoEXT* pSizeInfo
         );
 
         [NativeName("vkGetMicromapBuildSizesEXT")]
@@ -19144,9 +19144,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetMicromapBuildSizesEXT")]
         static abstract void GetMicromapBuildSizesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-            [NativeName("pBuildInfo")] Ref<MicromapBuildInfoExt> pBuildInfo,
-            [NativeName("pSizeInfo")] Ref<MicromapBuildSizesInfoExt> pSizeInfo
+            [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+            [NativeName("pBuildInfo")] Ref<MicromapBuildInfoEXT> pBuildInfo,
+            [NativeName("pSizeInfo")] Ref<MicromapBuildSizesInfoEXT> pSizeInfo
         );
 
         [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
@@ -19161,8 +19161,8 @@ public unsafe partial interface IVk
         )]
         static abstract void GetPartitionedAccelerationStructuresBuildSizesNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] PartitionedAccelerationStructureInstancesInputNv* pInfo,
-            [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKhr* pSizeInfo
+            [NativeName("pInfo")] PartitionedAccelerationStructureInstancesInputNV* pInfo,
+            [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
         );
 
         [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
@@ -19177,8 +19177,8 @@ public unsafe partial interface IVk
         )]
         static abstract void GetPartitionedAccelerationStructuresBuildSizesNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<PartitionedAccelerationStructureInstancesInputNv> pInfo,
-            [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKhr> pSizeInfo
+            [NativeName("pInfo")] Ref<PartitionedAccelerationStructureInstancesInputNV> pInfo,
+            [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
         [NativeName("vkGetPastPresentationTimingGOOGLE")]
@@ -19190,9 +19190,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
         static abstract Result GetPastPresentationTimingGoogle(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pPresentationTimingCount")] uint* pPresentationTimingCount,
-            [NativeName("pPresentationTimings")] PastPresentationTimingGoogle* pPresentationTimings
+            [NativeName("pPresentationTimings")] PastPresentationTimingGOOGLE* pPresentationTimings
         );
 
         [NativeName("vkGetPastPresentationTimingGOOGLE")]
@@ -19204,10 +19204,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
         static abstract Result GetPastPresentationTimingGoogle(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pPresentationTimingCount")] Ref<uint> pPresentationTimingCount,
             [NativeName("pPresentationTimings")]
-                Ref<PastPresentationTimingGoogle> pPresentationTimings
+                Ref<PastPresentationTimingGOOGLE> pPresentationTimings
         );
 
         [NativeName("vkGetPerformanceParameterINTEL")]
@@ -19215,8 +19215,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
         static abstract Result GetPerformanceParameterIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("parameter")] PerformanceParameterTypeIntel parameter,
-            [NativeName("pValue")] PerformanceValueIntel* pValue
+            [NativeName("parameter")] PerformanceParameterTypeINTEL parameter,
+            [NativeName("pValue")] PerformanceValueINTEL* pValue
         );
 
         [NativeName("vkGetPerformanceParameterINTEL")]
@@ -19224,8 +19224,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
         static abstract Result GetPerformanceParameterIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("parameter")] PerformanceParameterTypeIntel parameter,
-            [NativeName("pValue")] Ref<PerformanceValueIntel> pValue
+            [NativeName("parameter")] PerformanceParameterTypeINTEL parameter,
+            [NativeName("pValue")] Ref<PerformanceValueINTEL> pValue
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
@@ -19241,7 +19241,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsExt(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-            [NativeName("pTimeDomains")] TimeDomainKhr* pTimeDomains
+            [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
@@ -19257,7 +19257,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsExt(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-            [NativeName("pTimeDomains")] Ref<TimeDomainKhr> pTimeDomains
+            [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -19273,7 +19273,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-            [NativeName("pTimeDomains")] TimeDomainKhr* pTimeDomains
+            [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -19289,7 +19289,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-            [NativeName("pTimeDomains")] Ref<TimeDomainKhr> pTimeDomains
+            [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
@@ -19305,7 +19305,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] CooperativeMatrixFlexibleDimensionsPropertiesNv* pProperties
+            [NativeName("pProperties")] CooperativeMatrixFlexibleDimensionsPropertiesNV* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
@@ -19322,7 +19322,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
             [NativeName("pProperties")]
-                Ref<CooperativeMatrixFlexibleDimensionsPropertiesNv> pProperties
+                Ref<CooperativeMatrixFlexibleDimensionsPropertiesNV> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
@@ -19338,7 +19338,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeMatrixPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] CooperativeMatrixPropertiesKhr* pProperties
+            [NativeName("pProperties")] CooperativeMatrixPropertiesKHR* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
@@ -19354,7 +19354,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeMatrixPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesKhr> pProperties
+            [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesKHR> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
@@ -19370,7 +19370,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeMatrixPropertiesNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] CooperativeMatrixPropertiesNv* pProperties
+            [NativeName("pProperties")] CooperativeMatrixPropertiesNV* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
@@ -19386,7 +19386,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeMatrixPropertiesNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesNv> pProperties
+            [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesNV> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
@@ -19402,7 +19402,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeVectorPropertiesNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] CooperativeVectorPropertiesNv* pProperties
+            [NativeName("pProperties")] CooperativeVectorPropertiesNV* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
@@ -19418,7 +19418,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCooperativeVectorPropertiesNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<CooperativeVectorPropertiesNv> pProperties
+            [NativeName("pProperties")] Ref<CooperativeVectorPropertiesNV> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
@@ -19431,7 +19431,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayPlaneProperties2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] DisplayPlaneProperties2Khr* pProperties
+            [NativeName("pProperties")] DisplayPlaneProperties2KHR* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
@@ -19444,7 +19444,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayPlaneProperties2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<DisplayPlaneProperties2Khr> pProperties
+            [NativeName("pProperties")] Ref<DisplayPlaneProperties2KHR> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -19453,7 +19453,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayPlanePropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] DisplayPlanePropertiesKhr* pProperties
+            [NativeName("pProperties")] DisplayPlanePropertiesKHR* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -19462,7 +19462,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayPlanePropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<DisplayPlanePropertiesKhr> pProperties
+            [NativeName("pProperties")] Ref<DisplayPlanePropertiesKHR> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
@@ -19475,7 +19475,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayProperties2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] DisplayProperties2Khr* pProperties
+            [NativeName("pProperties")] DisplayProperties2KHR* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
@@ -19488,7 +19488,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayProperties2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<DisplayProperties2Khr> pProperties
+            [NativeName("pProperties")] Ref<DisplayProperties2KHR> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -19497,7 +19497,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] uint* pPropertyCount,
-            [NativeName("pProperties")] DisplayPropertiesKhr* pProperties
+            [NativeName("pProperties")] DisplayPropertiesKHR* pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -19506,7 +19506,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceDisplayPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-            [NativeName("pProperties")] Ref<DisplayPropertiesKhr> pProperties
+            [NativeName("pProperties")] Ref<DisplayPropertiesKHR> pProperties
         );
 
         [NativeName("vkGetPhysicalDeviceExternalBufferProperties")]
@@ -19720,9 +19720,9 @@ public unsafe partial interface IVk
             [NativeName("tiling")] ImageTiling tiling,
             [NativeName("usage")] ImageUsageFlags usage,
             [NativeName("flags")] ImageCreateFlags flags,
-            [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNv externalHandleType,
+            [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNV externalHandleType,
             [NativeName("pExternalImageFormatProperties")]
-                ExternalImageFormatPropertiesNv* pExternalImageFormatProperties
+                ExternalImageFormatPropertiesNV* pExternalImageFormatProperties
         );
 
         [NativeName("vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
@@ -19738,9 +19738,9 @@ public unsafe partial interface IVk
             [NativeName("tiling")] ImageTiling tiling,
             [NativeName("usage")] ImageUsageFlags usage,
             [NativeName("flags")] ImageCreateFlags flags,
-            [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNv externalHandleType,
+            [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNV externalHandleType,
             [NativeName("pExternalImageFormatProperties")]
-                Ref<ExternalImageFormatPropertiesNv> pExternalImageFormatProperties
+                Ref<ExternalImageFormatPropertiesNV> pExternalImageFormatProperties
         );
 
         [NativeName("vkGetPhysicalDeviceExternalSemaphoreProperties")]
@@ -19849,9 +19849,9 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceExternalTensorPropertiesArm(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pExternalTensorInfo")]
-                PhysicalDeviceExternalTensorInfoArm* pExternalTensorInfo,
+                PhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo,
             [NativeName("pExternalTensorProperties")]
-                ExternalTensorPropertiesArm* pExternalTensorProperties
+                ExternalTensorPropertiesARM* pExternalTensorProperties
         );
 
         [NativeName("vkGetPhysicalDeviceExternalTensorPropertiesARM")]
@@ -19860,9 +19860,9 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceExternalTensorPropertiesArm(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pExternalTensorInfo")]
-                Ref<PhysicalDeviceExternalTensorInfoArm> pExternalTensorInfo,
+                Ref<PhysicalDeviceExternalTensorInfoARM> pExternalTensorInfo,
             [NativeName("pExternalTensorProperties")]
-                Ref<ExternalTensorPropertiesArm> pExternalTensorProperties
+                Ref<ExternalTensorPropertiesARM> pExternalTensorProperties
         );
 
         [NativeName("vkGetPhysicalDeviceFeatures")]
@@ -20166,7 +20166,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pFragmentShadingRateCount")] uint* pFragmentShadingRateCount,
             [NativeName("pFragmentShadingRates")]
-                PhysicalDeviceFragmentShadingRateKhr* pFragmentShadingRates
+                PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates
         );
 
         [NativeName("vkGetPhysicalDeviceFragmentShadingRatesKHR")]
@@ -20184,7 +20184,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pFragmentShadingRateCount")] Ref<uint> pFragmentShadingRateCount,
             [NativeName("pFragmentShadingRates")]
-                Ref<PhysicalDeviceFragmentShadingRateKhr> pFragmentShadingRates
+                Ref<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates
         );
 
         [NativeName("vkGetPhysicalDeviceImageFormatProperties")]
@@ -20496,7 +20496,7 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceMultisamplePropertiesExt(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("samples")] SampleCountFlags samples,
-            [NativeName("pMultisampleProperties")] MultisamplePropertiesExt* pMultisampleProperties
+            [NativeName("pMultisampleProperties")] MultisamplePropertiesEXT* pMultisampleProperties
         );
 
         [NativeName("vkGetPhysicalDeviceMultisamplePropertiesEXT")]
@@ -20513,7 +20513,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("samples")] SampleCountFlags samples,
             [NativeName("pMultisampleProperties")]
-                Ref<MultisamplePropertiesExt> pMultisampleProperties
+                Ref<MultisamplePropertiesEXT> pMultisampleProperties
         );
 
         [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
@@ -20530,10 +20530,10 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceOpticalFlowImageFormatsNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pOpticalFlowImageFormatInfo")]
-                OpticalFlowImageFormatInfoNv* pOpticalFlowImageFormatInfo,
+                OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo,
             [NativeName("pFormatCount")] uint* pFormatCount,
             [NativeName("pImageFormatProperties")]
-                OpticalFlowImageFormatPropertiesNv* pImageFormatProperties
+                OpticalFlowImageFormatPropertiesNV* pImageFormatProperties
         );
 
         [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
@@ -20550,10 +20550,10 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceOpticalFlowImageFormatsNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pOpticalFlowImageFormatInfo")]
-                Ref<OpticalFlowImageFormatInfoNv> pOpticalFlowImageFormatInfo,
+                Ref<OpticalFlowImageFormatInfoNV> pOpticalFlowImageFormatInfo,
             [NativeName("pFormatCount")] Ref<uint> pFormatCount,
             [NativeName("pImageFormatProperties")]
-                Ref<OpticalFlowImageFormatPropertiesNv> pImageFormatProperties
+                Ref<OpticalFlowImageFormatPropertiesNV> pImageFormatProperties
         );
 
         [NativeName("vkGetPhysicalDevicePresentRectanglesKHR")]
@@ -20566,7 +20566,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
         static abstract Result GetPhysicalDevicePresentRectanglesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pRectCount")] uint* pRectCount,
             [NativeName("pRects")] Rect2D* pRects
         );
@@ -20581,7 +20581,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
         static abstract Result GetPhysicalDevicePresentRectanglesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pRectCount")] Ref<uint> pRectCount,
             [NativeName("pRects")] Ref<Rect2D> pRects
         );
@@ -20743,9 +20743,9 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesArm(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pQueueFamilyDataGraphProcessingEngineInfo")]
-                PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoArm* pQueueFamilyDataGraphProcessingEngineInfo,
+                PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM* pQueueFamilyDataGraphProcessingEngineInfo,
             [NativeName("pQueueFamilyDataGraphProcessingEngineProperties")]
-                QueueFamilyDataGraphProcessingEnginePropertiesArm* pQueueFamilyDataGraphProcessingEngineProperties
+                QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
         );
 
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM")]
@@ -20765,9 +20765,9 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesArm(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pQueueFamilyDataGraphProcessingEngineInfo")]
-                Ref<PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoArm> pQueueFamilyDataGraphProcessingEngineInfo,
+                Ref<PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM> pQueueFamilyDataGraphProcessingEngineInfo,
             [NativeName("pQueueFamilyDataGraphProcessingEngineProperties")]
-                Ref<QueueFamilyDataGraphProcessingEnginePropertiesArm> pQueueFamilyDataGraphProcessingEngineProperties
+                Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
         );
 
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
@@ -20790,7 +20790,7 @@ public unsafe partial interface IVk
             [NativeName("pQueueFamilyDataGraphPropertyCount")]
                 uint* pQueueFamilyDataGraphPropertyCount,
             [NativeName("pQueueFamilyDataGraphProperties")]
-                QueueFamilyDataGraphPropertiesArm* pQueueFamilyDataGraphProperties
+                QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
         );
 
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
@@ -20813,7 +20813,7 @@ public unsafe partial interface IVk
             [NativeName("pQueueFamilyDataGraphPropertyCount")]
                 Ref<uint> pQueueFamilyDataGraphPropertyCount,
             [NativeName("pQueueFamilyDataGraphProperties")]
-                Ref<QueueFamilyDataGraphPropertiesArm> pQueueFamilyDataGraphProperties
+                Ref<QueueFamilyDataGraphPropertiesARM> pQueueFamilyDataGraphProperties
         );
 
         [NativeName("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR")]
@@ -20832,7 +20832,7 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPerformanceQueryCreateInfo")]
-                QueryPoolPerformanceCreateInfoKhr* pPerformanceQueryCreateInfo,
+                QueryPoolPerformanceCreateInfoKHR* pPerformanceQueryCreateInfo,
             [NativeName("pNumPasses")] uint* pNumPasses
         );
 
@@ -20852,7 +20852,7 @@ public unsafe partial interface IVk
         static abstract void GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pPerformanceQueryCreateInfo")]
-                Ref<QueryPoolPerformanceCreateInfoKhr> pPerformanceQueryCreateInfo,
+                Ref<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo,
             [NativeName("pNumPasses")] Ref<uint> pNumPasses
         );
 
@@ -21186,7 +21186,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pCombinationCount")] uint* pCombinationCount,
-            [NativeName("pCombinations")] FramebufferMixedSamplesCombinationNv* pCombinations
+            [NativeName("pCombinations")] FramebufferMixedSamplesCombinationNV* pCombinations
         );
 
         [NativeName("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
@@ -21205,7 +21205,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNv(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pCombinationCount")] Ref<uint> pCombinationCount,
-            [NativeName("pCombinations")] Ref<FramebufferMixedSamplesCombinationNv> pCombinations
+            [NativeName("pCombinations")] Ref<FramebufferMixedSamplesCombinationNV> pCombinations
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
@@ -21217,8 +21217,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
         static abstract Result GetPhysicalDeviceSurfaceCapabilities2Ext(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
-            [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2Ext* pSurfaceCapabilities
+            [NativeName("surface")] SurfaceHandleKHR surface,
+            [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2EXT* pSurfaceCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
@@ -21230,8 +21230,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
         static abstract Result GetPhysicalDeviceSurfaceCapabilities2Ext(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
-            [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2Ext> pSurfaceCapabilities
+            [NativeName("surface")] SurfaceHandleKHR surface,
+            [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2EXT> pSurfaceCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
@@ -21243,8 +21243,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
         static abstract Result GetPhysicalDeviceSurfaceCapabilities2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2Khr* pSurfaceInfo,
-            [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2Khr* pSurfaceCapabilities
+            [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+            [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2KHR* pSurfaceCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
@@ -21256,8 +21256,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
         static abstract Result GetPhysicalDeviceSurfaceCapabilities2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2Khr> pSurfaceInfo,
-            [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2Khr> pSurfaceCapabilities
+            [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+            [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2KHR> pSurfaceCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -21265,8 +21265,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
         static abstract Result GetPhysicalDeviceSurfaceCapabilitiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
-            [NativeName("pSurfaceCapabilities")] SurfaceCapabilitiesKhr* pSurfaceCapabilities
+            [NativeName("surface")] SurfaceHandleKHR surface,
+            [NativeName("pSurfaceCapabilities")] SurfaceCapabilitiesKHR* pSurfaceCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -21274,8 +21274,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
         static abstract Result GetPhysicalDeviceSurfaceCapabilitiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
-            [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilitiesKhr> pSurfaceCapabilities
+            [NativeName("surface")] SurfaceHandleKHR surface,
+            [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilitiesKHR> pSurfaceCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
@@ -21287,9 +21287,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
         static abstract Result GetPhysicalDeviceSurfaceFormats2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2Khr* pSurfaceInfo,
+            [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             [NativeName("pSurfaceFormatCount")] uint* pSurfaceFormatCount,
-            [NativeName("pSurfaceFormats")] SurfaceFormat2Khr* pSurfaceFormats
+            [NativeName("pSurfaceFormats")] SurfaceFormat2KHR* pSurfaceFormats
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
@@ -21301,9 +21301,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
         static abstract Result GetPhysicalDeviceSurfaceFormats2Khr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2Khr> pSurfaceInfo,
+            [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
             [NativeName("pSurfaceFormatCount")] Ref<uint> pSurfaceFormatCount,
-            [NativeName("pSurfaceFormats")] Ref<SurfaceFormat2Khr> pSurfaceFormats
+            [NativeName("pSurfaceFormats")] Ref<SurfaceFormat2KHR> pSurfaceFormats
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -21311,9 +21311,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
         static abstract Result GetPhysicalDeviceSurfaceFormatsKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pSurfaceFormatCount")] uint* pSurfaceFormatCount,
-            [NativeName("pSurfaceFormats")] SurfaceFormatKhr* pSurfaceFormats
+            [NativeName("pSurfaceFormats")] SurfaceFormatKHR* pSurfaceFormats
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -21321,9 +21321,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
         static abstract Result GetPhysicalDeviceSurfaceFormatsKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pSurfaceFormatCount")] Ref<uint> pSurfaceFormatCount,
-            [NativeName("pSurfaceFormats")] Ref<SurfaceFormatKhr> pSurfaceFormats
+            [NativeName("pSurfaceFormats")] Ref<SurfaceFormatKHR> pSurfaceFormats
         );
 
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -21331,9 +21331,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
         static abstract Result GetPhysicalDeviceSurfacePresentModesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pPresentModeCount")] uint* pPresentModeCount,
-            [NativeName("pPresentModes")] PresentModeKhr* pPresentModes
+            [NativeName("pPresentModes")] PresentModeKHR* pPresentModes
         );
 
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -21341,9 +21341,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
         static abstract Result GetPhysicalDeviceSurfacePresentModesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pPresentModeCount")] Ref<uint> pPresentModeCount,
-            [NativeName("pPresentModes")] Ref<PresentModeKhr> pPresentModes
+            [NativeName("pPresentModes")] Ref<PresentModeKHR> pPresentModes
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -21352,7 +21352,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceSurfaceSupportKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pSupported")] uint* pSupported
         );
 
@@ -21362,7 +21362,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceSurfaceSupportKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
-            [NativeName("surface")] SurfaceHandleKhr surface,
+            [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pSupported")] Ref<uint> pSupported
         );
 
@@ -21437,8 +21437,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR")]
         static abstract Result GetPhysicalDeviceVideoCapabilitiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pVideoProfile")] VideoProfileInfoKhr* pVideoProfile,
-            [NativeName("pCapabilities")] VideoCapabilitiesKhr* pCapabilities
+            [NativeName("pVideoProfile")] VideoProfileInfoKHR* pVideoProfile,
+            [NativeName("pCapabilities")] VideoCapabilitiesKHR* pCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceVideoCapabilitiesKHR")]
@@ -21450,8 +21450,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR")]
         static abstract Result GetPhysicalDeviceVideoCapabilitiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pVideoProfile")] Ref<VideoProfileInfoKhr> pVideoProfile,
-            [NativeName("pCapabilities")] Ref<VideoCapabilitiesKhr> pCapabilities
+            [NativeName("pVideoProfile")] Ref<VideoProfileInfoKHR> pVideoProfile,
+            [NativeName("pCapabilities")] Ref<VideoCapabilitiesKHR> pCapabilities
         );
 
         [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
@@ -21470,9 +21470,9 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pQualityLevelInfo")]
-                PhysicalDeviceVideoEncodeQualityLevelInfoKhr* pQualityLevelInfo,
+                PhysicalDeviceVideoEncodeQualityLevelInfoKHR* pQualityLevelInfo,
             [NativeName("pQualityLevelProperties")]
-                VideoEncodeQualityLevelPropertiesKhr* pQualityLevelProperties
+                VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties
         );
 
         [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
@@ -21491,9 +21491,9 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pQualityLevelInfo")]
-                Ref<PhysicalDeviceVideoEncodeQualityLevelInfoKhr> pQualityLevelInfo,
+                Ref<PhysicalDeviceVideoEncodeQualityLevelInfoKHR> pQualityLevelInfo,
             [NativeName("pQualityLevelProperties")]
-                Ref<VideoEncodeQualityLevelPropertiesKhr> pQualityLevelProperties
+                Ref<VideoEncodeQualityLevelPropertiesKHR> pQualityLevelProperties
         );
 
         [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
@@ -21505,9 +21505,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         static abstract Result GetPhysicalDeviceVideoFormatPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pVideoFormatInfo")] PhysicalDeviceVideoFormatInfoKhr* pVideoFormatInfo,
+            [NativeName("pVideoFormatInfo")] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo,
             [NativeName("pVideoFormatPropertyCount")] uint* pVideoFormatPropertyCount,
-            [NativeName("pVideoFormatProperties")] VideoFormatPropertiesKhr* pVideoFormatProperties
+            [NativeName("pVideoFormatProperties")] VideoFormatPropertiesKHR* pVideoFormatProperties
         );
 
         [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
@@ -21519,10 +21519,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         static abstract Result GetPhysicalDeviceVideoFormatPropertiesKhr(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("pVideoFormatInfo")] Ref<PhysicalDeviceVideoFormatInfoKhr> pVideoFormatInfo,
+            [NativeName("pVideoFormatInfo")] Ref<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo,
             [NativeName("pVideoFormatPropertyCount")] Ref<uint> pVideoFormatPropertyCount,
             [NativeName("pVideoFormatProperties")]
-                Ref<VideoFormatPropertiesKhr> pVideoFormatProperties
+                Ref<VideoFormatPropertiesKHR> pVideoFormatProperties
         );
 
         [NativeName("vkGetPipelineBinaryDataKHR")]
@@ -21537,8 +21537,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineBinaryDataKHR")]
         static abstract Result GetPipelineBinaryDataKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] PipelineBinaryDataInfoKhr* pInfo,
-            [NativeName("pPipelineBinaryKey")] PipelineBinaryKeyKhr* pPipelineBinaryKey,
+            [NativeName("pInfo")] PipelineBinaryDataInfoKHR* pInfo,
+            [NativeName("pPipelineBinaryKey")] PipelineBinaryKeyKHR* pPipelineBinaryKey,
             [NativeName("pPipelineBinaryDataSize")] nuint* pPipelineBinaryDataSize,
             [NativeName("pPipelineBinaryData")] void* pPipelineBinaryData
         );
@@ -21555,8 +21555,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineBinaryDataKHR")]
         static abstract Result GetPipelineBinaryDataKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<PipelineBinaryDataInfoKhr> pInfo,
-            [NativeName("pPipelineBinaryKey")] Ref<PipelineBinaryKeyKhr> pPipelineBinaryKey,
+            [NativeName("pInfo")] Ref<PipelineBinaryDataInfoKHR> pInfo,
+            [NativeName("pPipelineBinaryKey")] Ref<PipelineBinaryKeyKHR> pPipelineBinaryKey,
             [NativeName("pPipelineBinaryDataSize")] Ref<nuint> pPipelineBinaryDataSize,
             [NativeName("pPipelineBinaryData")] Ref pPipelineBinaryData
         );
@@ -21633,10 +21633,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         static abstract Result GetPipelineExecutableInternalRepresentationsKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pExecutableInfo")] PipelineExecutableInfoKhr* pExecutableInfo,
+            [NativeName("pExecutableInfo")] PipelineExecutableInfoKHR* pExecutableInfo,
             [NativeName("pInternalRepresentationCount")] uint* pInternalRepresentationCount,
             [NativeName("pInternalRepresentations")]
-                PipelineExecutableInternalRepresentationKhr* pInternalRepresentations
+                PipelineExecutableInternalRepresentationKHR* pInternalRepresentations
         );
 
         [NativeName("vkGetPipelineExecutableInternalRepresentationsKHR")]
@@ -21651,10 +21651,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         static abstract Result GetPipelineExecutableInternalRepresentationsKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKhr> pExecutableInfo,
+            [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKHR> pExecutableInfo,
             [NativeName("pInternalRepresentationCount")] Ref<uint> pInternalRepresentationCount,
             [NativeName("pInternalRepresentations")]
-                Ref<PipelineExecutableInternalRepresentationKhr> pInternalRepresentations
+                Ref<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations
         );
 
         [NativeName("vkGetPipelineExecutablePropertiesKHR")]
@@ -21669,9 +21669,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         static abstract Result GetPipelineExecutablePropertiesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] PipelineInfoKhr* pPipelineInfo,
+            [NativeName("pPipelineInfo")] PipelineInfoKHR* pPipelineInfo,
             [NativeName("pExecutableCount")] uint* pExecutableCount,
-            [NativeName("pProperties")] PipelineExecutablePropertiesKhr* pProperties
+            [NativeName("pProperties")] PipelineExecutablePropertiesKHR* pProperties
         );
 
         [NativeName("vkGetPipelineExecutablePropertiesKHR")]
@@ -21686,9 +21686,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         static abstract Result GetPipelineExecutablePropertiesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] Ref<PipelineInfoKhr> pPipelineInfo,
+            [NativeName("pPipelineInfo")] Ref<PipelineInfoKHR> pPipelineInfo,
             [NativeName("pExecutableCount")] Ref<uint> pExecutableCount,
-            [NativeName("pProperties")] Ref<PipelineExecutablePropertiesKhr> pProperties
+            [NativeName("pProperties")] Ref<PipelineExecutablePropertiesKHR> pProperties
         );
 
         [NativeName("vkGetPipelineExecutableStatisticsKHR")]
@@ -21703,9 +21703,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         static abstract Result GetPipelineExecutableStatisticsKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pExecutableInfo")] PipelineExecutableInfoKhr* pExecutableInfo,
+            [NativeName("pExecutableInfo")] PipelineExecutableInfoKHR* pExecutableInfo,
             [NativeName("pStatisticCount")] uint* pStatisticCount,
-            [NativeName("pStatistics")] PipelineExecutableStatisticKhr* pStatistics
+            [NativeName("pStatistics")] PipelineExecutableStatisticKHR* pStatistics
         );
 
         [NativeName("vkGetPipelineExecutableStatisticsKHR")]
@@ -21720,9 +21720,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         static abstract Result GetPipelineExecutableStatisticsKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKhr> pExecutableInfo,
+            [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKHR> pExecutableInfo,
             [NativeName("pStatisticCount")] Ref<uint> pStatisticCount,
-            [NativeName("pStatistics")] Ref<PipelineExecutableStatisticKhr> pStatistics
+            [NativeName("pStatistics")] Ref<PipelineExecutableStatisticKHR> pStatistics
         );
 
         [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
@@ -21734,7 +21734,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
         static abstract ulong GetPipelineIndirectDeviceAddressNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] PipelineIndirectDeviceAddressInfoNv* pInfo
+            [NativeName("pInfo")] PipelineIndirectDeviceAddressInfoNV* pInfo
         );
 
         [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
@@ -21746,7 +21746,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
         static abstract ulong GetPipelineIndirectDeviceAddressNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<PipelineIndirectDeviceAddressInfoNv> pInfo
+            [NativeName("pInfo")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
         );
 
         [NativeName("vkGetPipelineIndirectMemoryRequirementsNV")]
@@ -21787,8 +21787,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineKeyKHR")]
         static abstract Result GetPipelineKeyKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineCreateInfo")] PipelineCreateInfoKhr* pPipelineCreateInfo,
-            [NativeName("pPipelineKey")] PipelineBinaryKeyKhr* pPipelineKey
+            [NativeName("pPipelineCreateInfo")] PipelineCreateInfoKHR* pPipelineCreateInfo,
+            [NativeName("pPipelineKey")] PipelineBinaryKeyKHR* pPipelineKey
         );
 
         [NativeName("vkGetPipelineKeyKHR")]
@@ -21803,8 +21803,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelineKeyKHR")]
         static abstract Result GetPipelineKeyKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineCreateInfo")] Ref<PipelineCreateInfoKhr> pPipelineCreateInfo,
-            [NativeName("pPipelineKey")] Ref<PipelineBinaryKeyKhr> pPipelineKey
+            [NativeName("pPipelineCreateInfo")] Ref<PipelineCreateInfoKHR> pPipelineCreateInfo,
+            [NativeName("pPipelineKey")] Ref<PipelineBinaryKeyKHR> pPipelineKey
         );
 
         [NativeName("vkGetPipelinePropertiesEXT")]
@@ -21819,7 +21819,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelinePropertiesEXT")]
         static abstract Result GetPipelinePropertiesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] PipelineInfoKhr* pPipelineInfo,
+            [NativeName("pPipelineInfo")] PipelineInfoKHR* pPipelineInfo,
             [NativeName("pPipelineProperties")] BaseOutStructure* pPipelineProperties
         );
 
@@ -21835,7 +21835,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetPipelinePropertiesEXT")]
         static abstract Result GetPipelinePropertiesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pPipelineInfo")] Ref<PipelineInfoKhr> pPipelineInfo,
+            [NativeName("pPipelineInfo")] Ref<PipelineInfoKHR> pPipelineInfo,
             [NativeName("pPipelineProperties")] Ref<BaseOutStructure> pPipelineProperties
         );
 
@@ -22017,7 +22017,7 @@ public unsafe partial interface IVk
         static abstract void GetQueueCheckpointData2Nv(
             [NativeName("queue")] QueueHandle queue,
             [NativeName("pCheckpointDataCount")] uint* pCheckpointDataCount,
-            [NativeName("pCheckpointData")] CheckpointData2Nv* pCheckpointData
+            [NativeName("pCheckpointData")] CheckpointData2NV* pCheckpointData
         );
 
         [NativeName("vkGetQueueCheckpointData2NV")]
@@ -22036,7 +22036,7 @@ public unsafe partial interface IVk
         static abstract void GetQueueCheckpointData2Nv(
             [NativeName("queue")] QueueHandle queue,
             [NativeName("pCheckpointDataCount")] Ref<uint> pCheckpointDataCount,
-            [NativeName("pCheckpointData")] Ref<CheckpointData2Nv> pCheckpointData
+            [NativeName("pCheckpointData")] Ref<CheckpointData2NV> pCheckpointData
         );
 
         [NativeName("vkGetQueueCheckpointDataNV")]
@@ -22052,7 +22052,7 @@ public unsafe partial interface IVk
         static abstract void GetQueueCheckpointDataNv(
             [NativeName("queue")] QueueHandle queue,
             [NativeName("pCheckpointDataCount")] uint* pCheckpointDataCount,
-            [NativeName("pCheckpointData")] CheckpointDataNv* pCheckpointData
+            [NativeName("pCheckpointData")] CheckpointDataNV* pCheckpointData
         );
 
         [NativeName("vkGetQueueCheckpointDataNV")]
@@ -22068,7 +22068,7 @@ public unsafe partial interface IVk
         static abstract void GetQueueCheckpointDataNv(
             [NativeName("queue")] QueueHandle queue,
             [NativeName("pCheckpointDataCount")] Ref<uint> pCheckpointDataCount,
-            [NativeName("pCheckpointData")] Ref<CheckpointDataNv> pCheckpointData
+            [NativeName("pCheckpointData")] Ref<CheckpointDataNV> pCheckpointData
         );
 
         [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
@@ -22199,7 +22199,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("pipeline")] PipelineHandle pipeline,
             [NativeName("group")] uint group,
-            [NativeName("groupShader")] ShaderGroupShaderKhr groupShader
+            [NativeName("groupShader")] ShaderGroupShaderKHR groupShader
         );
 
         [NativeName("vkGetRefreshCycleDurationGOOGLE")]
@@ -22211,9 +22211,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetRefreshCycleDurationGOOGLE")]
         static abstract Result GetRefreshCycleDurationGoogle(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pDisplayTimingProperties")]
-                RefreshCycleDurationGoogle* pDisplayTimingProperties
+                RefreshCycleDurationGOOGLE* pDisplayTimingProperties
         );
 
         [NativeName("vkGetRefreshCycleDurationGOOGLE")]
@@ -22225,9 +22225,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetRefreshCycleDurationGOOGLE")]
         static abstract Result GetRefreshCycleDurationGoogle(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pDisplayTimingProperties")]
-                Ref<RefreshCycleDurationGoogle> pDisplayTimingProperties
+                Ref<RefreshCycleDurationGOOGLE> pDisplayTimingProperties
         );
 
         [NativeName("vkGetRenderAreaGranularity")]
@@ -22344,7 +22344,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetSamplerOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] SamplerCaptureDescriptorDataInfoExt* pInfo,
+            [NativeName("pInfo")] SamplerCaptureDescriptorDataInfoEXT* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -22362,7 +22362,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
         static abstract Result GetSamplerOpaqueCaptureDescriptorDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<SamplerCaptureDescriptorDataInfoExt> pInfo,
+            [NativeName("pInfo")] Ref<SamplerCaptureDescriptorDataInfoEXT> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -22462,7 +22462,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreFdKHR")]
         static abstract Result GetSemaphoreFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pGetFdInfo")] SemaphoreGetFdInfoKhr* pGetFdInfo,
+            [NativeName("pGetFdInfo")] SemaphoreGetFdInfoKHR* pGetFdInfo,
             [NativeName("pFd")] int* pFd
         );
 
@@ -22478,7 +22478,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreFdKHR")]
         static abstract Result GetSemaphoreFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pGetFdInfo")] Ref<SemaphoreGetFdInfoKhr> pGetFdInfo,
+            [NativeName("pGetFdInfo")] Ref<SemaphoreGetFdInfoKHR> pGetFdInfo,
             [NativeName("pFd")] Ref<int> pFd
         );
 
@@ -22495,7 +22495,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetShaderBinaryDataEXT")]
         static abstract Result GetShaderBinaryDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("shader")] ShaderHandleExt shader,
+            [NativeName("shader")] ShaderHandleEXT shader,
             [NativeName("pDataSize")] nuint* pDataSize,
             [NativeName("pData")] void* pData
         );
@@ -22513,7 +22513,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetShaderBinaryDataEXT")]
         static abstract Result GetShaderBinaryDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("shader")] ShaderHandleExt shader,
+            [NativeName("shader")] ShaderHandleEXT shader,
             [NativeName("pDataSize")] Ref<nuint> pDataSize,
             [NativeName("pData")] Ref pData
         );
@@ -22525,7 +22525,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("pipeline")] PipelineHandle pipeline,
             [NativeName("shaderStage")] ShaderStageFlags shaderStage,
-            [NativeName("infoType")] ShaderInfoTypeAmd infoType,
+            [NativeName("infoType")] ShaderInfoTypeAMD infoType,
             [NativeName("pInfoSize")] nuint* pInfoSize,
             [NativeName("pInfo")] void* pInfo
         );
@@ -22537,7 +22537,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("pipeline")] PipelineHandle pipeline,
             [NativeName("shaderStage")] ShaderStageFlags shaderStage,
-            [NativeName("infoType")] ShaderInfoTypeAmd infoType,
+            [NativeName("infoType")] ShaderInfoTypeAMD infoType,
             [NativeName("pInfoSize")] Ref<nuint> pInfoSize,
             [NativeName("pInfo")] Ref pInfo
         );
@@ -22556,7 +22556,7 @@ public unsafe partial interface IVk
         static abstract void GetShaderModuleCreateInfoIdentifierExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pCreateInfo")] ShaderModuleCreateInfo* pCreateInfo,
-            [NativeName("pIdentifier")] ShaderModuleIdentifierExt* pIdentifier
+            [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
         );
 
         [NativeName("vkGetShaderModuleCreateInfoIdentifierEXT")]
@@ -22573,7 +22573,7 @@ public unsafe partial interface IVk
         static abstract void GetShaderModuleCreateInfoIdentifierExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pCreateInfo")] Ref<ShaderModuleCreateInfo> pCreateInfo,
-            [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierExt> pIdentifier
+            [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
         );
 
         [NativeName("vkGetShaderModuleIdentifierEXT")]
@@ -22590,7 +22590,7 @@ public unsafe partial interface IVk
         static abstract void GetShaderModuleIdentifierExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("shaderModule")] ShaderModuleHandle shaderModule,
-            [NativeName("pIdentifier")] ShaderModuleIdentifierExt* pIdentifier
+            [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
         );
 
         [NativeName("vkGetShaderModuleIdentifierEXT")]
@@ -22607,7 +22607,7 @@ public unsafe partial interface IVk
         static abstract void GetShaderModuleIdentifierExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("shaderModule")] ShaderModuleHandle shaderModule,
-            [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierExt> pIdentifier
+            [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
         );
 
         [NativeName("vkGetSwapchainCounterEXT")]
@@ -22619,8 +22619,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
         static abstract Result GetSwapchainCounterExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("counter")] SurfaceCounterFlagsExt counter,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("counter")] SurfaceCounterFlagsEXT counter,
             [NativeName("pCounterValue")] ulong* pCounterValue
         );
 
@@ -22633,8 +22633,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
         static abstract Result GetSwapchainCounterExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("counter")] SurfaceCounterFlagsExt counter,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("counter")] SurfaceCounterFlagsEXT counter,
             [NativeName("pCounterValue")] Ref<ulong> pCounterValue
         );
 
@@ -22643,7 +22643,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
         static abstract Result GetSwapchainImagesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pSwapchainImageCount")] uint* pSwapchainImageCount,
             [NativeName("pSwapchainImages")] ImageHandle* pSwapchainImages
         );
@@ -22653,7 +22653,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
         static abstract Result GetSwapchainImagesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("pSwapchainImageCount")] Ref<uint> pSwapchainImageCount,
             [NativeName("pSwapchainImages")] Ref<ImageHandle> pSwapchainImages
         );
@@ -22670,7 +22670,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainStatusKHR")]
         static abstract Result GetSwapchainStatusKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain
         );
 
         [NativeName("vkGetTensorMemoryRequirementsARM")]
@@ -22678,7 +22678,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
         static abstract void GetTensorMemoryRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] TensorMemoryRequirementsInfoArm* pInfo,
+            [NativeName("pInfo")] TensorMemoryRequirementsInfoARM* pInfo,
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
@@ -22687,7 +22687,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
         static abstract void GetTensorMemoryRequirementsArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<TensorMemoryRequirementsInfoArm> pInfo,
+            [NativeName("pInfo")] Ref<TensorMemoryRequirementsInfoARM> pInfo,
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
@@ -22701,7 +22701,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorOpaqueCaptureDescriptorDataArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] TensorCaptureDescriptorDataInfoArm* pInfo,
+            [NativeName("pInfo")] TensorCaptureDescriptorDataInfoARM* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -22715,7 +22715,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorOpaqueCaptureDescriptorDataArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<TensorCaptureDescriptorDataInfoArm> pInfo,
+            [NativeName("pInfo")] Ref<TensorCaptureDescriptorDataInfoARM> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -22729,7 +22729,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorViewOpaqueCaptureDescriptorDataArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] TensorViewCaptureDescriptorDataInfoArm* pInfo,
+            [NativeName("pInfo")] TensorViewCaptureDescriptorDataInfoARM* pInfo,
             [NativeName("pData")] void* pData
         );
 
@@ -22743,7 +22743,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
         static abstract Result GetTensorViewOpaqueCaptureDescriptorDataArm(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<TensorViewCaptureDescriptorDataInfoArm> pInfo,
+            [NativeName("pInfo")] Ref<TensorViewCaptureDescriptorDataInfoARM> pInfo,
             [NativeName("pData")] Ref pData
         );
 
@@ -22752,7 +22752,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
         static abstract Result GetValidationCacheDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+            [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
             [NativeName("pDataSize")] nuint* pDataSize,
             [NativeName("pData")] void* pData
         );
@@ -22762,7 +22762,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
         static abstract Result GetValidationCacheDataExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+            [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
             [NativeName("pDataSize")] Ref<nuint> pDataSize,
             [NativeName("pData")] Ref pData
         );
@@ -22776,10 +22776,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR")]
         static abstract Result GetVideoSessionMemoryRequirementsKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+            [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
             [NativeName("pMemoryRequirementsCount")] uint* pMemoryRequirementsCount,
             [NativeName("pMemoryRequirements")]
-                VideoSessionMemoryRequirementsKhr* pMemoryRequirements
+                VideoSessionMemoryRequirementsKHR* pMemoryRequirements
         );
 
         [NativeName("vkGetVideoSessionMemoryRequirementsKHR")]
@@ -22791,10 +22791,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR")]
         static abstract Result GetVideoSessionMemoryRequirementsKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+            [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
             [NativeName("pMemoryRequirementsCount")] Ref<uint> pMemoryRequirementsCount,
             [NativeName("pMemoryRequirements")]
-                Ref<VideoSessionMemoryRequirementsKhr> pMemoryRequirements
+                Ref<VideoSessionMemoryRequirementsKHR> pMemoryRequirements
         );
 
         [NativeName("vkImportFenceFdKHR")]
@@ -22809,7 +22809,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkImportFenceFdKHR")]
         static abstract Result ImportFenceFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pImportFenceFdInfo")] ImportFenceFdInfoKhr* pImportFenceFdInfo
+            [NativeName("pImportFenceFdInfo")] ImportFenceFdInfoKHR* pImportFenceFdInfo
         );
 
         [NativeName("vkImportFenceFdKHR")]
@@ -22824,7 +22824,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkImportFenceFdKHR")]
         static abstract Result ImportFenceFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pImportFenceFdInfo")] Ref<ImportFenceFdInfoKhr> pImportFenceFdInfo
+            [NativeName("pImportFenceFdInfo")] Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
         );
 
         [NativeName("vkImportSemaphoreFdKHR")]
@@ -22839,7 +22839,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreFdKHR")]
         static abstract Result ImportSemaphoreFdKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pImportSemaphoreFdInfo")] ImportSemaphoreFdInfoKhr* pImportSemaphoreFdInfo
+            [NativeName("pImportSemaphoreFdInfo")] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo
         );
 
         [NativeName("vkImportSemaphoreFdKHR")]
@@ -22855,7 +22855,7 @@ public unsafe partial interface IVk
         static abstract Result ImportSemaphoreFdKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pImportSemaphoreFdInfo")]
-                Ref<ImportSemaphoreFdInfoKhr> pImportSemaphoreFdInfo
+                Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
         );
 
         [NativeName("vkInitializePerformanceApiINTEL")]
@@ -22863,7 +22863,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
         static abstract Result InitializePerformanceApiIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInitializeInfo")] InitializePerformanceApiInfoIntel* pInitializeInfo
+            [NativeName("pInitializeInfo")] InitializePerformanceApiInfoINTEL* pInitializeInfo
         );
 
         [NativeName("vkInitializePerformanceApiINTEL")]
@@ -22871,7 +22871,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
         static abstract Result InitializePerformanceApiIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInitializeInfo")] Ref<InitializePerformanceApiInfoIntel> pInitializeInfo
+            [NativeName("pInitializeInfo")] Ref<InitializePerformanceApiInfoINTEL> pInitializeInfo
         );
 
         [NativeName("vkInvalidateMappedMemoryRanges")]
@@ -22956,8 +22956,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkLatencySleepNV")]
         static abstract Result LatencySleepNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pSleepInfo")] LatencySleepInfoNv* pSleepInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pSleepInfo")] LatencySleepInfoNV* pSleepInfo
         );
 
         [NativeName("vkLatencySleepNV")]
@@ -22974,8 +22974,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkLatencySleepNV")]
         static abstract Result LatencySleepNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pSleepInfo")] Ref<LatencySleepInfoNv> pSleepInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pSleepInfo")] Ref<LatencySleepInfoNV> pSleepInfo
         );
 
         [NativeName("vkMapMemory")]
@@ -23171,9 +23171,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
         static abstract Result MergeValidationCachesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("dstCache")] ValidationCacheHandleExt dstCache,
+            [NativeName("dstCache")] ValidationCacheHandleEXT dstCache,
             [NativeName("srcCacheCount")] uint srcCacheCount,
-            [NativeName("pSrcCaches")] ValidationCacheHandleExt* pSrcCaches
+            [NativeName("pSrcCaches")] ValidationCacheHandleEXT* pSrcCaches
         );
 
         [NativeName("vkMergeValidationCachesEXT")]
@@ -23181,9 +23181,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
         static abstract Result MergeValidationCachesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("dstCache")] ValidationCacheHandleExt dstCache,
+            [NativeName("dstCache")] ValidationCacheHandleEXT dstCache,
             [NativeName("srcCacheCount")] uint srcCacheCount,
-            [NativeName("pSrcCaches")] Ref<ValidationCacheHandleExt> pSrcCaches
+            [NativeName("pSrcCaches")] Ref<ValidationCacheHandleEXT> pSrcCaches
         );
 
         [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
@@ -23191,7 +23191,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
         static abstract void QueueBeginDebugUtilsLabelExt(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+            [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
         [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
@@ -23199,7 +23199,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
         static abstract void QueueBeginDebugUtilsLabelExt(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
         );
 
         [NativeName("vkQueueBindSparse")]
@@ -23282,7 +23282,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
         static abstract void QueueInsertDebugUtilsLabelExt(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+            [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
         [NativeName("vkQueueInsertDebugUtilsLabelEXT")]
@@ -23290,7 +23290,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
         static abstract void QueueInsertDebugUtilsLabelExt(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+            [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
         );
 
         [NativeName("vkQueueNotifyOutOfBandNV")]
@@ -23307,7 +23307,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueNotifyOutOfBandNV")]
         static abstract void QueueNotifyOutOfBandNv(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pQueueTypeInfo")] OutOfBandQueueTypeInfoNv* pQueueTypeInfo
+            [NativeName("pQueueTypeInfo")] OutOfBandQueueTypeInfoNV* pQueueTypeInfo
         );
 
         [NativeName("vkQueueNotifyOutOfBandNV")]
@@ -23324,7 +23324,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueNotifyOutOfBandNV")]
         static abstract void QueueNotifyOutOfBandNv(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pQueueTypeInfo")] Ref<OutOfBandQueueTypeInfoNv> pQueueTypeInfo
+            [NativeName("pQueueTypeInfo")] Ref<OutOfBandQueueTypeInfoNV> pQueueTypeInfo
         );
 
         [NativeName("vkQueuePresentKHR")]
@@ -23332,7 +23332,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
         static abstract Result QueuePresentKhr(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pPresentInfo")] PresentInfoKhr* pPresentInfo
+            [NativeName("pPresentInfo")] PresentInfoKHR* pPresentInfo
         );
 
         [NativeName("vkQueuePresentKHR")]
@@ -23340,7 +23340,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
         static abstract Result QueuePresentKhr(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("pPresentInfo")] Ref<PresentInfoKhr> pPresentInfo
+            [NativeName("pPresentInfo")] Ref<PresentInfoKHR> pPresentInfo
         );
 
         [NativeName("vkQueueSetPerformanceConfigurationINTEL")]
@@ -23348,7 +23348,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueSetPerformanceConfigurationINTEL")]
         static abstract Result QueueSetPerformanceConfigurationIntel(
             [NativeName("queue")] QueueHandle queue,
-            [NativeName("configuration")] PerformanceConfigurationHandleIntel configuration
+            [NativeName("configuration")] PerformanceConfigurationHandleINTEL configuration
         );
 
         [NativeName("vkQueueSubmit")]
@@ -23540,7 +23540,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkRegisterDeviceEventEXT")]
         static abstract Result RegisterDeviceEventExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pDeviceEventInfo")] DeviceEventInfoExt* pDeviceEventInfo,
+            [NativeName("pDeviceEventInfo")] DeviceEventInfoEXT* pDeviceEventInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pFence")] FenceHandle* pFence
         );
@@ -23554,7 +23554,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkRegisterDeviceEventEXT")]
         static abstract Result RegisterDeviceEventExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pDeviceEventInfo")] Ref<DeviceEventInfoExt> pDeviceEventInfo,
+            [NativeName("pDeviceEventInfo")] Ref<DeviceEventInfoEXT> pDeviceEventInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pFence")] Ref<FenceHandle> pFence
         );
@@ -23568,8 +23568,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkRegisterDisplayEventEXT")]
         static abstract Result RegisterDisplayEventExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("display")] DisplayHandleKhr display,
-            [NativeName("pDisplayEventInfo")] DisplayEventInfoExt* pDisplayEventInfo,
+            [NativeName("display")] DisplayHandleKHR display,
+            [NativeName("pDisplayEventInfo")] DisplayEventInfoEXT* pDisplayEventInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
             [NativeName("pFence")] FenceHandle* pFence
         );
@@ -23583,8 +23583,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkRegisterDisplayEventEXT")]
         static abstract Result RegisterDisplayEventExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("display")] DisplayHandleKhr display,
-            [NativeName("pDisplayEventInfo")] Ref<DisplayEventInfoExt> pDisplayEventInfo,
+            [NativeName("display")] DisplayHandleKHR display,
+            [NativeName("pDisplayEventInfo")] Ref<DisplayEventInfoEXT> pDisplayEventInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
             [NativeName("pFence")] Ref<FenceHandle> pFence
         );
@@ -23601,7 +23601,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseCapturedPipelineDataKHR")]
         static abstract Result ReleaseCapturedPipelineDataKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] ReleaseCapturedPipelineDataInfoKhr* pInfo,
+            [NativeName("pInfo")] ReleaseCapturedPipelineDataInfoKHR* pInfo,
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
@@ -23617,7 +23617,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseCapturedPipelineDataKHR")]
         static abstract Result ReleaseCapturedPipelineDataKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pInfo")] Ref<ReleaseCapturedPipelineDataInfoKhr> pInfo,
+            [NativeName("pInfo")] Ref<ReleaseCapturedPipelineDataInfoKHR> pInfo,
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
@@ -23630,7 +23630,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseDisplayEXT")]
         static abstract Result ReleaseDisplayExt(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-            [NativeName("display")] DisplayHandleKhr display
+            [NativeName("display")] DisplayHandleKHR display
         );
 
         [NativeName("vkReleasePerformanceConfigurationINTEL")]
@@ -23638,7 +23638,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
         static abstract Result ReleasePerformanceConfigurationIntel(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("configuration")] PerformanceConfigurationHandleIntel configuration
+            [NativeName("configuration")] PerformanceConfigurationHandleINTEL configuration
         );
 
         [NativeName("vkReleaseProfilingLockKHR")]
@@ -23665,7 +23665,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
         static abstract Result ReleaseSwapchainImagesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKhr* pReleaseInfo
+            [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
         );
 
         [NativeName("vkReleaseSwapchainImagesEXT")]
@@ -23680,7 +23680,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
         static abstract Result ReleaseSwapchainImagesExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKhr> pReleaseInfo
+            [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
         );
 
         [NativeName("vkReleaseSwapchainImagesKHR")]
@@ -23696,7 +23696,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
         static abstract Result ReleaseSwapchainImagesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKhr* pReleaseInfo
+            [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
         );
 
         [NativeName("vkReleaseSwapchainImagesKHR")]
@@ -23712,7 +23712,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
         static abstract Result ReleaseSwapchainImagesKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKhr> pReleaseInfo
+            [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
         );
 
         [NativeName("vkResetCommandBuffer")]
@@ -23956,7 +23956,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
         static abstract Result SetDebugUtilsObjectNameExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pNameInfo")] DebugUtilsObjectNameInfoExt* pNameInfo
+            [NativeName("pNameInfo")] DebugUtilsObjectNameInfoEXT* pNameInfo
         );
 
         [NativeName("vkSetDebugUtilsObjectNameEXT")]
@@ -23964,7 +23964,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
         static abstract Result SetDebugUtilsObjectNameExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pNameInfo")] Ref<DebugUtilsObjectNameInfoExt> pNameInfo
+            [NativeName("pNameInfo")] Ref<DebugUtilsObjectNameInfoEXT> pNameInfo
         );
 
         [NativeName("vkSetDebugUtilsObjectTagEXT")]
@@ -23972,7 +23972,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
         static abstract Result SetDebugUtilsObjectTagExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pTagInfo")] DebugUtilsObjectTagInfoExt* pTagInfo
+            [NativeName("pTagInfo")] DebugUtilsObjectTagInfoEXT* pTagInfo
         );
 
         [NativeName("vkSetDebugUtilsObjectTagEXT")]
@@ -23980,7 +23980,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
         static abstract Result SetDebugUtilsObjectTagExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("pTagInfo")] Ref<DebugUtilsObjectTagInfoExt> pTagInfo
+            [NativeName("pTagInfo")] Ref<DebugUtilsObjectTagInfoEXT> pTagInfo
         );
 
         [NativeName("vkSetDeviceMemoryPriorityEXT")]
@@ -24030,8 +24030,8 @@ public unsafe partial interface IVk
         static abstract void SetHdrMetadataExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("swapchainCount")] uint swapchainCount,
-            [NativeName("pSwapchains")] SwapchainHandleKhr* pSwapchains,
-            [NativeName("pMetadata")] HdrMetadataExt* pMetadata
+            [NativeName("pSwapchains")] SwapchainHandleKHR* pSwapchains,
+            [NativeName("pMetadata")] HdrMetadataEXT* pMetadata
         );
 
         [NativeName("vkSetHdrMetadataEXT")]
@@ -24040,8 +24040,8 @@ public unsafe partial interface IVk
         static abstract void SetHdrMetadataExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("swapchainCount")] uint swapchainCount,
-            [NativeName("pSwapchains")] Ref<SwapchainHandleKhr> pSwapchains,
-            [NativeName("pMetadata")] Ref<HdrMetadataExt> pMetadata
+            [NativeName("pSwapchains")] Ref<SwapchainHandleKHR> pSwapchains,
+            [NativeName("pMetadata")] Ref<HdrMetadataEXT> pMetadata
         );
 
         [NativeName("vkSetLatencyMarkerNV")]
@@ -24058,8 +24058,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetLatencyMarkerNV")]
         static abstract void SetLatencyMarkerNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pLatencyMarkerInfo")] SetLatencyMarkerInfoNv* pLatencyMarkerInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pLatencyMarkerInfo")] SetLatencyMarkerInfoNV* pLatencyMarkerInfo
         );
 
         [NativeName("vkSetLatencyMarkerNV")]
@@ -24076,8 +24076,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetLatencyMarkerNV")]
         static abstract void SetLatencyMarkerNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pLatencyMarkerInfo")] Ref<SetLatencyMarkerInfoNv> pLatencyMarkerInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pLatencyMarkerInfo")] Ref<SetLatencyMarkerInfoNV> pLatencyMarkerInfo
         );
 
         [NativeName("vkSetLatencySleepModeNV")]
@@ -24094,8 +24094,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetLatencySleepModeNV")]
         static abstract Result SetLatencySleepModeNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pSleepModeInfo")] LatencySleepModeInfoNv* pSleepModeInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pSleepModeInfo")] LatencySleepModeInfoNV* pSleepModeInfo
         );
 
         [NativeName("vkSetLatencySleepModeNV")]
@@ -24112,8 +24112,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetLatencySleepModeNV")]
         static abstract Result SetLatencySleepModeNv(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pSleepModeInfo")] Ref<LatencySleepModeInfoNv> pSleepModeInfo
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pSleepModeInfo")] Ref<LatencySleepModeInfoNV> pSleepModeInfo
         );
 
         [NativeName("vkSetLocalDimmingAMD")]
@@ -24128,7 +24128,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetLocalDimmingAMD")]
         static abstract void SetLocalDimmingAmd(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapChain")] SwapchainHandleKhr swapChain,
+            [NativeName("swapChain")] SwapchainHandleKHR swapChain,
             [NativeName("localDimmingEnable")] uint localDimmingEnable
         );
 
@@ -24144,7 +24144,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSetLocalDimmingAMD")]
         static abstract void SetLocalDimmingAmd(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapChain")] SwapchainHandleKhr swapChain,
+            [NativeName("swapChain")] SwapchainHandleKHR swapChain,
             [NativeName("localDimmingEnable")] MaybeBool<uint> localDimmingEnable
         );
 
@@ -24275,9 +24275,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
         static abstract void SubmitDebugUtilsMessageExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsExt messageSeverity,
-            [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsExt messageTypes,
-            [NativeName("pCallbackData")] DebugUtilsMessengerCallbackDataExt* pCallbackData
+            [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+            [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsEXT messageTypes,
+            [NativeName("pCallbackData")] DebugUtilsMessengerCallbackDataEXT* pCallbackData
         );
 
         [NativeName("vkSubmitDebugUtilsMessageEXT")]
@@ -24285,9 +24285,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
         static abstract void SubmitDebugUtilsMessageExt(
             [NativeName("instance")] InstanceHandle instance,
-            [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsExt messageSeverity,
-            [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsExt messageTypes,
-            [NativeName("pCallbackData")] Ref<DebugUtilsMessengerCallbackDataExt> pCallbackData
+            [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+            [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsEXT messageTypes,
+            [NativeName("pCallbackData")] Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
         );
 
         [NativeName("vkTransitionImageLayout")]
@@ -24642,10 +24642,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT")]
         static abstract void UpdateIndirectExecutionSetPipelineExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
             [NativeName("pExecutionSetWrites")]
-                WriteIndirectExecutionSetPipelineExt* pExecutionSetWrites
+                WriteIndirectExecutionSetPipelineEXT* pExecutionSetWrites
         );
 
         [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
@@ -24661,10 +24661,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT")]
         static abstract void UpdateIndirectExecutionSetPipelineExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
             [NativeName("pExecutionSetWrites")]
-                Ref<WriteIndirectExecutionSetPipelineExt> pExecutionSetWrites
+                Ref<WriteIndirectExecutionSetPipelineEXT> pExecutionSetWrites
         );
 
         [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
@@ -24680,9 +24680,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT")]
         static abstract void UpdateIndirectExecutionSetPipelineExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("pExecutionSetWrites")]
-                WriteIndirectExecutionSetPipelineExt pExecutionSetWrites
+                WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites
         );
 
         [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
@@ -24698,10 +24698,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT")]
         static abstract void UpdateIndirectExecutionSetShaderExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
             [NativeName("pExecutionSetWrites")]
-                WriteIndirectExecutionSetShaderExt* pExecutionSetWrites
+                WriteIndirectExecutionSetShaderEXT* pExecutionSetWrites
         );
 
         [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
@@ -24717,10 +24717,10 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT")]
         static abstract void UpdateIndirectExecutionSetShaderExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
             [NativeName("pExecutionSetWrites")]
-                Ref<WriteIndirectExecutionSetShaderExt> pExecutionSetWrites
+                Ref<WriteIndirectExecutionSetShaderEXT> pExecutionSetWrites
         );
 
         [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
@@ -24736,9 +24736,9 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT")]
         static abstract void UpdateIndirectExecutionSetShaderExt(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+            [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
             [NativeName("pExecutionSetWrites")]
-                WriteIndirectExecutionSetShaderExt pExecutionSetWrites
+                WriteIndirectExecutionSetShaderEXT pExecutionSetWrites
         );
 
         [NativeName("vkUpdateVideoSessionParametersKHR")]
@@ -24751,8 +24751,8 @@ public unsafe partial interface IVk
         static abstract Result UpdateVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("videoSessionParameters")]
-                VideoSessionParametersHandleKhr videoSessionParameters,
-            [NativeName("pUpdateInfo")] VideoSessionParametersUpdateInfoKhr* pUpdateInfo
+                VideoSessionParametersHandleKHR videoSessionParameters,
+            [NativeName("pUpdateInfo")] VideoSessionParametersUpdateInfoKHR* pUpdateInfo
         );
 
         [NativeName("vkUpdateVideoSessionParametersKHR")]
@@ -24765,8 +24765,8 @@ public unsafe partial interface IVk
         static abstract Result UpdateVideoSessionParametersKhr(
             [NativeName("device")] DeviceHandle device,
             [NativeName("videoSessionParameters")]
-                VideoSessionParametersHandleKhr videoSessionParameters,
-            [NativeName("pUpdateInfo")] Ref<VideoSessionParametersUpdateInfoKhr> pUpdateInfo
+                VideoSessionParametersHandleKHR videoSessionParameters,
+            [NativeName("pUpdateInfo")] Ref<VideoSessionParametersUpdateInfoKHR> pUpdateInfo
         );
 
         [NativeName("vkWaitForFences")]
@@ -24855,8 +24855,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
         static abstract Result WaitForPresent2Khr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pPresentWait2Info")] PresentWait2InfoKhr* pPresentWait2Info
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pPresentWait2Info")] PresentWait2InfoKHR* pPresentWait2Info
         );
 
         [NativeName("vkWaitForPresent2KHR")]
@@ -24873,8 +24873,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
         static abstract Result WaitForPresent2Khr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-            [NativeName("pPresentWait2Info")] Ref<PresentWait2InfoKhr> pPresentWait2Info
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+            [NativeName("pPresentWait2Info")] Ref<PresentWait2InfoKHR> pPresentWait2Info
         );
 
         [NativeName("vkWaitForPresentKHR")]
@@ -24886,7 +24886,7 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkWaitForPresentKHR")]
         static abstract Result WaitForPresentKhr(
             [NativeName("device")] DeviceHandle device,
-            [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+            [NativeName("swapchain")] SwapchainHandleKHR swapchain,
             [NativeName("presentId")] ulong presentId,
             [NativeName("timeout")] ulong timeout
         );
@@ -24989,7 +24989,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
             [NativeName("pAccelerationStructures")]
-                AccelerationStructureHandleKhr* pAccelerationStructures,
+                AccelerationStructureHandleKHR* pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pData")] void* pData,
@@ -25010,7 +25010,7 @@ public unsafe partial interface IVk
             [NativeName("device")] DeviceHandle device,
             [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
             [NativeName("pAccelerationStructures")]
-                Ref<AccelerationStructureHandleKhr> pAccelerationStructures,
+                Ref<AccelerationStructureHandleKHR> pAccelerationStructures,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pData")] Ref pData,
@@ -25030,7 +25030,7 @@ public unsafe partial interface IVk
         static abstract Result WriteMicromapsPropertiesExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("micromapCount")] uint micromapCount,
-            [NativeName("pMicromaps")] MicromapHandleExt* pMicromaps,
+            [NativeName("pMicromaps")] MicromapHandleEXT* pMicromaps,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pData")] void* pData,
@@ -25050,7 +25050,7 @@ public unsafe partial interface IVk
         static abstract Result WriteMicromapsPropertiesExt(
             [NativeName("device")] DeviceHandle device,
             [NativeName("micromapCount")] uint micromapCount,
-            [NativeName("pMicromaps")] Ref<MicromapHandleExt> pMicromaps,
+            [NativeName("pMicromaps")] Ref<MicromapHandleEXT> pMicromaps,
             [NativeName("queryType")] QueryType queryType,
             [NativeName("dataSize")] nuint dataSize,
             [NativeName("pData")] Ref pData,
@@ -25068,7 +25068,7 @@ public unsafe partial interface IVk
     Result AcquireDrmDisplayExt(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("drmFd")] int drmFd,
-        [NativeName("display")] DisplayHandleKhr display
+        [NativeName("display")] DisplayHandleKHR display
     );
 
     [NativeName("vkAcquireNextImage2KHR")]
@@ -25081,7 +25081,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImage2KHR")]
     Result AcquireNextImage2Khr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pAcquireInfo")] AcquireNextImageInfoKhr* pAcquireInfo,
+        [NativeName("pAcquireInfo")] AcquireNextImageInfoKHR* pAcquireInfo,
         [NativeName("pImageIndex")] uint* pImageIndex
     );
 
@@ -25095,7 +25095,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImage2KHR")]
     Result AcquireNextImage2Khr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pAcquireInfo")] Ref<AcquireNextImageInfoKhr> pAcquireInfo,
+        [NativeName("pAcquireInfo")] Ref<AcquireNextImageInfoKHR> pAcquireInfo,
         [NativeName("pImageIndex")] Ref<uint> pImageIndex
     );
 
@@ -25104,7 +25104,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
     Result AcquireNextImageKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("timeout")] ulong timeout,
         [NativeName("semaphore")] SemaphoreHandle semaphore,
         [NativeName("fence")] FenceHandle fence,
@@ -25116,7 +25116,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
     Result AcquireNextImageKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("timeout")] ulong timeout,
         [NativeName("semaphore")] SemaphoreHandle semaphore,
         [NativeName("fence")] FenceHandle fence,
@@ -25128,8 +25128,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
     Result AcquirePerformanceConfigurationIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pAcquireInfo")] PerformanceConfigurationAcquireInfoIntel* pAcquireInfo,
-        [NativeName("pConfiguration")] PerformanceConfigurationHandleIntel* pConfiguration
+        [NativeName("pAcquireInfo")] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo,
+        [NativeName("pConfiguration")] PerformanceConfigurationHandleINTEL* pConfiguration
     );
 
     [NativeName("vkAcquirePerformanceConfigurationINTEL")]
@@ -25137,8 +25137,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
     Result AcquirePerformanceConfigurationIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pAcquireInfo")] Ref<PerformanceConfigurationAcquireInfoIntel> pAcquireInfo,
-        [NativeName("pConfiguration")] Ref<PerformanceConfigurationHandleIntel> pConfiguration
+        [NativeName("pAcquireInfo")] Ref<PerformanceConfigurationAcquireInfoINTEL> pAcquireInfo,
+        [NativeName("pConfiguration")] Ref<PerformanceConfigurationHandleINTEL> pConfiguration
     );
 
     [NativeName("vkAcquireProfilingLockKHR")]
@@ -25153,7 +25153,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireProfilingLockKHR")]
     Result AcquireProfilingLockKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] AcquireProfilingLockInfoKhr* pInfo
+        [NativeName("pInfo")] AcquireProfilingLockInfoKHR* pInfo
     );
 
     [NativeName("vkAcquireProfilingLockKHR")]
@@ -25168,7 +25168,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAcquireProfilingLockKHR")]
     Result AcquireProfilingLockKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<AcquireProfilingLockInfoKhr> pInfo
+        [NativeName("pInfo")] Ref<AcquireProfilingLockInfoKHR> pInfo
     );
 
     [NativeName("vkAllocateCommandBuffers")]
@@ -25379,7 +25379,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
     void AntiLagUpdateAmd(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pData")] AntiLagDataAmd* pData
+        [NativeName("pData")] AntiLagDataAMD* pData
     );
 
     [NativeName("vkAntiLagUpdateAMD")]
@@ -25394,7 +25394,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkAntiLagUpdateAMD")]
     void AntiLagUpdateAmd(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pData")] Ref<AntiLagDataAmd> pData
+        [NativeName("pData")] Ref<AntiLagDataAMD> pData
     );
 
     [NativeName("vkBeginCommandBuffer")]
@@ -25476,7 +25476,7 @@ public unsafe partial interface IVk
     Result BindAccelerationStructureMemoryNv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("bindInfoCount")] uint bindInfoCount,
-        [NativeName("pBindInfos")] BindAccelerationStructureMemoryInfoNv* pBindInfos
+        [NativeName("pBindInfos")] BindAccelerationStructureMemoryInfoNV* pBindInfos
     );
 
     [NativeName("vkBindAccelerationStructureMemoryNV")]
@@ -25492,7 +25492,7 @@ public unsafe partial interface IVk
     Result BindAccelerationStructureMemoryNv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("bindInfoCount")] uint bindInfoCount,
-        [NativeName("pBindInfos")] Ref<BindAccelerationStructureMemoryInfoNv> pBindInfos
+        [NativeName("pBindInfos")] Ref<BindAccelerationStructureMemoryInfoNV> pBindInfos
     );
 
     [NativeName("vkBindBufferMemory")]
@@ -25618,7 +25618,7 @@ public unsafe partial interface IVk
     Result BindDataGraphPipelineSessionMemoryArm(
         [NativeName("device")] DeviceHandle device,
         [NativeName("bindInfoCount")] uint bindInfoCount,
-        [NativeName("pBindInfos")] BindDataGraphPipelineSessionMemoryInfoArm* pBindInfos
+        [NativeName("pBindInfos")] BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
     );
 
     [NativeName("vkBindDataGraphPipelineSessionMemoryARM")]
@@ -25631,7 +25631,7 @@ public unsafe partial interface IVk
     Result BindDataGraphPipelineSessionMemoryArm(
         [NativeName("device")] DeviceHandle device,
         [NativeName("bindInfoCount")] uint bindInfoCount,
-        [NativeName("pBindInfos")] Ref<BindDataGraphPipelineSessionMemoryInfoArm> pBindInfos
+        [NativeName("pBindInfos")] Ref<BindDataGraphPipelineSessionMemoryInfoARM> pBindInfos
     );
 
     [NativeName("vkBindImageMemory")]
@@ -25760,8 +25760,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBindOpticalFlowSessionImageNV")]
     Result BindOpticalFlowSessionImageNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("session")] OpticalFlowSessionHandleNv session,
-        [NativeName("bindingPoint")] OpticalFlowSessionBindingPointNv bindingPoint,
+        [NativeName("session")] OpticalFlowSessionHandleNV session,
+        [NativeName("bindingPoint")] OpticalFlowSessionBindingPointNV bindingPoint,
         [NativeName("view")] ImageViewHandle view,
         [NativeName("layout")] ImageLayout layout
     );
@@ -25772,7 +25772,7 @@ public unsafe partial interface IVk
     Result BindTensorMemoryArm(
         [NativeName("device")] DeviceHandle device,
         [NativeName("bindInfoCount")] uint bindInfoCount,
-        [NativeName("pBindInfos")] BindTensorMemoryInfoArm* pBindInfos
+        [NativeName("pBindInfos")] BindTensorMemoryInfoARM* pBindInfos
     );
 
     [NativeName("vkBindTensorMemoryARM")]
@@ -25781,7 +25781,7 @@ public unsafe partial interface IVk
     Result BindTensorMemoryArm(
         [NativeName("device")] DeviceHandle device,
         [NativeName("bindInfoCount")] uint bindInfoCount,
-        [NativeName("pBindInfos")] Ref<BindTensorMemoryInfoArm> pBindInfos
+        [NativeName("pBindInfos")] Ref<BindTensorMemoryInfoARM> pBindInfos
     );
 
     [NativeName("vkBindVideoSessionMemoryKHR")]
@@ -25793,10 +25793,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBindVideoSessionMemoryKHR")]
     Result BindVideoSessionMemoryKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+        [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
         [NativeName("bindSessionMemoryInfoCount")] uint bindSessionMemoryInfoCount,
         [NativeName("pBindSessionMemoryInfos")]
-            BindVideoSessionMemoryInfoKhr* pBindSessionMemoryInfos
+            BindVideoSessionMemoryInfoKHR* pBindSessionMemoryInfos
     );
 
     [NativeName("vkBindVideoSessionMemoryKHR")]
@@ -25808,10 +25808,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBindVideoSessionMemoryKHR")]
     Result BindVideoSessionMemoryKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+        [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
         [NativeName("bindSessionMemoryInfoCount")] uint bindSessionMemoryInfoCount,
         [NativeName("pBindSessionMemoryInfos")]
-            Ref<BindVideoSessionMemoryInfoKhr> pBindSessionMemoryInfos
+            Ref<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos
     );
 
     [NativeName("vkBuildAccelerationStructuresKHR")]
@@ -25826,10 +25826,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBuildAccelerationStructuresKHR")]
     Result BuildAccelerationStructuresKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKhr* pInfos,
-        [NativeName("ppBuildRangeInfos")] AccelerationStructureBuildRangeInfoKhr** ppBuildRangeInfos
+        [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKHR* pInfos,
+        [NativeName("ppBuildRangeInfos")] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
     );
 
     [NativeName("vkBuildAccelerationStructuresKHR")]
@@ -25844,11 +25844,11 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBuildAccelerationStructuresKHR")]
     Result BuildAccelerationStructuresKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKhr> pInfos,
+        [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
         [NativeName("ppBuildRangeInfos")]
-            Ref2D<AccelerationStructureBuildRangeInfoKhr> ppBuildRangeInfos
+            Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
     );
 
     [NativeName("vkBuildMicromapsEXT")]
@@ -25863,9 +25863,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBuildMicromapsEXT")]
     Result BuildMicromapsExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] MicromapBuildInfoExt* pInfos
+        [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
     );
 
     [NativeName("vkBuildMicromapsEXT")]
@@ -25880,9 +25880,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkBuildMicromapsEXT")]
     Result BuildMicromapsExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] Ref<MicromapBuildInfoExt> pInfos
+        [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
     );
 
     [NativeName("vkCmdBeginConditionalRenderingEXT")]
@@ -25898,7 +25898,7 @@ public unsafe partial interface IVk
     void CmdBeginConditionalRenderingExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pConditionalRenderingBegin")]
-            ConditionalRenderingBeginInfoExt* pConditionalRenderingBegin
+            ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin
     );
 
     [NativeName("vkCmdBeginConditionalRenderingEXT")]
@@ -25914,7 +25914,7 @@ public unsafe partial interface IVk
     void CmdBeginConditionalRenderingExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pConditionalRenderingBegin")]
-            Ref<ConditionalRenderingBeginInfoExt> pConditionalRenderingBegin
+            Ref<ConditionalRenderingBeginInfoEXT> pConditionalRenderingBegin
     );
 
     [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
@@ -25922,7 +25922,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
     void CmdBeginDebugUtilsLabelExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+        [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
     [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
@@ -25930,7 +25930,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
     void CmdBeginDebugUtilsLabelExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
     );
 
     [NativeName("vkCmdBeginPerTileExecutionQCOM")]
@@ -25945,7 +25945,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginPerTileExecutionQCOM")]
     void CmdBeginPerTileExecutionQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pPerTileBeginInfo")] PerTileBeginInfoQcom* pPerTileBeginInfo
+        [NativeName("pPerTileBeginInfo")] PerTileBeginInfoQCOM* pPerTileBeginInfo
     );
 
     [NativeName("vkCmdBeginPerTileExecutionQCOM")]
@@ -25960,7 +25960,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginPerTileExecutionQCOM")]
     void CmdBeginPerTileExecutionQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pPerTileBeginInfo")] Ref<PerTileBeginInfoQcom> pPerTileBeginInfo
+        [NativeName("pPerTileBeginInfo")] Ref<PerTileBeginInfoQCOM> pPerTileBeginInfo
     );
 
     [NativeName("vkCmdBeginQuery")]
@@ -26231,7 +26231,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginVideoCodingKHR")]
     void CmdBeginVideoCodingKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pBeginInfo")] VideoBeginCodingInfoKhr* pBeginInfo
+        [NativeName("pBeginInfo")] VideoBeginCodingInfoKHR* pBeginInfo
     );
 
     [NativeName("vkCmdBeginVideoCodingKHR")]
@@ -26243,7 +26243,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginVideoCodingKHR")]
     void CmdBeginVideoCodingKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pBeginInfo")] Ref<VideoBeginCodingInfoKhr> pBeginInfo
+        [NativeName("pBeginInfo")] Ref<VideoBeginCodingInfoKHR> pBeginInfo
     );
 
     [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
@@ -26257,7 +26257,7 @@ public unsafe partial interface IVk
     void CmdBindDescriptorBufferEmbeddedSamplers2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pBindDescriptorBufferEmbeddedSamplersInfo")]
-            BindDescriptorBufferEmbeddedSamplersInfoExt* pBindDescriptorBufferEmbeddedSamplersInfo
+            BindDescriptorBufferEmbeddedSamplersInfoEXT* pBindDescriptorBufferEmbeddedSamplersInfo
     );
 
     [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
@@ -26271,7 +26271,7 @@ public unsafe partial interface IVk
     void CmdBindDescriptorBufferEmbeddedSamplers2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pBindDescriptorBufferEmbeddedSamplersInfo")]
-            Ref<BindDescriptorBufferEmbeddedSamplersInfoExt> pBindDescriptorBufferEmbeddedSamplersInfo
+            Ref<BindDescriptorBufferEmbeddedSamplersInfoEXT> pBindDescriptorBufferEmbeddedSamplersInfo
     );
 
     [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplersEXT")]
@@ -26308,7 +26308,7 @@ public unsafe partial interface IVk
     void CmdBindDescriptorBuffersExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("bufferCount")] uint bufferCount,
-        [NativeName("pBindingInfos")] DescriptorBufferBindingInfoExt* pBindingInfos
+        [NativeName("pBindingInfos")] DescriptorBufferBindingInfoEXT* pBindingInfos
     );
 
     [NativeName("vkCmdBindDescriptorBuffersEXT")]
@@ -26326,7 +26326,7 @@ public unsafe partial interface IVk
     void CmdBindDescriptorBuffersExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("bufferCount")] uint bufferCount,
-        [NativeName("pBindingInfos")] Ref<DescriptorBufferBindingInfoExt> pBindingInfos
+        [NativeName("pBindingInfos")] Ref<DescriptorBufferBindingInfoEXT> pBindingInfos
     );
 
     [NativeName("vkCmdBindDescriptorBuffersEXT")]
@@ -26343,7 +26343,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
     void CmdBindDescriptorBuffersExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pBindingInfos")] DescriptorBufferBindingInfoExt pBindingInfos
+        [NativeName("pBindingInfos")] DescriptorBufferBindingInfoEXT pBindingInfos
     );
 
     [NativeName("vkCmdBindDescriptorSets")]
@@ -26583,7 +26583,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("stageCount")] uint stageCount,
         [NativeName("pStages")] ShaderStageFlags* pStages,
-        [NativeName("pShaders")] ShaderHandleExt* pShaders
+        [NativeName("pShaders")] ShaderHandleEXT* pShaders
     );
 
     [NativeName("vkCmdBindShadersEXT")]
@@ -26601,7 +26601,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("stageCount")] uint stageCount,
         [NativeName("pStages")] Ref<ShaderStageFlags> pStages,
-        [NativeName("pShaders")] Ref<ShaderHandleExt> pShaders
+        [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
     );
 
     [NativeName("vkCmdBindShadingRateImageNV")]
@@ -26632,7 +26632,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindTileMemoryQCOM")]
     void CmdBindTileMemoryQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pTileMemoryBindInfo")] TileMemoryBindInfoQcom* pTileMemoryBindInfo
+        [NativeName("pTileMemoryBindInfo")] TileMemoryBindInfoQCOM* pTileMemoryBindInfo
     );
 
     [NativeName("vkCmdBindTileMemoryQCOM")]
@@ -26647,7 +26647,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindTileMemoryQCOM")]
     void CmdBindTileMemoryQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pTileMemoryBindInfo")] Ref<TileMemoryBindInfoQcom> pTileMemoryBindInfo
+        [NativeName("pTileMemoryBindInfo")] Ref<TileMemoryBindInfoQCOM> pTileMemoryBindInfo
     );
 
     [NativeName("vkCmdBindTransformFeedbackBuffersEXT")]
@@ -26966,12 +26966,12 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
     void CmdBuildAccelerationStructureNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] AccelerationStructureInfoNv* pInfo,
+        [NativeName("pInfo")] AccelerationStructureInfoNV* pInfo,
         [NativeName("instanceData")] BufferHandle instanceData,
         [NativeName("instanceOffset")] ulong instanceOffset,
         [NativeName("update")] uint update,
-        [NativeName("dst")] AccelerationStructureHandleNv dst,
-        [NativeName("src")] AccelerationStructureHandleNv src,
+        [NativeName("dst")] AccelerationStructureHandleNV dst,
+        [NativeName("src")] AccelerationStructureHandleNV src,
         [NativeName("scratch")] BufferHandle scratch,
         [NativeName("scratchOffset")] ulong scratchOffset
     );
@@ -26988,12 +26988,12 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildAccelerationStructureNV")]
     void CmdBuildAccelerationStructureNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<AccelerationStructureInfoNv> pInfo,
+        [NativeName("pInfo")] Ref<AccelerationStructureInfoNV> pInfo,
         [NativeName("instanceData")] BufferHandle instanceData,
         [NativeName("instanceOffset")] ulong instanceOffset,
         [NativeName("update")] MaybeBool<uint> update,
-        [NativeName("dst")] AccelerationStructureHandleNv dst,
-        [NativeName("src")] AccelerationStructureHandleNv src,
+        [NativeName("dst")] AccelerationStructureHandleNV dst,
+        [NativeName("src")] AccelerationStructureHandleNV src,
         [NativeName("scratch")] BufferHandle scratch,
         [NativeName("scratchOffset")] ulong scratchOffset
     );
@@ -27011,7 +27011,7 @@ public unsafe partial interface IVk
     void CmdBuildAccelerationStructuresIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKhr* pInfos,
+        [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKHR* pInfos,
         [NativeName("pIndirectDeviceAddresses")] ulong* pIndirectDeviceAddresses,
         [NativeName("pIndirectStrides")] uint* pIndirectStrides,
         [NativeName("ppMaxPrimitiveCounts")] uint** ppMaxPrimitiveCounts
@@ -27030,7 +27030,7 @@ public unsafe partial interface IVk
     void CmdBuildAccelerationStructuresIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKhr> pInfos,
+        [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
         [NativeName("pIndirectDeviceAddresses")] Ref<ulong> pIndirectDeviceAddresses,
         [NativeName("pIndirectStrides")] Ref<uint> pIndirectStrides,
         [NativeName("ppMaxPrimitiveCounts")] Ref2D<uint> ppMaxPrimitiveCounts
@@ -27049,8 +27049,8 @@ public unsafe partial interface IVk
     void CmdBuildAccelerationStructuresKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKhr* pInfos,
-        [NativeName("ppBuildRangeInfos")] AccelerationStructureBuildRangeInfoKhr** ppBuildRangeInfos
+        [NativeName("pInfos")] AccelerationStructureBuildGeometryInfoKHR* pInfos,
+        [NativeName("ppBuildRangeInfos")] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
     );
 
     [NativeName("vkCmdBuildAccelerationStructuresKHR")]
@@ -27066,9 +27066,9 @@ public unsafe partial interface IVk
     void CmdBuildAccelerationStructuresKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKhr> pInfos,
+        [NativeName("pInfos")] Ref<AccelerationStructureBuildGeometryInfoKHR> pInfos,
         [NativeName("ppBuildRangeInfos")]
-            Ref2D<AccelerationStructureBuildRangeInfoKhr> ppBuildRangeInfos
+            Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
     );
 
     [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
@@ -27080,7 +27080,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildClusterAccelerationStructureIndirectNV")]
     void CmdBuildClusterAccelerationStructureIndirectNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCommandInfos")] ClusterAccelerationStructureCommandsInfoNv* pCommandInfos
+        [NativeName("pCommandInfos")] ClusterAccelerationStructureCommandsInfoNV* pCommandInfos
     );
 
     [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
@@ -27092,7 +27092,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildClusterAccelerationStructureIndirectNV")]
     void CmdBuildClusterAccelerationStructureIndirectNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCommandInfos")] Ref<ClusterAccelerationStructureCommandsInfoNv> pCommandInfos
+        [NativeName("pCommandInfos")] Ref<ClusterAccelerationStructureCommandsInfoNV> pCommandInfos
     );
 
     [NativeName("vkCmdBuildMicromapsEXT")]
@@ -27108,7 +27108,7 @@ public unsafe partial interface IVk
     void CmdBuildMicromapsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] MicromapBuildInfoExt* pInfos
+        [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
     );
 
     [NativeName("vkCmdBuildMicromapsEXT")]
@@ -27124,7 +27124,7 @@ public unsafe partial interface IVk
     void CmdBuildMicromapsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] Ref<MicromapBuildInfoExt> pInfos
+        [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
     );
 
     [NativeName("vkCmdBuildMicromapsEXT")]
@@ -27139,7 +27139,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
     void CmdBuildMicromapsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfos")] MicromapBuildInfoExt pInfos
+        [NativeName("pInfos")] MicromapBuildInfoEXT pInfos
     );
 
     [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
@@ -27151,7 +27151,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildPartitionedAccelerationStructuresNV")]
     void CmdBuildPartitionedAccelerationStructuresNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pBuildInfo")] BuildPartitionedAccelerationStructureInfoNv* pBuildInfo
+        [NativeName("pBuildInfo")] BuildPartitionedAccelerationStructureInfoNV* pBuildInfo
     );
 
     [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
@@ -27163,7 +27163,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildPartitionedAccelerationStructuresNV")]
     void CmdBuildPartitionedAccelerationStructuresNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pBuildInfo")] Ref<BuildPartitionedAccelerationStructureInfoNv> pBuildInfo
+        [NativeName("pBuildInfo")] Ref<BuildPartitionedAccelerationStructureInfoNV> pBuildInfo
     );
 
     [NativeName("vkCmdClearAttachments")]
@@ -27402,7 +27402,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdControlVideoCodingKHR")]
     void CmdControlVideoCodingKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCodingControlInfo")] VideoCodingControlInfoKhr* pCodingControlInfo
+        [NativeName("pCodingControlInfo")] VideoCodingControlInfoKHR* pCodingControlInfo
     );
 
     [NativeName("vkCmdControlVideoCodingKHR")]
@@ -27414,7 +27414,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdControlVideoCodingKHR")]
     void CmdControlVideoCodingKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCodingControlInfo")] Ref<VideoCodingControlInfoKhr> pCodingControlInfo
+        [NativeName("pCodingControlInfo")] Ref<VideoCodingControlInfoKHR> pCodingControlInfo
     );
 
     [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
@@ -27430,7 +27430,7 @@ public unsafe partial interface IVk
     void CmdConvertCooperativeVectorMatrixNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNv* pInfos
+        [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV* pInfos
     );
 
     [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
@@ -27446,7 +27446,7 @@ public unsafe partial interface IVk
     void CmdConvertCooperativeVectorMatrixNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("infoCount")] uint infoCount,
-        [NativeName("pInfos")] Ref<ConvertCooperativeVectorMatrixInfoNv> pInfos
+        [NativeName("pInfos")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfos
     );
 
     [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
@@ -27461,7 +27461,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdConvertCooperativeVectorMatrixNV")]
     void CmdConvertCooperativeVectorMatrixNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNv pInfos
+        [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV pInfos
     );
 
     [NativeName("vkCmdCopyAccelerationStructureKHR")]
@@ -27476,7 +27476,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureKHR")]
     void CmdCopyAccelerationStructureKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] CopyAccelerationStructureInfoKhr* pInfo
+        [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
     );
 
     [NativeName("vkCmdCopyAccelerationStructureKHR")]
@@ -27491,7 +27491,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureKHR")]
     void CmdCopyAccelerationStructureKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKhr> pInfo
+        [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
     );
 
     [NativeName("vkCmdCopyAccelerationStructureNV")]
@@ -27506,9 +27506,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureNV")]
     void CmdCopyAccelerationStructureNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("dst")] AccelerationStructureHandleNv dst,
-        [NativeName("src")] AccelerationStructureHandleNv src,
-        [NativeName("mode")] CopyAccelerationStructureModeKhr mode
+        [NativeName("dst")] AccelerationStructureHandleNV dst,
+        [NativeName("src")] AccelerationStructureHandleNV src,
+        [NativeName("mode")] CopyAccelerationStructureModeKHR mode
     );
 
     [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
@@ -27523,7 +27523,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR")]
     void CmdCopyAccelerationStructureToMemoryKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKhr* pInfo
+        [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
     );
 
     [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
@@ -27538,7 +27538,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyAccelerationStructureToMemoryKHR")]
     void CmdCopyAccelerationStructureToMemoryKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKhr> pInfo
+        [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
     );
 
     [NativeName("vkCmdCopyBuffer")]
@@ -28281,7 +28281,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryIndirectKHR")]
     void CmdCopyMemoryIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCopyMemoryIndirectInfo")] CopyMemoryIndirectInfoKhr* pCopyMemoryIndirectInfo
+        [NativeName("pCopyMemoryIndirectInfo")] CopyMemoryIndirectInfoKHR* pCopyMemoryIndirectInfo
     );
 
     [NativeName("vkCmdCopyMemoryIndirectKHR")]
@@ -28297,7 +28297,7 @@ public unsafe partial interface IVk
     void CmdCopyMemoryIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pCopyMemoryIndirectInfo")]
-            Ref<CopyMemoryIndirectInfoKhr> pCopyMemoryIndirectInfo
+            Ref<CopyMemoryIndirectInfoKHR> pCopyMemoryIndirectInfo
     );
 
     [NativeName("vkCmdCopyMemoryIndirectNV")]
@@ -28330,7 +28330,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR")]
     void CmdCopyMemoryToAccelerationStructureKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKhr* pInfo
+        [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
     );
 
     [NativeName("vkCmdCopyMemoryToAccelerationStructureKHR")]
@@ -28345,7 +28345,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToAccelerationStructureKHR")]
     void CmdCopyMemoryToAccelerationStructureKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKhr> pInfo
+        [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
     );
 
     [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
@@ -28361,7 +28361,7 @@ public unsafe partial interface IVk
     void CmdCopyMemoryToImageIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pCopyMemoryToImageIndirectInfo")]
-            CopyMemoryToImageIndirectInfoKhr* pCopyMemoryToImageIndirectInfo
+            CopyMemoryToImageIndirectInfoKHR* pCopyMemoryToImageIndirectInfo
     );
 
     [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
@@ -28377,7 +28377,7 @@ public unsafe partial interface IVk
     void CmdCopyMemoryToImageIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pCopyMemoryToImageIndirectInfo")]
-            Ref<CopyMemoryToImageIndirectInfoKhr> pCopyMemoryToImageIndirectInfo
+            Ref<CopyMemoryToImageIndirectInfoKHR> pCopyMemoryToImageIndirectInfo
     );
 
     [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
@@ -28454,7 +28454,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToMicromapEXT")]
     void CmdCopyMemoryToMicromapExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] CopyMemoryToMicromapInfoExt* pInfo
+        [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
     );
 
     [NativeName("vkCmdCopyMemoryToMicromapEXT")]
@@ -28469,7 +28469,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMemoryToMicromapEXT")]
     void CmdCopyMemoryToMicromapExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoExt> pInfo
+        [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
     );
 
     [NativeName("vkCmdCopyMicromapEXT")]
@@ -28484,7 +28484,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapEXT")]
     void CmdCopyMicromapExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] CopyMicromapInfoExt* pInfo
+        [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
     );
 
     [NativeName("vkCmdCopyMicromapEXT")]
@@ -28499,7 +28499,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapEXT")]
     void CmdCopyMicromapExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<CopyMicromapInfoExt> pInfo
+        [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
     );
 
     [NativeName("vkCmdCopyMicromapToMemoryEXT")]
@@ -28514,7 +28514,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapToMemoryEXT")]
     void CmdCopyMicromapToMemoryExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] CopyMicromapToMemoryInfoExt* pInfo
+        [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
     );
 
     [NativeName("vkCmdCopyMicromapToMemoryEXT")]
@@ -28529,7 +28529,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyMicromapToMemoryEXT")]
     void CmdCopyMicromapToMemoryExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoExt> pInfo
+        [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoEXT> pInfo
     );
 
     [NativeName("vkCmdCopyQueryPoolResults")]
@@ -28576,7 +28576,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
     void CmdCopyTensorArm(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCopyTensorInfo")] CopyTensorInfoArm* pCopyTensorInfo
+        [NativeName("pCopyTensorInfo")] CopyTensorInfoARM* pCopyTensorInfo
     );
 
     [NativeName("vkCmdCopyTensorARM")]
@@ -28584,7 +28584,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
     void CmdCopyTensorArm(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pCopyTensorInfo")] Ref<CopyTensorInfoArm> pCopyTensorInfo
+        [NativeName("pCopyTensorInfo")] Ref<CopyTensorInfoARM> pCopyTensorInfo
     );
 
     [NativeName("vkCmdCuLaunchKernelNVX")]
@@ -28592,7 +28592,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
     void CmdCuLaunchKernelNvx(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pLaunchInfo")] CuLaunchInfoNvx* pLaunchInfo
+        [NativeName("pLaunchInfo")] CuLaunchInfoNVX* pLaunchInfo
     );
 
     [NativeName("vkCmdCuLaunchKernelNVX")]
@@ -28600,7 +28600,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
     void CmdCuLaunchKernelNvx(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pLaunchInfo")] Ref<CuLaunchInfoNvx> pLaunchInfo
+        [NativeName("pLaunchInfo")] Ref<CuLaunchInfoNVX> pLaunchInfo
     );
 
     [NativeName("vkCmdDebugMarkerBeginEXT")]
@@ -28608,7 +28608,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerBeginEXT")]
     void CmdDebugMarkerBeginExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoExt* pMarkerInfo
+        [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
     );
 
     [NativeName("vkCmdDebugMarkerBeginEXT")]
@@ -28616,7 +28616,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerBeginEXT")]
     void CmdDebugMarkerBeginExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoExt> pMarkerInfo
+        [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
     );
 
     [NativeName("vkCmdDebugMarkerEndEXT")]
@@ -28629,7 +28629,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerInsertEXT")]
     void CmdDebugMarkerInsertExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoExt* pMarkerInfo
+        [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
     );
 
     [NativeName("vkCmdDebugMarkerInsertEXT")]
@@ -28637,7 +28637,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerInsertEXT")]
     void CmdDebugMarkerInsertExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoExt> pMarkerInfo
+        [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
     );
 
     [NativeName("vkCmdDecodeVideoKHR")]
@@ -28652,7 +28652,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecodeVideoKHR")]
     void CmdDecodeVideoKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDecodeInfo")] VideoDecodeInfoKhr* pDecodeInfo
+        [NativeName("pDecodeInfo")] VideoDecodeInfoKHR* pDecodeInfo
     );
 
     [NativeName("vkCmdDecodeVideoKHR")]
@@ -28667,7 +28667,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecodeVideoKHR")]
     void CmdDecodeVideoKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDecodeInfo")] Ref<VideoDecodeInfoKhr> pDecodeInfo
+        [NativeName("pDecodeInfo")] Ref<VideoDecodeInfoKHR> pDecodeInfo
     );
 
     [NativeName("vkCmdDecompressMemoryEXT")]
@@ -28679,7 +28679,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryEXT")]
     void CmdDecompressMemoryExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDecompressMemoryInfoEXT")] DecompressMemoryInfoExt* pDecompressMemoryInfoEXT
+        [NativeName("pDecompressMemoryInfoEXT")] DecompressMemoryInfoEXT* pDecompressMemoryInfoEXT
     );
 
     [NativeName("vkCmdDecompressMemoryEXT")]
@@ -28692,7 +28692,7 @@ public unsafe partial interface IVk
     void CmdDecompressMemoryExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pDecompressMemoryInfoEXT")]
-            Ref<DecompressMemoryInfoExt> pDecompressMemoryInfoEXT
+            Ref<DecompressMemoryInfoEXT> pDecompressMemoryInfoEXT
     );
 
     [NativeName("vkCmdDecompressMemoryIndirectCountEXT")]
@@ -28704,7 +28704,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountEXT")]
     void CmdDecompressMemoryIndirectCountExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("decompressionMethod")] MemoryDecompressionMethodFlagsExt decompressionMethod,
+        [NativeName("decompressionMethod")] MemoryDecompressionMethodFlagsEXT decompressionMethod,
         [NativeName("indirectCommandsAddress")] ulong indirectCommandsAddress,
         [NativeName("indirectCommandsCountAddress")] ulong indirectCommandsCountAddress,
         [NativeName("maxDecompressionCount")] uint maxDecompressionCount,
@@ -28743,7 +28743,7 @@ public unsafe partial interface IVk
     void CmdDecompressMemoryNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("decompressRegionCount")] uint decompressRegionCount,
-        [NativeName("pDecompressMemoryRegions")] DecompressMemoryRegionNv* pDecompressMemoryRegions
+        [NativeName("pDecompressMemoryRegions")] DecompressMemoryRegionNV* pDecompressMemoryRegions
     );
 
     [NativeName("vkCmdDecompressMemoryNV")]
@@ -28761,7 +28761,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("decompressRegionCount")] uint decompressRegionCount,
         [NativeName("pDecompressMemoryRegions")]
-            Ref<DecompressMemoryRegionNv> pDecompressMemoryRegions
+            Ref<DecompressMemoryRegionNV> pDecompressMemoryRegions
     );
 
     [NativeName("vkCmdDecompressMemoryNV")]
@@ -28777,7 +28777,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryNV")]
     void CmdDecompressMemoryNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDecompressMemoryRegions")] DecompressMemoryRegionNv pDecompressMemoryRegions
+        [NativeName("pDecompressMemoryRegions")] DecompressMemoryRegionNV pDecompressMemoryRegions
     );
 
     [NativeName("vkCmdDispatch")]
@@ -28866,8 +28866,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
     void CmdDispatchDataGraphArm(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("session")] DataGraphPipelineSessionHandleArm session,
-        [NativeName("pInfo")] DataGraphPipelineDispatchInfoArm* pInfo
+        [NativeName("session")] DataGraphPipelineSessionHandleARM session,
+        [NativeName("pInfo")] DataGraphPipelineDispatchInfoARM* pInfo
     );
 
     [NativeName("vkCmdDispatchDataGraphARM")]
@@ -28879,8 +28879,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchDataGraphARM")]
     void CmdDispatchDataGraphArm(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("session")] DataGraphPipelineSessionHandleArm session,
-        [NativeName("pInfo")] Ref<DataGraphPipelineDispatchInfoArm> pInfo
+        [NativeName("session")] DataGraphPipelineSessionHandleARM session,
+        [NativeName("pInfo")] Ref<DataGraphPipelineDispatchInfoARM> pInfo
     );
 
     [NativeName("vkCmdDispatchIndirect")]
@@ -28924,7 +28924,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
     void CmdDispatchTileQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDispatchTileInfo")] DispatchTileInfoQcom* pDispatchTileInfo
+        [NativeName("pDispatchTileInfo")] DispatchTileInfoQCOM* pDispatchTileInfo
     );
 
     [NativeName("vkCmdDispatchTileQCOM")]
@@ -28939,7 +28939,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDispatchTileQCOM")]
     void CmdDispatchTileQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDispatchTileInfo")] Ref<DispatchTileInfoQcom> pDispatchTileInfo
+        [NativeName("pDispatchTileInfo")] Ref<DispatchTileInfoQCOM> pDispatchTileInfo
     );
 
     [NativeName("vkCmdDraw")]
@@ -29321,7 +29321,7 @@ public unsafe partial interface IVk
     void CmdDrawMultiExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("drawCount")] uint drawCount,
-        [NativeName("pVertexInfo")] MultiDrawInfoExt* pVertexInfo,
+        [NativeName("pVertexInfo")] MultiDrawInfoEXT* pVertexInfo,
         [NativeName("instanceCount")] uint instanceCount,
         [NativeName("firstInstance")] uint firstInstance,
         [NativeName("stride")] uint stride
@@ -29340,7 +29340,7 @@ public unsafe partial interface IVk
     void CmdDrawMultiExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("drawCount")] uint drawCount,
-        [NativeName("pVertexInfo")] Ref<MultiDrawInfoExt> pVertexInfo,
+        [NativeName("pVertexInfo")] Ref<MultiDrawInfoEXT> pVertexInfo,
         [NativeName("instanceCount")] uint instanceCount,
         [NativeName("firstInstance")] uint firstInstance,
         [NativeName("stride")] uint stride
@@ -29358,7 +29358,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMultiEXT")]
     void CmdDrawMultiExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pVertexInfo")] MultiDrawInfoExt pVertexInfo,
+        [NativeName("pVertexInfo")] MultiDrawInfoEXT pVertexInfo,
         [NativeName("instanceCount")] uint instanceCount,
         [NativeName("firstInstance")] uint firstInstance,
         [NativeName("stride")] uint stride
@@ -29377,7 +29377,7 @@ public unsafe partial interface IVk
     void CmdDrawMultiIndexedExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("drawCount")] uint drawCount,
-        [NativeName("pIndexInfo")] MultiDrawIndexedInfoExt* pIndexInfo,
+        [NativeName("pIndexInfo")] MultiDrawIndexedInfoEXT* pIndexInfo,
         [NativeName("instanceCount")] uint instanceCount,
         [NativeName("firstInstance")] uint firstInstance,
         [NativeName("stride")] uint stride,
@@ -29397,7 +29397,7 @@ public unsafe partial interface IVk
     void CmdDrawMultiIndexedExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("drawCount")] uint drawCount,
-        [NativeName("pIndexInfo")] Ref<MultiDrawIndexedInfoExt> pIndexInfo,
+        [NativeName("pIndexInfo")] Ref<MultiDrawIndexedInfoEXT> pIndexInfo,
         [NativeName("instanceCount")] uint instanceCount,
         [NativeName("firstInstance")] uint firstInstance,
         [NativeName("stride")] uint stride,
@@ -29416,7 +29416,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawMultiIndexedEXT")]
     void CmdDrawMultiIndexedExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pIndexInfo")] MultiDrawIndexedInfoExt pIndexInfo,
+        [NativeName("pIndexInfo")] MultiDrawIndexedInfoEXT pIndexInfo,
         [NativeName("instanceCount")] uint instanceCount,
         [NativeName("firstInstance")] uint firstInstance,
         [NativeName("stride")] uint stride,
@@ -29435,7 +29435,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEncodeVideoKHR")]
     void CmdEncodeVideoKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pEncodeInfo")] VideoEncodeInfoKhr* pEncodeInfo
+        [NativeName("pEncodeInfo")] VideoEncodeInfoKHR* pEncodeInfo
     );
 
     [NativeName("vkCmdEncodeVideoKHR")]
@@ -29450,7 +29450,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEncodeVideoKHR")]
     void CmdEncodeVideoKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pEncodeInfo")] Ref<VideoEncodeInfoKhr> pEncodeInfo
+        [NativeName("pEncodeInfo")] Ref<VideoEncodeInfoKHR> pEncodeInfo
     );
 
     [NativeName("vkCmdEndConditionalRenderingEXT")]
@@ -29484,7 +29484,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndPerTileExecutionQCOM")]
     void CmdEndPerTileExecutionQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pPerTileEndInfo")] PerTileEndInfoQcom* pPerTileEndInfo
+        [NativeName("pPerTileEndInfo")] PerTileEndInfoQCOM* pPerTileEndInfo
     );
 
     [NativeName("vkCmdEndPerTileExecutionQCOM")]
@@ -29499,7 +29499,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndPerTileExecutionQCOM")]
     void CmdEndPerTileExecutionQcom(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pPerTileEndInfo")] Ref<PerTileEndInfoQcom> pPerTileEndInfo
+        [NativeName("pPerTileEndInfo")] Ref<PerTileEndInfoQCOM> pPerTileEndInfo
     );
 
     [NativeName("vkCmdEndQuery")]
@@ -29580,7 +29580,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
     void CmdEndRendering2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pRenderingEndInfo")] RenderingEndInfoKhr* pRenderingEndInfo
+        [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
     );
 
     [NativeName("vkCmdEndRendering2EXT")]
@@ -29601,7 +29601,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2EXT")]
     void CmdEndRendering2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKhr> pRenderingEndInfo
+        [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
     );
 
     [NativeName("vkCmdEndRendering2KHR")]
@@ -29616,7 +29616,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
     void CmdEndRendering2Khr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pRenderingEndInfo")] RenderingEndInfoKhr* pRenderingEndInfo
+        [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
     );
 
     [NativeName("vkCmdEndRendering2KHR")]
@@ -29631,7 +29631,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering2KHR")]
     void CmdEndRendering2Khr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKhr> pRenderingEndInfo
+        [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
     );
 
     [NativeName("vkCmdEndRenderingKHR")]
@@ -29774,7 +29774,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndVideoCodingKHR")]
     void CmdEndVideoCodingKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pEndCodingInfo")] VideoEndCodingInfoKhr* pEndCodingInfo
+        [NativeName("pEndCodingInfo")] VideoEndCodingInfoKHR* pEndCodingInfo
     );
 
     [NativeName("vkCmdEndVideoCodingKHR")]
@@ -29786,7 +29786,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndVideoCodingKHR")]
     void CmdEndVideoCodingKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pEndCodingInfo")] Ref<VideoEndCodingInfoKhr> pEndCodingInfo
+        [NativeName("pEndCodingInfo")] Ref<VideoEndCodingInfoKHR> pEndCodingInfo
     );
 
     [NativeName("vkCmdExecuteCommands")]
@@ -29904,7 +29904,7 @@ public unsafe partial interface IVk
     void CmdExecuteGeneratedCommandsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("isPreprocessed")] uint isPreprocessed,
-        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoExt* pGeneratedCommandsInfo
+        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoEXT* pGeneratedCommandsInfo
     );
 
     [NativeName("vkCmdExecuteGeneratedCommandsEXT")]
@@ -29921,7 +29921,7 @@ public unsafe partial interface IVk
     void CmdExecuteGeneratedCommandsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("isPreprocessed")] MaybeBool<uint> isPreprocessed,
-        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoExt> pGeneratedCommandsInfo
+        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo
     );
 
     [NativeName("vkCmdExecuteGeneratedCommandsNV")]
@@ -29934,7 +29934,7 @@ public unsafe partial interface IVk
     void CmdExecuteGeneratedCommandsNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("isPreprocessed")] uint isPreprocessed,
-        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNv* pGeneratedCommandsInfo
+        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
     );
 
     [NativeName("vkCmdExecuteGeneratedCommandsNV")]
@@ -29947,7 +29947,7 @@ public unsafe partial interface IVk
     void CmdExecuteGeneratedCommandsNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("isPreprocessed")] MaybeBool<uint> isPreprocessed,
-        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoNv> pGeneratedCommandsInfo
+        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoNV> pGeneratedCommandsInfo
     );
 
     [NativeName("vkCmdFillBuffer")]
@@ -29991,7 +29991,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
     void CmdInsertDebugUtilsLabelExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+        [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
     [NativeName("vkCmdInsertDebugUtilsLabelEXT")]
@@ -29999,7 +29999,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
     void CmdInsertDebugUtilsLabelExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
     );
 
     [NativeName("vkCmdNextSubpass")]
@@ -30104,8 +30104,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdOpticalFlowExecuteNV")]
     void CmdOpticalFlowExecuteNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("session")] OpticalFlowSessionHandleNv session,
-        [NativeName("pExecuteInfo")] OpticalFlowExecuteInfoNv* pExecuteInfo
+        [NativeName("session")] OpticalFlowSessionHandleNV session,
+        [NativeName("pExecuteInfo")] OpticalFlowExecuteInfoNV* pExecuteInfo
     );
 
     [NativeName("vkCmdOpticalFlowExecuteNV")]
@@ -30121,8 +30121,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdOpticalFlowExecuteNV")]
     void CmdOpticalFlowExecuteNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("session")] OpticalFlowSessionHandleNv session,
-        [NativeName("pExecuteInfo")] Ref<OpticalFlowExecuteInfoNv> pExecuteInfo
+        [NativeName("session")] OpticalFlowSessionHandleNV session,
+        [NativeName("pExecuteInfo")] Ref<OpticalFlowExecuteInfoNV> pExecuteInfo
     );
 
     [NativeName("vkCmdPipelineBarrier")]
@@ -30292,7 +30292,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdPreprocessGeneratedCommandsEXT")]
     void CmdPreprocessGeneratedCommandsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoExt* pGeneratedCommandsInfo,
+        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoEXT* pGeneratedCommandsInfo,
         [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
     );
 
@@ -30309,7 +30309,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdPreprocessGeneratedCommandsEXT")]
     void CmdPreprocessGeneratedCommandsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoExt> pGeneratedCommandsInfo,
+        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo,
         [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
     );
 
@@ -30322,7 +30322,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
     void CmdPreprocessGeneratedCommandsNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNv* pGeneratedCommandsInfo
+        [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
     );
 
     [NativeName("vkCmdPreprocessGeneratedCommandsNV")]
@@ -30334,7 +30334,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
     void CmdPreprocessGeneratedCommandsNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoNv> pGeneratedCommandsInfo
+        [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoNV> pGeneratedCommandsInfo
     );
 
     [NativeName("vkCmdPushConstants")]
@@ -31124,9 +31124,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
     void CmdSetCoarseSampleOrderNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("sampleOrderType")] CoarseSampleOrderTypeNv sampleOrderType,
+        [NativeName("sampleOrderType")] CoarseSampleOrderTypeNV sampleOrderType,
         [NativeName("customSampleOrderCount")] uint customSampleOrderCount,
-        [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNv* pCustomSampleOrders
+        [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV* pCustomSampleOrders
     );
 
     [NativeName("vkCmdSetCoarseSampleOrderNV")]
@@ -31141,9 +31141,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
     void CmdSetCoarseSampleOrderNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("sampleOrderType")] CoarseSampleOrderTypeNv sampleOrderType,
+        [NativeName("sampleOrderType")] CoarseSampleOrderTypeNV sampleOrderType,
         [NativeName("customSampleOrderCount")] uint customSampleOrderCount,
-        [NativeName("pCustomSampleOrders")] Ref<CoarseSampleOrderCustomNv> pCustomSampleOrders
+        [NativeName("pCustomSampleOrders")] Ref<CoarseSampleOrderCustomNV> pCustomSampleOrders
     );
 
     [NativeName("vkCmdSetCoarseSampleOrderNV")]
@@ -31158,8 +31158,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
     void CmdSetCoarseSampleOrderNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("sampleOrderType")] CoarseSampleOrderTypeNv sampleOrderType,
-        [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNv pCustomSampleOrders
+        [NativeName("sampleOrderType")] CoarseSampleOrderTypeNV sampleOrderType,
+        [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV pCustomSampleOrders
     );
 
     [NativeName("vkCmdSetColorBlendAdvancedEXT")]
@@ -31177,7 +31177,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstAttachment")] uint firstAttachment,
         [NativeName("attachmentCount")] uint attachmentCount,
-        [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedExt* pColorBlendAdvanced
+        [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT* pColorBlendAdvanced
     );
 
     [NativeName("vkCmdSetColorBlendAdvancedEXT")]
@@ -31195,7 +31195,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstAttachment")] uint firstAttachment,
         [NativeName("attachmentCount")] uint attachmentCount,
-        [NativeName("pColorBlendAdvanced")] Ref<ColorBlendAdvancedExt> pColorBlendAdvanced
+        [NativeName("pColorBlendAdvanced")] Ref<ColorBlendAdvancedEXT> pColorBlendAdvanced
     );
 
     [NativeName("vkCmdSetColorBlendAdvancedEXT")]
@@ -31212,7 +31212,7 @@ public unsafe partial interface IVk
     void CmdSetColorBlendAdvancedExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstAttachment")] uint firstAttachment,
-        [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedExt pColorBlendAdvanced
+        [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT pColorBlendAdvanced
     );
 
     [NativeName("vkCmdSetColorBlendEnableEXT")]
@@ -31279,7 +31279,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstAttachment")] uint firstAttachment,
         [NativeName("attachmentCount")] uint attachmentCount,
-        [NativeName("pColorBlendEquations")] ColorBlendEquationExt* pColorBlendEquations
+        [NativeName("pColorBlendEquations")] ColorBlendEquationEXT* pColorBlendEquations
     );
 
     [NativeName("vkCmdSetColorBlendEquationEXT")]
@@ -31296,7 +31296,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstAttachment")] uint firstAttachment,
         [NativeName("attachmentCount")] uint attachmentCount,
-        [NativeName("pColorBlendEquations")] Ref<ColorBlendEquationExt> pColorBlendEquations
+        [NativeName("pColorBlendEquations")] Ref<ColorBlendEquationEXT> pColorBlendEquations
     );
 
     [NativeName("vkCmdSetColorBlendEquationEXT")]
@@ -31312,7 +31312,7 @@ public unsafe partial interface IVk
     void CmdSetColorBlendEquationExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstAttachment")] uint firstAttachment,
-        [NativeName("pColorBlendEquations")] ColorBlendEquationExt pColorBlendEquations
+        [NativeName("pColorBlendEquations")] ColorBlendEquationEXT pColorBlendEquations
     );
 
     [NativeName("vkCmdSetColorWriteEnableEXT")]
@@ -31426,7 +31426,7 @@ public unsafe partial interface IVk
     void CmdSetConservativeRasterizationModeExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("conservativeRasterizationMode")]
-            ConservativeRasterizationModeExt conservativeRasterizationMode
+            ConservativeRasterizationModeEXT conservativeRasterizationMode
     );
 
     [NativeName("vkCmdSetCoverageModulationModeNV")]
@@ -31442,7 +31442,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageModulationModeNV")]
     void CmdSetCoverageModulationModeNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("coverageModulationMode")] CoverageModulationModeNv coverageModulationMode
+        [NativeName("coverageModulationMode")] CoverageModulationModeNV coverageModulationMode
     );
 
     [NativeName("vkCmdSetCoverageModulationTableEnableNV")]
@@ -31540,7 +31540,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetCoverageReductionModeNV")]
     void CmdSetCoverageReductionModeNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("coverageReductionMode")] CoverageReductionModeNv coverageReductionMode
+        [NativeName("coverageReductionMode")] CoverageReductionModeNV coverageReductionMode
     );
 
     [NativeName("vkCmdSetCoverageToColorEnableNV")]
@@ -31655,7 +31655,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBias2EXT")]
     void CmdSetDepthBias2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDepthBiasInfo")] DepthBiasInfoExt* pDepthBiasInfo
+        [NativeName("pDepthBiasInfo")] DepthBiasInfoEXT* pDepthBiasInfo
     );
 
     [NativeName("vkCmdSetDepthBias2EXT")]
@@ -31670,7 +31670,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthBias2EXT")]
     void CmdSetDepthBias2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pDepthBiasInfo")] Ref<DepthBiasInfoExt> pDepthBiasInfo
+        [NativeName("pDepthBiasInfo")] Ref<DepthBiasInfoEXT> pDepthBiasInfo
     );
 
     [NativeName("vkCmdSetDepthBiasEnable")]
@@ -31849,8 +31849,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampRangeEXT")]
     void CmdSetDepthClampRangeExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("depthClampMode")] DepthClampModeExt depthClampMode,
-        [NativeName("pDepthClampRange")] DepthClampRangeExt* pDepthClampRange
+        [NativeName("depthClampMode")] DepthClampModeEXT depthClampMode,
+        [NativeName("pDepthClampRange")] DepthClampRangeEXT* pDepthClampRange
     );
 
     [NativeName("vkCmdSetDepthClampRangeEXT")]
@@ -31867,8 +31867,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDepthClampRangeEXT")]
     void CmdSetDepthClampRangeExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("depthClampMode")] DepthClampModeExt depthClampMode,
-        [NativeName("pDepthClampRange")] Ref<DepthClampRangeExt> pDepthClampRange
+        [NativeName("depthClampMode")] DepthClampModeEXT depthClampMode,
+        [NativeName("pDepthClampRange")] Ref<DepthClampRangeEXT> pDepthClampRange
     );
 
     [NativeName("vkCmdSetDepthClipEnableEXT")]
@@ -32081,7 +32081,7 @@ public unsafe partial interface IVk
     void CmdSetDescriptorBufferOffsets2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pSetDescriptorBufferOffsetsInfo")]
-            SetDescriptorBufferOffsetsInfoExt* pSetDescriptorBufferOffsetsInfo
+            SetDescriptorBufferOffsetsInfoEXT* pSetDescriptorBufferOffsetsInfo
     );
 
     [NativeName("vkCmdSetDescriptorBufferOffsets2EXT")]
@@ -32095,7 +32095,7 @@ public unsafe partial interface IVk
     void CmdSetDescriptorBufferOffsets2Ext(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pSetDescriptorBufferOffsetsInfo")]
-            Ref<SetDescriptorBufferOffsetsInfoExt> pSetDescriptorBufferOffsetsInfo
+            Ref<SetDescriptorBufferOffsetsInfoEXT> pSetDescriptorBufferOffsetsInfo
     );
 
     [NativeName("vkCmdSetDescriptorBufferOffsetsEXT")]
@@ -32275,7 +32275,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetDiscardRectangleModeEXT")]
     void CmdSetDiscardRectangleModeExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("discardRectangleMode")] DiscardRectangleModeExt discardRectangleMode
+        [NativeName("discardRectangleMode")] DiscardRectangleModeEXT discardRectangleMode
     );
 
     [NativeName("vkCmdSetEvent")]
@@ -32504,8 +32504,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
     void CmdSetFragmentShadingRateEnumNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("shadingRate")] FragmentShadingRateNv shadingRate,
-        [NativeName("combinerOps")] FragmentShadingRateCombinerOpKhr* combinerOps
+        [NativeName("shadingRate")] FragmentShadingRateNV shadingRate,
+        [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
     );
 
     [NativeName("vkCmdSetFragmentShadingRateEnumNV")]
@@ -32517,8 +32517,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
     void CmdSetFragmentShadingRateEnumNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("shadingRate")] FragmentShadingRateNv shadingRate,
-        [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKhr> combinerOps
+        [NativeName("shadingRate")] FragmentShadingRateNV shadingRate,
+        [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKHR> combinerOps
     );
 
     [NativeName("vkCmdSetFragmentShadingRateKHR")]
@@ -32535,7 +32535,7 @@ public unsafe partial interface IVk
     void CmdSetFragmentShadingRateKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pFragmentSize")] Extent2D* pFragmentSize,
-        [NativeName("combinerOps")] FragmentShadingRateCombinerOpKhr* combinerOps
+        [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
     );
 
     [NativeName("vkCmdSetFragmentShadingRateKHR")]
@@ -32552,7 +32552,7 @@ public unsafe partial interface IVk
     void CmdSetFragmentShadingRateKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pFragmentSize")] Ref<Extent2D> pFragmentSize,
-        [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKhr> combinerOps
+        [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKHR> combinerOps
     );
 
     [NativeName("vkCmdSetFrontFace")]
@@ -32763,7 +32763,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
     Result CmdSetPerformanceMarkerIntel(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] PerformanceMarkerInfoIntel* pMarkerInfo
+        [NativeName("pMarkerInfo")] PerformanceMarkerInfoINTEL* pMarkerInfo
     );
 
     [NativeName("vkCmdSetPerformanceMarkerINTEL")]
@@ -32771,7 +32771,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
     Result CmdSetPerformanceMarkerIntel(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] Ref<PerformanceMarkerInfoIntel> pMarkerInfo
+        [NativeName("pMarkerInfo")] Ref<PerformanceMarkerInfoINTEL> pMarkerInfo
     );
 
     [NativeName("vkCmdSetPerformanceOverrideINTEL")]
@@ -32779,7 +32779,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
     Result CmdSetPerformanceOverrideIntel(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pOverrideInfo")] PerformanceOverrideInfoIntel* pOverrideInfo
+        [NativeName("pOverrideInfo")] PerformanceOverrideInfoINTEL* pOverrideInfo
     );
 
     [NativeName("vkCmdSetPerformanceOverrideINTEL")]
@@ -32787,7 +32787,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
     Result CmdSetPerformanceOverrideIntel(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pOverrideInfo")] Ref<PerformanceOverrideInfoIntel> pOverrideInfo
+        [NativeName("pOverrideInfo")] Ref<PerformanceOverrideInfoINTEL> pOverrideInfo
     );
 
     [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -32795,7 +32795,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
     Result CmdSetPerformanceStreamMarkerIntel(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] PerformanceStreamMarkerInfoIntel* pMarkerInfo
+        [NativeName("pMarkerInfo")] PerformanceStreamMarkerInfoINTEL* pMarkerInfo
     );
 
     [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -32803,7 +32803,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
     Result CmdSetPerformanceStreamMarkerIntel(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMarkerInfo")] Ref<PerformanceStreamMarkerInfoIntel> pMarkerInfo
+        [NativeName("pMarkerInfo")] Ref<PerformanceStreamMarkerInfoINTEL> pMarkerInfo
     );
 
     [NativeName("vkCmdSetPolygonModeEXT")]
@@ -32915,7 +32915,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetProvokingVertexModeEXT")]
     void CmdSetProvokingVertexModeExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("provokingVertexMode")] ProvokingVertexModeExt provokingVertexMode
+        [NativeName("provokingVertexMode")] ProvokingVertexModeEXT provokingVertexMode
     );
 
     [NativeName("vkCmdSetRasterizationSamplesEXT")]
@@ -33207,7 +33207,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEXT")]
     void CmdSetSampleLocationsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pSampleLocationsInfo")] SampleLocationsInfoExt* pSampleLocationsInfo
+        [NativeName("pSampleLocationsInfo")] SampleLocationsInfoEXT* pSampleLocationsInfo
     );
 
     [NativeName("vkCmdSetSampleLocationsEXT")]
@@ -33222,7 +33222,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetSampleLocationsEXT")]
     void CmdSetSampleLocationsExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pSampleLocationsInfo")] Ref<SampleLocationsInfoExt> pSampleLocationsInfo
+        [NativeName("pSampleLocationsInfo")] Ref<SampleLocationsInfoEXT> pSampleLocationsInfo
     );
 
     [NativeName("vkCmdSetSampleMaskEXT")]
@@ -33641,10 +33641,10 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("vertexBindingDescriptionCount")] uint vertexBindingDescriptionCount,
         [NativeName("pVertexBindingDescriptions")]
-            VertexInputBindingDescription2Ext* pVertexBindingDescriptions,
+            VertexInputBindingDescription2EXT* pVertexBindingDescriptions,
         [NativeName("vertexAttributeDescriptionCount")] uint vertexAttributeDescriptionCount,
         [NativeName("pVertexAttributeDescriptions")]
-            VertexInputAttributeDescription2Ext* pVertexAttributeDescriptions
+            VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions
     );
 
     [NativeName("vkCmdSetVertexInputEXT")]
@@ -33661,10 +33661,10 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("vertexBindingDescriptionCount")] uint vertexBindingDescriptionCount,
         [NativeName("pVertexBindingDescriptions")]
-            Ref<VertexInputBindingDescription2Ext> pVertexBindingDescriptions,
+            Ref<VertexInputBindingDescription2EXT> pVertexBindingDescriptions,
         [NativeName("vertexAttributeDescriptionCount")] uint vertexAttributeDescriptionCount,
         [NativeName("pVertexAttributeDescriptions")]
-            Ref<VertexInputAttributeDescription2Ext> pVertexAttributeDescriptions
+            Ref<VertexInputAttributeDescription2EXT> pVertexAttributeDescriptions
     );
 
     [NativeName("vkCmdSetViewport")]
@@ -33755,7 +33755,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
         [NativeName("viewportCount")] uint viewportCount,
-        [NativeName("pShadingRatePalettes")] ShadingRatePaletteNv* pShadingRatePalettes
+        [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV* pShadingRatePalettes
     );
 
     [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
@@ -33772,7 +33772,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
         [NativeName("viewportCount")] uint viewportCount,
-        [NativeName("pShadingRatePalettes")] Ref<ShadingRatePaletteNv> pShadingRatePalettes
+        [NativeName("pShadingRatePalettes")] Ref<ShadingRatePaletteNV> pShadingRatePalettes
     );
 
     [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
@@ -33788,7 +33788,7 @@ public unsafe partial interface IVk
     void CmdSetViewportShadingRatePaletteNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
-        [NativeName("pShadingRatePalettes")] ShadingRatePaletteNv pShadingRatePalettes
+        [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV pShadingRatePalettes
     );
 
     [NativeName("vkCmdSetViewportSwizzleNV")]
@@ -33806,7 +33806,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
         [NativeName("viewportCount")] uint viewportCount,
-        [NativeName("pViewportSwizzles")] ViewportSwizzleNv* pViewportSwizzles
+        [NativeName("pViewportSwizzles")] ViewportSwizzleNV* pViewportSwizzles
     );
 
     [NativeName("vkCmdSetViewportSwizzleNV")]
@@ -33824,7 +33824,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
         [NativeName("viewportCount")] uint viewportCount,
-        [NativeName("pViewportSwizzles")] Ref<ViewportSwizzleNv> pViewportSwizzles
+        [NativeName("pViewportSwizzles")] Ref<ViewportSwizzleNV> pViewportSwizzles
     );
 
     [NativeName("vkCmdSetViewportSwizzleNV")]
@@ -33841,7 +33841,7 @@ public unsafe partial interface IVk
     void CmdSetViewportSwizzleNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
-        [NativeName("pViewportSwizzles")] ViewportSwizzleNv pViewportSwizzles
+        [NativeName("pViewportSwizzles")] ViewportSwizzleNV pViewportSwizzles
     );
 
     [NativeName("vkCmdSetViewportWithCount")]
@@ -33968,7 +33968,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
         [NativeName("viewportCount")] uint viewportCount,
-        [NativeName("pViewportWScalings")] ViewportWScalingNv* pViewportWScalings
+        [NativeName("pViewportWScalings")] ViewportWScalingNV* pViewportWScalings
     );
 
     [NativeName("vkCmdSetViewportWScalingNV")]
@@ -33978,7 +33978,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
         [NativeName("viewportCount")] uint viewportCount,
-        [NativeName("pViewportWScalings")] Ref<ViewportWScalingNv> pViewportWScalings
+        [NativeName("pViewportWScalings")] Ref<ViewportWScalingNV> pViewportWScalings
     );
 
     [NativeName("vkCmdSetViewportWScalingNV")]
@@ -33987,7 +33987,7 @@ public unsafe partial interface IVk
     void CmdSetViewportWScalingNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("firstViewport")] uint firstViewport,
-        [NativeName("pViewportWScalings")] ViewportWScalingNv pViewportWScalings
+        [NativeName("pViewportWScalings")] ViewportWScalingNV pViewportWScalings
     );
 
     [NativeName("vkCmdSubpassShadingHUAWEI")]
@@ -34029,13 +34029,13 @@ public unsafe partial interface IVk
     void CmdTraceRaysIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pRaygenShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pRaygenShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable,
         [NativeName("pMissShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pMissShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pMissShaderBindingTable,
         [NativeName("pHitShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pHitShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pHitShaderBindingTable,
         [NativeName("pCallableShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pCallableShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pCallableShaderBindingTable,
         [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
     );
 
@@ -34052,13 +34052,13 @@ public unsafe partial interface IVk
     void CmdTraceRaysIndirectKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pRaygenShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pRaygenShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable,
         [NativeName("pMissShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pMissShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable,
         [NativeName("pHitShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pHitShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable,
         [NativeName("pCallableShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pCallableShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable,
         [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
     );
 
@@ -34075,13 +34075,13 @@ public unsafe partial interface IVk
     void CmdTraceRaysKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pRaygenShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pRaygenShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable,
         [NativeName("pMissShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pMissShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pMissShaderBindingTable,
         [NativeName("pHitShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pHitShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pHitShaderBindingTable,
         [NativeName("pCallableShaderBindingTable")]
-            StridedDeviceAddressRegionKhr* pCallableShaderBindingTable,
+            StridedDeviceAddressRegionKHR* pCallableShaderBindingTable,
         [NativeName("width")] uint width,
         [NativeName("height")] uint height,
         [NativeName("depth")] uint depth
@@ -34100,13 +34100,13 @@ public unsafe partial interface IVk
     void CmdTraceRaysKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pRaygenShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pRaygenShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pRaygenShaderBindingTable,
         [NativeName("pMissShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pMissShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pMissShaderBindingTable,
         [NativeName("pHitShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pHitShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pHitShaderBindingTable,
         [NativeName("pCallableShaderBindingTable")]
-            Ref<StridedDeviceAddressRegionKhr> pCallableShaderBindingTable,
+            Ref<StridedDeviceAddressRegionKHR> pCallableShaderBindingTable,
         [NativeName("width")] uint width,
         [NativeName("height")] uint height,
         [NativeName("depth")] uint depth
@@ -34390,7 +34390,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
         [NativeName("pAccelerationStructures")]
-            AccelerationStructureHandleKhr* pAccelerationStructures,
+            AccelerationStructureHandleKHR* pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34410,7 +34410,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
         [NativeName("pAccelerationStructures")]
-            Ref<AccelerationStructureHandleKhr> pAccelerationStructures,
+            Ref<AccelerationStructureHandleKHR> pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34429,7 +34429,7 @@ public unsafe partial interface IVk
     void CmdWriteAccelerationStructuresPropertiesKhr(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pAccelerationStructures")]
-            AccelerationStructureHandleKhr pAccelerationStructures,
+            AccelerationStructureHandleKHR pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34449,7 +34449,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
         [NativeName("pAccelerationStructures")]
-            AccelerationStructureHandleNv* pAccelerationStructures,
+            AccelerationStructureHandleNV* pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34469,7 +34469,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
         [NativeName("pAccelerationStructures")]
-            Ref<AccelerationStructureHandleNv> pAccelerationStructures,
+            Ref<AccelerationStructureHandleNV> pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34488,7 +34488,7 @@ public unsafe partial interface IVk
     void CmdWriteAccelerationStructuresPropertiesNv(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("pAccelerationStructures")]
-            AccelerationStructureHandleNv pAccelerationStructures,
+            AccelerationStructureHandleNV pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34532,7 +34532,7 @@ public unsafe partial interface IVk
     void CmdWriteMicromapsPropertiesExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("micromapCount")] uint micromapCount,
-        [NativeName("pMicromaps")] MicromapHandleExt* pMicromaps,
+        [NativeName("pMicromaps")] MicromapHandleEXT* pMicromaps,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34551,7 +34551,7 @@ public unsafe partial interface IVk
     void CmdWriteMicromapsPropertiesExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("micromapCount")] uint micromapCount,
-        [NativeName("pMicromaps")] Ref<MicromapHandleExt> pMicromaps,
+        [NativeName("pMicromaps")] Ref<MicromapHandleEXT> pMicromaps,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34569,7 +34569,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteMicromapsPropertiesEXT")]
     void CmdWriteMicromapsPropertiesExt(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("pMicromaps")] MicromapHandleExt pMicromaps,
+        [NativeName("pMicromaps")] MicromapHandleEXT pMicromaps,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("queryPool")] QueryPoolHandle queryPool,
         [NativeName("firstQuery")] uint firstQuery
@@ -34678,7 +34678,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
     Result ConvertCooperativeVectorMatrixNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ConvertCooperativeVectorMatrixInfoNv* pInfo
+        [NativeName("pInfo")] ConvertCooperativeVectorMatrixInfoNV* pInfo
     );
 
     [NativeName("vkConvertCooperativeVectorMatrixNV")]
@@ -34693,7 +34693,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkConvertCooperativeVectorMatrixNV")]
     Result ConvertCooperativeVectorMatrixNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ConvertCooperativeVectorMatrixInfoNv> pInfo
+        [NativeName("pInfo")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfo
     );
 
     [NativeName("vkCopyAccelerationStructureKHR")]
@@ -34708,8 +34708,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureKHR")]
     Result CopyAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] CopyAccelerationStructureInfoKhr* pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
     );
 
     [NativeName("vkCopyAccelerationStructureKHR")]
@@ -34724,8 +34724,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureKHR")]
     Result CopyAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKhr> pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
     );
 
     [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
@@ -34740,8 +34740,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureToMemoryKHR")]
     Result CopyAccelerationStructureToMemoryKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKhr* pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
     );
 
     [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
@@ -34756,8 +34756,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyAccelerationStructureToMemoryKHR")]
     Result CopyAccelerationStructureToMemoryKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKhr> pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] Ref<CopyAccelerationStructureToMemoryInfoKHR> pInfo
     );
 
     [NativeName("vkCopyImageToImage")]
@@ -34904,8 +34904,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToAccelerationStructureKHR")]
     Result CopyMemoryToAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKhr* pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
     );
 
     [NativeName("vkCopyMemoryToAccelerationStructureKHR")]
@@ -34920,8 +34920,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToAccelerationStructureKHR")]
     Result CopyMemoryToAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKhr> pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
     );
 
     [NativeName("vkCopyMemoryToImage")]
@@ -35002,8 +35002,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToMicromapEXT")]
     Result CopyMemoryToMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] CopyMemoryToMicromapInfoExt* pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
     );
 
     [NativeName("vkCopyMemoryToMicromapEXT")]
@@ -35018,8 +35018,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMemoryToMicromapEXT")]
     Result CopyMemoryToMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoExt> pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
     );
 
     [NativeName("vkCopyMicromapEXT")]
@@ -35034,8 +35034,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapEXT")]
     Result CopyMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] CopyMicromapInfoExt* pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
     );
 
     [NativeName("vkCopyMicromapEXT")]
@@ -35050,8 +35050,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapEXT")]
     Result CopyMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] Ref<CopyMicromapInfoExt> pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
     );
 
     [NativeName("vkCopyMicromapToMemoryEXT")]
@@ -35066,8 +35066,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapToMemoryEXT")]
     Result CopyMicromapToMemoryExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] CopyMicromapToMemoryInfoExt* pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
     );
 
     [NativeName("vkCopyMicromapToMemoryEXT")]
@@ -35082,8 +35082,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCopyMicromapToMemoryEXT")]
     Result CopyMicromapToMemoryExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
-        [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoExt> pInfo
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
+        [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoEXT> pInfo
     );
 
     [NativeName("vkCreateAccelerationStructureKHR")]
@@ -35098,10 +35098,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureKHR")]
     Result CreateAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] AccelerationStructureCreateInfoKhr* pCreateInfo,
+        [NativeName("pCreateInfo")] AccelerationStructureCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pAccelerationStructure")]
-            AccelerationStructureHandleKhr* pAccelerationStructure
+            AccelerationStructureHandleKHR* pAccelerationStructure
     );
 
     [NativeName("vkCreateAccelerationStructureKHR")]
@@ -35116,10 +35116,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureKHR")]
     Result CreateAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoKhr> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pAccelerationStructure")]
-            Ref<AccelerationStructureHandleKhr> pAccelerationStructure
+            Ref<AccelerationStructureHandleKHR> pAccelerationStructure
     );
 
     [NativeName("vkCreateAccelerationStructureNV")]
@@ -35134,9 +35134,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureNV")]
     Result CreateAccelerationStructureNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] AccelerationStructureCreateInfoNv* pCreateInfo,
+        [NativeName("pCreateInfo")] AccelerationStructureCreateInfoNV* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pAccelerationStructure")] AccelerationStructureHandleNv* pAccelerationStructure
+        [NativeName("pAccelerationStructure")] AccelerationStructureHandleNV* pAccelerationStructure
     );
 
     [NativeName("vkCreateAccelerationStructureNV")]
@@ -35151,10 +35151,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateAccelerationStructureNV")]
     Result CreateAccelerationStructureNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoNv> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<AccelerationStructureCreateInfoNV> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pAccelerationStructure")]
-            Ref<AccelerationStructureHandleNv> pAccelerationStructure
+            Ref<AccelerationStructureHandleNV> pAccelerationStructure
     );
 
     [NativeName("vkCreateBuffer")]
@@ -35426,9 +35426,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
     Result CreateCuFunctionNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] CuFunctionCreateInfoNvx* pCreateInfo,
+        [NativeName("pCreateInfo")] CuFunctionCreateInfoNVX* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pFunction")] CuFunctionHandleNvx* pFunction
+        [NativeName("pFunction")] CuFunctionHandleNVX* pFunction
     );
 
     [NativeName("vkCreateCuFunctionNVX")]
@@ -35436,9 +35436,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
     Result CreateCuFunctionNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<CuFunctionCreateInfoNvx> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<CuFunctionCreateInfoNVX> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pFunction")] Ref<CuFunctionHandleNvx> pFunction
+        [NativeName("pFunction")] Ref<CuFunctionHandleNVX> pFunction
     );
 
     [NativeName("vkCreateCuModuleNVX")]
@@ -35446,9 +35446,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
     Result CreateCuModuleNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] CuModuleCreateInfoNvx* pCreateInfo,
+        [NativeName("pCreateInfo")] CuModuleCreateInfoNVX* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pModule")] CuModuleHandleNvx* pModule
+        [NativeName("pModule")] CuModuleHandleNVX* pModule
     );
 
     [NativeName("vkCreateCuModuleNVX")]
@@ -35456,9 +35456,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
     Result CreateCuModuleNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<CuModuleCreateInfoNvx> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<CuModuleCreateInfoNVX> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pModule")] Ref<CuModuleHandleNvx> pModule
+        [NativeName("pModule")] Ref<CuModuleHandleNVX> pModule
     );
 
     [NativeName("vkCreateDataGraphPipelinesARM")]
@@ -35470,10 +35470,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
     Result CreateDataGraphPipelinesArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] DataGraphPipelineCreateInfoArm* pCreateInfos,
+        [NativeName("pCreateInfos")] DataGraphPipelineCreateInfoARM* pCreateInfos,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pPipelines")] PipelineHandle* pPipelines
     );
@@ -35487,10 +35487,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelinesARM")]
     Result CreateDataGraphPipelinesArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] Ref<DataGraphPipelineCreateInfoArm> pCreateInfos,
+        [NativeName("pCreateInfos")] Ref<DataGraphPipelineCreateInfoARM> pCreateInfos,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
@@ -35504,9 +35504,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
     Result CreateDataGraphPipelineSessionArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] DataGraphPipelineSessionCreateInfoArm* pCreateInfo,
+        [NativeName("pCreateInfo")] DataGraphPipelineSessionCreateInfoARM* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pSession")] DataGraphPipelineSessionHandleArm* pSession
+        [NativeName("pSession")] DataGraphPipelineSessionHandleARM* pSession
     );
 
     [NativeName("vkCreateDataGraphPipelineSessionARM")]
@@ -35518,9 +35518,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDataGraphPipelineSessionARM")]
     Result CreateDataGraphPipelineSessionArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<DataGraphPipelineSessionCreateInfoArm> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<DataGraphPipelineSessionCreateInfoARM> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pSession")] Ref<DataGraphPipelineSessionHandleArm> pSession
+        [NativeName("pSession")] Ref<DataGraphPipelineSessionHandleARM> pSession
     );
 
     [NativeName("vkCreateDebugReportCallbackEXT")]
@@ -35528,9 +35528,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
     Result CreateDebugReportCallbackExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] DebugReportCallbackCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] DebugReportCallbackCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pCallback")] DebugReportCallbackHandleExt* pCallback
+        [NativeName("pCallback")] DebugReportCallbackHandleEXT* pCallback
     );
 
     [NativeName("vkCreateDebugReportCallbackEXT")]
@@ -35538,9 +35538,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
     Result CreateDebugReportCallbackExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] Ref<DebugReportCallbackCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<DebugReportCallbackCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pCallback")] Ref<DebugReportCallbackHandleExt> pCallback
+        [NativeName("pCallback")] Ref<DebugReportCallbackHandleEXT> pCallback
     );
 
     [NativeName("vkCreateDebugUtilsMessengerEXT")]
@@ -35548,9 +35548,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
     Result CreateDebugUtilsMessengerExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] DebugUtilsMessengerCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] DebugUtilsMessengerCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pMessenger")] DebugUtilsMessengerHandleExt* pMessenger
+        [NativeName("pMessenger")] DebugUtilsMessengerHandleEXT* pMessenger
     );
 
     [NativeName("vkCreateDebugUtilsMessengerEXT")]
@@ -35558,9 +35558,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
     Result CreateDebugUtilsMessengerExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] Ref<DebugUtilsMessengerCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<DebugUtilsMessengerCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pMessenger")] Ref<DebugUtilsMessengerHandleExt> pMessenger
+        [NativeName("pMessenger")] Ref<DebugUtilsMessengerHandleEXT> pMessenger
     );
 
     [NativeName("vkCreateDeferredOperationKHR")]
@@ -35569,7 +35569,7 @@ public unsafe partial interface IVk
     Result CreateDeferredOperationKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pDeferredOperation")] DeferredOperationHandleKhr* pDeferredOperation
+        [NativeName("pDeferredOperation")] DeferredOperationHandleKHR* pDeferredOperation
     );
 
     [NativeName("vkCreateDeferredOperationKHR")]
@@ -35578,7 +35578,7 @@ public unsafe partial interface IVk
     Result CreateDeferredOperationKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pDeferredOperation")] Ref<DeferredOperationHandleKhr> pDeferredOperation
+        [NativeName("pDeferredOperation")] Ref<DeferredOperationHandleKHR> pDeferredOperation
     );
 
     [NativeName("vkCreateDescriptorPool")]
@@ -35854,10 +35854,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
     Result CreateDisplayModeKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display,
-        [NativeName("pCreateInfo")] DisplayModeCreateInfoKhr* pCreateInfo,
+        [NativeName("display")] DisplayHandleKHR display,
+        [NativeName("pCreateInfo")] DisplayModeCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pMode")] DisplayModeHandleKhr* pMode
+        [NativeName("pMode")] DisplayModeHandleKHR* pMode
     );
 
     [NativeName("vkCreateDisplayModeKHR")]
@@ -35865,10 +35865,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
     Result CreateDisplayModeKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display,
-        [NativeName("pCreateInfo")] Ref<DisplayModeCreateInfoKhr> pCreateInfo,
+        [NativeName("display")] DisplayHandleKHR display,
+        [NativeName("pCreateInfo")] Ref<DisplayModeCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pMode")] Ref<DisplayModeHandleKhr> pMode
+        [NativeName("pMode")] Ref<DisplayModeHandleKHR> pMode
     );
 
     [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
@@ -35876,9 +35876,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
     Result CreateDisplayPlaneSurfaceKhr(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] DisplaySurfaceCreateInfoKhr* pCreateInfo,
+        [NativeName("pCreateInfo")] DisplaySurfaceCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pSurface")] SurfaceHandleKhr* pSurface
+        [NativeName("pSurface")] SurfaceHandleKHR* pSurface
     );
 
     [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
@@ -35886,9 +35886,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
     Result CreateDisplayPlaneSurfaceKhr(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] Ref<DisplaySurfaceCreateInfoKhr> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<DisplaySurfaceCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pSurface")] Ref<SurfaceHandleKhr> pSurface
+        [NativeName("pSurface")] Ref<SurfaceHandleKHR> pSurface
     );
 
     [NativeName("vkCreateEvent")]
@@ -35956,9 +35956,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
     Result CreateExternalComputeQueueNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] ExternalComputeQueueCreateInfoNv* pCreateInfo,
+        [NativeName("pCreateInfo")] ExternalComputeQueueCreateInfoNV* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pExternalQueue")] ExternalComputeQueueHandleNv* pExternalQueue
+        [NativeName("pExternalQueue")] ExternalComputeQueueHandleNV* pExternalQueue
     );
 
     [NativeName("vkCreateExternalComputeQueueNV")]
@@ -35966,9 +35966,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
     Result CreateExternalComputeQueueNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<ExternalComputeQueueCreateInfoNv> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<ExternalComputeQueueCreateInfoNV> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pExternalQueue")] Ref<ExternalComputeQueueHandleNv> pExternalQueue
+        [NativeName("pExternalQueue")] Ref<ExternalComputeQueueHandleNV> pExternalQueue
     );
 
     [NativeName("vkCreateFence")]
@@ -36150,9 +36150,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateHeadlessSurfaceEXT")]
     Result CreateHeadlessSurfaceExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] HeadlessSurfaceCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] HeadlessSurfaceCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pSurface")] SurfaceHandleKhr* pSurface
+        [NativeName("pSurface")] SurfaceHandleKHR* pSurface
     );
 
     [NativeName("vkCreateHeadlessSurfaceEXT")]
@@ -36160,9 +36160,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateHeadlessSurfaceEXT")]
     Result CreateHeadlessSurfaceExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("pCreateInfo")] Ref<HeadlessSurfaceCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<HeadlessSurfaceCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pSurface")] Ref<SurfaceHandleKhr> pSurface
+        [NativeName("pSurface")] Ref<SurfaceHandleKHR> pSurface
     );
 
     [NativeName("vkCreateImage")]
@@ -36318,10 +36318,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutEXT")]
     Result CreateIndirectCommandsLayoutExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pIndirectCommandsLayout")]
-            IndirectCommandsLayoutHandleExt* pIndirectCommandsLayout
+            IndirectCommandsLayoutHandleEXT* pIndirectCommandsLayout
     );
 
     [NativeName("vkCreateIndirectCommandsLayoutEXT")]
@@ -36337,10 +36337,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutEXT")]
     Result CreateIndirectCommandsLayoutExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pIndirectCommandsLayout")]
-            Ref<IndirectCommandsLayoutHandleExt> pIndirectCommandsLayout
+            Ref<IndirectCommandsLayoutHandleEXT> pIndirectCommandsLayout
     );
 
     [NativeName("vkCreateIndirectCommandsLayoutNV")]
@@ -36352,10 +36352,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
     Result CreateIndirectCommandsLayoutNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoNv* pCreateInfo,
+        [NativeName("pCreateInfo")] IndirectCommandsLayoutCreateInfoNV* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pIndirectCommandsLayout")]
-            IndirectCommandsLayoutHandleNv* pIndirectCommandsLayout
+            IndirectCommandsLayoutHandleNV* pIndirectCommandsLayout
     );
 
     [NativeName("vkCreateIndirectCommandsLayoutNV")]
@@ -36367,10 +36367,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
     Result CreateIndirectCommandsLayoutNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoNv> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<IndirectCommandsLayoutCreateInfoNV> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pIndirectCommandsLayout")]
-            Ref<IndirectCommandsLayoutHandleNv> pIndirectCommandsLayout
+            Ref<IndirectCommandsLayoutHandleNV> pIndirectCommandsLayout
     );
 
     [NativeName("vkCreateIndirectExecutionSetEXT")]
@@ -36386,9 +36386,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectExecutionSetEXT")]
     Result CreateIndirectExecutionSetExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] IndirectExecutionSetCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] IndirectExecutionSetCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pIndirectExecutionSet")] IndirectExecutionSetHandleExt* pIndirectExecutionSet
+        [NativeName("pIndirectExecutionSet")] IndirectExecutionSetHandleEXT* pIndirectExecutionSet
     );
 
     [NativeName("vkCreateIndirectExecutionSetEXT")]
@@ -36404,10 +36404,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateIndirectExecutionSetEXT")]
     Result CreateIndirectExecutionSetExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<IndirectExecutionSetCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<IndirectExecutionSetCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pIndirectExecutionSet")]
-            Ref<IndirectExecutionSetHandleExt> pIndirectExecutionSet
+            Ref<IndirectExecutionSetHandleEXT> pIndirectExecutionSet
     );
 
     [NativeName("vkCreateInstance")]
@@ -36490,9 +36490,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateMicromapEXT")]
     Result CreateMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] MicromapCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] MicromapCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pMicromap")] MicromapHandleExt* pMicromap
+        [NativeName("pMicromap")] MicromapHandleEXT* pMicromap
     );
 
     [NativeName("vkCreateMicromapEXT")]
@@ -36507,9 +36507,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateMicromapEXT")]
     Result CreateMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<MicromapCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<MicromapCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pMicromap")] Ref<MicromapHandleExt> pMicromap
+        [NativeName("pMicromap")] Ref<MicromapHandleEXT> pMicromap
     );
 
     [NativeName("vkCreateOpticalFlowSessionNV")]
@@ -36525,9 +36525,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateOpticalFlowSessionNV")]
     Result CreateOpticalFlowSessionNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] OpticalFlowSessionCreateInfoNv* pCreateInfo,
+        [NativeName("pCreateInfo")] OpticalFlowSessionCreateInfoNV* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pSession")] OpticalFlowSessionHandleNv* pSession
+        [NativeName("pSession")] OpticalFlowSessionHandleNV* pSession
     );
 
     [NativeName("vkCreateOpticalFlowSessionNV")]
@@ -36543,9 +36543,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateOpticalFlowSessionNV")]
     Result CreateOpticalFlowSessionNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<OpticalFlowSessionCreateInfoNv> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<OpticalFlowSessionCreateInfoNV> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pSession")] Ref<OpticalFlowSessionHandleNv> pSession
+        [NativeName("pSession")] Ref<OpticalFlowSessionHandleNV> pSession
     );
 
     [NativeName("vkCreatePipelineBinariesKHR")]
@@ -36560,9 +36560,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreatePipelineBinariesKHR")]
     Result CreatePipelineBinariesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] PipelineBinaryCreateInfoKhr* pCreateInfo,
+        [NativeName("pCreateInfo")] PipelineBinaryCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pBinaries")] PipelineBinaryHandlesInfoKhr* pBinaries
+        [NativeName("pBinaries")] PipelineBinaryHandlesInfoKHR* pBinaries
     );
 
     [NativeName("vkCreatePipelineBinariesKHR")]
@@ -36577,9 +36577,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreatePipelineBinariesKHR")]
     Result CreatePipelineBinariesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<PipelineBinaryCreateInfoKhr> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<PipelineBinaryCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pBinaries")] Ref<PipelineBinaryHandlesInfoKhr> pBinaries
+        [NativeName("pBinaries")] Ref<PipelineBinaryHandlesInfoKHR> pBinaries
     );
 
     [NativeName("vkCreatePipelineCache")]
@@ -36864,10 +36864,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateRayTracingPipelinesKHR")]
     Result CreateRayTracingPipelinesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoKhr* pCreateInfos,
+        [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoKHR* pCreateInfos,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pPipelines")] PipelineHandle* pPipelines
     );
@@ -36884,10 +36884,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateRayTracingPipelinesKHR")]
     Result CreateRayTracingPipelinesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("deferredOperation")] DeferredOperationHandleKhr deferredOperation,
+        [NativeName("deferredOperation")] DeferredOperationHandleKHR deferredOperation,
         [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoKhr> pCreateInfos,
+        [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoKHR> pCreateInfos,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
@@ -36906,7 +36906,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoNv* pCreateInfos,
+        [NativeName("pCreateInfos")] RayTracingPipelineCreateInfoNV* pCreateInfos,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pPipelines")] PipelineHandle* pPipelines
     );
@@ -36925,7 +36925,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("pipelineCache")] PipelineCacheHandle pipelineCache,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoNv> pCreateInfos,
+        [NativeName("pCreateInfos")] Ref<RayTracingPipelineCreateInfoNV> pCreateInfos,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
@@ -37342,9 +37342,9 @@ public unsafe partial interface IVk
     Result CreateShadersExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] ShaderCreateInfoExt* pCreateInfos,
+        [NativeName("pCreateInfos")] ShaderCreateInfoEXT* pCreateInfos,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pShaders")] ShaderHandleExt* pShaders
+        [NativeName("pShaders")] ShaderHandleEXT* pShaders
     );
 
     [NativeName("vkCreateShadersEXT")]
@@ -37361,9 +37361,9 @@ public unsafe partial interface IVk
     Result CreateShadersExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("createInfoCount")] uint createInfoCount,
-        [NativeName("pCreateInfos")] Ref<ShaderCreateInfoExt> pCreateInfos,
+        [NativeName("pCreateInfos")] Ref<ShaderCreateInfoEXT> pCreateInfos,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pShaders")] Ref<ShaderHandleExt> pShaders
+        [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
     );
 
     [NativeName("vkCreateSharedSwapchainsKHR")]
@@ -37376,9 +37376,9 @@ public unsafe partial interface IVk
     Result CreateSharedSwapchainsKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("swapchainCount")] uint swapchainCount,
-        [NativeName("pCreateInfos")] SwapchainCreateInfoKhr* pCreateInfos,
+        [NativeName("pCreateInfos")] SwapchainCreateInfoKHR* pCreateInfos,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pSwapchains")] SwapchainHandleKhr* pSwapchains
+        [NativeName("pSwapchains")] SwapchainHandleKHR* pSwapchains
     );
 
     [NativeName("vkCreateSharedSwapchainsKHR")]
@@ -37391,9 +37391,9 @@ public unsafe partial interface IVk
     Result CreateSharedSwapchainsKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("swapchainCount")] uint swapchainCount,
-        [NativeName("pCreateInfos")] Ref<SwapchainCreateInfoKhr> pCreateInfos,
+        [NativeName("pCreateInfos")] Ref<SwapchainCreateInfoKHR> pCreateInfos,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pSwapchains")] Ref<SwapchainHandleKhr> pSwapchains
+        [NativeName("pSwapchains")] Ref<SwapchainHandleKHR> pSwapchains
     );
 
     [NativeName("vkCreateSwapchainKHR")]
@@ -37401,9 +37401,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
     Result CreateSwapchainKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] SwapchainCreateInfoKhr* pCreateInfo,
+        [NativeName("pCreateInfo")] SwapchainCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pSwapchain")] SwapchainHandleKhr* pSwapchain
+        [NativeName("pSwapchain")] SwapchainHandleKHR* pSwapchain
     );
 
     [NativeName("vkCreateSwapchainKHR")]
@@ -37411,9 +37411,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
     Result CreateSwapchainKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<SwapchainCreateInfoKhr> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<SwapchainCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pSwapchain")] Ref<SwapchainHandleKhr> pSwapchain
+        [NativeName("pSwapchain")] Ref<SwapchainHandleKHR> pSwapchain
     );
 
     [NativeName("vkCreateTensorARM")]
@@ -37421,9 +37421,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
     Result CreateTensorArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] TensorCreateInfoArm* pCreateInfo,
+        [NativeName("pCreateInfo")] TensorCreateInfoARM* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pTensor")] TensorHandleArm* pTensor
+        [NativeName("pTensor")] TensorHandleARM* pTensor
     );
 
     [NativeName("vkCreateTensorARM")]
@@ -37431,9 +37431,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
     Result CreateTensorArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<TensorCreateInfoArm> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<TensorCreateInfoARM> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pTensor")] Ref<TensorHandleArm> pTensor
+        [NativeName("pTensor")] Ref<TensorHandleARM> pTensor
     );
 
     [NativeName("vkCreateTensorViewARM")]
@@ -37441,9 +37441,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
     Result CreateTensorViewArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] TensorViewCreateInfoArm* pCreateInfo,
+        [NativeName("pCreateInfo")] TensorViewCreateInfoARM* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pView")] TensorViewHandleArm* pView
+        [NativeName("pView")] TensorViewHandleARM* pView
     );
 
     [NativeName("vkCreateTensorViewARM")]
@@ -37451,9 +37451,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
     Result CreateTensorViewArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<TensorViewCreateInfoArm> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<TensorViewCreateInfoARM> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pView")] Ref<TensorViewHandleArm> pView
+        [NativeName("pView")] Ref<TensorViewHandleARM> pView
     );
 
     [NativeName("vkCreateValidationCacheEXT")]
@@ -37461,9 +37461,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
     Result CreateValidationCacheExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] ValidationCacheCreateInfoExt* pCreateInfo,
+        [NativeName("pCreateInfo")] ValidationCacheCreateInfoEXT* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pValidationCache")] ValidationCacheHandleExt* pValidationCache
+        [NativeName("pValidationCache")] ValidationCacheHandleEXT* pValidationCache
     );
 
     [NativeName("vkCreateValidationCacheEXT")]
@@ -37471,9 +37471,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
     Result CreateValidationCacheExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<ValidationCacheCreateInfoExt> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<ValidationCacheCreateInfoEXT> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pValidationCache")] Ref<ValidationCacheHandleExt> pValidationCache
+        [NativeName("pValidationCache")] Ref<ValidationCacheHandleEXT> pValidationCache
     );
 
     [NativeName("vkCreateVideoSessionKHR")]
@@ -37485,9 +37485,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionKHR")]
     Result CreateVideoSessionKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] VideoSessionCreateInfoKhr* pCreateInfo,
+        [NativeName("pCreateInfo")] VideoSessionCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
-        [NativeName("pVideoSession")] VideoSessionHandleKhr* pVideoSession
+        [NativeName("pVideoSession")] VideoSessionHandleKHR* pVideoSession
     );
 
     [NativeName("vkCreateVideoSessionKHR")]
@@ -37499,9 +37499,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionKHR")]
     Result CreateVideoSessionKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<VideoSessionCreateInfoKhr> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<VideoSessionCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
-        [NativeName("pVideoSession")] Ref<VideoSessionHandleKhr> pVideoSession
+        [NativeName("pVideoSession")] Ref<VideoSessionHandleKHR> pVideoSession
     );
 
     [NativeName("vkCreateVideoSessionParametersKHR")]
@@ -37513,10 +37513,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionParametersKHR")]
     Result CreateVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] VideoSessionParametersCreateInfoKhr* pCreateInfo,
+        [NativeName("pCreateInfo")] VideoSessionParametersCreateInfoKHR* pCreateInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pVideoSessionParameters")]
-            VideoSessionParametersHandleKhr* pVideoSessionParameters
+            VideoSessionParametersHandleKHR* pVideoSessionParameters
     );
 
     [NativeName("vkCreateVideoSessionParametersKHR")]
@@ -37528,10 +37528,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCreateVideoSessionParametersKHR")]
     Result CreateVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pCreateInfo")] Ref<VideoSessionParametersCreateInfoKhr> pCreateInfo,
+        [NativeName("pCreateInfo")] Ref<VideoSessionParametersCreateInfoKHR> pCreateInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pVideoSessionParameters")]
-            Ref<VideoSessionParametersHandleKhr> pVideoSessionParameters
+            Ref<VideoSessionParametersHandleKHR> pVideoSessionParameters
     );
 
     [NativeName("vkDebugMarkerSetObjectNameEXT")]
@@ -37539,7 +37539,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
     Result DebugMarkerSetObjectNameExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pNameInfo")] DebugMarkerObjectNameInfoExt* pNameInfo
+        [NativeName("pNameInfo")] DebugMarkerObjectNameInfoEXT* pNameInfo
     );
 
     [NativeName("vkDebugMarkerSetObjectNameEXT")]
@@ -37547,7 +37547,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
     Result DebugMarkerSetObjectNameExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pNameInfo")] Ref<DebugMarkerObjectNameInfoExt> pNameInfo
+        [NativeName("pNameInfo")] Ref<DebugMarkerObjectNameInfoEXT> pNameInfo
     );
 
     [NativeName("vkDebugMarkerSetObjectTagEXT")]
@@ -37555,7 +37555,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
     Result DebugMarkerSetObjectTagExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pTagInfo")] DebugMarkerObjectTagInfoExt* pTagInfo
+        [NativeName("pTagInfo")] DebugMarkerObjectTagInfoEXT* pTagInfo
     );
 
     [NativeName("vkDebugMarkerSetObjectTagEXT")]
@@ -37563,7 +37563,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
     Result DebugMarkerSetObjectTagExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pTagInfo")] Ref<DebugMarkerObjectTagInfoExt> pTagInfo
+        [NativeName("pTagInfo")] Ref<DebugMarkerObjectTagInfoEXT> pTagInfo
     );
 
     [NativeName("vkDebugReportMessageEXT")]
@@ -37571,8 +37571,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
     void DebugReportMessageExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("flags")] DebugReportFlagsExt flags,
-        [NativeName("objectType")] DebugReportObjectTypeExt objectType,
+        [NativeName("flags")] DebugReportFlagsEXT flags,
+        [NativeName("objectType")] DebugReportObjectTypeEXT objectType,
         [NativeName("@object")] ulong @object,
         [NativeName("location")] nuint location,
         [NativeName("messageCode")] int messageCode,
@@ -37585,8 +37585,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
     void DebugReportMessageExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("flags")] DebugReportFlagsExt flags,
-        [NativeName("objectType")] DebugReportObjectTypeExt objectType,
+        [NativeName("flags")] DebugReportFlagsEXT flags,
+        [NativeName("objectType")] DebugReportObjectTypeEXT objectType,
         [NativeName("@object")] ulong @object,
         [NativeName("location")] nuint location,
         [NativeName("messageCode")] int messageCode,
@@ -37599,7 +37599,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDeferredOperationJoinKHR")]
     Result DeferredOperationJoinKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("operation")] DeferredOperationHandleKhr operation
+        [NativeName("operation")] DeferredOperationHandleKHR operation
     );
 
     [NativeName("vkDestroyAccelerationStructureKHR")]
@@ -37614,7 +37614,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyAccelerationStructureKHR")]
     void DestroyAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("accelerationStructure")] AccelerationStructureHandleKhr accelerationStructure,
+        [NativeName("accelerationStructure")] AccelerationStructureHandleKHR accelerationStructure,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37630,7 +37630,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyAccelerationStructureKHR")]
     void DestroyAccelerationStructureKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("accelerationStructure")] AccelerationStructureHandleKhr accelerationStructure,
+        [NativeName("accelerationStructure")] AccelerationStructureHandleKHR accelerationStructure,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37646,7 +37646,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyAccelerationStructureNV")]
     void DestroyAccelerationStructureNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("accelerationStructure")] AccelerationStructureHandleNv accelerationStructure,
+        [NativeName("accelerationStructure")] AccelerationStructureHandleNV accelerationStructure,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37662,7 +37662,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyAccelerationStructureNV")]
     void DestroyAccelerationStructureNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("accelerationStructure")] AccelerationStructureHandleNv accelerationStructure,
+        [NativeName("accelerationStructure")] AccelerationStructureHandleNV accelerationStructure,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37865,7 +37865,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
     void DestroyCuFunctionNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("function")] CuFunctionHandleNvx function,
+        [NativeName("function")] CuFunctionHandleNVX function,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37874,7 +37874,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
     void DestroyCuFunctionNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("function")] CuFunctionHandleNvx function,
+        [NativeName("function")] CuFunctionHandleNVX function,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37883,7 +37883,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
     void DestroyCuModuleNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("module")] CuModuleHandleNvx module,
+        [NativeName("module")] CuModuleHandleNVX module,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37892,7 +37892,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
     void DestroyCuModuleNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("module")] CuModuleHandleNvx module,
+        [NativeName("module")] CuModuleHandleNVX module,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37905,7 +37905,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
     void DestroyDataGraphPipelineSessionArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("session")] DataGraphPipelineSessionHandleArm session,
+        [NativeName("session")] DataGraphPipelineSessionHandleARM session,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37918,7 +37918,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDataGraphPipelineSessionARM")]
     void DestroyDataGraphPipelineSessionArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("session")] DataGraphPipelineSessionHandleArm session,
+        [NativeName("session")] DataGraphPipelineSessionHandleARM session,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37927,7 +37927,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
     void DestroyDebugReportCallbackExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("callback")] DebugReportCallbackHandleExt callback,
+        [NativeName("callback")] DebugReportCallbackHandleEXT callback,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37936,7 +37936,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
     void DestroyDebugReportCallbackExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("callback")] DebugReportCallbackHandleExt callback,
+        [NativeName("callback")] DebugReportCallbackHandleEXT callback,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37945,7 +37945,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
     void DestroyDebugUtilsMessengerExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("messenger")] DebugUtilsMessengerHandleExt messenger,
+        [NativeName("messenger")] DebugUtilsMessengerHandleEXT messenger,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37954,7 +37954,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
     void DestroyDebugUtilsMessengerExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("messenger")] DebugUtilsMessengerHandleExt messenger,
+        [NativeName("messenger")] DebugUtilsMessengerHandleEXT messenger,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -37963,7 +37963,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
     void DestroyDeferredOperationKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("operation")] DeferredOperationHandleKhr operation,
+        [NativeName("operation")] DeferredOperationHandleKHR operation,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -37972,7 +37972,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
     void DestroyDeferredOperationKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("operation")] DeferredOperationHandleKhr operation,
+        [NativeName("operation")] DeferredOperationHandleKHR operation,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38295,7 +38295,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
     void DestroyExternalComputeQueueNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
+        [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38304,7 +38304,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
     void DestroyExternalComputeQueueNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
+        [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38574,7 +38574,7 @@ public unsafe partial interface IVk
     void DestroyIndirectCommandsLayoutExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("indirectCommandsLayout")]
-            IndirectCommandsLayoutHandleExt indirectCommandsLayout,
+            IndirectCommandsLayoutHandleEXT indirectCommandsLayout,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38592,7 +38592,7 @@ public unsafe partial interface IVk
     void DestroyIndirectCommandsLayoutExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("indirectCommandsLayout")]
-            IndirectCommandsLayoutHandleExt indirectCommandsLayout,
+            IndirectCommandsLayoutHandleEXT indirectCommandsLayout,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38606,7 +38606,7 @@ public unsafe partial interface IVk
     void DestroyIndirectCommandsLayoutNv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("indirectCommandsLayout")]
-            IndirectCommandsLayoutHandleNv indirectCommandsLayout,
+            IndirectCommandsLayoutHandleNV indirectCommandsLayout,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38620,7 +38620,7 @@ public unsafe partial interface IVk
     void DestroyIndirectCommandsLayoutNv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("indirectCommandsLayout")]
-            IndirectCommandsLayoutHandleNv indirectCommandsLayout,
+            IndirectCommandsLayoutHandleNV indirectCommandsLayout,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38637,7 +38637,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyIndirectExecutionSetEXT")]
     void DestroyIndirectExecutionSetExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38654,7 +38654,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyIndirectExecutionSetEXT")]
     void DestroyIndirectExecutionSetExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38736,7 +38736,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyMicromapEXT")]
     void DestroyMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("micromap")] MicromapHandleExt micromap,
+        [NativeName("micromap")] MicromapHandleEXT micromap,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38752,7 +38752,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyMicromapEXT")]
     void DestroyMicromapExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("micromap")] MicromapHandleExt micromap,
+        [NativeName("micromap")] MicromapHandleEXT micromap,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38769,7 +38769,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyOpticalFlowSessionNV")]
     void DestroyOpticalFlowSessionNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("session")] OpticalFlowSessionHandleNv session,
+        [NativeName("session")] OpticalFlowSessionHandleNV session,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38786,7 +38786,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyOpticalFlowSessionNV")]
     void DestroyOpticalFlowSessionNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("session")] OpticalFlowSessionHandleNv session,
+        [NativeName("session")] OpticalFlowSessionHandleNV session,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -38860,7 +38860,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
     void DestroyPipelineBinaryKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pipelineBinary")] PipelineBinaryHandleKhr pipelineBinary,
+        [NativeName("pipelineBinary")] PipelineBinaryHandleKHR pipelineBinary,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -38876,7 +38876,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyPipelineBinaryKHR")]
     void DestroyPipelineBinaryKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pipelineBinary")] PipelineBinaryHandleKhr pipelineBinary,
+        [NativeName("pipelineBinary")] PipelineBinaryHandleKHR pipelineBinary,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39411,7 +39411,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyShaderEXT")]
     void DestroyShaderExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("shader")] ShaderHandleExt shader,
+        [NativeName("shader")] ShaderHandleEXT shader,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39428,7 +39428,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyShaderEXT")]
     void DestroyShaderExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("shader")] ShaderHandleExt shader,
+        [NativeName("shader")] ShaderHandleEXT shader,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39495,7 +39495,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
     void DestroySurfaceKhr(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39504,7 +39504,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
     void DestroySurfaceKhr(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39513,7 +39513,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
     void DestroySwapchainKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39522,7 +39522,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
     void DestroySwapchainKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39531,7 +39531,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
     void DestroyTensorArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("tensor")] TensorHandleArm tensor,
+        [NativeName("tensor")] TensorHandleARM tensor,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39540,7 +39540,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
     void DestroyTensorArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("tensor")] TensorHandleArm tensor,
+        [NativeName("tensor")] TensorHandleARM tensor,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39549,7 +39549,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
     void DestroyTensorViewArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("tensorView")] TensorViewHandleArm tensorView,
+        [NativeName("tensorView")] TensorViewHandleARM tensorView,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39558,7 +39558,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
     void DestroyTensorViewArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("tensorView")] TensorViewHandleArm tensorView,
+        [NativeName("tensorView")] TensorViewHandleARM tensorView,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39567,7 +39567,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
     void DestroyValidationCacheExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+        [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39576,7 +39576,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
     void DestroyValidationCacheExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+        [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39589,7 +39589,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyVideoSessionKHR")]
     void DestroyVideoSessionKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+        [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39602,7 +39602,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDestroyVideoSessionKHR")]
     void DestroyVideoSessionKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+        [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39616,7 +39616,7 @@ public unsafe partial interface IVk
     void DestroyVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("videoSessionParameters")]
-            VideoSessionParametersHandleKhr videoSessionParameters,
+            VideoSessionParametersHandleKHR videoSessionParameters,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -39630,7 +39630,7 @@ public unsafe partial interface IVk
     void DestroyVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("videoSessionParameters")]
-            VideoSessionParametersHandleKhr videoSessionParameters,
+            VideoSessionParametersHandleKHR videoSessionParameters,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -39673,8 +39673,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDisplayPowerControlEXT")]
     Result DisplayPowerControlExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("display")] DisplayHandleKhr display,
-        [NativeName("pDisplayPowerInfo")] DisplayPowerInfoExt* pDisplayPowerInfo
+        [NativeName("display")] DisplayHandleKHR display,
+        [NativeName("pDisplayPowerInfo")] DisplayPowerInfoEXT* pDisplayPowerInfo
     );
 
     [NativeName("vkDisplayPowerControlEXT")]
@@ -39686,8 +39686,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDisplayPowerControlEXT")]
     Result DisplayPowerControlExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("display")] DisplayHandleKhr display,
-        [NativeName("pDisplayPowerInfo")] Ref<DisplayPowerInfoExt> pDisplayPowerInfo
+        [NativeName("display")] DisplayHandleKHR display,
+        [NativeName("pDisplayPowerInfo")] Ref<DisplayPowerInfoEXT> pDisplayPowerInfo
     );
 
     [NativeName("vkEndCommandBuffer")]
@@ -40143,8 +40143,8 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
         [NativeName("pCounterCount")] uint* pCounterCount,
-        [NativeName("pCounters")] PerformanceCounterArm* pCounters,
-        [NativeName("pCounterDescriptions")] PerformanceCounterDescriptionArm* pCounterDescriptions
+        [NativeName("pCounters")] PerformanceCounterARM* pCounters,
+        [NativeName("pCounterDescriptions")] PerformanceCounterDescriptionARM* pCounterDescriptions
     );
 
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM")]
@@ -40164,9 +40164,9 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
         [NativeName("pCounterCount")] Ref<uint> pCounterCount,
-        [NativeName("pCounters")] Ref<PerformanceCounterArm> pCounters,
+        [NativeName("pCounters")] Ref<PerformanceCounterARM> pCounters,
         [NativeName("pCounterDescriptions")]
-            Ref<PerformanceCounterDescriptionArm> pCounterDescriptions
+            Ref<PerformanceCounterDescriptionARM> pCounterDescriptions
     );
 
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
@@ -40186,8 +40186,8 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
         [NativeName("pCounterCount")] uint* pCounterCount,
-        [NativeName("pCounters")] PerformanceCounterKhr* pCounters,
-        [NativeName("pCounterDescriptions")] PerformanceCounterDescriptionKhr* pCounterDescriptions
+        [NativeName("pCounters")] PerformanceCounterKHR* pCounters,
+        [NativeName("pCounterDescriptions")] PerformanceCounterDescriptionKHR* pCounterDescriptions
     );
 
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
@@ -40207,9 +40207,9 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
         [NativeName("pCounterCount")] Ref<uint> pCounterCount,
-        [NativeName("pCounters")] Ref<PerformanceCounterKhr> pCounters,
+        [NativeName("pCounters")] Ref<PerformanceCounterKHR> pCounters,
         [NativeName("pCounterDescriptions")]
-            Ref<PerformanceCounterDescriptionKhr> pCounterDescriptions
+            Ref<PerformanceCounterDescriptionKHR> pCounterDescriptions
     );
 
     [NativeName("vkEnumeratePhysicalDevices")]
@@ -40592,10 +40592,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
     void GetAccelerationStructureBuildSizesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-        [NativeName("pBuildInfo")] AccelerationStructureBuildGeometryInfoKhr* pBuildInfo,
+        [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+        [NativeName("pBuildInfo")] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo,
         [NativeName("pMaxPrimitiveCounts")] uint* pMaxPrimitiveCounts,
-        [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKhr* pSizeInfo
+        [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
     );
 
     [NativeName("vkGetAccelerationStructureBuildSizesKHR")]
@@ -40610,10 +40610,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureBuildSizesKHR")]
     void GetAccelerationStructureBuildSizesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-        [NativeName("pBuildInfo")] Ref<AccelerationStructureBuildGeometryInfoKhr> pBuildInfo,
+        [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+        [NativeName("pBuildInfo")] Ref<AccelerationStructureBuildGeometryInfoKHR> pBuildInfo,
         [NativeName("pMaxPrimitiveCounts")] Ref<uint> pMaxPrimitiveCounts,
-        [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKhr> pSizeInfo
+        [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
     [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
@@ -40628,7 +40628,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
     ulong GetAccelerationStructureDeviceAddressKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] AccelerationStructureDeviceAddressInfoKhr* pInfo
+        [NativeName("pInfo")] AccelerationStructureDeviceAddressInfoKHR* pInfo
     );
 
     [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
@@ -40643,7 +40643,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureDeviceAddressKHR")]
     ulong GetAccelerationStructureDeviceAddressKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<AccelerationStructureDeviceAddressInfoKhr> pInfo
+        [NativeName("pInfo")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
     );
 
     [NativeName("vkGetAccelerationStructureHandleNV")]
@@ -40658,7 +40658,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureHandleNV")]
     Result GetAccelerationStructureHandleNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("accelerationStructure")] AccelerationStructureHandleNv accelerationStructure,
+        [NativeName("accelerationStructure")] AccelerationStructureHandleNV accelerationStructure,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pData")] void* pData
     );
@@ -40675,7 +40675,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureHandleNV")]
     Result GetAccelerationStructureHandleNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("accelerationStructure")] AccelerationStructureHandleNv accelerationStructure,
+        [NativeName("accelerationStructure")] AccelerationStructureHandleNV accelerationStructure,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pData")] Ref pData
     );
@@ -40692,7 +40692,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
     void GetAccelerationStructureMemoryRequirementsNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] AccelerationStructureMemoryRequirementsInfoNv* pInfo,
+        [NativeName("pInfo")] AccelerationStructureMemoryRequirementsInfoNV* pInfo,
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
@@ -40708,7 +40708,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
     void GetAccelerationStructureMemoryRequirementsNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<AccelerationStructureMemoryRequirementsInfoNv> pInfo,
+        [NativeName("pInfo")] Ref<AccelerationStructureMemoryRequirementsInfoNV> pInfo,
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
@@ -40732,7 +40732,7 @@ public unsafe partial interface IVk
     )]
     Result GetAccelerationStructureOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] AccelerationStructureCaptureDescriptorDataInfoExt* pInfo,
+        [NativeName("pInfo")] AccelerationStructureCaptureDescriptorDataInfoEXT* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -40756,7 +40756,7 @@ public unsafe partial interface IVk
     )]
     Result GetAccelerationStructureOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<AccelerationStructureCaptureDescriptorDataInfoExt> pInfo,
+        [NativeName("pInfo")] Ref<AccelerationStructureCaptureDescriptorDataInfoEXT> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -41110,7 +41110,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT")]
     Result GetBufferOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] BufferCaptureDescriptorDataInfoExt* pInfo,
+        [NativeName("pInfo")] BufferCaptureDescriptorDataInfoEXT* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -41128,7 +41128,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT")]
     Result GetBufferOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<BufferCaptureDescriptorDataInfoExt> pInfo,
+        [NativeName("pInfo")] Ref<BufferCaptureDescriptorDataInfoEXT> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -41145,7 +41145,7 @@ public unsafe partial interface IVk
     Result GetCalibratedTimestampsExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("timestampCount")] uint timestampCount,
-        [NativeName("pTimestampInfos")] CalibratedTimestampInfoKhr* pTimestampInfos,
+        [NativeName("pTimestampInfos")] CalibratedTimestampInfoKHR* pTimestampInfos,
         [NativeName("pTimestamps")] ulong* pTimestamps,
         [NativeName("pMaxDeviation")] ulong* pMaxDeviation
     );
@@ -41163,7 +41163,7 @@ public unsafe partial interface IVk
     Result GetCalibratedTimestampsExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("timestampCount")] uint timestampCount,
-        [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKhr> pTimestampInfos,
+        [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
         [NativeName("pTimestamps")] Ref<ulong> pTimestamps,
         [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
     );
@@ -41181,7 +41181,7 @@ public unsafe partial interface IVk
     Result GetCalibratedTimestampsKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("timestampCount")] uint timestampCount,
-        [NativeName("pTimestampInfos")] CalibratedTimestampInfoKhr* pTimestampInfos,
+        [NativeName("pTimestampInfos")] CalibratedTimestampInfoKHR* pTimestampInfos,
         [NativeName("pTimestamps")] ulong* pTimestamps,
         [NativeName("pMaxDeviation")] ulong* pMaxDeviation
     );
@@ -41199,7 +41199,7 @@ public unsafe partial interface IVk
     Result GetCalibratedTimestampsKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("timestampCount")] uint timestampCount,
-        [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKhr> pTimestampInfos,
+        [NativeName("pTimestampInfos")] Ref<CalibratedTimestampInfoKHR> pTimestampInfos,
         [NativeName("pTimestamps")] Ref<ulong> pTimestamps,
         [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
     );
@@ -41213,8 +41213,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetClusterAccelerationStructureBuildSizesNV")]
     void GetClusterAccelerationStructureBuildSizesNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ClusterAccelerationStructureInputInfoNv* pInfo,
-        [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKhr* pSizeInfo
+        [NativeName("pInfo")] ClusterAccelerationStructureInputInfoNV* pInfo,
+        [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
     );
 
     [NativeName("vkGetClusterAccelerationStructureBuildSizesNV")]
@@ -41226,8 +41226,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetClusterAccelerationStructureBuildSizesNV")]
     void GetClusterAccelerationStructureBuildSizesNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ClusterAccelerationStructureInputInfoNv> pInfo,
-        [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKhr> pSizeInfo
+        [NativeName("pInfo")] Ref<ClusterAccelerationStructureInputInfoNV> pInfo,
+        [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
     [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
@@ -41239,9 +41239,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
     Result GetDataGraphPipelineAvailablePropertiesArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] DataGraphPipelineInfoArm* pPipelineInfo,
+        [NativeName("pPipelineInfo")] DataGraphPipelineInfoARM* pPipelineInfo,
         [NativeName("pPropertiesCount")] uint* pPropertiesCount,
-        [NativeName("pProperties")] DataGraphPipelinePropertyArm* pProperties
+        [NativeName("pProperties")] DataGraphPipelinePropertyARM* pProperties
     );
 
     [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
@@ -41253,9 +41253,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineAvailablePropertiesARM")]
     Result GetDataGraphPipelineAvailablePropertiesArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoArm> pPipelineInfo,
+        [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoARM> pPipelineInfo,
         [NativeName("pPropertiesCount")] Ref<uint> pPropertiesCount,
-        [NativeName("pProperties")] Ref<DataGraphPipelinePropertyArm> pProperties
+        [NativeName("pProperties")] Ref<DataGraphPipelinePropertyARM> pProperties
     );
 
     [NativeName("vkGetDataGraphPipelinePropertiesARM")]
@@ -41267,9 +41267,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
     Result GetDataGraphPipelinePropertiesArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] DataGraphPipelineInfoArm* pPipelineInfo,
+        [NativeName("pPipelineInfo")] DataGraphPipelineInfoARM* pPipelineInfo,
         [NativeName("propertiesCount")] uint propertiesCount,
-        [NativeName("pProperties")] DataGraphPipelinePropertyQueryResultArm* pProperties
+        [NativeName("pProperties")] DataGraphPipelinePropertyQueryResultARM* pProperties
     );
 
     [NativeName("vkGetDataGraphPipelinePropertiesARM")]
@@ -41281,9 +41281,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelinePropertiesARM")]
     Result GetDataGraphPipelinePropertiesArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoArm> pPipelineInfo,
+        [NativeName("pPipelineInfo")] Ref<DataGraphPipelineInfoARM> pPipelineInfo,
         [NativeName("propertiesCount")] uint propertiesCount,
-        [NativeName("pProperties")] Ref<DataGraphPipelinePropertyQueryResultArm> pProperties
+        [NativeName("pProperties")] Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
     );
 
     [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
@@ -41295,10 +41295,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
     Result GetDataGraphPipelineSessionBindPointRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] DataGraphPipelineSessionBindPointRequirementsInfoArm* pInfo,
+        [NativeName("pInfo")] DataGraphPipelineSessionBindPointRequirementsInfoARM* pInfo,
         [NativeName("pBindPointRequirementCount")] uint* pBindPointRequirementCount,
         [NativeName("pBindPointRequirements")]
-            DataGraphPipelineSessionBindPointRequirementArm* pBindPointRequirements
+            DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
     );
 
     [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
@@ -41310,10 +41310,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
     Result GetDataGraphPipelineSessionBindPointRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<DataGraphPipelineSessionBindPointRequirementsInfoArm> pInfo,
+        [NativeName("pInfo")] Ref<DataGraphPipelineSessionBindPointRequirementsInfoARM> pInfo,
         [NativeName("pBindPointRequirementCount")] Ref<uint> pBindPointRequirementCount,
         [NativeName("pBindPointRequirements")]
-            Ref<DataGraphPipelineSessionBindPointRequirementArm> pBindPointRequirements
+            Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
     );
 
     [NativeName("vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
@@ -41325,7 +41325,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
     void GetDataGraphPipelineSessionMemoryRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] DataGraphPipelineSessionMemoryRequirementsInfoArm* pInfo,
+        [NativeName("pInfo")] DataGraphPipelineSessionMemoryRequirementsInfoARM* pInfo,
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
@@ -41338,7 +41338,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
     void GetDataGraphPipelineSessionMemoryRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<DataGraphPipelineSessionMemoryRequirementsInfoArm> pInfo,
+        [NativeName("pInfo")] Ref<DataGraphPipelineSessionMemoryRequirementsInfoARM> pInfo,
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
@@ -41347,7 +41347,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationMaxConcurrencyKHR")]
     uint GetDeferredOperationMaxConcurrencyKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("operation")] DeferredOperationHandleKhr operation
+        [NativeName("operation")] DeferredOperationHandleKHR operation
     );
 
     [NativeName("vkGetDeferredOperationResultKHR")]
@@ -41355,7 +41355,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationResultKHR")]
     Result GetDeferredOperationResultKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("operation")] DeferredOperationHandleKhr operation
+        [NativeName("operation")] DeferredOperationHandleKHR operation
     );
 
     [NativeName("vkGetDescriptorEXT")]
@@ -41372,7 +41372,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorEXT")]
     void GetDescriptorExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pDescriptorInfo")] DescriptorGetInfoExt* pDescriptorInfo,
+        [NativeName("pDescriptorInfo")] DescriptorGetInfoEXT* pDescriptorInfo,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pDescriptor")] void* pDescriptor
     );
@@ -41391,7 +41391,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorEXT")]
     void GetDescriptorExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pDescriptorInfo")] Ref<DescriptorGetInfoExt> pDescriptorInfo,
+        [NativeName("pDescriptorInfo")] Ref<DescriptorGetInfoEXT> pDescriptorInfo,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pDescriptor")] Ref pDescriptor
     );
@@ -41478,8 +41478,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
     void GetDescriptorSetLayoutHostMappingInfoValve(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pBindingReference")] DescriptorSetBindingReferenceValve* pBindingReference,
-        [NativeName("pHostMapping")] DescriptorSetLayoutHostMappingInfoValve* pHostMapping
+        [NativeName("pBindingReference")] DescriptorSetBindingReferenceVALVE* pBindingReference,
+        [NativeName("pHostMapping")] DescriptorSetLayoutHostMappingInfoVALVE* pHostMapping
     );
 
     [NativeName("vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
@@ -41494,8 +41494,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
     void GetDescriptorSetLayoutHostMappingInfoValve(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pBindingReference")] Ref<DescriptorSetBindingReferenceValve> pBindingReference,
-        [NativeName("pHostMapping")] Ref<DescriptorSetLayoutHostMappingInfoValve> pHostMapping
+        [NativeName("pBindingReference")] Ref<DescriptorSetBindingReferenceVALVE> pBindingReference,
+        [NativeName("pHostMapping")] Ref<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping
     );
 
     [NativeName("vkGetDescriptorSetLayoutSizeEXT")]
@@ -41630,8 +41630,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
     void GetDeviceAccelerationStructureCompatibilityKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pVersionInfo")] AccelerationStructureVersionInfoKhr* pVersionInfo,
-        [NativeName("pCompatibility")] AccelerationStructureCompatibilityKhr* pCompatibility
+        [NativeName("pVersionInfo")] AccelerationStructureVersionInfoKHR* pVersionInfo,
+        [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
     );
 
     [NativeName("vkGetDeviceAccelerationStructureCompatibilityKHR")]
@@ -41646,8 +41646,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceAccelerationStructureCompatibilityKHR")]
     void GetDeviceAccelerationStructureCompatibilityKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pVersionInfo")] Ref<AccelerationStructureVersionInfoKhr> pVersionInfo,
-        [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKhr> pCompatibility
+        [NativeName("pVersionInfo")] Ref<AccelerationStructureVersionInfoKHR> pVersionInfo,
+        [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKHR> pCompatibility
     );
 
     [NativeName("vkGetDeviceBufferMemoryRequirements")]
@@ -41724,8 +41724,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceFaultInfoEXT")]
     Result GetDeviceFaultInfoExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pFaultCounts")] DeviceFaultCountsExt* pFaultCounts,
-        [NativeName("pFaultInfo")] DeviceFaultInfoExt* pFaultInfo
+        [NativeName("pFaultCounts")] DeviceFaultCountsEXT* pFaultCounts,
+        [NativeName("pFaultInfo")] DeviceFaultInfoEXT* pFaultInfo
     );
 
     [NativeName("vkGetDeviceFaultInfoEXT")]
@@ -41740,8 +41740,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceFaultInfoEXT")]
     Result GetDeviceFaultInfoExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pFaultCounts")] Ref<DeviceFaultCountsExt> pFaultCounts,
-        [NativeName("pFaultInfo")] Ref<DeviceFaultInfoExt> pFaultInfo
+        [NativeName("pFaultCounts")] Ref<DeviceFaultCountsEXT> pFaultCounts,
+        [NativeName("pFaultInfo")] Ref<DeviceFaultInfoEXT> pFaultInfo
     );
 
     [NativeName("vkGetDeviceGroupPeerMemoryFeatures")]
@@ -41849,7 +41849,7 @@ public unsafe partial interface IVk
     Result GetDeviceGroupPresentCapabilitiesKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pDeviceGroupPresentCapabilities")]
-            DeviceGroupPresentCapabilitiesKhr* pDeviceGroupPresentCapabilities
+            DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities
     );
 
     [NativeName("vkGetDeviceGroupPresentCapabilitiesKHR")]
@@ -41863,7 +41863,7 @@ public unsafe partial interface IVk
     Result GetDeviceGroupPresentCapabilitiesKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pDeviceGroupPresentCapabilities")]
-            Ref<DeviceGroupPresentCapabilitiesKhr> pDeviceGroupPresentCapabilities
+            Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
     );
 
     [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
@@ -41876,8 +41876,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR")]
     Result GetDeviceGroupSurfacePresentModesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("surface")] SurfaceHandleKhr surface,
-        [NativeName("pModes")] DeviceGroupPresentModeFlagsKhr* pModes
+        [NativeName("surface")] SurfaceHandleKHR surface,
+        [NativeName("pModes")] DeviceGroupPresentModeFlagsKHR* pModes
     );
 
     [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
@@ -41890,8 +41890,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceGroupSurfacePresentModesKHR")]
     Result GetDeviceGroupSurfacePresentModesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("surface")] SurfaceHandleKhr surface,
-        [NativeName("pModes")] Ref<DeviceGroupPresentModeFlagsKhr> pModes
+        [NativeName("surface")] SurfaceHandleKHR surface,
+        [NativeName("pModes")] Ref<DeviceGroupPresentModeFlagsKHR> pModes
     );
 
     [NativeName("vkGetDeviceImageMemoryRequirements")]
@@ -42248,8 +42248,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMicromapCompatibilityEXT")]
     void GetDeviceMicromapCompatibilityExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pVersionInfo")] MicromapVersionInfoExt* pVersionInfo,
-        [NativeName("pCompatibility")] AccelerationStructureCompatibilityKhr* pCompatibility
+        [NativeName("pVersionInfo")] MicromapVersionInfoEXT* pVersionInfo,
+        [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
     );
 
     [NativeName("vkGetDeviceMicromapCompatibilityEXT")]
@@ -42264,8 +42264,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceMicromapCompatibilityEXT")]
     void GetDeviceMicromapCompatibilityExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pVersionInfo")] Ref<MicromapVersionInfoExt> pVersionInfo,
-        [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKhr> pCompatibility
+        [NativeName("pVersionInfo")] Ref<MicromapVersionInfoEXT> pVersionInfo,
+        [NativeName("pCompatibility")] Ref<AccelerationStructureCompatibilityKHR> pCompatibility
     );
 
     [NativeName("vkGetDeviceProcAddr")]
@@ -42503,7 +42503,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
     void GetDeviceTensorMemoryRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] DeviceTensorMemoryRequirementsArm* pInfo,
+        [NativeName("pInfo")] DeviceTensorMemoryRequirementsARM* pInfo,
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
@@ -42512,7 +42512,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
     void GetDeviceTensorMemoryRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<DeviceTensorMemoryRequirementsArm> pInfo,
+        [NativeName("pInfo")] Ref<DeviceTensorMemoryRequirementsARM> pInfo,
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
@@ -42525,9 +42525,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModeProperties2KHR")]
     Result GetDisplayModeProperties2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display,
+        [NativeName("display")] DisplayHandleKHR display,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] DisplayModeProperties2Khr* pProperties
+        [NativeName("pProperties")] DisplayModeProperties2KHR* pProperties
     );
 
     [NativeName("vkGetDisplayModeProperties2KHR")]
@@ -42539,9 +42539,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModeProperties2KHR")]
     Result GetDisplayModeProperties2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display,
+        [NativeName("display")] DisplayHandleKHR display,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<DisplayModeProperties2Khr> pProperties
+        [NativeName("pProperties")] Ref<DisplayModeProperties2KHR> pProperties
     );
 
     [NativeName("vkGetDisplayModePropertiesKHR")]
@@ -42549,9 +42549,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
     Result GetDisplayModePropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display,
+        [NativeName("display")] DisplayHandleKHR display,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] DisplayModePropertiesKhr* pProperties
+        [NativeName("pProperties")] DisplayModePropertiesKHR* pProperties
     );
 
     [NativeName("vkGetDisplayModePropertiesKHR")]
@@ -42559,9 +42559,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
     Result GetDisplayModePropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display,
+        [NativeName("display")] DisplayHandleKHR display,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<DisplayModePropertiesKhr> pProperties
+        [NativeName("pProperties")] Ref<DisplayModePropertiesKHR> pProperties
     );
 
     [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
@@ -42573,8 +42573,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
     Result GetDisplayPlaneCapabilities2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pDisplayPlaneInfo")] DisplayPlaneInfo2Khr* pDisplayPlaneInfo,
-        [NativeName("pCapabilities")] DisplayPlaneCapabilities2Khr* pCapabilities
+        [NativeName("pDisplayPlaneInfo")] DisplayPlaneInfo2KHR* pDisplayPlaneInfo,
+        [NativeName("pCapabilities")] DisplayPlaneCapabilities2KHR* pCapabilities
     );
 
     [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
@@ -42586,8 +42586,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
     Result GetDisplayPlaneCapabilities2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pDisplayPlaneInfo")] Ref<DisplayPlaneInfo2Khr> pDisplayPlaneInfo,
-        [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilities2Khr> pCapabilities
+        [NativeName("pDisplayPlaneInfo")] Ref<DisplayPlaneInfo2KHR> pDisplayPlaneInfo,
+        [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilities2KHR> pCapabilities
     );
 
     [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
@@ -42595,9 +42595,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
     Result GetDisplayPlaneCapabilitiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("mode")] DisplayModeHandleKhr mode,
+        [NativeName("mode")] DisplayModeHandleKHR mode,
         [NativeName("planeIndex")] uint planeIndex,
-        [NativeName("pCapabilities")] DisplayPlaneCapabilitiesKhr* pCapabilities
+        [NativeName("pCapabilities")] DisplayPlaneCapabilitiesKHR* pCapabilities
     );
 
     [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
@@ -42605,9 +42605,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
     Result GetDisplayPlaneCapabilitiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("mode")] DisplayModeHandleKhr mode,
+        [NativeName("mode")] DisplayModeHandleKHR mode,
         [NativeName("planeIndex")] uint planeIndex,
-        [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilitiesKhr> pCapabilities
+        [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilitiesKHR> pCapabilities
     );
 
     [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -42617,7 +42617,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("planeIndex")] uint planeIndex,
         [NativeName("pDisplayCount")] uint* pDisplayCount,
-        [NativeName("pDisplays")] DisplayHandleKhr* pDisplays
+        [NativeName("pDisplays")] DisplayHandleKHR* pDisplays
     );
 
     [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -42627,7 +42627,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("planeIndex")] uint planeIndex,
         [NativeName("pDisplayCount")] Ref<uint> pDisplayCount,
-        [NativeName("pDisplays")] Ref<DisplayHandleKhr> pDisplays
+        [NativeName("pDisplays")] Ref<DisplayHandleKHR> pDisplays
     );
 
     [NativeName("vkGetDrmDisplayEXT")]
@@ -42641,7 +42641,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("drmFd")] int drmFd,
         [NativeName("connectorId")] uint connectorId,
-        [NativeName("display")] DisplayHandleKhr* display
+        [NativeName("display")] DisplayHandleKHR* display
     );
 
     [NativeName("vkGetDrmDisplayEXT")]
@@ -42655,7 +42655,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("drmFd")] int drmFd,
         [NativeName("connectorId")] uint connectorId,
-        [NativeName("display")] Ref<DisplayHandleKhr> display
+        [NativeName("display")] Ref<DisplayHandleKHR> display
     );
 
     [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
@@ -42671,7 +42671,7 @@ public unsafe partial interface IVk
     Result GetDynamicRenderingTilePropertiesQcom(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pRenderingInfo")] RenderingInfo* pRenderingInfo,
-        [NativeName("pProperties")] TilePropertiesQcom* pProperties
+        [NativeName("pProperties")] TilePropertiesQCOM* pProperties
     );
 
     [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
@@ -42687,7 +42687,7 @@ public unsafe partial interface IVk
     Result GetDynamicRenderingTilePropertiesQcom(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pRenderingInfo")] Ref<RenderingInfo> pRenderingInfo,
-        [NativeName("pProperties")] Ref<TilePropertiesQcom> pProperties
+        [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
     );
 
     [NativeName("vkGetEncodedVideoSessionParametersKHR")]
@@ -42703,8 +42703,8 @@ public unsafe partial interface IVk
     Result GetEncodedVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pVideoSessionParametersInfo")]
-            VideoEncodeSessionParametersGetInfoKhr* pVideoSessionParametersInfo,
-        [NativeName("pFeedbackInfo")] VideoEncodeSessionParametersFeedbackInfoKhr* pFeedbackInfo,
+            VideoEncodeSessionParametersGetInfoKHR* pVideoSessionParametersInfo,
+        [NativeName("pFeedbackInfo")] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo,
         [NativeName("pDataSize")] nuint* pDataSize,
         [NativeName("pData")] void* pData
     );
@@ -42722,9 +42722,9 @@ public unsafe partial interface IVk
     Result GetEncodedVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pVideoSessionParametersInfo")]
-            Ref<VideoEncodeSessionParametersGetInfoKhr> pVideoSessionParametersInfo,
+            Ref<VideoEncodeSessionParametersGetInfoKHR> pVideoSessionParametersInfo,
         [NativeName("pFeedbackInfo")]
-            Ref<VideoEncodeSessionParametersFeedbackInfoKhr> pFeedbackInfo,
+            Ref<VideoEncodeSessionParametersFeedbackInfoKHR> pFeedbackInfo,
         [NativeName("pDataSize")] Ref<nuint> pDataSize,
         [NativeName("pData")] Ref pData
     );
@@ -42761,8 +42761,8 @@ public unsafe partial interface IVk
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
     void GetExternalComputeQueueDataNv(
-        [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
-        [NativeName("@params")] ExternalComputeQueueDataParamsNv* @params,
+        [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
+        [NativeName("@params")] ExternalComputeQueueDataParamsNV* @params,
         [NativeName("pData")] void* pData
     );
 
@@ -42770,8 +42770,8 @@ public unsafe partial interface IVk
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
     void GetExternalComputeQueueDataNv(
-        [NativeName("externalQueue")] ExternalComputeQueueHandleNv externalQueue,
-        [NativeName("@params")] Ref<ExternalComputeQueueDataParamsNv> @params,
+        [NativeName("externalQueue")] ExternalComputeQueueHandleNV externalQueue,
+        [NativeName("@params")] Ref<ExternalComputeQueueDataParamsNV> @params,
         [NativeName("pData")] Ref pData
     );
 
@@ -42787,7 +42787,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetFenceFdKHR")]
     Result GetFenceFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pGetFdInfo")] FenceGetFdInfoKhr* pGetFdInfo,
+        [NativeName("pGetFdInfo")] FenceGetFdInfoKHR* pGetFdInfo,
         [NativeName("pFd")] int* pFd
     );
 
@@ -42803,7 +42803,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetFenceFdKHR")]
     Result GetFenceFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pGetFdInfo")] Ref<FenceGetFdInfoKhr> pGetFdInfo,
+        [NativeName("pGetFdInfo")] Ref<FenceGetFdInfoKHR> pGetFdInfo,
         [NativeName("pFd")] Ref<int> pFd
     );
 
@@ -42854,7 +42854,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("framebuffer")] FramebufferHandle framebuffer,
         [NativeName("pPropertiesCount")] uint* pPropertiesCount,
-        [NativeName("pProperties")] TilePropertiesQcom* pProperties
+        [NativeName("pProperties")] TilePropertiesQCOM* pProperties
     );
 
     [NativeName("vkGetFramebufferTilePropertiesQCOM")]
@@ -42871,7 +42871,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("framebuffer")] FramebufferHandle framebuffer,
         [NativeName("pPropertiesCount")] Ref<uint> pPropertiesCount,
-        [NativeName("pProperties")] Ref<TilePropertiesQcom> pProperties
+        [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
     );
 
     [NativeName("vkGetGeneratedCommandsMemoryRequirementsEXT")]
@@ -42887,7 +42887,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT")]
     void GetGeneratedCommandsMemoryRequirementsExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoExt* pInfo,
+        [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoEXT* pInfo,
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
@@ -42904,7 +42904,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT")]
     void GetGeneratedCommandsMemoryRequirementsExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoExt> pInfo,
+        [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoEXT> pInfo,
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
@@ -42917,7 +42917,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
     void GetGeneratedCommandsMemoryRequirementsNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoNv* pInfo,
+        [NativeName("pInfo")] GeneratedCommandsMemoryRequirementsInfoNV* pInfo,
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
@@ -42930,7 +42930,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
     void GetGeneratedCommandsMemoryRequirementsNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoNv> pInfo,
+        [NativeName("pInfo")] Ref<GeneratedCommandsMemoryRequirementsInfoNV> pInfo,
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
@@ -42948,7 +42948,7 @@ public unsafe partial interface IVk
     Result GetImageDrmFormatModifierPropertiesExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("image")] ImageHandle image,
-        [NativeName("pProperties")] ImageDrmFormatModifierPropertiesExt* pProperties
+        [NativeName("pProperties")] ImageDrmFormatModifierPropertiesEXT* pProperties
     );
 
     [NativeName("vkGetImageDrmFormatModifierPropertiesEXT")]
@@ -42965,7 +42965,7 @@ public unsafe partial interface IVk
     Result GetImageDrmFormatModifierPropertiesExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("image")] ImageHandle image,
-        [NativeName("pProperties")] Ref<ImageDrmFormatModifierPropertiesExt> pProperties
+        [NativeName("pProperties")] Ref<ImageDrmFormatModifierPropertiesEXT> pProperties
     );
 
     [NativeName("vkGetImageMemoryRequirements")]
@@ -43128,7 +43128,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageOpaqueCaptureDescriptorDataEXT")]
     Result GetImageOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ImageCaptureDescriptorDataInfoExt* pInfo,
+        [NativeName("pInfo")] ImageCaptureDescriptorDataInfoEXT* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -43146,7 +43146,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageOpaqueCaptureDescriptorDataEXT")]
     Result GetImageOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ImageCaptureDescriptorDataInfoExt> pInfo,
+        [NativeName("pInfo")] Ref<ImageCaptureDescriptorDataInfoEXT> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -43486,7 +43486,7 @@ public unsafe partial interface IVk
     Result GetImageViewAddressNvx(
         [NativeName("device")] DeviceHandle device,
         [NativeName("imageView")] ImageViewHandle imageView,
-        [NativeName("pProperties")] ImageViewAddressPropertiesNvx* pProperties
+        [NativeName("pProperties")] ImageViewAddressPropertiesNVX* pProperties
     );
 
     [NativeName("vkGetImageViewAddressNVX")]
@@ -43495,7 +43495,7 @@ public unsafe partial interface IVk
     Result GetImageViewAddressNvx(
         [NativeName("device")] DeviceHandle device,
         [NativeName("imageView")] ImageViewHandle imageView,
-        [NativeName("pProperties")] Ref<ImageViewAddressPropertiesNvx> pProperties
+        [NativeName("pProperties")] Ref<ImageViewAddressPropertiesNVX> pProperties
     );
 
     [NativeName("vkGetImageViewHandle64NVX")]
@@ -43503,7 +43503,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
     ulong GetImageViewHandle64Nvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ImageViewHandleInfoNvx* pInfo
+        [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
     );
 
     [NativeName("vkGetImageViewHandle64NVX")]
@@ -43511,7 +43511,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
     ulong GetImageViewHandle64Nvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ImageViewHandleInfoNvx> pInfo
+        [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
     );
 
     [NativeName("vkGetImageViewHandleNVX")]
@@ -43519,7 +43519,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
     uint GetImageViewHandleNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ImageViewHandleInfoNvx* pInfo
+        [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
     );
 
     [NativeName("vkGetImageViewHandleNVX")]
@@ -43527,7 +43527,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
     uint GetImageViewHandleNvx(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ImageViewHandleInfoNvx> pInfo
+        [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
     );
 
     [NativeName("vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
@@ -43544,7 +43544,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
     Result GetImageViewOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ImageViewCaptureDescriptorDataInfoExt* pInfo,
+        [NativeName("pInfo")] ImageViewCaptureDescriptorDataInfoEXT* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -43562,7 +43562,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
     Result GetImageViewOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ImageViewCaptureDescriptorDataInfoExt> pInfo,
+        [NativeName("pInfo")] Ref<ImageViewCaptureDescriptorDataInfoEXT> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -43646,8 +43646,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetLatencyTimingsNV")]
     void GetLatencyTimingsNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pLatencyMarkerInfo")] GetLatencyMarkerInfoNv* pLatencyMarkerInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pLatencyMarkerInfo")] GetLatencyMarkerInfoNV* pLatencyMarkerInfo
     );
 
     [NativeName("vkGetLatencyTimingsNV")]
@@ -43664,8 +43664,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetLatencyTimingsNV")]
     void GetLatencyTimingsNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pLatencyMarkerInfo")] Ref<GetLatencyMarkerInfoNv> pLatencyMarkerInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pLatencyMarkerInfo")] Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
     );
 
     [NativeName("vkGetMemoryFdKHR")]
@@ -43680,7 +43680,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdKHR")]
     Result GetMemoryFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pGetFdInfo")] MemoryGetFdInfoKhr* pGetFdInfo,
+        [NativeName("pGetFdInfo")] MemoryGetFdInfoKHR* pGetFdInfo,
         [NativeName("pFd")] int* pFd
     );
 
@@ -43696,7 +43696,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMemoryFdKHR")]
     Result GetMemoryFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pGetFdInfo")] Ref<MemoryGetFdInfoKhr> pGetFdInfo,
+        [NativeName("pGetFdInfo")] Ref<MemoryGetFdInfoKHR> pGetFdInfo,
         [NativeName("pFd")] Ref<int> pFd
     );
 
@@ -43714,7 +43714,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
         [NativeName("fd")] int fd,
-        [NativeName("pMemoryFdProperties")] MemoryFdPropertiesKhr* pMemoryFdProperties
+        [NativeName("pMemoryFdProperties")] MemoryFdPropertiesKHR* pMemoryFdProperties
     );
 
     [NativeName("vkGetMemoryFdPropertiesKHR")]
@@ -43731,7 +43731,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
         [NativeName("fd")] int fd,
-        [NativeName("pMemoryFdProperties")] Ref<MemoryFdPropertiesKhr> pMemoryFdProperties
+        [NativeName("pMemoryFdProperties")] Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
     );
 
     [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
@@ -43749,7 +43749,7 @@ public unsafe partial interface IVk
         [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
         [NativeName("pHostPointer")] void* pHostPointer,
         [NativeName("pMemoryHostPointerProperties")]
-            MemoryHostPointerPropertiesExt* pMemoryHostPointerProperties
+            MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
     );
 
     [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
@@ -43767,7 +43767,7 @@ public unsafe partial interface IVk
         [NativeName("handleType")] ExternalMemoryHandleTypeFlags handleType,
         [NativeName("pHostPointer")] Ref pHostPointer,
         [NativeName("pMemoryHostPointerProperties")]
-            Ref<MemoryHostPointerPropertiesExt> pMemoryHostPointerProperties
+            Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
     );
 
     [NativeName("vkGetMemoryRemoteAddressNV")]
@@ -43783,7 +43783,7 @@ public unsafe partial interface IVk
     Result GetMemoryRemoteAddressNv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pMemoryGetRemoteAddressInfo")]
-            MemoryGetRemoteAddressInfoNv* pMemoryGetRemoteAddressInfo,
+            MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo,
         [NativeName("pAddress")] void** pAddress
     );
 
@@ -43800,7 +43800,7 @@ public unsafe partial interface IVk
     Result GetMemoryRemoteAddressNv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pMemoryGetRemoteAddressInfo")]
-            Ref<MemoryGetRemoteAddressInfoNv> pMemoryGetRemoteAddressInfo,
+            Ref<MemoryGetRemoteAddressInfoNV> pMemoryGetRemoteAddressInfo,
         [NativeName("pAddress")] Ref2D pAddress
     );
 
@@ -43816,9 +43816,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMicromapBuildSizesEXT")]
     void GetMicromapBuildSizesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-        [NativeName("pBuildInfo")] MicromapBuildInfoExt* pBuildInfo,
-        [NativeName("pSizeInfo")] MicromapBuildSizesInfoExt* pSizeInfo
+        [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+        [NativeName("pBuildInfo")] MicromapBuildInfoEXT* pBuildInfo,
+        [NativeName("pSizeInfo")] MicromapBuildSizesInfoEXT* pSizeInfo
     );
 
     [NativeName("vkGetMicromapBuildSizesEXT")]
@@ -43833,9 +43833,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetMicromapBuildSizesEXT")]
     void GetMicromapBuildSizesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("buildType")] AccelerationStructureBuildTypeKhr buildType,
-        [NativeName("pBuildInfo")] Ref<MicromapBuildInfoExt> pBuildInfo,
-        [NativeName("pSizeInfo")] Ref<MicromapBuildSizesInfoExt> pSizeInfo
+        [NativeName("buildType")] AccelerationStructureBuildTypeKHR buildType,
+        [NativeName("pBuildInfo")] Ref<MicromapBuildInfoEXT> pBuildInfo,
+        [NativeName("pSizeInfo")] Ref<MicromapBuildSizesInfoEXT> pSizeInfo
     );
 
     [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
@@ -43847,8 +43847,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPartitionedAccelerationStructuresBuildSizesNV")]
     void GetPartitionedAccelerationStructuresBuildSizesNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] PartitionedAccelerationStructureInstancesInputNv* pInfo,
-        [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKhr* pSizeInfo
+        [NativeName("pInfo")] PartitionedAccelerationStructureInstancesInputNV* pInfo,
+        [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
     );
 
     [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
@@ -43860,8 +43860,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPartitionedAccelerationStructuresBuildSizesNV")]
     void GetPartitionedAccelerationStructuresBuildSizesNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<PartitionedAccelerationStructureInstancesInputNv> pInfo,
-        [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKhr> pSizeInfo
+        [NativeName("pInfo")] Ref<PartitionedAccelerationStructureInstancesInputNV> pInfo,
+        [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
     [NativeName("vkGetPastPresentationTimingGOOGLE")]
@@ -43873,9 +43873,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
     Result GetPastPresentationTimingGoogle(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pPresentationTimingCount")] uint* pPresentationTimingCount,
-        [NativeName("pPresentationTimings")] PastPresentationTimingGoogle* pPresentationTimings
+        [NativeName("pPresentationTimings")] PastPresentationTimingGOOGLE* pPresentationTimings
     );
 
     [NativeName("vkGetPastPresentationTimingGOOGLE")]
@@ -43887,9 +43887,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
     Result GetPastPresentationTimingGoogle(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pPresentationTimingCount")] Ref<uint> pPresentationTimingCount,
-        [NativeName("pPresentationTimings")] Ref<PastPresentationTimingGoogle> pPresentationTimings
+        [NativeName("pPresentationTimings")] Ref<PastPresentationTimingGOOGLE> pPresentationTimings
     );
 
     [NativeName("vkGetPerformanceParameterINTEL")]
@@ -43897,8 +43897,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
     Result GetPerformanceParameterIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("parameter")] PerformanceParameterTypeIntel parameter,
-        [NativeName("pValue")] PerformanceValueIntel* pValue
+        [NativeName("parameter")] PerformanceParameterTypeINTEL parameter,
+        [NativeName("pValue")] PerformanceValueINTEL* pValue
     );
 
     [NativeName("vkGetPerformanceParameterINTEL")]
@@ -43906,8 +43906,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
     Result GetPerformanceParameterIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("parameter")] PerformanceParameterTypeIntel parameter,
-        [NativeName("pValue")] Ref<PerformanceValueIntel> pValue
+        [NativeName("parameter")] PerformanceParameterTypeINTEL parameter,
+        [NativeName("pValue")] Ref<PerformanceValueINTEL> pValue
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
@@ -43923,7 +43923,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsExt(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-        [NativeName("pTimeDomains")] TimeDomainKhr* pTimeDomains
+        [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
@@ -43939,7 +43939,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsExt(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-        [NativeName("pTimeDomains")] Ref<TimeDomainKhr> pTimeDomains
+        [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -43955,7 +43955,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-        [NativeName("pTimeDomains")] TimeDomainKhr* pTimeDomains
+        [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -43971,7 +43971,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-        [NativeName("pTimeDomains")] Ref<TimeDomainKhr> pTimeDomains
+        [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
@@ -43987,7 +43987,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] CooperativeMatrixFlexibleDimensionsPropertiesNv* pProperties
+        [NativeName("pProperties")] CooperativeMatrixFlexibleDimensionsPropertiesNV* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
@@ -44003,7 +44003,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<CooperativeMatrixFlexibleDimensionsPropertiesNv> pProperties
+        [NativeName("pProperties")] Ref<CooperativeMatrixFlexibleDimensionsPropertiesNV> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
@@ -44019,7 +44019,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeMatrixPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] CooperativeMatrixPropertiesKhr* pProperties
+        [NativeName("pProperties")] CooperativeMatrixPropertiesKHR* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
@@ -44035,7 +44035,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeMatrixPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesKhr> pProperties
+        [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesKHR> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
@@ -44051,7 +44051,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeMatrixPropertiesNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] CooperativeMatrixPropertiesNv* pProperties
+        [NativeName("pProperties")] CooperativeMatrixPropertiesNV* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
@@ -44067,7 +44067,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeMatrixPropertiesNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesNv> pProperties
+        [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesNV> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
@@ -44083,7 +44083,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeVectorPropertiesNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] CooperativeVectorPropertiesNv* pProperties
+        [NativeName("pProperties")] CooperativeVectorPropertiesNV* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
@@ -44099,7 +44099,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCooperativeVectorPropertiesNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<CooperativeVectorPropertiesNv> pProperties
+        [NativeName("pProperties")] Ref<CooperativeVectorPropertiesNV> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
@@ -44112,7 +44112,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayPlaneProperties2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] DisplayPlaneProperties2Khr* pProperties
+        [NativeName("pProperties")] DisplayPlaneProperties2KHR* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
@@ -44125,7 +44125,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayPlaneProperties2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<DisplayPlaneProperties2Khr> pProperties
+        [NativeName("pProperties")] Ref<DisplayPlaneProperties2KHR> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -44134,7 +44134,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayPlanePropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] DisplayPlanePropertiesKhr* pProperties
+        [NativeName("pProperties")] DisplayPlanePropertiesKHR* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -44143,7 +44143,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayPlanePropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<DisplayPlanePropertiesKhr> pProperties
+        [NativeName("pProperties")] Ref<DisplayPlanePropertiesKHR> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
@@ -44156,7 +44156,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayProperties2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] DisplayProperties2Khr* pProperties
+        [NativeName("pProperties")] DisplayProperties2KHR* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
@@ -44169,7 +44169,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayProperties2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<DisplayProperties2Khr> pProperties
+        [NativeName("pProperties")] Ref<DisplayProperties2KHR> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -44178,7 +44178,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] uint* pPropertyCount,
-        [NativeName("pProperties")] DisplayPropertiesKhr* pProperties
+        [NativeName("pProperties")] DisplayPropertiesKHR* pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -44187,7 +44187,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceDisplayPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPropertyCount")] Ref<uint> pPropertyCount,
-        [NativeName("pProperties")] Ref<DisplayPropertiesKhr> pProperties
+        [NativeName("pProperties")] Ref<DisplayPropertiesKHR> pProperties
     );
 
     [NativeName("vkGetPhysicalDeviceExternalBufferProperties")]
@@ -44392,9 +44392,9 @@ public unsafe partial interface IVk
         [NativeName("tiling")] ImageTiling tiling,
         [NativeName("usage")] ImageUsageFlags usage,
         [NativeName("flags")] ImageCreateFlags flags,
-        [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNv externalHandleType,
+        [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNV externalHandleType,
         [NativeName("pExternalImageFormatProperties")]
-            ExternalImageFormatPropertiesNv* pExternalImageFormatProperties
+            ExternalImageFormatPropertiesNV* pExternalImageFormatProperties
     );
 
     [NativeName("vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
@@ -44407,9 +44407,9 @@ public unsafe partial interface IVk
         [NativeName("tiling")] ImageTiling tiling,
         [NativeName("usage")] ImageUsageFlags usage,
         [NativeName("flags")] ImageCreateFlags flags,
-        [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNv externalHandleType,
+        [NativeName("externalHandleType")] ExternalMemoryHandleTypeFlagsNV externalHandleType,
         [NativeName("pExternalImageFormatProperties")]
-            Ref<ExternalImageFormatPropertiesNv> pExternalImageFormatProperties
+            Ref<ExternalImageFormatPropertiesNV> pExternalImageFormatProperties
     );
 
     [NativeName("vkGetPhysicalDeviceExternalSemaphoreProperties")]
@@ -44518,9 +44518,9 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceExternalTensorPropertiesArm(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pExternalTensorInfo")]
-            PhysicalDeviceExternalTensorInfoArm* pExternalTensorInfo,
+            PhysicalDeviceExternalTensorInfoARM* pExternalTensorInfo,
         [NativeName("pExternalTensorProperties")]
-            ExternalTensorPropertiesArm* pExternalTensorProperties
+            ExternalTensorPropertiesARM* pExternalTensorProperties
     );
 
     [NativeName("vkGetPhysicalDeviceExternalTensorPropertiesARM")]
@@ -44529,9 +44529,9 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceExternalTensorPropertiesArm(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pExternalTensorInfo")]
-            Ref<PhysicalDeviceExternalTensorInfoArm> pExternalTensorInfo,
+            Ref<PhysicalDeviceExternalTensorInfoARM> pExternalTensorInfo,
         [NativeName("pExternalTensorProperties")]
-            Ref<ExternalTensorPropertiesArm> pExternalTensorProperties
+            Ref<ExternalTensorPropertiesARM> pExternalTensorProperties
     );
 
     [NativeName("vkGetPhysicalDeviceFeatures")]
@@ -44835,7 +44835,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pFragmentShadingRateCount")] uint* pFragmentShadingRateCount,
         [NativeName("pFragmentShadingRates")]
-            PhysicalDeviceFragmentShadingRateKhr* pFragmentShadingRates
+            PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates
     );
 
     [NativeName("vkGetPhysicalDeviceFragmentShadingRatesKHR")]
@@ -44853,7 +44853,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pFragmentShadingRateCount")] Ref<uint> pFragmentShadingRateCount,
         [NativeName("pFragmentShadingRates")]
-            Ref<PhysicalDeviceFragmentShadingRateKhr> pFragmentShadingRates
+            Ref<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates
     );
 
     [NativeName("vkGetPhysicalDeviceImageFormatProperties")]
@@ -45163,7 +45163,7 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceMultisamplePropertiesExt(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("samples")] SampleCountFlags samples,
-        [NativeName("pMultisampleProperties")] MultisamplePropertiesExt* pMultisampleProperties
+        [NativeName("pMultisampleProperties")] MultisamplePropertiesEXT* pMultisampleProperties
     );
 
     [NativeName("vkGetPhysicalDeviceMultisamplePropertiesEXT")]
@@ -45179,7 +45179,7 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceMultisamplePropertiesExt(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("samples")] SampleCountFlags samples,
-        [NativeName("pMultisampleProperties")] Ref<MultisamplePropertiesExt> pMultisampleProperties
+        [NativeName("pMultisampleProperties")] Ref<MultisamplePropertiesEXT> pMultisampleProperties
     );
 
     [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
@@ -45196,10 +45196,10 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceOpticalFlowImageFormatsNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pOpticalFlowImageFormatInfo")]
-            OpticalFlowImageFormatInfoNv* pOpticalFlowImageFormatInfo,
+            OpticalFlowImageFormatInfoNV* pOpticalFlowImageFormatInfo,
         [NativeName("pFormatCount")] uint* pFormatCount,
         [NativeName("pImageFormatProperties")]
-            OpticalFlowImageFormatPropertiesNv* pImageFormatProperties
+            OpticalFlowImageFormatPropertiesNV* pImageFormatProperties
     );
 
     [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
@@ -45216,10 +45216,10 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceOpticalFlowImageFormatsNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pOpticalFlowImageFormatInfo")]
-            Ref<OpticalFlowImageFormatInfoNv> pOpticalFlowImageFormatInfo,
+            Ref<OpticalFlowImageFormatInfoNV> pOpticalFlowImageFormatInfo,
         [NativeName("pFormatCount")] Ref<uint> pFormatCount,
         [NativeName("pImageFormatProperties")]
-            Ref<OpticalFlowImageFormatPropertiesNv> pImageFormatProperties
+            Ref<OpticalFlowImageFormatPropertiesNV> pImageFormatProperties
     );
 
     [NativeName("vkGetPhysicalDevicePresentRectanglesKHR")]
@@ -45232,7 +45232,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
     Result GetPhysicalDevicePresentRectanglesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pRectCount")] uint* pRectCount,
         [NativeName("pRects")] Rect2D* pRects
     );
@@ -45247,7 +45247,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDevicePresentRectanglesKHR")]
     Result GetPhysicalDevicePresentRectanglesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pRectCount")] Ref<uint> pRectCount,
         [NativeName("pRects")] Ref<Rect2D> pRects
     );
@@ -45405,9 +45405,9 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesArm(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pQueueFamilyDataGraphProcessingEngineInfo")]
-            PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoArm* pQueueFamilyDataGraphProcessingEngineInfo,
+            PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM* pQueueFamilyDataGraphProcessingEngineInfo,
         [NativeName("pQueueFamilyDataGraphProcessingEngineProperties")]
-            QueueFamilyDataGraphProcessingEnginePropertiesArm* pQueueFamilyDataGraphProcessingEngineProperties
+            QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
     );
 
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM")]
@@ -45423,9 +45423,9 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesArm(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pQueueFamilyDataGraphProcessingEngineInfo")]
-            Ref<PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoArm> pQueueFamilyDataGraphProcessingEngineInfo,
+            Ref<PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM> pQueueFamilyDataGraphProcessingEngineInfo,
         [NativeName("pQueueFamilyDataGraphProcessingEngineProperties")]
-            Ref<QueueFamilyDataGraphProcessingEnginePropertiesArm> pQueueFamilyDataGraphProcessingEngineProperties
+            Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
     );
 
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
@@ -45440,7 +45440,7 @@ public unsafe partial interface IVk
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
         [NativeName("pQueueFamilyDataGraphPropertyCount")] uint* pQueueFamilyDataGraphPropertyCount,
         [NativeName("pQueueFamilyDataGraphProperties")]
-            QueueFamilyDataGraphPropertiesArm* pQueueFamilyDataGraphProperties
+            QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
     );
 
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
@@ -45456,7 +45456,7 @@ public unsafe partial interface IVk
         [NativeName("pQueueFamilyDataGraphPropertyCount")]
             Ref<uint> pQueueFamilyDataGraphPropertyCount,
         [NativeName("pQueueFamilyDataGraphProperties")]
-            Ref<QueueFamilyDataGraphPropertiesArm> pQueueFamilyDataGraphProperties
+            Ref<QueueFamilyDataGraphPropertiesARM> pQueueFamilyDataGraphProperties
     );
 
     [NativeName("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR")]
@@ -45475,7 +45475,7 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPerformanceQueryCreateInfo")]
-            QueryPoolPerformanceCreateInfoKhr* pPerformanceQueryCreateInfo,
+            QueryPoolPerformanceCreateInfoKHR* pPerformanceQueryCreateInfo,
         [NativeName("pNumPasses")] uint* pNumPasses
     );
 
@@ -45495,7 +45495,7 @@ public unsafe partial interface IVk
     void GetPhysicalDeviceQueueFamilyPerformanceQueryPassesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pPerformanceQueryCreateInfo")]
-            Ref<QueryPoolPerformanceCreateInfoKhr> pPerformanceQueryCreateInfo,
+            Ref<QueryPoolPerformanceCreateInfoKHR> pPerformanceQueryCreateInfo,
         [NativeName("pNumPasses")] Ref<uint> pNumPasses
     );
 
@@ -45821,7 +45821,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pCombinationCount")] uint* pCombinationCount,
-        [NativeName("pCombinations")] FramebufferMixedSamplesCombinationNv* pCombinations
+        [NativeName("pCombinations")] FramebufferMixedSamplesCombinationNV* pCombinations
     );
 
     [NativeName("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
@@ -45840,7 +45840,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNv(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pCombinationCount")] Ref<uint> pCombinationCount,
-        [NativeName("pCombinations")] Ref<FramebufferMixedSamplesCombinationNv> pCombinations
+        [NativeName("pCombinations")] Ref<FramebufferMixedSamplesCombinationNV> pCombinations
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
@@ -45852,8 +45852,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
     Result GetPhysicalDeviceSurfaceCapabilities2Ext(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
-        [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2Ext* pSurfaceCapabilities
+        [NativeName("surface")] SurfaceHandleKHR surface,
+        [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2EXT* pSurfaceCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
@@ -45865,8 +45865,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
     Result GetPhysicalDeviceSurfaceCapabilities2Ext(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
-        [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2Ext> pSurfaceCapabilities
+        [NativeName("surface")] SurfaceHandleKHR surface,
+        [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2EXT> pSurfaceCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
@@ -45878,8 +45878,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
     Result GetPhysicalDeviceSurfaceCapabilities2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2Khr* pSurfaceInfo,
-        [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2Khr* pSurfaceCapabilities
+        [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
+        [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2KHR* pSurfaceCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
@@ -45891,8 +45891,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
     Result GetPhysicalDeviceSurfaceCapabilities2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2Khr> pSurfaceInfo,
-        [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2Khr> pSurfaceCapabilities
+        [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
+        [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2KHR> pSurfaceCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -45900,8 +45900,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
     Result GetPhysicalDeviceSurfaceCapabilitiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
-        [NativeName("pSurfaceCapabilities")] SurfaceCapabilitiesKhr* pSurfaceCapabilities
+        [NativeName("surface")] SurfaceHandleKHR surface,
+        [NativeName("pSurfaceCapabilities")] SurfaceCapabilitiesKHR* pSurfaceCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -45909,8 +45909,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
     Result GetPhysicalDeviceSurfaceCapabilitiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
-        [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilitiesKhr> pSurfaceCapabilities
+        [NativeName("surface")] SurfaceHandleKHR surface,
+        [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilitiesKHR> pSurfaceCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
@@ -45922,9 +45922,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
     Result GetPhysicalDeviceSurfaceFormats2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2Khr* pSurfaceInfo,
+        [NativeName("pSurfaceInfo")] PhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
         [NativeName("pSurfaceFormatCount")] uint* pSurfaceFormatCount,
-        [NativeName("pSurfaceFormats")] SurfaceFormat2Khr* pSurfaceFormats
+        [NativeName("pSurfaceFormats")] SurfaceFormat2KHR* pSurfaceFormats
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
@@ -45936,9 +45936,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormats2KHR")]
     Result GetPhysicalDeviceSurfaceFormats2Khr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2Khr> pSurfaceInfo,
+        [NativeName("pSurfaceInfo")] Ref<PhysicalDeviceSurfaceInfo2KHR> pSurfaceInfo,
         [NativeName("pSurfaceFormatCount")] Ref<uint> pSurfaceFormatCount,
-        [NativeName("pSurfaceFormats")] Ref<SurfaceFormat2Khr> pSurfaceFormats
+        [NativeName("pSurfaceFormats")] Ref<SurfaceFormat2KHR> pSurfaceFormats
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -45946,9 +45946,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
     Result GetPhysicalDeviceSurfaceFormatsKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pSurfaceFormatCount")] uint* pSurfaceFormatCount,
-        [NativeName("pSurfaceFormats")] SurfaceFormatKhr* pSurfaceFormats
+        [NativeName("pSurfaceFormats")] SurfaceFormatKHR* pSurfaceFormats
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -45956,9 +45956,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
     Result GetPhysicalDeviceSurfaceFormatsKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pSurfaceFormatCount")] Ref<uint> pSurfaceFormatCount,
-        [NativeName("pSurfaceFormats")] Ref<SurfaceFormatKhr> pSurfaceFormats
+        [NativeName("pSurfaceFormats")] Ref<SurfaceFormatKHR> pSurfaceFormats
     );
 
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -45966,9 +45966,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
     Result GetPhysicalDeviceSurfacePresentModesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pPresentModeCount")] uint* pPresentModeCount,
-        [NativeName("pPresentModes")] PresentModeKhr* pPresentModes
+        [NativeName("pPresentModes")] PresentModeKHR* pPresentModes
     );
 
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -45976,9 +45976,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
     Result GetPhysicalDeviceSurfacePresentModesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pPresentModeCount")] Ref<uint> pPresentModeCount,
-        [NativeName("pPresentModes")] Ref<PresentModeKhr> pPresentModes
+        [NativeName("pPresentModes")] Ref<PresentModeKHR> pPresentModes
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -45987,7 +45987,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceSurfaceSupportKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pSupported")] uint* pSupported
     );
 
@@ -45997,7 +45997,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceSurfaceSupportKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("queueFamilyIndex")] uint queueFamilyIndex,
-        [NativeName("surface")] SurfaceHandleKhr surface,
+        [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pSupported")] Ref<uint> pSupported
     );
 
@@ -46072,8 +46072,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR")]
     Result GetPhysicalDeviceVideoCapabilitiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pVideoProfile")] VideoProfileInfoKhr* pVideoProfile,
-        [NativeName("pCapabilities")] VideoCapabilitiesKhr* pCapabilities
+        [NativeName("pVideoProfile")] VideoProfileInfoKHR* pVideoProfile,
+        [NativeName("pCapabilities")] VideoCapabilitiesKHR* pCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceVideoCapabilitiesKHR")]
@@ -46085,8 +46085,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoCapabilitiesKHR")]
     Result GetPhysicalDeviceVideoCapabilitiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pVideoProfile")] Ref<VideoProfileInfoKhr> pVideoProfile,
-        [NativeName("pCapabilities")] Ref<VideoCapabilitiesKhr> pCapabilities
+        [NativeName("pVideoProfile")] Ref<VideoProfileInfoKHR> pVideoProfile,
+        [NativeName("pCapabilities")] Ref<VideoCapabilitiesKHR> pCapabilities
     );
 
     [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
@@ -46105,9 +46105,9 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pQualityLevelInfo")]
-            PhysicalDeviceVideoEncodeQualityLevelInfoKhr* pQualityLevelInfo,
+            PhysicalDeviceVideoEncodeQualityLevelInfoKHR* pQualityLevelInfo,
         [NativeName("pQualityLevelProperties")]
-            VideoEncodeQualityLevelPropertiesKhr* pQualityLevelProperties
+            VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties
     );
 
     [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
@@ -46126,9 +46126,9 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceVideoEncodeQualityLevelPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pQualityLevelInfo")]
-            Ref<PhysicalDeviceVideoEncodeQualityLevelInfoKhr> pQualityLevelInfo,
+            Ref<PhysicalDeviceVideoEncodeQualityLevelInfoKHR> pQualityLevelInfo,
         [NativeName("pQualityLevelProperties")]
-            Ref<VideoEncodeQualityLevelPropertiesKhr> pQualityLevelProperties
+            Ref<VideoEncodeQualityLevelPropertiesKHR> pQualityLevelProperties
     );
 
     [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
@@ -46140,9 +46140,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
     Result GetPhysicalDeviceVideoFormatPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pVideoFormatInfo")] PhysicalDeviceVideoFormatInfoKhr* pVideoFormatInfo,
+        [NativeName("pVideoFormatInfo")] PhysicalDeviceVideoFormatInfoKHR* pVideoFormatInfo,
         [NativeName("pVideoFormatPropertyCount")] uint* pVideoFormatPropertyCount,
-        [NativeName("pVideoFormatProperties")] VideoFormatPropertiesKhr* pVideoFormatProperties
+        [NativeName("pVideoFormatProperties")] VideoFormatPropertiesKHR* pVideoFormatProperties
     );
 
     [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
@@ -46154,9 +46154,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
     Result GetPhysicalDeviceVideoFormatPropertiesKhr(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("pVideoFormatInfo")] Ref<PhysicalDeviceVideoFormatInfoKhr> pVideoFormatInfo,
+        [NativeName("pVideoFormatInfo")] Ref<PhysicalDeviceVideoFormatInfoKHR> pVideoFormatInfo,
         [NativeName("pVideoFormatPropertyCount")] Ref<uint> pVideoFormatPropertyCount,
-        [NativeName("pVideoFormatProperties")] Ref<VideoFormatPropertiesKhr> pVideoFormatProperties
+        [NativeName("pVideoFormatProperties")] Ref<VideoFormatPropertiesKHR> pVideoFormatProperties
     );
 
     [NativeName("vkGetPipelineBinaryDataKHR")]
@@ -46171,8 +46171,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineBinaryDataKHR")]
     Result GetPipelineBinaryDataKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] PipelineBinaryDataInfoKhr* pInfo,
-        [NativeName("pPipelineBinaryKey")] PipelineBinaryKeyKhr* pPipelineBinaryKey,
+        [NativeName("pInfo")] PipelineBinaryDataInfoKHR* pInfo,
+        [NativeName("pPipelineBinaryKey")] PipelineBinaryKeyKHR* pPipelineBinaryKey,
         [NativeName("pPipelineBinaryDataSize")] nuint* pPipelineBinaryDataSize,
         [NativeName("pPipelineBinaryData")] void* pPipelineBinaryData
     );
@@ -46189,8 +46189,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineBinaryDataKHR")]
     Result GetPipelineBinaryDataKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<PipelineBinaryDataInfoKhr> pInfo,
-        [NativeName("pPipelineBinaryKey")] Ref<PipelineBinaryKeyKhr> pPipelineBinaryKey,
+        [NativeName("pInfo")] Ref<PipelineBinaryDataInfoKHR> pInfo,
+        [NativeName("pPipelineBinaryKey")] Ref<PipelineBinaryKeyKHR> pPipelineBinaryKey,
         [NativeName("pPipelineBinaryDataSize")] Ref<nuint> pPipelineBinaryDataSize,
         [NativeName("pPipelineBinaryData")] Ref pPipelineBinaryData
     );
@@ -46267,10 +46267,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
     Result GetPipelineExecutableInternalRepresentationsKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pExecutableInfo")] PipelineExecutableInfoKhr* pExecutableInfo,
+        [NativeName("pExecutableInfo")] PipelineExecutableInfoKHR* pExecutableInfo,
         [NativeName("pInternalRepresentationCount")] uint* pInternalRepresentationCount,
         [NativeName("pInternalRepresentations")]
-            PipelineExecutableInternalRepresentationKhr* pInternalRepresentations
+            PipelineExecutableInternalRepresentationKHR* pInternalRepresentations
     );
 
     [NativeName("vkGetPipelineExecutableInternalRepresentationsKHR")]
@@ -46285,10 +46285,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
     Result GetPipelineExecutableInternalRepresentationsKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKhr> pExecutableInfo,
+        [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKHR> pExecutableInfo,
         [NativeName("pInternalRepresentationCount")] Ref<uint> pInternalRepresentationCount,
         [NativeName("pInternalRepresentations")]
-            Ref<PipelineExecutableInternalRepresentationKhr> pInternalRepresentations
+            Ref<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations
     );
 
     [NativeName("vkGetPipelineExecutablePropertiesKHR")]
@@ -46303,9 +46303,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
     Result GetPipelineExecutablePropertiesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] PipelineInfoKhr* pPipelineInfo,
+        [NativeName("pPipelineInfo")] PipelineInfoKHR* pPipelineInfo,
         [NativeName("pExecutableCount")] uint* pExecutableCount,
-        [NativeName("pProperties")] PipelineExecutablePropertiesKhr* pProperties
+        [NativeName("pProperties")] PipelineExecutablePropertiesKHR* pProperties
     );
 
     [NativeName("vkGetPipelineExecutablePropertiesKHR")]
@@ -46320,9 +46320,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
     Result GetPipelineExecutablePropertiesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] Ref<PipelineInfoKhr> pPipelineInfo,
+        [NativeName("pPipelineInfo")] Ref<PipelineInfoKHR> pPipelineInfo,
         [NativeName("pExecutableCount")] Ref<uint> pExecutableCount,
-        [NativeName("pProperties")] Ref<PipelineExecutablePropertiesKhr> pProperties
+        [NativeName("pProperties")] Ref<PipelineExecutablePropertiesKHR> pProperties
     );
 
     [NativeName("vkGetPipelineExecutableStatisticsKHR")]
@@ -46337,9 +46337,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
     Result GetPipelineExecutableStatisticsKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pExecutableInfo")] PipelineExecutableInfoKhr* pExecutableInfo,
+        [NativeName("pExecutableInfo")] PipelineExecutableInfoKHR* pExecutableInfo,
         [NativeName("pStatisticCount")] uint* pStatisticCount,
-        [NativeName("pStatistics")] PipelineExecutableStatisticKhr* pStatistics
+        [NativeName("pStatistics")] PipelineExecutableStatisticKHR* pStatistics
     );
 
     [NativeName("vkGetPipelineExecutableStatisticsKHR")]
@@ -46354,9 +46354,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
     Result GetPipelineExecutableStatisticsKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKhr> pExecutableInfo,
+        [NativeName("pExecutableInfo")] Ref<PipelineExecutableInfoKHR> pExecutableInfo,
         [NativeName("pStatisticCount")] Ref<uint> pStatisticCount,
-        [NativeName("pStatistics")] Ref<PipelineExecutableStatisticKhr> pStatistics
+        [NativeName("pStatistics")] Ref<PipelineExecutableStatisticKHR> pStatistics
     );
 
     [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
@@ -46368,7 +46368,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
     ulong GetPipelineIndirectDeviceAddressNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] PipelineIndirectDeviceAddressInfoNv* pInfo
+        [NativeName("pInfo")] PipelineIndirectDeviceAddressInfoNV* pInfo
     );
 
     [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
@@ -46380,7 +46380,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineIndirectDeviceAddressNV")]
     ulong GetPipelineIndirectDeviceAddressNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<PipelineIndirectDeviceAddressInfoNv> pInfo
+        [NativeName("pInfo")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
     );
 
     [NativeName("vkGetPipelineIndirectMemoryRequirementsNV")]
@@ -46421,8 +46421,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineKeyKHR")]
     Result GetPipelineKeyKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineCreateInfo")] PipelineCreateInfoKhr* pPipelineCreateInfo,
-        [NativeName("pPipelineKey")] PipelineBinaryKeyKhr* pPipelineKey
+        [NativeName("pPipelineCreateInfo")] PipelineCreateInfoKHR* pPipelineCreateInfo,
+        [NativeName("pPipelineKey")] PipelineBinaryKeyKHR* pPipelineKey
     );
 
     [NativeName("vkGetPipelineKeyKHR")]
@@ -46437,8 +46437,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelineKeyKHR")]
     Result GetPipelineKeyKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineCreateInfo")] Ref<PipelineCreateInfoKhr> pPipelineCreateInfo,
-        [NativeName("pPipelineKey")] Ref<PipelineBinaryKeyKhr> pPipelineKey
+        [NativeName("pPipelineCreateInfo")] Ref<PipelineCreateInfoKHR> pPipelineCreateInfo,
+        [NativeName("pPipelineKey")] Ref<PipelineBinaryKeyKHR> pPipelineKey
     );
 
     [NativeName("vkGetPipelinePropertiesEXT")]
@@ -46453,7 +46453,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelinePropertiesEXT")]
     Result GetPipelinePropertiesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] PipelineInfoKhr* pPipelineInfo,
+        [NativeName("pPipelineInfo")] PipelineInfoKHR* pPipelineInfo,
         [NativeName("pPipelineProperties")] BaseOutStructure* pPipelineProperties
     );
 
@@ -46469,7 +46469,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetPipelinePropertiesEXT")]
     Result GetPipelinePropertiesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pPipelineInfo")] Ref<PipelineInfoKhr> pPipelineInfo,
+        [NativeName("pPipelineInfo")] Ref<PipelineInfoKHR> pPipelineInfo,
         [NativeName("pPipelineProperties")] Ref<BaseOutStructure> pPipelineProperties
     );
 
@@ -46651,7 +46651,7 @@ public unsafe partial interface IVk
     void GetQueueCheckpointData2Nv(
         [NativeName("queue")] QueueHandle queue,
         [NativeName("pCheckpointDataCount")] uint* pCheckpointDataCount,
-        [NativeName("pCheckpointData")] CheckpointData2Nv* pCheckpointData
+        [NativeName("pCheckpointData")] CheckpointData2NV* pCheckpointData
     );
 
     [NativeName("vkGetQueueCheckpointData2NV")]
@@ -46670,7 +46670,7 @@ public unsafe partial interface IVk
     void GetQueueCheckpointData2Nv(
         [NativeName("queue")] QueueHandle queue,
         [NativeName("pCheckpointDataCount")] Ref<uint> pCheckpointDataCount,
-        [NativeName("pCheckpointData")] Ref<CheckpointData2Nv> pCheckpointData
+        [NativeName("pCheckpointData")] Ref<CheckpointData2NV> pCheckpointData
     );
 
     [NativeName("vkGetQueueCheckpointDataNV")]
@@ -46686,7 +46686,7 @@ public unsafe partial interface IVk
     void GetQueueCheckpointDataNv(
         [NativeName("queue")] QueueHandle queue,
         [NativeName("pCheckpointDataCount")] uint* pCheckpointDataCount,
-        [NativeName("pCheckpointData")] CheckpointDataNv* pCheckpointData
+        [NativeName("pCheckpointData")] CheckpointDataNV* pCheckpointData
     );
 
     [NativeName("vkGetQueueCheckpointDataNV")]
@@ -46702,7 +46702,7 @@ public unsafe partial interface IVk
     void GetQueueCheckpointDataNv(
         [NativeName("queue")] QueueHandle queue,
         [NativeName("pCheckpointDataCount")] Ref<uint> pCheckpointDataCount,
-        [NativeName("pCheckpointData")] Ref<CheckpointDataNv> pCheckpointData
+        [NativeName("pCheckpointData")] Ref<CheckpointDataNV> pCheckpointData
     );
 
     [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
@@ -46833,7 +46833,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("pipeline")] PipelineHandle pipeline,
         [NativeName("group")] uint group,
-        [NativeName("groupShader")] ShaderGroupShaderKhr groupShader
+        [NativeName("groupShader")] ShaderGroupShaderKHR groupShader
     );
 
     [NativeName("vkGetRefreshCycleDurationGOOGLE")]
@@ -46845,9 +46845,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetRefreshCycleDurationGOOGLE")]
     Result GetRefreshCycleDurationGoogle(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pDisplayTimingProperties")]
-            RefreshCycleDurationGoogle* pDisplayTimingProperties
+            RefreshCycleDurationGOOGLE* pDisplayTimingProperties
     );
 
     [NativeName("vkGetRefreshCycleDurationGOOGLE")]
@@ -46859,9 +46859,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetRefreshCycleDurationGOOGLE")]
     Result GetRefreshCycleDurationGoogle(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pDisplayTimingProperties")]
-            Ref<RefreshCycleDurationGoogle> pDisplayTimingProperties
+            Ref<RefreshCycleDurationGOOGLE> pDisplayTimingProperties
     );
 
     [NativeName("vkGetRenderAreaGranularity")]
@@ -46978,7 +46978,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
     Result GetSamplerOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] SamplerCaptureDescriptorDataInfoExt* pInfo,
+        [NativeName("pInfo")] SamplerCaptureDescriptorDataInfoEXT* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -46996,7 +46996,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
     Result GetSamplerOpaqueCaptureDescriptorDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<SamplerCaptureDescriptorDataInfoExt> pInfo,
+        [NativeName("pInfo")] Ref<SamplerCaptureDescriptorDataInfoEXT> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -47096,7 +47096,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreFdKHR")]
     Result GetSemaphoreFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pGetFdInfo")] SemaphoreGetFdInfoKhr* pGetFdInfo,
+        [NativeName("pGetFdInfo")] SemaphoreGetFdInfoKHR* pGetFdInfo,
         [NativeName("pFd")] int* pFd
     );
 
@@ -47112,7 +47112,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSemaphoreFdKHR")]
     Result GetSemaphoreFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pGetFdInfo")] Ref<SemaphoreGetFdInfoKhr> pGetFdInfo,
+        [NativeName("pGetFdInfo")] Ref<SemaphoreGetFdInfoKHR> pGetFdInfo,
         [NativeName("pFd")] Ref<int> pFd
     );
 
@@ -47129,7 +47129,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetShaderBinaryDataEXT")]
     Result GetShaderBinaryDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("shader")] ShaderHandleExt shader,
+        [NativeName("shader")] ShaderHandleEXT shader,
         [NativeName("pDataSize")] nuint* pDataSize,
         [NativeName("pData")] void* pData
     );
@@ -47147,7 +47147,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetShaderBinaryDataEXT")]
     Result GetShaderBinaryDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("shader")] ShaderHandleExt shader,
+        [NativeName("shader")] ShaderHandleEXT shader,
         [NativeName("pDataSize")] Ref<nuint> pDataSize,
         [NativeName("pData")] Ref pData
     );
@@ -47159,7 +47159,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("pipeline")] PipelineHandle pipeline,
         [NativeName("shaderStage")] ShaderStageFlags shaderStage,
-        [NativeName("infoType")] ShaderInfoTypeAmd infoType,
+        [NativeName("infoType")] ShaderInfoTypeAMD infoType,
         [NativeName("pInfoSize")] nuint* pInfoSize,
         [NativeName("pInfo")] void* pInfo
     );
@@ -47171,7 +47171,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("pipeline")] PipelineHandle pipeline,
         [NativeName("shaderStage")] ShaderStageFlags shaderStage,
-        [NativeName("infoType")] ShaderInfoTypeAmd infoType,
+        [NativeName("infoType")] ShaderInfoTypeAMD infoType,
         [NativeName("pInfoSize")] Ref<nuint> pInfoSize,
         [NativeName("pInfo")] Ref pInfo
     );
@@ -47190,7 +47190,7 @@ public unsafe partial interface IVk
     void GetShaderModuleCreateInfoIdentifierExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pCreateInfo")] ShaderModuleCreateInfo* pCreateInfo,
-        [NativeName("pIdentifier")] ShaderModuleIdentifierExt* pIdentifier
+        [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
     );
 
     [NativeName("vkGetShaderModuleCreateInfoIdentifierEXT")]
@@ -47207,7 +47207,7 @@ public unsafe partial interface IVk
     void GetShaderModuleCreateInfoIdentifierExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pCreateInfo")] Ref<ShaderModuleCreateInfo> pCreateInfo,
-        [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierExt> pIdentifier
+        [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
     );
 
     [NativeName("vkGetShaderModuleIdentifierEXT")]
@@ -47224,7 +47224,7 @@ public unsafe partial interface IVk
     void GetShaderModuleIdentifierExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("shaderModule")] ShaderModuleHandle shaderModule,
-        [NativeName("pIdentifier")] ShaderModuleIdentifierExt* pIdentifier
+        [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
     );
 
     [NativeName("vkGetShaderModuleIdentifierEXT")]
@@ -47241,7 +47241,7 @@ public unsafe partial interface IVk
     void GetShaderModuleIdentifierExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("shaderModule")] ShaderModuleHandle shaderModule,
-        [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierExt> pIdentifier
+        [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
     );
 
     [NativeName("vkGetSwapchainCounterEXT")]
@@ -47253,8 +47253,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
     Result GetSwapchainCounterExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("counter")] SurfaceCounterFlagsExt counter,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("counter")] SurfaceCounterFlagsEXT counter,
         [NativeName("pCounterValue")] ulong* pCounterValue
     );
 
@@ -47267,8 +47267,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainCounterEXT")]
     Result GetSwapchainCounterExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("counter")] SurfaceCounterFlagsExt counter,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("counter")] SurfaceCounterFlagsEXT counter,
         [NativeName("pCounterValue")] Ref<ulong> pCounterValue
     );
 
@@ -47277,7 +47277,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
     Result GetSwapchainImagesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pSwapchainImageCount")] uint* pSwapchainImageCount,
         [NativeName("pSwapchainImages")] ImageHandle* pSwapchainImages
     );
@@ -47287,7 +47287,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
     Result GetSwapchainImagesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("pSwapchainImageCount")] Ref<uint> pSwapchainImageCount,
         [NativeName("pSwapchainImages")] Ref<ImageHandle> pSwapchainImages
     );
@@ -47304,7 +47304,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainStatusKHR")]
     Result GetSwapchainStatusKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain
     );
 
     [NativeName("vkGetTensorMemoryRequirementsARM")]
@@ -47312,7 +47312,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
     void GetTensorMemoryRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] TensorMemoryRequirementsInfoArm* pInfo,
+        [NativeName("pInfo")] TensorMemoryRequirementsInfoARM* pInfo,
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
@@ -47321,7 +47321,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
     void GetTensorMemoryRequirementsArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<TensorMemoryRequirementsInfoArm> pInfo,
+        [NativeName("pInfo")] Ref<TensorMemoryRequirementsInfoARM> pInfo,
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
@@ -47335,7 +47335,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
     Result GetTensorOpaqueCaptureDescriptorDataArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] TensorCaptureDescriptorDataInfoArm* pInfo,
+        [NativeName("pInfo")] TensorCaptureDescriptorDataInfoARM* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -47349,7 +47349,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorOpaqueCaptureDescriptorDataARM")]
     Result GetTensorOpaqueCaptureDescriptorDataArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<TensorCaptureDescriptorDataInfoArm> pInfo,
+        [NativeName("pInfo")] Ref<TensorCaptureDescriptorDataInfoARM> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -47363,7 +47363,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
     Result GetTensorViewOpaqueCaptureDescriptorDataArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] TensorViewCaptureDescriptorDataInfoArm* pInfo,
+        [NativeName("pInfo")] TensorViewCaptureDescriptorDataInfoARM* pInfo,
         [NativeName("pData")] void* pData
     );
 
@@ -47377,7 +47377,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
     Result GetTensorViewOpaqueCaptureDescriptorDataArm(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<TensorViewCaptureDescriptorDataInfoArm> pInfo,
+        [NativeName("pInfo")] Ref<TensorViewCaptureDescriptorDataInfoARM> pInfo,
         [NativeName("pData")] Ref pData
     );
 
@@ -47386,7 +47386,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
     Result GetValidationCacheDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+        [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
         [NativeName("pDataSize")] nuint* pDataSize,
         [NativeName("pData")] void* pData
     );
@@ -47396,7 +47396,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
     Result GetValidationCacheDataExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("validationCache")] ValidationCacheHandleExt validationCache,
+        [NativeName("validationCache")] ValidationCacheHandleEXT validationCache,
         [NativeName("pDataSize")] Ref<nuint> pDataSize,
         [NativeName("pData")] Ref pData
     );
@@ -47410,9 +47410,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR")]
     Result GetVideoSessionMemoryRequirementsKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+        [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
         [NativeName("pMemoryRequirementsCount")] uint* pMemoryRequirementsCount,
-        [NativeName("pMemoryRequirements")] VideoSessionMemoryRequirementsKhr* pMemoryRequirements
+        [NativeName("pMemoryRequirements")] VideoSessionMemoryRequirementsKHR* pMemoryRequirements
     );
 
     [NativeName("vkGetVideoSessionMemoryRequirementsKHR")]
@@ -47424,10 +47424,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkGetVideoSessionMemoryRequirementsKHR")]
     Result GetVideoSessionMemoryRequirementsKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("videoSession")] VideoSessionHandleKhr videoSession,
+        [NativeName("videoSession")] VideoSessionHandleKHR videoSession,
         [NativeName("pMemoryRequirementsCount")] Ref<uint> pMemoryRequirementsCount,
         [NativeName("pMemoryRequirements")]
-            Ref<VideoSessionMemoryRequirementsKhr> pMemoryRequirements
+            Ref<VideoSessionMemoryRequirementsKHR> pMemoryRequirements
     );
 
     [NativeName("vkImportFenceFdKHR")]
@@ -47442,7 +47442,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkImportFenceFdKHR")]
     Result ImportFenceFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pImportFenceFdInfo")] ImportFenceFdInfoKhr* pImportFenceFdInfo
+        [NativeName("pImportFenceFdInfo")] ImportFenceFdInfoKHR* pImportFenceFdInfo
     );
 
     [NativeName("vkImportFenceFdKHR")]
@@ -47457,7 +47457,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkImportFenceFdKHR")]
     Result ImportFenceFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pImportFenceFdInfo")] Ref<ImportFenceFdInfoKhr> pImportFenceFdInfo
+        [NativeName("pImportFenceFdInfo")] Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
     );
 
     [NativeName("vkImportSemaphoreFdKHR")]
@@ -47472,7 +47472,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreFdKHR")]
     Result ImportSemaphoreFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pImportSemaphoreFdInfo")] ImportSemaphoreFdInfoKhr* pImportSemaphoreFdInfo
+        [NativeName("pImportSemaphoreFdInfo")] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo
     );
 
     [NativeName("vkImportSemaphoreFdKHR")]
@@ -47487,7 +47487,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkImportSemaphoreFdKHR")]
     Result ImportSemaphoreFdKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pImportSemaphoreFdInfo")] Ref<ImportSemaphoreFdInfoKhr> pImportSemaphoreFdInfo
+        [NativeName("pImportSemaphoreFdInfo")] Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
     );
 
     [NativeName("vkInitializePerformanceApiINTEL")]
@@ -47495,7 +47495,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
     Result InitializePerformanceApiIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInitializeInfo")] InitializePerformanceApiInfoIntel* pInitializeInfo
+        [NativeName("pInitializeInfo")] InitializePerformanceApiInfoINTEL* pInitializeInfo
     );
 
     [NativeName("vkInitializePerformanceApiINTEL")]
@@ -47503,7 +47503,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
     Result InitializePerformanceApiIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInitializeInfo")] Ref<InitializePerformanceApiInfoIntel> pInitializeInfo
+        [NativeName("pInitializeInfo")] Ref<InitializePerformanceApiInfoINTEL> pInitializeInfo
     );
 
     [NativeName("vkInvalidateMappedMemoryRanges")]
@@ -47588,8 +47588,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkLatencySleepNV")]
     Result LatencySleepNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pSleepInfo")] LatencySleepInfoNv* pSleepInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pSleepInfo")] LatencySleepInfoNV* pSleepInfo
     );
 
     [NativeName("vkLatencySleepNV")]
@@ -47606,8 +47606,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkLatencySleepNV")]
     Result LatencySleepNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pSleepInfo")] Ref<LatencySleepInfoNv> pSleepInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pSleepInfo")] Ref<LatencySleepInfoNV> pSleepInfo
     );
 
     [NativeName("vkMapMemory")]
@@ -47803,9 +47803,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
     Result MergeValidationCachesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("dstCache")] ValidationCacheHandleExt dstCache,
+        [NativeName("dstCache")] ValidationCacheHandleEXT dstCache,
         [NativeName("srcCacheCount")] uint srcCacheCount,
-        [NativeName("pSrcCaches")] ValidationCacheHandleExt* pSrcCaches
+        [NativeName("pSrcCaches")] ValidationCacheHandleEXT* pSrcCaches
     );
 
     [NativeName("vkMergeValidationCachesEXT")]
@@ -47813,9 +47813,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
     Result MergeValidationCachesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("dstCache")] ValidationCacheHandleExt dstCache,
+        [NativeName("dstCache")] ValidationCacheHandleEXT dstCache,
         [NativeName("srcCacheCount")] uint srcCacheCount,
-        [NativeName("pSrcCaches")] Ref<ValidationCacheHandleExt> pSrcCaches
+        [NativeName("pSrcCaches")] Ref<ValidationCacheHandleEXT> pSrcCaches
     );
 
     [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
@@ -47823,7 +47823,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
     void QueueBeginDebugUtilsLabelExt(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+        [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
     [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
@@ -47831,7 +47831,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
     void QueueBeginDebugUtilsLabelExt(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
     );
 
     [NativeName("vkQueueBindSparse")]
@@ -47914,7 +47914,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
     void QueueInsertDebugUtilsLabelExt(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pLabelInfo")] DebugUtilsLabelExt* pLabelInfo
+        [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
     [NativeName("vkQueueInsertDebugUtilsLabelEXT")]
@@ -47922,7 +47922,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
     void QueueInsertDebugUtilsLabelExt(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelExt> pLabelInfo
+        [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
     );
 
     [NativeName("vkQueueNotifyOutOfBandNV")]
@@ -47939,7 +47939,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueNotifyOutOfBandNV")]
     void QueueNotifyOutOfBandNv(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pQueueTypeInfo")] OutOfBandQueueTypeInfoNv* pQueueTypeInfo
+        [NativeName("pQueueTypeInfo")] OutOfBandQueueTypeInfoNV* pQueueTypeInfo
     );
 
     [NativeName("vkQueueNotifyOutOfBandNV")]
@@ -47956,7 +47956,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueNotifyOutOfBandNV")]
     void QueueNotifyOutOfBandNv(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pQueueTypeInfo")] Ref<OutOfBandQueueTypeInfoNv> pQueueTypeInfo
+        [NativeName("pQueueTypeInfo")] Ref<OutOfBandQueueTypeInfoNV> pQueueTypeInfo
     );
 
     [NativeName("vkQueuePresentKHR")]
@@ -47964,7 +47964,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
     Result QueuePresentKhr(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pPresentInfo")] PresentInfoKhr* pPresentInfo
+        [NativeName("pPresentInfo")] PresentInfoKHR* pPresentInfo
     );
 
     [NativeName("vkQueuePresentKHR")]
@@ -47972,7 +47972,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
     Result QueuePresentKhr(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("pPresentInfo")] Ref<PresentInfoKhr> pPresentInfo
+        [NativeName("pPresentInfo")] Ref<PresentInfoKHR> pPresentInfo
     );
 
     [NativeName("vkQueueSetPerformanceConfigurationINTEL")]
@@ -47980,7 +47980,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueSetPerformanceConfigurationINTEL")]
     Result QueueSetPerformanceConfigurationIntel(
         [NativeName("queue")] QueueHandle queue,
-        [NativeName("configuration")] PerformanceConfigurationHandleIntel configuration
+        [NativeName("configuration")] PerformanceConfigurationHandleINTEL configuration
     );
 
     [NativeName("vkQueueSubmit")]
@@ -48172,7 +48172,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkRegisterDeviceEventEXT")]
     Result RegisterDeviceEventExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pDeviceEventInfo")] DeviceEventInfoExt* pDeviceEventInfo,
+        [NativeName("pDeviceEventInfo")] DeviceEventInfoEXT* pDeviceEventInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pFence")] FenceHandle* pFence
     );
@@ -48186,7 +48186,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkRegisterDeviceEventEXT")]
     Result RegisterDeviceEventExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pDeviceEventInfo")] Ref<DeviceEventInfoExt> pDeviceEventInfo,
+        [NativeName("pDeviceEventInfo")] Ref<DeviceEventInfoEXT> pDeviceEventInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pFence")] Ref<FenceHandle> pFence
     );
@@ -48200,8 +48200,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkRegisterDisplayEventEXT")]
     Result RegisterDisplayEventExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("display")] DisplayHandleKhr display,
-        [NativeName("pDisplayEventInfo")] DisplayEventInfoExt* pDisplayEventInfo,
+        [NativeName("display")] DisplayHandleKHR display,
+        [NativeName("pDisplayEventInfo")] DisplayEventInfoEXT* pDisplayEventInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator,
         [NativeName("pFence")] FenceHandle* pFence
     );
@@ -48215,8 +48215,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkRegisterDisplayEventEXT")]
     Result RegisterDisplayEventExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("display")] DisplayHandleKhr display,
-        [NativeName("pDisplayEventInfo")] Ref<DisplayEventInfoExt> pDisplayEventInfo,
+        [NativeName("display")] DisplayHandleKHR display,
+        [NativeName("pDisplayEventInfo")] Ref<DisplayEventInfoEXT> pDisplayEventInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator,
         [NativeName("pFence")] Ref<FenceHandle> pFence
     );
@@ -48233,7 +48233,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseCapturedPipelineDataKHR")]
     Result ReleaseCapturedPipelineDataKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] ReleaseCapturedPipelineDataInfoKhr* pInfo,
+        [NativeName("pInfo")] ReleaseCapturedPipelineDataInfoKHR* pInfo,
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
@@ -48249,7 +48249,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseCapturedPipelineDataKHR")]
     Result ReleaseCapturedPipelineDataKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pInfo")] Ref<ReleaseCapturedPipelineDataInfoKhr> pInfo,
+        [NativeName("pInfo")] Ref<ReleaseCapturedPipelineDataInfoKHR> pInfo,
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
@@ -48262,7 +48262,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseDisplayEXT")]
     Result ReleaseDisplayExt(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
-        [NativeName("display")] DisplayHandleKhr display
+        [NativeName("display")] DisplayHandleKHR display
     );
 
     [NativeName("vkReleasePerformanceConfigurationINTEL")]
@@ -48270,7 +48270,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
     Result ReleasePerformanceConfigurationIntel(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("configuration")] PerformanceConfigurationHandleIntel configuration
+        [NativeName("configuration")] PerformanceConfigurationHandleINTEL configuration
     );
 
     [NativeName("vkReleaseProfilingLockKHR")]
@@ -48297,7 +48297,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
     Result ReleaseSwapchainImagesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKhr* pReleaseInfo
+        [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
     );
 
     [NativeName("vkReleaseSwapchainImagesEXT")]
@@ -48312,7 +48312,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesEXT")]
     Result ReleaseSwapchainImagesExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKhr> pReleaseInfo
+        [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
     );
 
     [NativeName("vkReleaseSwapchainImagesKHR")]
@@ -48328,7 +48328,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
     Result ReleaseSwapchainImagesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKhr* pReleaseInfo
+        [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
     );
 
     [NativeName("vkReleaseSwapchainImagesKHR")]
@@ -48344,7 +48344,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseSwapchainImagesKHR")]
     Result ReleaseSwapchainImagesKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKhr> pReleaseInfo
+        [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
     );
 
     [NativeName("vkResetCommandBuffer")]
@@ -48588,7 +48588,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
     Result SetDebugUtilsObjectNameExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pNameInfo")] DebugUtilsObjectNameInfoExt* pNameInfo
+        [NativeName("pNameInfo")] DebugUtilsObjectNameInfoEXT* pNameInfo
     );
 
     [NativeName("vkSetDebugUtilsObjectNameEXT")]
@@ -48596,7 +48596,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
     Result SetDebugUtilsObjectNameExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pNameInfo")] Ref<DebugUtilsObjectNameInfoExt> pNameInfo
+        [NativeName("pNameInfo")] Ref<DebugUtilsObjectNameInfoEXT> pNameInfo
     );
 
     [NativeName("vkSetDebugUtilsObjectTagEXT")]
@@ -48604,7 +48604,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
     Result SetDebugUtilsObjectTagExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pTagInfo")] DebugUtilsObjectTagInfoExt* pTagInfo
+        [NativeName("pTagInfo")] DebugUtilsObjectTagInfoEXT* pTagInfo
     );
 
     [NativeName("vkSetDebugUtilsObjectTagEXT")]
@@ -48612,7 +48612,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
     Result SetDebugUtilsObjectTagExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("pTagInfo")] Ref<DebugUtilsObjectTagInfoExt> pTagInfo
+        [NativeName("pTagInfo")] Ref<DebugUtilsObjectTagInfoEXT> pTagInfo
     );
 
     [NativeName("vkSetDeviceMemoryPriorityEXT")]
@@ -48662,8 +48662,8 @@ public unsafe partial interface IVk
     void SetHdrMetadataExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("swapchainCount")] uint swapchainCount,
-        [NativeName("pSwapchains")] SwapchainHandleKhr* pSwapchains,
-        [NativeName("pMetadata")] HdrMetadataExt* pMetadata
+        [NativeName("pSwapchains")] SwapchainHandleKHR* pSwapchains,
+        [NativeName("pMetadata")] HdrMetadataEXT* pMetadata
     );
 
     [NativeName("vkSetHdrMetadataEXT")]
@@ -48672,8 +48672,8 @@ public unsafe partial interface IVk
     void SetHdrMetadataExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("swapchainCount")] uint swapchainCount,
-        [NativeName("pSwapchains")] Ref<SwapchainHandleKhr> pSwapchains,
-        [NativeName("pMetadata")] Ref<HdrMetadataExt> pMetadata
+        [NativeName("pSwapchains")] Ref<SwapchainHandleKHR> pSwapchains,
+        [NativeName("pMetadata")] Ref<HdrMetadataEXT> pMetadata
     );
 
     [NativeName("vkSetLatencyMarkerNV")]
@@ -48690,8 +48690,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetLatencyMarkerNV")]
     void SetLatencyMarkerNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pLatencyMarkerInfo")] SetLatencyMarkerInfoNv* pLatencyMarkerInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pLatencyMarkerInfo")] SetLatencyMarkerInfoNV* pLatencyMarkerInfo
     );
 
     [NativeName("vkSetLatencyMarkerNV")]
@@ -48708,8 +48708,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetLatencyMarkerNV")]
     void SetLatencyMarkerNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pLatencyMarkerInfo")] Ref<SetLatencyMarkerInfoNv> pLatencyMarkerInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pLatencyMarkerInfo")] Ref<SetLatencyMarkerInfoNV> pLatencyMarkerInfo
     );
 
     [NativeName("vkSetLatencySleepModeNV")]
@@ -48726,8 +48726,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetLatencySleepModeNV")]
     Result SetLatencySleepModeNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pSleepModeInfo")] LatencySleepModeInfoNv* pSleepModeInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pSleepModeInfo")] LatencySleepModeInfoNV* pSleepModeInfo
     );
 
     [NativeName("vkSetLatencySleepModeNV")]
@@ -48744,8 +48744,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetLatencySleepModeNV")]
     Result SetLatencySleepModeNv(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pSleepModeInfo")] Ref<LatencySleepModeInfoNv> pSleepModeInfo
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pSleepModeInfo")] Ref<LatencySleepModeInfoNV> pSleepModeInfo
     );
 
     [NativeName("vkSetLocalDimmingAMD")]
@@ -48760,7 +48760,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetLocalDimmingAMD")]
     void SetLocalDimmingAmd(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapChain")] SwapchainHandleKhr swapChain,
+        [NativeName("swapChain")] SwapchainHandleKHR swapChain,
         [NativeName("localDimmingEnable")] uint localDimmingEnable
     );
 
@@ -48776,7 +48776,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSetLocalDimmingAMD")]
     void SetLocalDimmingAmd(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapChain")] SwapchainHandleKhr swapChain,
+        [NativeName("swapChain")] SwapchainHandleKHR swapChain,
         [NativeName("localDimmingEnable")] MaybeBool<uint> localDimmingEnable
     );
 
@@ -48907,9 +48907,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
     void SubmitDebugUtilsMessageExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsExt messageSeverity,
-        [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsExt messageTypes,
-        [NativeName("pCallbackData")] DebugUtilsMessengerCallbackDataExt* pCallbackData
+        [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+        [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsEXT messageTypes,
+        [NativeName("pCallbackData")] DebugUtilsMessengerCallbackDataEXT* pCallbackData
     );
 
     [NativeName("vkSubmitDebugUtilsMessageEXT")]
@@ -48917,9 +48917,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
     void SubmitDebugUtilsMessageExt(
         [NativeName("instance")] InstanceHandle instance,
-        [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsExt messageSeverity,
-        [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsExt messageTypes,
-        [NativeName("pCallbackData")] Ref<DebugUtilsMessengerCallbackDataExt> pCallbackData
+        [NativeName("messageSeverity")] DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+        [NativeName("messageTypes")] DebugUtilsMessageTypeFlagsEXT messageTypes,
+        [NativeName("pCallbackData")] Ref<DebugUtilsMessengerCallbackDataEXT> pCallbackData
     );
 
     [NativeName("vkTransitionImageLayout")]
@@ -49272,10 +49272,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT")]
     void UpdateIndirectExecutionSetPipelineExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
         [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
         [NativeName("pExecutionSetWrites")]
-            WriteIndirectExecutionSetPipelineExt* pExecutionSetWrites
+            WriteIndirectExecutionSetPipelineEXT* pExecutionSetWrites
     );
 
     [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
@@ -49291,10 +49291,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT")]
     void UpdateIndirectExecutionSetPipelineExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
         [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
         [NativeName("pExecutionSetWrites")]
-            Ref<WriteIndirectExecutionSetPipelineExt> pExecutionSetWrites
+            Ref<WriteIndirectExecutionSetPipelineEXT> pExecutionSetWrites
     );
 
     [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
@@ -49310,8 +49310,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT")]
     void UpdateIndirectExecutionSetPipelineExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
-        [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetPipelineExt pExecutionSetWrites
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
+        [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites
     );
 
     [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
@@ -49327,9 +49327,9 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT")]
     void UpdateIndirectExecutionSetShaderExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
         [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
-        [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetShaderExt* pExecutionSetWrites
+        [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetShaderEXT* pExecutionSetWrites
     );
 
     [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
@@ -49345,10 +49345,10 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT")]
     void UpdateIndirectExecutionSetShaderExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
         [NativeName("executionSetWriteCount")] uint executionSetWriteCount,
         [NativeName("pExecutionSetWrites")]
-            Ref<WriteIndirectExecutionSetShaderExt> pExecutionSetWrites
+            Ref<WriteIndirectExecutionSetShaderEXT> pExecutionSetWrites
     );
 
     [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
@@ -49364,8 +49364,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT")]
     void UpdateIndirectExecutionSetShaderExt(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleExt indirectExecutionSet,
-        [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetShaderExt pExecutionSetWrites
+        [NativeName("indirectExecutionSet")] IndirectExecutionSetHandleEXT indirectExecutionSet,
+        [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetShaderEXT pExecutionSetWrites
     );
 
     [NativeName("vkUpdateVideoSessionParametersKHR")]
@@ -49378,8 +49378,8 @@ public unsafe partial interface IVk
     Result UpdateVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("videoSessionParameters")]
-            VideoSessionParametersHandleKhr videoSessionParameters,
-        [NativeName("pUpdateInfo")] VideoSessionParametersUpdateInfoKhr* pUpdateInfo
+            VideoSessionParametersHandleKHR videoSessionParameters,
+        [NativeName("pUpdateInfo")] VideoSessionParametersUpdateInfoKHR* pUpdateInfo
     );
 
     [NativeName("vkUpdateVideoSessionParametersKHR")]
@@ -49392,8 +49392,8 @@ public unsafe partial interface IVk
     Result UpdateVideoSessionParametersKhr(
         [NativeName("device")] DeviceHandle device,
         [NativeName("videoSessionParameters")]
-            VideoSessionParametersHandleKhr videoSessionParameters,
-        [NativeName("pUpdateInfo")] Ref<VideoSessionParametersUpdateInfoKhr> pUpdateInfo
+            VideoSessionParametersHandleKHR videoSessionParameters,
+        [NativeName("pUpdateInfo")] Ref<VideoSessionParametersUpdateInfoKHR> pUpdateInfo
     );
 
     [NativeName("vkWaitForFences")]
@@ -49482,8 +49482,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
     Result WaitForPresent2Khr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pPresentWait2Info")] PresentWait2InfoKhr* pPresentWait2Info
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pPresentWait2Info")] PresentWait2InfoKHR* pPresentWait2Info
     );
 
     [NativeName("vkWaitForPresent2KHR")]
@@ -49500,8 +49500,8 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresent2KHR")]
     Result WaitForPresent2Khr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
-        [NativeName("pPresentWait2Info")] Ref<PresentWait2InfoKhr> pPresentWait2Info
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
+        [NativeName("pPresentWait2Info")] Ref<PresentWait2InfoKHR> pPresentWait2Info
     );
 
     [NativeName("vkWaitForPresentKHR")]
@@ -49513,7 +49513,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkWaitForPresentKHR")]
     Result WaitForPresentKhr(
         [NativeName("device")] DeviceHandle device,
-        [NativeName("swapchain")] SwapchainHandleKhr swapchain,
+        [NativeName("swapchain")] SwapchainHandleKHR swapchain,
         [NativeName("presentId")] ulong presentId,
         [NativeName("timeout")] ulong timeout
     );
@@ -49616,7 +49616,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
         [NativeName("pAccelerationStructures")]
-            AccelerationStructureHandleKhr* pAccelerationStructures,
+            AccelerationStructureHandleKHR* pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pData")] void* pData,
@@ -49637,7 +49637,7 @@ public unsafe partial interface IVk
         [NativeName("device")] DeviceHandle device,
         [NativeName("accelerationStructureCount")] uint accelerationStructureCount,
         [NativeName("pAccelerationStructures")]
-            Ref<AccelerationStructureHandleKhr> pAccelerationStructures,
+            Ref<AccelerationStructureHandleKHR> pAccelerationStructures,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pData")] Ref pData,
@@ -49657,7 +49657,7 @@ public unsafe partial interface IVk
     Result WriteMicromapsPropertiesExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("micromapCount")] uint micromapCount,
-        [NativeName("pMicromaps")] MicromapHandleExt* pMicromaps,
+        [NativeName("pMicromaps")] MicromapHandleEXT* pMicromaps,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pData")] void* pData,
@@ -49677,7 +49677,7 @@ public unsafe partial interface IVk
     Result WriteMicromapsPropertiesExt(
         [NativeName("device")] DeviceHandle device,
         [NativeName("micromapCount")] uint micromapCount,
-        [NativeName("pMicromaps")] Ref<MicromapHandleExt> pMicromaps,
+        [NativeName("pMicromaps")] Ref<MicromapHandleEXT> pMicromaps,
         [NativeName("queryType")] QueryType queryType,
         [NativeName("dataSize")] nuint dataSize,
         [NativeName("pData")] Ref pData,

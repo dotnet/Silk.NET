@@ -24,5 +24,5 @@ public enum PipelineLayoutCreateFlags : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    IndependentSetsBitext = 0x2,
+    IndependentSetsBitEXT = 0x2,
 }

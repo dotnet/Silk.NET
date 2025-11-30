@@ -96,12 +96,12 @@ public enum DependencyFlags : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    FeedbackLoopBitext = 0x8,
+    FeedbackLoopBitEXT = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_QUEUE_FAMILY_OWNERSHIP_TRANSFER_USE_ALL_STAGES_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    QueueFamilyOwnershipTransferUseAllStagesBitkhr = 0x20,
+    QueueFamilyOwnershipTransferUseAllStagesBitKHR = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_ASYMMETRIC_EVENT_BIT_KHR")]
@@ -113,7 +113,7 @@ public enum DependencyFlags : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    AsymmetricEventBitkhr = 0x40,
+    AsymmetricEventBitKHR = 0x40,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
@@ -125,7 +125,7 @@ public enum DependencyFlags : uint
             "VK_KHR_multiview+VK_VERSION_1_1",
         ]
     )]
-    ViewLocalBitkhr = ViewLocalBit,
+    ViewLocalBitKHR = ViewLocalBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
@@ -134,5 +134,5 @@ public enum DependencyFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    DeviceGroupBitkhr = DeviceGroupBit,
+    DeviceGroupBitKHR = DeviceGroupBit,
 }

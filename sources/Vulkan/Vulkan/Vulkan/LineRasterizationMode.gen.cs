@@ -54,7 +54,7 @@ public enum LineRasterizationMode : uint
             "VK_EXT_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Defaultext = Default,
+    DefaultEXT = Default,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_EXT")]
@@ -66,7 +66,7 @@ public enum LineRasterizationMode : uint
             "VK_EXT_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Rectangularext = Rectangular,
+    RectangularEXT = Rectangular,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_EXT")]
@@ -78,7 +78,7 @@ public enum LineRasterizationMode : uint
             "VK_EXT_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Bresenhamext = Bresenham,
+    BresenhamEXT = Bresenham,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT")]
@@ -90,7 +90,7 @@ public enum LineRasterizationMode : uint
             "VK_EXT_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    RectangularSmoothext = RectangularSmooth,
+    RectangularSmoothEXT = RectangularSmooth,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_KHR")]
@@ -102,7 +102,7 @@ public enum LineRasterizationMode : uint
             "VK_KHR_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Defaultkhr = Default,
+    DefaultKHR = Default,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR")]
@@ -114,7 +114,7 @@ public enum LineRasterizationMode : uint
             "VK_KHR_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Rectangularkhr = Rectangular,
+    RectangularKHR = Rectangular,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR")]
@@ -126,7 +126,7 @@ public enum LineRasterizationMode : uint
             "VK_KHR_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Bresenhamkhr = Bresenham,
+    BresenhamKHR = Bresenham,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR")]
@@ -138,5 +138,5 @@ public enum LineRasterizationMode : uint
             "VK_KHR_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    RectangularSmoothkhr = RectangularSmooth,
+    RectangularSmoothKHR = RectangularSmooth,
 }

@@ -307,7 +307,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeSrcBitkhr = 0x2000,
+    VideoDecodeSrcBitKHR = 0x2000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
@@ -319,7 +319,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDstBitkhr = 0x4000,
+    VideoDecodeDstBitKHR = 0x4000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT")]
@@ -331,7 +331,7 @@ public enum BufferUsageFlags : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackBufferBitext = 0x800,
+    TransformFeedbackBufferBitEXT = 0x800,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT")]
@@ -343,7 +343,7 @@ public enum BufferUsageFlags : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackCounterBufferBitext = 0x1000,
+    TransformFeedbackCounterBufferBitEXT = 0x1000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
@@ -355,7 +355,7 @@ public enum BufferUsageFlags : uint
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    ConditionalRenderingBitext = 0x200,
+    ConditionalRenderingBitEXT = 0x200,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
@@ -367,7 +367,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureBuildInputReadOnlyBitkhr = 0x80000,
+    AccelerationStructureBuildInputReadOnlyBitKHR = 0x80000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
@@ -379,7 +379,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureStorageBitkhr = 0x100000,
+    AccelerationStructureStorageBitKHR = 0x100000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_SHADER_BINDING_TABLE_BIT_KHR")]
@@ -391,7 +391,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ShaderBindingTableBitkhr = 0x400,
+    ShaderBindingTableBitKHR = 0x400,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
@@ -403,7 +403,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDstBitkhr = 0x8000,
+    VideoEncodeDstBitKHR = 0x8000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
@@ -415,7 +415,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeSrcBitkhr = 0x10000,
+    VideoEncodeSrcBitKHR = 0x10000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT")]
@@ -429,7 +429,7 @@ public enum BufferUsageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SamplerDescriptorBufferBitext = 0x200000,
+    SamplerDescriptorBufferBitEXT = 0x200000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT")]
@@ -443,7 +443,7 @@ public enum BufferUsageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ResourceDescriptorBufferBitext = 0x400000,
+    ResourceDescriptorBufferBitEXT = 0x400000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
@@ -457,7 +457,7 @@ public enum BufferUsageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    PushDescriptorsDescriptorBufferBitext = 0x4000000,
+    PushDescriptorsDescriptorBufferBitEXT = 0x4000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT")]
@@ -469,7 +469,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapBuildInputReadOnlyBitext = 0x800000,
+    MicromapBuildInputReadOnlyBitEXT = 0x800000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_MICROMAP_STORAGE_BIT_EXT")]
@@ -481,7 +481,7 @@ public enum BufferUsageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapStorageBitext = 0x1000000,
+    MicromapStorageBitEXT = 0x1000000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_BUFFER_USAGE_TILE_MEMORY_BIT_QCOM")]
@@ -493,7 +493,7 @@ public enum BufferUsageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TileMemoryBitqcom = 0x8000000,
+    TileMemoryBitQCOM = 0x8000000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
@@ -505,7 +505,7 @@ public enum BufferUsageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    RayTracingBitnv = ShaderBindingTableBitkhr,
+    RayTracingBitNV = ShaderBindingTableBitKHR,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]
@@ -517,7 +517,7 @@ public enum BufferUsageFlags : uint
             "VK_EXT_buffer_device_address+VK_VERSION_1_1",
         ]
     )]
-    ShaderDeviceAddressBitext = ShaderDeviceAddressBit,
+    ShaderDeviceAddressBitEXT = ShaderDeviceAddressBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_KHR")]
@@ -529,5 +529,5 @@ public enum BufferUsageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ShaderDeviceAddressBitkhr = ShaderDeviceAddressBit,
+    ShaderDeviceAddressBitKHR = ShaderDeviceAddressBit,
 }

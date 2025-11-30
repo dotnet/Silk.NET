@@ -52,7 +52,7 @@ public enum PipelineShaderStageCreateFlags : uint
         ["VK_EXT_subgroup_size_control"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    AllowVaryingSubgroupSizeBitext = AllowVaryingSubgroupSizeBit,
+    AllowVaryingSubgroupSizeBitEXT = AllowVaryingSubgroupSizeBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
@@ -61,5 +61,5 @@ public enum PipelineShaderStageCreateFlags : uint
         ["VK_EXT_subgroup_size_control"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    RequireFullSubgroupsBitext = RequireFullSubgroupsBit,
+    RequireFullSubgroupsBitEXT = RequireFullSubgroupsBit,
 }

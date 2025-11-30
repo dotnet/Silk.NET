@@ -17,5 +17,5 @@ public enum InstanceCreateFlags : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_portability_enumeration"])]
-    EnumeratePortabilityBitkhr = 0x1,
+    EnumeratePortabilityBitKHR = 0x1,
 }

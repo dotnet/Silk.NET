@@ -10,6 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
 public unsafe delegate void DeviceMemoryReportCallbackExtDelegate(
-    DeviceMemoryReportCallbackDataExt* arg0,
+    DeviceMemoryReportCallbackDataEXT* arg0,
     void* arg1
 );

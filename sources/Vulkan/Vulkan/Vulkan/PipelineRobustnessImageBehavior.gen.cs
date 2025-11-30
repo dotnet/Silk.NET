@@ -54,7 +54,7 @@ public enum PipelineRobustnessImageBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    DeviceDefaultext = DeviceDefault,
+    DeviceDefaultEXT = DeviceDefault,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
@@ -66,7 +66,7 @@ public enum PipelineRobustnessImageBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    Disabledext = Disabled,
+    DisabledEXT = Disabled,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
@@ -78,7 +78,7 @@ public enum PipelineRobustnessImageBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    RobustImageAccessext = RobustImageAccess,
+    RobustImageAccessEXT = RobustImageAccess,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2_EXT")]
@@ -90,5 +90,5 @@ public enum PipelineRobustnessImageBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    RobustImageAccess2Ext = RobustImageAccess2,
+    RobustImageAccess2EXT = RobustImageAccess2,
 }

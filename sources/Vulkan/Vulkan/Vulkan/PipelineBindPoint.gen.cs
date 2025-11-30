@@ -70,7 +70,7 @@ public enum PipelineBindPoint : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingkhr = 1000165000,
+    RayTracingKHR = 1000165000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI")]
@@ -83,7 +83,7 @@ public enum PipelineBindPoint : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SubpassShadinghuawei = 1000369003,
+    SubpassShadingHUAWEI = 1000369003,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_DATA_GRAPH_ARM")]
@@ -92,7 +92,7 @@ public enum PipelineBindPoint : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    DataGrapharm = 1000507000,
+    DataGraphARM = 1000507000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]
@@ -104,5 +104,5 @@ public enum PipelineBindPoint : uint
             "VK_VERSION_1_1",
         ]
     )]
-    RayTracingnv = RayTracingkhr,
+    RayTracingNV = RayTracingKHR,
 }

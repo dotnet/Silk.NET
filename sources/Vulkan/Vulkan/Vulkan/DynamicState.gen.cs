@@ -313,7 +313,7 @@ public enum DynamicState : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
-    ViewportWScalingnv = 1000087000,
+    ViewportWScalingNV = 1000087000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DISCARD_RECTANGLE_EXT")]
@@ -325,7 +325,7 @@ public enum DynamicState : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    DiscardRectangleext = 1000099000,
+    DiscardRectangleEXT = 1000099000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DISCARD_RECTANGLE_ENABLE_EXT")]
@@ -337,7 +337,7 @@ public enum DynamicState : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    DiscardRectangleEnableext = 1000099001,
+    DiscardRectangleEnableEXT = 1000099001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DISCARD_RECTANGLE_MODE_EXT")]
@@ -349,7 +349,7 @@ public enum DynamicState : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    DiscardRectangleModeext = 1000099002,
+    DiscardRectangleModeEXT = 1000099002,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT")]
@@ -361,7 +361,7 @@ public enum DynamicState : uint
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    SampleLocationsext = 1000143000,
+    SampleLocationsEXT = 1000143000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR")]
@@ -373,7 +373,7 @@ public enum DynamicState : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingPipelineStackSizekhr = 1000347000,
+    RayTracingPipelineStackSizeKHR = 1000347000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_SHADING_RATE_PALETTE_NV")]
@@ -385,7 +385,7 @@ public enum DynamicState : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    ViewportShadingRatePalettenv = 1000164004,
+    ViewportShadingRatePaletteNV = 1000164004,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_COARSE_SAMPLE_ORDER_NV")]
@@ -397,7 +397,7 @@ public enum DynamicState : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    ViewportCoarseSampleOrdernv = 1000164006,
+    ViewportCoarseSampleOrderNV = 1000164006,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_ENABLE_NV")]
@@ -409,7 +409,7 @@ public enum DynamicState : uint
             "VK_NV_scissor_exclusive+VK_VERSION_1_1",
         ]
     )]
-    ExclusiveScissorEnablenv = 1000205000,
+    ExclusiveScissorEnableNV = 1000205000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV")]
@@ -421,7 +421,7 @@ public enum DynamicState : uint
             "VK_NV_scissor_exclusive+VK_VERSION_1_1",
         ]
     )]
-    ExclusiveScissornv = 1000205001,
+    ExclusiveScissorNV = 1000205001,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DYNAMIC_STATE_FRAGMENT_SHADING_RATE_KHR")]
@@ -434,7 +434,7 @@ public enum DynamicState : uint
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRatekhr = 1000226000,
+    FragmentShadingRateKHR = 1000226000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_EXT")]
@@ -446,7 +446,7 @@ public enum DynamicState : uint
             "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    VertexInputext = 1000352000,
+    VertexInputEXT = 1000352000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PATCH_CONTROL_POINTS_EXT")]
@@ -458,7 +458,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    PatchControlPointsext = 1000377000,
+    PatchControlPointsEXT = 1000377000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LOGIC_OP_EXT")]
@@ -470,7 +470,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    LogicOpext = 1000377003,
+    LogicOpEXT = 1000377003,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
@@ -482,7 +482,7 @@ public enum DynamicState : uint
             "VK_EXT_color_write_enable+VK_VERSION_1_1",
         ]
     )]
-    ColorWriteEnableext = 1000381000,
+    ColorWriteEnableEXT = 1000381000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLAMP_ENABLE_EXT")]
@@ -494,7 +494,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    DepthClampEnableext = 1000455003,
+    DepthClampEnableEXT = 1000455003,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_POLYGON_MODE_EXT")]
@@ -506,7 +506,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    PolygonModeext = 1000455004,
+    PolygonModeEXT = 1000455004,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT")]
@@ -518,7 +518,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    RasterizationSamplesext = 1000455005,
+    RasterizationSamplesEXT = 1000455005,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SAMPLE_MASK_EXT")]
@@ -530,7 +530,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    SampleMaskext = 1000455006,
+    SampleMaskEXT = 1000455006,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT")]
@@ -542,7 +542,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    AlphaToCoverageEnableext = 1000455007,
+    AlphaToCoverageEnableEXT = 1000455007,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT")]
@@ -554,7 +554,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    AlphaToOneEnableext = 1000455008,
+    AlphaToOneEnableEXT = 1000455008,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LOGIC_OP_ENABLE_EXT")]
@@ -566,7 +566,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    LogicOpEnableext = 1000455009,
+    LogicOpEnableEXT = 1000455009,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_BLEND_ENABLE_EXT")]
@@ -578,7 +578,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    ColorBlendEnableext = 1000455010,
+    ColorBlendEnableEXT = 1000455010,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_BLEND_EQUATION_EXT")]
@@ -590,7 +590,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    ColorBlendEquationext = 1000455011,
+    ColorBlendEquationEXT = 1000455011,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_WRITE_MASK_EXT")]
@@ -602,7 +602,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    ColorWriteMaskext = 1000455012,
+    ColorWriteMaskEXT = 1000455012,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
@@ -617,7 +617,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    TessellationDomainOriginext = 1000455002,
+    TessellationDomainOriginEXT = 1000455002,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_RASTERIZATION_STREAM_EXT")]
@@ -630,7 +630,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    RasterizationStreamext = 1000455013,
+    RasterizationStreamEXT = 1000455013,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_CONSERVATIVE_RASTERIZATION_MODE_EXT")]
@@ -643,7 +643,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ConservativeRasterizationModeext = 1000455014,
+    ConservativeRasterizationModeEXT = 1000455014,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_EXT")]
@@ -656,7 +656,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ExtraPrimitiveOverestimationSizeext = 1000455015,
+    ExtraPrimitiveOverestimationSizeEXT = 1000455015,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLIP_ENABLE_EXT")]
@@ -669,7 +669,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    DepthClipEnableext = 1000455016,
+    DepthClipEnableEXT = 1000455016,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_ENABLE_EXT")]
@@ -682,7 +682,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    SampleLocationsEnableext = 1000455017,
+    SampleLocationsEnableEXT = 1000455017,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_BLEND_ADVANCED_EXT")]
@@ -695,7 +695,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ColorBlendAdvancedext = 1000455018,
+    ColorBlendAdvancedEXT = 1000455018,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PROVOKING_VERTEX_MODE_EXT")]
@@ -708,7 +708,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ProvokingVertexModeext = 1000455019,
+    ProvokingVertexModeEXT = 1000455019,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_RASTERIZATION_MODE_EXT")]
@@ -721,7 +721,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    LineRasterizationModeext = 1000455020,
+    LineRasterizationModeEXT = 1000455020,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_ENABLE_EXT")]
@@ -734,7 +734,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    LineStippleEnableext = 1000455021,
+    LineStippleEnableEXT = 1000455021,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_EXT")]
@@ -747,7 +747,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    DepthClipNegativeOneToOneext = 1000455022,
+    DepthClipNegativeOneToOneEXT = 1000455022,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_ENABLE_NV")]
@@ -760,7 +760,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ViewportWScalingEnablenv = 1000455023,
+    ViewportWScalingEnableNV = 1000455023,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_SWIZZLE_NV")]
@@ -773,7 +773,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ViewportSwizzlenv = 1000455024,
+    ViewportSwizzleNV = 1000455024,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_TO_COLOR_ENABLE_NV")]
@@ -786,7 +786,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    CoverageToColorEnablenv = 1000455025,
+    CoverageToColorEnableNV = 1000455025,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_TO_COLOR_LOCATION_NV")]
@@ -799,7 +799,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    CoverageToColorLocationnv = 1000455026,
+    CoverageToColorLocationNV = 1000455026,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_MODULATION_MODE_NV")]
@@ -812,7 +812,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    CoverageModulationModenv = 1000455027,
+    CoverageModulationModeNV = 1000455027,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_MODULATION_TABLE_ENABLE_NV")]
@@ -825,7 +825,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    CoverageModulationTableEnablenv = 1000455028,
+    CoverageModulationTableEnableNV = 1000455028,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_MODULATION_TABLE_NV")]
@@ -838,7 +838,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    CoverageModulationTablenv = 1000455029,
+    CoverageModulationTableNV = 1000455029,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_SHADING_RATE_IMAGE_ENABLE_NV")]
@@ -851,7 +851,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    ShadingRateImageEnablenv = 1000455030,
+    ShadingRateImageEnableNV = 1000455030,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_NV")]
@@ -864,7 +864,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    RepresentativeFragmentTestEnablenv = 1000455031,
+    RepresentativeFragmentTestEnableNV = 1000455031,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_REDUCTION_MODE_NV")]
@@ -877,7 +877,7 @@ public enum DynamicState : uint
         ],
         RequireAll = true
     )]
-    CoverageReductionModenv = 1000455032,
+    CoverageReductionModeNV = 1000455032,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT")]
@@ -889,7 +889,7 @@ public enum DynamicState : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    AttachmentFeedbackLoopEnableext = 1000524000,
+    AttachmentFeedbackLoopEnableEXT = 1000524000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLAMP_RANGE_EXT")]
@@ -901,7 +901,7 @@ public enum DynamicState : uint
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    DepthClampRangeext = 1000582000,
+    DepthClampRangeEXT = 1000582000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_EXT")]
@@ -913,7 +913,7 @@ public enum DynamicState : uint
             "VK_EXT_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    LineStippleext = LineStipple,
+    LineStippleEXT = LineStipple,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_CULL_MODE_EXT")]
@@ -925,7 +925,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    CullModeext = CullMode,
+    CullModeEXT = CullMode,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_FRONT_FACE_EXT")]
@@ -937,7 +937,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    FrontFaceext = FrontFace,
+    FrontFaceEXT = FrontFace,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY_EXT")]
@@ -949,7 +949,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    PrimitiveTopologyext = PrimitiveTopology,
+    PrimitiveTopologyEXT = PrimitiveTopology,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT_EXT")]
@@ -961,7 +961,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    ViewportWithCountext = ViewportWithCount,
+    ViewportWithCountEXT = ViewportWithCount,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT_EXT")]
@@ -973,7 +973,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    ScissorWithCountext = ScissorWithCount,
+    ScissorWithCountEXT = ScissorWithCount,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT")]
@@ -985,7 +985,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    VertexInputBindingStrideext = VertexInputBindingStride,
+    VertexInputBindingStrideEXT = VertexInputBindingStride,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE_EXT")]
@@ -997,7 +997,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    DepthTestEnableext = DepthTestEnable,
+    DepthTestEnableEXT = DepthTestEnable,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE_EXT")]
@@ -1009,7 +1009,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    DepthWriteEnableext = DepthWriteEnable,
+    DepthWriteEnableEXT = DepthWriteEnable,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_COMPARE_OP_EXT")]
@@ -1021,7 +1021,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    DepthCompareOpext = DepthCompareOp,
+    DepthCompareOpEXT = DepthCompareOp,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE_EXT")]
@@ -1033,7 +1033,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    DepthBoundsTestEnableext = DepthBoundsTestEnable,
+    DepthBoundsTestEnableEXT = DepthBoundsTestEnable,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE_EXT")]
@@ -1045,7 +1045,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    StencilTestEnableext = StencilTestEnable,
+    StencilTestEnableEXT = StencilTestEnable,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_STENCIL_OP_EXT")]
@@ -1057,7 +1057,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    StencilOpext = StencilOp,
+    StencilOpEXT = StencilOp,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE_EXT")]
@@ -1069,7 +1069,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    RasterizerDiscardEnableext = RasterizerDiscardEnable,
+    RasterizerDiscardEnableEXT = RasterizerDiscardEnable,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE_EXT")]
@@ -1081,7 +1081,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    DepthBiasEnableext = DepthBiasEnable,
+    DepthBiasEnableEXT = DepthBiasEnable,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE_EXT")]
@@ -1093,7 +1093,7 @@ public enum DynamicState : uint
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    PrimitiveRestartEnableext = PrimitiveRestartEnable,
+    PrimitiveRestartEnableEXT = PrimitiveRestartEnable,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_KHR")]
@@ -1105,5 +1105,5 @@ public enum DynamicState : uint
             "VK_KHR_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    LineStipplekhr = LineStipple,
+    LineStippleKHR = LineStipple,
 }

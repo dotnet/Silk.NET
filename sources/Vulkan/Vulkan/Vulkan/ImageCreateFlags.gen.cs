@@ -344,7 +344,7 @@ public enum ImageCreateFlags : uint
             "VK_NV_corner_sampled_image+VK_VERSION_1_1",
         ]
     )]
-    CreateCornerSampledBitnv = 0x2000,
+    CreateCornerSampledBitNV = 0x2000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_CREATE_SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_BIT_EXT")]
@@ -356,7 +356,7 @@ public enum ImageCreateFlags : uint
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    CreateSampleLocationsCompatibleDepthBitext = 0x1000,
+    CreateSampleLocationsCompatibleDepthBitEXT = 0x1000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
@@ -368,7 +368,7 @@ public enum ImageCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    CreateSubsampledBitext = 0x4000,
+    CreateSubsampledBitEXT = 0x4000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
@@ -382,7 +382,7 @@ public enum ImageCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateDescriptorBufferCaptureReplayBitext = 0x10000,
+    CreateDescriptorBufferCaptureReplayBitEXT = 0x10000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
@@ -391,7 +391,7 @@ public enum ImageCreateFlags : uint
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    CreateMultisampledRenderToSingleSampledBitext = 0x40000,
+    CreateMultisampledRenderToSingleSampledBitEXT = 0x40000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_CREATE_2D_VIEW_COMPATIBLE_BIT_EXT")]
@@ -403,7 +403,7 @@ public enum ImageCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Create2DViewCompatibleBitext = 0x20000,
+    Create2DViewCompatibleBitEXT = 0x20000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
@@ -412,7 +412,7 @@ public enum ImageCreateFlags : uint
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    CreateVideoProfileIndependentBitkhr = 0x100000,
+    CreateVideoProfileIndependentBitKHR = 0x100000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_EXT")]
@@ -430,7 +430,7 @@ public enum ImageCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1+VK_VERSION_1_2+VK_VERSION_1_3",
         ]
     )]
-    CreateFragmentDensityMapOffsetBitext = 0x8000,
+    CreateFragmentDensityMapOffsetBitEXT = 0x8000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
@@ -440,22 +440,22 @@ public enum ImageCreateFlags : uint
         ImpliesSets = ["VK_KHR_device_group_creation"],
         RequireAll = true
     )]
-    CreateSplitInstanceBindRegionsBitkhr = CreateSplitInstanceBindRegionsBit,
+    CreateSplitInstanceBindRegionsBitKHR = CreateSplitInstanceBindRegionsBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    Create2DArrayCompatibleBitkhr = Create2DArrayCompatibleBit,
+    Create2DArrayCompatibleBitKHR = Create2DArrayCompatibleBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_BLOCK_TEXEL_VIEW_COMPATIBLE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    CreateBlockTexelViewCompatibleBitkhr = CreateBlockTexelViewCompatibleBit,
+    CreateBlockTexelViewCompatibleBitKHR = CreateBlockTexelViewCompatibleBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_EXTENDED_USAGE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    CreateExtendedUsageBitkhr = CreateExtendedUsageBit,
+    CreateExtendedUsageBitKHR = CreateExtendedUsageBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_DISJOINT_BIT_KHR")]
@@ -467,12 +467,12 @@ public enum ImageCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CreateDisjointBitkhr = CreateDisjointBit,
+    CreateDisjointBitKHR = CreateDisjointBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_CREATE_ALIAS_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
-    CreateAliasBitkhr = CreateAliasBit,
+    CreateAliasBitKHR = CreateAliasBit,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
@@ -484,5 +484,5 @@ public enum ImageCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    CreateFragmentDensityMapOffsetBitqcom = CreateFragmentDensityMapOffsetBitext,
+    CreateFragmentDensityMapOffsetBitQCOM = CreateFragmentDensityMapOffsetBitEXT,
 }

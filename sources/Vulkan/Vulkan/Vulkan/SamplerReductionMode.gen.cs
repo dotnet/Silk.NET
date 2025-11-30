@@ -76,7 +76,7 @@ public enum SamplerReductionMode : uint
             "VK_EXT_filter_cubic+VK_VERSION_1_2",
         ]
     )]
-    WeightedAverageRangeclampqcom = 1000521000,
+    WeightedAverageRangeclampQCOM = 1000521000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT")]
@@ -88,7 +88,7 @@ public enum SamplerReductionMode : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    WeightedAverageext = WeightedAverage,
+    WeightedAverageEXT = WeightedAverage,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN_EXT")]
@@ -100,7 +100,7 @@ public enum SamplerReductionMode : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    Minext = Min,
+    MinEXT = Min,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MAX_EXT")]
@@ -112,5 +112,5 @@ public enum SamplerReductionMode : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    Maxext = Max,
+    MaxEXT = Max,
 }

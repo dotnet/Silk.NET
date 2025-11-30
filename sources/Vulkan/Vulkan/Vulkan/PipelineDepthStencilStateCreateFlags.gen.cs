@@ -27,7 +27,7 @@ public enum PipelineDepthStencilStateCreateFlags : uint
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentDepthAccessBitext = 0x1,
+    RasterizationOrderAttachmentDepthAccessBitEXT = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
@@ -41,7 +41,7 @@ public enum PipelineDepthStencilStateCreateFlags : uint
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentStencilAccessBitext = 0x2,
+    RasterizationOrderAttachmentStencilAccessBitEXT = 0x2,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
@@ -55,7 +55,7 @@ public enum PipelineDepthStencilStateCreateFlags : uint
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentDepthAccessBitarm = RasterizationOrderAttachmentDepthAccessBitext,
+    RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
@@ -69,6 +69,6 @@ public enum PipelineDepthStencilStateCreateFlags : uint
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentStencilAccessBitarm =
-        RasterizationOrderAttachmentStencilAccessBitext,
+    RasterizationOrderAttachmentStencilAccessBitARM =
+        RasterizationOrderAttachmentStencilAccessBitEXT,
 }

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -82,9 +81,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
             {
                 newNames[name] = new RenamedType(
-                    GetOverriddenName(null, name, cfg.NameOverrides),
-                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides)),
-                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides))
+                    ApplyPrettifyOnlyPipeline(null, name, cfg.NameOverrides, visitor.AffixTypes),
+                    nonFunctions.ToDictionary(x => x, x => ApplyPrettifyOnlyPipeline(name, x, cfg.NameOverrides, visitor.AffixTypes)),
+                    functions.ToDictionary(x => x.Name, x => ApplyPrettifyOnlyPipeline(name, x.Name, cfg.NameOverrides, visitor.AffixTypes))
                 );
             }
         }
@@ -99,7 +98,6 @@ public class PrettifyNames(
             var trimmers = trimmerProviders
                 .SelectMany(x => x.Get(ctx.JobKey))
                 .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
-                .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
                 .OrderBy(x => x.Version)
                 .ToArray();
 
@@ -179,16 +177,16 @@ public class PrettifyNames(
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
-                    newTypeName.Prettify(),
+                    ApplyAffixes(newTypeName.Prettify(), null, typeName, visitor.AffixTypes),
 
                     constNames.ToDictionary(
                         x => x.Key,
-                        x => x.Value.Primary.Prettify()
+                        x => ApplyAffixes(x.Value.Primary.Prettify(), typeName, x.Key, visitor.AffixTypes)
                     ),
 
                     functionNames.ToDictionary(
                         x => x.Key,
-                        x => x.Value.Primary.Prettify()
+                        x => ApplyAffixes(x.Value.Primary.Prettify(), typeName, x.Key, visitor.AffixTypes)
                     )
                 );
             }
@@ -199,12 +197,12 @@ public class PrettifyNames(
         {
             if (!newNames.TryGetValue(typeName, out var renamedType))
             {
-                renamedType = new RenamedType(GetOverriddenName(null, typeName, cfg.NameOverrides), [], []);
+                renamedType = new RenamedType(ApplyPrettifyOnlyPipeline(null, typeName, cfg.NameOverrides, visitor.AffixTypes), [], []);
             }
 
             foreach (var memberName in memberNames)
             {
-                renamedType.NonFunctions[memberName] = GetOverriddenName(typeName, memberName, cfg.NameOverrides);
+                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(typeName, memberName, cfg.NameOverrides, visitor.AffixTypes);
             }
 
             newNames[typeName] = renamedType;
@@ -362,11 +360,19 @@ public class PrettifyNames(
         ctx.SourceProject = proj;
     }
 
-    private string GetOverriddenName(
+    /// <summary>
+    /// Applies the prettify only pipeline.
+    /// This currently consists of checking for name overrides first.
+    /// Then if no override is found, then the name's affixes are removed,
+    /// the name is prettified, and the name's affixes are added back.
+    /// </summary>
+    private string ApplyPrettifyOnlyPipeline(
         string? container,
         string name,
-        Dictionary<string, string> nameOverrides)
+        Dictionary<string, string> nameOverrides,
+        Dictionary<string, TypeAffixData> affixTypes)
     {
+        // Check for overrides
         foreach (var (nativeName, overriddenName) in nameOverrides)
         {
             if (nativeName.Contains('.'))
@@ -397,7 +403,8 @@ public class PrettifyNames(
             }
         }
 
-        return name.Prettify();
+        // Remove affixes, prettify, and add affixes back
+        return ApplyAffixes(RemoveAffixes(name, container, name, affixTypes).Prettify(), container, name, affixTypes);
     }
 
     private void Trim(
@@ -1225,40 +1232,6 @@ public class PrettifyNames(
             foreach (var (original, (primary, secondary)) in context.Names)
             {
                 var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes);
-                var secondaries = secondary ?? [];
-                secondaries.Add(primary);
-
-                context.Names[original] = new CandidateNames(newPrimary, secondaries);
-            }
-        }
-    }
-
-    private class NameAffixerLateTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
-    {
-        /// <summary>
-        /// Use high version to ensure this trimmer runs last.
-        /// </summary>
-        public Version Version => new (999, 999, 999);
-
-        public void Trim(NameTrimmerContext context)
-        {
-            if (context.Container == null)
-            {
-                foreach (var (original, (primary, secondary)) in context.Names)
-                {
-                    var newPrimary = ApplyAffixes(primary, null, original, affixTypes);
-                    var secondaries = secondary ?? [];
-                    secondaries.Add(primary);
-
-                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
-                }
-
-                return;
-            }
-
-            foreach (var (original, (primary, secondary)) in context.Names)
-            {
-                var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes);
                 var secondaries = secondary ?? [];
                 secondaries.Add(primary);
 

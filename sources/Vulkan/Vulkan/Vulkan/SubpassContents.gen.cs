@@ -53,7 +53,7 @@ public enum SubpassContents : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    InlineAndSecondaryCommandBufferskhr = 1000451000,
+    InlineAndSecondaryCommandBuffersKHR = 1000451000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_EXT")]
@@ -65,5 +65,5 @@ public enum SubpassContents : uint
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    InlineAndSecondaryCommandBuffersext = InlineAndSecondaryCommandBufferskhr,
+    InlineAndSecondaryCommandBuffersEXT = InlineAndSecondaryCommandBuffersKHR,
 }

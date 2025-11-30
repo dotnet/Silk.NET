@@ -159,7 +159,7 @@ public enum BufferCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitext = 0x20,
+    DescriptorBufferCaptureReplayBitEXT = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
@@ -168,7 +168,7 @@ public enum BufferCreateFlags : uint
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    VideoProfileIndependentBitkhr = 0x40,
+    VideoProfileIndependentBitKHR = 0x40,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_EXT")]
@@ -180,7 +180,7 @@ public enum BufferCreateFlags : uint
             "VK_EXT_buffer_device_address+VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressCaptureReplayBitext = DeviceAddressCaptureReplayBit,
+    DeviceAddressCaptureReplayBitEXT = DeviceAddressCaptureReplayBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
@@ -192,5 +192,5 @@ public enum BufferCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressCaptureReplayBitkhr = DeviceAddressCaptureReplayBit,
+    DeviceAddressCaptureReplayBitKHR = DeviceAddressCaptureReplayBit,
 }

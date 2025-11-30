@@ -92,7 +92,7 @@ public enum MemoryAllocateFlags : uint
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    ZeroInitializeBitext = 0x8,
+    ZeroInitializeBitEXT = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT_KHR")]
@@ -101,7 +101,7 @@ public enum MemoryAllocateFlags : uint
         ["VK_KHR_device_group"],
         ImpliesSets = ["VK_KHR_device_group_creation"]
     )]
-    DeviceMaskBitkhr = DeviceMaskBit,
+    DeviceMaskBitKHR = DeviceMaskBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT_KHR")]
@@ -113,7 +113,7 @@ public enum MemoryAllocateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressBitkhr = DeviceAddressBit,
+    DeviceAddressBitKHR = DeviceAddressBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
@@ -125,5 +125,5 @@ public enum MemoryAllocateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressCaptureReplayBitkhr = DeviceAddressCaptureReplayBit,
+    DeviceAddressCaptureReplayBitKHR = DeviceAddressCaptureReplayBit,
 }

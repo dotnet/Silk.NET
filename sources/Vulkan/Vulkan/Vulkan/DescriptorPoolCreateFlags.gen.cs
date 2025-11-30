@@ -67,7 +67,7 @@ public enum DescriptorPoolCreateFlags : uint
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    HostOnlyBitext = 0x4,
+    HostOnlyBitEXT = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_SETS_BIT_NV")]
@@ -76,7 +76,7 @@ public enum DescriptorPoolCreateFlags : uint
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    AllowOverallocationSetsBitnv = 0x8,
+    AllowOverallocationSetsBitNV = 0x8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_POOLS_BIT_NV")]
@@ -85,7 +85,7 @@ public enum DescriptorPoolCreateFlags : uint
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    AllowOverallocationPoolsBitnv = 0x10,
+    AllowOverallocationPoolsBitNV = 0x10,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT")]
@@ -97,7 +97,7 @@ public enum DescriptorPoolCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    UpdateAfterBindBitext = UpdateAfterBindBit,
+    UpdateAfterBindBitEXT = UpdateAfterBindBit,
 
     [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
@@ -106,5 +106,5 @@ public enum DescriptorPoolCreateFlags : uint
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    HostOnlyBitvalve = HostOnlyBitext,
+    HostOnlyBitVALVE = HostOnlyBitEXT,
 }

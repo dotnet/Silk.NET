@@ -197,7 +197,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
         ["VK_EXT_external_memory_dma_buf"],
         ImpliesSets = ["VK_KHR_external_memory_fd"]
     )]
-    DmaBufBitext = 0x200,
+    DmaBufBitEXT = 0x200,
 
     [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID")]
@@ -209,7 +209,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    AndroidHardwareBufferBitandroid = 0x400,
+    AndroidHardwareBufferBitANDROID = 0x400,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION_BIT_EXT")]
@@ -221,7 +221,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    HostAllocationBitext = 0x80,
+    HostAllocationBitEXT = 0x80,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY_BIT_EXT")]
@@ -233,7 +233,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    HostMappedForeignMemoryBitext = 0x100,
+    HostMappedForeignMemoryBitEXT = 0x100,
 
     [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ZIRCON_VMO_BIT_FUCHSIA")]
@@ -245,7 +245,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ZirconVmoBitfuchsia = 0x800,
+    ZirconVmoBitFUCHSIA = 0x800,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_RDMA_ADDRESS_BIT_NV")]
@@ -257,7 +257,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    RdmaAddressBitnv = 0x1000,
+    RdmaAddressBitNV = 0x1000,
 
     [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OH_NATIVE_BUFFER_BIT_OHOS")]
@@ -269,7 +269,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    OhNativeBufferBitohos = 0x8000,
+    OhNativeBufferBitOHOS = 0x8000,
 
     [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
@@ -281,7 +281,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_queue_family_foreign+VK_VERSION_1_1",
         ]
     )]
-    ScreenBufferBitqnx = 0x4000,
+    ScreenBufferBitQNX = 0x4000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLBUFFER_BIT_EXT")]
@@ -293,7 +293,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_external_memory_metal+VK_VERSION_1_1",
         ]
     )]
-    MtlbufferBitext = 0x10000,
+    MtlbufferBitEXT = 0x10000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLTEXTURE_BIT_EXT")]
@@ -305,7 +305,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_external_memory_metal+VK_VERSION_1_1",
         ]
     )]
-    MtltextureBitext = 0x20000,
+    MtltextureBitEXT = 0x20000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLHEAP_BIT_EXT")]
@@ -317,7 +317,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_EXT_external_memory_metal+VK_VERSION_1_1",
         ]
     )]
-    MtlheapBitext = 0x40000,
+    MtlheapBitEXT = 0x40000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
@@ -329,7 +329,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueFdBitkhr = OpaqueFdBit,
+    OpaqueFdBitKHR = OpaqueFdBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
@@ -341,7 +341,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueWin32Bitkhr = OpaqueWin32Bit,
+    OpaqueWin32BitKHR = OpaqueWin32Bit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
@@ -353,7 +353,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueWin32KmtBitkhr = OpaqueWin32KmtBit,
+    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR")]
@@ -365,7 +365,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    D3D11TextureBitkhr = D3D11TextureBit,
+    D3D11TextureBitKHR = D3D11TextureBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT_BIT_KHR")]
@@ -377,7 +377,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    D3D11TextureKmtBitkhr = D3D11TextureKmtBit,
+    D3D11TextureKmtBitKHR = D3D11TextureKmtBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR")]
@@ -389,7 +389,7 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    D3D12HeapBitkhr = D3D12HeapBit,
+    D3D12HeapBitKHR = D3D12HeapBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR")]
@@ -401,5 +401,5 @@ public enum ExternalMemoryHandleTypeFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    D3D12ResourceBitkhr = D3D12ResourceBit,
+    D3D12ResourceBitKHR = D3D12ResourceBit,
 }

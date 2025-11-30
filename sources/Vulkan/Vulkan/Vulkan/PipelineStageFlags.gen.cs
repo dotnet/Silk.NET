@@ -533,7 +533,7 @@ public enum PipelineStageFlags : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackBitext = 0x1000000,
+    TransformFeedbackBitEXT = 0x1000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_CONDITIONAL_RENDERING_BIT_EXT")]
@@ -545,7 +545,7 @@ public enum PipelineStageFlags : uint
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    ConditionalRenderingBitext = 0x40000,
+    ConditionalRenderingBitEXT = 0x40000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_ACCELERATION_STRUCTURE_BUILD_BIT_KHR")]
@@ -557,7 +557,7 @@ public enum PipelineStageFlags : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureBuildBitkhr = 0x2000000,
+    AccelerationStructureBuildBitKHR = 0x2000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_KHR")]
@@ -569,7 +569,7 @@ public enum PipelineStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RayTracingShaderBitkhr = 0x200000,
+    RayTracingShaderBitKHR = 0x200000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_FRAGMENT_DENSITY_PROCESS_BIT_EXT")]
@@ -581,7 +581,7 @@ public enum PipelineStageFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityProcessBitext = 0x800000,
+    FragmentDensityProcessBitEXT = 0x800000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
@@ -594,7 +594,7 @@ public enum PipelineStageFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentBitkhr = 0x400000,
+    FragmentShadingRateAttachmentBitKHR = 0x400000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_TASK_SHADER_BIT_EXT")]
@@ -603,7 +603,7 @@ public enum PipelineStageFlags : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    TaskShaderBitext = 0x80000,
+    TaskShaderBitEXT = 0x80000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_MESH_SHADER_BIT_EXT")]
@@ -612,7 +612,7 @@ public enum PipelineStageFlags : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshShaderBitext = 0x100000,
+    MeshShaderBitEXT = 0x100000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_COMMAND_PREPROCESS_BIT_EXT")]
@@ -625,7 +625,7 @@ public enum PipelineStageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CommandPreprocessBitext = 0x20000,
+    CommandPreprocessBitEXT = 0x20000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_SHADING_RATE_IMAGE_BIT_NV")]
@@ -637,7 +637,7 @@ public enum PipelineStageFlags : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    ShadingRateImageBitnv = FragmentShadingRateAttachmentBitkhr,
+    ShadingRateImageBitNV = FragmentShadingRateAttachmentBitKHR,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_NV")]
@@ -649,7 +649,7 @@ public enum PipelineStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    RayTracingShaderBitnv = RayTracingShaderBitkhr,
+    RayTracingShaderBitNV = RayTracingShaderBitKHR,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_ACCELERATION_STRUCTURE_BUILD_BIT_NV")]
@@ -661,7 +661,7 @@ public enum PipelineStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AccelerationStructureBuildBitnv = AccelerationStructureBuildBitkhr,
+    AccelerationStructureBuildBitNV = AccelerationStructureBuildBitKHR,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_TASK_SHADER_BIT_NV")]
@@ -673,7 +673,7 @@ public enum PipelineStageFlags : uint
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    TaskShaderBitnv = TaskShaderBitext,
+    TaskShaderBitNV = TaskShaderBitEXT,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_MESH_SHADER_BIT_NV")]
@@ -685,7 +685,7 @@ public enum PipelineStageFlags : uint
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    MeshShaderBitnv = MeshShaderBitext,
+    MeshShaderBitNV = MeshShaderBitEXT,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_COMMAND_PREPROCESS_BIT_NV")]
@@ -694,7 +694,7 @@ public enum PipelineStageFlags : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    CommandPreprocessBitnv = CommandPreprocessBitext,
+    CommandPreprocessBitNV = CommandPreprocessBitEXT,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_NONE_KHR")]
@@ -706,5 +706,5 @@ public enum PipelineStageFlags : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    Nonekhr = None,
+    NoneKHR = None,
 }

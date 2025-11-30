@@ -25,7 +25,7 @@ public enum SamplerCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    SubsampledBitext = 0x1,
+    SubsampledBitEXT = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_SUBSAMPLED_COARSE_RECONSTRUCTION_BIT_EXT")]
@@ -37,7 +37,7 @@ public enum SamplerCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    SubsampledCoarseReconstructionBitext = 0x2,
+    SubsampledCoarseReconstructionBitEXT = 0x2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
@@ -51,7 +51,7 @@ public enum SamplerCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitext = 0x8,
+    DescriptorBufferCaptureReplayBitEXT = 0x8,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_CREATE_NON_SEAMLESS_CUBE_MAP_BIT_EXT")]
@@ -63,7 +63,7 @@ public enum SamplerCreateFlags : uint
             "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
         ]
     )]
-    NonSeamlessCubeMapBitext = 0x4,
+    NonSeamlessCubeMapBitEXT = 0x4,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_SAMPLER_CREATE_IMAGE_PROCESSING_BIT_QCOM")]
@@ -75,5 +75,5 @@ public enum SamplerCreateFlags : uint
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    ImageProcessingBitqcom = 0x10,
+    ImageProcessingBitQCOM = 0x10,
 }

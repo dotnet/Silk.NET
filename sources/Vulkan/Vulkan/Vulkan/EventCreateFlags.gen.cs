@@ -40,5 +40,5 @@ public enum EventCreateFlags : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    DeviceOnlyBitkhr = DeviceOnlyBit,
+    DeviceOnlyBitKHR = DeviceOnlyBit,
 }
