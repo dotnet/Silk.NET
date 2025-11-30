@@ -181,10 +181,16 @@ public class PrettifyNames(
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
                     newTypeName.Prettify(nameTransformer, allowAllCaps: true), // <-- lenient about caps for type names
+
                     // TODO deprecate secondaries if they're within the baseline?
-                    constNames.Select(x => new KeyValuePair<string, CandidateNames>(x.Key, new CandidateNames(x.Value.Primary.Prettify(nameTransformer), x.Value.Secondary)))
+                    constNames
+                        .Select(type =>
+                            new KeyValuePair<string, CandidateNames>(
+                                type.Key,
+                                new CandidateNames(type.Value.Primary.Prettify(nameTransformer), type.Value.Secondary)))
                         .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
                         .ToDictionary(x => x.Key, x => x.Value.Primary),
+
                     functionNames.ToDictionary(
                         x => x.Key,
                         x => x.Value.Primary.Prettify(nameTransformer)
@@ -456,7 +462,7 @@ public class PrettifyNames(
             trimmer.Trim(context with { Names = namesToTrim });
         }
 
-        // Apply changes.
+        // Apply changes
         if (namesToTrim != context.Names)
         {
             foreach (var (evalName, result) in namesToTrim)
@@ -1103,7 +1109,7 @@ public class PrettifyNames(
         /// <summary>
         /// Use low version to ensure this trimmer runs first.
         /// </summary>
-        public Version Version => new (0, 0, 0);
+        public Version Version => new(0, 0, 0);
 
         public void Trim(NameTrimmerContext context)
         {
