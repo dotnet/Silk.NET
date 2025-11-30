@@ -11,6 +11,54 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum RenderbufferParameterName : uint
 {
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
+    Widthoes = unchecked((uint)0x8D42),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
+    Heightoes = unchecked((uint)0x8D43),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
+    InternalFormatoes = unchecked((uint)0x8D44),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
+    RedSizeoes = unchecked((uint)0x8D50),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
+    GreenSizeoes = unchecked((uint)0x8D51),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
+    BlueSizeoes = unchecked((uint)0x8D52),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
+    AlphaSizeoes = unchecked((uint)0x8D53),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
+    DepthSizeoes = unchecked((uint)0x8D54),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
+    StencilSizeoes = unchecked((uint)0x8D55),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
+    Samplesapple = unchecked((uint)0x8CAB),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
+    Samplesext = unchecked((uint)0x8CAB),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
+    Samplesimg = unchecked((uint)0x9133),
+
     [NativeName("GL_RENDERBUFFER_SAMPLES")]
     Samples = unchecked((uint)0x8CAB),
 
@@ -44,10 +92,6 @@ public enum RenderbufferParameterName : uint
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_RENDERBUFFER_STORAGE_SAMPLES_AMD")]
     StorageSamplesamd = unchecked((uint)0x91B2),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
-    Samplesext = unchecked((uint)0x8CAB),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_WIDTH_EXT")]
@@ -97,51 +141,7 @@ public enum RenderbufferParameterName : uint
     [NativeName("GL_RENDERBUFFER_SAMPLES_ANGLE")]
     Samplesangle = unchecked((uint)0x8CAB),
 
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
-    Samplesapple = unchecked((uint)0x8CAB),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
-    Samplesimg = unchecked((uint)0x9133),
-
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_NV")]
     Samplesnv = unchecked((uint)0x8CAB),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
-    Widthoes = unchecked((uint)0x8D42),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
-    Heightoes = unchecked((uint)0x8D43),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
-    InternalFormatoes = unchecked((uint)0x8D44),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
-    RedSizeoes = unchecked((uint)0x8D50),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
-    GreenSizeoes = unchecked((uint)0x8D51),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
-    BlueSizeoes = unchecked((uint)0x8D52),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
-    AlphaSizeoes = unchecked((uint)0x8D53),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
-    DepthSizeoes = unchecked((uint)0x8D54),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
-    StencilSizeoes = unchecked((uint)0x8D55),
 }

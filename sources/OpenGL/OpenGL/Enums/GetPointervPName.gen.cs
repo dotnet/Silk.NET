@@ -20,11 +20,11 @@ public enum GetPointervPName : uint
     [NativeName("GL_COLOR_ARRAY_POINTER")]
     ColorArrayPointer = unchecked((uint)0x8090),
 
-    [NativeName("GL_INDEX_ARRAY_POINTER")]
-    IndexArrayPointer = unchecked((uint)0x8091),
-
     [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER")]
     TextureCoordArrayPointer = unchecked((uint)0x8092),
+
+    [NativeName("GL_INDEX_ARRAY_POINTER")]
+    IndexArrayPointer = unchecked((uint)0x8091),
 
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER")]
     EdgeFlagArrayPointer = unchecked((uint)0x8093),

@@ -11,9 +11,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureEnvParameter : uint
 {
-    [NativeName("GL_ALPHA_SCALE")]
-    AlphaScale = unchecked((uint)0x0D1C),
-
     [NativeName("GL_TEXTURE_ENV_MODE")]
     TextureEnvMode = unchecked((uint)0x2200),
 
@@ -28,42 +25,6 @@ public enum TextureEnvParameter : uint
 
     [NativeName("GL_COMBINE_ALPHA")]
     CombineAlpha = unchecked((uint)0x8572),
-
-    [NativeName("GL_SOURCE0_RGB")]
-    Source0Rgb = unchecked((uint)0x8580),
-
-    [NativeName("GL_SOURCE1_RGB")]
-    Source1Rgb = unchecked((uint)0x8581),
-
-    [NativeName("GL_SOURCE2_RGB")]
-    Source2Rgb = unchecked((uint)0x8582),
-
-    [NativeName("GL_SOURCE0_ALPHA")]
-    Source0Alpha = unchecked((uint)0x8588),
-
-    [NativeName("GL_SOURCE1_ALPHA")]
-    Source1Alpha = unchecked((uint)0x8589),
-
-    [NativeName("GL_SOURCE2_ALPHA")]
-    Source2Alpha = unchecked((uint)0x858A),
-
-    [NativeName("GL_OPERAND0_RGB")]
-    Operand0Rgb = unchecked((uint)0x8590),
-
-    [NativeName("GL_OPERAND1_RGB")]
-    Operand1Rgb = unchecked((uint)0x8591),
-
-    [NativeName("GL_OPERAND2_RGB")]
-    Operand2Rgb = unchecked((uint)0x8592),
-
-    [NativeName("GL_OPERAND0_ALPHA")]
-    Operand0Alpha = unchecked((uint)0x8598),
-
-    [NativeName("GL_OPERAND1_ALPHA")]
-    Operand1Alpha = unchecked((uint)0x8599),
-
-    [NativeName("GL_OPERAND2_ALPHA")]
-    Operand2Alpha = unchecked((uint)0x859A),
 
     [NativeName("GL_RGB_SCALE")]
     RgbScale = unchecked((uint)0x8573),
@@ -83,11 +44,26 @@ public enum TextureEnvParameter : uint
     [NativeName("GL_PREVIOUS")]
     Previous = unchecked((uint)0x8578),
 
-    [NativeName("GL_TEXTURE_LOD_BIAS")]
-    TextureLodBias = unchecked((uint)0x8501),
+    [NativeName("GL_OPERAND0_RGB")]
+    Operand0Rgb = unchecked((uint)0x8590),
 
-    [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = unchecked((uint)0x8589),
+    [NativeName("GL_OPERAND1_RGB")]
+    Operand1Rgb = unchecked((uint)0x8591),
+
+    [NativeName("GL_OPERAND2_RGB")]
+    Operand2Rgb = unchecked((uint)0x8592),
+
+    [NativeName("GL_OPERAND0_ALPHA")]
+    Operand0Alpha = unchecked((uint)0x8598),
+
+    [NativeName("GL_OPERAND1_ALPHA")]
+    Operand1Alpha = unchecked((uint)0x8599),
+
+    [NativeName("GL_OPERAND2_ALPHA")]
+    Operand2Alpha = unchecked((uint)0x859A),
+
+    [NativeName("GL_ALPHA_SCALE")]
+    AlphaScale = unchecked((uint)0x0D1C),
 
     [NativeName("GL_SRC0_RGB")]
     Src0Rgb = unchecked((uint)0x8580),
@@ -101,8 +77,32 @@ public enum TextureEnvParameter : uint
     [NativeName("GL_SRC0_ALPHA")]
     Src0Alpha = unchecked((uint)0x8588),
 
+    [NativeName("GL_SRC1_ALPHA")]
+    Src1Alpha = unchecked((uint)0x8589),
+
     [NativeName("GL_SRC2_ALPHA")]
     Src2Alpha = unchecked((uint)0x858A),
+
+    [NativeName("GL_SOURCE0_RGB")]
+    Source0Rgb = unchecked((uint)0x8580),
+
+    [NativeName("GL_SOURCE1_RGB")]
+    Source1Rgb = unchecked((uint)0x8581),
+
+    [NativeName("GL_SOURCE2_RGB")]
+    Source2Rgb = unchecked((uint)0x8582),
+
+    [NativeName("GL_SOURCE0_ALPHA")]
+    Source0Alpha = unchecked((uint)0x8588),
+
+    [NativeName("GL_SOURCE1_ALPHA")]
+    Source1Alpha = unchecked((uint)0x8589),
+
+    [NativeName("GL_SOURCE2_ALPHA")]
+    Source2Alpha = unchecked((uint)0x858A),
+
+    [NativeName("GL_TEXTURE_LOD_BIAS")]
+    TextureLodBias = unchecked((uint)0x8501),
 
     [NativeName("GL_COORD_REPLACE")]
     CoordReplace = unchecked((uint)0x8862),

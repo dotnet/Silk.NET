@@ -11,9 +11,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PathColorFormat : uint
 {
-    [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
-
     [NativeName("GL_ALPHA")]
     Alpha = unchecked((uint)0x1906),
 
@@ -28,6 +25,9 @@ public enum PathColorFormat : uint
 
     [NativeName("GL_LUMINANCE_ALPHA")]
     LuminanceAlpha = unchecked((uint)0x190A),
+
+    [NativeName("GL_NONE")]
+    None = unchecked((uint)0),
 
     [NativeName("GL_INTENSITY")]
     Intensity = unchecked((uint)0x8049),

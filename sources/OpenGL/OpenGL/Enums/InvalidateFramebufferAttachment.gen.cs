@@ -11,6 +11,18 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum InvalidateFramebufferAttachment : uint
 {
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
+    ColorAttachment0Oes = unchecked((uint)0x8CE0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
+    DepthAttachmentoes = unchecked((uint)0x8D00),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
+    StencilAttachmentoes = unchecked((uint)0x8D20),
+
     [NativeName("GL_COLOR")]
     Color = unchecked((uint)0x1800),
 
@@ -257,16 +269,4 @@ public enum InvalidateFramebufferAttachment : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
     ColorAttachment15Nv = unchecked((uint)0x8CEF),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
-    ColorAttachment0Oes = unchecked((uint)0x8CE0),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
-    DepthAttachmentoes = unchecked((uint)0x8D00),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
-    StencilAttachmentoes = unchecked((uint)0x8D20),
 }

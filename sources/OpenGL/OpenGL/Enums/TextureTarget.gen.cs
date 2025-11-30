@@ -11,11 +11,39 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum TextureTarget : uint
 {
-    [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
-
     [NativeName("GL_TEXTURE_2D")]
     Texture2D = unchecked((uint)0x0DE1),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapoes = unchecked((uint)0x8513),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
+    TextureCubeMapPositiveXoes = unchecked((uint)0x8515),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
+    TextureCubeMapNegativeXoes = unchecked((uint)0x8516),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
+    TextureCubeMapPositiveYoes = unchecked((uint)0x8517),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
+    TextureCubeMapNegativeYoes = unchecked((uint)0x8518),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
+    TextureCubeMapPositiveZoes = unchecked((uint)0x8519),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
+    TextureCubeMapNegativeZoes = unchecked((uint)0x851A),
+
+    [NativeName("GL_TEXTURE_1D")]
+    Texture1D = unchecked((uint)0x0DE0),
 
     [NativeName("GL_PROXY_TEXTURE_1D")]
     ProxyTexture1D = unchecked((uint)0x8063),
@@ -232,32 +260,4 @@ public enum TextureTarget : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_EXT")]
     TextureCubeMapArrayext = unchecked((uint)0x9009),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapoes = unchecked((uint)0x8513),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
-    TextureCubeMapPositiveXoes = unchecked((uint)0x8515),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
-    TextureCubeMapNegativeXoes = unchecked((uint)0x8516),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
-    TextureCubeMapPositiveYoes = unchecked((uint)0x8517),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
-    TextureCubeMapNegativeYoes = unchecked((uint)0x8518),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
-    TextureCubeMapPositiveZoes = unchecked((uint)0x8519),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
-    TextureCubeMapNegativeZoes = unchecked((uint)0x851A),
 }

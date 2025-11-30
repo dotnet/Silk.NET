@@ -11,6 +11,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelTransferParameter : uint
 {
+    [NativeName("GL_ALPHA_SCALE")]
+    AlphaScale = unchecked((uint)0x0D1C),
+
     [NativeName("GL_MAP_COLOR")]
     MapColor = unchecked((uint)0x0D10),
 
@@ -40,9 +43,6 @@ public enum PixelTransferParameter : uint
 
     [NativeName("GL_BLUE_BIAS")]
     BlueBias = unchecked((uint)0x0D1B),
-
-    [NativeName("GL_ALPHA_SCALE")]
-    AlphaScale = unchecked((uint)0x0D1C),
 
     [NativeName("GL_ALPHA_BIAS")]
     AlphaBias = unchecked((uint)0x0D1D),

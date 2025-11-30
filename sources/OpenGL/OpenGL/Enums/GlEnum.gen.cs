@@ -11,6 +11,15 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GlEnum : uint
 {
+    [NativeName("GL_VERSION_ES_CL_1_0")]
+    VersionEsCl1X0 = unchecked((uint)1),
+
+    [NativeName("GL_VERSION_ES_CM_1_1")]
+    VersionEsCm1X1 = unchecked((uint)1),
+
+    [NativeName("GL_VERSION_ES_CL_1_1")]
+    VersionEsCl1X1 = unchecked((uint)1),
+
     [NativeName("GL_DEPTH_BUFFER_BIT")]
     DepthBufferBit = unchecked((uint)0x00000100),
 
@@ -46,9 +55,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_TRIANGLE_FAN")]
     TriangleFan = unchecked((uint)0x0006),
-
-    [NativeName("GL_QUADS")]
-    Quads = unchecked((uint)0x0007),
 
     [NativeName("GL_NEVER")]
     Never = unchecked((uint)0x0200),
@@ -107,20 +113,23 @@ public enum GlEnum : uint
     [NativeName("GL_SRC_ALPHA_SATURATE")]
     SrcAlphaSaturate = unchecked((uint)0x0308),
 
-    [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
+    [NativeName("GL_CLIP_PLANE0")]
+    ClipPlane0 = unchecked((uint)0x3000),
 
-    [NativeName("GL_FRONT_LEFT")]
-    FrontLeft = unchecked((uint)0x0400),
+    [NativeName("GL_CLIP_PLANE1")]
+    ClipPlane1 = unchecked((uint)0x3001),
 
-    [NativeName("GL_FRONT_RIGHT")]
-    FrontRight = unchecked((uint)0x0401),
+    [NativeName("GL_CLIP_PLANE2")]
+    ClipPlane2 = unchecked((uint)0x3002),
 
-    [NativeName("GL_BACK_LEFT")]
-    BackLeft = unchecked((uint)0x0402),
+    [NativeName("GL_CLIP_PLANE3")]
+    ClipPlane3 = unchecked((uint)0x3003),
 
-    [NativeName("GL_BACK_RIGHT")]
-    BackRight = unchecked((uint)0x0403),
+    [NativeName("GL_CLIP_PLANE4")]
+    ClipPlane4 = unchecked((uint)0x3004),
+
+    [NativeName("GL_CLIP_PLANE5")]
+    ClipPlane5 = unchecked((uint)0x3005),
 
     [NativeName("GL_FRONT")]
     Front = unchecked((uint)0x0404),
@@ -128,14 +137,80 @@ public enum GlEnum : uint
     [NativeName("GL_BACK")]
     Back = unchecked((uint)0x0405),
 
-    [NativeName("GL_LEFT")]
-    Left = unchecked((uint)0x0406),
-
-    [NativeName("GL_RIGHT")]
-    Right = unchecked((uint)0x0407),
-
     [NativeName("GL_FRONT_AND_BACK")]
     FrontAndBack = unchecked((uint)0x0408),
+
+    [NativeName("GL_FOG")]
+    Fog = unchecked((uint)0x0B60),
+
+    [NativeName("GL_LIGHTING")]
+    Lighting = unchecked((uint)0x0B50),
+
+    [NativeName("GL_TEXTURE_2D")]
+    Texture2D = unchecked((uint)0x0DE1),
+
+    [NativeName("GL_CULL_FACE")]
+    CullFace = unchecked((uint)0x0B44),
+
+    [NativeName("GL_ALPHA_TEST")]
+    AlphaTest = unchecked((uint)0x0BC0),
+
+    [NativeName("GL_BLEND")]
+    Blend = unchecked((uint)0x0BE2),
+
+    [NativeName("GL_COLOR_LOGIC_OP")]
+    ColorLogicOp = unchecked((uint)0x0BF2),
+
+    [NativeName("GL_DITHER")]
+    Dither = unchecked((uint)0x0BD0),
+
+    [NativeName("GL_STENCIL_TEST")]
+    StencilTest = unchecked((uint)0x0B90),
+
+    [NativeName("GL_DEPTH_TEST")]
+    DepthTest = unchecked((uint)0x0B71),
+
+    [NativeName("GL_POINT_SMOOTH")]
+    PointSmooth = unchecked((uint)0x0B10),
+
+    [NativeName("GL_LINE_SMOOTH")]
+    LineSmooth = unchecked((uint)0x0B20),
+
+    [NativeName("GL_SCISSOR_TEST")]
+    ScissorTest = unchecked((uint)0x0C11),
+
+    [NativeName("GL_COLOR_MATERIAL")]
+    ColorMaterial = unchecked((uint)0x0B57),
+
+    [NativeName("GL_NORMALIZE")]
+    Normalize = unchecked((uint)0x0BA1),
+
+    [NativeName("GL_RESCALE_NORMAL")]
+    RescaleNormal = unchecked((uint)0x803A),
+
+    [NativeName("GL_VERTEX_ARRAY")]
+    VertexArray = unchecked((uint)0x8074),
+
+    [NativeName("GL_NORMAL_ARRAY")]
+    NormalArray = unchecked((uint)0x8075),
+
+    [NativeName("GL_COLOR_ARRAY")]
+    ColorArray = unchecked((uint)0x8076),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY")]
+    TextureCoordArray = unchecked((uint)0x8078),
+
+    [NativeName("GL_MULTISAMPLE")]
+    Multisample = unchecked((uint)0x809D),
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
+    SampleAlphaToCoverage = unchecked((uint)0x809E),
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
+    SampleAlphaToOne = unchecked((uint)0x809F),
+
+    [NativeName("GL_SAMPLE_COVERAGE")]
+    SampleCoverage = unchecked((uint)0x80A0),
 
     [NativeName("GL_NO_ERROR")]
     NoError = unchecked((uint)0),
@@ -149,8 +224,35 @@ public enum GlEnum : uint
     [NativeName("GL_INVALID_OPERATION")]
     InvalidOperation = unchecked((uint)0x0502),
 
+    [NativeName("GL_STACK_OVERFLOW")]
+    StackOverflow = unchecked((uint)0x0503),
+
+    [NativeName("GL_STACK_UNDERFLOW")]
+    StackUnderflow = unchecked((uint)0x0504),
+
     [NativeName("GL_OUT_OF_MEMORY")]
     OutOfMemory = unchecked((uint)0x0505),
+
+    [NativeName("GL_EXP")]
+    Exp = unchecked((uint)0x0800),
+
+    [NativeName("GL_EXP2")]
+    Exp2 = unchecked((uint)0x0801),
+
+    [NativeName("GL_FOG_DENSITY")]
+    FogDensity = unchecked((uint)0x0B62),
+
+    [NativeName("GL_FOG_START")]
+    FogStart = unchecked((uint)0x0B63),
+
+    [NativeName("GL_FOG_END")]
+    FogEnd = unchecked((uint)0x0B64),
+
+    [NativeName("GL_FOG_MODE")]
+    FogMode = unchecked((uint)0x0B65),
+
+    [NativeName("GL_FOG_COLOR")]
+    FogColor = unchecked((uint)0x0B66),
 
     [NativeName("GL_CW")]
     Cw = unchecked((uint)0x0900),
@@ -158,35 +260,44 @@ public enum GlEnum : uint
     [NativeName("GL_CCW")]
     Ccw = unchecked((uint)0x0901),
 
+    [NativeName("GL_CURRENT_COLOR")]
+    CurrentColor = unchecked((uint)0x0B00),
+
+    [NativeName("GL_CURRENT_NORMAL")]
+    CurrentNormal = unchecked((uint)0x0B02),
+
+    [NativeName("GL_CURRENT_TEXTURE_COORDS")]
+    CurrentTextureCoords = unchecked((uint)0x0B03),
+
     [NativeName("GL_POINT_SIZE")]
     PointSize = unchecked((uint)0x0B11),
 
-    [NativeName("GL_POINT_SIZE_RANGE")]
-    PointSizeRange = unchecked((uint)0x0B12),
+    [NativeName("GL_POINT_SIZE_MIN")]
+    PointSizeMin = unchecked((uint)0x8126),
 
-    [NativeName("GL_POINT_SIZE_GRANULARITY")]
-    PointSizeGranularity = unchecked((uint)0x0B13),
+    [NativeName("GL_POINT_SIZE_MAX")]
+    PointSizeMax = unchecked((uint)0x8127),
 
-    [NativeName("GL_LINE_SMOOTH")]
-    LineSmooth = unchecked((uint)0x0B20),
+    [NativeName("GL_POINT_FADE_THRESHOLD_SIZE")]
+    PointFadeThresholdSize = unchecked((uint)0x8128),
+
+    [NativeName("GL_POINT_DISTANCE_ATTENUATION")]
+    PointDistanceAttenuation = unchecked((uint)0x8129),
+
+    [NativeName("GL_SMOOTH_POINT_SIZE_RANGE")]
+    SmoothPointSizeRange = unchecked((uint)0x0B12),
 
     [NativeName("GL_LINE_WIDTH")]
     LineWidth = unchecked((uint)0x0B21),
 
-    [NativeName("GL_LINE_WIDTH_RANGE")]
-    LineWidthRange = unchecked((uint)0x0B22),
+    [NativeName("GL_SMOOTH_LINE_WIDTH_RANGE")]
+    SmoothLineWidthRange = unchecked((uint)0x0B22),
 
-    [NativeName("GL_LINE_WIDTH_GRANULARITY")]
-    LineWidthGranularity = unchecked((uint)0x0B23),
+    [NativeName("GL_ALIASED_POINT_SIZE_RANGE")]
+    AliasedPointSizeRange = unchecked((uint)0x846D),
 
-    [NativeName("GL_POLYGON_MODE")]
-    PolygonMode = unchecked((uint)0x0B40),
-
-    [NativeName("GL_POLYGON_SMOOTH")]
-    PolygonSmooth = unchecked((uint)0x0B41),
-
-    [NativeName("GL_CULL_FACE")]
-    CullFace = unchecked((uint)0x0B44),
+    [NativeName("GL_ALIASED_LINE_WIDTH_RANGE")]
+    AliasedLineWidthRange = unchecked((uint)0x846E),
 
     [NativeName("GL_CULL_FACE_MODE")]
     CullFaceMode = unchecked((uint)0x0B45),
@@ -194,11 +305,11 @@ public enum GlEnum : uint
     [NativeName("GL_FRONT_FACE")]
     FrontFace = unchecked((uint)0x0B46),
 
+    [NativeName("GL_SHADE_MODEL")]
+    ShadeModel = unchecked((uint)0x0B54),
+
     [NativeName("GL_DEPTH_RANGE")]
     DepthRange = unchecked((uint)0x0B70),
-
-    [NativeName("GL_DEPTH_TEST")]
-    DepthTest = unchecked((uint)0x0B71),
 
     [NativeName("GL_DEPTH_WRITEMASK")]
     DepthWritemask = unchecked((uint)0x0B72),
@@ -208,9 +319,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_DEPTH_FUNC")]
     DepthFunc = unchecked((uint)0x0B74),
-
-    [NativeName("GL_STENCIL_TEST")]
-    StencilTest = unchecked((uint)0x0B90),
 
     [NativeName("GL_STENCIL_CLEAR_VALUE")]
     StencilClearValue = unchecked((uint)0x0B91),
@@ -236,11 +344,35 @@ public enum GlEnum : uint
     [NativeName("GL_STENCIL_WRITEMASK")]
     StencilWritemask = unchecked((uint)0x0B98),
 
+    [NativeName("GL_MATRIX_MODE")]
+    MatrixMode = unchecked((uint)0x0BA0),
+
     [NativeName("GL_VIEWPORT")]
     Viewport = unchecked((uint)0x0BA2),
 
-    [NativeName("GL_DITHER")]
-    Dither = unchecked((uint)0x0BD0),
+    [NativeName("GL_MODELVIEW_STACK_DEPTH")]
+    ModelviewStackDepth = unchecked((uint)0x0BA3),
+
+    [NativeName("GL_PROJECTION_STACK_DEPTH")]
+    ProjectionStackDepth = unchecked((uint)0x0BA4),
+
+    [NativeName("GL_TEXTURE_STACK_DEPTH")]
+    TextureStackDepth = unchecked((uint)0x0BA5),
+
+    [NativeName("GL_MODELVIEW_MATRIX")]
+    ModelviewMatrix = unchecked((uint)0x0BA6),
+
+    [NativeName("GL_PROJECTION_MATRIX")]
+    ProjectionMatrix = unchecked((uint)0x0BA7),
+
+    [NativeName("GL_TEXTURE_MATRIX")]
+    TextureMatrix = unchecked((uint)0x0BA8),
+
+    [NativeName("GL_ALPHA_TEST_FUNC")]
+    AlphaTestFunc = unchecked((uint)0x0BC1),
+
+    [NativeName("GL_ALPHA_TEST_REF")]
+    AlphaTestRef = unchecked((uint)0x0BC2),
 
     [NativeName("GL_BLEND_DST")]
     BlendDst = unchecked((uint)0x0BE0),
@@ -248,23 +380,11 @@ public enum GlEnum : uint
     [NativeName("GL_BLEND_SRC")]
     BlendSrc = unchecked((uint)0x0BE1),
 
-    [NativeName("GL_BLEND")]
-    Blend = unchecked((uint)0x0BE2),
-
     [NativeName("GL_LOGIC_OP_MODE")]
     LogicOpMode = unchecked((uint)0x0BF0),
 
-    [NativeName("GL_DRAW_BUFFER")]
-    DrawBuffer = unchecked((uint)0x0C01),
-
-    [NativeName("GL_READ_BUFFER")]
-    ReadBuffer = unchecked((uint)0x0C02),
-
     [NativeName("GL_SCISSOR_BOX")]
     ScissorBox = unchecked((uint)0x0C10),
-
-    [NativeName("GL_SCISSOR_TEST")]
-    ScissorTest = unchecked((uint)0x0C11),
 
     [NativeName("GL_COLOR_CLEAR_VALUE")]
     ColorClearValue = unchecked((uint)0x0C22),
@@ -272,77 +392,125 @@ public enum GlEnum : uint
     [NativeName("GL_COLOR_WRITEMASK")]
     ColorWritemask = unchecked((uint)0x0C23),
 
-    [NativeName("GL_DOUBLEBUFFER")]
-    Doublebuffer = unchecked((uint)0x0C32),
+    [NativeName("GL_MAX_LIGHTS")]
+    MaxLights = unchecked((uint)0x0D31),
 
-    [NativeName("GL_STEREO")]
-    Stereo = unchecked((uint)0x0C33),
-
-    [NativeName("GL_LINE_SMOOTH_HINT")]
-    LineSmoothHint = unchecked((uint)0x0C52),
-
-    [NativeName("GL_POLYGON_SMOOTH_HINT")]
-    PolygonSmoothHint = unchecked((uint)0x0C53),
-
-    [NativeName("GL_UNPACK_SWAP_BYTES")]
-    UnpackSwapBytes = unchecked((uint)0x0CF0),
-
-    [NativeName("GL_UNPACK_LSB_FIRST")]
-    UnpackLsbFirst = unchecked((uint)0x0CF1),
-
-    [NativeName("GL_UNPACK_ROW_LENGTH")]
-    UnpackRowLength = unchecked((uint)0x0CF2),
-
-    [NativeName("GL_UNPACK_SKIP_ROWS")]
-    UnpackSkipRows = unchecked((uint)0x0CF3),
-
-    [NativeName("GL_UNPACK_SKIP_PIXELS")]
-    UnpackSkipPixels = unchecked((uint)0x0CF4),
-
-    [NativeName("GL_UNPACK_ALIGNMENT")]
-    UnpackAlignment = unchecked((uint)0x0CF5),
-
-    [NativeName("GL_PACK_SWAP_BYTES")]
-    PackSwapBytes = unchecked((uint)0x0D00),
-
-    [NativeName("GL_PACK_LSB_FIRST")]
-    PackLsbFirst = unchecked((uint)0x0D01),
-
-    [NativeName("GL_PACK_ROW_LENGTH")]
-    PackRowLength = unchecked((uint)0x0D02),
-
-    [NativeName("GL_PACK_SKIP_ROWS")]
-    PackSkipRows = unchecked((uint)0x0D03),
-
-    [NativeName("GL_PACK_SKIP_PIXELS")]
-    PackSkipPixels = unchecked((uint)0x0D04),
-
-    [NativeName("GL_PACK_ALIGNMENT")]
-    PackAlignment = unchecked((uint)0x0D05),
+    [NativeName("GL_MAX_CLIP_PLANES")]
+    MaxClipPlanes = unchecked((uint)0x0D32),
 
     [NativeName("GL_MAX_TEXTURE_SIZE")]
     MaxTextureSize = unchecked((uint)0x0D33),
 
+    [NativeName("GL_MAX_MODELVIEW_STACK_DEPTH")]
+    MaxModelviewStackDepth = unchecked((uint)0x0D36),
+
+    [NativeName("GL_MAX_PROJECTION_STACK_DEPTH")]
+    MaxProjectionStackDepth = unchecked((uint)0x0D38),
+
+    [NativeName("GL_MAX_TEXTURE_STACK_DEPTH")]
+    MaxTextureStackDepth = unchecked((uint)0x0D39),
+
     [NativeName("GL_MAX_VIEWPORT_DIMS")]
     MaxViewportDims = unchecked((uint)0x0D3A),
+
+    [NativeName("GL_MAX_TEXTURE_UNITS")]
+    MaxTextureUnits = unchecked((uint)0x84E2),
 
     [NativeName("GL_SUBPIXEL_BITS")]
     SubpixelBits = unchecked((uint)0x0D50),
 
-    [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
+    [NativeName("GL_RED_BITS")]
+    RedBits = unchecked((uint)0x0D52),
 
-    [NativeName("GL_TEXTURE_2D")]
-    Texture2D = unchecked((uint)0x0DE1),
+    [NativeName("GL_GREEN_BITS")]
+    GreenBits = unchecked((uint)0x0D53),
 
-    [NativeName("GL_TEXTURE_WIDTH")]
-    TextureWidth = unchecked((uint)0x1000),
+    [NativeName("GL_BLUE_BITS")]
+    BlueBits = unchecked((uint)0x0D54),
 
-    [NativeName("GL_TEXTURE_HEIGHT")]
-    TextureHeight = unchecked((uint)0x1001),
+    [NativeName("GL_ALPHA_BITS")]
+    AlphaBits = unchecked((uint)0x0D55),
 
-    [NativeName("GL_TEXTURE_BORDER_COLOR")]
-    TextureBorderColor = unchecked((uint)0x1004),
+    [NativeName("GL_DEPTH_BITS")]
+    DepthBits = unchecked((uint)0x0D56),
+
+    [NativeName("GL_STENCIL_BITS")]
+    StencilBits = unchecked((uint)0x0D57),
+
+    [NativeName("GL_POLYGON_OFFSET_UNITS")]
+    PolygonOffsetUnits = unchecked((uint)0x2A00),
+
+    [NativeName("GL_POLYGON_OFFSET_FILL")]
+    PolygonOffsetFill = unchecked((uint)0x8037),
+
+    [NativeName("GL_POLYGON_OFFSET_FACTOR")]
+    PolygonOffsetFactor = unchecked((uint)0x8038),
+
+    [NativeName("GL_TEXTURE_BINDING_2D")]
+    TextureBinding2D = unchecked((uint)0x8069),
+
+    [NativeName("GL_VERTEX_ARRAY_SIZE")]
+    VertexArraySize = unchecked((uint)0x807A),
+
+    [NativeName("GL_VERTEX_ARRAY_TYPE")]
+    VertexArrayType = unchecked((uint)0x807B),
+
+    [NativeName("GL_VERTEX_ARRAY_STRIDE")]
+    VertexArrayStride = unchecked((uint)0x807C),
+
+    [NativeName("GL_NORMAL_ARRAY_TYPE")]
+    NormalArrayType = unchecked((uint)0x807E),
+
+    [NativeName("GL_NORMAL_ARRAY_STRIDE")]
+    NormalArrayStride = unchecked((uint)0x807F),
+
+    [NativeName("GL_COLOR_ARRAY_SIZE")]
+    ColorArraySize = unchecked((uint)0x8081),
+
+    [NativeName("GL_COLOR_ARRAY_TYPE")]
+    ColorArrayType = unchecked((uint)0x8082),
+
+    [NativeName("GL_COLOR_ARRAY_STRIDE")]
+    ColorArrayStride = unchecked((uint)0x8083),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_SIZE")]
+    TextureCoordArraySize = unchecked((uint)0x8088),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_TYPE")]
+    TextureCoordArrayType = unchecked((uint)0x8089),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_STRIDE")]
+    TextureCoordArrayStride = unchecked((uint)0x808A),
+
+    [NativeName("GL_VERTEX_ARRAY_POINTER")]
+    VertexArrayPointer = unchecked((uint)0x808E),
+
+    [NativeName("GL_NORMAL_ARRAY_POINTER")]
+    NormalArrayPointer = unchecked((uint)0x808F),
+
+    [NativeName("GL_COLOR_ARRAY_POINTER")]
+    ColorArrayPointer = unchecked((uint)0x8090),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER")]
+    TextureCoordArrayPointer = unchecked((uint)0x8092),
+
+    [NativeName("GL_SAMPLE_BUFFERS")]
+    SampleBuffers = unchecked((uint)0x80A8),
+
+    [NativeName("GL_SAMPLES")]
+    Samples = unchecked((uint)0x80A9),
+
+    [NativeName("GL_SAMPLE_COVERAGE_VALUE")]
+    SampleCoverageValue = unchecked((uint)0x80AA),
+
+    [NativeName("GL_SAMPLE_COVERAGE_INVERT")]
+    SampleCoverageInvert = unchecked((uint)0x80AB),
+
+    [NativeName("GL_NUM_COMPRESSED_TEXTURE_FORMATS")]
+    NumCompressedTextureFormats = unchecked((uint)0x86A2),
+
+    [NativeName("GL_COMPRESSED_TEXTURE_FORMATS")]
+    CompressedTextureFormats = unchecked((uint)0x86A3),
 
     [NativeName("GL_DONT_CARE")]
     DontCare = unchecked((uint)0x1100),
@@ -352,6 +520,57 @@ public enum GlEnum : uint
 
     [NativeName("GL_NICEST")]
     Nicest = unchecked((uint)0x1102),
+
+    [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
+    PerspectiveCorrectionHint = unchecked((uint)0x0C50),
+
+    [NativeName("GL_POINT_SMOOTH_HINT")]
+    PointSmoothHint = unchecked((uint)0x0C51),
+
+    [NativeName("GL_LINE_SMOOTH_HINT")]
+    LineSmoothHint = unchecked((uint)0x0C52),
+
+    [NativeName("GL_FOG_HINT")]
+    FogHint = unchecked((uint)0x0C54),
+
+    [NativeName("GL_GENERATE_MIPMAP_HINT")]
+    GenerateMipmapHint = unchecked((uint)0x8192),
+
+    [NativeName("GL_LIGHT_MODEL_AMBIENT")]
+    LightModelAmbient = unchecked((uint)0x0B53),
+
+    [NativeName("GL_LIGHT_MODEL_TWO_SIDE")]
+    LightModelTwoSide = unchecked((uint)0x0B52),
+
+    [NativeName("GL_AMBIENT")]
+    Ambient = unchecked((uint)0x1200),
+
+    [NativeName("GL_DIFFUSE")]
+    Diffuse = unchecked((uint)0x1201),
+
+    [NativeName("GL_SPECULAR")]
+    Specular = unchecked((uint)0x1202),
+
+    [NativeName("GL_POSITION")]
+    Position = unchecked((uint)0x1203),
+
+    [NativeName("GL_SPOT_DIRECTION")]
+    SpotDirection = unchecked((uint)0x1204),
+
+    [NativeName("GL_SPOT_EXPONENT")]
+    SpotExponent = unchecked((uint)0x1205),
+
+    [NativeName("GL_SPOT_CUTOFF")]
+    SpotCutoff = unchecked((uint)0x1206),
+
+    [NativeName("GL_CONSTANT_ATTENUATION")]
+    ConstantAttenuation = unchecked((uint)0x1207),
+
+    [NativeName("GL_LINEAR_ATTENUATION")]
+    LinearAttenuation = unchecked((uint)0x1208),
+
+    [NativeName("GL_QUADRATIC_ATTENUATION")]
+    QuadraticAttenuation = unchecked((uint)0x1209),
 
     [NativeName("GL_BYTE")]
     Byte = unchecked((uint)0x1400),
@@ -365,20 +584,11 @@ public enum GlEnum : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
 
-    [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
-
-    [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = unchecked((uint)0x1405),
-
     [NativeName("GL_FLOAT")]
     Float = unchecked((uint)0x1406),
 
-    [NativeName("GL_STACK_OVERFLOW")]
-    StackOverflow = unchecked((uint)0x0503),
-
-    [NativeName("GL_STACK_UNDERFLOW")]
-    StackUnderflow = unchecked((uint)0x0504),
+    [NativeName("GL_FIXED")]
+    Fixed = unchecked((uint)0x140C),
 
     [NativeName("GL_CLEAR")]
     Clear = unchecked((uint)0x1500),
@@ -428,32 +638,23 @@ public enum GlEnum : uint
     [NativeName("GL_SET")]
     Set = unchecked((uint)0x150F),
 
+    [NativeName("GL_EMISSION")]
+    Emission = unchecked((uint)0x1600),
+
+    [NativeName("GL_SHININESS")]
+    Shininess = unchecked((uint)0x1601),
+
+    [NativeName("GL_AMBIENT_AND_DIFFUSE")]
+    AmbientAndDiffuse = unchecked((uint)0x1602),
+
+    [NativeName("GL_MODELVIEW")]
+    Modelview = unchecked((uint)0x1700),
+
+    [NativeName("GL_PROJECTION")]
+    Projection = unchecked((uint)0x1701),
+
     [NativeName("GL_TEXTURE")]
     Texture = unchecked((uint)0x1702),
-
-    [NativeName("GL_COLOR")]
-    Color = unchecked((uint)0x1800),
-
-    [NativeName("GL_DEPTH")]
-    Depth = unchecked((uint)0x1801),
-
-    [NativeName("GL_STENCIL")]
-    Stencil = unchecked((uint)0x1802),
-
-    [NativeName("GL_STENCIL_INDEX")]
-    StencilIndex = unchecked((uint)0x1901),
-
-    [NativeName("GL_DEPTH_COMPONENT")]
-    DepthComponent = unchecked((uint)0x1902),
-
-    [NativeName("GL_RED")]
-    Red = unchecked((uint)0x1903),
-
-    [NativeName("GL_GREEN")]
-    Green = unchecked((uint)0x1904),
-
-    [NativeName("GL_BLUE")]
-    Blue = unchecked((uint)0x1905),
 
     [NativeName("GL_ALPHA")]
     Alpha = unchecked((uint)0x1906),
@@ -464,14 +665,32 @@ public enum GlEnum : uint
     [NativeName("GL_RGBA")]
     Rgba = unchecked((uint)0x1908),
 
-    [NativeName("GL_POINT")]
-    Point = unchecked((uint)0x1B00),
+    [NativeName("GL_LUMINANCE")]
+    Luminance = unchecked((uint)0x1909),
 
-    [NativeName("GL_LINE")]
-    Line = unchecked((uint)0x1B01),
+    [NativeName("GL_LUMINANCE_ALPHA")]
+    LuminanceAlpha = unchecked((uint)0x190A),
 
-    [NativeName("GL_FILL")]
-    Fill = unchecked((uint)0x1B02),
+    [NativeName("GL_UNPACK_ALIGNMENT")]
+    UnpackAlignment = unchecked((uint)0x0CF5),
+
+    [NativeName("GL_PACK_ALIGNMENT")]
+    PackAlignment = unchecked((uint)0x0D05),
+
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4")]
+    UnsignedShort4X4X4X4 = unchecked((uint)0x8033),
+
+    [NativeName("GL_UNSIGNED_SHORT_5_5_5_1")]
+    UnsignedShort5X5X5X1 = unchecked((uint)0x8034),
+
+    [NativeName("GL_UNSIGNED_SHORT_5_6_5")]
+    UnsignedShort5X6X5 = unchecked((uint)0x8363),
+
+    [NativeName("GL_FLAT")]
+    Flat = unchecked((uint)0x1D00),
+
+    [NativeName("GL_SMOOTH")]
+    Smooth = unchecked((uint)0x1D01),
 
     [NativeName("GL_KEEP")]
     Keep = unchecked((uint)0x1E00),
@@ -496,6 +715,25 @@ public enum GlEnum : uint
 
     [NativeName("GL_EXTENSIONS")]
     Extensions = unchecked((uint)0x1F03),
+
+    [NativeName("GL_MODULATE")]
+    Modulate = unchecked((uint)0x2100),
+
+    [NativeName("GL_DECAL")]
+    Decal = unchecked((uint)0x2101),
+
+    [NativeName("GL_ADD")]
+    Add = unchecked((uint)0x0104),
+
+    [NativeName("GL_TEXTURE_ENV_MODE")]
+    TextureEnvMode = unchecked((uint)0x2200),
+
+    [NativeName("GL_TEXTURE_ENV_COLOR")]
+    TextureEnvColor = unchecked((uint)0x2201),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_TEXTURE_ENV")]
+    TextureEnv = unchecked((uint)0x2300),
 
     [NativeName("GL_NEAREST")]
     Nearest = unchecked((uint)0x2600),
@@ -528,8 +766,1520 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "_T", -1)]
     TextureWrap = unchecked((uint)0x2803),
 
+    [NativeName("GL_GENERATE_MIPMAP")]
+    GenerateMipmap = unchecked((uint)0x8191),
+
+    [NativeName("GL_TEXTURE0")]
+    Texture0 = unchecked((uint)0x84C0),
+
+    [NativeName("GL_TEXTURE1")]
+    Texture1 = unchecked((uint)0x84C1),
+
+    [NativeName("GL_TEXTURE2")]
+    Texture2 = unchecked((uint)0x84C2),
+
+    [NativeName("GL_TEXTURE3")]
+    Texture3 = unchecked((uint)0x84C3),
+
+    [NativeName("GL_TEXTURE4")]
+    Texture4 = unchecked((uint)0x84C4),
+
+    [NativeName("GL_TEXTURE5")]
+    Texture5 = unchecked((uint)0x84C5),
+
+    [NativeName("GL_TEXTURE6")]
+    Texture6 = unchecked((uint)0x84C6),
+
+    [NativeName("GL_TEXTURE7")]
+    Texture7 = unchecked((uint)0x84C7),
+
+    [NativeName("GL_TEXTURE8")]
+    Texture8 = unchecked((uint)0x84C8),
+
+    [NativeName("GL_TEXTURE9")]
+    Texture9 = unchecked((uint)0x84C9),
+
+    [NativeName("GL_TEXTURE10")]
+    Texture10 = unchecked((uint)0x84CA),
+
+    [NativeName("GL_TEXTURE11")]
+    Texture11 = unchecked((uint)0x84CB),
+
+    [NativeName("GL_TEXTURE12")]
+    Texture12 = unchecked((uint)0x84CC),
+
+    [NativeName("GL_TEXTURE13")]
+    Texture13 = unchecked((uint)0x84CD),
+
+    [NativeName("GL_TEXTURE14")]
+    Texture14 = unchecked((uint)0x84CE),
+
+    [NativeName("GL_TEXTURE15")]
+    Texture15 = unchecked((uint)0x84CF),
+
+    [NativeName("GL_TEXTURE16")]
+    Texture16 = unchecked((uint)0x84D0),
+
+    [NativeName("GL_TEXTURE17")]
+    Texture17 = unchecked((uint)0x84D1),
+
+    [NativeName("GL_TEXTURE18")]
+    Texture18 = unchecked((uint)0x84D2),
+
+    [NativeName("GL_TEXTURE19")]
+    Texture19 = unchecked((uint)0x84D3),
+
+    [NativeName("GL_TEXTURE20")]
+    Texture20 = unchecked((uint)0x84D4),
+
+    [NativeName("GL_TEXTURE21")]
+    Texture21 = unchecked((uint)0x84D5),
+
+    [NativeName("GL_TEXTURE22")]
+    Texture22 = unchecked((uint)0x84D6),
+
+    [NativeName("GL_TEXTURE23")]
+    Texture23 = unchecked((uint)0x84D7),
+
+    [NativeName("GL_TEXTURE24")]
+    Texture24 = unchecked((uint)0x84D8),
+
+    [NativeName("GL_TEXTURE25")]
+    Texture25 = unchecked((uint)0x84D9),
+
+    [NativeName("GL_TEXTURE26")]
+    Texture26 = unchecked((uint)0x84DA),
+
+    [NativeName("GL_TEXTURE27")]
+    Texture27 = unchecked((uint)0x84DB),
+
+    [NativeName("GL_TEXTURE28")]
+    Texture28 = unchecked((uint)0x84DC),
+
+    [NativeName("GL_TEXTURE29")]
+    Texture29 = unchecked((uint)0x84DD),
+
+    [NativeName("GL_TEXTURE30")]
+    Texture30 = unchecked((uint)0x84DE),
+
+    [NativeName("GL_TEXTURE31")]
+    Texture31 = unchecked((uint)0x84DF),
+
+    [NativeName("GL_ACTIVE_TEXTURE")]
+    ActiveTexture = unchecked((uint)0x84E0),
+
+    [NativeName("GL_CLIENT_ACTIVE_TEXTURE")]
+    ClientActiveTexture = unchecked((uint)0x84E1),
+
     [NativeName("GL_REPEAT")]
     Repeat = unchecked((uint)0x2901),
+
+    [NativeName("GL_CLAMP_TO_EDGE")]
+    ClampToEdge = unchecked((uint)0x812F),
+
+    [NativeName("GL_LIGHT0")]
+    Light0 = unchecked((uint)0x4000),
+
+    [NativeName("GL_LIGHT1")]
+    Light1 = unchecked((uint)0x4001),
+
+    [NativeName("GL_LIGHT2")]
+    Light2 = unchecked((uint)0x4002),
+
+    [NativeName("GL_LIGHT3")]
+    Light3 = unchecked((uint)0x4003),
+
+    [NativeName("GL_LIGHT4")]
+    Light4 = unchecked((uint)0x4004),
+
+    [NativeName("GL_LIGHT5")]
+    Light5 = unchecked((uint)0x4005),
+
+    [NativeName("GL_LIGHT6")]
+    Light6 = unchecked((uint)0x4006),
+
+    [NativeName("GL_LIGHT7")]
+    Light7 = unchecked((uint)0x4007),
+
+    [NativeName("GL_ARRAY_BUFFER")]
+    ArrayBuffer = unchecked((uint)0x8892),
+
+    [NativeName("GL_ELEMENT_ARRAY_BUFFER")]
+    ElementArrayBuffer = unchecked((uint)0x8893),
+
+    [NativeName("GL_ARRAY_BUFFER_BINDING")]
+    ArrayBufferBinding = unchecked((uint)0x8894),
+
+    [NativeName("GL_ELEMENT_ARRAY_BUFFER_BINDING")]
+    ElementArrayBufferBinding = unchecked((uint)0x8895),
+
+    [NativeName("GL_VERTEX_ARRAY_BUFFER_BINDING")]
+    VertexArrayBufferBinding = unchecked((uint)0x8896),
+
+    [NativeName("GL_NORMAL_ARRAY_BUFFER_BINDING")]
+    NormalArrayBufferBinding = unchecked((uint)0x8897),
+
+    [NativeName("GL_COLOR_ARRAY_BUFFER_BINDING")]
+    ColorArrayBufferBinding = unchecked((uint)0x8898),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING")]
+    TextureCoordArrayBufferBinding = unchecked((uint)0x889A),
+
+    [NativeName("GL_STATIC_DRAW")]
+    StaticDraw = unchecked((uint)0x88E4),
+
+    [NativeName("GL_DYNAMIC_DRAW")]
+    DynamicDraw = unchecked((uint)0x88E8),
+
+    [NativeName("GL_BUFFER_SIZE")]
+    BufferSize = unchecked((uint)0x8764),
+
+    [NativeName("GL_BUFFER_USAGE")]
+    BufferUsage = unchecked((uint)0x8765),
+
+    [NativeName("GL_SUBTRACT")]
+    Subtract = unchecked((uint)0x84E7),
+
+    [NativeName("GL_COMBINE")]
+    Combine = unchecked((uint)0x8570),
+
+    [NativeName("GL_COMBINE_RGB")]
+    CombineRgb = unchecked((uint)0x8571),
+
+    [NativeName("GL_COMBINE_ALPHA")]
+    CombineAlpha = unchecked((uint)0x8572),
+
+    [NativeName("GL_RGB_SCALE")]
+    RgbScale = unchecked((uint)0x8573),
+
+    [NativeName("GL_ADD_SIGNED")]
+    AddSigned = unchecked((uint)0x8574),
+
+    [NativeName("GL_INTERPOLATE")]
+    Interpolate = unchecked((uint)0x8575),
+
+    [NativeName("GL_CONSTANT")]
+    Constant = unchecked((uint)0x8576),
+
+    [NativeName("GL_PRIMARY_COLOR")]
+    PrimaryColor = unchecked((uint)0x8577),
+
+    [NativeName("GL_PREVIOUS")]
+    Previous = unchecked((uint)0x8578),
+
+    [NativeName("GL_OPERAND0_RGB")]
+    Operand0Rgb = unchecked((uint)0x8590),
+
+    [NativeName("GL_OPERAND1_RGB")]
+    Operand1Rgb = unchecked((uint)0x8591),
+
+    [NativeName("GL_OPERAND2_RGB")]
+    Operand2Rgb = unchecked((uint)0x8592),
+
+    [NativeName("GL_OPERAND0_ALPHA")]
+    Operand0Alpha = unchecked((uint)0x8598),
+
+    [NativeName("GL_OPERAND1_ALPHA")]
+    Operand1Alpha = unchecked((uint)0x8599),
+
+    [NativeName("GL_OPERAND2_ALPHA")]
+    Operand2Alpha = unchecked((uint)0x859A),
+
+    [NativeName("GL_ALPHA_SCALE")]
+    AlphaScale = unchecked((uint)0x0D1C),
+
+    [NativeName("GL_SRC0_RGB")]
+    Src0Rgb = unchecked((uint)0x8580),
+
+    [NativeName("GL_SRC1_RGB")]
+    Src1Rgb = unchecked((uint)0x8581),
+
+    [NativeName("GL_SRC2_RGB")]
+    Src2Rgb = unchecked((uint)0x8582),
+
+    [NativeName("GL_SRC0_ALPHA")]
+    Src0Alpha = unchecked((uint)0x8588),
+
+    [NativeName("GL_SRC1_ALPHA")]
+    Src1Alpha = unchecked((uint)0x8589),
+
+    [NativeName("GL_SRC2_ALPHA")]
+    Src2Alpha = unchecked((uint)0x858A),
+
+    [NativeName("GL_DOT3_RGB")]
+    Dot3Rgb = unchecked((uint)0x86AE),
+
+    [NativeName("GL_DOT3_RGBA")]
+    Dot3Rgba = unchecked((uint)0x86AF),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_EXTERNAL_OES")]
+    TextureExternaloes = unchecked((uint)0x8D65),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_BINDING_EXTERNAL_OES")]
+    TextureBindingExternaloes = unchecked((uint)0x8D67),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES")]
+    RequiredTextureImageUnitsoes = unchecked((uint)0x8D68),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_EQUATION_RGB_OES")]
+    BlendEquationRgboes = unchecked((uint)0x8009),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_EQUATION_ALPHA_OES")]
+    BlendEquationAlphaoes = unchecked((uint)0x883D),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_DST_RGB_OES")]
+    BlendDstRgboes = unchecked((uint)0x80C8),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_SRC_RGB_OES")]
+    BlendSrcRgboes = unchecked((uint)0x80C9),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_DST_ALPHA_OES")]
+    BlendDstAlphaoes = unchecked((uint)0x80CA),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_SRC_ALPHA_OES")]
+    BlendSrcAlphaoes = unchecked((uint)0x80CB),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BLEND_EQUATION_OES")]
+    BlendEquationoes = unchecked((uint)0x8009),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FUNC_ADD_OES")]
+    FuncAddoes = unchecked((uint)0x8006),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FUNC_SUBTRACT_OES")]
+    FuncSubtractoes = unchecked((uint)0x800A),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FUNC_REVERSE_SUBTRACT_OES")]
+    FuncReverseSubtractoes = unchecked((uint)0x800B),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_ETC1_RGB8_OES")]
+    Etc1Rgb8Oes = unchecked((uint)0x8D64),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE4_RGB8_OES")]
+    Palette4Rgb8Oes = unchecked((uint)0x8B90),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE4_RGBA8_OES")]
+    Palette4Rgba8Oes = unchecked((uint)0x8B91),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE4_R5_G6_B5_OES")]
+    Palette4R5G6B5Oes = unchecked((uint)0x8B92),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE4_RGBA4_OES")]
+    Palette4Rgba4Oes = unchecked((uint)0x8B93),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE4_RGB5_A1_OES")]
+    Palette4Rgb5A1Oes = unchecked((uint)0x8B94),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE8_RGB8_OES")]
+    Palette8Rgb8Oes = unchecked((uint)0x8B95),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE8_RGBA8_OES")]
+    Palette8Rgba8Oes = unchecked((uint)0x8B96),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE8_R5_G6_B5_OES")]
+    Palette8R5G6B5Oes = unchecked((uint)0x8B97),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE8_RGBA4_OES")]
+    Palette8Rgba4Oes = unchecked((uint)0x8B98),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PALETTE8_RGB5_A1_OES")]
+    Palette8Rgb5A1Oes = unchecked((uint)0x8B99),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_COMPONENT24_OES")]
+    DepthComponent24Oes = unchecked((uint)0x81A6),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_COMPONENT32_OES")]
+    DepthComponent32Oes = unchecked((uint)0x81A7),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CROP_RECT_OES")]
+    TextureCropRectoes = unchecked((uint)0x8B9D),
+
+    [NativeName("GL_UNSIGNED_INT")]
+    UnsignedInt = unchecked((uint)0x1405),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FIXED_OES")]
+    Fixedoes = unchecked((uint)0x140C),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_NONE_OES")]
+    Noneoes = unchecked((uint)0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_OES")]
+    Framebufferoes = unchecked((uint)0x8D40),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_OES")]
+    Renderbufferoes = unchecked((uint)0x8D41),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGBA4_OES")]
+    Rgba4Oes = unchecked((uint)0x8056),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGB5_A1_OES")]
+    Rgb5A1Oes = unchecked((uint)0x8057),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGB565_OES")]
+    Rgb565Oes = unchecked((uint)0x8D62),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_COMPONENT16_OES")]
+    DepthComponent16Oes = unchecked((uint)0x81A5),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
+    RenderbufferWidthoes = unchecked((uint)0x8D42),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
+    RenderbufferHeightoes = unchecked((uint)0x8D43),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
+    RenderbufferInternalFormatoes = unchecked((uint)0x8D44),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
+    RenderbufferRedSizeoes = unchecked((uint)0x8D50),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
+    RenderbufferGreenSizeoes = unchecked((uint)0x8D51),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
+    RenderbufferBlueSizeoes = unchecked((uint)0x8D52),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
+    RenderbufferAlphaSizeoes = unchecked((uint)0x8D53),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
+    RenderbufferDepthSizeoes = unchecked((uint)0x8D54),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
+    RenderbufferStencilSizeoes = unchecked((uint)0x8D55),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
+    FramebufferAttachmentObjectTypeoes = unchecked((uint)0x8CD0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
+    FramebufferAttachmentObjectNameoes = unchecked((uint)0x8CD1),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
+    FramebufferAttachmentTextureLeveloes = unchecked((uint)0x8CD2),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
+    FramebufferAttachmentTextureCubeMapFaceoes = unchecked((uint)0x8CD3),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
+    ColorAttachment0Oes = unchecked((uint)0x8CE0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
+    DepthAttachmentoes = unchecked((uint)0x8D00),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
+    StencilAttachmentoes = unchecked((uint)0x8D20),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_COMPLETE_OES")]
+    FramebufferCompleteoes = unchecked((uint)0x8CD5),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES")]
+    FramebufferIncompleteAttachmentoes = unchecked((uint)0x8CD6),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES")]
+    FramebufferIncompleteMissingAttachmentoes = unchecked((uint)0x8CD7),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES")]
+    FramebufferIncompleteDimensionsoes = unchecked((uint)0x8CD9),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES")]
+    FramebufferIncompleteFormatsoes = unchecked((uint)0x8CDA),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_UNSUPPORTED_OES")]
+    FramebufferUnsupportedoes = unchecked((uint)0x8CDD),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_BINDING_OES")]
+    FramebufferBindingoes = unchecked((uint)0x8CA6),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RENDERBUFFER_BINDING_OES")]
+    RenderbufferBindingoes = unchecked((uint)0x8CA7),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MAX_RENDERBUFFER_SIZE_OES")]
+    MaxRenderbufferSizeoes = unchecked((uint)0x84E8),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
+    InvalidFramebufferOperationoes = unchecked((uint)0x0506),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WRITE_ONLY_OES")]
+    WriteOnlyoes = unchecked((uint)0x88B9),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BUFFER_ACCESS_OES")]
+    BufferAccessoes = unchecked((uint)0x88BB),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BUFFER_MAPPED_OES")]
+    BufferMappedoes = unchecked((uint)0x88BC),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_BUFFER_MAP_POINTER_OES")]
+    BufferMapPointeroes = unchecked((uint)0x88BD),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES")]
+    ModelviewMatrixFloatAsIntBitsoes = unchecked((uint)0x898D),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES")]
+    ProjectionMatrixFloatAsIntBitsoes = unchecked((uint)0x898E),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES")]
+    TextureMatrixFloatAsIntBitsoes = unchecked((uint)0x898F),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MAX_VERTEX_UNITS_OES")]
+    MaxVertexUnitsoes = unchecked((uint)0x86A4),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MAX_PALETTE_MATRICES_OES")]
+    MaxPaletteMatricesoes = unchecked((uint)0x8842),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_PALETTE_OES")]
+    MatrixPaletteoes = unchecked((uint)0x8840),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_INDEX_ARRAY_OES")]
+    MatrixIndexArrayoes = unchecked((uint)0x8844),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WEIGHT_ARRAY_OES")]
+    WeightArrayoes = unchecked((uint)0x86AD),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_CURRENT_PALETTE_MATRIX_OES")]
+    CurrentPaletteMatrixoes = unchecked((uint)0x8843),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_INDEX_ARRAY_SIZE_OES")]
+    MatrixIndexArraySizeoes = unchecked((uint)0x8846),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_INDEX_ARRAY_TYPE_OES")]
+    MatrixIndexArrayTypeoes = unchecked((uint)0x8847),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_INDEX_ARRAY_STRIDE_OES")]
+    MatrixIndexArrayStrideoes = unchecked((uint)0x8848),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_INDEX_ARRAY_POINTER_OES")]
+    MatrixIndexArrayPointeroes = unchecked((uint)0x8849),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES")]
+    MatrixIndexArrayBufferBindingoes = unchecked((uint)0x8B9E),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WEIGHT_ARRAY_SIZE_OES")]
+    WeightArraySizeoes = unchecked((uint)0x86AB),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WEIGHT_ARRAY_TYPE_OES")]
+    WeightArrayTypeoes = unchecked((uint)0x86A9),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WEIGHT_ARRAY_STRIDE_OES")]
+    WeightArrayStrideoes = unchecked((uint)0x86AA),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WEIGHT_ARRAY_POINTER_OES")]
+    WeightArrayPointeroes = unchecked((uint)0x86AC),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_WEIGHT_ARRAY_BUFFER_BINDING_OES")]
+    WeightArrayBufferBindingoes = unchecked((uint)0x889E),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_STENCIL_OES")]
+    DepthStenciloes = unchecked((uint)0x84F9),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
+    UnsignedInt24X8Oes = unchecked((uint)0x84FA),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH24_STENCIL8_OES")]
+    Depth24Stencil8Oes = unchecked((uint)0x88F0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_POINT_SIZE_ARRAY_OES")]
+    PointSizeArrayoes = unchecked((uint)0x8B9C),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_POINT_SIZE_ARRAY_TYPE_OES")]
+    PointSizeArrayTypeoes = unchecked((uint)0x898A),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_POINT_SIZE_ARRAY_STRIDE_OES")]
+    PointSizeArrayStrideoes = unchecked((uint)0x898B),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_POINT_SIZE_ARRAY_POINTER_OES")]
+    PointSizeArrayPointeroes = unchecked((uint)0x898C),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES")]
+    PointSizeArrayBufferBindingoes = unchecked((uint)0x8B9F),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_POINT_SPRITE_OES")]
+    PointSpriteoes = unchecked((uint)0x8861),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_COORD_REPLACE_OES")]
+    CoordReplaceoes = unchecked((uint)0x8862),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE_OES")]
+    ImplementationColorReadTypeoes = unchecked((uint)0x8B9A),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES")]
+    ImplementationColorReadFormatoes = unchecked((uint)0x8B9B),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_ALPHA8_OES")]
+    Alpha8Oes = unchecked((uint)0x803C),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
+    Luminance4Alpha4Oes = unchecked((uint)0x8043),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
+    Luminance8Alpha8Oes = unchecked((uint)0x8045),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_LUMINANCE8_OES")]
+    Luminance8Oes = unchecked((uint)0x8040),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGB8_OES")]
+    Rgb8Oes = unchecked((uint)0x8051),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGBA8_OES")]
+    Rgba8Oes = unchecked((uint)0x8058),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB10_EXT")]
+    Rgb10Ext = unchecked((uint)0x8052),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB10_A2_EXT")]
+    Rgb10A2Ext = unchecked((uint)0x8059),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_INDEX1_OES")]
+    StencilIndex1Oes = unchecked((uint)0x8D46),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_INDEX4_OES")]
+    StencilIndex4Oes = unchecked((uint)0x8D47),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_INDEX8_OES")]
+    StencilIndex8Oes = unchecked((uint)0x8D48),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_INCR_WRAP_OES")]
+    IncrWrapoes = unchecked((uint)0x8507),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DECR_WRAP_OES")]
+    DecrWrapoes = unchecked((uint)0x8508),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_UNDEFINED_OES")]
+    FramebufferUndefinedoes = unchecked((uint)0x8219),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_NORMAL_MAP_OES")]
+    NormalMapoes = unchecked((uint)0x8511),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_REFLECTION_MAP_OES")]
+    ReflectionMapoes = unchecked((uint)0x8512),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapoes = unchecked((uint)0x8513),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
+    TextureBindingCubeMapoes = unchecked((uint)0x8514),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
+    TextureCubeMapPositiveXoes = unchecked((uint)0x8515),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
+    TextureCubeMapNegativeXoes = unchecked((uint)0x8516),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
+    TextureCubeMapPositiveYoes = unchecked((uint)0x8517),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
+    TextureCubeMapNegativeYoes = unchecked((uint)0x8518),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
+    TextureCubeMapPositiveZoes = unchecked((uint)0x8519),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
+    TextureCubeMapNegativeZoes = unchecked((uint)0x851A),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
+    MaxCubeMapTextureSizeoes = unchecked((uint)0x851C),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_GEN_MODE_OES")]
+    TextureGenModeoes = unchecked((uint)0x2500),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStroes = unchecked((uint)0x8D60),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_MIRRORED_REPEAT_OES")]
+    MirroredRepeatoes = unchecked((uint)0x8370),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_VERTEX_ARRAY_BINDING_OES")]
+    VertexArrayBindingoes = unchecked((uint)0x85B5),
+
+    [NameAffix("Suffix", "AMD", 0)]
+    [NativeName("GL_3DC_X_AMD")]
+    X3DcXamd = unchecked((uint)0x87F9),
+
+    [NameAffix("Suffix", "AMD", 0)]
+    [NativeName("GL_3DC_XY_AMD")]
+    X3DcXyamd = unchecked((uint)0x87FA),
+
+    [NameAffix("Suffix", "AMD", 0)]
+    [NativeName("GL_ATC_RGB_AMD")]
+    AtcRgbamd = unchecked((uint)0x8C92),
+
+    [NameAffix("Suffix", "AMD", 0)]
+    [NativeName("GL_ATC_RGBA_EXPLICIT_ALPHA_AMD")]
+    AtcRgbaExplicitAlphaamd = unchecked((uint)0x8C93),
+
+    [NameAffix("Suffix", "AMD", 0)]
+    [NativeName("GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD")]
+    AtcRgbaInterpolatedAlphaamd = unchecked((uint)0x87EE),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
+    RenderbufferSamplesapple = unchecked((uint)0x8CAB),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE")]
+    FramebufferIncompleteMultisampleapple = unchecked((uint)0x8D56),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_MAX_SAMPLES_APPLE")]
+    MaxSamplesapple = unchecked((uint)0x8D57),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_READ_FRAMEBUFFER_APPLE")]
+    ReadFramebufferapple = unchecked((uint)0x8CA8),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_DRAW_FRAMEBUFFER_APPLE")]
+    DrawFramebufferapple = unchecked((uint)0x8CA9),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_APPLE")]
+    DrawFramebufferBindingapple = unchecked((uint)0x8CA6),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_READ_FRAMEBUFFER_BINDING_APPLE")]
+    ReadFramebufferBindingapple = unchecked((uint)0x8CAA),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_OBJECT_APPLE")]
+    SyncObjectapple = unchecked((uint)0x8A53),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_MAX_SERVER_WAIT_TIMEOUT_APPLE")]
+    MaxServerWaitTimeoutapple = unchecked((uint)0x9111),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_OBJECT_TYPE_APPLE")]
+    ObjectTypeapple = unchecked((uint)0x9112),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_CONDITION_APPLE")]
+    SyncConditionapple = unchecked((uint)0x9113),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_STATUS_APPLE")]
+    SyncStatusapple = unchecked((uint)0x9114),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_FLAGS_APPLE")]
+    SyncFlagsapple = unchecked((uint)0x9115),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_FENCE_APPLE")]
+    SyncFenceapple = unchecked((uint)0x9116),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE")]
+    SyncGpuCommandsCompleteapple = unchecked((uint)0x9117),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_UNSIGNALED_APPLE")]
+    Unsignaledapple = unchecked((uint)0x9118),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SIGNALED_APPLE")]
+    Signaledapple = unchecked((uint)0x9119),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_ALREADY_SIGNALED_APPLE")]
+    AlreadySignaledapple = unchecked((uint)0x911A),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_TIMEOUT_EXPIRED_APPLE")]
+    TimeoutExpiredapple = unchecked((uint)0x911B),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_CONDITION_SATISFIED_APPLE")]
+    ConditionSatisfiedapple = unchecked((uint)0x911C),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_WAIT_FAILED_APPLE")]
+    WaitFailedapple = unchecked((uint)0x911D),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
+    SyncFlushCommandsBitapple = unchecked((uint)0x00000001),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_TIMEOUT_IGNORED_APPLE")]
+    TimeoutIgnoredapple = unchecked((uint)0xFFFFFFFFFFFFFFFFUL),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_BGRA_EXT")]
+    Bgraext = unchecked((uint)0x80E1),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_BGRA8_EXT")]
+    Bgra8Ext = unchecked((uint)0x93A1),
+
+    [NameAffix("Suffix", "APPLE", 0)]
+    [NativeName("GL_TEXTURE_MAX_LEVEL_APPLE")]
+    TextureMaxLevelapple = unchecked((uint)0x813D),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MIN_EXT")]
+    Minext = unchecked((uint)0x8007),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAX_EXT")]
+    Maxext = unchecked((uint)0x8008),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_COLOR_EXT")]
+    Colorext = unchecked((uint)0x1800),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_DEPTH_EXT")]
+    Depthext = unchecked((uint)0x1801),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_STENCIL_EXT")]
+    Stencilext = unchecked((uint)0x1802),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_READ_BIT_EXT")]
+    MapReadBitext = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
+    MapWriteBitext = unchecked((uint)0x0002),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
+    MapInvalidateRangeBitext = unchecked((uint)0x0004),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
+    MapInvalidateBufferBitext = unchecked((uint)0x0008),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
+    MapFlushExplicitBitext = unchecked((uint)0x0010),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
+    MapUnsynchronizedBitext = unchecked((uint)0x0020),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
+    FramebufferAttachmentTextureSamplesext = unchecked((uint)0x8D6C),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
+    RenderbufferSamplesext = unchecked((uint)0x8CAB),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT")]
+    FramebufferIncompleteMultisampleext = unchecked((uint)0x8D56),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAX_SAMPLES_EXT")]
+    MaxSamplesext = unchecked((uint)0x8D57),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
+    UnsignedShort4X4X4X4Revext = unchecked((uint)0x8365),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
+    UnsignedShort1X5X5X5Revext = unchecked((uint)0x8366),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_GUILTY_CONTEXT_RESET_EXT")]
+    GuiltyContextResetext = unchecked((uint)0x8253),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_INNOCENT_CONTEXT_RESET_EXT")]
+    InnocentContextResetext = unchecked((uint)0x8254),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_UNKNOWN_CONTEXT_RESET_EXT")]
+    UnknownContextResetext = unchecked((uint)0x8255),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_CONTEXT_ROBUST_ACCESS_EXT")]
+    ContextRobustAccessext = unchecked((uint)0x90F3),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RESET_NOTIFICATION_STRATEGY_EXT")]
+    ResetNotificationStrategyext = unchecked((uint)0x8256),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LOSE_CONTEXT_ON_RESET_EXT")]
+    LoseContextOnResetext = unchecked((uint)0x8252),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_NO_RESET_NOTIFICATION_EXT")]
+    NoResetNotificationext = unchecked((uint)0x8261),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SRGB_EXT")]
+    Srgbext = unchecked((uint)0x8C40),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SRGB_ALPHA_EXT")]
+    SrgbAlphaext = unchecked((uint)0x8C42),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SRGB8_ALPHA8_EXT")]
+    Srgb8Alpha8Ext = unchecked((uint)0x8C43),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
+    FramebufferAttachmentColorEncodingext = unchecked((uint)0x8210),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_COMPRESSED_RGB_S3TC_DXT1_EXT")]
+    CompressedRgbS3TcDxt1Ext = unchecked((uint)0x83F0),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
+    CompressedRgbaS3TcDxt1Ext = unchecked((uint)0x83F1),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_TEXTURE_MAX_ANISOTROPY_EXT")]
+    TextureMaxAnisotropyext = unchecked((uint)0x84FE),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT")]
+    MaxTextureMaxAnisotropyext = unchecked((uint)0x84FF),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAX_TEXTURE_LOD_BIAS_EXT")]
+    MaxTextureLodBiasext = unchecked((uint)0x84FD),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_TEXTURE_FILTER_CONTROL_EXT")]
+    TextureFilterControlext = unchecked((uint)0x8500),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_TEXTURE_LOD_BIAS_EXT")]
+    TextureLodBiasext = unchecked((uint)0x8501),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_TEXTURE_IMMUTABLE_FORMAT_EXT")]
+    TextureImmutableFormatext = unchecked((uint)0x912F),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_ALPHA8_EXT")]
+    Alpha8Ext = unchecked((uint)0x803C),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE8_EXT")]
+    Luminance8Ext = unchecked((uint)0x8040),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE8_ALPHA8_EXT")]
+    Luminance8Alpha8Ext = unchecked((uint)0x8045),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGBA32F_EXT")]
+    Rgba32Fext = unchecked((uint)0x8814),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB32F_EXT")]
+    Rgb32Fext = unchecked((uint)0x8815),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_ALPHA32F_EXT")]
+    Alpha32Fext = unchecked((uint)0x8816),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE32F_EXT")]
+    Luminance32Fext = unchecked((uint)0x8818),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE_ALPHA32F_EXT")]
+    LuminanceAlpha32Fext = unchecked((uint)0x8819),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGBA16F_EXT")]
+    Rgba16Fext = unchecked((uint)0x881A),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB16F_EXT")]
+    Rgb16Fext = unchecked((uint)0x881B),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_ALPHA16F_EXT")]
+    Alpha16Fext = unchecked((uint)0x881C),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE16F_EXT")]
+    Luminance16Fext = unchecked((uint)0x881E),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE_ALPHA16F_EXT")]
+    LuminanceAlpha16Fext = unchecked((uint)0x881F),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_R8_EXT")]
+    R8Ext = unchecked((uint)0x8229),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RG8_EXT")]
+    Rg8Ext = unchecked((uint)0x822B),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_R32F_EXT")]
+    R32Fext = unchecked((uint)0x822E),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RG32F_EXT")]
+    Rg32Fext = unchecked((uint)0x8230),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_R16F_EXT")]
+    R16Fext = unchecked((uint)0x822D),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RG16F_EXT")]
+    Rg16Fext = unchecked((uint)0x822F),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
+    RenderbufferSamplesimg = unchecked((uint)0x9133),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG")]
+    FramebufferIncompleteMultisampleimg = unchecked((uint)0x9134),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_MAX_SAMPLES_IMG")]
+    MaxSamplesimg = unchecked((uint)0x9135),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_TEXTURE_SAMPLES_IMG")]
+    TextureSamplesimg = unchecked((uint)0x9136),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_BGRA_IMG")]
+    Bgraimg = unchecked((uint)0x80E1),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
+    UnsignedShort4X4X4X4Revimg = unchecked((uint)0x8365),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG")]
+    CompressedRgbPvrtc4Bppv1Img = unchecked((uint)0x8C00),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG")]
+    CompressedRgbPvrtc2Bppv1Img = unchecked((uint)0x8C01),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG")]
+    CompressedRgbaPvrtc4Bppv1Img = unchecked((uint)0x8C02),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG")]
+    CompressedRgbaPvrtc2Bppv1Img = unchecked((uint)0x8C03),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_MODULATE_COLOR_IMG")]
+    ModulateColorimg = unchecked((uint)0x8C04),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_RECIP_ADD_SIGNED_ALPHA_IMG")]
+    RecipAddSignedAlphaimg = unchecked((uint)0x8C05),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_TEXTURE_ALPHA_MODULATE_IMG")]
+    TextureAlphaModulateimg = unchecked((uint)0x8C06),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_FACTOR_ALPHA_MODULATE_IMG")]
+    FactorAlphaModulateimg = unchecked((uint)0x8C07),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_FRAGMENT_ALPHA_MODULATE_IMG")]
+    FragmentAlphaModulateimg = unchecked((uint)0x8C08),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_ADD_BLEND_IMG")]
+    AddBlendimg = unchecked((uint)0x8C09),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_DOT3_RGBA_IMG")]
+    Dot3Rgbaimg = unchecked((uint)0x86AF),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_CLIP_PLANE0_IMG")]
+    ClipPlane0Img = unchecked((uint)0x3000),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_CLIP_PLANE1_IMG")]
+    ClipPlane1Img = unchecked((uint)0x3001),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_CLIP_PLANE2_IMG")]
+    ClipPlane2Img = unchecked((uint)0x3002),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_CLIP_PLANE3_IMG")]
+    ClipPlane3Img = unchecked((uint)0x3003),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_CLIP_PLANE4_IMG")]
+    ClipPlane4Img = unchecked((uint)0x3004),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_CLIP_PLANE5_IMG")]
+    ClipPlane5Img = unchecked((uint)0x3005),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_MAX_CLIP_PLANES_IMG")]
+    MaxClipPlanesimg = unchecked((uint)0x0D32),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_ALL_COMPLETED_NV")]
+    AllCompletednv = unchecked((uint)0x84F2),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_FENCE_STATUS_NV")]
+    FenceStatusnv = unchecked((uint)0x84F3),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_FENCE_CONDITION_NV")]
+    FenceConditionnv = unchecked((uint)0x84F4),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_WIDTH_QCOM")]
+    TextureWidthqcom = unchecked((uint)0x8BD2),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_HEIGHT_QCOM")]
+    TextureHeightqcom = unchecked((uint)0x8BD3),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_DEPTH_QCOM")]
+    TextureDepthqcom = unchecked((uint)0x8BD4),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_INTERNAL_FORMAT_QCOM")]
+    TextureInternalFormatqcom = unchecked((uint)0x8BD5),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_FORMAT_QCOM")]
+    TextureFormatqcom = unchecked((uint)0x8BD6),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_TYPE_QCOM")]
+    TextureTypeqcom = unchecked((uint)0x8BD7),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_IMAGE_VALID_QCOM")]
+    TextureImageValidqcom = unchecked((uint)0x8BD8),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_NUM_LEVELS_QCOM")]
+    TextureNumLevelsqcom = unchecked((uint)0x8BD9),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_TARGET_QCOM")]
+    TextureTargetqcom = unchecked((uint)0x8BDA),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_TEXTURE_OBJECT_VALID_QCOM")]
+    TextureObjectValidqcom = unchecked((uint)0x8BDB),
+
+    [NativeName("GL_STATE_RESTORE")]
+    StateRestore = unchecked((uint)0x8BDC),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_PERFMON_GLOBAL_MODE_QCOM")]
+    PerfmonGlobalModeqcom = unchecked((uint)0x8FA0),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
+    ColorBufferBit0Qcom = unchecked((uint)0x00000001),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT1_QCOM")]
+    ColorBufferBit1Qcom = unchecked((uint)0x00000002),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT2_QCOM")]
+    ColorBufferBit2Qcom = unchecked((uint)0x00000004),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT3_QCOM")]
+    ColorBufferBit3Qcom = unchecked((uint)0x00000008),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT4_QCOM")]
+    ColorBufferBit4Qcom = unchecked((uint)0x00000010),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT5_QCOM")]
+    ColorBufferBit5Qcom = unchecked((uint)0x00000020),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT6_QCOM")]
+    ColorBufferBit6Qcom = unchecked((uint)0x00000040),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_COLOR_BUFFER_BIT7_QCOM")]
+    ColorBufferBit7Qcom = unchecked((uint)0x00000080),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT0_QCOM")]
+    DepthBufferBit0Qcom = unchecked((uint)0x00000100),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT1_QCOM")]
+    DepthBufferBit1Qcom = unchecked((uint)0x00000200),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT2_QCOM")]
+    DepthBufferBit2Qcom = unchecked((uint)0x00000400),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT3_QCOM")]
+    DepthBufferBit3Qcom = unchecked((uint)0x00000800),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT4_QCOM")]
+    DepthBufferBit4Qcom = unchecked((uint)0x00001000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT5_QCOM")]
+    DepthBufferBit5Qcom = unchecked((uint)0x00002000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT6_QCOM")]
+    DepthBufferBit6Qcom = unchecked((uint)0x00004000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_DEPTH_BUFFER_BIT7_QCOM")]
+    DepthBufferBit7Qcom = unchecked((uint)0x00008000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT0_QCOM")]
+    StencilBufferBit0Qcom = unchecked((uint)0x00010000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT1_QCOM")]
+    StencilBufferBit1Qcom = unchecked((uint)0x00020000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT2_QCOM")]
+    StencilBufferBit2Qcom = unchecked((uint)0x00040000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT3_QCOM")]
+    StencilBufferBit3Qcom = unchecked((uint)0x00080000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT4_QCOM")]
+    StencilBufferBit4Qcom = unchecked((uint)0x00100000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT5_QCOM")]
+    StencilBufferBit5Qcom = unchecked((uint)0x00200000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT6_QCOM")]
+    StencilBufferBit6Qcom = unchecked((uint)0x00400000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_STENCIL_BUFFER_BIT7_QCOM")]
+    StencilBufferBit7Qcom = unchecked((uint)0x00800000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT0_QCOM")]
+    MultisampleBufferBit0Qcom = unchecked((uint)0x01000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT1_QCOM")]
+    MultisampleBufferBit1Qcom = unchecked((uint)0x02000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT2_QCOM")]
+    MultisampleBufferBit2Qcom = unchecked((uint)0x04000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT3_QCOM")]
+    MultisampleBufferBit3Qcom = unchecked((uint)0x08000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT4_QCOM")]
+    MultisampleBufferBit4Qcom = unchecked((uint)0x10000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT5_QCOM")]
+    MultisampleBufferBit5Qcom = unchecked((uint)0x20000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT6_QCOM")]
+    MultisampleBufferBit6Qcom = unchecked((uint)0x40000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT7_QCOM")]
+    MultisampleBufferBit7Qcom = unchecked((uint)0x80000000),
+
+    [NameAffix("Suffix", "QCOM", 0)]
+    [NativeName("GL_WRITEONLY_RENDERING_QCOM")]
+    WriteonlyRenderingqcom = unchecked((uint)0x8823),
+
+    [NativeName("GL_QUADS")]
+    Quads = unchecked((uint)0x0007),
+
+    [NativeName("GL_NONE")]
+    None = unchecked((uint)0),
+
+    [NativeName("GL_FRONT_LEFT")]
+    FrontLeft = unchecked((uint)0x0400),
+
+    [NativeName("GL_FRONT_RIGHT")]
+    FrontRight = unchecked((uint)0x0401),
+
+    [NativeName("GL_BACK_LEFT")]
+    BackLeft = unchecked((uint)0x0402),
+
+    [NativeName("GL_BACK_RIGHT")]
+    BackRight = unchecked((uint)0x0403),
+
+    [NativeName("GL_LEFT")]
+    Left = unchecked((uint)0x0406),
+
+    [NativeName("GL_RIGHT")]
+    Right = unchecked((uint)0x0407),
+
+    [NativeName("GL_POINT_SIZE_RANGE")]
+    PointSizeRange = unchecked((uint)0x0B12),
+
+    [NativeName("GL_POINT_SIZE_GRANULARITY")]
+    PointSizeGranularity = unchecked((uint)0x0B13),
+
+    [NativeName("GL_LINE_WIDTH_RANGE")]
+    LineWidthRange = unchecked((uint)0x0B22),
+
+    [NativeName("GL_LINE_WIDTH_GRANULARITY")]
+    LineWidthGranularity = unchecked((uint)0x0B23),
+
+    [NativeName("GL_POLYGON_MODE")]
+    PolygonMode = unchecked((uint)0x0B40),
+
+    [NativeName("GL_POLYGON_SMOOTH")]
+    PolygonSmooth = unchecked((uint)0x0B41),
+
+    [NativeName("GL_DRAW_BUFFER")]
+    DrawBuffer = unchecked((uint)0x0C01),
+
+    [NativeName("GL_READ_BUFFER")]
+    ReadBuffer = unchecked((uint)0x0C02),
+
+    [NativeName("GL_DOUBLEBUFFER")]
+    Doublebuffer = unchecked((uint)0x0C32),
+
+    [NativeName("GL_STEREO")]
+    Stereo = unchecked((uint)0x0C33),
+
+    [NativeName("GL_POLYGON_SMOOTH_HINT")]
+    PolygonSmoothHint = unchecked((uint)0x0C53),
+
+    [NativeName("GL_UNPACK_SWAP_BYTES")]
+    UnpackSwapBytes = unchecked((uint)0x0CF0),
+
+    [NativeName("GL_UNPACK_LSB_FIRST")]
+    UnpackLsbFirst = unchecked((uint)0x0CF1),
+
+    [NativeName("GL_UNPACK_ROW_LENGTH")]
+    UnpackRowLength = unchecked((uint)0x0CF2),
+
+    [NativeName("GL_UNPACK_SKIP_ROWS")]
+    UnpackSkipRows = unchecked((uint)0x0CF3),
+
+    [NativeName("GL_UNPACK_SKIP_PIXELS")]
+    UnpackSkipPixels = unchecked((uint)0x0CF4),
+
+    [NativeName("GL_PACK_SWAP_BYTES")]
+    PackSwapBytes = unchecked((uint)0x0D00),
+
+    [NativeName("GL_PACK_LSB_FIRST")]
+    PackLsbFirst = unchecked((uint)0x0D01),
+
+    [NativeName("GL_PACK_ROW_LENGTH")]
+    PackRowLength = unchecked((uint)0x0D02),
+
+    [NativeName("GL_PACK_SKIP_ROWS")]
+    PackSkipRows = unchecked((uint)0x0D03),
+
+    [NativeName("GL_PACK_SKIP_PIXELS")]
+    PackSkipPixels = unchecked((uint)0x0D04),
+
+    [NativeName("GL_TEXTURE_1D")]
+    Texture1D = unchecked((uint)0x0DE0),
+
+    [NativeName("GL_TEXTURE_WIDTH")]
+    TextureWidth = unchecked((uint)0x1000),
+
+    [NativeName("GL_TEXTURE_HEIGHT")]
+    TextureHeight = unchecked((uint)0x1001),
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR")]
+    TextureBorderColor = unchecked((uint)0x1004),
+
+    [NativeName("GL_INT")]
+    Int = unchecked((uint)0x1404),
+
+    [NativeName("GL_COLOR")]
+    Color = unchecked((uint)0x1800),
+
+    [NativeName("GL_DEPTH")]
+    Depth = unchecked((uint)0x1801),
+
+    [NativeName("GL_STENCIL")]
+    Stencil = unchecked((uint)0x1802),
+
+    [NativeName("GL_STENCIL_INDEX")]
+    StencilIndex = unchecked((uint)0x1901),
+
+    [NativeName("GL_DEPTH_COMPONENT")]
+    DepthComponent = unchecked((uint)0x1902),
+
+    [NativeName("GL_RED")]
+    Red = unchecked((uint)0x1903),
+
+    [NativeName("GL_GREEN")]
+    Green = unchecked((uint)0x1904),
+
+    [NativeName("GL_BLUE")]
+    Blue = unchecked((uint)0x1905),
+
+    [NativeName("GL_POINT")]
+    Point = unchecked((uint)0x1B00),
+
+    [NativeName("GL_LINE")]
+    Line = unchecked((uint)0x1B01),
+
+    [NativeName("GL_FILL")]
+    Fill = unchecked((uint)0x1B02),
 
     [NativeName("GL_CURRENT_BIT")]
     CurrentBit = unchecked((uint)0x00000001),
@@ -603,9 +2353,6 @@ public enum GlEnum : uint
     [NativeName("GL_MULT")]
     Mult = unchecked((uint)0x0103),
 
-    [NativeName("GL_ADD")]
-    Add = unchecked((uint)0x0104),
-
     [NativeName("GL_AUX0")]
     Aux0 = unchecked((uint)0x0409),
 
@@ -657,12 +2404,6 @@ public enum GlEnum : uint
     [NativeName("GL_LINE_RESET_TOKEN")]
     LineResetToken = unchecked((uint)0x0707),
 
-    [NativeName("GL_EXP")]
-    Exp = unchecked((uint)0x0800),
-
-    [NativeName("GL_EXP2")]
-    Exp2 = unchecked((uint)0x0801),
-
     [NativeName("GL_COEFF")]
     Coeff = unchecked((uint)0x0A00),
 
@@ -702,17 +2443,8 @@ public enum GlEnum : uint
     [NativeName("GL_PIXEL_MAP_A_TO_A")]
     PixelMapAToA = unchecked((uint)0x0C79),
 
-    [NativeName("GL_CURRENT_COLOR")]
-    CurrentColor = unchecked((uint)0x0B00),
-
     [NativeName("GL_CURRENT_INDEX")]
     CurrentIndex = unchecked((uint)0x0B01),
-
-    [NativeName("GL_CURRENT_NORMAL")]
-    CurrentNormal = unchecked((uint)0x0B02),
-
-    [NativeName("GL_CURRENT_TEXTURE_COORDS")]
-    CurrentTextureCoords = unchecked((uint)0x0B03),
 
     [NativeName("GL_CURRENT_RASTER_COLOR")]
     CurrentRasterColor = unchecked((uint)0x0B04),
@@ -731,9 +2463,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_CURRENT_RASTER_DISTANCE")]
     CurrentRasterDistance = unchecked((uint)0x0B09),
-
-    [NativeName("GL_POINT_SMOOTH")]
-    PointSmooth = unchecked((uint)0x0B10),
 
     [NativeName("GL_LINE_STIPPLE")]
     LineStipple = unchecked((uint)0x0B24),
@@ -762,20 +2491,8 @@ public enum GlEnum : uint
     [NativeName("GL_EDGE_FLAG")]
     EdgeFlag = unchecked((uint)0x0B43),
 
-    [NativeName("GL_LIGHTING")]
-    Lighting = unchecked((uint)0x0B50),
-
     [NativeName("GL_LIGHT_MODEL_LOCAL_VIEWER")]
     LightModelLocalViewer = unchecked((uint)0x0B51),
-
-    [NativeName("GL_LIGHT_MODEL_TWO_SIDE")]
-    LightModelTwoSide = unchecked((uint)0x0B52),
-
-    [NativeName("GL_LIGHT_MODEL_AMBIENT")]
-    LightModelAmbient = unchecked((uint)0x0B53),
-
-    [NativeName("GL_SHADE_MODEL")]
-    ShadeModel = unchecked((uint)0x0B54),
 
     [NativeName("GL_COLOR_MATERIAL_FACE")]
     ColorMaterialFace = unchecked((uint)0x0B55),
@@ -783,68 +2500,14 @@ public enum GlEnum : uint
     [NativeName("GL_COLOR_MATERIAL_PARAMETER")]
     ColorMaterialParameter = unchecked((uint)0x0B56),
 
-    [NativeName("GL_COLOR_MATERIAL")]
-    ColorMaterial = unchecked((uint)0x0B57),
-
-    [NativeName("GL_FOG")]
-    Fog = unchecked((uint)0x0B60),
-
     [NativeName("GL_FOG_INDEX")]
     FogIndex = unchecked((uint)0x0B61),
-
-    [NativeName("GL_FOG_DENSITY")]
-    FogDensity = unchecked((uint)0x0B62),
-
-    [NativeName("GL_FOG_START")]
-    FogStart = unchecked((uint)0x0B63),
-
-    [NativeName("GL_FOG_END")]
-    FogEnd = unchecked((uint)0x0B64),
-
-    [NativeName("GL_FOG_MODE")]
-    FogMode = unchecked((uint)0x0B65),
-
-    [NativeName("GL_FOG_COLOR")]
-    FogColor = unchecked((uint)0x0B66),
 
     [NativeName("GL_ACCUM_CLEAR_VALUE")]
     AccumClearValue = unchecked((uint)0x0B80),
 
-    [NativeName("GL_MATRIX_MODE")]
-    MatrixMode = unchecked((uint)0x0BA0),
-
-    [NativeName("GL_NORMALIZE")]
-    Normalize = unchecked((uint)0x0BA1),
-
-    [NativeName("GL_MODELVIEW_STACK_DEPTH")]
-    ModelviewStackDepth = unchecked((uint)0x0BA3),
-
-    [NativeName("GL_PROJECTION_STACK_DEPTH")]
-    ProjectionStackDepth = unchecked((uint)0x0BA4),
-
-    [NativeName("GL_TEXTURE_STACK_DEPTH")]
-    TextureStackDepth = unchecked((uint)0x0BA5),
-
-    [NativeName("GL_MODELVIEW_MATRIX")]
-    ModelviewMatrix = unchecked((uint)0x0BA6),
-
-    [NativeName("GL_PROJECTION_MATRIX")]
-    ProjectionMatrix = unchecked((uint)0x0BA7),
-
-    [NativeName("GL_TEXTURE_MATRIX")]
-    TextureMatrix = unchecked((uint)0x0BA8),
-
     [NativeName("GL_ATTRIB_STACK_DEPTH")]
     AttribStackDepth = unchecked((uint)0x0BB0),
-
-    [NativeName("GL_ALPHA_TEST")]
-    AlphaTest = unchecked((uint)0x0BC0),
-
-    [NativeName("GL_ALPHA_TEST_FUNC")]
-    AlphaTestFunc = unchecked((uint)0x0BC1),
-
-    [NativeName("GL_ALPHA_TEST_REF")]
-    AlphaTestRef = unchecked((uint)0x0BC2),
 
     [NativeName("GL_LOGIC_OP")]
     LogicOp = unchecked((uint)0x0BF1),
@@ -866,15 +2529,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_RENDER_MODE")]
     RenderMode = unchecked((uint)0x0C40),
-
-    [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
-    PerspectiveCorrectionHint = unchecked((uint)0x0C50),
-
-    [NativeName("GL_POINT_SMOOTH_HINT")]
-    PointSmoothHint = unchecked((uint)0x0C51),
-
-    [NativeName("GL_FOG_HINT")]
-    FogHint = unchecked((uint)0x0C54),
 
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = unchecked((uint)0x0C60),
@@ -955,9 +2609,6 @@ public enum GlEnum : uint
     [NativeName("GL_BLUE_BIAS")]
     BlueBias = unchecked((uint)0x0D1B),
 
-    [NativeName("GL_ALPHA_SCALE")]
-    AlphaScale = unchecked((uint)0x0D1C),
-
     [NativeName("GL_ALPHA_BIAS")]
     AlphaBias = unchecked((uint)0x0D1D),
 
@@ -970,50 +2621,17 @@ public enum GlEnum : uint
     [NativeName("GL_MAX_EVAL_ORDER")]
     MaxEvalOrder = unchecked((uint)0x0D30),
 
-    [NativeName("GL_MAX_LIGHTS")]
-    MaxLights = unchecked((uint)0x0D31),
-
-    [NativeName("GL_MAX_CLIP_PLANES")]
-    MaxClipPlanes = unchecked((uint)0x0D32),
-
     [NativeName("GL_MAX_PIXEL_MAP_TABLE")]
     MaxPixelMapTable = unchecked((uint)0x0D34),
 
     [NativeName("GL_MAX_ATTRIB_STACK_DEPTH")]
     MaxAttribStackDepth = unchecked((uint)0x0D35),
 
-    [NativeName("GL_MAX_MODELVIEW_STACK_DEPTH")]
-    MaxModelviewStackDepth = unchecked((uint)0x0D36),
-
     [NativeName("GL_MAX_NAME_STACK_DEPTH")]
     MaxNameStackDepth = unchecked((uint)0x0D37),
 
-    [NativeName("GL_MAX_PROJECTION_STACK_DEPTH")]
-    MaxProjectionStackDepth = unchecked((uint)0x0D38),
-
-    [NativeName("GL_MAX_TEXTURE_STACK_DEPTH")]
-    MaxTextureStackDepth = unchecked((uint)0x0D39),
-
     [NativeName("GL_INDEX_BITS")]
     IndexBits = unchecked((uint)0x0D51),
-
-    [NativeName("GL_RED_BITS")]
-    RedBits = unchecked((uint)0x0D52),
-
-    [NativeName("GL_GREEN_BITS")]
-    GreenBits = unchecked((uint)0x0D53),
-
-    [NativeName("GL_BLUE_BITS")]
-    BlueBits = unchecked((uint)0x0D54),
-
-    [NativeName("GL_ALPHA_BITS")]
-    AlphaBits = unchecked((uint)0x0D55),
-
-    [NativeName("GL_DEPTH_BITS")]
-    DepthBits = unchecked((uint)0x0D56),
-
-    [NativeName("GL_STENCIL_BITS")]
-    StencilBits = unchecked((uint)0x0D57),
 
     [NativeName("GL_ACCUM_RED_BITS")]
     AccumRedBits = unchecked((uint)0x0D58),
@@ -1105,36 +2723,6 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_BORDER")]
     TextureBorder = unchecked((uint)0x1005),
 
-    [NativeName("GL_AMBIENT")]
-    Ambient = unchecked((uint)0x1200),
-
-    [NativeName("GL_DIFFUSE")]
-    Diffuse = unchecked((uint)0x1201),
-
-    [NativeName("GL_SPECULAR")]
-    Specular = unchecked((uint)0x1202),
-
-    [NativeName("GL_POSITION")]
-    Position = unchecked((uint)0x1203),
-
-    [NativeName("GL_SPOT_DIRECTION")]
-    SpotDirection = unchecked((uint)0x1204),
-
-    [NativeName("GL_SPOT_EXPONENT")]
-    SpotExponent = unchecked((uint)0x1205),
-
-    [NativeName("GL_SPOT_CUTOFF")]
-    SpotCutoff = unchecked((uint)0x1206),
-
-    [NativeName("GL_CONSTANT_ATTENUATION")]
-    ConstantAttenuation = unchecked((uint)0x1207),
-
-    [NativeName("GL_LINEAR_ATTENUATION")]
-    LinearAttenuation = unchecked((uint)0x1208),
-
-    [NativeName("GL_QUADRATIC_ATTENUATION")]
-    QuadraticAttenuation = unchecked((uint)0x1209),
-
     [NativeName("GL_COMPILE")]
     Compile = unchecked((uint)0x1300),
 
@@ -1150,32 +2738,11 @@ public enum GlEnum : uint
     [NativeName("GL_4_BYTES")]
     X4Bytes = unchecked((uint)0x1409),
 
-    [NativeName("GL_EMISSION")]
-    Emission = unchecked((uint)0x1600),
-
-    [NativeName("GL_SHININESS")]
-    Shininess = unchecked((uint)0x1601),
-
-    [NativeName("GL_AMBIENT_AND_DIFFUSE")]
-    AmbientAndDiffuse = unchecked((uint)0x1602),
-
     [NativeName("GL_COLOR_INDEXES")]
     ColorIndexes = unchecked((uint)0x1603),
 
-    [NativeName("GL_MODELVIEW")]
-    Modelview = unchecked((uint)0x1700),
-
-    [NativeName("GL_PROJECTION")]
-    Projection = unchecked((uint)0x1701),
-
     [NativeName("GL_COLOR_INDEX")]
     ColorIndex = unchecked((uint)0x1900),
-
-    [NativeName("GL_LUMINANCE")]
-    Luminance = unchecked((uint)0x1909),
-
-    [NativeName("GL_LUMINANCE_ALPHA")]
-    LuminanceAlpha = unchecked((uint)0x190A),
 
     [NativeName("GL_BITMAP")]
     Bitmap = unchecked((uint)0x1A00),
@@ -1189,12 +2756,6 @@ public enum GlEnum : uint
     [NativeName("GL_SELECT")]
     Select = unchecked((uint)0x1C02),
 
-    [NativeName("GL_FLAT")]
-    Flat = unchecked((uint)0x1D00),
-
-    [NativeName("GL_SMOOTH")]
-    Smooth = unchecked((uint)0x1D01),
-
     [NativeName("GL_S")]
     S = unchecked((uint)0x2000),
 
@@ -1207,22 +2768,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_Q")]
     Q = unchecked((uint)0x2003),
-
-    [NativeName("GL_MODULATE")]
-    Modulate = unchecked((uint)0x2100),
-
-    [NativeName("GL_DECAL")]
-    Decal = unchecked((uint)0x2101),
-
-    [NativeName("GL_TEXTURE_ENV_MODE")]
-    TextureEnvMode = unchecked((uint)0x2200),
-
-    [NativeName("GL_TEXTURE_ENV_COLOR")]
-    TextureEnvColor = unchecked((uint)0x2201),
-
-    [NameAffix("Suffix", "NV", 0)]
-    [NativeName("GL_TEXTURE_ENV")]
-    TextureEnv = unchecked((uint)0x2300),
 
     [NativeName("GL_EYE_LINEAR")]
     EyeLinear = unchecked((uint)0x2400),
@@ -1245,71 +2790,14 @@ public enum GlEnum : uint
     [NativeName("GL_CLAMP")]
     Clamp = unchecked((uint)0x2900),
 
-    [NativeName("GL_CLIP_PLANE0")]
-    ClipPlane0 = unchecked((uint)0x3000),
-
-    [NativeName("GL_CLIP_PLANE1")]
-    ClipPlane1 = unchecked((uint)0x3001),
-
-    [NativeName("GL_CLIP_PLANE2")]
-    ClipPlane2 = unchecked((uint)0x3002),
-
-    [NativeName("GL_CLIP_PLANE3")]
-    ClipPlane3 = unchecked((uint)0x3003),
-
-    [NativeName("GL_CLIP_PLANE4")]
-    ClipPlane4 = unchecked((uint)0x3004),
-
-    [NativeName("GL_CLIP_PLANE5")]
-    ClipPlane5 = unchecked((uint)0x3005),
-
-    [NativeName("GL_LIGHT0")]
-    Light0 = unchecked((uint)0x4000),
-
-    [NativeName("GL_LIGHT1")]
-    Light1 = unchecked((uint)0x4001),
-
-    [NativeName("GL_LIGHT2")]
-    Light2 = unchecked((uint)0x4002),
-
-    [NativeName("GL_LIGHT3")]
-    Light3 = unchecked((uint)0x4003),
-
-    [NativeName("GL_LIGHT4")]
-    Light4 = unchecked((uint)0x4004),
-
-    [NativeName("GL_LIGHT5")]
-    Light5 = unchecked((uint)0x4005),
-
-    [NativeName("GL_LIGHT6")]
-    Light6 = unchecked((uint)0x4006),
-
-    [NativeName("GL_LIGHT7")]
-    Light7 = unchecked((uint)0x4007),
-
-    [NativeName("GL_COLOR_LOGIC_OP")]
-    ColorLogicOp = unchecked((uint)0x0BF2),
-
-    [NativeName("GL_POLYGON_OFFSET_UNITS")]
-    PolygonOffsetUnits = unchecked((uint)0x2A00),
-
     [NativeName("GL_POLYGON_OFFSET_POINT")]
     PolygonOffsetPoint = unchecked((uint)0x2A01),
 
     [NativeName("GL_POLYGON_OFFSET_LINE")]
     PolygonOffsetLine = unchecked((uint)0x2A02),
 
-    [NativeName("GL_POLYGON_OFFSET_FILL")]
-    PolygonOffsetFill = unchecked((uint)0x8037),
-
-    [NativeName("GL_POLYGON_OFFSET_FACTOR")]
-    PolygonOffsetFactor = unchecked((uint)0x8038),
-
     [NativeName("GL_TEXTURE_BINDING_1D")]
     TextureBinding1D = unchecked((uint)0x8068),
-
-    [NativeName("GL_TEXTURE_BINDING_2D")]
-    TextureBinding2D = unchecked((uint)0x8069),
 
     [NativeName("GL_TEXTURE_INTERNAL_FORMAT")]
     TextureInternalFormat = unchecked((uint)0x1003),
@@ -1386,20 +2874,8 @@ public enum GlEnum : uint
     [NativeName("GL_CLIENT_ALL_ATTRIB_BITS")]
     ClientAllAttribBits = unchecked((uint)0xFFFFFFFF),
 
-    [NativeName("GL_VERTEX_ARRAY_POINTER")]
-    VertexArrayPointer = unchecked((uint)0x808E),
-
-    [NativeName("GL_NORMAL_ARRAY_POINTER")]
-    NormalArrayPointer = unchecked((uint)0x808F),
-
-    [NativeName("GL_COLOR_ARRAY_POINTER")]
-    ColorArrayPointer = unchecked((uint)0x8090),
-
     [NativeName("GL_INDEX_ARRAY_POINTER")]
     IndexArrayPointer = unchecked((uint)0x8091),
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER")]
-    TextureCoordArrayPointer = unchecked((uint)0x8092),
 
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER")]
     EdgeFlagArrayPointer = unchecked((uint)0x8093),
@@ -1428,62 +2904,17 @@ public enum GlEnum : uint
     [NativeName("GL_SELECTION_BUFFER_SIZE")]
     SelectionBufferSize = unchecked((uint)0x0DF4),
 
-    [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = unchecked((uint)0x8074),
-
-    [NativeName("GL_NORMAL_ARRAY")]
-    NormalArray = unchecked((uint)0x8075),
-
-    [NativeName("GL_COLOR_ARRAY")]
-    ColorArray = unchecked((uint)0x8076),
-
     [NativeName("GL_INDEX_ARRAY")]
     IndexArray = unchecked((uint)0x8077),
 
-    [NativeName("GL_TEXTURE_COORD_ARRAY")]
-    TextureCoordArray = unchecked((uint)0x8078),
-
     [NativeName("GL_EDGE_FLAG_ARRAY")]
     EdgeFlagArray = unchecked((uint)0x8079),
-
-    [NativeName("GL_VERTEX_ARRAY_SIZE")]
-    VertexArraySize = unchecked((uint)0x807A),
-
-    [NativeName("GL_VERTEX_ARRAY_TYPE")]
-    VertexArrayType = unchecked((uint)0x807B),
-
-    [NativeName("GL_VERTEX_ARRAY_STRIDE")]
-    VertexArrayStride = unchecked((uint)0x807C),
-
-    [NativeName("GL_NORMAL_ARRAY_TYPE")]
-    NormalArrayType = unchecked((uint)0x807E),
-
-    [NativeName("GL_NORMAL_ARRAY_STRIDE")]
-    NormalArrayStride = unchecked((uint)0x807F),
-
-    [NativeName("GL_COLOR_ARRAY_SIZE")]
-    ColorArraySize = unchecked((uint)0x8081),
-
-    [NativeName("GL_COLOR_ARRAY_TYPE")]
-    ColorArrayType = unchecked((uint)0x8082),
-
-    [NativeName("GL_COLOR_ARRAY_STRIDE")]
-    ColorArrayStride = unchecked((uint)0x8083),
 
     [NativeName("GL_INDEX_ARRAY_TYPE")]
     IndexArrayType = unchecked((uint)0x8085),
 
     [NativeName("GL_INDEX_ARRAY_STRIDE")]
     IndexArrayStride = unchecked((uint)0x8086),
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_SIZE")]
-    TextureCoordArraySize = unchecked((uint)0x8088),
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_TYPE")]
-    TextureCoordArrayType = unchecked((uint)0x8089),
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_STRIDE")]
-    TextureCoordArrayStride = unchecked((uint)0x808A),
 
     [NativeName("GL_EDGE_FLAG_ARRAY_STRIDE")]
     EdgeFlagArrayStride = unchecked((uint)0x808C),
@@ -1602,12 +3033,6 @@ public enum GlEnum : uint
     [NativeName("GL_UNSIGNED_BYTE_3_3_2")]
     UnsignedByte3X3X2 = unchecked((uint)0x8032),
 
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4")]
-    UnsignedShort4X4X4X4 = unchecked((uint)0x8033),
-
-    [NativeName("GL_UNSIGNED_SHORT_5_5_5_1")]
-    UnsignedShort5X5X5X1 = unchecked((uint)0x8034),
-
     [NativeName("GL_UNSIGNED_INT_8_8_8_8")]
     UnsignedInt8X8X8X8 = unchecked((uint)0x8035),
 
@@ -1647,9 +3072,6 @@ public enum GlEnum : uint
     [NativeName("GL_UNSIGNED_BYTE_2_3_3_REV")]
     UnsignedByte2X3X3Rev = unchecked((uint)0x8362),
 
-    [NativeName("GL_UNSIGNED_SHORT_5_6_5")]
-    UnsignedShort5X6X5 = unchecked((uint)0x8363),
-
     [NativeName("GL_UNSIGNED_SHORT_5_6_5_REV")]
     UnsignedShort5X6X5Rev = unchecked((uint)0x8364),
 
@@ -1677,9 +3099,6 @@ public enum GlEnum : uint
     [NativeName("GL_MAX_ELEMENTS_INDICES")]
     MaxElementsIndices = unchecked((uint)0x80E9),
 
-    [NativeName("GL_CLAMP_TO_EDGE")]
-    ClampToEdge = unchecked((uint)0x812F),
-
     [NativeName("GL_TEXTURE_MIN_LOD")]
     TextureMinLod = unchecked((uint)0x813A),
 
@@ -1692,23 +3111,11 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_MAX_LEVEL")]
     TextureMaxLevel = unchecked((uint)0x813D),
 
-    [NativeName("GL_SMOOTH_POINT_SIZE_RANGE")]
-    SmoothPointSizeRange = unchecked((uint)0x0B12),
-
     [NativeName("GL_SMOOTH_POINT_SIZE_GRANULARITY")]
     SmoothPointSizeGranularity = unchecked((uint)0x0B13),
 
-    [NativeName("GL_SMOOTH_LINE_WIDTH_RANGE")]
-    SmoothLineWidthRange = unchecked((uint)0x0B22),
-
     [NativeName("GL_SMOOTH_LINE_WIDTH_GRANULARITY")]
     SmoothLineWidthGranularity = unchecked((uint)0x0B23),
-
-    [NativeName("GL_ALIASED_LINE_WIDTH_RANGE")]
-    AliasedLineWidthRange = unchecked((uint)0x846E),
-
-    [NativeName("GL_RESCALE_NORMAL")]
-    RescaleNormal = unchecked((uint)0x803A),
 
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL")]
     LightModelColorControl = unchecked((uint)0x81F8),
@@ -1718,132 +3125,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_SEPARATE_SPECULAR_COLOR")]
     SeparateSpecularColor = unchecked((uint)0x81FA),
-
-    [NativeName("GL_ALIASED_POINT_SIZE_RANGE")]
-    AliasedPointSizeRange = unchecked((uint)0x846D),
-
-    [NativeName("GL_TEXTURE0")]
-    Texture0 = unchecked((uint)0x84C0),
-
-    [NativeName("GL_TEXTURE1")]
-    Texture1 = unchecked((uint)0x84C1),
-
-    [NativeName("GL_TEXTURE2")]
-    Texture2 = unchecked((uint)0x84C2),
-
-    [NativeName("GL_TEXTURE3")]
-    Texture3 = unchecked((uint)0x84C3),
-
-    [NativeName("GL_TEXTURE4")]
-    Texture4 = unchecked((uint)0x84C4),
-
-    [NativeName("GL_TEXTURE5")]
-    Texture5 = unchecked((uint)0x84C5),
-
-    [NativeName("GL_TEXTURE6")]
-    Texture6 = unchecked((uint)0x84C6),
-
-    [NativeName("GL_TEXTURE7")]
-    Texture7 = unchecked((uint)0x84C7),
-
-    [NativeName("GL_TEXTURE8")]
-    Texture8 = unchecked((uint)0x84C8),
-
-    [NativeName("GL_TEXTURE9")]
-    Texture9 = unchecked((uint)0x84C9),
-
-    [NativeName("GL_TEXTURE10")]
-    Texture10 = unchecked((uint)0x84CA),
-
-    [NativeName("GL_TEXTURE11")]
-    Texture11 = unchecked((uint)0x84CB),
-
-    [NativeName("GL_TEXTURE12")]
-    Texture12 = unchecked((uint)0x84CC),
-
-    [NativeName("GL_TEXTURE13")]
-    Texture13 = unchecked((uint)0x84CD),
-
-    [NativeName("GL_TEXTURE14")]
-    Texture14 = unchecked((uint)0x84CE),
-
-    [NativeName("GL_TEXTURE15")]
-    Texture15 = unchecked((uint)0x84CF),
-
-    [NativeName("GL_TEXTURE16")]
-    Texture16 = unchecked((uint)0x84D0),
-
-    [NativeName("GL_TEXTURE17")]
-    Texture17 = unchecked((uint)0x84D1),
-
-    [NativeName("GL_TEXTURE18")]
-    Texture18 = unchecked((uint)0x84D2),
-
-    [NativeName("GL_TEXTURE19")]
-    Texture19 = unchecked((uint)0x84D3),
-
-    [NativeName("GL_TEXTURE20")]
-    Texture20 = unchecked((uint)0x84D4),
-
-    [NativeName("GL_TEXTURE21")]
-    Texture21 = unchecked((uint)0x84D5),
-
-    [NativeName("GL_TEXTURE22")]
-    Texture22 = unchecked((uint)0x84D6),
-
-    [NativeName("GL_TEXTURE23")]
-    Texture23 = unchecked((uint)0x84D7),
-
-    [NativeName("GL_TEXTURE24")]
-    Texture24 = unchecked((uint)0x84D8),
-
-    [NativeName("GL_TEXTURE25")]
-    Texture25 = unchecked((uint)0x84D9),
-
-    [NativeName("GL_TEXTURE26")]
-    Texture26 = unchecked((uint)0x84DA),
-
-    [NativeName("GL_TEXTURE27")]
-    Texture27 = unchecked((uint)0x84DB),
-
-    [NativeName("GL_TEXTURE28")]
-    Texture28 = unchecked((uint)0x84DC),
-
-    [NativeName("GL_TEXTURE29")]
-    Texture29 = unchecked((uint)0x84DD),
-
-    [NativeName("GL_TEXTURE30")]
-    Texture30 = unchecked((uint)0x84DE),
-
-    [NativeName("GL_TEXTURE31")]
-    Texture31 = unchecked((uint)0x84DF),
-
-    [NativeName("GL_ACTIVE_TEXTURE")]
-    ActiveTexture = unchecked((uint)0x84E0),
-
-    [NativeName("GL_MULTISAMPLE")]
-    Multisample = unchecked((uint)0x809D),
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
-    SampleAlphaToCoverage = unchecked((uint)0x809E),
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
-    SampleAlphaToOne = unchecked((uint)0x809F),
-
-    [NativeName("GL_SAMPLE_COVERAGE")]
-    SampleCoverage = unchecked((uint)0x80A0),
-
-    [NativeName("GL_SAMPLE_BUFFERS")]
-    SampleBuffers = unchecked((uint)0x80A8),
-
-    [NativeName("GL_SAMPLES")]
-    Samples = unchecked((uint)0x80A9),
-
-    [NativeName("GL_SAMPLE_COVERAGE_VALUE")]
-    SampleCoverageValue = unchecked((uint)0x80AA),
-
-    [NativeName("GL_SAMPLE_COVERAGE_INVERT")]
-    SampleCoverageInvert = unchecked((uint)0x80AB),
 
     [NativeName("GL_TEXTURE_CUBE_MAP")]
     TextureCubeMap = unchecked((uint)0x8513),
@@ -1890,20 +3171,8 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_COMPRESSED")]
     TextureCompressed = unchecked((uint)0x86A1),
 
-    [NativeName("GL_NUM_COMPRESSED_TEXTURE_FORMATS")]
-    NumCompressedTextureFormats = unchecked((uint)0x86A2),
-
-    [NativeName("GL_COMPRESSED_TEXTURE_FORMATS")]
-    CompressedTextureFormats = unchecked((uint)0x86A3),
-
     [NativeName("GL_CLAMP_TO_BORDER")]
     ClampToBorder = unchecked((uint)0x812D),
-
-    [NativeName("GL_CLIENT_ACTIVE_TEXTURE")]
-    ClientActiveTexture = unchecked((uint)0x84E1),
-
-    [NativeName("GL_MAX_TEXTURE_UNITS")]
-    MaxTextureUnits = unchecked((uint)0x84E2),
 
     [NativeName("GL_TRANSPOSE_MODELVIEW_MATRIX")]
     TransposeModelviewMatrix = unchecked((uint)0x84E3),
@@ -1938,15 +3207,6 @@ public enum GlEnum : uint
     [NativeName("GL_COMPRESSED_INTENSITY")]
     CompressedIntensity = unchecked((uint)0x84EC),
 
-    [NativeName("GL_COMBINE")]
-    Combine = unchecked((uint)0x8570),
-
-    [NativeName("GL_COMBINE_RGB")]
-    CombineRgb = unchecked((uint)0x8571),
-
-    [NativeName("GL_COMBINE_ALPHA")]
-    CombineAlpha = unchecked((uint)0x8572),
-
     [NativeName("GL_SOURCE0_RGB")]
     Source0Rgb = unchecked((uint)0x8580),
 
@@ -1965,51 +3225,6 @@ public enum GlEnum : uint
     [NativeName("GL_SOURCE2_ALPHA")]
     Source2Alpha = unchecked((uint)0x858A),
 
-    [NativeName("GL_OPERAND0_RGB")]
-    Operand0Rgb = unchecked((uint)0x8590),
-
-    [NativeName("GL_OPERAND1_RGB")]
-    Operand1Rgb = unchecked((uint)0x8591),
-
-    [NativeName("GL_OPERAND2_RGB")]
-    Operand2Rgb = unchecked((uint)0x8592),
-
-    [NativeName("GL_OPERAND0_ALPHA")]
-    Operand0Alpha = unchecked((uint)0x8598),
-
-    [NativeName("GL_OPERAND1_ALPHA")]
-    Operand1Alpha = unchecked((uint)0x8599),
-
-    [NativeName("GL_OPERAND2_ALPHA")]
-    Operand2Alpha = unchecked((uint)0x859A),
-
-    [NativeName("GL_RGB_SCALE")]
-    RgbScale = unchecked((uint)0x8573),
-
-    [NativeName("GL_ADD_SIGNED")]
-    AddSigned = unchecked((uint)0x8574),
-
-    [NativeName("GL_INTERPOLATE")]
-    Interpolate = unchecked((uint)0x8575),
-
-    [NativeName("GL_SUBTRACT")]
-    Subtract = unchecked((uint)0x84E7),
-
-    [NativeName("GL_CONSTANT")]
-    Constant = unchecked((uint)0x8576),
-
-    [NativeName("GL_PRIMARY_COLOR")]
-    PrimaryColor = unchecked((uint)0x8577),
-
-    [NativeName("GL_PREVIOUS")]
-    Previous = unchecked((uint)0x8578),
-
-    [NativeName("GL_DOT3_RGB")]
-    Dot3Rgb = unchecked((uint)0x86AE),
-
-    [NativeName("GL_DOT3_RGBA")]
-    Dot3Rgba = unchecked((uint)0x86AF),
-
     [NativeName("GL_BLEND_DST_RGB")]
     BlendDstRgb = unchecked((uint)0x80C8),
 
@@ -2021,9 +3236,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_BLEND_SRC_ALPHA")]
     BlendSrcAlpha = unchecked((uint)0x80CB),
-
-    [NativeName("GL_POINT_FADE_THRESHOLD_SIZE")]
-    PointFadeThresholdSize = unchecked((uint)0x8128),
 
     [NativeName("GL_DEPTH_COMPONENT16")]
     DepthComponent16 = unchecked((uint)0x81A5),
@@ -2057,21 +3269,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_TEXTURE_COMPARE_FUNC")]
     TextureCompareFunc = unchecked((uint)0x884D),
-
-    [NativeName("GL_POINT_SIZE_MIN")]
-    PointSizeMin = unchecked((uint)0x8126),
-
-    [NativeName("GL_POINT_SIZE_MAX")]
-    PointSizeMax = unchecked((uint)0x8127),
-
-    [NativeName("GL_POINT_DISTANCE_ATTENUATION")]
-    PointDistanceAttenuation = unchecked((uint)0x8129),
-
-    [NativeName("GL_GENERATE_MIPMAP")]
-    GenerateMipmap = unchecked((uint)0x8191),
-
-    [NativeName("GL_GENERATE_MIPMAP_HINT")]
-    GenerateMipmapHint = unchecked((uint)0x8192),
 
     [NativeName("GL_FOG_COORDINATE_SOURCE")]
     FogCoordinateSource = unchecked((uint)0x8450),
@@ -2160,12 +3357,6 @@ public enum GlEnum : uint
     [NativeName("GL_MAX")]
     Max = unchecked((uint)0x8008),
 
-    [NativeName("GL_BUFFER_SIZE")]
-    BufferSize = unchecked((uint)0x8764),
-
-    [NativeName("GL_BUFFER_USAGE")]
-    BufferUsage = unchecked((uint)0x8765),
-
     [NativeName("GL_QUERY_COUNTER_BITS")]
     QueryCounterBits = unchecked((uint)0x8864),
 
@@ -2177,18 +3368,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_QUERY_RESULT_AVAILABLE")]
     QueryResultAvailable = unchecked((uint)0x8867),
-
-    [NativeName("GL_ARRAY_BUFFER")]
-    ArrayBuffer = unchecked((uint)0x8892),
-
-    [NativeName("GL_ELEMENT_ARRAY_BUFFER")]
-    ElementArrayBuffer = unchecked((uint)0x8893),
-
-    [NativeName("GL_ARRAY_BUFFER_BINDING")]
-    ArrayBufferBinding = unchecked((uint)0x8894),
-
-    [NativeName("GL_ELEMENT_ARRAY_BUFFER_BINDING")]
-    ElementArrayBufferBinding = unchecked((uint)0x8895),
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]
     VertexAttribArrayBufferBinding = unchecked((uint)0x889F),
@@ -2220,17 +3399,11 @@ public enum GlEnum : uint
     [NativeName("GL_STREAM_COPY")]
     StreamCopy = unchecked((uint)0x88E2),
 
-    [NativeName("GL_STATIC_DRAW")]
-    StaticDraw = unchecked((uint)0x88E4),
-
     [NativeName("GL_STATIC_READ")]
     StaticRead = unchecked((uint)0x88E5),
 
     [NativeName("GL_STATIC_COPY")]
     StaticCopy = unchecked((uint)0x88E6),
-
-    [NativeName("GL_DYNAMIC_DRAW")]
-    DynamicDraw = unchecked((uint)0x88E8),
 
     [NativeName("GL_DYNAMIC_READ")]
     DynamicRead = unchecked((uint)0x88E9),
@@ -2241,23 +3414,8 @@ public enum GlEnum : uint
     [NativeName("GL_SAMPLES_PASSED")]
     SamplesPassed = unchecked((uint)0x8914),
 
-    [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = unchecked((uint)0x8589),
-
-    [NativeName("GL_VERTEX_ARRAY_BUFFER_BINDING")]
-    VertexArrayBufferBinding = unchecked((uint)0x8896),
-
-    [NativeName("GL_NORMAL_ARRAY_BUFFER_BINDING")]
-    NormalArrayBufferBinding = unchecked((uint)0x8897),
-
-    [NativeName("GL_COLOR_ARRAY_BUFFER_BINDING")]
-    ColorArrayBufferBinding = unchecked((uint)0x8898),
-
     [NativeName("GL_INDEX_ARRAY_BUFFER_BINDING")]
     IndexArrayBufferBinding = unchecked((uint)0x8899),
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING")]
-    TextureCoordArrayBufferBinding = unchecked((uint)0x889A),
 
     [NativeName("GL_EDGE_FLAG_ARRAY_BUFFER_BINDING")]
     EdgeFlagArrayBufferBinding = unchecked((uint)0x889B),
@@ -2294,21 +3452,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_FOG_COORD_ARRAY_BUFFER_BINDING")]
     FogCoordArrayBufferBinding = unchecked((uint)0x889D),
-
-    [NativeName("GL_SRC0_RGB")]
-    Src0Rgb = unchecked((uint)0x8580),
-
-    [NativeName("GL_SRC1_RGB")]
-    Src1Rgb = unchecked((uint)0x8581),
-
-    [NativeName("GL_SRC2_RGB")]
-    Src2Rgb = unchecked((uint)0x8582),
-
-    [NativeName("GL_SRC0_ALPHA")]
-    Src0Alpha = unchecked((uint)0x8588),
-
-    [NativeName("GL_SRC2_ALPHA")]
-    Src2Alpha = unchecked((uint)0x858A),
 
     [NativeName("GL_BLEND_EQUATION_RGB")]
     BlendEquationRgb = unchecked((uint)0x8009),
@@ -3998,9 +5141,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_BUFFERS")]
     MaxTransformFeedbackBuffers = unchecked((uint)0x8E70),
-
-    [NativeName("GL_FIXED")]
-    Fixed = unchecked((uint)0x140C),
 
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE")]
     ImplementationColorReadType = unchecked((uint)0x8B9A),
@@ -7978,58 +9118,6 @@ public enum GlEnum : uint
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR")]
     CompressedSrgb8Alpha8Astc12X12Khr = unchecked((uint)0x93DD),
 
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE4_RGB8_OES")]
-    Palette4Rgb8Oes = unchecked((uint)0x8B90),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE4_RGBA8_OES")]
-    Palette4Rgba8Oes = unchecked((uint)0x8B91),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE4_R5_G6_B5_OES")]
-    Palette4R5G6B5Oes = unchecked((uint)0x8B92),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE4_RGBA4_OES")]
-    Palette4Rgba4Oes = unchecked((uint)0x8B93),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE4_RGB5_A1_OES")]
-    Palette4Rgb5A1Oes = unchecked((uint)0x8B94),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE8_RGB8_OES")]
-    Palette8Rgb8Oes = unchecked((uint)0x8B95),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE8_RGBA8_OES")]
-    Palette8Rgba8Oes = unchecked((uint)0x8B96),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE8_R5_G6_B5_OES")]
-    Palette8R5G6B5Oes = unchecked((uint)0x8B97),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE8_RGBA4_OES")]
-    Palette8Rgba4Oes = unchecked((uint)0x8B98),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PALETTE8_RGB5_A1_OES")]
-    Palette8Rgb5A1Oes = unchecked((uint)0x8B99),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FIXED_OES")]
-    Fixedoes = unchecked((uint)0x140C),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE_OES")]
-    ImplementationColorReadTypeoes = unchecked((uint)0x8B9A),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES")]
-    ImplementationColorReadFormatoes = unchecked((uint)0x8B9B),
-
     [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_MULTISAMPLE_3DFX")]
     Multisample3Dfx = unchecked((uint)0x86B2),
@@ -9502,10 +10590,6 @@ public enum GlEnum : uint
     Bgrext = unchecked((uint)0x80E0),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_BGRA_EXT")]
-    Bgraext = unchecked((uint)0x80E1),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_BINDABLE_UNIFORMS_EXT")]
     MaxVertexBindableUniformsext = unchecked((uint)0x8DE2),
 
@@ -9572,14 +10656,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_SRC_ALPHA_EXT")]
     BlendSrcAlphaext = unchecked((uint)0x80CB),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MIN_EXT")]
-    Minext = unchecked((uint)0x8007),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAX_EXT")]
-    Maxext = unchecked((uint)0x8008),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FUNC_ADD_EXT")]
@@ -9872,18 +10948,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_BINDING_EXT")]
     ReadFramebufferBindingext = unchecked((uint)0x8CAA),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
-    RenderbufferSamplesext = unchecked((uint)0x8CAB),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT")]
-    FramebufferIncompleteMultisampleext = unchecked((uint)0x8D56),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAX_SAMPLES_EXT")]
-    MaxSamplesext = unchecked((uint)0x8D57),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SCALED_RESOLVE_FASTEST_EXT")]
@@ -11146,10 +12210,6 @@ public enum GlEnum : uint
     Alpha4Ext = unchecked((uint)0x803B),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_ALPHA8_EXT")]
-    Alpha8Ext = unchecked((uint)0x803C),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA12_EXT")]
     Alpha12Ext = unchecked((uint)0x803D),
 
@@ -11160,10 +12220,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE4_EXT")]
     Luminance4Ext = unchecked((uint)0x803F),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE8_EXT")]
-    Luminance8Ext = unchecked((uint)0x8040),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_EXT")]
@@ -11180,10 +12236,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE6_ALPHA2_EXT")]
     Luminance6Alpha2Ext = unchecked((uint)0x8044),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE8_ALPHA8_EXT")]
-    Luminance8Alpha8Ext = unchecked((uint)0x8045),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_ALPHA4_EXT")]
@@ -11234,10 +12286,6 @@ public enum GlEnum : uint
     Rgb8Ext = unchecked((uint)0x8051),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB10_EXT")]
-    Rgb10Ext = unchecked((uint)0x8052),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB12_EXT")]
     Rgb12Ext = unchecked((uint)0x8053),
 
@@ -11260,10 +12308,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA8_EXT")]
     Rgba8Ext = unchecked((uint)0x8058),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB10_A2_EXT")]
-    Rgb10A2Ext = unchecked((uint)0x8059),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA12_EXT")]
@@ -11434,14 +12478,6 @@ public enum GlEnum : uint
     CompressedSignedRedGreenRgtc2Ext = unchecked((uint)0x8DBE),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_COMPRESSED_RGB_S3TC_DXT1_EXT")]
-    CompressedRgbS3TcDxt1Ext = unchecked((uint)0x83F0),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
-    CompressedRgbaS3TcDxt1Ext = unchecked((uint)0x83F1),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_EXT")]
     CompressedRgbaS3TcDxt3Ext = unchecked((uint)0x83F2),
 
@@ -11588,14 +12624,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOT3_RGBA_EXT")]
     Dot3Rgbaext = unchecked((uint)0x8741),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_TEXTURE_MAX_ANISOTROPY_EXT")]
-    TextureMaxAnisotropyext = unchecked((uint)0x84FE),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT")]
-    MaxTextureMaxAnisotropyext = unchecked((uint)0x84FF),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_REDUCTION_MODE_EXT")]
@@ -11794,18 +12822,6 @@ public enum GlEnum : uint
     RgbaIntegerModeext = unchecked((uint)0x8D9E),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAX_TEXTURE_LOD_BIAS_EXT")]
-    MaxTextureLodBiasext = unchecked((uint)0x84FD),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_TEXTURE_FILTER_CONTROL_EXT")]
-    TextureFilterControlext = unchecked((uint)0x8500),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_TEXTURE_LOD_BIAS_EXT")]
-    TextureLodBiasext = unchecked((uint)0x8501),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIRROR_CLAMP_EXT")]
     MirrorClampext = unchecked((uint)0x8742),
 
@@ -11846,20 +12862,8 @@ public enum GlEnum : uint
     TextureNormalext = unchecked((uint)0x85AF),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_SRGB_EXT")]
-    Srgbext = unchecked((uint)0x8C40),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRGB8_EXT")]
     Srgb8Ext = unchecked((uint)0x8C41),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_SRGB_ALPHA_EXT")]
-    SrgbAlphaext = unchecked((uint)0x8C42),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_SRGB8_ALPHA8_EXT")]
-    Srgb8Alpha8Ext = unchecked((uint)0x8C43),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SLUMINANCE_ALPHA_EXT")]
@@ -11988,78 +12992,6 @@ public enum GlEnum : uint
 
     [NativeName("GL_RGBA_SNORM")]
     RgbaSnorm = unchecked((uint)0x8F93),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_TEXTURE_IMMUTABLE_FORMAT_EXT")]
-    TextureImmutableFormatext = unchecked((uint)0x912F),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGBA32F_EXT")]
-    Rgba32Fext = unchecked((uint)0x8814),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB32F_EXT")]
-    Rgb32Fext = unchecked((uint)0x8815),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_ALPHA32F_EXT")]
-    Alpha32Fext = unchecked((uint)0x8816),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE32F_EXT")]
-    Luminance32Fext = unchecked((uint)0x8818),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE_ALPHA32F_EXT")]
-    LuminanceAlpha32Fext = unchecked((uint)0x8819),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGBA16F_EXT")]
-    Rgba16Fext = unchecked((uint)0x881A),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB16F_EXT")]
-    Rgb16Fext = unchecked((uint)0x881B),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_ALPHA16F_EXT")]
-    Alpha16Fext = unchecked((uint)0x881C),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE16F_EXT")]
-    Luminance16Fext = unchecked((uint)0x881E),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE_ALPHA16F_EXT")]
-    LuminanceAlpha16Fext = unchecked((uint)0x881F),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_BGRA8_EXT")]
-    Bgra8Ext = unchecked((uint)0x93A1),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_R8_EXT")]
-    R8Ext = unchecked((uint)0x8229),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RG8_EXT")]
-    Rg8Ext = unchecked((uint)0x822B),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_R32F_EXT")]
-    R32Fext = unchecked((uint)0x822E),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RG32F_EXT")]
-    Rg32Fext = unchecked((uint)0x8230),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_R16F_EXT")]
-    R16Fext = unchecked((uint)0x822D),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RG16F_EXT")]
-    Rg16Fext = unchecked((uint)0x822F),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SWIZZLE_R_EXT")]
@@ -13824,18 +14756,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SAMPLE_MASK_WORDS_NV")]
     MaxSampleMaskWordsnv = unchecked((uint)0x8E59),
-
-    [NameAffix("Suffix", "NV", 0)]
-    [NativeName("GL_ALL_COMPLETED_NV")]
-    AllCompletednv = unchecked((uint)0x84F2),
-
-    [NameAffix("Suffix", "NV", 0)]
-    [NativeName("GL_FENCE_STATUS_NV")]
-    FenceStatusnv = unchecked((uint)0x84F3),
-
-    [NameAffix("Suffix", "NV", 0)]
-    [NativeName("GL_FENCE_CONDITION_NV")]
-    FenceConditionnv = unchecked((uint)0x84F4),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FILL_RECTANGLE_NV")]
@@ -18311,32 +19231,8 @@ public enum GlEnum : uint
     ContextLostkhr = unchecked((uint)0x0507),
 
     [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_EXTERNAL_OES")]
-    TextureExternaloes = unchecked((uint)0x8D65),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_BINDING_EXTERNAL_OES")]
-    TextureBindingExternaloes = unchecked((uint)0x8D67),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES")]
-    RequiredTextureImageUnitsoes = unchecked((uint)0x8D68),
-
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_EXTERNAL_OES")]
     SamplerExternaloes = unchecked((uint)0x8D66),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_ETC1_RGB8_OES")]
-    Etc1Rgb8Oes = unchecked((uint)0x8D64),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_COMPONENT24_OES")]
-    DepthComponent24Oes = unchecked((uint)0x81A6),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_COMPONENT32_OES")]
-    DepthComponent32Oes = unchecked((uint)0x81A7),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_SHADER_OES")]
@@ -18483,76 +19379,8 @@ public enum GlEnum : uint
     ProgramBinaryFormatsoes = unchecked((uint)0x87FF),
 
     [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WRITE_ONLY_OES")]
-    WriteOnlyoes = unchecked((uint)0x88B9),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BUFFER_ACCESS_OES")]
-    BufferAccessoes = unchecked((uint)0x88BB),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BUFFER_MAPPED_OES")]
-    BufferMappedoes = unchecked((uint)0x88BC),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BUFFER_MAP_POINTER_OES")]
-    BufferMapPointeroes = unchecked((uint)0x88BD),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_STENCIL_OES")]
-    DepthStenciloes = unchecked((uint)0x84F9),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
-    UnsignedInt24X8Oes = unchecked((uint)0x84FA),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH24_STENCIL8_OES")]
-    Depth24Stencil8Oes = unchecked((uint)0x88F0),
-
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PRIMITIVE_BOUNDING_BOX_OES")]
     PrimitiveBoundingBoxoes = unchecked((uint)0x92BE),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_ALPHA8_OES")]
-    Alpha8Oes = unchecked((uint)0x803C),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_COMPONENT16_OES")]
-    DepthComponent16Oes = unchecked((uint)0x81A5),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
-    Luminance4Alpha4Oes = unchecked((uint)0x8043),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
-    Luminance8Alpha8Oes = unchecked((uint)0x8045),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_LUMINANCE8_OES")]
-    Luminance8Oes = unchecked((uint)0x8040),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGBA4_OES")]
-    Rgba4Oes = unchecked((uint)0x8056),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGB5_A1_OES")]
-    Rgb5A1Oes = unchecked((uint)0x8057),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGB565_OES")]
-    Rgb565Oes = unchecked((uint)0x8D62),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGB8_OES")]
-    Rgb8Oes = unchecked((uint)0x8051),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGBA8_OES")]
-    Rgba8Oes = unchecked((uint)0x8058),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLE_SHADING_OES")]
@@ -18577,18 +19405,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
     FragmentShaderDerivativeHintoes = unchecked((uint)0x8B8B),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_INDEX1_OES")]
-    StencilIndex1Oes = unchecked((uint)0x8D46),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_INDEX4_OES")]
-    StencilIndex4Oes = unchecked((uint)0x8D47),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_UNDEFINED_OES")]
-    FramebufferUndefinedoes = unchecked((uint)0x8219),
 
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PATCHES_OES")]
@@ -18975,10 +19791,6 @@ public enum GlEnum : uint
     StencilIndexoes = unchecked((uint)0x1901),
 
     [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_INDEX8_OES")]
-    StencilIndex8Oes = unchecked((uint)0x8D48),
-
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES")]
     Texture2DMultisampleArrayoes = unchecked((uint)0x9102),
 
@@ -19015,10 +19827,6 @@ public enum GlEnum : uint
     TextureViewNumLayersoes = unchecked((uint)0x82DE),
 
     [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_VERTEX_ARRAY_BINDING_OES")]
-    VertexArrayBindingoes = unchecked((uint)0x85B5),
-
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_10_10_10_2_OES")]
     UnsignedInt10X10X10X2Oes = unchecked((uint)0x8DF6),
 
@@ -19041,26 +19849,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_OES")]
     ViewportIndexProvokingVertexoes = unchecked((uint)0x825F),
-
-    [NameAffix("Suffix", "AMD", 0)]
-    [NativeName("GL_3DC_X_AMD")]
-    X3DcXamd = unchecked((uint)0x87F9),
-
-    [NameAffix("Suffix", "AMD", 0)]
-    [NativeName("GL_3DC_XY_AMD")]
-    X3DcXyamd = unchecked((uint)0x87FA),
-
-    [NameAffix("Suffix", "AMD", 0)]
-    [NativeName("GL_ATC_RGB_AMD")]
-    AtcRgbamd = unchecked((uint)0x8C92),
-
-    [NameAffix("Suffix", "AMD", 0)]
-    [NativeName("GL_ATC_RGBA_EXPLICIT_ALPHA_AMD")]
-    AtcRgbaExplicitAlphaamd = unchecked((uint)0x8C93),
-
-    [NameAffix("Suffix", "AMD", 0)]
-    [NativeName("GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD")]
-    AtcRgbaInterpolatedAlphaamd = unchecked((uint)0x87EE),
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_Z400_BINARY_AMD")]
@@ -19161,102 +19949,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE7_APPLE")]
     ClipDistance7Apple = unchecked((uint)0x3007),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
-    RenderbufferSamplesapple = unchecked((uint)0x8CAB),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE")]
-    FramebufferIncompleteMultisampleapple = unchecked((uint)0x8D56),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_MAX_SAMPLES_APPLE")]
-    MaxSamplesapple = unchecked((uint)0x8D57),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_READ_FRAMEBUFFER_APPLE")]
-    ReadFramebufferapple = unchecked((uint)0x8CA8),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_DRAW_FRAMEBUFFER_APPLE")]
-    DrawFramebufferapple = unchecked((uint)0x8CA9),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_APPLE")]
-    DrawFramebufferBindingapple = unchecked((uint)0x8CA6),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_READ_FRAMEBUFFER_BINDING_APPLE")]
-    ReadFramebufferBindingapple = unchecked((uint)0x8CAA),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_OBJECT_APPLE")]
-    SyncObjectapple = unchecked((uint)0x8A53),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_MAX_SERVER_WAIT_TIMEOUT_APPLE")]
-    MaxServerWaitTimeoutapple = unchecked((uint)0x9111),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_OBJECT_TYPE_APPLE")]
-    ObjectTypeapple = unchecked((uint)0x9112),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_CONDITION_APPLE")]
-    SyncConditionapple = unchecked((uint)0x9113),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_STATUS_APPLE")]
-    SyncStatusapple = unchecked((uint)0x9114),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_FLAGS_APPLE")]
-    SyncFlagsapple = unchecked((uint)0x9115),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_FENCE_APPLE")]
-    SyncFenceapple = unchecked((uint)0x9116),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE")]
-    SyncGpuCommandsCompleteapple = unchecked((uint)0x9117),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_UNSIGNALED_APPLE")]
-    Unsignaledapple = unchecked((uint)0x9118),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SIGNALED_APPLE")]
-    Signaledapple = unchecked((uint)0x9119),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_ALREADY_SIGNALED_APPLE")]
-    AlreadySignaledapple = unchecked((uint)0x911A),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_TIMEOUT_EXPIRED_APPLE")]
-    TimeoutExpiredapple = unchecked((uint)0x911B),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_CONDITION_SATISFIED_APPLE")]
-    ConditionSatisfiedapple = unchecked((uint)0x911C),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_WAIT_FAILED_APPLE")]
-    WaitFailedapple = unchecked((uint)0x911D),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
-    SyncFlushCommandsBitapple = unchecked((uint)0x00000001),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_TIMEOUT_IGNORED_APPLE")]
-    TimeoutIgnoredapple = unchecked((uint)0xFFFFFFFFFFFFFFFFUL),
-
-    [NameAffix("Suffix", "APPLE", 0)]
-    [NativeName("GL_TEXTURE_MAX_LEVEL_APPLE")]
-    TextureMaxLevelapple = unchecked((uint)0x813D),
 
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
@@ -19461,18 +20153,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_CLAMP_EXT")]
     DepthClampext = unchecked((uint)0x864F),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_COLOR_EXT")]
-    Colorext = unchecked((uint)0x1800),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_DEPTH_EXT")]
-    Depthext = unchecked((uint)0x1801),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_STENCIL_EXT")]
-    Stencilext = unchecked((uint)0x1802),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUERY_COUNTER_BITS_EXT")]
@@ -19751,34 +20431,6 @@ public enum GlEnum : uint
     VertexAttribArrayDivisorext = unchecked((uint)0x88FE),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitext = unchecked((uint)0x0001),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitext = unchecked((uint)0x0002),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
-    MapInvalidateRangeBitext = unchecked((uint)0x0004),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
-    MapInvalidateBufferBitext = unchecked((uint)0x0008),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
-    MapFlushExplicitBitext = unchecked((uint)0x0010),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
-    MapUnsynchronizedBitext = unchecked((uint)0x0020),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
-    FramebufferAttachmentTextureSamplesext = unchecked((uint)0x8D6C),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT_EXT")]
     ColorAttachmentext = unchecked((uint)0x90F0),
 
@@ -19843,14 +20495,6 @@ public enum GlEnum : uint
     CompressedSrgbAlphaPvrtc4Bppv2Img = unchecked((uint)0x93F1),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
-    UnsignedShort4X4X4X4Revext = unchecked((uint)0x8365),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
-    UnsignedShort1X5X5X5Revext = unchecked((uint)0x8366),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R16_SNORM_EXT")]
     R16Snormext = unchecked((uint)0x8F98),
 
@@ -19861,38 +20505,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA16_SNORM_EXT")]
     Rgba16Snormext = unchecked((uint)0x8F9B),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_GUILTY_CONTEXT_RESET_EXT")]
-    GuiltyContextResetext = unchecked((uint)0x8253),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_INNOCENT_CONTEXT_RESET_EXT")]
-    InnocentContextResetext = unchecked((uint)0x8254),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_UNKNOWN_CONTEXT_RESET_EXT")]
-    UnknownContextResetext = unchecked((uint)0x8255),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_CONTEXT_ROBUST_ACCESS_EXT")]
-    ContextRobustAccessext = unchecked((uint)0x90F3),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RESET_NOTIFICATION_STRATEGY_EXT")]
-    ResetNotificationStrategyext = unchecked((uint)0x8256),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LOSE_CONTEXT_ON_RESET_EXT")]
-    LoseContextOnResetext = unchecked((uint)0x8252),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_NO_RESET_NOTIFICATION_EXT")]
-    NoResetNotificationext = unchecked((uint)0x8261),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
-    FramebufferAttachmentColorEncodingext = unchecked((uint)0x8210),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
@@ -20363,52 +20975,12 @@ public enum GlEnum : uint
     FramebufferAttachmentTextureScaleimg = unchecked((uint)0x913F),
 
     [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
-    RenderbufferSamplesimg = unchecked((uint)0x9133),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG")]
-    FramebufferIncompleteMultisampleimg = unchecked((uint)0x9134),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_MAX_SAMPLES_IMG")]
-    MaxSamplesimg = unchecked((uint)0x9135),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_TEXTURE_SAMPLES_IMG")]
-    TextureSamplesimg = unchecked((uint)0x9136),
-
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_SGX_PROGRAM_BINARY_IMG")]
     SgxProgramBinaryimg = unchecked((uint)0x9130),
 
     [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_BGRA_IMG")]
-    Bgraimg = unchecked((uint)0x80E1),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
-    UnsignedShort4X4X4X4Revimg = unchecked((uint)0x8365),
-
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_SGX_BINARY_IMG")]
     SgxBinaryimg = unchecked((uint)0x8C0A),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG")]
-    CompressedRgbPvrtc4Bppv1Img = unchecked((uint)0x8C00),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG")]
-    CompressedRgbPvrtc2Bppv1Img = unchecked((uint)0x8C01),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG")]
-    CompressedRgbaPvrtc4Bppv1Img = unchecked((uint)0x8C02),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG")]
-    CompressedRgbaPvrtc2Bppv1Img = unchecked((uint)0x8C03),
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG")]
@@ -20827,49 +21399,6 @@ public enum GlEnum : uint
     RenderDirectToFramebufferqcom = unchecked((uint)0x8FB3),
 
     [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_WIDTH_QCOM")]
-    TextureWidthqcom = unchecked((uint)0x8BD2),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_HEIGHT_QCOM")]
-    TextureHeightqcom = unchecked((uint)0x8BD3),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_DEPTH_QCOM")]
-    TextureDepthqcom = unchecked((uint)0x8BD4),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_INTERNAL_FORMAT_QCOM")]
-    TextureInternalFormatqcom = unchecked((uint)0x8BD5),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_FORMAT_QCOM")]
-    TextureFormatqcom = unchecked((uint)0x8BD6),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_TYPE_QCOM")]
-    TextureTypeqcom = unchecked((uint)0x8BD7),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_IMAGE_VALID_QCOM")]
-    TextureImageValidqcom = unchecked((uint)0x8BD8),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_NUM_LEVELS_QCOM")]
-    TextureNumLevelsqcom = unchecked((uint)0x8BD9),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_TARGET_QCOM")]
-    TextureTargetqcom = unchecked((uint)0x8BDA),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_TEXTURE_OBJECT_VALID_QCOM")]
-    TextureObjectValidqcom = unchecked((uint)0x8BDB),
-
-    [NativeName("GL_STATE_RESTORE")]
-    StateRestore = unchecked((uint)0x8BDC),
-
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
     FoveationEnableBitqcom = unchecked((uint)0x00000001),
 
@@ -20884,10 +21413,6 @@ public enum GlEnum : uint
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM")]
     MotionEstimationSearchBlockYqcom = unchecked((uint)0x8C91),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_PERFMON_GLOBAL_MODE_QCOM")]
-    PerfmonGlobalModeqcom = unchecked((uint)0x8FA0),
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
@@ -20961,532 +21486,7 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_LOD_BIAS_QCOM")]
     TextureLodBiasqcom = unchecked((uint)0x8C96),
 
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
-    ColorBufferBit0Qcom = unchecked((uint)0x00000001),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT1_QCOM")]
-    ColorBufferBit1Qcom = unchecked((uint)0x00000002),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT2_QCOM")]
-    ColorBufferBit2Qcom = unchecked((uint)0x00000004),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT3_QCOM")]
-    ColorBufferBit3Qcom = unchecked((uint)0x00000008),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT4_QCOM")]
-    ColorBufferBit4Qcom = unchecked((uint)0x00000010),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT5_QCOM")]
-    ColorBufferBit5Qcom = unchecked((uint)0x00000020),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT6_QCOM")]
-    ColorBufferBit6Qcom = unchecked((uint)0x00000040),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_COLOR_BUFFER_BIT7_QCOM")]
-    ColorBufferBit7Qcom = unchecked((uint)0x00000080),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT0_QCOM")]
-    DepthBufferBit0Qcom = unchecked((uint)0x00000100),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT1_QCOM")]
-    DepthBufferBit1Qcom = unchecked((uint)0x00000200),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT2_QCOM")]
-    DepthBufferBit2Qcom = unchecked((uint)0x00000400),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT3_QCOM")]
-    DepthBufferBit3Qcom = unchecked((uint)0x00000800),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT4_QCOM")]
-    DepthBufferBit4Qcom = unchecked((uint)0x00001000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT5_QCOM")]
-    DepthBufferBit5Qcom = unchecked((uint)0x00002000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT6_QCOM")]
-    DepthBufferBit6Qcom = unchecked((uint)0x00004000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_DEPTH_BUFFER_BIT7_QCOM")]
-    DepthBufferBit7Qcom = unchecked((uint)0x00008000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT0_QCOM")]
-    StencilBufferBit0Qcom = unchecked((uint)0x00010000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT1_QCOM")]
-    StencilBufferBit1Qcom = unchecked((uint)0x00020000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT2_QCOM")]
-    StencilBufferBit2Qcom = unchecked((uint)0x00040000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT3_QCOM")]
-    StencilBufferBit3Qcom = unchecked((uint)0x00080000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT4_QCOM")]
-    StencilBufferBit4Qcom = unchecked((uint)0x00100000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT5_QCOM")]
-    StencilBufferBit5Qcom = unchecked((uint)0x00200000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT6_QCOM")]
-    StencilBufferBit6Qcom = unchecked((uint)0x00400000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_STENCIL_BUFFER_BIT7_QCOM")]
-    StencilBufferBit7Qcom = unchecked((uint)0x00800000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT0_QCOM")]
-    MultisampleBufferBit0Qcom = unchecked((uint)0x01000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT1_QCOM")]
-    MultisampleBufferBit1Qcom = unchecked((uint)0x02000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT2_QCOM")]
-    MultisampleBufferBit2Qcom = unchecked((uint)0x04000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT3_QCOM")]
-    MultisampleBufferBit3Qcom = unchecked((uint)0x08000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT4_QCOM")]
-    MultisampleBufferBit4Qcom = unchecked((uint)0x10000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT5_QCOM")]
-    MultisampleBufferBit5Qcom = unchecked((uint)0x20000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT6_QCOM")]
-    MultisampleBufferBit6Qcom = unchecked((uint)0x40000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT7_QCOM")]
-    MultisampleBufferBit7Qcom = unchecked((uint)0x80000000),
-
-    [NameAffix("Suffix", "QCOM", 0)]
-    [NativeName("GL_WRITEONLY_RENDERING_QCOM")]
-    WriteonlyRenderingqcom = unchecked((uint)0x8823),
-
     [NameAffix("Suffix", "VIV", 0)]
     [NativeName("GL_SHADER_BINARY_VIV")]
     ShaderBinaryviv = unchecked((uint)0x8FC4),
-
-    [NativeName("GL_VERSION_ES_CL_1_0")]
-    VersionEsCl1X0 = unchecked((uint)1),
-
-    [NativeName("GL_VERSION_ES_CM_1_1")]
-    VersionEsCm1X1 = unchecked((uint)1),
-
-    [NativeName("GL_VERSION_ES_CL_1_1")]
-    VersionEsCl1X1 = unchecked((uint)1),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_EQUATION_RGB_OES")]
-    BlendEquationRgboes = unchecked((uint)0x8009),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_EQUATION_ALPHA_OES")]
-    BlendEquationAlphaoes = unchecked((uint)0x883D),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_DST_RGB_OES")]
-    BlendDstRgboes = unchecked((uint)0x80C8),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_SRC_RGB_OES")]
-    BlendSrcRgboes = unchecked((uint)0x80C9),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_DST_ALPHA_OES")]
-    BlendDstAlphaoes = unchecked((uint)0x80CA),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_SRC_ALPHA_OES")]
-    BlendSrcAlphaoes = unchecked((uint)0x80CB),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_BLEND_EQUATION_OES")]
-    BlendEquationoes = unchecked((uint)0x8009),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FUNC_ADD_OES")]
-    FuncAddoes = unchecked((uint)0x8006),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FUNC_SUBTRACT_OES")]
-    FuncSubtractoes = unchecked((uint)0x800A),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FUNC_REVERSE_SUBTRACT_OES")]
-    FuncReverseSubtractoes = unchecked((uint)0x800B),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CROP_RECT_OES")]
-    TextureCropRectoes = unchecked((uint)0x8B9D),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_NONE_OES")]
-    Noneoes = unchecked((uint)0),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_OES")]
-    Framebufferoes = unchecked((uint)0x8D40),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_OES")]
-    Renderbufferoes = unchecked((uint)0x8D41),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
-    RenderbufferWidthoes = unchecked((uint)0x8D42),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
-    RenderbufferHeightoes = unchecked((uint)0x8D43),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
-    RenderbufferInternalFormatoes = unchecked((uint)0x8D44),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
-    RenderbufferRedSizeoes = unchecked((uint)0x8D50),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
-    RenderbufferGreenSizeoes = unchecked((uint)0x8D51),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
-    RenderbufferBlueSizeoes = unchecked((uint)0x8D52),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
-    RenderbufferAlphaSizeoes = unchecked((uint)0x8D53),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
-    RenderbufferDepthSizeoes = unchecked((uint)0x8D54),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
-    RenderbufferStencilSizeoes = unchecked((uint)0x8D55),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
-    FramebufferAttachmentObjectTypeoes = unchecked((uint)0x8CD0),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
-    FramebufferAttachmentObjectNameoes = unchecked((uint)0x8CD1),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
-    FramebufferAttachmentTextureLeveloes = unchecked((uint)0x8CD2),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
-    FramebufferAttachmentTextureCubeMapFaceoes = unchecked((uint)0x8CD3),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
-    ColorAttachment0Oes = unchecked((uint)0x8CE0),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
-    DepthAttachmentoes = unchecked((uint)0x8D00),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
-    StencilAttachmentoes = unchecked((uint)0x8D20),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_COMPLETE_OES")]
-    FramebufferCompleteoes = unchecked((uint)0x8CD5),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES")]
-    FramebufferIncompleteAttachmentoes = unchecked((uint)0x8CD6),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES")]
-    FramebufferIncompleteMissingAttachmentoes = unchecked((uint)0x8CD7),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES")]
-    FramebufferIncompleteDimensionsoes = unchecked((uint)0x8CD9),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES")]
-    FramebufferIncompleteFormatsoes = unchecked((uint)0x8CDA),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_UNSUPPORTED_OES")]
-    FramebufferUnsupportedoes = unchecked((uint)0x8CDD),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_BINDING_OES")]
-    FramebufferBindingoes = unchecked((uint)0x8CA6),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RENDERBUFFER_BINDING_OES")]
-    RenderbufferBindingoes = unchecked((uint)0x8CA7),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MAX_RENDERBUFFER_SIZE_OES")]
-    MaxRenderbufferSizeoes = unchecked((uint)0x84E8),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
-    InvalidFramebufferOperationoes = unchecked((uint)0x0506),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES")]
-    ModelviewMatrixFloatAsIntBitsoes = unchecked((uint)0x898D),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES")]
-    ProjectionMatrixFloatAsIntBitsoes = unchecked((uint)0x898E),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES")]
-    TextureMatrixFloatAsIntBitsoes = unchecked((uint)0x898F),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MAX_VERTEX_UNITS_OES")]
-    MaxVertexUnitsoes = unchecked((uint)0x86A4),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MAX_PALETTE_MATRICES_OES")]
-    MaxPaletteMatricesoes = unchecked((uint)0x8842),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_PALETTE_OES")]
-    MatrixPaletteoes = unchecked((uint)0x8840),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_INDEX_ARRAY_OES")]
-    MatrixIndexArrayoes = unchecked((uint)0x8844),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WEIGHT_ARRAY_OES")]
-    WeightArrayoes = unchecked((uint)0x86AD),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_CURRENT_PALETTE_MATRIX_OES")]
-    CurrentPaletteMatrixoes = unchecked((uint)0x8843),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_INDEX_ARRAY_SIZE_OES")]
-    MatrixIndexArraySizeoes = unchecked((uint)0x8846),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_INDEX_ARRAY_TYPE_OES")]
-    MatrixIndexArrayTypeoes = unchecked((uint)0x8847),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_INDEX_ARRAY_STRIDE_OES")]
-    MatrixIndexArrayStrideoes = unchecked((uint)0x8848),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_INDEX_ARRAY_POINTER_OES")]
-    MatrixIndexArrayPointeroes = unchecked((uint)0x8849),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES")]
-    MatrixIndexArrayBufferBindingoes = unchecked((uint)0x8B9E),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WEIGHT_ARRAY_SIZE_OES")]
-    WeightArraySizeoes = unchecked((uint)0x86AB),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WEIGHT_ARRAY_TYPE_OES")]
-    WeightArrayTypeoes = unchecked((uint)0x86A9),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WEIGHT_ARRAY_STRIDE_OES")]
-    WeightArrayStrideoes = unchecked((uint)0x86AA),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WEIGHT_ARRAY_POINTER_OES")]
-    WeightArrayPointeroes = unchecked((uint)0x86AC),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_WEIGHT_ARRAY_BUFFER_BINDING_OES")]
-    WeightArrayBufferBindingoes = unchecked((uint)0x889E),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_POINT_SIZE_ARRAY_OES")]
-    PointSizeArrayoes = unchecked((uint)0x8B9C),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_POINT_SIZE_ARRAY_TYPE_OES")]
-    PointSizeArrayTypeoes = unchecked((uint)0x898A),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_POINT_SIZE_ARRAY_STRIDE_OES")]
-    PointSizeArrayStrideoes = unchecked((uint)0x898B),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_POINT_SIZE_ARRAY_POINTER_OES")]
-    PointSizeArrayPointeroes = unchecked((uint)0x898C),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES")]
-    PointSizeArrayBufferBindingoes = unchecked((uint)0x8B9F),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_POINT_SPRITE_OES")]
-    PointSpriteoes = unchecked((uint)0x8861),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_COORD_REPLACE_OES")]
-    CoordReplaceoes = unchecked((uint)0x8862),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_INCR_WRAP_OES")]
-    IncrWrapoes = unchecked((uint)0x8507),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DECR_WRAP_OES")]
-    DecrWrapoes = unchecked((uint)0x8508),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_NORMAL_MAP_OES")]
-    NormalMapoes = unchecked((uint)0x8511),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_REFLECTION_MAP_OES")]
-    ReflectionMapoes = unchecked((uint)0x8512),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapoes = unchecked((uint)0x8513),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
-    TextureBindingCubeMapoes = unchecked((uint)0x8514),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
-    TextureCubeMapPositiveXoes = unchecked((uint)0x8515),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
-    TextureCubeMapNegativeXoes = unchecked((uint)0x8516),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
-    TextureCubeMapPositiveYoes = unchecked((uint)0x8517),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
-    TextureCubeMapNegativeYoes = unchecked((uint)0x8518),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
-    TextureCubeMapPositiveZoes = unchecked((uint)0x8519),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
-    TextureCubeMapNegativeZoes = unchecked((uint)0x851A),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
-    MaxCubeMapTextureSizeoes = unchecked((uint)0x851C),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_GEN_MODE_OES")]
-    TextureGenModeoes = unchecked((uint)0x2500),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStroes = unchecked((uint)0x8D60),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_MIRRORED_REPEAT_OES")]
-    MirroredRepeatoes = unchecked((uint)0x8370),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_MODULATE_COLOR_IMG")]
-    ModulateColorimg = unchecked((uint)0x8C04),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_RECIP_ADD_SIGNED_ALPHA_IMG")]
-    RecipAddSignedAlphaimg = unchecked((uint)0x8C05),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_TEXTURE_ALPHA_MODULATE_IMG")]
-    TextureAlphaModulateimg = unchecked((uint)0x8C06),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_FACTOR_ALPHA_MODULATE_IMG")]
-    FactorAlphaModulateimg = unchecked((uint)0x8C07),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_FRAGMENT_ALPHA_MODULATE_IMG")]
-    FragmentAlphaModulateimg = unchecked((uint)0x8C08),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_ADD_BLEND_IMG")]
-    AddBlendimg = unchecked((uint)0x8C09),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_DOT3_RGBA_IMG")]
-    Dot3Rgbaimg = unchecked((uint)0x86AF),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_CLIP_PLANE0_IMG")]
-    ClipPlane0Img = unchecked((uint)0x3000),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_CLIP_PLANE1_IMG")]
-    ClipPlane1Img = unchecked((uint)0x3001),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_CLIP_PLANE2_IMG")]
-    ClipPlane2Img = unchecked((uint)0x3002),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_CLIP_PLANE3_IMG")]
-    ClipPlane3Img = unchecked((uint)0x3003),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_CLIP_PLANE4_IMG")]
-    ClipPlane4Img = unchecked((uint)0x3004),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_CLIP_PLANE5_IMG")]
-    ClipPlane5Img = unchecked((uint)0x3005),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_MAX_CLIP_PLANES_IMG")]
-    MaxClipPlanesimg = unchecked((uint)0x0D32),
 }

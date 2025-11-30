@@ -11,59 +11,139 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum EnableCap : uint
 {
-    [NativeName("GL_LINE_SMOOTH")]
-    LineSmooth = unchecked((uint)0x0B20),
+    [NativeName("GL_CLIP_PLANE0")]
+    ClipPlane0 = unchecked((uint)0x3000),
 
-    [NativeName("GL_POLYGON_SMOOTH")]
-    PolygonSmooth = unchecked((uint)0x0B41),
+    [NativeName("GL_CLIP_PLANE1")]
+    ClipPlane1 = unchecked((uint)0x3001),
 
-    [NativeName("GL_CULL_FACE")]
-    CullFace = unchecked((uint)0x0B44),
+    [NativeName("GL_CLIP_PLANE2")]
+    ClipPlane2 = unchecked((uint)0x3002),
 
-    [NativeName("GL_DEPTH_TEST")]
-    DepthTest = unchecked((uint)0x0B71),
+    [NativeName("GL_CLIP_PLANE3")]
+    ClipPlane3 = unchecked((uint)0x3003),
 
-    [NativeName("GL_STENCIL_TEST")]
-    StencilTest = unchecked((uint)0x0B90),
+    [NativeName("GL_CLIP_PLANE4")]
+    ClipPlane4 = unchecked((uint)0x3004),
 
-    [NativeName("GL_DITHER")]
-    Dither = unchecked((uint)0x0BD0),
+    [NativeName("GL_CLIP_PLANE5")]
+    ClipPlane5 = unchecked((uint)0x3005),
 
-    [NativeName("GL_BLEND")]
-    Blend = unchecked((uint)0x0BE2),
+    [NativeName("GL_FOG")]
+    Fog = unchecked((uint)0x0B60),
 
-    [NativeName("GL_SCISSOR_TEST")]
-    ScissorTest = unchecked((uint)0x0C11),
-
-    [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
+    [NativeName("GL_LIGHTING")]
+    Lighting = unchecked((uint)0x0B50),
 
     [NativeName("GL_TEXTURE_2D")]
     Texture2D = unchecked((uint)0x0DE1),
 
+    [NativeName("GL_CULL_FACE")]
+    CullFace = unchecked((uint)0x0B44),
+
+    [NativeName("GL_ALPHA_TEST")]
+    AlphaTest = unchecked((uint)0x0BC0),
+
+    [NativeName("GL_BLEND")]
+    Blend = unchecked((uint)0x0BE2),
+
+    [NativeName("GL_COLOR_LOGIC_OP")]
+    ColorLogicOp = unchecked((uint)0x0BF2),
+
+    [NativeName("GL_DITHER")]
+    Dither = unchecked((uint)0x0BD0),
+
+    [NativeName("GL_STENCIL_TEST")]
+    StencilTest = unchecked((uint)0x0B90),
+
+    [NativeName("GL_DEPTH_TEST")]
+    DepthTest = unchecked((uint)0x0B71),
+
     [NativeName("GL_POINT_SMOOTH")]
     PointSmooth = unchecked((uint)0x0B10),
+
+    [NativeName("GL_LINE_SMOOTH")]
+    LineSmooth = unchecked((uint)0x0B20),
+
+    [NativeName("GL_SCISSOR_TEST")]
+    ScissorTest = unchecked((uint)0x0C11),
+
+    [NativeName("GL_COLOR_MATERIAL")]
+    ColorMaterial = unchecked((uint)0x0B57),
+
+    [NativeName("GL_NORMALIZE")]
+    Normalize = unchecked((uint)0x0BA1),
+
+    [NativeName("GL_VERTEX_ARRAY")]
+    VertexArray = unchecked((uint)0x8074),
+
+    [NativeName("GL_NORMAL_ARRAY")]
+    NormalArray = unchecked((uint)0x8075),
+
+    [NativeName("GL_COLOR_ARRAY")]
+    ColorArray = unchecked((uint)0x8076),
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY")]
+    TextureCoordArray = unchecked((uint)0x8078),
+
+    [NativeName("GL_MULTISAMPLE")]
+    Multisample = unchecked((uint)0x809D),
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
+    SampleAlphaToCoverage = unchecked((uint)0x809E),
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
+    SampleAlphaToOne = unchecked((uint)0x809F),
+
+    [NativeName("GL_SAMPLE_COVERAGE")]
+    SampleCoverage = unchecked((uint)0x80A0),
+
+    [NativeName("GL_POLYGON_OFFSET_FILL")]
+    PolygonOffsetFill = unchecked((uint)0x8037),
+
+    [NativeName("GL_LIGHT0")]
+    Light0 = unchecked((uint)0x4000),
+
+    [NativeName("GL_LIGHT1")]
+    Light1 = unchecked((uint)0x4001),
+
+    [NativeName("GL_LIGHT2")]
+    Light2 = unchecked((uint)0x4002),
+
+    [NativeName("GL_LIGHT3")]
+    Light3 = unchecked((uint)0x4003),
+
+    [NativeName("GL_LIGHT4")]
+    Light4 = unchecked((uint)0x4004),
+
+    [NativeName("GL_LIGHT5")]
+    Light5 = unchecked((uint)0x4005),
+
+    [NativeName("GL_LIGHT6")]
+    Light6 = unchecked((uint)0x4006),
+
+    [NativeName("GL_LIGHT7")]
+    Light7 = unchecked((uint)0x4007),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapoes = unchecked((uint)0x8513),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStroes = unchecked((uint)0x8D60),
+
+    [NativeName("GL_POLYGON_SMOOTH")]
+    PolygonSmooth = unchecked((uint)0x0B41),
+
+    [NativeName("GL_TEXTURE_1D")]
+    Texture1D = unchecked((uint)0x0DE0),
 
     [NativeName("GL_LINE_STIPPLE")]
     LineStipple = unchecked((uint)0x0B24),
 
     [NativeName("GL_POLYGON_STIPPLE")]
     PolygonStipple = unchecked((uint)0x0B42),
-
-    [NativeName("GL_LIGHTING")]
-    Lighting = unchecked((uint)0x0B50),
-
-    [NativeName("GL_COLOR_MATERIAL")]
-    ColorMaterial = unchecked((uint)0x0B57),
-
-    [NativeName("GL_FOG")]
-    Fog = unchecked((uint)0x0B60),
-
-    [NativeName("GL_NORMALIZE")]
-    Normalize = unchecked((uint)0x0BA1),
-
-    [NativeName("GL_ALPHA_TEST")]
-    AlphaTest = unchecked((uint)0x0BC0),
 
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = unchecked((uint)0x0C60),
@@ -135,92 +215,20 @@ public enum EnableCap : uint
     [NativeName("GL_MAP2_VERTEX_4")]
     Map2Vertex4 = unchecked((uint)0x0DB8),
 
-    [NativeName("GL_CLIP_PLANE0")]
-    ClipPlane0 = unchecked((uint)0x3000),
-
-    [NativeName("GL_CLIP_PLANE1")]
-    ClipPlane1 = unchecked((uint)0x3001),
-
-    [NativeName("GL_CLIP_PLANE2")]
-    ClipPlane2 = unchecked((uint)0x3002),
-
-    [NativeName("GL_CLIP_PLANE3")]
-    ClipPlane3 = unchecked((uint)0x3003),
-
-    [NativeName("GL_CLIP_PLANE4")]
-    ClipPlane4 = unchecked((uint)0x3004),
-
-    [NativeName("GL_CLIP_PLANE5")]
-    ClipPlane5 = unchecked((uint)0x3005),
-
-    [NativeName("GL_LIGHT0")]
-    Light0 = unchecked((uint)0x4000),
-
-    [NativeName("GL_LIGHT1")]
-    Light1 = unchecked((uint)0x4001),
-
-    [NativeName("GL_LIGHT2")]
-    Light2 = unchecked((uint)0x4002),
-
-    [NativeName("GL_LIGHT3")]
-    Light3 = unchecked((uint)0x4003),
-
-    [NativeName("GL_LIGHT4")]
-    Light4 = unchecked((uint)0x4004),
-
-    [NativeName("GL_LIGHT5")]
-    Light5 = unchecked((uint)0x4005),
-
-    [NativeName("GL_LIGHT6")]
-    Light6 = unchecked((uint)0x4006),
-
-    [NativeName("GL_LIGHT7")]
-    Light7 = unchecked((uint)0x4007),
-
-    [NativeName("GL_COLOR_LOGIC_OP")]
-    ColorLogicOp = unchecked((uint)0x0BF2),
-
     [NativeName("GL_POLYGON_OFFSET_POINT")]
     PolygonOffsetPoint = unchecked((uint)0x2A01),
 
     [NativeName("GL_POLYGON_OFFSET_LINE")]
     PolygonOffsetLine = unchecked((uint)0x2A02),
 
-    [NativeName("GL_POLYGON_OFFSET_FILL")]
-    PolygonOffsetFill = unchecked((uint)0x8037),
-
     [NativeName("GL_INDEX_LOGIC_OP")]
     IndexLogicOp = unchecked((uint)0x0BF1),
-
-    [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = unchecked((uint)0x8074),
-
-    [NativeName("GL_NORMAL_ARRAY")]
-    NormalArray = unchecked((uint)0x8075),
-
-    [NativeName("GL_COLOR_ARRAY")]
-    ColorArray = unchecked((uint)0x8076),
 
     [NativeName("GL_INDEX_ARRAY")]
     IndexArray = unchecked((uint)0x8077),
 
-    [NativeName("GL_TEXTURE_COORD_ARRAY")]
-    TextureCoordArray = unchecked((uint)0x8078),
-
     [NativeName("GL_EDGE_FLAG_ARRAY")]
     EdgeFlagArray = unchecked((uint)0x8079),
-
-    [NativeName("GL_MULTISAMPLE")]
-    Multisample = unchecked((uint)0x809D),
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
-    SampleAlphaToCoverage = unchecked((uint)0x809E),
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
-    SampleAlphaToOne = unchecked((uint)0x809F),
-
-    [NativeName("GL_SAMPLE_COVERAGE")]
-    SampleCoverage = unchecked((uint)0x80A0),
 
     [NativeName("GL_TEXTURE_CUBE_MAP")]
     TextureCubeMap = unchecked((uint)0x8513),
@@ -486,12 +494,4 @@ public enum EnableCap : uint
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
     ShadingRatePreserveAspectRatioqcom = unchecked((uint)0x96A5),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapoes = unchecked((uint)0x8513),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStroes = unchecked((uint)0x8D60),
 }

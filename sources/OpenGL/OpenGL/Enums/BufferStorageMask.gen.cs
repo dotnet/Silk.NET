@@ -12,6 +12,14 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum BufferStorageMask : uint
 {
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_READ_BIT_EXT")]
+    MapReadBitext = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
+    MapWriteBitext = unchecked((uint)0x0002),
+
     [NativeName("GL_MAP_READ_BIT")]
     MapReadBit = unchecked((uint)0x0001),
 
@@ -57,12 +65,4 @@ public enum BufferStorageMask : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
     ClientStorageBitext = unchecked((uint)0x0200),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitext = unchecked((uint)0x0001),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitext = unchecked((uint)0x0002),
 }

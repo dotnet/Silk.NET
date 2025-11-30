@@ -12,9 +12,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelTexGenModeSgix : uint
 {
-    [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
-
     [NativeName("GL_ALPHA")]
     Alpha = unchecked((uint)0x1906),
 
@@ -23,4 +20,7 @@ public enum PixelTexGenModeSgix : uint
 
     [NativeName("GL_RGBA")]
     Rgba = unchecked((uint)0x1908),
+
+    [NativeName("GL_NONE")]
+    None = unchecked((uint)0),
 }

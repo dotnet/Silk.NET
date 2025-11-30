@@ -15,9 +15,9 @@ public enum LightEnvModeSgix : uint
     [NativeName("GL_REPLACE")]
     Replace = unchecked((uint)0x1E01),
 
-    [NativeName("GL_ADD")]
-    Add = unchecked((uint)0x0104),
-
     [NativeName("GL_MODULATE")]
     Modulate = unchecked((uint)0x2100),
+
+    [NativeName("GL_ADD")]
+    Add = unchecked((uint)0x0104),
 }

@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CopyImageSubDataTarget : uint
 {
-    [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
-
     [NativeName("GL_TEXTURE_2D")]
     Texture2D = unchecked((uint)0x0DE1),
+
+    [NativeName("GL_TEXTURE_1D")]
+    Texture1D = unchecked((uint)0x0DE0),
 
     [NativeName("GL_TEXTURE_3D")]
     Texture3D = unchecked((uint)0x806F),

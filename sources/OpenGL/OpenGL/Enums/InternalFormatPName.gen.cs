@@ -14,11 +14,11 @@ public enum InternalFormatPName : uint
     [NativeName("GL_SAMPLES")]
     Samples = unchecked((uint)0x80A9),
 
-    [NativeName("GL_TEXTURE_COMPRESSED")]
-    TextureCompressed = unchecked((uint)0x86A1),
-
     [NativeName("GL_GENERATE_MIPMAP")]
     GenerateMipmap = unchecked((uint)0x8191),
+
+    [NativeName("GL_TEXTURE_COMPRESSED")]
+    TextureCompressed = unchecked((uint)0x86A1),
 
     [NativeName("GL_NUM_SAMPLE_COUNTS")]
     NumSampleCounts = unchecked((uint)0x9380),

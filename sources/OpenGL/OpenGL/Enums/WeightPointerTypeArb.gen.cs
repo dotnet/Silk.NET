@@ -24,14 +24,14 @@ public enum WeightPointerTypeArb : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
 
-    [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
+    [NativeName("GL_FLOAT")]
+    Float = unchecked((uint)0x1406),
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = unchecked((uint)0x1405),
 
-    [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    [NativeName("GL_INT")]
+    Int = unchecked((uint)0x1404),
 
     [NativeName("GL_DOUBLE")]
     Double = unchecked((uint)0x140A),

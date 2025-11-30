@@ -44,6 +44,9 @@ public enum BlendingFactor : uint
     [NativeName("GL_SRC_ALPHA_SATURATE")]
     SrcAlphaSaturate = unchecked((uint)0x0308),
 
+    [NativeName("GL_SRC1_ALPHA")]
+    Src1Alpha = unchecked((uint)0x8589),
+
     [NativeName("GL_CONSTANT_COLOR")]
     ConstantColor = unchecked((uint)0x8001),
 
@@ -55,9 +58,6 @@ public enum BlendingFactor : uint
 
     [NativeName("GL_ONE_MINUS_CONSTANT_ALPHA")]
     OneMinusConstantAlpha = unchecked((uint)0x8004),
-
-    [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = unchecked((uint)0x8589),
 
     [NativeName("GL_SRC1_COLOR")]
     Src1Color = unchecked((uint)0x88F9),

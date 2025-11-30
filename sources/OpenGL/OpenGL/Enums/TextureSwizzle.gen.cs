@@ -17,6 +17,9 @@ public enum TextureSwizzle : uint
     [NativeName("GL_ONE")]
     One = unchecked((uint)1),
 
+    [NativeName("GL_ALPHA")]
+    Alpha = unchecked((uint)0x1906),
+
     [NativeName("GL_RED")]
     Red = unchecked((uint)0x1903),
 
@@ -25,7 +28,4 @@ public enum TextureSwizzle : uint
 
     [NativeName("GL_BLUE")]
     Blue = unchecked((uint)0x1905),
-
-    [NativeName("GL_ALPHA")]
-    Alpha = unchecked((uint)0x1906),
 }

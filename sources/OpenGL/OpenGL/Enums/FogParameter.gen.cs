@@ -11,9 +11,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FogParameter : uint
 {
-    [NativeName("GL_FOG_INDEX")]
-    Index = unchecked((uint)0x0B61),
-
     [NativeName("GL_FOG_DENSITY")]
     Density = unchecked((uint)0x0B62),
 
@@ -28,6 +25,9 @@ public enum FogParameter : uint
 
     [NativeName("GL_FOG_COLOR")]
     Color = unchecked((uint)0x0B66),
+
+    [NativeName("GL_FOG_INDEX")]
+    Index = unchecked((uint)0x0B61),
 
     [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FOG_OFFSET_VALUE_SGIX")]

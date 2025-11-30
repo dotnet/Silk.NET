@@ -11,6 +11,15 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ColorBuffer : uint
 {
+    [NativeName("GL_FRONT")]
+    Front = unchecked((uint)0x0404),
+
+    [NativeName("GL_BACK")]
+    Back = unchecked((uint)0x0405),
+
+    [NativeName("GL_FRONT_AND_BACK")]
+    FrontAndBack = unchecked((uint)0x0408),
+
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),
 
@@ -26,20 +35,11 @@ public enum ColorBuffer : uint
     [NativeName("GL_BACK_RIGHT")]
     BackRight = unchecked((uint)0x0403),
 
-    [NativeName("GL_FRONT")]
-    Front = unchecked((uint)0x0404),
-
-    [NativeName("GL_BACK")]
-    Back = unchecked((uint)0x0405),
-
     [NativeName("GL_LEFT")]
     Left = unchecked((uint)0x0406),
 
     [NativeName("GL_RIGHT")]
     Right = unchecked((uint)0x0407),
-
-    [NativeName("GL_FRONT_AND_BACK")]
-    FrontAndBack = unchecked((uint)0x0408),
 
     [NativeName("GL_COLOR_ATTACHMENT0")]
     ColorAttachment0 = unchecked((uint)0x8CE0),

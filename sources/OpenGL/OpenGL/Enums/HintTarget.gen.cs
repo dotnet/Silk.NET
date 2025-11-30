@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum HintTarget : uint
 {
-    [NativeName("GL_LINE_SMOOTH_HINT")]
-    LineSmoothHint = unchecked((uint)0x0C52),
-
-    [NativeName("GL_POLYGON_SMOOTH_HINT")]
-    PolygonSmoothHint = unchecked((uint)0x0C53),
-
     [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
     PerspectiveCorrectionHint = unchecked((uint)0x0C50),
 
     [NativeName("GL_POINT_SMOOTH_HINT")]
     PointSmoothHint = unchecked((uint)0x0C51),
 
+    [NativeName("GL_LINE_SMOOTH_HINT")]
+    LineSmoothHint = unchecked((uint)0x0C52),
+
     [NativeName("GL_FOG_HINT")]
     FogHint = unchecked((uint)0x0C54),
 
-    [NativeName("GL_TEXTURE_COMPRESSION_HINT")]
-    TextureCompressionHint = unchecked((uint)0x84EF),
-
     [NativeName("GL_GENERATE_MIPMAP_HINT")]
     GenerateMipmapHint = unchecked((uint)0x8192),
+
+    [NativeName("GL_POLYGON_SMOOTH_HINT")]
+    PolygonSmoothHint = unchecked((uint)0x0C53),
+
+    [NativeName("GL_TEXTURE_COMPRESSION_HINT")]
+    TextureCompressionHint = unchecked((uint)0x84EF),
 
     [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT")]
     FragmentShaderDerivativeHint = unchecked((uint)0x8B8B),

@@ -11,6 +11,164 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum InternalFormat : uint
 {
+    [NativeName("GL_RGB")]
+    Rgb = unchecked((uint)0x1907),
+
+    [NativeName("GL_RGBA")]
+    Rgba = unchecked((uint)0x1908),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_ETC1_RGB8_OES")]
+    Etc1Rgb8Oes = unchecked((uint)0x8D64),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_COMPONENT24_OES")]
+    DepthComponent24Oes = unchecked((uint)0x81A6),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_COMPONENT32_OES")]
+    DepthComponent32Oes = unchecked((uint)0x81A7),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGBA4_OES")]
+    Rgba4Oes = unchecked((uint)0x8056),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGB5_A1_OES")]
+    Rgb5A1Oes = unchecked((uint)0x8057),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGB565_OES")]
+    Rgb565Oes = unchecked((uint)0x8D62),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_COMPONENT16_OES")]
+    DepthComponent16Oes = unchecked((uint)0x81A5),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH_STENCIL_OES")]
+    DepthStenciloes = unchecked((uint)0x84F9),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_DEPTH24_STENCIL8_OES")]
+    Depth24Stencil8Oes = unchecked((uint)0x88F0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_ALPHA8_OES")]
+    Alpha8Oes = unchecked((uint)0x803C),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
+    Luminance4Alpha4Oes = unchecked((uint)0x8043),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
+    Luminance8Alpha8Oes = unchecked((uint)0x8045),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_LUMINANCE8_OES")]
+    Luminance8Oes = unchecked((uint)0x8040),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGB8_OES")]
+    Rgb8Oes = unchecked((uint)0x8051),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_RGBA8_OES")]
+    Rgba8Oes = unchecked((uint)0x8058),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB10_EXT")]
+    Rgb10Ext = unchecked((uint)0x8052),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB10_A2_EXT")]
+    Rgb10A2Ext = unchecked((uint)0x8059),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_INDEX1_OES")]
+    StencilIndex1Oes = unchecked((uint)0x8D46),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_INDEX4_OES")]
+    StencilIndex4Oes = unchecked((uint)0x8D47),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_STENCIL_INDEX8_OES")]
+    StencilIndex8Oes = unchecked((uint)0x8D48),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SRGB_EXT")]
+    Srgbext = unchecked((uint)0x8C40),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SRGB_ALPHA_EXT")]
+    SrgbAlphaext = unchecked((uint)0x8C42),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SRGB8_ALPHA8_EXT")]
+    Srgb8Alpha8Ext = unchecked((uint)0x8C43),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_COMPRESSED_RGB_S3TC_DXT1_EXT")]
+    CompressedRgbS3TcDxt1Ext = unchecked((uint)0x83F0),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
+    CompressedRgbaS3TcDxt1Ext = unchecked((uint)0x83F1),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_ALPHA8_EXT")]
+    Alpha8Ext = unchecked((uint)0x803C),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE8_EXT")]
+    Luminance8Ext = unchecked((uint)0x8040),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_LUMINANCE8_ALPHA8_EXT")]
+    Luminance8Alpha8Ext = unchecked((uint)0x8045),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGBA32F_EXT")]
+    Rgba32Fext = unchecked((uint)0x8814),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB32F_EXT")]
+    Rgb32Fext = unchecked((uint)0x8815),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGBA16F_EXT")]
+    Rgba16Fext = unchecked((uint)0x881A),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RGB16F_EXT")]
+    Rgb16Fext = unchecked((uint)0x881B),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_R8_EXT")]
+    R8Ext = unchecked((uint)0x8229),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RG8_EXT")]
+    Rg8Ext = unchecked((uint)0x822B),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_R32F_EXT")]
+    R32Fext = unchecked((uint)0x822E),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RG32F_EXT")]
+    Rg32Fext = unchecked((uint)0x8230),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_R16F_EXT")]
+    R16Fext = unchecked((uint)0x822D),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_RG16F_EXT")]
+    Rg16Fext = unchecked((uint)0x822F),
+
     [NativeName("GL_STENCIL_INDEX")]
     StencilIndex = unchecked((uint)0x1901),
 
@@ -19,12 +177,6 @@ public enum InternalFormat : uint
 
     [NativeName("GL_RED")]
     Red = unchecked((uint)0x1903),
-
-    [NativeName("GL_RGB")]
-    Rgb = unchecked((uint)0x1907),
-
-    [NativeName("GL_RGBA")]
-    Rgba = unchecked((uint)0x1908),
 
     [NativeName("GL_R3_G3_B2")]
     R3G3B2 = unchecked((uint)0x2A10),
@@ -578,10 +730,6 @@ public enum InternalFormat : uint
     Alpha4Ext = unchecked((uint)0x803B),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_ALPHA8_EXT")]
-    Alpha8Ext = unchecked((uint)0x803C),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA12_EXT")]
     Alpha12Ext = unchecked((uint)0x803D),
 
@@ -592,10 +740,6 @@ public enum InternalFormat : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE4_EXT")]
     Luminance4Ext = unchecked((uint)0x803F),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE8_EXT")]
-    Luminance8Ext = unchecked((uint)0x8040),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_EXT")]
@@ -612,10 +756,6 @@ public enum InternalFormat : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE6_ALPHA2_EXT")]
     Luminance6Alpha2Ext = unchecked((uint)0x8044),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_LUMINANCE8_ALPHA8_EXT")]
-    Luminance8Alpha8Ext = unchecked((uint)0x8045),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_ALPHA4_EXT")]
@@ -662,10 +802,6 @@ public enum InternalFormat : uint
     Rgb8Ext = unchecked((uint)0x8051),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB10_EXT")]
-    Rgb10Ext = unchecked((uint)0x8052),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB12_EXT")]
     Rgb12Ext = unchecked((uint)0x8053),
 
@@ -690,10 +826,6 @@ public enum InternalFormat : uint
     Rgba8Ext = unchecked((uint)0x8058),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB10_A2_EXT")]
-    Rgb10A2Ext = unchecked((uint)0x8059),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA12_EXT")]
     Rgba12Ext = unchecked((uint)0x805A),
 
@@ -716,14 +848,6 @@ public enum InternalFormat : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT")]
     CompressedSignedRedGreenRgtc2Ext = unchecked((uint)0x8DBE),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_COMPRESSED_RGB_S3TC_DXT1_EXT")]
-    CompressedRgbS3TcDxt1Ext = unchecked((uint)0x83F0),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
-    CompressedRgbaS3TcDxt1Ext = unchecked((uint)0x83F1),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_EXT")]
@@ -878,20 +1002,8 @@ public enum InternalFormat : uint
     LuminanceAlpha8Iext = unchecked((uint)0x8D93),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_SRGB_EXT")]
-    Srgbext = unchecked((uint)0x8C40),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRGB8_EXT")]
     Srgb8Ext = unchecked((uint)0x8C41),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_SRGB_ALPHA_EXT")]
-    SrgbAlphaext = unchecked((uint)0x8C42),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_SRGB8_ALPHA8_EXT")]
-    Srgb8Alpha8Ext = unchecked((uint)0x8C43),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_EXT")]
@@ -920,46 +1032,6 @@ public enum InternalFormat : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB9_E5_EXT")]
     Rgb9E5Ext = unchecked((uint)0x8C3D),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGBA32F_EXT")]
-    Rgba32Fext = unchecked((uint)0x8814),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB32F_EXT")]
-    Rgb32Fext = unchecked((uint)0x8815),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGBA16F_EXT")]
-    Rgba16Fext = unchecked((uint)0x881A),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RGB16F_EXT")]
-    Rgb16Fext = unchecked((uint)0x881B),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_R8_EXT")]
-    R8Ext = unchecked((uint)0x8229),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RG8_EXT")]
-    Rg8Ext = unchecked((uint)0x822B),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_R32F_EXT")]
-    R32Fext = unchecked((uint)0x822E),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RG32F_EXT")]
-    Rg32Fext = unchecked((uint)0x8230),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_R16F_EXT")]
-    R16Fext = unchecked((uint)0x822D),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_RG16F_EXT")]
-    Rg16Fext = unchecked((uint)0x822F),
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_COMPONENT32F_NV")]
@@ -1066,74 +1138,6 @@ public enum InternalFormat : uint
     DepthComponent32Sgix = unchecked((uint)0x81A7),
 
     [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_ETC1_RGB8_OES")]
-    Etc1Rgb8Oes = unchecked((uint)0x8D64),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_COMPONENT24_OES")]
-    DepthComponent24Oes = unchecked((uint)0x81A6),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_COMPONENT32_OES")]
-    DepthComponent32Oes = unchecked((uint)0x81A7),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_STENCIL_OES")]
-    DepthStenciloes = unchecked((uint)0x84F9),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH24_STENCIL8_OES")]
-    Depth24Stencil8Oes = unchecked((uint)0x88F0),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_ALPHA8_OES")]
-    Alpha8Oes = unchecked((uint)0x803C),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_DEPTH_COMPONENT16_OES")]
-    DepthComponent16Oes = unchecked((uint)0x81A5),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
-    Luminance4Alpha4Oes = unchecked((uint)0x8043),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
-    Luminance8Alpha8Oes = unchecked((uint)0x8045),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_LUMINANCE8_OES")]
-    Luminance8Oes = unchecked((uint)0x8040),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGBA4_OES")]
-    Rgba4Oes = unchecked((uint)0x8056),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGB5_A1_OES")]
-    Rgb5A1Oes = unchecked((uint)0x8057),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGB565_OES")]
-    Rgb565Oes = unchecked((uint)0x8D62),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGB8_OES")]
-    Rgb8Oes = unchecked((uint)0x8051),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_RGBA8_OES")]
-    Rgba8Oes = unchecked((uint)0x8058),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_INDEX1_OES")]
-    StencilIndex1Oes = unchecked((uint)0x8D46),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_INDEX4_OES")]
-    StencilIndex4Oes = unchecked((uint)0x8D47),
-
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_3x3x3_OES")]
     CompressedRgbaAstc3X3X3Oes = unchecked((uint)0x93C0),
 
@@ -1216,10 +1220,6 @@ public enum InternalFormat : uint
     [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_INDEX_OES")]
     StencilIndexoes = unchecked((uint)0x1901),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_STENCIL_INDEX8_OES")]
-    StencilIndex8Oes = unchecked((uint)0x8D48),
 
     [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE")]

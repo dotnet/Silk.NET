@@ -11,6 +11,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelStoreParameter : uint
 {
+    [NativeName("GL_UNPACK_ALIGNMENT")]
+    UnpackAlignment = unchecked((uint)0x0CF5),
+
+    [NativeName("GL_PACK_ALIGNMENT")]
+    PackAlignment = unchecked((uint)0x0D05),
+
     [NativeName("GL_UNPACK_SWAP_BYTES")]
     UnpackSwapBytes = unchecked((uint)0x0CF0),
 
@@ -26,9 +32,6 @@ public enum PixelStoreParameter : uint
     [NativeName("GL_UNPACK_SKIP_PIXELS")]
     UnpackSkipPixels = unchecked((uint)0x0CF4),
 
-    [NativeName("GL_UNPACK_ALIGNMENT")]
-    UnpackAlignment = unchecked((uint)0x0CF5),
-
     [NativeName("GL_PACK_SWAP_BYTES")]
     PackSwapBytes = unchecked((uint)0x0D00),
 
@@ -43,9 +46,6 @@ public enum PixelStoreParameter : uint
 
     [NativeName("GL_PACK_SKIP_PIXELS")]
     PackSkipPixels = unchecked((uint)0x0D04),
-
-    [NativeName("GL_PACK_ALIGNMENT")]
-    PackAlignment = unchecked((uint)0x0D05),
 
     [NativeName("GL_PACK_SKIP_IMAGES")]
     PackSkipImages = unchecked((uint)0x806B),

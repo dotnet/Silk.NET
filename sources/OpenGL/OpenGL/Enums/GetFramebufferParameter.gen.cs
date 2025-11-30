@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum GetFramebufferParameter : uint
 {
-    [NativeName("GL_DOUBLEBUFFER")]
-    Doublebuffer = unchecked((uint)0x0C32),
-
-    [NativeName("GL_STEREO")]
-    Stereo = unchecked((uint)0x0C33),
-
     [NativeName("GL_SAMPLE_BUFFERS")]
     SampleBuffers = unchecked((uint)0x80A8),
 
     [NativeName("GL_SAMPLES")]
     Samples = unchecked((uint)0x80A9),
+
+    [NativeName("GL_DOUBLEBUFFER")]
+    Doublebuffer = unchecked((uint)0x0C32),
+
+    [NativeName("GL_STEREO")]
+    Stereo = unchecked((uint)0x0C33),
 
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE")]
     ImplementationColorReadType = unchecked((uint)0x8B9A),

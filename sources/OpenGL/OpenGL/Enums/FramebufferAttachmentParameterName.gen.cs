@@ -11,6 +11,30 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FramebufferAttachmentParameterName : uint
 {
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
+    ObjectTypeoes = unchecked((uint)0x8CD0),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
+    ObjectNameoes = unchecked((uint)0x8CD1),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
+    TextureLeveloes = unchecked((uint)0x8CD2),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
+    TextureCubeMapFaceoes = unchecked((uint)0x8CD3),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
+    TextureSamplesext = unchecked((uint)0x8D6C),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
+    ColorEncodingext = unchecked((uint)0x8210),
+
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING")]
     ColorEncoding = unchecked((uint)0x8210),
 
@@ -105,31 +129,7 @@ public enum FramebufferAttachmentParameterName : uint
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
     ComponentTypeext = unchecked((uint)0x8211),
 
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
-    TextureSamplesext = unchecked((uint)0x8D6C),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
-    ColorEncodingext = unchecked((uint)0x8210),
-
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
     TextureScaleimg = unchecked((uint)0x913F),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
-    ObjectTypeoes = unchecked((uint)0x8CD0),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
-    ObjectNameoes = unchecked((uint)0x8CD1),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
-    TextureLeveloes = unchecked((uint)0x8CD2),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
-    TextureCubeMapFaceoes = unchecked((uint)0x8CD3),
 }

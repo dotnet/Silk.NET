@@ -12,6 +12,30 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum MapBufferAccessMask : uint
 {
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_READ_BIT_EXT")]
+    ReadBitext = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
+    WriteBitext = unchecked((uint)0x0002),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
+    InvalidateRangeBitext = unchecked((uint)0x0004),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
+    InvalidateBufferBitext = unchecked((uint)0x0008),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
+    FlushExplicitBitext = unchecked((uint)0x0010),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
+    UnsynchronizedBitext = unchecked((uint)0x0020),
+
     [NativeName("GL_MAP_READ_BIT")]
     ReadBit = unchecked((uint)0x0001),
 
@@ -43,28 +67,4 @@ public enum MapBufferAccessMask : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_COHERENT_BIT_EXT")]
     CoherentBitext = unchecked((uint)0x0080),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    ReadBitext = unchecked((uint)0x0001),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    WriteBitext = unchecked((uint)0x0002),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
-    InvalidateRangeBitext = unchecked((uint)0x0004),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
-    InvalidateBufferBitext = unchecked((uint)0x0008),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
-    FlushExplicitBitext = unchecked((uint)0x0010),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
-    UnsynchronizedBitext = unchecked((uint)0x0020),
 }

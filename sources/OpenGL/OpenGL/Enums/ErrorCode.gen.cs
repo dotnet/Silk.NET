@@ -23,14 +23,18 @@ public enum ErrorCode : uint
     [NativeName("GL_INVALID_OPERATION")]
     InvalidOperation = unchecked((uint)0x0502),
 
-    [NativeName("GL_OUT_OF_MEMORY")]
-    OutOfMemory = unchecked((uint)0x0505),
-
     [NativeName("GL_STACK_OVERFLOW")]
     StackOverflow = unchecked((uint)0x0503),
 
     [NativeName("GL_STACK_UNDERFLOW")]
     StackUnderflow = unchecked((uint)0x0504),
+
+    [NativeName("GL_OUT_OF_MEMORY")]
+    OutOfMemory = unchecked((uint)0x0505),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
+    InvalidFramebufferOperationoes = unchecked((uint)0x0506),
 
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION")]
     InvalidFramebufferOperation = unchecked((uint)0x0506),
@@ -49,8 +53,4 @@ public enum ErrorCode : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_TOO_LARGE_EXT")]
     TextureTooLargeext = unchecked((uint)0x8065),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
-    InvalidFramebufferOperationoes = unchecked((uint)0x0506),
 }

@@ -12,10 +12,10 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum SyncObjectMask : uint
 {
-    [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT")]
-    FlushCommandsBit = unchecked((uint)0x00000001),
-
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
     FlushCommandsBitapple = unchecked((uint)0x00000001),
+
+    [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT")]
+    FlushCommandsBit = unchecked((uint)0x00000001),
 }

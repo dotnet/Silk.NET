@@ -7,11 +7,11 @@ namespace Silk.NET.OpenGL;
 
 public static class ContextSourceExtensions
 {
-    private static ConditionalWeakTable<IGLContext, IGL> _cwt = new();
+    private static ConditionalWeakTable<IGlContext, IGl> _cwt = new();
 
-    public static IGL CreateOpenGL(this IGLContextSource src)
+    public static IGl CreateOpenGl(this IGlContextSource src)
     {
-        if (src.GLContext is not { } ctx)
+        if (src.GlContext is not { } ctx)
         {
             throw new ArgumentException(
                 "The given context source does not have an OpenGL context",
@@ -19,13 +19,13 @@ public static class ContextSourceExtensions
             );
         }
 
-        return GL.Create(ctx);
+        return Gl.Create(ctx);
     }
 
-    public static IGL CreateOpenGL(this IGLContext ctx) => GL.Create(ctx);
+    public static IGl CreateOpenGl(this IGlContext ctx) => Gl.Create(ctx);
 
-    public static void MakeCurrent(this IGLContextSource src) => src.GLContext?.MakeCurrent();
+    public static void MakeCurrent(this IGlContextSource src) => src.GlContext?.MakeCurrent();
 
-    public static void MakeCurrent(this IGLContext ctx) =>
-        GL.ThisThread.MakeCurrent(_cwt.GetValue(ctx, c => c.CreateOpenGL()));
+    public static void MakeCurrent(this IGlContext ctx) =>
+        Gl.ThisThread.MakeCurrent(_cwt.GetValue(ctx, c => c.CreateOpenGl()));
 }

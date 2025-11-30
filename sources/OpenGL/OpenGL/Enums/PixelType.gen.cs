@@ -23,26 +23,45 @@ public enum PixelType : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
 
-    [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
-
-    [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = unchecked((uint)0x1405),
-
     [NativeName("GL_FLOAT")]
     Float = unchecked((uint)0x1406),
-
-    [NativeName("GL_BITMAP")]
-    Bitmap = unchecked((uint)0x1A00),
-
-    [NativeName("GL_UNSIGNED_BYTE_3_3_2")]
-    UnsignedByte3X3X2 = unchecked((uint)0x8032),
 
     [NativeName("GL_UNSIGNED_SHORT_4_4_4_4")]
     UnsignedShort4X4X4X4 = unchecked((uint)0x8033),
 
     [NativeName("GL_UNSIGNED_SHORT_5_5_5_1")]
     UnsignedShort5X5X5X1 = unchecked((uint)0x8034),
+
+    [NativeName("GL_UNSIGNED_SHORT_5_6_5")]
+    UnsignedShort5X6X5 = unchecked((uint)0x8363),
+
+    [NativeName("GL_UNSIGNED_INT")]
+    UnsignedInt = unchecked((uint)0x1405),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
+    UnsignedInt24X8Oes = unchecked((uint)0x84FA),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
+    UnsignedShort4X4X4X4Revext = unchecked((uint)0x8365),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
+    UnsignedShort1X5X5X5Revext = unchecked((uint)0x8366),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
+    UnsignedShort4X4X4X4Revimg = unchecked((uint)0x8365),
+
+    [NativeName("GL_INT")]
+    Int = unchecked((uint)0x1404),
+
+    [NativeName("GL_BITMAP")]
+    Bitmap = unchecked((uint)0x1A00),
+
+    [NativeName("GL_UNSIGNED_BYTE_3_3_2")]
+    UnsignedByte3X3X2 = unchecked((uint)0x8032),
 
     [NativeName("GL_UNSIGNED_INT_8_8_8_8")]
     UnsignedInt8X8X8X8 = unchecked((uint)0x8035),
@@ -52,9 +71,6 @@ public enum PixelType : uint
 
     [NativeName("GL_UNSIGNED_BYTE_2_3_3_REV")]
     UnsignedByte2X3X3Rev = unchecked((uint)0x8362),
-
-    [NativeName("GL_UNSIGNED_SHORT_5_6_5")]
-    UnsignedShort5X6X5 = unchecked((uint)0x8363),
 
     [NativeName("GL_UNSIGNED_SHORT_5_6_5_REV")]
     UnsignedShort5X6X5Rev = unchecked((uint)0x8364),
@@ -138,10 +154,6 @@ public enum PixelType : uint
     [NativeName("GL_UNSIGNED_INT_24_8_NV")]
     UnsignedInt24X8Nv = unchecked((uint)0x84FA),
 
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
-    UnsignedInt24X8Oes = unchecked((uint)0x84FA),
-
     [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
     UnsignedInt10F11F11FRevapple = unchecked((uint)0x8C3B),
@@ -151,18 +163,6 @@ public enum PixelType : uint
     UnsignedInt5X9X9X9Revapple = unchecked((uint)0x8C3E),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
-    UnsignedShort4X4X4X4Revext = unchecked((uint)0x8365),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
-    UnsignedShort1X5X5X5Revext = unchecked((uint)0x8366),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
     UnsignedInt2X10X10X10Revext = unchecked((uint)0x8368),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
-    UnsignedShort4X4X4X4Revimg = unchecked((uint)0x8365),
 }

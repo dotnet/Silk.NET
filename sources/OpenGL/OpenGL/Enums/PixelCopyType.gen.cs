@@ -11,15 +11,6 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum PixelCopyType : uint
 {
-    [NativeName("GL_COLOR")]
-    Color = unchecked((uint)0x1800),
-
-    [NativeName("GL_DEPTH")]
-    Depth = unchecked((uint)0x1801),
-
-    [NativeName("GL_STENCIL")]
-    Stencil = unchecked((uint)0x1802),
-
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_EXT")]
     Colorext = unchecked((uint)0x1800),
@@ -31,4 +22,13 @@ public enum PixelCopyType : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_EXT")]
     Stencilext = unchecked((uint)0x1802),
+
+    [NativeName("GL_COLOR")]
+    Color = unchecked((uint)0x1800),
+
+    [NativeName("GL_DEPTH")]
+    Depth = unchecked((uint)0x1801),
+
+    [NativeName("GL_STENCIL")]
+    Stencil = unchecked((uint)0x1802),
 }

@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ObjectIdentifier : uint
 {
-    [NativeName("GL_TEXTURE")]
-    Texture = unchecked((uint)0x1702),
-
     [NativeName("GL_VERTEX_ARRAY")]
     VertexArray = unchecked((uint)0x8074),
+
+    [NativeName("GL_TEXTURE")]
+    Texture = unchecked((uint)0x1702),
 
     [NativeName("GL_FRAMEBUFFER")]
     Framebuffer = unchecked((uint)0x8D40),

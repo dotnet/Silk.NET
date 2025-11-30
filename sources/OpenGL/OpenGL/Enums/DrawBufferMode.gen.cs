@@ -11,6 +11,19 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum DrawBufferMode : uint
 {
+    [NativeName("GL_FRONT")]
+    Front = unchecked((uint)0x0404),
+
+    [NativeName("GL_BACK")]
+    Back = unchecked((uint)0x0405),
+
+    [NativeName("GL_FRONT_AND_BACK")]
+    FrontAndBack = unchecked((uint)0x0408),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_NONE_OES")]
+    Noneoes = unchecked((uint)0),
+
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),
 
@@ -26,20 +39,11 @@ public enum DrawBufferMode : uint
     [NativeName("GL_BACK_RIGHT")]
     BackRight = unchecked((uint)0x0403),
 
-    [NativeName("GL_FRONT")]
-    Front = unchecked((uint)0x0404),
-
-    [NativeName("GL_BACK")]
-    Back = unchecked((uint)0x0405),
-
     [NativeName("GL_LEFT")]
     Left = unchecked((uint)0x0406),
 
     [NativeName("GL_RIGHT")]
     Right = unchecked((uint)0x0407),
-
-    [NativeName("GL_FRONT_AND_BACK")]
-    FrontAndBack = unchecked((uint)0x0408),
 
     [NativeName("GL_AUX0")]
     Aux0 = unchecked((uint)0x0409),
@@ -212,8 +216,4 @@ public enum DrawBufferMode : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
     ColorAttachment15Nv = unchecked((uint)0x8CEF),
-
-    [NameAffix("Suffix", "OES", 0)]
-    [NativeName("GL_NONE_OES")]
-    Noneoes = unchecked((uint)0),
 }

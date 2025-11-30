@@ -23,14 +23,17 @@ public enum VertexAttribType : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
 
-    [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
+    [NativeName("GL_FLOAT")]
+    Float = unchecked((uint)0x1406),
+
+    [NativeName("GL_FIXED")]
+    Fixed = unchecked((uint)0x140C),
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = unchecked((uint)0x1405),
 
-    [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    [NativeName("GL_INT")]
+    Int = unchecked((uint)0x1404),
 
     [NativeName("GL_DOUBLE")]
     Double = unchecked((uint)0x140A),
@@ -46,9 +49,6 @@ public enum VertexAttribType : uint
 
     [NativeName("GL_INT_2_10_10_10_REV")]
     Int2X10X10X10Rev = unchecked((uint)0x8D9F),
-
-    [NativeName("GL_FIXED")]
-    Fixed = unchecked((uint)0x140C),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]

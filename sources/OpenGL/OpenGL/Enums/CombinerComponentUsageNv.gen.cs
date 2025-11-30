@@ -12,12 +12,12 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum CombinerComponentUsageNv : uint
 {
-    [NativeName("GL_BLUE")]
-    Blue = unchecked((uint)0x1905),
-
     [NativeName("GL_ALPHA")]
     Alpha = unchecked((uint)0x1906),
 
     [NativeName("GL_RGB")]
     Rgb = unchecked((uint)0x1907),
+
+    [NativeName("GL_BLUE")]
+    Blue = unchecked((uint)0x1905),
 }

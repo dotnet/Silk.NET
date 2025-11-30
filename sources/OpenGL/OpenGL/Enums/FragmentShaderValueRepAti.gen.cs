@@ -12,6 +12,9 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentShaderValueRepAti : uint
 {
+    [NativeName("GL_ALPHA")]
+    Alpha = unchecked((uint)0x1906),
+
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),
 
@@ -23,7 +26,4 @@ public enum FragmentShaderValueRepAti : uint
 
     [NativeName("GL_BLUE")]
     Blue = unchecked((uint)0x1905),
-
-    [NativeName("GL_ALPHA")]
-    Alpha = unchecked((uint)0x1906),
 }

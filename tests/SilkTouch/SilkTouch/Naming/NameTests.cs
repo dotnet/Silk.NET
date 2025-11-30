@@ -54,7 +54,7 @@ public class NameTests : NameTrimmer
         foreach (var (key, (trimmed, _)) in test)
         {
             Assert.That(
-                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                trimmed.Prettify(new NameUtils.NameTransformer()),
                 Is.EqualTo(expected[key])
             );
         }
@@ -89,7 +89,7 @@ public class NameTests : NameTrimmer
         foreach (var (key, (trimmed, _)) in test)
         {
             Assert.That(
-                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                trimmed.Prettify(new NameUtils.NameTransformer()),
                 Is.EqualTo(expected[key])
             );
         }
@@ -120,7 +120,7 @@ public class NameTests : NameTrimmer
         foreach (var (key, (trimmed, _)) in test)
         {
             Assert.That(
-                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                trimmed.Prettify(new NameUtils.NameTransformer()),
                 Is.EqualTo(expected[key])
             );
         }

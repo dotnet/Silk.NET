@@ -12,6 +12,14 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum BlendEquationModeExt : uint
 {
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MIN_EXT")]
+    Minext = unchecked((uint)0x8007),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAX_EXT")]
+    Maxext = unchecked((uint)0x8008),
+
     [NativeName("GL_FUNC_ADD")]
     FuncAdd = unchecked((uint)0x8006),
 
@@ -26,14 +34,6 @@ public enum BlendEquationModeExt : uint
 
     [NativeName("GL_MAX")]
     Max = unchecked((uint)0x8008),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MIN_EXT")]
-    Minext = unchecked((uint)0x8007),
-
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_MAX_EXT")]
-    Maxext = unchecked((uint)0x8008),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FUNC_ADD_EXT")]

@@ -14,11 +14,11 @@ public enum TexCoordPointerType : uint
     [NativeName("GL_SHORT")]
     Short = unchecked((uint)0x1402),
 
-    [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
-
     [NativeName("GL_FLOAT")]
     Float = unchecked((uint)0x1406),
+
+    [NativeName("GL_INT")]
+    Int = unchecked((uint)0x1404),
 
     [NativeName("GL_DOUBLE")]
     Double = unchecked((uint)0x140A),

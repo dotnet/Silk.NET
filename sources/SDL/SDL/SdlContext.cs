@@ -4,12 +4,12 @@
 namespace Silk.NET.SDL;
 
 /// <summary>
-/// Represents an OpenGL context created using SDL.
+/// Represents an OpenGl context created using SDL.
 /// </summary>
-public class SdlContext : IGLContext
+public class SdlContext : IGlContext
 {
     /// <summary>
-    /// Creates an OpenGL context using SDL.
+    /// Creates an OpenGl context using SDL.
     /// </summary>
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
@@ -17,18 +17,18 @@ public class SdlContext : IGLContext
     /// <exception cref="SdlException">If an error occurs when creating the context.</exception>
     public SdlContext(
         WindowHandle window,
-        Span<KeyValuePair<GLAttr, int>> attributes,
+        Span<KeyValuePair<GlAttr, int>> attributes,
         ISdl? sdl = null
     )
     {
         Api = sdl ?? Sdl.Instance;
         foreach (var (attr, value) in attributes)
         {
-            Expect(Api.GLSetAttribute(attr, value), "set OpenGL context attribute");
+            Expect(Api.GlSetAttribute(attr, value), "set OpenGl context attribute");
         }
 
         Window = window;
-        Context = Api.GLCreateContext(window);
+        Context = Api.GlCreateContext(window);
         if (Context != nullptr)
         {
             return;
@@ -36,26 +36,26 @@ public class SdlContext : IGLContext
 
         var ctxError = (string)Api.GetError();
         Api.ClearError();
-        throw new SdlException($"Failed to create OpenGL context: {ctxError}");
+        throw new SdlException($"Failed to create OpenGl context: {ctxError}");
     }
 
     /// <summary>
-    /// Creates an OpenGL context using SDL.
+    /// Creates an OpenGl context using SDL.
     /// </summary>
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
     /// <param name="sdl">The SDL interface to use.</param>
     /// <exception cref="SdlException">If an error occurs when creating the context.</exception>
-    public SdlContext(WindowHandle window, ISdl sdl, params KeyValuePair<GLAttr, int>[] attributes)
+    public SdlContext(WindowHandle window, ISdl sdl, params KeyValuePair<GlAttr, int>[] attributes)
         : this(window, attributes, sdl) { }
 
     /// <summary>
-    /// Creates an OpenGL context using SDL.
+    /// Creates an OpenGl context using SDL.
     /// </summary>
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
     /// <exception cref="SdlException">If an error occurs when creating the context.</exception>
-    public SdlContext(WindowHandle window, params KeyValuePair<GLAttr, int>[] attributes)
+    public SdlContext(WindowHandle window, params KeyValuePair<GlAttr, int>[] attributes)
         : this(window, attributes, Sdl.Instance) { }
 
     /// <summary>
@@ -64,7 +64,7 @@ public class SdlContext : IGLContext
     /// <param name="window">The window handle.</param>
     /// <param name="context">The context handle.</param>
     /// <param name="sdl">The SDL interface to use. Defaults to <see cref="Sdl.Instance"/>.</param>
-    public SdlContext(WindowHandle window, GLContextStateHandle context, ISdl? sdl = null) =>
+    public SdlContext(WindowHandle window, GlContextStateHandle context, ISdl? sdl = null) =>
         (Window, Context, Api) = (window, context, sdl ?? Sdl.Instance);
 
     /// <summary>
@@ -75,7 +75,7 @@ public class SdlContext : IGLContext
     /// <summary>
     /// The context handle.
     /// </summary>
-    public GLContextStateHandle Context { get; }
+    public GlContextStateHandle Context { get; }
 
     /// <summary>
     /// The API interface in use.
@@ -83,14 +83,14 @@ public class SdlContext : IGLContext
     public ISdl Api { get; }
 
     /// <inheritdoc />
-    public void Dispose() => Expect(Api.GLDestroyContext(Context), "dispose OpenGL context");
+    public void Dispose() => Expect(Api.GlDestroyContext(Context), "dispose OpenGl context");
 
     /// <inheritdoc />
     public unsafe void* LoadFunction(string functionName, string libraryNameHint)
     {
-        var ret = libraryNameHint.Contains("EGL")
-            ? Api.EGLGetProcAddress(libraryNameHint)
-            : Api.GLGetProcAddress(functionName);
+        var ret = libraryNameHint.Contains("EGl")
+            ? Api.EglGetProcAddress(libraryNameHint)
+            : Api.GlGetProcAddress(functionName);
         Api.ClearError();
         return ret;
     }
@@ -98,16 +98,16 @@ public class SdlContext : IGLContext
     /// <inheritdoc />
     public bool IsCurrent
     {
-        get => Api.GLGetCurrentContext() == Context;
+        get => Api.GlGetCurrentContext() == Context;
         set
         {
             if (value)
             {
-                Expect(Api.GLMakeCurrent(Window, Context), "make context current");
+                Expect(Api.GlMakeCurrent(Window, Context), "make context current");
             }
             else
             {
-                Expect(Api.GLMakeCurrent(Window, nullptr), "clear current context");
+                Expect(Api.GlMakeCurrent(Window, nullptr), "clear current context");
             }
         }
     }
@@ -118,14 +118,14 @@ public class SdlContext : IGLContext
         get
         {
             var interval = 0;
-            Expect(Api.GLGetSwapInterval(interval.AsRef()), "get swap interval");
+            Expect(Api.GlGetSwapInterval(interval.AsRef()), "get swap interval");
             return interval;
         }
-        set => Expect(Api.GLSetSwapInterval(value), "set swap interval");
+        set => Expect(Api.GlSetSwapInterval(value), "set swap interval");
     }
 
     /// <inheritdoc />
-    public void SwapBuffers() => Expect(Api.GLSwapWindow(Window), "swap buffers");
+    public void SwapBuffers() => Expect(Api.GlSwapWindow(Window), "swap buffers");
 
     private void Expect(bool ec, string action)
     {

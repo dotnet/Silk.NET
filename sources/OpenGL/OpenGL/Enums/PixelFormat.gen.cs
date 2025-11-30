@@ -14,8 +14,31 @@ public enum PixelFormat : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
 
+    [NativeName("GL_ALPHA")]
+    Alpha = unchecked((uint)0x1906),
+
+    [NativeName("GL_RGB")]
+    Rgb = unchecked((uint)0x1907),
+
+    [NativeName("GL_RGBA")]
+    Rgba = unchecked((uint)0x1908),
+
+    [NativeName("GL_LUMINANCE")]
+    Luminance = unchecked((uint)0x1909),
+
+    [NativeName("GL_LUMINANCE_ALPHA")]
+    LuminanceAlpha = unchecked((uint)0x190A),
+
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = unchecked((uint)0x1405),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_BGRA_EXT")]
+    Bgraext = unchecked((uint)0x80E1),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_BGRA_IMG")]
+    Bgraimg = unchecked((uint)0x80E1),
 
     [NativeName("GL_STENCIL_INDEX")]
     StencilIndex = unchecked((uint)0x1901),
@@ -32,23 +55,8 @@ public enum PixelFormat : uint
     [NativeName("GL_BLUE")]
     Blue = unchecked((uint)0x1905),
 
-    [NativeName("GL_ALPHA")]
-    Alpha = unchecked((uint)0x1906),
-
-    [NativeName("GL_RGB")]
-    Rgb = unchecked((uint)0x1907),
-
-    [NativeName("GL_RGBA")]
-    Rgba = unchecked((uint)0x1908),
-
     [NativeName("GL_COLOR_INDEX")]
     ColorIndex = unchecked((uint)0x1900),
-
-    [NativeName("GL_LUMINANCE")]
-    Luminance = unchecked((uint)0x1909),
-
-    [NativeName("GL_LUMINANCE_ALPHA")]
-    LuminanceAlpha = unchecked((uint)0x190A),
 
     [NativeName("GL_BGR")]
     Bgr = unchecked((uint)0x80E0),
@@ -95,10 +103,6 @@ public enum PixelFormat : uint
     Bgrext = unchecked((uint)0x80E0),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("GL_BGRA_EXT")]
-    Bgraext = unchecked((uint)0x80E1),
-
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYK_EXT")]
     Cmykext = unchecked((uint)0x800C),
 
@@ -117,8 +121,4 @@ public enum PixelFormat : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RED_EXT")]
     Redext = unchecked((uint)0x1903),
-
-    [NameAffix("Suffix", "IMG", 0)]
-    [NativeName("GL_BGRA_IMG")]
-    Bgraimg = unchecked((uint)0x80E1),
 }
