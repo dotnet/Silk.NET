@@ -330,7 +330,8 @@
       "PrettifyNames": {
         "GlobalPrefixHints": ["PFN_vk","vk"],
         "PrefixOverrides": {
-          "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"
+          "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
+          "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
         }
       },
       "TransformEnums": {

@@ -17,9 +17,9 @@ public enum MemoryDecompressionMethodFlagsEXT : ulong
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_EXT")]
-    EXT = 0x1,
+    Gdeflate1X0BitEXT = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_NV")]
-    NV = 0x1,
+    Gdeflate1X0BitNV = 0x1,
 }
