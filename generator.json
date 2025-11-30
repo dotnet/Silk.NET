@@ -303,6 +303,9 @@
           }
         ]
       },
+      "ExtractNestedTyping": {
+        "DelegateSuffixPriority": 1
+      },
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan",

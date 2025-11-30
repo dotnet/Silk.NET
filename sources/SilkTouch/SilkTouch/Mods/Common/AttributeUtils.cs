@@ -230,7 +230,7 @@ public static class AttributeUtils
     /// <summary>
     /// Gets the value of the native name attribute from the given attribute list.
     /// </summary>
-    public static bool TryGetNativeName(this IEnumerable<AttributeListSyntax> attributeLists, out string? nativeName)
+    public static bool TryGetNativeName(this IEnumerable<AttributeListSyntax> attributeLists, [NotNullWhen(true)] out string? nativeName)
     {
         var nativeNameAttribute = attributeLists.SelectMany(list => list.Attributes).FirstOrDefault(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName"));
         if (nativeNameAttribute == null)
@@ -239,13 +239,8 @@ public static class AttributeUtils
             return false;
         }
 
-        nativeName = nativeNameAttribute.ArgumentList?.Arguments
-            .Select(arg =>
-                arg.IsKind(SyntaxKind.StringLiteralExpression)
-                    ? (arg.Expression as LiteralExpressionSyntax)?.Token.Value
-                    : null)
-            .OfType<string>()
-            .FirstOrDefault();
+        var arg = nativeNameAttribute.ArgumentList?.Arguments[0];
+        nativeName = (arg?.Expression as LiteralExpressionSyntax)?.Token.Value as string;
 
         return nativeName != null;
     }

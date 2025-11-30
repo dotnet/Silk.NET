@@ -7,6 +7,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -34,12 +35,26 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </description></item>
 /// </list>
 /// </summary>
-public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
+[ModConfiguration<Configuration>]
+public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IOptionsSnapshot<ExtractNestedTyping.Configuration> cfg) : Mod
 {
+    /// <summary>
+    /// ExtractNestedTyping configuration.
+    /// </summary>
+    public record Configuration
+    {
+        /// <summary>
+        /// The priority with which the -Delegate suffix is applied.
+        /// </summary>
+        public int DelegateSuffixPriority { get; init; } = 0;
+    }
+
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         await base.ExecuteAsync(ctx, ct);
+
+        var config = cfg.Get(ctx.JobKey);
 
         var project = ctx.SourceProject;
         if (project == null)
@@ -62,7 +77,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         }
 
         // Second pass to modify existing files as per our discovery.
-        var rewriter = new Rewriter(logger);
+        var rewriter = new Rewriter(logger, config.DelegateSuffixPriority);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
@@ -236,7 +251,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         }
     }
 
-    partial class Rewriter(ILogger logger) : CSharpSyntaxRewriter
+    partial class Rewriter(ILogger logger, int delegateSuffixPriority) : CSharpSyntaxRewriter
     {
         private Dictionary<string, string> _typeRenames = [];
 
@@ -512,6 +527,11 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                         ? SingletonList(AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Transformed")))))
                         : default)
                         .WithNativeName(currentNativeTypeName),
+                    (currentNativeTypeName == fallback
+                        ? SingletonList(AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Transformed")))))
+                        : default)
+                        .WithNativeName(currentNativeTypeName)
+                        .AddNameSuffix("Delegate", delegateSuffixPriority),
                     node
                 );
                 FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);
@@ -751,7 +771,8 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
     ) CreateFunctionPointerTypes(
         string pfnName,
         string delegateName,
-        SyntaxList<AttributeListSyntax> attrLists,
+        SyntaxList<AttributeListSyntax> pfnAttrLists,
+        SyntaxList<AttributeListSyntax> delegateAttrLists,
         FunctionPointerTypeSyntax rawPfn
     )
     {
@@ -771,7 +792,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                     )
                 )
             )
-            .WithAttributeLists(attrLists)
+            .WithAttributeLists(pfnAttrLists)
             .WithMembers(
                 List<MemberDeclarationSyntax>(
                     [
@@ -932,7 +953,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             .WithModifiers(
                 TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
             )
-            .WithAttributeLists(attrLists)
+            .WithAttributeLists(delegateAttrLists)
             .WithParameterList(
                 ParameterList(
                     SeparatedList(

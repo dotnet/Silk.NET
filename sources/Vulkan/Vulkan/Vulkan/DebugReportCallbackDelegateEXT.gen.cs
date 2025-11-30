@@ -8,11 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("PFN_vkDebugUtilsMessengerCallbackEXT")]
+[NameAffix("Suffix", "EXT", 0)]
+[NameAffix("Suffix", "Delegate", 1)]
+[NativeName("PFN_vkDebugReportCallbackEXT")]
 [SupportedApiProfile("vulkan")]
-public unsafe delegate uint DebugUtilsMessengerCallbackExtDelegate(
-    DebugUtilsMessageSeverityFlagsEXT arg0,
-    DebugUtilsMessageTypeFlagsEXT arg1,
-    DebugUtilsMessengerCallbackDataEXT* arg2,
-    void* arg3
+public unsafe delegate uint DebugReportCallbackDelegateEXT(
+    DebugReportFlagsEXT arg0,
+    DebugReportObjectTypeEXT arg1,
+    ulong arg2,
+    nuint arg3,
+    int arg4,
+    sbyte* arg5,
+    sbyte* arg6,
+    void* arg7
 );

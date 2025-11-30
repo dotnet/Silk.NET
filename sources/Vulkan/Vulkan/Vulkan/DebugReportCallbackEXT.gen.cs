@@ -53,7 +53,7 @@ public readonly unsafe struct DebugReportCallbackEXT : IDisposable
     ) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    public DebugReportCallbackEXT(DebugReportCallbackExtDelegate proc) =>
+    public DebugReportCallbackEXT(DebugReportCallbackDelegateEXT proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]

@@ -54,7 +54,7 @@ public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemoryReportCallbackEXT(DeviceMemoryReportCallbackExtDelegate proc) =>
+    public DeviceMemoryReportCallbackEXT(DeviceMemoryReportCallbackDelegateEXT proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile(

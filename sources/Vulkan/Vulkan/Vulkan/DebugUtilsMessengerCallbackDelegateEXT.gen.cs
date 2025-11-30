@@ -8,9 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("PFN_vkGetInstanceProcAddrLUNARG")]
+[NameAffix("Suffix", "EXT", 0)]
+[NameAffix("Suffix", "Delegate", 1)]
+[NativeName("PFN_vkDebugUtilsMessengerCallbackEXT")]
 [SupportedApiProfile("vulkan")]
-public unsafe delegate GetInstanceProcAddrLunargP2 GetInstanceProcAddrLunargDelegate(
-    InstanceHandle arg0,
-    sbyte* arg1
+public unsafe delegate uint DebugUtilsMessengerCallbackDelegateEXT(
+    DebugUtilsMessageSeverityFlagsEXT arg0,
+    DebugUtilsMessageTypeFlagsEXT arg1,
+    DebugUtilsMessengerCallbackDataEXT* arg2,
+    void* arg3
 );

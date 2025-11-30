@@ -13,7 +13,8 @@ namespace Silk.NET.Core;
     | AttributeTargets.Field
     | AttributeTargets.Method
     | AttributeTargets.Parameter
-    | AttributeTargets.ReturnValue,
+    | AttributeTargets.ReturnValue
+    | AttributeTargets.Delegate,
     AllowMultiple = false,
     Inherited = true
 )]

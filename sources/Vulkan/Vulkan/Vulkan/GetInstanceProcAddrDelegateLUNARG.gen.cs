@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("PFN_vkDeviceMemoryReportCallbackEXT")]
+[NameAffix("Suffix", "LUNARG", 0)]
+[NameAffix("Suffix", "Delegate", 1)]
+[NativeName("PFN_vkGetInstanceProcAddrLUNARG")]
 [SupportedApiProfile("vulkan")]
-public unsafe delegate void DeviceMemoryReportCallbackExtDelegate(
-    DeviceMemoryReportCallbackDataEXT* arg0,
-    void* arg1
+public unsafe delegate GetInstanceProcAddrLunargP2 GetInstanceProcAddrDelegateLUNARG(
+    InstanceHandle arg0,
+    sbyte* arg1
 );

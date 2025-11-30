@@ -2044,7 +2044,8 @@ public partial class MixKhronosData(
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
-            var name = identifier.Text;
+            var name = attributeLists.TryGetNativeName(out var nativeName) ? nativeName : identifier.Text;
+
             var handleSuffix = "_T";
             if (name.EndsWith(handleSuffix))
             {
@@ -2091,6 +2092,9 @@ public partial class MixKhronosData(
             node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
             return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
         }
+
+        public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
 
         // ----- Members -----
 

@@ -12,7 +12,8 @@ namespace Silk.NET.Core;
     | AttributeTargets.Property
     | AttributeTargets.Field
     | AttributeTargets.Method
-    | AttributeTargets.Parameter,
+    | AttributeTargets.Parameter
+    | AttributeTargets.Delegate,
     AllowMultiple = true,
     Inherited = true
 )]
