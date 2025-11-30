@@ -309,6 +309,11 @@
         "FlagsTypes": [
           "VkFlags",
           "VkFlags64"
+        ],
+        "VendorSuffixIdentifierExclusions": [
+          "VK_VENDOR_ID_VIV",
+          "VK_VENDOR_ID_VSI",
+          "VK_VENDOR_ID_MESA"
         ]
       },
       "InterceptNativeFunctions": {

@@ -39,9 +39,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Khronos = 65536,
+    VendorIdKhronos = 65536,
 
-    [NameAffix("Suffix", "VIV", 0)]
     [NativeName("VK_VENDOR_ID_VIV")]
     [SupportedApiProfile(
         "vulkan",
@@ -69,9 +68,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VIV = 65537,
+    VendorIdViv = 65537,
 
-    [NameAffix("Suffix", "VSI", 0)]
     [NativeName("VK_VENDOR_ID_VSI")]
     [SupportedApiProfile(
         "vulkan",
@@ -99,7 +97,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VSI = 65538,
+    VendorIdVsi = 65538,
 
     [NativeName("VK_VENDOR_ID_KAZAN")]
     [SupportedApiProfile(
@@ -128,7 +126,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Kazan = 65539,
+    VendorIdKazan = 65539,
 
     [NativeName("VK_VENDOR_ID_CODEPLAY")]
     [SupportedApiProfile(
@@ -157,9 +155,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Codeplay = 65540,
+    VendorIdCodeplay = 65540,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_VENDOR_ID_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -187,7 +184,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    MESA = 65541,
+    VendorIdMesa = 65541,
 
     [NativeName("VK_VENDOR_ID_POCL")]
     [SupportedApiProfile(
@@ -216,7 +213,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Pocl = 65542,
+    VendorIdPocl = 65542,
 
     [NativeName("VK_VENDOR_ID_MOBILEYE")]
     [SupportedApiProfile(
@@ -245,5 +242,5 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Mobileye = 65543,
+    VendorIdMobileye = 65543,
 }

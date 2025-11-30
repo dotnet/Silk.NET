@@ -207,6 +207,14 @@ public partial class MixKhronosData(
         /// The priority with which vendor suffixes are applied.
         /// </summary>
         public int VendorSuffixPriority { get; init; } = 0;
+
+        /// <summary>
+        /// The set of identifiers that should be excluded from vendor suffix identification.
+        /// </summary>
+        /// <remarks>
+        /// See <see cref="RewriterPhase3"/>.
+        /// </remarks>
+        public HashSet<string> VendorSuffixIdentifierExclusions { get; init; } = [];
     }
 
     /// <summary>
@@ -439,7 +447,7 @@ public partial class MixKhronosData(
                     continue;
                 }
 
-                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixPriority);
+                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixIdentifierExclusions, currentConfig.VendorSuffixPriority);
                 proj = doc.WithSyntaxRoot(
                     rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null.")
@@ -2182,7 +2190,7 @@ public partial class MixKhronosData(
     /// <remarks>
     /// Yes, this is a 3rd rewriter.
     /// </remarks>
-    private class RewriterPhase3(HashSet<string> vendors, int vendorSuffixPriority) : CSharpSyntaxRewriter
+    private class RewriterPhase3(HashSet<string> vendors, HashSet<string> excludedIdentifiers, int vendorSuffixPriority) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
@@ -2194,6 +2202,11 @@ public partial class MixKhronosData(
                 attributeLists = attributeLists
                     .AddNameSuffix(handleSuffix, -1)
                     .WithNativeName(name);
+            }
+
+            if (excludedIdentifiers.Contains(name))
+            {
+                return attributeLists;
             }
 
             foreach (var vendor in vendors)
