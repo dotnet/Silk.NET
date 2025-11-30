@@ -74,9 +74,24 @@ public class PrettifyNames(
         // The dictionary containing mappings from the original type names to the new names of the type and its members
         var newNames = new Dictionary<string, RenamedType>();
 
-        // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
-        if (cfg.TrimmerBaseline is not null)
+        // Trim the trimmable names if the trimmer baseline is set
+        // Otherwise, we just prettify the trimmable names
+        if (cfg.TrimmerBaseline is null)
         {
+            // Only prettify the trimmable names
+            foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
+            {
+                newNames[name] = new RenamedType(
+                    GetOverriddenName(null, name, cfg.NameOverrides, true), // <-- lenient about caps for type names (e.g. GL)
+                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides)),
+                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides))
+                );
+            }
+        }
+        else
+        {
+            // Trim and prettify the trimmable names
+
             // Get all the trimmers that are above this baseline. We also sort by the version. Why? Because someone
             // couldn't be bothered to introduce a weight property. It is also unclear what effect this has on 2.17/2.18
             // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
@@ -89,7 +104,7 @@ public class PrettifyNames(
                 .ToArray();
 
             // Create a type name dictionary to trim the type names.
-            var typeNames = visitor.Types.ToDictionary(
+            var typeNames = visitor.TrimmableTypes.ToDictionary(
                 x => x.Key,
                 x => new CandidateNames(x.Key, null)
             );
@@ -114,7 +129,7 @@ public class PrettifyNames(
             // Now rename everything within each type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
-                var (_, (consts, functions)) = visitor.Types.First(x => x.Key == typeName);
+                var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
@@ -162,19 +177,14 @@ public class PrettifyNames(
                     functionSyntax
                 );
 
-                // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
-                var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(memberName => new KeyValuePair<string, string>(memberName, GetOverriddenName(typeName, memberName, cfg.NameOverrides)))
-                    : [];
-
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
                     newTypeName.Prettify(),
 
-                    constNames
-                        .Select(type => new KeyValuePair<string, string>(type.Key, type.Value.Primary.Prettify()))
-                        .Concat(prettifiedOnly.DistinctBy(kvp => kvp.Key).ToDictionary())
-                        .ToDictionary(x => x.Key, x => x.Value),
+                    constNames.ToDictionary(
+                        x => x.Key,
+                        x => x.Value.Primary.Prettify()
+                    ),
 
                     functionNames.ToDictionary(
                         x => x.Key,
@@ -183,17 +193,21 @@ public class PrettifyNames(
                 );
             }
         }
-        else // (there's no trimming baseline)
+
+        // Prettify the prettify only names
+        foreach (var (typeName, memberNames) in visitor.PrettifyOnlyTypes)
         {
-            // Prettify only if the user has not indicated they want to trim.
-            foreach (var (name, (nonFunctions, functions)) in visitor.Types)
+            if (!newNames.TryGetValue(typeName, out var renamedType))
             {
-                newNames[name] = new RenamedType(
-                    GetOverriddenName(null, name, cfg.NameOverrides, true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions.ToDictionary(x => x, x => GetOverriddenName(name, x, cfg.NameOverrides)),
-                    functions.ToDictionary(x => x.Name, x => GetOverriddenName(name, x.Name, cfg.NameOverrides))
-                );
+                renamedType = new RenamedType(GetOverriddenName(null, typeName, cfg.NameOverrides), [], []);
             }
+
+            foreach (var memberName in memberNames)
+            {
+                renamedType.NonFunctions[memberName] = GetOverriddenName(typeName, memberName, cfg.NameOverrides);
+            }
+
+            newNames[typeName] = renamedType;
         }
 
         if (logger.IsEnabled(LogLevel.Debug))
@@ -749,7 +763,7 @@ public class PrettifyNames(
         /// A mapping from type names to their member names (along with some additional info).
         /// These names are first trimmed, then prettified.
         /// </summary>
-        public Dictionary<string, TypeData> Types { get; } = new();
+        public Dictionary<string, TypeData> TrimmableTypes { get; } = new();
 
         /// <summary>
         /// A mapping from type names to their member names.
@@ -900,10 +914,10 @@ public class PrettifyNames(
             base.VisitClassDeclaration(node);
 
             // Merge with existing data in case of partials
-            if (!Types.TryGetValue(identifier, out var typeData))
+            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], []);
-                Types.Add(identifier, typeData);
+                TrimmableTypes.Add(identifier, typeData);
             }
 
             typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
@@ -932,10 +946,10 @@ public class PrettifyNames(
             base.VisitStructDeclaration(node);
 
             // Merge with existing data in case of partials
-            if (!Types.TryGetValue(identifier, out var typeData))
+            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], []);
-                Types.Add(identifier, typeData);
+                TrimmableTypes.Add(identifier, typeData);
             }
 
             typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
@@ -964,10 +978,10 @@ public class PrettifyNames(
             base.VisitEnumDeclaration(node);
 
             // Merge with existing data in case of partials
-            if (!Types.TryGetValue(identifier, out var typeData))
+            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
             {
                 typeData = new TypeData([], []);
-                Types.Add(identifier, typeData);
+                TrimmableTypes.Add(identifier, typeData);
             }
 
             typeData.NonFunctions.AddRange(_enumInProgress.Value.EnumMembers);
@@ -993,7 +1007,7 @@ public class PrettifyNames(
             }
 
             ReportTypeAffixData(identifier, node.AttributeLists);
-            Types.Add(identifier, new TypeData([], []));
+            TrimmableTypes.Add(identifier, new TypeData([], []));
         }
 
         // ----- Members -----
