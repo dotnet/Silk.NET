@@ -13,7 +13,7 @@ namespace Silk.NET.Core;
     | AttributeTargets.Field
     | AttributeTargets.Method
     | AttributeTargets.Parameter,
-    AllowMultiple = false,
+    AllowMultiple = true,
     Inherited = true
 )]
 [Conditional("DEBUG")]
