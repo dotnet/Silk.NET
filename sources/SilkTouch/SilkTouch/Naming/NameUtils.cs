@@ -46,6 +46,11 @@ public static partial class NameUtils
     /// <returns>The pretty string.</returns>
     public static string Prettify(this string str)
     {
+        if (str.Length == 0)
+        {
+            throw new InvalidOperationException("Cannot prettify an empty string");
+        }
+
         var ret = string.Join(
             null,
             str.LenientUnderscore()
@@ -57,7 +62,7 @@ public static partial class NameUtils
 
         if (ret.Length == 0)
         {
-            throw new InvalidOperationException($"Failed to prettify string: {str}");
+            throw new InvalidOperationException($"Prettification for '{str}' led to an empty string");
         }
 
         // Disallow all capitals
