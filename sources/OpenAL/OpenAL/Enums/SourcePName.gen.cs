@@ -106,15 +106,15 @@ public enum SourcePName : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
-    ByteRwOffsetssoft = unchecked((uint)0x1031),
+    ByteRwOffsetsSOFT = unchecked((uint)0x1031),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetssoft = unchecked((uint)0x1032),
+    SampleRwOffsetsSOFT = unchecked((uint)0x1032),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_DIRECT_CHANNELS_SOFT")]
-    DirectChannelssoft = unchecked((uint)0x1033),
+    DirectChannelsSOFT = unchecked((uint)0x1033),
 
     [NativeName("AL_STEREO_ANGLES")]
     StereoAngles = unchecked((uint)0x1030),
@@ -124,33 +124,33 @@ public enum SourcePName : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
-    SampleOffsetLatencysoft = unchecked((uint)0x1200),
+    SampleOffsetLatencySOFT = unchecked((uint)0x1200),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
-    SecOffsetLatencysoft = unchecked((uint)0x1201),
+    SecOffsetLatencySOFT = unchecked((uint)0x1201),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
-    SourceResamplersoft = unchecked((uint)0x1212),
+    SourceResamplerSOFT = unchecked((uint)0x1212),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
-    SourceSpatializesoft = unchecked((uint)0x1214),
+    SourceSpatializeSOFT = unchecked((uint)0x1214),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
-    SampleOffsetClocksoft = unchecked((uint)0x1202),
+    SampleOffsetClockSOFT = unchecked((uint)0x1202),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
-    SecOffsetClocksoft = unchecked((uint)0x1203),
+    SecOffsetClockSOFT = unchecked((uint)0x1203),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO_MODE_SOFT")]
-    StereoModesoft = unchecked((uint)0x19B0),
+    StereoModeSOFT = unchecked((uint)0x19B0),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
-    SuperStereoWidthsoft = unchecked((uint)0x19B1),
+    SuperStereoWidthSOFT = unchecked((uint)0x19B1),
 }

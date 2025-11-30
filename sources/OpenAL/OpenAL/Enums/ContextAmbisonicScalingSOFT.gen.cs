@@ -11,17 +11,19 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("SourceSpatializeSOFT")]
+[NativeName("ContextAmbisonicScalingSOFT")]
 [Transformed]
-public enum SourceSpatializeSoft : uint
+public enum ContextAmbisonicScalingSOFT : uint
 {
-    [NativeName("AL_FALSE")]
-    False = unchecked((uint)0),
-
-    [NativeName("AL_TRUE")]
-    True = unchecked((uint)1),
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_FUMA_SOFT")]
+    FumaSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_AUTO_SOFT")]
-    Autosoft = unchecked((uint)0x0002),
+    [NativeName("ALC_SN3D_SOFT")]
+    Sn3DSOFT = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_N3D_SOFT")]
+    N3DSOFT = unchecked((uint)0x0002),
 }

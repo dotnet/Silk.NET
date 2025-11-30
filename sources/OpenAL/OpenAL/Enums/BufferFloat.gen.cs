@@ -16,5 +16,5 @@ public enum BufferFloat : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_LENGTH_SOFT")]
-    SecLengthsoft = unchecked((uint)0x200B),
+    SecLengthSOFT = unchecked((uint)0x200B),
 }

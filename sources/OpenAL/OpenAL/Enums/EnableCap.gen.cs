@@ -19,5 +19,5 @@ public enum EnableCap : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_OUTPUT_EXT")]
-    DebugOutputext = unchecked((uint)0x19B2),
+    DebugOutputEXT = unchecked((uint)0x19B2),
 }

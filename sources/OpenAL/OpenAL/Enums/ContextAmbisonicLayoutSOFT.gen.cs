@@ -11,15 +11,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("BufferPointerSOFT")]
+[NativeName("ContextAmbisonicLayoutSOFT")]
 [Transformed]
-public enum BufferPointerSoft : uint
+public enum ContextAmbisonicLayoutSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    Functionsoft = unchecked((uint)0x19A0),
+    [NativeName("ALC_FUMA_SOFT")]
+    FumaSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    UserParamsoft = unchecked((uint)0x19A1),
+    [NativeName("ALC_ACN_SOFT")]
+    AcnSOFT = unchecked((uint)0x0001),
 }

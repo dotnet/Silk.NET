@@ -11,15 +11,19 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("DeviceTypeSOFT")]
+[NativeName("AmbisonicScalingSOFT")]
 [Transformed]
-public enum DeviceTypeSoft : uint
+public enum AmbisonicScalingSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_PLAYBACK_DEVICE_SOFT")]
-    PlaybackDevicesoft = unchecked((uint)0x19D4),
+    [NativeName("AL_FUMA_SOFT")]
+    FumaSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_CAPTURE_DEVICE_SOFT")]
-    CaptureDevicesoft = unchecked((uint)0x19D5),
+    [NativeName("AL_SN3D_SOFT")]
+    Sn3DSOFT = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_N3D_SOFT")]
+    N3DSOFT = unchecked((uint)0x0002),
 }

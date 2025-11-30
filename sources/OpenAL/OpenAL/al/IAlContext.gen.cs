@@ -153,9 +153,9 @@ public unsafe partial interface IAlContext
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
-        static abstract Constant<int, AlcEnum, EventSupportSoft> EventIsSupportedSoft(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+        static abstract Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSoft(
+            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         );
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -368,8 +368,8 @@ public unsafe partial interface IAlContext
         static abstract MaybeBool<sbyte> IsRenderFormatSupportedSoft(
             DeviceHandle device,
             [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         );
 
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
@@ -621,9 +621,9 @@ public unsafe partial interface IAlContext
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
-    Constant<int, AlcEnum, EventSupportSoft> EventIsSupportedSoft(
-        [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+    Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSoft(
+        [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
     );
 
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -818,8 +818,8 @@ public unsafe partial interface IAlContext
     MaybeBool<sbyte> IsRenderFormatSupportedSoft(
         DeviceHandle device,
         [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
     );
 
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]

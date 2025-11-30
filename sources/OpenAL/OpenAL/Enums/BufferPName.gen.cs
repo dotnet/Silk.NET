@@ -28,49 +28,49 @@ public enum BufferPName : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_LOOP_POINTS_SOFT")]
-    LoopPointssoft = unchecked((uint)0x2015),
+    LoopPointsSOFT = unchecked((uint)0x2015),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_INTERNAL_FORMAT_SOFT")]
-    InternalFormatsoft = unchecked((uint)0x2008),
+    InternalFormatSOFT = unchecked((uint)0x2008),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE_LENGTH_SOFT")]
-    ByteLengthsoft = unchecked((uint)0x2009),
+    ByteLengthSOFT = unchecked((uint)0x2009),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_LENGTH_SOFT")]
-    SampleLengthsoft = unchecked((uint)0x200A),
+    SampleLengthSOFT = unchecked((uint)0x200A),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_LENGTH_SOFT")]
-    SecLengthsoft = unchecked((uint)0x200B),
+    SecLengthSOFT = unchecked((uint)0x200B),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNPACK_BLOCK_ALIGNMENT_SOFT")]
-    UnpackBlockAlignmentsoft = unchecked((uint)0x200C),
+    UnpackBlockAlignmentSOFT = unchecked((uint)0x200C),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_PACK_BLOCK_ALIGNMENT_SOFT")]
-    PackBlockAlignmentsoft = unchecked((uint)0x200D),
+    PackBlockAlignmentSOFT = unchecked((uint)0x200D),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutsoft = unchecked((uint)0x1997),
+    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingsoft = unchecked((uint)0x1998),
+    AmbisonicScalingSOFT = unchecked((uint)0x1998),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    BufferCallbackFunctionsoft = unchecked((uint)0x19A0),
+    BufferCallbackFunctionSOFT = unchecked((uint)0x19A0),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    BufferCallbackUserParamsoft = unchecked((uint)0x19A1),
+    BufferCallbackUserParamSOFT = unchecked((uint)0x19A1),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNPACK_AMBISONIC_ORDER_SOFT")]
-    UnpackAmbisonicOrdersoft = unchecked((uint)0x199D),
+    UnpackAmbisonicOrderSOFT = unchecked((uint)0x199D),
 }

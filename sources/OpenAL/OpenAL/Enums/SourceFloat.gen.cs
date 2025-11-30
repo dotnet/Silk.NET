@@ -55,11 +55,11 @@ public enum SourceFloat : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
-    ByteRwOffsetssoft = unchecked((uint)0x1031),
+    ByteRwOffsetsSOFT = unchecked((uint)0x1031),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetssoft = unchecked((uint)0x1032),
+    SampleRwOffsetsSOFT = unchecked((uint)0x1032),
 
     [NativeName("AL_STEREO_ANGLES")]
     StereoAngles = unchecked((uint)0x1030),
@@ -69,9 +69,9 @@ public enum SourceFloat : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
-    SecOffsetLatencysoft = unchecked((uint)0x1201),
+    SecOffsetLatencySOFT = unchecked((uint)0x1201),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
-    SuperStereoWidthsoft = unchecked((uint)0x19B1),
+    SuperStereoWidthSOFT = unchecked((uint)0x19B1),
 }

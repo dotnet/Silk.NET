@@ -10,20 +10,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "LOKI", 0)]
-[NativeName("AudioChannelLOKI")]
+[NameAffix("Suffix", "SOFT", 0)]
+[NativeName("ContextRequestSOFT")]
 [Transformed]
-public enum AudioChannelLoki : uint
+public enum ContextRequestSOFT : uint
 {
-    [NameAffix("Suffix", "LOKI", 0)]
-    [NativeName("ALC_CHAN_MAIN_LOKI")]
-    Mainloki = unchecked((uint)0x500001),
+    [NativeName("ALC_FALSE")]
+    False = unchecked((uint)0),
 
-    [NameAffix("Suffix", "LOKI", 0)]
-    [NativeName("ALC_CHAN_PCM_LOKI")]
-    Pcmloki = unchecked((uint)0x500002),
+    [NativeName("ALC_TRUE")]
+    True = unchecked((uint)1),
 
-    [NameAffix("Suffix", "LOKI", 0)]
-    [NativeName("ALC_CHAN_CD_LOKI")]
-    Cdloki = unchecked((uint)0x500003),
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_DONT_CARE_SOFT")]
+    DontCareSOFT = unchecked((uint)0x0002),
 }

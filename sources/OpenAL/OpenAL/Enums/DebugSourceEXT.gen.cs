@@ -11,27 +11,31 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "EXT", 0)]
-[NativeName("DebugSeverityEXT")]
+[NativeName("DebugSourceEXT")]
 [Transformed]
-public enum DebugSeverityExt : uint
+public enum DebugSourceEXT : uint
 {
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DONT_CARE_EXT")]
-    DontCareext = unchecked((uint)0x0002),
+    DontCareEXT = unchecked((uint)0x0002),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("AL_DEBUG_SEVERITY_HIGH_EXT")]
-    DebugSeverityHighext = unchecked((uint)0x19C3),
+    [NativeName("AL_DEBUG_SOURCE_API_EXT")]
+    DebugSourceApiEXT = unchecked((uint)0x19B5),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("AL_DEBUG_SEVERITY_MEDIUM_EXT")]
-    DebugSeverityMediumext = unchecked((uint)0x19C4),
+    [NativeName("AL_DEBUG_SOURCE_AUDIO_SYSTEM_EXT")]
+    DebugSourceAudioSystemEXT = unchecked((uint)0x19B6),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("AL_DEBUG_SEVERITY_LOW_EXT")]
-    DebugSeverityLowext = unchecked((uint)0x19C5),
+    [NativeName("AL_DEBUG_SOURCE_THIRD_PARTY_EXT")]
+    DebugSourceThirdPartyEXT = unchecked((uint)0x19B7),
 
     [NameAffix("Suffix", "EXT", 0)]
-    [NativeName("AL_DEBUG_SEVERITY_NOTIFICATION_EXT")]
-    DebugSeverityNotificationext = unchecked((uint)0x19C6),
+    [NativeName("AL_DEBUG_SOURCE_APPLICATION_EXT")]
+    DebugSourceApplicationEXT = unchecked((uint)0x19B8),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SOURCE_OTHER_EXT")]
+    DebugSourceOtherEXT = unchecked((uint)0x19B9),
 }

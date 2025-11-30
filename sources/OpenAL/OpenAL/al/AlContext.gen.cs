@@ -206,11 +206,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
-        public static Constant<int, AlcEnum, EventSupportSoft> EventIsSupportedSoft(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+        public static Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSoft(
+            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         ) =>
-            (Constant<int, AlcEnum, EventSupportSoft>)
+            (Constant<int, AlcEnum, EventSupportSOFT>)
                 (int)EventIsSupportedSoft((int)eventType, (int)deviceType);
 
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetContextsDevice")]
@@ -494,8 +494,8 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static MaybeBool<sbyte> IsRenderFormatSupportedSoft(
             DeviceHandle device,
             [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) =>
             (MaybeBool<sbyte>)
                 (sbyte)IsRenderFormatSupportedSoft(device, freq, (int)channels, (int)type);
@@ -899,9 +899,9 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Constant<int, AlcEnum, EventSupportSoft> EventIsSupportedSoft(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+        public Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSoft(
+            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         ) => T.EventIsSupportedSoft(eventType, deviceType);
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -1187,8 +1187,8 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public MaybeBool<sbyte> IsRenderFormatSupportedSoft(
             DeviceHandle device,
             [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) => T.IsRenderFormatSupportedSoft(device, freq, channels, type);
 
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
@@ -1599,9 +1599,9 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Constant<int, AlcEnum, EventSupportSoft> EventIsSupportedSoft(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+        public static Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSoft(
+            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         ) => Underlying.Value!.EventIsSupportedSoft(eventType, deviceType);
 
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -1937,8 +1937,8 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static MaybeBool<sbyte> IsRenderFormatSupportedSoft(
             DeviceHandle device,
             [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) => Underlying.Value!.IsRenderFormatSupportedSoft(device, freq, channels, type);
 
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
@@ -2151,7 +2151,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [NameAffix("Suffix", "EXT", 0)]
     [NativeTypeName("#define ALC_ENUMERATE_ALL_EXT 1")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    public const int EnumerateAllext = 1;
+    public const int EnumerateAllEXT = 1;
 
     [NativeTypeName("#define ALC_EXT_EFX_NAME \"ALC_EXT_EFX\"")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -2605,11 +2605,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, AlcEnum, EventSupportSoft> IAlContext.EventIsSupportedSoft(
-        [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+    Constant<int, AlcEnum, EventSupportSOFT> IAlContext.EventIsSupportedSoft(
+        [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
     ) =>
-        (Constant<int, AlcEnum, EventSupportSoft>)
+        (Constant<int, AlcEnum, EventSupportSOFT>)
             (int)((IAlContext)this).EventIsSupportedSoft((int)eventType, (int)deviceType);
 
     [return: NativeTypeName("ALCenum")]
@@ -2617,9 +2617,9 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, AlcEnum, EventSupportSoft> EventIsSupportedSoft(
-        [NativeTypeName("ALCenum")] Constant<int, EventTypeSoft> eventType,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSoft> deviceType
+    public static Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSoft(
+        [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
     ) => ThisThread.EventIsSupportedSoft(eventType, deviceType);
 
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -3221,8 +3221,8 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     MaybeBool<sbyte> IAlContext.IsRenderFormatSupportedSoft(
         DeviceHandle device,
         [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
     ) =>
         (MaybeBool<sbyte>)
             (sbyte)
@@ -3241,8 +3241,8 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static MaybeBool<sbyte> IsRenderFormatSupportedSoft(
         DeviceHandle device,
         [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSoft> channels,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSoft> type
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
     ) => ThisThread.IsRenderFormatSupportedSoft(device, freq, channels, type);
 
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]

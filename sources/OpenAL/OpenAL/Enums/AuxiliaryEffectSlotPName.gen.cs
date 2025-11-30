@@ -25,5 +25,5 @@ public enum AuxiliaryEffectSlotPName : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
-    Targetsoft = unchecked((uint)0x199C),
+    TargetSOFT = unchecked((uint)0x199C),
 }

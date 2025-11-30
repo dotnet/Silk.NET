@@ -34,11 +34,11 @@ public enum ErrorCode : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowext = unchecked((uint)0x19CD),
+    StackOverflowEXT = unchecked((uint)0x19CD),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowext = unchecked((uint)0x19CE),
+    StackUnderflowEXT = unchecked((uint)0x19CE),
 
     [NativeName("ALC_NO_ERROR")]
     CNoError = unchecked((uint)0),
@@ -48,7 +48,7 @@ public enum ErrorCode : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("ALC_INVALID_CONTEXT")]
-    CInvalidContext = unchecked((uint)0xA002),
+    CInvalidContEXT = unchecked((uint)0xA002),
 
     [NativeName("ALC_INVALID_ENUM")]
     CInvalidEnum = unchecked((uint)0xA003),

@@ -736,8 +736,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint samplerate,
             [NativeTypeName("ALenum")] int internalformat,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("const ALvoid *")] Ref data
         )
         {
@@ -860,8 +860,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("const ALvoid *")] Ref data
         )
         {
@@ -953,9 +953,9 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void DebugMessageControlDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALuint *")] Ref<uint> ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -983,9 +983,9 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlDirectEXT")]
         public static void DebugMessageControlDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALuint *")] uint ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) =>
@@ -1017,9 +1017,9 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DebugMessageControlExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALuint *")] Ref<uint> ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -1042,9 +1042,9 @@ public unsafe partial class Al : IAl, IAl.Static
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
         public static void DebugMessageControlExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALuint *")] uint ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) =>
@@ -1083,10 +1083,10 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void DebugMessageInsertDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         )
@@ -1113,10 +1113,10 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertDirectEXT")]
         public static void DebugMessageInsertDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALchar *")] sbyte message
         ) =>
             DebugMessageInsertDirectExt(
@@ -1147,10 +1147,10 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DebugMessageInsertExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         )
@@ -1172,10 +1172,10 @@ public unsafe partial class Al : IAl, IAl.Static
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
         public static void DebugMessageInsertExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => DebugMessageInsertExt((int)source, (int)type, id, (int)severity, 1, (sbyte*)&message);
 
@@ -3155,7 +3155,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public static void GetBuffer3PtrDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
             [NativeTypeName("ALvoid **")] Ref2D ptr1,
             [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -3194,7 +3194,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void GetBuffer3PtrSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
             [NativeTypeName("ALvoid **")] Ref2D ptr1,
             [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -3488,7 +3488,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public static void GetBufferPtrDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -3514,7 +3514,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void GetBufferPtrSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -3564,7 +3564,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public static void GetBufferPtrvDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -3590,7 +3590,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void GetBufferPtrvSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -3621,8 +3621,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("ALvoid *")] Ref data
         )
         {
@@ -3750,20 +3750,20 @@ public unsafe partial class Al : IAl, IAl.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
-            [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-            [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+            [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+            [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
             [NativeTypeName("ALuint *")] Ref<uint> ids,
-            [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+            [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
             [NativeTypeName("ALsizei *")] Ref<int> lengths,
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         )
         {
             fixed (sbyte* __dsl_logBuf = logBuf)
             fixed (int* __dsl_lengths = lengths)
-            fixed (DebugSeverityExt* __dsl_severities = severities)
+            fixed (DebugSeverityEXT* __dsl_severities = severities)
             fixed (uint* __dsl_ids = ids)
-            fixed (DebugTypeExt* __dsl_types = types)
-            fixed (DebugSourceExt* __dsl_sources = sources)
+            fixed (DebugTypeEXT* __dsl_types = types)
+            fixed (DebugSourceEXT* __dsl_sources = sources)
             {
                 return (uint)GetDebugMessageLogDirectExt(
                     context,
@@ -3879,20 +3879,20 @@ public unsafe partial class Al : IAl, IAl.Static
         public static uint GetDebugMessageLogExt(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
-            [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-            [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+            [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+            [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
             [NativeTypeName("ALuint *")] Ref<uint> ids,
-            [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+            [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
             [NativeTypeName("ALsizei *")] Ref<int> lengths,
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         )
         {
             fixed (sbyte* __dsl_logBuf = logBuf)
             fixed (int* __dsl_lengths = lengths)
-            fixed (DebugSeverityExt* __dsl_severities = severities)
+            fixed (DebugSeverityEXT* __dsl_severities = severities)
             fixed (uint* __dsl_ids = ids)
-            fixed (DebugTypeExt* __dsl_types = types)
-            fixed (DebugSourceExt* __dsl_sources = sources)
+            fixed (DebugTypeEXT* __dsl_types = types)
+            fixed (DebugSourceEXT* __dsl_sources = sources)
             {
                 return (uint)GetDebugMessageLogExt(
                     count,
@@ -7204,7 +7204,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void PushDebugGroupDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -7224,7 +7224,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupDirectEXT")]
         public static void PushDebugGroupDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => PushDebugGroupDirectExt(context, (int)source, id, 1, (sbyte*)&message);
@@ -7245,7 +7245,7 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void PushDebugGroupExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -7261,7 +7261,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [Transformed]
         [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
         public static void PushDebugGroupExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => PushDebugGroupExt((int)source, id, 1, (sbyte*)&message);
@@ -9558,8 +9558,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint samplerate,
             [NativeTypeName("ALenum")] int internalformat,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("const ALvoid *")] Ref data
         ) => T.BufferSamplesSoft(buffer, samplerate, internalformat, samples, channels, type, data);
 
@@ -9665,8 +9665,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("const ALvoid *")] Ref data
         ) => T.BufferSubSamplesSoft(buffer, offset, samples, channels, type, data);
 
@@ -9749,9 +9749,9 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void DebugMessageControlDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALuint *")] Ref<uint> ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -9768,9 +9768,9 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void DebugMessageControlDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALuint *")] uint ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) => T.DebugMessageControlDirectExt(context, source, type, severity, ids, enable);
@@ -9796,9 +9796,9 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DebugMessageControlExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALuint *")] Ref<uint> ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -9811,9 +9811,9 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DebugMessageControlExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALuint *")] uint ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) => T.DebugMessageControlExt(source, type, severity, ids, enable);
@@ -9847,10 +9847,10 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void DebugMessageInsertDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         ) => T.DebugMessageInsertDirectExt(context, source, type, id, severity, length, message);
@@ -9866,10 +9866,10 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void DebugMessageInsertDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => T.DebugMessageInsertDirectExt(context, source, type, id, severity, message);
 
@@ -9894,10 +9894,10 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DebugMessageInsertExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         ) => T.DebugMessageInsertExt(source, type, id, severity, length, message);
@@ -9909,10 +9909,10 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DebugMessageInsertExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => T.DebugMessageInsertExt(source, type, id, severity, message);
 
@@ -11876,7 +11876,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public void GetBuffer3PtrDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
             [NativeTypeName("ALvoid **")] Ref2D ptr1,
             [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -11903,7 +11903,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void GetBuffer3PtrSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
             [NativeTypeName("ALvoid **")] Ref2D ptr1,
             [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -12168,7 +12168,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public void GetBufferPtrDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         ) => T.GetBufferPtrDirectSoft(context, buffer, param2, ptr);
 
@@ -12191,7 +12191,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void GetBufferPtrSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         ) => T.GetBufferPtrSoft(buffer, param1, ptr);
 
@@ -12238,7 +12238,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public void GetBufferPtrvDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         ) => T.GetBufferPtrvDirectSoft(context, buffer, param2, ptr);
 
@@ -12261,7 +12261,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void GetBufferPtrvSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         ) => T.GetBufferPtrvSoft(buffer, param1, ptr);
 
@@ -12289,8 +12289,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("ALvoid *")] Ref data
         ) => T.GetBufferSamplesSoft(buffer, offset, samples, channels, type, data);
 
@@ -12406,10 +12406,10 @@ public unsafe partial class Al : IAl, IAl.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
-            [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-            [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+            [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+            [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
             [NativeTypeName("ALuint *")] Ref<uint> ids,
-            [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+            [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
             [NativeTypeName("ALsizei *")] Ref<int> lengths,
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         ) =>
@@ -12518,10 +12518,10 @@ public unsafe partial class Al : IAl, IAl.Static
         public uint GetDebugMessageLogExt(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
-            [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-            [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+            [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+            [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
             [NativeTypeName("ALuint *")] Ref<uint> ids,
-            [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+            [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
             [NativeTypeName("ALsizei *")] Ref<int> lengths,
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         ) =>
@@ -15725,7 +15725,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void PushDebugGroupDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -15742,7 +15742,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public void PushDebugGroupDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => T.PushDebugGroupDirectExt(context, source, id, message);
@@ -15766,7 +15766,7 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void PushDebugGroupExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -15779,7 +15779,7 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void PushDebugGroupExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => T.PushDebugGroupExt(source, id, message);
@@ -18245,8 +18245,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint samplerate,
             [NativeTypeName("ALenum")] int internalformat,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("const ALvoid *")] Ref data
         )
         {
@@ -18386,8 +18386,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("const ALvoid *")] Ref data
         )
         {
@@ -18497,9 +18497,9 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void DebugMessageControlDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALuint *")] Ref<uint> ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -18530,9 +18530,9 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void DebugMessageControlDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALuint *")] uint ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) =>
@@ -18566,9 +18566,9 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DebugMessageControlExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int count,
             [NativeTypeName("const ALuint *")] Ref<uint> ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -18594,9 +18594,9 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DebugMessageControlExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALuint *")] uint ids,
             [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
         ) => Underlying.Value!.DebugMessageControlExt(source, type, severity, ids, enable);
@@ -18639,10 +18639,10 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void DebugMessageInsertDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         )
@@ -18672,10 +18672,10 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void DebugMessageInsertDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALchar *")] sbyte message
         ) =>
             Underlying.Value!.DebugMessageInsertDirectExt(
@@ -18708,10 +18708,10 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DebugMessageInsertExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
         )
@@ -18736,10 +18736,10 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DebugMessageInsertExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
             [NativeTypeName("ALuint")] uint id,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => Underlying.Value!.DebugMessageInsertExt(source, type, id, severity, message);
 
@@ -21041,7 +21041,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public static void GetBuffer3PtrDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
             [NativeTypeName("ALvoid **")] Ref2D ptr1,
             [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -21083,7 +21083,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void GetBuffer3PtrSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr0,
             [NativeTypeName("ALvoid **")] Ref2D ptr1,
             [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -21404,7 +21404,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public static void GetBufferPtrDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -21433,7 +21433,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void GetBufferPtrSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -21486,7 +21486,7 @@ public unsafe partial class Al : IAl, IAl.Static
         public static void GetBufferPtrvDirectSoft(
             ContextHandle context,
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -21515,7 +21515,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void GetBufferPtrvSoft(
             [NativeTypeName("ALuint")] uint buffer,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
             [NativeTypeName("ALvoid **")] Ref2D ptr
         )
         {
@@ -21549,8 +21549,8 @@ public unsafe partial class Al : IAl, IAl.Static
             [NativeTypeName("ALuint")] uint buffer,
             [NativeTypeName("ALsizei")] int offset,
             [NativeTypeName("ALsizei")] int samples,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
             [NativeTypeName("ALvoid *")] Ref data
         )
         {
@@ -21692,20 +21692,20 @@ public unsafe partial class Al : IAl, IAl.Static
             ContextHandle context,
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
-            [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-            [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+            [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+            [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
             [NativeTypeName("ALuint *")] Ref<uint> ids,
-            [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+            [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
             [NativeTypeName("ALsizei *")] Ref<int> lengths,
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         )
         {
             fixed (sbyte* __dsl_logBuf = logBuf)
             fixed (int* __dsl_lengths = lengths)
-            fixed (DebugSeverityExt* __dsl_severities = severities)
+            fixed (DebugSeverityEXT* __dsl_severities = severities)
             fixed (uint* __dsl_ids = ids)
-            fixed (DebugTypeExt* __dsl_types = types)
-            fixed (DebugSourceExt* __dsl_sources = sources)
+            fixed (DebugTypeEXT* __dsl_types = types)
+            fixed (DebugSourceEXT* __dsl_sources = sources)
             {
                 return (uint)GetDebugMessageLogDirectExt(
                     context,
@@ -21834,20 +21834,20 @@ public unsafe partial class Al : IAl, IAl.Static
         public static uint GetDebugMessageLogExt(
             [NativeTypeName("ALuint")] uint count,
             [NativeTypeName("ALsizei")] int logBufSize,
-            [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-            [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+            [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+            [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
             [NativeTypeName("ALuint *")] Ref<uint> ids,
-            [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+            [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
             [NativeTypeName("ALsizei *")] Ref<int> lengths,
             [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
         )
         {
             fixed (sbyte* __dsl_logBuf = logBuf)
             fixed (int* __dsl_lengths = lengths)
-            fixed (DebugSeverityExt* __dsl_severities = severities)
+            fixed (DebugSeverityEXT* __dsl_severities = severities)
             fixed (uint* __dsl_ids = ids)
-            fixed (DebugTypeExt* __dsl_types = types)
-            fixed (DebugSourceExt* __dsl_sources = sources)
+            fixed (DebugTypeEXT* __dsl_types = types)
+            fixed (DebugSourceEXT* __dsl_sources = sources)
             {
                 return (uint)GetDebugMessageLogExt(
                     count,
@@ -25624,7 +25624,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void PushDebugGroupDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -25647,7 +25647,7 @@ public unsafe partial class Al : IAl, IAl.Static
         )]
         public static void PushDebugGroupDirectExt(
             ContextHandle context,
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => Underlying.Value!.PushDebugGroupDirectExt(context, source, id, message);
@@ -25671,7 +25671,7 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void PushDebugGroupExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("ALsizei")] int length,
             [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -25690,7 +25690,7 @@ public unsafe partial class Al : IAl, IAl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void PushDebugGroupExt(
-            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+            [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
             [NativeTypeName("ALuint")] uint id,
             [NativeTypeName("const ALchar *")] sbyte message
         ) => Underlying.Value!.PushDebugGroupExt(source, id, message);
@@ -29117,8 +29117,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeTypeName("ALuint")] uint samplerate,
         [NativeTypeName("ALenum")] int internalformat,
         [NativeTypeName("ALsizei")] int samples,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
         [NativeTypeName("const ALvoid *")] Ref data
     )
     {
@@ -29145,8 +29145,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeTypeName("ALuint")] uint samplerate,
         [NativeTypeName("ALenum")] int internalformat,
         [NativeTypeName("ALsizei")] int samples,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
         [NativeTypeName("const ALvoid *")] Ref data
     ) =>
         ThisThread.BufferSamplesSoft(
@@ -29371,8 +29371,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
         [NativeTypeName("const ALvoid *")] Ref data
     )
     {
@@ -29397,8 +29397,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
         [NativeTypeName("const ALvoid *")] Ref data
     ) => ThisThread.BufferSubSamplesSoft(buffer, offset, samples, channels, type, data);
 
@@ -29575,9 +29575,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageControlDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALuint *")] Ref<uint> ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -29606,9 +29606,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageControlDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALuint *")] Ref<uint> ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -29632,9 +29632,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageControlDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALuint *")] uint ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     ) =>
@@ -29657,9 +29657,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageControlDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALuint *")] uint ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     ) => ThisThread.DebugMessageControlDirectExt(context, source, type, severity, ids, enable);
@@ -29700,9 +29700,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageControlExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALuint *")] Ref<uint> ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -29726,9 +29726,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageControlExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int count,
         [NativeTypeName("const ALuint *")] Ref<uint> ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
@@ -29739,9 +29739,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageControlExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALuint *")] uint ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     ) =>
@@ -29759,9 +29759,9 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageControlEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageControlExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALuint *")] uint ids,
         [NativeTypeName("ALboolean")] MaybeBool<sbyte> enable
     ) => ThisThread.DebugMessageControlExt(source, type, severity, ids, enable);
@@ -29826,10 +29826,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageInsertDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     )
@@ -29857,10 +29857,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageInsertDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     ) =>
@@ -29883,10 +29883,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageInsertDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALchar *")] sbyte message
     ) =>
         ((IAl)this).DebugMessageInsertDirectExt(
@@ -29908,10 +29908,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageInsertDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALchar *")] sbyte message
     ) => ThisThread.DebugMessageInsertDirectExt(context, source, type, id, severity, message);
 
@@ -29951,10 +29951,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageInsertExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     )
@@ -29977,10 +29977,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageInsertExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
     ) => ThisThread.DebugMessageInsertExt(source, type, id, severity, length, message);
@@ -29990,10 +29990,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.DebugMessageInsertExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALchar *")] sbyte message
     ) =>
         ((IAl)this).DebugMessageInsertExt(
@@ -30010,10 +30010,10 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alDebugMessageInsertEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DebugMessageInsertExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeExt> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugTypeEXT> type,
         [NativeTypeName("ALuint")] uint id,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityExt> severity,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSeverityEXT> severity,
         [NativeTypeName("const ALchar *")] sbyte message
     ) => ThisThread.DebugMessageInsertExt(source, type, id, severity, message);
 
@@ -34090,7 +34090,7 @@ public unsafe partial class Al : IAl, IAl.Static
     void IAl.GetBuffer3PtrDirectSoft(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr0,
         [NativeTypeName("ALvoid **")] Ref2D ptr1,
         [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -34129,7 +34129,7 @@ public unsafe partial class Al : IAl, IAl.Static
     public static void GetBuffer3PtrDirectSoft(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr0,
         [NativeTypeName("ALvoid **")] Ref2D ptr1,
         [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -34170,7 +34170,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.GetBuffer3PtrSoft(
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr0,
         [NativeTypeName("ALvoid **")] Ref2D ptr1,
         [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -34190,7 +34190,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBuffer3PtrSoft(
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr0,
         [NativeTypeName("ALvoid **")] Ref2D ptr1,
         [NativeTypeName("ALvoid **")] Ref2D ptr2
@@ -34735,7 +34735,7 @@ public unsafe partial class Al : IAl, IAl.Static
     void IAl.GetBufferPtrDirectSoft(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     )
     {
@@ -34763,7 +34763,7 @@ public unsafe partial class Al : IAl, IAl.Static
     public static void GetBufferPtrDirectSoft(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     ) => ThisThread.GetBufferPtrDirectSoft(context, buffer, param2, ptr);
 
@@ -34798,7 +34798,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.GetBufferPtrSoft(
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     )
     {
@@ -34814,7 +34814,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferPtrSoft(
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     ) => ThisThread.GetBufferPtrSoft(buffer, param1, ptr);
 
@@ -34888,7 +34888,7 @@ public unsafe partial class Al : IAl, IAl.Static
     void IAl.GetBufferPtrvDirectSoft(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     )
     {
@@ -34916,7 +34916,7 @@ public unsafe partial class Al : IAl, IAl.Static
     public static void GetBufferPtrvDirectSoft(
         ContextHandle context,
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param2,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param2,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     ) => ThisThread.GetBufferPtrvDirectSoft(context, buffer, param2, ptr);
 
@@ -34951,7 +34951,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.GetBufferPtrvSoft(
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     )
     {
@@ -34967,7 +34967,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferPtrvSoft(
         [NativeTypeName("ALuint")] uint buffer,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSoft> param1,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferPointerSOFT> param1,
         [NativeTypeName("ALvoid **")] Ref2D ptr
     ) => ThisThread.GetBufferPtrvSoft(buffer, param1, ptr);
 
@@ -35010,8 +35010,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
         [NativeTypeName("ALvoid *")] Ref data
     )
     {
@@ -35036,8 +35036,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeTypeName("ALuint")] uint buffer,
         [NativeTypeName("ALsizei")] int offset,
         [NativeTypeName("ALsizei")] int samples,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSoft> channels,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSoft> type,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, BufferChannelsSOFT> channels,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, SampleTypeSOFT> type,
         [NativeTypeName("ALvoid *")] Ref data
     ) => ThisThread.GetBufferSamplesSoft(buffer, offset, samples, channels, type, data);
 
@@ -35268,20 +35268,20 @@ public unsafe partial class Al : IAl, IAl.Static
         ContextHandle context,
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
-        [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-        [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+        [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+        [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
         [NativeTypeName("ALuint *")] Ref<uint> ids,
-        [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+        [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
         [NativeTypeName("ALsizei *")] Ref<int> lengths,
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     )
     {
         fixed (sbyte* __dsl_logBuf = logBuf)
         fixed (int* __dsl_lengths = lengths)
-        fixed (DebugSeverityExt* __dsl_severities = severities)
+        fixed (DebugSeverityEXT* __dsl_severities = severities)
         fixed (uint* __dsl_ids = ids)
-        fixed (DebugTypeExt* __dsl_types = types)
-        fixed (DebugSourceExt* __dsl_sources = sources)
+        fixed (DebugTypeEXT* __dsl_types = types)
+        fixed (DebugSourceEXT* __dsl_sources = sources)
         {
             return (uint)
                 ((IAl)this).GetDebugMessageLogDirectExt(
@@ -35310,10 +35310,10 @@ public unsafe partial class Al : IAl, IAl.Static
         ContextHandle context,
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
-        [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-        [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+        [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+        [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
         [NativeTypeName("ALuint *")] Ref<uint> ids,
-        [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+        [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
         [NativeTypeName("ALsizei *")] Ref<int> lengths,
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     ) =>
@@ -35510,20 +35510,20 @@ public unsafe partial class Al : IAl, IAl.Static
     uint IAl.GetDebugMessageLogExt(
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
-        [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-        [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+        [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+        [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
         [NativeTypeName("ALuint *")] Ref<uint> ids,
-        [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+        [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
         [NativeTypeName("ALsizei *")] Ref<int> lengths,
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     )
     {
         fixed (sbyte* __dsl_logBuf = logBuf)
         fixed (int* __dsl_lengths = lengths)
-        fixed (DebugSeverityExt* __dsl_severities = severities)
+        fixed (DebugSeverityEXT* __dsl_severities = severities)
         fixed (uint* __dsl_ids = ids)
-        fixed (DebugTypeExt* __dsl_types = types)
-        fixed (DebugSourceExt* __dsl_sources = sources)
+        fixed (DebugTypeEXT* __dsl_types = types)
+        fixed (DebugSourceEXT* __dsl_sources = sources)
         {
             return (uint)
                 ((IAl)this).GetDebugMessageLogExt(
@@ -35547,10 +35547,10 @@ public unsafe partial class Al : IAl, IAl.Static
     public static uint GetDebugMessageLogExt(
         [NativeTypeName("ALuint")] uint count,
         [NativeTypeName("ALsizei")] int logBufSize,
-        [NativeTypeName("ALenum *")] Ref<DebugSourceExt> sources,
-        [NativeTypeName("ALenum *")] Ref<DebugTypeExt> types,
+        [NativeTypeName("ALenum *")] Ref<DebugSourceEXT> sources,
+        [NativeTypeName("ALenum *")] Ref<DebugTypeEXT> types,
         [NativeTypeName("ALuint *")] Ref<uint> ids,
-        [NativeTypeName("ALenum *")] Ref<DebugSeverityExt> severities,
+        [NativeTypeName("ALenum *")] Ref<DebugSeverityEXT> severities,
         [NativeTypeName("ALsizei *")] Ref<int> lengths,
         [NativeTypeName("ALchar *")] Ref<sbyte> logBuf
     ) =>
@@ -42314,7 +42314,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.PushDebugGroupDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -42335,7 +42335,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PushDebugGroupDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -42350,7 +42350,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.PushDebugGroupDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("const ALchar *")] sbyte message
     ) => ((IAl)this).PushDebugGroupDirectExt(context, (int)source, id, 1, (sbyte*)&message);
@@ -42364,7 +42364,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PushDebugGroupDirectExt(
         ContextHandle context,
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("const ALchar *")] sbyte message
     ) => ThisThread.PushDebugGroupDirectExt(context, source, id, message);
@@ -42401,7 +42401,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.PushDebugGroupExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -42418,7 +42418,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PushDebugGroupExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("ALsizei")] int length,
         [NativeTypeName("const ALchar *")] Ref<sbyte> message
@@ -42429,7 +42429,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAl.PushDebugGroupExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("const ALchar *")] sbyte message
     ) => ((IAl)this).PushDebugGroupExt((int)source, id, 1, (sbyte*)&message);
@@ -42439,7 +42439,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [NativeFunction("openal", EntryPoint = "alPushDebugGroupEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PushDebugGroupExt(
-        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceExt> source,
+        [NativeTypeName("ALenum")] Constant<int, AlEnum, DebugSourceEXT> source,
         [NativeTypeName("ALuint")] uint id,
         [NativeTypeName("const ALchar *")] sbyte message
     ) => ThisThread.PushDebugGroupExt(source, id, message);

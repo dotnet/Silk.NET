@@ -11,35 +11,35 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("OutputModeSOFT")]
+[NativeName("RenderFormatTypeSOFT")]
 [Transformed]
-public enum OutputModeSoft : uint
+public enum RenderFormatTypeSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_ANY_SOFT")]
-    Anysoft = unchecked((uint)0x19AD),
+    [NativeName("ALC_BYTE_SOFT")]
+    ByteSOFT = unchecked((uint)0x1400),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_STEREO_BASIC_SOFT")]
-    StereoBasicsoft = unchecked((uint)0x19AE),
+    [NativeName("ALC_UNSIGNED_BYTE_SOFT")]
+    UnsignedByteSOFT = unchecked((uint)0x1401),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_STEREO_UHJ_SOFT")]
-    StereoUhjsoft = unchecked((uint)0x19AF),
+    [NativeName("ALC_SHORT_SOFT")]
+    ShortSOFT = unchecked((uint)0x1402),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_STEREO_HRTF_SOFT")]
-    StereoHrtfsoft = unchecked((uint)0x19B2),
+    [NativeName("ALC_UNSIGNED_SHORT_SOFT")]
+    UnsignedShortSOFT = unchecked((uint)0x1403),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_SURROUND_5_1_SOFT")]
-    Surround5X1Soft = unchecked((uint)0x1504),
+    [NativeName("ALC_INT_SOFT")]
+    IntSOFT = unchecked((uint)0x1404),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_SURROUND_6_1_SOFT")]
-    Surround6X1Soft = unchecked((uint)0x1505),
+    [NativeName("ALC_UNSIGNED_INT_SOFT")]
+    UnsignedIntSOFT = unchecked((uint)0x1405),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_SURROUND_7_1_SOFT")]
-    Surround7X1Soft = unchecked((uint)0x1506),
+    [NativeName("ALC_FLOAT_SOFT")]
+    FloatSOFT = unchecked((uint)0x1406),
 }

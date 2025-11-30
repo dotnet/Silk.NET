@@ -11,15 +11,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("EventSupportSOFT")]
+[NativeName("DeviceTypeSOFT")]
 [Transformed]
-public enum EventSupportSoft : uint
+public enum DeviceTypeSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_EVENT_SUPPORTED_SOFT")]
-    Supportedsoft = unchecked((uint)0x19D9),
+    [NativeName("ALC_PLAYBACK_DEVICE_SOFT")]
+    PlaybackDeviceSOFT = unchecked((uint)0x19D4),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_EVENT_NOT_SUPPORTED_SOFT")]
-    NotSupportedsoft = unchecked((uint)0x19DA),
+    [NativeName("ALC_CAPTURE_DEVICE_SOFT")]
+    CaptureDeviceSOFT = unchecked((uint)0x19D5),
 }

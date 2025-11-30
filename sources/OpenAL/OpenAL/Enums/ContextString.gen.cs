@@ -37,5 +37,5 @@ public enum ContextString : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_HRTF_SPECIFIER_SOFT")]
-    HrtfSpecifiersoft = unchecked((uint)0x1995),
+    HrtfSpecifierSOFT = unchecked((uint)0x1995),
 }

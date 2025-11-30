@@ -10,17 +10,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("AuxiliaryEffectSlotInteger")]
+[NameAffix("Suffix", "LOKI", 0)]
+[NativeName("AudioChannelLOKI")]
 [Transformed]
-public enum AuxiliaryEffectSlotInteger : uint
+public enum AudioChannelLOKI : uint
 {
-    [NativeName("AL_EFFECTSLOT_EFFECT")]
-    Effect = unchecked((uint)0x0001),
+    [NameAffix("Suffix", "LOKI", 0)]
+    [NativeName("ALC_CHAN_MAIN_LOKI")]
+    MainLOKI = unchecked((uint)0x500001),
 
-    [NativeName("AL_EFFECTSLOT_AUXILIARY_SEND_AUTO")]
-    AuxiliarySendAuto = unchecked((uint)0x0003),
+    [NameAffix("Suffix", "LOKI", 0)]
+    [NativeName("ALC_CHAN_PCM_LOKI")]
+    PcmLOKI = unchecked((uint)0x500002),
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
-    TargetSOFT = unchecked((uint)0x199C),
+    [NameAffix("Suffix", "LOKI", 0)]
+    [NativeName("ALC_CHAN_CD_LOKI")]
+    CdLOKI = unchecked((uint)0x500003),
 }

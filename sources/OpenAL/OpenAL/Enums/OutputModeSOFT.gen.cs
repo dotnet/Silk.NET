@@ -11,31 +11,35 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("HrtfStatusSOFT")]
+[NativeName("OutputModeSOFT")]
 [Transformed]
-public enum HrtfStatusSoft : uint
+public enum OutputModeSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_HRTF_DISABLED_SOFT")]
-    Disabledsoft = unchecked((uint)0x0000),
+    [NativeName("ALC_ANY_SOFT")]
+    AnySOFT = unchecked((uint)0x19AD),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_HRTF_ENABLED_SOFT")]
-    Enabledsoft = unchecked((uint)0x0001),
+    [NativeName("ALC_STEREO_BASIC_SOFT")]
+    StereoBasicSOFT = unchecked((uint)0x19AE),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_HRTF_DENIED_SOFT")]
-    Deniedsoft = unchecked((uint)0x0002),
+    [NativeName("ALC_STEREO_UHJ_SOFT")]
+    StereoUhjSOFT = unchecked((uint)0x19AF),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_HRTF_REQUIRED_SOFT")]
-    Requiredsoft = unchecked((uint)0x0003),
+    [NativeName("ALC_STEREO_HRTF_SOFT")]
+    StereoHrtfSOFT = unchecked((uint)0x19B2),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_HRTF_HEADPHONES_DETECTED_SOFT")]
-    HeadphonesDetectedsoft = unchecked((uint)0x0004),
+    [NativeName("ALC_SURROUND_5_1_SOFT")]
+    Surround5X1SOFT = unchecked((uint)0x1504),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_HRTF_UNSUPPORTED_FORMAT_SOFT")]
-    UnsupportedFormatsoft = unchecked((uint)0x0005),
+    [NativeName("ALC_SURROUND_6_1_SOFT")]
+    Surround6X1SOFT = unchecked((uint)0x1505),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_SURROUND_7_1_SOFT")]
+    Surround7X1SOFT = unchecked((uint)0x1506),
 }

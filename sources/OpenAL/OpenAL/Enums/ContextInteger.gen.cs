@@ -46,41 +46,41 @@ public enum ContextInteger : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_HRTF_SOFT")]
-    Hrtfsoft = unchecked((uint)0x1992),
+    HrtfSOFT = unchecked((uint)0x1992),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_HRTF_STATUS_SOFT")]
-    HrtfStatussoft = unchecked((uint)0x1993),
+    HrtfStatusSOFT = unchecked((uint)0x1993),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_NUM_HRTF_SPECIFIERS_SOFT")]
-    NumHrtfSpecifierssoft = unchecked((uint)0x1994),
+    NumHrtfSpecifiersSOFT = unchecked((uint)0x1994),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimitersoft = unchecked((uint)0x199A),
+    OutputLimiterSOFT = unchecked((uint)0x199A),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_DEVICE_CLOCK_SOFT")]
-    DeviceClocksoft = unchecked((uint)0x1600),
+    DeviceClockSOFT = unchecked((uint)0x1600),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_DEVICE_LATENCY_SOFT")]
-    DeviceLatencysoft = unchecked((uint)0x1601),
+    DeviceLatencySOFT = unchecked((uint)0x1601),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
-    DeviceClockLatencysoft = unchecked((uint)0x1602),
+    DeviceClockLatencySOFT = unchecked((uint)0x1602),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
-    MaxAmbisonicOrdersoft = unchecked((uint)0x199B),
+    MaxAmbisonicOrderSOFT = unchecked((uint)0x199B),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
-    OutputModesoft = unchecked((uint)0x19AC),
+    OutputModeSOFT = unchecked((uint)0x19AC),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("ALC_CONTEXT_FLAGS_EXT")]
-    ContextFlagsext = unchecked((uint)0x19CF),
+    ContextFlagsEXT = unchecked((uint)0x19CF),
 }

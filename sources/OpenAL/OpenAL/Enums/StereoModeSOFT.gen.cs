@@ -11,18 +11,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("DirectChannelsSOFT")]
+[NativeName("StereoModeSOFT")]
 [Transformed]
-public enum DirectChannelsSoft : uint
+public enum StereoModeSOFT : uint
 {
-    [NativeName("AL_FALSE")]
-    False = unchecked((uint)0),
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_NORMAL_SOFT")]
+    NormalSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_DROP_UNMATCHED_SOFT")]
-    DropUnmatchedsoft = unchecked((uint)0x0001),
-
-    [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_REMIX_UNMATCHED_SOFT")]
-    RemixUnmatchedsoft = unchecked((uint)0x0002),
+    [NativeName("AL_SUPER_STEREO_SOFT")]
+    SuperStereoSOFT = unchecked((uint)0x0001),
 }

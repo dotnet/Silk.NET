@@ -28,27 +28,27 @@ public enum Format : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_IMA_ADPCM_MONO16_EXT")]
-    FormatImaAdpcmMono16Ext = unchecked((uint)0x10000),
+    FormatImaAdpcmMono16EXT = unchecked((uint)0x10000),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_IMA_ADPCM_STEREO16_EXT")]
-    FormatImaAdpcmStereo16Ext = unchecked((uint)0x10001),
+    FormatImaAdpcmStereo16EXT = unchecked((uint)0x10001),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_WAVE_EXT")]
-    FormatWaveext = unchecked((uint)0x10002),
+    FormatWaveEXT = unchecked((uint)0x10002),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_VORBIS_EXT")]
-    FormatVorbisext = unchecked((uint)0x10003),
+    FormatVorbisEXT = unchecked((uint)0x10003),
 
     [NameAffix("Suffix", "LOKI", 0)]
     [NativeName("AL_FORMAT_QUAD8_LOKI")]
-    FormatQuad8Loki = unchecked((uint)0x10004),
+    FormatQuad8LOKI = unchecked((uint)0x10004),
 
     [NameAffix("Suffix", "LOKI", 0)]
     [NativeName("AL_FORMAT_QUAD16_LOKI")]
-    FormatQuad16Loki = unchecked((uint)0x10005),
+    FormatQuad16LOKI = unchecked((uint)0x10005),
 
     [NativeName("AL_FORMAT_MONO_FLOAT32")]
     FormatMonoFloat32 = unchecked((uint)0x10010),
@@ -58,27 +58,27 @@ public enum Format : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_MONO_DOUBLE_EXT")]
-    FormatMonoDoubleext = unchecked((uint)0x10012),
+    FormatMonoDoubleEXT = unchecked((uint)0x10012),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_STEREO_DOUBLE_EXT")]
-    FormatStereoDoubleext = unchecked((uint)0x10013),
+    FormatStereoDoubleEXT = unchecked((uint)0x10013),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_MONO_MULAW_EXT")]
-    FormatMonoMulawext = unchecked((uint)0x10014),
+    FormatMonoMulawEXT = unchecked((uint)0x10014),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_STEREO_MULAW_EXT")]
-    FormatStereoMulawext = unchecked((uint)0x10015),
+    FormatStereoMulawEXT = unchecked((uint)0x10015),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_MONO_ALAW_EXT")]
-    FormatMonoAlawext = unchecked((uint)0x10016),
+    FormatMonoAlawEXT = unchecked((uint)0x10016),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_STEREO_ALAW_EXT")]
-    FormatStereoAlawext = unchecked((uint)0x10017),
+    FormatStereoAlawEXT = unchecked((uint)0x10017),
 
     [NativeName("AL_FORMAT_QUAD8")]
     FormatQuad8 = unchecked((uint)0x1204),
@@ -154,11 +154,11 @@ public enum Format : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_MONO_MSADPCM_SOFT")]
-    FormatMonoMsadpcmsoft = unchecked((uint)0x1302),
+    FormatMonoMsadpcmSOFT = unchecked((uint)0x1302),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_STEREO_MSADPCM_SOFT")]
-    FormatStereoMsadpcmsoft = unchecked((uint)0x1303),
+    FormatStereoMsadpcmSOFT = unchecked((uint)0x1303),
 
     [NativeName("AL_FORMAT_BFORMAT2D_8")]
     FormatBformat2D8 = unchecked((uint)0x20021),
@@ -186,69 +186,69 @@ public enum Format : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN8_SOFT")]
-    FormatUhj2Chn8Soft = unchecked((uint)0x19A2),
+    FormatUhj2Chn8SOFT = unchecked((uint)0x19A2),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN16_SOFT")]
-    FormatUhj2Chn16Soft = unchecked((uint)0x19A3),
+    FormatUhj2Chn16SOFT = unchecked((uint)0x19A3),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_FLOAT32_SOFT")]
-    FormatUhj2ChnFloat32Soft = unchecked((uint)0x19A4),
+    FormatUhj2ChnFloat32SOFT = unchecked((uint)0x19A4),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN8_SOFT")]
-    FormatUhj3Chn8Soft = unchecked((uint)0x19A5),
+    FormatUhj3Chn8SOFT = unchecked((uint)0x19A5),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN16_SOFT")]
-    FormatUhj3Chn16Soft = unchecked((uint)0x19A6),
+    FormatUhj3Chn16SOFT = unchecked((uint)0x19A6),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN_FLOAT32_SOFT")]
-    FormatUhj3ChnFloat32Soft = unchecked((uint)0x19A7),
+    FormatUhj3ChnFloat32SOFT = unchecked((uint)0x19A7),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN8_SOFT")]
-    FormatUhj4Chn8Soft = unchecked((uint)0x19A8),
+    FormatUhj4Chn8SOFT = unchecked((uint)0x19A8),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN16_SOFT")]
-    FormatUhj4Chn16Soft = unchecked((uint)0x19A9),
+    FormatUhj4Chn16SOFT = unchecked((uint)0x19A9),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN_FLOAT32_SOFT")]
-    FormatUhj4ChnFloat32Soft = unchecked((uint)0x19AA),
+    FormatUhj4ChnFloat32SOFT = unchecked((uint)0x19AA),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_MULAW_SOFT")]
-    FormatUhj2ChnMulawsoft = unchecked((uint)0x19B3),
+    FormatUhj2ChnMulawSOFT = unchecked((uint)0x19B3),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_ALAW_SOFT")]
-    FormatUhj2ChnAlawsoft = unchecked((uint)0x19B4),
+    FormatUhj2ChnAlawSOFT = unchecked((uint)0x19B4),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_IMA4_SOFT")]
-    FormatUhj2ChnIma4Soft = unchecked((uint)0x19B5),
+    FormatUhj2ChnIma4SOFT = unchecked((uint)0x19B5),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_MSADPCM_SOFT")]
-    FormatUhj2ChnMsadpcmsoft = unchecked((uint)0x19B6),
+    FormatUhj2ChnMsadpcmSOFT = unchecked((uint)0x19B6),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN_MULAW_SOFT")]
-    FormatUhj3ChnMulawsoft = unchecked((uint)0x19B7),
+    FormatUhj3ChnMulawSOFT = unchecked((uint)0x19B7),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN_ALAW_SOFT")]
-    FormatUhj3ChnAlawsoft = unchecked((uint)0x19B8),
+    FormatUhj3ChnAlawSOFT = unchecked((uint)0x19B8),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN_MULAW_SOFT")]
-    FormatUhj4ChnMulawsoft = unchecked((uint)0x19B9),
+    FormatUhj4ChnMulawSOFT = unchecked((uint)0x19B9),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN_ALAW_SOFT")]
-    FormatUhj4ChnAlawsoft = unchecked((uint)0x19BA),
+    FormatUhj4ChnAlawSOFT = unchecked((uint)0x19BA),
 }

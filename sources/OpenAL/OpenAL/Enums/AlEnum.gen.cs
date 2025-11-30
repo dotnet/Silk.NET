@@ -220,27 +220,27 @@ public enum AlEnum : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_IMA_ADPCM_MONO16_EXT")]
-    FormatImaAdpcmMono16Ext = unchecked((uint)0x10000),
+    FormatImaAdpcmMono16EXT = unchecked((uint)0x10000),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_IMA_ADPCM_STEREO16_EXT")]
-    FormatImaAdpcmStereo16Ext = unchecked((uint)0x10001),
+    FormatImaAdpcmStereo16EXT = unchecked((uint)0x10001),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_WAVE_EXT")]
-    FormatWaveext = unchecked((uint)0x10002),
+    FormatWaveEXT = unchecked((uint)0x10002),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_VORBIS_EXT")]
-    FormatVorbisext = unchecked((uint)0x10003),
+    FormatVorbisEXT = unchecked((uint)0x10003),
 
     [NameAffix("Suffix", "LOKI", 0)]
     [NativeName("AL_FORMAT_QUAD8_LOKI")]
-    FormatQuad8Loki = unchecked((uint)0x10004),
+    FormatQuad8LOKI = unchecked((uint)0x10004),
 
     [NameAffix("Suffix", "LOKI", 0)]
     [NativeName("AL_FORMAT_QUAD16_LOKI")]
-    FormatQuad16Loki = unchecked((uint)0x10005),
+    FormatQuad16LOKI = unchecked((uint)0x10005),
 
     [NativeName("AL_FORMAT_MONO_FLOAT32")]
     FormatMonoFloat32 = unchecked((uint)0x10010),
@@ -250,27 +250,27 @@ public enum AlEnum : uint
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_MONO_DOUBLE_EXT")]
-    FormatMonoDoubleext = unchecked((uint)0x10012),
+    FormatMonoDoubleEXT = unchecked((uint)0x10012),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_STEREO_DOUBLE_EXT")]
-    FormatStereoDoubleext = unchecked((uint)0x10013),
+    FormatStereoDoubleEXT = unchecked((uint)0x10013),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_MONO_MULAW_EXT")]
-    FormatMonoMulawext = unchecked((uint)0x10014),
+    FormatMonoMulawEXT = unchecked((uint)0x10014),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_STEREO_MULAW_EXT")]
-    FormatStereoMulawext = unchecked((uint)0x10015),
+    FormatStereoMulawEXT = unchecked((uint)0x10015),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_MONO_ALAW_EXT")]
-    FormatMonoAlawext = unchecked((uint)0x10016),
+    FormatMonoAlawEXT = unchecked((uint)0x10016),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FORMAT_STEREO_ALAW_EXT")]
-    FormatStereoAlawext = unchecked((uint)0x10017),
+    FormatStereoAlawEXT = unchecked((uint)0x10017),
 
     [NativeName("AL_FORMAT_QUAD8")]
     FormatQuad8 = unchecked((uint)0x1204),
@@ -1769,15 +1769,15 @@ public enum AlEnum : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
-    ByteRwOffsetssoft = unchecked((uint)0x1031),
+    ByteRwOffsetsSOFT = unchecked((uint)0x1031),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetssoft = unchecked((uint)0x1032),
+    SampleRwOffsetsSOFT = unchecked((uint)0x1032),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_LOOP_POINTS_SOFT")]
-    LoopPointssoft = unchecked((uint)0x2015),
+    LoopPointsSOFT = unchecked((uint)0x2015),
 
     [NativeName("AL_FOLDBACK_EVENT_BLOCK")]
     FoldbackEventBlock = unchecked((uint)0x4112),
@@ -1805,175 +1805,175 @@ public enum AlEnum : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO_SOFT")]
-    Monosoft = unchecked((uint)0x1500),
+    MonoSOFT = unchecked((uint)0x1500),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO_SOFT")]
-    Stereosoft = unchecked((uint)0x1501),
+    StereoSOFT = unchecked((uint)0x1501),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR_SOFT")]
-    Rearsoft = unchecked((uint)0x1502),
+    RearSOFT = unchecked((uint)0x1502),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD_SOFT")]
-    Quadsoft = unchecked((uint)0x1503),
+    QuadSOFT = unchecked((uint)0x1503),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_SOFT")]
-    X5Point1Soft = unchecked((uint)0x1504),
+    X5Point1SOFT = unchecked((uint)0x1504),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_SOFT")]
-    X6Point1Soft = unchecked((uint)0x1505),
+    X6Point1SOFT = unchecked((uint)0x1505),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_SOFT")]
-    X7Point1Soft = unchecked((uint)0x1506),
+    X7Point1SOFT = unchecked((uint)0x1506),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE_SOFT")]
-    Bytesoft = unchecked((uint)0x1400),
+    ByteSOFT = unchecked((uint)0x1400),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNSIGNED_BYTE_SOFT")]
-    UnsignedBytesoft = unchecked((uint)0x1401),
+    UnsignedByteSOFT = unchecked((uint)0x1401),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SHORT_SOFT")]
-    Shortsoft = unchecked((uint)0x1402),
+    ShortSOFT = unchecked((uint)0x1402),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNSIGNED_SHORT_SOFT")]
-    UnsignedShortsoft = unchecked((uint)0x1403),
+    UnsignedShortSOFT = unchecked((uint)0x1403),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_INT_SOFT")]
-    Intsoft = unchecked((uint)0x1404),
+    IntSOFT = unchecked((uint)0x1404),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNSIGNED_INT_SOFT")]
-    UnsignedIntsoft = unchecked((uint)0x1405),
+    UnsignedIntSOFT = unchecked((uint)0x1405),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FLOAT_SOFT")]
-    Floatsoft = unchecked((uint)0x1406),
+    FloatSOFT = unchecked((uint)0x1406),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_DOUBLE_SOFT")]
-    Doublesoft = unchecked((uint)0x1407),
+    DoubleSOFT = unchecked((uint)0x1407),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE3_SOFT")]
-    Byte3Soft = unchecked((uint)0x1408),
+    Byte3SOFT = unchecked((uint)0x1408),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNSIGNED_BYTE3_SOFT")]
-    UnsignedByte3Soft = unchecked((uint)0x1409),
+    UnsignedByte3SOFT = unchecked((uint)0x1409),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO8_SOFT")]
-    Mono8Soft = unchecked((uint)0x1100),
+    Mono8SOFT = unchecked((uint)0x1100),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO16_SOFT")]
-    Mono16Soft = unchecked((uint)0x1101),
+    Mono16SOFT = unchecked((uint)0x1101),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO32F_SOFT")]
-    Mono32Fsoft = unchecked((uint)0x10010),
+    Mono32FSOFT = unchecked((uint)0x10010),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO8_SOFT")]
-    Stereo8Soft = unchecked((uint)0x1102),
+    Stereo8SOFT = unchecked((uint)0x1102),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO16_SOFT")]
-    Stereo16Soft = unchecked((uint)0x1103),
+    Stereo16SOFT = unchecked((uint)0x1103),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO32F_SOFT")]
-    Stereo32Fsoft = unchecked((uint)0x10011),
+    Stereo32FSOFT = unchecked((uint)0x10011),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD8_SOFT")]
-    Quad8Soft = unchecked((uint)0x1204),
+    Quad8SOFT = unchecked((uint)0x1204),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD16_SOFT")]
-    Quad16Soft = unchecked((uint)0x1205),
+    Quad16SOFT = unchecked((uint)0x1205),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD32F_SOFT")]
-    Quad32Fsoft = unchecked((uint)0x1206),
+    Quad32FSOFT = unchecked((uint)0x1206),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR8_SOFT")]
-    Rear8Soft = unchecked((uint)0x1207),
+    Rear8SOFT = unchecked((uint)0x1207),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR16_SOFT")]
-    Rear16Soft = unchecked((uint)0x1208),
+    Rear16SOFT = unchecked((uint)0x1208),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR32F_SOFT")]
-    Rear32Fsoft = unchecked((uint)0x1209),
+    Rear32FSOFT = unchecked((uint)0x1209),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_8_SOFT")]
-    X5Point1X8Soft = unchecked((uint)0x120A),
+    X5Point1X8SOFT = unchecked((uint)0x120A),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_16_SOFT")]
-    X5Point1X16Soft = unchecked((uint)0x120B),
+    X5Point1X16SOFT = unchecked((uint)0x120B),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_32F_SOFT")]
-    X5Point1X32Fsoft = unchecked((uint)0x120C),
+    X5Point1X32FSOFT = unchecked((uint)0x120C),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_8_SOFT")]
-    X6Point1X8Soft = unchecked((uint)0x120D),
+    X6Point1X8SOFT = unchecked((uint)0x120D),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_16_SOFT")]
-    X6Point1X16Soft = unchecked((uint)0x120E),
+    X6Point1X16SOFT = unchecked((uint)0x120E),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_32F_SOFT")]
-    X6Point1X32Fsoft = unchecked((uint)0x120F),
+    X6Point1X32FSOFT = unchecked((uint)0x120F),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_8_SOFT")]
-    X7Point1X8Soft = unchecked((uint)0x1210),
+    X7Point1X8SOFT = unchecked((uint)0x1210),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_16_SOFT")]
-    X7Point1X16Soft = unchecked((uint)0x1211),
+    X7Point1X16SOFT = unchecked((uint)0x1211),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_32F_SOFT")]
-    X7Point1X32Fsoft = unchecked((uint)0x1212),
+    X7Point1X32FSOFT = unchecked((uint)0x1212),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_INTERNAL_FORMAT_SOFT")]
-    InternalFormatsoft = unchecked((uint)0x2008),
+    InternalFormatSOFT = unchecked((uint)0x2008),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BYTE_LENGTH_SOFT")]
-    ByteLengthsoft = unchecked((uint)0x2009),
+    ByteLengthSOFT = unchecked((uint)0x2009),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_LENGTH_SOFT")]
-    SampleLengthsoft = unchecked((uint)0x200A),
+    SampleLengthSOFT = unchecked((uint)0x200A),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_LENGTH_SOFT")]
-    SecLengthsoft = unchecked((uint)0x200B),
+    SecLengthSOFT = unchecked((uint)0x200B),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_DIRECT_CHANNELS_SOFT")]
-    DirectChannelssoft = unchecked((uint)0x1033),
+    DirectChannelsSOFT = unchecked((uint)0x1033),
 
     [NativeName("AL_STEREO_ANGLES")]
     StereoAngles = unchecked((uint)0x1030),
@@ -1983,31 +1983,31 @@ public enum AlEnum : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
-    SampleOffsetLatencysoft = unchecked((uint)0x1200),
+    SampleOffsetLatencySOFT = unchecked((uint)0x1200),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
-    SecOffsetLatencysoft = unchecked((uint)0x1201),
+    SecOffsetLatencySOFT = unchecked((uint)0x1201),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_DEFERRED_UPDATES_SOFT")]
-    DeferredUpdatessoft = unchecked((uint)0xC002),
+    DeferredUpdatesSOFT = unchecked((uint)0xC002),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNPACK_BLOCK_ALIGNMENT_SOFT")]
-    UnpackBlockAlignmentsoft = unchecked((uint)0x200C),
+    UnpackBlockAlignmentSOFT = unchecked((uint)0x200C),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_PACK_BLOCK_ALIGNMENT_SOFT")]
-    PackBlockAlignmentsoft = unchecked((uint)0x200D),
+    PackBlockAlignmentSOFT = unchecked((uint)0x200D),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_MONO_MSADPCM_SOFT")]
-    FormatMonoMsadpcmsoft = unchecked((uint)0x1302),
+    FormatMonoMsadpcmSOFT = unchecked((uint)0x1302),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_STEREO_MSADPCM_SOFT")]
-    FormatStereoMsadpcmsoft = unchecked((uint)0x1303),
+    FormatStereoMsadpcmSOFT = unchecked((uint)0x1303),
 
     [NativeName("AL_FORMAT_BFORMAT2D_8")]
     FormatBformat2D8 = unchecked((uint)0x20021),
@@ -2035,335 +2035,335 @@ public enum AlEnum : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_GAIN_LIMIT_SOFT")]
-    GainLimitsoft = unchecked((uint)0x200E),
+    GainLimitSOFT = unchecked((uint)0x200E),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_NUM_RESAMPLERS_SOFT")]
-    NumResamplerssoft = unchecked((uint)0x1210),
+    NumResamplersSOFT = unchecked((uint)0x1210),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_DEFAULT_RESAMPLER_SOFT")]
-    DefaultResamplersoft = unchecked((uint)0x1211),
+    DefaultResamplerSOFT = unchecked((uint)0x1211),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
-    SourceResamplersoft = unchecked((uint)0x1212),
+    SourceResamplerSOFT = unchecked((uint)0x1212),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_RESAMPLER_NAME_SOFT")]
-    ResamplerNamesoft = unchecked((uint)0x1213),
+    ResamplerNameSOFT = unchecked((uint)0x1213),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
-    SourceSpatializesoft = unchecked((uint)0x1214),
+    SourceSpatializeSOFT = unchecked((uint)0x1214),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_AUTO_SOFT")]
-    Autosoft = unchecked((uint)0x0002),
+    AutoSOFT = unchecked((uint)0x0002),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
-    SampleOffsetClocksoft = unchecked((uint)0x1202),
+    SampleOffsetClockSOFT = unchecked((uint)0x1202),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
-    SecOffsetClocksoft = unchecked((uint)0x1203),
+    SecOffsetClockSOFT = unchecked((uint)0x1203),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_DROP_UNMATCHED_SOFT")]
-    DropUnmatchedsoft = unchecked((uint)0x0001),
+    DropUnmatchedSOFT = unchecked((uint)0x0001),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REMIX_UNMATCHED_SOFT")]
-    RemixUnmatchedsoft = unchecked((uint)0x0002),
+    RemixUnmatchedSOFT = unchecked((uint)0x0002),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutsoft = unchecked((uint)0x1997),
+    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingsoft = unchecked((uint)0x1998),
+    AmbisonicScalingSOFT = unchecked((uint)0x1998),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FUMA_SOFT")]
-    Fumasoft = unchecked((uint)0x0000),
+    FumaSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_ACN_SOFT")]
-    Acnsoft = unchecked((uint)0x0001),
+    AcnSOFT = unchecked((uint)0x0001),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SN3D_SOFT")]
-    Sn3Dsoft = unchecked((uint)0x0001),
+    Sn3DSOFT = unchecked((uint)0x0001),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_N3D_SOFT")]
-    N3Dsoft = unchecked((uint)0x0002),
+    N3DSOFT = unchecked((uint)0x0002),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
-    EffectslotTargetsoft = unchecked((uint)0x199C),
+    EffectslotTargetSOFT = unchecked((uint)0x199C),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_CALLBACK_FUNCTION_SOFT")]
-    EventCallbackFunctionsoft = unchecked((uint)0x19A2),
+    EventCallbackFunctionSOFT = unchecked((uint)0x19A2),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_CALLBACK_USER_PARAM_SOFT")]
-    EventCallbackUserParamsoft = unchecked((uint)0x19A3),
+    EventCallbackUserParamSOFT = unchecked((uint)0x19A3),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_TYPE_BUFFER_COMPLETED_SOFT")]
-    EventTypeBufferCompletedsoft = unchecked((uint)0x19A4),
+    EventTypeBufferCompletedSOFT = unchecked((uint)0x19A4),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_TYPE_SOURCE_STATE_CHANGED_SOFT")]
-    EventTypeSourceStateChangedsoft = unchecked((uint)0x19A5),
+    EventTypeSourceStateChangedSOFT = unchecked((uint)0x19A5),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_TYPE_DISCONNECTED_SOFT")]
-    EventTypeDisconnectedsoft = unchecked((uint)0x19A6),
+    EventTypeDisconnectedSOFT = unchecked((uint)0x19A6),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    BufferCallbackFunctionsoft = unchecked((uint)0x19A0),
+    BufferCallbackFunctionSOFT = unchecked((uint)0x19A0),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    BufferCallbackUserParamsoft = unchecked((uint)0x19A1),
+    BufferCallbackUserParamSOFT = unchecked((uint)0x19A1),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN8_SOFT")]
-    FormatUhj2Chn8Soft = unchecked((uint)0x19A2),
+    FormatUhj2Chn8SOFT = unchecked((uint)0x19A2),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN16_SOFT")]
-    FormatUhj2Chn16Soft = unchecked((uint)0x19A3),
+    FormatUhj2Chn16SOFT = unchecked((uint)0x19A3),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_FLOAT32_SOFT")]
-    FormatUhj2ChnFloat32Soft = unchecked((uint)0x19A4),
+    FormatUhj2ChnFloat32SOFT = unchecked((uint)0x19A4),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN8_SOFT")]
-    FormatUhj3Chn8Soft = unchecked((uint)0x19A5),
+    FormatUhj3Chn8SOFT = unchecked((uint)0x19A5),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN16_SOFT")]
-    FormatUhj3Chn16Soft = unchecked((uint)0x19A6),
+    FormatUhj3Chn16SOFT = unchecked((uint)0x19A6),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN_FLOAT32_SOFT")]
-    FormatUhj3ChnFloat32Soft = unchecked((uint)0x19A7),
+    FormatUhj3ChnFloat32SOFT = unchecked((uint)0x19A7),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN8_SOFT")]
-    FormatUhj4Chn8Soft = unchecked((uint)0x19A8),
+    FormatUhj4Chn8SOFT = unchecked((uint)0x19A8),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN16_SOFT")]
-    FormatUhj4Chn16Soft = unchecked((uint)0x19A9),
+    FormatUhj4Chn16SOFT = unchecked((uint)0x19A9),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN_FLOAT32_SOFT")]
-    FormatUhj4ChnFloat32Soft = unchecked((uint)0x19AA),
+    FormatUhj4ChnFloat32SOFT = unchecked((uint)0x19AA),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO_MODE_SOFT")]
-    StereoModesoft = unchecked((uint)0x19B0),
+    StereoModeSOFT = unchecked((uint)0x19B0),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_NORMAL_SOFT")]
-    Normalsoft = unchecked((uint)0x0000),
+    NormalSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SUPER_STEREO_SOFT")]
-    SuperStereosoft = unchecked((uint)0x0001),
+    SuperStereoSOFT = unchecked((uint)0x0001),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
-    SuperStereoWidthsoft = unchecked((uint)0x19B1),
+    SuperStereoWidthSOFT = unchecked((uint)0x19B1),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_MULAW_SOFT")]
-    FormatUhj2ChnMulawsoft = unchecked((uint)0x19B3),
+    FormatUhj2ChnMulawSOFT = unchecked((uint)0x19B3),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_ALAW_SOFT")]
-    FormatUhj2ChnAlawsoft = unchecked((uint)0x19B4),
+    FormatUhj2ChnAlawSOFT = unchecked((uint)0x19B4),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_IMA4_SOFT")]
-    FormatUhj2ChnIma4Soft = unchecked((uint)0x19B5),
+    FormatUhj2ChnIma4SOFT = unchecked((uint)0x19B5),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ2CHN_MSADPCM_SOFT")]
-    FormatUhj2ChnMsadpcmsoft = unchecked((uint)0x19B6),
+    FormatUhj2ChnMsadpcmSOFT = unchecked((uint)0x19B6),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN_MULAW_SOFT")]
-    FormatUhj3ChnMulawsoft = unchecked((uint)0x19B7),
+    FormatUhj3ChnMulawSOFT = unchecked((uint)0x19B7),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ3CHN_ALAW_SOFT")]
-    FormatUhj3ChnAlawsoft = unchecked((uint)0x19B8),
+    FormatUhj3ChnAlawSOFT = unchecked((uint)0x19B8),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN_MULAW_SOFT")]
-    FormatUhj4ChnMulawsoft = unchecked((uint)0x19B9),
+    FormatUhj4ChnMulawSOFT = unchecked((uint)0x19B9),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FORMAT_UHJ4CHN_ALAW_SOFT")]
-    FormatUhj4ChnAlawsoft = unchecked((uint)0x19BA),
+    FormatUhj4ChnAlawSOFT = unchecked((uint)0x19BA),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DONT_CARE_EXT")]
-    DontCareext = unchecked((uint)0x0002),
+    DontCareEXT = unchecked((uint)0x0002),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_OUTPUT_EXT")]
-    DebugOutputext = unchecked((uint)0x19B2),
+    DebugOutputEXT = unchecked((uint)0x19B2),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_CALLBACK_FUNCTION_EXT")]
-    DebugCallbackFunctionext = unchecked((uint)0x19B3),
+    DebugCallbackFunctionEXT = unchecked((uint)0x19B3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_CALLBACK_USER_PARAM_EXT")]
-    DebugCallbackUserParamext = unchecked((uint)0x19B4),
+    DebugCallbackUserParamEXT = unchecked((uint)0x19B4),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SOURCE_API_EXT")]
-    DebugSourceApiext = unchecked((uint)0x19B5),
+    DebugSourceApiEXT = unchecked((uint)0x19B5),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SOURCE_AUDIO_SYSTEM_EXT")]
-    DebugSourceAudioSystemext = unchecked((uint)0x19B6),
+    DebugSourceAudioSystemEXT = unchecked((uint)0x19B6),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SOURCE_THIRD_PARTY_EXT")]
-    DebugSourceThirdPartyext = unchecked((uint)0x19B7),
+    DebugSourceThirdPartyEXT = unchecked((uint)0x19B7),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SOURCE_APPLICATION_EXT")]
-    DebugSourceApplicationext = unchecked((uint)0x19B8),
+    DebugSourceApplicationEXT = unchecked((uint)0x19B8),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SOURCE_OTHER_EXT")]
-    DebugSourceOtherext = unchecked((uint)0x19B9),
+    DebugSourceOtherEXT = unchecked((uint)0x19B9),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_ERROR_EXT")]
-    DebugTypeErrorext = unchecked((uint)0x19BA),
+    DebugTypeErrorEXT = unchecked((uint)0x19BA),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_EXT")]
-    DebugTypeDeprecatedBehaviorext = unchecked((uint)0x19BB),
+    DebugTypeDeprecatedBehaviorEXT = unchecked((uint)0x19BB),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_EXT")]
-    DebugTypeUndefinedBehaviorext = unchecked((uint)0x19BC),
+    DebugTypeUndefinedBehaviorEXT = unchecked((uint)0x19BC),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_PORTABILITY_EXT")]
-    DebugTypePortabilityext = unchecked((uint)0x19BD),
+    DebugTypePortabilityEXT = unchecked((uint)0x19BD),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_PERFORMANCE_EXT")]
-    DebugTypePerformanceext = unchecked((uint)0x19BE),
+    DebugTypePerformanceEXT = unchecked((uint)0x19BE),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_MARKER_EXT")]
-    DebugTypeMarkerext = unchecked((uint)0x19BF),
+    DebugTypeMarkerEXT = unchecked((uint)0x19BF),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_PUSH_GROUP_EXT")]
-    DebugTypePushGroupext = unchecked((uint)0x19C0),
+    DebugTypePushGroupEXT = unchecked((uint)0x19C0),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_POP_GROUP_EXT")]
-    DebugTypePopGroupext = unchecked((uint)0x19C1),
+    DebugTypePopGroupEXT = unchecked((uint)0x19C1),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_TYPE_OTHER_EXT")]
-    DebugTypeOtherext = unchecked((uint)0x19C2),
+    DebugTypeOtherEXT = unchecked((uint)0x19C2),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SEVERITY_HIGH_EXT")]
-    DebugSeverityHighext = unchecked((uint)0x19C3),
+    DebugSeverityHighEXT = unchecked((uint)0x19C3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SEVERITY_MEDIUM_EXT")]
-    DebugSeverityMediumext = unchecked((uint)0x19C4),
+    DebugSeverityMediumEXT = unchecked((uint)0x19C4),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SEVERITY_LOW_EXT")]
-    DebugSeverityLowext = unchecked((uint)0x19C5),
+    DebugSeverityLowEXT = unchecked((uint)0x19C5),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_SEVERITY_NOTIFICATION_EXT")]
-    DebugSeverityNotificationext = unchecked((uint)0x19C6),
+    DebugSeverityNotificationEXT = unchecked((uint)0x19C6),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
-    DebugLoggedMessagesext = unchecked((uint)0x19C7),
+    DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
-    DebugNextLoggedMessageLengthext = unchecked((uint)0x19C8),
+    DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
-    MaxDebugMessageLengthext = unchecked((uint)0x19C9),
+    MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
-    MaxDebugLoggedMessagesext = unchecked((uint)0x19CA),
+    MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
-    MaxDebugGroupStackDepthext = unchecked((uint)0x19CB),
+    MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
-    MaxLabelLengthext = unchecked((uint)0x19CC),
+    MaxLabelLengthEXT = unchecked((uint)0x19CC),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowext = unchecked((uint)0x19CD),
+    StackOverflowEXT = unchecked((uint)0x19CD),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowext = unchecked((uint)0x19CE),
+    StackUnderflowEXT = unchecked((uint)0x19CE),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_CONTEXT_FLAGS_EXT")]
-    ContextFlagsext = unchecked((uint)0x19CF),
+    ContextFlagsEXT = unchecked((uint)0x19CF),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_BUFFER_EXT")]
-    Bufferext = unchecked((uint)0x1009),
+    BufferEXT = unchecked((uint)0x1009),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_SOURCE_EXT")]
-    Sourceext = unchecked((uint)0x19D0),
+    SourceEXT = unchecked((uint)0x19D0),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_FILTER_EXT")]
-    Filterext = unchecked((uint)0x19D1),
+    FilterEXT = unchecked((uint)0x19D1),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_EFFECT_EXT")]
-    Effectext = unchecked((uint)0x19D2),
+    EffectEXT = unchecked((uint)0x19D2),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_AUXILIARY_EFFECT_SLOT_EXT")]
-    AuxiliaryEffectSlotext = unchecked((uint)0x19D3),
+    AuxiliaryEffectSlotEXT = unchecked((uint)0x19D3),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_UNPACK_AMBISONIC_ORDER_SOFT")]
-    UnpackAmbisonicOrdersoft = unchecked((uint)0x199D),
+    UnpackAmbisonicOrderSOFT = unchecked((uint)0x199D),
 
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
     CDefaultFilterOrder = unchecked((uint)0x1100),

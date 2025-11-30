@@ -16,5 +16,5 @@ public enum SourceDouble : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
-    SecOffsetClocksoft = unchecked((uint)0x1203),
+    SecOffsetClockSOFT = unchecked((uint)0x1203),
 }

@@ -11,19 +11,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("AmbisonicScalingSOFT")]
+[NativeName("AmbisonicLayoutSOFT")]
 [Transformed]
-public enum AmbisonicScalingSoft : uint
+public enum AmbisonicLayoutSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_FUMA_SOFT")]
-    Fumasoft = unchecked((uint)0x0000),
+    FumaSOFT = unchecked((uint)0x0000),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_SN3D_SOFT")]
-    Sn3Dsoft = unchecked((uint)0x0001),
-
-    [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_N3D_SOFT")]
-    N3Dsoft = unchecked((uint)0x0002),
+    [NativeName("AL_ACN_SOFT")]
+    AcnSOFT = unchecked((uint)0x0001),
 }

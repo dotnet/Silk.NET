@@ -28,5 +28,5 @@ public enum StringPName : uint
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_RESAMPLER_NAME_SOFT")]
-    ResamplerNamesoft = unchecked((uint)0x1213),
+    ResamplerNameSOFT = unchecked((uint)0x1213),
 }

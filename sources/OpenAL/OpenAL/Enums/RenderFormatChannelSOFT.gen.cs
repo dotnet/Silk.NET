@@ -11,31 +11,35 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("EventTypeSOFT")]
+[NativeName("RenderFormatChannelSOFT")]
 [Transformed]
-public enum EventTypeSoft : uint
+public enum RenderFormatChannelSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_EVENT_TYPE_BUFFER_COMPLETED_SOFT")]
-    EventTypeBufferCompletedsoft = unchecked((uint)0x19A4),
+    [NativeName("ALC_MONO_SOFT")]
+    MonoSOFT = unchecked((uint)0x1500),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_EVENT_TYPE_SOURCE_STATE_CHANGED_SOFT")]
-    EventTypeSourceStateChangedsoft = unchecked((uint)0x19A5),
+    [NativeName("ALC_STEREO_SOFT")]
+    StereoSOFT = unchecked((uint)0x1501),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_EVENT_TYPE_DISCONNECTED_SOFT")]
-    EventTypeDisconnectedsoft = unchecked((uint)0x19A6),
+    [NativeName("ALC_QUAD_SOFT")]
+    QuadSOFT = unchecked((uint)0x1503),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_EVENT_TYPE_DEFAULT_DEVICE_CHANGED_SOFT")]
-    CEventTypeDefaultDeviceChangedsoft = unchecked((uint)0x19D6),
+    [NativeName("ALC_5POINT1_SOFT")]
+    X5Point1SOFT = unchecked((uint)0x1504),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_EVENT_TYPE_DEVICE_ADDED_SOFT")]
-    CEventTypeDeviceAddedsoft = unchecked((uint)0x19D7),
+    [NativeName("ALC_6POINT1_SOFT")]
+    X6Point1SOFT = unchecked((uint)0x1505),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_EVENT_TYPE_DEVICE_REMOVED_SOFT")]
-    CEventTypeDeviceRemovedsoft = unchecked((uint)0x19D8),
+    [NativeName("ALC_7POINT1_SOFT")]
+    X7Point1SOFT = unchecked((uint)0x1506),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_BFORMAT3D_SOFT")]
+    Bformat3DSOFT = unchecked((uint)0x1507),
 }

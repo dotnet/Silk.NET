@@ -11,15 +11,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("ContextAmbisonicLayoutSOFT")]
+[NativeName("DirectChannelsSOFT")]
 [Transformed]
-public enum ContextAmbisonicLayoutSoft : uint
+public enum DirectChannelsSOFT : uint
 {
-    [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_FUMA_SOFT")]
-    Fumasoft = unchecked((uint)0x0000),
+    [NativeName("AL_FALSE")]
+    False = unchecked((uint)0),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_ACN_SOFT")]
-    Acnsoft = unchecked((uint)0x0001),
+    [NativeName("AL_DROP_UNMATCHED_SOFT")]
+    DropUnmatchedSOFT = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_REMIX_UNMATCHED_SOFT")]
+    RemixUnmatchedSOFT = unchecked((uint)0x0002),
 }

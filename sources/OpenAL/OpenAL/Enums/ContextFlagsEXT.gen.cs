@@ -10,16 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "SOFT", 0)]
-[NativeName("AmbisonicLayoutSOFT")]
+[NameAffix("Suffix", "EXT", 0)]
+[NativeName("ContextFlagsEXT")]
 [Transformed]
-public enum AmbisonicLayoutSoft : uint
+public enum ContextFlagsEXT : uint
 {
-    [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_FUMA_SOFT")]
-    Fumasoft = unchecked((uint)0x0000),
-
-    [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("AL_ACN_SOFT")]
-    Acnsoft = unchecked((uint)0x0001),
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("ALC_CONTEXT_DEBUG_BIT_EXT")]
+    ContextDebugBitEXT = unchecked((uint)0x0001),
 }

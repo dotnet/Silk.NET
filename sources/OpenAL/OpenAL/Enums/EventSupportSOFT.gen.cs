@@ -11,17 +11,15 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "SOFT", 0)]
-[NativeName("ContextRequestSOFT")]
+[NativeName("EventSupportSOFT")]
 [Transformed]
-public enum ContextRequestSoft : uint
+public enum EventSupportSOFT : uint
 {
-    [NativeName("ALC_FALSE")]
-    False = unchecked((uint)0),
-
-    [NativeName("ALC_TRUE")]
-    True = unchecked((uint)1),
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_EVENT_SUPPORTED_SOFT")]
+    SupportedSOFT = unchecked((uint)0x19D9),
 
     [NameAffix("Suffix", "SOFT", 0)]
-    [NativeName("ALC_DONT_CARE_SOFT")]
-    DontCaresoft = unchecked((uint)0x0002),
+    [NativeName("ALC_EVENT_NOT_SUPPORTED_SOFT")]
+    NotSupportedSOFT = unchecked((uint)0x19DA),
 }

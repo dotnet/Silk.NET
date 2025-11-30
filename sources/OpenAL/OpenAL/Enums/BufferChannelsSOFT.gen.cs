@@ -13,33 +13,33 @@ namespace Silk.NET.OpenAL;
 [NameAffix("Suffix", "SOFT", 0)]
 [NativeName("BufferChannelsSOFT")]
 [Transformed]
-public enum BufferChannelsSoft : uint
+public enum BufferChannelsSOFT : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO_SOFT")]
-    Monosoft = unchecked((uint)0x1500),
+    MonoSOFT = unchecked((uint)0x1500),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO_SOFT")]
-    Stereosoft = unchecked((uint)0x1501),
+    StereoSOFT = unchecked((uint)0x1501),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR_SOFT")]
-    Rearsoft = unchecked((uint)0x1502),
+    RearSOFT = unchecked((uint)0x1502),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD_SOFT")]
-    Quadsoft = unchecked((uint)0x1503),
+    QuadSOFT = unchecked((uint)0x1503),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_SOFT")]
-    X5Point1Soft = unchecked((uint)0x1504),
+    X5Point1SOFT = unchecked((uint)0x1504),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_SOFT")]
-    X6Point1Soft = unchecked((uint)0x1505),
+    X6Point1SOFT = unchecked((uint)0x1505),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_SOFT")]
-    X7Point1Soft = unchecked((uint)0x1506),
+    X7Point1SOFT = unchecked((uint)0x1506),
 }

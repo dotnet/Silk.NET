@@ -16,17 +16,17 @@ public enum PointerPName : uint
 {
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_CALLBACK_FUNCTION_SOFT")]
-    EventCallbackFunctionsoft = unchecked((uint)0x19A2),
+    EventCallbackFunctionSOFT = unchecked((uint)0x19A2),
 
     [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_EVENT_CALLBACK_USER_PARAM_SOFT")]
-    EventCallbackUserParamsoft = unchecked((uint)0x19A3),
+    EventCallbackUserParamSOFT = unchecked((uint)0x19A3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_CALLBACK_FUNCTION_EXT")]
-    DebugCallbackFunctionext = unchecked((uint)0x19B3),
+    DebugCallbackFunctionEXT = unchecked((uint)0x19B3),
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_DEBUG_CALLBACK_USER_PARAM_EXT")]
-    DebugCallbackUserParamext = unchecked((uint)0x19B4),
+    DebugCallbackUserParamEXT = unchecked((uint)0x19B4),
 }
