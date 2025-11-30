@@ -5,7 +5,6 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -431,13 +430,6 @@ public partial class MixKhronosData(
         // Rewrite phase 3
         if (jobData.Vendors != null)
         {
-            var compilation = await proj.GetCompilationAsync(ct);
-            if (compilation == null)
-            {
-                throw new Exception("Failed to get compilation");
-            }
-
-            var symbolsToRename = new List<(ISymbol Symbol, string NewName)>();
             foreach (var docId in proj.DocumentIds)
             {
                 var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
