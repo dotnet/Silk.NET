@@ -309,12 +309,7 @@ public class MixKhronosDataTests
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration
-                    {
-                        UseExtensionVendorTrimmings = MixKhronosData
-                            .ExtensionVendorTrimmingMode
-                            .None,
-                    },
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["NV"],
                     Groups =
                     {
@@ -362,12 +357,7 @@ public class MixKhronosDataTests
             {
                 ["OpenAL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration
-                    {
-                        UseExtensionVendorTrimmings = MixKhronosData
-                            .ExtensionVendorTrimmingMode
-                            .None,
-                    },
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["SOFT"],
                     Groups =
                     {
