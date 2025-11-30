@@ -716,6 +716,101 @@ public class PrettifyNames(
         }
     }
 
+    private static NameAffix[] GetAffixes(string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
+    {
+        TypeAffixData typeAffixData;
+        if (container == null)
+        {
+            if (!affixTypes.TryGetValue(originalName, out typeAffixData))
+            {
+                return [];
+            }
+
+            return typeAffixData.TypeAffixes;
+        }
+
+        if (affixTypes.TryGetValue(container, out typeAffixData))
+        {
+            if (typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false)
+            {
+                return affixes;
+            }
+        }
+
+        return [];
+    }
+
+    private static string RemoveAffixes(string nameToModify, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
+    {
+        var affixes = GetAffixes(container, originalName, affixTypes);
+        if (affixes.Length == 0)
+        {
+            return nameToModify;
+        }
+
+        affixes.Sort((a, b) => a.Priority.CompareTo(b.Priority));
+        var prefixes = affixes.Where(x => x.IsPrefix).ToList();
+        var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
+
+        RemoveSide(true, prefixes);
+        RemoveSide(false, suffixes);
+
+        return nameToModify;
+
+        void RemoveSide(bool isPrefix, List<NameAffix> nameAffixes)
+        {
+            while (nameAffixes.Count > 0)
+            {
+                var removedAffix = false;
+                for (var i = 0; i < nameAffixes.Count; i++)
+                {
+                    var affix = nameAffixes[i];
+                    if (isPrefix ? nameToModify.StartsWith(affix.Affix) : nameToModify.EndsWith(affix.Affix))
+                    {
+                        nameToModify = isPrefix ? nameToModify[affix.Affix.Length..] : nameToModify[..^affix.Affix.Length];
+
+                        nameAffixes.RemoveAt(i);
+                        removedAffix = true;
+                        break;
+                    }
+                }
+
+                if (!removedAffix)
+                {
+                    break;
+                }
+            }
+        }
+    }
+
+    private static string ApplyAffixes(string nameToModify, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
+    {
+        var affixes = GetAffixes(container, originalName, affixTypes);
+        if (affixes.Length == 0)
+        {
+            return nameToModify;
+        }
+
+        affixes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+
+        foreach (var affix in affixes)
+        {
+            if (affix.Priority >= 0)
+            {
+                if (affix.IsPrefix)
+                {
+                    nameToModify = affix.Affix + nameToModify;
+                }
+                else
+                {
+                    nameToModify += affix.Affix;
+                }
+            }
+        }
+
+        return nameToModify;
+    }
+
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
@@ -1117,16 +1212,11 @@ public class PrettifyNames(
             {
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
-                    if (affixTypes.TryGetValue(original, out var affixTypeData))
-                    {
-                        if (TryRemoveAffixes(primary, affixTypeData.TypeAffixes, out var newName))
-                        {
-                            var secondaries = secondary ?? [];
-                            secondaries.Add(primary);
+                    var newPrimary = RemoveAffixes(primary, null, original, affixTypes);
+                    var secondaries = secondary ?? [];
+                    secondaries.Add(primary);
 
-                            context.Names[original] = new CandidateNames(newName, secondaries);
-                        }
-                    }
+                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
 
                 return;
@@ -1134,19 +1224,11 @@ public class PrettifyNames(
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                if (affixTypes.TryGetValue(context.Container, out var affixTypeData))
-                {
-                    if (affixTypeData.MemberAffixes?.TryGetValue(original, out var affixes) ?? false)
-                    {
-                        if (TryRemoveAffixes(primary, affixes, out var newName))
-                        {
-                            var secondaries = secondary ?? [];
-                            secondaries.Add(primary);
+                var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes);
+                var secondaries = secondary ?? [];
+                secondaries.Add(primary);
 
-                            context.Names[original] = new CandidateNames(newName, secondaries);
-                        }
-                    }
-                }
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
     }
@@ -1164,16 +1246,11 @@ public class PrettifyNames(
             {
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
-                    if (affixTypes.TryGetValue(original, out var affixTypeData))
-                    {
-                        if (TryApplyAffixes(primary, affixTypeData.TypeAffixes, out var newName))
-                        {
-                            var secondaries = secondary ?? [];
-                            secondaries.Add(primary);
+                    var newPrimary = ApplyAffixes(primary, null, original, affixTypes);
+                    var secondaries = secondary ?? [];
+                    secondaries.Add(primary);
 
-                            context.Names[original] = new CandidateNames(newName, secondaries);
-                        }
-                    }
+                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
 
                 return;
@@ -1181,94 +1258,12 @@ public class PrettifyNames(
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                if (affixTypes.TryGetValue(context.Container, out var affixTypeData))
-                {
-                    if (affixTypeData.MemberAffixes?.TryGetValue(original, out var affixes) ?? false)
-                    {
-                        if (TryApplyAffixes(primary, affixes, out var newName))
-                        {
-                            var secondaries = secondary ?? [];
-                            secondaries.Add(primary);
+                var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes);
+                var secondaries = secondary ?? [];
+                secondaries.Add(primary);
 
-                            context.Names[original] = new CandidateNames(newName, secondaries);
-                        }
-                    }
-                }
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
-    }
-
-    private static bool TryRemoveAffixes(string name, NameAffix[] affixes, [NotNullWhen(true)] out string? newName)
-    {
-        if (affixes.Length == 0)
-        {
-            newName = name;
-            return false;
-        }
-
-        affixes.Sort((a, b) => a.Priority.CompareTo(b.Priority));
-        var prefixes = affixes.Where(x => x.IsPrefix).ToList();
-        var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
-
-        var modified = false;
-        RemoveAffixes(true, prefixes);
-        RemoveAffixes(false, suffixes);
-
-        newName = name;
-        return modified;
-
-        void RemoveAffixes(bool isPrefix, List<NameAffix> nameAffixes)
-        {
-            while (nameAffixes.Count > 0)
-            {
-                var removedAffix = false;
-                for (var i = 0; i < nameAffixes.Count; i++)
-                {
-                    var affix = nameAffixes[i];
-                    if (isPrefix ? name.StartsWith(affix.Affix) : name.EndsWith(affix.Affix))
-                    {
-                        name = isPrefix ? name[affix.Affix.Length..] : name[..^affix.Affix.Length];
-
-                        nameAffixes.RemoveAt(i);
-                        removedAffix = true;
-                        modified = true;
-                        break;
-                    }
-                }
-
-                if (!removedAffix)
-                {
-                    break;
-                }
-            }
-        }
-    }
-
-    private static bool TryApplyAffixes(string name, NameAffix[] affixes, [NotNullWhen(true)] out string? newName)
-    {
-        newName = name;
-        if (affixes.Length == 0)
-        {
-            return false;
-        }
-
-        affixes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
-
-        foreach (var affix in affixes)
-        {
-            if (affix.Priority >= 0)
-            {
-                if (affix.IsPrefix)
-                {
-                    newName = affix.Affix + newName;
-                }
-                else
-                {
-                    newName += affix.Affix;
-                }
-            }
-        }
-
-        return true;
     }
 }
