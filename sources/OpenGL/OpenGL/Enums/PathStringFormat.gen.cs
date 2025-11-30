@@ -7,9 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PathStringFormat")]
 [Transformed]
 public enum PathStringFormat : uint
 {
-    SvgNV = unchecked((uint)0x9070),
-    PsNV = unchecked((uint)0x9071),
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_PATH_FORMAT_SVG_NV")]
+    Svgnv = unchecked((uint)0x9070),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_PATH_FORMAT_PS_NV")]
+    Psnv = unchecked((uint)0x9071),
 }

@@ -317,7 +317,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionETC2;
+    public uint TextureCompressionEtc2;
 
     [NativeName("textureCompressionASTC_LDR")]
     [SupportedApiProfile(
@@ -346,7 +346,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionASTCLDR;
+    public uint TextureCompressionAstcLdr;
 
     [NativeName("textureCompressionBC")]
     [SupportedApiProfile(
@@ -375,7 +375,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionBC;
+    public uint TextureCompressionBc;
 
     [NativeName("occlusionQueryPrecise")]
     [SupportedApiProfile(

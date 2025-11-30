@@ -15,11 +15,11 @@ public partial struct EfxEaxReverbProperties
     public float FlDensity;
     public float FlDiffusion;
     public float FlGain;
-    public float FlGainHF;
-    public float FlGainLF;
+    public float FlGainHf;
+    public float FlGainLf;
     public float FlDecayTime;
-    public float FlDecayHFRatio;
-    public float FlDecayLFRatio;
+    public float FlDecayHfRatio;
+    public float FlDecayLfRatio;
     public float FlReflectionsGain;
     public float FlReflectionsDelay;
 
@@ -34,9 +34,9 @@ public partial struct EfxEaxReverbProperties
     public float FlEchoDepth;
     public float FlModulationTime;
     public float FlModulationDepth;
-    public float FlAirAbsorptionGainHF;
-    public float FlHFReference;
-    public float FlLFReference;
+    public float FlAirAbsorptionGainHf;
+    public float FlHfReference;
+    public float FlLfReference;
     public float FlRoomRolloffFactor;
-    public int IDecayHFLimit;
+    public int IDecayHfLimit;
 }

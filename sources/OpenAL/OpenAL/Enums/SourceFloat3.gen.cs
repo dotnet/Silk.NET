@@ -10,10 +10,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("SourceFloat3")]
 [Transformed]
 public enum SourceFloat3 : uint
 {
+    [NativeName("AL_POSITION")]
     Position = unchecked((uint)0x1004),
+
+    [NativeName("AL_DIRECTION")]
     Direction = unchecked((uint)0x1005),
+
+    [NativeName("AL_VELOCITY")]
     Velocity = unchecked((uint)0x1006),
 }

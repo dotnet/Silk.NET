@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("SDL_hid_device")]
 public readonly unsafe partial struct HidDeviceHandle
 {
     public readonly void* Handle;

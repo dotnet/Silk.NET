@@ -17,7 +17,7 @@ public partial struct KeyboardEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 
     [NativeTypeName("SDL_KeyboardID")]
     public uint Which;

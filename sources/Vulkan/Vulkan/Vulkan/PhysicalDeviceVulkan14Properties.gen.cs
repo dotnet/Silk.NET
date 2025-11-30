@@ -348,7 +348,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public PhysicalDeviceVulkan14PropertiesOptimalTilingLayoutUUID OptimalTilingLayoutUUID;
+    public PhysicalDeviceVulkan14PropertiesOptimalTilingLayoutUuid OptimalTilingLayoutUuid;
 
     [NativeName("identicalMemoryTypeRequirements")]
     [SupportedApiProfile(

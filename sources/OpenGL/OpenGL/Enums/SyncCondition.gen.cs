@@ -7,8 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("SyncCondition")]
 [Transformed]
 public enum SyncCondition : uint
 {
+    [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE")]
     SyncGpuCommandsComplete = unchecked((uint)0x9117),
 }

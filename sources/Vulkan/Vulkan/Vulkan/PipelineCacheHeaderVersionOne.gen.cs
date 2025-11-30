@@ -82,7 +82,7 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public uint VendorID;
+    public uint VendorId;
 
     [NativeName("deviceID")]
     [SupportedApiProfile(
@@ -106,7 +106,7 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public uint DeviceID;
+    public uint DeviceId;
 
     [NativeName("pipelineCacheUUID")]
     [SupportedApiProfile(
@@ -130,5 +130,5 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public PipelineCacheHeaderVersionOnePipelineCacheUUID PipelineCacheUUID;
+    public PipelineCacheHeaderVersionOnePipelineCacheUuid PipelineCacheUuid;
 }

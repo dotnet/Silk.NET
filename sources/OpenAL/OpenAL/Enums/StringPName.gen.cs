@@ -10,12 +10,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("StringPName")]
 [Transformed]
 public enum StringPName : uint
 {
+    [NativeName("AL_VENDOR")]
     Vendor = unchecked((uint)0xB001),
+
+    [NativeName("AL_VERSION")]
     Version = unchecked((uint)0xB002),
+
+    [NativeName("AL_RENDERER")]
     Renderer = unchecked((uint)0xB003),
+
+    [NativeName("AL_EXTENSIONS")]
     Extensions = unchecked((uint)0xB004),
-    ResamplerNameSOFT = unchecked((uint)0x1213),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_RESAMPLER_NAME_SOFT")]
+    ResamplerNamesoft = unchecked((uint)0x1213),
 }

@@ -10,6 +10,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("ALCcontext")]
 public readonly unsafe partial struct ContextHandle
 {
     public readonly void* Handle;
@@ -19,21 +21,21 @@ public readonly unsafe partial struct ContextHandle
         Handle = handle;
     }
 
-    public bool Equals(ContextHandle other) => Handle == other.Handle;
+    public bool Equal(ContextHandle other) => Handle == other.Handle;
 
-    public override bool Equals(object? obj) => obj is ContextHandle other && Equals(other);
+    public override bool Equal(object? obj) => obj is ContextHandle other && Equal(other);
 
     public override int GetHashCode() => HashCode.Combine((nuint)Handle);
 
-    public static bool operator ==(ContextHandle left, ContextHandle right) => left.Equals(right);
+    public static bool operator ==(ContextHandle left, ContextHandle right) => left.Equal(right);
 
-    public static bool operator !=(ContextHandle left, ContextHandle right) => !left.Equals(right);
+    public static bool operator !=(ContextHandle left, ContextHandle right) => !left.Equal(right);
 
-    public bool Equals(NullPtr _) => Handle is null;
+    public bool Equal(NullPtr _) => Handle is null;
 
-    public static bool operator ==(ContextHandle left, NullPtr right) => left.Equals(right);
+    public static bool operator ==(ContextHandle left, NullPtr right) => left.Equal(right);
 
-    public static bool operator !=(ContextHandle left, NullPtr right) => !left.Equals(right);
+    public static bool operator !=(ContextHandle left, NullPtr right) => !left.Equal(right);
 
     public static implicit operator ContextHandle(NullPtr _) => default;
 }

@@ -14,7 +14,7 @@ public enum ColorPrimaries : uint
     Unknown = 0,
     Bt709 = 1,
     Unspecified = 2,
-    BT470M = 4,
+    Bt470M = 4,
     Bt470Bg = 5,
     Bt601 = 6,
     Smpte240 = 7,

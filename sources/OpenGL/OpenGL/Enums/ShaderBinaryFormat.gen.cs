@@ -7,13 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("ShaderBinaryFormat")]
 [Transformed]
 public enum ShaderBinaryFormat : uint
 {
+    [NativeName("GL_SHADER_BINARY_FORMAT_SPIR_V")]
     ShaderBinaryFormatSpirV = unchecked((uint)0x9551),
-    MaliShaderBinaryARM = unchecked((uint)0x8F60),
-    ShaderBinaryDMP = unchecked((uint)0x9250),
-    GccsoShaderBinaryFJ = unchecked((uint)0x9260),
-    SgxBinaryIMG = unchecked((uint)0x8C0A),
-    ShaderBinaryVIV = unchecked((uint)0x8FC4),
+
+    [NameAffix("Suffix", "ARM", 0)]
+    [NativeName("GL_MALI_SHADER_BINARY_ARM")]
+    MaliShaderBinaryarm = unchecked((uint)0x8F60),
+
+    [NameAffix("Suffix", "DMP", 0)]
+    [NativeName("GL_SHADER_BINARY_DMP")]
+    ShaderBinarydmp = unchecked((uint)0x9250),
+
+    [NameAffix("Suffix", "FJ", 0)]
+    [NativeName("GL_GCCSO_SHADER_BINARY_FJ")]
+    GccsoShaderBinaryfj = unchecked((uint)0x9260),
+
+    [NameAffix("Suffix", "IMG", 0)]
+    [NativeName("GL_SGX_BINARY_IMG")]
+    SgxBinaryimg = unchecked((uint)0x8C0A),
+
+    [NameAffix("Suffix", "VIV", 0)]
+    [NativeName("GL_SHADER_BINARY_VIV")]
+    ShaderBinaryviv = unchecked((uint)0x8FC4),
 }

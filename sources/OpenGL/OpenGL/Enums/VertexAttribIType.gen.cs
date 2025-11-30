@@ -7,13 +7,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("VertexAttribIType")]
 [Transformed]
 public enum VertexAttribIType : uint
 {
+    [NativeName("GL_BYTE")]
     Byte = unchecked((uint)0x1400),
+
+    [NativeName("GL_UNSIGNED_BYTE")]
     UnsignedByte = unchecked((uint)0x1401),
+
+    [NativeName("GL_SHORT")]
     Short = unchecked((uint)0x1402),
+
+    [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
+
+    [NativeName("GL_INT")]
     Int = unchecked((uint)0x1404),
+
+    [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = unchecked((uint)0x1405),
 }

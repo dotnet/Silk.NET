@@ -7,10 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("Buffer")]
 [Transformed]
 public enum Buffer : uint
 {
+    [NativeName("GL_COLOR")]
     Color = unchecked((uint)0x1800),
+
+    [NativeName("GL_DEPTH")]
     Depth = unchecked((uint)0x1801),
+
+    [NativeName("GL_STENCIL")]
     Stencil = unchecked((uint)0x1802),
 }

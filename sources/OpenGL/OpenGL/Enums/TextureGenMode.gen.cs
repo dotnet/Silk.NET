@@ -7,14 +7,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("TextureGenMode")]
 [Transformed]
 public enum TextureGenMode : uint
 {
+    [NativeName("GL_EYE_LINEAR")]
     EyeLinear = unchecked((uint)0x2400),
+
+    [NativeName("GL_OBJECT_LINEAR")]
     ObjectLinear = unchecked((uint)0x2401),
+
+    [NativeName("GL_SPHERE_MAP")]
     SphereMap = unchecked((uint)0x2402),
-    EyeDistanceToPointSGIS = unchecked((uint)0x81F0),
-    ObjectDistanceToPointSGIS = unchecked((uint)0x81F1),
-    EyeDistanceToLineSGIS = unchecked((uint)0x81F2),
-    ObjectDistanceToLineSGIS = unchecked((uint)0x81F3),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_EYE_DISTANCE_TO_POINT_SGIS")]
+    EyeDistanceToPointsgis = unchecked((uint)0x81F0),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_OBJECT_DISTANCE_TO_POINT_SGIS")]
+    ObjectDistanceToPointsgis = unchecked((uint)0x81F1),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_EYE_DISTANCE_TO_LINE_SGIS")]
+    EyeDistanceToLinesgis = unchecked((uint)0x81F2),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_OBJECT_DISTANCE_TO_LINE_SGIS")]
+    ObjectDistanceToLinesgis = unchecked((uint)0x81F3),
 }

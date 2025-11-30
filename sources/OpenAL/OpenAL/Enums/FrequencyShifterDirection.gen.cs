@@ -10,10 +10,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("FrequencyShifterDirection")]
 [Transformed]
 public enum FrequencyShifterDirection : uint
 {
+    [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_DOWN")]
     Down = unchecked((uint)0),
+
+    [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_UP")]
     Up = unchecked((uint)1),
+
+    [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_OFF")]
     Off = unchecked((uint)2),
 }

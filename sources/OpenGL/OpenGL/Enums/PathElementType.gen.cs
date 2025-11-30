@@ -7,9 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PathElementType")]
 [Transformed]
 public enum PathElementType : uint
 {
-    Utf8NV = unchecked((uint)0x909A),
-    Utf16NV = unchecked((uint)0x909B),
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_UTF8_NV")]
+    Utf8Nv = unchecked((uint)0x909A),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_UTF16_NV")]
+    Utf16Nv = unchecked((uint)0x909B),
 }

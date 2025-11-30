@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUMultisampleState"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuMultisampleState"/> struct.</summary>
 public static unsafe partial class SDL_GPUMultisampleStateTests
 {
-    /// <summary>Validates that the <see cref = "GPUMultisampleState"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuMultisampleState"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GPUMultisampleState>(), Is.EqualTo(sizeof(GPUMultisampleState)));
+        Assert.That(Marshal.SizeOf<GpuMultisampleState>(), Is.EqualTo(sizeof(GpuMultisampleState)));
     }
 
-    /// <summary>Validates that the <see cref = "GPUMultisampleState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuMultisampleState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUMultisampleState).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuMultisampleState).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUMultisampleState"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuMultisampleState"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GPUMultisampleState), Is.EqualTo(12));
+        Assert.That(sizeof(GpuMultisampleState), Is.EqualTo(12));
     }
 }

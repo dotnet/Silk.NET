@@ -7,7 +7,7 @@ namespace Silk.NET.SDL;
 public unsafe partial struct DisplayMode
 {
     [NativeTypeName("SDL_DisplayID")]
-    public uint DisplayID;
+    public uint DisplayId;
     public PixelFormat Format;
     public int W;
     public int H;

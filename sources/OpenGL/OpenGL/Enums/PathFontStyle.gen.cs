@@ -7,10 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PathFontStyle")]
 [Transformed]
 public enum PathFontStyle : uint
 {
+    [NativeName("GL_NONE")]
     None = unchecked((uint)0),
-    BoldBitNV = unchecked((uint)0x01),
-    ItalicBitNV = unchecked((uint)0x02),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_BOLD_BIT_NV")]
+    BoldBitnv = unchecked((uint)0x01),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_ITALIC_BIT_NV")]
+    ItalicBitnv = unchecked((uint)0x02),
 }

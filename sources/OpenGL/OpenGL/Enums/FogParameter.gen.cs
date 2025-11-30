@@ -7,14 +7,29 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("FogParameter")]
 [Transformed]
 public enum FogParameter : uint
 {
+    [NativeName("GL_FOG_INDEX")]
     Index = unchecked((uint)0x0B61),
+
+    [NativeName("GL_FOG_DENSITY")]
     Density = unchecked((uint)0x0B62),
+
+    [NativeName("GL_FOG_START")]
     Start = unchecked((uint)0x0B63),
+
+    [NativeName("GL_FOG_END")]
     End = unchecked((uint)0x0B64),
+
+    [NativeName("GL_FOG_MODE")]
     Mode = unchecked((uint)0x0B65),
+
+    [NativeName("GL_FOG_COLOR")]
     Color = unchecked((uint)0x0B66),
-    OffsetValueSGIX = unchecked((uint)0x8199),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FOG_OFFSET_VALUE_SGIX")]
+    OffsetValuesgix = unchecked((uint)0x8199),
 }

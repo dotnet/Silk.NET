@@ -96,7 +96,7 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint VendorID;
+    public uint VendorId;
 
     [NativeName("deviceID")]
     [SupportedApiProfile(
@@ -125,7 +125,7 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint DeviceID;
+    public uint DeviceId;
 
     [NativeName("deviceType")]
     [SupportedApiProfile(
@@ -212,7 +212,7 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public PhysicalDevicePropertiesPipelineCacheUUID PipelineCacheUUID;
+    public PhysicalDevicePropertiesPipelineCacheUuid PipelineCacheUuid;
 
     [NativeName("limits")]
     [SupportedApiProfile(

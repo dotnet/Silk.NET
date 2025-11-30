@@ -7,10 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "INTEL", 0)]
+[NativeName("MapTextureFormatINTEL")]
 [Transformed]
 public enum MapTextureFormatIntel : uint
 {
-    Default = unchecked((uint)0),
-    Linear = unchecked((uint)1),
-    LinearCpuCached = unchecked((uint)2),
+    [NameAffix("Suffix", "INTEL", 0)]
+    [NativeName("GL_LAYOUT_DEFAULT_INTEL")]
+    Defaultintel = unchecked((uint)0),
+
+    [NameAffix("Suffix", "INTEL", 0)]
+    [NativeName("GL_LAYOUT_LINEAR_INTEL")]
+    Linearintel = unchecked((uint)1),
+
+    [NameAffix("Suffix", "INTEL", 0)]
+    [NativeName("GL_LAYOUT_LINEAR_CPU_CACHED_INTEL")]
+    LinearCpuCachedintel = unchecked((uint)2),
 }

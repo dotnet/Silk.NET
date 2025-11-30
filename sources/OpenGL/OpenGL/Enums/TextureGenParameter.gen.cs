@@ -7,15 +7,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("TextureGenParameter")]
 [Transformed]
 public enum TextureGenParameter : uint
 {
+    [NativeName("GL_TEXTURE_GEN_MODE")]
     TextureGenMode = unchecked((uint)0x2500),
+
+    [NativeName("GL_OBJECT_PLANE")]
     ObjectPlane = unchecked((uint)0x2501),
+
+    [NativeName("GL_EYE_PLANE")]
     EyePlane = unchecked((uint)0x2502),
-    EyePointSGIS = unchecked((uint)0x81F4),
-    ObjectPointSGIS = unchecked((uint)0x81F5),
-    EyeLineSGIS = unchecked((uint)0x81F6),
-    ObjectLineSGIS = unchecked((uint)0x81F7),
-    TextureGenModeOES = unchecked((uint)0x2500),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_EYE_POINT_SGIS")]
+    EyePointsgis = unchecked((uint)0x81F4),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_OBJECT_POINT_SGIS")]
+    ObjectPointsgis = unchecked((uint)0x81F5),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_EYE_LINE_SGIS")]
+    EyeLinesgis = unchecked((uint)0x81F6),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_OBJECT_LINE_SGIS")]
+    ObjectLinesgis = unchecked((uint)0x81F7),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_TEXTURE_GEN_MODE_OES")]
+    TextureGenModeoes = unchecked((uint)0x2500),
 }

@@ -10,18 +10,50 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("IntegerPName")]
 [Transformed]
 public enum IntegerPName : uint
 {
+    [NativeName("AL_DISTANCE_MODEL")]
     DistanceModel = unchecked((uint)0xD000),
-    GainLimitSOFT = unchecked((uint)0x200E),
-    NumResamplersSOFT = unchecked((uint)0x1210),
-    DefaultResamplerSOFT = unchecked((uint)0x1211),
-    DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
-    DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
-    MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
-    MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
-    MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
-    MaxLabelLengthEXT = unchecked((uint)0x19CC),
-    ContextFlagsEXT = unchecked((uint)0x19CF),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_GAIN_LIMIT_SOFT")]
+    GainLimitsoft = unchecked((uint)0x200E),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_NUM_RESAMPLERS_SOFT")]
+    NumResamplerssoft = unchecked((uint)0x1210),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_DEFAULT_RESAMPLER_SOFT")]
+    DefaultResamplersoft = unchecked((uint)0x1211),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
+    DebugLoggedMessagesext = unchecked((uint)0x19C7),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
+    DebugNextLoggedMessageLengthext = unchecked((uint)0x19C8),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
+    MaxDebugMessageLengthext = unchecked((uint)0x19C9),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
+    MaxDebugLoggedMessagesext = unchecked((uint)0x19CA),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
+    MaxDebugGroupStackDepthext = unchecked((uint)0x19CB),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
+    MaxLabelLengthext = unchecked((uint)0x19CC),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_CONTEXT_FLAGS_EXT")]
+    ContextFlagsext = unchecked((uint)0x19CF),
 }

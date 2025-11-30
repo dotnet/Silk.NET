@@ -34,7 +34,7 @@ public partial struct SpecializationMapEntry
         ],
         MinVersion = "1.0"
     )]
-    public uint ConstantID;
+    public uint ConstantId;
 
     [NativeName("offset")]
     [SupportedApiProfile(

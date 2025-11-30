@@ -19,7 +19,7 @@ public unsafe partial struct TextInputEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 
     [NativeTypeName("const char *")]
     public sbyte* Text;

@@ -17,10 +17,10 @@ public partial struct TouchFingerEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_TouchID")]
-    public nuint TouchID;
+    public nuint TouchId;
 
     [NativeTypeName("SDL_FingerID")]
-    public nuint FingerID;
+    public nuint FingerId;
     public float X;
     public float Y;
     public float Dx;
@@ -28,5 +28,5 @@ public partial struct TouchFingerEvent
     public float Pressure;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 }

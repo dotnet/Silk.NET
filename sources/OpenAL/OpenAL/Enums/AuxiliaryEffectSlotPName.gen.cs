@@ -10,11 +10,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("AuxiliaryEffectSlotPName")]
 [Transformed]
 public enum AuxiliaryEffectSlotPName : uint
 {
+    [NativeName("AL_EFFECTSLOT_EFFECT")]
     Effect = unchecked((uint)0x0001),
+
+    [NativeName("AL_EFFECTSLOT_GAIN")]
     Gain = unchecked((uint)0x0002),
+
+    [NativeName("AL_EFFECTSLOT_AUXILIARY_SEND_AUTO")]
     AuxiliarySendAuto = unchecked((uint)0x0003),
-    TargetSOFT = unchecked((uint)0x199C),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
+    Targetsoft = unchecked((uint)0x199C),
 }

@@ -73,7 +73,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public PhysicalDeviceVulkan11PropertiesDeviceUUID DeviceUUID;
+    public PhysicalDeviceVulkan11PropertiesDeviceUuid DeviceUuid;
 
     [NativeName("driverUUID")]
     [SupportedApiProfile(
@@ -94,7 +94,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public PhysicalDeviceVulkan11PropertiesDriverUUID DriverUUID;
+    public PhysicalDeviceVulkan11PropertiesDriverUuid DriverUuid;
 
     [NativeName("deviceLUID")]
     [SupportedApiProfile(
@@ -115,7 +115,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public PhysicalDeviceVulkan11PropertiesDeviceLUID DeviceLUID;
+    public PhysicalDeviceVulkan11PropertiesDeviceLuid DeviceLuid;
 
     [NativeName("deviceNodeMask")]
     [SupportedApiProfile(
@@ -157,7 +157,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint DeviceLUIDValid;
+    public uint DeviceLuidValid;
 
     [NativeName("subgroupSize")]
     [SupportedApiProfile(

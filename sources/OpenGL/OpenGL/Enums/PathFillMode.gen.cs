@@ -7,11 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PathFillMode")]
 [Transformed]
 public enum PathFillMode : uint
 {
+    [NativeName("GL_INVERT")]
     Invert = unchecked((uint)0x150A),
-    PathFillModeNV = unchecked((uint)0x9080),
-    CountUpNV = unchecked((uint)0x9088),
-    CountDownNV = unchecked((uint)0x9089),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_PATH_FILL_MODE_NV")]
+    PathFillModenv = unchecked((uint)0x9080),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_COUNT_UP_NV")]
+    CountUpnv = unchecked((uint)0x9088),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_COUNT_DOWN_NV")]
+    CountDownnv = unchecked((uint)0x9089),
 }

@@ -7,8 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("ListParameterName")]
 [Transformed]
 public enum ListParameterName : uint
 {
-    ListPrioritySGIX = unchecked((uint)0x8182),
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_LIST_PRIORITY_SGIX")]
+    ListPrioritysgix = unchecked((uint)0x8182),
 }

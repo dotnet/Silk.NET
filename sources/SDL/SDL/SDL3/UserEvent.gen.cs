@@ -18,7 +18,7 @@ public unsafe partial struct UserEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 
     [NativeTypeName("Sint32")]
     public int Code;

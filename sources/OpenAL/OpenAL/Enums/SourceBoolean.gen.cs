@@ -10,12 +10,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("SourceBoolean")]
 [Transformed]
 public enum SourceBoolean : uint
 {
+    [NativeName("AL_SOURCE_RELATIVE")]
     SourceRelative = unchecked((uint)0x202),
+
+    [NativeName("AL_LOOPING")]
     Looping = unchecked((uint)0x1007),
+
+    [NativeName("AL_DIRECT_FILTER_GAINHF_AUTO")]
     DirectFilterGainhfAuto = unchecked((uint)0x2000A),
+
+    [NativeName("AL_AUXILIARY_SEND_FILTER_GAIN_AUTO")]
     AuxiliarySendFilterGainAuto = unchecked((uint)0x2000B),
+
+    [NativeName("AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
     AuxiliarySendFilterGainhfAuto = unchecked((uint)0x2000C),
 }

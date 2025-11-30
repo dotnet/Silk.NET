@@ -7,11 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("FramebufferTarget")]
 [Transformed]
 public enum FramebufferTarget : uint
 {
+    [NativeName("GL_READ_FRAMEBUFFER")]
     ReadFramebuffer = unchecked((uint)0x8CA8),
+
+    [NativeName("GL_DRAW_FRAMEBUFFER")]
     DrawFramebuffer = unchecked((uint)0x8CA9),
+
+    [NativeName("GL_FRAMEBUFFER")]
     Framebuffer = unchecked((uint)0x8D40),
-    FramebufferOES = unchecked((uint)0x8D40),
+
+    [NameAffix("Suffix", "OES", 0)]
+    [NativeName("GL_FRAMEBUFFER_OES")]
+    Framebufferoes = unchecked((uint)0x8D40),
 }

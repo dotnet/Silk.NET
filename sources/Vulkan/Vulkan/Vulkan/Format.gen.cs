@@ -4592,7 +4592,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC4X4UnormBlock = 157,
+    Astc4X4UnormBlock = 157,
 
     [NativeName("VK_FORMAT_ASTC_4x4_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4621,7 +4621,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC4X4SrgbBlock = 158,
+    Astc4X4SrgbBlock = 158,
 
     [NativeName("VK_FORMAT_ASTC_5x4_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4650,7 +4650,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X4UnormBlock = 159,
+    Astc5X4UnormBlock = 159,
 
     [NativeName("VK_FORMAT_ASTC_5x4_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4679,7 +4679,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X4SrgbBlock = 160,
+    Astc5X4SrgbBlock = 160,
 
     [NativeName("VK_FORMAT_ASTC_5x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4708,7 +4708,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X5UnormBlock = 161,
+    Astc5X5UnormBlock = 161,
 
     [NativeName("VK_FORMAT_ASTC_5x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4737,7 +4737,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X5SrgbBlock = 162,
+    Astc5X5SrgbBlock = 162,
 
     [NativeName("VK_FORMAT_ASTC_6x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4766,7 +4766,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X5UnormBlock = 163,
+    Astc6X5UnormBlock = 163,
 
     [NativeName("VK_FORMAT_ASTC_6x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4795,7 +4795,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X5SrgbBlock = 164,
+    Astc6X5SrgbBlock = 164,
 
     [NativeName("VK_FORMAT_ASTC_6x6_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4824,7 +4824,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X6UnormBlock = 165,
+    Astc6X6UnormBlock = 165,
 
     [NativeName("VK_FORMAT_ASTC_6x6_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4853,7 +4853,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X6SrgbBlock = 166,
+    Astc6X6SrgbBlock = 166,
 
     [NativeName("VK_FORMAT_ASTC_8x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4882,7 +4882,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X5UnormBlock = 167,
+    Astc8X5UnormBlock = 167,
 
     [NativeName("VK_FORMAT_ASTC_8x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4911,7 +4911,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X5SrgbBlock = 168,
+    Astc8X5SrgbBlock = 168,
 
     [NativeName("VK_FORMAT_ASTC_8x6_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4940,7 +4940,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X6UnormBlock = 169,
+    Astc8X6UnormBlock = 169,
 
     [NativeName("VK_FORMAT_ASTC_8x6_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4969,7 +4969,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X6SrgbBlock = 170,
+    Astc8X6SrgbBlock = 170,
 
     [NativeName("VK_FORMAT_ASTC_8x8_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4998,7 +4998,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X8UnormBlock = 171,
+    Astc8X8UnormBlock = 171,
 
     [NativeName("VK_FORMAT_ASTC_8x8_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5027,7 +5027,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X8SrgbBlock = 172,
+    Astc8X8SrgbBlock = 172,
 
     [NativeName("VK_FORMAT_ASTC_10x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5056,7 +5056,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X5UnormBlock = 173,
+    Astc10X5UnormBlock = 173,
 
     [NativeName("VK_FORMAT_ASTC_10x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5085,7 +5085,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X5SrgbBlock = 174,
+    Astc10X5SrgbBlock = 174,
 
     [NativeName("VK_FORMAT_ASTC_10x6_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5114,7 +5114,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X6UnormBlock = 175,
+    Astc10X6UnormBlock = 175,
 
     [NativeName("VK_FORMAT_ASTC_10x6_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5143,7 +5143,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X6SrgbBlock = 176,
+    Astc10X6SrgbBlock = 176,
 
     [NativeName("VK_FORMAT_ASTC_10x8_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5172,7 +5172,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X8UnormBlock = 177,
+    Astc10X8UnormBlock = 177,
 
     [NativeName("VK_FORMAT_ASTC_10x8_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5201,7 +5201,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X8SrgbBlock = 178,
+    Astc10X8SrgbBlock = 178,
 
     [NativeName("VK_FORMAT_ASTC_10x10_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5230,7 +5230,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X10UnormBlock = 179,
+    Astc10X10UnormBlock = 179,
 
     [NativeName("VK_FORMAT_ASTC_10x10_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5259,7 +5259,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X10SrgbBlock = 180,
+    Astc10X10SrgbBlock = 180,
 
     [NativeName("VK_FORMAT_ASTC_12x10_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5288,7 +5288,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X10UnormBlock = 181,
+    Astc12X10UnormBlock = 181,
 
     [NativeName("VK_FORMAT_ASTC_12x10_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5317,7 +5317,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X10SrgbBlock = 182,
+    Astc12X10SrgbBlock = 182,
 
     [NativeName("VK_FORMAT_ASTC_12x12_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5346,7 +5346,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X12UnormBlock = 183,
+    Astc12X12UnormBlock = 183,
 
     [NativeName("VK_FORMAT_ASTC_12x12_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5375,7 +5375,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X12SrgbBlock = 184,
+    Astc12X12SrgbBlock = 184,
 
     [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM")]
     [SupportedApiProfile(
@@ -6344,7 +6344,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC4X4SfloatBlock = 1000066000,
+    Astc4X4SfloatBlock = 1000066000,
 
     [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6361,7 +6361,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC5X4SfloatBlock = 1000066001,
+    Astc5X4SfloatBlock = 1000066001,
 
     [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6378,7 +6378,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC5X5SfloatBlock = 1000066002,
+    Astc5X5SfloatBlock = 1000066002,
 
     [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6395,7 +6395,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC6X5SfloatBlock = 1000066003,
+    Astc6X5SfloatBlock = 1000066003,
 
     [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6412,7 +6412,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC6X6SfloatBlock = 1000066004,
+    Astc6X6SfloatBlock = 1000066004,
 
     [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6429,7 +6429,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X5SfloatBlock = 1000066005,
+    Astc8X5SfloatBlock = 1000066005,
 
     [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6446,7 +6446,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X6SfloatBlock = 1000066006,
+    Astc8X6SfloatBlock = 1000066006,
 
     [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6463,7 +6463,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X8SfloatBlock = 1000066007,
+    Astc8X8SfloatBlock = 1000066007,
 
     [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6480,7 +6480,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X5SfloatBlock = 1000066008,
+    Astc10X5SfloatBlock = 1000066008,
 
     [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6497,7 +6497,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X6SfloatBlock = 1000066009,
+    Astc10X6SfloatBlock = 1000066009,
 
     [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6514,7 +6514,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X8SfloatBlock = 1000066010,
+    Astc10X8SfloatBlock = 1000066010,
 
     [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6531,7 +6531,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X10SfloatBlock = 1000066011,
+    Astc10X10SfloatBlock = 1000066011,
 
     [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6548,7 +6548,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC12X10SfloatBlock = 1000066012,
+    Astc12X10SfloatBlock = 1000066012,
 
     [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6565,7 +6565,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC12X12SfloatBlock = 1000066013,
+    Astc12X12SfloatBlock = 1000066013,
 
     [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16")]
     [SupportedApiProfile(
@@ -6829,7 +6829,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC4X4SfloatBlockext = ASTC4X4SfloatBlock,
+    Astc4X4SfloatBlockext = Astc4X4SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
@@ -6841,7 +6841,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X4SfloatBlockext = ASTC5X4SfloatBlock,
+    Astc5X4SfloatBlockext = Astc5X4SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
@@ -6853,7 +6853,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X5SfloatBlockext = ASTC5X5SfloatBlock,
+    Astc5X5SfloatBlockext = Astc5X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
@@ -6865,7 +6865,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X5SfloatBlockext = ASTC6X5SfloatBlock,
+    Astc6X5SfloatBlockext = Astc6X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
@@ -6877,7 +6877,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X6SfloatBlockext = ASTC6X6SfloatBlock,
+    Astc6X6SfloatBlockext = Astc6X6SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
@@ -6889,7 +6889,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X5SfloatBlockext = ASTC8X5SfloatBlock,
+    Astc8X5SfloatBlockext = Astc8X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
@@ -6901,7 +6901,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X6SfloatBlockext = ASTC8X6SfloatBlock,
+    Astc8X6SfloatBlockext = Astc8X6SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
@@ -6913,7 +6913,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X8SfloatBlockext = ASTC8X8SfloatBlock,
+    Astc8X8SfloatBlockext = Astc8X8SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
@@ -6925,7 +6925,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X5SfloatBlockext = ASTC10X5SfloatBlock,
+    Astc10X5SfloatBlockext = Astc10X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
@@ -6937,7 +6937,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X6SfloatBlockext = ASTC10X6SfloatBlock,
+    Astc10X6SfloatBlockext = Astc10X6SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
@@ -6949,7 +6949,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X8SfloatBlockext = ASTC10X8SfloatBlock,
+    Astc10X8SfloatBlockext = Astc10X8SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
@@ -6961,7 +6961,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X10SfloatBlockext = ASTC10X10SfloatBlock,
+    Astc10X10SfloatBlockext = Astc10X10SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
@@ -6973,7 +6973,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X10SfloatBlockext = ASTC12X10SfloatBlock,
+    Astc12X10SfloatBlockext = Astc12X10SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
@@ -6985,7 +6985,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X12SfloatBlockext = ASTC12X12SfloatBlock,
+    Astc12X12SfloatBlockext = Astc12X12SfloatBlock,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]

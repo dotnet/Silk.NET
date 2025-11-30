@@ -7,10 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PathFontTarget")]
 [Transformed]
 public enum PathFontTarget : uint
 {
-    StandardFontNameNV = unchecked((uint)0x9072),
-    SystemFontNameNV = unchecked((uint)0x9073),
-    FileNameNV = unchecked((uint)0x9074),
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_STANDARD_FONT_NAME_NV")]
+    StandardFontNamenv = unchecked((uint)0x9072),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_SYSTEM_FONT_NAME_NV")]
+    SystemFontNamenv = unchecked((uint)0x9073),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_FILE_NAME_NV")]
+    FileNamenv = unchecked((uint)0x9074),
 }

@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUViewport"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuViewport"/> struct.</summary>
 public static unsafe partial class SDL_GPUViewportTests
 {
-    /// <summary>Validates that the <see cref = "GPUViewport"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuViewport"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GPUViewport>(), Is.EqualTo(sizeof(GPUViewport)));
+        Assert.That(Marshal.SizeOf<GpuViewport>(), Is.EqualTo(sizeof(GpuViewport)));
     }
 
-    /// <summary>Validates that the <see cref = "GPUViewport"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuViewport"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUViewport).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuViewport).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUViewport"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuViewport"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GPUViewport), Is.EqualTo(24));
+        Assert.That(sizeof(GpuViewport), Is.EqualTo(24));
     }
 }

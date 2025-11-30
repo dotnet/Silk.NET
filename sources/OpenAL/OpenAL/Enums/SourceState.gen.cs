@@ -10,11 +10,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("SourceState")]
 [Transformed]
 public enum SourceState : uint
 {
+    [NativeName("AL_INITIAL")]
     Initial = unchecked((uint)0x1011),
+
+    [NativeName("AL_PLAYING")]
     Playing = unchecked((uint)0x1012),
+
+    [NativeName("AL_PAUSED")]
     Paused = unchecked((uint)0x1013),
+
+    [NativeName("AL_STOPPED")]
     Stopped = unchecked((uint)0x1014),
 }

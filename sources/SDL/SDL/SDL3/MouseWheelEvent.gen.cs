@@ -17,7 +17,7 @@ public partial struct MouseWheelEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 
     [NativeTypeName("SDL_MouseID")]
     public uint Which;
