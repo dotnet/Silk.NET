@@ -44,13 +44,8 @@ public static partial class NameUtils
     /// <param name="transformer">
     /// The transformer that mutates a humanised string before being converted back to pascal case.
     /// </param>
-    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(
-        this string str,
-        ICulturedStringTransformer transformer,
-        bool allowAllCaps = false
-    )
+    public static string Prettify(this string str, ICulturedStringTransformer transformer)
     {
         var ret = string.Join(
             null,
@@ -67,12 +62,13 @@ public static partial class NameUtils
         }
 
         var retSpan = ret.AsSpan();
-        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
+        if (retSpan.IndexOfAny(NotUppercase) == -1)
         {
             Span<char> caps = stackalloc char[retSpan.Length - 1];
             retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
             ret = $"{ret[0]}{caps}";
         }
+
         return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
     }
 

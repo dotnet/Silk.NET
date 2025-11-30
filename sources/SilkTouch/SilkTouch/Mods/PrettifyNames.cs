@@ -171,7 +171,7 @@ public class PrettifyNames(
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
-                    newTypeName.Prettify(nameTransformer, allowAllCaps: true), // <-- lenient about caps for type names
+                    newTypeName.Prettify(nameTransformer),
 
                     constNames
                         .Select(type => new KeyValuePair<string, string>(type.Key, type.Value.Primary.Prettify(nameTransformer)))
@@ -384,7 +384,7 @@ public class PrettifyNames(
                 return overriddenName;
             }
         }
-        return name.Prettify(nameTransformer, allowAllCaps);
+        return name.Prettify(nameTransformer);
     }
 
     private void Trim(
@@ -1204,19 +1204,19 @@ public class PrettifyNames(
         newName = name;
         return modified;
 
-        void RemoveAffixes(bool isPrefix, List<NameAffix> affixes)
+        void RemoveAffixes(bool isPrefix, List<NameAffix> nameAffixes)
         {
-            while (affixes.Count > 0)
+            while (nameAffixes.Count > 0)
             {
                 var removedAffix = false;
-                for (var i = 0; i < affixes.Count; i++)
+                for (var i = 0; i < nameAffixes.Count; i++)
                 {
-                    var affix = affixes[i];
+                    var affix = nameAffixes[i];
                     if (isPrefix ? name.StartsWith(affix.Affix) : name.EndsWith(affix.Affix))
                     {
                         name = isPrefix ? name[affix.Affix.Length..] : name[..^affix.Affix.Length];
 
-                        affixes.RemoveAt(i);
+                        nameAffixes.RemoveAt(i);
                         removedAffix = true;
                         modified = true;
                         break;
