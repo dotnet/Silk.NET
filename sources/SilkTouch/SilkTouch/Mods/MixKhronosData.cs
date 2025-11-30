@@ -154,11 +154,6 @@ public partial class MixKhronosData(
         public bool UseDataTypeTrimmings { get; init; }
 
         /// <summary>
-        /// Whether the extension vendor suffixes should be trimmed.
-        /// </summary>
-        public ExtensionVendorTrimmingMode UseExtensionVendorTrimmings { get; init; }
-
-        /// <summary>
         /// A map of native type names to group names.
         /// </summary>
         public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
@@ -214,58 +209,6 @@ public partial class MixKhronosData(
         /// See <see cref="RewriterPhase3"/>.
         /// </remarks>
         public HashSet<string> VendorSuffixIdentifierExclusions { get; init; } = [];
-    }
-
-    /// <summary>
-    /// Modes for trimming extension vendor names.
-    /// </summary>
-    [JsonConverter(typeof(ExtensionVendorTrimmingModeJsonConverter))]
-    public enum ExtensionVendorTrimmingMode
-    {
-        /// <summary>
-        /// Do not trim extension vendors from names. Note that matching vendors may still be used to determine the
-        /// offset of data type suffixes.
-        /// </summary>
-        None,
-
-        /// <summary>
-        /// Trim all extension vendor names.
-        /// </summary>
-        All,
-
-        /// <summary>
-        /// Only trim Khronos/first-party extension vendor names i.e. KHR and ARB.
-        /// </summary>
-        KhronosOnly,
-    }
-
-    private class ExtensionVendorTrimmingModeJsonConverter
-        : JsonConverter<ExtensionVendorTrimmingMode>
-    {
-        public override ExtensionVendorTrimmingMode Read(
-            ref Utf8JsonReader reader,
-            Type typeToConvert,
-            JsonSerializerOptions options
-        )
-        {
-            if (reader.TokenType == JsonTokenType.True)
-            {
-                return ExtensionVendorTrimmingMode.All;
-            }
-
-            if (reader.GetString() is { } str)
-            {
-                return Enum.Parse<ExtensionVendorTrimmingMode>(str);
-            }
-
-            return ExtensionVendorTrimmingMode.None;
-        }
-
-        public override void Write(
-            Utf8JsonWriter writer,
-            ExtensionVendorTrimmingMode value,
-            JsonSerializerOptions options
-        ) => writer.WriteStringValue(value.ToString());
     }
 
     /// <inheritdoc />
@@ -1406,20 +1349,9 @@ public partial class MixKhronosData(
                 // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
                 trimVendor =
                     !context.Names.ContainsKey(newOriginal)
-                    && (
-                        job.Configuration.UseExtensionVendorTrimmings
-                            == ExtensionVendorTrimmingMode.All
-                        || (
-                            job.Configuration.UseExtensionVendorTrimmings
-                                == ExtensionVendorTrimmingMode.KhronosOnly
-                            && vendor is "KHR" or "ARB"
-                        )
-                        || (
-                            context.Container is not null
-                            && job.Groups.TryGetValue(context.Container, out var group)
-                            && group.ExclusiveVendor == vendor
-                        )
-                    );
+                    && context.Container is not null
+                    && job.Groups.TryGetValue(context.Container, out var group)
+                    && group.ExclusiveVendor == vendor;
                 if (trimVendor)
                 {
                     newPrev ??= previous ?? [];
