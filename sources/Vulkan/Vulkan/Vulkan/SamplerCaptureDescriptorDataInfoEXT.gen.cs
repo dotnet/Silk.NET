@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkSamplerCaptureDescriptorDataInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerCaptureDescriptorDataInfoEXT
@@ -50,5 +50,5 @@ public unsafe partial struct SamplerCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public Sampler Sampler;
+    public SamplerHandle Sampler;
 }

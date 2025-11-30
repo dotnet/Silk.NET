@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkPhysicalDeviceSampleLocationsPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
@@ -66,7 +66,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceSampleLocationsPropertiesEXTSampleLocationCoordinateRange SampleLocationCoordinateRange;
+    public PhysicalDeviceSampleLocationsPropertiesExtSampleLocationCoordinateRange SampleLocationCoordinateRange;
 
     [NativeName("sampleLocationSubPixelBits")]
     [SupportedApiProfile(

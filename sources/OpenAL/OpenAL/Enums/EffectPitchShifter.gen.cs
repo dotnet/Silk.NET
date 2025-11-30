@@ -10,9 +10,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("EffectPitchShifter")]
 [Transformed]
 public enum EffectPitchShifter : uint
 {
+    [NativeName("AL_PITCH_SHIFTER_COARSE_TUNE")]
     CoarseTune = unchecked((uint)0x0001),
+
+    [NativeName("AL_PITCH_SHIFTER_FINE_TUNE")]
     FineTune = unchecked((uint)0x0002),
 }

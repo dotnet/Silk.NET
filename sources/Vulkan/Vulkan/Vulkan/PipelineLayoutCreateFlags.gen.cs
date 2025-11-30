@@ -14,7 +14,7 @@ public enum PipelineLayoutCreateFlags : uint
 {
     None = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

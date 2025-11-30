@@ -7,11 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("FogMode")]
 [Transformed]
 public enum FogMode : uint
 {
-    Linear = unchecked((uint)0x2601),
+    [NativeName("GL_EXP")]
     Exp = unchecked((uint)0x0800),
+
+    [NativeName("GL_EXP2")]
     Exp2 = unchecked((uint)0x0801),
+
+    [NativeName("GL_LINEAR")]
+    Linear = unchecked((uint)0x2601),
+
+    [NameAffix("Suffix", "SGIS", 0)]
+    [NativeName("GL_FOG_FUNC_SGIS")]
     FogFuncSGIS = unchecked((uint)0x812A),
 }

@@ -6,12 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPipelineExecutableStatisticFormatKHR")]
 [SupportedApiProfile("vulkan")]
 public enum PipelineExecutableStatisticFormatKHR : uint
 {
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
     )]
     Bool32KHR = 0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_INT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35,7 +35,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
     )]
     Int64KHR = 1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_UINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47,7 +47,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
     )]
     Uint64KHR = 2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR")]
     [SupportedApiProfile(
         "vulkan",

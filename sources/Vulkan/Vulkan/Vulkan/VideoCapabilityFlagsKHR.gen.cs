@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoCapabilityFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum VideoCapabilityFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CAPABILITY_PROTECTED_CONTENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum VideoCapabilityFlagsKHR : uint
     )]
     ProtectedContentBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CAPABILITY_SEPARATE_REFERENCE_IMAGES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

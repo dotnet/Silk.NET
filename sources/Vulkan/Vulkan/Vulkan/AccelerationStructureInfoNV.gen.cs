@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkAccelerationStructureInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureInfoNV

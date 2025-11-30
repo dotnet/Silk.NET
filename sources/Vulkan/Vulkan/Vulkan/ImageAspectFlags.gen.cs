@@ -221,7 +221,7 @@ public enum ImageAspectFlags : uint
     )]
     None = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_0_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -234,7 +234,7 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane0BitEXT = 0x80,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_1_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -247,7 +247,7 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane1BitEXT = 0x100,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_2_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -260,7 +260,7 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane2BitEXT = 0x200,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_3_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -273,7 +273,7 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane3BitEXT = 0x400,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_PLANE_0_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -285,7 +285,7 @@ public enum ImageAspectFlags : uint
     )]
     Plane0BitKHR = Plane0Bit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -297,7 +297,7 @@ public enum ImageAspectFlags : uint
     )]
     Plane1BitKHR = Plane1Bit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -309,7 +309,7 @@ public enum ImageAspectFlags : uint
     )]
     Plane2BitKHR = Plane2Bit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_ASPECT_NONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     NoneKHR = None,

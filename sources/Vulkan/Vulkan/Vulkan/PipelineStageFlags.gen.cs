@@ -523,7 +523,7 @@ public enum PipelineStageFlags : uint
     )]
     None = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_TRANSFORM_FEEDBACK_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -535,7 +535,7 @@ public enum PipelineStageFlags : uint
     )]
     TransformFeedbackBitEXT = 0x1000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_CONDITIONAL_RENDERING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -547,7 +547,7 @@ public enum PipelineStageFlags : uint
     )]
     ConditionalRenderingBitEXT = 0x40000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_ACCELERATION_STRUCTURE_BUILD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -559,7 +559,7 @@ public enum PipelineStageFlags : uint
     )]
     AccelerationStructureBuildBitKHR = 0x2000000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -571,7 +571,7 @@ public enum PipelineStageFlags : uint
     )]
     RayTracingShaderBitKHR = 0x200000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_FRAGMENT_DENSITY_PROCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -583,7 +583,7 @@ public enum PipelineStageFlags : uint
     )]
     FragmentDensityProcessBitEXT = 0x800000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -596,7 +596,7 @@ public enum PipelineStageFlags : uint
     )]
     FragmentShadingRateAttachmentBitKHR = 0x400000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_TASK_SHADER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -605,7 +605,7 @@ public enum PipelineStageFlags : uint
     )]
     TaskShaderBitEXT = 0x80000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_MESH_SHADER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -614,7 +614,7 @@ public enum PipelineStageFlags : uint
     )]
     MeshShaderBitEXT = 0x100000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_COMMAND_PREPROCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -627,7 +627,7 @@ public enum PipelineStageFlags : uint
     )]
     CommandPreprocessBitEXT = 0x20000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_SHADING_RATE_IMAGE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -639,7 +639,7 @@ public enum PipelineStageFlags : uint
     )]
     ShadingRateImageBitNV = FragmentShadingRateAttachmentBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -651,7 +651,7 @@ public enum PipelineStageFlags : uint
     )]
     RayTracingShaderBitNV = RayTracingShaderBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_ACCELERATION_STRUCTURE_BUILD_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -663,7 +663,7 @@ public enum PipelineStageFlags : uint
     )]
     AccelerationStructureBuildBitNV = AccelerationStructureBuildBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_TASK_SHADER_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -675,7 +675,7 @@ public enum PipelineStageFlags : uint
     )]
     TaskShaderBitNV = TaskShaderBitEXT,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_MESH_SHADER_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -687,7 +687,7 @@ public enum PipelineStageFlags : uint
     )]
     MeshShaderBitNV = MeshShaderBitEXT,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_COMMAND_PREPROCESS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -696,7 +696,7 @@ public enum PipelineStageFlags : uint
     )]
     CommandPreprocessBitNV = CommandPreprocessBitEXT,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",

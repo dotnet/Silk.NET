@@ -262,7 +262,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRTEFloat16;
+    public uint ShaderRoundingModeRteFloat16;
 
     [NativeName("shaderRoundingModeRTEFloat32")]
     [SupportedApiProfile(
@@ -280,7 +280,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRTEFloat32;
+    public uint ShaderRoundingModeRteFloat32;
 
     [NativeName("shaderRoundingModeRTEFloat64")]
     [SupportedApiProfile(
@@ -298,7 +298,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRTEFloat64;
+    public uint ShaderRoundingModeRteFloat64;
 
     [NativeName("shaderRoundingModeRTZFloat16")]
     [SupportedApiProfile(
@@ -316,7 +316,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRTZFloat16;
+    public uint ShaderRoundingModeRtzFloat16;
 
     [NativeName("shaderRoundingModeRTZFloat32")]
     [SupportedApiProfile(
@@ -334,7 +334,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRTZFloat32;
+    public uint ShaderRoundingModeRtzFloat32;
 
     [NativeName("shaderRoundingModeRTZFloat64")]
     [SupportedApiProfile(
@@ -352,5 +352,5 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRTZFloat64;
+    public uint ShaderRoundingModeRtzFloat64;
 }

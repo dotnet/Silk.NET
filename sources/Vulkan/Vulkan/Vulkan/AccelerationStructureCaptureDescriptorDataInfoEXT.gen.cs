@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkAccelerationStructureCaptureDescriptorDataInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
@@ -54,9 +54,9 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHR AccelerationStructure;
+    public AccelerationStructureHandleKHR AccelerationStructure;
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("accelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -71,5 +71,5 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public AccelerationStructureNV AccelerationStructureNV;
+    public AccelerationStructureHandleNV AccelerationStructureNV;
 }

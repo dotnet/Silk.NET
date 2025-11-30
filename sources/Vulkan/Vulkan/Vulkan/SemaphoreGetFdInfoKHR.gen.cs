@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkSemaphoreGetFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SemaphoreGetFdInfoKHR
@@ -44,7 +44,7 @@ public unsafe partial struct SemaphoreGetFdInfoKHR
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public Semaphore Semaphore;
+    public SemaphoreHandle Semaphore;
 
     [NativeName("handleType")]
     [SupportedApiProfile(

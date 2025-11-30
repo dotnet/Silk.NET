@@ -5,7 +5,6 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -38,9 +37,6 @@ public partial class MixKhronosData(
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
     internal ConcurrentDictionary<string, JobData> Jobs = new();
-    private static readonly ICulturedStringTransformer _transformer = new NameUtils.NameTransformer(
-        4
-    );
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
     private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
@@ -158,11 +154,6 @@ public partial class MixKhronosData(
         public bool UseDataTypeTrimmings { get; init; }
 
         /// <summary>
-        /// Whether the extension vendor suffixes should be trimmed.
-        /// </summary>
-        public ExtensionVendorTrimmingMode UseExtensionVendorTrimmings { get; init; }
-
-        /// <summary>
         /// A map of native type names to group names.
         /// </summary>
         public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
@@ -210,58 +201,14 @@ public partial class MixKhronosData(
         /// The priority with which vendor suffixes are applied.
         /// </summary>
         public int VendorSuffixPriority { get; init; } = 0;
-    }
-
-    /// <summary>
-    /// Modes for trimming extension vendor names.
-    /// </summary>
-    [JsonConverter(typeof(ExtensionVendorTrimmingModeJsonConverter))]
-    public enum ExtensionVendorTrimmingMode
-    {
-        /// <summary>
-        /// Do not trim extension vendors from names. Note that matching vendors may still be used to determine the
-        /// offset of data type suffixes.
-        /// </summary>
-        None,
 
         /// <summary>
-        /// Trim all extension vendor names.
+        /// The set of identifiers that should be excluded from vendor suffix identification.
         /// </summary>
-        All,
-
-        /// <summary>
-        /// Only trim Khronos/first-party extension vendor names i.e. KHR and ARB.
-        /// </summary>
-        KhronosOnly,
-    }
-
-    private class ExtensionVendorTrimmingModeJsonConverter
-        : JsonConverter<ExtensionVendorTrimmingMode>
-    {
-        public override ExtensionVendorTrimmingMode Read(
-            ref Utf8JsonReader reader,
-            Type typeToConvert,
-            JsonSerializerOptions options
-        )
-        {
-            if (reader.TokenType == JsonTokenType.True)
-            {
-                return ExtensionVendorTrimmingMode.All;
-            }
-
-            if (reader.GetString() is { } str)
-            {
-                return Enum.Parse<ExtensionVendorTrimmingMode>(str);
-            }
-
-            return ExtensionVendorTrimmingMode.None;
-        }
-
-        public override void Write(
-            Utf8JsonWriter writer,
-            ExtensionVendorTrimmingMode value,
-            JsonSerializerOptions options
-        ) => writer.WriteStringValue(value.ToString());
+        /// <remarks>
+        /// See <see cref="RewriterPhase3"/>.
+        /// </remarks>
+        public HashSet<string> VendorSuffixIdentifierExclusions { get; init; } = [];
     }
 
     /// <inheritdoc />
@@ -426,13 +373,6 @@ public partial class MixKhronosData(
         // Rewrite phase 3
         if (jobData.Vendors != null)
         {
-            var compilation = await proj.GetCompilationAsync(ct);
-            if (compilation == null)
-            {
-                throw new Exception("Failed to get compilation");
-            }
-
-            var symbolsToRename = new List<(ISymbol Symbol, string NewName)>();
             foreach (var docId in proj.DocumentIds)
             {
                 var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -442,28 +382,12 @@ public partial class MixKhronosData(
                     continue;
                 }
 
-                var semanticModel = compilation.GetSemanticModel(syntaxTree);
-
-                var rewriter3 = new RewriterPhase3(symbolsToRename, jobData.Vendors, currentConfig.VendorSuffixPriority, semanticModel);
+                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixIdentifierExclusions, currentConfig.VendorSuffixPriority);
                 proj = doc.WithSyntaxRoot(
                     rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null.")
                 ).Project;
             }
-
-            // Revive symbols
-            compilation = await proj.GetCompilationAsync(ct);
-            if (compilation == null)
-            {
-                throw new Exception("Failed to get compilation");
-            }
-            symbolsToRename = symbolsToRename.Select(x => (compilation.GetNewSymbol(x.Symbol), x.NewName)).ToList();
-
-            // TODO: This approach doesn't really work
-            // // Remove identified extension suffixes from type names
-            // ctx.SourceProject = proj;
-            // await NameUtils.RenameAllAsync(ctx, symbolsToRename, logger, ct);
-            // proj = ctx.SourceProject!;
         }
 
         // Rename documents to account for FlagBits/Flags differences
@@ -1270,7 +1194,7 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public void Trim(NameTrimmerContext context)
     {
-        if (context.Names is null || context.JobKey is null)
+        if (context.JobKey is null)
         {
             return;
         }
@@ -1312,7 +1236,7 @@ public partial class MixKhronosData(
 
         if (rewind)
         {
-            foreach (var (original, (current, previous)) in context.Names)
+            foreach (var (original, (_, previous)) in context.Names)
             {
                 var prev = previous?.FirstOrDefault() ?? original;
                 var prevList = previous ?? [];
@@ -1327,23 +1251,6 @@ public partial class MixKhronosData(
                 }
 
                 context.Names[original] = new CandidateNames(prev[(prev.IndexOf('_') + 1)..], prevList);
-            }
-        }
-
-        // Trim _T from the end of names
-        // This is targeted towards Vulkan handle type names, which end in _T
-        if (context.Container is null)
-        {
-            foreach (var (original, (current, previous)) in context.Names)
-            {
-                if (current.EndsWith("_T"))
-                {
-                    var newPrim = current[..^2];
-                    var newPrev = previous ?? [];
-                    newPrev.Add(current);
-
-                    context.Names[original] = new CandidateNames(newPrim, newPrev);
-                }
             }
         }
 
@@ -1442,20 +1349,9 @@ public partial class MixKhronosData(
                 // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
                 trimVendor =
                     !context.Names.ContainsKey(newOriginal)
-                    && (
-                        job.Configuration.UseExtensionVendorTrimmings
-                            == ExtensionVendorTrimmingMode.All
-                        || (
-                            job.Configuration.UseExtensionVendorTrimmings
-                                == ExtensionVendorTrimmingMode.KhronosOnly
-                            && vendor is "KHR" or "ARB"
-                        )
-                        || (
-                            context.Container is not null
-                            && job.Groups.TryGetValue(context.Container, out var group)
-                            && group.ExclusiveVendor == vendor
-                        )
-                    );
+                    && context.Container is not null
+                    && job.Groups.TryGetValue(context.Container, out var group)
+                    && group.ExclusiveVendor == vendor;
                 if (trimVendor)
                 {
                     newPrev ??= previous ?? [];
@@ -1467,6 +1363,7 @@ public partial class MixKhronosData(
                 break;
             }
 
+            // TODO: Consider removing. Diff results for all Khronos APIs before removing.
             // Below is a hack to ensure extension vendors are capitalised for enums (which are all caps and therefore
             // will not be treated as an acronym)
             if (
@@ -1475,7 +1372,7 @@ public partial class MixKhronosData(
             )
             {
                 newPrev ??= previous ?? [];
-                var pretty = newCurrent.Prettify(_transformer);
+                var pretty = newCurrent.Prettify();
 
                 // Hack to ensure extension vendors are preserved as acronyms
                 if (char.IsUpper(pretty[^1]))
@@ -1498,6 +1395,7 @@ public partial class MixKhronosData(
                 }
             }
 
+            // TODO: Consider removing. Diff results for all Khronos APIs before removing.
             // Another hack to make sure that extension vendors are preserved as acronyms e.g. glTexImage4DSGIS was
             // becoming glTexImage4Dsgis instead of glTexImage4DSGIS
             if (
@@ -1638,7 +1536,7 @@ public partial class MixKhronosData(
             // Are the parameters transformable?
             for (var i = 0; i < @params.Count; i++)
             {
-                var param = current.ParameterList!.Parameters[i];
+                var param = current.ParameterList.Parameters[i];
                 if (
                     param.Type is null
                     || GetTypeTransformation(
@@ -2023,7 +1921,7 @@ public partial class MixKhronosData(
 
             AllKnownEnums.Add(identifier);
 
-            if (job.Groups.TryGetValue(identifier, out var group)
+            if (job.Groups.TryGetValue(identifier, out _)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any())
             {
                 AlreadyPresentGroups.Add(identifier);
@@ -2090,7 +1988,7 @@ public partial class MixKhronosData(
     /// </summary>
     private class RewriterPhase2(JobData job, RewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
     {
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
+        public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -2199,30 +2097,31 @@ public partial class MixKhronosData(
     /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
     /// </summary>
     /// <remarks>
-    /// Yes, this is a 3rd rewriter. This one requires a fresh semantic model though.
+    /// Yes, this is a 3rd rewriter.
     /// </remarks>
-    private class RewriterPhase3(List<(ISymbol Symbol, string NewName)> toRename, HashSet<string> vendors, int vendorSuffixPriority, SemanticModel semanticModel) : CSharpSyntaxRewriter
+    private class RewriterPhase3(HashSet<string> vendors, HashSet<string> excludedIdentifiers, int vendorSuffixPriority) : CSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(ISymbol? symbol, SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
-            if (symbol == null)
-            {
-                return attributeLists;
-            }
-
             var name = identifier.Text;
             var handleSuffix = "_T";
             if (name.EndsWith(handleSuffix))
             {
                 name = name[..^handleSuffix.Length];
-                attributeLists = attributeLists.AddNameSuffix(handleSuffix, -1);
+                attributeLists = attributeLists
+                    .AddNameSuffix(handleSuffix, -1)
+                    .WithNativeName(name);
+            }
+
+            if (excludedIdentifiers.Contains(name))
+            {
+                return attributeLists;
             }
 
             foreach (var vendor in vendors)
             {
                 if (name.EndsWith(vendor))
                 {
-                    toRename.Add((symbol, $"{name[..^vendor.Length]}_"));
                     attributeLists = attributeLists.AddNameSuffix(vendor, vendorSuffixPriority);
 
                     break;
@@ -2234,36 +2133,27 @@ public partial class MixKhronosData(
 
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
             node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
         }
 
         public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             var variable = node.Declaration.Variables.First();
-            var symbol = semanticModel.GetDeclaredSymbol(variable);
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, variable.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier));
         }
 
-        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-        {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
-        }
+        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
 
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
             node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
         }
 
-        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            var symbol = semanticModel.GetDeclaredSymbol(node);
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(symbol, node.AttributeLists, node.Identifier));
-        }
+        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]

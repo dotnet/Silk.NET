@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkWriteDescriptorSetAccelerationStructureKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
@@ -54,5 +54,5 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHR* PAccelerationStructures;
+    public AccelerationStructureHandleKHR* PAccelerationStructures;
 }

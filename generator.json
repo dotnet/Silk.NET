@@ -151,7 +151,6 @@
         ]
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
           "SyncObjectMask": "GL_SYNC"
@@ -197,8 +196,8 @@
         "UseDataTypeTrimmings": true,
         "SpecPath": "eng/submodules/openal-soft/registry/xml/al.xml",
         "EnumNativeTypeNames": {
-          "ALenum": "ALEnum",
-          "ALCenum": "ALCEnum"
+          "ALenum": "AlEnum",
+          "ALCenum": "AlcEnum"
         },
         "Namespace": "Silk.NET.OpenAL",
         "NonStandardExtensionNomenclature": true,
@@ -233,7 +232,6 @@
         ]
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["alc", "al"],
         "NameOverrides": {
           "ALContext": "ALContext",
@@ -252,10 +250,10 @@
           "ALDEBUGPROCEXTDelegate": "DebugProcDelegateEXT",
           "LPALFOLDBACKCALLBACK": "FoldbackCallback",
           "LPALFOLDBACKCALLBACKDelegate": "FoldbackCallbackDelegate",
-          "EAXSetDirect": "EAXSetDirect",
-          "EAXGetDirect": "EAXGetDirect",
-          "EAXGetBufferModeDirect": "EAXGetBufferModeDirect",
-          "EAXSetBufferModeDirect": "EAXSetBufferModeDirect"
+          "EAXSetDirect": "EaxSetDirect",
+          "EAXGetDirect": "EaxGetDirect",
+          "EAXGetBufferModeDirect": "EaxGetBufferModeDirect",
+          "EAXSetBufferModeDirect": "EaxSetBufferModeDirect"
         }
       },
       "TransformFunctions": {
@@ -279,8 +277,8 @@
         "ClangScraper",
         "MarkNativeNames",
         "ExtractNestedTyping",
-        "MixKhronosData",
         "TransformHandles",
+        "MixKhronosData",
         "AddApiProfiles",
         "InterceptNativeFunctions",
         "TransformFunctions",
@@ -311,6 +309,11 @@
         "FlagsTypes": [
           "VkFlags",
           "VkFlags64"
+        ],
+        "VendorSuffixIdentifierExclusions": [
+          "VK_VENDOR_ID_VIV",
+          "VK_VENDOR_ID_VSI",
+          "VK_VENDOR_ID_MESA"
         ]
       },
       "InterceptNativeFunctions": {
@@ -326,13 +329,14 @@
       },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true
+        "UseDSL": true,
+        "HandleSuffixPriority": 1
       },
       "PrettifyNames": {
-        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["PFN_vk","vk"],
         "PrefixOverrides": {
-          "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2"
+          "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
+          "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
         }
       },
       "TransformEnums": {

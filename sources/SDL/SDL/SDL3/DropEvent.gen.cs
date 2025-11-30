@@ -19,7 +19,7 @@ public unsafe partial struct DropEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
     public float X;
     public float Y;
 

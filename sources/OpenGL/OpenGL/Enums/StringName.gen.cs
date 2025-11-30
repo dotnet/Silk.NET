@@ -7,12 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("StringName")]
 [Transformed]
 public enum StringName : uint
 {
+    [NativeName("GL_VENDOR")]
     Vendor = unchecked((uint)0x1F00),
+
+    [NativeName("GL_RENDERER")]
     Renderer = unchecked((uint)0x1F01),
+
+    [NativeName("GL_VERSION")]
     Version = unchecked((uint)0x1F02),
+
+    [NativeName("GL_EXTENSIONS")]
     Extensions = unchecked((uint)0x1F03),
+
+    [NativeName("GL_SHADING_LANGUAGE_VERSION")]
     ShadingLanguageVersion = unchecked((uint)0x8B8C),
 }

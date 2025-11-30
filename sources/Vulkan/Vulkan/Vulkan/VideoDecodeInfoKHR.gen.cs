@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoDecodeInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeInfoKHR
@@ -55,7 +55,7 @@ public unsafe partial struct VideoDecodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public Buffer SrcBuffer;
+    public BufferHandle SrcBuffer;
 
     [NativeName("srcBufferOffset")]
     [SupportedApiProfile(

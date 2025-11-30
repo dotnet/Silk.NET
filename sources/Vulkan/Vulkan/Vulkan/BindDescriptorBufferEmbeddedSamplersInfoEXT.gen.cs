@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkBindDescriptorBufferEmbeddedSamplersInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
@@ -47,7 +47,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public PipelineLayout Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeName("set")]
     [SupportedApiProfile(

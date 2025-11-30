@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPhysicalDeviceSurfaceInfo2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
@@ -34,5 +34,5 @@ public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
         ["VK_KHR_get_surface_capabilities2"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public SurfaceKHR Surface;
+    public SurfaceHandleKHR Surface;
 }

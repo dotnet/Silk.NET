@@ -10,11 +10,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("FilterType")]
 [Transformed]
 public enum FilterType : uint
 {
+    [NativeName("AL_FILTER_NULL")]
     Null = unchecked((uint)0x0000),
+
+    [NativeName("AL_FILTER_LOWPASS")]
     Lowpass = unchecked((uint)0x0001),
+
+    [NativeName("AL_FILTER_HIGHPASS")]
     Highpass = unchecked((uint)0x0002),
+
+    [NativeName("AL_FILTER_BANDPASS")]
     Bandpass = unchecked((uint)0x0003),
 }

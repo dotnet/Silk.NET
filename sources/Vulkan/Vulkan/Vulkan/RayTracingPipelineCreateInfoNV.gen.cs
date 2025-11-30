@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkRayTracingPipelineCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingPipelineCreateInfoNV
@@ -110,7 +110,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public PipelineLayout Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeName("basePipelineHandle")]
     [SupportedApiProfile(
@@ -121,7 +121,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public Pipeline BasePipelineHandle;
+    public PipelineHandle BasePipelineHandle;
 
     [NativeName("basePipelineIndex")]
     [SupportedApiProfile(

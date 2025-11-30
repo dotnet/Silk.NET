@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
 {
@@ -40,7 +40,7 @@ public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
     ) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public DebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackEXTDelegate proc) =>
+    public DebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackExtDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

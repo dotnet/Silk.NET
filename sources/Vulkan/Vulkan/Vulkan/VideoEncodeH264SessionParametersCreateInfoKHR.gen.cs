@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeH264SessionParametersCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264SessionParametersCreateInfoKHR
@@ -35,7 +35,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint MaxStdSPSCount;
+    public uint MaxStdSpsCount;
 
     [NativeName("maxStdPPSCount")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint MaxStdPPSCount;
+    public uint MaxStdPpsCount;
 
     [NativeName("pParametersAddInfo")]
     [SupportedApiProfile(

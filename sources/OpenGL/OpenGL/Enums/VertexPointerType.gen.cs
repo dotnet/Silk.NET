@@ -7,11 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("VertexPointerType")]
 [Transformed]
 public enum VertexPointerType : uint
 {
+    [NativeName("GL_SHORT")]
     Short = unchecked((uint)0x1402),
-    Int = unchecked((uint)0x1404),
+
+    [NativeName("GL_FLOAT")]
     Float = unchecked((uint)0x1406),
+
+    [NativeName("GL_INT")]
+    Int = unchecked((uint)0x1404),
+
+    [NativeName("GL_DOUBLE")]
     Double = unchecked((uint)0x140A),
 }

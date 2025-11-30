@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPipelineFragmentShadingRateStateCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
@@ -59,5 +59,5 @@ public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public PipelineFragmentShadingRateStateCreateInfoKHRCombinerOps CombinerOps;
+    public PipelineFragmentShadingRateStateCreateInfoKhrCombinerOps CombinerOps;
 }

@@ -7,7 +7,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.SDL3;
 
-internal partial class SdlSurfaceComponents : ISurfaceOpenGL
+internal partial class SdlSurfaceComponents : ISurfaceOpenGl
 {
     void IDisposable.Dispose() { }
 
@@ -15,44 +15,44 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
     {
         if (ContextHandle != nullptr)
         {
-            return Sdl.GLGetProcAddress(functionName);
+            return Sdl.GlGetProcAddress(functionName);
         }
 
-        ThrowGLPrematureAccessException();
+        ThrowGlPrematureAccessException();
         return null;
     }
 
-    private GLContextStateHandle ContextHandle { get; set; }
+    private GlContextStateHandle ContextHandle { get; set; }
 
     public bool IsCurrent
     {
-        get => ContextHandle != nullptr && Sdl.GLGetCurrentContext() == ContextHandle;
+        get => ContextHandle != nullptr && Sdl.GlGetCurrentContext() == ContextHandle;
         set
         {
             if (ContextHandle == nullptr)
             {
-                ThrowGLPrematureAccessException();
+                ThrowGlPrematureAccessException();
                 return;
             }
 
-            if (!Sdl.GLMakeCurrent(Handle, value ? ContextHandle : nullptr))
+            if (!Sdl.GlMakeCurrent(Handle, value ? ContextHandle : nullptr))
             {
                 Sdl.ThrowError();
             }
         }
     }
 
-    private void ThrowGLPrematureAccessException()
+    private void ThrowGlPrematureAccessException()
     {
         if (IsSurfaceInitialized)
         {
             throw new InvalidOperationException(
-                "The OpenGL context cannot be accessed as it was not enabled during "
+                "The OpenGl context cannot be accessed as it was not enabled during "
                     + "ISurfaceApplication.Initialize<TSurface>(TSurface)."
             );
         }
         throw new InvalidOperationException(
-            "The OpenGL context cannot be accessed until ISurfaceApplication.Initialize<TSurface>(TSurface) "
+            "The OpenGl context cannot be accessed until ISurfaceApplication.Initialize<TSurface>(TSurface) "
                 + "has finished executing, consider using the Surface.Created callback instead."
         );
     }
@@ -67,7 +67,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             }
 
             var ret = 0;
-            if (!Sdl.GLGetSwapInterval(ret.AsRef()))
+            if (!Sdl.GlGetSwapInterval(ret.AsRef()))
             {
                 Sdl.ThrowError();
             }
@@ -83,7 +83,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
                 return;
             }
 
-            if (!Sdl.GLSetSwapInterval(value))
+            if (!Sdl.GlSetSwapInterval(value))
             {
                 Sdl.ThrowError();
             }
@@ -93,7 +93,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
 
     public void SwapBuffers()
     {
-        if (!Sdl.GLSwapWindow(Handle))
+        if (!Sdl.GlSwapWindow(Handle))
         {
             Sdl.ThrowError();
         }
@@ -154,7 +154,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         }
     }
 
-    public OpenGLContextFlags Flags
+    public OpenGlContextFlags Flags
     {
         get;
         set
@@ -165,7 +165,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         }
     }
 
-    public OpenGLContextProfile Profile
+    public OpenGlContextProfile Profile
     {
         get;
         set
@@ -179,7 +179,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
 
     public bool ShouldSwapAutomatically { get; set; } = true;
 
-    public IGLContext? SharedContext
+    public IGlContext? SharedContext
     {
         get;
         set
@@ -192,32 +192,32 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
 
     private void SetEnabled()
     {
-        if (Profile == OpenGLContextProfile.None)
+        if (Profile == OpenGlContextProfile.None)
         {
-            Profile = OpenGLContextProfile.Default;
+            Profile = OpenGlContextProfile.Default;
         }
     }
 
     private bool TryCreateContext(bool isInitializing)
     {
         var profile = Profile;
-        if (profile is OpenGLContextProfile.None)
+        if (profile is OpenGlContextProfile.None)
         {
             return true;
         }
 
         // If isInitializing == false, we should restore the thread to the state we found it in.
-        var current = Sdl.GLGetCurrentContext();
+        var current = Sdl.GlGetCurrentContext();
         WindowHandle currentWindow = nullptr;
         if (current != nullptr)
         {
-            currentWindow = Sdl.GLGetCurrentWindow();
+            currentWindow = Sdl.GlGetCurrentWindow();
         }
 
         if (Handle == nullptr && isInitializing)
         {
             throw new InvalidOperationException(
-                "Attempted to initialize OpenGL context before window initialization - this should not be possible "
+                "Attempted to initialize OpenGl context before window initialization - this should not be possible "
                     + "with normal usage. Please report this at https://github.com/dotnet/Silk.NET"
             );
         }
@@ -229,14 +229,14 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             && GetDummyWindow(Sdl.WindowOpengl, nFlags: Sdl.WindowVulkan) == nullptr
         )
         {
-            // Guess OpenGL isn't supported after all...
+            // Guess OpenGl isn't supported after all...
             ClearErrorIf(!isInitializing);
             return false;
         }
 
         // Get the shared context we need to make current before creating the context
-        (GLContextStateHandle Context, WindowHandle Window)? sharedContext = (
-            (ISurfaceOpenGL)this
+        (GlContextStateHandle Context, WindowHandle Window)? sharedContext = (
+            (ISurfaceOpenGl)this
         ).SharedContext switch
         {
             SdlContext sdlCtx => (sdlCtx.Context, sdlCtx.Window),
@@ -251,7 +251,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             if (isInitializing)
             {
                 throw new NotSupportedException(
-                    "On this platform, SharedContext must be either a Silk.NET.SDL.SdlContext an OpenGL component "
+                    "On this platform, SharedContext must be either a Silk.NET.SDL.SdlContext an OpenGl component "
                         + "retrieved from a surface created using ISurfaceApplication.Run<T>() or "
                         + "IDetachedSurfaceLifecycle.TryCreate<T>(out IDetachedSurfaceLifecycle?)."
                 );
@@ -264,10 +264,10 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         var expectedCurrent = sharedContext?.Context ?? nullptr;
         if (current != expectedCurrent || currentWindow != expectedCurrentWindow)
         {
-            Sdl.GLMakeCurrent(sharedContext?.Window ?? Handle, sharedContext?.Context ?? nullptr);
+            Sdl.GlMakeCurrent(sharedContext?.Window ?? Handle, sharedContext?.Context ?? nullptr);
         }
 
-        if (sharedContext is not null && !Sdl.GLSetAttribute(GLAttr.ShareWithCurrentContext, 1))
+        if (sharedContext is not null && !Sdl.GlSetAttribute(GlAttr.ShareWithCurrentContext, 1))
         {
             ClearErrorIf(!isInitializing);
             return false;
@@ -275,16 +275,16 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
 
         // Set the context profile.
         if (
-            profile is not OpenGLContextProfile.Default
-            && !Sdl.GLSetAttribute(
-                GLAttr.ContextProfileMask,
+            profile is not OpenGlContextProfile.Default
+            && !Sdl.GlSetAttribute(
+                GlAttr.ContextProfileMask,
                 profile switch
                 {
-                    OpenGLContextProfile.Core => Sdl.GlContextProfileCore,
-                    OpenGLContextProfile.Compatibility => Sdl.GlContextProfileCompatibility,
-                    OpenGLContextProfile.ES2 => Sdl.GlContextProfileEs,
+                    OpenGlContextProfile.Core => Sdl.GlContextProfileCore,
+                    OpenGlContextProfile.Compatibility => Sdl.GlContextProfileCompatibility,
+                    OpenGlContextProfile.ES2 => Sdl.GlContextProfileEs,
                     _ => throw new InvalidOperationException(
-                        "OpenGLContextProfile is not a legal value."
+                        "OpenGlContextProfile is not a legal value."
                     ),
                 }
             )
@@ -297,12 +297,12 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         // Set the context flags.
         var flags = Flags;
         if (
-            flags is not OpenGLContextFlags.Default
-            && !Sdl.GLSetAttribute(
-                GLAttr.ContextProfileMask,
-                ((flags & OpenGLContextFlags.Debug) != 0 ? Sdl.GlContextDebugFlag : 0)
+            flags is not OpenGlContextFlags.Default
+            && !Sdl.GlSetAttribute(
+                GlAttr.ContextProfileMask,
+                ((flags & OpenGlContextFlags.Debug) != 0 ? Sdl.GlContextDebugFlag : 0)
                     | (
-                        (flags & OpenGLContextFlags.ForwardCompatible) != 0
+                        (flags & OpenGlContextFlags.ForwardCompatible) != 0
                             ? Sdl.GlContextForwardCompatibleFlag
                             : 0
                     )
@@ -317,8 +317,8 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         if (
             Version is { } ver
             && !(
-                Sdl.GLSetAttribute(GLAttr.ContextMajorVersion, (int)ver.Major)
-                && Sdl.GLSetAttribute(GLAttr.ContextMinorVersion, (int)ver.Minor)
+                Sdl.GlSetAttribute(GlAttr.ContextMajorVersion, (int)ver.Major)
+                && Sdl.GlSetAttribute(GlAttr.ContextMinorVersion, (int)ver.Minor)
             )
         )
         {
@@ -330,10 +330,10 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         if (
             PreferredBitDepth is { } colour
             && !(
-                (colour.X < 0 || Sdl.GLSetAttribute(GLAttr.RedSize, colour.X))
-                && (colour.Y < 0 || Sdl.GLSetAttribute(GLAttr.GreenSize, colour.Y))
-                && (colour.Z < 0 || Sdl.GLSetAttribute(GLAttr.BlueSize, colour.Z))
-                && (colour.W < 0 || Sdl.GLSetAttribute(GLAttr.AlphaSize, colour.W))
+                (colour.X < 0 || Sdl.GlSetAttribute(GlAttr.RedSize, colour.X))
+                && (colour.Y < 0 || Sdl.GlSetAttribute(GlAttr.GreenSize, colour.Y))
+                && (colour.Z < 0 || Sdl.GlSetAttribute(GlAttr.BlueSize, colour.Z))
+                && (colour.W < 0 || Sdl.GlSetAttribute(GlAttr.AlphaSize, colour.W))
             )
         )
         {
@@ -345,8 +345,8 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         if (
             PreferredSampleCount is >= 0 and var count
             && !(
-                Sdl.GLSetAttribute(GLAttr.Multisamplebuffers, 1)
-                && Sdl.GLSetAttribute(GLAttr.Multisamplesamples, count)
+                Sdl.GlSetAttribute(GlAttr.Multisamplebuffers, 1)
+                && Sdl.GlSetAttribute(GlAttr.Multisamplesamples, count)
             )
         )
         {
@@ -355,7 +355,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         }
 
         // Configure depth buffer.
-        if (PreferredDepthBufferBits is { } depth && !Sdl.GLSetAttribute(GLAttr.DepthSize, depth))
+        if (PreferredDepthBufferBits is { } depth && !Sdl.GlSetAttribute(GlAttr.DepthSize, depth))
         {
             ClearErrorIf(!isInitializing);
             return false;
@@ -364,7 +364,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         // Configure stencil buffer.
         if (
             PreferredStencilBufferBits is { } stencil
-            && !Sdl.GLSetAttribute(GLAttr.StencilSize, stencil)
+            && !Sdl.GlSetAttribute(GlAttr.StencilSize, stencil)
         )
         {
             ClearErrorIf(!isInitializing);
@@ -372,7 +372,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         }
 
         // Now let's try to create the context!
-        var ctx = Sdl.GLCreateContext(Handle);
+        var ctx = Sdl.GlCreateContext(Handle);
         if (ctx == nullptr)
         {
             ClearErrorIf(!isInitializing);
@@ -389,12 +389,12 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
             return true;
         }
 
-        if (!Sdl.GLMakeCurrent(currentWindow, current))
+        if (!Sdl.GlMakeCurrent(currentWindow, current))
         {
             Sdl.ThrowError();
         }
 
-        if (!Sdl.GLDestroyContext(ctx))
+        if (!Sdl.GlDestroyContext(ctx))
         {
             Sdl.ThrowError();
         }
@@ -409,9 +409,9 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         }
     }
 
-    private void InitializeOpenGL(uint props)
+    private void InitializeOpenGl(uint props)
     {
-        if (Profile == OpenGLContextProfile.None)
+        if (Profile == OpenGlContextProfile.None)
         {
             return;
         }
@@ -419,7 +419,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGL
         AddWindowCreateFlags(props, Sdl.WindowOpengl);
     }
 
-    private void PostInitializeOpenGL()
+    private void PostInitializeOpenGl()
     {
         DebugPrint();
         if (!TryCreateContext(true))

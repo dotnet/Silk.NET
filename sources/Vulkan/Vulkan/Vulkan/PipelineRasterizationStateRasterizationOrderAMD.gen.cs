@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("AMD", 0)]
+[NameAffix("Suffix", "AMD", 0)]
 [NativeName("VkPipelineRasterizationStateRasterizationOrderAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD

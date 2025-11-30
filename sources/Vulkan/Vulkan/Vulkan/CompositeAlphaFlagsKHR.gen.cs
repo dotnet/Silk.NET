@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkCompositeAlphaFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,22 +15,22 @@ public enum CompositeAlphaFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     OpaqueBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_PRE_MULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     PreMultipliedBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_POST_MULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     PostMultipliedBitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     InheritBitKHR = 0x8,

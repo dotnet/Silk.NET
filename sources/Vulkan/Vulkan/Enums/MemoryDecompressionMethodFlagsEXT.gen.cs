@@ -8,18 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkMemoryDecompressionMethodFlagsEXT")]
 [Flags]
 public enum MemoryDecompressionMethodFlagsEXT : ulong
 {
     None = 0x0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_EXT")]
-    MemoryDecompressionMethodGdeflate1X0BitEXT = 0x1,
+    Gdeflate1X0BitEXT = 0x1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_NV")]
-    MemoryDecompressionMethodGdeflate1X0BitNV = 0x1,
+    Gdeflate1X0BitNV = 0x1,
 }

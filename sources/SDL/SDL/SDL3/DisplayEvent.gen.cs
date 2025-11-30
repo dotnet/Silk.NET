@@ -17,7 +17,7 @@ public partial struct DisplayEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_DisplayID")]
-    public uint DisplayID;
+    public uint DisplayId;
 
     [NativeTypeName("Sint32")]
     public int Data1;

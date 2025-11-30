@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPhysicalDeviceLayeredApiPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLayeredApiPropertiesKHR
@@ -23,17 +23,17 @@ public unsafe partial struct PhysicalDeviceLayeredApiPropertiesKHR
 
     [NativeName("vendorID")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint VendorID;
+    public uint VendorId;
 
     [NativeName("deviceID")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint DeviceID;
+    public uint DeviceId;
 
     [NativeName("layeredAPI")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiKHR LayeredAPI;
+    public PhysicalDeviceLayeredApiKHR LayeredApi;
 
     [NativeName("deviceName")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiPropertiesKHRDeviceName DeviceName;
+    public PhysicalDeviceLayeredApiPropertiesKhrDeviceName DeviceName;
 }

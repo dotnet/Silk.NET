@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("SDL_Cursor")]
 public readonly unsafe partial struct CursorHandle
 {
     public readonly void* Handle;

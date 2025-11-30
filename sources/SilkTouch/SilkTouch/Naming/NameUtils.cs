@@ -37,42 +37,43 @@ public static partial class NameUtils
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
     );
 
+    private static readonly IStringTransformer[] _prettifyTransformers = [new NameTransformer()];
+
     /// <summary>
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
-    /// <param name="transformer">
-    /// The transformer that mutates a humanised string before being converted back to pascal case.
-    /// </param>
-    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(
-        this string str,
-        ICulturedStringTransformer transformer,
-        bool allowAllCaps = false
-    )
+    public static string Prettify(this string str)
     {
+        if (str.Length == 0)
+        {
+            throw new InvalidOperationException("Cannot prettify an empty string");
+        }
+
         var ret = string.Join(
             null,
             str.LenientUnderscore()
                 .Humanize()
-                .Transform(transformer)
+                .Transform(_prettifyTransformers)
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
 
         if (ret.Length == 0)
         {
-            throw new InvalidOperationException($"Failed to prettify string: {str}");
+            throw new InvalidOperationException($"Prettification for '{str}' led to an empty string");
         }
 
+        // Disallow all capitals
         var retSpan = ret.AsSpan();
-        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
+        if (retSpan.IndexOfAny(NotUppercase) == -1)
         {
             Span<char> caps = stackalloc char[retSpan.Length - 1];
             retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
             ret = $"{ret[0]}{caps}";
         }
+
         return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
     }
 
@@ -240,7 +241,7 @@ public static partial class NameUtils
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
 
-    internal partial class NameTransformer(int longAcronymThreshold) : ICulturedStringTransformer
+    private partial class NameTransformer : ICulturedStringTransformer
     {
         public string Transform(string input) => Transform(input, null);
 
@@ -256,18 +257,8 @@ public static partial class NameUtils
                 {
                     continue;
                 }
-                if (
-                    word.Length > longAcronymThreshold
-                    || !AllCapitals(word)
-                    || (
-                        AllCapitals(input)
-                        && input.Length > longAcronymThreshold
-                        && matches.Length > 1
-                    )
-                )
-                {
-                    word = MakeFirstLetterUpper(word, culture);
-                }
+
+                word = MakeFirstLetterUpper(word, culture);
 
                 for (var j = i - 1; j >= 0; j--)
                 {

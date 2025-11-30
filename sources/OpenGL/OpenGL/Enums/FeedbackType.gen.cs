@@ -7,12 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("FeedbackType")]
 [Transformed]
 public enum FeedbackType : uint
 {
+    [NativeName("GL_2D")]
     X2D = unchecked((uint)0x0600),
+
+    [NativeName("GL_3D")]
     X3D = unchecked((uint)0x0601),
+
+    [NativeName("GL_3D_COLOR")]
     X3DColor = unchecked((uint)0x0602),
+
+    [NativeName("GL_3D_COLOR_TEXTURE")]
     X3DColorTexture = unchecked((uint)0x0603),
+
+    [NativeName("GL_4D_COLOR_TEXTURE")]
     X4DColorTexture = unchecked((uint)0x0604),
 }

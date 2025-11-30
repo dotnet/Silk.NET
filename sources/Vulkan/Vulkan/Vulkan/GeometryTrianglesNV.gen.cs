@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkGeometryTrianglesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeometryTrianglesNV
@@ -43,7 +43,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public Buffer VertexData;
+    public BufferHandle VertexData;
 
     [NativeName("vertexOffset")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public Buffer IndexData;
+    public BufferHandle IndexData;
 
     [NativeName("indexOffset")]
     [SupportedApiProfile(
@@ -142,7 +142,7 @@ public unsafe partial struct GeometryTrianglesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public Buffer TransformData;
+    public BufferHandle TransformData;
 
     [NativeName("transformOffset")]
     [SupportedApiProfile(

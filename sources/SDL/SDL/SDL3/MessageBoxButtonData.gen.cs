@@ -12,7 +12,7 @@ public unsafe partial struct MessageBoxButtonData
 {
     [NativeTypeName("SDL_MessageBoxButtonFlags")]
     public uint Flags;
-    public int ButtonID;
+    public int ButtonId;
 
     [NativeTypeName("const char *")]
     public sbyte* Text;

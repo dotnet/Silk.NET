@@ -8,14 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkDisplayPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPropertiesKHR
 {
     [NativeName("display")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public DisplayKHR Display;
+    public DisplayHandleKHR Display;
 
     [NativeName("displayName")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]

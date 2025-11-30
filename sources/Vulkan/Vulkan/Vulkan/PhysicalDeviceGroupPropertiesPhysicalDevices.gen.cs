@@ -14,139 +14,139 @@ public unsafe partial struct PhysicalDeviceGroupPropertiesPhysicalDevices
 {
     [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E0;
+    public PhysicalDeviceHandle E0;
 
     [NativeName("e1")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E1;
+    public PhysicalDeviceHandle E1;
 
     [NativeName("e2")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E2;
+    public PhysicalDeviceHandle E2;
 
     [NativeName("e3")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E3;
+    public PhysicalDeviceHandle E3;
 
     [NativeName("e4")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E4;
+    public PhysicalDeviceHandle E4;
 
     [NativeName("e5")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E5;
+    public PhysicalDeviceHandle E5;
 
     [NativeName("e6")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E6;
+    public PhysicalDeviceHandle E6;
 
     [NativeName("e7")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E7;
+    public PhysicalDeviceHandle E7;
 
     [NativeName("e8")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E8;
+    public PhysicalDeviceHandle E8;
 
     [NativeName("e9")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E9;
+    public PhysicalDeviceHandle E9;
 
     [NativeName("e10")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E10;
+    public PhysicalDeviceHandle E10;
 
     [NativeName("e11")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E11;
+    public PhysicalDeviceHandle E11;
 
     [NativeName("e12")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E12;
+    public PhysicalDeviceHandle E12;
 
     [NativeName("e13")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E13;
+    public PhysicalDeviceHandle E13;
 
     [NativeName("e14")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E14;
+    public PhysicalDeviceHandle E14;
 
     [NativeName("e15")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E15;
+    public PhysicalDeviceHandle E15;
 
     [NativeName("e16")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E16;
+    public PhysicalDeviceHandle E16;
 
     [NativeName("e17")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E17;
+    public PhysicalDeviceHandle E17;
 
     [NativeName("e18")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E18;
+    public PhysicalDeviceHandle E18;
 
     [NativeName("e19")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E19;
+    public PhysicalDeviceHandle E19;
 
     [NativeName("e20")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E20;
+    public PhysicalDeviceHandle E20;
 
     [NativeName("e21")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E21;
+    public PhysicalDeviceHandle E21;
 
     [NativeName("e22")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E22;
+    public PhysicalDeviceHandle E22;
 
     [NativeName("e23")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E23;
+    public PhysicalDeviceHandle E23;
 
     [NativeName("e24")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E24;
+    public PhysicalDeviceHandle E24;
 
     [NativeName("e25")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E25;
+    public PhysicalDeviceHandle E25;
 
     [NativeName("e26")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E26;
+    public PhysicalDeviceHandle E26;
 
     [NativeName("e27")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E27;
+    public PhysicalDeviceHandle E27;
 
     [NativeName("e28")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E28;
+    public PhysicalDeviceHandle E28;
 
     [NativeName("e29")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E29;
+    public PhysicalDeviceHandle E29;
 
     [NativeName("e30")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E30;
+    public PhysicalDeviceHandle E30;
 
     [NativeName("e31")]
     [SupportedApiProfile("vulkan")]
-    public PhysicalDevice E31;
+    public PhysicalDeviceHandle E31;
 
     [SupportedApiProfile("vulkan")]
-    public ref PhysicalDevice this[[NativeName("index")] int index]
+    public ref PhysicalDeviceHandle this[[NativeName("index")] int index]
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            fixed (PhysicalDevice* pThis = &E0)
+            fixed (PhysicalDeviceHandle* pThis = &E0)
             {
                 return ref pThis[index];
             }

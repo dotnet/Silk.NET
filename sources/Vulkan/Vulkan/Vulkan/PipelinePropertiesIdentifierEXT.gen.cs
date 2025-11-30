@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkPipelinePropertiesIdentifierEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelinePropertiesIdentifierEXT
@@ -43,5 +43,5 @@ public unsafe partial struct PipelinePropertiesIdentifierEXT
             "VK_EXT_pipeline_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelinePropertiesIdentifierEXTPipelineIdentifier PipelineIdentifier;
+    public PipelinePropertiesIdentifierExtPipelineIdentifier PipelineIdentifier;
 }

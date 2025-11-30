@@ -10,10 +10,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("SourceType")]
 [Transformed]
 public enum SourceType : uint
 {
+    [NativeName("AL_STATIC")]
     Static = unchecked((uint)0x1028),
+
+    [NativeName("AL_STREAMING")]
     Streaming = unchecked((uint)0x1029),
+
+    [NativeName("AL_UNDETERMINED")]
     Undetermined = unchecked((uint)0x1030),
 }

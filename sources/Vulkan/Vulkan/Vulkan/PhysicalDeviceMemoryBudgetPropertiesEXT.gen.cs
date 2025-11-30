@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkPhysicalDeviceMemoryBudgetPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
@@ -44,7 +44,7 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapBudget HeapBudget;
+    public PhysicalDeviceMemoryBudgetPropertiesExtHeapBudget HeapBudget;
 
     [NativeName("heapUsage")]
     [SupportedApiProfile(
@@ -55,5 +55,5 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapUsage HeapUsage;
+    public PhysicalDeviceMemoryBudgetPropertiesExtHeapUsage HeapUsage;
 }

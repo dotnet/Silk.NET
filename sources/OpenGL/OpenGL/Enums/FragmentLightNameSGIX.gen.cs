@@ -7,15 +7,40 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "SGIX", 0)]
+[NativeName("FragmentLightNameSGIX")]
 [Transformed]
 public enum FragmentLightNameSGIX : uint
 {
-    Light0 = unchecked((uint)0x840C),
-    Light1 = unchecked((uint)0x840D),
-    Light2 = unchecked((uint)0x840E),
-    Light3 = unchecked((uint)0x840F),
-    Light4 = unchecked((uint)0x8410),
-    Light5 = unchecked((uint)0x8411),
-    Light6 = unchecked((uint)0x8412),
-    Light7 = unchecked((uint)0x8413),
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
+    Light0SGIX = unchecked((uint)0x840C),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
+    Light1SGIX = unchecked((uint)0x840D),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
+    Light2SGIX = unchecked((uint)0x840E),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
+    Light3SGIX = unchecked((uint)0x840F),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
+    Light4SGIX = unchecked((uint)0x8410),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
+    Light5SGIX = unchecked((uint)0x8411),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
+    Light6SGIX = unchecked((uint)0x8412),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
+    Light7SGIX = unchecked((uint)0x8413),
 }

@@ -126,7 +126,7 @@ public unsafe partial struct SubmitInfo
         ],
         MinVersion = "1.0"
     )]
-    public Semaphore* PWaitSemaphores;
+    public SemaphoreHandle* PWaitSemaphores;
 
     [NativeName("pWaitDstStageMask")]
     [SupportedApiProfile(
@@ -213,7 +213,7 @@ public unsafe partial struct SubmitInfo
         ],
         MinVersion = "1.0"
     )]
-    public CommandBuffer* PCommandBuffers;
+    public CommandBufferHandle* PCommandBuffers;
 
     [NativeName("signalSemaphoreCount")]
     [SupportedApiProfile(
@@ -271,5 +271,5 @@ public unsafe partial struct SubmitInfo
         ],
         MinVersion = "1.0"
     )]
-    public Semaphore* PSignalSemaphores;
+    public SemaphoreHandle* PSignalSemaphores;
 }

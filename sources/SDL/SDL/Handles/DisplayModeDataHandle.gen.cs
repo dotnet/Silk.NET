@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("SDL_DisplayModeData")]
 public readonly unsafe partial struct DisplayModeDataHandle
 {
     public readonly void* Handle;

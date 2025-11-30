@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkPartitionedAccelerationStructureWritePartitionTranslationDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureWritePartitionTranslationDataNV
@@ -27,5 +27,5 @@ public partial struct PartitionedAccelerationStructureWritePartitionTranslationD
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public PartitionedAccelerationStructureWritePartitionTranslationDataNVPartitionTranslation PartitionTranslation;
+    public PartitionedAccelerationStructureWritePartitionTranslationDataNvPartitionTranslation PartitionTranslation;
 }

@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkBlendOverlapEXT")]
 [SupportedApiProfile("vulkan")]
 public enum BlendOverlapEXT : uint
 {
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum BlendOverlapEXT : uint
     )]
     UncorrelatedEXT = 0,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OVERLAP_DISJOINT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum BlendOverlapEXT : uint
     )]
     DisjointEXT = 1,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OVERLAP_CONJOINT_EXT")]
     [SupportedApiProfile(
         "vulkan",

@@ -4,7 +4,7 @@
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkRenderPassFragmentDensityMapOffsetEndInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT

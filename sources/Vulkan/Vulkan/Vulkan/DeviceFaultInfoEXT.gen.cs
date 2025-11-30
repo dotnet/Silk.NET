@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDeviceFaultInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultInfoEXT
@@ -43,7 +43,7 @@ public unsafe partial struct DeviceFaultInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultInfoEXTDescription Description;
+    public DeviceFaultInfoExtDescription Description;
 
     [NativeName("pAddressInfos")]
     [SupportedApiProfile(

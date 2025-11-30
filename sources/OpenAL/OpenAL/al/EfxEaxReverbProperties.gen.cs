@@ -3,10 +3,7 @@
 // Generated using the OpenAL Soft headers and corresponding dependencies.
 // Original source is licensed under the LGPL 2.0 license. Please note that while bindings are able to be MIT due to
 // being header-derived only, implementations of the headers may have a less permissive license.
-using System;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
@@ -15,11 +12,11 @@ public partial struct EfxEaxReverbProperties
     public float FlDensity;
     public float FlDiffusion;
     public float FlGain;
-    public float FlGainHF;
-    public float FlGainLF;
+    public float FlGainHf;
+    public float FlGainLf;
     public float FlDecayTime;
-    public float FlDecayHFRatio;
-    public float FlDecayLFRatio;
+    public float FlDecayHfRatio;
+    public float FlDecayLfRatio;
     public float FlReflectionsGain;
     public float FlReflectionsDelay;
 
@@ -34,9 +31,9 @@ public partial struct EfxEaxReverbProperties
     public float FlEchoDepth;
     public float FlModulationTime;
     public float FlModulationDepth;
-    public float FlAirAbsorptionGainHF;
-    public float FlHFReference;
-    public float FlLFReference;
+    public float FlAirAbsorptionGainHf;
+    public float FlHfReference;
+    public float FlLfReference;
     public float FlRoomRolloffFactor;
-    public int IDecayHFLimit;
+    public int IDecayHfLimit;
 }

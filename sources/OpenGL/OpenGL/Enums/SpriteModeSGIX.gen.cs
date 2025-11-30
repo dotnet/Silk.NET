@@ -7,10 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "SGIX", 0)]
+[NativeName("SpriteModeSGIX")]
 [Transformed]
 public enum SpriteModeSGIX : uint
 {
-    Axial = unchecked((uint)0x814C),
-    ObjectAligned = unchecked((uint)0x814D),
-    EyeAligned = unchecked((uint)0x814E),
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_SPRITE_AXIAL_SGIX")]
+    AxialSGIX = unchecked((uint)0x814C),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_SPRITE_OBJECT_ALIGNED_SGIX")]
+    ObjectAlignedSGIX = unchecked((uint)0x814D),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_SPRITE_EYE_ALIGNED_SGIX")]
+    EyeAlignedSGIX = unchecked((uint)0x814E),
 }

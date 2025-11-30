@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("QCOM", 0)]
+[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkRenderPassTileShadingCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassTileShadingCreateInfoQCOM

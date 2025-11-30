@@ -44,123 +44,123 @@ public enum BufferUsageFlags2 : ulong
     [NativeName("VK_BUFFER_USAGE_2_SHADER_DEVICE_ADDRESS_BIT")]
     ShaderDeviceAddressBit = 0x20000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_TRANSFER_SRC_BIT_KHR")]
     TransferSrcBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_TRANSFER_DST_BIT_KHR")]
     TransferDstBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_UNIFORM_TEXEL_BUFFER_BIT_KHR")]
     UniformTexelBufferBitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_STORAGE_TEXEL_BUFFER_BIT_KHR")]
     StorageTexelBufferBitKHR = 0x8,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_UNIFORM_BUFFER_BIT_KHR")]
     UniformBufferBitKHR = 0x10,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_STORAGE_BUFFER_BIT_KHR")]
     StorageBufferBitKHR = 0x20,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_INDEX_BUFFER_BIT_KHR")]
     IndexBufferBitKHR = 0x40,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_VERTEX_BUFFER_BIT_KHR")]
     VertexBufferBitKHR = 0x80,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_INDIRECT_BUFFER_BIT_KHR")]
     IndirectBufferBitKHR = 0x100,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_CONDITIONAL_RENDERING_BIT_EXT")]
     ConditionalRenderingBitEXT = 0x200,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_SHADER_BINDING_TABLE_BIT_KHR")]
     ShaderBindingTableBitKHR = 0x400,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUFFER_USAGE_2_RAY_TRACING_BIT_NV")]
     RayTracingBitNV = 0x400,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT")]
     TransformFeedbackBufferBitEXT = 0x800,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT")]
     TransformFeedbackCounterBufferBitEXT = 0x1000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_VIDEO_DECODE_SRC_BIT_KHR")]
     VideoDecodeSrcBitKHR = 0x2000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_VIDEO_DECODE_DST_BIT_KHR")]
     VideoDecodeDstBitKHR = 0x4000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_VIDEO_ENCODE_DST_BIT_KHR")]
     VideoEncodeDstBitKHR = 0x8000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_VIDEO_ENCODE_SRC_BIT_KHR")]
     VideoEncodeSrcBitKHR = 0x10000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_SHADER_DEVICE_ADDRESS_BIT_KHR")]
     ShaderDeviceAddressBitKHR = 0x20000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
     AccelerationStructureBuildInputReadOnlyBitKHR = 0x80000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_2_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
     AccelerationStructureStorageBitKHR = 0x100000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT")]
     SamplerDescriptorBufferBitEXT = 0x200000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT")]
     ResourceDescriptorBufferBitEXT = 0x400000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
     PushDescriptorsDescriptorBufferBitEXT = 0x4000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT")]
     MicromapBuildInputReadOnlyBitEXT = 0x800000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_MICROMAP_STORAGE_BIT_EXT")]
     MicromapStorageBitEXT = 0x1000000,
 
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_BUFFER_USAGE_2_DATA_GRAPH_FOREIGN_DESCRIPTOR_BIT_ARM")]
     DataGraphForeignDescriptorBitARM = 0x20000000,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_BUFFER_USAGE_2_TILE_MEMORY_BIT_QCOM")]
     TileMemoryBitQCOM = 0x8000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_MEMORY_DECOMPRESSION_BIT_EXT")]
     MemoryDecompressionBitEXT = 0x100000000,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_2_PREPROCESS_BUFFER_BIT_EXT")]
     PreprocessBufferBitEXT = 0x80000000,
 }

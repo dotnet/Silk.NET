@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV

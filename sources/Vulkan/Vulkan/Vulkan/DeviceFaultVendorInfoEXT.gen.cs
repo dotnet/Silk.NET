@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDeviceFaultVendorInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorInfoEXT
@@ -22,7 +22,7 @@ public partial struct DeviceFaultVendorInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorInfoEXTDescription Description;
+    public DeviceFaultVendorInfoExtDescription Description;
 
     [NativeName("vendorFaultCode")]
     [SupportedApiProfile(

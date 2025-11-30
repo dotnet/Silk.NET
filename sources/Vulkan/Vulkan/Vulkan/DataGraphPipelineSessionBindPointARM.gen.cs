@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("ARM", 0)]
+[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkDataGraphPipelineSessionBindPointARM")]
 [SupportedApiProfile("vulkan")]
 public enum DataGraphPipelineSessionBindPointARM : uint
 {
-    [NameSuffix("ARM", 0)]
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_DATA_GRAPH_PIPELINE_SESSION_BIND_POINT_TRANSIENT_ARM")]
     [SupportedApiProfile(
         "vulkan",

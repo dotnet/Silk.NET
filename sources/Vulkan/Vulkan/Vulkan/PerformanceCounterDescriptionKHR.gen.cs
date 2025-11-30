@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPerformanceCounterDescriptionKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceCounterDescriptionKHR
@@ -54,7 +54,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKHRName Name;
+    public PerformanceCounterDescriptionKhrName Name;
 
     [NativeName("category")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKHRCategory Category;
+    public PerformanceCounterDescriptionKhrCategory Category;
 
     [NativeName("description")]
     [SupportedApiProfile(
@@ -76,5 +76,5 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKHRDescription Description;
+    public PerformanceCounterDescriptionKhrDescription Description;
 }

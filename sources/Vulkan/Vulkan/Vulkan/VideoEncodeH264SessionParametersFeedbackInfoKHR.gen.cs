@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeH264SessionParametersFeedbackInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264SessionParametersFeedbackInfoKHR
@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersFeedbackInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint HasStdSPSOverrides;
+    public uint HasStdSpsOverrides;
 
     [NativeName("hasStdPPSOverrides")]
     [SupportedApiProfile(
@@ -41,5 +41,5 @@ public unsafe partial struct VideoEncodeH264SessionParametersFeedbackInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint HasStdPPSOverrides;
+    public uint HasStdPpsOverrides;
 }

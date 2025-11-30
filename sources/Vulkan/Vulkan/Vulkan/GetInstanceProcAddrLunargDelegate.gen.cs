@@ -10,6 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [SupportedApiProfile("vulkan")]
 public unsafe delegate GetInstanceProcAddrLunargP2 GetInstanceProcAddrLunargDelegate(
-    Instance arg0,
+    InstanceHandle arg0,
     sbyte* arg1
 );

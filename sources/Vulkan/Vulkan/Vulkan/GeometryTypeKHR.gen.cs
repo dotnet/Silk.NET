@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkGeometryTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum GeometryTypeKHR : uint
 {
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum GeometryTypeKHR : uint
     )]
     TrianglesKHR = 0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum GeometryTypeKHR : uint
     )]
     AabbsKHR = 1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +49,7 @@ public enum GeometryTypeKHR : uint
     )]
     InstancesKHR = 2,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -58,7 +58,7 @@ public enum GeometryTypeKHR : uint
     )]
     SpheresNV = 1000429004,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_LINEAR_SWEPT_SPHERES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -67,7 +67,7 @@ public enum GeometryTypeKHR : uint
     )]
     LinearSweptSpheresNV = 1000429005,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -79,7 +79,7 @@ public enum GeometryTypeKHR : uint
     )]
     TrianglesNV = TrianglesKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
     [SupportedApiProfile(
         "vulkan",

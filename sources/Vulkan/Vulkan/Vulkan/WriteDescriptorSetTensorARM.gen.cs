@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("ARM", 0)]
+[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkWriteDescriptorSetTensorARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetTensorARM
@@ -26,5 +26,5 @@ public unsafe partial struct WriteDescriptorSetTensorARM
 
     [NativeName("pTensorViews")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorViewARM* PTensorViews;
+    public TensorViewHandleARM* PTensorViews;
 }

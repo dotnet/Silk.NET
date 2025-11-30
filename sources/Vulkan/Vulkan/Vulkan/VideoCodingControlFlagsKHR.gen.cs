@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoCodingControlFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,7 +15,7 @@ public enum VideoCodingControlFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -24,7 +24,7 @@ public enum VideoCodingControlFlagsKHR : uint
     )]
     ResetBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +36,7 @@ public enum VideoCodingControlFlagsKHR : uint
     )]
     EncodeRateControlBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

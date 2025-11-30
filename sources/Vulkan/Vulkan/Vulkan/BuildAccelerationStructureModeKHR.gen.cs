@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkBuildAccelerationStructureModeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum BuildAccelerationStructureModeKHR : uint
 {
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum BuildAccelerationStructureModeKHR : uint
     )]
     BuildKHR = 0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
     [SupportedApiProfile(
         "vulkan",

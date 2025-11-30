@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDebugUtilsLabelEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DebugUtilsLabelEXT
@@ -27,5 +27,5 @@ public unsafe partial struct DebugUtilsLabelEXT
 
     [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public DebugUtilsLabelEXTColor Color;
+    public DebugUtilsLabelExtColor Color;
 }

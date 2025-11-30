@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NVX", 0)]
+[NameAffix("Suffix", "NVX", 0)]
 [NativeName("VkCuLaunchInfoNVX")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CuLaunchInfoNVX
@@ -23,7 +23,7 @@ public unsafe partial struct CuLaunchInfoNVX
 
     [NativeName("function")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuFunctionNVX Function;
+    public CuFunctionHandleNVX Function;
 
     [NativeName("gridDimX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]

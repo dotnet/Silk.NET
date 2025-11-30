@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkFenceGetFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FenceGetFdInfoKHR
@@ -43,7 +43,7 @@ public unsafe partial struct FenceGetFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public Fence Fence;
+    public FenceHandle Fence;
 
     [NativeName("handleType")]
     [SupportedApiProfile(

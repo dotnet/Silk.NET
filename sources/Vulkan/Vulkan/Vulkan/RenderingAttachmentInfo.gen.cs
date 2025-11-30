@@ -33,7 +33,7 @@ public unsafe partial struct RenderingAttachmentInfo
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public ImageView ImageView;
+    public ImageViewHandle ImageView;
 
     [NativeName("imageLayout")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public unsafe partial struct RenderingAttachmentInfo
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public ImageView ResolveImageView;
+    public ImageViewHandle ResolveImageView;
 
     [NativeName("resolveImageLayout")]
     [SupportedApiProfile(

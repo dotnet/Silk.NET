@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkIndirectCommandsStreamNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsStreamNV
@@ -18,7 +18,7 @@ public unsafe partial struct IndirectCommandsStreamNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public Buffer Buffer;
+    public BufferHandle Buffer;
 
     [NativeName("offset")]
     [SupportedApiProfile(

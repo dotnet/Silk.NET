@@ -7,9 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("VertexShaderTextureUnitParameter")]
 [Transformed]
 public enum VertexShaderTextureUnitParameter : uint
 {
+    [NativeName("GL_CURRENT_TEXTURE_COORDS")]
     CurrentTextureCoords = unchecked((uint)0x0B03),
+
+    [NativeName("GL_TEXTURE_MATRIX")]
     TextureMatrix = unchecked((uint)0x0BA8),
 }

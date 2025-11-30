@@ -17,7 +17,7 @@ public partial struct PenAxisEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 
     [NativeTypeName("SDL_PenID")]
     public uint Which;

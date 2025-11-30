@@ -7,18 +7,40 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("ObjectIdentifier")]
 [Transformed]
 public enum ObjectIdentifier : uint
 {
-    Texture = unchecked((uint)0x1702),
+    [NativeName("GL_VERTEX_ARRAY")]
     VertexArray = unchecked((uint)0x8074),
+
+    [NativeName("GL_TEXTURE")]
+    Texture = unchecked((uint)0x1702),
+
+    [NativeName("GL_FRAMEBUFFER")]
     Framebuffer = unchecked((uint)0x8D40),
+
+    [NativeName("GL_RENDERBUFFER")]
     Renderbuffer = unchecked((uint)0x8D41),
+
+    [NativeName("GL_TRANSFORM_FEEDBACK")]
     TransformFeedback = unchecked((uint)0x8E22),
+
+    [NativeName("GL_BUFFER")]
     Buffer = unchecked((uint)0x82E0),
+
+    [NativeName("GL_SHADER")]
     Shader = unchecked((uint)0x82E1),
+
+    [NativeName("GL_PROGRAM")]
     Program = unchecked((uint)0x82E2),
+
+    [NativeName("GL_QUERY")]
     Query = unchecked((uint)0x82E3),
+
+    [NativeName("GL_PROGRAM_PIPELINE")]
     ProgramPipeline = unchecked((uint)0x82E4),
+
+    [NativeName("GL_SAMPLER")]
     Sampler = unchecked((uint)0x82E6),
 }

@@ -34,7 +34,7 @@ public unsafe partial struct DescriptorBufferInfo
         ],
         MinVersion = "1.0"
     )]
-    public Buffer Buffer;
+    public BufferHandle Buffer;
 
     [NativeName("offset")]
     [SupportedApiProfile(

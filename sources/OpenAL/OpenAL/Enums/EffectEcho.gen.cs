@@ -10,12 +10,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("EffectEcho")]
 [Transformed]
 public enum EffectEcho : uint
 {
+    [NativeName("AL_ECHO_DELAY")]
     Delay = unchecked((uint)0x0001),
+
+    [NativeName("AL_ECHO_LRDELAY")]
     Lrdelay = unchecked((uint)0x0002),
+
+    [NativeName("AL_ECHO_DAMPING")]
     Damping = unchecked((uint)0x0003),
+
+    [NativeName("AL_ECHO_FEEDBACK")]
     Feedback = unchecked((uint)0x0004),
+
+    [NativeName("AL_ECHO_SPREAD")]
     Spread = unchecked((uint)0x0005),
 }

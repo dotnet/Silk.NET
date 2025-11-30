@@ -7,24 +7,64 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("MapBufferAccessMask")]
 [Transformed]
 [Flags]
 public enum MapBufferAccessMask : uint
 {
-    ReadBit = unchecked((uint)0x0001),
-    WriteBit = unchecked((uint)0x0002),
-    InvalidateRangeBit = unchecked((uint)0x0004),
-    InvalidateBufferBit = unchecked((uint)0x0008),
-    FlushExplicitBit = unchecked((uint)0x0010),
-    UnsynchronizedBit = unchecked((uint)0x0020),
-    PersistentBit = unchecked((uint)0x0040),
-    CoherentBit = unchecked((uint)0x0080),
-    PersistentBitEXT = unchecked((uint)0x0040),
-    CoherentBitEXT = unchecked((uint)0x0080),
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_READ_BIT_EXT")]
     ReadBitEXT = unchecked((uint)0x0001),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
     WriteBitEXT = unchecked((uint)0x0002),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
     InvalidateRangeBitEXT = unchecked((uint)0x0004),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
     InvalidateBufferBitEXT = unchecked((uint)0x0008),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
     FlushExplicitBitEXT = unchecked((uint)0x0010),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
     UnsynchronizedBitEXT = unchecked((uint)0x0020),
+
+    [NativeName("GL_MAP_READ_BIT")]
+    ReadBit = unchecked((uint)0x0001),
+
+    [NativeName("GL_MAP_WRITE_BIT")]
+    WriteBit = unchecked((uint)0x0002),
+
+    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT")]
+    InvalidateRangeBit = unchecked((uint)0x0004),
+
+    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT")]
+    InvalidateBufferBit = unchecked((uint)0x0008),
+
+    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT")]
+    FlushExplicitBit = unchecked((uint)0x0010),
+
+    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT")]
+    UnsynchronizedBit = unchecked((uint)0x0020),
+
+    [NativeName("GL_MAP_PERSISTENT_BIT")]
+    PersistentBit = unchecked((uint)0x0040),
+
+    [NativeName("GL_MAP_COHERENT_BIT")]
+    CoherentBit = unchecked((uint)0x0080),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
+    PersistentBitEXT = unchecked((uint)0x0040),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_MAP_COHERENT_BIT_EXT")]
+    CoherentBitEXT = unchecked((uint)0x0080),
 }

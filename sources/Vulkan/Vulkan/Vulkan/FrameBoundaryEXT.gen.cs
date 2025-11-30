@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkFrameBoundaryEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryEXT
@@ -55,7 +55,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public ulong FrameID;
+    public ulong FrameId;
 
     [NativeName("imageCount")]
     [SupportedApiProfile(
@@ -77,7 +77,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public Image* PImages;
+    public ImageHandle* PImages;
 
     [NativeName("bufferCount")]
     [SupportedApiProfile(
@@ -99,7 +99,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public Buffer* PBuffers;
+    public BufferHandle* PBuffers;
 
     [NativeName("tagName")]
     [SupportedApiProfile(

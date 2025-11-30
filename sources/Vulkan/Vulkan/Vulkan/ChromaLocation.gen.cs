@@ -53,7 +53,7 @@ public enum ChromaLocation : uint
     )]
     Midpoint = 1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_CHROMA_LOCATION_COSITED_EVEN_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +65,7 @@ public enum ChromaLocation : uint
     )]
     CositedEvenKHR = CositedEven,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_CHROMA_LOCATION_MIDPOINT_KHR")]
     [SupportedApiProfile(
         "vulkan",

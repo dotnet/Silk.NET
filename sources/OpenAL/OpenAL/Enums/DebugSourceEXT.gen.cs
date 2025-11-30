@@ -10,13 +10,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "EXT", 0)]
+[NativeName("DebugSourceEXT")]
 [Transformed]
 public enum DebugSourceEXT : uint
 {
-    DontCare = unchecked((uint)0x0002),
-    DebugSourceApi = unchecked((uint)0x19B5),
-    DebugSourceAudioSystem = unchecked((uint)0x19B6),
-    DebugSourceThirdParty = unchecked((uint)0x19B7),
-    DebugSourceApplication = unchecked((uint)0x19B8),
-    DebugSourceOther = unchecked((uint)0x19B9),
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DONT_CARE_EXT")]
+    DontCareEXT = unchecked((uint)0x0002),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SOURCE_API_EXT")]
+    DebugSourceApiEXT = unchecked((uint)0x19B5),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SOURCE_AUDIO_SYSTEM_EXT")]
+    DebugSourceAudioSystemEXT = unchecked((uint)0x19B6),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SOURCE_THIRD_PARTY_EXT")]
+    DebugSourceThirdPartyEXT = unchecked((uint)0x19B7),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SOURCE_APPLICATION_EXT")]
+    DebugSourceApplicationEXT = unchecked((uint)0x19B8),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SOURCE_OTHER_EXT")]
+    DebugSourceOtherEXT = unchecked((uint)0x19B9),
 }

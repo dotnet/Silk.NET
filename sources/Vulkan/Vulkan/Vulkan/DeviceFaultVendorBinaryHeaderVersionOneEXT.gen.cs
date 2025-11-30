@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDeviceFaultVendorBinaryHeaderVersionOneEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
@@ -43,7 +43,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public uint VendorID;
+    public uint VendorId;
 
     [NativeName("deviceID")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public uint DeviceID;
+    public uint DeviceId;
 
     [NativeName("driverVersion")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorBinaryHeaderVersionOneEXTPipelineCacheUUID PipelineCacheUUID;
+    public DeviceFaultVendorBinaryHeaderVersionOneExtPipelineCacheUuid PipelineCacheUuid;
 
     [NativeName("applicationNameOffset")]
     [SupportedApiProfile(

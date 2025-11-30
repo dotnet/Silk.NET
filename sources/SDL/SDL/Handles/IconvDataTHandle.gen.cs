@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("SDL_iconv_data_t")]
 public readonly unsafe partial struct IconvDataTHandle
 {
     public readonly void* Handle;

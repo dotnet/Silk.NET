@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPipelineExecutablePropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineExecutablePropertiesKHR
@@ -55,7 +55,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutablePropertiesKHRName Name;
+    public PipelineExecutablePropertiesKhrName Name;
 
     [NativeName("description")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutablePropertiesKHRDescription Description;
+    public PipelineExecutablePropertiesKhrDescription Description;
 
     [NativeName("subgroupSize")]
     [SupportedApiProfile(

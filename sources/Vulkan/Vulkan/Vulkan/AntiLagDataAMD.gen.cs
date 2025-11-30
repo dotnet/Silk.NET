@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("AMD", 0)]
+[NameAffix("Suffix", "AMD", 0)]
 [NativeName("VkAntiLagDataAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AntiLagDataAMD
@@ -55,7 +55,7 @@ public unsafe partial struct AntiLagDataAMD
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    public uint MaxFPS;
+    public uint MaxFps;
 
     [NativeName("pPresentationInfo")]
     [SupportedApiProfile(

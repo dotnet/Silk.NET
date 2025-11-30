@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDeviceFaultCountsEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultCountsEXT

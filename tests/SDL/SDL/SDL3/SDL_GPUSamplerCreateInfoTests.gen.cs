@@ -7,33 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUSamplerCreateInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuSamplerCreateInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPUSamplerCreateInfoTests
 {
-    /// <summary>Validates that the <see cref = "GPUSamplerCreateInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuSamplerCreateInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GPUSamplerCreateInfo>(),
-            Is.EqualTo(sizeof(GPUSamplerCreateInfo))
+            Marshal.SizeOf<GpuSamplerCreateInfo>(),
+            Is.EqualTo(sizeof(GpuSamplerCreateInfo))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GPUSamplerCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuSamplerCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUSamplerCreateInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuSamplerCreateInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUSamplerCreateInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuSamplerCreateInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GPUSamplerCreateInfo), Is.EqualTo(52));
+        Assert.That(sizeof(GpuSamplerCreateInfo), Is.EqualTo(52));
     }
 }

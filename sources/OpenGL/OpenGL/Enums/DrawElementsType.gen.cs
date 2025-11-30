@@ -7,10 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("DrawElementsType")]
 [Transformed]
 public enum DrawElementsType : uint
 {
+    [NativeName("GL_UNSIGNED_BYTE")]
     UnsignedByte = unchecked((uint)0x1401),
+
+    [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = unchecked((uint)0x1403),
+
+    [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = unchecked((uint)0x1405),
 }

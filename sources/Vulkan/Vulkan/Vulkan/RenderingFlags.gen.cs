@@ -39,7 +39,7 @@ public enum RenderingFlags : uint
     )]
     ResumingBit = 0x4,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_RENDERING_ENABLE_LEGACY_DITHERING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,12 +56,12 @@ public enum RenderingFlags : uint
     )]
     EnableLegacyDitheringBitEXT = 0x8,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     ContentsInlineBitKHR = 0x10,
 
-    [NameSuffix("VALVE", 0)]
+    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -71,9 +71,9 @@ public enum RenderingFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitValve = 0x20,
+    PerLayerFragmentDensityBitVALVE = 0x20,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -90,7 +90,7 @@ public enum RenderingFlags : uint
     )]
     LocalReadConcurrentAccessControlBitKHR = 0x100,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -103,7 +103,7 @@ public enum RenderingFlags : uint
     )]
     ContentsSecondaryCommandBuffersBitKHR = ContentsSecondaryCommandBuffersBit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_SUSPENDING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -116,7 +116,7 @@ public enum RenderingFlags : uint
     )]
     SuspendingBitKHR = SuspendingBit,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RENDERING_RESUMING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -129,7 +129,7 @@ public enum RenderingFlags : uint
     )]
     ResumingBitKHR = ResumingBit,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

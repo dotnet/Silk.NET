@@ -75,7 +75,7 @@ public unsafe partial struct VirtualJoystickDesc
     public VirtualJoystickDescRumbleTriggers RumbleTriggers;
 
     [NativeTypeName("bool (*)(void *, Uint8, Uint8, Uint8)")]
-    public VirtualJoystickDescSetLED SetLED;
+    public VirtualJoystickDescSetLed SetLed;
 
     [NativeTypeName("bool (*)(void *, const void *, int)")]
     public VirtualJoystickDescSendEffect SendEffect;

@@ -7,16 +7,43 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("ShadingRate")]
 [Transformed]
 public enum ShadingRate : uint
 {
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_1X1_PIXELS_EXT")]
     Rate1X1PixelsEXT = unchecked((uint)0x96A6),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_1X2_PIXELS_EXT")]
     Rate1X2PixelsEXT = unchecked((uint)0x96A7),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_2X1_PIXELS_EXT")]
     Rate2X1PixelsEXT = unchecked((uint)0x96A8),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_2X2_PIXELS_EXT")]
     Rate2X2PixelsEXT = unchecked((uint)0x96A9),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_1X4_PIXELS_EXT")]
     Rate1X4PixelsEXT = unchecked((uint)0x96AA),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_4X1_PIXELS_EXT")]
     Rate4X1PixelsEXT = unchecked((uint)0x96AB),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_4X2_PIXELS_EXT")]
     Rate4X2PixelsEXT = unchecked((uint)0x96AC),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_2X4_PIXELS_EXT")]
     Rate2X4PixelsEXT = unchecked((uint)0x96AD),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_SHADING_RATE_4X4_PIXELS_EXT")]
     Rate4X4PixelsEXT = unchecked((uint)0x96AE),
 }

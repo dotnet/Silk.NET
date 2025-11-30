@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkGeometryDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct GeometryDataNV
@@ -32,5 +32,5 @@ public partial struct GeometryDataNV
             "VK_VERSION_1_1",
         ]
     )]
-    public GeometryAABBNV Aabbs;
+    public GeometryAabbNV Aabbs;
 }

@@ -82,7 +82,7 @@ public unsafe partial struct WriteDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSet DstSet;
+    public DescriptorSetHandle DstSet;
 
     [NativeName("dstBinding")]
     [SupportedApiProfile(
@@ -250,5 +250,5 @@ public unsafe partial struct WriteDescriptorSet
         ],
         MinVersion = "1.0"
     )]
-    public BufferView* PTexelBufferView;
+    public BufferViewHandle* PTexelBufferView;
 }

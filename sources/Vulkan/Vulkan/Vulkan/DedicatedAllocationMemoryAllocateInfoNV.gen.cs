@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkDedicatedAllocationMemoryAllocateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DedicatedAllocationMemoryAllocateInfoNV
@@ -23,9 +23,9 @@ public unsafe partial struct DedicatedAllocationMemoryAllocateInfoNV
 
     [NativeName("image")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public Image Image;
+    public ImageHandle Image;
 
     [NativeName("buffer")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public Buffer Buffer;
+    public BufferHandle Buffer;
 }

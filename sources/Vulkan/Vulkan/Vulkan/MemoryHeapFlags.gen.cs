@@ -68,7 +68,7 @@ public enum MemoryHeapFlags : uint
     )]
     MultiInstanceBit = 0x2,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_MEMORY_HEAP_TILE_MEMORY_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -80,7 +80,7 @@ public enum MemoryHeapFlags : uint
     )]
     TileMemoryBitQCOM = 0x8,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_MEMORY_HEAP_MULTI_INSTANCE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     MultiInstanceBitKHR = MultiInstanceBit,

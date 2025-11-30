@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("ARM", 0)]
+[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkPerformanceCounterARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceCounterARM
@@ -44,5 +44,5 @@ public unsafe partial struct PerformanceCounterARM
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public uint CounterID;
+    public uint CounterId;
 }

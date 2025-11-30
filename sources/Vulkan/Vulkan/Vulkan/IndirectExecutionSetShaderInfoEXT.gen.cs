@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkIndirectExecutionSetShaderInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectExecutionSetShaderInfoEXT
@@ -59,7 +59,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ShaderEXT* PInitialShaders;
+    public ShaderHandleEXT* PInitialShaders;
 
     [NativeName("pSetLayoutInfos")]
     [SupportedApiProfile(

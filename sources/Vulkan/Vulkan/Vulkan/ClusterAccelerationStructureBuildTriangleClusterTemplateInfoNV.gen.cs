@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateInfoNV
@@ -18,7 +18,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint ClusterID;
+    public uint ClusterId;
 
     [NativeName("clusterFlags")]
     [SupportedApiProfile(

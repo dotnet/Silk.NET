@@ -129,7 +129,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public ShaderModule Module;
+    public ShaderModuleHandle Module;
 
     [NativeName("pName")]
     [SupportedApiProfile(

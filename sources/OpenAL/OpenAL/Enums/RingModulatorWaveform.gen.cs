@@ -10,10 +10,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("RingModulatorWaveform")]
 [Transformed]
 public enum RingModulatorWaveform : uint
 {
+    [NativeName("AL_RING_MODULATOR_SINUSOID")]
     Sinusoid = unchecked((uint)0),
+
+    [NativeName("AL_RING_MODULATOR_SAWTOOTH")]
     Sawtooth = unchecked((uint)1),
+
+    [NativeName("AL_RING_MODULATOR_SQUARE")]
     Square = unchecked((uint)2),
 }

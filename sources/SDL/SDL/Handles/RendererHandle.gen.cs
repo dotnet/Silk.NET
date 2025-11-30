@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("SDL_Renderer")]
 public readonly unsafe partial struct RendererHandle
 {
     public readonly void* Handle;

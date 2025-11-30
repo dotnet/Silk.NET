@@ -7,11 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "PGI", 0)]
+[NativeName("HintTargetPGI")]
 [Transformed]
 public enum HintTargetPGI : uint
 {
-    VertexDataHint = unchecked((uint)0x1A22A),
-    VertexConsistentHint = unchecked((uint)0x1A22B),
-    MaterialSideHint = unchecked((uint)0x1A22C),
-    MaxVertexHint = unchecked((uint)0x1A22D),
+    [NameAffix("Suffix", "PGI", 0)]
+    [NativeName("GL_VERTEX_DATA_HINT_PGI")]
+    VertexDataHintPGI = unchecked((uint)0x1A22A),
+
+    [NameAffix("Suffix", "PGI", 0)]
+    [NativeName("GL_VERTEX_CONSISTENT_HINT_PGI")]
+    VertexConsistentHintPGI = unchecked((uint)0x1A22B),
+
+    [NameAffix("Suffix", "PGI", 0)]
+    [NativeName("GL_MATERIAL_SIDE_HINT_PGI")]
+    MaterialSideHintPGI = unchecked((uint)0x1A22C),
+
+    [NameAffix("Suffix", "PGI", 0)]
+    [NativeName("GL_MAX_VERTEX_HINT_PGI")]
+    MaxVertexHintPGI = unchecked((uint)0x1A22D),
 }

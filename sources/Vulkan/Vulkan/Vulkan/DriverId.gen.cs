@@ -117,7 +117,7 @@ public enum DriverId : uint
     )]
     IntelProprietaryWindows = 5,
 
-    [NameSuffix("MESA", 0)]
+    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -517,7 +517,7 @@ public enum DriverId : uint
     )]
     MesaNvk = 24,
 
-    [NameSuffix("MESA", 0)]
+    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_DRIVER_ID_IMAGINATION_OPEN_SOURCE_MESA")]
     [SupportedApiProfile(
         "vulkan",
@@ -602,7 +602,7 @@ public enum DriverId : uint
     )]
     MesaKosmickrisp = 28,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_AMD_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -614,7 +614,7 @@ public enum DriverId : uint
     )]
     AmdProprietaryKHR = AmdProprietary,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -626,7 +626,7 @@ public enum DriverId : uint
     )]
     AmdOpenSourceKHR = AmdOpenSource,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_MESA_RADV_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -638,7 +638,7 @@ public enum DriverId : uint
     )]
     MesaRadvKHR = MesaRadv,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -650,7 +650,7 @@ public enum DriverId : uint
     )]
     NvidiaProprietaryKHR = NvidiaProprietary,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -662,7 +662,7 @@ public enum DriverId : uint
     )]
     IntelProprietaryWindowsKHR = IntelProprietaryWindows,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -674,7 +674,7 @@ public enum DriverId : uint
     )]
     IntelOpenSourceMesaKHR = IntelOpenSourceMESA,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -686,7 +686,7 @@ public enum DriverId : uint
     )]
     ImaginationProprietaryKHR = ImaginationProprietary,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -698,7 +698,7 @@ public enum DriverId : uint
     )]
     QualcommProprietaryKHR = QualcommProprietary,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -710,7 +710,7 @@ public enum DriverId : uint
     )]
     ArmProprietaryKHR = ArmProprietary,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -722,7 +722,7 @@ public enum DriverId : uint
     )]
     GoogleSwiftshaderKHR = GoogleSwiftshader,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -734,7 +734,7 @@ public enum DriverId : uint
     )]
     GgpProprietaryKHR = GgpProprietary,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",

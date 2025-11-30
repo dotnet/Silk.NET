@@ -96,7 +96,7 @@ public unsafe partial struct CommandBufferAllocateInfo
         ],
         MinVersion = "1.0"
     )]
-    public CommandPool CommandPool;
+    public CommandPoolHandle CommandPool;
 
     [NativeName("level")]
     [SupportedApiProfile(

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkPipelineIndirectDeviceAddressInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
@@ -43,5 +43,5 @@ public unsafe partial struct PipelineIndirectDeviceAddressInfoNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public Pipeline Pipeline;
+    public PipelineHandle Pipeline;
 }

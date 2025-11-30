@@ -102,7 +102,7 @@ public unsafe partial struct BufferViewCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public Buffer Buffer;
+    public BufferHandle Buffer;
 
     [NativeName("format")]
     [SupportedApiProfile(

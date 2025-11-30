@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkDisplayPlaneInfo2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPlaneInfo2KHR
@@ -35,7 +35,7 @@ public unsafe partial struct DisplayPlaneInfo2KHR
         ["VK_KHR_get_display_properties2"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public DisplayModeKHR Mode;
+    public DisplayModeHandleKHR Mode;
 
     [NativeName("planeIndex")]
     [SupportedApiProfile(

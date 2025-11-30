@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkRenderPassSubpassFeedbackInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct RenderPassSubpassFeedbackInfoEXT
@@ -32,7 +32,7 @@ public partial struct RenderPassSubpassFeedbackInfoEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public RenderPassSubpassFeedbackInfoEXTDescription Description;
+    public RenderPassSubpassFeedbackInfoExtDescription Description;
 
     [NativeName("postMergeIndex")]
     [SupportedApiProfile(

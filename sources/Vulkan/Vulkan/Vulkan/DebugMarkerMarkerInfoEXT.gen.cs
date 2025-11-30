@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDebugMarkerMarkerInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DebugMarkerMarkerInfoEXT
@@ -27,5 +27,5 @@ public unsafe partial struct DebugMarkerMarkerInfoEXT
 
     [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
-    public DebugMarkerMarkerInfoEXTColor Color;
+    public DebugMarkerMarkerInfoExtColor Color;
 }

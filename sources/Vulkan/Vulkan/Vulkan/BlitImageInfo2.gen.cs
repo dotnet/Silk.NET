@@ -33,7 +33,7 @@ public unsafe partial struct BlitImageInfo2
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public Image SrcImage;
+    public ImageHandle SrcImage;
 
     [NativeName("srcImageLayout")]
     [SupportedApiProfile(
@@ -49,7 +49,7 @@ public unsafe partial struct BlitImageInfo2
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public Image DstImage;
+    public ImageHandle DstImage;
 
     [NativeName("dstImageLayout")]
     [SupportedApiProfile(

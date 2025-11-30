@@ -10,14 +10,28 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("DistanceModel")]
 [Transformed]
 public enum DistanceModel : uint
 {
+    [NativeName("AL_NONE")]
     None = unchecked((uint)0),
+
+    [NativeName("AL_INVERSE_DISTANCE")]
     InverseDistance = unchecked((uint)0xD001),
+
+    [NativeName("AL_INVERSE_DISTANCE_CLAMPED")]
     InverseDistanceClamped = unchecked((uint)0xD002),
+
+    [NativeName("AL_LINEAR_DISTANCE")]
     LinearDistance = unchecked((uint)0xD003),
+
+    [NativeName("AL_LINEAR_DISTANCE_CLAMPED")]
     LinearDistanceClamped = unchecked((uint)0xD004),
+
+    [NativeName("AL_EXPONENT_DISTANCE")]
     ExponentDistance = unchecked((uint)0xD005),
+
+    [NativeName("AL_EXPONENT_DISTANCE_CLAMPED")]
     ExponentDistanceClamped = unchecked((uint)0xD006),
 }

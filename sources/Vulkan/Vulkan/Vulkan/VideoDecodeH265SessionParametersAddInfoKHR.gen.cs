@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoDecodeH265SessionParametersAddInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
@@ -35,7 +35,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public uint StdVPSCount;
+    public uint StdVpsCount;
 
     [NativeName("pStdVPSs")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH265VideoParameterSet* PStdVPSs;
+    public StdVideoH265VideoParameterSet* PStdVpSs;
 
     [NativeName("stdSPSCount")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public uint StdSPSCount;
+    public uint StdSpsCount;
 
     [NativeName("pStdSPSs")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH265SequenceParameterSet* PStdSPSs;
+    public StdVideoH265SequenceParameterSet* PStdSpSs;
 
     [NativeName("stdPPSCount")]
     [SupportedApiProfile(
@@ -67,7 +67,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public uint StdPPSCount;
+    public uint StdPpsCount;
 
     [NativeName("pStdPPSs")]
     [SupportedApiProfile(
@@ -75,5 +75,5 @@ public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StdVideoH265PictureParameterSet* PStdPPSs;
+    public StdVideoH265PictureParameterSet* PStdPpSs;
 }

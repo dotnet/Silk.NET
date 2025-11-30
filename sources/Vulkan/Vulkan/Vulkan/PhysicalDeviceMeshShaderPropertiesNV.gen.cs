@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkPhysicalDeviceMeshShaderPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
@@ -66,7 +66,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMeshShaderPropertiesNVMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesNvMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
 
     [NativeName("maxTaskTotalMemorySize")]
     [SupportedApiProfile(
@@ -110,7 +110,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMeshShaderPropertiesNVMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesNvMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
 
     [NativeName("maxMeshTotalMemorySize")]
     [SupportedApiProfile(

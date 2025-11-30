@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkWriteDescriptorSetAccelerationStructureNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
@@ -54,5 +54,5 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
             "VK_VERSION_1_1",
         ]
     )]
-    public AccelerationStructureNV* PAccelerationStructures;
+    public AccelerationStructureHandleNV* PAccelerationStructures;
 }

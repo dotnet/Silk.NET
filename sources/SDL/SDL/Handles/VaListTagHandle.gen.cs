@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("__va_list_tag")]
 public readonly unsafe partial struct VaListTagHandle
 {
     public readonly void* Handle;

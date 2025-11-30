@@ -70,5 +70,5 @@ public unsafe partial struct RenderPassAttachmentBeginInfo
         ],
         MinVersion = "1.2"
     )]
-    public ImageView* PAttachments;
+    public ImageViewHandle* PAttachments;
 }

@@ -7,14 +7,28 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PipelineParameterName")]
 [Transformed]
 public enum PipelineParameterName : uint
 {
+    [NativeName("GL_FRAGMENT_SHADER")]
     FragmentShader = unchecked((uint)0x8B30),
+
+    [NativeName("GL_VERTEX_SHADER")]
     VertexShader = unchecked((uint)0x8B31),
+
+    [NativeName("GL_INFO_LOG_LENGTH")]
     InfoLogLength = unchecked((uint)0x8B84),
+
+    [NativeName("GL_GEOMETRY_SHADER")]
     GeometryShader = unchecked((uint)0x8DD9),
+
+    [NativeName("GL_TESS_EVALUATION_SHADER")]
     TessEvaluationShader = unchecked((uint)0x8E87),
+
+    [NativeName("GL_TESS_CONTROL_SHADER")]
     TessControlShader = unchecked((uint)0x8E88),
+
+    [NativeName("GL_ACTIVE_PROGRAM")]
     ActiveProgram = unchecked((uint)0x8259),
 }

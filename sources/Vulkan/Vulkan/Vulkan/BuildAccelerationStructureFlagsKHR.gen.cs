@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkBuildAccelerationStructureFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +28,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowUpdateBitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +40,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowCompactionBitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +52,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     PreferFastTraceBitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +64,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     PreferFastBuildBitKHR = 0x8,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -76,7 +76,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     LowMemoryBitKHR = 0x10,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +85,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     MotionBitNV = 0x20,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +97,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowOpacityMicromapUpdateBitEXT = 0x40,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -109,7 +109,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowDisableOpacityMicromapsBitEXT = 0x80,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -121,7 +121,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowOpacityMicromapDataUpdateBitEXT = 0x100,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -130,7 +130,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowDataAccessBitKHR = 0x800,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_CLUSTER_OPACITY_MICROMAPS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -139,7 +139,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowClusterOpacityMicromapsBitNV = 0x1000,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -151,7 +151,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowUpdateBitNV = AllowUpdateBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -163,7 +163,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowCompactionBitNV = AllowCompactionBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -175,7 +175,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     PreferFastTraceBitNV = PreferFastTraceBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -187,7 +187,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     PreferFastBuildBitNV = PreferFastBuildBitKHR,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

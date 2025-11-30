@@ -7,11 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("QueryObjectParameterName")]
 [Transformed]
 public enum QueryObjectParameterName : uint
 {
+    [NativeName("GL_QUERY_RESULT")]
     Result = unchecked((uint)0x8866),
+
+    [NativeName("GL_QUERY_RESULT_AVAILABLE")]
     ResultAvailable = unchecked((uint)0x8867),
+
+    [NativeName("GL_QUERY_RESULT_NO_WAIT")]
     ResultNoWait = unchecked((uint)0x9194),
+
+    [NativeName("GL_QUERY_TARGET")]
     Target = unchecked((uint)0x82EA),
 }

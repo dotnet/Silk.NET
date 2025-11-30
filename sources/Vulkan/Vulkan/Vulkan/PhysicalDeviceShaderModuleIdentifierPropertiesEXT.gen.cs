@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderModuleIdentifierPropertiesEXT
@@ -47,5 +47,5 @@ public unsafe partial struct PhysicalDeviceShaderModuleIdentifierPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public PhysicalDeviceShaderModuleIdentifierPropertiesEXTShaderModuleIdentifierAlgorithmUUID ShaderModuleIdentifierAlgorithmUUID;
+    public PhysicalDeviceShaderModuleIdentifierPropertiesExtShaderModuleIdentifierAlgorithmUuid ShaderModuleIdentifierAlgorithmUuid;
 }

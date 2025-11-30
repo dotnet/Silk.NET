@@ -10,9 +10,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("FilterLowPass")]
 [Transformed]
 public enum FilterLowPass : uint
 {
+    [NativeName("AL_LOWPASS_GAIN")]
     Gain = unchecked((uint)0x0001),
+
+    [NativeName("AL_LOWPASS_GAINHF")]
     Gainhf = unchecked((uint)0x0002),
 }

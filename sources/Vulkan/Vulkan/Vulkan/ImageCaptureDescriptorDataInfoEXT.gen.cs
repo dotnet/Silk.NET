@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkImageCaptureDescriptorDataInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageCaptureDescriptorDataInfoEXT
@@ -49,5 +49,5 @@ public unsafe partial struct ImageCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public Image Image;
+    public ImageHandle Image;
 }

@@ -7,6 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "MESA", 0)]
+[NativeName("TraceMaskMESA")]
 [Transformed]
 [Flags]
 public enum TraceMaskMESA : uint { }

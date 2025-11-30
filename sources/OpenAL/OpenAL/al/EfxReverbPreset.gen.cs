@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL;
 public unsafe partial class EfxReverbPreset
 {
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Generic
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetGeneric
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -137,7 +137,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PaddedCell
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPaddedCell
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -261,7 +261,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Room
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -385,7 +385,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Bathroom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetBathroom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -509,7 +509,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties LivingRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetLivingRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -633,7 +633,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties StoneRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetStoneRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -757,7 +757,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Auditorium
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetAuditorium
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -881,7 +881,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties ConcertHall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetConcertHall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1005,7 +1005,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Cave
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCave
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1129,7 +1129,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Arena
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetArena
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1253,7 +1253,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Hangar
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetHangar
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1377,7 +1377,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CarpetedHallway
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCarpetedHallway
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1501,7 +1501,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Hallway
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetHallway
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1625,7 +1625,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties StoneCorridor
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetStoneCorridor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1749,7 +1749,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Alley
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetAlley
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1873,7 +1873,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Forest
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetForest
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -1997,7 +1997,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties City
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCity
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2121,7 +2121,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Mountains
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetMountains
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2245,7 +2245,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Quarry
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetQuarry
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2369,7 +2369,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Plain
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPlain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2493,7 +2493,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Parkinglot
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetParkinglot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2617,7 +2617,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Sewerpipe
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSewerpipe
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2741,7 +2741,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Underwater
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetUnderwater
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2865,7 +2865,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Drugged
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrugged
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -2989,7 +2989,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Dizzy
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDizzy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3113,7 +3113,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Psychotic
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPsychotic
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3237,7 +3237,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleSmallroom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleSmallroom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3361,7 +3361,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleShortpassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleShortpassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3485,7 +3485,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleMediumroom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleMediumroom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3609,7 +3609,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleLargeroom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleLargeroom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3733,7 +3733,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleLongpassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleLongpassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3857,7 +3857,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleHall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleHall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -3981,7 +3981,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleCupboard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleCupboard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4105,7 +4105,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleCourtyard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleCourtyard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4229,7 +4229,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CastleAlcove
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCastleAlcove
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4353,7 +4353,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactorySmallRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactorySmallRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4477,7 +4477,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryShortPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryShortPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4601,7 +4601,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryMediumRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryMediumRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4725,7 +4725,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryLargeRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryLargeRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4849,7 +4849,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryLongPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryLongPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -4973,7 +4973,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryHall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryHall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5097,7 +5097,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryCupboard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryCupboard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5221,7 +5221,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryCourtyard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryCourtyard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5345,7 +5345,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties FactoryAlcove
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetFactoryAlcove
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5469,7 +5469,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceSmallRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceSmallRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5593,7 +5593,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceShortPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceShortPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5717,7 +5717,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceMediumRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceMediumRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5841,7 +5841,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceLargeRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceLargeRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -5965,7 +5965,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceLongPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceLongPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6089,7 +6089,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceHall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceHall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6213,7 +6213,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceCupboard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceCupboard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6337,7 +6337,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceCourtyard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceCourtyard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6461,7 +6461,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties IcePalaceAlcove
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetIcePalaceAlcove
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6585,7 +6585,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationSmallRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationSmallRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6709,7 +6709,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationShortPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationShortPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6833,7 +6833,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationMediumRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationMediumRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -6957,7 +6957,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationLargeRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationLargeRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7081,7 +7081,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationLongPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationLongPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7205,7 +7205,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationHall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationHall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7329,7 +7329,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationCupboard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationCupboard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7453,7 +7453,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SpaceStationAlcove
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSpaceStationAlcove
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7577,7 +7577,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenSmallRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenSmallRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7701,7 +7701,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenShortPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenShortPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7825,7 +7825,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenMediumRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenMediumRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -7949,7 +7949,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenLargeRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenLargeRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8073,7 +8073,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenLongPassage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenLongPassage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8197,7 +8197,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenHall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenHall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8321,7 +8321,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenCupboard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenCupboard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8445,7 +8445,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenCourtyard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenCourtyard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8569,7 +8569,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties WoodenAlcove
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetWoodenAlcove
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8693,7 +8693,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportEmptyStadium
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportEmptyStadium
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8817,7 +8817,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportSquashCourt
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportSquashCourt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -8941,7 +8941,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportSmallSwimmingPool
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportSmallSwimmingPool
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9065,7 +9065,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportLargeSwimmingPool
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportLargeSwimmingPool
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9189,7 +9189,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportGymnasium
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportGymnasium
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9313,7 +9313,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportFullStadium
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportFullStadium
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9437,7 +9437,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SportStadiumTannoy
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSportStadiumTannoy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9561,7 +9561,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PrefabWorkshop
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPrefabWorkshop
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9685,7 +9685,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PrefabSchoolRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPrefabSchoolRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9809,7 +9809,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PrefabPractiseRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPrefabPractiseRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -9933,7 +9933,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PrefabOuthouse
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPrefabOuthouse
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10057,7 +10057,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PrefabCaravan
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPrefabCaravan
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10181,7 +10181,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DomeTomb
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDomeTomb
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10305,7 +10305,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PipeSmall
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPipeSmall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10429,7 +10429,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DomeSaintPauls
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDomeSaintPauls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10553,7 +10553,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PipeLongThin
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPipeLongThin
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10677,7 +10677,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PipeLarge
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPipeLarge
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10801,7 +10801,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties PipeResonant
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetPipeResonant
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -10925,7 +10925,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties OutdoorsBackyard
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetOutdoorsBackyard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11049,7 +11049,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties OutdoorsRollingPlains
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetOutdoorsRollingPlains
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11173,7 +11173,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties OutdoorsDeepCanyon
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetOutdoorsDeepCanyon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11297,7 +11297,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties OutdoorsCreek
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetOutdoorsCreek
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11421,7 +11421,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties OutdoorsValley
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetOutdoorsValley
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11545,7 +11545,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties MoodHeaven
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetMoodHeaven
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11669,7 +11669,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties MoodHell
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetMoodHell
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11793,7 +11793,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties MoodMemory
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetMoodMemory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -11917,7 +11917,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingCommentator
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingCommentator
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12041,7 +12041,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingPitGarage
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingPitGarage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12165,7 +12165,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingInCarRacer
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingInCarRacer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12289,7 +12289,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingInCarSports
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingInCarSports
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12413,7 +12413,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingInCarLuxury
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingInCarLuxury
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12537,7 +12537,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingFullGrandStand
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingFullGrandStand
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12661,7 +12661,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingEmptyGrandStand
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingEmptyGrandStand
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12785,7 +12785,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DrivingTunnel
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDrivingTunnel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -12909,7 +12909,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CityStreets
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCityStreets
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13033,7 +13033,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CitySubway
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCitySubway
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13157,7 +13157,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CityMuseum
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCityMuseum
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13281,7 +13281,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CityLibrary
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCityLibrary
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13405,7 +13405,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CityUnderpass
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCityUnderpass
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13529,7 +13529,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties CityAbandoned
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetCityAbandoned
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13653,7 +13653,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties DustyRoom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetDustyRoom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13777,7 +13777,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties Chapel
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetChapel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -13901,7 +13901,7 @@ public unsafe partial class EfxReverbPreset
     }
 
     [NativeTypeName("const EFXEAXREVERBPROPERTIES")]
-    public static ref readonly EfxEaxReverbProperties SmallWaterroom
+    public static ref readonly EfxEaxReverbProperties EfxReverbPresetSmallWaterroom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

@@ -7,9 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("QueryParameterName")]
 [Transformed]
 public enum QueryParameterName : uint
 {
+    [NativeName("GL_QUERY_COUNTER_BITS")]
     QueryCounterBits = unchecked((uint)0x8864),
+
+    [NativeName("GL_CURRENT_QUERY")]
     CurrentQuery = unchecked((uint)0x8865),
 }

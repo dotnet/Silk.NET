@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkPartitionedAccelerationStructureWriteInstanceDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
@@ -26,7 +26,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public PartitionedAccelerationStructureWriteInstanceDataNVExplicitAABB ExplicitAABB;
+    public PartitionedAccelerationStructureWriteInstanceDataNvExplicitAabb ExplicitAabb;
 
     [NativeName("instanceID")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint InstanceID;
+    public uint InstanceId;
 
     [NativeName("instanceMask")]
     [SupportedApiProfile(

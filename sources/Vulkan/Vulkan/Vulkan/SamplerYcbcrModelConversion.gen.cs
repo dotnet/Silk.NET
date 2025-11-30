@@ -117,7 +117,7 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr2020 = 4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -129,7 +129,7 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     RgbIdentityKHR = RgbIdentity,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_IDENTITY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -141,7 +141,7 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     YcbcrIdentityKHR = YcbcrIdentity,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_709_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -153,7 +153,7 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr709KHR = Ycbcr709,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_601_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -165,7 +165,7 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr601KHR = Ycbcr601,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_2020_KHR")]
     [SupportedApiProfile(
         "vulkan",

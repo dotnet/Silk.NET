@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkRenderingFragmentShadingRateAttachmentInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR
@@ -55,7 +55,7 @@ public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public ImageView ImageView;
+    public ImageViewHandle ImageView;
 
     [NativeName("imageLayout")]
     [SupportedApiProfile(

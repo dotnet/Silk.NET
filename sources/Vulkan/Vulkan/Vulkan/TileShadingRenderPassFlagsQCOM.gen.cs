@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("QCOM", 0)]
+[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkTileShadingRenderPassFlagBitsQCOM")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +16,7 @@ public enum TileShadingRenderPassFlagsQCOM : uint
 {
     None = 0x0,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_TILE_SHADING_RENDER_PASS_ENABLE_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +28,7 @@ public enum TileShadingRenderPassFlagsQCOM : uint
     )]
     EnableBitQCOM = 0x1,
 
-    [NameSuffix("QCOM", 0)]
+    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_TILE_SHADING_RENDER_PASS_PER_TILE_EXECUTION_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",

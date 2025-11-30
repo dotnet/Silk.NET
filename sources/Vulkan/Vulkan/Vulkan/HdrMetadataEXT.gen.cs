@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkHdrMetadataEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct HdrMetadataEXT
@@ -23,19 +23,19 @@ public unsafe partial struct HdrMetadataEXT
 
     [NativeName("displayPrimaryRed")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT DisplayPrimaryRed;
+    public XyColorEXT DisplayPrimaryRed;
 
     [NativeName("displayPrimaryGreen")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT DisplayPrimaryGreen;
+    public XyColorEXT DisplayPrimaryGreen;
 
     [NativeName("displayPrimaryBlue")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT DisplayPrimaryBlue;
+    public XyColorEXT DisplayPrimaryBlue;
 
     [NativeName("whitePoint")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT WhitePoint;
+    public XyColorEXT WhitePoint;
 
     [NativeName("maxLuminance")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]

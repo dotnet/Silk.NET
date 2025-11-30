@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("MSFT", 0)]
+[NameAffix("Suffix", "MSFT", 0)]
 [NativeName("VkPhysicalDeviceLayeredDriverPropertiesMSFT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLayeredDriverPropertiesMSFT
@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceLayeredDriverPropertiesMSFT
             "VK_MSFT_layered_driver+VK_VERSION_1_1",
         ]
     )]
-    public LayeredDriverUnderlyingApiMSFT UnderlyingAPI;
+    public LayeredDriverUnderlyingApiMSFT UnderlyingApi;
 }

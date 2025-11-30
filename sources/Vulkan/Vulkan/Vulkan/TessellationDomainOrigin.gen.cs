@@ -46,12 +46,12 @@ public enum TessellationDomainOrigin : uint
     )]
     LowerLeft = 1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     UpperLeftKHR = UpperLeft,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TESSELLATION_DOMAIN_ORIGIN_LOWER_LEFT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     LowerLeftKHR = LowerLeft,

@@ -7,11 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "SGIX", 0)]
+[NativeName("FragmentLightModelParameterSGIX")]
 [Transformed]
 public enum FragmentLightModelParameterSGIX : uint
 {
-    LocalViewer = unchecked((uint)0x8408),
-    TwoSide = unchecked((uint)0x8409),
-    Ambient = unchecked((uint)0x840A),
-    NormalInterpolation = unchecked((uint)0x840B),
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT_MODEL_LOCAL_VIEWER_SGIX")]
+    LocalViewerSGIX = unchecked((uint)0x8408),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT_MODEL_TWO_SIDE_SGIX")]
+    TwoSideSGIX = unchecked((uint)0x8409),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT_MODEL_AMBIENT_SGIX")]
+    AmbientSGIX = unchecked((uint)0x840A),
+
+    [NameAffix("Suffix", "SGIX", 0)]
+    [NativeName("GL_FRAGMENT_LIGHT_MODEL_NORMAL_INTERPOLATION_SGIX")]
+    NormalInterpolationSGIX = unchecked((uint)0x840B),
 }

@@ -10,14 +10,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "SOFT", 0)]
+[NativeName("RenderFormatChannelSOFT")]
 [Transformed]
 public enum RenderFormatChannelSOFT : uint
 {
-    Mono = unchecked((uint)0x1500),
-    Stereo = unchecked((uint)0x1501),
-    Quad = unchecked((uint)0x1503),
-    X5Point1 = unchecked((uint)0x1504),
-    X6Point1 = unchecked((uint)0x1505),
-    X7Point1 = unchecked((uint)0x1506),
-    Bformat3D = unchecked((uint)0x1507),
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_MONO_SOFT")]
+    MonoSOFT = unchecked((uint)0x1500),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_STEREO_SOFT")]
+    StereoSOFT = unchecked((uint)0x1501),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_QUAD_SOFT")]
+    QuadSOFT = unchecked((uint)0x1503),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_5POINT1_SOFT")]
+    X5Point1SOFT = unchecked((uint)0x1504),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_6POINT1_SOFT")]
+    X6Point1SOFT = unchecked((uint)0x1505),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_7POINT1_SOFT")]
+    X7Point1SOFT = unchecked((uint)0x1506),
+
+    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("ALC_BFORMAT3D_SOFT")]
+    Bformat3DSOFT = unchecked((uint)0x1507),
 }

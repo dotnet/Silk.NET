@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkLatencyTimingsFrameReportNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LatencyTimingsFrameReportNV
@@ -50,7 +50,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    public ulong PresentID;
+    public ulong PresentId;
 
     [NativeName("inputSampleTimeUs")]
     [SupportedApiProfile(

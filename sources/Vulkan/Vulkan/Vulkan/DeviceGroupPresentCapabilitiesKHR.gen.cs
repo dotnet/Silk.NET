@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkDeviceGroupPresentCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
@@ -38,7 +38,7 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public DeviceGroupPresentCapabilitiesKHRPresentMask PresentMask;
+    public DeviceGroupPresentCapabilitiesKhrPresentMask PresentMask;
 
     [NativeName("modes")]
     [SupportedApiProfile(

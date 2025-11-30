@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkAccelerationStructureMemoryRequirementsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
@@ -55,5 +55,5 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureNV AccelerationStructure;
+    public AccelerationStructureHandleNV AccelerationStructure;
 }

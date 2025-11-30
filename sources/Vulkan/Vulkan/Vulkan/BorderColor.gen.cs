@@ -156,7 +156,7 @@ public enum BorderColor : uint
     )]
     IntOpaqueWhite = 5,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BORDER_COLOR_FLOAT_CUSTOM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -168,7 +168,7 @@ public enum BorderColor : uint
     )]
     FloatCustomEXT = 1000287003,
 
-    [NameSuffix("EXT", 0)]
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BORDER_COLOR_INT_CUSTOM_EXT")]
     [SupportedApiProfile(
         "vulkan",

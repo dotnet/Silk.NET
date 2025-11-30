@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkPipelineFragmentShadingRateEnumStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
@@ -50,5 +50,5 @@ public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public PipelineFragmentShadingRateEnumStateCreateInfoNVCombinerOps CombinerOps;
+    public PipelineFragmentShadingRateEnumStateCreateInfoNvCombinerOps CombinerOps;
 }

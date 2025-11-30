@@ -7,9 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "EXT", 0)]
+[NativeName("FogPointerTypeEXT")]
 [Transformed]
 public enum FogPointerTypeEXT : uint
 {
+    [NativeName("GL_FLOAT")]
     Float = unchecked((uint)0x1406),
+
+    [NativeName("GL_DOUBLE")]
     Double = unchecked((uint)0x140A),
 }

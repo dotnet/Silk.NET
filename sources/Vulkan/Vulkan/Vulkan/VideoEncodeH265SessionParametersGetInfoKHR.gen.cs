@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeH265SessionParametersGetInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
@@ -35,7 +35,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdVPS;
+    public uint WriteStdVps;
 
     [NativeName("writeStdSPS")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdSPS;
+    public uint WriteStdSps;
 
     [NativeName("writeStdPPS")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdPPS;
+    public uint WriteStdPps;
 
     [NativeName("stdVPSId")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdVPSId;
+    public uint StdVpsId;
 
     [NativeName("stdSPSId")]
     [SupportedApiProfile(
@@ -67,7 +67,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSPSId;
+    public uint StdSpsId;
 
     [NativeName("stdPPSId")]
     [SupportedApiProfile(
@@ -75,5 +75,5 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdPPSId;
+    public uint StdPpsId;
 }

@@ -7,18 +7,52 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "EXT", 0)]
+[NativeName("VertexShaderCoordOutEXT")]
 [Transformed]
 public enum VertexShaderCoordOutEXT : uint
 {
-    X = unchecked((uint)0x87D5),
-    Y = unchecked((uint)0x87D6),
-    Z = unchecked((uint)0x87D7),
-    W = unchecked((uint)0x87D8),
-    NegativeX = unchecked((uint)0x87D9),
-    NegativeY = unchecked((uint)0x87DA),
-    NegativeZ = unchecked((uint)0x87DB),
-    NegativeW = unchecked((uint)0x87DC),
-    Zero = unchecked((uint)0x87DD),
-    One = unchecked((uint)0x87DE),
-    NegativeOne = unchecked((uint)0x87DF),
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_X_EXT")]
+    Xext = unchecked((uint)0x87D5),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_Y_EXT")]
+    Yext = unchecked((uint)0x87D6),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_Z_EXT")]
+    Zext = unchecked((uint)0x87D7),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_W_EXT")]
+    Wext = unchecked((uint)0x87D8),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_NEGATIVE_X_EXT")]
+    NegativeXEXT = unchecked((uint)0x87D9),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_NEGATIVE_Y_EXT")]
+    NegativeYEXT = unchecked((uint)0x87DA),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_NEGATIVE_Z_EXT")]
+    NegativeZEXT = unchecked((uint)0x87DB),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_NEGATIVE_W_EXT")]
+    NegativeWEXT = unchecked((uint)0x87DC),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_ZERO_EXT")]
+    ZeroEXT = unchecked((uint)0x87DD),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_ONE_EXT")]
+    OneEXT = unchecked((uint)0x87DE),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("GL_NEGATIVE_ONE_EXT")]
+    NegativeOneEXT = unchecked((uint)0x87DF),
 }

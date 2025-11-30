@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkExternalComputeQueueCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalComputeQueueCreateInfoNV
@@ -22,5 +22,5 @@ public unsafe partial struct ExternalComputeQueueCreateInfoNV
 
     [NativeName("preferredQueue")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
-    public Queue PreferredQueue;
+    public QueueHandle PreferredQueue;
 }

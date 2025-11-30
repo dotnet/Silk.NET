@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkBindAccelerationStructureMemoryInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindAccelerationStructureMemoryInfoNV
@@ -44,7 +44,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureNV AccelerationStructure;
+    public AccelerationStructureHandleNV AccelerationStructure;
 
     [NativeName("memory")]
     [SupportedApiProfile(
@@ -55,7 +55,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemory Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeName("memoryOffset")]
     [SupportedApiProfile(

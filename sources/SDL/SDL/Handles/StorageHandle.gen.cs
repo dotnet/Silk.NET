@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NameAffix("Suffix", "Handle", 0)]
+[NativeName("SDL_Storage")]
 public readonly unsafe partial struct StorageHandle
 {
     public readonly void* Handle;

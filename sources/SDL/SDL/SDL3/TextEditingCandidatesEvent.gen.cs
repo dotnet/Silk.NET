@@ -19,7 +19,7 @@ public unsafe partial struct TextEditingCandidatesEvent
     public nuint Timestamp;
 
     [NativeTypeName("SDL_WindowID")]
-    public uint WindowID;
+    public uint WindowId;
 
     [NativeTypeName("const char *const *")]
     public sbyte** Candidates;

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
 {
@@ -53,7 +53,7 @@ public readonly unsafe struct DeviceMemoryReportCallbackEXT : IDisposable
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemoryReportCallbackEXT(DeviceMemoryReportCallbackEXTDelegate proc) =>
+    public DeviceMemoryReportCallbackEXT(DeviceMemoryReportCallbackExtDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile(

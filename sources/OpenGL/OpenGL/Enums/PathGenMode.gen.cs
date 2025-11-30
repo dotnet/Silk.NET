@@ -7,12 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("PathGenMode")]
 [Transformed]
 public enum PathGenMode : uint
 {
-    None = unchecked((uint)0),
-    EyeLinear = unchecked((uint)0x2400),
-    ObjectLinear = unchecked((uint)0x2401),
+    [NativeName("GL_CONSTANT")]
     Constant = unchecked((uint)0x8576),
+
+    [NativeName("GL_NONE")]
+    None = unchecked((uint)0),
+
+    [NativeName("GL_EYE_LINEAR")]
+    EyeLinear = unchecked((uint)0x2400),
+
+    [NativeName("GL_OBJECT_LINEAR")]
+    ObjectLinear = unchecked((uint)0x2401),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
     PathObjectBoundingBoxNV = unchecked((uint)0x908A),
 }

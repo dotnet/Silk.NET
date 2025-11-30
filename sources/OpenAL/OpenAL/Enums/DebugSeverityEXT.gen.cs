@@ -10,12 +10,28 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "EXT", 0)]
+[NativeName("DebugSeverityEXT")]
 [Transformed]
 public enum DebugSeverityEXT : uint
 {
-    DontCare = unchecked((uint)0x0002),
-    DebugSeverityHigh = unchecked((uint)0x19C3),
-    DebugSeverityMedium = unchecked((uint)0x19C4),
-    DebugSeverityLow = unchecked((uint)0x19C5),
-    DebugSeverityNotification = unchecked((uint)0x19C6),
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DONT_CARE_EXT")]
+    DontCareEXT = unchecked((uint)0x0002),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SEVERITY_HIGH_EXT")]
+    DebugSeverityHighEXT = unchecked((uint)0x19C3),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SEVERITY_MEDIUM_EXT")]
+    DebugSeverityMediumEXT = unchecked((uint)0x19C4),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SEVERITY_LOW_EXT")]
+    DebugSeverityLowEXT = unchecked((uint)0x19C5),
+
+    [NameAffix("Suffix", "EXT", 0)]
+    [NativeName("AL_DEBUG_SEVERITY_NOTIFICATION_EXT")]
+    DebugSeverityNotificationEXT = unchecked((uint)0x19C6),
 }

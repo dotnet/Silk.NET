@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkAccelerationStructureMotionInstanceDataNV")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
@@ -38,5 +38,5 @@ public partial struct AccelerationStructureMotionInstanceDataNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public AccelerationStructureSRTMotionInstanceNV SrtMotionInstance;
+    public AccelerationStructureSrtMotionInstanceNV SrtMotionInstance;
 }

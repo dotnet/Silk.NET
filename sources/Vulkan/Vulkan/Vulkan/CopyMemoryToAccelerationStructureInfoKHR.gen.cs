@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkCopyMemoryToAccelerationStructureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryToAccelerationStructureInfoKHR
@@ -54,7 +54,7 @@ public unsafe partial struct CopyMemoryToAccelerationStructureInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHR Dst;
+    public AccelerationStructureHandleKHR Dst;
 
     [NativeName("mode")]
     [SupportedApiProfile(

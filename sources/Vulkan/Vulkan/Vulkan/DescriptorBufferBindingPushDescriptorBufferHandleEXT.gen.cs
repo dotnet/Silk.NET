@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("EXT", 0)]
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDescriptorBufferBindingPushDescriptorBufferHandleEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorBufferBindingPushDescriptorBufferHandleEXT
@@ -50,5 +50,5 @@ public unsafe partial struct DescriptorBufferBindingPushDescriptorBufferHandleEX
             "VK_VERSION_1_3",
         ]
     )]
-    public Buffer Buffer;
+    public BufferHandle Buffer;
 }

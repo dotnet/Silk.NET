@@ -33,7 +33,7 @@ public unsafe partial struct DescriptorImageInfo
         ],
         MinVersion = "1.0"
     )]
-    public Sampler Sampler;
+    public SamplerHandle Sampler;
 
     [NativeName("imageView")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public unsafe partial struct DescriptorImageInfo
         ],
         MinVersion = "1.0"
     )]
-    public ImageView ImageView;
+    public ImageViewHandle ImageView;
 
     [NativeName("imageLayout")]
     [SupportedApiProfile(

@@ -53,7 +53,7 @@ public enum SamplerYcbcrRange : uint
     )]
     ItuNarrow = 1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_FULL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +65,7 @@ public enum SamplerYcbcrRange : uint
     )]
     ItuFullKHR = ItuFull,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_NARROW_KHR")]
     [SupportedApiProfile(
         "vulkan",

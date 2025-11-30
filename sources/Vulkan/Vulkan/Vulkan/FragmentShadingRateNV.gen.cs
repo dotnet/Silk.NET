@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("NV", 0)]
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkFragmentShadingRateNV")]
 [SupportedApiProfile("vulkan")]
 public enum FragmentShadingRateNV : uint
 {
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -21,7 +21,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPerPixelNV = 0,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_1X2_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +30,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPer1X2PixelsNV = 1,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -39,7 +39,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPer2X1PixelsNV = 4,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48,7 +48,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPer2X2PixelsNV = 5,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -57,7 +57,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPer2X4PixelsNV = 6,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -66,7 +66,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPer4X2PixelsNV = 9,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -75,7 +75,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate1InvocationPer4X4PixelsNV = 10,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -84,7 +84,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate2InvocationsPerPixelNV = 11,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_4_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -93,7 +93,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate4InvocationsPerPixelNV = 12,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_8_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -102,7 +102,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate8InvocationsPerPixelNV = 13,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_16_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -111,7 +111,7 @@ public enum FragmentShadingRateNV : uint
     )]
     Rate16InvocationsPerPixelNV = 14,
 
-    [NameSuffix("NV", 0)]
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_NO_INVOCATIONS_NV")]
     [SupportedApiProfile(
         "vulkan",

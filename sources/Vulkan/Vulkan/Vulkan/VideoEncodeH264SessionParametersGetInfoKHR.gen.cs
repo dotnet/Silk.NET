@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeH264SessionParametersGetInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
@@ -35,7 +35,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdSPS;
+    public uint WriteStdSps;
 
     [NativeName("writeStdPPS")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdPPS;
+    public uint WriteStdPps;
 
     [NativeName("stdSPSId")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSPSId;
+    public uint StdSpsId;
 
     [NativeName("stdPPSId")]
     [SupportedApiProfile(
@@ -59,5 +59,5 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdPPSId;
+    public uint StdPpsId;
 }

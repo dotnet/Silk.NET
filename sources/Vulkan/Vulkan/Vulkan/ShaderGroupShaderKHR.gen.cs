@@ -8,12 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkShaderGroupShaderKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ShaderGroupShaderKHR : uint
 {
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_GROUP_SHADER_GENERAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +25,7 @@ public enum ShaderGroupShaderKHR : uint
     )]
     GeneralKHR = 0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_GROUP_SHADER_CLOSEST_HIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +37,7 @@ public enum ShaderGroupShaderKHR : uint
     )]
     ClosestHitKHR = 1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_GROUP_SHADER_ANY_HIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +49,7 @@ public enum ShaderGroupShaderKHR : uint
     )]
     AnyHitKHR = 2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_GROUP_SHADER_INTERSECTION_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,13 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoCodecOperationFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum VideoCodecOperationFlagsKHR : uint
 {
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +23,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     NoneKHR = 0x0,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +32,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     EncodeH264BitKHR = 0x10000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +41,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     EncodeH265BitKHR = 0x20000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50,7 +50,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeH264BitKHR = 0x1,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -59,7 +59,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeH265BitKHR = 0x2,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +68,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     DecodeAv1BitKHR = 0x4,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -77,7 +77,7 @@ public enum VideoCodecOperationFlagsKHR : uint
     )]
     EncodeAv1BitKHR = 0x40000,
 
-    [NameSuffix("KHR", 0)]
+    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_VP9_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

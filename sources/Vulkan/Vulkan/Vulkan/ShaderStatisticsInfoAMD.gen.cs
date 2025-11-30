@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("AMD", 0)]
+[NameAffix("Suffix", "AMD", 0)]
 [NativeName("VkShaderStatisticsInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public partial struct ShaderStatisticsInfoAMD
@@ -39,5 +39,5 @@ public partial struct ShaderStatisticsInfoAMD
 
     [NativeName("computeWorkGroupSize")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    public ShaderStatisticsInfoAMDComputeWorkGroupSize ComputeWorkGroupSize;
+    public ShaderStatisticsInfoAmdComputeWorkGroupSize ComputeWorkGroupSize;
 }

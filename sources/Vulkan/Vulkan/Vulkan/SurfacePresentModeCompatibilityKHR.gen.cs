@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameSuffix("KHR", 0)]
+[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkSurfacePresentModeCompatibilityKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfacePresentModeCompatibilityKHR

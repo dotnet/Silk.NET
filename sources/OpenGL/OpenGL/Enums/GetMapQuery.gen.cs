@@ -7,10 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("GetMapQuery")]
 [Transformed]
 public enum GetMapQuery : uint
 {
+    [NativeName("GL_COEFF")]
     Coeff = unchecked((uint)0x0A00),
+
+    [NativeName("GL_ORDER")]
     Order = unchecked((uint)0x0A01),
+
+    [NativeName("GL_DOMAIN")]
     Domain = unchecked((uint)0x0A02),
 }

@@ -7,15 +7,40 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "NV", 0)]
+[NativeName("CombinerMappingNV")]
 [Transformed]
 public enum CombinerMappingNV : uint
 {
-    UnsignedIdentity = unchecked((uint)0x8536),
-    UnsignedInvert = unchecked((uint)0x8537),
-    ExpandNormal = unchecked((uint)0x8538),
-    ExpandNegate = unchecked((uint)0x8539),
-    HalfBiasNormal = unchecked((uint)0x853A),
-    HalfBiasNegate = unchecked((uint)0x853B),
-    SignedIdentity = unchecked((uint)0x853C),
-    SignedNegate = unchecked((uint)0x853D),
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_UNSIGNED_IDENTITY_NV")]
+    UnsignedIdentityNV = unchecked((uint)0x8536),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_UNSIGNED_INVERT_NV")]
+    UnsignedInvertNV = unchecked((uint)0x8537),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_EXPAND_NORMAL_NV")]
+    ExpandNormalNV = unchecked((uint)0x8538),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_EXPAND_NEGATE_NV")]
+    ExpandNegateNV = unchecked((uint)0x8539),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_HALF_BIAS_NORMAL_NV")]
+    HalfBiasNormalNV = unchecked((uint)0x853A),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_HALF_BIAS_NEGATE_NV")]
+    HalfBiasNegateNV = unchecked((uint)0x853B),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_SIGNED_IDENTITY_NV")]
+    SignedIdentityNV = unchecked((uint)0x853C),
+
+    [NameAffix("Suffix", "NV", 0)]
+    [NativeName("GL_SIGNED_NEGATE_NV")]
+    SignedNegateNV = unchecked((uint)0x853D),
 }
