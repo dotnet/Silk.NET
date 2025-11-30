@@ -919,7 +919,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             )
                             : null
                     )
-                    .WithAttributeLists(List<AttributeListSyntax>())
                     .WithExpressionBody(
                         node.Body is null
                         && node.ExpressionBody is null

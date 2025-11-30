@@ -16,3 +16,9 @@
 [submodule "eng/submodules/openal-soft"]
 	path = eng/submodules/openal-soft
 	url = https://github.com/kcat/openal-soft
+[submodule "eng/submodules/vulkan"]
+	path = eng/submodules/vulkan
+	url = https://github.com/KhronosGroup/Vulkan-Docs.git
+[submodule "eng/submodules/vulkan-headers"]
+	path = eng/submodules/vulkan-headers
+	url = https://github.com/KhronosGroup/Vulkan-Headers.git

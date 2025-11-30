@@ -26,6 +26,7 @@ public class ModLoader
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
             nameof(TransformHandles) => typeof(TransformHandles),
+            nameof(TransformEnums) => typeof(TransformEnums),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
             nameof(TransformProperties) => typeof(TransformProperties),
             nameof(ClangScraper) => typeof(ClangScraper),

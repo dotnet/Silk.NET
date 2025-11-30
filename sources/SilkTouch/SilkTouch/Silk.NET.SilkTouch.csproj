@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     <SilkTrimmingExempt>true</SilkTrimmingExempt>
@@ -13,6 +13,7 @@
     <PackageReference Include="CSharpier.Core" />
     <PackageReference Include="Humanizer.Core" />
     <PackageReference Include="Microsoft.Build.Locator" />
+    <PackageReference Include="Microsoft.Build.Framework" PrivateAssets="all" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" />
@@ -24,10 +25,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
     <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" />
     <PackageReference Include="System.CommandLine" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" />
     <PackageReference Include="System.IO.Hashing" />
-
-    <!-- This is not used but it is used transitively and the version pulled in has a vulnerability -->
-    <PackageReference Include="System.Formats.Asn1" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,22 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using NUnit.Framework;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Naming;
-using VerifyNUnit;
-using VerifyTests;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using NameTrimmer = Silk.NET.SilkTouch.Naming.NameTrimmer;
 
@@ -58,7 +50,7 @@ public class MixKhronosDataTests
         IEnumerable<string> files = ["gl.xml", "wgl.xml", "glx.xml", "cl.xml", "vk.xml"];
         return files
             .ToAsyncEnumerable()
-            .SelectAwait(async x =>
+            .Select(async (x, ct) =>
             {
                 var mod = new MixKhronosData(
                     new NullLogger<MixKhronosData>(),
@@ -67,7 +59,7 @@ public class MixKhronosDataTests
                         Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
                     }
                 );
-                await mod.InitializeAsync(new DummyModContext());
+                await mod.InitializeAsync(new DummyModContext(), ct);
                 return (object[])[x, mod.Jobs[""]];
             });
     }
@@ -77,7 +69,7 @@ public class MixKhronosDataTests
 
     private static IAsyncEnumerable<object[]> RegressionTestCases() =>
         TestCases()
-            .SelectAwait(async s =>
+            .Select(async (object[] s, CancellationToken ct) =>
                 s[0] is "gl.xml" or "cl.xml"
                     ? (object[])
                         [
