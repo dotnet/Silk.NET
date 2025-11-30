@@ -25,7 +25,7 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DpbAndOutputCoincideBitKHR = 0x1,
+    DpbAndOutputCoincideBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_DISTINCT_BIT_KHR")]
@@ -37,5 +37,5 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DpbAndOutputDistinctBitKHR = 0x2,
+    DpbAndOutputDistinctBitkhr = 0x2,
 }

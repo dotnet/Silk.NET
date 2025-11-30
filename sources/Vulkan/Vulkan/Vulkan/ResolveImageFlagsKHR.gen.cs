@@ -26,7 +26,7 @@ public enum ResolveImageFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    SkipTransferFunctionBitKHR = 0x1,
+    SkipTransferFunctionBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_RESOLVE_IMAGE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
@@ -38,5 +38,5 @@ public enum ResolveImageFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    EnableTransferFunctionBitKHR = 0x2,
+    EnableTransferFunctionBitkhr = 0x2,
 }

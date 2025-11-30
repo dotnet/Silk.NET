@@ -20,7 +20,7 @@ public enum BlockMatchWindowCompareModeQCOM : uint
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    MinQCOM = 0,
+    Minqcom = 0,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MAX_QCOM")]
@@ -29,5 +29,5 @@ public enum BlockMatchWindowCompareModeQCOM : uint
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    MaxQCOM = 1,
+    Maxqcom = 1,
 }

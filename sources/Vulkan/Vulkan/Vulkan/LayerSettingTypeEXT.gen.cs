@@ -14,40 +14,40 @@ public enum LayerSettingTypeEXT : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_BOOL32_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Bool32EXT = 0,
+    Bool32Ext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_INT32_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Int32EXT = 1,
+    Int32Ext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_INT64_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Int64EXT = 2,
+    Int64Ext = 2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_UINT32_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Uint32EXT = 3,
+    Uint32Ext = 3,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_UINT64_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Uint64EXT = 4,
+    Uint64Ext = 4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_FLOAT32_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Float32EXT = 5,
+    Float32Ext = 5,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_FLOAT64_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    Float64EXT = 6,
+    Float64Ext = 6,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LAYER_SETTING_TYPE_STRING_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    StringEXT = 7,
+    Stringext = 7,
 }

@@ -47,7 +47,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectExecutionSetEXT IndirectExecutionSet;
+    public IndirectExecutionSetHandleEXT IndirectExecutionSet;
 
     [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectCommandsLayoutEXT IndirectCommandsLayout;
+    public IndirectCommandsLayoutHandleEXT IndirectCommandsLayout;
 
     [NativeName("maxSequenceCount")]
     [SupportedApiProfile(

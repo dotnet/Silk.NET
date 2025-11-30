@@ -47,5 +47,5 @@ public enum SemaphoreImportFlags : uint
         ["VK_KHR_external_semaphore"],
         ImpliesSets = ["VK_KHR_external_semaphore_capabilities"]
     )]
-    TemporaryBitKHR = TemporaryBit,
+    TemporaryBitkhr = TemporaryBit,
 }

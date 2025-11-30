@@ -23,7 +23,7 @@ public unsafe partial struct CuLaunchInfoNVX
 
     [NativeName("function")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuFunctionNVX Function;
+    public CuFunctionHandleNVX Function;
 
     [NativeName("gridDimX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]

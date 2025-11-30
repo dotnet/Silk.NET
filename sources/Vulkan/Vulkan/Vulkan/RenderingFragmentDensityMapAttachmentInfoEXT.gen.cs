@@ -53,7 +53,7 @@ public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public ImageView ImageView;
+    public ImageViewHandle ImageView;
 
     [NativeName("imageLayout")]
     [SupportedApiProfile(

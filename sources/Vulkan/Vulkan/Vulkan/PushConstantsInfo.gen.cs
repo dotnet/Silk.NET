@@ -32,7 +32,7 @@ public unsafe partial struct PushConstantsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public PipelineLayout Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeName("stageFlags")]
     [SupportedApiProfile(

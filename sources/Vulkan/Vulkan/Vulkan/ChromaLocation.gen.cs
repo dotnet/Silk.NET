@@ -63,7 +63,7 @@ public enum ChromaLocation : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CositedEvenKHR = CositedEven,
+    CositedEvenkhr = CositedEven,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_CHROMA_LOCATION_MIDPOINT_KHR")]
@@ -75,5 +75,5 @@ public enum ChromaLocation : uint
             "VK_VERSION_1_1",
         ]
     )]
-    MidpointKHR = Midpoint,
+    Midpointkhr = Midpoint,
 }

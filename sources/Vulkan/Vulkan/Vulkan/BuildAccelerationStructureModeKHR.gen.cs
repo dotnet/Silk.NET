@@ -23,7 +23,7 @@ public enum BuildAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    BuildKHR = 0,
+    Buildkhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
@@ -35,5 +35,5 @@ public enum BuildAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    UpdateKHR = 1,
+    Updatekhr = 1,
 }

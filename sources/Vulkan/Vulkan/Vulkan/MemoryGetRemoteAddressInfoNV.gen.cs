@@ -43,7 +43,7 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public DeviceMemory Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeName("handleType")]
     [SupportedApiProfile(

@@ -24,7 +24,7 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnknownNV = 0x0,
+    Unknownnv = 0x0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_INPUT_BIT_NV")]
@@ -37,7 +37,7 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    InputBitNV = 0x1,
+    InputBitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_OUTPUT_BIT_NV")]
@@ -50,7 +50,7 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    OutputBitNV = 0x2,
+    OutputBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_HINT_BIT_NV")]
@@ -63,7 +63,7 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    HintBitNV = 0x4,
+    HintBitnv = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_COST_BIT_NV")]
@@ -76,7 +76,7 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CostBitNV = 0x8,
+    CostBitnv = 0x8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_USAGE_GLOBAL_FLOW_BIT_NV")]
@@ -89,5 +89,5 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    GlobalFlowBitNV = 0x10,
+    GlobalFlowBitnv = 0x10,
 }

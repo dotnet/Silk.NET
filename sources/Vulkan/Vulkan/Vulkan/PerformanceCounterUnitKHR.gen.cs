@@ -23,7 +23,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    GenericKHR = 0,
+    Generickhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_PERCENTAGE_KHR")]
@@ -35,7 +35,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    PercentageKHR = 1,
+    Percentagekhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_NANOSECONDS_KHR")]
@@ -47,7 +47,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    NanosecondsKHR = 2,
+    Nanosecondskhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_BYTES_KHR")]
@@ -59,7 +59,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    BytesKHR = 3,
+    Byteskhr = 3,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_BYTES_PER_SECOND_KHR")]
@@ -71,7 +71,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    BytesPerSecondKHR = 4,
+    BytesPerSecondkhr = 4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_KELVIN_KHR")]
@@ -83,7 +83,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    KelvinKHR = 5,
+    Kelvinkhr = 5,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_WATTS_KHR")]
@@ -95,7 +95,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    WattsKHR = 6,
+    Wattskhr = 6,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_VOLTS_KHR")]
@@ -107,7 +107,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    VoltsKHR = 7,
+    Voltskhr = 7,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_AMPS_KHR")]
@@ -119,7 +119,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    AmpsKHR = 8,
+    Ampskhr = 8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_HERTZ_KHR")]
@@ -131,7 +131,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    HertzKHR = 9,
+    Hertzkhr = 9,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_CYCLES_KHR")]
@@ -143,5 +143,5 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CyclesKHR = 10,
+    Cycleskhr = 10,
 }

@@ -23,7 +23,7 @@ public enum ConservativeRasterizationModeEXT : uint
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    DisabledEXT = 0,
+    Disabledext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_OVERESTIMATE_EXT")]
@@ -35,7 +35,7 @@ public enum ConservativeRasterizationModeEXT : uint
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    OverestimateEXT = 1,
+    Overestimateext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_UNDERESTIMATE_EXT")]
@@ -47,5 +47,5 @@ public enum ConservativeRasterizationModeEXT : uint
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    UnderestimateEXT = 2,
+    Underestimateext = 2,
 }

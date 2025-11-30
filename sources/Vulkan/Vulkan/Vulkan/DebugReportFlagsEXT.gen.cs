@@ -19,25 +19,25 @@ public enum DebugReportFlagsEXT : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_REPORT_INFORMATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    InformationBitEXT = 0x1,
+    InformationBitext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_REPORT_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    WarningBitEXT = 0x2,
+    WarningBitext = 0x2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PerformanceWarningBitEXT = 0x4,
+    PerformanceWarningBitext = 0x4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_REPORT_ERROR_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ErrorBitEXT = 0x8,
+    ErrorBitext = 0x8,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_REPORT_DEBUG_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugBitEXT = 0x10,
+    DebugBitext = 0x10,
 }

@@ -15,5 +15,5 @@ public enum AccessFlags3KHR : ulong
 {
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCESS_3_NONE_KHR")]
-    Access3NoneKHR = 0x0,
+    Access3Nonekhr = 0x0,
 }

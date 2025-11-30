@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -90,6 +91,8 @@ public class PrettifyNames(
             // old logic.
             var trimmers = trimmerProviders
                 .SelectMany(x => x.Get(ctx.JobKey))
+                .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
+                .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
                 .OrderBy(x => x.Version)
                 .ToArray();
 
@@ -768,7 +771,7 @@ public class PrettifyNames(
         /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
         /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
         /// </summary>
-        public Dictionary<string, TypeAffixData> Affixes { get; } = new();
+        public Dictionary<string, TypeAffixData> AffixTypes { get; } = new();
 
         /// <summary>
         /// A set of type names marked with the [Transformed] attribute.
@@ -857,12 +860,12 @@ public class PrettifyNames(
                 return;
             }
 
-            if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
+            if (!AffixTypes.TryGetValue(typeIdentifier, out var typeAffixData))
             {
                 typeAffixData = new TypeAffixData([], null);
             }
 
-            Affixes[typeIdentifier] = typeAffixData with
+            AffixTypes[typeIdentifier] = typeAffixData with
             {
                 TypeAffixes = [..typeAffixData.TypeAffixes, ..affixes],
             };
@@ -875,13 +878,13 @@ public class PrettifyNames(
                 return;
             }
 
-            if (!Affixes.TryGetValue(typeIdentifier, out var typeAffixData))
+            if (!AffixTypes.TryGetValue(typeIdentifier, out var typeAffixData))
             {
                 typeAffixData = new TypeAffixData([], null);
             }
 
             (typeAffixData.MemberAffixes ??= []).Add(memberIdentifier, affixData);
-            Affixes[typeIdentifier] = typeAffixData;
+            AffixTypes[typeIdentifier] = typeAffixData;
         }
 
         // ----- Types -----
@@ -1093,5 +1096,173 @@ public class PrettifyNames(
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!)
                 .WithRenameSafeAttributeLists();
+    }
+
+    private class NameAffixerEarlyTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
+    {
+        /// <summary>
+        /// Use low version to ensure this trimmer runs first.
+        /// </summary>
+        public Version Version => new (0, 0, 0);
+
+        public void Trim(NameTrimmerContext context)
+        {
+            if (context.Container == null)
+            {
+                foreach (var (original, (primary, secondary)) in context.Names)
+                {
+                    if (affixTypes.TryGetValue(original, out var affixTypeData))
+                    {
+                        if (TryRemoveAffixes(primary, affixTypeData.TypeAffixes, out var newName))
+                        {
+                            var secondaries = secondary ?? [];
+                            secondaries.Add(primary);
+
+                            context.Names[original] = new CandidateNames(newName, secondaries);
+                        }
+                    }
+                }
+
+                return;
+            }
+
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                if (affixTypes.TryGetValue(context.Container, out var affixTypeData))
+                {
+                    if (affixTypeData.MemberAffixes?.TryGetValue(original, out var affixes) ?? false)
+                    {
+                        if (TryRemoveAffixes(primary, affixes, out var newName))
+                        {
+                            var secondaries = secondary ?? [];
+                            secondaries.Add(primary);
+
+                            context.Names[original] = new CandidateNames(newName, secondaries);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private class NameAffixerLateTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
+    {
+        /// <summary>
+        /// Use high version to ensure this trimmer runs last.
+        /// </summary>
+        public Version Version => new (999, 999, 999);
+
+        public void Trim(NameTrimmerContext context)
+        {
+            if (context.Container == null)
+            {
+                foreach (var (original, (primary, secondary)) in context.Names)
+                {
+                    if (affixTypes.TryGetValue(original, out var affixTypeData))
+                    {
+                        if (TryApplyAffixes(primary, affixTypeData.TypeAffixes, out var newName))
+                        {
+                            var secondaries = secondary ?? [];
+                            secondaries.Add(primary);
+
+                            context.Names[original] = new CandidateNames(newName, secondaries);
+                        }
+                    }
+                }
+
+                return;
+            }
+
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                if (affixTypes.TryGetValue(context.Container, out var affixTypeData))
+                {
+                    if (affixTypeData.MemberAffixes?.TryGetValue(original, out var affixes) ?? false)
+                    {
+                        if (TryApplyAffixes(primary, affixes, out var newName))
+                        {
+                            var secondaries = secondary ?? [];
+                            secondaries.Add(primary);
+
+                            context.Names[original] = new CandidateNames(newName, secondaries);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private static bool TryRemoveAffixes(string name, NameAffix[] affixes, [NotNullWhen(true)] out string? newName)
+    {
+        if (affixes.Length == 0)
+        {
+            newName = name;
+            return false;
+        }
+
+        affixes.Sort((a, b) => a.Priority.CompareTo(b.Priority));
+        var prefixes = affixes.Where(x => x.IsPrefix).ToList();
+        var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
+
+        var modified = false;
+        RemoveAffixes(true, prefixes);
+        RemoveAffixes(false, suffixes);
+
+        newName = name;
+        return modified;
+
+        void RemoveAffixes(bool isPrefix, List<NameAffix> affixes)
+        {
+            while (affixes.Count > 0)
+            {
+                var removedAffix = false;
+                for (var i = 0; i < affixes.Count; i++)
+                {
+                    var affix = affixes[i];
+                    if (isPrefix ? name.StartsWith(affix.Affix) : name.EndsWith(affix.Affix))
+                    {
+                        name = isPrefix ? name[affix.Affix.Length..] : name[..^affix.Affix.Length];
+
+                        affixes.RemoveAt(i);
+                        removedAffix = true;
+                        modified = true;
+                        break;
+                    }
+                }
+
+                if (!removedAffix)
+                {
+                    break;
+                }
+            }
+        }
+    }
+
+    private static bool TryApplyAffixes(string name, NameAffix[] affixes, [NotNullWhen(true)] out string? newName)
+    {
+        newName = name;
+        if (affixes.Length == 0)
+        {
+            return false;
+        }
+
+        affixes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+
+        foreach (var affix in affixes)
+        {
+            if (affix.Priority >= 0)
+            {
+                if (affix.IsPrefix)
+                {
+                    newName = affix.Affix + newName;
+                }
+                else
+                {
+                    newName += affix.Affix;
+                }
+            }
+        }
+
+        return true;
     }
 }

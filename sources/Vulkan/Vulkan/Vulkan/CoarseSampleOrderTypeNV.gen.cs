@@ -23,7 +23,7 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    DefaultNV = 0,
+    Defaultnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_CUSTOM_NV")]
@@ -35,7 +35,7 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    CustomNV = 1,
+    Customnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_PIXEL_MAJOR_NV")]
@@ -47,7 +47,7 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    PixelMajorNV = 2,
+    PixelMajornv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_SAMPLE_MAJOR_NV")]
@@ -59,5 +59,5 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    SampleMajorNV = 3,
+    SampleMajornv = 3,
 }

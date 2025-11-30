@@ -39,5 +39,5 @@ public enum HostImageCopyFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    MemcpyBitEXT = MemcpyBit,
+    MemcpyBitext = MemcpyBit,
 }

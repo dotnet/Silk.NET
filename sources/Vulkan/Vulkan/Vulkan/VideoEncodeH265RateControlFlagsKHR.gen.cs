@@ -23,7 +23,7 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    AttemptHrdComplianceBitKHR = 0x1,
+    AttemptHrdComplianceBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_REGULAR_GOP_BIT_KHR")]
@@ -32,7 +32,7 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RegularGopBitKHR = 0x2,
+    RegularGopBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR")]
@@ -41,7 +41,7 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternFlatBitKHR = 0x4,
+    ReferencePatternFlatBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR")]
@@ -50,7 +50,7 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternDyadicBitKHR = 0x8,
+    ReferencePatternDyadicBitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_KHR")]
@@ -59,5 +59,5 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    TemporalSubLayerPatternDyadicBitKHR = 0x10,
+    TemporalSubLayerPatternDyadicBitkhr = 0x10,
 }

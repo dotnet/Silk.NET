@@ -92,213 +92,213 @@ public enum PipelineStageFlags2 : ulong
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_VIDEO_DECODE_BIT_KHR")]
-    VideoDecodeBitKHR = 0x4000000,
+    VideoDecodeBitkhr = 0x4000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_VIDEO_ENCODE_BIT_KHR")]
-    VideoEncodeBitKHR = 0x8000000,
+    VideoEncodeBitkhr = 0x8000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_NONE_KHR")]
-    NoneKHR = 0x0,
+    Nonekhr = 0x0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TOP_OF_PIPE_BIT_KHR")]
-    TopOfPipeBitKHR = 0x1,
+    TopOfPipeBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_DRAW_INDIRECT_BIT_KHR")]
-    DrawIndirectBitKHR = 0x2,
+    DrawIndirectBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_VERTEX_INPUT_BIT_KHR")]
-    VertexInputBitKHR = 0x4,
+    VertexInputBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT_KHR")]
-    VertexShaderBitKHR = 0x8,
+    VertexShaderBitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TESSELLATION_CONTROL_SHADER_BIT_KHR")]
-    TessellationControlShaderBitKHR = 0x10,
+    TessellationControlShaderBitkhr = 0x10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TESSELLATION_EVALUATION_SHADER_BIT_KHR")]
-    TessellationEvaluationShaderBitKHR = 0x20,
+    TessellationEvaluationShaderBitkhr = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_GEOMETRY_SHADER_BIT_KHR")]
-    GeometryShaderBitKHR = 0x40,
+    GeometryShaderBitkhr = 0x40,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT_KHR")]
-    FragmentShaderBitKHR = 0x80,
+    FragmentShaderBitkhr = 0x80,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_EARLY_FRAGMENT_TESTS_BIT_KHR")]
-    EarlyFragmentTestsBitKHR = 0x100,
+    EarlyFragmentTestsBitkhr = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_LATE_FRAGMENT_TESTS_BIT_KHR")]
-    LateFragmentTestsBitKHR = 0x200,
+    LateFragmentTestsBitkhr = 0x200,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_COLOR_ATTACHMENT_OUTPUT_BIT_KHR")]
-    ColorAttachmentOutputBitKHR = 0x400,
+    ColorAttachmentOutputBitkhr = 0x400,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_COMPUTE_SHADER_BIT_KHR")]
-    ComputeShaderBitKHR = 0x800,
+    ComputeShaderBitkhr = 0x800,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_ALL_TRANSFER_BIT_KHR")]
-    AllTransferBitKHR = 0x1000,
+    AllTransferBitkhr = 0x1000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TRANSFER_BIT_KHR")]
-    TransferBitKHR = 0x1000,
+    TransferBitkhr = 0x1000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_BOTTOM_OF_PIPE_BIT_KHR")]
-    BottomOfPipeBitKHR = 0x2000,
+    BottomOfPipeBitkhr = 0x2000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_HOST_BIT_KHR")]
-    HostBitKHR = 0x4000,
+    HostBitkhr = 0x4000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_ALL_GRAPHICS_BIT_KHR")]
-    AllGraphicsBitKHR = 0x8000,
+    AllGraphicsBitkhr = 0x8000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT_KHR")]
-    AllCommandsBitKHR = 0x10000,
+    AllCommandsBitkhr = 0x10000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_COPY_BIT_KHR")]
-    CopyBitKHR = 0x100000000,
+    CopyBitkhr = 0x100000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_RESOLVE_BIT_KHR")]
-    ResolveBitKHR = 0x200000000,
+    ResolveBitkhr = 0x200000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_BLIT_BIT_KHR")]
-    BlitBitKHR = 0x400000000,
+    BlitBitkhr = 0x400000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_CLEAR_BIT_KHR")]
-    ClearBitKHR = 0x800000000,
+    ClearBitkhr = 0x800000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_INDEX_INPUT_BIT_KHR")]
-    IndexInputBitKHR = 0x1000000000,
+    IndexInputBitkhr = 0x1000000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_VERTEX_ATTRIBUTE_INPUT_BIT_KHR")]
-    VertexAttributeInputBitKHR = 0x2000000000,
+    VertexAttributeInputBitkhr = 0x2000000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_PRE_RASTERIZATION_SHADERS_BIT_KHR")]
-    PreRasterizationShadersBitKHR = 0x4000000000,
+    PreRasterizationShadersBitkhr = 0x4000000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TRANSFORM_FEEDBACK_BIT_EXT")]
-    TransformFeedbackBitEXT = 0x1000000,
+    TransformFeedbackBitext = 0x1000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_CONDITIONAL_RENDERING_BIT_EXT")]
-    ConditionalRenderingBitEXT = 0x40000,
+    ConditionalRenderingBitext = 0x40000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_NV")]
-    CommandPreprocessBitNV = 0x20000,
+    CommandPreprocessBitnv = 0x20000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_COMMAND_PREPROCESS_BIT_EXT")]
-    CommandPreprocessBitEXT = 0x20000,
+    CommandPreprocessBitext = 0x20000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
-    FragmentShadingRateAttachmentBitKHR = 0x400000,
+    FragmentShadingRateAttachmentBitkhr = 0x400000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_SHADING_RATE_IMAGE_BIT_NV")]
-    ShadingRateImageBitNV = 0x400000,
+    ShadingRateImageBitnv = 0x400000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_ACCELERATION_STRUCTURE_BUILD_BIT_KHR")]
-    AccelerationStructureBuildBitKHR = 0x2000000,
+    AccelerationStructureBuildBitkhr = 0x2000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_RAY_TRACING_SHADER_BIT_KHR")]
-    RayTracingShaderBitKHR = 0x200000,
+    RayTracingShaderBitkhr = 0x200000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_RAY_TRACING_SHADER_BIT_NV")]
-    RayTracingShaderBitNV = 0x200000,
+    RayTracingShaderBitnv = 0x200000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_ACCELERATION_STRUCTURE_BUILD_BIT_NV")]
-    AccelerationStructureBuildBitNV = 0x2000000,
+    AccelerationStructureBuildBitnv = 0x2000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_FRAGMENT_DENSITY_PROCESS_BIT_EXT")]
-    FragmentDensityProcessBitEXT = 0x800000,
+    FragmentDensityProcessBitext = 0x800000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TASK_SHADER_BIT_NV")]
-    TaskShaderBitNV = 0x80000,
+    TaskShaderBitnv = 0x80000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_MESH_SHADER_BIT_NV")]
-    MeshShaderBitNV = 0x100000,
+    MeshShaderBitnv = 0x100000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_TASK_SHADER_BIT_EXT")]
-    TaskShaderBitEXT = 0x80000,
+    TaskShaderBitext = 0x80000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_MESH_SHADER_BIT_EXT")]
-    MeshShaderBitEXT = 0x100000,
+    MeshShaderBitext = 0x100000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_SUBPASS_SHADER_BIT_HUAWEI")]
-    SubpassShaderBitHuawei = 0x8000000000,
+    SubpassShaderBithuawei = 0x8000000000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_INVOCATION_MASK_BIT_HUAWEI")]
-    InvocationMaskBitHuawei = 0x10000000000,
+    InvocationMaskBithuawei = 0x10000000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_ACCELERATION_STRUCTURE_COPY_BIT_KHR")]
-    AccelerationStructureCopyBitKHR = 0x10000000,
+    AccelerationStructureCopyBitkhr = 0x10000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_MICROMAP_BUILD_BIT_EXT")]
-    MicromapBuildBitEXT = 0x40000000,
+    MicromapBuildBitext = 0x40000000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_CLUSTER_CULLING_SHADER_BIT_HUAWEI")]
-    ClusterCullingShaderBitHuawei = 0x20000000000,
+    ClusterCullingShaderBithuawei = 0x20000000000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_OPTICAL_FLOW_BIT_NV")]
-    OpticalFlowBitNV = 0x20000000,
+    OpticalFlowBitnv = 0x20000000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_CONVERT_COOPERATIVE_VECTOR_MATRIX_BIT_NV")]
-    ConvertCooperativeVectorMatrixBitNV = 0x100000000000,
+    ConvertCooperativeVectorMatrixBitnv = 0x100000000000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_DATA_GRAPH_BIT_ARM")]
-    DataGraphBitARM = 0x40000000000,
+    DataGraphBitarm = 0x40000000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_COPY_INDIRECT_BIT_KHR")]
-    CopyIndirectBitKHR = 0x400000000000,
+    CopyIndirectBitkhr = 0x400000000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_STAGE_2_MEMORY_DECOMPRESSION_BIT_EXT")]
-    MemoryDecompressionBitEXT = 0x200000000000,
+    MemoryDecompressionBitext = 0x200000000000,
 }

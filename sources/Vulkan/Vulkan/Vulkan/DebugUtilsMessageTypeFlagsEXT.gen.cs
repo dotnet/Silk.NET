@@ -18,17 +18,17 @@ public enum DebugUtilsMessageTypeFlagsEXT : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    GeneralBitEXT = 0x1,
+    GeneralBitext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    ValidationBitEXT = 0x2,
+    ValidationBitext = 0x2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    PerformanceBitEXT = 0x4,
+    PerformanceBitext = 0x4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_DEVICE_ADDRESS_BINDING_BIT_EXT")]
@@ -40,5 +40,5 @@ public enum DebugUtilsMessageTypeFlagsEXT : uint
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressBindingBitEXT = 0x8,
+    DeviceAddressBindingBitext = 0x8,
 }

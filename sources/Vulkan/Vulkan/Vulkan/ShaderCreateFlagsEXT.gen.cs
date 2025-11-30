@@ -27,7 +27,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateLinkStageBitEXT = 0x1,
+    CreateLinkStageBitext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
@@ -43,7 +43,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateAllowVaryingSubgroupSizeBitEXT = 0x2,
+    CreateAllowVaryingSubgroupSizeBitext = 0x2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
@@ -59,7 +59,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateRequireFullSubgroupsBitEXT = 0x4,
+    CreateRequireFullSubgroupsBitext = 0x4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_NO_TASK_SHADER_BIT_EXT")]
@@ -72,7 +72,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateNoTaskShaderBitEXT = 0x8,
+    CreateNoTaskShaderBitext = 0x8,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_DISPATCH_BASE_BIT_EXT")]
@@ -85,7 +85,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateDispatchBaseBitEXT = 0x10,
+    CreateDispatchBaseBitext = 0x10,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_EXT")]
@@ -99,7 +99,7 @@ public enum ShaderCreateFlagsEXT : uint
         ],
         RequireAll = true
     )]
-    CreateFragmentShadingRateAttachmentBitEXT = 0x20,
+    CreateFragmentShadingRateAttachmentBitext = 0x20,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
@@ -113,7 +113,7 @@ public enum ShaderCreateFlagsEXT : uint
         ],
         RequireAll = true
     )]
-    CreateFragmentDensityMapAttachmentBitEXT = 0x40,
+    CreateFragmentDensityMapAttachmentBitext = 0x40,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
@@ -126,7 +126,7 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateIndirectBindableBitEXT = 0x80,
+    CreateIndirectBindableBitext = 0x80,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CREATE_64_BIT_INDEXING_BIT_EXT")]
@@ -138,5 +138,5 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_EXT_shader_64bit_indexing+VK_VERSION_1_1",
         ]
     )]
-    Create64BitIndexingBitEXT = 0x8000,
+    Create64BitIndexingBitext = 0x8000,
 }

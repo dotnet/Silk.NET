@@ -206,7 +206,7 @@ public enum SubgroupFeatureFlags : uint
         ["VK_NV_shader_subgroup_partitioned"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    PartitionedBitNV = 0x100,
+    PartitionedBitnv = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT_KHR")]
@@ -218,7 +218,7 @@ public enum SubgroupFeatureFlags : uint
             "VK_KHR_shader_subgroup_rotate+VK_VERSION_1_1",
         ]
     )]
-    RotateBitKHR = RotateBit,
+    RotateBitkhr = RotateBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR")]
@@ -230,5 +230,5 @@ public enum SubgroupFeatureFlags : uint
             "VK_KHR_shader_subgroup_rotate+VK_VERSION_1_1",
         ]
     )]
-    RotateClusteredBitKHR = RotateClusteredBit,
+    RotateClusteredBitkhr = RotateClusteredBit,
 }

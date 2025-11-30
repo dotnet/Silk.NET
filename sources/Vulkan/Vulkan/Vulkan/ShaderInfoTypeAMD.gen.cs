@@ -16,15 +16,15 @@ public enum ShaderInfoTypeAMD : uint
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    StatisticsAMD = 0,
+    Statisticsamd = 0,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_SHADER_INFO_TYPE_BINARY_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    BinaryAMD = 1,
+    Binaryamd = 1,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    DisassemblyAMD = 2,
+    Disassemblyamd = 2,
 }

@@ -23,7 +23,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0,
+    Defaultkhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_HIGH_QUALITY_KHR")]
@@ -35,7 +35,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    HighQualityKHR = 1,
+    HighQualitykhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_LOW_LATENCY_KHR")]
@@ -47,7 +47,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    LowLatencyKHR = 2,
+    LowLatencykhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_ULTRA_LOW_LATENCY_KHR")]
@@ -59,7 +59,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    UltraLowLatencyKHR = 3,
+    UltraLowLatencykhr = 3,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_LOSSLESS_KHR")]
@@ -71,5 +71,5 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    LosslessKHR = 4,
+    Losslesskhr = 4,
 }

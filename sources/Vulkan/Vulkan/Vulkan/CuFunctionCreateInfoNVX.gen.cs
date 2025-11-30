@@ -22,7 +22,7 @@ public unsafe partial struct CuFunctionCreateInfoNVX
 
     [NativeName("module")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuModuleNVX Module;
+    public CuModuleHandleNVX Module;
 
     [NativeName("pName")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]

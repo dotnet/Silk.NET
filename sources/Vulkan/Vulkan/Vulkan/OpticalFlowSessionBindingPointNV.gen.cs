@@ -22,7 +22,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnknownNV = 0,
+    Unknownnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_INPUT_NV")]
@@ -35,7 +35,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    InputNV = 1,
+    Inputnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_REFERENCE_NV")]
@@ -48,7 +48,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ReferenceNV = 2,
+    Referencenv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_HINT_NV")]
@@ -61,7 +61,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    HintNV = 3,
+    Hintnv = 3,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_FLOW_VECTOR_NV")]
@@ -74,7 +74,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    FlowVectorNV = 4,
+    FlowVectornv = 4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_BACKWARD_FLOW_VECTOR_NV")]
@@ -87,7 +87,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BackwardFlowVectorNV = 5,
+    BackwardFlowVectornv = 5,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_COST_NV")]
@@ -100,7 +100,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CostNV = 6,
+    Costnv = 6,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_BACKWARD_COST_NV")]
@@ -113,7 +113,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BackwardCostNV = 7,
+    BackwardCostnv = 7,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_GLOBAL_FLOW_NV")]
@@ -126,5 +126,5 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    GlobalFlowNV = 8,
+    GlobalFlownv = 8,
 }

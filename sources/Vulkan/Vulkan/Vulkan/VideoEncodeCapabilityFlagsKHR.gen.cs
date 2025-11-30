@@ -25,7 +25,7 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    PrecedingExternallyEncodedBytesBitKHR = 0x1,
+    PrecedingExternallyEncodedBytesBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_DETECTION_BIT_KHR")]
@@ -37,7 +37,7 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    InsufficientBitstreamBufferRangeDetectionBitKHR = 0x2,
+    InsufficientBitstreamBufferRangeDetectionBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_QUANTIZATION_DELTA_MAP_BIT_KHR")]
@@ -49,7 +49,7 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    QuantizationDeltaMapBitKHR = 0x4,
+    QuantizationDeltaMapBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_EMPHASIS_MAP_BIT_KHR")]
@@ -61,5 +61,5 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    EmphasisMapBitKHR = 0x8,
+    EmphasisMapBitkhr = 0x8,
 }

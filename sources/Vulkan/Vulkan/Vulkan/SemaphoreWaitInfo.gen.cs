@@ -115,7 +115,7 @@ public unsafe partial struct SemaphoreWaitInfo
         ],
         MinVersion = "1.2"
     )]
-    public Semaphore* PSemaphores;
+    public SemaphoreHandle* PSemaphores;
 
     [NativeName("pValues")]
     [SupportedApiProfile(

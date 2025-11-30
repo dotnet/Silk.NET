@@ -23,7 +23,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TopLevelKHR = 0,
+    TopLevelkhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
@@ -35,7 +35,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    BottomLevelKHR = 1,
+    BottomLevelkhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
@@ -47,7 +47,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    GenericKHR = 2,
+    Generickhr = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
@@ -59,7 +59,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TopLevelNV = TopLevelKHR,
+    TopLevelnv = TopLevelkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
@@ -71,5 +71,5 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    BottomLevelNV = BottomLevelKHR,
+    BottomLevelnv = BottomLevelkhr,
 }

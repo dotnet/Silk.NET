@@ -54,7 +54,7 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHR AccelerationStructure;
+    public AccelerationStructureHandleKHR AccelerationStructure;
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("accelerationStructureNV")]
@@ -71,5 +71,5 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public AccelerationStructureNV AccelerationStructureNV;
+    public AccelerationStructureHandleNV AccelerationStructureNV;
 }

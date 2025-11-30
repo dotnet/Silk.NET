@@ -23,7 +23,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    RowMajorNV = 0,
+    RowMajornv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_COLUMN_MAJOR_NV")]
@@ -35,7 +35,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    ColumnMajorNV = 1,
+    ColumnMajornv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_INFERENCING_OPTIMAL_NV")]
@@ -47,7 +47,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    InferencingOptimalNV = 2,
+    InferencingOptimalnv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_TRAINING_OPTIMAL_NV")]
@@ -59,5 +59,5 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    TrainingOptimalNV = 3,
+    TrainingOptimalnv = 3,
 }

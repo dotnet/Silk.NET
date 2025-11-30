@@ -83,7 +83,7 @@ public unsafe partial struct BindImageMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public Image Image;
+    public ImageHandle Image;
 
     [NativeName("memory")]
     [SupportedApiProfile(
@@ -108,7 +108,7 @@ public unsafe partial struct BindImageMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public DeviceMemory Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeName("memoryOffset")]
     [SupportedApiProfile(

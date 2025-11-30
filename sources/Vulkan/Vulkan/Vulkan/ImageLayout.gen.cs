@@ -410,7 +410,7 @@ public enum ImageLayout : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_PRESENT_SRC_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    PresentSrcKHR = 1000001002,
+    PresentSrckhr = 1000001002,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_DECODE_DST_KHR")]
@@ -422,7 +422,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDstKHR = 1000024000,
+    VideoDecodeDstkhr = 1000024000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_DECODE_SRC_KHR")]
@@ -434,7 +434,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeSrcKHR = 1000024001,
+    VideoDecodeSrckhr = 1000024001,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_DECODE_DPB_KHR")]
@@ -446,7 +446,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDpbKHR = 1000024002,
+    VideoDecodeDpbkhr = 1000024002,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_SHARED_PRESENT_KHR")]
@@ -458,7 +458,7 @@ public enum ImageLayout : uint
             "VK_KHR_swapchain+VK_KHR_get_surface_capabilities2+VK_VERSION_1_1",
         ]
     )]
-    SharedPresentKHR = 1000111000,
+    SharedPresentkhr = 1000111000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT")]
@@ -470,7 +470,7 @@ public enum ImageLayout : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapOptimalEXT = 1000218000,
+    FragmentDensityMapOptimalext = 1000218000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL_KHR")]
@@ -483,7 +483,7 @@ public enum ImageLayout : uint
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentOptimalKHR = 1000164003,
+    FragmentShadingRateAttachmentOptimalkhr = 1000164003,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_DST_KHR")]
@@ -495,7 +495,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDstKHR = 1000299000,
+    VideoEncodeDstkhr = 1000299000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_SRC_KHR")]
@@ -507,7 +507,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeSrcKHR = 1000299001,
+    VideoEncodeSrckhr = 1000299001,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_DPB_KHR")]
@@ -519,7 +519,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDpbKHR = 1000299002,
+    VideoEncodeDpbkhr = 1000299002,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_FEEDBACK_LOOP_OPTIMAL_EXT")]
@@ -531,12 +531,12 @@ public enum ImageLayout : uint
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    AttachmentFeedbackLoopOptimalEXT = 1000339000,
+    AttachmentFeedbackLoopOptimalext = 1000339000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_IMAGE_LAYOUT_TENSOR_ALIASING_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    TensorAliasingARM = 1000460000,
+    TensorAliasingarm = 1000460000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_VIDEO_ENCODE_QUANTIZATION_MAP_KHR")]
@@ -548,7 +548,7 @@ public enum ImageLayout : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeQuantizationMapKHR = 1000553000,
+    VideoEncodeQuantizationMapkhr = 1000553000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT")]
@@ -560,17 +560,17 @@ public enum ImageLayout : uint
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    ZeroInitializedEXT = 1000620000,
+    ZeroInitializedext = 1000620000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    DepthReadOnlyStencilAttachmentOptimalKHR = DepthReadOnlyStencilAttachmentOptimal,
+    DepthReadOnlyStencilAttachmentOptimalkhr = DepthReadOnlyStencilAttachmentOptimal,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
-    DepthAttachmentStencilReadOnlyOptimalKHR = DepthAttachmentStencilReadOnlyOptimal,
+    DepthAttachmentStencilReadOnlyOptimalkhr = DepthAttachmentStencilReadOnlyOptimal,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_IMAGE_LAYOUT_SHADING_RATE_OPTIMAL_NV")]
@@ -582,7 +582,7 @@ public enum ImageLayout : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    ShadingRateOptimalNV = FragmentShadingRateAttachmentOptimalKHR,
+    ShadingRateOptimalnv = FragmentShadingRateAttachmentOptimalkhr,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_RENDERING_LOCAL_READ_KHR")]
@@ -594,7 +594,7 @@ public enum ImageLayout : uint
             "VK_KHR_dynamic_rendering_local_read+VK_VERSION_1_3",
         ]
     )]
-    RenderingLocalReadKHR = RenderingLocalRead,
+    RenderingLocalReadkhr = RenderingLocalRead,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
@@ -607,7 +607,7 @@ public enum ImageLayout : uint
             "VK_VERSION_1_2",
         ]
     )]
-    DepthAttachmentOptimalKHR = DepthAttachmentOptimal,
+    DepthAttachmentOptimalkhr = DepthAttachmentOptimal,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]
@@ -620,7 +620,7 @@ public enum ImageLayout : uint
             "VK_VERSION_1_2",
         ]
     )]
-    DepthReadOnlyOptimalKHR = DepthReadOnlyOptimal,
+    DepthReadOnlyOptimalkhr = DepthReadOnlyOptimal,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
@@ -633,7 +633,7 @@ public enum ImageLayout : uint
             "VK_VERSION_1_2",
         ]
     )]
-    StencilAttachmentOptimalKHR = StencilAttachmentOptimal,
+    StencilAttachmentOptimalkhr = StencilAttachmentOptimal,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
@@ -646,7 +646,7 @@ public enum ImageLayout : uint
             "VK_VERSION_1_2",
         ]
     )]
-    StencilReadOnlyOptimalKHR = StencilReadOnlyOptimal,
+    StencilReadOnlyOptimalkhr = StencilReadOnlyOptimal,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL_KHR")]
@@ -658,7 +658,7 @@ public enum ImageLayout : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    ReadOnlyOptimalKHR = ReadOnlyOptimal,
+    ReadOnlyOptimalkhr = ReadOnlyOptimal,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]
@@ -670,5 +670,5 @@ public enum ImageLayout : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    AttachmentOptimalKHR = AttachmentOptimal,
+    AttachmentOptimalkhr = AttachmentOptimal,
 }

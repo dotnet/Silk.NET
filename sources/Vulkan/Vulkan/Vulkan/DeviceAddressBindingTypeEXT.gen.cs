@@ -23,7 +23,7 @@ public enum DeviceAddressBindingTypeEXT : uint
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    BindEXT = 0,
+    Bindext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_ADDRESS_BINDING_TYPE_UNBIND_EXT")]
@@ -35,5 +35,5 @@ public enum DeviceAddressBindingTypeEXT : uint
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    UnbindEXT = 1,
+    Unbindext = 1,
 }

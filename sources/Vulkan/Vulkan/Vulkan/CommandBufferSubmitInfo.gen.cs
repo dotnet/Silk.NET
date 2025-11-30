@@ -60,7 +60,7 @@ public unsafe partial struct CommandBufferSubmitInfo
         ],
         MinVersion = "1.3"
     )]
-    public CommandBuffer CommandBuffer;
+    public CommandBufferHandle CommandBuffer;
 
     [NativeName("deviceMask")]
     [SupportedApiProfile(

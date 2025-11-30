@@ -166,7 +166,7 @@ public enum BorderColor : uint
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    FloatCustomEXT = 1000287003,
+    FloatCustomext = 1000287003,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BORDER_COLOR_INT_CUSTOM_EXT")]
@@ -178,5 +178,5 @@ public enum BorderColor : uint
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    IntCustomEXT = 1000287004,
+    IntCustomext = 1000287004,
 }

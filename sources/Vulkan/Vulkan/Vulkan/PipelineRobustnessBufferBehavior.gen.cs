@@ -54,7 +54,7 @@ public enum PipelineRobustnessBufferBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    DeviceDefaultEXT = DeviceDefault,
+    DeviceDefaultext = DeviceDefault,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_DISABLED_EXT")]
@@ -66,7 +66,7 @@ public enum PipelineRobustnessBufferBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    DisabledEXT = Disabled,
+    Disabledext = Disabled,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_EXT")]
@@ -78,7 +78,7 @@ public enum PipelineRobustnessBufferBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    RobustBufferAccessEXT = RobustBufferAccess,
+    RobustBufferAccessext = RobustBufferAccess,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS_2_EXT")]
@@ -90,5 +90,5 @@ public enum PipelineRobustnessBufferBehavior : uint
             "VK_EXT_pipeline_robustness+VK_VERSION_1_1",
         ]
     )]
-    RobustBufferAccess2EXT = RobustBufferAccess2,
+    RobustBufferAccess2Ext = RobustBufferAccess2,
 }

@@ -19,15 +19,15 @@ public enum ExternalMemoryFeatureFlagsNV : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    DedicatedOnlyBitNV = 0x1,
+    DedicatedOnlyBitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    ExportableBitNV = 0x2,
+    ExportableBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    ImportableBitNV = 0x4,
+    ImportableBitnv = 0x4,
 }

@@ -77,7 +77,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public Image DstImage;
+    public ImageHandle DstImage;
 
     [NativeName("dstImageLayout")]
     [SupportedApiProfile(

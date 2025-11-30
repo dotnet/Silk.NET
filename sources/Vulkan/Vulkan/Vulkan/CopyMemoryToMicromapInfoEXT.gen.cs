@@ -54,7 +54,7 @@ public unsafe partial struct CopyMemoryToMicromapInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapEXT Dst;
+    public MicromapHandleEXT Dst;
 
     [NativeName("mode")]
     [SupportedApiProfile(

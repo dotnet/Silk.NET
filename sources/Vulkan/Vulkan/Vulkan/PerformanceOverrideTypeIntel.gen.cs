@@ -16,10 +16,10 @@ public enum PerformanceOverrideTypeIntel : uint
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    NullHardwareIntel = 0,
+    NullHardwareintel = 0,
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_OVERRIDE_TYPE_FLUSH_GPU_CACHES_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    FlushGpuCachesIntel = 1,
+    FlushGpuCachesintel = 1,
 }

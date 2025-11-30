@@ -24,5 +24,5 @@ public enum MemoryUnmapFlags : uint
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    ReserveBitEXT = 0x1,
+    ReserveBitext = 0x1,
 }

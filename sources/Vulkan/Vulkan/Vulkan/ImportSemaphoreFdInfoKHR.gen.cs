@@ -43,7 +43,7 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public Semaphore Semaphore;
+    public SemaphoreHandle Semaphore;
 
     [NativeName("flags")]
     [SupportedApiProfile(

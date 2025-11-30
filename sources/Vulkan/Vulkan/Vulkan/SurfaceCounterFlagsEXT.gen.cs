@@ -23,5 +23,5 @@ public enum SurfaceCounterFlagsEXT : uint
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    VblankBitEXT = 0x1,
+    VblankBitext = 0x1,
 }

@@ -21,7 +21,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    NoneKHR = 0x0,
+    Nonekhr = 0x0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H264_BIT_KHR")]
@@ -30,7 +30,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EncodeH264BitKHR = 0x10000,
+    EncodeH264Bitkhr = 0x10000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_H265_BIT_KHR")]
@@ -39,7 +39,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EncodeH265BitKHR = 0x20000,
+    EncodeH265Bitkhr = 0x20000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H264_BIT_KHR")]
@@ -48,7 +48,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    DecodeH264BitKHR = 0x1,
+    DecodeH264Bitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_H265_BIT_KHR")]
@@ -57,7 +57,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    DecodeH265BitKHR = 0x2,
+    DecodeH265Bitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_AV1_BIT_KHR")]
@@ -66,7 +66,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    DecodeAv1BitKHR = 0x4,
+    DecodeAv1Bitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_ENCODE_AV1_BIT_KHR")]
@@ -75,7 +75,7 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EncodeAv1BitKHR = 0x40000,
+    EncodeAv1Bitkhr = 0x40000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_CODEC_OPERATION_DECODE_VP9_BIT_KHR")]
@@ -84,5 +84,5 @@ public enum VideoCodecOperationFlagsKHR : uint
         ["VK_KHR_video_decode_vp9"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    DecodeVp9BitKHR = 0x8,
+    DecodeVp9Bitkhr = 0x8,
 }

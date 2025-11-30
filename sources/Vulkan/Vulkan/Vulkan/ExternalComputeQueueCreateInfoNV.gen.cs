@@ -22,5 +22,5 @@ public unsafe partial struct ExternalComputeQueueCreateInfoNV
 
     [NativeName("preferredQueue")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
-    public Queue PreferredQueue;
+    public QueueHandle PreferredQueue;
 }

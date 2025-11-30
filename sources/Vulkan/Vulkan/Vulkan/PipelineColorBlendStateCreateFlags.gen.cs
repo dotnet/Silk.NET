@@ -27,7 +27,7 @@ public enum PipelineColorBlendStateCreateFlags : uint
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentAccessBitEXT = 0x1,
+    RasterizationOrderAttachmentAccessBitext = 0x1,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
@@ -41,5 +41,5 @@ public enum PipelineColorBlendStateCreateFlags : uint
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentAccessBitARM = RasterizationOrderAttachmentAccessBitEXT,
+    RasterizationOrderAttachmentAccessBitarm = RasterizationOrderAttachmentAccessBitext,
 }

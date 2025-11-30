@@ -20,7 +20,7 @@ public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    DefaultARM = 0,
+    Defaultarm = 0,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_NEURAL_QCOM")]
@@ -29,7 +29,7 @@ public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    NeuralQCOM = 1000629000,
+    Neuralqcom = 1000629000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_COMPUTE_QCOM")]
@@ -38,5 +38,5 @@ public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    ComputeQCOM = 1000629001,
+    Computeqcom = 1000629001,
 }

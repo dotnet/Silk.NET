@@ -25,7 +25,7 @@ public enum AddressCopyFlagsKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    DeviceLocalBitKHR = 0x1,
+    DeviceLocalBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ADDRESS_COPY_SPARSE_BIT_KHR")]
@@ -37,7 +37,7 @@ public enum AddressCopyFlagsKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    SparseBitKHR = 0x2,
+    SparseBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ADDRESS_COPY_PROTECTED_BIT_KHR")]
@@ -49,5 +49,5 @@ public enum AddressCopyFlagsKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ProtectedBitKHR = 0x4,
+    ProtectedBitkhr = 0x4,
 }

@@ -16,7 +16,7 @@ public enum ColorSpaceKHR : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COLOR_SPACE_SRGB_NONLINEAR_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    SrgbNonlinearKHR = 0,
+    SrgbNonlinearkhr = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DISPLAY_P3_NONLINEAR_EXT")]
@@ -25,7 +25,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    DisplayP3NonlinearEXT = 1000104001,
+    DisplayP3Nonlinearext = 1000104001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_EXTENDED_SRGB_LINEAR_EXT")]
@@ -34,7 +34,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ExtendedSrgbLinearEXT = 1000104002,
+    ExtendedSrgbLinearext = 1000104002,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DISPLAY_P3_LINEAR_EXT")]
@@ -43,7 +43,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    DisplayP3LinearEXT = 1000104003,
+    DisplayP3Linearext = 1000104003,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DCI_P3_NONLINEAR_EXT")]
@@ -52,7 +52,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    DciP3NonlinearEXT = 1000104004,
+    DciP3Nonlinearext = 1000104004,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_BT709_LINEAR_EXT")]
@@ -61,7 +61,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    Bt709LinearEXT = 1000104005,
+    Bt709Linearext = 1000104005,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_BT709_NONLINEAR_EXT")]
@@ -70,7 +70,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    Bt709NonlinearEXT = 1000104006,
+    Bt709Nonlinearext = 1000104006,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_BT2020_LINEAR_EXT")]
@@ -79,7 +79,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    Bt2020LinearEXT = 1000104007,
+    Bt2020Linearext = 1000104007,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_HDR10_ST2084_EXT")]
@@ -88,7 +88,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    Hdr10St2084EXT = 1000104008,
+    Hdr10St2084Ext = 1000104008,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_DOLBYVISION_EXT")]
@@ -97,7 +97,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    DolbyvisionEXT = 1000104009,
+    Dolbyvisionext = 1000104009,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_HDR10_HLG_EXT")]
@@ -106,7 +106,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    Hdr10HlgEXT = 1000104010,
+    Hdr10Hlgext = 1000104010,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_ADOBERGB_LINEAR_EXT")]
@@ -115,7 +115,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    AdobergbLinearEXT = 1000104011,
+    AdobergbLinearext = 1000104011,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_ADOBERGB_NONLINEAR_EXT")]
@@ -124,7 +124,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    AdobergbNonlinearEXT = 1000104012,
+    AdobergbNonlinearext = 1000104012,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_PASS_THROUGH_EXT")]
@@ -133,7 +133,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    PassThroughEXT = 1000104013,
+    PassThroughext = 1000104013,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COLOR_SPACE_EXTENDED_SRGB_NONLINEAR_EXT")]
@@ -142,7 +142,7 @@ public enum ColorSpaceKHR : uint
         ["VK_EXT_swapchain_colorspace"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    ExtendedSrgbNonlinearEXT = 1000104014,
+    ExtendedSrgbNonlinearext = 1000104014,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_COLOR_SPACE_DISPLAY_NATIVE_AMD")]
@@ -154,5 +154,5 @@ public enum ColorSpaceKHR : uint
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    DisplayNativeAMD = 1000213000,
+    DisplayNativeamd = 1000213000,
 }

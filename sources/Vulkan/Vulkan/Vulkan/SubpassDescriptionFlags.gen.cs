@@ -25,7 +25,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    PerViewAttributesBitNVX = 0x1,
+    PerViewAttributesBitnvx = 0x1,
 
     [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_PER_VIEW_POSITION_X_ONLY_BIT_NVX")]
@@ -37,17 +37,17 @@ public enum SubpassDescriptionFlags : uint
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    PerViewPositionXOnlyBitNVX = 0x2,
+    PerViewPositionXOnlyBitnvx = 0x2,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    FragmentRegionBitQCOM = 0x4,
+    FragmentRegionBitqcom = 0x4,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    ShaderResolveBitQCOM = 0x8,
+    ShaderResolveBitqcom = 0x8,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
@@ -59,7 +59,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    TileShadingApronBitQCOM = 0x100,
+    TileShadingApronBitqcom = 0x100,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_EXT")]
@@ -71,7 +71,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentColorAccessBitEXT = 0x10,
+    RasterizationOrderAttachmentColorAccessBitext = 0x10,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT")]
@@ -83,7 +83,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentDepthAccessBitEXT = 0x20,
+    RasterizationOrderAttachmentDepthAccessBitext = 0x20,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT")]
@@ -95,7 +95,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentStencilAccessBitEXT = 0x40,
+    RasterizationOrderAttachmentStencilAccessBitext = 0x40,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
@@ -107,7 +107,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    EnableLegacyDitheringBitEXT = 0x80,
+    EnableLegacyDitheringBitext = 0x80,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
@@ -119,7 +119,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentColorAccessBitARM = RasterizationOrderAttachmentColorAccessBitEXT,
+    RasterizationOrderAttachmentColorAccessBitarm = RasterizationOrderAttachmentColorAccessBitext,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM")]
@@ -131,7 +131,7 @@ public enum SubpassDescriptionFlags : uint
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
+    RasterizationOrderAttachmentDepthAccessBitarm = RasterizationOrderAttachmentDepthAccessBitext,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM")]
@@ -143,6 +143,6 @@ public enum SubpassDescriptionFlags : uint
             "VK_ARM_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    RasterizationOrderAttachmentStencilAccessBitARM =
-        RasterizationOrderAttachmentStencilAccessBitEXT,
+    RasterizationOrderAttachmentStencilAccessBitarm =
+        RasterizationOrderAttachmentStencilAccessBitext,
 }

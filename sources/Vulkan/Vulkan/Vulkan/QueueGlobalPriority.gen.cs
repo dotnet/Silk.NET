@@ -67,22 +67,22 @@ public enum QueueGlobalPriority : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    LowEXT = Low,
+    Lowext = Low,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    MediumEXT = Medium,
+    Mediumext = Medium,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    HighEXT = High,
+    Highext = High,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
-    RealtimeEXT = Realtime,
+    Realtimeext = Realtime,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR")]
@@ -94,7 +94,7 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    LowKHR = Low,
+    Lowkhr = Low,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR")]
@@ -106,7 +106,7 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    MediumKHR = Medium,
+    Mediumkhr = Medium,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_KHR")]
@@ -118,7 +118,7 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    HighKHR = High,
+    Highkhr = High,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME_KHR")]
@@ -130,5 +130,5 @@ public enum QueueGlobalPriority : uint
             "VK_KHR_global_priority+VK_VERSION_1_1",
         ]
     )]
-    RealtimeKHR = Realtime,
+    Realtimekhr = Realtime,
 }

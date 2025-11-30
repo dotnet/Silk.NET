@@ -43,5 +43,5 @@ public enum PipelineCacheHeaderVersion : uint
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    DataGraphQCOM = 1000629000,
+    DataGraphqcom = 1000629000,
 }

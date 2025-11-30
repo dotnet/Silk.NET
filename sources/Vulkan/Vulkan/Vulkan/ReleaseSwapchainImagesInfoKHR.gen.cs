@@ -47,7 +47,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public SwapchainKHR Swapchain;
+    public SwapchainHandleKHR Swapchain;
 
     [NativeName("imageIndexCount")]
     [SupportedApiProfile(

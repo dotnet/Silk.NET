@@ -100,7 +100,7 @@ public enum ExternalMemoryFeatureFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    DedicatedOnlyBitKHR = DedicatedOnlyBit,
+    DedicatedOnlyBitkhr = DedicatedOnlyBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT_KHR")]
@@ -112,7 +112,7 @@ public enum ExternalMemoryFeatureFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    ExportableBitKHR = ExportableBit,
+    ExportableBitkhr = ExportableBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT_KHR")]
@@ -124,5 +124,5 @@ public enum ExternalMemoryFeatureFlags : uint
             "VK_KHR_external_memory_capabilities+VK_VERSION_1_1",
         ]
     )]
-    ImportableBitKHR = ImportableBit,
+    ImportableBitkhr = ImportableBit,
 }

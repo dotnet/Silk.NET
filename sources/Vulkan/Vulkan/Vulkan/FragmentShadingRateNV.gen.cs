@@ -19,7 +19,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPerPixelNV = 0,
+    Rate1InvocationPerPixelnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_1X2_PIXELS_NV")]
@@ -28,7 +28,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer1X2PixelsNV = 1,
+    Rate1InvocationPer1X2Pixelsnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV")]
@@ -37,7 +37,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer2X1PixelsNV = 4,
+    Rate1InvocationPer2X1Pixelsnv = 4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV")]
@@ -46,7 +46,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer2X2PixelsNV = 5,
+    Rate1InvocationPer2X2Pixelsnv = 5,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV")]
@@ -55,7 +55,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer2X4PixelsNV = 6,
+    Rate1InvocationPer2X4Pixelsnv = 6,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV")]
@@ -64,7 +64,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer4X2PixelsNV = 9,
+    Rate1InvocationPer4X2Pixelsnv = 9,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV")]
@@ -73,7 +73,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer4X4PixelsNV = 10,
+    Rate1InvocationPer4X4Pixelsnv = 10,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV")]
@@ -82,7 +82,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate2InvocationsPerPixelNV = 11,
+    Rate2InvocationsPerPixelnv = 11,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_4_INVOCATIONS_PER_PIXEL_NV")]
@@ -91,7 +91,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate4InvocationsPerPixelNV = 12,
+    Rate4InvocationsPerPixelnv = 12,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_8_INVOCATIONS_PER_PIXEL_NV")]
@@ -100,7 +100,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate8InvocationsPerPixelNV = 13,
+    Rate8InvocationsPerPixelnv = 13,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_16_INVOCATIONS_PER_PIXEL_NV")]
@@ -109,7 +109,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate16InvocationsPerPixelNV = 14,
+    Rate16InvocationsPerPixelnv = 14,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_NO_INVOCATIONS_NV")]
@@ -118,5 +118,5 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    RateNoInvocationsNV = 15,
+    RateNoInvocationsnv = 15,
 }

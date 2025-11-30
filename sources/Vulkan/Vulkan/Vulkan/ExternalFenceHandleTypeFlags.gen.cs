@@ -125,7 +125,7 @@ public enum ExternalFenceHandleTypeFlags : uint
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueFdBitKHR = OpaqueFdBit,
+    OpaqueFdBitkhr = OpaqueFdBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
@@ -137,7 +137,7 @@ public enum ExternalFenceHandleTypeFlags : uint
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueWin32BitKHR = OpaqueWin32Bit,
+    OpaqueWin32Bitkhr = OpaqueWin32Bit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
@@ -149,7 +149,7 @@ public enum ExternalFenceHandleTypeFlags : uint
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
+    OpaqueWin32KmtBitkhr = OpaqueWin32KmtBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT_KHR")]
@@ -161,5 +161,5 @@ public enum ExternalFenceHandleTypeFlags : uint
             "VK_KHR_external_fence_capabilities+VK_VERSION_1_1",
         ]
     )]
-    SyncFdBitKHR = SyncFdBit,
+    SyncFdBitkhr = SyncFdBit,
 }

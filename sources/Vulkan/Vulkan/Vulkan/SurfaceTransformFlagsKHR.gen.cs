@@ -19,45 +19,45 @@ public enum SurfaceTransformFlagsKHR : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    IdentityBitKHR = 0x1,
+    IdentityBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_ROTATE_90_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    Rotate90BitKHR = 0x2,
+    Rotate90Bitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_ROTATE_180_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    Rotate180BitKHR = 0x4,
+    Rotate180Bitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_ROTATE_270_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    Rotate270BitKHR = 0x8,
+    Rotate270Bitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorBitKHR = 0x10,
+    HorizontalMirrorBitkhr = 0x10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_90_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorRotate90BitKHR = 0x20,
+    HorizontalMirrorRotate90Bitkhr = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_180_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorRotate180BitKHR = 0x40,
+    HorizontalMirrorRotate180Bitkhr = 0x40,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_270_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorRotate270BitKHR = 0x80,
+    HorizontalMirrorRotate270Bitkhr = 0x80,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SURFACE_TRANSFORM_INHERIT_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    InheritBitKHR = 0x100,
+    InheritBitkhr = 0x100,
 }

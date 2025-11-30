@@ -16,20 +16,20 @@ public enum CoverageModulationModeNV : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_MODULATION_MODE_NONE_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    NoneNV = 0,
+    Nonenv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_MODULATION_MODE_RGB_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    RgbNV = 1,
+    Rgbnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_MODULATION_MODE_ALPHA_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    AlphaNV = 2,
+    Alphanv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_MODULATION_MODE_RGBA_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    RgbaNV = 3,
+    Rgbanv = 3,
 }

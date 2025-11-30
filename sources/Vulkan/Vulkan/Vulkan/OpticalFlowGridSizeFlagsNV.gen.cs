@@ -25,7 +25,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SizeUnknownNV = 0x0,
+    SizeUnknownnv = 0x0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_1X1_BIT_NV")]
@@ -38,7 +38,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size1X1BitNV = 0x1,
+    Size1X1Bitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_2X2_BIT_NV")]
@@ -51,7 +51,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size2X2BitNV = 0x2,
+    Size2X2Bitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_4X4_BIT_NV")]
@@ -64,7 +64,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size4X4BitNV = 0x4,
+    Size4X4Bitnv = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_8X8_BIT_NV")]
@@ -77,5 +77,5 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size8X8BitNV = 0x8,
+    Size8X8Bitnv = 0x8,
 }

@@ -16,25 +16,25 @@ public enum ValidationFeatureEnableEXT : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    GpuAssistedEXT = 0,
+    GpuAssistedext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_RESERVE_BINDING_SLOT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    GpuAssistedReserveBindingSlotEXT = 1,
+    GpuAssistedReserveBindingSlotext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_BEST_PRACTICES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    BestPracticesEXT = 2,
+    BestPracticesext = 2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_DEBUG_PRINTF_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    DebugPrintfEXT = 3,
+    DebugPrintfext = 3,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_FEATURE_ENABLE_SYNCHRONIZATION_VALIDATION_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    SynchronizationValidationEXT = 4,
+    SynchronizationValidationext = 4,
 }

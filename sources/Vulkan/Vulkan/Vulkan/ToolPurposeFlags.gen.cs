@@ -107,7 +107,7 @@ public enum ToolPurposeFlags : uint
         ["VK_EXT_debug_report", "VK_EXT_tooling_info"],
         RequireAll = true
     )]
-    DebugReportingBitEXT = 0x20,
+    DebugReportingBitext = 0x20,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TOOL_PURPOSE_DEBUG_MARKERS_BIT_EXT")]
@@ -116,30 +116,30 @@ public enum ToolPurposeFlags : uint
         ["VK_EXT_debug_marker", "VK_EXT_tooling_info"],
         RequireAll = true
     )]
-    DebugMarkersBitEXT = 0x40,
+    DebugMarkersBitext = 0x40,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TOOL_PURPOSE_VALIDATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    ValidationBitEXT = ValidationBit,
+    ValidationBitext = ValidationBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TOOL_PURPOSE_PROFILING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    ProfilingBitEXT = ProfilingBit,
+    ProfilingBitext = ProfilingBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TOOL_PURPOSE_TRACING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    TracingBitEXT = TracingBit,
+    TracingBitext = TracingBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TOOL_PURPOSE_ADDITIONAL_FEATURES_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    AdditionalFeaturesBitEXT = AdditionalFeaturesBit,
+    AdditionalFeaturesBitext = AdditionalFeaturesBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TOOL_PURPOSE_MODIFYING_FEATURES_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
-    ModifyingFeaturesBitEXT = ModifyingFeaturesBit,
+    ModifyingFeaturesBitext = ModifyingFeaturesBit,
 }

@@ -147,7 +147,7 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
         ["VK_FUCHSIA_external_semaphore"],
         ImpliesSets = ["VK_KHR_external_semaphore", "VK_KHR_external_semaphore_capabilities"]
     )]
-    ZirconEventBitFuchsia = 0x80,
+    ZirconEventBitfuchsia = 0x80,
 
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D11_FENCE_BIT")]
     [SupportedApiProfile(
@@ -184,7 +184,7 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueFdBitKHR = OpaqueFdBit,
+    OpaqueFdBitkhr = OpaqueFdBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
@@ -196,7 +196,7 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueWin32BitKHR = OpaqueWin32Bit,
+    OpaqueWin32Bitkhr = OpaqueWin32Bit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
@@ -208,7 +208,7 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
+    OpaqueWin32KmtBitkhr = OpaqueWin32KmtBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE_BIT_KHR")]
@@ -220,7 +220,7 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    D3D12FenceBitKHR = D3D12FenceBit,
+    D3D12FenceBitkhr = D3D12FenceBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD_BIT_KHR")]
@@ -232,5 +232,5 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    SyncFdBitKHR = SyncFdBit,
+    SyncFdBitkhr = SyncFdBit,
 }

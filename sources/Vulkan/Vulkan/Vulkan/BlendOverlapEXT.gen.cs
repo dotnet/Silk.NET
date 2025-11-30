@@ -23,7 +23,7 @@ public enum BlendOverlapEXT : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    UncorrelatedEXT = 0,
+    Uncorrelatedext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OVERLAP_DISJOINT_EXT")]
@@ -35,7 +35,7 @@ public enum BlendOverlapEXT : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    DisjointEXT = 1,
+    Disjointext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BLEND_OVERLAP_CONJOINT_EXT")]
@@ -47,5 +47,5 @@ public enum BlendOverlapEXT : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    ConjointEXT = 2,
+    Conjointext = 2,
 }

@@ -23,7 +23,7 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerRateControlGroupMinMaxQIndexBitKHR = 0x1,
+    PerRateControlGroupMinMaxQIndexBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_GENERATE_OBU_EXTENSION_HEADER_BIT_KHR")]
@@ -32,7 +32,7 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    GenerateObuExtensionHeaderBitKHR = 0x2,
+    GenerateObuExtensionHeaderBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_PRIMARY_REFERENCE_CDF_ONLY_BIT_KHR")]
@@ -41,7 +41,7 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PrimaryReferenceCdfOnlyBitKHR = 0x4,
+    PrimaryReferenceCdfOnlyBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_FRAME_SIZE_OVERRIDE_BIT_KHR")]
@@ -50,7 +50,7 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    FrameSizeOverrideBitKHR = 0x8,
+    FrameSizeOverrideBitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_MOTION_VECTOR_SCALING_BIT_KHR")]
@@ -59,7 +59,7 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    MotionVectorScalingBitKHR = 0x10,
+    MotionVectorScalingBitkhr = 0x10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_COMPOUND_PREDICTION_INTRA_REFRESH_BIT_KHR")]
@@ -69,5 +69,5 @@ public enum VideoEncodeAV1CapabilityFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"],
         RequireAll = true
     )]
-    CompoundPredictionIntraRefreshBitKHR = 0x20,
+    CompoundPredictionIntraRefreshBitkhr = 0x20,
 }

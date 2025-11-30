@@ -46,5 +46,5 @@ public enum SemaphoreWaitFlags : uint
             "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
         ]
     )]
-    AnyBitKHR = AnyBit,
+    AnyBitkhr = AnyBit,
 }

@@ -21,7 +21,7 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CloneEXT = 0,
+    Cloneext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COPY_MICROMAP_MODE_SERIALIZE_EXT")]
@@ -33,7 +33,7 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    SerializeEXT = 1,
+    Serializeext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COPY_MICROMAP_MODE_DESERIALIZE_EXT")]
@@ -45,7 +45,7 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DeserializeEXT = 2,
+    Deserializeext = 2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COPY_MICROMAP_MODE_COMPACT_EXT")]
@@ -57,5 +57,5 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CompactEXT = 3,
+    Compactext = 3,
 }

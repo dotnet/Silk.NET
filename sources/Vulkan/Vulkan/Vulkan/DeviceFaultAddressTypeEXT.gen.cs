@@ -22,7 +22,7 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    NoneEXT = 0,
+    Noneext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_EXT")]
@@ -34,7 +34,7 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    ReadInvalidEXT = 1,
+    ReadInvalidext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_EXT")]
@@ -46,7 +46,7 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    WriteInvalidEXT = 2,
+    WriteInvalidext = 2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_EXT")]
@@ -58,7 +58,7 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    ExecuteInvalidEXT = 3,
+    ExecuteInvalidext = 3,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_EXT")]
@@ -70,7 +70,7 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    InstructionPointerUnknownEXT = 4,
+    InstructionPointerUnknownext = 4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_EXT")]
@@ -82,7 +82,7 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    InstructionPointerInvalidEXT = 5,
+    InstructionPointerInvalidext = 5,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_EXT")]
@@ -94,5 +94,5 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    InstructionPointerFaultEXT = 6,
+    InstructionPointerFaultext = 6,
 }

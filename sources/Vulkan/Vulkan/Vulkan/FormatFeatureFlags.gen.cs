@@ -623,7 +623,7 @@ public enum FormatFeatureFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeOutputBitKHR = 0x2000000,
+    VideoDecodeOutputBitkhr = 0x2000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_DECODE_DPB_BIT_KHR")]
@@ -635,7 +635,7 @@ public enum FormatFeatureFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeDpbBitKHR = 0x4000000,
+    VideoDecodeDpbBitkhr = 0x4000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_ACCELERATION_STRUCTURE_VERTEX_BUFFER_BIT_KHR")]
@@ -647,12 +647,12 @@ public enum FormatFeatureFlags : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureVertexBufferBitKHR = 0x20000000,
+    AccelerationStructureVertexBufferBitkhr = 0x20000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    SampledImageFilterCubicBitEXT = 0x2000,
+    SampledImageFilterCubicBitext = 0x2000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
@@ -664,7 +664,7 @@ public enum FormatFeatureFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapBitEXT = 0x1000000,
+    FragmentDensityMapBitext = 0x1000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
@@ -677,7 +677,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentBitKHR = 0x40000000,
+    FragmentShadingRateAttachmentBitkhr = 0x40000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
@@ -689,7 +689,7 @@ public enum FormatFeatureFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeInputBitKHR = 0x8000000,
+    VideoEncodeInputBitkhr = 0x8000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_DPB_BIT_KHR")]
@@ -701,22 +701,22 @@ public enum FormatFeatureFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeDpbBitKHR = 0x10000000,
+    VideoEncodeDpbBitkhr = 0x10000000,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
-    SampledImageFilterCubicBitIMG = SampledImageFilterCubicBitEXT,
+    SampledImageFilterCubicBitimg = SampledImageFilterCubicBitext,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    TransferSrcBitKHR = TransferSrcBit,
+    TransferSrcBitkhr = TransferSrcBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
-    TransferDstBitKHR = TransferDstBit,
+    TransferDstBitkhr = TransferDstBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT_EXT")]
@@ -728,7 +728,7 @@ public enum FormatFeatureFlags : uint
             "VK_EXT_sampler_filter_minmax+VK_VERSION_1_1",
         ]
     )]
-    SampledImageFilterMinmaxBitEXT = SampledImageFilterMinmaxBit,
+    SampledImageFilterMinmaxBitext = SampledImageFilterMinmaxBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT_KHR")]
@@ -740,7 +740,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    MidpointChromaSamplesBitKHR = MidpointChromaSamplesBit,
+    MidpointChromaSamplesBitkhr = MidpointChromaSamplesBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT_KHR")]
@@ -752,7 +752,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    SampledImageYcbcrConversionLinearFilterBitKHR = SampledImageYcbcrConversionLinearFilterBit,
+    SampledImageYcbcrConversionLinearFilterBitkhr = SampledImageYcbcrConversionLinearFilterBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
@@ -766,7 +766,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR =
+    SampledImageYcbcrConversionSeparateReconstructionFilterBitkhr =
         SampledImageYcbcrConversionSeparateReconstructionFilterBit,
 
     [NameAffix("Suffix", "KHR", 0)]
@@ -781,7 +781,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR =
+    SampledImageYcbcrConversionChromaReconstructionExplicitBitkhr =
         SampledImageYcbcrConversionChromaReconstructionExplicitBit,
 
     [NameAffix("Suffix", "KHR", 0)]
@@ -796,7 +796,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR =
+    SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitkhr =
         SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit,
 
     [NameAffix("Suffix", "KHR", 0)]
@@ -809,7 +809,7 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    DisjointBitKHR = DisjointBit,
+    DisjointBitkhr = DisjointBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT_KHR")]
@@ -821,5 +821,5 @@ public enum FormatFeatureFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CositedChromaSamplesBitKHR = CositedChromaSamplesBit,
+    CositedChromaSamplesBitkhr = CositedChromaSamplesBit,
 }

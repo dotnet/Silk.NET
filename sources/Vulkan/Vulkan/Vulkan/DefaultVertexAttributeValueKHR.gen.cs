@@ -22,7 +22,7 @@ public enum DefaultVertexAttributeValueKHR : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ZeroZeroZeroZeroKHR = 0,
+    ZeroZeroZeroZerokhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEFAULT_VERTEX_ATTRIBUTE_VALUE_ZERO_ZERO_ZERO_ONE_KHR")]
@@ -34,5 +34,5 @@ public enum DefaultVertexAttributeValueKHR : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ZeroZeroZeroOneKHR = 1,
+    ZeroZeroZeroOnekhr = 1,
 }

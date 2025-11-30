@@ -17,21 +17,21 @@ public enum TensorUsageFlagsARM : ulong
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_USAGE_SHADER_BIT_ARM")]
-    ShaderBitARM = 0x2,
+    ShaderBitarm = 0x2,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_USAGE_TRANSFER_SRC_BIT_ARM")]
-    TransferSrcBitARM = 0x4,
+    TransferSrcBitarm = 0x4,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_USAGE_TRANSFER_DST_BIT_ARM")]
-    TransferDstBitARM = 0x8,
+    TransferDstBitarm = 0x8,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_USAGE_IMAGE_ALIASING_BIT_ARM")]
-    ImageAliasingBitARM = 0x10,
+    ImageAliasingBitarm = 0x10,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_USAGE_DATA_GRAPH_BIT_ARM")]
-    DataGraphBitARM = 0x20,
+    DataGraphBitarm = 0x20,
 }

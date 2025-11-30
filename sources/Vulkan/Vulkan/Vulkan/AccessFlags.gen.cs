@@ -533,7 +533,7 @@ public enum AccessFlags : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackWriteBitEXT = 0x2000000,
+    TransformFeedbackWriteBitext = 0x2000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT")]
@@ -545,7 +545,7 @@ public enum AccessFlags : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackCounterReadBitEXT = 0x4000000,
+    TransformFeedbackCounterReadBitext = 0x4000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_WRITE_BIT_EXT")]
@@ -557,7 +557,7 @@ public enum AccessFlags : uint
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    TransformFeedbackCounterWriteBitEXT = 0x8000000,
+    TransformFeedbackCounterWriteBitext = 0x8000000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_CONDITIONAL_RENDERING_READ_BIT_EXT")]
@@ -569,7 +569,7 @@ public enum AccessFlags : uint
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    ConditionalRenderingReadBitEXT = 0x100000,
+    ConditionalRenderingReadBitext = 0x100000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_COLOR_ATTACHMENT_READ_NONCOHERENT_BIT_EXT")]
@@ -581,7 +581,7 @@ public enum AccessFlags : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    ColorAttachmentReadNoncoherentBitEXT = 0x80000,
+    ColorAttachmentReadNoncoherentBitext = 0x80000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_READ_BIT_KHR")]
@@ -593,7 +593,7 @@ public enum AccessFlags : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureReadBitKHR = 0x200000,
+    AccelerationStructureReadBitkhr = 0x200000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_WRITE_BIT_KHR")]
@@ -605,7 +605,7 @@ public enum AccessFlags : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureWriteBitKHR = 0x400000,
+    AccelerationStructureWriteBitkhr = 0x400000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_FRAGMENT_DENSITY_MAP_READ_BIT_EXT")]
@@ -617,7 +617,7 @@ public enum AccessFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    FragmentDensityMapReadBitEXT = 0x1000000,
+    FragmentDensityMapReadBitext = 0x1000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCESS_FRAGMENT_SHADING_RATE_ATTACHMENT_READ_BIT_KHR")]
@@ -630,7 +630,7 @@ public enum AccessFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    FragmentShadingRateAttachmentReadBitKHR = 0x800000,
+    FragmentShadingRateAttachmentReadBitkhr = 0x800000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_EXT")]
@@ -643,7 +643,7 @@ public enum AccessFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CommandPreprocessReadBitEXT = 0x20000,
+    CommandPreprocessReadBitext = 0x20000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_EXT")]
@@ -656,7 +656,7 @@ public enum AccessFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CommandPreprocessWriteBitEXT = 0x40000,
+    CommandPreprocessWriteBitext = 0x40000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCESS_SHADING_RATE_IMAGE_READ_BIT_NV")]
@@ -668,7 +668,7 @@ public enum AccessFlags : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    ShadingRateImageReadBitNV = FragmentShadingRateAttachmentReadBitKHR,
+    ShadingRateImageReadBitnv = FragmentShadingRateAttachmentReadBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_READ_BIT_NV")]
@@ -680,7 +680,7 @@ public enum AccessFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AccelerationStructureReadBitNV = AccelerationStructureReadBitKHR,
+    AccelerationStructureReadBitnv = AccelerationStructureReadBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCESS_ACCELERATION_STRUCTURE_WRITE_BIT_NV")]
@@ -692,7 +692,7 @@ public enum AccessFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AccelerationStructureWriteBitNV = AccelerationStructureWriteBitKHR,
+    AccelerationStructureWriteBitnv = AccelerationStructureWriteBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_NV")]
@@ -701,7 +701,7 @@ public enum AccessFlags : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    CommandPreprocessReadBitNV = CommandPreprocessReadBitEXT,
+    CommandPreprocessReadBitnv = CommandPreprocessReadBitext,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_NV")]
@@ -710,7 +710,7 @@ public enum AccessFlags : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    CommandPreprocessWriteBitNV = CommandPreprocessWriteBitEXT,
+    CommandPreprocessWriteBitnv = CommandPreprocessWriteBitext,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCESS_NONE_KHR")]
@@ -722,5 +722,5 @@ public enum AccessFlags : uint
             "VK_KHR_synchronization2+VK_VERSION_1_1",
         ]
     )]
-    NoneKHR = None,
+    Nonekhr = None,
 }

@@ -26,7 +26,7 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BitstreamBufferOffsetBitKHR = 0x1,
+    BitstreamBufferOffsetBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_BYTES_WRITTEN_BIT_KHR")]
@@ -38,7 +38,7 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BitstreamBytesWrittenBitKHR = 0x2,
+    BitstreamBytesWrittenBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_FEEDBACK_BITSTREAM_HAS_OVERRIDES_BIT_KHR")]
@@ -50,5 +50,5 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    BitstreamHasOverridesBitKHR = 0x4,
+    BitstreamHasOverridesBitkhr = 0x4,
 }

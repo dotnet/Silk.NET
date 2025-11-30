@@ -23,7 +23,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    EntryNoInvocationsNV = 0,
+    EntryNoInvocationsnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_16_INVOCATIONS_PER_PIXEL_NV")]
@@ -35,7 +35,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry16InvocationsPerPixelNV = 1,
+    Entry16InvocationsPerPixelnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_8_INVOCATIONS_PER_PIXEL_NV")]
@@ -47,7 +47,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry8InvocationsPerPixelNV = 2,
+    Entry8InvocationsPerPixelnv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_4_INVOCATIONS_PER_PIXEL_NV")]
@@ -59,7 +59,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry4InvocationsPerPixelNV = 3,
+    Entry4InvocationsPerPixelnv = 3,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_2_INVOCATIONS_PER_PIXEL_NV")]
@@ -71,7 +71,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry2InvocationsPerPixelNV = 4,
+    Entry2InvocationsPerPixelnv = 4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_PIXEL_NV")]
@@ -83,7 +83,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPerPixelNV = 5,
+    Entry1InvocationPerPixelnv = 5,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X1_PIXELS_NV")]
@@ -95,7 +95,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPer2X1PixelsNV = 6,
+    Entry1InvocationPer2X1Pixelsnv = 6,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_1X2_PIXELS_NV")]
@@ -107,7 +107,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPer1X2PixelsNV = 7,
+    Entry1InvocationPer1X2Pixelsnv = 7,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X2_PIXELS_NV")]
@@ -119,7 +119,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPer2X2PixelsNV = 8,
+    Entry1InvocationPer2X2Pixelsnv = 8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_4X2_PIXELS_NV")]
@@ -131,7 +131,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPer4X2PixelsNV = 9,
+    Entry1InvocationPer4X2Pixelsnv = 9,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X4_PIXELS_NV")]
@@ -143,7 +143,7 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPer2X4PixelsNV = 10,
+    Entry1InvocationPer2X4Pixelsnv = 10,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_4X4_PIXELS_NV")]
@@ -155,5 +155,5 @@ public enum ShadingRatePaletteEntryNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Entry1InvocationPer4X4PixelsNV = 11,
+    Entry1InvocationPer4X4Pixelsnv = 11,
 }

@@ -23,7 +23,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    DeviceKHR = 0,
+    Devicekhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR")]
@@ -35,7 +35,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicKHR = 1,
+    ClockMonotonickhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_KHR")]
@@ -47,7 +47,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicRawKHR = 2,
+    ClockMonotonicRawkhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
@@ -59,7 +59,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    QueryPerformanceCounterKHR = 3,
+    QueryPerformanceCounterkhr = 3,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
@@ -71,7 +71,7 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    DeviceEXT = DeviceKHR,
+    Deviceext = Devicekhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT")]
@@ -83,7 +83,7 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicEXT = ClockMonotonicKHR,
+    ClockMonotonicext = ClockMonotonickhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT")]
@@ -95,7 +95,7 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicRawEXT = ClockMonotonicRawKHR,
+    ClockMonotonicRawext = ClockMonotonicRawkhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT")]
@@ -107,5 +107,5 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    QueryPerformanceCounterEXT = QueryPerformanceCounterKHR,
+    QueryPerformanceCounterext = QueryPerformanceCounterkhr,
 }

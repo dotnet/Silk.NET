@@ -20,7 +20,7 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ClustersBottomLevelNV = 0,
+    ClustersBottomLevelnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_TRIANGLE_CLUSTER_NV")]
@@ -29,7 +29,7 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleClusterNV = 1,
+    TriangleClusternv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_TRIANGLE_CLUSTER_TEMPLATE_NV")]
@@ -38,5 +38,5 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleClusterTemplateNV = 2,
+    TriangleClusterTemplatenv = 2,
 }

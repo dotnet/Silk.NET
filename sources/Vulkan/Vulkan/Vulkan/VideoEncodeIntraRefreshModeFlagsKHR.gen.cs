@@ -21,7 +21,7 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    NoneKHR = 0x0,
+    Nonekhr = 0x0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_PER_PICTURE_PARTITION_BIT_KHR")]
@@ -30,7 +30,7 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerPicturePartitionBitKHR = 0x1,
+    PerPicturePartitionBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_BLOCK_BASED_BIT_KHR")]
@@ -39,7 +39,7 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BlockBasedBitKHR = 0x2,
+    BlockBasedBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_BLOCK_ROW_BASED_BIT_KHR")]
@@ -48,7 +48,7 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BlockRowBasedBitKHR = 0x4,
+    BlockRowBasedBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_BLOCK_COLUMN_BASED_BIT_KHR")]
@@ -57,5 +57,5 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BlockColumnBasedBitKHR = 0x8,
+    BlockColumnBasedBitkhr = 0x8,
 }

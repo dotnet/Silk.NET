@@ -25,7 +25,7 @@ public enum OutOfBandQueueTypeNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    RenderNV = 0,
+    Rendernv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OUT_OF_BAND_QUEUE_TYPE_PRESENT_NV")]
@@ -39,5 +39,5 @@ public enum OutOfBandQueueTypeNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    PresentNV = 1,
+    Presentnv = 1,
 }

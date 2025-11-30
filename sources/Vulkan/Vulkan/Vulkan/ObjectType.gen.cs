@@ -828,27 +828,27 @@ public enum ObjectType : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_SURFACE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    SurfaceKHR = 1000000000,
+    Surfacekhr = 1000000000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_SWAPCHAIN_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    SwapchainKHR = 1000001000,
+    Swapchainkhr = 1000001000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_DISPLAY_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    DisplayKHR = 1000002000,
+    Displaykhr = 1000002000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_DISPLAY_MODE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    DisplayModeKHR = 1000002001,
+    DisplayModekhr = 1000002001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_DEBUG_REPORT_CALLBACK_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugReportCallbackEXT = 1000011000,
+    DebugReportCallbackext = 1000011000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_VIDEO_SESSION_KHR")]
@@ -857,7 +857,7 @@ public enum ObjectType : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    VideoSessionKHR = 1000023000,
+    VideoSessionkhr = 1000023000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_VIDEO_SESSION_PARAMETERS_KHR")]
@@ -866,22 +866,22 @@ public enum ObjectType : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    VideoSessionParametersKHR = 1000023001,
+    VideoSessionParameterskhr = 1000023001,
 
     [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_OBJECT_TYPE_CU_MODULE_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    CuModuleNVX = 1000029000,
+    CuModulenvx = 1000029000,
 
     [NameAffix("Suffix", "NVX", 0)]
     [NativeName("VK_OBJECT_TYPE_CU_FUNCTION_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    CuFunctionNVX = 1000029001,
+    CuFunctionnvx = 1000029001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    DebugUtilsMessengerEXT = 1000128000,
+    DebugUtilsMessengerext = 1000128000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR")]
@@ -893,12 +893,12 @@ public enum ObjectType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureKHR = 1000150000,
+    AccelerationStructurekhr = 1000150000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_VALIDATION_CACHE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    ValidationCacheEXT = 1000160000,
+    ValidationCacheext = 1000160000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV")]
@@ -910,17 +910,17 @@ public enum ObjectType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AccelerationStructureNV = 1000165000,
+    AccelerationStructurenv = 1000165000,
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_OBJECT_TYPE_PERFORMANCE_CONFIGURATION_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    PerformanceConfigurationIntel = 1000210000,
+    PerformanceConfigurationintel = 1000210000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_DEFERRED_OPERATION_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
-    DeferredOperationKHR = 1000268000,
+    DeferredOperationkhr = 1000268000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_NV")]
@@ -929,7 +929,7 @@ public enum ObjectType : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    IndirectCommandsLayoutNV = 1000277000,
+    IndirectCommandsLayoutnv = 1000277000,
 
     [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA")]
@@ -941,7 +941,7 @@ public enum ObjectType : uint
             "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
         ]
     )]
-    BufferCollectionFuchsia = 1000366000,
+    BufferCollectionfuchsia = 1000366000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_MICROMAP_EXT")]
@@ -953,17 +953,17 @@ public enum ObjectType : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    MicromapEXT = 1000396000,
+    Micromapext = 1000396000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_OBJECT_TYPE_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    TensorARM = 1000460000,
+    Tensorarm = 1000460000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_OBJECT_TYPE_TENSOR_VIEW_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    TensorViewARM = 1000460001,
+    TensorViewarm = 1000460001,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OBJECT_TYPE_OPTICAL_FLOW_SESSION_NV")]
@@ -976,7 +976,7 @@ public enum ObjectType : uint
             "VK_VERSION_1_3",
         ]
     )]
-    OpticalFlowSessionNV = 1000464000,
+    OpticalFlowSessionnv = 1000464000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_SHADER_EXT")]
@@ -989,7 +989,7 @@ public enum ObjectType : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ShaderEXT = 1000482000,
+    Shaderext = 1000482000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_PIPELINE_BINARY_KHR")]
@@ -1001,7 +1001,7 @@ public enum ObjectType : uint
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    PipelineBinaryKHR = 1000483000,
+    PipelineBinarykhr = 1000483000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_OBJECT_TYPE_DATA_GRAPH_PIPELINE_SESSION_ARM")]
@@ -1010,12 +1010,12 @@ public enum ObjectType : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    DataGraphPipelineSessionARM = 1000507000,
+    DataGraphPipelineSessionarm = 1000507000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OBJECT_TYPE_EXTERNAL_COMPUTE_QUEUE_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
-    ExternalComputeQueueNV = 1000556000,
+    ExternalComputeQueuenv = 1000556000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_EXT")]
@@ -1028,7 +1028,7 @@ public enum ObjectType : uint
             "VK_VERSION_1_3",
         ]
     )]
-    IndirectCommandsLayoutEXT = 1000572000,
+    IndirectCommandsLayoutext = 1000572000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_INDIRECT_EXECUTION_SET_EXT")]
@@ -1041,12 +1041,12 @@ public enum ObjectType : uint
             "VK_VERSION_1_3",
         ]
     )]
-    IndirectExecutionSetEXT = 1000572001,
+    IndirectExecutionSetext = 1000572001,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
-    DescriptorUpdateTemplateKHR = DescriptorUpdateTemplate,
+    DescriptorUpdateTemplatekhr = DescriptorUpdateTemplate,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR")]
@@ -1058,7 +1058,7 @@ public enum ObjectType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    SamplerYcbcrConversionKHR = SamplerYcbcrConversion,
+    SamplerYcbcrConversionkhr = SamplerYcbcrConversion,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT_EXT")]
@@ -1070,5 +1070,5 @@ public enum ObjectType : uint
             "VK_EXT_private_data+VK_VERSION_1_1",
         ]
     )]
-    PrivateDataSlotEXT = PrivateDataSlot,
+    PrivateDataSlotext = PrivateDataSlot,
 }

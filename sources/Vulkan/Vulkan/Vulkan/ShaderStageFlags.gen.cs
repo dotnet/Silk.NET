@@ -216,7 +216,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    RaygenBitKHR = 0x100,
+    RaygenBitkhr = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_STAGE_ANY_HIT_BIT_KHR")]
@@ -228,7 +228,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    AnyHitBitKHR = 0x200,
+    AnyHitBitkhr = 0x200,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_STAGE_CLOSEST_HIT_BIT_KHR")]
@@ -240,7 +240,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ClosestHitBitKHR = 0x400,
+    ClosestHitBitkhr = 0x400,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_STAGE_MISS_BIT_KHR")]
@@ -252,7 +252,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    MissBitKHR = 0x800,
+    MissBitkhr = 0x800,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_STAGE_INTERSECTION_BIT_KHR")]
@@ -264,7 +264,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    IntersectionBitKHR = 0x1000,
+    IntersectionBitkhr = 0x1000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_STAGE_CALLABLE_BIT_KHR")]
@@ -276,7 +276,7 @@ public enum ShaderStageFlags : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    CallableBitKHR = 0x2000,
+    CallableBitkhr = 0x2000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_STAGE_TASK_BIT_EXT")]
@@ -285,7 +285,7 @@ public enum ShaderStageFlags : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    TaskBitEXT = 0x40,
+    TaskBitext = 0x40,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_STAGE_MESH_BIT_EXT")]
@@ -294,7 +294,7 @@ public enum ShaderStageFlags : uint
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    MeshBitEXT = 0x80,
+    MeshBitext = 0x80,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_SHADER_STAGE_SUBPASS_SHADING_BIT_HUAWEI")]
@@ -307,7 +307,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SubpassShadingBitHuawei = 0x4000,
+    SubpassShadingBithuawei = 0x4000,
 
     [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_SHADER_STAGE_CLUSTER_CULLING_BIT_HUAWEI")]
@@ -319,7 +319,7 @@ public enum ShaderStageFlags : uint
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    ClusterCullingBitHuawei = 0x80000,
+    ClusterCullingBithuawei = 0x80000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_RAYGEN_BIT_NV")]
@@ -331,7 +331,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    RaygenBitNV = RaygenBitKHR,
+    RaygenBitnv = RaygenBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_ANY_HIT_BIT_NV")]
@@ -343,7 +343,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AnyHitBitNV = AnyHitBitKHR,
+    AnyHitBitnv = AnyHitBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_CLOSEST_HIT_BIT_NV")]
@@ -355,7 +355,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ClosestHitBitNV = ClosestHitBitKHR,
+    ClosestHitBitnv = ClosestHitBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_MISS_BIT_NV")]
@@ -367,7 +367,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    MissBitNV = MissBitKHR,
+    MissBitnv = MissBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_INTERSECTION_BIT_NV")]
@@ -379,7 +379,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    IntersectionBitNV = IntersectionBitKHR,
+    IntersectionBitnv = IntersectionBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_CALLABLE_BIT_NV")]
@@ -391,7 +391,7 @@ public enum ShaderStageFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CallableBitNV = CallableBitKHR,
+    CallableBitnv = CallableBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_TASK_BIT_NV")]
@@ -403,7 +403,7 @@ public enum ShaderStageFlags : uint
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    TaskBitNV = TaskBitEXT,
+    TaskBitnv = TaskBitext,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADER_STAGE_MESH_BIT_NV")]
@@ -415,5 +415,5 @@ public enum ShaderStageFlags : uint
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    MeshBitNV = MeshBitEXT,
+    MeshBitnv = MeshBitext,
 }

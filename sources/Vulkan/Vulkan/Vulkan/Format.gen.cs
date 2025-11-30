@@ -6596,47 +6596,47 @@ public enum Format : uint
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X2BppUnormBlockIMG = 1000054000,
+    Pvrtc1X2BppUnormBlockimg = 1000054000,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X4BppUnormBlockIMG = 1000054001,
+    Pvrtc1X4BppUnormBlockimg = 1000054001,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X2BppUnormBlockIMG = 1000054002,
+    Pvrtc2X2BppUnormBlockimg = 1000054002,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X4BppUnormBlockIMG = 1000054003,
+    Pvrtc2X4BppUnormBlockimg = 1000054003,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X2BppSrgbBlockIMG = 1000054004,
+    Pvrtc1X2BppSrgbBlockimg = 1000054004,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X4BppSrgbBlockIMG = 1000054005,
+    Pvrtc1X4BppSrgbBlockimg = 1000054005,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X2BppSrgbBlockIMG = 1000054006,
+    Pvrtc2X2BppSrgbBlockimg = 1000054006,
 
     [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X4BppSrgbBlockIMG = 1000054007,
+    Pvrtc2X4BppSrgbBlockimg = 1000054007,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R8_BOOL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    R8BoolARM = 1000460000,
+    R8Boolarm = 1000460000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FORMAT_R16G16_SFIXED5_NV")]
@@ -6649,7 +6649,7 @@ public enum Format : uint
             "VK_VERSION_1_3",
         ]
     )]
-    R16G16Sfixed5NV = 1000464000,
+    R16G16Sfixed5Nv = 1000464000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R10X6_UINT_PACK16_ARM")]
@@ -6661,7 +6661,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6UintPack16ARM = 1000609000,
+    R10X6UintPack16Arm = 1000609000,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6_UINT_2PACK16_ARM")]
@@ -6673,7 +6673,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6Uint2Pack16ARM = 1000609001,
+    R10X6G10X6Uint2Pack16Arm = 1000609001,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UINT_4PACK16_ARM")]
@@ -6685,7 +6685,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6B10X6A10X6Uint4Pack16ARM = 1000609002,
+    R10X6G10X6B10X6A10X6Uint4Pack16Arm = 1000609002,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R12X4_UINT_PACK16_ARM")]
@@ -6697,7 +6697,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4UintPack16ARM = 1000609003,
+    R12X4UintPack16Arm = 1000609003,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4_UINT_2PACK16_ARM")]
@@ -6709,7 +6709,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4Uint2Pack16ARM = 1000609004,
+    R12X4G12X4Uint2Pack16Arm = 1000609004,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UINT_4PACK16_ARM")]
@@ -6721,7 +6721,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4B12X4A12X4Uint4Pack16ARM = 1000609005,
+    R12X4G12X4B12X4A12X4Uint4Pack16Arm = 1000609005,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2_UINT_PACK16_ARM")]
@@ -6733,7 +6733,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2UintPack16ARM = 1000609006,
+    R14X2UintPack16Arm = 1000609006,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2_UINT_2PACK16_ARM")]
@@ -6745,7 +6745,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2Uint2Pack16ARM = 1000609007,
+    R14X2G14X2Uint2Pack16Arm = 1000609007,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UINT_4PACK16_ARM")]
@@ -6757,7 +6757,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2B14X2A14X2Uint4Pack16ARM = 1000609008,
+    R14X2G14X2B14X2A14X2Uint4Pack16Arm = 1000609008,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2_UNORM_PACK16_ARM")]
@@ -6769,7 +6769,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2UnormPack16ARM = 1000609009,
+    R14X2UnormPack16Arm = 1000609009,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2_UNORM_2PACK16_ARM")]
@@ -6781,7 +6781,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2Unorm2Pack16ARM = 1000609010,
+    R14X2G14X2Unorm2Pack16Arm = 1000609010,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UNORM_4PACK16_ARM")]
@@ -6793,7 +6793,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2B14X2A14X2Unorm4Pack16ARM = 1000609011,
+    R14X2G14X2B14X2A14X2Unorm4Pack16Arm = 1000609011,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_420_UNORM_3PACK16_ARM")]
@@ -6805,7 +6805,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    G14X2B14X2R14X2X2Plane420Unorm3Pack16ARM = 1000609012,
+    G14X2B14X2R14X2X2Plane420Unorm3Pack16Arm = 1000609012,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_422_UNORM_3PACK16_ARM")]
@@ -6817,7 +6817,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    G14X2B14X2R14X2X2Plane422Unorm3Pack16ARM = 1000609013,
+    G14X2B14X2R14X2X2Plane422Unorm3Pack16Arm = 1000609013,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT")]
@@ -6829,7 +6829,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC4X4SfloatBlockEXT = ASTC4X4SfloatBlock,
+    ASTC4X4SfloatBlockext = ASTC4X4SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
@@ -6841,7 +6841,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X4SfloatBlockEXT = ASTC5X4SfloatBlock,
+    ASTC5X4SfloatBlockext = ASTC5X4SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
@@ -6853,7 +6853,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X5SfloatBlockEXT = ASTC5X5SfloatBlock,
+    ASTC5X5SfloatBlockext = ASTC5X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
@@ -6865,7 +6865,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X5SfloatBlockEXT = ASTC6X5SfloatBlock,
+    ASTC6X5SfloatBlockext = ASTC6X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
@@ -6877,7 +6877,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X6SfloatBlockEXT = ASTC6X6SfloatBlock,
+    ASTC6X6SfloatBlockext = ASTC6X6SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
@@ -6889,7 +6889,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X5SfloatBlockEXT = ASTC8X5SfloatBlock,
+    ASTC8X5SfloatBlockext = ASTC8X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
@@ -6901,7 +6901,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X6SfloatBlockEXT = ASTC8X6SfloatBlock,
+    ASTC8X6SfloatBlockext = ASTC8X6SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
@@ -6913,7 +6913,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X8SfloatBlockEXT = ASTC8X8SfloatBlock,
+    ASTC8X8SfloatBlockext = ASTC8X8SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
@@ -6925,7 +6925,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X5SfloatBlockEXT = ASTC10X5SfloatBlock,
+    ASTC10X5SfloatBlockext = ASTC10X5SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
@@ -6937,7 +6937,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X6SfloatBlockEXT = ASTC10X6SfloatBlock,
+    ASTC10X6SfloatBlockext = ASTC10X6SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
@@ -6949,7 +6949,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X8SfloatBlockEXT = ASTC10X8SfloatBlock,
+    ASTC10X8SfloatBlockext = ASTC10X8SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
@@ -6961,7 +6961,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X10SfloatBlockEXT = ASTC10X10SfloatBlock,
+    ASTC10X10SfloatBlockext = ASTC10X10SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
@@ -6973,7 +6973,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X10SfloatBlockEXT = ASTC12X10SfloatBlock,
+    ASTC12X10SfloatBlockext = ASTC12X10SfloatBlock,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
@@ -6985,7 +6985,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X12SfloatBlockEXT = ASTC12X12SfloatBlock,
+    ASTC12X12SfloatBlockext = ASTC12X12SfloatBlock,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]
@@ -6997,7 +6997,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8G8R8X422UnormKHR = G8B8G8R8X422Unorm,
+    G8B8G8R8X422Unormkhr = G8B8G8R8X422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM_KHR")]
@@ -7009,7 +7009,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B8G8R8G8X422UnormKHR = B8G8R8G8X422Unorm,
+    B8G8R8G8X422Unormkhr = B8G8R8G8X422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM_KHR")]
@@ -7021,7 +7021,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane420UnormKHR = G8B8R8X3Plane420Unorm,
+    G8B8R8X3Plane420Unormkhr = G8B8R8X3Plane420Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM_KHR")]
@@ -7033,7 +7033,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane420UnormKHR = G8B8R8X2Plane420Unorm,
+    G8B8R8X2Plane420Unormkhr = G8B8R8X2Plane420Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM_KHR")]
@@ -7045,7 +7045,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane422UnormKHR = G8B8R8X3Plane422Unorm,
+    G8B8R8X3Plane422Unormkhr = G8B8R8X3Plane422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM_KHR")]
@@ -7057,7 +7057,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane422UnormKHR = G8B8R8X2Plane422Unorm,
+    G8B8R8X2Plane422Unormkhr = G8B8R8X2Plane422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM_KHR")]
@@ -7069,7 +7069,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane444UnormKHR = G8B8R8X3Plane444Unorm,
+    G8B8R8X3Plane444Unormkhr = G8B8R8X3Plane444Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R10X6_UNORM_PACK16_KHR")]
@@ -7081,7 +7081,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6UnormPack16KHR = R10X6UnormPack16,
+    R10X6UnormPack16Khr = R10X6UnormPack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16_KHR")]
@@ -7093,7 +7093,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6Unorm2Pack16KHR = R10X6G10X6Unorm2Pack16,
+    R10X6G10X6Unorm2Pack16Khr = R10X6G10X6Unorm2Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16_KHR")]
@@ -7105,7 +7105,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6B10X6A10X6Unorm4Pack16KHR = R10X6G10X6B10X6A10X6Unorm4Pack16,
+    R10X6G10X6B10X6A10X6Unorm4Pack16Khr = R10X6G10X6B10X6A10X6Unorm4Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16_KHR")]
@@ -7117,7 +7117,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6G10X6R10X6X422Unorm4Pack16KHR = G10X6B10X6G10X6R10X6X422Unorm4Pack16,
+    G10X6B10X6G10X6R10X6X422Unorm4Pack16Khr = G10X6B10X6G10X6R10X6X422Unorm4Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16_KHR")]
@@ -7129,7 +7129,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B10X6G10X6R10X6G10X6X422Unorm4Pack16KHR = B10X6G10X6R10X6G10X6X422Unorm4Pack16,
+    B10X6G10X6R10X6G10X6X422Unorm4Pack16Khr = B10X6G10X6R10X6G10X6X422Unorm4Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16_KHR")]
@@ -7141,7 +7141,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane420Unorm3Pack16,
+    G10X6B10X6R10X6X3Plane420Unorm3Pack16Khr = G10X6B10X6R10X6X3Plane420Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16_KHR")]
@@ -7153,7 +7153,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane420Unorm3Pack16,
+    G10X6B10X6R10X6X2Plane420Unorm3Pack16Khr = G10X6B10X6R10X6X2Plane420Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16_KHR")]
@@ -7165,7 +7165,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane422Unorm3Pack16,
+    G10X6B10X6R10X6X3Plane422Unorm3Pack16Khr = G10X6B10X6R10X6X3Plane422Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16_KHR")]
@@ -7177,7 +7177,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane422Unorm3Pack16,
+    G10X6B10X6R10X6X2Plane422Unorm3Pack16Khr = G10X6B10X6R10X6X2Plane422Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16_KHR")]
@@ -7189,7 +7189,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane444Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane444Unorm3Pack16,
+    G10X6B10X6R10X6X3Plane444Unorm3Pack16Khr = G10X6B10X6R10X6X3Plane444Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R12X4_UNORM_PACK16_KHR")]
@@ -7201,7 +7201,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4UnormPack16KHR = R12X4UnormPack16,
+    R12X4UnormPack16Khr = R12X4UnormPack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16_KHR")]
@@ -7213,7 +7213,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4Unorm2Pack16KHR = R12X4G12X4Unorm2Pack16,
+    R12X4G12X4Unorm2Pack16Khr = R12X4G12X4Unorm2Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16_KHR")]
@@ -7225,7 +7225,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4B12X4A12X4Unorm4Pack16KHR = R12X4G12X4B12X4A12X4Unorm4Pack16,
+    R12X4G12X4B12X4A12X4Unorm4Pack16Khr = R12X4G12X4B12X4A12X4Unorm4Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16_KHR")]
@@ -7237,7 +7237,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4G12X4R12X4X422Unorm4Pack16KHR = G12X4B12X4G12X4R12X4X422Unorm4Pack16,
+    G12X4B12X4G12X4R12X4X422Unorm4Pack16Khr = G12X4B12X4G12X4R12X4X422Unorm4Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16_KHR")]
@@ -7249,7 +7249,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B12X4G12X4R12X4G12X4X422Unorm4Pack16KHR = B12X4G12X4R12X4G12X4X422Unorm4Pack16,
+    B12X4G12X4R12X4G12X4X422Unorm4Pack16Khr = B12X4G12X4R12X4G12X4X422Unorm4Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16_KHR")]
@@ -7261,7 +7261,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane420Unorm3Pack16,
+    G12X4B12X4R12X4X3Plane420Unorm3Pack16Khr = G12X4B12X4R12X4X3Plane420Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16_KHR")]
@@ -7273,7 +7273,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane420Unorm3Pack16,
+    G12X4B12X4R12X4X2Plane420Unorm3Pack16Khr = G12X4B12X4R12X4X2Plane420Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16_KHR")]
@@ -7285,7 +7285,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane422Unorm3Pack16,
+    G12X4B12X4R12X4X3Plane422Unorm3Pack16Khr = G12X4B12X4R12X4X3Plane422Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16_KHR")]
@@ -7297,7 +7297,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane422Unorm3Pack16,
+    G12X4B12X4R12X4X2Plane422Unorm3Pack16Khr = G12X4B12X4R12X4X2Plane422Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16_KHR")]
@@ -7309,7 +7309,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane444Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane444Unorm3Pack16,
+    G12X4B12X4R12X4X3Plane444Unorm3Pack16Khr = G12X4B12X4R12X4X3Plane444Unorm3Pack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM_KHR")]
@@ -7321,7 +7321,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16G16R16X422UnormKHR = G16B16G16R16X422Unorm,
+    G16B16G16R16X422Unormkhr = G16B16G16R16X422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM_KHR")]
@@ -7333,7 +7333,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B16G16R16G16X422UnormKHR = B16G16R16G16X422Unorm,
+    B16G16R16G16X422Unormkhr = B16G16R16G16X422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM_KHR")]
@@ -7345,7 +7345,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane420UnormKHR = G16B16R16X3Plane420Unorm,
+    G16B16R16X3Plane420Unormkhr = G16B16R16X3Plane420Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM_KHR")]
@@ -7357,7 +7357,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane420UnormKHR = G16B16R16X2Plane420Unorm,
+    G16B16R16X2Plane420Unormkhr = G16B16R16X2Plane420Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR")]
@@ -7369,7 +7369,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane422UnormKHR = G16B16R16X3Plane422Unorm,
+    G16B16R16X3Plane422Unormkhr = G16B16R16X3Plane422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR")]
@@ -7381,7 +7381,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane422UnormKHR = G16B16R16X2Plane422Unorm,
+    G16B16R16X2Plane422Unormkhr = G16B16R16X2Plane422Unorm,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR")]
@@ -7393,7 +7393,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane444UnormKHR = G16B16R16X3Plane444Unorm,
+    G16B16R16X3Plane444Unormkhr = G16B16R16X3Plane444Unorm,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
@@ -7405,7 +7405,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane444UnormEXT = G8B8R8X2Plane444Unorm,
+    G8B8R8X2Plane444Unormext = G8B8R8X2Plane444Unorm,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
@@ -7417,7 +7417,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane444Unorm3Pack16EXT = G10X6B10X6R10X6X2Plane444Unorm3Pack16,
+    G10X6B10X6R10X6X2Plane444Unorm3Pack16Ext = G10X6B10X6R10X6X2Plane444Unorm3Pack16,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
@@ -7429,7 +7429,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane444Unorm3Pack16EXT = G12X4B12X4R12X4X2Plane444Unorm3Pack16,
+    G12X4B12X4R12X4X2Plane444Unorm3Pack16Ext = G12X4B12X4R12X4X2Plane444Unorm3Pack16,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
@@ -7441,7 +7441,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane444UnormEXT = G16B16R16X2Plane444Unorm,
+    G16B16R16X2Plane444Unormext = G16B16R16X2Plane444Unorm,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
@@ -7453,7 +7453,7 @@ public enum Format : uint
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    A4R4G4B4UnormPack16EXT = A4R4G4B4UnormPack16,
+    A4R4G4B4UnormPack16Ext = A4R4G4B4UnormPack16,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
@@ -7465,7 +7465,7 @@ public enum Format : uint
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    A4B4G4R4UnormPack16EXT = A4B4G4R4UnormPack16,
+    A4B4G4R4UnormPack16Ext = A4B4G4R4UnormPack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR")]
@@ -7474,7 +7474,7 @@ public enum Format : uint
         ["VK_KHR_maintenance5"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
     )]
-    A1B5G5R5UnormPack16KHR = A1B5G5R5UnormPack16,
+    A1B5G5R5UnormPack16Khr = A1B5G5R5UnormPack16,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_A8_UNORM_KHR")]
@@ -7483,5 +7483,5 @@ public enum Format : uint
         ["VK_KHR_maintenance5"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"]
     )]
-    A8UnormKHR = A8Unorm,
+    A8Unormkhr = A8Unorm,
 }

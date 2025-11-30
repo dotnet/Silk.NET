@@ -20,7 +20,7 @@ public enum QueryResultStatusKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ErrorKHR = -1,
+    Errorkhr = -1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_NOT_READY_KHR")]
@@ -29,7 +29,7 @@ public enum QueryResultStatusKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    NotReadyKHR = 0,
+    NotReadykhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_COMPLETE_KHR")]
@@ -38,7 +38,7 @@ public enum QueryResultStatusKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    CompleteKHR = 1,
+    Completekhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_RESULT_STATUS_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_KHR")]
@@ -50,5 +50,5 @@ public enum QueryResultStatusKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    InsufficientBitstreamBufferRangeKHR = -1000299000,
+    InsufficientBitstreamBufferRangekhr = -1000299000,
 }

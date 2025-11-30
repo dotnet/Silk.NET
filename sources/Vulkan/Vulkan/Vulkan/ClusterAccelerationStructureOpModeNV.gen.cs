@@ -20,7 +20,7 @@ public enum ClusterAccelerationStructureOpModeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ImplicitDestinationsNV = 0,
+    ImplicitDestinationsnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_MODE_EXPLICIT_DESTINATIONS_NV")]
@@ -29,7 +29,7 @@ public enum ClusterAccelerationStructureOpModeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ExplicitDestinationsNV = 1,
+    ExplicitDestinationsnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_MODE_COMPUTE_SIZES_NV")]
@@ -38,5 +38,5 @@ public enum ClusterAccelerationStructureOpModeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ComputeSizesNV = 2,
+    ComputeSizesnv = 2,
 }

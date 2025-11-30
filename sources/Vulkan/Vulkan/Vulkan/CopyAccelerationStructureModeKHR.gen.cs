@@ -23,7 +23,7 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    CloneKHR = 0,
+    Clonekhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_KHR")]
@@ -35,7 +35,7 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    CompactKHR = 1,
+    Compactkhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_SERIALIZE_KHR")]
@@ -47,7 +47,7 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    SerializeKHR = 2,
+    Serializekhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_DESERIALIZE_KHR")]
@@ -59,7 +59,7 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    DeserializeKHR = 3,
+    Deserializekhr = 3,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV")]
@@ -71,7 +71,7 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CloneNV = CloneKHR,
+    Clonenv = Clonekhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV")]
@@ -83,5 +83,5 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CompactNV = CompactKHR,
+    Compactnv = Compactkhr,
 }

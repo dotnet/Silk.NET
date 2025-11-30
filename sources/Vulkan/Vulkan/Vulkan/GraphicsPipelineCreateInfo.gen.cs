@@ -295,7 +295,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public PipelineLayout Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeName("renderPass")]
     [SupportedApiProfile(
@@ -314,7 +314,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public RenderPass RenderPass;
+    public RenderPassHandle RenderPass;
 
     [NativeName("subpass")]
     [SupportedApiProfile(
@@ -352,7 +352,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public Pipeline BasePipelineHandle;
+    public PipelineHandle BasePipelineHandle;
 
     [NativeName("basePipelineIndex")]
     [SupportedApiProfile(

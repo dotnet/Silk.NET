@@ -62,7 +62,7 @@ public unsafe partial struct CopyImageToMemoryInfo
         ],
         MinVersion = "1.4"
     )]
-    public Image SrcImage;
+    public ImageHandle SrcImage;
 
     [NativeName("srcImageLayout")]
     [SupportedApiProfile(

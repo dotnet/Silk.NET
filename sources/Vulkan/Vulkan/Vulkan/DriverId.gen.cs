@@ -137,7 +137,7 @@ public enum DriverId : uint
         ],
         MinVersion = "1.2"
     )]
-    IntelOpenSourceMESA = 6,
+    IntelOpenSourcemesa = 6,
 
     [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY")]
     [SupportedApiProfile(
@@ -537,7 +537,7 @@ public enum DriverId : uint
         ],
         MinVersion = "1.2"
     )]
-    ImaginationOpenSourceMESA = 25,
+    ImaginationOpenSourcemesa = 25,
 
     [NativeName("VK_DRIVER_ID_MESA_HONEYKRISP")]
     [SupportedApiProfile(
@@ -612,7 +612,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    AmdProprietaryKHR = AmdProprietary,
+    AmdProprietarykhr = AmdProprietary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR")]
@@ -624,7 +624,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    AmdOpenSourceKHR = AmdOpenSource,
+    AmdOpenSourcekhr = AmdOpenSource,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_MESA_RADV_KHR")]
@@ -636,7 +636,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    MesaRadvKHR = MesaRadv,
+    MesaRadvkhr = MesaRadv,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY_KHR")]
@@ -648,7 +648,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    NvidiaProprietaryKHR = NvidiaProprietary,
+    NvidiaProprietarykhr = NvidiaProprietary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR")]
@@ -660,7 +660,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    IntelProprietaryWindowsKHR = IntelProprietaryWindows,
+    IntelProprietaryWindowskhr = IntelProprietaryWindows,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA_KHR")]
@@ -672,7 +672,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    IntelOpenSourceMesaKHR = IntelOpenSourceMESA,
+    IntelOpenSourceMesakhr = IntelOpenSourcemesa,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY_KHR")]
@@ -684,7 +684,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    ImaginationProprietaryKHR = ImaginationProprietary,
+    ImaginationProprietarykhr = ImaginationProprietary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY_KHR")]
@@ -696,7 +696,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    QualcommProprietaryKHR = QualcommProprietary,
+    QualcommProprietarykhr = QualcommProprietary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY_KHR")]
@@ -708,7 +708,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    ArmProprietaryKHR = ArmProprietary,
+    ArmProprietarykhr = ArmProprietary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER_KHR")]
@@ -720,7 +720,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    GoogleSwiftshaderKHR = GoogleSwiftshader,
+    GoogleSwiftshaderkhr = GoogleSwiftshader,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY_KHR")]
@@ -732,7 +732,7 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    GgpProprietaryKHR = GgpProprietary,
+    GgpProprietarykhr = GgpProprietary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY_KHR")]
@@ -744,5 +744,5 @@ public enum DriverId : uint
             "VK_KHR_driver_properties+VK_VERSION_1_1",
         ]
     )]
-    BroadcomProprietaryKHR = BroadcomProprietary,
+    BroadcomProprietarykhr = BroadcomProprietary,
 }

@@ -76,7 +76,7 @@ public enum ShaderFloatControlsIndependence : uint
             "VK_KHR_shader_float_controls+VK_VERSION_1_1",
         ]
     )]
-    Independence32BitOnlyKHR = Independence32BitOnly,
+    Independence32BitOnlykhr = Independence32BitOnly,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL_KHR")]
@@ -88,7 +88,7 @@ public enum ShaderFloatControlsIndependence : uint
             "VK_KHR_shader_float_controls+VK_VERSION_1_1",
         ]
     )]
-    IndependenceAllKHR = IndependenceAll,
+    IndependenceAllkhr = IndependenceAll,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE_KHR")]
@@ -100,5 +100,5 @@ public enum ShaderFloatControlsIndependence : uint
             "VK_KHR_shader_float_controls+VK_VERSION_1_1",
         ]
     )]
-    IndependenceNoneKHR = IndependenceNone,
+    IndependenceNonekhr = IndependenceNone,
 }

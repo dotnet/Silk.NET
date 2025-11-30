@@ -23,7 +23,7 @@ public enum AntiLagModeAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    DriverControlAMD = 0,
+    DriverControlamd = 0,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_ANTI_LAG_MODE_ON_AMD")]
@@ -35,7 +35,7 @@ public enum AntiLagModeAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    OnAMD = 1,
+    Onamd = 1,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_ANTI_LAG_MODE_OFF_AMD")]
@@ -47,5 +47,5 @@ public enum AntiLagModeAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    OffAMD = 2,
+    Offamd = 2,
 }

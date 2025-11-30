@@ -22,7 +22,7 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RegularGopBitKHR = 0x1,
+    RegularGopBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR")]
@@ -31,7 +31,7 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    TemporalLayerPatternDyadicBitKHR = 0x2,
+    TemporalLayerPatternDyadicBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR")]
@@ -40,7 +40,7 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternFlatBitKHR = 0x4,
+    ReferencePatternFlatBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR")]
@@ -49,5 +49,5 @@ public enum VideoEncodeAV1RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternDyadicBitKHR = 0x8,
+    ReferencePatternDyadicBitkhr = 0x8,
 }

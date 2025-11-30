@@ -24,7 +24,7 @@ public enum ImageCompressionFlagsEXT : uint
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    DefaultEXT = 0x0,
+    Defaultext = 0x0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
@@ -36,7 +36,7 @@ public enum ImageCompressionFlagsEXT : uint
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    FixedRateDefaultEXT = 0x1,
+    FixedRateDefaultext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_FIXED_RATE_EXPLICIT_EXT")]
@@ -48,7 +48,7 @@ public enum ImageCompressionFlagsEXT : uint
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    FixedRateExplicitEXT = 0x2,
+    FixedRateExplicitext = 0x2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_COMPRESSION_DISABLED_EXT")]
@@ -60,5 +60,5 @@ public enum ImageCompressionFlagsEXT : uint
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    DisabledEXT = 0x4,
+    Disabledext = 0x4,
 }

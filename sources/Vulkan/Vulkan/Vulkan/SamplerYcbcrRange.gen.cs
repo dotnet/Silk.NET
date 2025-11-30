@@ -63,7 +63,7 @@ public enum SamplerYcbcrRange : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ItuFullKHR = ItuFull,
+    ItuFullkhr = ItuFull,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_RANGE_ITU_NARROW_KHR")]
@@ -75,5 +75,5 @@ public enum SamplerYcbcrRange : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ItuNarrowKHR = ItuNarrow,
+    ItuNarrowkhr = ItuNarrow,
 }

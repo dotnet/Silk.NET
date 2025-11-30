@@ -24,7 +24,7 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnknownNV = 0,
+    Unknownnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_SLOW_NV")]
@@ -37,7 +37,7 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SlowNV = 1,
+    Slownv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_MEDIUM_NV")]
@@ -50,7 +50,7 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    MediumNV = 2,
+    Mediumnv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_FAST_NV")]
@@ -63,5 +63,5 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    FastNV = 3,
+    Fastnv = 3,
 }

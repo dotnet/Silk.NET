@@ -19,7 +19,7 @@ public enum VideoEncodeAV1RateControlGroupKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    IntraKHR = 0,
+    Intrakhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_PREDICTIVE_KHR")]
@@ -28,7 +28,7 @@ public enum VideoEncodeAV1RateControlGroupKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PredictiveKHR = 1,
+    Predictivekhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_BIPREDICTIVE_KHR")]
@@ -37,5 +37,5 @@ public enum VideoEncodeAV1RateControlGroupKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BipredictiveKHR = 2,
+    Bipredictivekhr = 2,
 }

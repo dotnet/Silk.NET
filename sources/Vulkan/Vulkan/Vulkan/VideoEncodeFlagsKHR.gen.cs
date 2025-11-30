@@ -22,7 +22,7 @@ public enum VideoEncodeFlagsKHR : uint
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    IntraRefreshBitKHR = 0x4,
+    IntraRefreshBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_WITH_QUANTIZATION_DELTA_MAP_BIT_KHR")]
@@ -34,7 +34,7 @@ public enum VideoEncodeFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    WithQuantizationDeltaMapBitKHR = 0x1,
+    WithQuantizationDeltaMapBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_WITH_EMPHASIS_MAP_BIT_KHR")]
@@ -46,5 +46,5 @@ public enum VideoEncodeFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    WithEmphasisMapBitKHR = 0x2,
+    WithEmphasisMapBitkhr = 0x2,
 }

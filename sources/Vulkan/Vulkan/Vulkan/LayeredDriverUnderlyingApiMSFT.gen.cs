@@ -22,7 +22,7 @@ public enum LayeredDriverUnderlyingApiMSFT : uint
             "VK_MSFT_layered_driver+VK_VERSION_1_1",
         ]
     )]
-    NoneMSFT = 0,
+    Nonemsft = 0,
 
     [NameAffix("Suffix", "MSFT", 0)]
     [NativeName("VK_LAYERED_DRIVER_UNDERLYING_API_D3D12_MSFT")]

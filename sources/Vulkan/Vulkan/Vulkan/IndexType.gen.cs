@@ -93,7 +93,7 @@ public enum IndexType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    NoneKHR = 1000165000,
+    Nonekhr = 1000165000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_INDEX_TYPE_NONE_NV")]
@@ -105,7 +105,7 @@ public enum IndexType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    NoneNV = NoneKHR,
+    Nonenv = Nonekhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDEX_TYPE_UINT8_EXT")]
@@ -117,7 +117,7 @@ public enum IndexType : uint
             "VK_EXT_index_type_uint8+VK_VERSION_1_1",
         ]
     )]
-    Uint8EXT = Uint8,
+    Uint8Ext = Uint8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_INDEX_TYPE_UINT8_KHR")]
@@ -129,5 +129,5 @@ public enum IndexType : uint
             "VK_KHR_index_type_uint8+VK_VERSION_1_1",
         ]
     )]
-    Uint8KHR = Uint8,
+    Uint8Khr = Uint8,
 }

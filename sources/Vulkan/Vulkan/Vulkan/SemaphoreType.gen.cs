@@ -63,7 +63,7 @@ public enum SemaphoreType : uint
             "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
         ]
     )]
-    BinaryKHR = Binary,
+    Binarykhr = Binary,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SEMAPHORE_TYPE_TIMELINE_KHR")]
@@ -75,5 +75,5 @@ public enum SemaphoreType : uint
             "VK_KHR_timeline_semaphore+VK_VERSION_1_1",
         ]
     )]
-    TimelineKHR = Timeline,
+    Timelinekhr = Timeline,
 }

@@ -130,7 +130,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public DescriptorSetLayout* PSetLayouts;
+    public DescriptorSetLayoutHandle* PSetLayouts;
 
     [NativeName("pushConstantRangeCount")]
     [SupportedApiProfile(

@@ -41,5 +41,5 @@ public enum FramebufferCreateFlags : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ImagelessBitKHR = ImagelessBit,
+    ImagelessBitkhr = ImagelessBit,
 }

@@ -77,7 +77,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public Image* PImages;
+    public ImageHandle* PImages;
 
     [NativeName("bufferCount")]
     [SupportedApiProfile(
@@ -99,7 +99,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public Buffer* PBuffers;
+    public BufferHandle* PBuffers;
 
     [NativeName("tagName")]
     [SupportedApiProfile(

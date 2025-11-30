@@ -19,20 +19,20 @@ public enum DisplayPlaneAlphaFlagsKHR : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    OpaqueBitKHR = 0x1,
+    OpaqueBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    GlobalBitKHR = 0x2,
+    GlobalBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelBitKHR = 0x4,
+    PerPixelBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelPremultipliedBitKHR = 0x8,
+    PerPixelPremultipliedBitkhr = 0x8,
 }

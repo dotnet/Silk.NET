@@ -24,7 +24,7 @@ public enum IndirectExecutionSetInfoTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    PipelinesEXT = 0,
+    Pipelinesext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_EXECUTION_SET_INFO_TYPE_SHADER_OBJECTS_EXT")]
@@ -37,5 +37,5 @@ public enum IndirectExecutionSetInfoTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ShaderObjectsEXT = 1,
+    ShaderObjectsext = 1,
 }

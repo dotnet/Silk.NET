@@ -72,5 +72,5 @@ public enum PolygonMode : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_POLYGON_MODE_FILL_RECTANGLE_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_fill_rectangle"])]
-    FillRectangleNV = 1000153000,
+    FillRectanglenv = 1000153000,
 }

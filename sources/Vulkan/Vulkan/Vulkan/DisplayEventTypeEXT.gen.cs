@@ -18,5 +18,5 @@ public enum DisplayEventTypeEXT : uint
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    FirstPixelOutEXT = 0,
+    FirstPixelOutext = 0,
 }

@@ -22,7 +22,7 @@ public enum VideoEncodeAV1StdFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    UniformTileSpacingFlagSetBitKHR = 0x1,
+    UniformTileSpacingFlagSetBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_STD_SKIP_MODE_PRESENT_UNSET_BIT_KHR")]
@@ -31,7 +31,7 @@ public enum VideoEncodeAV1StdFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SkipModePresentUnsetBitKHR = 0x2,
+    SkipModePresentUnsetBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_STD_PRIMARY_REF_FRAME_BIT_KHR")]
@@ -40,7 +40,7 @@ public enum VideoEncodeAV1StdFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PrimaryRefFrameBitKHR = 0x4,
+    PrimaryRefFrameBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_STD_DELTA_Q_BIT_KHR")]
@@ -49,5 +49,5 @@ public enum VideoEncodeAV1StdFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeltaQBitKHR = 0x8,
+    DeltaQBitkhr = 0x8,
 }

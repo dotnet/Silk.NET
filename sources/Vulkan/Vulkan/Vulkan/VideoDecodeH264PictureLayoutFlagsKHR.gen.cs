@@ -21,7 +21,7 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    ProgressiveKHR = 0x0,
+    Progressivekhr = 0x0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_INTERLEAVED_LINES_BIT_KHR")]
@@ -30,7 +30,7 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    InterlacedInterleavedLinesBitKHR = 0x1,
+    InterlacedInterleavedLinesBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_DECODE_H264_PICTURE_LAYOUT_INTERLACED_SEPARATE_PLANES_BIT_KHR")]
@@ -39,5 +39,5 @@ public enum VideoDecodeH264PictureLayoutFlagsKHR : uint
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    InterlacedSeparatePlanesBitKHR = 0x2,
+    InterlacedSeparatePlanesBitkhr = 0x2,
 }

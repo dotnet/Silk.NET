@@ -23,7 +23,7 @@ public enum VideoEncodeH265CtbSizeFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size16BitKHR = 0x1,
+    Size16Bitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_CTB_SIZE_32_BIT_KHR")]
@@ -32,7 +32,7 @@ public enum VideoEncodeH265CtbSizeFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size32BitKHR = 0x2,
+    Size32Bitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_CTB_SIZE_64_BIT_KHR")]
@@ -41,5 +41,5 @@ public enum VideoEncodeH265CtbSizeFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size64BitKHR = 0x4,
+    Size64Bitkhr = 0x4,
 }

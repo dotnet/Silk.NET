@@ -26,7 +26,7 @@ public enum IndirectCommandsLayoutUsageFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ExplicitPreprocessBitEXT = 0x1,
+    ExplicitPreprocessBitext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_EXT")]
@@ -39,5 +39,5 @@ public enum IndirectCommandsLayoutUsageFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnorderedSequencesBitEXT = 0x2,
+    UnorderedSequencesBitext = 0x2,
 }

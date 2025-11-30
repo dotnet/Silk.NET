@@ -44,5 +44,5 @@ public unsafe partial struct AccelerationStructureDeviceAddressInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHR AccelerationStructure;
+    public AccelerationStructureHandleKHR AccelerationStructure;
 }

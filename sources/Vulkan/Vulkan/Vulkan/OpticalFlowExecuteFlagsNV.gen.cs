@@ -27,5 +27,5 @@ public enum OpticalFlowExecuteFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DisableTemporalHintsBitNV = 0x1,
+    DisableTemporalHintsBitnv = 0x1,
 }

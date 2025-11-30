@@ -23,7 +23,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SeparateColorPlaneFlagSetBitKHR = 0x1,
+    SeparateColorPlaneFlagSetBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_QPPRIME_Y_ZERO_TRANSFORM_BYPASS_FLAG_SET_BIT_KHR")]
@@ -32,7 +32,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    QpprimeYZeroTransformBypassFlagSetBitKHR = 0x2,
+    QpprimeYZeroTransformBypassFlagSetBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_SCALING_MATRIX_PRESENT_FLAG_SET_BIT_KHR")]
@@ -41,7 +41,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ScalingMatrixPresentFlagSetBitKHR = 0x4,
+    ScalingMatrixPresentFlagSetBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_CHROMA_QP_INDEX_OFFSET_BIT_KHR")]
@@ -50,7 +50,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ChromaQpIndexOffsetBitKHR = 0x8,
+    ChromaQpIndexOffsetBitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_SECOND_CHROMA_QP_INDEX_OFFSET_BIT_KHR")]
@@ -59,7 +59,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SecondChromaQpIndexOffsetBitKHR = 0x10,
+    SecondChromaQpIndexOffsetBitkhr = 0x10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_PIC_INIT_QP_MINUS26_BIT_KHR")]
@@ -68,7 +68,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PicInitQpMinus26BitKHR = 0x20,
+    PicInitQpMinus26Bitkhr = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_WEIGHTED_PRED_FLAG_SET_BIT_KHR")]
@@ -77,7 +77,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    WeightedPredFlagSetBitKHR = 0x40,
+    WeightedPredFlagSetBitkhr = 0x40,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_WEIGHTED_BIPRED_IDC_EXPLICIT_BIT_KHR")]
@@ -86,7 +86,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    WeightedBipredIdcExplicitBitKHR = 0x80,
+    WeightedBipredIdcExplicitBitkhr = 0x80,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_WEIGHTED_BIPRED_IDC_IMPLICIT_BIT_KHR")]
@@ -95,7 +95,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    WeightedBipredIdcImplicitBitKHR = 0x100,
+    WeightedBipredIdcImplicitBitkhr = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_TRANSFORM_8X8_MODE_FLAG_SET_BIT_KHR")]
@@ -104,7 +104,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Transform8X8ModeFlagSetBitKHR = 0x200,
+    Transform8X8ModeFlagSetBitkhr = 0x200,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DIRECT_SPATIAL_MV_PRED_FLAG_UNSET_BIT_KHR")]
@@ -113,7 +113,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DirectSpatialMvPredFlagUnsetBitKHR = 0x400,
+    DirectSpatialMvPredFlagUnsetBitkhr = 0x400,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_ENTROPY_CODING_MODE_FLAG_UNSET_BIT_KHR")]
@@ -122,7 +122,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EntropyCodingModeFlagUnsetBitKHR = 0x800,
+    EntropyCodingModeFlagUnsetBitkhr = 0x800,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_ENTROPY_CODING_MODE_FLAG_SET_BIT_KHR")]
@@ -131,7 +131,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    EntropyCodingModeFlagSetBitKHR = 0x1000,
+    EntropyCodingModeFlagSetBitkhr = 0x1000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DIRECT_8X8_INFERENCE_FLAG_UNSET_BIT_KHR")]
@@ -140,7 +140,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Direct8X8InferenceFlagUnsetBitKHR = 0x2000,
+    Direct8X8InferenceFlagUnsetBitkhr = 0x2000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_CONSTRAINED_INTRA_PRED_FLAG_SET_BIT_KHR")]
@@ -149,7 +149,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ConstrainedIntraPredFlagSetBitKHR = 0x4000,
+    ConstrainedIntraPredFlagSetBitkhr = 0x4000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_DISABLED_BIT_KHR")]
@@ -158,7 +158,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeblockingFilterDisabledBitKHR = 0x8000,
+    DeblockingFilterDisabledBitkhr = 0x8000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_ENABLED_BIT_KHR")]
@@ -167,7 +167,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeblockingFilterEnabledBitKHR = 0x10000,
+    DeblockingFilterEnabledBitkhr = 0x10000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DEBLOCKING_FILTER_PARTIAL_BIT_KHR")]
@@ -176,7 +176,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DeblockingFilterPartialBitKHR = 0x20000,
+    DeblockingFilterPartialBitkhr = 0x20000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_SLICE_QP_DELTA_BIT_KHR")]
@@ -185,7 +185,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SliceQpDeltaBitKHR = 0x80000,
+    SliceQpDeltaBitkhr = 0x80000,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DIFFERENT_SLICE_QP_DELTA_BIT_KHR")]
@@ -194,5 +194,5 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DifferentSliceQpDeltaBitKHR = 0x100000,
+    DifferentSliceQpDeltaBitkhr = 0x100000,
 }

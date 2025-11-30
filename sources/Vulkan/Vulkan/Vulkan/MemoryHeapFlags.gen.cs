@@ -78,10 +78,10 @@ public enum MemoryHeapFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TileMemoryBitQCOM = 0x8,
+    TileMemoryBitqcom = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_MEMORY_HEAP_MULTI_INSTANCE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
-    MultiInstanceBitKHR = MultiInstanceBit,
+    MultiInstanceBitkhr = MultiInstanceBit,
 }

@@ -24,7 +24,7 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    LocalBitKHR = 0x1,
+    LocalBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_REMOTE_BIT_KHR")]
@@ -34,7 +34,7 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    RemoteBitKHR = 0x2,
+    RemoteBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_SUM_BIT_KHR")]
@@ -44,7 +44,7 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    SumBitKHR = 0x4,
+    SumBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_LOCAL_MULTI_DEVICE_BIT_KHR")]
@@ -54,5 +54,5 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    LocalMultiDeviceBitKHR = 0x8,
+    LocalMultiDeviceBitkhr = 0x8,
 }

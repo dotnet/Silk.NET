@@ -20,5 +20,5 @@ public enum DataGraphModelCacheTypeQCOM : uint
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    GenericBinaryQCOM = 0,
+    GenericBinaryqcom = 0,
 }

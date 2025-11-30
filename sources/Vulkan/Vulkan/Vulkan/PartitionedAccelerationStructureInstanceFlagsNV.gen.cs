@@ -25,7 +25,7 @@ public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleFacingCullDisableBitNV = 0x1,
+    TriangleFacingCullDisableBitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_INSTANCE_FLAG_TRIANGLE_FLIP_FACING_BIT_NV")]
@@ -34,7 +34,7 @@ public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleFlipFacingBitNV = 0x2,
+    TriangleFlipFacingBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_INSTANCE_FLAG_FORCE_OPAQUE_BIT_NV")]
@@ -43,7 +43,7 @@ public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ForceOpaqueBitNV = 0x4,
+    ForceOpaqueBitnv = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_INSTANCE_FLAG_FORCE_NO_OPAQUE_BIT_NV")]
@@ -52,7 +52,7 @@ public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ForceNoOpaqueBitNV = 0x8,
+    ForceNoOpaqueBitnv = 0x8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName(
@@ -63,5 +63,5 @@ public enum PartitionedAccelerationStructureInstanceFlagsNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    EnableExplicitBoundingBoxNV = 0x10,
+    EnableExplicitBoundingBoxnv = 0x10,
 }

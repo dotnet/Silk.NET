@@ -27,7 +27,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("surface")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SurfaceKHR Surface;
+    public SurfaceHandleKHR Surface;
 
     [NativeName("minImageCount")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -83,5 +83,5 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("oldSwapchain")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public SwapchainKHR OldSwapchain;
+    public SwapchainHandleKHR OldSwapchain;
 }

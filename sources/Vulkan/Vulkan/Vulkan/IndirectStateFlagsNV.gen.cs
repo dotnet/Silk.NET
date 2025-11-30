@@ -23,5 +23,5 @@ public enum IndirectStateFlagsNV : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    FrontfaceBitNV = 0x1,
+    FrontfaceBitnv = 0x1,
 }

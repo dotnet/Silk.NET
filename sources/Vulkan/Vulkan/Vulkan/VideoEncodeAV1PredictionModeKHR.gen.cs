@@ -20,7 +20,7 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    IntraOnlyKHR = 0,
+    IntraOnlykhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_SINGLE_REFERENCE_KHR")]
@@ -29,7 +29,7 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SingleReferenceKHR = 1,
+    SingleReferencekhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_UNIDIRECTIONAL_COMPOUND_KHR")]
@@ -38,7 +38,7 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    UnidirectionalCompoundKHR = 2,
+    UnidirectionalCompoundkhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_BIDIRECTIONAL_COMPOUND_KHR")]
@@ -47,5 +47,5 @@ public enum VideoEncodeAV1PredictionModeKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BidirectionalCompoundKHR = 3,
+    BidirectionalCompoundkhr = 3,
 }

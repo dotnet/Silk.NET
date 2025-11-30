@@ -22,7 +22,7 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CommandBufferKHR = 0,
+    CommandBufferkhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_RENDER_PASS_KHR")]
@@ -34,7 +34,7 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    RenderPassKHR = 1,
+    RenderPasskhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_COMMAND_KHR")]
@@ -46,5 +46,5 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CommandKHR = 2,
+    Commandkhr = 2,
 }

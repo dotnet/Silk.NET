@@ -23,7 +23,7 @@ public enum OpacityMicromapFormatEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    Format2StateEXT = 1,
+    Format2Stateext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_FORMAT_4_STATE_EXT")]
@@ -35,5 +35,5 @@ public enum OpacityMicromapFormatEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    Format4StateEXT = 2,
+    Format4Stateext = 2,
 }

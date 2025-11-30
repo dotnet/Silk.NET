@@ -27,7 +27,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    EnableHintBitNV = 0x1,
+    EnableHintBitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ENABLE_COST_BIT_NV")]
@@ -40,7 +40,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    EnableCostBitNV = 0x2,
+    EnableCostBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ENABLE_GLOBAL_FLOW_BIT_NV")]
@@ -53,7 +53,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    EnableGlobalFlowBitNV = 0x4,
+    EnableGlobalFlowBitnv = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_ALLOW_REGIONS_BIT_NV")]
@@ -66,7 +66,7 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    AllowRegionsBitNV = 0x8,
+    AllowRegionsBitnv = 0x8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPTICAL_FLOW_SESSION_CREATE_BOTH_DIRECTIONS_BIT_NV")]
@@ -79,5 +79,5 @@ public enum OpticalFlowSessionCreateFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BothDirectionsBitNV = 0x10,
+    BothDirectionsBitnv = 0x10,
 }

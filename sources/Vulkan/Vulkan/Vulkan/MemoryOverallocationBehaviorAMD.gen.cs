@@ -16,15 +16,15 @@ public enum MemoryOverallocationBehaviorAMD : uint
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_OVERALLOCATION_BEHAVIOR_DEFAULT_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
-    DefaultAMD = 0,
+    Defaultamd = 0,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_OVERALLOCATION_BEHAVIOR_ALLOWED_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
-    AllowedAMD = 1,
+    Allowedamd = 1,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_OVERALLOCATION_BEHAVIOR_DISALLOWED_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
-    DisallowedAMD = 2,
+    Disallowedamd = 2,
 }

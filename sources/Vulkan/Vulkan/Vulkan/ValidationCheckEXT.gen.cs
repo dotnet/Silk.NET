@@ -15,10 +15,10 @@ public enum ValidationCheckEXT : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_CHECK_ALL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    AllEXT = 0,
+    Allext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_CHECK_SHADERS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    ShadersEXT = 1,
+    Shadersext = 1,
 }

@@ -23,7 +23,7 @@ public enum ClusterAccelerationStructureGeometryFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    CullDisableBitNV = 0x1,
+    CullDisableBitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANYHIT_INVOCATION_BIT_NV")]
@@ -32,7 +32,7 @@ public enum ClusterAccelerationStructureGeometryFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    NoDuplicateAnyhitInvocationBitNV = 0x2,
+    NoDuplicateAnyhitInvocationBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT_NV")]
@@ -41,5 +41,5 @@ public enum ClusterAccelerationStructureGeometryFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    OpaqueBitNV = 0x4,
+    OpaqueBitnv = 0x4,
 }

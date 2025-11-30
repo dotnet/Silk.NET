@@ -25,7 +25,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableShaderDebugInfoBitNV = 0x1,
+    EnableShaderDebugInfoBitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_RESOURCE_TRACKING_BIT_NV")]
@@ -37,7 +37,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableResourceTrackingBitNV = 0x2,
+    EnableResourceTrackingBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_AUTOMATIC_CHECKPOINTS_BIT_NV")]
@@ -49,7 +49,7 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableAutomaticCheckpointsBitNV = 0x4,
+    EnableAutomaticCheckpointsBitnv = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_ERROR_REPORTING_BIT_NV")]
@@ -61,5 +61,5 @@ public enum DeviceDiagnosticsConfigFlagsNV : uint
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    EnableShaderErrorReportingBitNV = 0x8,
+    EnableShaderErrorReportingBitnv = 0x8,
 }

@@ -44,7 +44,7 @@ public enum AttachmentDescriptionFlags : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveSkipTransferFunctionBitKHR = 0x2,
+    ResolveSkipTransferFunctionBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ATTACHMENT_DESCRIPTION_RESOLVE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
@@ -56,5 +56,5 @@ public enum AttachmentDescriptionFlags : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveEnableTransferFunctionBitKHR = 0x4,
+    ResolveEnableTransferFunctionBitkhr = 0x4,
 }

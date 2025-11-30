@@ -47,7 +47,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public PipelineLayout Layout;
+    public PipelineLayoutHandle Layout;
 
     [NativeName("set")]
     [SupportedApiProfile(

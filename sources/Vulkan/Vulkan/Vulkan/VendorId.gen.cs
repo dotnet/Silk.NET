@@ -39,7 +39,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdKhronos = 65536,
+    Khronos = 65536,
 
     [NameAffix("Suffix", "VIV", 0)]
     [NativeName("VK_VENDOR_ID_VIV")]
@@ -69,7 +69,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdVIV = 65537,
+    Viv = 65537,
 
     [NameAffix("Suffix", "VSI", 0)]
     [NativeName("VK_VENDOR_ID_VSI")]
@@ -99,7 +99,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdVSI = 65538,
+    Vsi = 65538,
 
     [NativeName("VK_VENDOR_ID_KAZAN")]
     [SupportedApiProfile(
@@ -128,7 +128,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdKazan = 65539,
+    Kazan = 65539,
 
     [NativeName("VK_VENDOR_ID_CODEPLAY")]
     [SupportedApiProfile(
@@ -157,7 +157,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdCodeplay = 65540,
+    Codeplay = 65540,
 
     [NameAffix("Suffix", "MESA", 0)]
     [NativeName("VK_VENDOR_ID_MESA")]
@@ -187,7 +187,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdMESA = 65541,
+    Mesa = 65541,
 
     [NativeName("VK_VENDOR_ID_POCL")]
     [SupportedApiProfile(
@@ -216,7 +216,7 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdPocl = 65542,
+    Pocl = 65542,
 
     [NativeName("VK_VENDOR_ID_MOBILEYE")]
     [SupportedApiProfile(
@@ -245,5 +245,5 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    VendorIdMobileye = 65543,
+    Mobileye = 65543,
 }

@@ -55,7 +55,7 @@ public unsafe partial struct VideoEncodeInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public Buffer DstBuffer;
+    public BufferHandle DstBuffer;
 
     [NativeName("dstBufferOffset")]
     [SupportedApiProfile(

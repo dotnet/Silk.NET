@@ -16,7 +16,7 @@ public enum PhysicalDeviceLayeredApiKHR : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_VULKAN_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    VulkanKHR = 0,
+    Vulkankhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_D3D12_KHR")]
@@ -26,15 +26,15 @@ public enum PhysicalDeviceLayeredApiKHR : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_METAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    MetalKHR = 2,
+    Metalkhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_OPENGL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    OpenglKHR = 3,
+    Openglkhr = 3,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PHYSICAL_DEVICE_LAYERED_API_OPENGLES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    OpenglesKHR = 4,
+    Opengleskhr = 4,
 }

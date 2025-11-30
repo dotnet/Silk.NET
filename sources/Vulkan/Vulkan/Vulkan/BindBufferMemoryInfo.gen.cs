@@ -85,7 +85,7 @@ public unsafe partial struct BindBufferMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public Buffer Buffer;
+    public BufferHandle Buffer;
 
     [NativeName("memory")]
     [SupportedApiProfile(
@@ -110,7 +110,7 @@ public unsafe partial struct BindBufferMemoryInfo
         ],
         MinVersion = "1.1"
     )]
-    public DeviceMemory Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeName("memoryOffset")]
     [SupportedApiProfile(

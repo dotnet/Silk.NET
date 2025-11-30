@@ -26,15 +26,15 @@ public enum PerformanceValueTypeIntel : uint
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_FLOAT_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    FloatIntel = 2,
+    Floatintel = 2,
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_BOOL_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    BoolIntel = 3,
+    Boolintel = 3,
 
     [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_VALUE_TYPE_STRING_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    StringIntel = 4,
+    Stringintel = 4,
 }

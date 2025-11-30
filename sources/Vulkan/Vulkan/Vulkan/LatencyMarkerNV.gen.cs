@@ -25,7 +25,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    SimulationStartNV = 0,
+    SimulationStartnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_SIMULATION_END_NV")]
@@ -39,7 +39,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    SimulationEndNV = 1,
+    SimulationEndnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_RENDERSUBMIT_START_NV")]
@@ -53,7 +53,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    RendersubmitStartNV = 2,
+    RendersubmitStartnv = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_RENDERSUBMIT_END_NV")]
@@ -67,7 +67,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    RendersubmitEndNV = 3,
+    RendersubmitEndnv = 3,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_PRESENT_START_NV")]
@@ -81,7 +81,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    PresentStartNV = 4,
+    PresentStartnv = 4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_PRESENT_END_NV")]
@@ -95,7 +95,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    PresentEndNV = 5,
+    PresentEndnv = 5,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_INPUT_SAMPLE_NV")]
@@ -109,7 +109,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    InputSampleNV = 6,
+    InputSamplenv = 6,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_TRIGGER_FLASH_NV")]
@@ -123,7 +123,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    TriggerFlashNV = 7,
+    TriggerFlashnv = 7,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_RENDERSUBMIT_START_NV")]
@@ -137,7 +137,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandRendersubmitStartNV = 8,
+    OutOfBandRendersubmitStartnv = 8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_RENDERSUBMIT_END_NV")]
@@ -151,7 +151,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandRendersubmitEndNV = 9,
+    OutOfBandRendersubmitEndnv = 9,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_PRESENT_START_NV")]
@@ -165,7 +165,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandPresentStartNV = 10,
+    OutOfBandPresentStartnv = 10,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_PRESENT_END_NV")]
@@ -179,5 +179,5 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandPresentEndNV = 11,
+    OutOfBandPresentEndnv = 11,
 }

@@ -22,7 +22,7 @@ public enum VideoSessionCreateFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ProtectedContentBitKHR = 0x1,
+    ProtectedContentBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_PARAMETER_OPTIMIZATIONS_BIT_KHR")]
@@ -34,7 +34,7 @@ public enum VideoSessionCreateFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeParameterOptimizationsBitKHR = 0x2,
+    AllowEncodeParameterOptimizationsBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_INLINE_QUERIES_BIT_KHR")]
@@ -43,7 +43,7 @@ public enum VideoSessionCreateFlagsKHR : uint
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    InlineQueriesBitKHR = 0x4,
+    InlineQueriesBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
@@ -55,7 +55,7 @@ public enum VideoSessionCreateFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeQuantizationDeltaMapBitKHR = 0x8,
+    AllowEncodeQuantizationDeltaMapBitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_EMPHASIS_MAP_BIT_KHR")]
@@ -67,7 +67,7 @@ public enum VideoSessionCreateFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeEmphasisMapBitKHR = 0x10,
+    AllowEncodeEmphasisMapBitkhr = 0x10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_INLINE_SESSION_PARAMETERS_BIT_KHR")]
@@ -77,5 +77,5 @@ public enum VideoSessionCreateFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_queue"],
         RequireAll = true
     )]
-    InlineSessionParametersBitKHR = 0x20,
+    InlineSessionParametersBitkhr = 0x20,
 }

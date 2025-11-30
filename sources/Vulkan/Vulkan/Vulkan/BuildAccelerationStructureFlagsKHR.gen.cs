@@ -26,7 +26,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowUpdateBitKHR = 0x1,
+    AllowUpdateBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
@@ -38,7 +38,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowCompactionBitKHR = 0x2,
+    AllowCompactionBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_KHR")]
@@ -50,7 +50,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PreferFastTraceBitKHR = 0x4,
+    PreferFastTraceBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_KHR")]
@@ -62,7 +62,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PreferFastBuildBitKHR = 0x8,
+    PreferFastBuildBitkhr = 0x8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_KHR")]
@@ -74,7 +74,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    LowMemoryBitKHR = 0x10,
+    LowMemoryBitkhr = 0x10,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
@@ -83,7 +83,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    MotionBitNV = 0x20,
+    MotionBitnv = 0x20,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_EXT")]
@@ -95,7 +95,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowOpacityMicromapUpdateBitEXT = 0x40,
+    AllowOpacityMicromapUpdateBitext = 0x40,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
@@ -107,7 +107,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowDisableOpacityMicromapsBitEXT = 0x80,
+    AllowDisableOpacityMicromapsBitext = 0x80,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_BIT_EXT")]
@@ -119,7 +119,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowOpacityMicromapDataUpdateBitEXT = 0x100,
+    AllowOpacityMicromapDataUpdateBitext = 0x100,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_BIT_KHR")]
@@ -128,7 +128,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowDataAccessBitKHR = 0x800,
+    AllowDataAccessBitkhr = 0x800,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_CLUSTER_OPACITY_MICROMAPS_BIT_NV")]
@@ -137,7 +137,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowClusterOpacityMicromapsBitNV = 0x1000,
+    AllowClusterOpacityMicromapsBitnv = 0x1000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV")]
@@ -149,7 +149,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AllowUpdateBitNV = AllowUpdateBitKHR,
+    AllowUpdateBitnv = AllowUpdateBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV")]
@@ -161,7 +161,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AllowCompactionBitNV = AllowCompactionBitKHR,
+    AllowCompactionBitnv = AllowCompactionBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV")]
@@ -173,7 +173,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    PreferFastTraceBitNV = PreferFastTraceBitKHR,
+    PreferFastTraceBitnv = PreferFastTraceBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV")]
@@ -185,7 +185,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    PreferFastBuildBitNV = PreferFastBuildBitKHR,
+    PreferFastBuildBitnv = PreferFastBuildBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV")]
@@ -197,5 +197,5 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    LowMemoryBitNV = LowMemoryBitKHR,
+    LowMemoryBitnv = LowMemoryBitkhr,
 }

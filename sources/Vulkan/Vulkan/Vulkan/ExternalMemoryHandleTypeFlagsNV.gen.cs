@@ -19,20 +19,20 @@ public enum ExternalMemoryHandleTypeFlagsNV : uint
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    OpaqueWin32BitNV = 0x1,
+    OpaqueWin32Bitnv = 0x1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    OpaqueWin32KmtBitNV = 0x2,
+    OpaqueWin32KmtBitnv = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_IMAGE_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    D3D11ImageBitNV = 0x4,
+    D3D11ImageBitnv = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_IMAGE_KMT_BIT_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
-    D3D11ImageKmtBitNV = 0x8,
+    D3D11ImageKmtBitnv = 0x8,
 }

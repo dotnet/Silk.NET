@@ -23,7 +23,7 @@ public enum ShaderCodeTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BinaryEXT = 0,
+    Binaryext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SHADER_CODE_TYPE_SPIRV_EXT")]
@@ -36,5 +36,5 @@ public enum ShaderCodeTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SpirvEXT = 1,
+    Spirvext = 1,
 }

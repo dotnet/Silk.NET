@@ -26,7 +26,7 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    PerformanceImpactingBitKHR = 0x1,
+    PerformanceImpactingBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_BIT_KHR")]
@@ -38,5 +38,5 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    ConcurrentlyImpactedBitKHR = 0x2,
+    ConcurrentlyImpactedBitkhr = 0x2,
 }

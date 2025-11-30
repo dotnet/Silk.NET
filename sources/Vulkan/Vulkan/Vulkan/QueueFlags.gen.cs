@@ -166,7 +166,7 @@ public enum QueueFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoDecodeBitKHR = 0x20,
+    VideoDecodeBitkhr = 0x20,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUEUE_VIDEO_ENCODE_BIT_KHR")]
@@ -178,7 +178,7 @@ public enum QueueFlags : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VideoEncodeBitKHR = 0x40,
+    VideoEncodeBitkhr = 0x40,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
@@ -191,7 +191,7 @@ public enum QueueFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    OpticalFlowBitNV = 0x100,
+    OpticalFlowBitnv = 0x100,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_QUEUE_DATA_GRAPH_BIT_ARM")]
@@ -200,5 +200,5 @@ public enum QueueFlags : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    DataGraphBitARM = 0x400,
+    DataGraphBitarm = 0x400,
 }

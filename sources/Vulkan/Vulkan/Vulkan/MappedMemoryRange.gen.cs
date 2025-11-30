@@ -97,7 +97,7 @@ public unsafe partial struct MappedMemoryRange
         ],
         MinVersion = "1.0"
     )]
-    public DeviceMemory Memory;
+    public DeviceMemoryHandle Memory;
 
     [NativeName("offset")]
     [SupportedApiProfile(

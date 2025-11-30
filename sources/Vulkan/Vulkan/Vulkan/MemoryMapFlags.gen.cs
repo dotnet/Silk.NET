@@ -25,5 +25,5 @@ public enum MemoryMapFlags : uint
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    PlacedBitEXT = 0x1,
+    PlacedBitext = 0x1,
 }

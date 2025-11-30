@@ -127,7 +127,7 @@ public enum SamplerYcbcrModelConversion : uint
             "VK_VERSION_1_1",
         ]
     )]
-    RgbIdentityKHR = RgbIdentity,
+    RgbIdentitykhr = RgbIdentity,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_IDENTITY_KHR")]
@@ -139,7 +139,7 @@ public enum SamplerYcbcrModelConversion : uint
             "VK_VERSION_1_1",
         ]
     )]
-    YcbcrIdentityKHR = YcbcrIdentity,
+    YcbcrIdentitykhr = YcbcrIdentity,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_709_KHR")]
@@ -151,7 +151,7 @@ public enum SamplerYcbcrModelConversion : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Ycbcr709KHR = Ycbcr709,
+    Ycbcr709Khr = Ycbcr709,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_601_KHR")]
@@ -163,7 +163,7 @@ public enum SamplerYcbcrModelConversion : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Ycbcr601KHR = Ycbcr601,
+    Ycbcr601Khr = Ycbcr601,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_2020_KHR")]
@@ -175,5 +175,5 @@ public enum SamplerYcbcrModelConversion : uint
             "VK_VERSION_1_1",
         ]
     )]
-    Ycbcr2020KHR = Ycbcr2020,
+    Ycbcr2020Khr = Ycbcr2020,
 }

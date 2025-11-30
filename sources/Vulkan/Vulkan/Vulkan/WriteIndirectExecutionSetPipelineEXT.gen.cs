@@ -59,5 +59,5 @@ public unsafe partial struct WriteIndirectExecutionSetPipelineEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public Pipeline Pipeline;
+    public PipelineHandle Pipeline;
 }

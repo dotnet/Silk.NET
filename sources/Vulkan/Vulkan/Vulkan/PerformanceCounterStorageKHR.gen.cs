@@ -23,7 +23,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Int32KHR = 0,
+    Int32Khr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_INT64_KHR")]
@@ -35,7 +35,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Int64KHR = 1,
+    Int64Khr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_UINT32_KHR")]
@@ -47,7 +47,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Uint32KHR = 2,
+    Uint32Khr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_UINT64_KHR")]
@@ -59,7 +59,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Uint64KHR = 3,
+    Uint64Khr = 3,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_FLOAT32_KHR")]
@@ -71,7 +71,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Float32KHR = 4,
+    Float32Khr = 4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_FLOAT64_KHR")]
@@ -83,5 +83,5 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Float64KHR = 5,
+    Float64Khr = 5,
 }

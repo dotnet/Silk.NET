@@ -46,7 +46,7 @@ public unsafe partial struct SubpassShadingPipelineCreateInfoHuawei
             "VK_VERSION_1_3",
         ]
     )]
-    public RenderPass RenderPass;
+    public RenderPassHandle RenderPass;
 
     [NativeName("subpass")]
     [SupportedApiProfile(

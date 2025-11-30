@@ -26,5 +26,5 @@ public unsafe partial struct WriteDescriptorSetTensorARM
 
     [NativeName("pTensorViews")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorViewARM* PTensorViews;
+    public TensorViewHandleARM* PTensorViews;
 }

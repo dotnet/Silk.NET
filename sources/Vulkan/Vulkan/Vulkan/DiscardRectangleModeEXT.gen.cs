@@ -23,7 +23,7 @@ public enum DiscardRectangleModeEXT : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    InclusiveEXT = 0,
+    Inclusiveext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DISCARD_RECTANGLE_MODE_EXCLUSIVE_EXT")]
@@ -35,5 +35,5 @@ public enum DiscardRectangleModeEXT : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    ExclusiveEXT = 1,
+    Exclusiveext = 1,
 }

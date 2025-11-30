@@ -47,5 +47,5 @@ public unsafe partial struct GeneratedCommandsPipelineInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public Pipeline Pipeline;
+    public PipelineHandle Pipeline;
 }

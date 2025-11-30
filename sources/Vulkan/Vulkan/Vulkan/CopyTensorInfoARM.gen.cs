@@ -23,11 +23,11 @@ public unsafe partial struct CopyTensorInfoARM
 
     [NativeName("srcTensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARM SrcTensor;
+    public TensorHandleARM SrcTensor;
 
     [NativeName("dstTensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARM DstTensor;
+    public TensorHandleARM DstTensor;
 
     [NativeName("regionCount")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]

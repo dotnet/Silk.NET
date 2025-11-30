@@ -22,7 +22,7 @@ public enum AntiLagStageAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    InputAMD = 0,
+    Inputamd = 0,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_ANTI_LAG_STAGE_PRESENT_AMD")]
@@ -34,5 +34,5 @@ public enum AntiLagStageAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    PresentAMD = 1,
+    Presentamd = 1,
 }

@@ -55,5 +55,5 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureNV AccelerationStructure;
+    public AccelerationStructureHandleNV AccelerationStructure;
 }

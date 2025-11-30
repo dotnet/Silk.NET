@@ -195,7 +195,7 @@ public enum MemoryPropertyFlags : uint
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    DeviceCoherentBitAMD = 0x40,
+    DeviceCoherentBitamd = 0x40,
 
     [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_PROPERTY_DEVICE_UNCACHED_BIT_AMD")]
@@ -207,7 +207,7 @@ public enum MemoryPropertyFlags : uint
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    DeviceUncachedBitAMD = 0x80,
+    DeviceUncachedBitamd = 0x80,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_MEMORY_PROPERTY_RDMA_CAPABLE_BIT_NV")]
@@ -219,5 +219,5 @@ public enum MemoryPropertyFlags : uint
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    RdmaCapableBitNV = 0x100,
+    RdmaCapableBitnv = 0x100,
 }

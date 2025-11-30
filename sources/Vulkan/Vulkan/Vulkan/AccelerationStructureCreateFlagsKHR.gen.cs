@@ -26,7 +26,7 @@ public enum AccelerationStructureCreateFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    DeviceAddressCaptureReplayBitKHR = 0x1,
+    DeviceAddressCaptureReplayBitkhr = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
@@ -40,7 +40,7 @@ public enum AccelerationStructureCreateFlagsKHR : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferCaptureReplayBitEXT = 0x8,
+    DescriptorBufferCaptureReplayBitext = 0x8,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_MOTION_BIT_NV")]
@@ -49,5 +49,5 @@ public enum AccelerationStructureCreateFlagsKHR : uint
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    MotionBitNV = 0x4,
+    MotionBitnv = 0x4,
 }

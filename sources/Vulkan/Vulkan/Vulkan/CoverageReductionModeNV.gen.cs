@@ -23,7 +23,7 @@ public enum CoverageReductionModeNV : uint
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    MergeNV = 0,
+    Mergenv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_REDUCTION_MODE_TRUNCATE_NV")]
@@ -35,5 +35,5 @@ public enum CoverageReductionModeNV : uint
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    TruncateNV = 1,
+    Truncatenv = 1,
 }

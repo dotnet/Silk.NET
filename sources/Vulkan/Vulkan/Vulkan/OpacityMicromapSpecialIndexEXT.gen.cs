@@ -23,7 +23,7 @@ public enum OpacityMicromapSpecialIndexEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    FullyTransparentEXT = -1,
+    FullyTransparentext = -1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_EXT")]
@@ -35,7 +35,7 @@ public enum OpacityMicromapSpecialIndexEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    FullyOpaqueEXT = -2,
+    FullyOpaqueext = -2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_EXT")]
@@ -47,7 +47,7 @@ public enum OpacityMicromapSpecialIndexEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    FullyUnknownTransparentEXT = -3,
+    FullyUnknownTransparentext = -3,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT")]
@@ -59,7 +59,7 @@ public enum OpacityMicromapSpecialIndexEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    FullyUnknownOpaqueEXT = -4,
+    FullyUnknownOpaqueext = -4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_CLUSTER_GEOMETRY_DISABLE_OPACITY_MICROMAP_NV")]
@@ -69,5 +69,5 @@ public enum OpacityMicromapSpecialIndexEXT
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    ClusterGeometryDisableOpacityMicromapNV = -5,
+    ClusterGeometryDisableOpacityMicromapnv = -5,
 }

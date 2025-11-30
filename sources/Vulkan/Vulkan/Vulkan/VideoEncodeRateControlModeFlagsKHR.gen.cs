@@ -23,7 +23,7 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0x0,
+    Defaultkhr = 0x0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_DISABLED_BIT_KHR")]
@@ -35,7 +35,7 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DisabledBitKHR = 0x1,
+    DisabledBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_CBR_BIT_KHR")]
@@ -47,7 +47,7 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CbrBitKHR = 0x2,
+    CbrBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_RATE_CONTROL_MODE_VBR_BIT_KHR")]
@@ -59,5 +59,5 @@ public enum VideoEncodeRateControlModeFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    VbrBitKHR = 0x4,
+    VbrBitkhr = 0x4,
 }

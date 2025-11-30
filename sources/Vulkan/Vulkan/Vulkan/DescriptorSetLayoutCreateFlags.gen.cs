@@ -53,7 +53,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DescriptorBufferBitEXT = 0x10,
+    DescriptorBufferBitext = 0x10,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_EMBEDDED_IMMUTABLE_SAMPLERS_BIT_EXT")]
@@ -67,7 +67,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
             "VK_VERSION_1_3",
         ]
     )]
-    EmbeddedImmutableSamplersBitEXT = 0x20,
+    EmbeddedImmutableSamplersBitext = 0x20,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_INDIRECT_BINDABLE_BIT_NV")]
@@ -76,7 +76,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    IndirectBindableBitNV = 0x80,
+    IndirectBindableBitnv = 0x80,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_EXT")]
@@ -88,7 +88,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    HostOnlyPoolBitEXT = 0x4,
+    HostOnlyPoolBitext = 0x4,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PER_STAGE_BIT_NV")]
@@ -100,7 +100,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    PerStageBitNV = 0x40,
+    PerStageBitnv = 0x40,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR")]
@@ -112,7 +112,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
             "VK_KHR_push_descriptor+VK_VERSION_1_1",
         ]
     )]
-    PushDescriptorBitKHR = PushDescriptorBit,
+    PushDescriptorBitkhr = PushDescriptorBit,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT_EXT")]
@@ -124,7 +124,7 @@ public enum DescriptorSetLayoutCreateFlags : uint
             "VK_VERSION_1_1",
         ]
     )]
-    UpdateAfterBindPoolBitEXT = UpdateAfterBindPoolBit,
+    UpdateAfterBindPoolBitext = UpdateAfterBindPoolBit,
 
     [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_VALVE")]
@@ -133,5 +133,5 @@ public enum DescriptorSetLayoutCreateFlags : uint
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    HostOnlyPoolBitValve = HostOnlyPoolBitEXT,
+    HostOnlyPoolBitvalve = HostOnlyPoolBitext,
 }

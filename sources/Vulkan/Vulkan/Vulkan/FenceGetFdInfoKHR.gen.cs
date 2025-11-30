@@ -43,7 +43,7 @@ public unsafe partial struct FenceGetFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public Fence Fence;
+    public FenceHandle Fence;
 
     [NativeName("handleType")]
     [SupportedApiProfile(

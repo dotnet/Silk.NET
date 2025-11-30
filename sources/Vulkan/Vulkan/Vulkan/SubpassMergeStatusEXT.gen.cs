@@ -23,7 +23,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    MergedEXT = 0,
+    Mergedext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_DISALLOWED_EXT")]
@@ -35,7 +35,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    DisallowedEXT = 1,
+    Disallowedext = 1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_SIDE_EFFECTS_EXT")]
@@ -47,7 +47,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedSideEffectsEXT = 2,
+    NotMergedSideEffectsext = 2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_SAMPLES_MISMATCH_EXT")]
@@ -59,7 +59,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedSamplesMismatchEXT = 3,
+    NotMergedSamplesMismatchext = 3,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_VIEWS_MISMATCH_EXT")]
@@ -71,7 +71,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedViewsMismatchEXT = 4,
+    NotMergedViewsMismatchext = 4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_ALIASING_EXT")]
@@ -83,7 +83,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedAliasingEXT = 5,
+    NotMergedAliasingext = 5,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_DEPENDENCIES_EXT")]
@@ -95,7 +95,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedDependenciesEXT = 6,
+    NotMergedDependenciesext = 6,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_INCOMPATIBLE_INPUT_ATTACHMENT_EXT")]
@@ -107,7 +107,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedIncompatibleInputAttachmentEXT = 7,
+    NotMergedIncompatibleInputAttachmentext = 7,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_TOO_MANY_ATTACHMENTS_EXT")]
@@ -119,7 +119,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedTooManyAttachmentsEXT = 8,
+    NotMergedTooManyAttachmentsext = 8,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_INSUFFICIENT_STORAGE_EXT")]
@@ -131,7 +131,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedInsufficientStorageEXT = 9,
+    NotMergedInsufficientStorageext = 9,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_DEPTH_STENCIL_COUNT_EXT")]
@@ -143,7 +143,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedDepthStencilCountEXT = 10,
+    NotMergedDepthStencilCountext = 10,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_RESOLVE_ATTACHMENT_REUSE_EXT")]
@@ -155,7 +155,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedResolveAttachmentReuseEXT = 11,
+    NotMergedResolveAttachmentReuseext = 11,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_SINGLE_SUBPASS_EXT")]
@@ -167,7 +167,7 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedSingleSubpassEXT = 12,
+    NotMergedSingleSubpassext = 12,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SUBPASS_MERGE_STATUS_NOT_MERGED_UNSPECIFIED_EXT")]
@@ -179,5 +179,5 @@ public enum SubpassMergeStatusEXT : uint
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    NotMergedUnspecifiedEXT = 13,
+    NotMergedUnspecifiedext = 13,
 }

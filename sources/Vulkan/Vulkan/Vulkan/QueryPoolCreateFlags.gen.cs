@@ -25,5 +25,5 @@ public enum QueryPoolCreateFlags : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ResetBitKHR = 0x1,
+    ResetBitkhr = 0x1,
 }

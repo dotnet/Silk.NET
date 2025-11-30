@@ -22,7 +22,7 @@ public enum ProvokingVertexModeEXT : uint
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    FirstVertexEXT = 0,
+    FirstVertexext = 0,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PROVOKING_VERTEX_MODE_LAST_VERTEX_EXT")]
@@ -34,5 +34,5 @@ public enum ProvokingVertexModeEXT : uint
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    LastVertexEXT = 1,
+    LastVertexext = 1,
 }

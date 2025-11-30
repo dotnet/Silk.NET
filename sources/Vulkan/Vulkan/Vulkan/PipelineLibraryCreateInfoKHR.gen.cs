@@ -27,5 +27,5 @@ public unsafe partial struct PipelineLibraryCreateInfoKHR
 
     [NativeName("pLibraries")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
-    public Pipeline* PLibraries;
+    public PipelineHandle* PLibraries;
 }

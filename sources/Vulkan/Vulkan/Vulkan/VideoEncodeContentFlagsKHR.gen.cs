@@ -24,7 +24,7 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0x0,
+    Defaultkhr = 0x0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_CAMERA_BIT_KHR")]
@@ -36,7 +36,7 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CameraBitKHR = 0x1,
+    CameraBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_DESKTOP_BIT_KHR")]
@@ -48,7 +48,7 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DesktopBitKHR = 0x2,
+    DesktopBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_RENDERED_BIT_KHR")]
@@ -60,5 +60,5 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    RenderedBitKHR = 0x4,
+    RenderedBitkhr = 0x4,
 }

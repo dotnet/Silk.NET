@@ -23,7 +23,7 @@ public enum AccelerationStructureCompatibilityKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    CompatibleKHR = 0,
+    Compatiblekhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_COMPATIBILITY_INCOMPATIBLE_KHR")]
@@ -35,5 +35,5 @@ public enum AccelerationStructureCompatibilityKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    IncompatibleKHR = 1,
+    Incompatiblekhr = 1,
 }

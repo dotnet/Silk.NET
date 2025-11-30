@@ -47,5 +47,5 @@ public unsafe partial struct TensorMemoryBarrierARM
 
     [NativeName("tensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARM Tensor;
+    public TensorHandleARM Tensor;
 }

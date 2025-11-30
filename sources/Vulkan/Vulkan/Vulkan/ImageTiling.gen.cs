@@ -81,5 +81,5 @@ public enum ImageTiling : uint
             "VK_VERSION_1_2",
         ]
     )]
-    DrmFormatModifierEXT = 1000158000,
+    DrmFormatModifierext = 1000158000,
 }

@@ -300,7 +300,7 @@ public enum DescriptorType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AccelerationStructureKHR = 1000150000,
+    AccelerationStructurekhr = 1000150000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_NV")]
@@ -312,7 +312,7 @@ public enum DescriptorType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AccelerationStructureNV = 1000165000,
+    AccelerationStructurenv = 1000165000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_SAMPLE_WEIGHT_IMAGE_QCOM")]
@@ -324,7 +324,7 @@ public enum DescriptorType : uint
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    SampleWeightImageQCOM = 1000440000,
+    SampleWeightImageqcom = 1000440000,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_BLOCK_MATCH_IMAGE_QCOM")]
@@ -336,12 +336,12 @@ public enum DescriptorType : uint
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    BlockMatchImageQCOM = 1000440001,
+    BlockMatchImageqcom = 1000440001,
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    TensorARM = 1000460000,
+    Tensorarm = 1000460000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_EXT")]
@@ -353,7 +353,7 @@ public enum DescriptorType : uint
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    MutableEXT = 1000351000,
+    Mutableext = 1000351000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_PARTITIONED_ACCELERATION_STRUCTURE_NV")]
@@ -362,7 +362,7 @@ public enum DescriptorType : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    PartitionedAccelerationStructureNV = 1000570000,
+    PartitionedAccelerationStructurenv = 1000570000,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT")]
@@ -374,7 +374,7 @@ public enum DescriptorType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    InlineUniformBlockEXT = InlineUniformBlock,
+    InlineUniformBlockext = InlineUniformBlock,
 
     [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
@@ -383,5 +383,5 @@ public enum DescriptorType : uint
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    MutableValve = MutableEXT,
+    Mutablevalve = Mutableext,
 }

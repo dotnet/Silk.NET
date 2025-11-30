@@ -22,7 +22,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ObjectNV = 0,
+    Objectnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV")]
@@ -34,7 +34,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
             "VK_VERSION_1_1",
         ]
     )]
-    BuildScratchNV = 1,
+    BuildScratchnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV")]
@@ -46,5 +46,5 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
             "VK_VERSION_1_1",
         ]
     )]
-    UpdateScratchNV = 2,
+    UpdateScratchnv = 2,
 }

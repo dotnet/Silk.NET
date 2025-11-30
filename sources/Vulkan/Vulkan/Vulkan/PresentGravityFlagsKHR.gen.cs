@@ -26,7 +26,7 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MinBitKHR = 0x1,
+    MinBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_KHR")]
@@ -38,7 +38,7 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MaxBitKHR = 0x2,
+    MaxBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_KHR")]
@@ -50,7 +50,7 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    CenteredBitKHR = 0x4,
+    CenteredBitkhr = 0x4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_GRAVITY_MIN_BIT_EXT")]
@@ -62,7 +62,7 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MinBitEXT = MinBitKHR,
+    MinBitext = MinBitkhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_EXT")]
@@ -74,7 +74,7 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MaxBitEXT = MaxBitKHR,
+    MaxBitext = MaxBitkhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_EXT")]
@@ -86,5 +86,5 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    CenteredBitEXT = CenteredBitKHR,
+    CenteredBitext = CenteredBitkhr,
 }

@@ -17,5 +17,5 @@ public enum DataGraphPipelineSessionCreateFlagsARM : ulong
 
     [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_DATA_GRAPH_PIPELINE_SESSION_CREATE_PROTECTED_BIT_ARM")]
-    ProtectedBitARM = 0x1,
+    ProtectedBitarm = 0x1,
 }

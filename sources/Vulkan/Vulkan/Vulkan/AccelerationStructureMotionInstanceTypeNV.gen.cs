@@ -20,7 +20,7 @@ public enum AccelerationStructureMotionInstanceTypeNV : uint
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    StaticNV = 0,
+    Staticnv = 0,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MOTION_INSTANCE_TYPE_MATRIX_MOTION_NV")]
@@ -29,7 +29,7 @@ public enum AccelerationStructureMotionInstanceTypeNV : uint
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    MatrixMotionNV = 1,
+    MatrixMotionnv = 1,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_MOTION_INSTANCE_TYPE_SRT_MOTION_NV")]
@@ -38,5 +38,5 @@ public enum AccelerationStructureMotionInstanceTypeNV : uint
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    SrtMotionNV = 2,
+    SrtMotionnv = 2,
 }

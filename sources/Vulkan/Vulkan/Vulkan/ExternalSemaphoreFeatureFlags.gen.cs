@@ -75,7 +75,7 @@ public enum ExternalSemaphoreFeatureFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    ExportableBitKHR = ExportableBit,
+    ExportableBitkhr = ExportableBit,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT_KHR")]
@@ -87,5 +87,5 @@ public enum ExternalSemaphoreFeatureFlags : uint
             "VK_KHR_external_semaphore_capabilities+VK_VERSION_1_1",
         ]
     )]
-    ImportableBitKHR = ImportableBit,
+    ImportableBitkhr = ImportableBit,
 }

@@ -26,7 +26,7 @@ public enum GeometryFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    OpaqueBitKHR = 0x1,
+    OpaqueBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
@@ -38,7 +38,7 @@ public enum GeometryFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    NoDuplicateAnyHitInvocationBitKHR = 0x2,
+    NoDuplicateAnyHitInvocationBitkhr = 0x2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_OPAQUE_BIT_NV")]
@@ -50,7 +50,7 @@ public enum GeometryFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    OpaqueBitNV = OpaqueBitKHR,
+    OpaqueBitnv = OpaqueBitkhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV")]
@@ -62,5 +62,5 @@ public enum GeometryFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    NoDuplicateAnyHitInvocationBitNV = NoDuplicateAnyHitInvocationBitKHR,
+    NoDuplicateAnyHitInvocationBitnv = NoDuplicateAnyHitInvocationBitkhr,
 }

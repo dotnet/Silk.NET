@@ -21,7 +21,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Bool32KHR = 0,
+    Bool32Khr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_INT64_KHR")]
@@ -33,7 +33,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Int64KHR = 1,
+    Int64Khr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_UINT64_KHR")]
@@ -45,7 +45,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Uint64KHR = 2,
+    Uint64Khr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR")]
@@ -57,5 +57,5 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Float64KHR = 3,
+    Float64Khr = 3,
 }

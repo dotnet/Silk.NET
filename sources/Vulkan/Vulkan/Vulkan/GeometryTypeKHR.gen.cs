@@ -23,7 +23,7 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TrianglesKHR = 0,
+    Triangleskhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
@@ -35,7 +35,7 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AabbsKHR = 1,
+    Aabbskhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
@@ -47,7 +47,7 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    InstancesKHR = 2,
+    Instanceskhr = 2,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
@@ -56,7 +56,7 @@ public enum GeometryTypeKHR : uint
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    SpheresNV = 1000429004,
+    Spheresnv = 1000429004,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_LINEAR_SWEPT_SPHERES_NV")]
@@ -65,7 +65,7 @@ public enum GeometryTypeKHR : uint
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    LinearSweptSpheresNV = 1000429005,
+    LinearSweptSpheresnv = 1000429005,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
@@ -77,7 +77,7 @@ public enum GeometryTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TrianglesNV = TrianglesKHR,
+    Trianglesnv = Triangleskhr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
@@ -89,5 +89,5 @@ public enum GeometryTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AabbsNV = AabbsKHR,
+    Aabbsnv = Aabbskhr,
 }

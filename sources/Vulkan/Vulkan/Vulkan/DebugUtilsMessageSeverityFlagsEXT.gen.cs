@@ -19,20 +19,20 @@ public enum DebugUtilsMessageSeverityFlagsEXT : uint
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    VerboseBitEXT = 0x1,
+    VerboseBitext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    InfoBitEXT = 0x10,
+    InfoBitext = 0x10,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    WarningBitEXT = 0x100,
+    WarningBitext = 0x100,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    ErrorBitEXT = 0x1000,
+    ErrorBitext = 0x1000,
 }

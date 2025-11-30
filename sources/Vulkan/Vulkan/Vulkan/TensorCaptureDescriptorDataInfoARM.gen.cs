@@ -38,5 +38,5 @@ public unsafe partial struct TensorCaptureDescriptorDataInfoARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public TensorARM Tensor;
+    public TensorHandleARM Tensor;
 }

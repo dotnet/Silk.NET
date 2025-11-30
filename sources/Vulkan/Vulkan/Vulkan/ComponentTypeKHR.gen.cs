@@ -22,7 +22,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Float16KHR = 0,
+    Float16Khr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT32_KHR")]
@@ -34,7 +34,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Float32KHR = 1,
+    Float32Khr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT64_KHR")]
@@ -46,7 +46,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Float64KHR = 2,
+    Float64Khr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT8_KHR")]
@@ -58,7 +58,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint8KHR = 3,
+    Sint8Khr = 3,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT16_KHR")]
@@ -70,7 +70,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint16KHR = 4,
+    Sint16Khr = 4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT32_KHR")]
@@ -82,7 +82,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint32KHR = 5,
+    Sint32Khr = 5,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT64_KHR")]
@@ -94,7 +94,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint64KHR = 6,
+    Sint64Khr = 6,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT8_KHR")]
@@ -106,7 +106,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint8KHR = 7,
+    Uint8Khr = 7,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT16_KHR")]
@@ -118,7 +118,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint16KHR = 8,
+    Uint16Khr = 8,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT32_KHR")]
@@ -130,7 +130,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint32KHR = 9,
+    Uint32Khr = 9,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT64_KHR")]
@@ -142,7 +142,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint64KHR = 10,
+    Uint64Khr = 10,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPONENT_TYPE_BFLOAT16_KHR")]
@@ -155,7 +155,7 @@ public enum ComponentTypeKHR : uint
         ],
         RequireAll = true
     )]
-    Bfloat16KHR = 1000141000,
+    Bfloat16Khr = 1000141000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT8_PACKED_NV")]
@@ -167,7 +167,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint8PackedNV = 1000491000,
+    Sint8Packednv = 1000491000,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT8_PACKED_NV")]
@@ -179,7 +179,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint8PackedNV = 1000491001,
+    Uint8Packednv = 1000491001,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT8_E4M3_EXT")]
@@ -192,7 +192,7 @@ public enum ComponentTypeKHR : uint
         ],
         RequireAll = true
     )]
-    Float8E4M3EXT = 1000491002,
+    Float8E4M3Ext = 1000491002,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT8_E5M2_EXT")]
@@ -205,7 +205,7 @@ public enum ComponentTypeKHR : uint
         ],
         RequireAll = true
     )]
-    Float8E5M2EXT = 1000491003,
+    Float8E5M2Ext = 1000491003,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT16_NV")]
@@ -217,7 +217,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Float16NV = Float16KHR,
+    Float16Nv = Float16Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT32_NV")]
@@ -229,7 +229,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Float32NV = Float32KHR,
+    Float32Nv = Float32Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT64_NV")]
@@ -241,7 +241,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Float64NV = Float64KHR,
+    Float64Nv = Float64Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT8_NV")]
@@ -253,7 +253,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint8NV = Sint8KHR,
+    Sint8Nv = Sint8Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT16_NV")]
@@ -265,7 +265,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint16NV = Sint16KHR,
+    Sint16Nv = Sint16Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT32_NV")]
@@ -277,7 +277,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint32NV = Sint32KHR,
+    Sint32Nv = Sint32Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_SINT64_NV")]
@@ -289,7 +289,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint64NV = Sint64KHR,
+    Sint64Nv = Sint64Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT8_NV")]
@@ -301,7 +301,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint8NV = Uint8KHR,
+    Uint8Nv = Uint8Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT16_NV")]
@@ -313,7 +313,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint16NV = Uint16KHR,
+    Uint16Nv = Uint16Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT32_NV")]
@@ -325,7 +325,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint32NV = Uint32KHR,
+    Uint32Nv = Uint32Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_UINT64_NV")]
@@ -337,7 +337,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint64NV = Uint64KHR,
+    Uint64Nv = Uint64Khr,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT_E4M3_NV")]
@@ -349,7 +349,7 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    FloatE4M3NV = Float8E4M3EXT,
+    FloatE4M3Nv = Float8E4M3Ext,
 
     [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COMPONENT_TYPE_FLOAT_E5M2_NV")]
@@ -361,5 +361,5 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    FloatE5M2NV = Float8E5M2EXT,
+    FloatE5M2Nv = Float8E5M2Ext,
 }

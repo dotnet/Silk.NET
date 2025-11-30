@@ -44,5 +44,5 @@ public unsafe partial struct VideoEncodeSessionParametersGetInfoKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public VideoSessionParametersKHR VideoSessionParameters;
+    public VideoSessionParametersHandleKHR VideoSessionParameters;
 }

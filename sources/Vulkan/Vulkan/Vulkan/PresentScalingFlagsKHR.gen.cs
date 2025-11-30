@@ -26,7 +26,7 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    OneToOneBitKHR = 0x1,
+    OneToOneBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_KHR")]
@@ -38,7 +38,7 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    AspectRatioStretchBitKHR = 0x2,
+    AspectRatioStretchBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_KHR")]
@@ -50,7 +50,7 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    StretchBitKHR = 0x4,
+    StretchBitkhr = 0x4,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_SCALING_ONE_TO_ONE_BIT_EXT")]
@@ -62,7 +62,7 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    OneToOneBitEXT = OneToOneBitKHR,
+    OneToOneBitext = OneToOneBitkhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_EXT")]
@@ -74,7 +74,7 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    AspectRatioStretchBitEXT = AspectRatioStretchBitKHR,
+    AspectRatioStretchBitext = AspectRatioStretchBitkhr,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_EXT")]
@@ -86,5 +86,5 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    StretchBitEXT = StretchBitKHR,
+    StretchBitext = StretchBitkhr,
 }

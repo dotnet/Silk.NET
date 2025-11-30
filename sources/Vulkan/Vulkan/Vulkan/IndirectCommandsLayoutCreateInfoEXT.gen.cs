@@ -82,7 +82,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public PipelineLayout PipelineLayout;
+    public PipelineLayoutHandle PipelineLayout;
 
     [NativeName("tokenCount")]
     [SupportedApiProfile(

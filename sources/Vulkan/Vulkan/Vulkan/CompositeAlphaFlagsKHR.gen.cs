@@ -18,20 +18,20 @@ public enum CompositeAlphaFlagsKHR : uint
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    OpaqueBitKHR = 0x1,
+    OpaqueBitkhr = 0x1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_PRE_MULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    PreMultipliedBitKHR = 0x2,
+    PreMultipliedBitkhr = 0x2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_POST_MULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    PostMultipliedBitKHR = 0x4,
+    PostMultipliedBitkhr = 0x4,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    InheritBitKHR = 0x8,
+    InheritBitkhr = 0x8,
 }

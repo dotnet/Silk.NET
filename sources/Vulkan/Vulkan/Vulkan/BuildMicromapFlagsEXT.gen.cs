@@ -26,7 +26,7 @@ public enum BuildMicromapFlagsEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    PreferFastTraceBitEXT = 0x1,
+    PreferFastTraceBitext = 0x1,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_MICROMAP_PREFER_FAST_BUILD_BIT_EXT")]
@@ -38,7 +38,7 @@ public enum BuildMicromapFlagsEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    PreferFastBuildBitEXT = 0x2,
+    PreferFastBuildBitext = 0x2,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUILD_MICROMAP_ALLOW_COMPACTION_BIT_EXT")]
@@ -50,5 +50,5 @@ public enum BuildMicromapFlagsEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    AllowCompactionBitEXT = 0x4,
+    AllowCompactionBitext = 0x4,
 }

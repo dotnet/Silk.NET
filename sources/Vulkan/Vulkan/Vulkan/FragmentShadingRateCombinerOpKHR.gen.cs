@@ -24,7 +24,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    KeepKHR = 0,
+    Keepkhr = 0,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_KHR")]
@@ -37,7 +37,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ReplaceKHR = 1,
+    Replacekhr = 1,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_KHR")]
@@ -50,7 +50,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MinKHR = 2,
+    Minkhr = 2,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_KHR")]
@@ -63,7 +63,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MaxKHR = 3,
+    Maxkhr = 3,
 
     [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_KHR")]
@@ -76,5 +76,5 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MulKHR = 4,
+    Mulkhr = 4,
 }

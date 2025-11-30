@@ -76,7 +76,7 @@ public unsafe partial struct MicromapBuildInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapEXT DstMicromap;
+    public MicromapHandleEXT DstMicromap;
 
     [NativeName("usageCountsCount")]
     [SupportedApiProfile(

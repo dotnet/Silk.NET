@@ -69,15 +69,15 @@ public enum AttachmentStoreOp : uint
             "VK_VERSION_1_2",
         ]
     )]
-    NoneKHR = None,
+    Nonekhr = None,
 
     [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_ATTACHMENT_STORE_OP_NONE_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_store_ops"])]
-    NoneQCOM = None,
+    Noneqcom = None,
 
     [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ATTACHMENT_STORE_OP_NONE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
-    NoneEXT = None,
+    Noneext = None,
 }

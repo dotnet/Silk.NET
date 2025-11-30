@@ -47,5 +47,5 @@ public unsafe partial struct FrameBoundaryTensorsARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public TensorARM* PTensors;
+    public TensorHandleARM* PTensors;
 }
