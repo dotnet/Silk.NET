@@ -20,21 +20,21 @@ public readonly unsafe partial struct ContextHandle
         Handle = handle;
     }
 
-    public bool Equal(ContextHandle other) => Handle == other.Handle;
+    public bool Equals(ContextHandle other) => Handle == other.Handle;
 
-    public override bool Equal(object? obj) => obj is ContextHandle other && Equal(other);
+    public override bool Equals(object? obj) => obj is ContextHandle other && Equals(other);
 
     public override int GetHashCode() => HashCode.Combine((nuint)Handle);
 
-    public static bool operator ==(ContextHandle left, ContextHandle right) => left.Equal(right);
+    public static bool operator ==(ContextHandle left, ContextHandle right) => left.Equals(right);
 
-    public static bool operator !=(ContextHandle left, ContextHandle right) => !left.Equal(right);
+    public static bool operator !=(ContextHandle left, ContextHandle right) => !left.Equals(right);
 
-    public bool Equal(NullPtr _) => Handle is null;
+    public bool Equals(NullPtr _) => Handle is null;
 
-    public static bool operator ==(ContextHandle left, NullPtr right) => left.Equal(right);
+    public static bool operator ==(ContextHandle left, NullPtr right) => left.Equals(right);
 
-    public static bool operator !=(ContextHandle left, NullPtr right) => !left.Equal(right);
+    public static bool operator !=(ContextHandle left, NullPtr right) => !left.Equals(right);
 
     public static implicit operator ContextHandle(NullPtr _) => default;
 }

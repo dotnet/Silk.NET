@@ -1184,9 +1184,26 @@ public class PrettifyNames(
             {
                 var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 var memberIdentifier = node.Identifier.ToString();
-                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
-                _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
+                if (_typeInProgress!.Value.Type.IsKind(SyntaxKind.StructDeclaration))
+                {
+                    // Prettify only
+                    // Struct methods are introduced by the generator so they are not prefixed
+                    if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                    {
+                        typeData = [];
+                        PrettifyOnlyTypes.Add(typeIdentifier, typeData);
+                    }
+
+                    typeData.Add(memberIdentifier);
+                }
+                else
+                {
+                    // Trim + Prettify
+                    ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                    _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
+                }
             }
         }
 

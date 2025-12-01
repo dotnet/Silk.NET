@@ -20,21 +20,21 @@ public readonly unsafe partial struct DeviceHandle
         Handle = handle;
     }
 
-    public bool Equal(DeviceHandle other) => Handle == other.Handle;
+    public bool Equals(DeviceHandle other) => Handle == other.Handle;
 
-    public override bool Equal(object? obj) => obj is DeviceHandle other && Equal(other);
+    public override bool Equals(object? obj) => obj is DeviceHandle other && Equals(other);
 
     public override int GetHashCode() => HashCode.Combine((nuint)Handle);
 
-    public static bool operator ==(DeviceHandle left, DeviceHandle right) => left.Equal(right);
+    public static bool operator ==(DeviceHandle left, DeviceHandle right) => left.Equals(right);
 
-    public static bool operator !=(DeviceHandle left, DeviceHandle right) => !left.Equal(right);
+    public static bool operator !=(DeviceHandle left, DeviceHandle right) => !left.Equals(right);
 
-    public bool Equal(NullPtr _) => Handle is null;
+    public bool Equals(NullPtr _) => Handle is null;
 
-    public static bool operator ==(DeviceHandle left, NullPtr right) => left.Equal(right);
+    public static bool operator ==(DeviceHandle left, NullPtr right) => left.Equals(right);
 
-    public static bool operator !=(DeviceHandle left, NullPtr right) => !left.Equal(right);
+    public static bool operator !=(DeviceHandle left, NullPtr right) => !left.Equals(right);
 
     public static implicit operator DeviceHandle(NullPtr _) => default;
 }
