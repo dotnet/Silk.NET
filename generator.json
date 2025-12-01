@@ -223,7 +223,7 @@
       },
       "ChangeNativeClass": {
         "NewClasses": {
-          "(alc|ALC_).*": "ALContext",
+          "(alc|ALC_).*": "AlContext",
           "EFX_REVERB_PRESET_.*": "EfxReverbPreset"
         }
       },
@@ -269,7 +269,7 @@
       "PrettifyNames": {
         "GlobalPrefixHints": ["alc", "al"],
         "NameOverrides": {
-          "ALContext": "ALContext",
+          "AlContext": "AlContext",
           "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",
           "EFXEAXREVERBPROPERTIES_flReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
           "EFXEAXREVERBPROPERTIES_flLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
