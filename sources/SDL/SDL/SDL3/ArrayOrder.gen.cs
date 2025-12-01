@@ -8,23 +8,23 @@ namespace Silk.NET.SDL;
 public enum ArrayOrder : uint
 {
     [NativeName("SDL_ARRAYORDER_NONE")]
-    None,
+    None = 0,
 
     [NativeName("SDL_ARRAYORDER_RGB")]
-    Rgb,
+    Rgb = 1,
 
     [NativeName("SDL_ARRAYORDER_RGBA")]
-    Rgba,
+    Rgba = 2,
 
     [NativeName("SDL_ARRAYORDER_ARGB")]
-    Argb,
+    Argb = 3,
 
     [NativeName("SDL_ARRAYORDER_BGR")]
-    Bgr,
+    Bgr = 4,
 
     [NativeName("SDL_ARRAYORDER_BGRA")]
-    Bgra,
+    Bgra = 5,
 
     [NativeName("SDL_ARRAYORDER_ABGR")]
-    Abgr,
+    Abgr = 6,
 }

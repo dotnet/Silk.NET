@@ -15,11 +15,11 @@ public enum GamepadBindingType : uint
     None = 0,
 
     [NativeName("SDL_GAMEPAD_BINDTYPE_BUTTON")]
-    Button,
+    Button = 1,
 
     [NativeName("SDL_GAMEPAD_BINDTYPE_AXIS")]
-    Axis,
+    Axis = 2,
 
     [NativeName("SDL_GAMEPAD_BINDTYPE_HAT")]
-    Hat,
+    Hat = 3,
 }

@@ -12,14 +12,14 @@ namespace Silk.NET.SDL;
 public enum ThreadState : uint
 {
     [NativeName("SDL_THREAD_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_THREAD_ALIVE")]
-    Alive,
+    Alive = 1,
 
     [NativeName("SDL_THREAD_DETACHED")]
-    Detached,
+    Detached = 2,
 
     [NativeName("SDL_THREAD_COMPLETE")]
-    Complete,
+    Complete = 3,
 }

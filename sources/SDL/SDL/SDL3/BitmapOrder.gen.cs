@@ -10,11 +10,11 @@ namespace Silk.NET.SDL;
 public enum BitmapOrder : uint
 {
     [NativeName("SDL_BITMAPORDER_NONE")]
-    BitmaporderNone,
+    BitmaporderNone = 0,
 
     [NativeName("SDL_BITMAPORDER_4321")]
-    Bitmaporder4321,
+    Bitmaporder4321 = 1,
 
     [NativeName("SDL_BITMAPORDER_1234")]
-    Bitmaporder1234,
+    Bitmaporder1234 = 2,
 }

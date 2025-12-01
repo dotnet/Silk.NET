@@ -15,11 +15,11 @@ public enum TouchDeviceType
     Invalid = -1,
 
     [NativeName("SDL_TOUCH_DEVICE_DIRECT")]
-    Direct,
+    Direct = 0,
 
     [NativeName("SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE")]
-    IndirectAbsolute,
+    IndirectAbsolute = 1,
 
     [NativeName("SDL_TOUCH_DEVICE_INDIRECT_RELATIVE")]
-    IndirectRelative,
+    IndirectRelative = 2,
 }

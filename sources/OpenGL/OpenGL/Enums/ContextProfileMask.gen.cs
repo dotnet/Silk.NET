@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum ContextProfileMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_CONTEXT_CORE_PROFILE_BIT")]
     CoreProfileBit = unchecked((uint)0x00000001),
 

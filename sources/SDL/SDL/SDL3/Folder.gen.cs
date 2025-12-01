@@ -10,38 +10,38 @@ namespace Silk.NET.SDL;
 public enum Folder : uint
 {
     [NativeName("SDL_FOLDER_HOME")]
-    Home,
+    Home = 0,
 
     [NativeName("SDL_FOLDER_DESKTOP")]
-    Desktop,
+    Desktop = 1,
 
     [NativeName("SDL_FOLDER_DOCUMENTS")]
-    Documents,
+    Documents = 2,
 
     [NativeName("SDL_FOLDER_DOWNLOADS")]
-    Downloads,
+    Downloads = 3,
 
     [NativeName("SDL_FOLDER_MUSIC")]
-    Music,
+    Music = 4,
 
     [NativeName("SDL_FOLDER_PICTURES")]
-    Pictures,
+    Pictures = 5,
 
     [NativeName("SDL_FOLDER_PUBLICSHARE")]
-    Publicshare,
+    Publicshare = 6,
 
     [NativeName("SDL_FOLDER_SAVEDGAMES")]
-    Savedgames,
+    Savedgames = 7,
 
     [NativeName("SDL_FOLDER_SCREENSHOTS")]
-    Screenshots,
+    Screenshots = 8,
 
     [NativeName("SDL_FOLDER_TEMPLATES")]
-    Templates,
+    Templates = 9,
 
     [NativeName("SDL_FOLDER_VIDEOS")]
-    Videos,
+    Videos = 10,
 
     [NativeName("SDL_FOLDER_COUNT")]
-    Count,
+    Count = 11,
 }

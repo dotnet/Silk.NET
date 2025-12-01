@@ -10,26 +10,26 @@ namespace Silk.NET.SDL;
 public enum PenAxis : uint
 {
     [NativeName("SDL_PEN_AXIS_PRESSURE")]
-    Pressure,
+    Pressure = 0,
 
     [NativeName("SDL_PEN_AXIS_XTILT")]
-    Xtilt,
+    Xtilt = 1,
 
     [NativeName("SDL_PEN_AXIS_YTILT")]
-    Ytilt,
+    Ytilt = 2,
 
     [NativeName("SDL_PEN_AXIS_DISTANCE")]
-    Distance,
+    Distance = 3,
 
     [NativeName("SDL_PEN_AXIS_ROTATION")]
-    Rotation,
+    Rotation = 4,
 
     [NativeName("SDL_PEN_AXIS_SLIDER")]
-    Slider,
+    Slider = 5,
 
     [NativeName("SDL_PEN_AXIS_TANGENTIAL_PRESSURE")]
-    TangentialPressure,
+    TangentialPressure = 6,
 
     [NativeName("SDL_PEN_AXIS_COUNT")]
-    Count,
+    Count = 7,
 }

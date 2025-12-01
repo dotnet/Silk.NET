@@ -10,44 +10,44 @@ namespace Silk.NET.SDL;
 public enum GpuBlendFactor : uint
 {
     [NativeName("SDL_GPU_BLENDFACTOR_INVALID")]
-    Invalid,
+    Invalid = 0,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ZERO")]
-    Zero,
+    Zero = 1,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ONE")]
-    One,
+    One = 2,
 
     [NativeName("SDL_GPU_BLENDFACTOR_SRC_COLOR")]
-    SrcColor,
+    SrcColor = 3,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ONE_MINUS_SRC_COLOR")]
-    OneMinusSrcColor,
+    OneMinusSrcColor = 4,
 
     [NativeName("SDL_GPU_BLENDFACTOR_DST_COLOR")]
-    DstColor,
+    DstColor = 5,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ONE_MINUS_DST_COLOR")]
-    OneMinusDstColor,
+    OneMinusDstColor = 6,
 
     [NativeName("SDL_GPU_BLENDFACTOR_SRC_ALPHA")]
-    SrcAlpha,
+    SrcAlpha = 7,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ONE_MINUS_SRC_ALPHA")]
-    OneMinusSrcAlpha,
+    OneMinusSrcAlpha = 8,
 
     [NativeName("SDL_GPU_BLENDFACTOR_DST_ALPHA")]
-    DstAlpha,
+    DstAlpha = 9,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ONE_MINUS_DST_ALPHA")]
-    OneMinusDstAlpha,
+    OneMinusDstAlpha = 10,
 
     [NativeName("SDL_GPU_BLENDFACTOR_CONSTANT_COLOR")]
-    ConstantColor,
+    ConstantColor = 11,
 
     [NativeName("SDL_GPU_BLENDFACTOR_ONE_MINUS_CONSTANT_COLOR")]
-    OneMinusConstantColor,
+    OneMinusConstantColor = 12,
 
     [NativeName("SDL_GPU_BLENDFACTOR_SRC_ALPHA_SATURATE")]
-    SrcAlphaSaturate,
+    SrcAlphaSaturate = 13,
 }

@@ -46,6 +46,7 @@
         "TransformFunctions",
         "TransformProperties",
         "PrettifyNames",
+        "TransformEnums",
         "AddVTables",
         "StripAttributes"
       ],
@@ -72,6 +73,10 @@
       "PrettifyNames": {
         "GlobalPrefixHints": ["SDL"]
       },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RewriteMemberValues": true
+      },
       "StripAttributes": {
         "Remove": [
           "NativeTypeName",
@@ -94,6 +99,7 @@
         "AddOpaqueStructs",
         "TransformFunctions",
         "PrettifyNames",
+        "TransformEnums",
         "AddVTables",
         "StripAttributes"
       ],
@@ -171,6 +177,10 @@
           "SyncObjectMask": "GL_SYNC"
         }
       },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RewriteMemberValues": true
+      },
       "TransformFunctions": {
         "BoolTypes": {
           "GLboolean": null
@@ -200,6 +210,7 @@
         "InterceptNativeFunctions",
         "TransformFunctions",
         "PrettifyNames",
+        "TransformEnums",
         "AddVTables",
         "StripAttributes"
       ],
@@ -279,6 +290,10 @@
           "EAXGetBufferModeDirect": "EaxGetBufferModeDirect",
           "EAXSetBufferModeDirect": "EaxSetBufferModeDirect"
         }
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RewriteMemberValues": true
       },
       "TransformFunctions": {
         "BoolTypes": {

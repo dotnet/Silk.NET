@@ -10,29 +10,29 @@ namespace Silk.NET.SDL;
 public enum LogPriority : uint
 {
     [NativeName("SDL_LOG_PRIORITY_INVALID")]
-    Invalid,
+    Invalid = 0,
 
     [NativeName("SDL_LOG_PRIORITY_TRACE")]
-    Trace,
+    Trace = 1,
 
     [NativeName("SDL_LOG_PRIORITY_VERBOSE")]
-    Verbose,
+    Verbose = 2,
 
     [NativeName("SDL_LOG_PRIORITY_DEBUG")]
-    Debug,
+    Debug = 3,
 
     [NativeName("SDL_LOG_PRIORITY_INFO")]
-    Info,
+    Info = 4,
 
     [NativeName("SDL_LOG_PRIORITY_WARN")]
-    Warn,
+    Warn = 5,
 
     [NativeName("SDL_LOG_PRIORITY_ERROR")]
-    Error,
+    Error = 6,
 
     [NativeName("SDL_LOG_PRIORITY_CRITICAL")]
-    Critical,
+    Critical = 7,
 
     [NativeName("SDL_LOG_PRIORITY_COUNT")]
-    Count,
+    Count = 8,
 }

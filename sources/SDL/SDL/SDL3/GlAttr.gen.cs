@@ -12,86 +12,86 @@ namespace Silk.NET.SDL;
 public enum GlAttr : uint
 {
     [NativeName("SDL_GL_RED_SIZE")]
-    RedSize,
+    RedSize = 0,
 
     [NativeName("SDL_GL_GREEN_SIZE")]
-    GreenSize,
+    GreenSize = 1,
 
     [NativeName("SDL_GL_BLUE_SIZE")]
-    BlueSize,
+    BlueSize = 2,
 
     [NativeName("SDL_GL_ALPHA_SIZE")]
-    AlphaSize,
+    AlphaSize = 3,
 
     [NativeName("SDL_GL_BUFFER_SIZE")]
-    BufferSize,
+    BufferSize = 4,
 
     [NativeName("SDL_GL_DOUBLEBUFFER")]
-    Doublebuffer,
+    Doublebuffer = 5,
 
     [NativeName("SDL_GL_DEPTH_SIZE")]
-    DepthSize,
+    DepthSize = 6,
 
     [NativeName("SDL_GL_STENCIL_SIZE")]
-    StencilSize,
+    StencilSize = 7,
 
     [NativeName("SDL_GL_ACCUM_RED_SIZE")]
-    AccumRedSize,
+    AccumRedSize = 8,
 
     [NativeName("SDL_GL_ACCUM_GREEN_SIZE")]
-    AccumGreenSize,
+    AccumGreenSize = 9,
 
     [NativeName("SDL_GL_ACCUM_BLUE_SIZE")]
-    AccumBlueSize,
+    AccumBlueSize = 10,
 
     [NativeName("SDL_GL_ACCUM_ALPHA_SIZE")]
-    AccumAlphaSize,
+    AccumAlphaSize = 11,
 
     [NativeName("SDL_GL_STEREO")]
-    Stereo,
+    Stereo = 12,
 
     [NativeName("SDL_GL_MULTISAMPLEBUFFERS")]
-    Multisamplebuffers,
+    Multisamplebuffers = 13,
 
     [NativeName("SDL_GL_MULTISAMPLESAMPLES")]
-    Multisamplesamples,
+    Multisamplesamples = 14,
 
     [NativeName("SDL_GL_ACCELERATED_VISUAL")]
-    AcceleratedVisual,
+    AcceleratedVisual = 15,
 
     [NativeName("SDL_GL_RETAINED_BACKING")]
-    RetainedBacking,
+    RetainedBacking = 16,
 
     [NativeName("SDL_GL_CONTEXT_MAJOR_VERSION")]
-    ContextMajorVersion,
+    ContextMajorVersion = 17,
 
     [NativeName("SDL_GL_CONTEXT_MINOR_VERSION")]
-    ContextMinorVersion,
+    ContextMinorVersion = 18,
 
     [NativeName("SDL_GL_CONTEXT_FLAGS")]
-    ContextFlags,
+    ContextFlags = 19,
 
     [NativeName("SDL_GL_CONTEXT_PROFILE_MASK")]
-    ContextProfileMask,
+    ContextProfileMask = 20,
 
     [NativeName("SDL_GL_SHARE_WITH_CURRENT_CONTEXT")]
-    ShareWithCurrentContext,
+    ShareWithCurrentContext = 21,
 
     [NativeName("SDL_GL_FRAMEBUFFER_SRGB_CAPABLE")]
-    FramebufferSrgbCapable,
+    FramebufferSrgbCapable = 22,
 
     [NativeName("SDL_GL_CONTEXT_RELEASE_BEHAVIOR")]
-    ContextReleaseBehavior,
+    ContextReleaseBehavior = 23,
 
     [NativeName("SDL_GL_CONTEXT_RESET_NOTIFICATION")]
-    ContextResetNotification,
+    ContextResetNotification = 24,
 
     [NativeName("SDL_GL_CONTEXT_NO_ERROR")]
-    ContextNoError,
+    ContextNoError = 25,
 
     [NativeName("SDL_GL_FLOATBUFFERS")]
-    Floatbuffers,
+    Floatbuffers = 26,
 
     [NativeName("SDL_GL_EGL_PLATFORM")]
-    EglPlatform,
+    EglPlatform = 27,
 }

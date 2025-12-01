@@ -13,11 +13,11 @@ public enum JoystickConnectionState
     Invalid = -1,
 
     [NativeName("SDL_JOYSTICK_CONNECTION_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_JOYSTICK_CONNECTION_WIRED")]
-    Wired,
+    Wired = 1,
 
     [NativeName("SDL_JOYSTICK_CONNECTION_WIRELESS")]
-    Wireless,
+    Wireless = 2,
 }

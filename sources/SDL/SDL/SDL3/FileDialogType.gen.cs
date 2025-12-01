@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum FileDialogType : uint
 {
     [NativeName("SDL_FILEDIALOG_OPENFILE")]
-    Openfile,
+    Openfile = 0,
 
     [NativeName("SDL_FILEDIALOG_SAVEFILE")]
-    Savefile,
+    Savefile = 1,
 
     [NativeName("SDL_FILEDIALOG_OPENFOLDER")]
-    Openfolder,
+    Openfolder = 2,
 }

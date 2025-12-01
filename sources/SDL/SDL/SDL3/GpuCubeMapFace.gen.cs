@@ -12,20 +12,20 @@ namespace Silk.NET.SDL;
 public enum GpuCubeMapFace : uint
 {
     [NativeName("SDL_GPU_CUBEMAPFACE_POSITIVEX")]
-    Positivex,
+    Positivex = 0,
 
     [NativeName("SDL_GPU_CUBEMAPFACE_NEGATIVEX")]
-    Negativex,
+    Negativex = 1,
 
     [NativeName("SDL_GPU_CUBEMAPFACE_POSITIVEY")]
-    Positivey,
+    Positivey = 2,
 
     [NativeName("SDL_GPU_CUBEMAPFACE_NEGATIVEY")]
-    Negativey,
+    Negativey = 3,
 
     [NativeName("SDL_GPU_CUBEMAPFACE_POSITIVEZ")]
-    Positivez,
+    Positivez = 4,
 
     [NativeName("SDL_GPU_CUBEMAPFACE_NEGATIVEZ")]
-    Negativez,
+    Negativez = 5,
 }

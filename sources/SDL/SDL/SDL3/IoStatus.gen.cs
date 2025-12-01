@@ -12,20 +12,20 @@ namespace Silk.NET.SDL;
 public enum IoStatus : uint
 {
     [NativeName("SDL_IO_STATUS_READY")]
-    Ready,
+    Ready = 0,
 
     [NativeName("SDL_IO_STATUS_ERROR")]
-    Error,
+    Error = 1,
 
     [NativeName("SDL_IO_STATUS_EOF")]
-    Eof,
+    Eof = 2,
 
     [NativeName("SDL_IO_STATUS_NOT_READY")]
-    NotReady,
+    NotReady = 3,
 
     [NativeName("SDL_IO_STATUS_READONLY")]
-    Readonly,
+    Readonly = 4,
 
     [NativeName("SDL_IO_STATUS_WRITEONLY")]
-    Writeonly,
+    Writeonly = 5,
 }

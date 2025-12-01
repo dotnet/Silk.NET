@@ -10,29 +10,29 @@ namespace Silk.NET.SDL;
 public enum GpuCompareOp : uint
 {
     [NativeName("SDL_GPU_COMPAREOP_INVALID")]
-    Invalid,
+    Invalid = 0,
 
     [NativeName("SDL_GPU_COMPAREOP_NEVER")]
-    Never,
+    Never = 1,
 
     [NativeName("SDL_GPU_COMPAREOP_LESS")]
-    Less,
+    Less = 2,
 
     [NativeName("SDL_GPU_COMPAREOP_EQUAL")]
-    Equal,
+    Equal = 3,
 
     [NativeName("SDL_GPU_COMPAREOP_LESS_OR_EQUAL")]
-    LessOrEqual,
+    LessOrEqual = 4,
 
     [NativeName("SDL_GPU_COMPAREOP_GREATER")]
-    Greater,
+    Greater = 5,
 
     [NativeName("SDL_GPU_COMPAREOP_NOT_EQUAL")]
-    NotEqual,
+    NotEqual = 6,
 
     [NativeName("SDL_GPU_COMPAREOP_GREATER_OR_EQUAL")]
-    GreaterOrEqual,
+    GreaterOrEqual = 7,
 
     [NativeName("SDL_GPU_COMPAREOP_ALWAYS")]
-    Always,
+    Always = 8,
 }

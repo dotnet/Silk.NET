@@ -12,5 +12,5 @@ namespace Silk.NET.SDL;
 public enum DummyEnum : uint
 {
     [NativeName("DUMMY_ENUM_VALUE")]
-    DummyEnumValue,
+    DummyEnumValue = 0,
 }

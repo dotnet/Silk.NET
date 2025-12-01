@@ -8,17 +8,17 @@ namespace Silk.NET.SDL;
 public enum DisplayOrientation : uint
 {
     [NativeName("SDL_ORIENTATION_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_ORIENTATION_LANDSCAPE")]
-    Landscape,
+    Landscape = 1,
 
     [NativeName("SDL_ORIENTATION_LANDSCAPE_FLIPPED")]
-    LandscapeFlipped,
+    LandscapeFlipped = 2,
 
     [NativeName("SDL_ORIENTATION_PORTRAIT")]
-    Portrait,
+    Portrait = 3,
 
     [NativeName("SDL_ORIENTATION_PORTRAIT_FLIPPED")]
-    PortraitFlipped,
+    PortraitFlipped = 4,
 }

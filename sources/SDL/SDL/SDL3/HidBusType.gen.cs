@@ -10,17 +10,17 @@ namespace Silk.NET.SDL;
 public enum HidBusType : uint
 {
     [NativeName("SDL_HID_API_BUS_UNKNOWN")]
-    Unknown = 0x00,
+    Unknown = 0,
 
     [NativeName("SDL_HID_API_BUS_USB")]
-    Usb = 0x01,
+    Usb = 1,
 
     [NativeName("SDL_HID_API_BUS_BLUETOOTH")]
-    Bluetooth = 0x02,
+    Bluetooth = 2,
 
     [NativeName("SDL_HID_API_BUS_I2C")]
-    I2C = 0x03,
+    I2C = 3,
 
     [NativeName("SDL_HID_API_BUS_SPI")]
-    Spi = 0x04,
+    Spi = 4,
 }

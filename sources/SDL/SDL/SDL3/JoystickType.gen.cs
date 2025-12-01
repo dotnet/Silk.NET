@@ -12,35 +12,35 @@ namespace Silk.NET.SDL;
 public enum JoystickType : uint
 {
     [NativeName("SDL_JOYSTICK_TYPE_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_JOYSTICK_TYPE_GAMEPAD")]
-    Gamepad,
+    Gamepad = 1,
 
     [NativeName("SDL_JOYSTICK_TYPE_WHEEL")]
-    Wheel,
+    Wheel = 2,
 
     [NativeName("SDL_JOYSTICK_TYPE_ARCADE_STICK")]
-    ArcadeStick,
+    ArcadeStick = 3,
 
     [NativeName("SDL_JOYSTICK_TYPE_FLIGHT_STICK")]
-    FlightStick,
+    FlightStick = 4,
 
     [NativeName("SDL_JOYSTICK_TYPE_DANCE_PAD")]
-    DancePad,
+    DancePad = 5,
 
     [NativeName("SDL_JOYSTICK_TYPE_GUITAR")]
-    Guitar,
+    Guitar = 6,
 
     [NativeName("SDL_JOYSTICK_TYPE_DRUM_KIT")]
-    DrumKit,
+    DrumKit = 7,
 
     [NativeName("SDL_JOYSTICK_TYPE_ARCADE_PAD")]
-    ArcadePad,
+    ArcadePad = 8,
 
     [NativeName("SDL_JOYSTICK_TYPE_THROTTLE")]
-    Throttle,
+    Throttle = 9,
 
     [NativeName("SDL_JOYSTICK_TYPE_COUNT")]
-    Count,
+    Count = 10,
 }

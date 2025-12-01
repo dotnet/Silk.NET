@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum ClientAttribMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_CLIENT_PIXEL_STORE_BIT")]
     PixelStoreBit = unchecked((uint)0x00000001),
 

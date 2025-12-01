@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum TextureStorageMaskAMD : uint
 {
+    None = 0x0,
+
     [NativeName("GL_TEXTURE_STORAGE_SPARSE_BIT_AMD")]
     TextureStorageSparseBitAMD = unchecked((uint)0x00000001),
 }

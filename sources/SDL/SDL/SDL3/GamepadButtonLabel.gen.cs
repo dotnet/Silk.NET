@@ -10,29 +10,29 @@ namespace Silk.NET.SDL;
 public enum GamepadButtonLabel : uint
 {
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_A")]
-    A,
+    A = 1,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_B")]
-    B,
+    B = 2,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_X")]
-    X,
+    X = 3,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_Y")]
-    Y,
+    Y = 4,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_CROSS")]
-    Cross,
+    Cross = 5,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_CIRCLE")]
-    Circle,
+    Circle = 6,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_SQUARE")]
-    Square,
+    Square = 7,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LABEL_TRIANGLE")]
-    Triangle,
+    Triangle = 8,
 }

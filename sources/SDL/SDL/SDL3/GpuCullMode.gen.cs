@@ -10,11 +10,11 @@ namespace Silk.NET.SDL;
 public enum GpuCullMode : uint
 {
     [NativeName("SDL_GPU_CULLMODE_NONE")]
-    None,
+    None = 0,
 
     [NativeName("SDL_GPU_CULLMODE_FRONT")]
-    Front,
+    Front = 1,
 
     [NativeName("SDL_GPU_CULLMODE_BACK")]
-    Back,
+    Back = 2,
 }

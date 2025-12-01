@@ -10,17 +10,17 @@ namespace Silk.NET.SDL;
 public enum BlendOperation : uint
 {
     [NativeName("SDL_BLENDOPERATION_ADD")]
-    Add = 0x1,
+    Add = 1,
 
     [NativeName("SDL_BLENDOPERATION_SUBTRACT")]
-    Subtract = 0x2,
+    Subtract = 2,
 
     [NativeName("SDL_BLENDOPERATION_REV_SUBTRACT")]
-    RevSubtract = 0x3,
+    RevSubtract = 3,
 
     [NativeName("SDL_BLENDOPERATION_MINIMUM")]
-    Minimum = 0x4,
+    Minimum = 4,
 
     [NativeName("SDL_BLENDOPERATION_MAXIMUM")]
-    Maximum = 0x5,
+    Maximum = 5,
 }

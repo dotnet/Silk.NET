@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum PathMetricMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_GLYPH_WIDTH_BIT_NV")]
     GlyphWidthBitNV = unchecked((uint)0x01),
 

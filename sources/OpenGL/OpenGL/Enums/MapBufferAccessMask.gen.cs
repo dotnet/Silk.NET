@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum MapBufferAccessMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_MAP_READ_BIT_EXT")]
     ReadBitEXT = unchecked((uint)0x0001),
 

@@ -13,17 +13,17 @@ public enum PowerState
     Error = -1,
 
     [NativeName("SDL_POWERSTATE_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_POWERSTATE_ON_BATTERY")]
-    OnBattery,
+    OnBattery = 1,
 
     [NativeName("SDL_POWERSTATE_NO_BATTERY")]
-    NoBattery,
+    NoBattery = 2,
 
     [NativeName("SDL_POWERSTATE_CHARGING")]
-    Charging,
+    Charging = 3,
 
     [NativeName("SDL_POWERSTATE_CHARGED")]
-    Charged,
+    Charged = 4,
 }

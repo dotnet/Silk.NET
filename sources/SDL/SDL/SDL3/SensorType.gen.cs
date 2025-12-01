@@ -15,23 +15,23 @@ public enum SensorType
     Invalid = -1,
 
     [NativeName("SDL_SENSOR_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_SENSOR_ACCEL")]
-    Accel,
+    Accel = 1,
 
     [NativeName("SDL_SENSOR_GYRO")]
-    Gyro,
+    Gyro = 2,
 
     [NativeName("SDL_SENSOR_ACCEL_L")]
-    AccelL,
+    AccelL = 3,
 
     [NativeName("SDL_SENSOR_GYRO_L")]
-    GyroL,
+    GyroL = 4,
 
     [NativeName("SDL_SENSOR_ACCEL_R")]
-    AccelR,
+    AccelR = 5,
 
     [NativeName("SDL_SENSOR_GYRO_R")]
-    GyroR,
+    GyroR = 6,
 }

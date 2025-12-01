@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum IoWhence : uint
 {
     [NativeName("SDL_IO_SEEK_SET")]
-    Set,
+    Set = 0,
 
     [NativeName("SDL_IO_SEEK_CUR")]
-    Cur,
+    Cur = 1,
 
     [NativeName("SDL_IO_SEEK_END")]
-    End,
+    End = 2,
 }

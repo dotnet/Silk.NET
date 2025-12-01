@@ -10,32 +10,32 @@ namespace Silk.NET.SDL;
 public enum HitTestResult : uint
 {
     [NativeName("SDL_HITTEST_NORMAL")]
-    Normal,
+    Normal = 0,
 
     [NativeName("SDL_HITTEST_DRAGGABLE")]
-    Draggable,
+    Draggable = 1,
 
     [NativeName("SDL_HITTEST_RESIZE_TOPLEFT")]
-    ResizeTopleft,
+    ResizeTopleft = 2,
 
     [NativeName("SDL_HITTEST_RESIZE_TOP")]
-    ResizeTop,
+    ResizeTop = 3,
 
     [NativeName("SDL_HITTEST_RESIZE_TOPRIGHT")]
-    ResizeTopright,
+    ResizeTopright = 4,
 
     [NativeName("SDL_HITTEST_RESIZE_RIGHT")]
-    ResizeRight,
+    ResizeRight = 5,
 
     [NativeName("SDL_HITTEST_RESIZE_BOTTOMRIGHT")]
-    ResizeBottomright,
+    ResizeBottomright = 6,
 
     [NativeName("SDL_HITTEST_RESIZE_BOTTOM")]
-    ResizeBottom,
+    ResizeBottom = 7,
 
     [NativeName("SDL_HITTEST_RESIZE_BOTTOMLEFT")]
-    ResizeBottomleft,
+    ResizeBottomleft = 8,
 
     [NativeName("SDL_HITTEST_RESIZE_LEFT")]
-    ResizeLeft,
+    ResizeLeft = 9,
 }

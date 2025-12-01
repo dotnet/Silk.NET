@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum FlashOperation : uint
 {
     [NativeName("SDL_FLASH_CANCEL")]
-    Cancel,
+    Cancel = 0,
 
     [NativeName("SDL_FLASH_BRIEFLY")]
-    Briefly,
+    Briefly = 1,
 
     [NativeName("SDL_FLASH_UNTIL_FOCUSED")]
-    UntilFocused,
+    UntilFocused = 2,
 }

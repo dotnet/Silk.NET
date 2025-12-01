@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum UseProgramStageMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_VERTEX_SHADER_BIT")]
     VertexShaderBit = unchecked((uint)0x00000001),
 

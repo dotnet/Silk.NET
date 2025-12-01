@@ -14,71 +14,71 @@ namespace Silk.NET.OpenAL;
 public enum EffectEaxReverb : uint
 {
     [NativeName("AL_EAXREVERB_DENSITY")]
-    Density = unchecked((uint)0x0001),
+    Density = 1,
 
     [NativeName("AL_EAXREVERB_DIFFUSION")]
-    Diffusion = unchecked((uint)0x0002),
+    Diffusion = 2,
 
     [NativeName("AL_EAXREVERB_GAIN")]
-    Gain = unchecked((uint)0x0003),
+    Gain = 3,
 
     [NativeName("AL_EAXREVERB_GAINHF")]
-    Gainhf = unchecked((uint)0x0004),
+    Gainhf = 4,
 
     [NativeName("AL_EAXREVERB_GAINLF")]
-    Gainlf = unchecked((uint)0x0005),
+    Gainlf = 5,
 
     [NativeName("AL_EAXREVERB_DECAY_TIME")]
-    DecayTime = unchecked((uint)0x0006),
+    DecayTime = 6,
 
     [NativeName("AL_EAXREVERB_DECAY_HFRATIO")]
-    DecayHfratio = unchecked((uint)0x0007),
+    DecayHfratio = 7,
 
     [NativeName("AL_EAXREVERB_DECAY_LFRATIO")]
-    DecayLfratio = unchecked((uint)0x0008),
+    DecayLfratio = 8,
 
     [NativeName("AL_EAXREVERB_REFLECTIONS_GAIN")]
-    ReflectionsGain = unchecked((uint)0x0009),
+    ReflectionsGain = 9,
 
     [NativeName("AL_EAXREVERB_REFLECTIONS_DELAY")]
-    ReflectionsDelay = unchecked((uint)0x000A),
+    ReflectionsDelay = 10,
 
     [NativeName("AL_EAXREVERB_REFLECTIONS_PAN")]
-    ReflectionsPan = unchecked((uint)0x000B),
+    ReflectionsPan = 11,
 
     [NativeName("AL_EAXREVERB_LATE_REVERB_GAIN")]
-    LateReverbGain = unchecked((uint)0x000C),
+    LateReverbGain = 12,
 
     [NativeName("AL_EAXREVERB_LATE_REVERB_DELAY")]
-    LateReverbDelay = unchecked((uint)0x000D),
+    LateReverbDelay = 13,
 
     [NativeName("AL_EAXREVERB_LATE_REVERB_PAN")]
-    LateReverbPan = unchecked((uint)0x000E),
+    LateReverbPan = 14,
 
     [NativeName("AL_EAXREVERB_ECHO_TIME")]
-    EchoTime = unchecked((uint)0x000F),
+    EchoTime = 15,
 
     [NativeName("AL_EAXREVERB_ECHO_DEPTH")]
-    EchoDepth = unchecked((uint)0x0010),
+    EchoDepth = 16,
 
     [NativeName("AL_EAXREVERB_MODULATION_TIME")]
-    ModulationTime = unchecked((uint)0x0011),
+    ModulationTime = 17,
 
     [NativeName("AL_EAXREVERB_MODULATION_DEPTH")]
-    ModulationDepth = unchecked((uint)0x0012),
+    ModulationDepth = 18,
 
     [NativeName("AL_EAXREVERB_AIR_ABSORPTION_GAINHF")]
-    AirAbsorptionGainhf = unchecked((uint)0x0013),
+    AirAbsorptionGainhf = 19,
 
     [NativeName("AL_EAXREVERB_HFREFERENCE")]
-    Hfreference = unchecked((uint)0x0014),
+    Hfreference = 20,
 
     [NativeName("AL_EAXREVERB_LFREFERENCE")]
-    Lfreference = unchecked((uint)0x0015),
+    Lfreference = 21,
 
     [NativeName("AL_EAXREVERB_ROOM_ROLLOFF_FACTOR")]
-    RoomRolloffFactor = unchecked((uint)0x0016),
+    RoomRolloffFactor = 22,
 
     [NativeName("AL_EAXREVERB_DECAY_HFLIMIT")]
-    DecayHflimit = unchecked((uint)0x0017),
+    DecayHflimit = 23,
 }

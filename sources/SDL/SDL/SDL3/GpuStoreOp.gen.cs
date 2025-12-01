@@ -10,14 +10,14 @@ namespace Silk.NET.SDL;
 public enum GpuStoreOp : uint
 {
     [NativeName("SDL_GPU_STOREOP_STORE")]
-    Store,
+    Store = 0,
 
     [NativeName("SDL_GPU_STOREOP_DONT_CARE")]
-    DontCare,
+    DontCare = 1,
 
     [NativeName("SDL_GPU_STOREOP_RESOLVE")]
-    Resolve,
+    Resolve = 2,
 
     [NativeName("SDL_GPU_STOREOP_RESOLVE_AND_STORE")]
-    ResolveAndStore,
+    ResolveAndStore = 3,
 }

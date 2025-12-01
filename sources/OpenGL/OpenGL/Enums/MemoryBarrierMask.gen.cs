@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum MemoryBarrierMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT")]
     VertexAttribArrayBarrierBit = unchecked((uint)0x00000001),
 

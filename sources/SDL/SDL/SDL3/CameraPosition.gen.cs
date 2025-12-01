@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum CameraPosition : uint
 {
     [NativeName("SDL_CAMERA_POSITION_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_CAMERA_POSITION_FRONT_FACING")]
-    FrontFacing,
+    FrontFacing = 1,
 
     [NativeName("SDL_CAMERA_POSITION_BACK_FACING")]
-    BackFacing,
+    BackFacing = 2,
 }

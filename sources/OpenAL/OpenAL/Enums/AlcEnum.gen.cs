@@ -14,272 +14,272 @@ namespace Silk.NET.OpenAL;
 public enum AlcEnum : uint
 {
     [NativeName("ALC_INVALID")]
-    Invalid = unchecked((uint)0),
+    Invalid = 0,
 
     [NativeName("ALC_FALSE")]
-    False = unchecked((uint)0),
+    False = 0,
 
     [NativeName("ALC_TRUE")]
-    True = unchecked((uint)1),
+    True = 1,
 
     [NativeName("ALC_FREQUENCY")]
-    Frequency = unchecked((uint)0x1007),
+    Frequency = 4103,
 
     [NativeName("ALC_REFRESH")]
-    Refresh = unchecked((uint)0x1008),
+    Refresh = 4104,
 
     [NativeName("ALC_SYNC")]
-    Sync = unchecked((uint)0x1009),
+    Sync = 4105,
 
     [NativeName("ALC_NO_ERROR")]
-    NoError = unchecked((uint)0),
+    NoError = 0,
 
     [NativeName("ALC_INVALID_DEVICE")]
-    InvalidDevice = unchecked((uint)0xA001),
+    InvalidDevice = 40961,
 
     [NativeName("ALC_INVALID_CONTEXT")]
-    InvalidContEXT = unchecked((uint)0xA002),
+    InvalidContEXT = 40962,
 
     [NativeName("ALC_INVALID_ENUM")]
-    InvalidEnum = unchecked((uint)0xA003),
+    InvalidEnum = 40963,
 
     [NativeName("ALC_INVALID_VALUE")]
-    InvalidValue = unchecked((uint)0xA004),
+    InvalidValue = 40964,
 
     [NativeName("ALC_OUT_OF_MEMORY")]
-    OutOfMemory = unchecked((uint)0xA005),
+    OutOfMemory = 40965,
 
     [NativeName("ALC_MAJOR_VERSION")]
-    MajorVersion = unchecked((uint)0x1000),
+    MajorVersion = 4096,
 
     [NativeName("ALC_MINOR_VERSION")]
-    MinorVersion = unchecked((uint)0x1001),
+    MinorVersion = 4097,
 
     [NativeName("ALC_ATTRIBUTES_SIZE")]
-    AttributesSize = unchecked((uint)0x1002),
+    AttributesSize = 4098,
 
     [NativeName("ALC_ALL_ATTRIBUTES")]
-    AllAttributes = unchecked((uint)0x1003),
+    AllAttributes = 4099,
 
     [NativeName("ALC_DEFAULT_DEVICE_SPECIFIER")]
-    DefaultDeviceSpecifier = unchecked((uint)0x1004),
+    DefaultDeviceSpecifier = 4100,
 
     [NativeName("ALC_DEVICE_SPECIFIER")]
-    DeviceSpecifier = unchecked((uint)0x1005),
+    DeviceSpecifier = 4101,
 
     [NativeName("ALC_EXTENSIONS")]
-    Extensions = unchecked((uint)0x1006),
+    Extensions = 4102,
 
     [NativeName("ALC_MONO_SOURCES")]
-    MonoSources = unchecked((uint)0x1010),
+    MonoSources = 4112,
 
     [NativeName("ALC_STEREO_SOURCES")]
-    StereoSources = unchecked((uint)0x1011),
+    StereoSources = 4113,
 
     [NativeName("ALC_CAPTURE_DEVICE_SPECIFIER")]
-    CaptureDeviceSpecifier = unchecked((uint)0x310),
+    CaptureDeviceSpecifier = 784,
 
     [NativeName("ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER")]
-    CaptureDefaultDeviceSpecifier = unchecked((uint)0x311),
+    CaptureDefaultDeviceSpecifier = 785,
 
     [NativeName("ALC_CAPTURE_SAMPLES")]
-    CaptureSamples = unchecked((uint)0x312),
+    CaptureSamples = 786,
 
     [NativeName("ALC_DEFAULT_ALL_DEVICES_SPECIFIER")]
-    DefaultAllDevicesSpecifier = unchecked((uint)0x1012),
+    DefaultAllDevicesSpecifier = 4114,
 
     [NativeName("ALC_ALL_DEVICES_SPECIFIER")]
-    AllDevicesSpecifier = unchecked((uint)0x1013),
+    AllDevicesSpecifier = 4115,
 
     [NativeName("ALC_CHAN_MAIN_LOKI")]
-    ChanMainLOKI = unchecked((uint)0x500001),
+    ChanMainLOKI = 5242881,
 
     [NativeName("ALC_CHAN_PCM_LOKI")]
-    ChanPcmLOKI = unchecked((uint)0x500002),
+    ChanPcmLOKI = 5242882,
 
     [NativeName("ALC_CHAN_CD_LOKI")]
-    ChanCdLOKI = unchecked((uint)0x500003),
+    ChanCdLOKI = 5242883,
 
     [NativeName("ALC_EFX_MAJOR_VERSION")]
-    EfxMajorVersion = unchecked((uint)0x20001),
+    EfxMajorVersion = 131073,
 
     [NativeName("ALC_EFX_MINOR_VERSION")]
-    EfxMinorVersion = unchecked((uint)0x20002),
+    EfxMinorVersion = 131074,
 
     [NativeName("ALC_MAX_AUXILIARY_SENDS")]
-    MaxAuxiliarySends = unchecked((uint)0x20003),
+    MaxAuxiliarySends = 131075,
 
     [NativeName("ALC_CONNECTED")]
-    Connected = unchecked((uint)0x313),
+    Connected = 787,
 
     [NativeName("ALC_FORMAT_CHANNELS_SOFT")]
-    FormatChannelsSOFT = unchecked((uint)0x1990),
+    FormatChannelsSOFT = 6544,
 
     [NativeName("ALC_FORMAT_TYPE_SOFT")]
-    FormatTypeSOFT = unchecked((uint)0x1991),
+    FormatTypeSOFT = 6545,
 
     [NativeName("ALC_BYTE_SOFT")]
-    ByteSOFT = unchecked((uint)0x1400),
+    ByteSOFT = 5120,
 
     [NativeName("ALC_UNSIGNED_BYTE_SOFT")]
-    UnsignedByteSOFT = unchecked((uint)0x1401),
+    UnsignedByteSOFT = 5121,
 
     [NativeName("ALC_SHORT_SOFT")]
-    ShortSOFT = unchecked((uint)0x1402),
+    ShortSOFT = 5122,
 
     [NativeName("ALC_UNSIGNED_SHORT_SOFT")]
-    UnsignedShortSOFT = unchecked((uint)0x1403),
+    UnsignedShortSOFT = 5123,
 
     [NativeName("ALC_INT_SOFT")]
-    IntSOFT = unchecked((uint)0x1404),
+    IntSOFT = 5124,
 
     [NativeName("ALC_UNSIGNED_INT_SOFT")]
-    UnsignedIntSOFT = unchecked((uint)0x1405),
+    UnsignedIntSOFT = 5125,
 
     [NativeName("ALC_FLOAT_SOFT")]
-    FloatSOFT = unchecked((uint)0x1406),
+    FloatSOFT = 5126,
 
     [NativeName("ALC_MONO_SOFT")]
-    MonoSOFT = unchecked((uint)0x1500),
+    MonoSOFT = 5376,
 
     [NativeName("ALC_STEREO_SOFT")]
-    StereoSOFT = unchecked((uint)0x1501),
+    StereoSOFT = 5377,
 
     [NativeName("ALC_QUAD_SOFT")]
-    QuadSOFT = unchecked((uint)0x1503),
+    QuadSOFT = 5379,
 
     [NativeName("ALC_5POINT1_SOFT")]
-    X5Point1SOFT = unchecked((uint)0x1504),
+    X5Point1SOFT = 5380,
 
     [NativeName("ALC_6POINT1_SOFT")]
-    X6Point1SOFT = unchecked((uint)0x1505),
+    X6Point1SOFT = 5381,
 
     [NativeName("ALC_7POINT1_SOFT")]
-    X7Point1SOFT = unchecked((uint)0x1506),
+    X7Point1SOFT = 5382,
 
     [NativeName("ALC_HRTF_SOFT")]
-    HrtfSOFT = unchecked((uint)0x1992),
+    HrtfSOFT = 6546,
 
     [NativeName("ALC_DONT_CARE_SOFT")]
-    DontCareSOFT = unchecked((uint)0x0002),
+    DontCareSOFT = 2,
 
     [NativeName("ALC_HRTF_STATUS_SOFT")]
-    HrtfStatusSOFT = unchecked((uint)0x1993),
+    HrtfStatusSOFT = 6547,
 
     [NativeName("ALC_HRTF_DISABLED_SOFT")]
-    HrtfDisabledSOFT = unchecked((uint)0x0000),
+    HrtfDisabledSOFT = 0,
 
     [NativeName("ALC_HRTF_ENABLED_SOFT")]
-    HrtfEnabledSOFT = unchecked((uint)0x0001),
+    HrtfEnabledSOFT = 1,
 
     [NativeName("ALC_HRTF_DENIED_SOFT")]
-    HrtfDeniedSOFT = unchecked((uint)0x0002),
+    HrtfDeniedSOFT = 2,
 
     [NativeName("ALC_HRTF_REQUIRED_SOFT")]
-    HrtfRequiredSOFT = unchecked((uint)0x0003),
+    HrtfRequiredSOFT = 3,
 
     [NativeName("ALC_HRTF_HEADPHONES_DETECTED_SOFT")]
-    HrtfHeadphonesDetectedSOFT = unchecked((uint)0x0004),
+    HrtfHeadphonesDetectedSOFT = 4,
 
     [NativeName("ALC_HRTF_UNSUPPORTED_FORMAT_SOFT")]
-    HrtfUnsupportedFormatSOFT = unchecked((uint)0x0005),
+    HrtfUnsupportedFormatSOFT = 5,
 
     [NativeName("ALC_NUM_HRTF_SPECIFIERS_SOFT")]
-    NumHrtfSpecifiersSOFT = unchecked((uint)0x1994),
+    NumHrtfSpecifiersSOFT = 6548,
 
     [NativeName("ALC_HRTF_SPECIFIER_SOFT")]
-    HrtfSpecifierSOFT = unchecked((uint)0x1995),
+    HrtfSpecifierSOFT = 6549,
 
     [NativeName("ALC_HRTF_ID_SOFT")]
-    HrtfIdSOFT = unchecked((uint)0x1996),
+    HrtfIdSOFT = 6550,
 
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimiterSOFT = unchecked((uint)0x199A),
+    OutputLimiterSOFT = 6554,
 
     [NativeName("ALC_DEVICE_CLOCK_SOFT")]
-    DeviceClockSOFT = unchecked((uint)0x1600),
+    DeviceClockSOFT = 5632,
 
     [NativeName("ALC_DEVICE_LATENCY_SOFT")]
-    DeviceLatencySOFT = unchecked((uint)0x1601),
+    DeviceLatencySOFT = 5633,
 
     [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
-    DeviceClockLatencySOFT = unchecked((uint)0x1602),
+    DeviceClockLatencySOFT = 5634,
 
     [NativeName("ALC_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
+    AmbisonicLayoutSOFT = 6551,
 
     [NativeName("ALC_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingSOFT = unchecked((uint)0x1998),
+    AmbisonicScalingSOFT = 6552,
 
     [NativeName("ALC_AMBISONIC_ORDER_SOFT")]
-    AmbisonicOrderSOFT = unchecked((uint)0x1999),
+    AmbisonicOrderSOFT = 6553,
 
     [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
-    MaxAmbisonicOrderSOFT = unchecked((uint)0x199B),
+    MaxAmbisonicOrderSOFT = 6555,
 
     [NativeName("ALC_BFORMAT3D_SOFT")]
-    Bformat3DSOFT = unchecked((uint)0x1507),
+    Bformat3DSOFT = 5383,
 
     [NativeName("ALC_FUMA_SOFT")]
-    FumaSOFT = unchecked((uint)0x0000),
+    FumaSOFT = 0,
 
     [NativeName("ALC_ACN_SOFT")]
-    AcnSOFT = unchecked((uint)0x0001),
+    AcnSOFT = 1,
 
     [NativeName("ALC_SN3D_SOFT")]
-    Sn3DSOFT = unchecked((uint)0x0001),
+    Sn3DSOFT = 1,
 
     [NativeName("ALC_N3D_SOFT")]
-    N3DSOFT = unchecked((uint)0x0002),
+    N3DSOFT = 2,
 
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
-    OutputModeSOFT = unchecked((uint)0x19AC),
+    OutputModeSOFT = 6572,
 
     [NativeName("ALC_ANY_SOFT")]
-    AnySOFT = unchecked((uint)0x19AD),
+    AnySOFT = 6573,
 
     [NativeName("ALC_STEREO_BASIC_SOFT")]
-    StereoBasicSOFT = unchecked((uint)0x19AE),
+    StereoBasicSOFT = 6574,
 
     [NativeName("ALC_STEREO_UHJ_SOFT")]
-    StereoUhjSOFT = unchecked((uint)0x19AF),
+    StereoUhjSOFT = 6575,
 
     [NativeName("ALC_STEREO_HRTF_SOFT")]
-    StereoHrtfSOFT = unchecked((uint)0x19B2),
+    StereoHrtfSOFT = 6578,
 
     [NativeName("ALC_SURROUND_5_1_SOFT")]
-    Surround5X1SOFT = unchecked((uint)0x1504),
+    Surround5X1SOFT = 5380,
 
     [NativeName("ALC_SURROUND_6_1_SOFT")]
-    Surround6X1SOFT = unchecked((uint)0x1505),
+    Surround6X1SOFT = 5381,
 
     [NativeName("ALC_SURROUND_7_1_SOFT")]
-    Surround7X1SOFT = unchecked((uint)0x1506),
+    Surround7X1SOFT = 5382,
 
     [NativeName("ALC_CONTEXT_FLAGS_EXT")]
-    ContextFlagsEXT = unchecked((uint)0x19CF),
+    ContextFlagsEXT = 6607,
 
     [NativeName("ALC_CONTEXT_DEBUG_BIT_EXT")]
-    ContextDebugBitEXT = unchecked((uint)0x0001),
+    ContextDebugBitEXT = 1,
 
     [NativeName("ALC_PLAYBACK_DEVICE_SOFT")]
-    PlaybackDeviceSOFT = unchecked((uint)0x19D4),
+    PlaybackDeviceSOFT = 6612,
 
     [NativeName("ALC_CAPTURE_DEVICE_SOFT")]
-    CaptureDeviceSOFT = unchecked((uint)0x19D5),
+    CaptureDeviceSOFT = 6613,
 
     [NativeName("ALC_EVENT_TYPE_DEFAULT_DEVICE_CHANGED_SOFT")]
-    EventTypeDefaultDeviceChangedSOFT = unchecked((uint)0x19D6),
+    EventTypeDefaultDeviceChangedSOFT = 6614,
 
     [NativeName("ALC_EVENT_TYPE_DEVICE_ADDED_SOFT")]
-    EventTypeDeviceAddedSOFT = unchecked((uint)0x19D7),
+    EventTypeDeviceAddedSOFT = 6615,
 
     [NativeName("ALC_EVENT_TYPE_DEVICE_REMOVED_SOFT")]
-    EventTypeDeviceRemovedSOFT = unchecked((uint)0x19D8),
+    EventTypeDeviceRemovedSOFT = 6616,
 
     [NativeName("ALC_EVENT_SUPPORTED_SOFT")]
-    EventSupportedSOFT = unchecked((uint)0x19D9),
+    EventSupportedSOFT = 6617,
 
     [NativeName("ALC_EVENT_NOT_SUPPORTED_SOFT")]
-    EventNotSupportedSOFT = unchecked((uint)0x19DA),
+    EventNotSupportedSOFT = 6618,
 }

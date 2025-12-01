@@ -12,29 +12,29 @@ namespace Silk.NET.SDL;
 public enum GpuStencilOp : uint
 {
     [NativeName("SDL_GPU_STENCILOP_INVALID")]
-    Invalid,
+    Invalid = 0,
 
     [NativeName("SDL_GPU_STENCILOP_KEEP")]
-    Keep,
+    Keep = 1,
 
     [NativeName("SDL_GPU_STENCILOP_ZERO")]
-    Zero,
+    Zero = 2,
 
     [NativeName("SDL_GPU_STENCILOP_REPLACE")]
-    Replace,
+    Replace = 3,
 
     [NativeName("SDL_GPU_STENCILOP_INCREMENT_AND_CLAMP")]
-    IncrementAndClamp,
+    IncrementAndClamp = 4,
 
     [NativeName("SDL_GPU_STENCILOP_DECREMENT_AND_CLAMP")]
-    DecrementAndClamp,
+    DecrementAndClamp = 5,
 
     [NativeName("SDL_GPU_STENCILOP_INVERT")]
-    Invert,
+    Invert = 6,
 
     [NativeName("SDL_GPU_STENCILOP_INCREMENT_AND_WRAP")]
-    IncrementAndWrap,
+    IncrementAndWrap = 7,
 
     [NativeName("SDL_GPU_STENCILOP_DECREMENT_AND_WRAP")]
-    DecrementAndWrap,
+    DecrementAndWrap = 8,
 }

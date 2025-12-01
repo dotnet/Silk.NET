@@ -10,8 +10,8 @@ namespace Silk.NET.SDL;
 public enum GpuIndexElementSize : uint
 {
     [NativeName("SDL_GPU_INDEXELEMENTSIZE_16BIT")]
-    Indexelementsize16Bit,
+    Indexelementsize16Bit = 0,
 
     [NativeName("SDL_GPU_INDEXELEMENTSIZE_32BIT")]
-    Indexelementsize32Bit,
+    Indexelementsize32Bit = 1,
 }

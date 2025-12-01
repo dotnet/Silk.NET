@@ -15,35 +15,35 @@ public enum GamepadType : uint
     Unknown = 0,
 
     [NativeName("SDL_GAMEPAD_TYPE_STANDARD")]
-    Standard,
+    Standard = 1,
 
     [NativeName("SDL_GAMEPAD_TYPE_XBOX360")]
-    Xbox360,
+    Xbox360 = 2,
 
     [NativeName("SDL_GAMEPAD_TYPE_XBOXONE")]
-    Xboxone,
+    Xboxone = 3,
 
     [NativeName("SDL_GAMEPAD_TYPE_PS3")]
-    Ps3,
+    Ps3 = 4,
 
     [NativeName("SDL_GAMEPAD_TYPE_PS4")]
-    Ps4,
+    Ps4 = 5,
 
     [NativeName("SDL_GAMEPAD_TYPE_PS5")]
-    Ps5,
+    Ps5 = 6,
 
     [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_PRO")]
-    NintendoSwitchPro,
+    NintendoSwitchPro = 7,
 
     [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_LEFT")]
-    NintendoSwitchJoyconLeft,
+    NintendoSwitchJoyconLeft = 8,
 
     [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT")]
-    NintendoSwitchJoyconRight,
+    NintendoSwitchJoyconRight = 9,
 
     [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
-    NintendoSwitchJoyconPair,
+    NintendoSwitchJoyconPair = 10,
 
     [NativeName("SDL_GAMEPAD_TYPE_COUNT")]
-    Count,
+    Count = 11,
 }

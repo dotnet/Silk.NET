@@ -10,8 +10,8 @@ namespace Silk.NET.SDL;
 public enum GpuShaderStage : uint
 {
     [NativeName("SDL_GPU_SHADERSTAGE_VERTEX")]
-    Vertex,
+    Vertex = 0,
 
     [NativeName("SDL_GPU_SHADERSTAGE_FRAGMENT")]
-    Fragment,
+    Fragment = 1,
 }

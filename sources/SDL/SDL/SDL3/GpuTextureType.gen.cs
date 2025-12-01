@@ -10,17 +10,17 @@ namespace Silk.NET.SDL;
 public enum GpuTextureType : uint
 {
     [NativeName("SDL_GPU_TEXTURETYPE_2D")]
-    Texturetype2D,
+    Texturetype2D = 0,
 
     [NativeName("SDL_GPU_TEXTURETYPE_2D_ARRAY")]
-    Texturetype2DArray,
+    Texturetype2DArray = 1,
 
     [NativeName("SDL_GPU_TEXTURETYPE_3D")]
-    Texturetype3D,
+    Texturetype3D = 2,
 
     [NativeName("SDL_GPU_TEXTURETYPE_CUBE")]
-    TexturetypeCube,
+    TexturetypeCube = 3,
 
     [NativeName("SDL_GPU_TEXTURETYPE_CUBE_ARRAY")]
-    TexturetypeCubeArray,
+    TexturetypeCubeArray = 4,
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.SDL;
 public enum GpuFilter : uint
 {
     [NativeName("SDL_GPU_FILTER_NEAREST")]
-    Nearest,
+    Nearest = 0,
 
     [NativeName("SDL_GPU_FILTER_LINEAR")]
-    Linear,
+    Linear = 1,
 }

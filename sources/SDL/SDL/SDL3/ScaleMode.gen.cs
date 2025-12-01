@@ -10,8 +10,8 @@ namespace Silk.NET.SDL;
 public enum ScaleMode : uint
 {
     [NativeName("SDL_SCALEMODE_NEAREST")]
-    Nearest,
+    Nearest = 0,
 
     [NativeName("SDL_SCALEMODE_LINEAR")]
-    Linear,
+    Linear = 1,
 }

@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum FlipMode : uint
 {
     [NativeName("SDL_FLIP_NONE")]
-    None,
+    None = 0,
 
     [NativeName("SDL_FLIP_HORIZONTAL")]
-    Horizontal,
+    Horizontal = 1,
 
     [NativeName("SDL_FLIP_VERTICAL")]
-    Vertical,
+    Vertical = 2,
 }

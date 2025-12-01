@@ -12,14 +12,14 @@ namespace Silk.NET.SDL;
 public enum PathType : uint
 {
     [NativeName("SDL_PATHTYPE_NONE")]
-    None,
+    None = 0,
 
     [NativeName("SDL_PATHTYPE_FILE")]
-    File,
+    File = 1,
 
     [NativeName("SDL_PATHTYPE_DIRECTORY")]
-    Directory,
+    Directory = 2,
 
     [NativeName("SDL_PATHTYPE_OTHER")]
-    Other,
+    Other = 3,
 }

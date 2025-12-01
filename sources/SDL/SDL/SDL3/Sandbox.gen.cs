@@ -15,14 +15,14 @@ public enum Sandbox : uint
     None = 0,
 
     [NativeName("SDL_SANDBOX_UNKNOWN_CONTAINER")]
-    UnknownContainer,
+    UnknownContainer = 1,
 
     [NativeName("SDL_SANDBOX_FLATPAK")]
-    Flatpak,
+    Flatpak = 2,
 
     [NativeName("SDL_SANDBOX_SNAP")]
-    Snap,
+    Snap = 3,
 
     [NativeName("SDL_SANDBOX_MACOS")]
-    Macos,
+    Macos = 4,
 }

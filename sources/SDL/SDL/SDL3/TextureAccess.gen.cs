@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum TextureAccess : uint
 {
     [NativeName("SDL_TEXTUREACCESS_STATIC")]
-    Static,
+    Static = 0,
 
     [NativeName("SDL_TEXTUREACCESS_STREAMING")]
-    Streaming,
+    Streaming = 1,
 
     [NativeName("SDL_TEXTUREACCESS_TARGET")]
-    Target,
+    Target = 2,
 }

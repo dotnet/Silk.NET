@@ -10,14 +10,14 @@ namespace Silk.NET.SDL;
 public enum ThreadPriority : uint
 {
     [NativeName("SDL_THREAD_PRIORITY_LOW")]
-    Low,
+    Low = 0,
 
     [NativeName("SDL_THREAD_PRIORITY_NORMAL")]
-    Normal,
+    Normal = 1,
 
     [NativeName("SDL_THREAD_PRIORITY_HIGH")]
-    High,
+    High = 2,
 
     [NativeName("SDL_THREAD_PRIORITY_TIME_CRITICAL")]
-    TimeCritical,
+    TimeCritical = 3,
 }

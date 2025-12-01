@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum FragmentShaderColorModMaskATI : uint
 {
+    None = 0x0,
+
     [NativeName("GL_2X_BIT_ATI")]
     X2XBitATI = unchecked((uint)0x00000001),
 

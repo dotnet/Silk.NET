@@ -12,29 +12,29 @@ namespace Silk.NET.SDL;
 public enum TextInputType : uint
 {
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT")]
-    Text,
+    Text = 0,
 
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT_NAME")]
-    TextName,
+    TextName = 1,
 
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT_EMAIL")]
-    TextEmail,
+    TextEmail = 2,
 
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT_USERNAME")]
-    TextUsername,
+    TextUsername = 3,
 
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT_PASSWORD_HIDDEN")]
-    TextPasswordHidden,
+    TextPasswordHidden = 4,
 
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT_PASSWORD_VISIBLE")]
-    TextPasswordVisible,
+    TextPasswordVisible = 5,
 
     [NativeName("SDL_TEXTINPUT_TYPE_NUMBER")]
-    Number,
+    Number = 6,
 
     [NativeName("SDL_TEXTINPUT_TYPE_NUMBER_PASSWORD_HIDDEN")]
-    NumberPasswordHidden,
+    NumberPasswordHidden = 7,
 
     [NativeName("SDL_TEXTINPUT_TYPE_NUMBER_PASSWORD_VISIBLE")]
-    NumberPasswordVisible,
+    NumberPasswordVisible = 8,
 }

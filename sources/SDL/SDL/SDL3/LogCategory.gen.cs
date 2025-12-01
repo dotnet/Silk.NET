@@ -12,62 +12,62 @@ namespace Silk.NET.SDL;
 public enum LogCategory : uint
 {
     [NativeName("SDL_LOG_CATEGORY_APPLICATION")]
-    Application,
+    Application = 0,
 
     [NativeName("SDL_LOG_CATEGORY_ERROR")]
-    Error,
+    Error = 1,
 
     [NativeName("SDL_LOG_CATEGORY_ASSERT")]
-    Assert,
+    Assert = 2,
 
     [NativeName("SDL_LOG_CATEGORY_SYSTEM")]
-    System,
+    System = 3,
 
     [NativeName("SDL_LOG_CATEGORY_AUDIO")]
-    Audio,
+    Audio = 4,
 
     [NativeName("SDL_LOG_CATEGORY_VIDEO")]
-    Video,
+    Video = 5,
 
     [NativeName("SDL_LOG_CATEGORY_RENDER")]
-    Render,
+    Render = 6,
 
     [NativeName("SDL_LOG_CATEGORY_INPUT")]
-    Input,
+    Input = 7,
 
     [NativeName("SDL_LOG_CATEGORY_TEST")]
-    Test,
+    Test = 8,
 
     [NativeName("SDL_LOG_CATEGORY_GPU")]
-    Gpu,
+    Gpu = 9,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED2")]
-    Reserved2,
+    Reserved2 = 10,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED3")]
-    Reserved3,
+    Reserved3 = 11,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED4")]
-    Reserved4,
+    Reserved4 = 12,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED5")]
-    Reserved5,
+    Reserved5 = 13,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED6")]
-    Reserved6,
+    Reserved6 = 14,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED7")]
-    Reserved7,
+    Reserved7 = 15,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED8")]
-    Reserved8,
+    Reserved8 = 16,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED9")]
-    Reserved9,
+    Reserved9 = 17,
 
     [NativeName("SDL_LOG_CATEGORY_RESERVED10")]
-    Reserved10,
+    Reserved10 = 18,
 
     [NativeName("SDL_LOG_CATEGORY_CUSTOM")]
-    Custom,
+    Custom = 19,
 }

@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum FfdMaskSGIX : uint
 {
+    None = 0x0,
+
     [NativeName("GL_TEXTURE_DEFORMATION_BIT_SGIX")]
     TextureDeformationBitSGIX = unchecked((uint)0x00000001),
 

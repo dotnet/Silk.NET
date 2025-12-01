@@ -10,11 +10,11 @@ namespace Silk.NET.SDL;
 public enum EventAction : uint
 {
     [NativeName("SDL_ADDEVENT")]
-    Addevent,
+    Addevent = 0,
 
     [NativeName("SDL_PEEKEVENT")]
-    Peekevent,
+    Peekevent = 1,
 
     [NativeName("SDL_GETEVENT")]
-    Getevent,
+    Getevent = 2,
 }

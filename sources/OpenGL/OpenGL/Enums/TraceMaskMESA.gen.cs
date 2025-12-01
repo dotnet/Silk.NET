@@ -9,4 +9,7 @@ namespace Silk.NET.OpenGL;
 
 [NativeName("TraceMaskMESA")]
 [Flags]
-public enum TraceMaskMESA : uint { }
+public enum TraceMaskMESA : uint
+{
+    None = 0x0,
+}

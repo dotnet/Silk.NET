@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum BufferBitQCOM : uint
 {
+    None = 0x0,
+
     [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
     ColorBufferBit0QCOM = unchecked((uint)0x00000001),
 

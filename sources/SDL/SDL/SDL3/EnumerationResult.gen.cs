@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum EnumerationResult : uint
 {
     [NativeName("SDL_ENUM_CONTINUE")]
-    Continue,
+    Continue = 0,
 
     [NativeName("SDL_ENUM_SUCCESS")]
-    Success,
+    Success = 1,
 
     [NativeName("SDL_ENUM_FAILURE")]
-    Failure,
+    Failure = 2,
 }

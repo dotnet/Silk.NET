@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum ClearBufferMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_DEPTH_BUFFER_BIT")]
     DepthBufferBit = unchecked((uint)0x00000100),
 

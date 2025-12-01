@@ -10,14 +10,14 @@ namespace Silk.NET.SDL;
 public enum Capitalization : uint
 {
     [NativeName("SDL_CAPITALIZE_NONE")]
-    None,
+    None = 0,
 
     [NativeName("SDL_CAPITALIZE_SENTENCES")]
-    Sentences,
+    Sentences = 1,
 
     [NativeName("SDL_CAPITALIZE_WORDS")]
-    Words,
+    Words = 2,
 
     [NativeName("SDL_CAPITALIZE_LETTERS")]
-    Letters,
+    Letters = 3,
 }

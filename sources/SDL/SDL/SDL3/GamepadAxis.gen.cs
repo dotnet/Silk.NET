@@ -13,23 +13,23 @@ public enum GamepadAxis
     Invalid = -1,
 
     [NativeName("SDL_GAMEPAD_AXIS_LEFTX")]
-    Leftx,
+    Leftx = 0,
 
     [NativeName("SDL_GAMEPAD_AXIS_LEFTY")]
-    Lefty,
+    Lefty = 1,
 
     [NativeName("SDL_GAMEPAD_AXIS_RIGHTX")]
-    Rightx,
+    Rightx = 2,
 
     [NativeName("SDL_GAMEPAD_AXIS_RIGHTY")]
-    Righty,
+    Righty = 3,
 
     [NativeName("SDL_GAMEPAD_AXIS_LEFT_TRIGGER")]
-    LeftTrigger,
+    LeftTrigger = 4,
 
     [NativeName("SDL_GAMEPAD_AXIS_RIGHT_TRIGGER")]
-    RightTrigger,
+    RightTrigger = 5,
 
     [NativeName("SDL_GAMEPAD_AXIS_COUNT")]
-    Count,
+    Count = 6,
 }

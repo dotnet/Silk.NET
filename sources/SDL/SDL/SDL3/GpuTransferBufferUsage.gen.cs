@@ -12,8 +12,8 @@ namespace Silk.NET.SDL;
 public enum GpuTransferBufferUsage : uint
 {
     [NativeName("SDL_GPU_TRANSFERBUFFERUSAGE_UPLOAD")]
-    Upload,
+    Upload = 0,
 
     [NativeName("SDL_GPU_TRANSFERBUFFERUSAGE_DOWNLOAD")]
-    Download,
+    Download = 1,
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.SDL;
 public enum GpuVertexInputRate : uint
 {
     [NativeName("SDL_GPU_VERTEXINPUTRATE_VERTEX")]
-    Vertex,
+    Vertex = 0,
 
     [NativeName("SDL_GPU_VERTEXINPUTRATE_INSTANCE")]
-    Instance,
+    Instance = 1,
 }

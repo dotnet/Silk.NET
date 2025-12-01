@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum OcclusionQueryEventMaskAMD : uint
 {
+    None = 0x0,
+
     [NativeName("GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD")]
     DepthPassEventBitAMD = unchecked((uint)0x00000001),
 

@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum FoveationConfigBitQCOM : uint
 {
+    None = 0x0,
+
     [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
     EnableBitQCOM = unchecked((uint)0x00000001),
 

@@ -10,31 +10,31 @@ namespace Silk.NET.SDL;
 public enum AudioFormat : uint
 {
     [NativeName("SDL_AUDIO_UNKNOWN")]
-    Unknown = 0x0000U,
+    Unknown = 0,
 
     [NativeName("SDL_AUDIO_U8")]
-    U8 = 0x0008U,
+    U8 = 8,
 
     [NativeName("SDL_AUDIO_S8")]
-    S8 = 0x8008U,
+    S8 = 32776,
 
     [NativeName("SDL_AUDIO_S16LE")]
-    S16Le = 0x8010U,
+    S16Le = 32784,
 
     [NativeName("SDL_AUDIO_S16BE")]
-    S16Be = 0x9010U,
+    S16Be = 36880,
 
     [NativeName("SDL_AUDIO_S32LE")]
-    S32Le = 0x8020U,
+    S32Le = 32800,
 
     [NativeName("SDL_AUDIO_S32BE")]
-    S32Be = 0x9020U,
+    S32Be = 36896,
 
     [NativeName("SDL_AUDIO_F32LE")]
-    F32Le = 0x8120U,
+    F32Le = 33056,
 
     [NativeName("SDL_AUDIO_F32BE")]
-    F32Be = 0x9120U,
+    F32Be = 37152,
 
     [NativeName("SDL_AUDIO_S16")]
     S16 = S16Le,

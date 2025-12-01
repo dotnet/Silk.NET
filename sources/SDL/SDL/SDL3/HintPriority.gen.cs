@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum HintPriority : uint
 {
     [NativeName("SDL_HINT_DEFAULT")]
-    Default,
+    Default = 0,
 
     [NativeName("SDL_HINT_NORMAL")]
-    Normal,
+    Normal = 1,
 
     [NativeName("SDL_HINT_OVERRIDE")]
-    Override,
+    Override = 2,
 }

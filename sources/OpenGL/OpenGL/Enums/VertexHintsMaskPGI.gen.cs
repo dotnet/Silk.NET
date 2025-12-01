@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum VertexHintsMaskPGI : uint
 {
+    None = 0x0,
+
     [NativeName("GL_COLOR3_BIT_PGI")]
     Color3BitPGI = unchecked((uint)0x00010000),
 

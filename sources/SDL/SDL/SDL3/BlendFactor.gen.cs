@@ -10,32 +10,32 @@ namespace Silk.NET.SDL;
 public enum BlendFactor : uint
 {
     [NativeName("SDL_BLENDFACTOR_ZERO")]
-    Zero = 0x1,
+    Zero = 1,
 
     [NativeName("SDL_BLENDFACTOR_ONE")]
-    One = 0x2,
+    One = 2,
 
     [NativeName("SDL_BLENDFACTOR_SRC_COLOR")]
-    SrcColor = 0x3,
+    SrcColor = 3,
 
     [NativeName("SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR")]
-    OneMinusSrcColor = 0x4,
+    OneMinusSrcColor = 4,
 
     [NativeName("SDL_BLENDFACTOR_SRC_ALPHA")]
-    SrcAlpha = 0x5,
+    SrcAlpha = 5,
 
     [NativeName("SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA")]
-    OneMinusSrcAlpha = 0x6,
+    OneMinusSrcAlpha = 6,
 
     [NativeName("SDL_BLENDFACTOR_DST_COLOR")]
-    DstColor = 0x7,
+    DstColor = 7,
 
     [NativeName("SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR")]
-    OneMinusDstColor = 0x8,
+    OneMinusDstColor = 8,
 
     [NativeName("SDL_BLENDFACTOR_DST_ALPHA")]
-    DstAlpha = 0x9,
+    DstAlpha = 9,
 
     [NativeName("SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA")]
-    OneMinusDstAlpha = 0xA,
+    OneMinusDstAlpha = 10,
 }

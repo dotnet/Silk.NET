@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum PnTrianglesPNameATI : uint
 {
     [NativeName("GL_PN_TRIANGLES_POINT_MODE_ATI")]
-    PointModeATI = unchecked((uint)0x87F2),
+    PointModeATI = 34802,
 
     [NativeName("GL_PN_TRIANGLES_NORMAL_MODE_ATI")]
-    NormalModeATI = unchecked((uint)0x87F3),
+    NormalModeATI = 34803,
 
     [NativeName("GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI")]
-    TesselationLevelATI = unchecked((uint)0x87F4),
+    TesselationLevelATI = 34804,
 }

@@ -12,17 +12,17 @@ namespace Silk.NET.SDL;
 public enum AssertState : uint
 {
     [NativeName("SDL_ASSERTION_RETRY")]
-    Retry,
+    Retry = 0,
 
     [NativeName("SDL_ASSERTION_BREAK")]
-    Break,
+    Break = 1,
 
     [NativeName("SDL_ASSERTION_ABORT")]
-    Abort,
+    Abort = 2,
 
     [NativeName("SDL_ASSERTION_IGNORE")]
-    Ignore,
+    Ignore = 3,
 
     [NativeName("SDL_ASSERTION_ALWAYS_IGNORE")]
-    AlwaysIgnore,
+    AlwaysIgnore = 4,
 }

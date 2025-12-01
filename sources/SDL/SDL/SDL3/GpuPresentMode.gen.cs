@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum GpuPresentMode : uint
 {
     [NativeName("SDL_GPU_PRESENTMODE_VSYNC")]
-    Vsync,
+    Vsync = 0,
 
     [NativeName("SDL_GPU_PRESENTMODE_IMMEDIATE")]
-    Immediate,
+    Immediate = 1,
 
     [NativeName("SDL_GPU_PRESENTMODE_MAILBOX")]
-    Mailbox,
+    Mailbox = 2,
 }

@@ -10,11 +10,11 @@ namespace Silk.NET.SDL;
 public enum AppResult : uint
 {
     [NativeName("SDL_APP_CONTINUE")]
-    Continue,
+    Continue = 0,
 
     [NativeName("SDL_APP_SUCCESS")]
-    Success,
+    Success = 1,
 
     [NativeName("SDL_APP_FAILURE")]
-    Failure,
+    Failure = 2,
 }

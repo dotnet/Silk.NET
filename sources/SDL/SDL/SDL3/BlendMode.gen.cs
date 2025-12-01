@@ -10,12 +10,12 @@ namespace Silk.NET.SDL;
 
 public enum BlendMode : uint
 {
-    None = 0x00000000U,
-    Blend = 0x00000001U,
-    BlendPremultiplied = 0x00000010U,
-    Add = 0x00000002U,
-    AddPremultiplied = 0x00000020U,
-    Mod = 0x00000004U,
-    Mul = 0x00000008U,
-    Invalid = 0x7FFFFFFFU,
+    None = 0,
+    Blend = 1,
+    BlendPremultiplied = 16,
+    Add = 2,
+    AddPremultiplied = 32,
+    Mod = 4,
+    Mul = 8,
+    Invalid = 2147483647,
 }

@@ -12,11 +12,11 @@ namespace Silk.NET.SDL;
 public enum GpuLoadOp : uint
 {
     [NativeName("SDL_GPU_LOADOP_LOAD")]
-    Load,
+    Load = 0,
 
     [NativeName("SDL_GPU_LOADOP_CLEAR")]
-    Clear,
+    Clear = 1,
 
     [NativeName("SDL_GPU_LOADOP_DONT_CARE")]
-    DontCare,
+    DontCare = 2,
 }

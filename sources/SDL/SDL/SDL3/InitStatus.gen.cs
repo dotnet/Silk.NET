@@ -12,14 +12,14 @@ namespace Silk.NET.SDL;
 public enum InitStatus : uint
 {
     [NativeName("SDL_INIT_STATUS_UNINITIALIZED")]
-    Uninitialized,
+    Uninitialized = 0,
 
     [NativeName("SDL_INIT_STATUS_INITIALIZING")]
-    Initializing,
+    Initializing = 1,
 
     [NativeName("SDL_INIT_STATUS_INITIALIZED")]
-    Initialized,
+    Initialized = 2,
 
     [NativeName("SDL_INIT_STATUS_UNINITIALIZING")]
-    Uninitializing,
+    Uninitializing = 3,
 }

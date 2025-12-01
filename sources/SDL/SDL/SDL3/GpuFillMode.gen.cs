@@ -12,8 +12,8 @@ namespace Silk.NET.SDL;
 public enum GpuFillMode : uint
 {
     [NativeName("SDL_GPU_FILLMODE_FILL")]
-    Fill,
+    Fill = 0,
 
     [NativeName("SDL_GPU_FILLMODE_LINE")]
-    Line,
+    Line = 1,
 }

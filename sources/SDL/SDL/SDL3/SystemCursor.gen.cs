@@ -10,65 +10,65 @@ namespace Silk.NET.SDL;
 public enum SystemCursor : uint
 {
     [NativeName("SDL_SYSTEM_CURSOR_DEFAULT")]
-    Default,
+    Default = 0,
 
     [NativeName("SDL_SYSTEM_CURSOR_TEXT")]
-    Text,
+    Text = 1,
 
     [NativeName("SDL_SYSTEM_CURSOR_WAIT")]
-    Wait,
+    Wait = 2,
 
     [NativeName("SDL_SYSTEM_CURSOR_CROSSHAIR")]
-    Crosshair,
+    Crosshair = 3,
 
     [NativeName("SDL_SYSTEM_CURSOR_PROGRESS")]
-    Progress,
+    Progress = 4,
 
     [NativeName("SDL_SYSTEM_CURSOR_NWSE_RESIZE")]
-    NwseResize,
+    NwseResize = 5,
 
     [NativeName("SDL_SYSTEM_CURSOR_NESW_RESIZE")]
-    NeswResize,
+    NeswResize = 6,
 
     [NativeName("SDL_SYSTEM_CURSOR_EW_RESIZE")]
-    EwResize,
+    EwResize = 7,
 
     [NativeName("SDL_SYSTEM_CURSOR_NS_RESIZE")]
-    NsResize,
+    NsResize = 8,
 
     [NativeName("SDL_SYSTEM_CURSOR_MOVE")]
-    Move,
+    Move = 9,
 
     [NativeName("SDL_SYSTEM_CURSOR_NOT_ALLOWED")]
-    NotAllowed,
+    NotAllowed = 10,
 
     [NativeName("SDL_SYSTEM_CURSOR_POINTER")]
-    Pointer,
+    Pointer = 11,
 
     [NativeName("SDL_SYSTEM_CURSOR_NW_RESIZE")]
-    NwResize,
+    NwResize = 12,
 
     [NativeName("SDL_SYSTEM_CURSOR_N_RESIZE")]
-    NResize,
+    NResize = 13,
 
     [NativeName("SDL_SYSTEM_CURSOR_NE_RESIZE")]
-    NeResize,
+    NeResize = 14,
 
     [NativeName("SDL_SYSTEM_CURSOR_E_RESIZE")]
-    EResize,
+    EResize = 15,
 
     [NativeName("SDL_SYSTEM_CURSOR_SE_RESIZE")]
-    SeResize,
+    SeResize = 16,
 
     [NativeName("SDL_SYSTEM_CURSOR_S_RESIZE")]
-    SResize,
+    SResize = 17,
 
     [NativeName("SDL_SYSTEM_CURSOR_SW_RESIZE")]
-    SwResize,
+    SwResize = 18,
 
     [NativeName("SDL_SYSTEM_CURSOR_W_RESIZE")]
-    WResize,
+    WResize = 19,
 
     [NativeName("SDL_SYSTEM_CURSOR_COUNT")]
-    Count,
+    Count = 20,
 }

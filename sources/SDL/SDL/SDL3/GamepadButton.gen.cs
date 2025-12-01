@@ -15,83 +15,83 @@ public enum GamepadButton
     Invalid = -1,
 
     [NativeName("SDL_GAMEPAD_BUTTON_SOUTH")]
-    South,
+    South = 0,
 
     [NativeName("SDL_GAMEPAD_BUTTON_EAST")]
-    East,
+    East = 1,
 
     [NativeName("SDL_GAMEPAD_BUTTON_WEST")]
-    West,
+    West = 2,
 
     [NativeName("SDL_GAMEPAD_BUTTON_NORTH")]
-    North,
+    North = 3,
 
     [NativeName("SDL_GAMEPAD_BUTTON_BACK")]
-    Back,
+    Back = 4,
 
     [NativeName("SDL_GAMEPAD_BUTTON_GUIDE")]
-    Guide,
+    Guide = 5,
 
     [NativeName("SDL_GAMEPAD_BUTTON_START")]
-    Start,
+    Start = 6,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LEFT_STICK")]
-    LeftStick,
+    LeftStick = 7,
 
     [NativeName("SDL_GAMEPAD_BUTTON_RIGHT_STICK")]
-    RightStick,
+    RightStick = 8,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LEFT_SHOULDER")]
-    LeftShoulder,
+    LeftShoulder = 9,
 
     [NativeName("SDL_GAMEPAD_BUTTON_RIGHT_SHOULDER")]
-    RightShoulder,
+    RightShoulder = 10,
 
     [NativeName("SDL_GAMEPAD_BUTTON_DPAD_UP")]
-    DpadUp,
+    DpadUp = 11,
 
     [NativeName("SDL_GAMEPAD_BUTTON_DPAD_DOWN")]
-    DpadDown,
+    DpadDown = 12,
 
     [NativeName("SDL_GAMEPAD_BUTTON_DPAD_LEFT")]
-    DpadLeft,
+    DpadLeft = 13,
 
     [NativeName("SDL_GAMEPAD_BUTTON_DPAD_RIGHT")]
-    DpadRight,
+    DpadRight = 14,
 
     [NativeName("SDL_GAMEPAD_BUTTON_MISC1")]
-    Misc1,
+    Misc1 = 15,
 
     [NativeName("SDL_GAMEPAD_BUTTON_RIGHT_PADDLE1")]
-    RightPaddle1,
+    RightPaddle1 = 16,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LEFT_PADDLE1")]
-    LeftPaddle1,
+    LeftPaddle1 = 17,
 
     [NativeName("SDL_GAMEPAD_BUTTON_RIGHT_PADDLE2")]
-    RightPaddle2,
+    RightPaddle2 = 18,
 
     [NativeName("SDL_GAMEPAD_BUTTON_LEFT_PADDLE2")]
-    LeftPaddle2,
+    LeftPaddle2 = 19,
 
     [NativeName("SDL_GAMEPAD_BUTTON_TOUCHPAD")]
-    Touchpad,
+    Touchpad = 20,
 
     [NativeName("SDL_GAMEPAD_BUTTON_MISC2")]
-    Misc2,
+    Misc2 = 21,
 
     [NativeName("SDL_GAMEPAD_BUTTON_MISC3")]
-    Misc3,
+    Misc3 = 22,
 
     [NativeName("SDL_GAMEPAD_BUTTON_MISC4")]
-    Misc4,
+    Misc4 = 23,
 
     [NativeName("SDL_GAMEPAD_BUTTON_MISC5")]
-    Misc5,
+    Misc5 = 24,
 
     [NativeName("SDL_GAMEPAD_BUTTON_MISC6")]
-    Misc6,
+    Misc6 = 25,
 
     [NativeName("SDL_GAMEPAD_BUTTON_COUNT")]
-    Count,
+    Count = 26,
 }

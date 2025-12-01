@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum ContextFlagMask : uint
 {
+    None = 0x0,
+
     [NativeName("GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT")]
     ForwardCompatibleBit = unchecked((uint)0x00000001),
 

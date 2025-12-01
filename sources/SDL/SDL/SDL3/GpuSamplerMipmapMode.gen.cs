@@ -12,8 +12,8 @@ namespace Silk.NET.SDL;
 public enum GpuSamplerMipmapMode : uint
 {
     [NativeName("SDL_GPU_SAMPLERMIPMAPMODE_NEAREST")]
-    Nearest,
+    Nearest = 0,
 
     [NativeName("SDL_GPU_SAMPLERMIPMAPMODE_LINEAR")]
-    Linear,
+    Linear = 1,
 }

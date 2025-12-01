@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum SubgroupSupportedFeatures : uint
 {
+    None = 0x0,
+
     [NativeName("GL_SUBGROUP_FEATURE_BASIC_BIT_KHR")]
     BasicBitKHR = unchecked((uint)0x00000001),
 

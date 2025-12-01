@@ -12,17 +12,17 @@ namespace Silk.NET.SDL;
 public enum RendererLogicalPresentation : uint
 {
     [NativeName("SDL_LOGICAL_PRESENTATION_DISABLED")]
-    Disabled,
+    Disabled = 0,
 
     [NativeName("SDL_LOGICAL_PRESENTATION_STRETCH")]
-    Stretch,
+    Stretch = 1,
 
     [NativeName("SDL_LOGICAL_PRESENTATION_LETTERBOX")]
-    Letterbox,
+    Letterbox = 2,
 
     [NativeName("SDL_LOGICAL_PRESENTATION_OVERSCAN")]
-    Overscan,
+    Overscan = 3,
 
     [NativeName("SDL_LOGICAL_PRESENTATION_INTEGER_SCALE")]
-    IntegerScale,
+    IntegerScale = 4,
 }

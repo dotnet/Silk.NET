@@ -12,8 +12,8 @@ namespace Silk.NET.SDL;
 public enum MouseWheelDirection : uint
 {
     [NativeName("SDL_MOUSEWHEEL_NORMAL")]
-    Normal,
+    Normal = 0,
 
     [NativeName("SDL_MOUSEWHEEL_FLIPPED")]
-    Flipped,
+    Flipped = 1,
 }

@@ -13,52 +13,52 @@ public enum EventType : uint
     First = 0,
 
     [NativeName("SDL_EVENT_QUIT")]
-    Quit = 0x100,
+    Quit = 256,
 
     [NativeName("SDL_EVENT_TERMINATING")]
-    Terminating,
+    Terminating = 257,
 
     [NativeName("SDL_EVENT_LOW_MEMORY")]
-    LowMemory,
+    LowMemory = 258,
 
     [NativeName("SDL_EVENT_WILL_ENTER_BACKGROUND")]
-    WillEnterBackground,
+    WillEnterBackground = 259,
 
     [NativeName("SDL_EVENT_DID_ENTER_BACKGROUND")]
-    DidEnterBackground,
+    DidEnterBackground = 260,
 
     [NativeName("SDL_EVENT_WILL_ENTER_FOREGROUND")]
-    WillEnterForeground,
+    WillEnterForeground = 261,
 
     [NativeName("SDL_EVENT_DID_ENTER_FOREGROUND")]
-    DidEnterForeground,
+    DidEnterForeground = 262,
 
     [NativeName("SDL_EVENT_LOCALE_CHANGED")]
-    LocaleChanged,
+    LocaleChanged = 263,
 
     [NativeName("SDL_EVENT_SYSTEM_THEME_CHANGED")]
-    SystemThemeChanged,
+    SystemThemeChanged = 264,
 
     [NativeName("SDL_EVENT_DISPLAY_ORIENTATION")]
-    DisplayOrientation = 0x151,
+    DisplayOrientation = 337,
 
     [NativeName("SDL_EVENT_DISPLAY_ADDED")]
-    DisplayAdded,
+    DisplayAdded = 338,
 
     [NativeName("SDL_EVENT_DISPLAY_REMOVED")]
-    DisplayRemoved,
+    DisplayRemoved = 339,
 
     [NativeName("SDL_EVENT_DISPLAY_MOVED")]
-    DisplayMoved,
+    DisplayMoved = 340,
 
     [NativeName("SDL_EVENT_DISPLAY_DESKTOP_MODE_CHANGED")]
-    DisplayDesktopModeChanged,
+    DisplayDesktopModeChanged = 341,
 
     [NativeName("SDL_EVENT_DISPLAY_CURRENT_MODE_CHANGED")]
-    DisplayCurrentModeChanged,
+    DisplayCurrentModeChanged = 342,
 
     [NativeName("SDL_EVENT_DISPLAY_CONTENT_SCALE_CHANGED")]
-    DisplayContentScaleChanged,
+    DisplayContentScaleChanged = 343,
 
     [NativeName("SDL_EVENT_DISPLAY_FIRST")]
     DisplayFirst = DisplayOrientation,
@@ -67,79 +67,79 @@ public enum EventType : uint
     DisplayLast = DisplayContentScaleChanged,
 
     [NativeName("SDL_EVENT_WINDOW_SHOWN")]
-    WindowShown = 0x202,
+    WindowShown = 514,
 
     [NativeName("SDL_EVENT_WINDOW_HIDDEN")]
-    WindowHidden,
+    WindowHidden = 515,
 
     [NativeName("SDL_EVENT_WINDOW_EXPOSED")]
-    WindowExposed,
+    WindowExposed = 516,
 
     [NativeName("SDL_EVENT_WINDOW_MOVED")]
-    WindowMoved,
+    WindowMoved = 517,
 
     [NativeName("SDL_EVENT_WINDOW_RESIZED")]
-    WindowResized,
+    WindowResized = 518,
 
     [NativeName("SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED")]
-    WindowPixelSizeChanged,
+    WindowPixelSizeChanged = 519,
 
     [NativeName("SDL_EVENT_WINDOW_METAL_VIEW_RESIZED")]
-    WindowMetalViewResized,
+    WindowMetalViewResized = 520,
 
     [NativeName("SDL_EVENT_WINDOW_MINIMIZED")]
-    WindowMinimized,
+    WindowMinimized = 521,
 
     [NativeName("SDL_EVENT_WINDOW_MAXIMIZED")]
-    WindowMaximized,
+    WindowMaximized = 522,
 
     [NativeName("SDL_EVENT_WINDOW_RESTORED")]
-    WindowRestored,
+    WindowRestored = 523,
 
     [NativeName("SDL_EVENT_WINDOW_MOUSE_ENTER")]
-    WindowMouseEnter,
+    WindowMouseEnter = 524,
 
     [NativeName("SDL_EVENT_WINDOW_MOUSE_LEAVE")]
-    WindowMouseLeave,
+    WindowMouseLeave = 525,
 
     [NativeName("SDL_EVENT_WINDOW_FOCUS_GAINED")]
-    WindowFocusGained,
+    WindowFocusGained = 526,
 
     [NativeName("SDL_EVENT_WINDOW_FOCUS_LOST")]
-    WindowFocusLost,
+    WindowFocusLost = 527,
 
     [NativeName("SDL_EVENT_WINDOW_CLOSE_REQUESTED")]
-    WindowCloseRequested,
+    WindowCloseRequested = 528,
 
     [NativeName("SDL_EVENT_WINDOW_HIT_TEST")]
-    WindowHitTest,
+    WindowHitTest = 529,
 
     [NativeName("SDL_EVENT_WINDOW_ICCPROF_CHANGED")]
-    WindowIccprofChanged,
+    WindowIccprofChanged = 530,
 
     [NativeName("SDL_EVENT_WINDOW_DISPLAY_CHANGED")]
-    WindowDisplayChanged,
+    WindowDisplayChanged = 531,
 
     [NativeName("SDL_EVENT_WINDOW_DISPLAY_SCALE_CHANGED")]
-    WindowDisplayScaleChanged,
+    WindowDisplayScaleChanged = 532,
 
     [NativeName("SDL_EVENT_WINDOW_SAFE_AREA_CHANGED")]
-    WindowSafeAreaChanged,
+    WindowSafeAreaChanged = 533,
 
     [NativeName("SDL_EVENT_WINDOW_OCCLUDED")]
-    WindowOccluded,
+    WindowOccluded = 534,
 
     [NativeName("SDL_EVENT_WINDOW_ENTER_FULLSCREEN")]
-    WindowEnterFullscreen,
+    WindowEnterFullscreen = 535,
 
     [NativeName("SDL_EVENT_WINDOW_LEAVE_FULLSCREEN")]
-    WindowLeaveFullscreen,
+    WindowLeaveFullscreen = 536,
 
     [NativeName("SDL_EVENT_WINDOW_DESTROYED")]
-    WindowDestroyed,
+    WindowDestroyed = 537,
 
     [NativeName("SDL_EVENT_WINDOW_HDR_STATE_CHANGED")]
-    WindowHdrStateChanged,
+    WindowHdrStateChanged = 538,
 
     [NativeName("SDL_EVENT_WINDOW_FIRST")]
     WindowFirst = WindowShown,
@@ -148,218 +148,218 @@ public enum EventType : uint
     WindowLast = WindowHdrStateChanged,
 
     [NativeName("SDL_EVENT_KEY_DOWN")]
-    KeyDown = 0x300,
+    KeyDown = 768,
 
     [NativeName("SDL_EVENT_KEY_UP")]
-    KeyUp,
+    KeyUp = 769,
 
     [NativeName("SDL_EVENT_TEXT_EDITING")]
-    TextEditing,
+    TextEditing = 770,
 
     [NativeName("SDL_EVENT_TEXT_INPUT")]
-    TextInput,
+    TextInput = 771,
 
     [NativeName("SDL_EVENT_KEYMAP_CHANGED")]
-    KeymapChanged,
+    KeymapChanged = 772,
 
     [NativeName("SDL_EVENT_KEYBOARD_ADDED")]
-    KeyboardAdded,
+    KeyboardAdded = 773,
 
     [NativeName("SDL_EVENT_KEYBOARD_REMOVED")]
-    KeyboardRemoved,
+    KeyboardRemoved = 774,
 
     [NativeName("SDL_EVENT_TEXT_EDITING_CANDIDATES")]
-    TextEditingCandidates,
+    TextEditingCandidates = 775,
 
     [NativeName("SDL_EVENT_MOUSE_MOTION")]
-    MouseMotion = 0x400,
+    MouseMotion = 1024,
 
     [NativeName("SDL_EVENT_MOUSE_BUTTON_DOWN")]
-    MouseButtonDown,
+    MouseButtonDown = 1025,
 
     [NativeName("SDL_EVENT_MOUSE_BUTTON_UP")]
-    MouseButtonUp,
+    MouseButtonUp = 1026,
 
     [NativeName("SDL_EVENT_MOUSE_WHEEL")]
-    MouseWheel,
+    MouseWheel = 1027,
 
     [NativeName("SDL_EVENT_MOUSE_ADDED")]
-    MouseAdded,
+    MouseAdded = 1028,
 
     [NativeName("SDL_EVENT_MOUSE_REMOVED")]
-    MouseRemoved,
+    MouseRemoved = 1029,
 
     [NativeName("SDL_EVENT_JOYSTICK_AXIS_MOTION")]
-    JoystickAxisMotion = 0x600,
+    JoystickAxisMotion = 1536,
 
     [NativeName("SDL_EVENT_JOYSTICK_BALL_MOTION")]
-    JoystickBallMotion,
+    JoystickBallMotion = 1537,
 
     [NativeName("SDL_EVENT_JOYSTICK_HAT_MOTION")]
-    JoystickHatMotion,
+    JoystickHatMotion = 1538,
 
     [NativeName("SDL_EVENT_JOYSTICK_BUTTON_DOWN")]
-    JoystickButtonDown,
+    JoystickButtonDown = 1539,
 
     [NativeName("SDL_EVENT_JOYSTICK_BUTTON_UP")]
-    JoystickButtonUp,
+    JoystickButtonUp = 1540,
 
     [NativeName("SDL_EVENT_JOYSTICK_ADDED")]
-    JoystickAdded,
+    JoystickAdded = 1541,
 
     [NativeName("SDL_EVENT_JOYSTICK_REMOVED")]
-    JoystickRemoved,
+    JoystickRemoved = 1542,
 
     [NativeName("SDL_EVENT_JOYSTICK_BATTERY_UPDATED")]
-    JoystickBatteryUpdated,
+    JoystickBatteryUpdated = 1543,
 
     [NativeName("SDL_EVENT_JOYSTICK_UPDATE_COMPLETE")]
-    JoystickUpdateComplete,
+    JoystickUpdateComplete = 1544,
 
     [NativeName("SDL_EVENT_GAMEPAD_AXIS_MOTION")]
-    GamepadAxisMotion = 0x650,
+    GamepadAxisMotion = 1616,
 
     [NativeName("SDL_EVENT_GAMEPAD_BUTTON_DOWN")]
-    GamepadButtonDown,
+    GamepadButtonDown = 1617,
 
     [NativeName("SDL_EVENT_GAMEPAD_BUTTON_UP")]
-    GamepadButtonUp,
+    GamepadButtonUp = 1618,
 
     [NativeName("SDL_EVENT_GAMEPAD_ADDED")]
-    GamepadAdded,
+    GamepadAdded = 1619,
 
     [NativeName("SDL_EVENT_GAMEPAD_REMOVED")]
-    GamepadRemoved,
+    GamepadRemoved = 1620,
 
     [NativeName("SDL_EVENT_GAMEPAD_REMAPPED")]
-    GamepadRemapped,
+    GamepadRemapped = 1621,
 
     [NativeName("SDL_EVENT_GAMEPAD_TOUCHPAD_DOWN")]
-    GamepadTouchpadDown,
+    GamepadTouchpadDown = 1622,
 
     [NativeName("SDL_EVENT_GAMEPAD_TOUCHPAD_MOTION")]
-    GamepadTouchpadMotion,
+    GamepadTouchpadMotion = 1623,
 
     [NativeName("SDL_EVENT_GAMEPAD_TOUCHPAD_UP")]
-    GamepadTouchpadUp,
+    GamepadTouchpadUp = 1624,
 
     [NativeName("SDL_EVENT_GAMEPAD_SENSOR_UPDATE")]
-    GamepadSensorUpdate,
+    GamepadSensorUpdate = 1625,
 
     [NativeName("SDL_EVENT_GAMEPAD_UPDATE_COMPLETE")]
-    GamepadUpdateComplete,
+    GamepadUpdateComplete = 1626,
 
     [NativeName("SDL_EVENT_GAMEPAD_STEAM_HANDLE_UPDATED")]
-    GamepadSteamHandleUpdated,
+    GamepadSteamHandleUpdated = 1627,
 
     [NativeName("SDL_EVENT_FINGER_DOWN")]
-    FingerDown = 0x700,
+    FingerDown = 1792,
 
     [NativeName("SDL_EVENT_FINGER_UP")]
-    FingerUp,
+    FingerUp = 1793,
 
     [NativeName("SDL_EVENT_FINGER_MOTION")]
-    FingerMotion,
+    FingerMotion = 1794,
 
     [NativeName("SDL_EVENT_FINGER_CANCELED")]
-    FingerCanceled,
+    FingerCanceled = 1795,
 
     [NativeName("SDL_EVENT_CLIPBOARD_UPDATE")]
-    ClipboardUpdate = 0x900,
+    ClipboardUpdate = 2304,
 
     [NativeName("SDL_EVENT_DROP_FILE")]
-    DropFile = 0x1000,
+    DropFile = 4096,
 
     [NativeName("SDL_EVENT_DROP_TEXT")]
-    DropText,
+    DropText = 4097,
 
     [NativeName("SDL_EVENT_DROP_BEGIN")]
-    DropBegin,
+    DropBegin = 4098,
 
     [NativeName("SDL_EVENT_DROP_COMPLETE")]
-    DropComplete,
+    DropComplete = 4099,
 
     [NativeName("SDL_EVENT_DROP_POSITION")]
-    DropPosition,
+    DropPosition = 4100,
 
     [NativeName("SDL_EVENT_AUDIO_DEVICE_ADDED")]
-    AudioDeviceAdded = 0x1100,
+    AudioDeviceAdded = 4352,
 
     [NativeName("SDL_EVENT_AUDIO_DEVICE_REMOVED")]
-    AudioDeviceRemoved,
+    AudioDeviceRemoved = 4353,
 
     [NativeName("SDL_EVENT_AUDIO_DEVICE_FORMAT_CHANGED")]
-    AudioDeviceFormatChanged,
+    AudioDeviceFormatChanged = 4354,
 
     [NativeName("SDL_EVENT_SENSOR_UPDATE")]
-    SensorUpdate = 0x1200,
+    SensorUpdate = 4608,
 
     [NativeName("SDL_EVENT_PEN_PROXIMITY_IN")]
-    PenProximityIn = 0x1300,
+    PenProximityIn = 4864,
 
     [NativeName("SDL_EVENT_PEN_PROXIMITY_OUT")]
-    PenProximityOut,
+    PenProximityOut = 4865,
 
     [NativeName("SDL_EVENT_PEN_DOWN")]
-    PenDown,
+    PenDown = 4866,
 
     [NativeName("SDL_EVENT_PEN_UP")]
-    PenUp,
+    PenUp = 4867,
 
     [NativeName("SDL_EVENT_PEN_BUTTON_DOWN")]
-    PenButtonDown,
+    PenButtonDown = 4868,
 
     [NativeName("SDL_EVENT_PEN_BUTTON_UP")]
-    PenButtonUp,
+    PenButtonUp = 4869,
 
     [NativeName("SDL_EVENT_PEN_MOTION")]
-    PenMotion,
+    PenMotion = 4870,
 
     [NativeName("SDL_EVENT_PEN_AXIS")]
-    PenAxis,
+    PenAxis = 4871,
 
     [NativeName("SDL_EVENT_CAMERA_DEVICE_ADDED")]
-    CameraDeviceAdded = 0x1400,
+    CameraDeviceAdded = 5120,
 
     [NativeName("SDL_EVENT_CAMERA_DEVICE_REMOVED")]
-    CameraDeviceRemoved,
+    CameraDeviceRemoved = 5121,
 
     [NativeName("SDL_EVENT_CAMERA_DEVICE_APPROVED")]
-    CameraDeviceApproved,
+    CameraDeviceApproved = 5122,
 
     [NativeName("SDL_EVENT_CAMERA_DEVICE_DENIED")]
-    CameraDeviceDenied,
+    CameraDeviceDenied = 5123,
 
     [NativeName("SDL_EVENT_RENDER_TARGETS_RESET")]
-    RenderTargetsReset = 0x2000,
+    RenderTargetsReset = 8192,
 
     [NativeName("SDL_EVENT_RENDER_DEVICE_RESET")]
-    RenderDeviceReset,
+    RenderDeviceReset = 8193,
 
     [NativeName("SDL_EVENT_RENDER_DEVICE_LOST")]
-    RenderDeviceLost,
+    RenderDeviceLost = 8194,
 
     [NativeName("SDL_EVENT_PRIVATE0")]
-    Private0 = 0x4000,
+    Private0 = 16384,
 
     [NativeName("SDL_EVENT_PRIVATE1")]
-    Private1,
+    Private1 = 16385,
 
     [NativeName("SDL_EVENT_PRIVATE2")]
-    Private2,
+    Private2 = 16386,
 
     [NativeName("SDL_EVENT_PRIVATE3")]
-    Private3,
+    Private3 = 16387,
 
     [NativeName("SDL_EVENT_POLL_SENTINEL")]
-    PollSentinel = 0x7F00,
+    PollSentinel = 32512,
 
     [NativeName("SDL_EVENT_USER")]
-    User = 0x8000,
+    User = 32768,
 
     [NativeName("SDL_EVENT_LAST")]
-    Last = 0xFFFF,
+    Last = 65535,
 
     [NativeName("SDL_EVENT_ENUM_PADDING")]
-    EnumPadding = 0x7FFFFFFF,
+    EnumPadding = 2147483647,
 }

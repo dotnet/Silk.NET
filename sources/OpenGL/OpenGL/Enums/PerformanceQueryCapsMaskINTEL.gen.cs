@@ -11,6 +11,8 @@ namespace Silk.NET.OpenGL;
 [Flags]
 public enum PerformanceQueryCapsMaskINTEL : uint
 {
+    None = 0x0,
+
     [NativeName("GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
     SingleContextINTEL = unchecked((uint)0x00000000),
 
