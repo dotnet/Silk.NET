@@ -205,7 +205,7 @@ public partial class MixKhronosData(
         /// <remarks>
         /// See <see cref="RewriterPhase3"/>.
         /// </remarks>
-        public HashSet<string> VendorSuffixIdentifierExclusions { get; init; } = [];
+        public HashSet<string> VendorSuffixIdentificationExclusions { get; init; } = [];
     }
 
     /// <inheritdoc />
@@ -379,7 +379,7 @@ public partial class MixKhronosData(
                     continue;
                 }
 
-                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixIdentifierExclusions, currentConfig.VendorSuffixPriority);
+                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixIdentificationExclusions, currentConfig.VendorSuffixPriority);
                 proj = doc.WithSyntaxRoot(
                     rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Visit returned null.")
